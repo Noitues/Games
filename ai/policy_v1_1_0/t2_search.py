@@ -33,6 +33,12 @@ DEFAULTS = {
     # resolved it misreads every tower dive and minion trade.
     "leaf_world": False,
     "temp_scale": 1.0,        # <1 sharpens the softmax over searched values
+    # Play the rest of the round out with the cheap model instead of stopping
+    # after a fixed number of plies, then resolve the World Phase. Activations
+    # in one round interact (Rules 5.2 snake order), so a leaf taken mid-round
+    # can miss the trade that decides the round.
+    "rollout_round": False,
+    "max_rollout": 8,
 }
 
 
@@ -45,6 +51,8 @@ class T2Search(T1Greedy):
         cfg = dict(DEFAULTS)
         cfg.update({k: v for k, v in (config or {}).items() if k in DEFAULTS})
         self.search = cfg
+        if cfg["rollout_round"]:
+            cfg["leaf_world"] = True
         self.leaf_weights = dict(self.weights, incoming_own=0.0, incoming_enemy=0.0,
                                  death_risk=0.0, kill_chance=0.0)
 
@@ -97,8 +105,15 @@ class T2Search(T1Greedy):
             return self.value(state)
         return evaluate(probe, self.team, self.leaf_weights)
 
+    def _depth(self, state) -> int:
+        if not self.search["rollout_round"]:
+            return self.search["plies"]
+        order = getattr(state, "turn_order", ()) or ()
+        idx = getattr(state, "turn_index", 0)
+        return max(1, min(self.search["max_rollout"], len(order) - idx))
+
     def _descend(self, state, ply: int, deadline: float) -> float:
-        if ply >= self.search["plies"] or state.winner is not None \
+        if ply >= self._depth(state) or state.winner is not None \
                 or time.perf_counter() > deadline:
             return self.leaf_value(state)
         actor = self._next_actor(state, ply)

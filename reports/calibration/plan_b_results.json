@@ -1,0 +1,77 @@
+[
+  {
+    "name": "T2_leafworld_vs_T1",
+    "p1": "T2_search",
+    "p2": "T1_greedy",
+    "games": 60,
+    "wr": 56.666666666666664,
+    "lo": 44.103438776125564,
+    "hi": 68.42760319531324,
+    "median_rounds": 12,
+    "runtime": 134.6169855594635,
+    "anomalies": 0,
+    "p1_config": {
+      "leaf_world": true,
+      "root_k": 8,
+      "time_budget_ms": 700
+    }
+  },
+  {
+    "name": "T2_leafworld_baseweights_vs_T1",
+    "p1": "T2_search",
+    "p2": "T1_greedy",
+    "games": 60,
+    "wr": 58.333333333333336,
+    "lo": 45.72808102264012,
+    "hi": 69.93572144165839,
+    "median_rounds": 11,
+    "runtime": 130.72118139266968,
+    "anomalies": 0,
+    "p1_config": {
+      "leaf_world": true,
+      "root_k": 8,
+      "time_budget_ms": 700,
+      "weights": {
+        "monster_chip": 0.0,
+        "objective_pull": 0.0,
+        "recall_value": 0.0
+      }
+    }
+  },
+  {
+    "name": "T2_leafworld_wide_vs_T1",
+    "p1": "T2_search",
+    "p2": "T1_greedy",
+    "games": 60,
+    "wr": 51.66666666666667,
+    "lo": 39.30781003259249,
+    "hi": 63.82495046026722,
+    "median_rounds": 12,
+    "runtime": 243.48104071617126,
+    "anomalies": 0,
+    "p1_config": {
+      "leaf_world": true,
+      "root_k": 14,
+      "plies": 3,
+      "time_budget_ms": 900
+    }
+  },
+  {
+    "name": "T2_leafworld_sharp_vs_T1",
+    "p1": "T2_search",
+    "p2": "T1_greedy",
+    "games": 60,
+    "wr": 58.333333333333336,
+    "lo": 45.72808102264012,
+    "hi": 69.93572144165839,
+    "median_rounds": 11,
+    "runtime": 146.58120250701904,
+    "anomalies": 0,
+    "p1_config": {
+      "leaf_world": true,
+      "root_k": 10,
+      "time_budget_ms": 800,
+      "temp_scale": 0.4
+    }
+  }
+]

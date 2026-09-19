@@ -1,0 +1,7 @@
+[
+  {"name": "T2_sharp_temp_vs_T1", "p1": "T2_search", "p2": "T1_greedy", "games": 200,
+   "p1_config": {"leaf_world": true, "root_k": 8, "time_budget_ms": 800, "temp_scale": 0.1}},
+  {"name": "T2_full_opponent_model_vs_T1", "p1": "T2_search", "p2": "T1_greedy", "games": 150,
+   "p1_config": {"leaf_world": true, "root_k": 8, "time_budget_ms": 1600, "temp_scale": 0.15,
+                 "opp_enum": {"step_cap": 4, "plan_cap": 4, "max_dest": 14, "max_options": 140, "placement_cap": 3}}}
+]

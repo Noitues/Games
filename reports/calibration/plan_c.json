@@ -1,0 +1,7 @@
+[
+  {"name": "T2_rollout_round_vs_T1", "p1": "T2_search", "p2": "T1_greedy",
+   "p1_config": {"rollout_round": true, "root_k": 6, "time_budget_ms": 1200}},
+  {"name": "T2_rollout_wide_vs_T1", "p1": "T2_search", "p2": "T1_greedy",
+   "p1_config": {"rollout_round": true, "root_k": 10, "time_budget_ms": 1600,
+                 "opp_enum": {"step_cap": 3, "plan_cap": 2, "max_dest": 10, "max_options": 70, "placement_cap": 2}}}
+]

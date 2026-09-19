@@ -1,0 +1,81 @@
+[
+  {
+    "name": "T1_macro_weights_vs_T1",
+    "p1": "T1_greedy",
+    "p2": "T1_greedy",
+    "games": 60,
+    "wr": 51.66666666666667,
+    "lo": 39.30781003259249,
+    "hi": 63.82495046026722,
+    "median_rounds": 12,
+    "runtime": 79.96025514602661,
+    "anomalies": 0,
+    "p1_config": {
+      "weights": {
+        "monster_chip": 0.25,
+        "objective_pull": 0.35,
+        "recall_value": 2.0
+      }
+    }
+  },
+  {
+    "name": "T2_baseline_weights_vs_T1",
+    "p1": "T2_search",
+    "p2": "T1_greedy",
+    "games": 60,
+    "wr": 55.00000000000001,
+    "lo": 42.49193588533434,
+    "hi": 66.90634559324477,
+    "median_rounds": 11,
+    "runtime": 118.84263062477112,
+    "anomalies": 0,
+    "p1_config": {
+      "weights": {
+        "monster_chip": 0.0,
+        "objective_pull": 0.0,
+        "recall_value": 0.0
+      }
+    }
+  },
+  {
+    "name": "T2_wide_k12_p3_vs_T1",
+    "p1": "T2_search",
+    "p2": "T1_greedy",
+    "games": 60,
+    "wr": 58.333333333333336,
+    "lo": 45.72808102264012,
+    "hi": 69.93572144165839,
+    "median_rounds": 11,
+    "runtime": 216.68185591697693,
+    "anomalies": 0,
+    "p1_config": {
+      "root_k": 12,
+      "plies": 3,
+      "time_budget_ms": 700
+    }
+  },
+  {
+    "name": "T2_fine_opponent_vs_T1",
+    "p1": "T2_search",
+    "p2": "T1_greedy",
+    "games": 60,
+    "wr": 58.333333333333336,
+    "lo": 45.72808102264012,
+    "hi": 69.93572144165839,
+    "median_rounds": 11,
+    "runtime": 192.9204559326172,
+    "anomalies": 0,
+    "p1_config": {
+      "root_k": 8,
+      "plies": 2,
+      "time_budget_ms": 700,
+      "opp_enum": {
+        "step_cap": 3,
+        "plan_cap": 3,
+        "max_dest": 12,
+        "max_options": 90,
+        "placement_cap": 3
+      }
+    }
+  }
+]
