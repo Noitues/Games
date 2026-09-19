@@ -12,9 +12,9 @@
 | seed | 90210 |
 | seat swap | True |
 | team sampling | random_by_role_no_duplicates |
-| runtime | 96.0s |
-| engine tests | not run |
-| generated | 2026-09-19 05:32:52 |
+| runtime | 94.0s |
+| engine tests | 78 passed in 25.30s |
+| generated | 2026-09-19 06:04:15 |
 
 ## 2. Balance scorecard
 
@@ -45,6 +45,8 @@
 
 ## 4. Roles
 
+Under `random_by_role_no_duplicates` both teams field exactly one champion of each role, so role win rate is 50% by construction. Read the AP column, and read win rates from the champion table.
+
 | role | WR% [95% CI] | AP/round |
 |---|---|---|
 | ADC | 50.0 [43.1, 56.9] | 1.13 |
@@ -57,7 +59,7 @@
 
 - length: median 13.5, p10 12, p90 19
 - end reasons: {'nexus': 92, 'round_limit_hp': 1, 'round_limit_towers': 7} (draws 0)
-- priority win rate: 50.0% [43.1, 56.9]
+- priority win rate: 100.0% [96.3, 100.0]
 - north win rate: 50.0% [40.4, 59.6]
 - length histogram: {9: 1, 11: 9, 12: 19, 13: 21, 14: 13, 15: 10, 16: 6, 17: 4, 18: 4, 19: 4, 20: 9}
 

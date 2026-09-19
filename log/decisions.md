@@ -36,6 +36,7 @@ Rulebook: `rules/Hex-Nexus_Rules_v1.0.0.md`.
 | RQ-024 | Do empowered (Baron) waves deal 2 hits to everything? (11) | No. 2 hits to enemy towers and the Nexus, 1 hit to everything else. | ruled |
 | RQ-025 | Does terrain do anything? (2.4) | No. Terrain is colour only in v1.0.0; the engine treats it as cosmetic. Left open as a rulebook TBD. | ruled |
 | RQ-026 | Minion waves inside hidden tiles. (3.6) | A wave always holds a specific path hex, even inside a hidden tile, and never uses the hidden shortcut. Confirms the rulebook DEFAULT. | ruled |
+| RQ-027 | A friendly *champion* stands on the minion spawn hex. (9.1) | The spawn is skipped. Rules 9.1 only covers a friendly wave (merge) and an enemy unit (skip); anything else that cannot merge skips the spawn, because a visible hex holds one unit (4.2). | ruled |
 
 ### Open for the lead designer
 
@@ -49,6 +50,13 @@ Rulebook: `rules/Hex-Nexus_Rules_v1.0.0.md`.
 2. **RQ-016 (bump-and-continue).** Engine simplification only; no player-facing
    rule change. Confirm that ending movement on a flip is acceptable for
    simulation, or it goes on the backlog as a two-part activation decision.
+
+## Iteration 1 — roster expansion
+
+| id | question | ruling | status |
+|---|---|---|---|
+| RQ-028 | The lead designer asked for 25 champions now, while Prompts Part 5 expands the roster only after Phase 4 passes with 10. | The lead designer's instruction wins: roster 1.1.0 carries 25 champions, 5 per role. The consequence is recorded rather than argued away - with 5 per role a champion plays 40% of games, so a champion win-rate read at the Rules 14.3 precision (+/-2.2 pts) now needs about 5,000 games per batch instead of 2,000, and every batch below that size reports champion verdicts as INCONCLUSIVE. | ruled |
+| RQ-029 | Do the 15 new champions need new icons? | No. Every kit uses only the Rules 6.3 vocabulary, so no point value in 14.2 had to change and the budget calculator needed no edit. | ruled |
 
 ### Engine interpretations recorded in reports
 

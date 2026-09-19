@@ -29,3 +29,36 @@ No balance patches yet: Phase 0 produces the baseline, not fixes.
 | Monster respawn onto an occupied hex | monster and champion stacked on one visible hex | a monster reappears only when its own hex is clear (RQ-018) |
 | Wave spawning under a friendly champion | wave and champion stacked on the spawn hex | any unit other than a mergeable friendly wave skips that spawn (RQ-027) |
 | Tile turning face up inside an ability (REVEAL then MOVE) | movement target node went stale, two champions stacked | a stale tile node resolves to a legal hex inside that tile |
+
+## Iteration 1 — roster expansion to 25 (lead designer instruction)
+
+| artefact | version | change |
+|---|---|---|
+| roster | 1.0.0 -> 1.1.0 | 15 new champions, 3 per role, taking the roster to 25 (5 per role). Every kit is inside the 22 +/- 2 band on its first pass and uses only Rules 6.3 icons. No existing champion was touched. |
+| tests | - | The roster test now asserts an even, arbitrary number of champions per role, plus a new check that no two kits are identical. The fixture roster follows `HEXNEXUS_ROSTER` so older rosters can still be tested. |
+
+New champions: Marrow, Kaelis, Ossuar (Top); Rictus, Bramblehide, Sylphine
+(Jungle); Noctis, Quillan, Sable (Mid); Veyra, Brixa, Orrin (ADC); Pallas, Wisp,
+Corvane (Support).
+
+**Sampling consequence (RQ-028).** With 5 champions per role,
+`random_by_role_no_duplicates` puts each champion in 40% of games. A 2,000-game
+batch now gives about 800 games per champion (+/-3.5 pts), and the Rules 14.3
+precision of +/-2.2 pts needs roughly 5,000 games. `batch_0004` (400 games) is a
+smoke batch for the new kits, not a balance read.
+
+### Iteration 1 batches
+
+| batch | matchup | games | result |
+|---|---|---|---|
+| batch_0004 | T1 vs T1, roster 1.1.0 | 400 | 0 anomalies. Median 12 rounds, 98.8% Nexus kills, priority 47.5% [42.7, 52.4]. Economy outliers: quillan 5.07x, sable 3.25x, ashwyn 3.15x, ossuar 2.12x the roster mean. |
+
+Batches 0001-0003 were re-run on the fixed engine and report code, so every
+report in `reports/` comes from one build. All four now carry 0 anomalies.
+
+### Further fixes in this iteration
+
+| bug | symptom | fix |
+|---|---|---|
+| Destination hex taken between enumeration and execution | two friendly champions stacked (1 game in 400) | a move onto an occupied hex is refused and the unit stays put; movement is optional |
+| Report clobbered the priority win rate | section 5 printed the last role's win rate instead of the first player's | separate variables; the role table now also states that role win rate is 50% by construction under `random_by_role_no_duplicates` |

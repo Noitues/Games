@@ -1,0 +1,14 @@
+{
+  "batch_id": "batch_0004",
+  "rules": "1.0.0", "roster": "1.1.0", "ai": "1.0.0",
+  "matchup": { "p1": "T1_greedy", "p2": "T1_greedy", "temperature": 0.3 },
+  "games": 400,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 525252,
+  "replays": 5,
+  "extra": [
+    "First batch on the 25-champion roster. Smoke only: with 5 champions per role each champion plays ~40% of games, so 400 games gives ~160 games per champion (about +/-7.5 pts). Champion win-rate verdicts stay INCONCLUSIVE by design until a 5,000-game batch.",
+    "compare_to:batch_0002"
+  ]
+}

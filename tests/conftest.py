@@ -10,8 +10,8 @@ from engine.game import new_game
 from engine.hexmap import Board
 from engine.kits import load_roster
 
-ROSTER = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                      "roster", "roster_v1.0.0.json")
+ROSTER = os.environ.get("HEXNEXUS_ROSTER") or os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "roster", "roster_v1.1.0.json")
 
 
 @pytest.fixture(scope="session")

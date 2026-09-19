@@ -176,6 +176,12 @@ def move_unit(state: GameState, u, node: Node, from_node: Optional[Node] = None)
                 return
         return                      # no legal hex: the unit stays put
     if node[0] == "H":
+        # The hex can have been taken since the option was enumerated (an
+        # earlier step of the same ability pushed a unit into it, or a flip
+        # placed one there). Movement is optional, so the unit stays put.
+        if any(x.alive and x.uid != u.uid and x.hexpos == (node[1], node[2])
+               for x in state.all_units()):
+            return
         u.hexpos = (node[1], node[2])
     else:
         hexes = state.board.tile_hexes[node[1]]

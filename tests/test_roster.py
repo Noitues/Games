@@ -1,14 +1,28 @@
+import json
+
 """Rules 14: every kit is legal and on budget."""
 from engine.kits import ability_gross, ability_net, budget, validate_kit
 
 
-def test_ten_champions_two_per_role(kits):
-    assert len(kits) == 10
+def test_roster_is_balanced_across_roles(kits):
     roles = {}
     for k in kits.values():
         roles.setdefault(k["role"], []).append(k["id"])
     assert sorted(roles) == ["ADC", "Jungle", "Mid", "Support", "Top"]
-    assert all(len(v) == 2 for v in roles.values())
+    counts = {len(v) for v in roles.values()}
+    assert len(counts) == 1, f"uneven roles: { {r: len(v) for r, v in roles.items()} }"
+    assert counts.pop() >= 2
+    assert len({k["name"] for k in kits.values()}) == len(kits)
+
+
+def test_identities_are_distinct(kits):
+    """Prompts 4.B guardrail: no two champions share a kit."""
+    seen = {}
+    for k in kits.values():
+        sig = (k["stats"]["hp"], k["stats"]["speed"],
+               json.dumps([k["abilities"][a] for a in ("Q", "W", "E", "R")], sort_keys=True))
+        assert sig not in seen, f"{k['id']} duplicates {seen.get(sig)}"
+        seen[sig] = k["id"]
 
 
 def test_kits_validate(kits):

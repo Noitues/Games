@@ -157,10 +157,10 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
                            f"roster mean {mean_use:.1f}%; {len(far)} champions >15pp from it",
                   "verdict": "PASS" if not off_band and not far else "FAIL"})
 
-    p, lo, hi = wilson(prio_wins, max(1, prio_games))
+    pr_p, pr_lo, pr_hi = wilson(prio_wins, max(1, prio_games))
     cards.append({"check": "Priority (first player) win rate 48-52%",
-                  "value": f"{p:.1f}% [{lo:.1f}, {hi:.1f}]",
-                  "verdict": verdict(lo, hi, 48, 52)})
+                  "value": f"{pr_p:.1f}% [{pr_lo:.1f}, {pr_hi:.1f}]",
+                  "verdict": verdict(pr_lo, pr_hi, 48, 52)})
     med, mlo, mhi = bootstrap(lengths, median)
     cards.append({"check": "Median game length 13-18 rounds",
                   "value": f"{med:.1f} [{mlo:.1f}, {mhi:.1f}]",
@@ -175,15 +175,15 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
                   "value": (", ".join(f"{c}" for c in econ_out) or "none") +
                            f" (roster mean {roster_ap_mean:.2f} AP/round)",
                   "verdict": "PASS" if not econ_out else "FAIL"})
-    p3, lo3, hi3 = wilson(north_wins, max(1, north_games))
+    n_p, n_lo, n_hi = wilson(north_wins, max(1, north_games))
     cards.append({"check": "North vs South win rate 48-52%",
-                  "value": f"north {p3:.1f}% [{lo3:.1f}, {hi3:.1f}]",
-                  "verdict": verdict(lo3, hi3, 48, 52)})
+                  "value": f"north {n_p:.1f}% [{n_lo:.1f}, {n_hi:.1f}]",
+                  "verdict": verdict(n_lo, n_hi, 48, 52)})
 
     role_rows = []
     for role in sorted(role_w):
-        p, lo, hi = wilson(sum(role_w[role]), len(role_w[role]))
-        role_rows.append({"role": role, "wr": p, "lo": lo, "hi": hi,
+        rp, rlo, rhi = wilson(sum(role_w[role]), len(role_w[role]))
+        role_rows.append({"role": role, "wr": rp, "lo": rlo, "hi": rhi,
                           "ap_per_round": sum(role_ap[role]) / len(role_ap[role])})
 
     item_rows = []
@@ -220,8 +220,8 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
             "length_p90": percentile(lengths, 0.9),
             "histogram": dict(sorted(Counter(lengths).items())),
             "end_reasons": dict(end_reasons), "draws": draws,
-            "priority_wr": p, "priority_ci": [lo, hi],
-            "north_wr": p3, "north_ci": [lo3, hi3],
+            "priority_wr": pr_p, "priority_ci": [pr_lo, pr_hi],
+            "north_wr": n_p, "north_ci": [n_lo, n_hi],
         },
         "objectives": {
             "dragon_rounds_median": median(obj_rounds["dragon"]),
@@ -340,7 +340,11 @@ def to_markdown(s: dict) -> str:
                  f"{c['ap_per_round']:.2f} | {c['ap_rel']:.2f} | " + " | ".join(us) +
                  f" | {c['kills']:.2f} | {c['deaths']:.2f} | {c['rounds_dead']:.1f} | "
                  f"{c['rounds_cd']:.1f} | {c['ap_share']:.0f}% | {items} |")
-    L += ["", "## 4. Roles", "", "| role | WR% [95% CI] | AP/round |", "|---|---|---|"]
+    L += ["", "## 4. Roles", "",
+          "Under `random_by_role_no_duplicates` both teams field exactly one champion "
+          "of each role, so role win rate is 50% by construction. Read the AP column, "
+          "and read win rates from the champion table.", "",
+          "| role | WR% [95% CI] | AP/round |", "|---|---|---|"]
     for r in s["roles"]:
         L.append(f"| {r['role']} | {r['wr']:.1f} [{r['lo']:.1f}, {r['hi']:.1f}] | {r['ap_per_round']:.2f} |")
     g = s["game"]

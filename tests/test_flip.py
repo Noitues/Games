@@ -82,3 +82,17 @@ def test_reveal_then_move_does_not_stack(state, board, game):
     apply_plan(state, mg, "W", (t, ("T", t)))
     state.refresh_visibility(placer=game.placer)
     assert assert_state(state) == []
+
+
+def test_move_is_refused_when_the_hex_was_taken_meanwhile(state, board):
+    """A destination chosen during enumeration can be occupied by the time the
+    movement resolves; the mover then stays where it is."""
+    from engine.resolve import move_unit
+    state.hidden_mask = 0
+    a, b = state.champs["n_kestrel"], state.champs["n_thornjaw"]
+    a.hexpos, b.hexpos = (0, 0), (1, 0)
+    state.touch()
+    move_unit(state, a, ("H", 1, 0), ("H", 0, 0))
+    assert a.hexpos == (0, 0) and b.hexpos == (1, 0)
+    move_unit(state, a, ("H", -1, 1), ("H", 0, 0))
+    assert a.hexpos == (-1, 1)

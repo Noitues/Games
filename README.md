@@ -24,7 +24,7 @@ docs/      the multi-agent prompt architecture, the map image, lab notes
 
 ```bash
 pip install pytest
-python -m pytest tests/ -q                                   # 76 unit tests
+python -m pytest tests/ -q                                   # 78 unit tests
 python tools/run_batch.py reports/requests/batch_0002.json --workers 4 --tests
 ```
 
@@ -33,9 +33,16 @@ Part 3.5 and is written as both JSON and Markdown into `reports/`.
 
 ## Status
 
-Phase 0 (bootstrap) is complete: roster v1.0.0, engine with a full test suite,
-T0 and T1 policies, and smoke batches. See `log/changelog.md` for the history
-and `reports/` for the data behind every claim.
+| phase | state |
+|---|---|
+| 0 Bootstrap | **complete** - engine, 78 unit tests, T0 and T1, and a 200-game T1 vs T1 smoke batch with 0 anomalies (`batch_0002`) |
+| 1 Roster expansion (out of order, lead designer's call) | **complete** - roster v1.1.0 has 25 champions, 5 per role, all on budget (`batch_0004`) |
+| 1b AI calibration (T2 + exploit policies) | next |
+| 2-6 | pacing, economy, champion balance, robustness, release candidate |
+
+Every claim about balance cites a batch id, a metric and its 95% confidence
+interval; see `log/changelog.md` for the history, `log/decisions.md` for the
+rulings, and `reports/` for the data.
 
 ## The rules in one paragraph
 

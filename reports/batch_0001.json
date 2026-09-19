@@ -13,10 +13,10 @@
     },
     "seat_swap": true,
     "team_sampling": "random_by_role_no_duplicates",
-    "runtime_s": 107.14816689491272,
-    "generated": "2026-09-19 05:26:23",
+    "runtime_s": 105.29449558258057,
+    "generated": "2026-09-19 05:57:21",
     "engine_tests": {
-      "summary": "76 passed in 25.11s",
+      "summary": "78 passed in 25.30s",
       "returncode": 0
     }
   },
@@ -450,10 +450,10 @@
       "round_limit_draw": 1
     },
     "draws": 1,
-    "priority_wr": 50.0,
+    "priority_wr": 68.34170854271356,
     "priority_ci": [
-      45.111329973009745,
-      54.88867002699025
+      61.583805047936146,
+      74.40489293541341
     ],
     "north_wr": 46.231155778894475,
     "north_ci": [

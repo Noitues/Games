@@ -24,6 +24,8 @@ def main() -> None:
     ap.add_argument("--workers", type=int, default=0)
     ap.add_argument("--tests", action="store_true", help="run pytest and record the result")
     ap.add_argument("--baseline", default=None)
+    ap.add_argument("--dump-raw", action="store_true",
+                    help="write per-game results to reports/raw/<batch>.jsonl.gz")
     args = ap.parse_args()
 
     with open(args.request) as fh:
@@ -59,6 +61,14 @@ def main() -> None:
         json.dump(summary, fh, indent=2)
     with open(out_md, "w") as fh:
         fh.write(to_markdown(summary))
+    if args.dump_raw:
+        import gzip
+        os.makedirs(os.path.join(ROOT, "reports", "raw"), exist_ok=True)
+        raw_path = os.path.join(ROOT, "reports", "raw", f"{spec['batch_id']}.jsonl.gz")
+        with gzip.open(raw_path, "wt") as fh:
+            for r in results:
+                fh.write(json.dumps({k: v for k, v in r.items() if k != "replay"}) + "\n")
+
     replays = [r for r in results if r.get("replay")]
     if replays:
         with open(os.path.join(ROOT, "reports", f"{spec['batch_id']}_replays.json"), "w") as fh:
