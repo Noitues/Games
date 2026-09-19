@@ -81,7 +81,13 @@ report in `reports/` comes from one build. All four now carry 0 anomalies.
 | batch_0007 | T2 mirror (ai 1.1.0) | 600 | 0 anomalies. Priority 55.0% [51.0, 58.9], against 47.5% under T1: the first-player advantage grows with stronger play. |
 | batch_0008 | T2 vs T1 (ai 1.2.0) | 400 | T2 wins 58.5% [53.6, 63.2]. Acceptance gate >=65%: FAIL, on a tight interval. |
 | batch_0009 | T2 mirror (ai 1.2.0) | 400 | 0 anomalies. Priority 48.8% [43.9, 53.6] - the 55.0% of batch_0007 does not reproduce on the calibrated T2, so seat balance is unresolved rather than failing. Median length falls to 11 rounds; 100% Nexus kills. |
-| exploit sweep, acceptance report | - | - | Not captured: work paused. Command is in docs/HANDOFF.md. |
+| exploit sweep | each exploit vs T2 | 40 each | dive 20.0%, farm 30.0%, split-push 32.5%, objectives 27.5%, turtle 20.0%, cooldown-lock 27.5%; 0 anomalies. No exploit beats T2: the Phase 5 gate is already met. |
+
+Acceptance report: `reports/ai_acceptance_v1.2.0.md`. Three checks pass (T1 vs
+T0, no illegal actions, no exploit beats T2), one is inconclusive at this
+sample size (the mirror), and three fail: T2 vs T1 at 58.5%, 47 of 100
+abilities used in under 5% of their affordable rounds, and a 2,000-game T2
+batch projecting to about 4 hours on 4 cores.
 
 ### Calibration
 

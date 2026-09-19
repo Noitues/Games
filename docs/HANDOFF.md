@@ -9,7 +9,7 @@ Written mid-Phase-1, at the lead designer's request. Everything below is on
 |---|---|
 | 0 Bootstrap | **complete** — engine, tests, T0/T1, 200-game T1 mirror with 0 anomalies (`batch_0002`) |
 | Roster expansion to 25 | **complete** (out of order, on your instruction) — roster v1.1.0, 5 per role, all on budget (`batch_0004`) |
-| 1 AI calibration | **blocked on a decision** — T2 and the exploit set are built and calibrated, but the 4.C gate "T2 beats T1 ≥65%" fails at 58.5% [53.6, 63.2] on 400 games. See §4. |
+| 1 AI calibration | **complete as evidence, blocked on a decision** — every 4.C check has been run (`reports/ai_acceptance_v1.2.0.md`). Three pass, three fail; the phase cannot be signed off until you rule on the 65% gate. See §4. |
 | 2–6 pacing, economy, champion balance, robustness, release | not started |
 
 Versions in play: rules 1.0.0, roster 1.1.0 (25 champions), engine with 94
@@ -23,7 +23,7 @@ Two things were running in the background and are **not** in the repo yet:
 | run | state | how to redo it |
 |---|---|---|
 | `batch_0009` — T2 mirror, 400 games, ai 1.2.0 | **finished and committed** after the handoff was first written; it changed a finding, see below | `python tools/run_batch.py reports/requests/batch_0009.json --workers 4 --baseline reports/batch_0007.json` |
-| exploit sweep + acceptance report | started automatically after `batch_0009`; not captured | `python tools/ai_acceptance.py --t1vt0 batch_0005 --t2vt1 batch_0008 --mirror batch_0009 --exploit-games 40 --ai 1.2.0 --workers 4` |
+| exploit sweep + acceptance report | **finished and committed**: `reports/ai_acceptance_v1.2.0.{md,json}` | `python tools/ai_acceptance.py --t1vt0 batch_0005 --t2vt1 batch_0008 --mirror batch_0009 --exploit-games 40 --ai 1.2.0 --workers 4` |
 
 Both are pure re-runs: the sim requests are committed, seeds are in them, and
 nothing else depends on them finishing. Expect ~35 min and ~25 min on 4 cores.
@@ -41,6 +41,31 @@ hex; a wave spawning under a friendly champion; a tile flipping face up
 mid-ability invalidating a move target; a destination hex taken between
 enumeration and execution), plus one report bug (the role loop overwrote the
 priority win rate).
+
+**The 4.C acceptance checks** (`reports/ai_acceptance_v1.2.0.md`):
+
+| check | result | verdict |
+|---|---|---|
+| T1 beats T0 ≥90% | 97.0% [93.6, 98.6] | PASS |
+| T2 beats T1 ≥65% | 58.5% [53.6, 63.2] | FAIL |
+| Mirror lands at 50 ± 2% | 48.8% [43.9, 53.6] | INCONCLUSIVE (needs ~2,400 games for that precision) |
+| No illegal action | 0 illegal states across every batch | PASS |
+| Every ability used >5% under T2 | 47 of 100 below 5% | FAIL |
+| Decisions inside the time budget | 7.4s per game; a 2,000-game T2 batch projects to ~4 hours | FAIL |
+| No exploit beats T2 >60% (Phase 5 gate) | worst is split-push at 32.5% [20.1, 48.0] | PASS |
+
+The exploit sweep is a genuinely good result: dive 20.0%, farm 30.0%,
+split-push 32.5%, objectives 27.5%, turtle 20.0%, cooldown-lock 27.5%, all
+against T2 over 40 games each with 0 anomalies. No single strategy pushed to
+the extreme breaks the game — the Phase 5 gate is already met.
+
+The two new failures both need a decision rather than more code. **Ability
+usage**: 47 of 100 abilities are used in under 5% of the rounds where they are
+affordable and have a legal target, which is a kit-design signal now that the
+AI is stable — the Designer's brief for Phase 4, with the caveat that T2 is
+only ~8 points better than greedy. **Runtime**: at 7.4s per game a 2,000-game
+T2 batch takes ~4 hours on 4 cores, and Phase 4 needs ~5,000 games; see §5.5
+for the three ways out.
 
 **AI strength.**
 

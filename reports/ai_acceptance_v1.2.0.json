@@ -1,0 +1,345 @@
+{
+  "checks": [
+    {
+      "check": "T1 beats T0 in >=90% of games",
+      "value": "97.0% [93.6, 98.6]",
+      "verdict": "PASS",
+      "evidence": "batch_0005"
+    },
+    {
+      "check": "T2 beats T1 in >=65% of games",
+      "value": "58.5% [53.6, 63.2]",
+      "verdict": "FAIL",
+      "evidence": "batch_0008"
+    },
+    {
+      "check": "Mirror T2 vs T2, seats swapped, lands at 50 +/- 2%",
+      "value": "48.8% [43.9, 53.6]",
+      "verdict": "INCONCLUSIVE",
+      "evidence": "batch_0009"
+    },
+    {
+      "check": "No illegal action is ever submitted",
+      "value": "0 illegal states",
+      "verdict": "PASS",
+      "evidence": "all batches"
+    },
+    {
+      "check": "Every ability used >5% of the time under T2",
+      "value": "47 of 100 below 5%",
+      "verdict": "FAIL",
+      "evidence": "batch_0009"
+    },
+    {
+      "check": "Decisions stay inside the time budget",
+      "value": "7.42s per game wall clock on 4 workers; a 2,000-game T2 batch projects to 247 min",
+      "verdict": "FAIL",
+      "evidence": "batch_0009"
+    },
+    {
+      "check": "No exploit policy beats T2 more than 60% (Phase 5 gate)",
+      "value": "worst is X_exploit_splitpush at 32.5% [20.1, 48.0]",
+      "verdict": "PASS",
+      "evidence": "exploit sweep"
+    }
+  ],
+  "exploits": [
+    {
+      "policy": "X_exploit_dive",
+      "games": 40,
+      "wr": 20.0,
+      "lo": 10.499989725437704,
+      "hi": 34.7573063463995,
+      "anomalies": 0,
+      "runtime": 171.27224230766296,
+      "median_rounds": 12
+    },
+    {
+      "policy": "X_exploit_farm",
+      "games": 40,
+      "wr": 30.0,
+      "lo": 18.07484522974653,
+      "hi": 45.43001881814494,
+      "anomalies": 0,
+      "runtime": 181.70709562301636,
+      "median_rounds": 11
+    },
+    {
+      "policy": "X_exploit_splitpush",
+      "games": 40,
+      "wr": 32.5,
+      "lo": 20.0845022317827,
+      "hi": 47.98225381012233,
+      "anomalies": 0,
+      "runtime": 159.40723848342896,
+      "median_rounds": 11
+    },
+    {
+      "policy": "X_exploit_objectives",
+      "games": 40,
+      "wr": 27.500000000000004,
+      "lo": 16.108016247667337,
+      "hi": 42.83495580621057,
+      "anomalies": 0,
+      "runtime": 177.3488085269928,
+      "median_rounds": 12
+    },
+    {
+      "policy": "X_exploit_turtle",
+      "games": 40,
+      "wr": 20.0,
+      "lo": 10.499989725437704,
+      "hi": 34.7573063463995,
+      "anomalies": 0,
+      "runtime": 208.87953424453735,
+      "median_rounds": 12
+    },
+    {
+      "policy": "X_exploit_cdlock",
+      "games": 40,
+      "wr": 27.500000000000004,
+      "lo": 16.108016247667337,
+      "hi": 42.83495580621057,
+      "anomalies": 0,
+      "runtime": 191.17926168441772,
+      "median_rounds": 13
+    }
+  ],
+  "unused_abilities": [
+    [
+      "ashwyn",
+      "Q",
+      0.7211538461538461
+    ],
+    [
+      "ashwyn",
+      "E",
+      0.08012820512820513
+    ],
+    [
+      "bastion",
+      "W",
+      4.112808460634548
+    ],
+    [
+      "bastion",
+      "E",
+      0.0
+    ],
+    [
+      "bramblehide",
+      "Q",
+      0.4439511653718091
+    ],
+    [
+      "bramblehide",
+      "W",
+      4.434589800443459
+    ],
+    [
+      "bramblehide",
+      "E",
+      2.0089285714285716
+    ],
+    [
+      "brixa",
+      "W",
+      3.5785288270377733
+    ],
+    [
+      "corvane",
+      "E",
+      0.2127659574468085
+    ],
+    [
+      "dax",
+      "E",
+      2.3191094619666046
+    ],
+    [
+      "grivven",
+      "W",
+      1.6129032258064515
+    ],
+    [
+      "grivven",
+      "E",
+      1.4880952380952381
+    ],
+    [
+      "kaelis",
+      "W",
+      2.1314387211367674
+    ],
+    [
+      "kaelis",
+      "E",
+      2.3090586145648313
+    ],
+    [
+      "kestrel",
+      "Q",
+      2.967741935483871
+    ],
+    [
+      "kestrel",
+      "E",
+      0.0
+    ],
+    [
+      "lumen",
+      "W",
+      1.7114914425427872
+    ],
+    [
+      "lumen",
+      "E",
+      0.0
+    ],
+    [
+      "marrow",
+      "Q",
+      3.3333333333333335
+    ],
+    [
+      "marrow",
+      "W",
+      2.714535901926445
+    ],
+    [
+      "marrow",
+      "E",
+      0.17497812773403323
+    ],
+    [
+      "mossgrove",
+      "E",
+      3.303964757709251
+    ],
+    [
+      "noctis",
+      "W",
+      0.33557046979865773
+    ],
+    [
+      "orrin",
+      "R",
+      1.5789473684210527
+    ],
+    [
+      "ossuar",
+      "Q",
+      0.5387931034482759
+    ],
+    [
+      "ossuar",
+      "W",
+      0.2159827213822894
+    ],
+    [
+      "ossuar",
+      "E",
+      0.0
+    ],
+    [
+      "pallas",
+      "Q",
+      3.2448377581120944
+    ],
+    [
+      "pallas",
+      "W",
+      3.336604514229637
+    ],
+    [
+      "pallas",
+      "E",
+      1.7664376840039253
+    ],
+    [
+      "quillan",
+      "Q",
+      0.19940179461615154
+    ],
+    [
+      "quillan",
+      "W",
+      2.694610778443114
+    ],
+    [
+      "quillan",
+      "E",
+      0.0
+    ],
+    [
+      "rictus",
+      "W",
+      2.401921537229784
+    ],
+    [
+      "sable",
+      "Q",
+      1.4022140221402215
+    ],
+    [
+      "sable",
+      "E",
+      0.3949447077409163
+    ],
+    [
+      "sylphine",
+      "W",
+      3.7307380373073804
+    ],
+    [
+      "sylphine",
+      "E",
+      4.785077047850771
+    ],
+    [
+      "thornjaw",
+      "W",
+      2.1323529411764706
+    ],
+    [
+      "vellum",
+      "Q",
+      2.0388349514563107
+    ],
+    [
+      "vellum",
+      "W",
+      0.10214504596527069
+    ],
+    [
+      "vellum",
+      "E",
+      0.0970873786407767
+    ],
+    [
+      "veyra",
+      "Q",
+      2.8273809523809526
+    ],
+    [
+      "veyra",
+      "E",
+      0.1488095238095238
+    ],
+    [
+      "vurmak",
+      "W",
+      2.2682445759368837
+    ],
+    [
+      "vurmak",
+      "E",
+      4.930966469428008
+    ],
+    [
+      "wisp",
+      "E",
+      0.1984126984126984
+    ]
+  ]
+}

@@ -20,9 +20,12 @@
    earlier 55% reads as an artefact of the uncalibrated search. Re-measure on
    one configuration before spending a lever. Pacing meanwhile got worse:
    median 11 rounds under the calibrated T2, against a 13-18 target.
-7. **Work paused mid-phase** at your request. `batch_0009` finished during the
-   handoff and is committed; the exploit sweep and acceptance report are not
-   captured. Commands are in `docs/HANDOFF.md`.
+7. **All 4.C checks are now run** (`reports/ai_acceptance_v1.2.0.md`): three
+   pass, one inconclusive, three fail. The good news is the Phase 5 gate is
+   already met - no exploit policy beats T2 (worst is split-push at 32.5%).
+   The other two failures are decisions, not code: 47 of 100 abilities are used
+   in under 5% of their affordable rounds, and a 2,000-game T2 batch projects
+   to about 4 hours on 4 cores against Phase 4's need for ~5,000 games.
 8. **Needs your decision**: the 65% gate (lower it to ~60%, treat it as a design
    problem, or keep investing in AI - recommendation is the first plus a design
    conversation), and the still-open RQ-001, RQ-002 and RQ-016.
