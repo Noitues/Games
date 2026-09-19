@@ -114,7 +114,11 @@ class Game:
         st = self.state
         p1 = st.priority
         order = [p1 if i == 0 else other(p1) for i in SNAKE]
-        for team in order:
+        st.turn_order = order
+        st.event("round", n=st.round, priority=p1,
+                 ap={t: st.teams[t].ap for t in ("north", "south")})
+        for slot, team in enumerate(order):
+            st.turn_index = slot
             if st.winner is not None:
                 return
             rec: Dict[str, object] = {}
@@ -138,7 +142,12 @@ class Game:
             play = self.policies[team].choose_card_play(st, act, plays) if plays else None
             if act.ability:
                 self.res.champ[act.champ]["uses"][act.ability] += 1
+            ap_before = st.teams[team].ap
             apply_activation(st, act, self)
+            st.event("act", champ=act.champ, ability=act.ability, recall=act.recall,
+                     dest=list(act.dest) if act.dest else None,
+                     card=(play.card if play is not None else None),
+                     ap=st.teams[team].ap - ap_before)
             if play is not None:
                 apply_card(st, act, play)
             st.refresh_visibility(allow_flip_back=True, placer=self.placer)
@@ -199,7 +208,7 @@ class Game:
         self.res.end_reason = st.end_reason or "nexus"
         for c in st.champs.values():
             d = self.res.champ[c.uid]
-            d.update(kills=c.kills, deaths=c.deaths, ap=c.ap_earned,
+            d.update(kills=c.kills, deaths=c.deaths, assists=c.assists, ap=c.ap_earned,
                      items=sorted(c.items), struct_dmg=c.dmg_to_structures)
         for t in TEAMS:
             self.res.team_ap_source[t] = dict(st.teams[t].ap_by_source)

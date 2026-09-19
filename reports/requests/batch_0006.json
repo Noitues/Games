@@ -1,0 +1,11 @@
+{
+  "batch_id": "batch_0006",
+  "rules": "1.0.0", "roster": "1.1.0", "ai": "1.1.0",
+  "matchup": { "p1": "T2_search", "p2": "T1_greedy", "temperature": 0.3 },
+  "games": 200,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 777002,
+  "replays": 5,
+  "extra": ["T2 must beat T1 in >=65% of games", "p1 plays the first-priority seat, so the priority win rate is p1's win rate"]
+}

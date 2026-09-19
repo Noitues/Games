@@ -60,4 +60,38 @@ in the pool, champion HP and lives, predicted World Phase damage for and against
 Dragon and Baron, and a small lane-assignment term by role. Per-champion
 knowledge is limited to the role hint table, per Prompts 4.C.
 
-T2_search and the exploit policies are Phase 1 work.
+## Phase 1: T2_search and the exploit set (ai 1.1.0)
+
+`T2_search` subclasses the greedy policy and adds a depth-limited look-ahead
+over the snake order, which the engine now publishes on the state
+(`turn_order`, `turn_index`) so the search knows whether the next activation is
+the opponent's or its own second slot.
+
+Each decision: prefilter every legal activation with the greedy score, expand
+the best `root_k` of them, reply with a T1 model of the opponent built on a
+tightened enumeration config, and evaluate the leaf. A per-decision time budget
+bounds the whole thing. Two properties are deliberate:
+
+* **Scores never mix scales.** A searched value already contains the
+  opponent's best reply, so it is systematically lower than a greedy one.
+  Running out of time shrinks the candidate set; it never lets an unsearched
+  score compete with a searched one. Passing is searched the same way.
+* **`leaf_world` resolves the World Phase at the leaf.** Damage in this game
+  lands in the World Phase (Rules 5.3), so a leaf that has not resolved it
+  misreads every tower dive and minion trade. When it is on, the leaf is
+  evaluated with the predicted-damage terms zeroed, because the damage is now
+  real rather than predicted.
+
+Macro planning lives in the weight profile, not in bespoke code: lane and
+jungle assignment by role, a pull toward a live Dragon or Baron for the
+jungler, and recall value for a hurt champion sitting in its own base. Shop
+builds by role are inherited from T1.
+
+The six `X_exploit_*` policies are the same greedy policy with a distorted
+weight profile each - dive, farm-and-scale, split-push, objective hoarding,
+turtle and cooldown-lock. Because they share the evaluator, an exploit that
+beats T2 is a statement about the rules rather than about bespoke AI code.
+
+`tools/ai_calibrate.py` runs head-to-head variants (the variant always takes
+the first-priority seat, and seats swap every other game), and
+`tools/ai_acceptance.py` grades the Prompts 4.C checks into one report.

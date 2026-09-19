@@ -84,6 +84,8 @@ def deal_hits(state: GameState, team: Optional[str], target, k: int, source: str
         return 0
     champ_source = attacker is not None
     if target.kind == "champion":
+        if attacker is not None and attacker.team != target.team:
+            target.damaged_by[attacker.uid] = state.round
         absorbed = 0
         if target.shield > 0 and target.shield_until >= state.round:
             absorbed = min(target.shield, k)
@@ -120,6 +122,13 @@ def kill_champion(state: GameState, victim: Champion, killer_team: Optional[str]
     if killer_team is not None:
         state.teams[killer_team].gain(1, "champion_kill")
         state.teams[killer_team].kills += 1
+        killer_uid = attacker.uid if attacker is not None else None
+        for uid, rnd in victim.damaged_by.items():
+            helper = state.champs.get(uid)
+            if helper is not None and uid != killer_uid and helper.team == killer_team \
+                    and rnd >= state.round - 1:
+                helper.assists += 1
+    victim.damaged_by.clear()
     if attacker is not None:
         attacker.kills += 1
     state.touch()

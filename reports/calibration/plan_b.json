@@ -1,0 +1,11 @@
+[
+  {"name": "T2_leafworld_vs_T1", "p1": "T2_search", "p2": "T1_greedy",
+   "p1_config": {"leaf_world": true, "root_k": 8, "time_budget_ms": 700}},
+  {"name": "T2_leafworld_baseweights_vs_T1", "p1": "T2_search", "p2": "T1_greedy",
+   "p1_config": {"leaf_world": true, "root_k": 8, "time_budget_ms": 700,
+                 "weights": {"monster_chip": 0.0, "objective_pull": 0.0, "recall_value": 0.0}}},
+  {"name": "T2_leafworld_wide_vs_T1", "p1": "T2_search", "p2": "T1_greedy",
+   "p1_config": {"leaf_world": true, "root_k": 14, "plies": 3, "time_budget_ms": 900}},
+  {"name": "T2_leafworld_sharp_vs_T1", "p1": "T2_search", "p2": "T1_greedy",
+   "p1_config": {"leaf_world": true, "root_k": 10, "time_budget_ms": 800, "temp_scale": 0.4}}
+]

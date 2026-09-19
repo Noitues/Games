@@ -1,0 +1,11 @@
+{
+  "batch_id": "batch_0007",
+  "rules": "1.0.0", "roster": "1.1.0", "ai": "1.1.0",
+  "matchup": { "p1": "T2_search", "p2": "T2_search", "temperature": 0.3 },
+  "games": 600,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 777003,
+  "replays": 5,
+  "extra": ["Phase 1 reference batch: mirror seat balance and ability usage under T2", "p1 plays the first-priority seat, so the priority win rate is p1's win rate"]
+}

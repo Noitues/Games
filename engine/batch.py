@@ -9,7 +9,7 @@ from dataclasses import asdict
 from multiprocessing import Pool
 from typing import Dict, List, Optional, Tuple
 
-from ai.policy_v1_0_0 import make as make_policy
+import importlib
 from engine.config import make_config
 from engine.game import new_game
 from engine.hexmap import Board
@@ -19,6 +19,11 @@ from engine.state import TEAMS
 
 ROLES = ("Top", "Jungle", "Mid", "ADC", "Support")
 _CACHE: Dict[str, object] = {}
+
+
+def _policy_factory(ai_version: str):
+    mod = importlib.import_module(f"ai.policy_v{ai_version.replace('.', '_')}")
+    return mod.make
 
 
 def _resources(roster_path: str):
@@ -55,11 +60,15 @@ def play_one(args: tuple) -> dict:
         picks = {"north": picks["south"], "south": picks["north"]}
     first = "south" if swap else "north"
     st = new_game(board, kits, picks, cfg, first=first)
+    make_policy = _policy_factory(spec.get("ai", "1.0.0"))
+    p1_cfg = spec.get("p1_config") or {}
+    p2_cfg = spec.get("p2_config") or {}
     pols = {}
-    for t, tier in (("north", spec["p1"] if first == "north" else spec["p2"]),
-                    ("south", spec["p2"] if first == "north" else spec["p1"])):
+    seats = (("north", spec["p1"], p1_cfg), ("south", spec["p2"], p2_cfg)) if first == "north" \
+        else (("north", spec["p2"], p2_cfg), ("south", spec["p1"], p1_cfg))
+    for t, tier, pcfg in seats:
         pols[t] = make_policy(tier, spec["seed"] * 7919 + i * 31 + (0 if t == "north" else 1),
-                              spec.get("temperature", 0.3), team=t)
+                              spec.get("temperature", 0.3), config=dict(pcfg), team=t)
     tiers = {t: pols[t].tier for t in TEAMS}
     g = Game(st, pols, seed=i, replay=i < spec.get("replays", 0), strict=False)
     t0 = time.time()

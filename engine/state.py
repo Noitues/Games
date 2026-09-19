@@ -52,6 +52,7 @@ class Champion:
     rounds_dead: int = 0
     rounds_cd: int = 0
     dmg_to_structures: int = 0
+    damaged_by: Dict[str, int] = field(default_factory=dict)   # uid -> round
 
     kind: str = "champion"
 
@@ -59,6 +60,7 @@ class Champion:
         c = Champion.__new__(Champion)
         c.__dict__.update(self.__dict__)
         c.items = set(self.items)
+        c.damaged_by = dict(self.damaged_by)
         return c
 
 
@@ -152,7 +154,7 @@ class GameState:
         "board", "kits", "round", "priority", "hidden_mask", "champs", "waves",
         "structures", "monsters", "teams", "wards", "_by_node", "_dirty",
         "winner", "end_reason", "log", "anomalies", "next_uid", "shadow",
-        "activation_seq", "config",
+        "activation_seq", "config", "turn_order", "turn_index",
     )
 
     def __init__(self, board: Board, kits: dict, config: dict):
@@ -177,6 +179,8 @@ class GameState:
         self.next_uid = 0
         self.activation_seq = 0
         self.shadow = False       # True for AI look-ahead copies: no logging
+        self.turn_order: List[str] = []    # this round's snake order (Rules 5.2)
+        self.turn_index = 0                # slot being taken right now
 
     def event(self, kind: str, **kw) -> None:
         if not self.shadow:
@@ -209,6 +213,8 @@ class GameState:
         s.anomalies = []
         s.next_uid = self.next_uid
         s.activation_seq = self.activation_seq
+        s.turn_order = self.turn_order
+        s.turn_index = self.turn_index
         s.shadow = True
         return s
 

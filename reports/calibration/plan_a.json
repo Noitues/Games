@@ -1,0 +1,11 @@
+[
+  {"name": "T1_macro_weights_vs_T1", "p1": "T1_greedy", "p2": "T1_greedy",
+   "p1_config": {"weights": {"monster_chip": 0.25, "objective_pull": 0.35, "recall_value": 2.0}}},
+  {"name": "T2_baseline_weights_vs_T1", "p1": "T2_search", "p2": "T1_greedy",
+   "p1_config": {"weights": {"monster_chip": 0.0, "objective_pull": 0.0, "recall_value": 0.0}}},
+  {"name": "T2_wide_k12_p3_vs_T1", "p1": "T2_search", "p2": "T1_greedy",
+   "p1_config": {"root_k": 12, "plies": 3, "time_budget_ms": 700}},
+  {"name": "T2_fine_opponent_vs_T1", "p1": "T2_search", "p2": "T1_greedy",
+   "p1_config": {"root_k": 8, "plies": 2, "time_budget_ms": 700,
+                 "opp_enum": {"step_cap": 3, "plan_cap": 3, "max_dest": 12, "max_options": 90, "placement_cap": 3}}}
+]
