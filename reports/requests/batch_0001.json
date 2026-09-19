@@ -1,0 +1,11 @@
+{
+  "batch_id": "batch_0001",
+  "rules": "1.0.0", "roster": "1.0.0", "ai": "1.0.0",
+  "matchup": { "p1": "T0_random", "p2": "T0_random", "temperature": 1.0 },
+  "games": 200,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 424242,
+  "replays": 3,
+  "extra": ["smoke test: engine correctness, not balance"]
+}

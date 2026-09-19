@@ -1,0 +1,226 @@
+{
+  "version": "1.0.0",
+  "rules": "1.0.0",
+  "notes": "Phase 0 roster. 2 champions per role, each built to 22 +/- 2 by Rules 14.2. Budgets are recomputed by engine/kits.py and asserted in tests/test_roster.py.",
+  "champions": [
+    {
+      "id": "bastion",
+      "name": "Bastion",
+      "role": "Top",
+      "version": "1.0.0",
+      "identity": "Engage tank. Slow, very hard to kill, locks a fight down with a point-blank ultimate.",
+      "stats": { "hp": 9, "speed": 2 },
+      "abilities": {
+        "Q": { "cost": 0, "cooldown": 1, "steps": [
+          { "icon": "HIT", "k": 1, "range": 1, "target": "enemy_any" },
+          { "icon": "PUSH", "n": 1, "target": "prev" } ] },
+        "W": { "cost": 1, "cooldown": 1, "steps": [
+          { "icon": "SHIELD", "n": 4, "range": 2, "target": "ally_champion" } ] },
+        "E": { "cost": 1, "cooldown": 2, "steps": [
+          { "icon": "DASH", "n": 2 },
+          { "icon": "ROOT", "range": 1, "target": "enemy_champion" } ] },
+        "R": { "cost": 3, "cooldown": 3, "steps": [
+          { "icon": "AREA", "k": 2, "range": 1, "target": "enemy_any" },
+          { "icon": "ROOT", "area": true, "range": 1, "target": "enemy_champion" } ] }
+      },
+      "budget": { "stats": 4, "Q": 5, "W": 4, "E": 3, "R": 5, "total": 21 },
+      "notes": "Speed 2 means Bastion needs a lane assignment it can hold; R is the only area root in the roster."
+    },
+    {
+      "id": "vurmak",
+      "name": "Vurmak",
+      "role": "Top",
+      "version": "1.0.0",
+      "identity": "Split-pushing juggernaut. Shoves waves and chews towers; self-sustains instead of recalling.",
+      "stats": { "hp": 9, "speed": 3 },
+      "abilities": {
+        "Q": { "cost": 1, "cooldown": 1, "steps": [
+          { "icon": "HIT", "k": 2, "range": 1, "target": "enemy_any" } ] },
+        "W": { "cost": 0, "cooldown": 2, "steps": [
+          { "icon": "HEAL", "n": 2, "range": 1, "target": "self" } ] },
+        "E": { "cost": 0, "cooldown": 2, "steps": [
+          { "icon": "DASH", "n": 3 },
+          { "icon": "PUSH", "n": 1, "range": 1, "target": "enemy_any" } ] },
+        "R": { "cost": 2, "cooldown": 2, "steps": [
+          { "icon": "HIT", "k": 4, "range": 1, "target": "enemy_any" } ] }
+      },
+      "budget": { "stats": 9, "Q": 3, "W": 2, "E": 4.5, "R": 4, "total": 22.5 },
+      "notes": "Q nets +1 AP per use on a wave and R nets +2: watch the economy metric. R is the roster's best single-target tower chipper."
+    },
+    {
+      "id": "thornjaw",
+      "name": "Thornjaw",
+      "role": "Jungle",
+      "version": "1.0.0",
+      "identity": "Skirmishing jungler. Fastest champion on the board; clears camps with a two-hit rend and ganks with a dash.",
+      "stats": { "hp": 8, "speed": 4 },
+      "abilities": {
+        "Q": { "cost": 0, "cooldown": 1, "steps": [
+          { "icon": "HIT", "k": 1, "range": 2, "target": "enemy_any" } ] },
+        "W": { "cost": 1, "cooldown": 1, "steps": [
+          { "icon": "DASH", "n": 2 },
+          { "icon": "HIT", "k": 1, "range": 1, "target": "enemy_any" } ] },
+        "E": { "cost": 1, "cooldown": 2, "steps": [
+          { "icon": "HIT", "k": 2, "range": 1, "target": "enemy_any" },
+          { "icon": "SLOW", "n": 1, "target": "prev" } ] },
+        "R": { "cost": 2, "cooldown": 2, "steps": [
+          { "icon": "HIT", "k": 2, "range": 1, "target": "enemy_any" },
+          { "icon": "PUSH", "n": 2, "target": "prev" } ] }
+      },
+      "budget": { "stats": 11, "Q": 4, "W": 3, "E": 2.5, "R": 2, "total": 22.5 },
+      "notes": "Camp clear: E (2) + Q (1) kills a 3-chip camp in two activations, or R (2) + Q (1)."
+    },
+    {
+      "id": "mossgrove",
+      "name": "Mossgrove",
+      "role": "Jungle",
+      "version": "1.0.0",
+      "identity": "Objective jungler. Slow, self-healing, built to solo Dragon and Baron and to scout with REVEAL.",
+      "stats": { "hp": 8, "speed": 3 },
+      "abilities": {
+        "Q": { "cost": 0, "cooldown": 2, "steps": [
+          { "icon": "HIT", "k": 2, "range": 1, "target": "enemy_any" } ] },
+        "W": { "cost": 0, "cooldown": 1, "steps": [
+          { "icon": "REVEAL", "range": 3 },
+          { "icon": "MOVE", "n": 2 } ] },
+        "E": { "cost": 1, "cooldown": 1, "steps": [
+          { "icon": "SHIELD", "n": 3, "range": 2, "target": "ally_champion" } ] },
+        "R": { "cost": 2, "cooldown": 3, "steps": [
+          { "icon": "HIT", "k": 3, "range": 1, "target": "enemy_any" },
+          { "icon": "HEAL", "n": 2, "range": 1, "target": "self" } ] }
+      },
+      "budget": { "stats": 6, "Q": 4, "W": 5, "E": 2.5, "R": 3, "total": 20.5 },
+      "notes": "Q is a free 2-chip farm on a 2-round cooldown: the roster's cleanest camp clear. R sustains through monster damage."
+    },
+    {
+      "id": "ashwyn",
+      "name": "Ashwyn",
+      "role": "Mid",
+      "version": "1.0.0",
+      "identity": "Burst mage. The most fragile champion in the game; deletes a single target from range 3 and blinks away.",
+      "stats": { "hp": 6, "speed": 3 },
+      "abilities": {
+        "Q": { "cost": 0, "cooldown": 1, "steps": [
+          { "icon": "HIT", "k": 1, "range": 3, "target": "enemy_any" } ] },
+        "W": { "cost": 1, "cooldown": 1, "steps": [
+          { "icon": "AREA", "k": 1, "range": 2, "target": "enemy_any" } ] },
+        "E": { "cost": 0, "cooldown": 2, "steps": [
+          { "icon": "BLINK", "n": 3 } ] },
+        "R": { "cost": 2, "cooldown": 2, "steps": [
+          { "icon": "HIT", "k": 3, "range": 3, "target": "enemy_any" } ] }
+      },
+      "budget": { "stats": 0, "Q": 5, "W": 4, "E": 4, "R": 7, "total": 20 },
+      "notes": "W is the roster's only r2 area hit: it farms stacked waves and punishes units sharing a hidden tile. 6 HP means a single tower volley plus one hit kills."
+    },
+    {
+      "id": "vellum",
+      "name": "Vellum",
+      "role": "Mid",
+      "version": "1.0.0",
+      "identity": "Control mage. Durable, slows and cooldown-locks a key target, and rakes a whole lane with a line ultimate.",
+      "stats": { "hp": 8, "speed": 3 },
+      "abilities": {
+        "Q": { "cost": 1, "cooldown": 1, "steps": [
+          { "icon": "HIT", "k": 1, "range": 3, "target": "enemy_any" },
+          { "icon": "SLOW", "n": 2, "target": "prev" } ] },
+        "W": { "cost": 2, "cooldown": 2, "steps": [
+          { "icon": "HIT", "k": 1, "range": 2, "target": "enemy_champion" },
+          { "icon": "DELAY", "target": "prev" } ] },
+        "E": { "cost": 0, "cooldown": 2, "steps": [
+          { "icon": "BLINK", "n": 2 } ] },
+        "R": { "cost": 2, "cooldown": 2, "steps": [
+          { "icon": "LINE", "k": 2, "n": 5, "target": "enemy_any" } ] }
+      },
+      "budget": { "stats": 6, "Q": 5, "W": 4, "E": 2, "R": 6, "total": 23 },
+      "notes": "Only DELAY in the roster (Designer cap: 1 per champion). Watch the cooldown-lock exploit policy against it."
+    },
+    {
+      "id": "kestrel",
+      "name": "Kestrel",
+      "role": "ADC",
+      "version": "1.0.0",
+      "identity": "Long-range marksman. Out-ranges everything, farms from safety, wins by out-scaling through AP.",
+      "stats": { "hp": 8, "speed": 3 },
+      "abilities": {
+        "Q": { "cost": 0, "cooldown": 1, "steps": [
+          { "icon": "HIT", "k": 1, "range": 3, "target": "enemy_any" } ] },
+        "W": { "cost": 1, "cooldown": 1, "steps": [
+          { "icon": "HIT", "k": 2, "range": 3, "target": "enemy_any" } ] },
+        "E": { "cost": 0, "cooldown": 2, "steps": [
+          { "icon": "BLINK", "n": 2 } ] },
+        "R": { "cost": 3, "cooldown": 3, "steps": [
+          { "icon": "LINE", "k": 2, "n": 6, "target": "enemy_any" } ] }
+      },
+      "budget": { "stats": 6, "Q": 5, "W": 7, "E": 2, "R": 3, "total": 23 },
+      "notes": "Rulebook worked example (Rules 14.2). W nets +1 AP per use against a wave: the roster's reference farming engine."
+    },
+    {
+      "id": "dax",
+      "name": "Dax",
+      "role": "ADC",
+      "version": "1.0.0",
+      "identity": "Mobile hyper-carry. Shorter range than Kestrel but repositions with every ability and self-peels with a knockback.",
+      "stats": { "hp": 7, "speed": 3 },
+      "abilities": {
+        "Q": { "cost": 0, "cooldown": 1, "steps": [
+          { "icon": "MOVE", "n": 1 },
+          { "icon": "HIT", "k": 1, "range": 2, "target": "enemy_any" } ] },
+        "W": { "cost": 1, "cooldown": 1, "steps": [
+          { "icon": "HIT", "k": 2, "range": 2, "target": "enemy_any" } ] },
+        "E": { "cost": 1, "cooldown": 2, "steps": [
+          { "icon": "HIT", "k": 1, "range": 2, "target": "enemy_any" },
+          { "icon": "PUSH", "n": 2, "target": "prev" } ] },
+        "R": { "cost": 2, "cooldown": 2, "steps": [
+          { "icon": "HIT", "k": 3, "range": 2, "target": "enemy_any" },
+          { "icon": "MOVE", "n": 2 } ] }
+      },
+      "budget": { "stats": 3, "Q": 5, "W": 5, "E": 3, "R": 6, "total": 22 },
+      "notes": "Three farming engines (Q, W, R all beat their cost in chips). Highest expected AP per round in the roster: economy watch."
+    },
+    {
+      "id": "lumen",
+      "name": "Lumen",
+      "role": "Support",
+      "version": "1.0.0",
+      "identity": "Enchanter. Keeps a carry alive and on tempo; the only HASTE in the roster.",
+      "stats": { "hp": 8, "speed": 4 },
+      "abilities": {
+        "Q": { "cost": 1, "cooldown": 1, "steps": [
+          { "icon": "HIT", "k": 1, "range": 2, "target": "enemy_any" },
+          { "icon": "HEAL", "n": 1, "range": 2, "target": "ally_champion" } ] },
+        "W": { "cost": 1, "cooldown": 1, "steps": [
+          { "icon": "SHIELD", "n": 3, "range": 2, "target": "ally_champion" } ] },
+        "E": { "cost": 1, "cooldown": 2, "steps": [
+          { "icon": "HASTE", "range": 2, "target": "ally_champion" } ] },
+        "R": { "cost": 2, "cooldown": 2, "steps": [
+          { "icon": "HEAL", "n": 3, "range": 2, "target": "ally_champion" },
+          { "icon": "SHIELD", "n": 2, "range": 2, "target": "ally_champion" } ] }
+      },
+      "budget": { "stats": 11, "Q": 4, "W": 2.5, "E": 2, "R": 3, "total": 22.5 },
+      "notes": "Q is the support's answer to Rules 4.B 'useful without farming': it pokes and heals in one step. E is the roster's only HASTE (Designer cap: 1 per champion)."
+    },
+    {
+      "id": "grivven",
+      "name": "Grivven",
+      "role": "Support",
+      "version": "1.0.0",
+      "identity": "Catcher. Tanky hook support that drags a target out of position and locks an area down with the ultimate.",
+      "stats": { "hp": 9, "speed": 3 },
+      "abilities": {
+        "Q": { "cost": 1, "cooldown": 2, "steps": [
+          { "icon": "HIT", "k": 1, "range": 3, "target": "enemy_any" },
+          { "icon": "PULL", "n": 2, "target": "prev" } ] },
+        "W": { "cost": 0, "cooldown": 2, "steps": [
+          { "icon": "SHIELD", "n": 2, "range": 3, "target": "ally_champion" } ] },
+        "E": { "cost": 0, "cooldown": 2, "steps": [
+          { "icon": "PUSH", "n": 2, "range": 1, "target": "enemy_any" },
+          { "icon": "SLOW", "n": 1, "target": "prev" } ] },
+        "R": { "cost": 2, "cooldown": 3, "steps": [
+          { "icon": "AREA", "k": 1, "range": 1, "target": "enemy_any" },
+          { "icon": "ROOT", "area": true, "range": 1, "target": "enemy_champion" } ] }
+      },
+      "budget": { "stats": 9, "Q": 4, "W": 2, "E": 3.5, "R": 3, "total": 21.5 },
+      "notes": "Q pulls a champion out of a hidden tile's protection; R is the second area root. No farming engine by design."
+    }
+  ]
+}

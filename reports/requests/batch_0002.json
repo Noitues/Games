@@ -1,0 +1,11 @@
+{
+  "batch_id": "batch_0002",
+  "rules": "1.0.0", "roster": "1.0.0", "ai": "1.0.0",
+  "matchup": { "p1": "T1_greedy", "p2": "T1_greedy", "temperature": 0.3 },
+  "games": 200,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 424242,
+  "replays": 10,
+  "extra": ["Phase 0 exit condition: 200-game T1 vs T1 smoke, 0 anomalies", "compare_to:batch_0001"]
+}

@@ -1,0 +1,1522 @@
+[
+  {
+    "game": 0,
+    "winner": "north",
+    "rounds": 20,
+    "picks": {
+      "north": [
+        "bastion",
+        "mossgrove",
+        "ashwyn",
+        "kestrel",
+        "lumen"
+      ],
+      "south": [
+        "vurmak",
+        "thornjaw",
+        "vellum",
+        "dax",
+        "grivven"
+      ]
+    },
+    "events": [
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "south",
+        "round": 1
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 1
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 1
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "south",
+        "round": 1
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "south",
+        "round": 1
+      },
+      {
+        "t": "kill",
+        "victim": "s_vurmak",
+        "team": "north",
+        "round": 2
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 2
+      },
+      {
+        "t": "kill",
+        "victim": "s_dax",
+        "team": "north",
+        "round": 3
+      },
+      {
+        "t": "kill",
+        "victim": "n_ashwyn",
+        "team": "south",
+        "round": 3
+      },
+      {
+        "t": "kill",
+        "victim": "n_kestrel",
+        "team": "south",
+        "round": 3
+      },
+      {
+        "t": "kill",
+        "victim": "s_grivven",
+        "team": "north",
+        "round": 4
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 4
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "south",
+        "round": 4
+      },
+      {
+        "t": "kill",
+        "victim": "n_bastion",
+        "team": "south",
+        "round": 4
+      },
+      {
+        "t": "kill",
+        "victim": "n_mossgrove",
+        "team": "south",
+        "round": 4
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "red_buff",
+        "team": "north",
+        "round": 5
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "red_buff",
+        "team": "south",
+        "round": 5
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 5
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 5
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 5
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 5
+      },
+      {
+        "t": "kill",
+        "victim": "s_vellum",
+        "team": "north",
+        "round": 5
+      },
+      {
+        "t": "kill",
+        "victim": "s_thornjaw",
+        "team": "north",
+        "round": 5
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "blue_buff",
+        "team": "south",
+        "round": 6
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "blue_buff",
+        "team": "north",
+        "round": 6
+      },
+      {
+        "t": "kill",
+        "victim": "s_vurmak",
+        "team": "north",
+        "round": 6
+      },
+      {
+        "t": "kill",
+        "victim": "s_grivven",
+        "team": "north",
+        "round": 7
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 7
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 7
+      },
+      {
+        "t": "kill",
+        "victim": "n_kestrel",
+        "team": "south",
+        "round": 7
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 8
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "south",
+        "round": 8
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "south",
+        "round": 8
+      },
+      {
+        "t": "kill",
+        "victim": "s_dax",
+        "team": "north",
+        "round": 8
+      },
+      {
+        "t": "kill",
+        "victim": "n_mossgrove",
+        "team": "south",
+        "round": 8
+      },
+      {
+        "t": "kill",
+        "victim": "n_lumen",
+        "team": "south",
+        "round": 8
+      },
+      {
+        "t": "kill",
+        "victim": "n_bastion",
+        "team": "south",
+        "round": 9
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 9
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "south",
+        "round": 10
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "dragon",
+        "team": "south",
+        "round": 10
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "south",
+        "round": 10
+      },
+      {
+        "t": "kill",
+        "victim": "s_dax",
+        "team": "north",
+        "round": 10
+      },
+      {
+        "t": "kill",
+        "victim": "n_ashwyn",
+        "team": "south",
+        "round": 10
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "red_buff",
+        "team": "north",
+        "round": 11
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "red_buff",
+        "team": "north",
+        "round": 11
+      },
+      {
+        "t": "kill",
+        "victim": "s_vurmak",
+        "team": "north",
+        "round": 11
+      },
+      {
+        "t": "kill",
+        "victim": "s_grivven",
+        "team": "north",
+        "round": 11
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 11
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "south",
+        "round": 11
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "south",
+        "round": 11
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "blue_buff",
+        "team": "south",
+        "round": 12
+      },
+      {
+        "t": "kill",
+        "victim": "s_vellum",
+        "team": "north",
+        "round": 12
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 12
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "blue_buff",
+        "team": "north",
+        "round": 13
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 13
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 13
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 14
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 14
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 14
+      },
+      {
+        "t": "kill",
+        "victim": "n_bastion",
+        "team": "south",
+        "round": 14
+      },
+      {
+        "t": "kill",
+        "victim": "s_thornjaw",
+        "team": "north",
+        "round": 14
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 15
+      },
+      {
+        "t": "kill",
+        "victim": "n_mossgrove",
+        "team": "south",
+        "round": 15
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "red_buff",
+        "team": "north",
+        "round": 16
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "south",
+        "round": 16
+      },
+      {
+        "t": "kill",
+        "victim": "s_grivven",
+        "team": "north",
+        "round": 16
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "blue_buff",
+        "team": "north",
+        "round": 17
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "red_buff",
+        "team": "south",
+        "round": 17
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 17
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 17
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "south",
+        "round": 17
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "south",
+        "round": 17
+      },
+      {
+        "t": "structure_down",
+        "uid": "s_top_T1",
+        "round": 18
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "blue_buff",
+        "team": "south",
+        "round": 18
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "dragon",
+        "team": "north",
+        "round": 18
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 18
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "baron",
+        "team": "south",
+        "round": 19
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "south",
+        "round": 19
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 20
+      }
+    ]
+  },
+  {
+    "game": 1,
+    "winner": "south",
+    "rounds": 20,
+    "picks": {
+      "north": [
+        "vurmak",
+        "thornjaw",
+        "vellum",
+        "dax",
+        "grivven"
+      ],
+      "south": [
+        "bastion",
+        "mossgrove",
+        "ashwyn",
+        "kestrel",
+        "lumen"
+      ]
+    },
+    "events": [
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 1
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "south",
+        "round": 1
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "south",
+        "round": 1
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 2
+      },
+      {
+        "t": "kill",
+        "victim": "s_bastion",
+        "team": "north",
+        "round": 2
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 2
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 2
+      },
+      {
+        "t": "kill",
+        "victim": "n_grivven",
+        "team": "south",
+        "round": 2
+      },
+      {
+        "t": "kill",
+        "victim": "n_thornjaw",
+        "team": "south",
+        "round": 2
+      },
+      {
+        "t": "kill",
+        "victim": "s_lumen",
+        "team": "north",
+        "round": 2
+      },
+      {
+        "t": "kill",
+        "victim": "n_vellum",
+        "team": null,
+        "round": 2
+      },
+      {
+        "t": "kill",
+        "victim": "s_ashwyn",
+        "team": "north",
+        "round": 3
+      },
+      {
+        "t": "kill",
+        "victim": "s_kestrel",
+        "team": "north",
+        "round": 3
+      },
+      {
+        "t": "kill",
+        "victim": "n_dax",
+        "team": "south",
+        "round": 4
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "south",
+        "round": 4
+      },
+      {
+        "t": "kill",
+        "victim": "s_mossgrove",
+        "team": "north",
+        "round": 4
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "south",
+        "round": 5
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "south",
+        "round": 5
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "blue_buff",
+        "team": "north",
+        "round": 5
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "red_buff",
+        "team": "north",
+        "round": 5
+      },
+      {
+        "t": "kill",
+        "victim": "n_thornjaw",
+        "team": "south",
+        "round": 5
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 5
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 5
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 5
+      },
+      {
+        "t": "kill",
+        "victim": "n_grivven",
+        "team": null,
+        "round": 5
+      },
+      {
+        "t": "kill",
+        "victim": "s_mossgrove",
+        "team": "north",
+        "round": 6
+      },
+      {
+        "t": "kill",
+        "victim": "s_lumen",
+        "team": "north",
+        "round": 6
+      },
+      {
+        "t": "kill",
+        "victim": "s_kestrel",
+        "team": "north",
+        "round": 6
+      },
+      {
+        "t": "kill",
+        "victim": "n_vurmak",
+        "team": "south",
+        "round": 6
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "red_buff",
+        "team": "north",
+        "round": 7
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "blue_buff",
+        "team": "south",
+        "round": 7
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "south",
+        "round": 7
+      },
+      {
+        "t": "kill",
+        "victim": "s_bastion",
+        "team": "north",
+        "round": 7
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "south",
+        "round": 8
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "south",
+        "round": 8
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 8
+      },
+      {
+        "t": "kill",
+        "victim": "n_vellum",
+        "team": "south",
+        "round": 8
+      },
+      {
+        "t": "kill",
+        "victim": "n_dax",
+        "team": "south",
+        "round": 8
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "south",
+        "round": 9
+      },
+      {
+        "t": "kill",
+        "victim": "s_ashwyn",
+        "team": "north",
+        "round": 9
+      },
+      {
+        "t": "kill",
+        "victim": "s_lumen",
+        "team": "north",
+        "round": 9
+      },
+      {
+        "t": "kill",
+        "victim": "n_grivven",
+        "team": "south",
+        "round": 9
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 9
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "dragon",
+        "team": "south",
+        "round": 10
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "south",
+        "round": 10
+      },
+      {
+        "t": "kill",
+        "victim": "s_mossgrove",
+        "team": "north",
+        "round": 11
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 11
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "blue_buff",
+        "team": "north",
+        "round": 11
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "red_buff",
+        "team": "south",
+        "round": 11
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "south",
+        "round": 11
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "south",
+        "round": 11
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 12
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 12
+      },
+      {
+        "t": "kill",
+        "victim": "n_dax",
+        "team": "south",
+        "round": 12
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "red_buff",
+        "team": "north",
+        "round": 13
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "south",
+        "round": 13
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "blue_buff",
+        "team": "north",
+        "round": 14
+      },
+      {
+        "t": "kill",
+        "victim": "s_lumen",
+        "team": "north",
+        "round": 14
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 14
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "south",
+        "round": 14
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "south",
+        "round": 14
+      },
+      {
+        "t": "kill",
+        "victim": "s_ashwyn",
+        "team": "north",
+        "round": 15
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 15
+      },
+      {
+        "t": "kill",
+        "victim": "n_grivven",
+        "team": "south",
+        "round": 15
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 17
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 17
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 17
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 17
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 17
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "blue_buff",
+        "team": "north",
+        "round": 17
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "red_buff",
+        "team": "north",
+        "round": 17
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "baron",
+        "team": "north",
+        "round": 18
+      },
+      {
+        "t": "kill",
+        "victim": "s_lumen",
+        "team": "north",
+        "round": 18
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 18
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "red_buff",
+        "team": "north",
+        "round": 19
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "dragon",
+        "team": "south",
+        "round": 19
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 20
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "blue_buff",
+        "team": "south",
+        "round": 20
+      },
+      {
+        "t": "kill",
+        "victim": "s_ashwyn",
+        "team": "north",
+        "round": 20
+      }
+    ]
+  },
+  {
+    "game": 2,
+    "winner": "north",
+    "rounds": 20,
+    "picks": {
+      "north": [
+        "vurmak",
+        "thornjaw",
+        "ashwyn",
+        "dax",
+        "lumen"
+      ],
+      "south": [
+        "bastion",
+        "mossgrove",
+        "vellum",
+        "kestrel",
+        "grivven"
+      ]
+    },
+    "events": [
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 1
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "south",
+        "round": 1
+      },
+      {
+        "t": "kill",
+        "victim": "s_vellum",
+        "team": "north",
+        "round": 2
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 2
+      },
+      {
+        "t": "kill",
+        "victim": "s_kestrel",
+        "team": "north",
+        "round": 2
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 2
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "south",
+        "round": 2
+      },
+      {
+        "t": "kill",
+        "victim": "n_ashwyn",
+        "team": "south",
+        "round": 2
+      },
+      {
+        "t": "kill",
+        "victim": "n_dax",
+        "team": "south",
+        "round": 2
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "south",
+        "round": 2
+      },
+      {
+        "t": "kill",
+        "victim": "s_bastion",
+        "team": "north",
+        "round": 3
+      },
+      {
+        "t": "kill",
+        "victim": "n_lumen",
+        "team": "south",
+        "round": 3
+      },
+      {
+        "t": "kill",
+        "victim": "n_vurmak",
+        "team": "south",
+        "round": 3
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 4
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "blue_buff",
+        "team": "north",
+        "round": 4
+      },
+      {
+        "t": "kill",
+        "victim": "s_mossgrove",
+        "team": "north",
+        "round": 4
+      },
+      {
+        "t": "kill",
+        "victim": "n_ashwyn",
+        "team": "south",
+        "round": 4
+      },
+      {
+        "t": "kill",
+        "victim": "s_grivven",
+        "team": "north",
+        "round": 4
+      },
+      {
+        "t": "kill",
+        "victim": "n_thornjaw",
+        "team": null,
+        "round": 4
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "south",
+        "round": 5
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "south",
+        "round": 5
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "red_buff",
+        "team": "south",
+        "round": 5
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 5
+      },
+      {
+        "t": "kill",
+        "victim": "s_kestrel",
+        "team": "north",
+        "round": 5
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 5
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 5
+      },
+      {
+        "t": "kill",
+        "victim": "n_dax",
+        "team": "south",
+        "round": 5
+      },
+      {
+        "t": "kill",
+        "victim": "s_bastion",
+        "team": "north",
+        "round": 6
+      },
+      {
+        "t": "kill",
+        "victim": "n_thornjaw",
+        "team": "south",
+        "round": 6
+      },
+      {
+        "t": "kill",
+        "victim": "n_lumen",
+        "team": null,
+        "round": 6
+      },
+      {
+        "t": "kill",
+        "victim": "n_vurmak",
+        "team": "south",
+        "round": 7
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "blue_buff",
+        "team": "south",
+        "round": 7
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "red_buff",
+        "team": "north",
+        "round": 7
+      },
+      {
+        "t": "kill",
+        "victim": "s_mossgrove",
+        "team": "north",
+        "round": 7
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 7
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 8
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 8
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "south",
+        "round": 8
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "south",
+        "round": 8
+      },
+      {
+        "t": "kill",
+        "victim": "n_ashwyn",
+        "team": "south",
+        "round": 8
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "south",
+        "round": 8
+      },
+      {
+        "t": "kill",
+        "victim": "n_dax",
+        "team": "south",
+        "round": 9
+      },
+      {
+        "t": "kill",
+        "victim": "s_grivven",
+        "team": "north",
+        "round": 9
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 10
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "blue_buff",
+        "team": "north",
+        "round": 10
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "red_buff",
+        "team": "south",
+        "round": 10
+      },
+      {
+        "t": "kill",
+        "victim": "s_mossgrove",
+        "team": "north",
+        "round": 10
+      },
+      {
+        "t": "kill",
+        "victim": "s_kestrel",
+        "team": "north",
+        "round": 10
+      },
+      {
+        "t": "kill",
+        "victim": "n_lumen",
+        "team": "south",
+        "round": 10
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 11
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 11
+      },
+      {
+        "t": "kill",
+        "victim": "n_ashwyn",
+        "team": "south",
+        "round": 11
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "south",
+        "round": 11
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "south",
+        "round": 11
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "south",
+        "round": 11
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "red_buff",
+        "team": "north",
+        "round": 13
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "blue_buff",
+        "team": "north",
+        "round": 13
+      },
+      {
+        "t": "kill",
+        "victim": "n_dax",
+        "team": "south",
+        "round": 13
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 14
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 14
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "south",
+        "round": 14
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "south",
+        "round": 14
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "dragon",
+        "team": "south",
+        "round": 14
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "south",
+        "round": 14
+      },
+      {
+        "t": "kill",
+        "victim": "s_grivven",
+        "team": null,
+        "round": 14
+      },
+      {
+        "t": "kill",
+        "victim": "s_mossgrove",
+        "team": "north",
+        "round": 15
+      },
+      {
+        "t": "kill",
+        "victim": "n_lumen",
+        "team": "south",
+        "round": 15
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 16
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "blue_buff",
+        "team": "north",
+        "round": 16
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "red_buff",
+        "team": "south",
+        "round": 16
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "south",
+        "round": 17
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 17
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "south",
+        "round": 17
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "red_buff",
+        "team": "north",
+        "round": 18
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "baron",
+        "team": "north",
+        "round": 18
+      },
+      {
+        "t": "kill",
+        "victim": "n_ashwyn",
+        "team": "south",
+        "round": 18
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "south",
+        "round": 18
+      },
+      {
+        "t": "kill",
+        "victim": "s_bastion",
+        "team": "north",
+        "round": 18
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "wolves",
+        "team": "north",
+        "round": 19
+      },
+      {
+        "t": "kill",
+        "victim": "n_thornjaw",
+        "team": "south",
+        "round": 19
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "krugs",
+        "team": "north",
+        "round": 20
+      },
+      {
+        "t": "monster_killed",
+        "mtype": "raptors",
+        "team": "north",
+        "round": 20
+      },
+      {
+        "t": "kill",
+        "victim": "n_vurmak",
+        "team": "south",
+        "round": 20
+      },
+      {
+        "t": "kill",
+        "victim": "n_dax",
+        "team": "south",
+        "round": 20
+      }
+    ]
+  }
+]

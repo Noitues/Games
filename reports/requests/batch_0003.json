@@ -1,0 +1,11 @@
+{
+  "batch_id": "batch_0003",
+  "rules": "1.0.0", "roster": "1.0.0", "ai": "1.0.0",
+  "matchup": { "p1": "T1_greedy", "p2": "T0_random", "temperature": 0.3 },
+  "games": 100,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 90210,
+  "replays": 0,
+  "extra": ["AI acceptance: T1 must beat T0 in >=90% of games; p1 is T1, so the priority win rate is T1's win rate"]
+}
