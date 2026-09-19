@@ -14,12 +14,15 @@
    pillar-level: damage resolves in a separate World Phase so nothing can be
    answered inside a round; one activation is one champion of five; whole-card
    cooldown makes every ability cost the same; 1 hit = 1 HP compresses outcomes.
-6. **The first-player advantage grows with skill**: priority 47.5% under T1,
-   **55.0% [51.0, 58.9]** under T2 (`batch_0007`). Target is 48-52%. Needs its
-   own lever once the AI question is settled.
-7. **Work paused mid-phase** at your request. `batch_0009` (T2 mirror) and the
-   exploit sweep plus acceptance report were ordered but not run; both are pure
-   re-runs, with commands in `docs/HANDOFF.md`.
+6. **Seat balance is unresolved.** The T2 mirrors disagree: priority 55.0%
+   [51.0, 58.9] in `batch_0007` (ai 1.1.0) against 48.8% [43.9, 53.6] in
+   `batch_0009` (ai 1.2.0, calibrated). Different T2 configurations, so the
+   earlier 55% reads as an artefact of the uncalibrated search. Re-measure on
+   one configuration before spending a lever. Pacing meanwhile got worse:
+   median 11 rounds under the calibrated T2, against a 13-18 target.
+7. **Work paused mid-phase** at your request. `batch_0009` finished during the
+   handoff and is committed; the exploit sweep and acceptance report are not
+   captured. Commands are in `docs/HANDOFF.md`.
 8. **Needs your decision**: the 65% gate (lower it to ~60%, treat it as a design
    problem, or keep investing in AI - recommendation is the first plus a design
    conversation), and the still-open RQ-001, RQ-002 and RQ-016.

@@ -80,7 +80,8 @@ report in `reports/` comes from one build. All four now carry 0 anomalies.
 | batch_0006 | T2 vs T1 (ai 1.1.0) | 200 | T2 wins 55.5% [48.6, 62.2]. |
 | batch_0007 | T2 mirror (ai 1.1.0) | 600 | 0 anomalies. Priority 55.0% [51.0, 58.9], against 47.5% under T1: the first-player advantage grows with stronger play. |
 | batch_0008 | T2 vs T1 (ai 1.2.0) | 400 | T2 wins 58.5% [53.6, 63.2]. Acceptance gate >=65%: FAIL, on a tight interval. |
-| batch_0009, exploit sweep, acceptance report | - | - | Ordered but not run: work paused. Commands are in docs/HANDOFF.md. |
+| batch_0009 | T2 mirror (ai 1.2.0) | 400 | 0 anomalies. Priority 48.8% [43.9, 53.6] - the 55.0% of batch_0007 does not reproduce on the calibrated T2, so seat balance is unresolved rather than failing. Median length falls to 11 rounds; 100% Nexus kills. |
+| exploit sweep, acceptance report | - | - | Not captured: work paused. Command is in docs/HANDOFF.md. |
 
 ### Calibration
 

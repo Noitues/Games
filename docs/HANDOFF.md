@@ -22,8 +22,8 @@ Two things were running in the background and are **not** in the repo yet:
 
 | run | state | how to redo it |
 |---|---|---|
-| `batch_0009` — T2 mirror, 400 games, ai 1.2.0 | was ~11 min in | `python tools/run_batch.py reports/requests/batch_0009.json --workers 4 --baseline reports/batch_0007.json` |
-| exploit sweep + acceptance report | had not started | `python tools/ai_acceptance.py --t1vt0 batch_0005 --t2vt1 batch_0008 --mirror batch_0009 --exploit-games 40 --ai 1.2.0 --workers 4` |
+| `batch_0009` — T2 mirror, 400 games, ai 1.2.0 | **finished and committed** after the handoff was first written; it changed a finding, see below | `python tools/run_batch.py reports/requests/batch_0009.json --workers 4 --baseline reports/batch_0007.json` |
+| exploit sweep + acceptance report | started automatically after `batch_0009`; not captured | `python tools/ai_acceptance.py --t1vt0 batch_0005 --t2vt1 batch_0008 --mirror batch_0009 --exploit-games 40 --ai 1.2.0 --workers 4` |
 
 Both are pure re-runs: the sim requests are committed, seeds are in them, and
 nothing else depends on them finishing. Expect ~35 min and ~25 min on 4 cores.
@@ -79,9 +79,17 @@ Facilitator's triage order puts AI competence first):
   rather than by the chips it can bank.
 - Champion spread: quillan 89.2% [84.6, 92.5] vs noctis 8.3% [5.5, 12.4]
   (`batch_0007`, T2 mirror, 600 games).
-- **First-player advantage grows with skill**: priority 47.5% under T1
-  (`batch_0004`) but **55.0% [51.0, 58.9]** under T2 (`batch_0007`). Target is
-  48–52%. This one is a genuine design signal, not an AI artefact.
+- **Seat balance is unresolved, not failing.** The two T2 mirrors disagree:
+  priority **55.0% [51.0, 58.9]** in `batch_0007` (600 games, ai 1.1.0) but
+  **48.8% [43.9, 53.6]** in `batch_0009` (400 games, ai 1.2.0, the calibrated
+  T2). They used different T2 configurations, so the honest reading is that the
+  earlier 55% was an artefact of the uncalibrated search — high-temperature
+  sampling and a leaf that had not resolved the World Phase — rather than a
+  first-player advantage that grows with skill. Re-measure on one fixed
+  configuration before spending any lever on it.
+- **Pacing is worse than the T1 reads suggested**: median **11 rounds**
+  [11, 11] under the calibrated T2 (`batch_0009`), against a 13–18 target, with
+  100% [99.0, 100.0] of games ending by Nexus kill.
 
 ## 4. Decisions waiting on you
 
