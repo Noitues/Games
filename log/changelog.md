@@ -62,3 +62,31 @@ report in `reports/` comes from one build. All four now carry 0 anomalies.
 |---|---|---|
 | Destination hex taken between enumeration and execution | two friendly champions stacked (1 game in 400) | a move onto an occupied hex is refused and the unit stays put; movement is optional |
 | Report clobbered the priority win rate | section 5 printed the last role's win rate instead of the first player's | separate variables; the role table now also states that role win rate is 50% by construction under `random_by_role_no_duplicates` |
+
+## Iteration 2 - Phase 1: AI calibration (paused mid-phase)
+
+| artefact | version | change |
+|---|---|---|
+| ai | 1.0.0 -> 1.1.0 | T2_search (depth-limited look-ahead over the snake order, T1 as the opponent model, per-decision time budget, macro weights) and the six required X_exploit_* policies as weight profiles over the shared evaluator. Evaluation now takes a weight profile; terms added for macro play default to 0 so T1 is unchanged. |
+| ai | 1.1.0 -> 1.2.0 | T2 retuned from calibration: World Phase resolved at the leaf, sharper softmax over searched values, full-fidelity opponent model. 1.1.0 is frozen so batches 0005-0007 stay reproducible. |
+| engine | 0.1.0 -> 0.2.0 | Publishes the snake order on the state; tracks assists; logs round and activation events; accepts per-policy config in a sim request. Closes two gaps against Prompts 4.D (assists, a compact text replay viewer). |
+| tests | - | 94 tests (16 new for the policy contract, T2 behaviour, assists and the 1.2.0 package). |
+
+### Iteration 2 batches
+
+| batch | matchup | games | result |
+|---|---|---|---|
+| batch_0005 | T1 vs T0 | 200 | T1 wins 97.0% [93.6, 98.6]. Acceptance gate >=90%: PASS. |
+| batch_0006 | T2 vs T1 (ai 1.1.0) | 200 | T2 wins 55.5% [48.6, 62.2]. |
+| batch_0007 | T2 mirror (ai 1.1.0) | 600 | 0 anomalies. Priority 55.0% [51.0, 58.9], against 47.5% under T1: the first-player advantage grows with stronger play. |
+| batch_0008 | T2 vs T1 (ai 1.2.0) | 400 | T2 wins 58.5% [53.6, 63.2]. Acceptance gate >=65%: FAIL, on a tight interval. |
+| batch_0009, exploit sweep, acceptance report | - | - | Ordered but not run: work paused. Commands are in docs/HANDOFF.md. |
+
+### Calibration
+
+Ten T2 variants over 890 games (`reports/calibration/plan_a..d`) all landed
+between 52% and 62% against T1. `tools/search_agreement.py` measured the
+searched move differing from the greedy move 45.4% of 399 decisions, at an
+average cost of 4.1 points of immediate value, for a few points of win rate.
+Recorded as a finding about the game's decision structure rather than an AI
+backlog item; escalated to the lead designer.
