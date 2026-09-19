@@ -1,0 +1,11 @@
+{
+  "batch_id": "batch_0009",
+  "rules": "1.0.0", "roster": "1.1.0", "ai": "1.2.0",
+  "matchup": { "p1": "T2_search", "p2": "T2_search", "temperature": 0.3 },
+  "games": 400,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 991002,
+  "replays": 5,
+  "extra": ["Phase 1 acceptance on the calibrated T2 (ai 1.2.0)", "p1 takes the first-priority seat, so the priority win rate is p1's win rate"]
+}

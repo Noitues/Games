@@ -1,0 +1,97 @@
+{
+  "games": 12,
+  "decisions": 399,
+  "agreement_pct": 54.63659147869674,
+  "agreement_ci": [
+    49.73061632623616,
+    59.45413841780541
+  ],
+  "disagreements": 181,
+  "mean_greedy_value_given_up": 4.139447513812154,
+  "examples": [
+    {
+      "round": 1,
+      "champ": "n_vellum",
+      "greedy_ability": "R",
+      "searched_ability": "R",
+      "greedy_minus_searched_greedyvalue": 4.28
+    },
+    {
+      "round": 1,
+      "champ": "n_bramblehide",
+      "greedy_ability": "R",
+      "searched_ability": "W",
+      "greedy_minus_searched_greedyvalue": 5.36
+    },
+    {
+      "round": 1,
+      "champ": "n_vurmak",
+      "greedy_ability": "R",
+      "searched_ability": "R",
+      "greedy_minus_searched_greedyvalue": 0.98
+    },
+    {
+      "round": 1,
+      "champ": "n_orrin",
+      "greedy_ability": "R",
+      "searched_ability": "Q",
+      "greedy_minus_searched_greedyvalue": 5.74
+    },
+    {
+      "round": 1,
+      "champ": "n_wisp",
+      "greedy_ability": "R",
+      "searched_ability": "R",
+      "greedy_minus_searched_greedyvalue": 0.06
+    },
+    {
+      "round": 3,
+      "champ": "n_wisp",
+      "greedy_ability": "R",
+      "searched_ability": "R",
+      "greedy_minus_searched_greedyvalue": 0.32
+    },
+    {
+      "round": 3,
+      "champ": "n_bramblehide",
+      "greedy_ability": "R",
+      "searched_ability": "R",
+      "greedy_minus_searched_greedyvalue": 1.54
+    },
+    {
+      "round": 4,
+      "champ": "n_orrin",
+      "greedy_ability": "E",
+      "searched_ability": "E",
+      "greedy_minus_searched_greedyvalue": 1.66
+    },
+    {
+      "round": 4,
+      "champ": "n_vurmak",
+      "greedy_ability": "R",
+      "searched_ability": "R",
+      "greedy_minus_searched_greedyvalue": 0.0
+    },
+    {
+      "round": 5,
+      "champ": "n_bramblehide",
+      "greedy_ability": "R",
+      "searched_ability": "R",
+      "greedy_minus_searched_greedyvalue": 0.5
+    },
+    {
+      "round": 7,
+      "champ": "n_vurmak",
+      "greedy_ability": "R",
+      "searched_ability": "R",
+      "greedy_minus_searched_greedyvalue": 7.11
+    },
+    {
+      "round": 8,
+      "champ": "n_wisp",
+      "greedy_ability": "W",
+      "searched_ability": "W",
+      "greedy_minus_searched_greedyvalue": 7.64
+    }
+  ]
+}

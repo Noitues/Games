@@ -87,3 +87,18 @@ def test_t2_never_mixes_searched_and_unsearched_scores(board, kits, monkeypatch)
     assert act in legal
     # With a zero budget exactly one candidate plus the pass option is searched.
     assert len(seen) == 2
+
+
+def test_ai_1_2_0_ships_calibrated_t2_defaults():
+    """ai 1.2.0 is a retune of 1.1.0: same tiers, new T2 defaults, and 1.1.0
+    must stay exactly as batches 0005-0007 ran it."""
+    v11 = importlib.import_module("ai.policy_v1_1_0")
+    v12 = importlib.import_module("ai.policy_v1_2_0")
+    assert sorted(v11.TIERS) == sorted(v12.TIERS)
+    old = v11.make("T2_search", 1, 0.3, team="north").search
+    new = v12.make("T2_search", 1, 0.3, team="north").search
+    assert old["leaf_world"] is False and old["temp_scale"] == 1.0
+    assert new["leaf_world"] is True and new["temp_scale"] < 1.0
+    assert new["opp_enum"]["max_options"] > old["opp_enum"]["max_options"]
+    override = v12.make("T2_search", 1, 0.3, {"root_k": 3}, team="north").search
+    assert override["root_k"] == 3 and override["leaf_world"] is True

@@ -95,3 +95,27 @@ beats T2 is a statement about the rules rather than about bespoke AI code.
 `tools/ai_calibrate.py` runs head-to-head variants (the variant always takes
 the first-priority seat, and seats swap every other game), and
 `tools/ai_acceptance.py` grades the Prompts 4.C checks into one report.
+
+## What the Phase 1 calibration found
+
+Ten T2 variants were run against T1 (`reports/calibration/plan_a..d`): macro
+weights alone, baseline weights, a wider root, a finer opponent model, the
+World Phase resolved at the leaf, a sharper softmax, and a full round rollout.
+Pooled over the first 540 games the T2 family beat T1 **56.5% [52.3, 60.6]**,
+and the best single configuration reached **62.0% [54.0, 69.4]**. Every variant
+landed between 52% and 62%; nothing came close to jumping the 65% gate.
+
+`tools/search_agreement.py` then asked the question that separates an AI
+problem from a game problem: **how often does the searched best move differ
+from the greedy best?** Over 399 decisions in 12 games, the searched choice
+differed **45.4%** of the time, and when it differed it gave up an average of
+**4.1 points** of immediate greedy value to do so.
+
+So the search is not failing to find different moves - it finds them
+constantly, pays real immediate value for them, and wins only a few points more
+often. The reading that fits: in Hex-Nexus a large share of activations are
+close to value-neutral. Two very different plans for the same champion end the
+round in much the same place, because one activation is one champion of five,
+damage lands in a separate World Phase, and the whole card goes on cooldown
+either way. That is a statement about the game's decision structure, and it
+belongs in front of the lead designer rather than in the AI backlog.
