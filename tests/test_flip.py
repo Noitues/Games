@@ -137,28 +137,54 @@ def test_bump_without_intent_stops_at_the_edge(state, board, game):
     assert board.tile_of[mover.hexpos] != t
 
 
-def test_reveal_on_outward_effect(state, board, game):
-    """RQ-032 remedy, off by default: shooting out of a hidden hexgroup gives
-    the position away for the round."""
+def test_only_an_ambush_ability_reaches_out_of_cover(state, board, game):
+    """RQ-034: from inside a hidden hexgroup, only the tagged ability may touch
+    anything outside it."""
+    from engine.resolve import can_act_outside, units_within
+    c = state.champs["n_kestrel"]
+    c.hexpos = (0, -1)
+    state.touch()
+    state.refresh_visibility(placer=game.placer)
+    node = state.node_of_unit(c)
+    assert state.hidden_mask >> board.tile_of[c.hexpos] & 1
+
+    tagged = [k for k in "QWER" if state.kits[c.cid]["abilities"][k].get("from_hidden")]
+    assert len(tagged) == 1, "one ambush ability for a non-jungler"
+    untagged = next(k for k in "QWER" if k not in tagged)
+
+    assert can_act_outside(state, c, node, tagged[0])
+    assert not can_act_outside(state, c, node, untagged)
+    assert not can_act_outside(state, c, node, "L0"), "the basic attack is not an ambush"
+
+    outside = units_within(state, node, 4, "north", "enemy_any", c.hexpos,
+                           can_act_outside(state, c, node, untagged))
+    assert outside == [] or all(board.tile_of[u.hexpos] == board.tile_of[c.hexpos]
+                                for u, _ in outside)
+
+
+def test_junglers_carry_two_ambush_abilities(kits):
+    for kit in kits.values():
+        n = sum(1 for k in "QWER" if kit["abilities"][k].get("from_hidden"))
+        assert n == (2 if kit["role"] == "Jungle" else 1), kit["id"]
+
+
+def test_an_ambush_gives_the_position_away(state, board, game):
     from engine.abilities import apply_plan
-    hider = state.champs["n_ashwyn"]
-    hider.hexpos = (0, 0)
-    tile = board.tile_of[hider.hexpos]
-    tower = state.structures["s_mid_T1"]
+    c = state.champs["n_kestrel"]
+    c.hexpos = (0, -1)
+    tile = board.tile_of[c.hexpos]
     state.round = 3
     state.touch()
     state.refresh_visibility(placer=game.placer)
     assert state.hidden_mask >> tile & 1
-
-    apply_plan(state, hider, "Q", (tower.uid,))        # outward hit, flag off
-    assert state.hidden_mask >> tile & 1, "as ruled, concealment survives the shot"
-
-    state.config["reveal_on_outward_effect"] = True
-    apply_plan(state, hider, "Q", (tower.uid,))
-    assert not state.hidden_mask >> tile & 1, "with the remedy on, the shot reveals"
+    key = next(k for k in "QWER" if state.kits[c.cid]["abilities"][k].get("from_hidden"))
+    tower = state.structures["s_mid_T1"]
+    apply_plan(state, c, key, (tower.uid,))
+    assert not state.hidden_mask >> tile & 1, "springing the ambush flips the hexgroup"
 
 
-def test_reveal_on_outward_effect_ignores_targets_inside_the_tile(state, board, game):
+def test_camp_clearing_from_cover_is_untouched(state, board, game):
+    """Acting inside your own hexgroup is not an ambush and reveals nothing."""
     from engine.abilities import apply_plan
     state.config["reveal_on_outward_effect"] = True
     m = state.monsters["dragon_0"]
@@ -169,4 +195,4 @@ def test_reveal_on_outward_effect_ignores_targets_inside_the_tile(state, board, 
     state.touch()
     state.refresh_visibility(placer=game.placer)
     apply_plan(state, c, "Q", (m.uid,))
-    assert state.hidden_mask >> tile & 1, "farming your own camp is not a giveaway"
+    assert state.hidden_mask >> tile & 1

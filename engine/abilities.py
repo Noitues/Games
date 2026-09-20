@@ -4,9 +4,9 @@ from __future__ import annotations
 from typing import List, Optional, Tuple
 
 from .hexmap import DIRS, Node
-from .resolve import (ability_range, can_be_hit, deal_hits, effect_context,
-                      line_targets, move_unit, push_pull, step_choices,
-                      units_within)
+from .resolve import (ability_range, can_act_outside, can_be_hit, deal_hits,
+                      effect_context, line_targets, move_unit, push_pull,
+                      step_choices, units_within)
 from .state import Champion, GameState
 
 Plan = Tuple
@@ -56,6 +56,8 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
     prev_uid: Optional[str] = None
     long_sword = "long_sword" in champ.items and ability == "L0"
     home_tile = state.board.tile_of[champ.hexpos]
+    node = state.node_of_unit(champ)
+    outside_ok = can_act_outside(state, champ, node, ability)
     outward = False
 
     def mark(target) -> None:
@@ -77,7 +79,8 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
         elif ic == "AREA":
             r = ability_range(champ, ability, step.get("range", 1))
             for u, _ in units_within(state, node, r, champ.team,
-                                     step.get("target", "enemy_any"), champ.hexpos):
+                                     step.get("target", "enemy_any"), champ.hexpos,
+                                     outside_ok):
                 mark(u)
                 deal_hits(state, champ.team, u, step.get("k", 1), "chips_" + u.kind, champ)
             prev_uid = None
@@ -86,7 +89,7 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
             origin, src_tile = effect_context(state, node, champ.hexpos)
             d = DIRS[ch if ch is not None else 0]
             for u in line_targets(state, (origin[0], origin[1]), d, n, champ.team,
-                                  step.get("target", "enemy_any"), src_tile):
+                                  step.get("target", "enemy_any"), src_tile, outside_ok):
                 mark(u)
                 deal_hits(state, champ.team, u, step.get("k", 1), "chips_" + u.kind, champ)
             prev_uid = None
@@ -105,7 +108,8 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
         elif ic == "ROOT":
             if step.get("area"):
                 for u, _ in units_within(state, node, ability_range(champ, ability, 1),
-                                         champ.team, "enemy_champion", champ.hexpos):
+                                         champ.team, "enemy_champion", champ.hexpos,
+                                         outside_ok):
                     u.rooted = True
             else:
                 tgt = state.unit(prev_uid if step.get("target") == "prev" else ch)
@@ -136,10 +140,10 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
                 state.refresh_visibility(allow_flip_back=False)
     if outward and (state.hidden_mask >> home_tile & 1):
         champ.conceal_attacks += 1          # RQ-032: acting out of the fog
-    if outward and state.config.get("reveal_on_outward_effect") and \
-            (state.hidden_mask >> home_tile & 1):
-        # RQ-032: acting on something outside the hexgroup gives the position
-        # away for the rest of the round.
+    if outward and (state.hidden_mask >> home_tile & 1):
+        # RQ-034: an ambush is a one-shot, not a firing position. Reaching out
+        # of the hexgroup flips it face up for the rest of the round, so the
+        # ambusher is exposed exactly as if it had stepped into the open.
         state.wards[home_tile] = state.round
         state.refresh_visibility(allow_flip_back=False)
     state.touch()

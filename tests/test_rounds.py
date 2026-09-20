@@ -28,8 +28,14 @@ def test_priority_alternates_each_round(state, game):
 def test_whole_card_goes_on_cooldown(state, game):
     c = state.champs["n_kestrel"]
     c.hexpos = (0, -1)          # within R's line of the south mid T1 at (0,2)
+    # Contest the hexgroup from another of its hexes so it is not cover: R is
+    # not Kestrel's ambush ability and could not reach out of a hidden tile.
+    tile = state.board.tile_of[c.hexpos]
+    other = next(h for h in state.board.tile_hexes[tile] if h != c.hexpos)
+    state.champs["s_dax"].hexpos = other
     state.teams["north"].ap = 3
     state.touch()
+    state.refresh_visibility()
     act = next(a for a in legal_activations(state, "north")
                if a.champ == c.uid and a.ability == "R")
     apply_activation(state, act, game)

@@ -139,6 +139,17 @@ def structure_targetable(state: GameState, s: Structure) -> bool:
     return any(all(not t.alive for t in ts) for ts in lanes.values())
 
 
+def can_act_outside(state: GameState, champ: Champion, node: Node, key: str) -> bool:
+    """RQ-034: from inside a hidden hexgroup, only an ability tagged
+    ``from_hidden`` may touch anything outside it. Anything already sharing the
+    hexgroup - a jungle camp, a contesting enemy - is always fair game."""
+    tile = state.board.node_tile(node)
+    if not (state.hidden_mask >> tile & 1):
+        return True
+    ab = state.kits[champ.cid]["abilities"].get(key)
+    return bool(ab and ab.get("from_hidden"))
+
+
 def concealed_from(state: GameState, u, src_tile: int) -> bool:
     """RQ-001: a champion inside a hidden hexgroup is out of reach from outside
     it. Everything else keeps its own hex and stays reachable."""
@@ -149,7 +160,8 @@ def concealed_from(state: GameState, u, src_tile: int) -> bool:
 
 
 def units_within(state: GameState, node: Node, radius: int, attacker_team: str,
-                 spec: str, src_hex: Optional[Hex] = None) -> List[Tuple[object, int]]:
+                 spec: str, src_hex: Optional[Hex] = None,
+                 outside_ok: bool = True) -> List[Tuple[object, int]]:
     """Legal targets within ``radius`` of ``node``.
 
     Range is board distance, as Rules 4.1 always had it: a hidden hexgroup is
@@ -157,6 +169,9 @@ def units_within(state: GameState, node: Node, radius: int, attacker_team: str,
     a champion hiding in a hexgroup is simply not a legal target from outside.
     """
     src_tile = state.board.node_tile(node)
+    if not outside_ok:                      # RQ-034: confined to the hexgroup
+        return [(u, 1) for u in state.units_at(node)
+                if can_be_hit(state, u, attacker_team, spec)]
     seen = state.board.nodes_within(node, radius, state.hidden_mask)
     out = []
     for nd, dist in seen.items():
@@ -371,12 +386,13 @@ def step_choices(state: GameState, champ: Champion, node: Node, step: dict,
         if ic == "HIT":
             r = ability_range(champ, ability, step.get("range", 1))
             cands = [u for u, _ in units_within(state, node, r, team,
-                                                step.get("target", "enemy_any"), champ.hexpos)]
+                                                step.get("target", "enemy_any"), champ.hexpos,
+                                                can_act_outside(state, champ, node, ability))]
             return _cap([u.uid for u in cands], cap)
         if ic == "AREA":
             r = ability_range(champ, ability, step.get("range", 1))
             hits = units_within(state, node, r, team, step.get("target", "enemy_any"),
-                                champ.hexpos)
+                                champ.hexpos, can_act_outside(state, champ, node, ability))
             return [None] if hits else []
         r = ability_range(champ, ability, step.get("n", 1))
         src_hex, src_tile = effect_context(state, node, champ.hexpos)
@@ -384,7 +400,8 @@ def step_choices(state: GameState, champ: Champion, node: Node, step: dict,
         out = []
         for i, d in enumerate(DIRS):
             if line_targets(state, (origin[0], origin[1]), d, r, team,
-                            step.get("target", "enemy_any"), src_tile):
+                            step.get("target", "enemy_any"), src_tile,
+                            can_act_outside(state, champ, node, ability)):
                 out.append(i)
         return _cap(out, cap)
     if ic in ("MOVE", "DASH", "BLINK"):
@@ -396,7 +413,8 @@ def step_choices(state: GameState, champ: Champion, node: Node, step: dict,
             return [None] if prev_uid else []
         spec = step.get("target", "enemy_any")
         r = ability_range(champ, ability, step.get("range", 1))
-        cands = [u for u, _ in units_within(state, node, r, team, spec, champ.hexpos)]
+        cands = [u for u, _ in units_within(state, node, r, team, spec, champ.hexpos,
+                                            can_act_outside(state, champ, node, ability))]
         if ic in ("PUSH", "PULL"):
             cands = [u for u in cands if u.kind in ("champion", "wave")]
         if ic == "DELAY":
@@ -407,7 +425,8 @@ def step_choices(state: GameState, champ: Champion, node: Node, step: dict,
             return [None]
         r = ability_range(champ, ability, step.get("range", 1))
         allies = [u for u, _ in units_within(state, node, r, team, "ally_champion",
-                                             champ.hexpos)]
+                                             champ.hexpos,
+                                             can_act_outside(state, champ, node, ability))]
         if ic == "HEAL":
             allies = [u for u in allies if u.hp < u.max_hp] or allies
         if ic == "HASTE":
@@ -430,12 +449,14 @@ def _cap(seq: List, cap: int) -> List:
 
 
 def line_targets(state: GameState, origin: Hex, d: Hex, n: int, team: str, spec: str,
-                 src_tile: Optional[int] = None) -> List:
+                 src_tile: Optional[int] = None, outside_ok: bool = True) -> List:
     """Units caught by a LINE, walking hexes and collecting whatever sits on the
     node each hex belongs to. A champion concealed in a hidden hexgroup is
     skipped (RQ-001)."""
     if src_tile is None:
         src_tile = state.board.tile_of[origin]
+    if not outside_ok:
+        return []                           # a LINE out of cover needs the tag
     nodes = []
     for h in state.board.line_hexes(origin, d, n):
         nd = state.board.node_of(h, state.hidden_mask)

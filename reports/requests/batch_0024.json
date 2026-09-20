@@ -1,0 +1,22 @@
+{
+  "rules": "1.2.0",
+  "roster": "1.3.0",
+  "ai": "1.2.0",
+  "matchup": {
+    "p1": "T1_greedy",
+    "p2": "T1_greedy",
+    "temperature": 0.3
+  },
+  "games": 150,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "replays": 0,
+  "batch_id": "batch_0024",
+  "seed": 2401,
+  "config_overrides": {
+    "tower_hp": 10
+  },
+  "extra": [
+    "P-0003: tower HP 10 under the ambush rule. Fights now consume rounds that used to go into sieging, so the P-0002 value of 11 overshoots: batch_0023 ran median 15 with only 88.7% ending by Nexus kill."
+  ]
+}

@@ -199,6 +199,8 @@ def legal_activations(state: GameState, team: str,
                     recall_dests = _cap(reachable(state, c, home, budget, include_start=True),
                                         max(2, cfg["max_dest"] // 3))
         abilities = [k for k in ("L0", "Q", "W", "E", "R") if ability_ready(state, c, k)]
+        # RQ-034 is enforced inside target enumeration: an untagged ability
+        # simply finds no legal target outside its hexgroup, so it drops out.
         home_node = state.board.node_of(state.board.fountain[team], state.hidden_mask)
         keep: List[Activation] = []          # canonical options, never sampled away
         core: List[Activation] = []          # other movement-only options

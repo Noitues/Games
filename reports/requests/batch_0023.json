@@ -1,0 +1,20 @@
+{
+  "rules": "1.2.0",
+  "roster": "1.3.0",
+  "ai": "1.2.0",
+  "matchup": {
+    "p1": "T1_greedy",
+    "p2": "T1_greedy",
+    "temperature": 0.3
+  },
+  "games": 300,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "replays": 3,
+  "batch_id": "batch_0023",
+  "seed": 2301,
+  "extra": [
+    "RQ-034: ambush abilities. From inside a hidden hexgroup only the tagged ability reaches outside it, and springing it flips the hexgroup face up for the round.",
+    "Compare with batch_0022 (same AI and tower HP, no ambush rule): champion kills 0.20/game, median 14 rounds."
+  ]
+}
