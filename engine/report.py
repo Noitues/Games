@@ -25,6 +25,8 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
     champ_cd: Dict[str, List[int]] = defaultdict(list)
     champ_apshare: Dict[str, List[float]] = defaultdict(list)
     champ_items: Dict[str, Counter] = defaultdict(Counter)
+    champ_conceal: Dict[str, List[int]] = defaultdict(list)
+    total_uses = total_conceal = 0
     role_w: Dict[str, List[int]] = defaultdict(list)
     role_ap: Dict[str, List[float]] = defaultdict(list)
     item_games: Counter = Counter()
@@ -80,6 +82,9 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
             champ_dead[cid].append(d["rounds_dead"])
             champ_cd[cid].append(d["rounds_cd"])
             champ_apshare[cid].append(d["ap"] / max(1, team_ap_total.get(d["team"], 1)))
+            champ_conceal[cid].append(d.get("conceal_attacks", 0))
+            total_conceal += d.get("conceal_attacks", 0)
+            total_uses += sum(d["uses"].values())
             for it in d["items"]:
                 champ_items[cid][it] += 1
                 if win is not None:
@@ -130,6 +135,7 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
             "deaths": sum(d for _, d, _ in champ_kda[cid]) / games,
             "rounds_dead": sum(champ_dead[cid]) / games,
             "rounds_cd": sum(champ_cd[cid]) / games,
+            "conceal_attacks": sum(champ_conceal[cid]) / games,
             "ap_share": 100 * sum(champ_apshare[cid]) / games,
             "items": champ_items[cid].most_common(3),
         })
@@ -246,6 +252,10 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
             "roster_mean_ap_per_round": roster_ap_mean,
         },
         "items": item_rows,
+        "concealment": {
+            "attacks_from_concealment_per_game": total_conceal / max(1, n),
+            "share_of_all_ability_uses": (100 * total_conceal / total_uses) if total_uses else 0.0,
+        },
         "anomalies": dict(anomalies),
         "top_flags": flags,
     }
@@ -380,6 +390,11 @@ def to_markdown(s: dict) -> str:
         nw = "-" if i["non_owner_wr"] is None else f"{i['non_owner_wr']:.1f}%"
         df = "-" if i["wr_diff"] is None else f"{i['wr_diff']:+.1f}"
         L.append(f"| {i['item']} | {i['cost']} | {i['purchases_per_game']:.2f} | {ow} | {nw} | {df} |")
+    c = s.get("concealment", {})
+    L += ["", "## 9b. Concealment (RQ-032)", "",
+          f"- attacks made from inside a hidden hexgroup on something outside it: "
+          f"{c.get('attacks_from_concealment_per_game', 0):.2f} per game",
+          f"- that is {c.get('share_of_all_ability_uses', 0):.1f}% of all ability uses", ""]
     L += ["", "## 10. Anomalies", ""]
     L.append("None." if not s["anomalies"] else
              "\n".join(f"- {k}: {v} games" for k, v in s["anomalies"].items()))

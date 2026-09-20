@@ -52,6 +52,7 @@ class Champion:
     rounds_dead: int = 0
     rounds_cd: int = 0
     dmg_to_structures: int = 0
+    conceal_attacks: int = 0        # abilities used from a hidden tile on something outside it
     damaged_by: Dict[str, int] = field(default_factory=dict)   # uid -> round
 
     kind: str = "champion"

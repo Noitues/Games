@@ -1,0 +1,24 @@
+{
+  "rules": "1.1.0",
+  "roster": "1.2.0",
+  "ai": "1.2.0",
+  "matchup": {
+    "p1": "T1_greedy",
+    "p2": "T1_greedy",
+    "temperature": 0.3
+  },
+  "games": 150,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "replays": 0,
+  "batch_id": "batch_0019",
+  "seed": 1802,
+  "config_overrides": {
+    "tower_hp": 9,
+    "nexus_hp": 14
+  },
+  "extra": [
+    "P-0002 arm B: structures +17% HP (towers 8->9, Nexus 12->14), the gentler step.",
+    "Baseline batch_0016: median 11 rounds, 97.3% Nexus kills, same rules/roster/AI."
+  ]
+}

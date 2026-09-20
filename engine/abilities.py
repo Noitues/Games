@@ -134,6 +134,8 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
             if ch is not None:
                 state.wards[ch] = state.round
                 state.refresh_visibility(allow_flip_back=False)
+    if outward and (state.hidden_mask >> home_tile & 1):
+        champ.conceal_attacks += 1          # RQ-032: acting out of the fog
     if outward and state.config.get("reveal_on_outward_effect") and \
             (state.hidden_mask >> home_tile & 1):
         # RQ-032: acting on something outside the hexgroup gives the position

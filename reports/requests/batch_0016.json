@@ -1,0 +1,19 @@
+{
+  "rules": "1.1.0",
+  "roster": "1.2.0",
+  "ai": "1.2.0",
+  "games": 150,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 1601,
+  "replays": 0,
+  "batch_id": "batch_0016",
+  "matchup": {
+    "p1": "T1_greedy",
+    "p2": "T1_greedy",
+    "temperature": 0.3
+  },
+  "extra": [
+    "RQ-032 retest, arm A: concealment one-way as ruled (flag off). Paired with batch_0017 on the same seed."
+  ]
+}

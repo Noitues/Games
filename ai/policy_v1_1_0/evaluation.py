@@ -35,6 +35,7 @@ W = {
     "home_bias": 0.0,           # stay near the home Nexus (turtle)
     "enemy_cd": 0.0,            # enemy cards stuck on the cooldown track
     "struct_focus": 0.0,        # extra pull toward enemy structures
+    "conceal_bias": 0.0,        # value of standing inside a hidden hexgroup (RQ-032)
 }
 
 # Macro profile for T2: lane and jungle assignment, objective setups, recall
@@ -107,6 +108,8 @@ def evaluate(state: GameState, team: str, w: Optional[Dict[str, float]] = None) 
             if w["recall_value"] and c.hp <= 2 and \
                     board.tile_of[c.hexpos] == board.tile_of[board.fountain[team]]:
                 score += w["recall_value"]
+            if w["conceal_bias"] and (state.hidden_mask >> board.tile_of[c.hexpos] & 1):
+                score += w["conceal_bias"]
         else:
             score += w["incoming_enemy"] * dmg
             if dmg >= c.hp + c.shield:
