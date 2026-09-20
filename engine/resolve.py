@@ -67,15 +67,30 @@ def effect_context(state: GameState, node: Node, fallback_hex: Optional[Hex] = N
 
 
 def effect_adjacent(state: GameState, u) -> List:
-    """Units ``u`` reaches in the World Phase (Rules 5.3), under RQ-002."""
+    """Units ``u`` reaches in the World Phase (Rules 5.3).
+
+    RQ-002: a minion wave, tower or monster inside a hidden hexgroup reaches
+    its own hex's neighbours, not the whole tile edge. A champion hidden in a
+    hexgroup is not reached at all, unless the source shares the hexgroup.
+    """
     tile = state.board.tile_of[u.hexpos]
+    by_hex = state.by_hex
     out = []
-    for other_unit in state.all_units():
-        if not other_unit.alive or other_unit.uid == u.uid:
+    for uid in state.by_tile.get(tile, ()):                  # same hexgroup: adjacent
+        if uid == u.uid:
             continue
-        d = effect_distance(state, u.hexpos, tile, other_unit)
-        if d is not None and d <= 1:
+        other_unit = state.unit(uid)
+        if other_unit is not None and other_unit.alive:
             out.append(other_unit)
+    for dq, dr, _ in ring_offsets(1):
+        for uid in by_hex.get((u.hexpos[0] + dq, u.hexpos[1] + dr), ()):
+            other_unit = state.unit(uid)
+            if other_unit is None or not other_unit.alive or other_unit.uid == u.uid:
+                continue
+            if concealed_from(state, other_unit, tile):
+                continue
+            if other_unit not in out:
+                out.append(other_unit)
     return out
 
 
@@ -124,38 +139,32 @@ def structure_targetable(state: GameState, s: Structure) -> bool:
     return any(all(not t.alive for t in ts) for ts in lanes.values())
 
 
+def concealed_from(state: GameState, u, src_tile: int) -> bool:
+    """RQ-001: a champion inside a hidden hexgroup is out of reach from outside
+    it. Everything else keeps its own hex and stays reachable."""
+    if u.kind != "champion":
+        return False
+    tile = state.board.tile_of[u.hexpos]
+    return tile != src_tile and bool(state.hidden_mask >> tile & 1)
+
+
 def units_within(state: GameState, node: Node, radius: int, attacker_team: str,
                  spec: str, src_hex: Optional[Hex] = None) -> List[Tuple[object, int]]:
-    """Legal targets within ``radius`` of ``node``, by effect distance."""
-    origin, tile = effect_context(state, node, src_hex)
-    hidden = state.hidden_mask
-    tof = state.board.tile_of
-    by_hex = state.by_hex
-    seen = set()
+    """Legal targets within ``radius`` of ``node``.
+
+    Range is board distance, as Rules 4.1 always had it: a hidden hexgroup is
+    one space. The ruling that changed is *who* can be reached, not how far -
+    a champion hiding in a hexgroup is simply not a legal target from outside.
+    """
+    src_tile = state.board.node_tile(node)
+    seen = state.board.nodes_within(node, radius, state.hidden_mask)
     out = []
-    for uid in state.by_tile.get(tile, ()):          # the source's own tile is always in reach
-        seen.add(uid)
-        u = state.unit(uid)
-        if u is None or not can_be_hit(state, u, attacker_team, spec):
-            continue
-        d = 1 if (hidden >> tile & 1) else hex_distance(origin, u.hexpos)
-        if d <= radius:
-            out.append((u, d))
-    for dq, dr, dist in ring_offsets(radius):
-        h = (origin[0] + dq, origin[1] + dr)
-        bucket = by_hex.get(h)
-        if not bucket:
-            continue
-        concealing = bool(hidden >> tof[h] & 1)
-        for uid in bucket:
-            if uid in seen:
+    for nd, dist in seen.items():
+        for u in state.units_at(nd):
+            if not can_be_hit(state, u, attacker_team, spec):
                 continue
-            seen.add(uid)
-            u = state.unit(uid)
-            if u is None or not can_be_hit(state, u, attacker_team, spec):
+            if concealed_from(state, u, src_tile):
                 continue
-            if concealing and u.kind == "champion":
-                continue                              # RQ-001: concealed
             out.append((u, dist))
     return out
 
@@ -422,19 +431,22 @@ def _cap(seq: List, cap: int) -> List:
 
 def line_targets(state: GameState, origin: Hex, d: Hex, n: int, team: str, spec: str,
                  src_tile: Optional[int] = None) -> List:
-    """Units caught by a LINE. Hexes, not tiles (RQ-002): a unit is caught when
-    its own hex lies on the line, and a concealed champion is never caught."""
+    """Units caught by a LINE, walking hexes and collecting whatever sits on the
+    node each hex belongs to. A champion concealed in a hidden hexgroup is
+    skipped (RQ-001)."""
     if src_tile is None:
         src_tile = state.board.tile_of[origin]
-    on_line = set(state.board.line_hexes(origin, d, n))
+    nodes = []
+    for h in state.board.line_hexes(origin, d, n):
+        nd = state.board.node_of(h, state.hidden_mask)
+        if nd not in nodes:
+            nodes.append(nd)
     out = []
-    for u in state.all_units():
-        if u.hexpos not in on_line or not can_be_hit(state, u, team, spec):
-            continue
-        tile = state.board.tile_of[u.hexpos]
-        if tile != src_tile and u.kind == "champion" and (state.hidden_mask >> tile & 1):
-            continue
-        out.append(u)
+    for nd in nodes:
+        for u in state.units_at(nd):
+            if can_be_hit(state, u, team, spec) and not concealed_from(state, u, src_tile) \
+                    and u not in out:
+                out.append(u)
     return out
 
 

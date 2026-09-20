@@ -1,0 +1,19 @@
+{
+  "rules": "1.1.0",
+  "ai": "1.2.0",
+  "matchup": {
+    "p1": "T1_greedy",
+    "p2": "T1_greedy",
+    "temperature": 0.3
+  },
+  "games": 150,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "replays": 2,
+  "batch_id": "batch_0015",
+  "roster": "1.1.0",
+  "seed": 1402,
+  "extra": [
+    "Same corrected rules, pre-recalibration roster: isolates P-0001 from the rules change."
+  ]
+}

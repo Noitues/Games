@@ -1,0 +1,20 @@
+{
+  "rules": "1.1.0",
+  "ai": "1.2.0",
+  "matchup": {
+    "p1": "T1_greedy",
+    "p2": "T1_greedy",
+    "temperature": 0.3
+  },
+  "games": 150,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "replays": 2,
+  "batch_id": "batch_0014",
+  "roster": "1.2.0",
+  "seed": 1401,
+  "extra": [
+    "Refuge ruling with range restored to board distance: concealment and tower reach only.",
+    "Roster 1.2.0 (recalibrated). Compare with batch_0012, which had the over-wide implementation."
+  ]
+}
