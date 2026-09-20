@@ -1,0 +1,19 @@
+{
+  "patch_id": "P-0001",
+  "from": { "rules": "1.1.0", "roster": "1.1.0", "ai": "1.2.0" },
+  "to": { "rules": "1.1.0", "roster": "1.2.0" },
+  "lever_class": "economy",
+  "changes": [
+    { "target": "rules:14.2.credits.ap", "from": -3.0, "to": -2.0 },
+    { "target": "rules:14.2.credits.cooldown", "from": -2.0, "to": -1.5 },
+    { "target": "rules:14.2.constraints.min_ability_net", "from": 2.0, "to": 3.0 },
+    { "target": "rules:14.2.constraints.max_r_gross_vs_basics", "from": null, "to": 1.75 },
+    { "target": "roster:all", "from": "1.1.0", "to": "1.2.0 (refit: 48 of 100 abilities, 10 single-step stat changes, no price raised)" }
+  ],
+  "evidence": "batch_0009 (400 games, T2 mirror, ai 1.2.0): ability usage rises monotonically with price - 9.3% mean use at 0 AP, 17.6% at 1 AP, 39.6% at 2 AP, 54.9% at 3 AP; 13.3% at cooldown 1 up to 44.2% at cooldown 3. 47 of 100 abilities are used in under 5% of the rounds where they are affordable and have a legal target. Reproduced in batch_0007 and batch_0008.",
+  "hypothesis": "The inversion is a pricing artefact, not 47 weak kits. Under whole-card cooldown every ability spends the same activation, so the budget's generous credits (-3 per AP, -2 per cooldown round) let expensive abilities buy large gross while cheap ones stay too weak to be worth an activation. Cutting the credits, raising the per-ability floor and capping R against the basics should flatten usage without making anything more expensive to cast.",
+  "success_metric": "In the next T2 mirror batch: the gap in mean usage between 0-AP and 3-AP abilities falls from 45.6 points to under 25, and fewer than 25 of 100 abilities sit below 5% use.",
+  "revert_if": "Median game length leaves 10-14 rounds, or any champion's win-rate CI falls outside [30, 70], or mean AP generated per team-round moves by more than 25%.",
+  "side_effects": "R gross falls from 13.1 to 9.9 on average, so burst ultimates are weaker and fights should last longer - which also pushes median game length back up toward the 13-18 target. The roster loses its 9 HP tier (three champions drop to 8) and gains two speed-2 champions, so tanks are slightly less durable and two carries slightly slower. Champion win rates will move; that is expected and is not evidence against the patch unless a CI leaves [30, 70].",
+  "pillar_change": false
+}

@@ -2,7 +2,20 @@
 from __future__ import annotations
 
 import json
-from typing import Dict, List
+from typing import Dict, List, Optional
+
+# Rules 14.2 point tables. v1 is the rulebook's seed table; v2 is the RQ-030
+# recalibration: an ability is priced against the activation it consumes, not
+# only against its AP cost, so the credits shrink and the per-ability floor
+# rises. Rosters name the table they were built to.
+POINTS = {
+    "v1": {"ap_credit": 3.0, "cd_credit": 2.0, "min_net": 2.0, "max_r_ratio": None},
+    # v2 also caps the spread inside a kit: under whole-card cooldown every
+    # ability spends the same activation, so a kit whose R dwarfs its Q, W and
+    # E is a kit with one real ability. RQ-030.
+    "v2": {"ap_credit": 2.0, "cd_credit": 1.5, "min_net": 3.0, "max_r_ratio": 1.75},
+}
+DEFAULT_POINTS = "v1"
 
 ICONS_DAMAGE = {"HIT", "AREA", "LINE"}
 ICONS_SELF_MOVE = {"MOVE", "DASH", "BLINK"}
@@ -56,27 +69,32 @@ def ability_gross(ab: dict) -> float:
     return sum(step_points(s) for s in ab["steps"])
 
 
-def ability_net(ab: dict) -> float:
-    return ability_gross(ab) - 3 * ab.get("cost", 0) - 2 * max(0, ab.get("cooldown", 1) - 1)
+def ability_net(ab: dict, points: str = DEFAULT_POINTS) -> float:
+    t = POINTS[points]
+    return (ability_gross(ab) - t["ap_credit"] * ab.get("cost", 0)
+            - t["cd_credit"] * max(0, ab.get("cooldown", 1) - 1))
 
 
 def stat_points(stats: dict) -> float:
     return 3 * (stats["hp"] - 6) + 5 * (stats["speed"] - 3)
 
 
-def budget(kit: dict) -> dict:
+def budget(kit: dict, points: Optional[str] = None) -> dict:
+    points = points or kit.get("points", DEFAULT_POINTS)
     out = {"stats": stat_points(kit["stats"])}
     total = out["stats"]
     for key in ("Q", "W", "E", "R"):
-        net = ability_net(kit["abilities"][key])
+        net = ability_net(kit["abilities"][key], points)
         out[key] = net
         total += net
     out["total"] = total
     return out
 
 
-def validate_kit(kit: dict) -> List[str]:
+def validate_kit(kit: dict, points: Optional[str] = None) -> List[str]:
     """Rules 14.2 constraints. Returns a list of problems (empty == valid)."""
+    points = points or kit.get("points", DEFAULT_POINTS)
+    min_net = POINTS[points]["min_net"]
     errs: List[str] = []
     st = kit["stats"]
     if not 6 <= st["hp"] <= 9:
@@ -93,13 +111,20 @@ def validate_kit(kit: dict) -> List[str]:
         for s in ab["steps"]:
             if s["icon"] not in ALL_ICONS:
                 errs.append(f"{kit['id']}.{key}: unknown icon {s['icon']}")
-        net = ability_net(ab)
-        if net < 2:
-            errs.append(f"{kit['id']}.{key}: net value {net} < 2")
+        net = ability_net(ab, points)
+        if net < min_net:
+            errs.append(f"{kit['id']}.{key}: net value {net} < {min_net}"
+                        " (an ability must be worth the activation it spends)")
         grosses[key] = ability_gross(ab)
     if grosses["R"] < max(grosses[k] for k in ("Q", "W", "E")):
         errs.append(f"{kit['id']}: R gross {grosses['R']} is not the highest {grosses}")
-    tot = budget(kit)["total"]
+    ratio_cap = POINTS[points].get("max_r_ratio")
+    if ratio_cap:
+        basics = sum(grosses[k] for k in ("Q", "W", "E")) / 3.0
+        if basics and grosses["R"] > ratio_cap * basics:
+            errs.append(f"{kit['id']}: R gross {grosses['R']} is more than "
+                        f"{ratio_cap}x the Q/W/E mean {basics:.1f} - one real ability")
+    tot = budget(kit, points)["total"]
     if not 20 <= tot <= 24:
         errs.append(f"{kit['id']}: budget total {tot} outside 22 +/- 2")
     if kit.get("budget", {}).get("total") is not None:
@@ -121,6 +146,8 @@ def load_roster(path: str) -> Dict[str, dict]:
     with open(path) as fh:
         data = json.load(fh)
     kits = {k["id"]: k for k in data["champions"]}
+    points = data.get("points", DEFAULT_POINTS)
     for k in kits.values():
+        k.setdefault("points", points)
         k["abilities"]["L0"] = json.loads(json.dumps(L0))
     return kits

@@ -35,12 +35,29 @@ def test_budget_band(kits):
         assert 20 <= budget(k)["total"] <= 24
 
 
-def test_rulebook_worked_examples(kits):
-    """Rules 14.2: Bastion totals 21, Kestrel totals 23."""
-    assert budget(kits["bastion"])["total"] == 21
-    assert budget(kits["kestrel"])["total"] == 23
-    assert ability_gross(kits["kestrel"]["abilities"]["R"]) == 16
-    assert ability_net(kits["kestrel"]["abilities"]["R"]) == 3
+def test_rulebook_worked_examples():
+    """Rules 14.2 v1 table: Bastion totals 21, Kestrel totals 23. The examples
+    belong to the seed table, so they are checked against the roster that was
+    built to it."""
+    import os
+    from engine.kits import load_roster
+    v1 = load_roster(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                                  "roster", "roster_v1.1.0.json"))
+    assert budget(v1["bastion"], "v1")["total"] == 21
+    assert budget(v1["kestrel"], "v1")["total"] == 23
+    assert ability_gross(v1["kestrel"]["abilities"]["R"]) == 16
+    assert ability_net(v1["kestrel"]["abilities"]["R"], "v1") == 3
+
+
+def test_recalibrated_table_flattens_the_kits(kits):
+    """RQ-030 / P-0001: no ability may be a dud, and no R may dwarf its kit."""
+    from engine.kits import POINTS
+    for k in kits.values():
+        grosses = {s: ability_gross(k["abilities"][s]) for s in ("Q", "W", "E", "R")}
+        basics = sum(grosses[s] for s in ("Q", "W", "E")) / 3
+        assert grosses["R"] <= 1.75 * basics + 1e-9, k["id"]
+        for s in ("Q", "W", "E", "R"):
+            assert ability_net(k["abilities"][s], "v2") >= 3, f"{k['id']}.{s}"
 
 
 def test_each_champion_has_an_affordable_ap_ability(kits):

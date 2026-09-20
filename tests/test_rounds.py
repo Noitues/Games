@@ -27,7 +27,7 @@ def test_priority_alternates_each_round(state, game):
 
 def test_whole_card_goes_on_cooldown(state, game):
     c = state.champs["n_kestrel"]
-    c.hexpos = (0, -3)
+    c.hexpos = (0, -1)          # within R's line of the south mid T1 at (0,2)
     state.teams["north"].ap = 3
     state.touch()
     act = next(a for a in legal_activations(state, "north")

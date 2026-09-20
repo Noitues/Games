@@ -632,13 +632,24 @@ Every champion is built to **22 ± 2 points**. The Monte Carlo agent should trea
 | REVEAL | 3 |
 
 **Credits** (subtracted from an ability's value)
-- −3 per AP of cost.
-- −2 per cooldown round beyond 1. Because the whole card goes on cooldown, a champion on cooldown can't move and is exposed on the board.
+- −2 per AP of cost.
+- −1.5 per cooldown round beyond 1. Because the whole card goes on cooldown, a champion on cooldown can't move and is exposed on the board.
+
+*Why these are smaller than they look.* An ability is priced against the
+**activation** it consumes, not only against its AP. A champion activates once
+per round and any ability puts the whole card on the track, so a 0 AP ability
+and a 3 AP ability cost the same activation. Crediting price too generously
+buys large ultimates and leaves the cheap slots too weak to be worth using —
+which is exactly what simulation found (see the RQ-030 entry in the decision
+log).
 
 **Constraints**
 - HP 6–9 and Speed 2–4.
-- Each ability's net value is at least 2.
-- R has the highest gross value (before credits) of the four abilities.
+- **Each ability's net value is at least 3** — it has to be worth the
+  activation it spends.
+- R has the highest gross value (before credits) of the four abilities, and
+  **no more than 1.75× the average gross of Q, W and E**. A kit whose R dwarfs
+  its basics is a kit with one real ability.
 - Cost 0–3 AP; cooldown 1 or more.
 
 **Economy watch:** any ability that can put k hits on a single wave returns k AP. So an ability with cost < hits is a farming engine. Track AP generated per champion as its own metric.

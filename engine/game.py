@@ -199,12 +199,18 @@ def legal_activations(state: GameState, team: str,
                     recall_dests = _cap(reachable(state, c, home, budget, include_start=True),
                                         max(2, cfg["max_dest"] // 3))
         abilities = [k for k in ("L0", "Q", "W", "E", "R") if ability_ready(state, c, k)]
-        core: List[Activation] = []          # movement-only options, never dropped
+        home_node = state.board.node_of(state.board.fountain[team], state.hidden_mask)
+        keep: List[Activation] = []          # canonical options, never sampled away
+        core: List[Activation] = []          # other movement-only options
         per_champ: List[Activation] = []     # ability options, sampled under the cap
+        keep.append(Activation(champ=c.uid, dest=node))      # stand still
+        if recall_dests and home_node in recall_dests:
+            keep.append(Activation(champ=c.uid, dest=home_node, recall=True))
         for dest in dests:
-            core.append(Activation(champ=c.uid, dest=dest))
+            if dest != node:
+                core.append(Activation(champ=c.uid, dest=dest))
         for dest, recall in [(d, False) for d in dests] + [(d, True) for d in recall_dests]:
-            if recall:
+            if recall and not (dest == home_node):
                 core.append(Activation(champ=c.uid, dest=dest, recall=True))
             for key in abilities:
                 plans = enumerate_plans(state, c, dest, key, cfg["step_cap"], cfg["plan_cap"])
@@ -240,8 +246,9 @@ def legal_activations(state: GameState, team: str,
                               and not x.activated]))
         budget = max(14, state.config["enum"]["max_options"] // n_avail)
         keep_core = _cap(core, max(5, budget // 3))
+        out.extend(keep)
         out.extend(keep_core)
-        out.extend(_cap(per_champ, max(6, budget - len(keep_core))))
+        out.extend(_cap(per_champ, max(6, budget - len(keep) - len(keep_core))))
     out.append(PASS)
     return out
 

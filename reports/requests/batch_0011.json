@@ -1,0 +1,11 @@
+{
+  "batch_id": "batch_0011",
+  "rules": "1.1.0", "roster": "1.2.0", "ai": "1.2.0",
+  "matchup": { "p1": "T2_search", "p2": "T2_search", "temperature": 0.3 },
+  "games": 300,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 990011,
+  "replays": 3,
+  "extra": ["rules-change-plus-recalibrated-roster", "Baseline for comparison is batch_0009 (rules 1.0.0, roster 1.1.0, ai 1.2.0). Running the two changes separately so the effects can be attributed."]
+}

@@ -42,8 +42,9 @@ def test_shop_purchases_and_item_effects(state):
     c = state.champs["n_kestrel"]
     assert apply_purchase(state, "north", Purchase("ruby_crystal", c.uid))
     assert c.max_hp == 10 and ts.ap == 6
+    speed_before = c.speed
     assert apply_purchase(state, "north", Purchase("boots", c.uid))
-    assert c.speed == 4 and ts.ap == 2
+    assert c.speed == min(5, speed_before + 1) and ts.ap == 2
     assert not apply_purchase(state, "north", Purchase("ruby_crystal", c.uid))
 
 
