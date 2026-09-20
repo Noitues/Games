@@ -1,0 +1,22 @@
+{
+  "batch_id": "batch_0028",
+  "rules": "1.2.0",
+  "roster": "1.3.0",
+  "ai": "1.2.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3
+  },
+  "games": 80,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 2801,
+  "replays": 2,
+  "config_overrides": {
+    "tower_hp": 10
+  },
+  "extra": [
+    "Does a stronger AI close the games T1 leaves unresolved? T1 at the same settings (batch_0026) left 8% at the round limit with the pressured side still holding a median 2.5 towers - that looks like a policy that prefers fighting to sieging now that fighting works, rather than a rules problem."
+  ]
+}

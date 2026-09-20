@@ -106,7 +106,12 @@ def upkeep(state: GameState, game: "Game") -> None:
 
 def spawn_waves(state: GameState) -> None:
     cfg = state.config
-    size = cfg["wave_chips"] if state.round < cfg["wave_growth_round"] else cfg["wave_chips_late"]
+    if state.round >= cfg.get("wave_growth_round2", 10 ** 6):
+        size = cfg["wave_chips_late2"]
+    elif state.round >= cfg["wave_growth_round"]:
+        size = cfg["wave_chips_late"]
+    else:
+        size = cfg["wave_chips"]
     for team in TEAMS:
         bonus = cfg["baron_wave_bonus"] if state.teams[team].baron_track > 0 else 0
         for lane, hexpos in state.board.spawn[team].items():

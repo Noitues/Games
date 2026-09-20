@@ -18,6 +18,11 @@ DEFAULT_CONFIG = {
     "wave_chips": 3,
     "wave_chips_late": 4,
     "wave_growth_round": 7,
+    # P-0003: a second growth step. Once champions fight (RQ-034) the siege
+    # stalls and a tail of games reaches the round limit; escalating the waves
+    # late closes those out without touching the median.
+    "wave_chips_late2": 5,
+    "wave_growth_round2": 13,
     "wave_spawn_odd_rounds_only": True,
     "wave_speed": 2,
     "baron_wave_bonus": 2,

@@ -1,0 +1,23 @@
+{
+  "rules": "1.2.0",
+  "roster": "1.3.0",
+  "ai": "1.2.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3
+  },
+  "games": 80,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "replays": 0,
+  "batch_id": "batch_0029",
+  "seed": 2901,
+  "config_overrides": {
+    "tower_hp": 13
+  },
+  "extra": [
+    "P-0003 on T2: tower HP 13. T2 closes every game and runs median 10 rounds at tower 10, so the 13-15 target needs more structure HP than the T1 tuning suggested.",
+    "Pacing must be tuned on the strongest AI available: T1 leaves 8% of games unresolved and reads 4 rounds longer, which is a policy artefact, not the game."
+  ]
+}

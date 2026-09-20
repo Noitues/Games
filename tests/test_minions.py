@@ -113,3 +113,20 @@ def test_monster_waits_for_a_clear_hex(state, game):
     state.touch()
     upkeep(state, game)
     assert m.alive and m.chips == m.max_chips
+
+
+def test_waves_escalate_twice(state, game):
+    """P-0003: a second growth step closes out long games (Rules 9.1, 13)."""
+    from engine.game import spawn_waves
+    cfg = state.config
+    sizes = {}
+    for rnd in (1, 7, 13):
+        for w in list(state.waves):
+            del state.waves[w]
+        state.round = rnd
+        state.touch()
+        spawn_waves(state)
+        sizes[rnd] = max((w.chips for w in state.waves.values()), default=0)
+    assert sizes[1] == cfg["wave_chips"]
+    assert sizes[7] == cfg["wave_chips_late"]
+    assert sizes[13] == cfg["wave_chips_late2"] > sizes[7]

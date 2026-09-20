@@ -1,0 +1,23 @@
+{
+  "rules": "1.2.0",
+  "roster": "1.3.0",
+  "ai": "1.2.0",
+  "matchup": {
+    "p1": "T1_greedy",
+    "p2": "T1_greedy",
+    "temperature": 0.3
+  },
+  "games": 150,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "replays": 0,
+  "batch_id": "batch_0027",
+  "seed": 2602,
+  "config_overrides": {
+    "tower_hp": 11
+  },
+  "extra": [
+    "P-0003 arm B: tower HP kept at 11, second growth step doing the closing work.",
+    "Baseline batch_0023: median 15, 88.7% Nexus kills, p90 20 - the tail is what fails."
+  ]
+}
