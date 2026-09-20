@@ -55,6 +55,13 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
     steps = state.kits[champ.cid]["abilities"][ability]["steps"]
     prev_uid: Optional[str] = None
     long_sword = "long_sword" in champ.items and ability == "L0"
+    home_tile = state.board.tile_of[champ.hexpos]
+    outward = False
+
+    def mark(target) -> None:
+        nonlocal outward
+        if target is not None and state.board.tile_of[target.hexpos] != home_tile:
+            outward = True
     for i, step in enumerate(steps):
         ch = plan[i] if i < len(plan) else None
         ic = step["icon"]
@@ -64,12 +71,14 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
             if tgt is None or not tgt.alive:
                 continue
             k = step.get("k", 1) * (2 if long_sword else 1)
+            mark(tgt)
             deal_hits(state, champ.team, tgt, k, "chips_" + tgt.kind, champ)
             prev_uid = ch
         elif ic == "AREA":
             r = ability_range(champ, ability, step.get("range", 1))
             for u, _ in units_within(state, node, r, champ.team,
                                      step.get("target", "enemy_any"), champ.hexpos):
+                mark(u)
                 deal_hits(state, champ.team, u, step.get("k", 1), "chips_" + u.kind, champ)
             prev_uid = None
         elif ic == "LINE":
@@ -78,6 +87,7 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
             d = DIRS[ch if ch is not None else 0]
             for u in line_targets(state, (origin[0], origin[1]), d, n, champ.team,
                                   step.get("target", "enemy_any"), src_tile):
+                mark(u)
                 deal_hits(state, champ.team, u, step.get("k", 1), "chips_" + u.kind, champ)
             prev_uid = None
         elif ic in ("MOVE", "DASH", "BLINK"):
@@ -124,6 +134,12 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
             if ch is not None:
                 state.wards[ch] = state.round
                 state.refresh_visibility(allow_flip_back=False)
+    if outward and state.config.get("reveal_on_outward_effect") and \
+            (state.hidden_mask >> home_tile & 1):
+        # RQ-032: acting on something outside the hexgroup gives the position
+        # away for the rest of the round.
+        state.wards[home_tile] = state.round
+        state.refresh_visibility(allow_flip_back=False)
     state.touch()
 
 

@@ -1,6 +1,7 @@
 """Targeting, ability resolution and damage (Rules 4, 6.3, 7, 8, 11)."""
 from __future__ import annotations
 
+from functools import lru_cache
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
 from .hexmap import DIRS, Board, Hex, Node, add, hex_distance
@@ -16,6 +17,17 @@ def death_track_pos(rnd: int) -> int:
         if rnd <= upper:
             return pos
     return 4
+
+
+@lru_cache(maxsize=16)
+def ring_offsets(radius: int) -> Tuple[Tuple[int, int, int], ...]:
+    """(dq, dr, distance) for every hex within ``radius``, centre excluded."""
+    out = []
+    for dq in range(-radius, radius + 1):
+        for dr in range(max(-radius, -dq - radius), min(radius, -dq + radius) + 1):
+            if dq or dr:
+                out.append((dq, dr, max(abs(dq), abs(dr), abs(-dq - dr))))
+    return tuple(out)
 
 
 def effect_distance(state: GameState, src_hex: Hex, src_tile: int, u) -> Optional[int]:
@@ -116,13 +128,35 @@ def units_within(state: GameState, node: Node, radius: int, attacker_team: str,
                  spec: str, src_hex: Optional[Hex] = None) -> List[Tuple[object, int]]:
     """Legal targets within ``radius`` of ``node``, by effect distance."""
     origin, tile = effect_context(state, node, src_hex)
+    hidden = state.hidden_mask
+    tof = state.board.tile_of
+    by_hex = state.by_hex
+    seen = set()
     out = []
-    for u in state.all_units():
-        if not can_be_hit(state, u, attacker_team, spec):
+    for uid in state.by_tile.get(tile, ()):          # the source's own tile is always in reach
+        seen.add(uid)
+        u = state.unit(uid)
+        if u is None or not can_be_hit(state, u, attacker_team, spec):
             continue
-        d = effect_distance(state, origin, tile, u)
-        if d is not None and d <= radius:
+        d = 1 if (hidden >> tile & 1) else hex_distance(origin, u.hexpos)
+        if d <= radius:
             out.append((u, d))
+    for dq, dr, dist in ring_offsets(radius):
+        h = (origin[0] + dq, origin[1] + dr)
+        bucket = by_hex.get(h)
+        if not bucket:
+            continue
+        concealing = bool(hidden >> tof[h] & 1)
+        for uid in bucket:
+            if uid in seen:
+                continue
+            seen.add(uid)
+            u = state.unit(uid)
+            if u is None or not can_be_hit(state, u, attacker_team, spec):
+                continue
+            if concealing and u.kind == "champion":
+                continue                              # RQ-001: concealed
+            out.append((u, dist))
     return out
 
 

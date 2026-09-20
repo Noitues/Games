@@ -152,7 +152,7 @@ class TeamState:
 class GameState:
     __slots__ = (
         "board", "kits", "round", "priority", "hidden_mask", "champs", "waves",
-        "structures", "monsters", "teams", "wards", "_by_node", "_dirty",
+        "structures", "monsters", "teams", "wards", "_by_node", "_by_hex", "_by_tile", "_dirty",
         "winner", "end_reason", "log", "anomalies", "next_uid", "shadow",
         "activation_seq", "config", "turn_order", "turn_index",
     )
@@ -171,6 +171,8 @@ class GameState:
         self.teams: Dict[str, TeamState] = {t: TeamState(t) for t in TEAMS}
         self.wards: Dict[int, int] = {}      # tile -> round it stops forcing visible
         self._by_node: Dict[Node, List[str]] = {}
+        self._by_hex: Dict[Hex, List[str]] = {}
+        self._by_tile: Dict[int, List[str]] = {}
         self._dirty = True
         self.winner: Optional[str] = None
         self.end_reason: str = ""
@@ -206,6 +208,8 @@ class GameState:
         s.teams = {k: v.clone() for k, v in self.teams.items()}
         s.wards = dict(self.wards)
         s._by_node = {}
+        s._by_hex = {}
+        s._by_tile = {}
         s._dirty = True
         s.winner = self.winner
         s.end_reason = self.end_reason
@@ -237,14 +241,33 @@ class GameState:
 
     def reindex(self) -> None:
         idx: Dict[Node, List[str]] = {}
+        by_hex: Dict[Hex, List[str]] = {}
+        by_tile: Dict[int, List[str]] = {}
         nod = self.board.node_of
+        tof = self.board.tile_of
         mask = self.hidden_mask
         for u in self.all_units():
             if not u.alive:
                 continue
             idx.setdefault(nod(u.hexpos, mask), []).append(u.uid)
+            by_hex.setdefault(u.hexpos, []).append(u.uid)
+            by_tile.setdefault(tof[u.hexpos], []).append(u.uid)
         self._by_node = idx
+        self._by_hex = by_hex
+        self._by_tile = by_tile
         self._dirty = False
+
+    @property
+    def by_hex(self) -> Dict[Hex, List[str]]:
+        if self._dirty:
+            self.reindex()
+        return self._by_hex
+
+    @property
+    def by_tile(self) -> Dict[int, List[str]]:
+        if self._dirty:
+            self.reindex()
+        return self._by_tile
 
     @property
     def by_node(self) -> Dict[Node, List[str]]:

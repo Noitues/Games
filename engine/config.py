@@ -27,6 +27,11 @@ DEFAULT_CONFIG = {
     "tower_hits_wave": 1,
     "monster_hits": 1,
     "round_limit": 20,
+    # RQ-032: with concealment one-way, a champion can act out of a hidden
+    # hexgroup without ever being reachable. Turning this on flips the
+    # hexgroup face up for the round as soon as its occupant affects anything
+    # outside it - you may hide, but shooting gives you away.
+    "reveal_on_outward_effect": False,
     # Enumeration caps (engine performance; reported under Anomalies).
     "enum": {"step_cap": 4, "plan_cap": 6, "max_dest": 18, "max_options": 220,
              "placement_cap": 6},

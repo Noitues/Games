@@ -135,3 +135,38 @@ def test_bump_without_intent_stops_at_the_edge(state, board, game):
                if a.champ == mover.uid and a.flip_entry == t and a.intent is None)
     apply_activation(state, act, game)
     assert board.tile_of[mover.hexpos] != t
+
+
+def test_reveal_on_outward_effect(state, board, game):
+    """RQ-032 remedy, off by default: shooting out of a hidden hexgroup gives
+    the position away for the round."""
+    from engine.abilities import apply_plan
+    hider = state.champs["n_ashwyn"]
+    hider.hexpos = (0, 0)
+    tile = board.tile_of[hider.hexpos]
+    tower = state.structures["s_mid_T1"]
+    state.round = 3
+    state.touch()
+    state.refresh_visibility(placer=game.placer)
+    assert state.hidden_mask >> tile & 1
+
+    apply_plan(state, hider, "Q", (tower.uid,))        # outward hit, flag off
+    assert state.hidden_mask >> tile & 1, "as ruled, concealment survives the shot"
+
+    state.config["reveal_on_outward_effect"] = True
+    apply_plan(state, hider, "Q", (tower.uid,))
+    assert not state.hidden_mask >> tile & 1, "with the remedy on, the shot reveals"
+
+
+def test_reveal_on_outward_effect_ignores_targets_inside_the_tile(state, board, game):
+    from engine.abilities import apply_plan
+    state.config["reveal_on_outward_effect"] = True
+    m = state.monsters["dragon_0"]
+    m.alive, m.chips = True, 8
+    c = state.champs["n_thornjaw"]
+    c.hexpos = (2, -1)
+    tile = board.tile_of[c.hexpos]
+    state.touch()
+    state.refresh_visibility(placer=game.placer)
+    apply_plan(state, c, "Q", (m.uid,))
+    assert state.hidden_mask >> tile & 1, "farming your own camp is not a giveaway"

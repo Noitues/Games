@@ -1,0 +1,23 @@
+{
+  "rules": "1.1.0",
+  "roster": "1.2.0",
+  "ai": "1.2.0",
+  "matchup": {
+    "p1": "T1_greedy",
+    "p2": "T1_greedy",
+    "temperature": 0.3
+  },
+  "games": 150,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "replays": 2,
+  "batch_id": "batch_0013",
+  "seed": 1202,
+  "extra": [
+    "Refuge plus the RQ-032 remedy: acting outside the hexgroup reveals it for the round. Arm C.",
+    "T1 mirror rather than T2: this is a pacing and economy read, the same AI plays both sides, and games now run long enough that T2 costs hours."
+  ],
+  "config_overrides": {
+    "reveal_on_outward_effect": true
+  }
+}
