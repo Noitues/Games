@@ -4,8 +4,9 @@ from __future__ import annotations
 from typing import List, Optional, Tuple
 
 from .hexmap import DIRS, Node
-from .resolve import (ability_range, can_be_hit, deal_hits, line_targets,
-                      move_unit, push_pull, step_choices, units_within)
+from .resolve import (ability_range, can_be_hit, deal_hits, effect_context,
+                      line_targets, move_unit, push_pull, step_choices,
+                      units_within)
 from .state import Champion, GameState
 
 Plan = Tuple
@@ -67,15 +68,16 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
             prev_uid = ch
         elif ic == "AREA":
             r = ability_range(champ, ability, step.get("range", 1))
-            for u, _ in units_within(state, node, r, champ.team, step.get("target", "enemy_any")):
+            for u, _ in units_within(state, node, r, champ.team,
+                                     step.get("target", "enemy_any"), champ.hexpos):
                 deal_hits(state, champ.team, u, step.get("k", 1), "chips_" + u.kind, champ)
             prev_uid = None
         elif ic == "LINE":
             n = ability_range(champ, ability, step.get("n", 1))
-            origin = node[1:] if node[0] == "H" else state.board.tile_hexes[node[1]][0]
+            origin, src_tile = effect_context(state, node, champ.hexpos)
             d = DIRS[ch if ch is not None else 0]
             for u in line_targets(state, (origin[0], origin[1]), d, n, champ.team,
-                                  step.get("target", "enemy_any")):
+                                  step.get("target", "enemy_any"), src_tile):
                 deal_hits(state, champ.team, u, step.get("k", 1), "chips_" + u.kind, champ)
             prev_uid = None
         elif ic in ("MOVE", "DASH", "BLINK"):
@@ -93,7 +95,7 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
         elif ic == "ROOT":
             if step.get("area"):
                 for u, _ in units_within(state, node, ability_range(champ, ability, 1),
-                                         champ.team, "enemy_champion"):
+                                         champ.team, "enemy_champion", champ.hexpos):
                     u.rooted = True
             else:
                 tgt = state.unit(prev_uid if step.get("target") == "prev" else ch)

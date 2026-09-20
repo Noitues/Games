@@ -116,17 +116,93 @@ def test_simultaneous_world_damage(state, board):
     assert state.waves["wa"].chips == 2 and state.waves["wb"].chips == 2
 
 
-def test_hidden_tile_extends_a_towers_reach(state, board):
-    """RULE-Q 004 ruling: a hidden tile is one space (Rules 3.1), so a tower
-    inside one reaches every hex bordering the tile."""
+def test_tower_in_a_hidden_tile_reaches_only_its_own_hex(state, board):
+    """RQ-002: a hidden tile is a movement shortcut, not an effect shortcut."""
     from engine.state import Wave
-    t = board.tile_index["Mid Lane S Outer"]         # holds the south mid T1
+    t = board.tile_index["Mid Lane S Outer"]         # holds the south mid T1 at (0,2)
     assert state.hidden_mask >> t & 1
-    state.waves["wa"] = Wave(uid="wa", team="north", lane="mid", chips=3, path_idx=0, hexpos=(0, 0))
+    state.waves["wa"] = Wave(uid="wa", team="north", lane="mid", chips=3, path_idx=0,
+                             hexpos=(0, 0))
+    state.touch()
+    world_phase(state)
+    assert state.waves["wa"].chips == 3, "(0,0) is two hexes from the tower"
+    state.waves["wa"].hexpos = (0, 1)                # now hex-adjacent to (0,2)
     state.touch()
     world_phase(state)
     assert state.waves["wa"].chips == 2
-    state.hidden_mask &= ~(1 << t)                   # face up: (0,2) is 2 hexes away
+
+
+def test_champion_in_a_hidden_tile_cannot_be_targeted_from_outside(state, board):
+    """RQ-001: the tile is a refuge."""
+    from engine.resolve import units_within
+    t = board.tile_index["Mid River"]
+    hider, shooter = state.champs["n_ashwyn"], state.champs["s_dax"]
+    hider.hexpos, shooter.hexpos = (0, 0), (0, 1)
     state.touch()
+    state.refresh_visibility()
+    assert state.hidden_mask >> t & 1
+    seen = [u.uid for u, _ in units_within(state, state.node_of_unit(shooter), 3,
+                                           "south", "enemy_champion", shooter.hexpos)]
+    assert hider.uid not in seen
+    # Only champions are concealed: north's mid T1, also inside a hidden tile,
+    # is still a legal target at plain hex range.
+    seen_any = [u.uid for u, _ in units_within(state, state.node_of_unit(shooter), 3,
+                                               "south", "enemy_any", shooter.hexpos)]
+    assert "n_mid_T1" in seen_any
+
+
+def test_concealment_is_one_way(state, board):
+    """As ruled, a champion may still act out of a hidden tile. The risk that
+    this creates is RQ-032, open with the lead designer."""
+    from engine.resolve import units_within
+    hider = state.champs["n_ashwyn"]
+    hider.hexpos = (0, 0)
+    state.touch()
+    state.refresh_visibility()
+    assert state.hidden_mask >> board.tile_of[hider.hexpos] & 1
+    seen = [u.uid for u, _ in units_within(state, state.node_of_unit(hider), 3,
+                                           "north", "enemy_any", hider.hexpos)]
+    assert "s_mid_T1" in seen, "a concealed champion can still act outward"
+
+
+def test_a_camp_still_hits_a_champion_sharing_its_hidden_tile(state, board):
+    m = state.monsters["dragon_0"]
+    m.alive, m.chips = True, 8
+    c = state.champs["n_thornjaw"]
+    c.hexpos = (2, -1)                                # inside the Dragon Pit tile
+    state.touch()
+    state.refresh_visibility()
+    assert state.hidden_mask >> board.tile_of[c.hexpos] & 1
     world_phase(state)
-    assert state.waves["wa"].chips == 2
+    assert c.hp == c.max_hp - 1
+
+
+def test_waves_in_hidden_tiles_still_trade(state, board):
+    """The refuge must not stall lanes: fixed-hex units fight by hex."""
+    from engine.state import Wave
+    state.waves["wa"] = Wave(uid="wa", team="north", lane="mid", chips=3, path_idx=0,
+                             hexpos=(0, 0))
+    state.waves["wb"] = Wave(uid="wb", team="south", lane="mid", chips=3, path_idx=0,
+                             hexpos=(0, 1))
+    state.touch()
+    state.refresh_visibility()
+    world_phase(state)
+    assert state.waves["wa"].chips == 2 and state.waves["wb"].chips == 2
+
+
+def test_line_catches_by_hex_and_skips_concealed_champions(state, board):
+    from engine.resolve import line_targets
+    shooter = state.champs["n_kestrel"]
+    shooter.hexpos = (0, -1)
+    exposed = state.champs["s_dax"]
+    exposed.hexpos = (0, 0)                           # shares Mid River with nobody else
+    state.touch()
+    state.refresh_visibility()
+    src_tile = board.tile_of[shooter.hexpos]
+    caught = line_targets(state, shooter.hexpos, (0, 1), 6, "north", "enemy_any", src_tile)
+    assert exposed.uid not in [u.uid for u in caught], "concealed in its own hidden tile"
+    state.champs["n_ashwyn"].hexpos = (1, 0)          # north enters Mid River: it flips
+    state.touch()
+    state.refresh_visibility()
+    caught = line_targets(state, shooter.hexpos, (0, 1), 6, "north", "enemy_any", src_tile)
+    assert exposed.uid in [u.uid for u in caught]

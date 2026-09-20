@@ -38,7 +38,19 @@ Rulebook: `rules/Hex-Nexus_Rules_v1.0.0.md`.
 | RQ-026 | Minion waves inside hidden tiles. (3.6) | A wave always holds a specific path hex, even inside a hidden tile, and never uses the hidden shortcut. Confirms the rulebook DEFAULT. | ruled |
 | RQ-027 | A friendly *champion* stands on the minion spawn hex. (9.1) | The spawn is skipped. Rules 9.1 only covers a friendly wave (merge) and an enemy unit (skip); anything else that cannot merge skips the spawn, because a visible hex holds one unit (4.2). | ruled |
 
-### Open for the lead designer
+## Iteration 3 — the lead designer's rulings
+
+All four open items were ruled on. Rules 1.1.0 carries the two rules changes.
+
+| id | ruling | status |
+|---|---|---|
+| RQ-001 / RQ-002 | **Flipped to the safe-haven reading.** A hidden hexgroup hides champions: a champion inside one cannot be targeted, hit or affected from outside, though it may still act outward. Minions, structures and monsters keep their own hex, so a tower inside a hidden hexgroup covers its own hex's neighbours instead of the whole tile edge. Stated in Rules 1.1.0 §3.1, §4.1 and §5.3 as the split between movement distance and effect distance: a hidden hexgroup is a shortcut for walking, not for shooting. | ruled, implemented |
+| RQ-016 | **Bump-and-continue implemented.** The engine no longer ends movement on a flip: the mover stops, the tile flips, and it spends what is left of its movement inside the revealed hexgroup, as Rules 3.3 step 4 always said. The engine simplification is retired from the report labels. | ruled, implemented |
+| RQ-030 | **Recalibrate 14.2 rather than redesign 47 abilities.** An ability is to be priced against the activation it consumes, not only against its AP cost. The cheap slots have to be worth an activation, so the floor rises rather than the ultimates falling. Proposed as an `economy`-class patch with the roster refitted to the new values. | ruled, in progress |
+| RQ-031 | **The T2-vs-T1 acceptance gate drops from 65% to 60%.** Ten calibration variants over 890 games all landed between 52% and 62%, and the search-agreement diagnostic shows depth is not the bottleneck: the searched move differs from the greedy move 45.4% of the time and wins only a few points more often. Balance work needs a stable AI, not a stronger one. Recorded so the check is graded against 60% from now on. | ruled |
+| RQ-032 | **New, open.** Concealment as ruled is one-way: a champion inside a hidden hexgroup cannot be hit from outside but may still attack out of it. That invites a "sniper in the fog" strategy. The lab is running the ruling as given and watching the exploit sweep for it; if it shows up, the natural fix is that acting on a unit outside the hexgroup flips it face up. | **HUMAN** |
+
+### Previously open, now closed
 
 1. **RQ-001 / RQ-002 (hidden-tile range).** These two rulings decide how much the
    hidden-tile pillar is a hiding place versus a trap. Under the current reading a
@@ -63,6 +75,8 @@ Rulebook: `rules/Hex-Nexus_Rules_v1.0.0.md`.
 - Option enumeration is capped per activation (`config.enum`), so a policy sees a
   representative sample of legal plans, not the full combinatorial set. Movement,
   recall and flip-entry options are never dropped by the cap.
+- (Retired at RQ-016: the engine used to end movement when a bump flipped a
+  tile. It now continues, as Rules 3.3 step 4 says.)
 - Ability step enumeration reads the state before the ability resolves, so a
   follow-up step's target list does not account for an earlier step's kill.
   Execution resolves steps in order for real.

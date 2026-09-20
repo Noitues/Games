@@ -96,3 +96,42 @@ def test_move_is_refused_when_the_hex_was_taken_meanwhile(state, board):
     assert a.hexpos == (0, 0) and b.hexpos == (1, 0)
     move_unit(state, a, ("H", -1, 1), ("H", 0, 0))
     assert a.hexpos == (-1, 1)
+
+
+def test_bump_and_continue(state, board, game):
+    """RQ-016: after the bump flips the tile, the mover spends what is left of
+    its movement inside it (Rules 3.3 step 4)."""
+    from engine.game import apply_activation, legal_activations
+    t = board.tile_index["Mid River"]
+    hider = state.champs["s_dax"]
+    hider.hexpos = (0, 0)
+    mover = state.champs["n_thornjaw"]               # Speed 4
+    mover.hexpos = (0, -3)
+    state.touch()
+    state.refresh_visibility(placer=game.placer)
+    assert state.hidden_mask >> t & 1
+
+    acts = [a for a in legal_activations(state, "north")
+            if a.champ == mover.uid and a.flip_entry == t]
+    assert acts, "a bump into the occupied hidden tile is offered"
+    pushes = [a for a in acts if a.intent is not None]
+    assert pushes, "with movement left over, pushing on is offered too"
+
+    apply_activation(state, pushes[0], game)
+    state.refresh_visibility(allow_flip_back=True, placer=game.placer)
+    assert not state.hidden_mask >> t & 1, "the tile flipped"
+    assert board.tile_of[mover.hexpos] == t, "and the mover carried on into it"
+
+
+def test_bump_without_intent_stops_at_the_edge(state, board, game):
+    from engine.game import apply_activation, legal_activations
+    t = board.tile_index["Mid River"]
+    state.champs["s_dax"].hexpos = (0, 0)
+    mover = state.champs["n_thornjaw"]
+    mover.hexpos = (0, -3)
+    state.touch()
+    state.refresh_visibility(placer=game.placer)
+    act = next(a for a in legal_activations(state, "north")
+               if a.champ == mover.uid and a.flip_entry == t and a.intent is None)
+    apply_activation(state, act, game)
+    assert board.tile_of[mover.hexpos] != t

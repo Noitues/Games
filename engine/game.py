@@ -12,6 +12,7 @@ from .hexmap import Board, Hex, Node
 from .items import ALL_ITEMS, CARD_ITEMS, MAX_CARD_COPIES, STAT_ITEMS
 from .kits import load_roster
 from .resolve import (ability_cooldown, adjacent_units, can_be_hit, deal_hits,
+                      effect_adjacent, movement_cost,
                       flip_entry_options, kill_champion, move_unit, reachable,
                       structure_targetable, units_within)
 from .state import (Champion, GameState, Monster, Structure, TEAMS, TeamState,
@@ -227,7 +228,13 @@ def legal_activations(state: GameState, team: str,
                     per_champ.append(Activation(champ=c.uid, dest=dest, ability=key,
                                                 when="before", plan=plan))
         for tile, stop in flip_entry_options(state, c, node, speed)[:4]:
+            # Stop at the edge, or push on into the tile once it flips (RQ-016).
             core.append(Activation(champ=c.uid, dest=stop, flip_entry=tile))
+            spent = movement_cost(state, c, node, stop, speed)
+            if spent is not None and speed - spent > 0:
+                for h in _cap(list(state.board.tile_hexes[tile]), 2):
+                    core.append(Activation(champ=c.uid, dest=stop, flip_entry=tile,
+                                           intent=("H", h[0], h[1])))
         n_avail = max(1, len([x for x in state.champs.values()
                               if x.team == team and x.alive and x.track == 0
                               and not x.activated]))
@@ -250,6 +257,7 @@ def apply_activation(state: GameState, act: Activation, game: "Game") -> None:
     if act.is_pass:
         return
     c = state.champs[act.champ]
+    origin_node = state.node_of_unit(c)
     c.slow = 0
     c.rooted = False
     if act.tonic:
@@ -262,7 +270,26 @@ def apply_activation(state: GameState, act: Activation, game: "Game") -> None:
     if act.dest is not None and act.dest != state.node_of_unit(c):
         move_unit(state, c, act.dest, state.node_of_unit(c))
     if act.flip_entry is not None:
+        start = state.node_of_unit(c) if act.dest is None else act.dest
         state.force_visible(act.flip_entry, placer=game.placer)
+        # RQ-016: the mover stopped for the flip; it may spend what is left of
+        # its movement, now paying 1 per hex inside the revealed tile.
+        if act.intent is not None:
+            speed = champion_speed(state, c, act.tonic)
+            spent = movement_cost(state, c, origin_node, start, speed) or 0
+            remaining = speed - spent
+            if remaining > 0:
+                goal = (act.intent[1], act.intent[2])
+                options = reachable(state, c, state.node_of_unit(c), remaining)
+                best = None
+                for nd in options:
+                    if nd[0] != "H":
+                        continue
+                    d = abs(nd[1] - goal[0]) + abs(nd[2] - goal[1])
+                    if best is None or d < best[0]:
+                        best = (d, nd)
+                if best is not None and best[1] != state.node_of_unit(c):
+                    move_unit(state, c, best[1], state.node_of_unit(c))
     if act.when == "after" and act.ability:
         pay_and_use(state, c, act)
     c.activated = True
@@ -350,8 +377,7 @@ def world_phase(state: GameState) -> None:
     for w in list(state.waves.values()):
         if not w.alive:
             continue
-        node = state.node_of_unit(w)
-        for u in adjacent_units(state, node, exclude=w.uid):
+        for u in effect_adjacent(state, w):
             if not can_be_hit(state, u, w.team, "enemy_any"):
                 continue
             hits = 1
@@ -361,8 +387,7 @@ def world_phase(state: GameState) -> None:
     for s in state.structures.values():
         if not s.alive or s.stype != "tower":
             continue
-        node = state.node_of_unit(s)
-        for u in adjacent_units(state, node, exclude=s.uid):
+        for u in effect_adjacent(state, s):
             if u.team == s.team or u.team is None:
                 continue
             if u.kind == "champion":
@@ -372,8 +397,7 @@ def world_phase(state: GameState) -> None:
     for m in state.monsters.values():
         if not m.alive:
             continue
-        node = state.node_of_unit(m)
-        for u in adjacent_units(state, node, exclude=m.uid):
+        for u in effect_adjacent(state, m):
             if u.kind == "champion":
                 pending.append((u, cfg["monster_hits"], None))
     # Simultaneous application (Rules 5.3).

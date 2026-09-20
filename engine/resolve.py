@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
-from .hexmap import DIRS, Board, Hex, Node, add
+from .hexmap import DIRS, Board, Hex, Node, add, hex_distance
 from .state import Champion, GameState, Monster, Structure, TeamState, Wave, other
 
 DEATH_BANDS = ((4, 2), (8, 3), (10 ** 9, 4))      # Rules 6.4
@@ -18,14 +18,65 @@ def death_track_pos(rnd: int) -> int:
     return 4
 
 
-def adjacent_units(state: GameState, node: Node, exclude: Optional[str] = None) -> List:
+def effect_distance(state: GameState, src_hex: Hex, src_tile: int, u) -> Optional[int]:
+    """Distance for *effects*, in hexes (RQ-001 / RQ-002).
+
+    A hidden hexgroup is a shortcut for movement, not for effects:
+
+    * everything inside one hidden tile is adjacent to everything else in it,
+      as before (Rules 4.1) - that is how a jungler reaches a camp;
+    * a champion inside a hidden tile cannot be reached from outside it: the
+      tile is a refuge (RQ-001);
+    * every other unit keeps its own hex, so a tower, camp or wave inside a
+      hidden tile reaches, and is reached at, plain hex range (RQ-002).
+
+    Concealment is one-way, as ruled: a champion may still act out of a hidden
+    tile. Whether that needs an answer is RQ-032, open with the lead designer.
+
+    Returns None when the effect cannot reach the target at all.
+    """
+    board = state.board
+    tgt_tile = board.tile_of[u.hexpos]
+    tgt_hidden = bool(state.hidden_mask >> tgt_tile & 1)
+    if tgt_tile == src_tile:
+        return 1 if tgt_hidden else hex_distance(src_hex, u.hexpos)
+    if tgt_hidden and u.kind == "champion":
+        return None
+    return hex_distance(src_hex, u.hexpos)
+
+
+def effect_context(state: GameState, node: Node, fallback_hex: Optional[Hex] = None):
+    """(hex, tile) for an effect used from ``node``. A champion inside a hidden
+    tile acts from its own hex; only incoming effects are blocked."""
+    tile = state.board.node_tile(node)
+    if node[0] == "H":
+        return ((node[1], node[2]), tile)
+    return (fallback_hex or state.board.tile_hexes[tile][0], tile)
+
+
+def effect_adjacent(state: GameState, u) -> List:
+    """Units ``u`` reaches in the World Phase (Rules 5.3), under RQ-002."""
+    tile = state.board.tile_of[u.hexpos]
     out = []
-    for nb in state.board.graph_neighbors(node, state.hidden_mask):
-        for u in state.units_at(nb):
-            if u.uid != exclude:
-                out.append(u)
-    for u in state.units_at(node):
-        if u.uid != exclude:
+    for other_unit in state.all_units():
+        if not other_unit.alive or other_unit.uid == u.uid:
+            continue
+        d = effect_distance(state, u.hexpos, tile, other_unit)
+        if d is not None and d <= 1:
+            out.append(other_unit)
+    return out
+
+
+def adjacent_units(state: GameState, node: Node, exclude: Optional[str] = None,
+                   src_hex: Optional[Hex] = None) -> List:
+    """Effect-adjacency from a node (used for card targets and AI threat reads)."""
+    origin, tile = effect_context(state, node, src_hex)
+    out = []
+    for u in state.all_units():
+        if not u.alive or u.uid == exclude:
+            continue
+        d = effect_distance(state, origin, tile, u)
+        if d is not None and d <= 1:
             out.append(u)
     return out
 
@@ -62,13 +113,16 @@ def structure_targetable(state: GameState, s: Structure) -> bool:
 
 
 def units_within(state: GameState, node: Node, radius: int, attacker_team: str,
-                 spec: str) -> List[Tuple[object, int]]:
-    seen = state.board.nodes_within(node, radius, state.hidden_mask)
+                 spec: str, src_hex: Optional[Hex] = None) -> List[Tuple[object, int]]:
+    """Legal targets within ``radius`` of ``node``, by effect distance."""
+    origin, tile = effect_context(state, node, src_hex)
     out = []
-    for nd, dist in seen.items():
-        for u in state.units_at(nd):
-            if can_be_hit(state, u, attacker_team, spec):
-                out.append((u, dist))
+    for u in state.all_units():
+        if not can_be_hit(state, u, attacker_team, spec):
+            continue
+        d = effect_distance(state, origin, tile, u)
+        if d is not None and d <= radius:
+            out.append((u, d))
     return out
 
 
@@ -273,17 +327,21 @@ def step_choices(state: GameState, champ: Champion, node: Node, step: dict,
     if ic in ("HIT", "AREA", "LINE"):
         if ic == "HIT":
             r = ability_range(champ, ability, step.get("range", 1))
-            cands = [u for u, _ in units_within(state, node, r, team, step.get("target", "enemy_any"))]
+            cands = [u for u, _ in units_within(state, node, r, team,
+                                                step.get("target", "enemy_any"), champ.hexpos)]
             return _cap([u.uid for u in cands], cap)
         if ic == "AREA":
             r = ability_range(champ, ability, step.get("range", 1))
-            hits = units_within(state, node, r, team, step.get("target", "enemy_any"))
+            hits = units_within(state, node, r, team, step.get("target", "enemy_any"),
+                                champ.hexpos)
             return [None] if hits else []
         r = ability_range(champ, ability, step.get("n", 1))
-        origin = node[1:] if node[0] == "H" else state.board.tile_hexes[node[1]][0]
+        src_hex, src_tile = effect_context(state, node, champ.hexpos)
+        origin = src_hex
         out = []
         for i, d in enumerate(DIRS):
-            if line_targets(state, (origin[0], origin[1]), d, r, team, step.get("target", "enemy_any")):
+            if line_targets(state, (origin[0], origin[1]), d, r, team,
+                            step.get("target", "enemy_any"), src_tile):
                 out.append(i)
         return _cap(out, cap)
     if ic in ("MOVE", "DASH", "BLINK"):
@@ -295,7 +353,7 @@ def step_choices(state: GameState, champ: Champion, node: Node, step: dict,
             return [None] if prev_uid else []
         spec = step.get("target", "enemy_any")
         r = ability_range(champ, ability, step.get("range", 1))
-        cands = [u for u, _ in units_within(state, node, r, team, spec)]
+        cands = [u for u, _ in units_within(state, node, r, team, spec, champ.hexpos)]
         if ic in ("PUSH", "PULL"):
             cands = [u for u in cands if u.kind in ("champion", "wave")]
         if ic == "DELAY":
@@ -305,7 +363,8 @@ def step_choices(state: GameState, champ: Champion, node: Node, step: dict,
         if step.get("target") == "self":
             return [None]
         r = ability_range(champ, ability, step.get("range", 1))
-        allies = [u for u, _ in units_within(state, node, r, team, "ally_champion")]
+        allies = [u for u, _ in units_within(state, node, r, team, "ally_champion",
+                                             champ.hexpos)]
         if ic == "HEAL":
             allies = [u for u in allies if u.hp < u.max_hp] or allies
         if ic == "HASTE":
@@ -327,19 +386,21 @@ def _cap(seq: List, cap: int) -> List:
     return [seq[int(i * stride)] for i in range(cap)]
 
 
-def line_targets(state: GameState, origin: Hex, d: Hex, n: int, team: str, spec: str) -> List:
-    """Units caught by a LINE. A unit inside a hidden tile is caught when any
-    hex of that tile lies on the line (the tile is one space, Rules 3.1)."""
-    nodes = []
-    for h in state.board.line_hexes(origin, d, n):
-        nd = state.board.node_of(h, state.hidden_mask)
-        if nd not in nodes:
-            nodes.append(nd)
+def line_targets(state: GameState, origin: Hex, d: Hex, n: int, team: str, spec: str,
+                 src_tile: Optional[int] = None) -> List:
+    """Units caught by a LINE. Hexes, not tiles (RQ-002): a unit is caught when
+    its own hex lies on the line, and a concealed champion is never caught."""
+    if src_tile is None:
+        src_tile = state.board.tile_of[origin]
+    on_line = set(state.board.line_hexes(origin, d, n))
     out = []
-    for nd in nodes:
-        for u in state.units_at(nd):
-            if can_be_hit(state, u, team, spec) and u not in out:
-                out.append(u)
+    for u in state.all_units():
+        if u.hexpos not in on_line or not can_be_hit(state, u, team, spec):
+            continue
+        tile = state.board.tile_of[u.hexpos]
+        if tile != src_tile and u.kind == "champion" and (state.hidden_mask >> tile & 1):
+            continue
+        out.append(u)
     return out
 
 
@@ -409,6 +470,28 @@ def _passable(state: GameState, nd: Node, champ: Champion) -> bool:
     if u.kind == "monster":
         return False
     return u.team == champ.team
+
+
+def movement_cost(state: GameState, champ: Champion, start: Node, dest: Node,
+                   budget: int) -> Optional[int]:
+    """Movement spent walking from ``start`` to ``dest`` (Rules 4.1/4.3)."""
+    if start == dest:
+        return 0
+    board = state.board
+    seen = {start: 0}
+    frontier = [start]
+    for d in range(1, budget + 1):
+        nxt = []
+        for nd in frontier:
+            for nb in board.graph_neighbors(nd, state.hidden_mask):
+                if nb in seen or not _passable(state, nb, champ):
+                    continue
+                seen[nb] = d
+                if nb == dest:
+                    return d
+                nxt.append(nb)
+        frontier = nxt
+    return None
 
 
 def flip_entry_options(state: GameState, champ: Champion, start: Node, budget: int) -> List[Tuple[int, Node]]:

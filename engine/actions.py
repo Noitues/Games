@@ -14,6 +14,7 @@ class Activation:
     dest: Optional[Node] = None          # node after the Speed movement
     recall: bool = False
     flip_entry: Optional[int] = None     # tile bumped into (Rules 3.3)
+    intent: Optional[Node] = None        # where to push on after that flip
     ability: Optional[str] = None        # "L0" | "Q" | "W" | "E" | "R"
     when: str = "after"                  # ability before or after the movement
     plan: Tuple = ()                     # one choice per icon step
