@@ -1,0 +1,19 @@
+{
+  "rules": "1.1.1",
+  "roster": "1.2.0",
+  "ai": "1.2.0",
+  "matchup": {
+    "p1": "T1_greedy",
+    "p2": "T1_greedy",
+    "temperature": 0.3
+  },
+  "games": 300,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "replays": 3,
+  "batch_id": "batch_0022",
+  "seed": 2201,
+  "extra": [
+    "P-0002 confirmation at the new default (tower HP 11), 300 games for a tighter interval."
+  ]
+}

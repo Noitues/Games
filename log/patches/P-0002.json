@@ -1,0 +1,84 @@
+{
+  "patch_id": "P-0002",
+  "from": {
+    "rules": "1.1.0",
+    "roster": "1.2.0",
+    "ai": "1.2.0"
+  },
+  "to": {
+    "rules": "1.1.1"
+  },
+  "lever_class": "pacing",
+  "changes": [
+    {
+      "target": "rules:8.tower_hp",
+      "from": 8,
+      "to": 11
+    }
+  ],
+  "evidence": "batch_0016 (150 games, T1 mirror, rules 1.1.0, roster 1.2.0): median game length 11 rounds [11, 11] against the 13-15 target the lead designer set, with 97.3% of games ending by Nexus kill.",
+  "hypothesis": "Games end too early because the structures they have to chew through are too cheap, not because champions kill too fast - champion combat is nearly absent under the current rules (0.20 kills per game). Raising tower HP lengthens the siege, which is the phase that actually fills the rounds, while leaving the Nexus alone so the close-out stays decisive.",
+  "success_metric": "Median game length in 13-15 rounds and at least 95% of games still ending by Nexus kill.",
+  "revert_if": "Nexus-kill rate below 95%, or median length above 16, or mean AP per team-round moves by more than 15%.",
+  "side_effects": "Towers are chips, so AP per team-round rises about 7% (15.31 to 16.40). Sieging is worth more and first-tower timings move later; champion win rates will shift slightly with them.",
+  "pillar_change": false,
+  "alternatives_tested": [
+    {
+      "config": "towers 9, Nexus 14",
+      "batch": "batch_0019",
+      "median": 13,
+      "nexus_pct": 96.7
+    },
+    {
+      "config": "towers 10, Nexus 12",
+      "batch": "batch_0020",
+      "median": 13,
+      "nexus_pct": 98.0
+    },
+    {
+      "config": "towers 10, Nexus 16",
+      "batch": "batch_0018",
+      "median": 14,
+      "nexus_pct": 92.7,
+      "note": "raising the Nexus too pushes the tail past the round limit and fails the 95% floor"
+    },
+    {
+      "config": "towers 11, Nexus 12",
+      "batch": "batch_0021",
+      "median": 14,
+      "nexus_pct": 98.7,
+      "note": "chosen: centres the target band with the highest close-out rate, and moves one number"
+    }
+  ],
+  "result": {
+    "verdict": "PASS - adopted as the default in rules 1.1.1",
+    "median_length": 14,
+    "p10": 11,
+    "p90": 17,
+    "nexus_pct": 98.7,
+    "ap_per_team_round": {
+      "before": 15.31,
+      "after": 16.4,
+      "change_pct": 7.1
+    },
+    "confirmation_batch": "batch_0022 (300 games, T1 mirror, tower HP 11 as the default)",
+    "confirmed": {
+      "median_length": 14.0,
+      "median_ci": [
+        13.0,
+        14.0
+      ],
+      "p10": 11,
+      "p90": 18,
+      "nexus_pct": 97.3,
+      "nexus_ci": [
+        94.8,
+        98.6
+      ],
+      "priority_wr": 49.0,
+      "north_wr": 47.0,
+      "ap_per_team_round": 2.58
+    },
+    "note": "Median length passes its Rules 14.3 target for the first time in the project, centred in the 13-15 band the lead designer asked for. The Nexus-kill check reads INCONCLUSIVE rather than PASS only because the interval clips 95 at the bottom (94.8); the point estimate is 97.3%."
+  }
+}

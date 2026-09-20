@@ -9,20 +9,22 @@ from engine.resolve import deal_hits, death_track_pos, structure_targetable
 def test_chip_removed_by_a_champion_becomes_ap(state):
     c = state.champs["n_kestrel"]
     tower = state.structures["s_mid_T1"]
+    full = tower.chips
     state.teams["north"].ap = 0
     got = deal_hits(state, "north", tower, 3, "chips_structure", c)
     assert got == 3
     assert state.teams["north"].ap == 3
     assert c.ap_earned == 3
-    assert tower.chips == 5
+    assert tower.chips == full - 3
 
 
 def test_world_phase_chips_go_to_the_supply(state):
     tower = state.structures["s_mid_T1"]
+    full = tower.chips
     state.teams["north"].ap = 0
     deal_hits(state, "north", tower, 2, "world", None)
     assert state.teams["north"].ap == 0
-    assert tower.chips == 6
+    assert tower.chips == full - 2
 
 
 def test_hitting_a_champion_gains_no_ap_but_a_kill_gives_one(state):

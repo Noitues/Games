@@ -1,0 +1,23 @@
+{
+  "rules": "1.1.0",
+  "roster": "1.2.0",
+  "ai": "1.2.0",
+  "matchup": {
+    "p1": "T1_greedy",
+    "p2": "T1_greedy",
+    "temperature": 0.3
+  },
+  "games": 150,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "replays": 0,
+  "batch_id": "batch_0021",
+  "seed": 2101,
+  "config_overrides": {
+    "tower_hp": 11,
+    "nexus_hp": 12
+  },
+  "extra": [
+    "P-0002 arm D: towers 8->11, Nexus unchanged. Arm C landed median 13 at the bottom of the 13-15 target; this asks whether one more step centres it without costing the close-out."
+  ]
+}

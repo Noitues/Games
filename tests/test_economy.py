@@ -62,11 +62,12 @@ def test_long_sword_doubles_l0(state):
     c = state.champs["n_kestrel"]
     c.items.add("long_sword")
     tower = state.structures["s_mid_T1"]
+    full = tower.chips
     c.hexpos = (0, 1)
     state.hidden_mask = 0
     state.touch()
     apply_plan(state, c, "L0", (tower.uid,))
-    assert tower.chips == 6
+    assert tower.chips == full - 2
 
 
 def test_longbow_extends_range(state):

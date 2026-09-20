@@ -82,11 +82,12 @@ def test_empowered_waves_deal_two_hits_to_structures(state, board):
     from engine.game import world_phase
     state.hidden_mask = 0
     tower = state.structures["s_mid_T1"]
+    full = tower.chips
     state.waves["w"] = Wave(uid="w", team="north", lane="mid", chips=3, path_idx=0,
                             hexpos=(0, 1), empowered=True)
     state.touch()
     world_phase(state)
-    assert tower.chips == 6
+    assert tower.chips == full - 2
 
 
 def test_spawn_is_skipped_when_a_friendly_champion_holds_the_hex(state, board):

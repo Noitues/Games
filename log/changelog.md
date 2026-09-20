@@ -114,3 +114,40 @@ backlog item; escalated to the lead designer.
 |---|---|
 | RQ-031 | The T2-vs-T1 acceptance gate drops from 65% to 60%: ten calibration variants over 890 games all landed between 52% and 62%, and the search-agreement diagnostic shows depth is not the bottleneck. At 58.5% [53.6, 63.2] the check is INCONCLUSIVE against the new gate rather than a pass - the interval straddles it. |
 | RQ-032 | Open. Concealment is one-way as ruled, so a champion can shoot out of a hidden hexgroup without being reachable. Watching the exploit sweep for a sniper-in-the-fog strategy. |
+
+## Iteration 4 - RQ-032 retest and the pacing patch
+
+| artefact | version | change |
+|---|---|---|
+| rules | 1.1.0 -> 1.1.1 | P-0002: tower HP 8 -> 11. One number, the gentlest lever that lands the target. |
+| engine | 0.3.0 -> 0.3.1 | Counts attacks made from inside a hidden hexgroup on something outside it, and reports them (Part 9b). Calibration tool takes config_overrides so rules variants can run head to head. |
+| ai | 1.2.0 | Adds X_exploit_fogsnipe, the policy RQ-032 is actually about. |
+| tests | - | 105, with the tower-HP assertions made config-relative. |
+
+### RQ-032 retested on the corrected rules
+
+The narrow question is clean. X_exploit_fogsnipe - a policy that values standing
+in a hidden hexgroup and shooting out of it - loses to T2 at 12.5% [5.5, 26.1]
+with concealment one-way as ruled, and at 2.5% with the reveal remedy on. Hiding
+and poking is not degenerate, so RQ-032 needs no rule change on its own account.
+
+Measuring it found something larger, logged as RQ-034: 85% of all ability uses
+are already made from inside a hidden hexgroup at a target outside it, because a
+champion's tile is hidden whenever no enemy stands in it. Champion kills per
+game: 17.31 under the literal reading (batch_0004), 0.20 under the refuge as
+ruled (batch_0016), 2.92 with the reveal remedy (batch_0017). A 5v5 skirmish is
+now settled almost entirely by structures.
+
+### P-0002 pacing sweep (150-game T1 mirrors)
+
+| towers / Nexus | median | p10 | p90 | Nexus kills |
+|---|---|---|---|---|
+| 8 / 12 (before) | 11 | 9 | 16 | 97.3% |
+| 9 / 14 | 13 | 10 | 17 | 96.7% |
+| 10 / 12 | 13 | 10 | 17 | 98.0% |
+| 10 / 16 | 14 | 11 | 19 | 92.7% |
+| **11 / 12 (chosen)** | **14** | 11 | 17 | **98.7%** |
+
+Raising the Nexus as well pushes the tail past the round limit and fails the 95%
+floor. Raising tower HP alone lengthens the siege - the phase that actually fills
+the rounds - and leaves the close-out decisive.

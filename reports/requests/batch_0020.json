@@ -1,0 +1,23 @@
+{
+  "rules": "1.1.0",
+  "roster": "1.2.0",
+  "ai": "1.2.0",
+  "matchup": {
+    "p1": "T1_greedy",
+    "p2": "T1_greedy",
+    "temperature": 0.3
+  },
+  "games": 150,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "replays": 0,
+  "batch_id": "batch_0020",
+  "seed": 2001,
+  "config_overrides": {
+    "tower_hp": 10,
+    "nexus_hp": 12
+  },
+  "extra": [
+    "P-0002 arm C: towers 8->10, Nexus left at 12. Lengthens the siege without slowing the close-out, which is what cost arm A its Nexus-kill rate."
+  ]
+}

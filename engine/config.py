@@ -13,7 +13,7 @@ DEFAULT_CONFIG = {
         "dragon":    {"hp": 8, "spawn": 3, "respawn": 4},
         "baron":     {"hp": 12, "spawn": 7, "respawn": 5},
     },
-    "tower_hp": 8,
+    "tower_hp": 11,     # P-0002: was 8; lengthens the siege into the 13-15 round target
     "nexus_hp": 12,
     "wave_chips": 3,
     "wave_chips_late": 4,
