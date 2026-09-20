@@ -65,6 +65,8 @@ def main() -> None:
     ap.add_argument("--t2vt1", dest="b_t2t1", default="batch_0006")
     ap.add_argument("--mirror", dest="b_mirror", default="batch_0007")
     ap.add_argument("--exploit-games", type=int, default=60)
+    ap.add_argument("--t2-gate", type=float, default=60.0,
+                    help="RQ-031 lowered this from 65 to 60")
     ap.add_argument("--seed", type=int, default=777100)
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--ai", default="1.1.0")
@@ -83,8 +85,10 @@ def main() -> None:
                    "PASS" if lo >= 90 else ("FAIL" if hi < 90 else "INCONCLUSIVE"),
                    args.b_t1t0))
     p, lo, hi = head_to_head(t2t1)
-    checks.append(("T2 beats T1 in >=65% of games", f"{p:.1f}% [{lo:.1f}, {hi:.1f}]",
-                   "PASS" if lo >= 65 else ("FAIL" if hi < 65 else "INCONCLUSIVE"),
+    gate = args.t2_gate
+    checks.append((f"T2 beats T1 in >={gate:.0f}% of games (RQ-031 lowered this from 65)",
+                   f"{p:.1f}% [{lo:.1f}, {hi:.1f}]",
+                   "PASS" if lo >= gate else ("FAIL" if hi < gate else "INCONCLUSIVE"),
                    args.b_t2t1))
     p, lo, hi = head_to_head(mirror)
     checks.append(("Mirror T2 vs T2, seats swapped, lands at 50 +/- 2%",

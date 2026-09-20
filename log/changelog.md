@@ -97,3 +97,20 @@ searched move differing from the greedy move 45.4% of 399 decisions, at an
 average cost of 4.1 points of immediate value, for a few points of win rate.
 Recorded as a finding about the game's decision structure rather than an AI
 backlog item; escalated to the lead designer.
+
+## Iteration 3 - the lead designer's rulings
+
+| artefact | version | change |
+|---|---|---|
+| rules | 1.0.0 -> 1.1.0 | RQ-001/RQ-002: hidden hexgroups become a refuge. Movement distance and effect distance are now separate - a hidden hexgroup is a shortcut for walking, not for shooting. Champions inside one cannot be reached from outside; minions, structures and monsters keep their own hex, so a tower inside a hidden hexgroup covers its own hex's neighbours. RQ-016: the rulebook's bump-and-continue is implemented rather than simplified. RQ-030: 14.2 credits cut to -2 per AP and -1.5 per cooldown round, ability floor raised to 3, and R capped at 1.75x the Q/W/E mean. |
+| roster | 1.1.0 -> 1.2.0 | Refit to the new table: 48 of 100 abilities changed, 10 single-step stat changes, no ability made more expensive. Mean R gross 13.1 -> 9.9. |
+| engine | 0.2.0 -> 0.3.0 | Effect geometry separated from movement geometry; bump-and-continue; canonical activation options (stand still, recall home) can no longer be sampled away by the enumeration cap. |
+| ai | 1.2.0 | Unchanged. |
+| tests | - | 102 tests. |
+
+### Rulings recorded
+
+| id | ruling |
+|---|---|
+| RQ-031 | The T2-vs-T1 acceptance gate drops from 65% to 60%: ten calibration variants over 890 games all landed between 52% and 62%, and the search-agreement diagnostic shows depth is not the bottleneck. At 58.5% [53.6, 63.2] the check is INCONCLUSIVE against the new gate rather than a pass - the interval straddles it. |
+| RQ-032 | Open. Concealment is one-way as ruled, so a champion can shoot out of a hidden hexgroup without being reachable. Watching the exploit sweep for a sniper-in-the-fog strategy. |
