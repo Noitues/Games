@@ -66,3 +66,45 @@ Rulebook: `rules/Hex-Nexus_Rules_v1.0.0.md`.
 - Ability step enumeration reads the state before the ability resolves, so a
   follow-up step's target list does not account for an earlier step's kill.
   Execution resolves steps in order for real.
+
+## Iteration 2 (Phase 1 close-out) — RULE-Q rulings
+
+| id | question | ruling | status |
+|---|---|---|---|
+| RQ-030 | The Rules 14.3 ability-usage check fails 47 of 100 abilities. Is that 47 weak kits (a Designer problem) or one shared cause (a 14.2 pricing problem)? | One shared cause. `tools/ability_usage.py` regroups the same numbers by price rather than by champion, and usage rises monotonically with both levers the budget calculator charges for: 9.3% mean use at 0 AP up to 54.9% at 3 AP, and 13.3% at cooldown 1 up to 44.2% at cooldown 3. The expensive abilities are the used ones. Per-champion, 16 of 25 champions spend =>70% of their activations on one ability and only 2.36 of 4 abilities clear 5%. This is a 14.2 pricing question, not 47 kit redesigns, and the pricing question is downstream of the whole-card-cooldown pillar — so it needs a lead-designer ruling before Phase 4 spends any lever on it. | **HUMAN** |
+
+### Why the direction matters
+
+A cost curve is meant to ration: an ability that costs more should be used less
+often, because it is affordable less often and its cooldown keeps the card off
+the board longer. Hex-Nexus produces the opposite ordering.
+
+The mechanism is the whole-card-cooldown pillar (Rules 6.4, Prompts 2.3). Using
+*any* ability spends the same thing — the champion's activation, and its card's
+place on the board. AP and cooldown are charged on top of that, but they are the
+smaller term. So within a round where several abilities are ready, the only
+question is which one is biggest, and a 0-AP ability is not cheap at all: it
+costs a full activation, exactly what the ultimate costs.
+
+The denominators make that comparison direct rather than inferred. The engine
+records an opportunity per (round, champion, ability) whenever the ability was
+affordable and had a legal plan (RQ-014), so every ability ready in the same
+round shares that round's denominator and only one of them can be used. The
+cheap abilities are not going unmeasured; they are being passed over.
+
+This is the same finding `tools/search_agreement.py` reached from the AI side.
+There, search gave up 4.1 points of immediate value on 45.4% of decisions and
+won barely more often — activations are close to value-neutral *across plans*.
+Here the neutrality shows up *within a kit*: three of a champion's four
+abilities are dominated by the fourth. Both are readings of one pillar, which is
+why neither is fixable in the AI backlog.
+
+### Open for the lead designer
+
+3. **RQ-030 (ability pricing vs the activation).** Two directions, both pillar-
+   adjacent. (a) Recalibrate 14.2 so an ability is priced against the activation
+   it consumes rather than against its AP cost — the cheap slots need to be worth
+   an activation, which means raising the floor rather than nerfing the
+   ultimates. (b) Change what an activation buys, so that using Q and using R are
+   not the same expenditure — that is a whole-card-cooldown change and therefore
+   a pillar decision. Direction (a) is a Designer brief; direction (b) is yours.

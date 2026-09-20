@@ -61,11 +61,35 @@ the extreme breaks the game — the Phase 5 gate is already met.
 
 The two new failures both need a decision rather than more code. **Ability
 usage**: 47 of 100 abilities are used in under 5% of the rounds where they are
-affordable and have a legal target, which is a kit-design signal now that the
-AI is stable — the Designer's brief for Phase 4, with the caveat that T2 is
-only ~8 points better than greedy. **Runtime**: at 7.4s per game a 2,000-game
-T2 batch takes ~4 hours on 4 cores, and Phase 4 needs ~5,000 games; see §5.5
-for the three ways out.
+affordable and have a legal target. That first read as 47 weak kits, i.e. the
+Designer's brief for Phase 4; regrouping the same numbers by price instead of by
+champion says otherwise — see the next paragraph. **Runtime**: at 7.4s per game
+a 2,000-game T2 batch takes ~4 hours on 4 cores, and Phase 4 needs ~5,000 games;
+see §5.5 for the three ways out.
+
+**The ability-usage failure has one cause, not 47** (`tools/ability_usage.py`,
+`reports/ability_usage_batch_0009.md`, RQ-030). Usage rises monotonically with
+both levers §14.2 charges for:
+
+| AP cost | 0 | 1 | 2 | 3 |
+|---|---|---|---|---|
+| mean use | 9.3% | 17.6% | 39.6% | 54.9% |
+
+| cooldown | 1 | 2 | 3 |
+|---|---|---|---|
+| mean use | 13.3% | 22.9% | 44.2% |
+
+The expensive abilities are the used ones — the exact inverse of what a cost
+curve should produce. Per champion, 16 of 25 spend ≥70% of their activations on
+a single ability and only 2.36 of 4 clear 5%; R is the top ability for 17 of 25.
+Because the engine scores an opportunity per (round, champion, ability) whenever
+it was affordable with a legal plan (RQ-014), abilities ready in the same round
+share a denominator, so the cheap slots are being *passed over*, not left
+unmeasured. The mechanism is whole-card cooldown: any ability spends the same
+activation, so a 0-AP ability is not cheap, and the only live question is which
+ready ability is biggest. This is the within-kit twin of what
+`tools/search_agreement.py` found across plans, and neither is an AI bug. It
+needs your ruling (RQ-030) before Phase 4 spends a lever on it.
 
 **AI strength.**
 
@@ -133,6 +157,14 @@ Facilitator's triage order puts AI competence first):
    zones. This shapes the hidden-hexgroup pillar's feel.
 3. **RQ-016**: the engine ends a champion's movement when a bump flips a tile,
    where Rules 3.3 lets it continue. Engine simplification only.
+4. **RQ-030 (new).** Ability pricing runs backwards: the more an ability costs,
+   the more it is used. Either §14.2 is recalibrated to price an ability against
+   the activation it consumes rather than against AP (a Designer brief — raise
+   the cheap slots, do not nerf the ultimates), or what an activation buys
+   changes, which is a whole-card-cooldown pillar decision and therefore yours.
+   Recommendation: rule for the §14.2 recalibration, since it shares a root
+   cause with the Phase 3 AP outliers and can be tested without touching a
+   pillar.
 
 ## 5. Picking the work back up
 
