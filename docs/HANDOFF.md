@@ -11,20 +11,30 @@ on `claude/hex-nexus-multiagent-prompts-aivg93`, pushed.
 | Roster expansion to 25 | **complete** — roster 1.3.0 |
 | 1 AI calibration | **closed** on the lead designer's ruling (RQ-031, gate lowered to 60%). T2 reads 58.5% [53.6, 63.2] — inconclusive against the new gate, not a pass. |
 | 2 Correctness and pacing | **in progress, one arm outstanding.** Median length passed on T1 (P-0002) but that tuning was measured on the wrong AI — see §3. Being re-tuned on T2. |
-| 3 Economy | **not started, but diagnosed** — see §5. |
+| 3 Economy | **patched, not yet measured** — P-0004 is in rules 1.3.0 and roster 1.4.0; `batch_0032` will judge it. See §5. |
 | 4 Champion balance | not started |
 | 5 Robustness | exploit gate already met; needs a re-run on rules 1.2.0 |
 | 6 Release candidate | not started |
 
-Versions: rules **1.2.0**, roster **1.3.0**, ai **1.2.0**, **108 tests** (~60s).
+Versions: rules **1.3.0**, roster **1.4.0**, ai **1.2.0**, **110 tests** (~55s).
+
+The engine default `tower_hp` is still **11**, the value P-0002 chose against
+T1. It is known to be wrong for T2 (§3) and is waiting on `batch_0031`.
 
 ## 2. What is in flight
 
-| run | state |
-|---|---|
-| `batch_0030` — T2 mirror, 80 games, tower HP 15 | **running when this was written.** Re-run with `python tools/run_batch.py reports/requests/batch_0030.json --workers 4 --baseline reports/batch_0028.json` |
+Nothing is running — the pacing arms were stopped mid-run when work paused.
+Three batches are written and ready but have **no results**:
 
-Nothing else is outstanding. Every other batch is committed.
+| run | what it settles | command |
+|---|---|---|
+| `batch_0031` — T2, 80 games, tower HP 16 | the leading candidate for P-0003 | `python tools/run_batch.py reports/requests/batch_0031.json --workers 4 --baseline reports/batch_0029.json` |
+| `batch_0030` — T2, 80 games, tower HP 15 | the fallback if 16 overshoots | `python tools/run_batch.py reports/requests/batch_0030.json --workers 4 --baseline reports/batch_0029.json` |
+| `batch_0032` — T2, 120 games, roster 1.4.0 | judges P-0004, the economy patch | `python tools/run_batch.py reports/requests/batch_0032.json --workers 4 --baseline reports/batch_0028.json` |
+
+A T2 batch costs roughly 18s a game on 4 cores, so each of these is 25–40
+minutes. **`batch_0032` is the one to run first** — P-0004 is committed to the
+rulebook and roster but has never been measured.
 
 ## 3. The finding that matters most right now
 
@@ -112,7 +122,7 @@ up for the rest of the round, which is what turns an ambush into a one-shot
 rather than a firing position. That is an extra rule beyond what was asked, it
 is in Rules 1.2.0 §3.1, and it should be confirmed or removed.
 
-## 5. Economy: diagnosed, not yet patched
+## 5. Economy: patched, awaiting its batch
 
 Measured on T2 (`batch_0028`), four champions sit far above the 1.5× target:
 
@@ -128,13 +138,29 @@ ability type is not the problem — a *cheap* one is. This confirms the standing
 hypothesis that §14.2 prices AREA and LINE by hits rather than by the chips they
 can bank: a 0-AP AREA touching three units banks three AP for nothing.
 
-Proposed as P-0004, an economy-class patch, not yet written or run:
-1. AREA point value steeper by radius (r1 5→6, r2 7→10).
-2. LINE (2+n) per hit → (3+n) per hit.
-3. A §14.2 constraint that any ability containing AREA or LINE costs at least
-   1 AP — no free farming engines.
+**P-0004 is written, committed and unmeasured** (`log/patches/P-0004.json`).
+Rules 1.3.0 prices AREA at 6 per hit at r1 climbing 4 per extra step of range,
+LINE at (3 + n) per hit, and forbids a free AREA or LINE outright. Roster 1.4.0
+is refit to it: 13 of 100 abilities changed, 3 single-step stat changes, and no
+free farming engine left anywhere. All 25 kits validate and the RQ-034 ambush
+tags survive the refit.
 
-Then refit only the kits that violate, rather than the whole roster.
+Its success metric is: no champion above 1.5× the roster-mean AP per round in a
+T2 mirror, top champion under 2.0×. `batch_0032` decides it.
+
+**One thing in P-0004 wants a designer's eye.** grivven is the single kit the
+new table could not price. Its R paired AREA with ROOT, which costs 14 gross
+under the new values — above the 1.75× spread cap at every combination of
+numbers, with no room left under the 22 ± 2 band. Rules §14.2 allows a redesign
+once stat and number levers are exhausted, so its R became a harder area hit
+(AREA k2) and **lost the root**. That is a genuine identity change, not a
+number tweak.
+
+Two bugs surfaced while building this, both fixed and worth knowing about:
+`tools/refit_roster.py` rebuilt each ability from its numbers and silently
+dropped the ambush tags, and `validate_kit` priced gross with the default point
+table rather than the kit's own, so the fitter and the validator disagreed
+about what an AREA was worth.
 
 ## 6. Picking the work back up
 
@@ -146,10 +172,14 @@ python tools/run_batch.py reports/requests/batch_0030.json --workers 4 --baselin
 
 In order:
 
-1. **Land `batch_0030`**, pick the tower HP that puts the T2 median in 13–15,
-   set it in `engine/config.py` and Rules §8, and confirm with a 300-game T2
-   mirror. Record it as P-0003 in `log/patches/`.
-2. **Economy (P-0004)** as in §5.
+1. **Run `batch_0032`** and judge P-0004 against its metric (§5). It is the
+   only committed patch with no evidence behind it.
+2. **Land `batch_0031`** (and `batch_0030` if 16 overshoots), pick the tower HP
+   that puts the T2 median in 13–15, set it in `engine/config.py` *and* the
+   Rules §8 line together, and confirm with a 300-game T2 mirror. Write it up
+   as P-0003 in `log/patches/` — that file does not exist yet. Note that
+   P-0004 removes some economy, which may itself lengthen games, so the tower
+   HP should be chosen on a roster-1.4.0 batch rather than on the 1.3.0 sweep.
 3. **Champion balance.** Note RQ-028: with 5 champions per role a champion plays
    40% of games, so ±2.2-point verdicts need ~5,000-game batches. T2 now costs
    about 18s a game on 4 cores, so a 5,000-game T2 batch is roughly 6 hours.
