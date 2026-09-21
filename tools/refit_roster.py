@@ -51,28 +51,39 @@ def step_variants(step: dict):
     return out
 
 
-def ability_variants(ab: dict, points: str, limit: int = 60):
+def ability_variants(ab: dict, points: str, limit: int = 110):
     """Candidate rewrites of one ability, with an edit count."""
     seen = {}
     step_options = [step_variants(s) for s in ab["steps"]]
     for combo in itertools.product(*step_options):
         steps = [c[0] for c in combo]
         edits_steps = sum(c[1] for c in combo)
-        if sum(1 for c in combo if c[1]) > 2:
+        if sum(1 for c in combo if c[1]) > 3:
             continue
-        # RQ-030 is about cheap abilities being unused. Shedding points by
-        # raising the price would make that worse, so this refit may only hold
-        # or lower a cost and a cooldown: the points have to come out of gross.
-        for cost in sorted({ab["cost"], max(0, ab["cost"] - 1)}):
+        # RQ-030 is about cheap abilities being unused, so shedding points by
+        # raising the price is normally off the table: the points come out of
+        # gross. The one exception is the RQ-035 floor - an AREA or LINE is a
+        # farming engine and may not be free - so such an ability may be lifted
+        # to the floor, and no further.
+        floor = 0
+        if any(st["icon"] in ("AREA", "LINE") for st in ab["steps"]):
+            floor = POINTS[points].get("min_cost_area_line", 0)
+        lo = max(floor, 0)
+        options = {max(lo, ab["cost"]), max(lo, ab["cost"] - 1)}
+        for cost in sorted(options):
             for cd in sorted({ab["cooldown"], max(1, ab["cooldown"] - 1)}):
-                cand = {"cost": cost, "cooldown": cd, "steps": [dict(s) for s in steps]}
+                # Carry everything the refit does not tune - the RQ-034 ambush
+                # tag above all - rather than rebuilding the ability from its
+                # numbers and quietly dropping it.
+                cand = dict(ab)
+                cand.update(cost=cost, cooldown=cd, steps=[dict(s) for s in steps])
                 edits = edits_steps + (cost != ab["cost"]) + (cd != ab["cooldown"])
-                if edits > 5:
+                if edits > 7:
                     continue
                 key = json.dumps(cand, sort_keys=True)
                 if key not in seen or seen[key][1] > edits:
                     seen[key] = (cand, edits)
-    out = [(c, e, ability_net(c, points), ability_gross(c)) for c, e in seen.values()
+    out = [(c, e, ability_net(c, points), ability_gross(c, points)) for c, e in seen.values()
            if ability_net(c, points) >= POINTS[points]["min_net"]]
     out.sort(key=lambda t: (t[1], abs(t[2] - 6)))
     return out[:limit]

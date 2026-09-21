@@ -14,6 +14,13 @@ POINTS = {
     # ability spends the same activation, so a kit whose R dwarfs its Q, W and
     # E is a kit with one real ability. RQ-030.
     "v2": {"ap_credit": 2.0, "cd_credit": 1.5, "min_net": 3.0, "max_r_ratio": 1.75},
+    # v3 is the RQ-035 economy recalibration. AREA and LINE were priced by the
+    # hits they deal, not by the chips they bank, so a 0 AP AREA touching three
+    # units banked three AP for nothing. Their value now climbs with reach, and
+    # an ability that carries one cannot be free.
+    "v3": {"ap_credit": 2.0, "cd_credit": 1.5, "min_net": 3.0, "max_r_ratio": 1.75,
+           "area_base": 6.0, "area_per_range": 4.0, "line_base": 3.0,
+           "min_cost_area_line": 1},
 }
 DEFAULT_POINTS = "v1"
 
@@ -27,8 +34,9 @@ L0 = {"cost": 0, "cooldown": 1,
       "steps": [{"icon": "HIT", "k": 1, "range": 1, "target": "enemy_any"}]}
 
 
-def step_points(step: dict) -> float:
+def step_points(step: dict, points: str = DEFAULT_POINTS) -> float:
     """Rules 14.2 point values for one icon step."""
+    t = POINTS[points]
     ic = step["icon"]
     if ic == "HIT":
         k = step.get("k", 1)
@@ -37,9 +45,11 @@ def step_points(step: dict) -> float:
     if ic == "AREA":
         k = step.get("k", 1)
         r = step.get("range", 1)
+        if "area_base" in t:
+            return k * (t["area_base"] + t["area_per_range"] * max(0, r - 1))
         return k * (5 if r <= 1 else 7)
     if ic == "LINE":
-        return step.get("k", 1) * (2 + step.get("n", 1))
+        return step.get("k", 1) * (t.get("line_base", 2.0) + step.get("n", 1))
     if ic == "MOVE":
         return 1.0 * step.get("n", 1)
     if ic == "DASH":
@@ -65,13 +75,13 @@ def step_points(step: dict) -> float:
     raise ValueError(f"unknown icon {ic}")
 
 
-def ability_gross(ab: dict) -> float:
-    return sum(step_points(s) for s in ab["steps"])
+def ability_gross(ab: dict, points: str = DEFAULT_POINTS) -> float:
+    return sum(step_points(s, points) for s in ab["steps"])
 
 
 def ability_net(ab: dict, points: str = DEFAULT_POINTS) -> float:
     t = POINTS[points]
-    return (ability_gross(ab) - t["ap_credit"] * ab.get("cost", 0)
+    return (ability_gross(ab, points) - t["ap_credit"] * ab.get("cost", 0)
             - t["cd_credit"] * max(0, ab.get("cooldown", 1) - 1))
 
 
@@ -115,9 +125,17 @@ def validate_kit(kit: dict, points: Optional[str] = None) -> List[str]:
         if net < min_net:
             errs.append(f"{kit['id']}.{key}: net value {net} < {min_net}"
                         " (an ability must be worth the activation it spends)")
-        grosses[key] = ability_gross(ab)
+        grosses[key] = ability_gross(ab, points)
     if grosses["R"] < max(grosses[k] for k in ("Q", "W", "E")):
         errs.append(f"{kit['id']}: R gross {grosses['R']} is not the highest {grosses}")
+    min_cost = POINTS[points].get("min_cost_area_line")
+    if min_cost:
+        for key in ("Q", "W", "E", "R"):
+            ab = kit["abilities"][key]
+            if any(st["icon"] in ("AREA", "LINE") for st in ab["steps"]) \
+                    and ab.get("cost", 0) < min_cost:
+                errs.append(f"{kit['id']}.{key}: AREA/LINE at {ab.get('cost', 0)} AP - a "
+                            f"farming engine has to cost at least {min_cost}")
     ratio_cap = POINTS[points].get("max_r_ratio")
     if ratio_cap:
         basics = sum(grosses[k] for k in ("Q", "W", "E")) / 3.0

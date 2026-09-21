@@ -11,13 +11,13 @@
   "team_sampling": "random_by_role_no_duplicates",
   "seat_swap": true,
   "replays": 0,
-  "batch_id": "batch_0030",
-  "seed": 3001,
+  "batch_id": "batch_0031",
+  "seed": 3101,
   "config_overrides": {
-    "tower_hp": 15
+    "tower_hp": 16
   },
   "extra": [
-    "P-0003 on T2: tower HP 15. The T2 sweep reads median 10 at tower 10 and 12 at tower 13, so about 0.67 rounds per point of tower HP.",
+    "P-0003 on T2: tower HP 16. The T2 sweep reads median 10 at tower 10 and 12 at tower 13, so about 0.67 rounds per point of tower HP.",
     "Pacing is tuned on T2 because T1 runs four rounds longer and leaves 8% of games unresolved (batch_0026 against batch_0028)."
   ]
 }

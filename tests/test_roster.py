@@ -50,14 +50,21 @@ def test_rulebook_worked_examples():
 
 
 def test_recalibrated_table_flattens_the_kits(kits):
-    """RQ-030 / P-0001: no ability may be a dud, and no R may dwarf its kit."""
+    """RQ-030 / P-0001: no ability may be a dud, and no R may dwarf its kit.
+
+    Each kit is judged against the table it was built to, which the roster
+    declares, so this keeps holding as the table is recalibrated.
+    """
     from engine.kits import POINTS
     for k in kits.values():
-        grosses = {s: ability_gross(k["abilities"][s]) for s in ("Q", "W", "E", "R")}
+        pts = k.get("points", "v1")
+        cap = POINTS[pts]["max_r_ratio"]
+        floor = POINTS[pts]["min_net"]
+        grosses = {s: ability_gross(k["abilities"][s], pts) for s in ("Q", "W", "E", "R")}
         basics = sum(grosses[s] for s in ("Q", "W", "E")) / 3
-        assert grosses["R"] <= 1.75 * basics + 1e-9, k["id"]
+        assert grosses["R"] <= cap * basics + 1e-9, k["id"]
         for s in ("Q", "W", "E", "R"):
-            assert ability_net(k["abilities"][s], "v2") >= 3, f"{k['id']}.{s}"
+            assert ability_net(k["abilities"][s], pts) >= floor, f"{k['id']}.{s}"
 
 
 def test_each_champion_has_an_affordable_ap_ability(kits):
@@ -66,3 +73,19 @@ def test_each_champion_has_an_affordable_ap_ability(kits):
         paid = [a for a in ("Q", "W", "E", "R") if k["abilities"][a]["cost"] > 0]
         assert paid, k["id"]
         assert min(k["abilities"][a]["cost"] for a in paid) <= 2
+
+
+def test_area_and_line_are_never_free(kits):
+    """RQ-035 / P-0004: a farming engine has to cost AP (Rules 14.2)."""
+    for kit in kits.values():
+        for key in ("Q", "W", "E", "R"):
+            ab = kit["abilities"][key]
+            if any(s["icon"] in ("AREA", "LINE") for s in ab["steps"]):
+                assert ab["cost"] >= 1, f"{kit['id']}.{key} banks chips for free"
+
+
+def test_area_value_climbs_with_reach():
+    from engine.kits import step_points
+    r1 = step_points({"icon": "AREA", "k": 1, "range": 1}, "v3")
+    r2 = step_points({"icon": "AREA", "k": 1, "range": 2}, "v3")
+    assert r2 > r1 and r2 - r1 == 4
