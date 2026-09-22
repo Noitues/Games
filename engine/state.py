@@ -53,6 +53,8 @@ class Champion:
     rounds_cd: int = 0
     dmg_to_structures: int = 0
     conceal_attacks: int = 0        # abilities used from a hidden tile on something outside it
+    edge_rounds: int = 0            # activations ended on a hexgroup border (RQ-036)
+    activations: int = 0
     damaged_by: Dict[str, int] = field(default_factory=dict)   # uid -> round
 
     kind: str = "champion"
@@ -300,12 +302,19 @@ class GameState:
     def refresh_visibility(self, allow_flip_back: bool = True, placer=None) -> None:
         """Rules 3.2/3.5. Tiles with both teams inside must be visible; tiles
         with at most one team flip back (only at the checkpoints that pass
-        allow_flip_back=True). Control Wards pin a tile visible (Rules 12)."""
+        allow_flip_back=True). Control Wards pin a tile visible (Rules 12).
+
+        RQ-036: an occupied hexgroup is also revealed while an enemy champion
+        stands adjacent to it. You cannot lurk next to someone - cover works at
+        a distance, and standing on the edge of a hexgroup is how you look into
+        it.
+        """
         sets = self.tile_team_sets()
         mask = self.hidden_mask
         newly_visible = []
+        watched = self._tiles_watched_by_enemies(sets)
         for t in range(self.board.n_tiles):
-            contested = len(sets.get(t, ())) > 1
+            contested = len(sets.get(t, ())) > 1 or t in watched
             warded = self.wards.get(t, -1) >= self.round
             hidden_now = bool(mask >> t & 1)
             if hidden_now and (contested or warded):
@@ -318,6 +327,24 @@ class GameState:
             self.touch()
         for t in newly_visible:
             place_units_on_flip(self, t, placer)
+
+    def _tiles_watched_by_enemies(self, sets) -> set:
+        """Occupied hexgroups with an enemy champion on an adjacent hex."""
+        if not self.config.get("adjacency_reveal", True):
+            return set()
+        board = self.board
+        watched = set()
+        for c in self.champs.values():
+            if not c.alive:
+                continue
+            for nb in board.neighbors.get(c.hexpos, ()):
+                t = board.tile_of.get(nb)
+                if t is None or t in watched:
+                    continue
+                occupants = sets.get(t, ())
+                if occupants and any(team != c.team for team in occupants):
+                    watched.add(t)
+        return watched
 
     def force_visible(self, tile: int, placer=None) -> None:
         """Flip one tile face up now (Rules 3.3 step 2)."""

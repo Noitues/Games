@@ -283,6 +283,10 @@ def apply_activation(state: GameState, act: Activation, game: "Game") -> None:
                                                 state.hidden_mask))
     if act.dest is not None and act.dest != state.node_of_unit(c):
         move_unit(state, c, act.dest, state.node_of_unit(c))
+    c.activations += 1
+    if any(state.board.tile_of.get(nb) not in (None, state.board.tile_of[c.hexpos])
+           for nb in state.board.neighbors.get(c.hexpos, ())):
+        c.edge_rounds += 1          # RQ-036: hovering where both hexgroups are legible
     if act.flip_entry is not None:
         start = state.node_of_unit(c) if act.dest is None else act.dest
         state.force_visible(act.flip_entry, placer=game.placer)

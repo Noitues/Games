@@ -37,6 +37,11 @@ DEFAULT_CONFIG = {
     # hexgroup face up for the round as soon as its occupant affects anything
     # outside it - you may hide, but shooting gives you away.
     "reveal_on_outward_effect": False,
+    # RQ-036: an occupied hexgroup is revealed while an enemy champion stands
+    # on an adjacent hex. Cover works at a distance, not at arm's length.
+    "adjacency_reveal": True,
+    # RQ-034's ambush gate, retired by RQ-036 but kept switchable.
+    "ambush_gate": False,
     # Enumeration caps (engine performance; reported under Anomalies).
     "enum": {"step_cap": 4, "plan_cap": 6, "max_dest": 18, "max_options": 220,
              "placement_cap": 6},

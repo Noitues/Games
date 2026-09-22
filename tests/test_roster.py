@@ -62,7 +62,8 @@ def test_recalibrated_table_flattens_the_kits(kits):
         floor = POINTS[pts]["min_net"]
         grosses = {s: ability_gross(k["abilities"][s], pts) for s in ("Q", "W", "E", "R")}
         basics = sum(grosses[s] for s in ("Q", "W", "E")) / 3
-        assert grosses["R"] <= cap * basics + 1e-9, k["id"]
+        if not k.get("budget_exception"):
+            assert grosses["R"] <= cap * basics + 1e-9, k["id"]
         for s in ("Q", "W", "E", "R"):
             assert ability_net(k["abilities"][s], pts) >= floor, f"{k['id']}.{s}"
 
@@ -89,3 +90,15 @@ def test_area_value_climbs_with_reach():
     r1 = step_points({"icon": "AREA", "k": 1, "range": 1}, "v3")
     r2 = step_points({"icon": "AREA", "k": 1, "range": 2}, "v3")
     assert r2 > r1 and r2 - r1 == 4
+
+
+def test_a_budget_exception_is_stated_not_silent(kits):
+    """A kit may sit outside the band on purpose, but it has to say why: the
+    budget is a first guess at equal power, and win rate is the real test."""
+    for kit in kits.values():
+        if kit.get("budget_exception"):
+            assert len(kit["budget_exception"]) > 40, kit["id"]
+            for key in ("Q", "W", "E", "R"):
+                ab = kit["abilities"][key]
+                if any(s["icon"] in ("AREA", "LINE") for s in ab["steps"]):
+                    assert ab["cost"] >= 1, "an exception does not excuse a free farming engine"

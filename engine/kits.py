@@ -102,7 +102,15 @@ def budget(kit: dict, points: Optional[str] = None) -> dict:
 
 
 def validate_kit(kit: dict, points: Optional[str] = None) -> List[str]:
-    """Rules 14.2 constraints. Returns a list of problems (empty == valid)."""
+    """Rules 14.2 constraints. Returns a list of problems (empty == valid).
+
+    A kit may carry ``budget_exception``: a stated reason for sitting outside
+    the band or the spread cap on purpose. The budget is only a first guess at
+    equal power, so a kit whose measured win rate lands in band is balanced
+    whatever the arithmetic says. Exceptions suppress the two whole-kit checks
+    and nothing else - every ability still has to be worth its activation, and
+    a farming engine still cannot be free.
+    """
     points = points or kit.get("points", DEFAULT_POINTS)
     min_net = POINTS[points]["min_net"]
     errs: List[str] = []
@@ -126,6 +134,7 @@ def validate_kit(kit: dict, points: Optional[str] = None) -> List[str]:
             errs.append(f"{kit['id']}.{key}: net value {net} < {min_net}"
                         " (an ability must be worth the activation it spends)")
         grosses[key] = ability_gross(ab, points)
+    excused = bool(kit.get("budget_exception"))
     if grosses["R"] < max(grosses[k] for k in ("Q", "W", "E")):
         errs.append(f"{kit['id']}: R gross {grosses['R']} is not the highest {grosses}")
     min_cost = POINTS[points].get("min_cost_area_line")
@@ -139,10 +148,12 @@ def validate_kit(kit: dict, points: Optional[str] = None) -> List[str]:
     ratio_cap = POINTS[points].get("max_r_ratio")
     if ratio_cap:
         basics = sum(grosses[k] for k in ("Q", "W", "E")) / 3.0
-        if basics and grosses["R"] > ratio_cap * basics:
+        if basics and grosses["R"] > ratio_cap * basics and not excused:
             errs.append(f"{kit['id']}: R gross {grosses['R']} is more than "
                         f"{ratio_cap}x the Q/W/E mean {basics:.1f} - one real ability")
     tot = budget(kit, points)["total"]
+    if excused:
+        return errs
     if not 20 <= tot <= 24:
         errs.append(f"{kit['id']}: budget total {tot} outside 22 +/- 2")
     if kit.get("budget", {}).get("total") is not None:

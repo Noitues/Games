@@ -22,7 +22,9 @@ def test_flip_back_when_one_team_remains(state, board, game):
     state.touch()
     state.refresh_visibility(placer=game.placer)
     assert not state.hidden_mask >> t & 1
-    state.champs["s_dax"].hexpos = (2, -1)
+    # (2, -1) still borders Mid River, and under RQ-036 an adjacent enemy keeps
+    # an occupied hexgroup revealed. Step off the edge entirely to flip back.
+    state.champs["s_dax"].hexpos = (3, -2)
     state.touch()
     state.refresh_visibility(placer=game.placer)
     assert state.hidden_mask >> t & 1
@@ -137,56 +139,57 @@ def test_bump_without_intent_stops_at_the_edge(state, board, game):
     assert board.tile_of[mover.hexpos] != t
 
 
-def test_only_an_ambush_ability_reaches_out_of_cover(state, board, game):
-    """RQ-034: from inside a hidden hexgroup, only the tagged ability may touch
-    anything outside it."""
-    from engine.resolve import can_act_outside, units_within
+def test_an_adjacent_enemy_reveals_an_occupied_hexgroup(state, board, game):
+    """RQ-036: cover works at a distance, not at arm's length."""
+    t = board.tile_index["Mid River"]
+    state.champs["n_ashwyn"].hexpos = (0, 0)          # hiding inside
+    state.champs["s_dax"].hexpos = (3, -2)            # far away: still hidden
+    state.touch()
+    state.refresh_visibility(placer=game.placer)
+    assert state.hidden_mask >> t & 1
+
+    state.champs["s_dax"].hexpos = (2, -1)            # steps onto the edge
+    state.touch()
+    state.refresh_visibility(placer=game.placer)
+    assert not state.hidden_mask >> t & 1, "standing on the edge looks in"
+
+
+def test_an_empty_hexgroup_is_not_revealed_by_standing_next_to_it(state, board, game):
+    t = board.tile_index["Mid River"]
+    for c in state.champs.values():
+        c.hexpos = state.board.fountain[c.team]
+    state.champs["s_dax"].hexpos = (2, -1)            # adjacent, but nobody inside
+    state.touch()
+    state.refresh_visibility(placer=game.placer)
+    assert state.hidden_mask >> t & 1
+
+
+def test_a_friendly_hexgroup_is_not_revealed_by_its_own_team(state, board, game):
+    t = board.tile_index["Mid River"]
+    state.champs["n_ashwyn"].hexpos = (0, 0)
+    state.champs["n_kestrel"].hexpos = (2, -1)        # same team on the edge
+    state.touch()
+    state.refresh_visibility(placer=game.placer)
+    assert state.hidden_mask >> t & 1
+
+
+def test_cover_no_longer_restricts_what_you_may_use(state, board, game):
+    """RQ-036 retired the RQ-034 ambush gate: playing from cover is the point
+    of cover. What limits sniping is the adjacency reveal and short ranges."""
+    from engine.resolve import can_act_outside
     c = state.champs["n_kestrel"]
     c.hexpos = (0, -1)
     state.touch()
     state.refresh_visibility(placer=game.placer)
     node = state.node_of_unit(c)
     assert state.hidden_mask >> board.tile_of[c.hexpos] & 1
-
-    tagged = [k for k in "QWER" if state.kits[c.cid]["abilities"][k].get("from_hidden")]
-    assert len(tagged) == 1, "one ambush ability for a non-jungler"
-    untagged = next(k for k in "QWER" if k not in tagged)
-
-    assert can_act_outside(state, c, node, tagged[0])
-    assert not can_act_outside(state, c, node, untagged)
-    assert not can_act_outside(state, c, node, "L0"), "the basic attack is not an ambush"
-
-    outside = units_within(state, node, 4, "north", "enemy_any", c.hexpos,
-                           can_act_outside(state, c, node, untagged))
-    assert outside == [] or all(board.tile_of[u.hexpos] == board.tile_of[c.hexpos]
-                                for u, _ in outside)
-
-
-def test_junglers_carry_two_ambush_abilities(kits):
-    for kit in kits.values():
-        n = sum(1 for k in "QWER" if kit["abilities"][k].get("from_hidden"))
-        assert n == (2 if kit["role"] == "Jungle" else 1), kit["id"]
-
-
-def test_an_ambush_gives_the_position_away(state, board, game):
-    from engine.abilities import apply_plan
-    c = state.champs["n_kestrel"]
-    c.hexpos = (0, -1)
-    tile = board.tile_of[c.hexpos]
-    state.round = 3
-    state.touch()
-    state.refresh_visibility(placer=game.placer)
-    assert state.hidden_mask >> tile & 1
-    key = next(k for k in "QWER" if state.kits[c.cid]["abilities"][k].get("from_hidden"))
-    tower = state.structures["s_mid_T1"]
-    apply_plan(state, c, key, (tower.uid,))
-    assert not state.hidden_mask >> tile & 1, "springing the ambush flips the hexgroup"
+    for key in ("L0", "Q", "W", "E", "R"):
+        assert can_act_outside(state, c, node, key), key
 
 
 def test_camp_clearing_from_cover_is_untouched(state, board, game):
-    """Acting inside your own hexgroup is not an ambush and reveals nothing."""
+    """Acting inside your own hexgroup reveals nothing."""
     from engine.abilities import apply_plan
-    state.config["reveal_on_outward_effect"] = True
     m = state.monsters["dragon_0"]
     m.alive, m.chips = True, 8
     c = state.champs["n_thornjaw"]

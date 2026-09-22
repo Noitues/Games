@@ -134,21 +134,44 @@ def test_tower_in_a_hidden_tile_reaches_only_its_own_hex(state, board):
     assert state.waves["wa"].chips == 2
 
 
+def _clear_the_edges(state, board, tile, keep=(), reserved=()):
+    """Park every champion that is not part of the test well away from ``tile``.
+
+    Under RQ-036 any adjacent enemy reveals an occupied hexgroup, so a test
+    about concealment has to control who is standing on the edge.
+    """
+    ring = {n for h in board.tile_hexes[tile] for n in board.neighbors.get(h, ())}
+    ring |= set(board.tile_hexes[tile]) | set(reserved)
+    spare = [h for h in board.hexes if h not in ring]
+    i = 0
+    for c in state.champs.values():
+        if c.uid in keep:
+            continue
+        c.hexpos = spare[i]
+        i += 1
+    state.touch()
+
+
 def test_champion_in_a_hidden_tile_cannot_be_targeted_from_outside(state, board):
     """RQ-001: the tile is a refuge."""
     from engine.resolve import units_within
     t = board.tile_index["Mid River"]
     hider, shooter = state.champs["n_ashwyn"], state.champs["s_dax"]
-    hider.hexpos, shooter.hexpos = (0, 0), (0, 1)
+    _clear_the_edges(state, board, t, keep=(hider.uid, shooter.uid),
+                     reserved=((0, 0), (3, -2)))
+    # The shooter has to stand off the edge: under RQ-036 an adjacent enemy
+    # reveals an occupied hexgroup, and a revealed champion is targetable.
+    hider.hexpos, shooter.hexpos = (0, 0), (3, -2)
     state.touch()
     state.refresh_visibility()
     assert state.hidden_mask >> t & 1
-    seen = [u.uid for u, _ in units_within(state, state.node_of_unit(shooter), 3,
+    assert state.hidden_mask >> t & 1, "nobody is standing on the edge"
+    seen = [u.uid for u, _ in units_within(state, state.node_of_unit(shooter), 4,
                                            "south", "enemy_champion", shooter.hexpos)]
     assert hider.uid not in seen
     # Only champions are concealed: north's mid T1, also inside a hidden tile,
     # is still a legal target at plain hex range.
-    seen_any = [u.uid for u, _ in units_within(state, state.node_of_unit(shooter), 3,
+    seen_any = [u.uid for u, _ in units_within(state, state.node_of_unit(shooter), 4,
                                                "south", "enemy_any", shooter.hexpos)]
     assert "n_mid_T1" in seen_any
 
@@ -194,9 +217,12 @@ def test_waves_in_hidden_tiles_still_trade(state, board):
 
 def test_line_catches_by_hex_and_skips_concealed_champions(state, board):
     from engine.resolve import line_targets
+    t = board.tile_index["Mid River"]
     shooter = state.champs["n_kestrel"]
-    shooter.hexpos = (0, -1)
     exposed = state.champs["s_dax"]
+    _clear_the_edges(state, board, t, keep=(shooter.uid, exposed.uid),
+                     reserved=((0, -2), (0, 0), (1, 0)))
+    shooter.hexpos = (0, -2)                          # off Mid River's edge (RQ-036)
     exposed.hexpos = (0, 0)                           # shares Mid River with nobody else
     state.touch()
     state.refresh_visibility()
@@ -206,5 +232,12 @@ def test_line_catches_by_hex_and_skips_concealed_champions(state, board):
     state.champs["n_ashwyn"].hexpos = (1, 0)          # north enters Mid River: it flips
     state.touch()
     state.refresh_visibility()
+    assert not state.hidden_mask >> t & 1
+    # A flip hands out real hexes to everyone in the revealed hexgroup, and
+    # under RQ-036 the shooter's own hexgroup can be revealed too, so put both
+    # ends of the line back where the test wants them.
+    shooter.hexpos = (0, -2)
+    exposed.hexpos = (0, 0)
+    state.touch()
     caught = line_targets(state, shooter.hexpos, (0, 1), 6, "north", "enemy_any", src_tile)
     assert exposed.uid in [u.uid for u in caught]

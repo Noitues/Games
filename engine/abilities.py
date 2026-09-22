@@ -140,10 +140,10 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
                 state.refresh_visibility(allow_flip_back=False)
     if outward and (state.hidden_mask >> home_tile & 1):
         champ.conceal_attacks += 1          # RQ-032: acting out of the fog
-    if outward and (state.hidden_mask >> home_tile & 1):
-        # RQ-034: an ambush is a one-shot, not a firing position. Reaching out
-        # of the hexgroup flips it face up for the rest of the round, so the
-        # ambusher is exposed exactly as if it had stepped into the open.
+    if outward and state.config.get("reveal_on_outward_effect") and \
+            (state.hidden_mask >> home_tile & 1):
+        # Retired by RQ-036 and off by default: acting from cover no longer
+        # gives the position away. An adjacent enemy is what reveals a hexgroup.
         state.wards[home_tile] = state.round
         state.refresh_visibility(allow_flip_back=False)
     state.touch()

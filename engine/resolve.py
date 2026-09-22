@@ -140,9 +140,18 @@ def structure_targetable(state: GameState, s: Structure) -> bool:
 
 
 def can_act_outside(state: GameState, champ: Champion, node: Node, key: str) -> bool:
-    """RQ-034: from inside a hidden hexgroup, only an ability tagged
-    ``from_hidden`` may touch anything outside it. Anything already sharing the
-    hexgroup - a jungle camp, a contesting enemy - is always fair game."""
+    """Whether an ability may reach outside the hexgroup it is used from.
+
+    RQ-036 retired the RQ-034 ambush gate. Playing *from* cover is the point of
+    cover, so nothing is forbidden here; what limits sniping is that an
+    occupied hexgroup is revealed by an adjacent enemy champion, and that
+    ability ranges are short enough to make distance poking rare.
+
+    Kept as a hook so the gate can be reinstated from config without threading
+    the check back through every call site.
+    """
+    if not state.config.get("ambush_gate", False):
+        return True
     tile = state.board.node_tile(node)
     if not (state.hidden_mask >> tile & 1):
         return True

@@ -26,7 +26,7 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
     champ_apshare: Dict[str, List[float]] = defaultdict(list)
     champ_items: Dict[str, Counter] = defaultdict(Counter)
     champ_conceal: Dict[str, List[int]] = defaultdict(list)
-    total_uses = total_conceal = 0
+    total_uses = total_conceal = total_edge = total_acts = 0
     role_w: Dict[str, List[int]] = defaultdict(list)
     role_ap: Dict[str, List[float]] = defaultdict(list)
     item_games: Counter = Counter()
@@ -85,6 +85,8 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
             champ_conceal[cid].append(d.get("conceal_attacks", 0))
             total_conceal += d.get("conceal_attacks", 0)
             total_uses += sum(d["uses"].values())
+            total_edge += d.get("edge_rounds", 0)
+            total_acts += d.get("activations", 0)
             for it in d["items"]:
                 champ_items[cid][it] += 1
                 if win is not None:
@@ -255,6 +257,7 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
         "concealment": {
             "attacks_from_concealment_per_game": total_conceal / max(1, n),
             "share_of_all_ability_uses": (100 * total_conceal / total_uses) if total_uses else 0.0,
+            "activations_ending_on_a_hexgroup_edge": (100 * total_edge / total_acts) if total_acts else 0.0,
         },
         "anomalies": dict(anomalies),
         "top_flags": flags,
@@ -394,7 +397,9 @@ def to_markdown(s: dict) -> str:
     L += ["", "## 9b. Concealment (RQ-032)", "",
           f"- attacks made from inside a hidden hexgroup on something outside it: "
           f"{c.get('attacks_from_concealment_per_game', 0):.2f} per game",
-          f"- that is {c.get('share_of_all_ability_uses', 0):.1f}% of all ability uses", ""]
+          f"- that is {c.get('share_of_all_ability_uses', 0):.1f}% of all ability uses",
+          f"- activations ending on a hexgroup edge: "
+          f"{c.get('activations_ending_on_a_hexgroup_edge', 0):.1f}%", ""]
     L += ["", "## 10. Anomalies", ""]
     L.append("None." if not s["anomalies"] else
              "\n".join(f"- {k}: {v} games" for k, v in s["anomalies"].items()))
