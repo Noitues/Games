@@ -7,3 +7,4 @@ runs/smoke/
 runs/llm-probe/
 harness/cohorts/smoke-*
 runs/*.log
+harness/cohorts/scripted-*
