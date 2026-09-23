@@ -1,0 +1,793 @@
+{
+ "run_id": "pilot-01__C__s87941__r1",
+ "batch_id": "pilot-01",
+ "arm": "C",
+ "seed": 87941,
+ "spec_version": "0.1.0",
+ "status": "partial",
+ "error": null,
+ "backend": "claude_cli",
+ "run_index": 1,
+ "cohort_id": "cohort-pilot-01",
+ "assignments": [
+  {
+   "character_id": "CH-1",
+   "name": "Ysolde",
+   "personality_id": "storyteller",
+   "seat": 0
+  },
+  {
+   "character_id": "CH-2",
+   "name": "Aldous",
+   "personality_id": "rules_lawyer",
+   "seat": 1
+  },
+  {
+   "character_id": "CH-3",
+   "name": "Morwen",
+   "personality_id": "lurker",
+   "seat": 2
+  },
+  {
+   "character_id": "CH-4",
+   "name": "Mire",
+   "personality_id": "method_actor",
+   "seat": 3
+  }
+ ],
+ "prep_packet": {
+  "anchors": [
+   "H-01",
+   "L-02"
+  ],
+  "environment": [
+   "H-05",
+   "T-01",
+   "F-03"
+  ],
+  "modules": [
+   {
+    "id": "M-1",
+    "cards": [
+     "C-01",
+     "T-05"
+    ],
+    "trigger": "scene_start:3"
+   },
+   {
+    "id": "M-2",
+    "cards": [
+     "H-06",
+     "T-02"
+    ],
+    "trigger": "deck_at_most:3"
+   }
+  ],
+  "beat_frames": [
+   {
+    "id": "B-01",
+    "name": "AMBUSH",
+    "trigger": "fiction:the party enters a settlement",
+    "used": null
+   },
+   {
+    "id": "B-05",
+    "name": "FALSE SANCTUARY",
+    "trigger": "clock_fills:L-02",
+    "used": null
+   },
+   {
+    "id": "B-02",
+    "name": "PLEA FOR HELP",
+    "trigger": "compel_refused",
+    "used": null
+   }
+  ]
+ },
+ "events": [
+  {
+   "event_id": 1,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Session start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "FP: Ysolde=3, Aldous=3, Morwen=3, Mire=3",
+   "event_type": "session_start",
+   "improvised": false
+  },
+  {
+   "event_id": 2,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + H-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "anchor",
+   "event_type": "rail_add",
+   "improvised": false
+  },
+  {
+   "event_id": 3,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + L-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "L-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "anchor",
+   "event_type": "rail_add",
+   "improvised": false
+  },
+  {
+   "event_id": 4,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Build Session Deck",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "7 cards: 3 GM + 4 player",
+   "event_type": "deck_built",
+   "improvised": false
+  },
+  {
+   "event_id": 5,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false
+  },
+  {
+   "event_id": 6,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Does the party get into Hollowmoot clean, or does the checkpoint mark one of them as trouble before they've even set foot in town?",
+   "event_type": "frame",
+   "improvised": false
+  },
+  {
+   "event_id": 7,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Ysolde shuffles forward with the crowd, rain dripping from her weathered clothes. She watches the sergeant with careful attention—the set of his shoulders, the ",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 8,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Aldous stands in the rain, watching the sergeant work through the line—the heavy downpour drums on the causeway boards in a rhythm that matches the officer's in",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 9,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "pass",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Morwen pulls her hood closer against the rain and waits, watching the sergeant work the line with a steady, measured gaze. She doesn't move forward yet.",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 10,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Mire stands silent in the rain, water streaming from her pauldrons, and watches Sergeant Coll work the line. She's worked a hundred checkpoints herself—she know",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 11,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Verrick now commands the Wardens",
+   "fp_spent": 1,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "refused",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "As Coll's hooked pole nears Aldous, the sergeant's eyes catch on the way he stands at ease with the drill-line rhythm — the unmistakable posture of old militia discipline. 'You served under the Captai",
+   "event_type": "compel",
+   "improvised": true,
+   "compel_forced": false
+  },
+  {
+   "event_id": 12,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Create Advantage: Aldous stands in the rain, watching the sergeant work throug",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "- - - +",
+   "total": "+2",
+   "opposition": "-1 (NPC - - - 0)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "aspect A-1.1.1 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "opposing_tags": [],
+   "target_card": "H-01",
+   "target_npc": "Warden Sergeant Coll",
+   "shifts": 3,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 13,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Peek",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "moved to bottom",
+   "event_type": "peek",
+   "improvised": false
+  },
+  {
+   "event_id": 14,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "Create Advantage: Mire stands silent in the rain, water streaming from her pau",
+   "skill": "Notice +3",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "0 - + +",
+   "total": "+4",
+   "opposition": "+1 (NPC 0 - - +)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "aspect A-1.1.2 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Warden Sergeant Coll",
+   "shifts": 3,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 15,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "Peek",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-09",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "left on top",
+   "event_type": "peek",
+   "improvised": false
+  },
+  {
+   "event_id": 16,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "3->2",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "resolved -1",
+   "event_type": "tension",
+   "improvised": false
+  },
+  {
+   "event_id": 17,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Warden Sergeant Coll",
+   "event_type": "story_add",
+   "improvised": false
+  },
+  {
+   "event_id": 18,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Trigger fired: B-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "fiction:the party enters a settlement",
+   "event_type": "trigger",
+   "improvised": false
+  },
+  {
+   "event_id": 19,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Trigger fired: B-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "compel_refused",
+   "event_type": "trigger",
+   "improvised": false
+  },
+  {
+   "event_id": 20,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "triggers fired: ['B-01', 'B-02']",
+   "event_type": "scene_end",
+   "improvised": false
+  }
+ ],
+ "scenes": [
+  {
+   "index": 1,
+   "tension_before": 3,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 1,
+   "climax": false,
+   "tension_after": 2,
+   "triggers_fired": [
+    "B-01",
+    "B-02"
+   ]
+  }
+ ],
+ "transcript": [
+  {
+   "session": 1,
+   "scene": 0,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Session begins. Each player has Ysolde 3 FP, Aldous 3 FP, Morwen 3 FP, Mire 3 FP. Face-up: Endless Rain [H-01], Saint Orrin's Drowned Temple [L-02].",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Rain hammers the causeway boards, and torchlight sputters under crude tin hoods as a line of soaked travelers shuffles toward the checkpoint. A Warden sergeant works the line with a hooked pole, prodding sleeves back to check for bite-marks and blight-boils, while two more wardens keep hands on axe-hafts and eyes on the reed banks. Somewhere behind the gate, Hollowmoot's stilt-lanterns glow dim and yellow through the downpour — dry ground, dry beds, if the party can talk, bribe, or bluff their way past the toll and the inspection. The sergeant's eyes are already moving over each of you, cataloguing scars, gear, and reasons to be suspicious.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Just looking for work and a dry bed in the city, like everyone else.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde shuffles forward with the crowd, rain dripping from her weathered clothes. She watches the sergeant with careful attention—the set of his shoulders, the cadence of his hooked pole, whether his suspicion comes from duty or appetite. When her turn comes, she steps forward unhurried and offers her arms for inspection, a woman with nothing obvious to hide.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "The rain shows the sergeant's pattern—where he slows, where he speeds, where the gate might open for us.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous stands in the rain, watching the sergeant work through the line—the heavy downpour drums on the causeway boards in a rhythm that matches the officer's inspection cadence perfectly. He reads the patterns in both water and flesh, noting where attention wavers and where the wardens' shoulders tense.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire stands silent in the rain, water streaming from her pauldrons, and watches Sergeant Coll work the line. She's worked a hundred checkpoints herself—she knows the dance. His attention is entirely on blight-boils and bite-marks. She notes the rhythm of his pole, which sleeves he examines closely, and settles her posture to match the other wet, tired travelers.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "The rain does what it will. I've learned not to fight it.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous refuses a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — create advantage with Notice: dice - - - + → Fair (+2) vs Poor (-1): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — create advantage with Notice: dice 0 - + + → Great (+4) vs Average (+1): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Between Aldous reading the rain's rhythm against the sergeant's own and Mire's ex-Warden instincts telling her exactly which sleeves draw a second look, the two of them fall into step with the checkpoint's hidden logic before Coll ever reaches the group. When his hooked pole swings toward Ysolde, Aldous murmurs a stray observation about the weather that lands exactly where the sergeant's attention was already drifting, and Mire shifts her stance to mirror the \"already-cleared\" travelers ahead — the whole party reads as background noise, wet and unremarkable. Coll's pole taps Ysolde's sleeve once, perfunctory, and moves on; he waves the group through with the same bored flick he's given forty others tonight. The gate creaks open, and beyond it Hollowmoot's stilt-lanterns bleed yellow through the downpour — dry boards underfoot at last, the checkpoint behind you clean.",
+   "visible_to": "all"
+  }
+ ],
+ "costs": [
+  {
+   "event": "free_compel",
+   "scene": 1,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Verrick now commands the Wardens",
+   "text": "As Coll's hooked pole nears Aldous, the sergeant's eyes catch on the way he stands at ease with the drill-line rhythm — the unmistakable posture of old militia discipline. 'You served under the Captain,' Coll says, not a question, and waves over a second warden to pull Aldous aside for a longer look",
+   "improvised": true,
+   "accepted": false,
+   "owner": "Aldous"
+  }
+ ],
+ "referee": {
+  "violations": [],
+  "ambiguities": [
+   {
+    "id": "AMB-01",
+    "section": "brief",
+    "issue": "Arm A lists 'Attention', which the spec never defines.",
+    "interim_ruling": "Not modelled.",
+    "detail": "Arm definition lists Attention; not modelled.",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-12",
+    "section": "§8",
+    "issue": "Stress box values are unspecified.",
+    "interim_ruling": "Fate Core: boxes 1 and 2; Physique/Will +1/+2 adds a 3 box, +3 or more adds 3 and 4.",
+    "detail": "stress boxes built with Fate Core values",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-22",
+    "section": "§3/§7",
+    "issue": "Does a GLOBAL anchor give the GM a free invoke like a GM card?",
+    "interim_ruling": "Yes, GLOBAL cards placed on the rail give the GM 1 free invoke that scene.",
+    "detail": "H-01",
+    "scene": 0,
+    "source": "engine"
+   },
+   {
+    "section": "§3 Outcomes table / Fate Core baseline",
+    "issue": "On success with style (3+), the table lets the player 'look at the top card of the Session Deck ... instead of taking a boost.' The spec never defines which roll types actually produce a 'boost' on success with style. In events 12 and 14, both rolls were Create Advantage actions, which under Fate Core baseline resolve success-with-style as '2 free invokes on the new aspect,' not a boost — so it's unclear whether a CA roll is even eligible to trade anything for the peek, or whether the peek is simply always available on any 3+ result regardless of action type.",
+    "interim_ruling": "The table treated the peek as always available on any 3+ result, granted in addition to the Create Advantage aspect's normal 2 free invokes (events 12→13 and 14→15), rather than as a true substitute for a boost that was never on offer.",
+    "scene": 1,
+    "source": "referee"
+   },
+   {
+    "section": "§5 Beat Frame procedure / §7 Scene loop cleanup step 4.5",
+    "issue": "B-01 and B-02 'fired' during cleanup (events 18–19), and B-02's fired-log even cites 'compel_refused' pointing back to Aldous's compel (event 11) — but that compel occurred mid-scene, before the trigger check, was logged as a standalone improvised compel with no draw_id, and no cards were ever drawn to fill the frame's open blanks as §5 requires ('Draw 1 card per open blank'). The spec doesn't clarify whether a Beat Frame's full draw-and-fill procedure must run immediately when 'deployed' during cleanup, or whether 'fired' can just be logged for deployment in the next scene, and it doesn't address a beat frame retroactively 'claiming' an earlier freeform compel instead of running its own draws.",
+    "interim_ruling": "The table logged B-01 and B-02 as fired without running the §5 draw procedure in this scene, treating full deployment (with blank-filling draws) as deferred to when the next scene is framed.",
+    "scene": 1,
+    "source": "referee"
+   },
+   {
+    "section": "§6 Adjusting Tension table",
+    "issue": "Tension dropped 3→2 at event 16 ('resolved -1') citing 'the party resolved a THREAT or filled a player's goal.' The only qualifying actions in the scene were two Create Advantage rolls against NPC Sgt Coll / card H-01, not an Overcome or conflict resolution. The spec doesn't define whether succeeding at a Create Advantage against a GM/HAZARD card counts as 'resolving' it for Tension purposes.",
+    "interim_ruling": "The table treated the successful CA rolls against the checkpoint (H-01/Sgt Coll) as resolving that threat cleanly, and applied the -1 Tension adjustment.",
+    "scene": 1,
+    "source": "referee"
+   }
+  ],
+  "cost_checks": [
+   {
+    "event_id": 13,
+    "used_drawn_card": false,
+    "note": "PX-03 is the §3 success-with-style deck peek, not a cost. No cost text was built from it; the card was simply viewed and moved to the bottom per the table's own procedure. 'Used tags' is not applicable to a peek.",
+    "scene": 1
+   },
+   {
+    "event_id": 15,
+    "used_drawn_card": false,
+    "note": "PX-09 is likewise a success-with-style peek (left on top), not a cost draw. No cost text applies.",
+    "scene": 1
+   },
+   {
+    "event_id": 17,
+    "used_drawn_card": false,
+    "note": "SN-01 is a §6A pile-maintenance 'Add' (a new NPC story card written for Sgt Coll at scene cleanup), not a Fate-trigger story draw or a deck-draw cost. No cost text to check against tags.",
+    "scene": 1
+   },
+   {
+    "event_id": 11,
+    "used_drawn_card": false,
+    "note": "This compel (tag 'Verrick now commands the Wardens') has no draw_id and is flagged improvised — it's a standard freeform Fate compel made up from the fiction (§3: 'compels ... are still made up at the table'), not a deck-draw cost, so the drawn-card-tag requirement doesn't apply.",
+    "scene": 1
+   }
+  ],
+  "friction": [
+   {
+    "scene": 1,
+    "text": "Success-with-style Create Advantage rolls (events 12, 14) each yielded both the standard 2-free-invoke aspect AND a deck peek (events 13, 15), which reads as a double benefit since the 'instead of a boost' peek option doesn't clearly apply to Create Advantage outcomes."
+   },
+   {
+    "scene": 1,
+    "text": "Beat Frame triggers (B-01, B-02) were logged as 'fired' at cleanup with no accompanying card draws or frame-sentence resolution, and B-02 appears to retroactively repurpose an earlier improvised, non-drawn compel as if it satisfied the Beat Frame's draw-and-fill procedure."
+   },
+   {
+    "scene": 1,
+    "text": "Tension was reduced for 'resolving a THREAT' on the strength of two Create Advantage successes rather than an actual Overcome/conflict resolution, stretching the §6 trigger condition."
+   }
+  ]
+ },
+ "surveys": [],
+ "interview": null,
+ "chronicle": null,
+ "state_end": {
+  "tension": 2,
+  "fp": {
+   "Ysolde": 3,
+   "Aldous": 2,
+   "Morwen": 3,
+   "Mire": 3
+  },
+  "surfaced": [],
+  "deck_player_cards": {
+   "PX-09": "Ysolde",
+   "PX-19": "Aldous",
+   "PX-03": "Morwen",
+   "PX-05": "Mire"
+  },
+  "guarantee_pulled": [],
+  "guarantee_failed": [],
+  "deck_left": [
+   "PX-09",
+   "T-01",
+   "PX-19",
+   "F-03",
+   "PX-05",
+   "H-05",
+   "PX-03"
+  ],
+  "draws": 0,
+  "turns": {
+   "Ysolde": 1,
+   "Aldous": 1,
+   "Morwen": 0,
+   "Mire": 1
+  }
+ },
+ "notes": [],
+ "metrics": {},
+ "tokens": {
+  "prompt": 190512,
+  "completion": 34648,
+  "cost_usd": 0.4646,
+  "calls": 11
+ },
+ "llm_calls": 11,
+ "models": {
+  "gm": "claude-sonnet-5",
+  "player": "claude-haiku-4-5-20251001",
+  "referee": "claude-sonnet-5",
+  "interviewer": "claude-haiku-4-5-20251001"
+ },
+ "elapsed_s": 293.1
+}
