@@ -85,7 +85,8 @@ class Game:
                 "cid": c.cid, "team": c.team, "role": c.role, "kills": 0, "deaths": 0,
                 "ap": 0, "rounds_dead": 0, "rounds_cd": 0, "uses": {k: 0 for k in ABILITY_KEYS},
                 "opp": {k: 0 for k in ABILITY_KEYS}, "items": [], "struct_dmg": 0,
-                "conceal_attacks": 0, "snipe_attacks": 0, "edge_rounds": 0, "activations": 0,
+                "conceal_attacks": 0, "snipe_attacks": 0, "champ_snipes": 0,
+                "edge_rounds": 0, "activations": 0,
             }
         sig_history: List[tuple] = []
         while st.winner is None and st.round < cfg["round_limit"]:
@@ -212,6 +213,7 @@ class Game:
             d.update(kills=c.kills, deaths=c.deaths, assists=c.assists, ap=c.ap_earned,
                      items=sorted(c.items), struct_dmg=c.dmg_to_structures,
                      conceal_attacks=c.conceal_attacks, snipe_attacks=c.snipe_attacks,
+                     champ_snipes=c.champ_snipes,
                      edge_rounds=c.edge_rounds,
                      activations=c.activations)
         for t in TEAMS:

@@ -60,10 +60,10 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
     node = state.node_of_unit(champ)
     outside_ok = can_act_outside(state, champ, node, ability)
     outward = False
-    far = False
+    far = far_champ = False
 
     def mark(target) -> None:
-        nonlocal outward, far
+        nonlocal outward, far, far_champ
         if target is not None and state.board.tile_of[target.hexpos] != home_tile:
             outward = True
             # Sniping is not "attacking while in cover" - a champion's own tile
@@ -72,6 +72,11 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
             # up would have revealed you (Rules 3.1).
             if hex_distance(champ.hexpos, target.hexpos) >= 2:
                 far = True
+                # Farming a wave from cover is not what sniping means here. The
+                # behaviour in question is hitting a champion from a hexgroup
+                # they could not have seen you in.
+                if target.kind == "champion":
+                    far_champ = True
     for i, step in enumerate(steps):
         ch = plan[i] if i < len(plan) else None
         ic = step["icon"]
@@ -153,6 +158,8 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
         champ.conceal_attacks += 1          # RQ-032: acting out of the fog
         if far:
             champ.snipe_attacks += 1
+        if far_champ:
+            champ.champ_snipes += 1
     if outward and state.config.get("reveal_on_outward_effect") and \
             (state.hidden_mask >> home_tile & 1):
         # Retired by RQ-036 and off by default: acting from cover no longer

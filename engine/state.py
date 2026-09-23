@@ -54,6 +54,7 @@ class Champion:
     dmg_to_structures: int = 0
     conceal_attacks: int = 0        # abilities used from a hidden tile on something outside it
     snipe_attacks: int = 0          # ...and from two or more hexes away: true sniping
+    champ_snipes: int = 0           # ...of those, the ones aimed at a champion
     edge_rounds: int = 0            # activations ended on a hexgroup border (RQ-036)
     activations: int = 0
     ap_by_ability: Dict[str, int] = field(default_factory=dict)
