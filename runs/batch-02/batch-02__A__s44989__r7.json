@@ -4,7 +4,7 @@
  "arm": "A",
  "seed": 44989,
  "spec_version": "0.3.1",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 7,
@@ -4135,6 +4135,146 @@
     "Fenwick": 5
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 142,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "3",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 2,
+    "Hask": 3,
+    "Eira": 2,
+    "Fenwick": 5
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 143,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "3",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 2,
+    "Hask": 3,
+    "Eira": 2,
+    "Fenwick": 5
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 144,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "3",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 2,
+    "Hask": 3,
+    "Eira": 2,
+    "Fenwick": 5
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 145,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "2",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 2,
+    "Hask": 3,
+    "Eira": 2,
+    "Fenwick": 5
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 146,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "FP: Maud=2, Hask=3, Eira=2, Fenwick=5",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 2,
+    "Hask": 3,
+    "Eira": 2,
+    "Fenwick": 5
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -5306,7 +5446,19 @@
    "text": "Sera, a wiry old pilgrim woman who marched the Causeway at Maud's side years back, comes stumbling out of the reeds half-drowned, recognizing Maud by name before she recognizes anything else.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "MA-01",
+    "type": "ROOTS",
+    "owner": "PC-MAUD",
+    "title": "The Pilgrim Road South",
+    "power_tags": [
+     "Marched the Ashwater Causeway with the Ashfield Pilgrims",
+     "Reads weather and water like scripture",
+     "Never loses the trail"
+    ],
+    "weakness": "Flinches at abandoned shrines"
+   }
   },
   {
    "event": "beat_fill",
@@ -5317,7 +5469,19 @@
    "text": "the Sanctuary Shoal, a half-sunk waystation of the Order of the Dry Saint that still guards the last dry approach to the temple — the same Order that has marked Fenwick an enemy on sight.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "FE-04",
+    "type": "REACH",
+    "owner": "PC-FENWICK",
+    "title": "Enemy of the Dry Saint",
+    "power_tags": [
+     "Marked as an enemy by the Order of the Dry Saint",
+     "Exposed their false relic maps once, publicly",
+     "Recognized on sight by Order agents"
+    ],
+    "weakness": "Order agents will move against him first, ask later"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -5332,7 +5496,19 @@
    "owner": "Maud",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "MA-01",
+    "type": "ROOTS",
+    "owner": "PC-MAUD",
+    "title": "The Pilgrim Road South",
+    "power_tags": [
+     "Marched the Ashwater Causeway with the Ashfield Pilgrims",
+     "Reads weather and water like scripture",
+     "Never loses the trail"
+    ],
+    "weakness": "Flinches at abandoned shrines"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -5347,7 +5523,19 @@
    "owner": "Fenwick",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "FE-04",
+    "type": "REACH",
+    "owner": "PC-FENWICK",
+    "title": "Enemy of the Dry Saint",
+    "power_tags": [
+     "Marked as an enemy by the Order of the Dry Saint",
+     "Exposed their false relic maps once, publicly",
+     "Recognized on sight by Order agents"
+    ],
+    "weakness": "Order agents will move against him first, ask later"
+   }
   },
   {
    "event": "free_compel",
@@ -5373,7 +5561,19 @@
    "owner": "Eira",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "EI-01",
+    "type": "ROOTS",
+    "owner": "PC-EIRA",
+    "title": "Born Behind the Quarantine Fence",
+    "power_tags": [
+     "Born in the Hollowmoot quarantine house",
+     "Immune to hive-fevers worst effects",
+     "Knows the old plague wards by heart"
+    ],
+    "weakness": "Panics when locked in small spaces"
+   }
   },
   {
    "event": "altered",
@@ -5383,7 +5583,19 @@
    "tag": "",
    "text": "The stair judders and gives under Hask's weight, a slab of wet stone grinding loose and sealing off the open climb in a crash of dust and spray. Where the passage used to be, there's only that hole Eira pointed to — a ragged gap punched through fallen masonry, barely shoulder-wide, black and close, ",
    "improvised": false,
-   "tag_in_text": false
+   "tag_in_text": false,
+   "card": {
+    "id": "EI-01",
+    "type": "ROOTS",
+    "owner": "PC-EIRA",
+    "title": "Born Behind the Quarantine Fence",
+    "power_tags": [
+     "Born in the Hollowmoot quarantine house",
+     "Immune to hive-fevers worst effects",
+     "Knows the old plague wards by heart"
+    ],
+    "weakness": "Panics when locked in small spaces"
+   }
   },
   {
    "event": "beat_fill",
@@ -5394,7 +5606,19 @@
    "text": "A gasping figure staggers up from the flooded reeds — one of Hask's own ferry kin, a cousin from the Gullet Ford ferry family same as him, half-drowned and shouting his name before she even reaches the group.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "HA-01",
+    "type": "ROOTS",
+    "owner": "PC-HASK",
+    "title": "Born on the Ferry Lines",
+    "power_tags": [
+     "Child of the Gullet Ford ferry family",
+     "Can pole a boat through any current",
+     "Knows the drowned roads beneath the water"
+    ],
+    "weakness": "Distrusts anyone whos never worked a ferry"
+   }
   },
   {
    "event": "beat_fill",
@@ -5405,7 +5629,20 @@
    "text": "Gullet Ford has risen past any safe crossing — the waist-deep churning crossing that used to be a hard wade is now a drowning current, and anyone caught in it tonight won't come out.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "L-01",
+    "type": "LOCATION",
+    "owner": "GM",
+    "title": "Gullet Ford",
+    "power_tags": [
+     "waist-deep churning crossing",
+     "reed banks for ambush",
+     "sunken cart wreck"
+    ],
+    "weakness": "Impassable in Flood",
+    "clock": "0/4"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -5420,7 +5657,19 @@
    "owner": "Hask",
    "placebo": false,
    "tag_in_text": false,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "HA-01",
+    "type": "ROOTS",
+    "owner": "PC-HASK",
+    "title": "Born on the Ferry Lines",
+    "power_tags": [
+     "Child of the Gullet Ford ferry family",
+     "Can pole a boat through any current",
+     "Knows the drowned roads beneath the water"
+    ],
+    "weakness": "Distrusts anyone whos never worked a ferry"
+   }
   },
   {
    "event": "free_compel",
@@ -5486,6 +5735,30 @@
     "section": "§3",
     "issue": "narration does not use its tag 'Distrusts anyone whos never worked a ferry' even after a rewrite",
     "source": "engine"
+   },
+   {
+    "section": "§6A",
+    "issue": "Story-pile draw FE-06 (drawn scene 3, event 64-65) was never returned to Fenwick's Story Pile at scene 3's cleanup (event 77) as required by §6A step 3 ('At scene end, return it and its echo slips to its pile... unless it was retired'). It remains face-up on the rail through scenes 4 and 5 with no rail_remove event ever logged for it.",
+    "event_id": 64,
+    "source": "referee"
+   },
+   {
+    "section": "§7",
+    "issue": "The rail exceeded its 5-card maximum. After event 124 added story-draw EI-05, the rail held 6 face-up cards (H-03, FE-06, L-01, HA-01, EI-05, SMA-02-to-come) before any correction; correction (event 131, removing L-04) restored the count to 5, but then event 132 (adding SMA-02) pushed the rail back to 6 cards with no further removal logged before scene end, violating 'The rail holds at most 5 face-up cards.'",
+    "event_id": 132,
+    "source": "referee"
+   },
+   {
+    "section": "§3 / §6",
+    "issue": "The Altered-scene twist built from drawn card EI-01 (scene 4) narrates a collapsing stair/rubble but never quotes or restates any of EI-01's tags, nor (as required once Eira refused the accompanying compel in event 81, per §4 step 4) any face-up GM tag. The engine's own refusal log confirms this ('altered scene did not use a tag of the drawn card'), and the cost_check data shows the final committed text still fails (tag_in_text:false, no repair recorded).",
+    "event_id": 80,
+    "source": "referee"
+   },
+   {
+    "section": "§3 / §4",
+    "issue": "The scene-5 deck-draw compel on HA-01's weakness tag 'Distrusts anyone whos never worked a ferry' still does not literally use/restate the tag in its narration even after a GM rewrite attempt; the engine's refusal log explicitly notes the issue persisted 'even after a rewrite,' and the compel was nonetheless accepted and resolved (fate point paid, card surfaced) without a compliant cost text.",
+    "event_id": 115,
+    "source": "referee"
    }
   ],
   "ambiguities": [
@@ -5551,14 +5824,221 @@
     "detail": "1 beat(s) carried over",
     "scene": 5,
     "source": "engine"
+   },
+   {
+    "section": "§3",
+    "issue": "The paragraph 'The cost must use the tag' first says it governs 'a cost, compel, twist or Beat Frame blank,' then immediately narrows itself to 'only the deck-draw costs in the table above' (i.e. the tie/major-cost row of §3's outcome table). It is unclear whether Altered-scene twists (§6), drawn-card compels (§4) and Beat Frame blank fills (§5) are actually bound by the strict 'must literally use/restate the tag' requirement, or only ties and major-cost successes are.",
+    "interim_ruling": "The engine applied the strict tag-use check broadly, to compels (§4), Beat Frame blanks (§5) and Altered-scene twists (§6) as well as §3 costs, issuing refusals/rewrite demands in all of these cases. Enforcement was inconsistent in outcome: some rewrites still failed the literal check and were nevertheless allowed to stand in the final log (see violations on event_id 80 and 115).",
+    "source": "referee"
+   },
+   {
+    "section": "§6A / §7",
+    "issue": "§6A step 3 requires a drawn story card to be 'returned to its pile and reshuffled' at scene end unless retired, but §7's five-step fixed cleanup order only lists 'Update Story Piles: add, weight or retire story cards' — it never explicitly instructs returning a story card that surfaced onto the rail this scene. It is unclear which text governs when they conflict.",
+    "interim_ruling": "The table let drawn story cards (FE-06, EI-05, SMA-02) remain face-up on the rail past the end of the scene in which they were drawn, with no rail_remove event ever logged for them, i.e. §7's cleanup checklist was followed literally and §6A's return instruction was not executed.",
+    "source": "referee"
+   },
+   {
+    "section": "§7",
+    "issue": "The rail-limit rule only provides a resolution mechanism for overflow — 'the GM removes the oldest non-GLOBAL GM card' — but does not say what happens once no eligible non-GLOBAL GM card remains on the rail while story-pile draws and surfaced player cards keep pushing the count past 5.",
+    "interim_ruling": "After the sole removable non-GLOBAL GM card (L-04) was discarded once, the rail was allowed to exceed 5 cards again (6 cards after event 132) with no further correction for the rest of the scene.",
+    "source": "referee"
    }
   ],
-  "cost_checks": [],
-  "friction": []
+  "cost_checks": [
+   {
+    "event_id": 47,
+    "used_drawn_card": true,
+    "note": "Beat Frame PLEA FOR HELP: MA-01 fills WHO using 'Marched the Ashwater Causeway...' (tag quoted in fiction); FE-04 fills WHERE (fallback slot) using 'Marked as an enemy by the Order of the Dry Saint' (tag used in fiction). Both valid."
+   },
+   {
+    "event_id": 48,
+    "used_drawn_card": true,
+    "note": "Compel on MA-01's weakness 'Flinches at abandoned shrines' explicitly named and dramatized; flagged tag_in_text:false initially but marked repaired:true in final text."
+   },
+   {
+    "event_id": 51,
+    "used_drawn_card": true,
+    "note": "Compel on FE-04's weakness 'Order agents will move against him first, ask later' clearly restated in the narration."
+   },
+   {
+    "event_id": 80,
+    "used_drawn_card": false,
+    "note": "Altered-scene twist built from EI-01 (and/or the alternate GM-tag cost required after Eira's refusal in event 81) never names or restates any tag — neither EI-01's tags nor a face-up GM tag. Engine flagged this refusal; the final committed text still fails the check (no 'repaired' flag present)."
+   },
+   {
+    "event_id": 81,
+    "used_drawn_card": true,
+    "note": "Compel offer on EI-01's weakness 'Panics when locked in small spaces' does use the tag after repair (tag_in_text:true, repaired:true), even though it was ultimately refused."
+   },
+   {
+    "event_id": 113,
+    "used_drawn_card": true,
+    "note": "Beat Frame BAD NEWS: HA-01 fills WHO using 'Child of the Gullet Ford ferry family'; L-01 fills WHY (fallback slot, since LOCATION has no WHERE blank open here) using 'waist-deep churning crossing'. Both valid."
+   },
+   {
+    "event_id": 115,
+    "used_drawn_card": false,
+    "note": "Compel on HA-01's weakness 'Distrusts anyone whos never worked a ferry' paraphrases the idea ('never poled a boat', 'trusts ferry blood') but the automated check still records tag_in_text:false even after the GM's rewrite; engine's own refusal log confirms it failed 'even after a rewrite.' Final log leaves this uncorrected."
+   }
+  ],
+  "friction": [
+   {
+    "text": "The §3 'cost must use the tag' rule's self-contradictory scope (applies broadly to 'cost, compel, twist or Beat Frame blank' in one sentence, then narrows to 'only the deck-draw costs in the table above' in the next) produced repeated engine refusals across three different mechanisms (a passive-opposition cost, an Altered-scene twist, and a deck-draw compel) and at least two cases where the rewrite still didn't satisfy the literal check, forcing the table to move on with an unresolved violation rather than a clean fix."
+   },
+   {
+    "text": "Story-pile draws triggered by ordinary (non-deck) compels use plain owner-prefix IDs (FE-06, EI-05) indistinguishable at a glance from binder-card IDs (FE-04, EI-04), while other story cards use an 'S'-prefix scheme (SMA-01, SHA-01, SN-01). This made it hard to tell from the log alone which pile a drawn card came from, and likely contributed to those cards never being returned to their piles at scene end."
+   },
+   {
+    "text": "The rail's 5-card cap and its single overflow-resolution rule (discard the oldest non-GLOBAL GM card) were designed around GM-card churn, but scene 5 combined a Beat Frame GM-card draw, a surfacing player card, and two story-pile draws in quick succession; once the one eligible GM card was gone, there was no further mechanism to keep the rail at 5, so it was simply allowed to run over."
+   }
+  ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "method_actor",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 7,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The bell-count breaking when Tomas refused to answer and collapsed into Maud's arms instead of the bell's shadow. The whole rescue clicking together—Hask's pattern-reading, Eira's grounding, my oath-keeping—and actually *working*. That oath I swore at the session's start mattered under maximum pressure.",
+    "most_frustrating": "When I tried to negotiate passage from the Cartel without sacrificing Sella, and Eira read straight through it, calling out that Maud is already compromised by the Silver Debt and will make the pragmatic choice anyway. I wanted to be clever enough to outsmart a bad situation, but the game was right—Maud is bought and sold. Frustrating realization, not a bad GM call.",
+    "background_used": "The Pilgrim Road oath with Sera, the Silver Debt to the Cartel, and the paralysis from abandoned shrines were all used centrally and earned rather than forced. The oath drove the rescue arc, the debt drove the final complication. Good use across the board.",
+    "wanted_but_couldnt": "Keep my negotiation path open with the Cartel. I wanted Maud's Cartel knowledge and leadership to let her find a solution that saved everyone, but her existing debt meant her compromise was already decided—she can't outsmart something that owns her.",
+    "one_sentence": "Maud's oath and debt were used as complementary pressures creating genuine stakes and real tension—the game used her history to constrain choices in ways that made sense, not as arbitrary punishment."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "storyteller",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Reading the bell-song's pattern beneath chaos and realizing it was just a count—then watching Tomas actually choose not to answer it. That moment when we actually won something.",
+    "most_frustrating": "The Gullet Ford drowning completely. It's my family's crossing—I can read dangerous water, find hidden roads beneath—but a whirlpool with no bottom? No skill fixes that. Just gone.",
+    "background_used": "Kess arriving as my cousin, calling me \"Shallow,\" the questions about reading water and the Ferry Lines—it all felt essential and organic. Good landing.",
+    "wanted_but_couldnt": "I wanted to find a hidden drowned road beneath the flood, some ferry route only the marsh families knew, a way to cross without the Cartel's price. But the water had swallowed that possibility too.",
+    "one_sentence": "My ferry-family roots weren't color—they were the reason I could help."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "rules_lawyer",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 7,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When I cracked the bell-song's true pattern as a binding census, and then my steady midwife presence helped Tomas choose the real world over the false father-voice. That moment felt earned—my knowledge of plague wards and my actual grounded presence doing work together in a way that mattered tactically and emotionally.",
+    "most_frustrating": "The narrowing of escape options felt inevitable rather than surprising. Once Gullet Ford drowned, the Cartel became the only viable path forward, and I couldn't pursue alternatives or challenge that constraint. I wanted to problem-solve toward a different solution, but the scenario had already closed those doors.",
+    "background_used": "Good overall—my plague ward knowledge and steady presence as a midwife were absolutely central and woven in well. But the Cartel debt triggering felt somewhat orchestrated through the scenario's constraints rather than emerging organically. It created good dramatic tension, but I could feel the rails underneath it.",
+    "wanted_but_couldnt": "I wanted to find an escape route that didn't trade or compromise Sella—either negotiate with the Cartel differently, or discover a third option. Once the scenario established that the Ford was gone and the Cartel were the only ones with boats, my actual choices collapsed into \"accept this premise.\"",
+    "one_sentence": "My knowledge and skills were absolutely essential and well-woven in, but the major story complications felt more like predetermined consequences of my character cards than genuine emergent challenges."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "lurker",
+   "scores": {
+    "fun": 6,
+    "involvement": 5,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The warning glyph scratched fresh beneath the Order sigil on the Sanctuary Shoal's doorpost. It was personal—the Order leaving a mark for Fenwick specifically—and it landed the threat perfectly without needing explanation.",
+    "most_frustrating": "I wanted to contribute more actively to solving the bell-song puzzle. Hask figured out the pattern (Notice), Eira broke the thrall (Empathy), Maud sealed it (Rapport)—Fenwick's high Lore and Investigate felt sidelined. I was supporting rather than solving, which fits the character but left me watching.",
+    "background_used": "Very well. The Order enmity hit hard and felt organic (not a gotcha), Bren's location was central to the whole setup, and the temple knowledge mattered. Only the \"Cast Out from Stilt Villages\" card stayed quiet—but that's fine, not every card needs to fire. The integration felt like the GM built this scenario partially *around* Fenwick's past.",
+    "wanted_but_couldnt": "Use Fenwick's Lore (4) or Investigate (3) to read something crucial about the bell or the ritual before the others figured it out. Also wanted a moment to do something active in the climax rather than just narrating support—maybe reading old temple architecture or Bren's old surveying notes to find the hidden exit or break the count.",
+    "one_sentence": "Your enmity with the Order and Bren's location felt woven in meaningfully—threatening but fair, integrated rather than forced."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Maud",
+    "turns": 27,
+    "references_to_others_background": 4
+   },
+   {
+    "name": "Hask",
+    "turns": 21,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Eira",
+    "turns": 24,
+    "references_to_others_background": 1
+   },
+   {
+    "name": "Fenwick",
+    "turns": 10,
+    "references_to_others_background": 0
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "The party fought the bell's pull long enough to win Tomas back, only to have the stair collapse and force them down through a tight, breathless crawl beneath Saint Orrin's Drowned Temple. They emerged to Kess's warning that Gullet Ford had drowned entirely, cutting off the only crossing south, and the group turned as one toward the Blackwater Cartel's docks — bound together by Maud's oath, Eira's unpaid debts, and Hask's family ties to the ferry lines. The night ends with the party alive, united, and walking straight into a negotiation that will cost them something no coin can cover.",
+  "closing_tension": 3,
+  "reverberations": {
+   "growth": {
+    "MA-01": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "FE-04": {
+     "added": 2,
+     "total": 2,
+     "evolve": false
+    },
+    "HA-01": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "EI-04": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    }
+   },
+   "clocks": [],
+   "mutations": [],
+   "retired": []
+  },
+  "retired": [
+   {
+    "card": "N-02",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-04",
+    "how": "story pile over limit",
+    "session": 1
+   }
+  ]
+ },
  "state_end": {
   "tension": 3,
   "fp": {
@@ -5596,14 +6076,113 @@
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 1750338,
-  "completion": 219816,
-  "cost_usd": 4.3192,
-  "calls": 113
+ "metrics": {
+  "arm": "A",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Eira",
+   "Fenwick",
+   "Hask",
+   "Maud"
+  ],
+  "backstory_all_players": true,
+  "deck_surfaced_all_players": true,
+  "deck_draws": 4,
+  "draw_costs": 9,
+  "draw_cost_used_card_rate_engine": 0.889,
+  "draw_cost_tag_in_text_rate": 0.778,
+  "draw_cost_repaired": 4,
+  "draw_cost_used_card_rate_referee": 0.714,
+  "fp_end": {
+   "Maud": 2,
+   "Hask": 3,
+   "Eira": 2,
+   "Fenwick": 5
+  },
+  "fp_end_mean": 3,
+  "fp_earned": {
+   "Maud": 2,
+   "Fenwick": 2,
+   "Hask": 1,
+   "Eira": 1
+  },
+  "fp_spent": {
+   "Maud": 3,
+   "Hask": 1,
+   "Eira": 2
+  },
+  "compels_accepted": 6,
+  "compels_refused": 1,
+  "compels_deck": 4,
+  "compels_free": 3,
+  "turns": {
+   "Maud": 13,
+   "Hask": 13,
+   "Eira": 13,
+   "Fenwick": 5
+  },
+  "turn_gini": 0.1364,
+  "invokes": {
+   "Maud": 3,
+   "Hask": 1,
+   "Eira": 2
+  },
+  "invoke_gini": 0.4167,
+  "tension_trajectory": [
+   3,
+   3,
+   2,
+   3,
+   2,
+   3
+  ],
+  "clock_marks": 0,
+  "violations": 9,
+  "violations_engine": 5,
+  "violations_referee": 4,
+  "ambiguities": 10,
+  "ambiguity_ids": [
+   "AMB-01",
+   "AMB-12",
+   "AMB-20",
+   "AMB-22",
+   "AMB-26",
+   "AMB-27",
+   "§3",
+   "§6A / §7",
+   "§7"
+  ],
+  "gm_improvised_complications": 3,
+  "card_supplied_complications": 9,
+  "improvisation_share": 0.25,
+  "guarantee_pulled": 1,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6.25,
+   "involvement": 6.5,
+   "connection": 7,
+   "control": 5.5,
+   "play_again": 7
+  },
+  "involvement_var_within": 0.75,
+  "personality": {
+   "Maud": "method_actor",
+   "Hask": "storyteller",
+   "Eira": "rules_lawyer",
+   "Fenwick": "lurker"
+  },
+  "elapsed_min": 36.1,
+  "cost_usd": 5.1496
  },
- "llm_calls": 113,
+ "tokens": {
+  "prompt": 1866338,
+  "completion": 282108,
+  "cost_usd": 5.1496,
+  "calls": 120
+ },
+ "llm_calls": 120,
  "call_log": [
   {
    "seq": 1,
@@ -6508,6 +7087,62 @@
    "cached": false,
    "prompt_tokens": 46663,
    "completion_tokens": 2207
+  },
+  {
+   "seq": 42,
+   "agent": "GM",
+   "kind": "gm_post",
+   "cached": false,
+   "prompt_tokens": 21285,
+   "completion_tokens": 313
+  },
+  {
+   "seq": 1,
+   "agent": "Referee",
+   "kind": "referee",
+   "cached": false,
+   "prompt_tokens": 24932,
+   "completion_tokens": 29637
+  },
+  {
+   "seq": 1,
+   "agent": "Fenwick#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 13939,
+   "completion_tokens": 1617
+  },
+  {
+   "seq": 1,
+   "agent": "Hask#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 13908,
+   "completion_tokens": 2359
+  },
+  {
+   "seq": 1,
+   "agent": "Eira#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 13920,
+   "completion_tokens": 3310
+  },
+  {
+   "seq": 1,
+   "agent": "Maud#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 13876,
+   "completion_tokens": 4939
+  },
+  {
+   "seq": 1,
+   "agent": "Interviewer",
+   "kind": "interviewer",
+   "cached": false,
+   "prompt_tokens": 14140,
+   "completion_tokens": 20117
   }
  ],
  "models": {
@@ -6516,5 +7151,5 @@
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 1622.9
+ "elapsed_s": 2163.9
 }
