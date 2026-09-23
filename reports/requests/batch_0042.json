@@ -1,0 +1,40 @@
+{
+  "batch_id": "batch_0042",
+  "rules": "1.7.0",
+  "roster": "1.6.0",
+  "ai": "1.4.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3,
+    "personality_pool": [
+      "SM_g1_clock3",
+      "SM_g1_clock2",
+      "SM_g2_lane3",
+      "SM_g2_lane5",
+      "SM_g2_lane6",
+      "SM_g2_clock3_short",
+      "SM_g2_lane_ap",
+      "SM_g2_lane_map",
+      "SM_g2_siege_guard",
+      "SM_g2_brawl_open"
+    ]
+  },
+  "anchors": ["T2_sieger", "T2_search"],
+  "anchor_share": 0.5,
+  "games": 480,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 4201,
+  "replays": 2,
+  "config_overrides": {
+    "tower_hp": 16,
+    "kill_ap": 3,
+    "death_band_bonus": 1
+  },
+  "extra": [
+    "State-machine tournament, generation 2 (Handoff 9.4). The two generation-1 survivors (clock3, clock2) plus eight bred around them: the lane opening at rounds 3, 5 and 6; clock3 with the objective band shortened; two crossovers of a lane opening with the income and tower rules; and two unrelated designs, a siege-from-round-1 machine that only wards when two champions down, and a machine that opens on a fight.",
+    "Anchors are no longer tiers in the pool: half the games put T2_sieger or T2_search in one seat against a drawn machine, so each machine meets each anchor about 12 times and the two anchors 24 times pooled. Rank on the lower confidence bound (9d), read the against-anchor columns.",
+    "What would settle it: a machine whose lower bound clears the pure sieger's point estimate says a laning opening (or something else) is real; a second generation with nothing clearing it says the field is the sieger, and champion balance can be read against it."
+  ]
+}

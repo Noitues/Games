@@ -70,7 +70,15 @@ def play_one(args: tuple) -> dict:
         # pair is drawn from the game index so both seats of a swapped pair see
         # the same two personalities in opposite seats.
         prng = random.Random(spec["seed"] * 104_729 + (i // 2))
-        p1_tier, p2_tier = prng.sample(list(pool), 2) if len(pool) > 1 else (pool[0], pool[0])
+        anchors = list(spec.get("anchors") or [])
+        share = float(spec.get("anchor_share") or 0.0)
+        if anchors and share > 0 and prng.random() < share:
+            # Handoff §9.2: a fixed anchor in a constant share of games, so a
+            # candidate's record against it is comparable across generations.
+            anchor, cand = prng.choice(anchors), prng.choice(list(pool))
+            p1_tier, p2_tier = (anchor, cand) if prng.random() < 0.5 else (cand, anchor)
+        else:
+            p1_tier, p2_tier = prng.sample(list(pool), 2) if len(pool) > 1 else (pool[0], pool[0])
     pols = {}
     seats = (("north", p1_tier, p1_cfg), ("south", p2_tier, p2_cfg)) if first == "north" \
         else (("north", p2_tier, p2_cfg), ("south", p1_tier, p1_cfg))
