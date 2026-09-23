@@ -2226,6 +2226,429 @@
    "notes": "",
    "event_type": "scene_end",
    "improvised": false
+  },
+  {
+   "event_id": 96,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Scene 4 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false
+  },
+  {
+   "event_id": 97,
+   "session": 1,
+   "scene": 4,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Will the party's mercy hold against the Order's own doctrine, or does saving Corren from the hive now mean losing him to the Dry Saint's law?",
+   "event_type": "frame",
+   "improvised": false
+  },
+  {
+   "event_id": 98,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "overcome",
+   "skill": "Empathy",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Ysolde steps forward to meet Sister Prioress Vessa's iron gaze directly, invoking the Exiled Cook of the Night-Barge Who Hears Everything [YS-HC]. She reads the",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 99,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "overcome",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Aldous steps forward and plants himself between the Prioress and Sela with her son, becoming an unmovable barrier. The drowned ghosts that mark him gather at hi",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 100,
+   "session": 1,
+   "scene": 4,
+   "actor": "Morwen",
+   "action": "attack",
+   "skill": "Will",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Morwen staggers forward to plant herself physically between the Prioress and Corren, her torn leg barely holding her upright, blood still soaking her clothes. S",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 101,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Mire steps forward to meet the Prioress's iron gaze, her bearing the perfect balance of discipline and immovable certainty—the stance of someone trained to hold",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 102,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Cannot Lie to a Priest",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Vessa fixes him with iron eyes and asks him plainly: are you certain the boy will never be lost to the song? Bound by his trouble, Aldous cannot lie to a priest, and admits aloud that he isn't certain",
+   "event_type": "compel",
+   "improvised": true,
+   "compel_forced": false
+  },
+  {
+   "event_id": 103,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "Overcome: Ysolde steps forward to meet Sister Prioress Vessa's iron ga",
+   "skill": "Empathy +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "- + 0 -",
+   "total": "+3",
+   "opposition": "+1 (NPC - + - -)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Sister Prioress Vessa",
+   "shifts": 2,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 104,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "Overcome: Aldous steps forward and plants himself between the Prioress",
+   "skill": "Notice +4",
+   "tags_invoked": "Fortune-Teller Who Reads the Rain, Sole Survivor of the Wreck [AL-HC]",
+   "fp_spent": 1,
+   "dice": "+ 0 - +",
+   "total": "+7",
+   "opposition": "+5 (NPC 0 + + 0)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Sister Prioress Vessa",
+   "shifts": 2,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 105,
+   "session": 1,
+   "scene": 4,
+   "actor": "Morwen",
+   "action": "Attack: Morwen staggers forward to plant herself physically between ",
+   "skill": "Will +4",
+   "tags_invoked": "Vowed to stand against the Wardens' torches for one more house [MO-A3]",
+   "fp_spent": 1,
+   "dice": "- - 0 -",
+   "total": "+3",
+   "opposition": "+8 (NPC 0 + + +)",
+   "result": "success_major_cost",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "GM invokes: fire cleanses the hive [C-02]",
+   "event_type": "roll",
+   "improvised": false,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Sister Prioress Vessa",
+   "shifts": -5,
+   "cost_mode": "improvised"
+  },
+  {
+   "event_id": 106,
+   "session": 1,
+   "scene": 4,
+   "actor": "GM",
+   "action": "Cost (success_major_cost)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Morwen's Will crashes into the Prioress's certainty like a wave breaking on stone — Vessa's breath catches, one crack showing in that iron composure. But the effort costs Morwen everything her torn le",
+   "event_type": "cost",
+   "improvised": true,
+   "cost_valid": null,
+   "for_event": 105
+  },
+  {
+   "event_id": 107,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Ysolde crosses to Morwen without hesitation, her hands already reading the blood soaking through the exorcist's torn leg. She helps her stand or catches her if ",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 108,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Aldous moves to Morwen's side, steadying her as her torn leg buckles beneath her. One hand firm on her shoulder, he lifts his gaze to Corren's wrists and throat",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 109,
+   "session": 1,
+   "scene": 4,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Morwen stays kneeling on the wet stone, unable to stand—her torn leg buckled beneath her, blood pooling dark. But she looks up at Sister Prioress Vessa with abs",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 110,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Mire strides to Morwen without hesitation and offers her arm to pull the injured exorcist up from the rising water, her movements trained and efficient. She pla",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 111,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Order Agents Know My Face",
+   "fp_spent": 1,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "refused",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Vessa's iron eyes flick to Ysolde and narrow with sudden, cold recognition — 'I know you too, cook. The Cartel's creature, aren't you, walking free in Order halls.' The accusation hangs in the air, th",
+   "event_type": "compel",
+   "improvised": true,
+   "compel_forced": false
+  },
+  {
+   "event_id": 112,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "Create Advantage: Aldous moves to Morwen's side, steadying her as her torn leg",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "0 0 - -",
+   "total": "+2",
+   "opposition": "+1 (NPC 0 0 - -)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.4.15 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Sister Prioress Vessa",
+   "shifts": 1,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 113,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Trigger fired: B-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "compel_refused",
+   "event_type": "trigger",
+   "improvised": false
+  },
+  {
+   "event_id": 114,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Scene 4 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "triggers fired: ['B-02']",
+   "event_type": "scene_end",
+   "improvised": false
   }
  ],
  "scenes": [
@@ -2264,6 +2687,19 @@
    "climax": false,
    "tension_after": null,
    "triggers_fired": []
+  },
+  {
+   "index": 4,
+   "tension_before": null,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 2,
+   "climax": false,
+   "tension_after": null,
+   "triggers_fired": [
+    "B-02"
+   ]
   }
  ],
  "transcript": [
@@ -3314,6 +3750,230 @@
    "kind": "narration",
    "text": "Brother Ansel's censer arm drops all the way now — not a retreat, a surrender. Ysolde has given him nothing to argue with, only his own face reflected back at him, and the grey-robes on the gallery lower their lanterns without needing to be told twice. Above, in the belltower, something breaks. Morwen's voice — his own name, spoken like a rite, like a debt owed — finds the boy under the swarm-song's grip, and Corren's unnatural stillness shatters into a full-body shudder. He turns from the window at last, blinking rain out of his eyes like waking from very deep water, and his knees buckle. Morwen catches him before he falls, and he's shaking, sobbing, utterly present — a frightened boy again, not a vessel. But the mark hasn't left him: faint hive-lines still trace beneath his skin at wrist and throat, dark as bruises, pulsing very faintly in time with the song still pouring from the belltower's shattered bell. He is himself. He is also still, in some small and terrible way, listening. Sela's scream of joy as she scrambles up the drowned stairs to hold her son drowns out everything else for a moment — the Order lowering their fire, the rain, even the swarm-song's patient drone — and for now, that's enough. The temple has not burned. Corren has come back. What the hive left in him is a question for another day.",
    "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Brother Ansel leads you up into the temple's dry gallery, out of the rain at last, where oil lamps gutter over water-stained scripture and rows of small clay urns — the ashes of those the Order couldn't save. He doesn't get far into explaining himself before a second figure rises from behind the lectern: old, spare, iron-eyed, a scarred hand resting on a ledger chained shut with lead. 'Sister Prioress,' Ansel says, and stiffens like a boy caught out. She doesn't look at him. She looks at Corren, at the faint dark lines still tracing his wrist, and at Sela clutching her son like the fire is already lit. 'Doctrine exists,' the Prioress says quietly, 'because mercy like Brother Ansel's has cost us whole villages before. The boy is marked. The law is plain. So, it seems, is your interference.' Outside, the swarm-song hasn't stopped, and somewhere below the flooded nave, water is still rising.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "You've buried too many, Sister Prioress—I can read that in your hands. But this boy came back when his mother called his name, and the hive doesn't release what it's truly claimed. Burning him now isn't mercy. It's just making sure what you've already lost stays lost.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde steps forward to meet Sister Prioress Vessa's iron gaze directly, invoking the Exiled Cook of the Night-Barge Who Hears Everything [YS-HC]. She reads the weight of grief and loss written in the old woman's scarred hands: villages buried, mercy that cost too much, trauma that has hardened into doctrine. She doesn't argue against the law or try to convince the Prioress on theological grounds. Instead, she speaks to the human beneath the authority—the person who made terrible choices trying to protect others. Her voice carries the same grounded, unmovable presence that held Sela steady and broke Ansel's resolve.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "You see it too, Sister. The law was written for souls already gone. This boy is still fighting to stay himself.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous steps forward and plants himself between the Prioress and Sela with her son, becoming an unmovable barrier. The drowned ghosts that mark him gather at his shoulders. He reads the pulse of the hive-lines tracing Corren's skin, reads the rain's patterns in the flooded temple stone, reads the iron certainty in the Prioress's eyes—and in all of it, a boy still there, still fighting, still himself.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "I was raised in your fires to save the marked, not burn them, Prioress. I just did it. Your law doesn't own this boy.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen staggers forward to plant herself physically between the Prioress and Corren, her torn leg barely holding her upright, blood still soaking her clothes. She meets the old woman's iron gaze with the full force of her Order training and the fire of her vow—to stand against the Wardens' torches for one more house. She speaks with the absolute certainty of someone who just proved doctrine could be lived differently.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Sister Prioress, I know that law. I was trained in it. But he's still fighting—still himself. The song hasn't claimed him yet. That has to mean something.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire steps forward to meet the Prioress's iron gaze, her bearing the perfect balance of discipline and immovable certainty—the stance of someone trained to hold a line. She doesn't draw her blade or threaten. She simply stands, using the Order's own language of hierarchy and duty to appeal for judgment over doctrine.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "I read the rain plain, Sister — I cannot lie to you and claim otherwise. The hive-lines still pulse beneath his skin, and I don't know if they'll fade or if the hunger will return. But I know he's here now, still himself, still fighting.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde — overcome with Empathy: dice - + 0 - → Good (+3) vs Average (+1): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — overcome with Notice: dice + 0 - +, invoking Fortune-Teller Who Reads the Rain, Sole Survivor of the Wreck [AL-HC] → Epic (+7) vs Superb (+5): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen — attack with Will: dice - - 0 -, invoking Vowed to stand against the Wardens' torches for one more house [MO-A3] → Good (+3) vs Legendary (+8): SUCCESS MAJOR COST (Sister Prioress Vessa stress 1)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Morwen's Will crashes into the Prioress's certainty like a wave breaking on stone — Vessa's breath catches, one crack showing in that iron composure. But the effort costs Morwen everything her torn leg has left: it buckles beneath her, blood welling fresh through the old wound, and she goes down hard on the flooded gallery stone. Vessa recovers her composure fast, and now looks at the kneeling exorcist not as a threat but as a name she recognizes — 'The famous one,' she says coldly. 'Too Famous to Hide, they call you, even out here. Careful whose attention you draw to this temple, girl.'",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Ysolde's words find their mark first — something in Vessa's scarred hands trembles almost imperceptibly, the old woman's gaze flicking toward the clay urns lining the wall before she catches herself. Aldous reads the boy plain as scripture: the hive-lines at Corren's wrist pulse slow and thin, not the frantic hunger of full claiming but something more like a splinter left under skin — and when he says so, Vessa's iron composure cracks just enough to listen. But it's Morwen who pays for the ground gained. She throws everything she has left — training, vow, grief — straight at the Prioress's certainty, and it lands hard enough to steal the old woman's breath for one long moment. Then Morwen's ruined leg gives out entirely, and she goes down in a spreading dark stain on the flooded stone, weaponless, gasping, spent. Vessa recovers fast and cold. She doesn't move to help. She looks down at the exorcist kneeling in her own blood and says, quiet as a closing door, \"The famous one. Too Famous to Hide, they call you, even out here. Careful whose attention you draw to this temple, girl — mine isn't the only fire your name has drawn.\" Behind her, Brother Ansel shifts his weight, torn between the urns on the wall and the boy still breathing in his mother's arms; the swarm-song from the belltower hasn't stopped, and somewhere below the gallery, the water keeps climbing.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "You're right, Prioress. The boy's breathing—that's the win we came for. The water won't wait. We're moving.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde crosses to Morwen without hesitation, her hands already reading the blood soaking through the exorcist's torn leg. She helps her stand or catches her if she falters, lending her steady strength. Even as she moves, she's reading Vessa's iron certainty and understanding exactly where mercy stops being possible. She starts shepherding people toward the stairs—Sela with Corren, Aldous, Mire—drawing them all toward higher ground as the swarm-song drones above and the water climbs below. The night-barge cook who's navigated impossible waters knows how to find the way out.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "Sister, I read the marks fading, not spreading—I read it as plain as the rain. The song weakens with every breath he reclaims as his own. That's the truth your law was written to protect.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous moves to Morwen's side, steadying her as her torn leg buckles beneath her. One hand firm on her shoulder, he lifts his gaze to Corren's wrists and throat, reading the pulse of the hive-marks the way he reads the rain—watching them track and fade. They are thinner than before Morwen spoke the boy's name. Their pulsing slows. The drowned ghosts that mark Aldous gather close at his shoulders, focusing his perception to sharp certainty as he reads what the marks truly do: they break, not bind.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Your doctrine is ash, Sister—all those urns. But this boy came back when his mother called his name. Fire won't change that. Your law doesn't own him.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen stays kneeling on the wet stone, unable to stand—her torn leg buckled beneath her, blood pooling dark. But she looks up at Sister Prioress Vessa with absolute conviction, meeting iron eyes with the faith of someone forged in childhood fire and tested in worse. She speaks like a binding, like a rite, her voice steady despite the ragged breathing. She doesn't flinch from the threat about her fame. She leans into it instead—this is who she is.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Morwen, up—the water's still rising. Prioress, the boy lives and the line holds. We leave together.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire strides to Morwen without hesitation and offers her arm to pull the injured exorcist up from the rising water, her movements trained and efficient. She plants herself between Morwen and Sister Vessa, shoulders squared and blade held at ready—not an attack, but a physical barrier. Her eyes track both the Prioress and Brother Ansel, reading them like she reads flood water: watching for the moment when survival becomes louder than doctrine.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Aye, and you've earned the right to judge me however you like, Prioress. But the boy breathes, and the water won't wait for your verdict. We move now.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde refuses a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — create advantage with Notice: dice 0 0 - - → Fair (+2) vs Average (+1): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Aldous doesn't argue theology—he simply looks, and looks true. The hive-lines at Corren's wrist aren't spreading the way a claiming should; they're guttering, thinning with every ragged breath the boy takes in his mother's arms, like a candle starved of air rather than a fire catching hold. He says so plainly, and this time even Vessa leans in to see it for herself, her scarred hand hovering an inch from the boy's skin without touching. She doesn't concede the law. She never will. But she doesn't call for fire either—not with the evidence pulsing faint and fading right in front of her own eyes. Ysolde, refusing to let the Prioress's judgment settle any deeper into her, simply turns her back on the old woman's warning and gathers the others toward the stair; Mire hauls Morwen upright with an arm under her shoulder, blood and rainwater mixing on the flooded stone as they go. Brother Ansel watches them pass without moving to stop them, his eyes on Corren rather than his superior. At the gallery door, Vessa's voice follows them once more—flat, cold, final for now: \"Go, then. But the mark isn't gone, only quiet. If it wakes again, girl, I won't ask twice.\" Outside, the swarm-song still drones from the shattered belltower and the water is still climbing the temple steps behind you, but Corren breathes, and Sela holds him, and for tonight that's the whole of the answer you came for.",
+   "visible_to": "all"
   }
  ],
  "costs": [
@@ -3455,6 +4115,38 @@
    "improvised": true,
    "accepted": true,
    "owner": "Mire"
+  },
+  {
+   "event": "free_compel",
+   "scene": 4,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Cannot Lie to a Priest",
+   "text": "Vessa fixes him with iron eyes and asks him plainly: are you certain the boy will never be lost to the song? Bound by his trouble, Aldous cannot lie to a priest, and admits aloud that he isn't certain at all — the hive-lines are still there, still pulsing, and he doesn't know if they'll ever fade. I",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Aldous"
+  },
+  {
+   "event": "success_major_cost",
+   "scene": 4,
+   "draw_id": "",
+   "valid": null,
+   "tag": "",
+   "text": "Morwen's Will crashes into the Prioress's certainty like a wave breaking on stone — Vessa's breath catches, one crack showing in that iron composure. But the effort costs Morwen everything her torn leg has left: it buckles beneath her, blood welling fresh through the old wound, and she goes down har",
+   "improvised": true,
+   "mode": "improvised"
+  },
+  {
+   "event": "free_compel",
+   "scene": 4,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Order Agents Know My Face",
+   "text": "Vessa's iron eyes flick to Ysolde and narrow with sudden, cold recognition — 'I know you too, cook. The Cartel's creature, aren't you, walking free in Order halls.' The accusation hangs in the air, threatening to turn the standoff from Corren's fate to Ysolde's own, and Brother Ansel's hand drifts t",
+   "improvised": true,
+   "accepted": false,
+   "owner": "Ysolde"
   }
  ],
  "referee": {
@@ -3574,6 +4266,15 @@
     "source": "engine"
    },
    {
+    "id": "AMB-23",
+    "section": "§3",
+    "issue": "Success at major cost on an attack: how much harm lands?",
+    "interim_ruling": "The attack lands for 1 shift.",
+    "detail": "",
+    "scene": 4,
+    "source": "engine"
+   },
+   {
     "section": "Compels",
     "issue": "The baseline rules state 'the GM may offer a compel on any player aspect or trouble.' In events 10 and 16, the Compel action's actor field is the player (Morwen, Mire) rather than 'GM', with compel_forced=false, suggesting the players self-initiated/proposed the compel on their own aspect/trouble rather than the GM offering it.",
     "interim_ruling": "Table treated player-proposed compels as valid GM-equivalent offers; both were logged as 'accepted' and processed normally (fp awarded per acceptance).",
@@ -3620,6 +4321,20 @@
     "issue": "The rules state the GM gets 1 fate point per player at the start of each scene (here 4 players → 4 GM fate points), but no event in the log records this allocation for Scene 3 (event 69/70 scene_start/frame carry no fp data). Event 85 shows the GM funding two tag invokes against Morwen (a card tag and a hostile trouble invoke) worth 2 fate points, with no visible ledger showing the GM had an available balance to spend from.",
     "interim_ruling": "Table treated GM fate-point spends as tracked only informally in roll notes (e.g. 'GM invokes: ...' in event 85), without a corresponding scene-start GM FP grant event or running balance in the log.",
     "scene": 3,
+    "source": "referee"
+   },
+   {
+    "section": "Fate points / Aspects and invokes",
+    "issue": "At event 105 the GM invokes an opposition-side aspect (\"fire cleanses the hive\" [C-02]) to boost Sister Prioress Vessa's roll, but no GM fate-point expenditure is logged anywhere in the scene, and the event's opposing_tags field is left empty even though the invoke clearly affected the opposition total. The rules say the GM gets fate points per scene but don't specify how NPC-side invokes are logged/paid or reconciled with the opposing_tags field.",
+    "interim_ruling": "Treated as a free narrative GM invoke; no fate point deducted from a GM pool and no opposing_tags entry recorded.",
+    "scene": 4,
+    "source": "referee"
+   },
+   {
+    "section": "Conflict",
+    "issue": "Morwen's event 100/105 action is typed as an \"attack\" with a named-NPC active roll and results in a fictional physical injury (torn leg buckling, fresh blood) on a failed roll taken as success at a major cost, but no stress track or consequence slot is referenced anywhere in the log for this or any other scene-4 event. The rules define conflict resolution via stress boxes/consequences, but don't say whether a single ad hoc \"attack\" action outside a declared conflict scene should invoke that full track or just a freeform major cost.",
+    "interim_ruling": "The major cost was resolved as a purely narrative injury (GM-invented cost) rather than being logged against a physical stress/consequence track.",
+    "scene": 4,
     "source": "referee"
    }
   ],
@@ -3701,6 +4416,24 @@
     "used_drawn_card": false,
     "note": "Compel on 'Vengeance Over Sense' (Mire's aspect); no draw_id present, not deck-card-based.",
     "scene": 3
+   },
+   {
+    "event_id": 102,
+    "used_drawn_card": false,
+    "note": "Compel on 'Cannot Lie to a Priest' has no draw_id; text was GM-improvised per the compel mechanic, not drawn from a card.",
+    "scene": 4
+   },
+   {
+    "event_id": 106,
+    "used_drawn_card": false,
+    "note": "Cost for event 105's success-at-major-cost has no draw_id and cost_mode 'improvised'; the GM invented the cost freeform, consistent with 'the GM invents costs', but no drawn card tags were involved.",
+    "scene": 4
+   },
+   {
+    "event_id": 111,
+    "used_drawn_card": false,
+    "note": "Compel on 'Order Agents Know My Face' has no draw_id; refused, fp_spent 1 matches the refusal cost, but the compel text itself was improvised, not card-derived.",
+    "scene": 4
    }
   ],
   "friction": [
@@ -3739,6 +4472,18 @@
    {
     "scene": 3,
     "text": "No GM fate-point ledger is visible across the log, making it hard for the table (or an auditor) to confirm the GM never overspent; this is purely a bookkeeping/visibility issue rather than a proven rule breach."
+   },
+   {
+    "scene": 4,
+    "text": "The free invoke created by Aldous's create_advantage (event 112) is only identified in freeform notes ('aspect A-1.4.15 (1 free)') rather than in the tags_invoked field, making it hard to audit which future invokes are free vs. paid."
+   },
+   {
+    "scene": 4,
+    "text": "The GM's opposition-side aspect invoke (C-02) at event 105 has no corresponding fate-point ledger entry, leaving the GM's fate point economy for the scene untraceable from the log."
+   },
+   {
+    "scene": 4,
+    "text": "Several roleplay 'declare' events (98, 99, 101, 107, 109, 110) carry no skill or resolution data, interleaving freeform narration with mechanical rolls in a way that makes it harder to trace which fictional beats actually drove which dice results."
    }
   ]
  },
@@ -3748,9 +4493,9 @@
  "state_end": {
   "tension": 3,
   "fp": {
-   "Ysolde": 2,
+   "Ysolde": 1,
    "Aldous": 3,
-   "Morwen": 1,
+   "Morwen": 0,
    "Mire": 7
   },
   "surfaced": [],
@@ -3760,26 +4505,26 @@
   "deck_left": [],
   "draws": 0,
   "turns": {
-   "Ysolde": 9,
-   "Aldous": 9,
-   "Morwen": 9,
-   "Mire": 9
+   "Ysolde": 11,
+   "Aldous": 11,
+   "Morwen": 11,
+   "Mire": 11
   }
  },
  "notes": [],
  "metrics": {},
  "tokens": {
-  "prompt": 1051958,
-  "completion": 292421,
-  "cost_usd": 4.5871,
-  "calls": 88
+  "prompt": 1396389,
+  "completion": 370888,
+  "cost_usd": 5.8695,
+  "calls": 109
  },
- "llm_calls": 88,
+ "llm_calls": 109,
  "models": {
   "gm": "claude-sonnet-5",
   "player": "claude-haiku-4-5-20251001",
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 2200.7
+ "elapsed_s": 2762.8
 }
