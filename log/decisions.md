@@ -125,3 +125,43 @@ why neither is fixable in the AI backlog.
    ultimates. (b) Change what an activation buys, so that using Q and using R are
    not the same expenditure — that is a whole-card-cooldown change and therefore
    a pillar decision. Direction (a) is a Designer brief; direction (b) is yours.
+
+## Iteration 5 - what the personalities found
+
+| id | question | finding | status |
+|---|---|---|---|
+| RQ-037 | Does Hex-Nexus reward more than one way of playing? | **No, and the spread is 65 points.** `batch_0037`, 120 games, five appetites drawn per game: sieger 86.5% [74.7, 93.3], objective 68.2% [53.4, 80.0], laner 52.2% [38.1, 65.9], warder 21.7% [12.3, 35.6], brawler 21.2% [12.2, 34.0]. The sieger and brawler intervals do not come close to overlapping. A policy that groups and hunts kills loses four games in five to one that ignores it and hits towers. | **HUMAN** |
+
+### Why this matters before champion balance
+
+Every champion number the lab has produced was measured in a field where
+sieging wins. A champion win rate read there is mostly a measure of how much
+that champion contributes to a siege, so tuning champions against it would
+tune the roster toward one strategy and then declare the roster balanced.
+
+The cause is not subtle. A champion kill pays +1 AP and a few rounds of the
+victim's cooldown; a tower pays 11 chips, which is 11 AP, and moves the win
+condition. Fighting is priced as a means to farming, and farming is priced
+below sieging. `batch_0037` also shows the fight is not merely unrewarded but
+actively wasteful: the brawler spends activations on champions while the
+sieger spends them on structures, and the sieger wins.
+
+Levers a designer might reach for, none of them applied:
+
+1. Raise what a kill pays - AP, or a tempo reward that compounds.
+2. Lengthen the window a kill opens (death timers by round band, Rules 6.4).
+3. Make objectives need the fight: Dragon and Baron are contested ground, so
+   pricing them higher pulls teams into each other.
+4. Make towers need the fight: a tower that only falls while your wave is
+   present, for instance, forces teams to hold ground rather than trade maps.
+
+Levers 1 and 2 are numbers. Levers 3 and 4 change what the map is for, so they
+are pillar-adjacent and belong to the lead designer.
+
+### A second reading from the same batch
+
+The mixed field produced 2 champions clearly off 50% against 7 in the
+`batch_0035` mirror. Some of that is genuinely a broader test and some is
+simply wider intervals from mixed match-ups, so it is not yet evidence that the
+roster is better balanced than the mirror said - only that the mirror was
+measuring against one taste.
