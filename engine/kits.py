@@ -19,7 +19,7 @@ POINTS = {
     # units banked three AP for nothing. Their value now climbs with reach, and
     # an ability that carries one cannot be free.
     "v3": {"ap_credit": 2.0, "cd_credit": 1.5, "min_net": 3.0, "max_r_ratio": 1.75,
-           "area_base": 6.0, "area_per_range": 4.0, "line_base": 3.0,
+           "area_base": 6.0, "area_per_range": 0.0, "line_base": 3.0,
            "min_cost_area_line": 1},
 }
 DEFAULT_POINTS = "v1"

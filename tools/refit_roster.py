@@ -137,6 +137,14 @@ def main() -> None:
     out_champs, failures = [], []
     for kit in data["champions"]:
         kit = copy.deepcopy(kit)
+        if kit.get("budget_exception"):
+            # The whole point of a stated exception is that the arithmetic does
+            # not decide this kit. Leave it exactly as the designer left it.
+            kit["points"] = args.points
+            kit["version"] = args.version
+            out_champs.append(kit)
+            print(f"{kit['id']:<12} left alone (budget_exception)")
+            continue
         kit.pop("budget", None)
         fitted = refit(kit, args.points)
         if fitted is None:

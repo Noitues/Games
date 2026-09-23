@@ -53,6 +53,7 @@ def enumerate_plans(state: GameState, champ: Champion, node: Node, ability: str,
 
 def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> None:
     steps = state.kits[champ.cid]["abilities"][ability]["steps"]
+    ap_before = champ.ap_earned
     prev_uid: Optional[str] = None
     long_sword = "long_sword" in champ.items and ability == "L0"
     home_tile = state.board.tile_of[champ.hexpos]
@@ -138,6 +139,9 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
             if ch is not None:
                 state.wards[ch] = state.round
                 state.refresh_visibility(allow_flip_back=False)
+    gained = champ.ap_earned - ap_before
+    if gained and not state.shadow:
+        champ.ap_by_ability[ability] = champ.ap_by_ability.get(ability, 0) + gained
     if outward and (state.hidden_mask >> home_tile & 1):
         champ.conceal_attacks += 1          # RQ-032: acting out of the fog
     if outward and state.config.get("reveal_on_outward_effect") and \

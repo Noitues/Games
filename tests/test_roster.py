@@ -85,11 +85,12 @@ def test_area_and_line_are_never_free(kits):
                 assert ab["cost"] >= 1, f"{kit['id']}.{key} banks chips for free"
 
 
-def test_area_value_climbs_with_reach():
+def test_area_is_priced_flat_now_that_it_has_no_reach():
+    """P-0004 priced AREA by reach; P-0006 removed reach from AREA instead,
+    because pricing moved the budget and not the behaviour."""
     from engine.kits import step_points
-    r1 = step_points({"icon": "AREA", "k": 1, "range": 1}, "v3")
-    r2 = step_points({"icon": "AREA", "k": 1, "range": 2}, "v3")
-    assert r2 > r1 and r2 - r1 == 4
+    assert step_points({"icon": "AREA", "k": 1, "range": 1}, "v3") == 6
+    assert step_points({"icon": "AREA", "k": 2, "range": 1}, "v3") == 12
 
 
 def test_a_budget_exception_is_stated_not_silent(kits):
@@ -102,3 +103,13 @@ def test_a_budget_exception_is_stated_not_silent(kits):
                 ab = kit["abilities"][key]
                 if any(s["icon"] in ("AREA", "LINE") for s in ab["steps"]):
                     assert ab["cost"] >= 1, "an exception does not excuse a free farming engine"
+
+
+def test_area_has_no_range_step(kits):
+    """P-0006: a blast is at your feet, not across the lane. Reach was what
+    scaled the farming engines (Rules 6.3)."""
+    for kit in kits.values():
+        for key in ("Q", "W", "E", "R"):
+            for step in kit["abilities"][key]["steps"]:
+                if step["icon"] == "AREA":
+                    assert step.get("range", 1) == 1, f"{kit['id']}.{key}"

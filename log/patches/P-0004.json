@@ -1,13 +1,36 @@
 {
   "patch_id": "P-0004",
-  "from": { "rules": "1.2.0", "roster": "1.3.0", "ai": "1.2.0" },
-  "to": { "rules": "1.3.0", "roster": "1.4.0" },
+  "from": {
+    "rules": "1.2.0",
+    "roster": "1.3.0",
+    "ai": "1.2.0"
+  },
+  "to": {
+    "rules": "1.3.0",
+    "roster": "1.4.0"
+  },
   "lever_class": "economy",
   "changes": [
-    { "target": "rules:14.2.AREA", "from": "5 per hit at r1, 7 at r2", "to": "6 per hit at r1, +4 per extra step of range" },
-    { "target": "rules:14.2.LINE", "from": "(2 + n) per hit", "to": "(3 + n) per hit" },
-    { "target": "rules:14.2.constraints.min_cost_area_line", "from": null, "to": 1 },
-    { "target": "roster:all", "from": "1.3.0", "to": "1.4.0 (refit: 13 of 100 abilities, 3 single-step stat changes, 1 redesign)" }
+    {
+      "target": "rules:14.2.AREA",
+      "from": "5 per hit at r1, 7 at r2",
+      "to": "6 per hit at r1, +4 per extra step of range"
+    },
+    {
+      "target": "rules:14.2.LINE",
+      "from": "(2 + n) per hit",
+      "to": "(3 + n) per hit"
+    },
+    {
+      "target": "rules:14.2.constraints.min_cost_area_line",
+      "from": null,
+      "to": 1
+    },
+    {
+      "target": "roster:all",
+      "from": "1.3.0",
+      "to": "1.4.0 (refit: 13 of 100 abilities, 3 single-step stat changes, 1 redesign)"
+    }
   ],
   "evidence": "batch_0028 (80 games, T2 mirror, rules 1.2.0, roster 1.3.0): ashwyn 3.99x, quillan 3.03x, wisp 2.51x and sable 2.43x the roster-mean AP per round, against a 1.5x target. All four run a cheap AREA or LINE - ashwyn's W is an AREA at 0 AP. 22 of 25 champions own an AREA or LINE somewhere and average 1.08x, so the ability type is not the problem; a cheap one is.",
   "hypothesis": "Chips are AP, so an ability's real price is the chips it can bank, not the hits printed on the card. AREA and LINE touch several units at once and were priced as though they touched one, which is why the four worst AP engines in the roster are exactly the champions holding a cheap one. Pricing them by reach, and forbidding a free one, should pull the outliers toward the roster mean without touching anyone else.",
@@ -15,5 +38,35 @@
   "revert_if": "Median game length leaves 13-15 rounds, or mean AP per team-round falls by more than 20%, or any champion's win-rate CI falls wholly outside [30, 70].",
   "side_effects": "The four outliers lose their free farm, so their AP share and probably their win rates fall - that is the point. Total economy should dip slightly, which interacts with pacing: P-0003 is being tuned in parallel and its tower HP may need a second look once this lands.",
   "pillar_change": false,
-  "designer_note": "grivven is the one kit the new table could not price. Its R paired AREA with ROOT, which costs 14 gross under v3 - above the 1.75x spread cap at every combination of numbers, with no room left under the 22 +/- 2 band. Rules 14.2 allows a redesign as the last resort once stat and number levers are exhausted, so its R became a harder area hit (AREA k2) and lost the root. That is a real identity change and should be reviewed."
+  "designer_note": "grivven is the one kit the new table could not price. Its R paired AREA with ROOT, which costs 14 gross under v3 - above the 1.75x spread cap at every combination of numbers, with no room left under the 22 +/- 2 band. Rules 14.2 allows a redesign as the last resort once stat and number levers are exhausted, so its R became a harder area hit (AREA k2) and lost the root. That is a real identity change and should be reviewed.",
+  "result": {
+    "verdict": "FAIL on its success metric, not reverted",
+    "batches": {
+      "before": "batch_0028 (roster 1.3.0)",
+      "after": "batch_0032 (roster 1.4.1)",
+      "caveat": "the two batches ran at different tower HP (10 and 16), so game length is not comparable between them; the AP figures are ratios to the roster mean and are"
+    },
+    "success_metric": {
+      "target": "no champion above 1.5x roster-mean AP, top under 2.0x",
+      "before": {
+        "ashwyn": 3.99,
+        "quillan": 3.03,
+        "wisp": 2.51,
+        "sable": 2.43
+      },
+      "after": {
+        "ashwyn": 3.77,
+        "quillan": 2.86,
+        "sable": 2.71,
+        "wisp": 2.56
+      },
+      "verdict": "FAIL - still four champions above 1.5x, and two of them rose"
+    },
+    "revert_checks": {
+      "median_length": "13 rounds, in band",
+      "ap_per_team_round": "17.03 -> 17.83, up 4.7%",
+      "note": "no revert condition triggered, so the table stays"
+    },
+    "reading": "The recalibration changed the design budget and not the behaviour. Raising the price of an AREA forces the kit to give something back elsewhere - ashwyn's W went from 0 to 1 AP but her R went from reach 3 to 4, and quillan's LINE went from n4 to n5 - so the farming rate was untouched. Paying 1 AP to bank several chips is still pure profit. The budget governs power at design time; it has no grip on a per-activation rate. Superseded by P-0006, which fixes the reach instead."
+  }
 }

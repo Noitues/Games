@@ -1,0 +1,36 @@
+{
+  "patch_id": "P-0006",
+  "from": {
+    "rules": "1.4.0",
+    "roster": "1.4.1",
+    "ai": "1.2.0"
+  },
+  "to": {
+    "rules": "1.5.0",
+    "roster": "1.5.0"
+  },
+  "lever_class": "economy",
+  "changes": [
+    {
+      "target": "rules:6.3.AREA",
+      "from": "AREA k r - k hits on every enemy unit within r",
+      "to": "AREA k - k hits on every enemy unit within 1. AREA has no range step"
+    },
+    {
+      "target": "rules:14.2.AREA",
+      "from": "6 per hit at r1, +4 per extra step of range",
+      "to": "6 per hit, flat"
+    },
+    {
+      "target": "roster:ashwyn.W, quillan.R",
+      "from": "AREA at reach 2",
+      "to": "AREA at reach 1"
+    }
+  ],
+  "evidence": "A 24-game trace attributing every AP a champion earned to the ability that earned it: ashwyn's W supplies 98% of her income, quillan's R 98%, wisp's W 94%, sable's W and R 98% between them, pallas's R 98%, grivven's R 96%. In every case the engine is a single AREA. The rate scales with reach - the two AREAs at range 2 earned 8.38 and 7.24 AP a round against a roster mean near 2.6, while those at range 1 earned 2.68 to 5.22.",
+  "hypothesis": "P-0004 failed because a point table prices design-time power and has no grip on a per-activation rate. Reach does: an AREA banks a chip from every unit it touches, so the blast radius is the throttle. Fixing AREA at reach 1 should roughly halve the two worst engines without touching anything else.",
+  "success_metric": "In a T2 mirror: ashwyn and quillan fall below 2.0x the roster-mean AP per round, and no champion sits above 2.5x.",
+  "revert_if": "Median game length leaves 13-15 rounds, or mean AP per team-round falls by more than 20%, or ashwyn's or quillan's win-rate CI falls wholly outside [30, 70].",
+  "side_effects": "Two champions lose their signature reach. quillan's R was a bare AREA and could not remain an ultimate once reach was fixed - k jumps from 6 to 12 gross, either under the per-ability floor or over the spread cap - so it gained a slow rider and its W line came back from n5 to n4. Four champions with reach-1 AREAs (sable, wisp, pallas, grivven) are untouched by this patch and will probably still sit above 1.5x; if they do, the next lever is on the conversion itself rather than the geometry, and that touches the chip-equals-AP pillar, so it is the lead designer's call.",
+  "pillar_change": false
+}

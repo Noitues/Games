@@ -55,6 +55,8 @@ class Champion:
     conceal_attacks: int = 0        # abilities used from a hidden tile on something outside it
     edge_rounds: int = 0            # activations ended on a hexgroup border (RQ-036)
     activations: int = 0
+    ap_by_ability: Dict[str, int] = field(default_factory=dict)
+    ap_by_target: Dict[str, int] = field(default_factory=dict)
     damaged_by: Dict[str, int] = field(default_factory=dict)   # uid -> round
 
     kind: str = "champion"
@@ -64,6 +66,8 @@ class Champion:
         c.__dict__.update(self.__dict__)
         c.items = set(self.items)
         c.damaged_by = dict(self.damaged_by)
+        c.ap_by_ability = dict(self.ap_by_ability)
+        c.ap_by_target = dict(self.ap_by_target)
         return c
 
 
