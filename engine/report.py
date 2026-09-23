@@ -27,7 +27,7 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
     champ_items: Dict[str, Counter] = defaultdict(Counter)
     champ_conceal: Dict[str, List[int]] = defaultdict(list)
     tier_w: Dict[str, List[int]] = defaultdict(list)
-    total_uses = total_conceal = total_edge = total_acts = 0
+    total_uses = total_conceal = total_edge = total_acts = total_snipe = 0
     role_w: Dict[str, List[int]] = defaultdict(list)
     role_ap: Dict[str, List[float]] = defaultdict(list)
     item_games: Counter = Counter()
@@ -85,6 +85,7 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
             champ_apshare[cid].append(d["ap"] / max(1, team_ap_total.get(d["team"], 1)))
             champ_conceal[cid].append(d.get("conceal_attacks", 0))
             total_conceal += d.get("conceal_attacks", 0)
+            total_snipe += d.get("snipe_attacks", 0)
             total_uses += sum(d["uses"].values())
             total_edge += d.get("edge_rounds", 0)
             total_acts += d.get("activations", 0)
@@ -265,6 +266,7 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
         "concealment": {
             "attacks_from_concealment_per_game": total_conceal / max(1, n),
             "share_of_all_ability_uses": (100 * total_conceal / total_uses) if total_uses else 0.0,
+            "snipes_share_of_all_ability_uses": (100 * total_snipe / total_uses) if total_uses else 0.0,
             "activations_ending_beside_an_enemy_hexgroup": (100 * total_edge / total_acts) if total_acts else 0.0,
         },
         "anomalies": dict(anomalies),
@@ -413,6 +415,8 @@ def to_markdown(s: dict) -> str:
           f"- attacks made from inside a hidden hexgroup on something outside it: "
           f"{c.get('attacks_from_concealment_per_game', 0):.2f} per game",
           f"- that is {c.get('share_of_all_ability_uses', 0):.1f}% of all ability uses",
+          f"- of which true snipes (from cover, two or more hexes away): "
+          f"{c.get('snipes_share_of_all_ability_uses', 0):.1f}% of all uses",
           f"- activations ending beside an enemy-held hexgroup (looking in): "
           f"{c.get('activations_ending_beside_an_enemy_hexgroup', 0):.1f}%", ""]
     L += ["", "## 10. Anomalies", ""]

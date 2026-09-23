@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from typing import List, Optional, Tuple
 
-from .hexmap import DIRS, Node
+from .hexmap import DIRS, hex_distance, Node
 from .resolve import (ability_range, can_act_outside, can_be_hit, deal_hits,
                       effect_context, line_targets, move_unit, push_pull,
                       step_choices, units_within)
@@ -60,11 +60,18 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
     node = state.node_of_unit(champ)
     outside_ok = can_act_outside(state, champ, node, ability)
     outward = False
+    far = False
 
     def mark(target) -> None:
-        nonlocal outward
+        nonlocal outward, far
         if target is not None and state.board.tile_of[target.hexpos] != home_tile:
             outward = True
+            # Sniping is not "attacking while in cover" - a champion's own tile
+            # is hidden whenever no enemy shares it, so that is the normal
+            # state. Sniping is doing it from beyond the range at which walking
+            # up would have revealed you (Rules 3.1).
+            if hex_distance(champ.hexpos, target.hexpos) >= 2:
+                far = True
     for i, step in enumerate(steps):
         ch = plan[i] if i < len(plan) else None
         ic = step["icon"]
@@ -144,6 +151,8 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
         champ.ap_by_ability[ability] = champ.ap_by_ability.get(ability, 0) + gained
     if outward and (state.hidden_mask >> home_tile & 1):
         champ.conceal_attacks += 1          # RQ-032: acting out of the fog
+        if far:
+            champ.snipe_attacks += 1
     if outward and state.config.get("reveal_on_outward_effect") and \
             (state.hidden_mask >> home_tile & 1):
         # Retired by RQ-036 and off by default: acting from cover no longer

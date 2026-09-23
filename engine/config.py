@@ -40,6 +40,10 @@ DEFAULT_CONFIG = {
     # RQ-036: an occupied hexgroup is revealed while an enemy champion stands
     # on an adjacent hex. Cover works at a distance, not at arm's length.
     "adjacency_reveal": True,
+    # How close an enemy champion has to be to reveal an occupied hexgroup.
+    # 1 is the rule as written (standing on the edge looks in). At 2 it matches
+    # the reach cap from P-0007, so anything that can hit you can see you.
+    "reveal_radius": 1,
     # RQ-034's ambush gate, retired by RQ-036 but kept switchable.
     "ambush_gate": False,
     # Enumeration caps (engine performance; reported under Anomalies).

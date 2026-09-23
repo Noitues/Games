@@ -53,6 +53,7 @@ class Champion:
     rounds_cd: int = 0
     dmg_to_structures: int = 0
     conceal_attacks: int = 0        # abilities used from a hidden tile on something outside it
+    snipe_attacks: int = 0          # ...and from two or more hexes away: true sniping
     edge_rounds: int = 0            # activations ended on a hexgroup border (RQ-036)
     activations: int = 0
     ap_by_ability: Dict[str, int] = field(default_factory=dict)
@@ -337,11 +338,15 @@ class GameState:
         if not self.config.get("adjacency_reveal", True):
             return set()
         board = self.board
+        radius = self.config.get("reveal_radius", 1)
         watched = set()
         for c in self.champs.values():
             if not c.alive:
                 continue
-            for nb in board.neighbors.get(c.hexpos, ()):
+            near = set(board.neighbors.get(c.hexpos, ()))
+            for _ in range(radius - 1):
+                near |= {n for h in tuple(near) for n in board.neighbors.get(h, ())}
+            for nb in near:
                 t = board.tile_of.get(nb)
                 if t is None or t in watched:
                     continue
