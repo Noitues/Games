@@ -4,7 +4,7 @@
  "arm": "A",
  "seed": 87942,
  "spec_version": "0.2.0",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 2,
@@ -4372,6 +4372,202 @@
     "Mire": 6
    },
    "gm_fp": 3
+  },
+  {
+   "event_id": 149,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Clock F-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-04 1/5",
+   "tension": 1,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 6
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 150,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Clock T-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "T-03 1/4",
+   "tension": 1,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 6
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 151,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Clock T-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "T-04 1/5",
+   "tension": 1,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 6
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 152,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Off-screen F-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "3",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 6
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 153,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Off-screen F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "1",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 6
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 154,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "T-02 -> T-02v2",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Wary of Those Who See Through Her Voice",
+   "event_type": "mutation",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 6
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 155,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "FP: Ysolde=1, Aldous=1, Morwen=4, Mire=6",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 6
+   },
+   "gm_fp": 3
   }
  ],
  "scenes": [
@@ -5923,9 +6119,176 @@
    }
   ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "protector",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When Ysolde recognized the shame shifting into redemption in Denn's face and stepped into his space to put her hand over his on the chain-lever. It was quiet and high-stakes, and felt like her entire character—reading people, putting others' safety first, finding the thread of humanity in someone the Cartel had tried to break. That moment mattered.",
+    "most_frustrating": "The pace of the escape meant the rescued hive-touched victims became abstractions rather than people—they were saved, but I wanted time to sit with what that rescue actually cost and meant. Not a huge complaint; the survival stakes made sense.",
+    "background_used": "Yes, and it landed really well. Brother Corvin's appearance directly tied to Old Tamsin and the Order ciphers Ysolde learned, making her expertise central to the quest. The GM clearly built the scenario to use this background naturally, not as window dressing.",
+    "wanted_but_couldnt": "I wanted more space to process the rescued hive-touched victims as individuals rather than cargo in an escape sequence. But honestly the pacing made sense for survival.",
+    "one_sentence": "My backstory felt woven in really well—the Order connection, Tamsin's teaching, Ysolde's crew-protector role all came together naturally and made her the logical center of multiple scenes."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "instigator",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The possession in S4. Tren using my own gifts against me—my power to read omens twisted into a path toward drowning—felt inevitable and terrifying. Then having the other PCs pull me back, especially Morwen's proof that rescue is real and survival is possible, turned it into something earned and painful in the best way.",
+    "most_frustrating": "The alarm bell in S3 escalated things so fast I wanted more time to problem-solve the escape—but honestly that's the point of an alarm. The urgency was earned and appropriate, even if I wanted to linger.",
+    "background_used": "Yes, extensively and well. Verrick opened the Causeway, the Sunken Barge survival was the core of the possession, the drowned ghosts that mark me became a literal possession vector, and my rainfall-reading shaped every major navigation moment. It felt organic, not forced—like the GM knew exactly which threads to pull.",
+    "wanted_but_couldnt": "Can't identify anything significant. I had real choices and real impact throughout. Being possessed removed control but I accepted that compel knowingly, and the sequence gave other PCs their moment to save me rather than me saving myself.",
+    "one_sentence": "My past wasn't just background texture—it was the shape of everything that happened, and the GM deployed it with respect and precision."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "tactician",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The cellar moment when I reached into the dark to pull the hive-touched victim back from the swarm-song's edge. It was character-defining—Morwen's entire core vow tested under pressure, her trauma from the first outbreak colliding with her refusal to let anyone drown, and it landed mechanically (that Will roll) and narratively both. It felt like the character's beating heart.",
+    "most_frustrating": "The relentless pacing meant there was never space to play Morwen's described approach—the cautious scout, the one who plans and gathers information before committing to risky actions. Everything was immediate crisis management, which was dramatically justified but left her more reactive than the character concept suggested.",
+    "background_used": "Very effectively. The GM wove Morwen's survival of the first outbreak untouched, her immunity to the swarm-song, and her vow against burning the hive-touched throughout the session—they felt essential to the story, not grafted on. The cellar scene hinged on these elements, as did bringing Aldous back from the Hive Mother. How it landed: Good. This felt earned and organic.",
+    "wanted_but_couldnt": "Space to scout the cellar before committing to the rescue, or to gather information about the hive-touched before rushing to save them. The narrative's time pressure and immediate stakes didn't allow for the methodical, planning-focused approach Morwen's character description suggested.",
+    "one_sentence": "Your backstory as the first outbreak's survivor who refuses to let people burn felt deeply essential—especially at the cellar and when bringing Aldous back—though the relentless pacing didn't leave room for the cautious, methodical planning approach you described wanting to play."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "optimizer",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 5,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The cellar doorway. Mire planted herself against the Guard with full guard training behind it—boots planted, line held, follow-up strike landing clean to take him out. Every mechanical roll aligned with character work; the description of her refusing to budge, the precision drilled since childhood paying off when the group needed a wall. That felt like Mire earned back something of herself even in disgrace.",
+    "most_frustrating": "Gullet Ford went hard toward Aldous's crisis—Morwen and Ysolde had the mechanical moments to pull him back while I became \"physical barrier.\" Narratively interesting but mechanically I was sidelined. Also the session ended on a chase cliffhanger with no resolution, which leaves threads hanging tight.",
+    "background_used": "Good. The Verrick name opened the checkpoint gate. My Cartel connections and knowledge of the cellars made me directly valuable to the mission. My disgraced status got invoked by other players and stung in character, which felt right. Guard training was central to multiple scenes. The GM wove my history in naturally and made it matter.",
+    "wanted_but_couldnt": "I wanted deeper mechanical/narrative engagement with Aldous's possession scene instead of becoming reactive. I wanted more space to grapple with what it means that Verrick's name still opens doors while Mire herself is cast out—there's weight there that got touched but not explored. And wanted to know more about Denn; there's Cartel history there that didn't develop.",
+    "one_sentence": "My background with the Cartel and guard training made me tactically essential to the mission, which felt earned and good, but the session's relentless pacing meant I didn't get breathing room to sit with the emotional complexity of my disgrace or what it costs to still fight like I'm badged."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Ysolde",
+    "turns": 16,
+    "references_to_others_background": 1
+   },
+   {
+    "name": "Aldous",
+    "turns": 19,
+    "references_to_others_background": 1
+   },
+   {
+    "name": "Morwen",
+    "turns": 12,
+    "references_to_others_background": 1
+   },
+   {
+    "name": "Mire",
+    "turns": 18,
+    "references_to_others_background": 1
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "Driven from the Wick Lane Cellars in a running fight, the party freed a dozen chained hive-touched captives and fled south through forgotten channels as Cartel guards closed in behind them. At Gullet Ford the Hive Mother reached across the water through the drowned shape of Tren to claim Aldous, nearly walking him into the black current before Ysolde read the lie in the currents and Morwen's testimony of survival broke the swarm-song's hold. Bloodied, short on rest, and still hunted by a Cartel with a price on their heads, the party stands at the true ford with Corvin's son and the real crossing still ahead.",
+  "closing_tension": 1,
+  "reverberations": {
+   "growth": {
+    "AL-02": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "MI-04": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "YS-02": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "MO-03": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "MI-03": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "MO-01": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "MI-01": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "AL-01": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    }
+   },
+   "clocks": [
+    "F-04 1/5",
+    "T-03 1/4",
+    "T-04 1/5"
+   ],
+   "mutations": [
+    {
+     "from": "T-02",
+     "to": "T-02v2"
+    }
+   ],
+   "retired": []
+  },
+  "retired": [
+   {
+    "card": "N-02",
+    "how": "story pile over limit",
+    "session": 1
+   }
+  ]
+ },
  "state_end": {
   "tension": 1,
   "fp": {
@@ -5960,19 +6323,123 @@
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 1594753,
-  "completion": 302752,
-  "cost_usd": 5.3413,
-  "calls": 82
+ "metrics": {
+  "arm": "A",
+  "status": "complete",
+  "scenes": 4,
+  "backstory_players": [
+   "Aldous",
+   "Mire",
+   "Morwen",
+   "Ysolde"
+  ],
+  "backstory_all_players": true,
+  "deck_surfaced_all_players": true,
+  "deck_draws": 6,
+  "draw_costs": 10,
+  "draw_cost_used_card_rate_engine": 1.0,
+  "draw_cost_used_card_rate_referee": 0.647,
+  "fp_end": {
+   "Ysolde": 1,
+   "Aldous": 1,
+   "Morwen": 4,
+   "Mire": 6
+  },
+  "fp_end_mean": 3,
+  "fp_earned": {
+   "Aldous": 2,
+   "Mire": 3,
+   "Ysolde": 1,
+   "Morwen": 2
+  },
+  "fp_spent": {
+   "Aldous": 5,
+   "Ysolde": 3,
+   "Mire": 0,
+   "Morwen": 1
+  },
+  "compels_accepted": 8,
+  "compels_refused": 0,
+  "compels_deck": 4,
+  "compels_free": 4,
+  "turns": {
+   "Ysolde": 7,
+   "Aldous": 7,
+   "Morwen": 7,
+   "Mire": 7
+  },
+  "turn_gini": 0.0,
+  "invokes": {
+   "Aldous": 7,
+   "Ysolde": 3,
+   "Mire": 0,
+   "Morwen": 1
+  },
+  "invoke_gini": 0.5227,
+  "tension_trajectory": [
+   3,
+   2,
+   2,
+   1,
+   1
+  ],
+  "clock_marks": 3,
+  "violations": 5,
+  "violations_engine": 3,
+  "violations_referee": 2,
+  "ambiguities": 19,
+  "ambiguity_ids": [
+   "AMB-01",
+   "AMB-03",
+   "AMB-12",
+   "AMB-19",
+   "AMB-22",
+   "AMB-27",
+   "§3 Invokes / Free invokes from cards",
+   "§4 Cleanup at scene end / §7 Backup modules",
+   "§4 When the deck runs out / Outcomes table",
+   "§5",
+   "§5 Beat Frame procedure, step 5",
+   "§5.4",
+   "§6A",
+   "§6A (draw triggers table, GM free invoke column)",
+   "§6A (draw triggers table, row 1)",
+   "§7",
+   "§7 The rail / §2 card provenance"
+  ],
+  "gm_improvised_complications": 4,
+  "card_supplied_complications": 10,
+  "improvisation_share": 0.286,
+  "guarantee_pulled": 1,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6.5,
+   "involvement": 6.75,
+   "connection": 6.5,
+   "control": 6,
+   "play_again": 7
+  },
+  "involvement_var_within": 0.188,
+  "personality": {
+   "Ysolde": "protector",
+   "Aldous": "instigator",
+   "Morwen": "tactician",
+   "Mire": "optimizer"
+  }
  },
- "llm_calls": 81,
+ "tokens": {
+  "prompt": 1683944,
+  "completion": 328121,
+  "cost_usd": 5.7695,
+  "calls": 88
+ },
+ "llm_calls": 87,
  "models": {
   "gm": "claude-sonnet-5",
   "player": "claude-haiku-4-5-20251001",
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 2514.8
+ "elapsed_s": 2745.8
 }
