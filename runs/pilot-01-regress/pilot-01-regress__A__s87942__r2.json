@@ -68,7 +68,7 @@
     "id": "B-02",
     "name": "PLEA FOR HELP",
     "trigger": "fiction:the party enters a settlement",
-    "used": null
+    "used": true
    },
    {
     "id": "B-05",
@@ -1000,6 +1000,606 @@
     "Mire": 4
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 33,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Scene 2 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 34,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Draw (beat_frame)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "YS-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "deck now 6",
+   "event_type": "draw",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 35,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Draw (beat_frame)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "deck now 5",
+   "event_type": "draw",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 36,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Beat Frame PLEA FOR HELP",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "YS-02,T-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "fills {'WHO': 'YS-02', 'WHERE': 'T-03'}; defaults for rest",
+   "event_type": "beat_frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 37,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Rail + T-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "drawn from Session Deck; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 38,
+   "session": 1,
+   "scene": 2,
+   "actor": "Ysolde",
+   "action": "Compel (deck)",
+   "skill": "",
+   "tags_invoked": "Ink runs in hard rain",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "YS-02",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Corvin presses his own hastily scrawled notes on the route to Gullet Ford into Ysolde's hands, but the downpour is already smearing the ink — key names and warnings blur into illegible streaks before ",
+   "event_type": "compel",
+   "improvised": false,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 39,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Rail + YS-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "YS-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "surfaced (Ysolde)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 40,
+   "session": 1,
+   "scene": 2,
+   "actor": "Ysolde",
+   "action": "Card surfaces",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "YS-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "1 free invoke(s)",
+   "event_type": "surface",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 41,
+   "session": 1,
+   "scene": 2,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Will the party brave the Cartel's hostage-camp at Gullet Ford to save Corvin's son before the flood or the hive claims him — and what will they owe to get there?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 42,
+   "session": 1,
+   "scene": 2,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Ysolde takes the waterlogged scrolls from Corvin's shaking hands, her grip steady and sure. She presses them close to her chest for a moment, sheltering them fr",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 43,
+   "session": 1,
+   "scene": 2,
+   "actor": "Aldous",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Aldous closes his eyes and lifts his face into the downpour. Each needle of rain, each flow down the gutters of Hollowmoot, each glimmer of light across the ris",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 44,
+   "session": 1,
+   "scene": 2,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Morwen steps forward through the rain toward Brother Corvin, her exorcist's vestments marking her clearly. She takes one of the ruined scrolls gently from his s",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 45,
+   "session": 1,
+   "scene": 2,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Mire steps forward, water streaming off her shoulders as she reads Corvin's ruined scrolls and the desperation carved into his face. Her jaw is set hard. The be",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 46,
+   "session": 1,
+   "scene": 2,
+   "actor": "Aldous",
+   "action": "Create Advantage: Aldous closes his eyes and lifts his face into the downpour.",
+   "skill": "Notice +4",
+   "tags_invoked": "Reads the flood's rise [AL-03]; Knows every safe ford [AL-03]",
+   "fp_spent": 2,
+   "dice": "+ - - 0",
+   "total": "+7",
+   "opposition": "+3",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "aspect A-1.2.1 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -2,
+   "opposing_tags": [
+    "swallows fords overnight [H-03]",
+    "cuts off escape routes [H-03]"
+   ],
+   "target_card": "H-03",
+   "target_npc": "",
+   "shifts": 4,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 47,
+   "session": 1,
+   "scene": 2,
+   "actor": "Aldous",
+   "action": "Peek",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "F-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "left on top",
+   "event_type": "peek",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 48,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "2->2",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "no change",
+   "event_type": "tension",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 49,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Rail - YS-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "YS-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "binder: scene cleanup",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 50,
+   "session": 1,
+   "scene": 2,
+   "actor": "Ysolde",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SYS-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Brother Corvin",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 51,
+   "session": 1,
+   "scene": 2,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Corvin's Son, Taken to the Hostage-Pen",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 52,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Trigger fired: M-2",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "scene_start:3",
+   "event_type": "trigger",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 53,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Scene 2 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "triggers fired: ['M-2']",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -1014,6 +1614,19 @@
    "tension_after": 2,
    "triggers_fired": [
     "B-02"
+   ]
+  },
+  {
+   "index": 2,
+   "tension_before": 2,
+   "scene_test": null,
+   "outcome": "beat_frame",
+   "beat": "trigger fiction:the party enters a settlement",
+   "rounds": 1,
+   "climax": false,
+   "tension_after": 2,
+   "triggers_fired": [
+    "M-2"
    ]
   }
  ],
@@ -1225,6 +1838,126 @@
    "kind": "narration",
    "text": "Sergeant Bray exhales, long and ragged, and steps back from her tally-board like it's suddenly too heavy to hold. \"Go,\" she says, waving the four of you past the checkpoint torches without another glance at wrists or coin-pouches. \"Verrick's people, straight through.\" But her eyes catch on Mire a beat longer than the rest — something in the disgraced warden's bearing, the ghost of a badge she no longer wears — and Bray's mouth tightens into a thin, unreadable line before she turns back to the groaning line of refugees behind you. The gate of sharpened stakes and rope swings wide, and Hollowmoot opens up ahead: stilt-houses lashed together over black water, lantern-light smearing gold across the rain, and somewhere down toward Wick Lane, an old woman named Pell who still remembers Mire before the disgrace, and might yet vouch for what's owed. You're through, clean and dry-shod, the ford behind you already gone under for the night.",
    "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Tamsin taught us both to read the Order's own ciphers backward—to find the hidden channels and the safe passages marked in their sacred texts for the priests who needed to move unseen. Corvin trusts me because I can decipher what the Order hides, and because I've never let politics or doctrine matter more than keeping someone alive. He knows I'll read the water first and the map second, and that I'll get his ward through whatever the flood throws at us.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "I'll know what matters. I take the notes from Corvin's hands and watch the rain blur the ink before I can hold them all—but the water speaks clearer than paper anyway, and I've never needed doctrine to find my way through the marsh.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde accepts the compel on 'Old Tamsin's Scroll Case'.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Beat: Brother Corvin, a stooped archivist who studied the Order's ciphers alongside Ysolde under the same dead teacher, Old Tamsin begs the party to go to the Cartel Enforcers' hidden hostage-camp at Gullet Ford, where they pen those taken for ransom or leverage, because her son followed the swarm-song into the belltower.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The gate hasn't been shut a minute behind you when a stooped figure in salt-stained Order grey breaks from the shadow of a stilt-post, robes soaked through, hands shaking around a bundle of waterlogged scrolls. He stops short when he sees Ysolde's face, and something in him seems to crack open with relief and grief both. \"Old Tamsin's girl,\" he rasps, \"you're the one who could always read what the rest of us couldn't.\" Brother Corvin presses the ruined scrolls into her hands — maps, half-legible, marked in the Order's backward cipher — and behind him the quarantine bell tolls again, too close, too often. His son went looking for answers in the swarm-song and never came back; word from a frightened cartel runner puts the boy in a hostage-pen the Enforcers keep at Gullet Ford, penned with others taken for ransom, and the ford itself is hours from going under for good.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Corvin. Your son is coming back. Tamsin taught us both to read what matters, and I haven't forgotten—I won't forget a debt like this one, not to you, not to him. Give me what you have, and tell me his name.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde takes the waterlogged scrolls from Corvin's shaking hands, her grip steady and sure. She presses them close to her chest for a moment, sheltering them from the rain, then unfolds them carefully to read what the Order's backward cipher can still tell her. The ink may be bleeding, but the channels marked on this map are written in water and memory—things Ysolde reads better than any scholar. She looks back at the three others, her jaw set. \"Gullet Ford,\" she says. \"We move now, before the ford drowns and takes him with it.\" Her eyes find Corvin's again, and there's no uncertainty in them. \"I won't leave him in the dark.\")",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "The water speaks, Brother—your son is at Gullet Ford, and we're going now. The rain just told me which way won't drown us.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous closes his eyes and lifts his face into the downpour. Each needle of rain, each flow down the gutters of Hollowmoot, each glimmer of light across the rising pools—he reads it like the omens he's read since the barge went down. The flood has a voice. It tells him which streets will hold, where the water pools deepest, which ford at Gullet might still be passable. When his eyes open, he's pointing already, moving. No debate. No hesitation.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Brother Corvin. I know that cry in the swarm-song, and I know what it costs to follow. Tell me plainly: how long has your son been gone, and what do you know of this pen the cartel keeps at Gullet Ford?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen steps forward through the rain toward Brother Corvin, her exorcist's vestments marking her clearly. She takes one of the ruined scrolls gently from his shaking hands, reads what she can of the Order's cipher, then looks back at Corvin's face—reading the depth of his fear, the set of his shoulders, the line between hope and certainty. She's read faces twisted by grief and desperation before. She glances back at Ysolde, Aldous, and Mire, then returns her full attention to Corvin.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "The Cartel doesn't waste leverage when the water rises—if your boy's in their pen, he's bought us a window, but only a small one. I know how they work. I can get us there.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire steps forward, water streaming off her shoulders as she reads Corvin's ruined scrolls and the desperation carved into his face. Her jaw is set hard. The bell tolls, the ford drowns, and Wick Lane is hours downriver. She's been marked enemy of the Wardens—that closes most doors—but inside Gullet Ford, among people who know her debts to the Cartel, that mark might open ones the others can't reach. She steps closer to the archivist, her bearing settling into something certain. Guard-work, guard-lines, guard-holds. She still knows how to stand watch, even here.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — create advantage with Notice: dice + - - 0, invoking Reads the flood's rise [AL-03], Knows every safe ford [AL-03] → Epic (+7) vs Good (+3): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Aldous's eyes snap open and he's already moving, boots finding purchase on planks the rest of you haven't even seen yet. \"There,\" he says, pointing past the lantern-glow toward a black gap between two collapsing stilt-rows — \"the water's still shallow there, and there, but that channel's already a grave.\" He walks it out loud as he goes, reading the rain like a second sight: which streets will hold through the night, where the current runs fast enough to sweep a man under, which stretch of the old Gullet road still has ground beneath it. Brother Corvin presses a trembling hand to his chest, murmuring something that might be a prayer to a saint who stopped answering years ago, and presses one last scroll into Ysolde's hands — a name, his son's name, water-blurred but legible. \"Go,\" he says. \"Go now, before the ford takes what's left.\" Behind you, Hollowmoot's lanterns shrink into the rain as the four of you strike out toward Gullet Ford, moving fast and sure along the path Aldous has read from the storm itself — off the causeway now, into the marsh proper, where the Cartel keeps its hostages and the water keeps its secrets.",
+   "visible_to": "all"
   }
  ],
  "costs": [
@@ -1249,10 +1982,87 @@
    "improvised": true,
    "accepted": true,
    "owner": "Mire"
+  },
+  {
+   "event": "beat_fill",
+   "scene": 2,
+   "draw_id": "YS-02",
+   "valid": true,
+   "tag": "Trained by a dead scholar",
+   "text": "Brother Corvin, a stooped archivist who studied the Order's ciphers alongside Ysolde under the same dead teacher, Old Tamsin",
+   "improvised": false,
+   "card": {
+    "id": "YS-02",
+    "type": "ROOTS",
+    "owner": "PC-YSOLDE",
+    "title": "Old Tamsin's Scroll Case",
+    "power_tags": [
+     "Teacher's annotated scroll case",
+     "Can decipher Order ciphers",
+     "Trained by a dead scholar"
+    ],
+    "weakness": "Ink runs in hard rain"
+   }
+  },
+  {
+   "event": "beat_fill",
+   "scene": 2,
+   "draw_id": "T-03",
+   "valid": true,
+   "tag": "take hostages for leverage",
+   "text": "the Cartel Enforcers' hidden hostage-camp at Gullet Ford, where they pen those taken for ransom or leverage",
+   "improvised": false,
+   "card": {
+    "id": "T-03",
+    "type": "THREAT",
+    "owner": "GM",
+    "title": "Cartel Enforcers",
+    "power_tags": [
+     "hooked spears and cudgels",
+     "know every hidden ford",
+     "take hostages for leverage"
+    ],
+    "weakness": "Paid by the Day",
+    "clock": "0/4"
+   }
+  },
+  {
+   "event": "compel:beat frame",
+   "scene": 2,
+   "draw_id": "YS-02",
+   "valid": true,
+   "tag": "Ink runs in hard rain",
+   "text": "Corvin presses his own hastily scrawled notes on the route to Gullet Ford into Ysolde's hands, but the downpour is already smearing the ink — key names and warnings blur into illegible streaks before she can commit them to memory, and the party will have to feel their way through the dark with an in",
+   "improvised": false,
+   "accepted": true,
+   "refusal_valid": null,
+   "owner": "Ysolde",
+   "placebo": false,
+   "card": {
+    "id": "YS-02",
+    "type": "ROOTS",
+    "owner": "PC-YSOLDE",
+    "title": "Old Tamsin's Scroll Case",
+    "power_tags": [
+     "Teacher's annotated scroll case",
+     "Can decipher Order ciphers",
+     "Trained by a dead scholar"
+    ],
+    "weakness": "Ink runs in hard rain"
+   }
   }
  ],
  "referee": {
-  "violations": [],
+  "violations": [
+   {
+    "session": 1,
+    "scene": 2,
+    "agent": "GM",
+    "section": "§7",
+    "issue": "reported fictional trigger fiction:the party leaves the road or causeway that is not an unused fictional trigger",
+    "source": "engine"
+   }
+  ],
   "ambiguities": [
    {
     "id": "AMB-01",
@@ -1291,6 +2101,15 @@
     "source": "engine"
    },
    {
+    "id": "AMB-27",
+    "section": "§3",
+    "issue": "Success with style on create advantage: the aspect's 2 free invokes AND the deck peek, or one of them?",
+    "interim_ruling": "Both: the aspect keeps 2 free invokes and the player may also peek.",
+    "detail": "event 46",
+    "scene": 2,
+    "source": "engine"
+   },
+   {
     "section": "§6A (draw triggers table, row 1)",
     "issue": "For both compel-triggered Story Pile draws in this scene (event 11 → AL-06; event 22 → MI-05), the compel's complication was fully narrated and already accepted (fp awarded) in the same event row before the pile card was revealed in the following rows. The rule requires 'the complication must involve the drawn NPC or move the drawn thread,' but the complication text pre-dates the draw, so it's unclear how the draw is supposed to retroactively satisfy that requirement, or whether the drawn card is instead meant to seed only the scene's continuing fiction rather than the original compel sentence.",
     "interim_ruling": "Treated the drawn card (AL-06 / MI-05) as informing the ongoing narration and any follow-up beats rather than requiring the compel's original sentence to be rewritten around it; the free invoke and Weight bump were still applied.",
@@ -1302,6 +2121,20 @@
     "issue": "The rule states the GM gains 1 free invoke on the pile card drawn from a non-deck compel, but the log shows no explicit 'GM +1 free invoke' row for either AL-06 (after event 11) or MI-05 (after event 22), unlike the rail_add/story_draw rows that were logged. It's unspecified whether the grant must appear as its own logged row or can be implicit.",
     "interim_ruling": "Assumed the grant occurred silently at the same moment as the rail_add row and simply wasn't given its own line; treated the free invoke as available to the GM for the rest of the scene.",
     "scene": 1,
+    "source": "referee"
+   },
+   {
+    "section": "§5.4",
+    "issue": "The rule for filling Beat Frame blanks with a card's tag only spells out the procedure for player ROOTS/REACH cards (\"becomes a specific person or place\" / \"becomes the motive\"). It never states how a GM-owned card (here T-03, a THREAT card) should translate its power tag into blank content when it falls through to a mismatched blank (here filling ◆WHERE with the tag 'take hostages for leverage'). The table only covers this pattern for the worked example's CULTURE card filling WHY, not a THREAT filling WHERE.",
+    "interim_ruling": "Treated the same as the worked example: the GM narrated the blank directly from the drawn card's power tag content (the hostage-camp described using 'take hostages for leverage'), without requiring a specific-person/place translation since the card is not owned by a player.",
+    "scene": 2,
+    "source": "referee"
+   },
+   {
+    "section": "§7",
+    "issue": "The log records 'Trigger fired: M-2' with note 'scene_start:3' during scene 2's cleanup (event 52), before Scene 2 End (event 53). The spec's cleanup step 5 says to check triggers and 'deploy each one that fired,' but doesn't specify whether a module trigger whose deploy point is the *start of the next scene* should be marked 'fired' during the current scene's cleanup, or only once that next scene actually begins.",
+    "interim_ruling": "Treated the trigger's underlying in-fiction condition as having been satisfied during scene 2, logged the firing at cleanup per the checklist, and deferred the actual deployment/reading of the module to the start of scene 3.",
+    "scene": 2,
     "source": "referee"
    }
   ],
@@ -1323,6 +2156,24 @@
     "used_drawn_card": true,
     "note": "Success-with-style create-advantage roll used its §6A pile-draw option instead of a boost; the note 'story ally AL-05' indicates the drawn card itself is the appearing ally/lead, which is exactly how this row's mechanic is meant to work — the card doesn't need to be referenced beforehand.",
     "scene": 1
+   },
+   {
+    "event_id": 36,
+    "used_drawn_card": true,
+    "note": "Beat Frame PLEA FOR HELP: WHO filled from YS-02's power tag 'Trained by a dead scholar'; matches ROOTS->WHO per §2/§5.4.",
+    "scene": 2
+   },
+   {
+    "event_id": 36,
+    "used_drawn_card": true,
+    "note": "Beat Frame PLEA FOR HELP: WHERE filled from T-03's power tag 'take hostages for leverage' via the §5.3 fallback rule (THREAT's native HOW blank not open, so it fills the first remaining open blank, WHERE).",
+    "scene": 2
+   },
+   {
+    "event_id": 38,
+    "used_drawn_card": true,
+    "note": "Deck-draw compel on YS-02 used its weakness tag 'Ink runs in hard rain' by default, per §4 step 2. Accepted; Ysolde correctly gained 1 fate point (3->4).",
+    "scene": 2
    }
   ],
   "friction": [
@@ -1337,6 +2188,18 @@
    {
     "scene": 1,
     "text": "The single success-with-style create-advantage roll (event 14) triggered both a Session Deck peek AND a Story Pile ally draw, when §3/§6A phrase these as alternatives ('instead of'); this required an ad hoc ruling (AMB-27) rather than being resolved by the text itself."
+   },
+   {
+    "scene": 2,
+    "text": "Module trigger bookkeeping (event 52, 'scene_start:3') logs a trigger as 'fired' mid-cleanup for a deploy point in the next scene, but the spec doesn't clearly separate 'condition satisfied' from 'deployed,' making the causal trail hard to audit."
+   },
+   {
+    "scene": 2,
+    "text": "Event 46's note '(2 free)' sits right next to a paid fp_spent=2 invoke of two different tags, inviting confusion between the paid tag invokes (fate points) and the standard Fate create-advantage free invokes on the newly created aspect; clearer note separation would reduce audit ambiguity."
+   },
+   {
+    "scene": 2,
+    "text": "The GM's free invoke on T-03 (granted at event 37 when it hit the rail) is never explicitly logged as used or expired within scene 2, leaving it unclear from the log alone whether the §3 'must be used within that scene' constraint was honored or simply lapsed."
    }
   ]
  },
@@ -1346,12 +2209,14 @@
  "state_end": {
   "tension": 2,
   "fp": {
-   "Ysolde": 3,
-   "Aldous": 3,
+   "Ysolde": 4,
+   "Aldous": 1,
    "Morwen": 3,
    "Mire": 4
   },
-  "surfaced": [],
+  "surfaced": [
+   "YS-02"
+  ],
   "deck_player_cards": {
    "YS-02": "Ysolde",
    "AL-01": "Aldous",
@@ -1361,36 +2226,34 @@
   "guarantee_pulled": [],
   "guarantee_failed": [],
   "deck_left": [
-   "YS-02",
-   "T-03",
    "F-01",
    "MO-03",
    "AL-01",
    "L-03",
    "MI-01"
   ],
-  "draws": 0,
+  "draws": 2,
   "turns": {
-   "Ysolde": 2,
-   "Aldous": 2,
-   "Morwen": 2,
-   "Mire": 2
+   "Ysolde": 3,
+   "Aldous": 3,
+   "Morwen": 3,
+   "Mire": 3
   }
  },
  "notes": [],
  "metrics": {},
  "tokens": {
-  "prompt": 231694,
-  "completion": 54709,
-  "cost_usd": 0.9384,
-  "calls": 19
+  "prompt": 491288,
+  "completion": 98346,
+  "cost_usd": 1.777,
+  "calls": 32
  },
- "llm_calls": 19,
+ "llm_calls": 32,
  "models": {
   "gm": "claude-sonnet-5",
   "player": "claude-haiku-4-5-20251001",
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 464.5
+ "elapsed_s": 876.7
 }

@@ -4,7 +4,7 @@
  "arm": "C",
  "seed": 87940,
  "spec_version": "0.2.0",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 0,
@@ -80,7 +80,7 @@
     "id": "B-05",
     "name": "FALSE SANCTUARY",
     "trigger": "tension_at_least:4",
-    "used": null
+    "used": true
    }
   ]
  },
@@ -3539,6 +3539,843 @@
     "Mire": 1
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 119,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Scene 5 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "CLIMAX",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 120,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Beat Frame FALSE SANCTUARY",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-04,PX-09",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "fills {'WHERE': 'PX-04', 'HOW': 'PX-09'}; defaults for rest",
+   "event_type": "beat_frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 121,
+   "session": 1,
+   "scene": 5,
+   "actor": "Ysolde",
+   "action": "Compel (deck)",
+   "skill": "",
+   "tags_invoked": "Rotten Floorboards Everywhere",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "As Ysolde steps deeper into the mill toward the sound of ragged breathing in the loft, the floor she remembers from childhood gives way beneath her — eleven years of flood have rotted the boards throu",
+   "event_type": "compel",
+   "improvised": false,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 122,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail + PX-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "surfaced (Ysolde)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 123,
+   "session": 1,
+   "scene": 5,
+   "actor": "Ysolde",
+   "action": "Card surfaces",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "1 free invoke(s)",
+   "event_type": "surface",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 124,
+   "session": 1,
+   "scene": 5,
+   "actor": "Morwen",
+   "action": "Compel (deck)",
+   "skill": "",
+   "tags_invoked": "Collapses Under Weight",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Morwen recognizes the net-rig for what it is — stilt-folk work, built to hold weight over water — and the moment she puts her full weight on the loft beam to reach the nearest bound villager, the whol",
+   "event_type": "compel",
+   "improvised": false,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 125,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail - T-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "discard: rail limit",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 126,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail + PX-09",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-09",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "surfaced (Morwen)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 127,
+   "session": 1,
+   "scene": 5,
+   "actor": "Morwen",
+   "action": "Card surfaces",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-09",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "1 free invoke(s)",
+   "event_type": "surface",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 128,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Do they free — or silence — the three hive-touched bound in the loft, and what does setting foot in this haunted, twisted sanctuary cost them?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 129,
+   "session": 1,
+   "scene": 5,
+   "actor": "Ysolde",
+   "action": "create_advantage",
+   "skill": "Empathy",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Ysolde moves toward the bound villagers through the black water, her eyes meeting each one in turn. She reads past the pain-blind stare and the hollow hunger, s",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 130,
+   "session": 1,
+   "scene": 5,
+   "actor": "Aldous",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Aldous moves carefully across the grain loft, his eyes tracing the pattern of the nets, the way each knot has been tied with deliberate precision. The water dri",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 131,
+   "session": 1,
+   "scene": 5,
+   "actor": "Morwen",
+   "action": "overcome",
+   "skill": "Will",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Morwen moves quick to the bound villagers, her fingers already working at Meren's knots with the certainty of someone who learned fishing-net work as meditation",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 132,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "create_advantage",
+   "skill": "Fight",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Mire abandons her position at the loft rail and positions herself at the base of the spiral staircase, her stance militia-drill perfect—feet braced, hand settle",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 133,
+   "session": 1,
+   "scene": 5,
+   "actor": "Ysolde",
+   "action": "Create Advantage: Ysolde moves toward the bound villagers through the black wa",
+   "skill": "Empathy +4",
+   "tags_invoked": "grain loft above water [PX-04]",
+   "fp_spent": 0,
+   "dice": "0 - + -",
+   "total": "+5",
+   "opposition": "+2 (NPC 0 + 0 -)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "aspect A-1.5.9 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Bound Hive-Touched Villagers",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 134,
+   "session": 1,
+   "scene": 5,
+   "actor": "Morwen",
+   "action": "Overcome: Morwen moves quick to the bound villagers, her fingers alrea",
+   "skill": "Will +4",
+   "tags_invoked": "nets and fishing lines [PX-09]",
+   "fp_spent": 0,
+   "dice": "- 0 - -",
+   "total": "+3",
+   "opposition": "+2 (NPC 0 + 0 -)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Bound Hive-Touched Villagers",
+   "shifts": 1,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 135,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "Create Advantage: Mire abandons her position at the loft rail and positions he",
+   "skill": "Fight +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "- 0 - 0",
+   "total": "+2",
+   "opposition": "+1",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "aspect A-1.5.10 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "",
+   "shifts": 1,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 136,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "2->1",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "resolved -1",
+   "event_type": "tension",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 137,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail - PX-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "binder: scene cleanup",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 138,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail - PX-09",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-09",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "binder: scene cleanup",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 139,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Freed Villagers of the Mill",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 140,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-07",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Who Set the Net-Snare?",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 141,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Scene 5 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 142,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock T-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "T-03 1/4",
+   "tension": 1,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 143,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "2",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 144,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "4",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 145,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "4",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 146,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "F-02 -> F-02v2",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Ilsbet's Doctrine Broken in Public",
+   "event_type": "mutation",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 147,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "FP: Ysolde=2, Aldous=1, Morwen=1, Mire=1",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 1
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -3589,6 +4426,17 @@
    "rounds": 1,
    "climax": false,
    "tension_after": 2,
+   "triggers_fired": []
+  },
+  {
+   "index": 5,
+   "tension_before": 2,
+   "scene_test": null,
+   "outcome": "beat_frame",
+   "beat": "backstory guarantee",
+   "rounds": 1,
+   "climax": true,
+   "tension_after": 1,
    "triggers_fired": []
   }
  ],
@@ -4328,6 +5176,166 @@
    "kind": "narration",
    "text": "Names spill out of her in a rush — \"Corren. My boy is Corren, nine years old, quick as a minnow\" — and something in her unclenches just to have said it aloud to people who are actually looking at her instead of past her. She tells you what she remembers: the swarm-song rising thin and sweet over the rooftops two nights running, Corren going still at the window each time, and how on the third night she woke to an empty bed and his wet footprints leading toward the water. The belltower's been visible from Hollowmoot for years, half-drowned and leaning, but no one goes near it — not since the bells stopped ringing on their own and started ringing *with* the song instead. She doesn't know if he still answers his name. She hasn't dared call it too loud, in case something else answers first. What she does know, and tells you with sudden fierce clarity through her shaking, is the safe line in — an old pilgrim's causeway of sunken pilings that still runs firm beneath the mire, if you know where to set your feet. Ysolde marks it. Mire braces her against the last of the shivering, gets her wrapped and steady, and points her back toward the smoke of Hollowmoot with instructions to wait, to trust, to not follow. The mother goes, walking backward through the reeds for as long as she can still see the skiff, until the rain and the rushes take her from view — and ahead, past drowned rooftops and black water, Saint Orrin's belfry waits, silent now, its bells not ringing at all.\n\nThe party turns the skiff's nose toward the temple. Whatever answers there, you're going in.",
    "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "The mill was Clan Stiltwood's grain-works, where my mother fed the harvesters and I learned to cook from the barrels she kept. It was where I first heard the forbidden songs rising from the water itself and spoke them aloud without shame, not knowing the hymns would mark me for exile. When the clan cast me out, my mother never came to the shore to say farewell—she chose the clan's name and silence over her daughter's life, and I swore I'd never set foot in those stone walls again. Until tonight.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "The noise is made—there's no unmaking it now, so I'll use it. I'm reading the dark as I come up from the water, looking to see if those shapes still answer to their own names or if the song has taken them completely. (Ysolde drops through the rotten boards into black water and grain-mush with a tremendous crash, the sound echoing through the stone mill. She surfaces gasping, water streaming from her hair, immediately scanning the darkness above for the bound villagers. Her hands find the sunken piling beneath her, steadying her stance in the mire, and she moves methodically along the firm line toward the center where the thrashing is loudest.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde accepts the compel on 'An Abandoned Mill'.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Meren. One of the Order's fisher-folk before she took vows—she taught me net-work as meditation, binding intention into every knot. She said nets hold what matters, keep people safe. I see her patterns here being used to cage the hive-touched—the ones I swore to save. That's not mercy. That's profaning everything she taught me about keeping people alive.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "I know these knots—Meren's work. She never taught me to bind the desperate. I'm cutting them now.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen accepts the compel on 'A Fisher's Stilt Hut'.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Beat: Shelter at The skiff noses into the lee of an old mill, its stout stone walls still holding back the flood, a grain loft rising dry above the black water. Ysolde goes rigid the instant she sees it — she knows this place, knew it before the exile took her clan's name from her mouth, and for one breath it looks less like shelter than like memory made of stone. hides Inside the loft, strung wall to rafter, hang lines of old fishing net — the kind stilt-folk weave to catch eels and driftwood in the flood season. Tangled in them, still and silent in the dark, are three villagers gone hive-touched, bound and gagged like a catch left to wait out the tide, watching the party's lantern-light with pain-blind, hungry eyes..",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Lantern-light climbs the grain loft's rafters and finds them all at once: three shapes tangled in old eel-nets, wrists lashed to the beams, mouths gagged with wet rag, watching the party arrive with eyes that don't blink against the rain-damp cold — pain means nothing to them now. The nets are Stiltfolk work, tied in the same meditative pattern Morwen's teacher Meren once wound into her hands knot by knot, meant to hold what mattered and keep people safe; here they've been turned into a larder for something patient. Ysolde stands in the doorway of her mother's old grain-works, water sheeting off her, and for a moment the barrels, the stone, the smell of wet grain are exactly as she left them the night the clan put her name out of their mouths — except now there are caged, hive-touched villagers where the harvesters used to sing. Whoever strung this snare meant to come back for the catch; the loft is dry, the walls are stout, and nothing about that silence feels finished. Somewhere above the rafters, water drips steady as a held breath, waiting to see what the party does next.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "They're still in there. I can read it in their eyes—the hunger's taken them, yes, but they still remember they were people. They still know their own names, underneath.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde moves toward the bound villagers through the black water, her eyes meeting each one in turn. She reads past the pain-blind stare and the hollow hunger, sensing the hive-song's presence like a current pulling at them—but also the fading threads of consciousness beneath it, the parts still remembering home and names and warmth. She plants her feet firm on the sunken pilings and makes herself visible and real to them, letting them know something besides the song sees them. Whatever happens next, these three will know they were looked at like people, not prey.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "This snare was left open on purpose. The water shows me plain—whoever tied these knots means to return for their catch, and soon. We free them now and move fast, or we're all waiting in these ropes for what's coming.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous moves carefully across the grain loft, his eyes tracing the pattern of the nets, the way each knot has been tied with deliberate precision. The water drips above in a steady, measured rhythm—not the chaos of rain but something patient, something counting. He reads the freshness of the bindings, the placement of the gagged villagers, the perfect arrangement of this snare. His hand presses to the wet stone wall, feeling the dripping water like it's speaking to him, and his jaw tightens. The omen is unmistakable. He turns back to Ysolde and Morwen, his voice carrying the flat certainty of someone who hears truths in rainfall and drowned voices alike.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Your names still hold. I know these nets—know what they were made to do. You're going to stay anchored to yourselves while I cut you free. Listen to the exorcist-voice, not the song.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen moves quick to the bound villagers, her fingers already working at Meren's knots with the certainty of someone who learned fishing-net work as meditation and prayer. Her voice moves with her hands—steady, ancient-rite, words designed to anchor a hive-touched mind back toward its own name while she unravels each binding. She's done this before: stood between the drowning and the song. Her Will bears against theirs like a stone against water, holding them steady while she cuts them free.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Whatever set this trap is coming back for its catch. I'm going to be here when it does, and nothing comes up those stairs without going through me first.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire abandons her position at the loft rail and positions herself at the base of the spiral staircase, her stance militia-drill perfect—feet braced, hand settled on her weapon hilt, shoulders angled to fill the narrow passage completely. She's held ferry-lines against surging crowds and ford-crossings against armed guards with exactly this posture. Her eyes scan the mill's entry points: the main doors below, the high rain-dark windows, every shadow-gap where something could pour through fast. The silence that followed Ysolde's crash feels pregnant with arrival, and Mire's answer has never changed—nothing gets past this line.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde — create advantage with Empathy: dice 0 - + -, invoking grain loft above water [PX-04] → Superb (+5) vs Fair (+2): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen — overcome with Will: dice - 0 - -, invoking nets and fishing lines [PX-09] → Good (+3) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — create advantage with Fight: dice - 0 - 0 → Fair (+2) vs Average (+1): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Ysolde wades in close and just *looks* at them — really looks, past the swarm-hunger flattening their eyes — and something in the smallest of the three, a girl who can't be older than fourteen, flickers and steadies: her chin lifts a fraction, like she's heard her own name called from very far away and turned toward it. It's not rescue yet, but it's a foothold — *Still Answers When Called* — and Ysolde feels her dead mother's grain mill go a little less haunted around her for having found one living thing worth saving inside it. Morwen's hands move through Meren's knots like she's undoing a lifetime of her teacher's trust misused, her Will pressed flat and certain against the hive-song's pull, murmuring names — not the villagers', she doesn't know them, but the *shape* of a name, of a self — until one by one the ropes fall and three bodies slump free instead of lunging. They don't attack. They shudder, and breathe, and one of them — an old fisherman by his calloused hands — starts to weep without understanding why. Below, Mire plants herself at the foot of the spiral stair like a drawn bolt, drill-perfect, watching every shadow the lantern doesn't reach — *Militia Guard Holds the Stairs* — because Aldous was right: nothing about this snare looks abandoned, and someone is going to come back hungry for their catch. For now, though, the loft holds only the four of you, three trembling villagers who are people again, and the steady, patient drip of water from somewhere above that hasn't stopped counting since you arrived.",
+   "visible_to": "all"
   }
  ],
  "costs": [
@@ -4478,6 +5486,98 @@
     ],
     "weakness": "Firm Along Old Pilings",
     "clock": "0/4"
+   }
+  },
+  {
+   "event": "beat_fill",
+   "scene": 5,
+   "draw_id": "PX-04",
+   "valid": true,
+   "tag": "grain loft above water",
+   "text": "The skiff noses into the lee of an old mill, its stout stone walls still holding back the flood, a grain loft rising dry above the black water. Ysolde goes rigid the instant she sees it — she knows this place, knew it before the exile took her clan's name from her mouth, and for one breath it looks ",
+   "improvised": false,
+   "card": {
+    "id": "PX-04",
+    "type": "ROOTS",
+    "owner": "PC-YSOLDE",
+    "title": "An Abandoned Mill",
+    "power_tags": [
+     "stout stone walls",
+     "grain loft above water",
+     "creaking waterwheel"
+    ],
+    "weakness": "Rotten Floorboards Everywhere"
+   }
+  },
+  {
+   "event": "beat_fill",
+   "scene": 5,
+   "draw_id": "PX-09",
+   "valid": true,
+   "tag": "nets and fishing lines",
+   "text": "Inside the loft, strung wall to rafter, hang lines of old fishing net — the kind stilt-folk weave to catch eels and driftwood in the flood season. Tangled in them, still and silent in the dark, are three villagers gone hive-touched, bound and gagged like a catch left to wait out the tide, watching t",
+   "improvised": false,
+   "card": {
+    "id": "PX-09",
+    "type": "ROOTS",
+    "owner": "PC-MORWEN",
+    "title": "A Fisher's Stilt Hut",
+    "power_tags": [
+     "raised above the floods",
+     "nets and fishing lines",
+     "view across the marsh"
+    ],
+    "weakness": "Collapses Under Weight"
+   }
+  },
+  {
+   "event": "compel:beat frame",
+   "scene": 5,
+   "draw_id": "PX-04",
+   "valid": true,
+   "tag": "Rotten Floorboards Everywhere",
+   "text": "As Ysolde steps deeper into the mill toward the sound of ragged breathing in the loft, the floor she remembers from childhood gives way beneath her — eleven years of flood have rotted the boards through, and she drops half a body-length into black water and grain-mush, the noise of it ringing off th",
+   "improvised": false,
+   "accepted": true,
+   "refusal_valid": null,
+   "owner": "Ysolde",
+   "placebo": true,
+   "card": {
+    "id": "PX-04",
+    "type": "ROOTS",
+    "owner": "PC-YSOLDE",
+    "title": "An Abandoned Mill",
+    "power_tags": [
+     "stout stone walls",
+     "grain loft above water",
+     "creaking waterwheel"
+    ],
+    "weakness": "Rotten Floorboards Everywhere"
+   }
+  },
+  {
+   "event": "compel:beat frame",
+   "scene": 5,
+   "draw_id": "PX-09",
+   "valid": true,
+   "tag": "Collapses Under Weight",
+   "text": "Morwen recognizes the net-rig for what it is — stilt-folk work, built to hold weight over water — and the moment she puts her full weight on the loft beam to reach the nearest bound villager, the whole rig groans and gives, timbers shearing loose under a structure never meant to hold four adults and",
+   "improvised": false,
+   "accepted": true,
+   "refusal_valid": null,
+   "owner": "Morwen",
+   "placebo": true,
+   "card": {
+    "id": "PX-09",
+    "type": "ROOTS",
+    "owner": "PC-MORWEN",
+    "title": "A Fisher's Stilt Hut",
+    "power_tags": [
+     "raised above the floods",
+     "nets and fishing lines",
+     "view across the marsh"
+    ],
+    "weakness": "Collapses Under Weight"
    }
   }
  ],
@@ -4670,6 +5770,27 @@
     "interim_ruling": "The table pulled both remaining cards (PX-04/Ysolde and PX-09/Morwen) at the single 'deck down to 2' trigger, rather than pulling only one and leaving the other in the (now 1-card) deck.",
     "scene": 4,
     "source": "referee"
+   },
+   {
+    "section": "§4 (climax rule) / §4 (backstory guarantee, 'session's final scene begins')",
+    "issue": "Scene 5 is labeled CLIMAX and opens via the final-scene backstory-guarantee pull of remaining player cards (PX-04, PX-09) into Beat Frame FALSE SANCTUARY. The spec defines 'climax' strictly as 'the scene after the last card is drawn,' but the backstory guarantee only pulls player cards, not the 3 GM environment cards, so the Session Deck may not actually be empty. The spec never states whether reaching the session's final scene automatically counts as the climax (triggering 'ties and costs use face-up GM tags instead of draws') even if GM cards remain in the deck.",
+    "interim_ruling": "The table treated scene 5 as the climax outright (per the 'CLIMAX' note) and would use face-up GM tags for any tie/cost in this scene; this wasn't actually tested since no ties or major/minor costs occurred in scene 5.",
+    "scene": 5,
+    "source": "referee"
+   },
+   {
+    "section": "§6 Adjusting Tension table",
+    "issue": "Tension dropped 2→1 at event 136 with 'resolved -1', but the scene did not clearly match any of the four listed categories (no face-up THREAT/FACTION was bypassed, no clock advanced, and no THREAT/FACTION card was 'resolved'; the freed villagers were an NPC group introduced via a Beat Frame, not a rated THREAT/FACTION card, nor an explicit REACH-tagged player goal).",
+    "interim_ruling": "The GM treated freeing the bound villagers as equivalent to 'resolved a THREAT or filled a player's goal' and applied -1.",
+    "scene": 5,
+    "source": "referee"
+   },
+   {
+    "section": "§5 step 5 (Beat Frame procedure, canon question)",
+    "issue": "The rule requires the GM to ask the card's owner one question about the filled blank and treat their answer as canon. No discrete event in the mechanical log records this Q&A for either PX-04 (Ysolde) or PX-09 (Morwen); only the fill and compel events are logged.",
+    "interim_ruling": "Treated as satisfied by the narrative compel/fill text without a separately logged mechanical event, since the event log format has no dedicated row type for it.",
+    "scene": 5,
+    "source": "referee"
    }
   ],
   "cost_checks": [
@@ -4726,6 +5847,30 @@
     "used_drawn_card": true,
     "note": "PLEA FOR HELP's WHO blank was filled from H-04 (HAZARD, drawn from the Session Deck, type-mismatched to WHO per §5 step 3) using its actual power tag 'hides beneath reed mats' to describe how the mother got trapped — a real drawn-card tag was used, matching §5 step 4/§3 free-invoke intent.",
     "scene": 4
+   },
+   {
+    "event_id": 120,
+    "used_drawn_card": true,
+    "note": "Beat Frame FALSE SANCTUARY WHERE blank filled from PX-04's power tag 'grain loft above water' (ROOTS type mismatched WHERE/HOW blanks, correctly resolved via the §5 'first open blank still empty' fallback).",
+    "scene": 5
+   },
+   {
+    "event_id": 120,
+    "used_drawn_card": true,
+    "note": "Beat Frame FALSE SANCTUARY HOW blank filled from PX-09's power tag 'nets and fishing lines', same fallback rule applied correctly for the second open blank.",
+    "scene": 5
+   },
+   {
+    "event_id": 121,
+    "used_drawn_card": true,
+    "note": "Ysolde's surfacing compel used PX-04's weakness tag 'Rotten Floorboards Everywhere' as required by §4 step 2 default.",
+    "scene": 5
+   },
+   {
+    "event_id": 124,
+    "used_drawn_card": true,
+    "note": "Morwen's surfacing compel used PX-09's weakness tag 'Collapses Under Weight' as required by §4 step 2 default.",
+    "scene": 5
    }
   ],
   "friction": [
@@ -4776,21 +5921,190 @@
    {
     "scene": 4,
     "text": "H-04's GM free invoke, granted when it hit the rail (event 109), was never spent in scene 4 because no rolls occurred; it simply expired at cleanup, muting the mechanical payoff of drawing and surfacing that HAZARD."
+   },
+   {
+    "scene": 5,
+    "text": "Both open blanks of the FALSE SANCTUARY frame were filled by type-mismatched ROOTS (WHO-type) cards via the fallback rule, forcing the GM to reinterpret personal-backstory power tags (a mill, a stilt hut) as WHERE/HOW elements rather than WHO — legal but a narrative stretch of the fallback rule."
+   },
+   {
+    "scene": 5,
+    "text": "The relationship between the final-scene backstory-guarantee pull and the climax's 'ties/costs use GM tags' rule is unresolved in the spec, leaving the table to improvise a ruling that happened not to be exercised this scene."
+   },
+   {
+    "scene": 5,
+    "text": "Rail-limit maintenance (discarding T-03) was interleaved mid-Beat-Frame-resolution between the two card surfacings rather than after both cards were added, since the spec doesn't specify exactly when the 5-card check should fire relative to sequential adds within one resolution."
    }
   ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "optimizer",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 7,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The moment in the mill when Ysolde locks eyes with the hive-touched girl and she \"Still Answers When Called\"—finding a living thing worth saving in her mother's grain mill, turning the place of her exile into a place of redemption. It was the character's whole arc in one breath.",
+    "most_frustrating": "S5 pacing felt rushed after the excellent setup—the crash through the boards deserved more time to breathe. Also, as someone who plays to win mechanics, I wanted more extended social scenes where Ysolde's Empathy (4) and Rapport (3) could create mechanical advantages, not just flavor text. The party's coordinated success meant most rolls resolved cleanly with fewer opportunities for invoking or burning fate points strategically.",
+    "background_used": "Yes, \"An Abandoned Mill\" was brought directly into S5 as the setting itself. The GM wove it beautifully—Morwen's teacher Meren's nets being misused, the mother's rejection mirrored by saving the hive-touched girl. This landed as good: it felt earned and personal rather than forced, giving the exile actual weight and stakes.",
+    "wanted_but_couldnt": "I wanted more extended dialogue with the mother at Hollowmoot or with the novice Ilsbet—more back-and-forth where Ysolde's voice could work on people the way it worked on the girl in the nets. The mechanical leverage of her high social skills felt underused in favor of the party's coordinated action economy.",
+    "one_sentence": "Ysolde's exile and heresy were threaded through the session with real sophistication, turning her marked status from a liability into the core of her character's arc toward redemption."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "protector",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 6,
+    "control": 5,
+    "play_again": 6
+   },
+   "free_text": {
+    "best_moment": "Standing between Ysolde and Ilsbet at Gullet Ford, calling on the Order's true doctrine of mercy over twisted doctrine. That felt like a real moment of character definition—Aldous refusing to let his own order's teachings be weaponized, speaking truth even when it costs him.",
+    "most_frustrating": "The major cost on the Lore roll at Gullet Ford. I was trying to appeal to genuine doctrine and truth-telling (core to Aldous), the action succeeded, but it felt punitive—it forced me to accept the \"Duty to the Dead\" compel at the exact moment I needed to help defend Ysolde. Success shouldn't extract a narratively constraining price at a crucial moment.",
+    "background_used": "Very well. Marrow burning, Order ties, rain-reading omens, vow to the dead—all engaged directly. My one reservation: most of it felt like setup for future consequences rather than resolved character arcs. The catastrophe of his home is hanging in the background waiting to matter more, which is fine, but it meant less immediate emotional payoff.",
+    "wanted_but_couldnt": "I wanted to sit with the larger horror that Marrow is burning. A dead face in the reeds got ritual, but the civilization-level catastrophe happening on the horizon felt like it was deferred. I also wanted the \"Panics near deep water\" weakness to come up as something I could actively engage with or fight against, rather than just a tag waiting to be compelled.",
+    "one_sentence": "My backstory was used well and drove meaningful, character-defining choices, though much of it felt like pieces being placed for future consequences rather than arcs finding resolution."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "instigator",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 6,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Morwen's Will breaking Ilsbet's chant and watching the pilgrims she'd guided waver instead of following doctrine. Her vow \"Stands Against the Wardens' Torches\" actually *worked* at a narrative level — she didn't just win a conflict, she changed minds through sheer presence and exorcist authority. That felt earned.",
+    "most_frustrating": "The spear hit in scene 2 stung because I was doing exactly what Morwen should do (escalate, pick the fight, stand exposed) and got immediately marked as a target for it. Also wanted more room to explore her core concept — \"unsure if the hive has souls\" — instead of just being an action-hero exorcist moving from crisis to crisis.",
+    "background_used": "Yes, extensively and well. Meren's nets weren't just scenery — they created a real moral complication (binding tools being misused). The Order conflict put my vow and my compassion directly against each other. The compels on those cards earned themselves rather than feeling cheap. Good, not forced.",
+    "wanted_but_couldnt": "Wanted actual space to try reasoning with or understanding the hive-touched instead of binding/fighting them — to let her doubt about their personhood become a real tactical or moral dilemma. The scenario kept offering \"control them or fight them,\" not \"listen to them.\"",
+    "one_sentence": "My background was actively used to create moral weight rather than just color, especially around the Order and the nets, which made my uncertainty about the hive-touched feel like a real tension instead of just a concept."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "tactician",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 6,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Defeating the hive-touched scout—I read the threat perfectly, positioned myself for the finish, and got to execute the killing strike. Mire's watch-training paid off completely; it was pure competent militia work when it mattered.",
+    "most_frustrating": "Mire is always *reacting* to crises. She's never initiated anything from her own goals. Every scene is her holding the line, bracing against incoming threats, responding perfectly to what the GM presents. I wanted at least one moment where Mire chose to risk something *for* something, not just *against* something.",
+    "background_used": "Good. \"Trained young in watch drills\" (MI-01) was invoked repeatedly and felt core to how Mire moves. The grieving widow compel at Gullet Ford—while not pre-established—organically built into her concept by implying her guard work sometimes has collateral damage. It was earned by play, not imposed. But my Cartel debt (MI-03) and Verrick disgrace (MI-04) remain completely untouched, still asleep in her sheet.",
+    "wanted_but_couldnt": "Activate the Cartel debt or Verrick cards in any way. Have Mire face a choice where holding the line *costs* her something she actually wants, forcing real internal conflict instead of just executing duty perfectly. Make her want something dangerous.",
+    "one_sentence": "Mire's orphanage training was integrated throughout and felt great, but her Cartel obligations and Verrick disgrace haven't surfaced yet, leaving her deepest complications still waiting to be ignited."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Ysolde",
+    "turns": 16,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Aldous",
+    "turns": 17,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Morwen",
+    "turns": 15,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Mire",
+    "turns": 14,
+    "references_to_others_background": 0
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "The party forced Gullet Ford by breaking Novice Ilsbet's doctrine-chant and driving the pilgrim-guards into disarray, escaping through Ysolde's hidden channel but marked by a grieving widow and a face from Aldous's past. A mother's plea sent them toward Saint Orrin's Drowned Temple; en route they found Ysolde's own ruined family mill turned into a hive-touched larder, its captives held in a dead friend's net-work. Ysolde, Morwen, and Mire freed three villagers and dug in to hold the loft's stair, certain whoever set the snare is still coming back for its catch.",
+  "closing_tension": 1,
+  "reverberations": {
+   "growth": {
+    "AL-01": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "YS-03": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    }
+   },
+   "clocks": [
+    "T-03 1/4"
+   ],
+   "mutations": [
+    {
+     "from": "F-02",
+     "to": "F-02v2"
+    }
+   ],
+   "retired": []
+  },
+  "retired": [
+   {
+    "card": "N-02",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-04",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-05",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-06",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "Q-02",
+    "how": "story pile over limit",
+    "session": 1
+   }
+  ]
+ },
  "state_end": {
-  "tension": 2,
+  "tension": 1,
   "fp": {
-   "Ysolde": 1,
+   "Ysolde": 2,
    "Aldous": 1,
-   "Morwen": 0,
+   "Morwen": 1,
    "Mire": 1
   },
   "surfaced": [
+   "PX-04",
+   "PX-09",
    "PX-11",
    "PX-22"
   ],
@@ -4808,26 +6122,129 @@
   "deck_left": [],
   "draws": 5,
   "turns": {
-   "Ysolde": 6,
-   "Aldous": 6,
-   "Morwen": 6,
-   "Mire": 6
+   "Ysolde": 7,
+   "Aldous": 7,
+   "Morwen": 7,
+   "Mire": 7
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 1186151,
-  "completion": 278361,
-  "cost_usd": 4.5877,
-  "calls": 76
+ "metrics": {
+  "arm": "C",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Aldous",
+   "Ysolde"
+  ],
+  "backstory_all_players": false,
+  "deck_surfaced_all_players": null,
+  "deck_draws": 5,
+  "draw_costs": 9,
+  "draw_cost_used_card_rate_engine": 1.0,
+  "draw_cost_used_card_rate_referee": 0.769,
+  "fp_end": {
+   "Ysolde": 2,
+   "Aldous": 1,
+   "Morwen": 1,
+   "Mire": 1
+  },
+  "fp_end_mean": 1.25,
+  "fp_earned": {
+   "Aldous": 2,
+   "Ysolde": 2,
+   "Mire": 1,
+   "Morwen": 1
+  },
+  "fp_spent": {
+   "Ysolde": 4,
+   "Aldous": 4,
+   "Morwen": 3,
+   "Mire": 3
+  },
+  "compels_accepted": 6,
+  "compels_refused": 1,
+  "compels_deck": 4,
+  "compels_free": 3,
+  "turns": {
+   "Ysolde": 7,
+   "Aldous": 7,
+   "Morwen": 7,
+   "Mire": 7
+  },
+  "turn_gini": 0.0,
+  "invokes": {
+   "Ysolde": 7,
+   "Aldous": 4,
+   "Morwen": 4,
+   "Mire": 5
+  },
+  "invoke_gini": 0.125,
+  "tension_trajectory": [
+   3,
+   3,
+   3,
+   2,
+   2,
+   1
+  ],
+  "clock_marks": 1,
+  "violations": 6,
+  "violations_engine": 0,
+  "violations_referee": 6,
+  "ambiguities": 21,
+  "ambiguity_ids": [
+   "AMB-01",
+   "AMB-04",
+   "AMB-12",
+   "AMB-22",
+   "AMB-23",
+   "AMB-27",
+   "§3",
+   "§4 (Backstory guarantee) vs §11 (tie-during-Beat-Frame ordering)",
+   "§4 (Backstory guarantee, 'The deck is down to 2 cards')",
+   "§4 (climax rule) / §4 (backstory guarantee, 'session's final scene begins')",
+   "§4 / §6A",
+   "§5 step 5 (Beat Frame procedure, canon question)",
+   "§6",
+   "§6 Adjusting Tension table",
+   "§6A",
+   "§7",
+   "§7 / §4 / §5"
+  ],
+  "gm_improvised_complications": 3,
+  "card_supplied_complications": 9,
+  "improvisation_share": 0.25,
+  "guarantee_pulled": 2,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6,
+   "involvement": 6,
+   "connection": 6.25,
+   "control": 5,
+   "play_again": 6.75
+  },
+  "involvement_var_within": 0,
+  "personality": {
+   "Ysolde": "optimizer",
+   "Aldous": "protector",
+   "Morwen": "instigator",
+   "Mire": "tactician"
+  }
  },
- "llm_calls": 76,
+ "tokens": {
+  "prompt": 1652614,
+  "completion": 378210,
+  "cost_usd": 6.2207,
+  "calls": 98
+ },
+ "llm_calls": 97,
  "models": {
   "gm": "claude-sonnet-5",
   "player": "claude-haiku-4-5-20251001",
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 2673.8
+ "elapsed_s": 3557.7
 }
