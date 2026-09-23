@@ -1,227 +1,160 @@
 # Handoff — Hex-Nexus Balance Lab
 
-Written at the lead designer's request, mid-pacing-retune. Everything below is
-on `claude/hex-nexus-multiagent-prompts-aivg93`, pushed.
+Written at the lead designer's request. Everything below is on
+`claude/hex-nexus-multiagent-prompts-aivg93`, pushed. Nothing is running.
 
 ## 1. Where the lab stands
 
 | phase | state |
 |---|---|
-| 0 Bootstrap | **complete** |
-| Roster expansion to 25 | **complete** — roster 1.3.0 |
-| 1 AI calibration | **closed** on the lead designer's ruling (RQ-031, gate lowered to 60%). T2 reads 58.5% [53.6, 63.2] — inconclusive against the new gate, not a pass. |
-| 2 Correctness and pacing | **in progress, one arm outstanding.** Median length passed on T1 (P-0002) but that tuning was measured on the wrong AI — see §3. Being re-tuned on T2. |
-| 3 Economy | **patched, not yet measured** — P-0004 is in rules 1.3.0 and roster 1.4.0; `batch_0032` will judge it. See §5. |
-| 4 Champion balance | not started |
-| 5 Robustness | exploit gate already met; needs a re-run on rules 1.2.0 |
+| 0 Bootstrap | complete |
+| 1 AI calibration | closed on RQ-031 (gate lowered to 60%) |
+| 2 Correctness and pacing | **deferred on purpose** — the lead designer moved pacing last |
+| 3 Economy | **partly done, stuck on a pillar question.** See §4. |
+| 4 Champion balance | **not started, and should not start yet.** See §3. |
+| 5 Robustness | exploit gate met under rules 1.0.0; needs a re-run, the game has changed six times since |
 | 6 Release candidate | not started |
 
-Versions: rules **1.3.0**, roster **1.4.0**, ai **1.2.0**, **110 tests** (~55s).
+Versions: rules **1.7.0**, roster **1.6.0**, ai **1.3.0**, **119 tests** (~2m20s).
 
-The engine default `tower_hp` is still **11**, the value P-0002 chose against
-T1. It is known to be wrong for T2 (§3) and is waiting on `batch_0031`.
+`engine/config.py` holds the live knobs. Two are set to values no patch has yet
+measured together: `tower_hp` is **16** (a placeholder from the T2 pacing sweep,
+never confirmed) and `reveal_radius` is **2** (ruled, but only probed on T1).
 
-## 2. What is in flight
+## 2. What is queued and why
 
-Nothing is running — the pacing arms were stopped mid-run when work paused.
-Three batches are written and ready but have **no results**:
+| run | what it settles |
+|---|---|
+| **P-0009** — raise `dragon_ap_each` from 1, personality batch | the objective lever the lead designer approved. The knob is wired and deliberately still at 1; nothing else is pending on it. |
+| a T2 read at reveal radius 2 | the ruling was made on T1 probes. The direction was clear, the magnitude was not. |
+| champion balance | only after the two above, and read on a mixed personality field. See §3. |
 
-| run | what it settles | command |
+A 120-game T2 personality batch costs about 70–90 minutes on 4 cores.
+
+## 3. The finding that should govern what happens next
+
+**The game rewards one way of playing, and every champion number in this repo
+was measured in that field.** `batch_0037`, 120 games, five personalities drawn
+per game:
+
+| personality | before P-0008 | after P-0008 |
 |---|---|---|
-| `batch_0031` — T2, 80 games, tower HP 16 | the leading candidate for P-0003 | `python tools/run_batch.py reports/requests/batch_0031.json --workers 4 --baseline reports/batch_0029.json` |
-| `batch_0030` — T2, 80 games, tower HP 15 | the fallback if 16 overshoots | `python tools/run_batch.py reports/requests/batch_0030.json --workers 4 --baseline reports/batch_0029.json` |
-| `batch_0032` — T2, 120 games, roster 1.4.0 | judges P-0004, the economy patch | `python tools/run_batch.py reports/requests/batch_0032.json --workers 4 --baseline reports/batch_0028.json` |
+| sieger | 86.5% | **70.7%** |
+| objective | 68.2% | 45.2% |
+| laner | 52.2% | 55.6% |
+| warder | 21.7% | 34.2% |
+| brawler | 21.2% | 35.4% |
 
-A T2 batch costs roughly 18s a game on 4 cores, so each of these is 25–40
-minutes. **`batch_0032` is the one to run first** — P-0004 is committed to the
-rulebook and roster but has never been measured.
+P-0008 (a kill pays 3 AP instead of 1, death timers a round longer) passed both
+its metrics and closed the spread from 65 points to 36. It did not level the
+field: the sieger still wins 70.7% and its interval sits clear of everything
+below the laner.
 
-## 3. The finding that matters most right now
+The consequence for Phase 4 is the important part. A champion win rate read in
+a field where sieging wins is mostly a measure of that champion's siege
+contribution. Tuning the roster against it would tune the roster toward one
+strategy and then declare it balanced. **Do the objective lever first, then
+re-baseline champion balance on a mixed personality field.**
 
-**Pacing must be tuned on T2, not T1.** Everything in P-0002 was measured on T1
-mirrors, and T1 turns out to misreport the game badly:
+## 4. Economy: stuck against a pillar
 
-| same rules, roster and tower HP 10 | median | p90 | ends by Nexus kill |
-|---|---|---|---|
-| T1 mirror (`batch_0026`, 150 games) | 14 | 20 | 92.0% |
-| T2 mirror (`batch_0028`, 80 games) | **10** | 14 | **100%** |
+Phase 3's exit condition is no champion above 1.5× the roster-mean AP per
+round. Five still are. The history matters, because two of the three patches
+were wrong in instructive ways:
 
-T1 leaves 8% of games unresolved and reads about four rounds longer. Inspecting
-those unresolved games, the pressured side still held a median 2.5 of 6 towers
-and in half of them neither Nexus had been scratched — they are not close games
-that ran out of clock, they are games where T1 never organised a siege. T2
-closes every one of them. So the round-limit tail was an AI-competence artefact
-and no rules lever was ever going to fix it. Two evenings of pacing levers
-(tower HP sweeps, a second wave-growth step) were spent chasing it.
+- **P-0004 (failed).** Re-priced AREA and LINE in the §14.2 budget. Moved the
+  design budget and not the behaviour: raising an AREA's price just forces the
+  kit to give something back elsewhere. A point table has no grip on a
+  per-activation rate.
+- **P-0006 (partial).** Took the range step off AREA. This was the right lever
+  and the evidence is unambiguous — the two AREAs with reach to lose dropped
+  34% and 23% of their absolute income. But it only reaches champions who had
+  reach; the three reach-1 engines went *up*.
+- What is left is the **conversion itself** — an AREA banking fewer chips as
+  AP — and that is the chip-equals-AP pillar. Two shapes were put to the lead
+  designer and neither has been ruled on: cap how many chips an AREA banks per
+  use, or stop area damage on minion waves converting at all.
 
-**Consequence: the adopted tower HP of 11 is wrong.** It was chosen because it
-put T1 at median 14. On T2 the sweep so far reads:
+The attribution tooling for this is in place: `apply_plan` books every AP a
+champion earns against the ability that earned it, which is how the engines
+were found (one AREA supplies 94–98% of each outlier's income).
 
-| tower HP (T2 mirror, 80 games) | median | p10 | p90 | Nexus kills |
-|---|---|---|---|---|
-| 10 | 10 | 8 | 14 | 100.0% |
-| 13 | 12 | 10 | 15 | 97.5% |
-| 15 | *`batch_0030`, in flight* | | | |
+## 5. Rulings implemented since the last handoff
 
-Extrapolating, tower HP around 15–16 should land the 13–15 median the lead
-designer asked for. **Do not adopt a value until `batch_0030` lands**, and set
-the default in `engine/config.py` (`tower_hp`) plus the Rules §8 line together.
-The second wave-growth step (`wave_chips_late2`, round 13) is in the engine and
-made almost no difference on T1; it has not been measured on T2 and can be
-reverted cheaply if it earns nothing.
+- **RQ-034 → RQ-036, the hidden-hexgroup redesign.** The ambush-gate approach
+  was replaced: a champion may now use any ability from cover, and an occupied
+  hexgroup is revealed by an enemy champion within **2 hexes** (rules 1.7.0).
+  The two numbers are equal on purpose — while sight reached 1 and abilities
+  reached 2 there was a band to shoot from unseen, and that is where most of
+  the shooting happened. Probes: champion snipes down about a fifth, champion
+  combat up about 40%.
+- **RQ-037a.** Objectives may be priced higher (approved, not yet applied); a
+  tower that only falls while your wave is present was **rejected** and is
+  recorded as rejected.
+- **grivven keeps the roster's only area root**, with his basics nerfed 4 gross
+  and a stated `budget_exception`. Kits may now sit outside the band on purpose
+  if they say why — the budget is a first guess at equal power and win rate is
+  the real test. `validate_kit` honours that for the whole-kit checks only.
 
-## 4. The rulings, and what they did
+## 6. Things I got wrong, so they are not rediscovered
 
-All four rulings from the last session are implemented, tested and measured.
+- **Twice over-implemented a rules ruling.** The safe-haven reading was first
+  made symmetric (which broke ranged play entirely) and then implemented by
+  replacing board distance with hex distance for every effect (which shrank
+  every ability's reach and stopped games resolving). The ruling changed *who*
+  can be reached, not how far anything reaches.
+- **Tuned pacing on T1.** T1 runs about four rounds longer than T2 and leaves
+  8% of games unresolved, and those unresolved games are not close finishes —
+  T1 simply never organises a siege. P-0002's tower HP of 11 was chosen against
+  T1 and is wrong for a T2 world. **Do not tune anything pacing-adjacent on T1
+  alone.**
+- **Chose two metrics that could not move.** "Share of ability uses made from
+  cover" measures location, not sniping — being in cover is the default state.
+  "Activations ending on a hexgroup edge" counted any hex bordering any other
+  hexgroup, which is nearly all of them, and read 98%. Both are replaced; the
+  concealment section of a report now separates true snipes, and snipes aimed
+  at a champion, from farming a wave.
+- **The refitter dropped data it did not tune** (the ambush tags), **bought
+  budget back by lengthening abilities**, and **disagreed with the validator**
+  about ties and about which point table to price with. All fixed, but it is
+  worth re-reading `tools/refit_roster.py` against `engine/kits.py` before
+  trusting a refit.
 
-**RQ-001 / RQ-002 — hidden hexgroups are a refuge** (rules 1.1.0). Movement
-distance and effect distance are now separate: a hidden hexgroup is a shortcut
-for walking, not for shooting. Champions inside cannot be reached from outside;
-minions, towers and camps keep their own hex, so a tower covers its hex's
-neighbours instead of the whole tile edge.
-
-**RQ-033 — my implementation of that ruling was wrong the first time, twice
-over.** The first cut made concealment symmetric, so a hidden champion could not
-attack out either; because a champion's own tile is hidden whenever no enemy
-shares it, that broke ranged play entirely. The second cut replaced board
-distance with raw hex distance for *every* effect, which quietly shrank every
-ability's reach and stopped the game resolving (0.7% of games ended by Nexus
-kill, team AP fell by two thirds). Both are fixed. The lesson is in the rule now:
-the ruling changes *who* can be reached, not how far anything reaches.
-
-**RQ-016 — bump-and-continue** is implemented as Rules 3.3 step 4 always said.
-
-**RQ-030 / patch P-0001 — §14.2 recalibrated** (credits cut to −2 per AP and
-−1.5 per cooldown round, ability floor raised to 3, R capped at 1.75× the Q/W/E
-mean), with roster 1.2.0 refit to it. Judged on two batches differing only in
-roster: the 0-AP-to-3-AP usage gap went from **+27.2 points to −4.5**, so the
-pricing inversion is gone. Its second metric missed — 34 of 100 abilities still
-sit under 5% use against a target of 25 — and that residue is situational
-effects (REVEAL, shields, blinks) the policy rarely wants, not a pricing
-problem. No revert condition triggered.
-
-**RQ-032 — retested clean.** A dedicated `X_exploit_fogsnipe` policy loses to T2
-at 12.5% [5.5, 26.1]. Sniping from concealment is not a degenerate strategy.
-
-**RQ-034 — ambush abilities** (rules 1.2.0, roster 1.3.0). Measuring RQ-032
-turned up that 85% of all ability uses were being made from inside a hidden
-hexgroup at a target outside it, and champion kills had collapsed from 17.31 per
-game under the literal reading to **0.20**. The lead designer's fix: tag which
-abilities may be used out of cover, one per champion and two for junglers,
-preferring a move-and-attack that commits the champion. Result:
-
-| | before | after (`batch_0023`) |
-|---|---|---|
-| champion kills per game | 0.24 | **4.48** |
-| attacks made from cover | 85% of uses | 46% |
-
-**One judgment call in RQ-034 still wants confirmation.** Only 7 of 25 kits own
-a move-and-attack, so tagging alone would have left 18 champions sniping from
-cover with a ranged ability. I made springing an ambush flip the hexgroup face
-up for the rest of the round, which is what turns an ambush into a one-shot
-rather than a firing position. That is an extra rule beyond what was asked, it
-is in Rules 1.2.0 §3.1, and it should be confirmed or removed.
-
-## 5. Economy: patched, awaiting its batch
-
-Measured on T2 (`batch_0028`), four champions sit far above the 1.5× target:
-
-| champion | AP/round | × roster mean | the cheap engine |
-|---|---|---|---|
-| ashwyn | 10.34 | **3.99×** | W: AREA at 0 AP |
-| quillan | 7.84 | **3.03×** | W: LINE, R: AREA |
-| wisp | 6.51 | **2.51×** | W: AREA |
-| sable | 6.31 | **2.43×** | W: AREA, R: AREA+HEAL |
-
-22 of 25 champions own an AREA or LINE somewhere and average 1.08×, so the
-ability type is not the problem — a *cheap* one is. This confirms the standing
-hypothesis that §14.2 prices AREA and LINE by hits rather than by the chips they
-can bank: a 0-AP AREA touching three units banks three AP for nothing.
-
-**P-0004 is written, committed and unmeasured** (`log/patches/P-0004.json`).
-Rules 1.3.0 prices AREA at 6 per hit at r1 climbing 4 per extra step of range,
-LINE at (3 + n) per hit, and forbids a free AREA or LINE outright. Roster 1.4.0
-is refit to it: 13 of 100 abilities changed, 3 single-step stat changes, and no
-free farming engine left anywhere. All 25 kits validate and the RQ-034 ambush
-tags survive the refit.
-
-Its success metric is: no champion above 1.5× the roster-mean AP per round in a
-T2 mirror, top champion under 2.0×. `batch_0032` decides it.
-
-**One thing in P-0004 wants a designer's eye.** grivven is the single kit the
-new table could not price. Its R paired AREA with ROOT, which costs 14 gross
-under the new values — above the 1.75× spread cap at every combination of
-numbers, with no room left under the 22 ± 2 band. Rules §14.2 allows a redesign
-once stat and number levers are exhausted, so its R became a harder area hit
-(AREA k2) and **lost the root**. That is a genuine identity change, not a
-number tweak.
-
-Two bugs surfaced while building this, both fixed and worth knowing about:
-`tools/refit_roster.py` rebuilt each ability from its numbers and silently
-dropped the ambush tags, and `validate_kit` priced gross with the default point
-table rather than the kit's own, so the fitter and the validator disagreed
-about what an AREA was worth.
-
-## 6. Picking the work back up
+## 7. Picking the work back up
 
 ```bash
 pip install pytest
-python -m pytest tests/ -q                      # 108 tests, ~60s
-python tools/run_batch.py reports/requests/batch_0030.json --workers 4 --baseline reports/batch_0028.json
+python -m pytest tests/ -q                     # 119 tests, ~2m20s
+python tools/run_batch.py reports/requests/batch_0038.json --workers 4   # the pattern
 ```
 
 In order:
 
-1. **Run `batch_0032`** and judge P-0004 against its metric (§5). It is the
-   only committed patch with no evidence behind it.
-2. **Land `batch_0031`** (and `batch_0030` if 16 overshoots), pick the tower HP
-   that puts the T2 median in 13–15, set it in `engine/config.py` *and* the
-   Rules §8 line together, and confirm with a 300-game T2 mirror. Write it up
-   as P-0003 in `log/patches/` — that file does not exist yet. Note that
-   P-0004 removes some economy, which may itself lengthen games, so the tower
-   HP should be chosen on a roster-1.4.0 batch rather than on the 1.3.0 sweep.
-3. **Champion balance.** Note RQ-028: with 5 champions per role a champion plays
-   40% of games, so ±2.2-point verdicts need ~5,000-game batches. T2 now costs
-   about 18s a game on 4 cores, so a 5,000-game T2 batch is roughly 6 hours.
-   Either budget for it, run the sweep on T1 and confirm only the outliers on
-   T2, or shrink T2's opponent model for bulk batches. **Do not** tune anything
-   pacing-adjacent on T1 alone again — see §3.
-4. **Re-run the exploit sweep on rules 1.2.0.** The Phase 5 gate was met under
-   rules 1.0.0 and the game has changed twice since.
-
-### Useful tools added this session
-
-| tool | what it answers |
-|---|---|
-| `tools/ability_usage.py` | regroups ability usage by price rather than by champion |
-| `tools/refit_roster.py` | refits a roster to a new §14.2 table, protecting identity |
-| `tools/tag_ambush.py` | picks each champion's ambush ability |
-| `tools/ai_calibrate.py --ai --roster` | now takes `config_overrides`, so rules variants run head to head |
-
-Report Part 9b carries the concealment metric (attacks made from cover).
-
-## 7. Decisions waiting on the lead designer
-
-1. **The ambush reveal** (§4) — confirm or remove.
-2. **Tower HP** once `batch_0030` lands, if the sweep does not land cleanly in
-   13–15; the choice trades median length against the Nexus-kill rate.
-3. **Phase 4 batch budget** (§6 item 3): ~6 hours of T2, or a T1 sweep with T2
-   confirmation.
+1. **P-0009, the objective lever.** Raise `dragon_ap_each` and measure on a
+   personality batch against `batch_0038`. Target: the sieger below 60% and the
+   spread below 25 points.
+2. **A T2 read at reveal radius 2**, since the ruling rests on T1 probes.
+3. **Champion balance**, on a mixed personality field, not a mirror. RQ-028
+   still applies: with 5 champions per role a champion plays 40% of games, so
+   ±2.2-point verdicts need roughly 5,000 games. Consider a T1 sweep to find
+   outliers and a T2 personality batch to confirm only those.
+4. **Pacing last**, as ruled. `tower_hp` 16 has never been confirmed, and both
+   P-0006 and P-0008 moved game length underneath it.
+5. **Re-run the exploit sweep.** The Phase 5 gate was met under rules 1.0.0.
 
 ## 8. Map of the repository
 
-| path | owner role | what it holds |
-|---|---|---|
-| `rules/` | Facilitator | the rulebook; **1.2.0 is current** |
-| `roster/` | Designer | champion kits; **1.3.0 is current** |
-| `engine/` | Sim Runner | map graph, state, abilities, phases, batch runner, report builder |
-| `ai/policy_v1_1_0`, `ai/policy_v1_2_0` | AI Developer | frozen and current policy packages |
-| `tests/` | Sim Runner | 108 tests, one module per rulebook area |
-| `tools/` | Sim Runner / AI Dev | see the table in §6 |
-| `reports/` | Sim Runner | sim requests, batch reports, calibration results |
-| `log/` | Facilitator | `decisions.md` (34 RULE-Qs), `changelog.md`, `briefs/`, `patches/` |
-| `docs/` | Facilitator | prompt architecture, lab notes, agent role cards, this handoff |
+| path | holds |
+|---|---|
+| `rules/` | the rulebook; **1.7.0 is current** |
+| `roster/` | champion kits; **1.6.0 is current** |
+| `engine/` | map graph, state, abilities, phases, batch runner, report builder |
+| `ai/policy_v1_1_0 … v1_3_0` | policy packages; **1.3.0 current**, earlier ones frozen so old batches stay reproducible |
+| `tests/` | 119 tests, one module per rulebook area |
+| `tools/` | `run_batch`, `ai_acceptance`, `ai_calibrate`, `search_agreement`, `ability_usage`, `refit_roster`, `tag_ambush`, `replay_view`, `roster_sheet` |
+| `reports/` | sim requests, batch reports, calibration results |
+| `log/` | `decisions.md` (37 RULE-Qs), `changelog.md`, `patches/` (P-0001…P-0008, each with what it expected and what it did), `briefs/` |
+| `docs/` | prompt architecture, lab notes, agent role cards, this handoff |
 
-Why a rule resolves the way it does is in `log/decisions.md`; why the engine and
-AI are built the way they are is in `docs/LAB_NOTES.md`; what each patch expected
-and what it actually did is in `log/patches/`.
+Patches record their own verdicts, including the two that failed. Read
+`log/patches/` before re-running any economy lever.
