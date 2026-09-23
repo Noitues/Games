@@ -80,7 +80,7 @@
     "id": "B-02",
     "name": "PLEA FOR HELP",
     "trigger": "compel_refused",
-    "used": null
+    "used": true
    }
   ]
  },
@@ -1703,6 +1703,512 @@
    "notes": "triggers fired: ['M-1']",
    "event_type": "scene_end",
    "improvised": false
+  },
+  {
+   "event_id": 75,
+   "session": 1,
+   "scene": 3,
+   "actor": "",
+   "action": "Rail + C-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "C-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "module M-1",
+   "event_type": "rail_add",
+   "improvised": false
+  },
+  {
+   "event_id": 76,
+   "session": 1,
+   "scene": 3,
+   "actor": "",
+   "action": "Rail + T-05",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "module M-1",
+   "event_type": "rail_add",
+   "improvised": false
+  },
+  {
+   "event_id": 77,
+   "session": 1,
+   "scene": 3,
+   "actor": "",
+   "action": "Scene 3 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false
+  },
+  {
+   "event_id": 78,
+   "session": 1,
+   "scene": 3,
+   "actor": "",
+   "action": "Draw (beat_frame)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "deck now 3",
+   "event_type": "draw",
+   "improvised": false
+  },
+  {
+   "event_id": 79,
+   "session": 1,
+   "scene": 3,
+   "actor": "",
+   "action": "Draw (beat_frame)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-19",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "deck now 2",
+   "event_type": "draw",
+   "improvised": false
+  },
+  {
+   "event_id": 80,
+   "session": 1,
+   "scene": 3,
+   "actor": "",
+   "action": "Beat Frame PLEA FOR HELP",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-03,PX-19",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "fills {'WHO': 'PX-03', 'WHERE': 'PX-19'}; defaults for rest",
+   "event_type": "beat_frame",
+   "improvised": false
+  },
+  {
+   "event_id": 81,
+   "session": 1,
+   "scene": 3,
+   "actor": "Morwen",
+   "action": "Compel (deck)",
+   "skill": "",
+   "tags_invoked": "Sells Out Lodgers",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Yara admits, shame-faced, that she already told a Warden patrol which direction the party went — she needed the toll-favor to keep her common room open, and now Warden eyes will be watching the road t",
+   "event_type": "compel",
+   "improvised": false,
+   "compel_forced": false
+  },
+  {
+   "event_id": 82,
+   "session": 1,
+   "scene": 3,
+   "actor": "",
+   "action": "Rail + PX-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "surfaced (Morwen)",
+   "event_type": "rail_add",
+   "improvised": false
+  },
+  {
+   "event_id": 83,
+   "session": 1,
+   "scene": 3,
+   "actor": "Morwen",
+   "action": "Card surfaces",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "1 free invoke(s)",
+   "event_type": "surface",
+   "improvised": false
+  },
+  {
+   "event_id": 84,
+   "session": 1,
+   "scene": 3,
+   "actor": "Aldous",
+   "action": "Compel (deck)",
+   "skill": "",
+   "tags_invoked": "Reckless Under Pressure",
+   "fp_spent": 1,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "refused",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Aldous, hearing Yara's plea, insists they cross the ford immediately rather than wait for better light or a scout — pushing the party into the rising water now, before anyone can properly ready gear o",
+   "event_type": "compel",
+   "improvised": false,
+   "compel_forced": false
+  },
+  {
+   "event_id": 85,
+   "session": 1,
+   "scene": 3,
+   "actor": "",
+   "action": "Rail - L-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "L-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "discard: rail limit",
+   "event_type": "rail_remove",
+   "improvised": false
+  },
+  {
+   "event_id": 86,
+   "session": 1,
+   "scene": 3,
+   "actor": "",
+   "action": "Rail + PX-19",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-19",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "surfaced (Aldous)",
+   "event_type": "rail_add",
+   "improvised": false
+  },
+  {
+   "event_id": 87,
+   "session": 1,
+   "scene": 3,
+   "actor": "Aldous",
+   "action": "Card surfaces",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-19",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "1 free invoke(s)",
+   "event_type": "surface",
+   "improvised": false
+  },
+  {
+   "event_id": 88,
+   "session": 1,
+   "scene": 3,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Can the party reach the belltower and pull Yara's son back before the rising water seals the ford — and before the swarm-song finishes what it started?",
+   "event_type": "frame",
+   "improvised": false
+  },
+  {
+   "event_id": 89,
+   "session": 1,
+   "scene": 3,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Ysolde steps forward, still dripping from the ford. She looks Mother Yara straight in the eyes — speaking with the quiet certainty of someone who has just been ",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 90,
+   "session": 1,
+   "scene": 3,
+   "actor": "Aldous",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Aldous opens the door wider and draws her inside, shaking rain from his shoulders. Before looking back at her face, his eyes turn outward into the storm, readin",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 91,
+   "session": 1,
+   "scene": 3,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Morwen steps to the door to face Mother Yara directly, meeting the older woman's wild eyes. She doesn't hesitate—this is the path she swore to walk. She's alrea",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 92,
+   "session": 1,
+   "scene": 3,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Mire doesn't hesitate. She's already moving toward her gear, checking her blade one more time, boots still wrapped from the ford bleeding through her breeches. ",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 93,
+   "session": 1,
+   "scene": 3,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "2->2",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "no change",
+   "event_type": "tension",
+   "improvised": false
+  },
+  {
+   "event_id": 94,
+   "session": 1,
+   "scene": 3,
+   "actor": "",
+   "action": "Rail - PX-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "binder: scene cleanup",
+   "event_type": "rail_remove",
+   "improvised": false
+  },
+  {
+   "event_id": 95,
+   "session": 1,
+   "scene": 3,
+   "actor": "",
+   "action": "Rail - PX-19",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-19",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "binder: scene cleanup",
+   "event_type": "rail_remove",
+   "improvised": false
+  },
+  {
+   "event_id": 96,
+   "session": 1,
+   "scene": 3,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Mother Yara",
+   "event_type": "story_add",
+   "improvised": false
+  },
+  {
+   "event_id": 97,
+   "session": 1,
+   "scene": 3,
+   "actor": "",
+   "action": "Trigger fired: M-2",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "deck_at_most:3",
+   "event_type": "trigger",
+   "improvised": false
+  },
+  {
+   "event_id": 98,
+   "session": 1,
+   "scene": 3,
+   "actor": "",
+   "action": "Scene 3 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "triggers fired: ['M-2']",
+   "event_type": "scene_end",
+   "improvised": false
   }
  ],
  "scenes": [
@@ -1731,6 +2237,19 @@
    "tension_after": 2,
    "triggers_fired": [
     "M-1"
+   ]
+  },
+  {
+   "index": 3,
+   "tension_before": 2,
+   "scene_test": null,
+   "outcome": "beat_frame",
+   "beat": "trigger compel_refused",
+   "rounds": 1,
+   "climax": false,
+   "tension_after": 2,
+   "triggers_fired": [
+    "M-2"
    ]
   }
  ],
@@ -2214,6 +2733,142 @@
    "kind": "narration",
    "text": "Aldous's reading of the ford lands true this time — he calls out the exact seam where a fisher's old reflex fights the hive's rhythm, and one of the attackers flinches, favoring a leg, blood running where the swarm-song can't quite override thirty years of muscle memory (Hive-Touched Pack takes a mild consequence: *Flinching Where the Fisher-Reflex Bites Back*). Morwen presses in behind that crack with everything she has — the old rite, spoken clean and certain, drives straight past the drone and into Kess's face, and for one full breath the swarm-song simply stops in her throat. Ysolde doesn't waste it. She's already moving with her sister's own balance, calling her home in the water-language they built together as girls, and Kess's spear-arm wavers, drops. That's the opening Mire needed. She puts her whole weight into the narrowest point of the ford one last time, blade snapping through the gap between coordinated bodies, and the pack simply comes apart — hive-touched stumbling, falling, Kess's knees buckling last of all as she pitches forward into the shallows. Ysolde catches her before the black water can take her, and for a moment there's only rain, and her sister's ragged breathing, and no swarm-song at all. The ford is quiet. The party is bloodied, but everyone is standing, and everyone still has their gear.",
    "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Her daughter was hive-touched. I brought her back without the Wardens knowing. Yara remembers who helps instead of who burns.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "The road's harder now. But the temple's still there.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen accepts the compel on 'A Weary Innkeeper'.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "Three years past at Bogmere Crossing. A pilgrim band needed to cross with night falling and water rising fast. The omens told me to wait—the rain said the flood would crest by dawn if we held fast. But a desperate guide's pressure and my own urgency pushed me to go at dusk when the current ran worst. Most of us got across. Corvus—their guide—he stepped back to help a stumbling child and the current took him. I've heard his voice in the rain ever since, asking why I chose haste over patience.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "No. I won't leave another Corvus behind—we rest, tend Mire's wounds, and listen to what the rain says about the temple approach. My vow doesn't demand we rush into disaster.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous refuses the compel on 'Cross Before the Flood'.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Beat: Mother Yara, the weary innkeeper who keeps Hollowmoot's last dry common room and hears every rumor that crosses her threshold, comes pounding on the party's door before dawn, soaked through despite her own roof. begs the party to go to She begs them to cross now, at the flooded ford below Saint Orrin's Drowned Temple, before the rising water closes the crossing for good — the risky path Aldous has sworn before to take rather than lose the light., because her son followed the swarm-song into the belltower.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Mother Yara doesn't wait for an answer at the door — she's already soaked through worse than the rain outside, fists still raised to knock again, eyes wild with the particular grief of a mother who has run out of people to ask. She knows Morwen's kindness from a debt kept quiet; she knows Aldous's name from the old stories of Bogmere, and she says it anyway, because there's no one else left to beg. Her boy followed the swarm-song into Saint Orrin's belltower sometime before dawn, and the ford below the drowned temple is rising fast — the same reckless crossing Aldous once swore never to rush again. Somewhere under that black water the Pikemaw still hunts by vibration, and every hour the flood climbs is an hour closer to losing both the ford and the boy for good.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "I know what the song does, Mother Yara. I heard it sing through my sister's throat not an hour ago. Your boy is still in there — the hive can't rewrite thirty years of his living. I speak the hymns. We cross at dawn, and I'll bring him back.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde steps forward, still dripping from the ford. She looks Mother Yara straight in the eyes — speaking with the quiet certainty of someone who has just been inside the swarm-song's grip and lived to tell about it. Her hand settles on the old woman's shoulder, a gesture both promise and shared understanding. She has heard the crew's secrets for years; she knows how to speak to desperate hope.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "Come in from that rain, Mother Yara. I know what it is to lose someone at a ford—I've carried Corvus's name in every rainfall since Bogmere. Your son, I'll cross for him, but not reckless and blind into waters I haven't read yet.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous opens the door wider and draws her inside, shaking rain from his shoulders. Before looking back at her face, his eyes turn outward into the storm, reading the patterns in wind and water, the rhythm of the flood against the rain, calculating what the ford truly demands and what it might offer them before committing to their path.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Your daughter came back because someone chose mercy over fear. I'll go to your boy, Yara. We're moving now.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen steps to the door to face Mother Yara directly, meeting the older woman's wild eyes. She doesn't hesitate—this is the path she swore to walk. She's already reaching for her coat.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "The temple is mine to hold. I was raised there, and your boy is still under Order protection whether he knows it or not. We move now—before that water closes the crossing and takes him down with it.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire doesn't hesitate. She's already moving toward her gear, checking her blade one more time, boots still wrapped from the ford bleeding through her breeches. She looks at Mother Yara with the flat certainty of someone who learned duty before she learned anything else. \"The others are ready. We cross fast and hard. You show me where that belltower is, and I'll haul your son out of it.\" She won't leave this woman or her child to the rising dark. She never leaves people behind.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Mother Yara doesn't argue with any of them — she just nods, hard and fast, like a woman afraid that stopping to speak will break whatever's holding her together. She takes Mire's offered hand only long enough to press a scrap of oilcloth into it, a rough charcoal mark of the temple's old servants' stair, muttering \"faster than the nave, if the water hasn't already climbed it.\" Aldous reads the rain a moment longer at the threshold — the rhythm's still holding, no flood-surge yet, but it won't hold long — and gives a short nod: they can move, if they move now. Ysolde checks the wrap on her still-damp sleeve where Kess's spear grazed her and says nothing more; her promise already stands. Morwen shrugs her coat on and is first out the door into the downpour, Yara half a step behind her, pointing the way north along the causeway toward the drowned silhouette of Saint Orrin's belltower. The dry common room empties out behind you into the black and endless rain, four soaked shapes and a desperate mother, moving fast toward a ford that is, even now, rising.",
+   "visible_to": "all"
   }
  ],
  "costs": [
@@ -2319,6 +2974,98 @@
      "sings loud hymns"
     ],
     "weakness": "Slow and Noisy"
+   }
+  },
+  {
+   "event": "beat_fill",
+   "scene": 3,
+   "draw_id": "PX-03",
+   "valid": true,
+   "tag": "hears every rumor",
+   "text": "Mother Yara, the weary innkeeper who keeps Hollowmoot's last dry common room and hears every rumor that crosses her threshold, comes pounding on the party's door before dawn, soaked through despite her own roof.",
+   "improvised": false,
+   "card": {
+    "id": "PX-03",
+    "type": "ROOTS",
+    "owner": "PC-MORWEN",
+    "title": "A Weary Innkeeper",
+    "power_tags": [
+     "keeps a dry common room",
+     "hears every rumor",
+     "hides guests for coin"
+    ],
+    "weakness": "Sells Out Lodgers"
+   }
+  },
+  {
+   "event": "beat_fill",
+   "scene": 3,
+   "draw_id": "PX-19",
+   "valid": true,
+   "tag": "takes the risky ford",
+   "text": "She begs them to cross now, at the flooded ford below Saint Orrin's Drowned Temple, before the rising water closes the crossing for good — the risky path Aldous has sworn before to take rather than lose the light.",
+   "improvised": false,
+   "card": {
+    "id": "PX-19",
+    "type": "REACH",
+    "owner": "PC-ALDOUS",
+    "title": "Cross Before the Flood",
+    "power_tags": [
+     "pushes on through dark",
+     "abandons slow companions",
+     "takes the risky ford"
+    ],
+    "weakness": "Reckless Under Pressure"
+   }
+  },
+  {
+   "event": "compel:beat frame",
+   "scene": 3,
+   "draw_id": "PX-03",
+   "valid": true,
+   "tag": "Sells Out Lodgers",
+   "text": "Yara admits, shame-faced, that she already told a Warden patrol which direction the party went — she needed the toll-favor to keep her common room open, and now Warden eyes will be watching the road to the temple.",
+   "improvised": false,
+   "accepted": true,
+   "refusal_valid": null,
+   "owner": "Morwen",
+   "placebo": true,
+   "card": {
+    "id": "PX-03",
+    "type": "ROOTS",
+    "owner": "PC-MORWEN",
+    "title": "A Weary Innkeeper",
+    "power_tags": [
+     "keeps a dry common room",
+     "hears every rumor",
+     "hides guests for coin"
+    ],
+    "weakness": "Sells Out Lodgers"
+   }
+  },
+  {
+   "event": "compel:beat frame",
+   "scene": 3,
+   "draw_id": "PX-19",
+   "valid": true,
+   "tag": "Reckless Under Pressure",
+   "text": "Aldous, hearing Yara's plea, insists they cross the ford immediately rather than wait for better light or a scout — pushing the party into the rising water now, before anyone can properly ready gear or rope.",
+   "improvised": false,
+   "accepted": false,
+   "refusal_valid": true,
+   "owner": "Aldous",
+   "placebo": true,
+   "card": {
+    "id": "PX-19",
+    "type": "REACH",
+    "owner": "PC-ALDOUS",
+    "title": "Cross Before the Flood",
+    "power_tags": [
+     "pushes on through dark",
+     "abandons slow companions",
+     "takes the risky ford"
+    ],
+    "weakness": "Reckless Under Pressure"
    }
   }
  ],
@@ -2429,6 +3176,27 @@
     "interim_ruling": "Narration alone was treated as satisfying 'the complication happens as described'; no further mechanical event was required.",
     "scene": 2,
     "source": "referee"
+   },
+   {
+    "section": "§5 (Beat Frame procedure, step 3-4)",
+    "issue": "PX-19 is a REACH card, whose type-blank per §2 is WHY. In the PLEA FOR HELP frame, WHY is a fixed default (not an open blank), so per step 3's fallback the card fell through to fill the first remaining open blank, WHERE. Step 4 only tells the GM how to render ROOTS (a person/place) and REACH (a motive) content — it gives no guidance for narrating a REACH card's tags as a WHERE. The GM had to improvise turning 'takes the risky ford' into a location description ('the flooded ford below Saint Orrin's Drowned Temple').",
+    "interim_ruling": "The table let the GM freely blend the REACH tag into a place description (naming an existing default/fictional location and layering the REACH tag's flavor onto it), since the spec gives no rendering rule for a card type placed via the mismatch-fallback into a non-native blank.",
+    "scene": 3,
+    "source": "referee"
+   },
+   {
+    "section": "§4 step 4 / §5 step 6",
+    "issue": "When Aldous refused the Beat Frame surfacing compel on PX-19 (event 84), §4 step 4 says 'The GM builds the cost from a face-up GM tag instead.' That instruction is written for the tie/major-cost draw context (§3), where a numeric shift-cost is owed. A Beat Frame surfacing compel has no shift-cost to build — the frame's complication (the flooded ford) was already fixed by the fill itself. It is unclear whether the GM must layer an additional GM-tag-based complication on top of the frame, or whether paying 1 FP to refuse is the entire consequence in this context.",
+    "interim_ruling": "The table treated refusal in a Beat Frame context as costing only the 1 fate point, with no additional face-up-GM-tag cost layered on, since the frame's fill already supplied the complication.",
+    "scene": 3,
+    "source": "referee"
+   },
+   {
+    "section": "§6A (Pile maintenance — Add)",
+    "issue": "Mother Yara (SN-03) originated from Morwen's ROOTS card (PX-03) and clearly 'ties to one character,' which per §6A should route her to Morwen's Player Story Pile rather than the GM Story Pile. The log entry (event 96) only records 'Story card added' by actor GM with no pile destination noted, so it can't be confirmed which pile she was filed to.",
+    "interim_ruling": "Logged as filed to Morwen's Player Story Pile, consistent with the ROOTS-tag origin, pending clearer logging of pile destination in future events.",
+    "scene": 3,
+    "source": "referee"
    }
   ],
   "cost_checks": [
@@ -2473,6 +3241,24 @@
     "used_drawn_card": true,
     "note": "Success-at-major-cost draw (PX-05, event 50/51) was resolved via a compel on PX-05's weakness tag 'Slow and Noisy,' satisfying §3's 'major cost must use its weakness tag' requirement.",
     "scene": 2
+   },
+   {
+    "event_id": 80,
+    "used_drawn_card": true,
+    "note": "WHO filled from PX-03's power tag 'hears every rumor' (ROOTS -> specific person, per §5 step 4); WHERE filled from PX-19's power tag 'takes the risky ford' via the type-mismatch fallback (§5 step 3), content-rendering not covered by step 4 (see ambiguity).",
+    "scene": 3
+   },
+   {
+    "event_id": 81,
+    "used_drawn_card": true,
+    "note": "Compel used PX-03's weakness tag 'Sells Out Lodgers' as default, matching §4 step 2. Accepted, per step 3.",
+    "scene": 3
+   },
+   {
+    "event_id": 84,
+    "used_drawn_card": true,
+    "note": "Compel named PX-19's weakness tag 'Reckless Under Pressure' as default, matching §4 step 2. Refused, player paid 1 FP per step 4; no follow-on GM-tag cost logged (see ambiguity).",
+    "scene": 3
    }
   ],
   "friction": [
@@ -2499,6 +3285,18 @@
    {
     "scene": 2,
     "text": "Two accepted deck-draw compels this scene (PX-09 dock collapse, PX-05 pilgrim ambush) are marked 'placebo' and have no traceable mechanical follow-up in later events, which makes it hard to verify the drawn card's cost actually 'happened' beyond flavor text, versus being pure color that doesn't constrain later play."
+   },
+   {
+    "scene": 3,
+    "text": "The type-mismatch fallback rule (§5 step 3) has no matching content-rendering guidance in step 4 for the mismatched blank, forcing the GM to invent how a REACH card's motive-flavored tag becomes a WHERE description."
+   },
+   {
+    "scene": 3,
+    "text": "§4 step 4's 'build the cost from a face-up GM tag' instruction doesn't map cleanly onto a refused Beat Frame surfacing compel, since the frame's complication is already fixed by the card fill rather than needing a separate shift-cost."
+   },
+   {
+    "scene": 3,
+    "text": "Story-card 'Add' events (§6A) aren't logged with a pile destination, making it impossible to verify player-tied NPCs are routed to the correct Player Story Pile versus the GM Story Pile."
    }
   ]
  },
@@ -2509,13 +3307,15 @@
   "tension": 2,
   "fp": {
    "Ysolde": 4,
-   "Aldous": 2,
-   "Morwen": 3,
+   "Aldous": 1,
+   "Morwen": 4,
    "Mire": 1
   },
   "surfaced": [
+   "PX-03",
    "PX-05",
-   "PX-09"
+   "PX-09",
+   "PX-19"
   ],
   "deck_player_cards": {
    "PX-09": "Ysolde",
@@ -2526,33 +3326,31 @@
   "guarantee_pulled": [],
   "guarantee_failed": [],
   "deck_left": [
-   "PX-03",
-   "PX-19",
    "F-03",
    "H-05"
   ],
-  "draws": 3,
+  "draws": 5,
   "turns": {
-   "Ysolde": 4,
-   "Aldous": 4,
-   "Morwen": 3,
-   "Mire": 4
+   "Ysolde": 5,
+   "Aldous": 5,
+   "Morwen": 4,
+   "Mire": 5
   }
  },
  "notes": [],
  "metrics": {},
  "tokens": {
-  "prompt": 753884,
-  "completion": 169970,
-  "cost_usd": 2.496,
-  "calls": 48
+  "prompt": 984082,
+  "completion": 211150,
+  "cost_usd": 3.3001,
+  "calls": 60
  },
- "llm_calls": 48,
+ "llm_calls": 60,
  "models": {
   "gm": "claude-sonnet-5",
   "player": "claude-haiku-4-5-20251001",
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 1376.5
+ "elapsed_s": 1775.3
 }

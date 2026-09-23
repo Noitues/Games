@@ -1,0 +1,964 @@
+{
+ "run_id": "pilot-01__B__s87942__r2",
+ "batch_id": "pilot-01",
+ "arm": "B",
+ "seed": 87942,
+ "spec_version": "0.1.0",
+ "status": "partial",
+ "error": null,
+ "backend": "claude_cli",
+ "run_index": 2,
+ "cohort_id": "cohort-pilot-01",
+ "assignments": [
+  {
+   "character_id": "CH-1",
+   "name": "Ysolde",
+   "personality_id": "protector",
+   "seat": 0
+  },
+  {
+   "character_id": "CH-2",
+   "name": "Aldous",
+   "personality_id": "instigator",
+   "seat": 1
+  },
+  {
+   "character_id": "CH-3",
+   "name": "Morwen",
+   "personality_id": "tactician",
+   "seat": 2
+  },
+  {
+   "character_id": "CH-4",
+   "name": "Mire",
+   "personality_id": "optimizer",
+   "seat": 3
+  }
+ ],
+ "prep_packet": {
+  "anchors": [
+   "H-03",
+   "T-04"
+  ],
+  "environment": [
+   "T-03",
+   "F-01",
+   "L-03"
+  ],
+  "modules": [
+   {
+    "id": "M-1",
+    "cards": [
+     "L-05",
+     "T-02"
+    ],
+    "trigger": "fiction:the party leaves the road or causeway"
+   },
+   {
+    "id": "M-2",
+    "cards": [
+     "C-03",
+     "F-04"
+    ],
+    "trigger": "scene_start:3"
+   }
+  ],
+  "beat_frames": [
+   {
+    "id": "B-02",
+    "name": "PLEA FOR HELP",
+    "trigger": "fiction:the party enters a settlement",
+    "used": null
+   },
+   {
+    "id": "B-05",
+    "name": "FALSE SANCTUARY",
+    "trigger": "deck_at_most:3",
+    "used": null
+   },
+   {
+    "id": "B-03",
+    "name": "BETRAYAL",
+    "trigger": "roll_fails_against:T-04",
+    "used": null
+   }
+  ]
+ },
+ "events": [
+  {
+   "event_id": 1,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Session start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "FP: Ysolde=3, Aldous=3, Morwen=3, Mire=3",
+   "event_type": "session_start",
+   "improvised": false
+  },
+  {
+   "event_id": 2,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + H-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "anchor",
+   "event_type": "rail_add",
+   "improvised": false
+  },
+  {
+   "event_id": 3,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + T-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "anchor",
+   "event_type": "rail_add",
+   "improvised": false
+  },
+  {
+   "event_id": 4,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false
+  },
+  {
+   "event_id": 5,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Will the party go after Senna's son before the floodwaters or the hive claim him first — and what will it cost them to try?",
+   "event_type": "frame",
+   "improvised": false
+  },
+  {
+   "event_id": 6,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Ysolde steps forward and gently takes Senna's knife hand, her voice steady despite the Order agent watching from the tea-stall awning. She meets Senna's eyes, m",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 7,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "attack",
+   "skill": "Rapport",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Aldous turns sharply on the acolyte lingering beneath the tea-stall awning, rain streaming down his weathered coat. He strides across the wet plankway and plant",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 8,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Morwen turns toward Senna as the crowd parts around them, taking in the knife still clenched in her fist, the soaked clothes, the raw edge of desperation. She s",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 9,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "I notice the grey-cowled acolyte watching Senna like a fisherman marking prey from the tea-stall awning. My Order training makes the pattern unmistakable: the c",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 10,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Cannot Lie to a Priest",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": "",
+   "notes": "The acolyte, cool and unruffled behind Aldous's challenge, asks him plainly: 'Do you truly believe the boy still lives, fortune-teller? Or do you only tell this mother what she needs to hear?' Aldous'",
+   "event_type": "compel",
+   "improvised": true,
+   "compel_forced": false
+  },
+  {
+   "event_id": 11,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Attack: Aldous turns sharply on the acolyte lingering beneath the te",
+   "skill": "Rapport +2",
+   "tags_invoked": "Fortune-Teller Who Reads the Rain, Sole Survivor of the Wreck [AL-HC]; Only survivor of the barge, marked by drowned ghosts [AL-A1]",
+   "fp_spent": 2,
+   "dice": "- - - 0",
+   "total": "+3",
+   "opposition": "+2",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "opposing_tags": [
+    "leads fanatical acolytes [T-04]"
+   ],
+   "target_card": "T-04",
+   "target_npc": "",
+   "shifts": 1,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 12,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "Create Advantage: I notice the grey-cowled acolyte watching Senna like a fishe",
+   "skill": "Notice +3",
+   "tags_invoked": "Raised in the Order's orphanage, trained to the watch drills [MI-A1]",
+   "fp_spent": 1,
+   "dice": "- - 0 -",
+   "total": "+2",
+   "opposition": "+1",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.1.1 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "opposing_tags": [],
+   "target_card": "T-04",
+   "target_npc": "",
+   "shifts": 1,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 13,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Ysolde releases Senna's hand and nods to the others. She leads the group south along the plankways toward the causeway markers, moving quickly but not panicked.",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 14,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "attack",
+   "skill": "Empathy",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Aldous pushes through the thinning market crowd toward the slack-eyed boy near the fish-stalls, his grip closing on the child's shoulder like iron. He pulls the",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 15,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "create_advantage",
+   "skill": "Lore",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Morwen stands with Senna, her gaze steady as rain runs down her coat. She speaks with the weight of someone who has survived what most have not. \"This isn't the",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 16,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "overcome",
+   "skill": "Provoke",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Mire strides directly into the path of the two slack-eyed boys at the fish-stalls, planting herself so they have to see her instead of that distant south wind. ",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 17,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Vengeance Over Sense",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Mire's hard warden-voice edges into a shove and a shout at the slack-eyed boys — instead of snapping them out of it, the sudden aggression spooks them, and they bolt for the marsh's edge before anyone",
+   "event_type": "compel",
+   "improvised": true,
+   "compel_forced": false
+  },
+  {
+   "event_id": 18,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Attack: Aldous pushes through the thinning market crowd toward the s",
+   "skill": "Empathy +3",
+   "tags_invoked": "Only survivor of the barge, marked by drowned ghosts [AL-A1]; Fortune-Teller Who Reads the Rain, Sole Survivor of the Wreck [AL-HC]",
+   "fp_spent": 2,
+   "dice": "- 0 - +",
+   "total": "+6",
+   "opposition": "+2",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "opposing_tags": [
+    "preaches the blight is holy [T-04]"
+   ],
+   "target_card": "T-04",
+   "target_npc": "",
+   "shifts": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 19,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "Create Advantage: Morwen stands with Senna, her gaze steady as rain runs down ",
+   "skill": "Lore +3",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ - 0 +",
+   "total": "+4",
+   "opposition": "+2",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.1.2 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "opposing_tags": [
+    "knows the temple's secret ways [T-04]"
+   ],
+   "target_card": "T-04",
+   "target_npc": "",
+   "shifts": 2,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 20,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "Overcome: Mire strides directly into the path of the two slack-eyed bo",
+   "skill": "Provoke +2",
+   "tags_invoked": "The Drowned Priest Targets Vulnerable Boys [A-1.1.1]",
+   "fp_spent": 0,
+   "dice": "+ - - 0",
+   "total": "+3",
+   "opposition": "+2",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "opposing_tags": [
+    "leads fanatical acolytes [T-04]"
+   ],
+   "target_card": "T-04",
+   "target_npc": "",
+   "shifts": 1,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 21,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Trigger fired: M-1",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "fiction:the party leaves the road or causeway",
+   "event_type": "trigger",
+   "improvised": false
+  },
+  {
+   "event_id": 22,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "triggers fired: ['M-1']",
+   "event_type": "scene_end",
+   "improvised": false
+  }
+ ],
+ "scenes": [
+  {
+   "index": 1,
+   "tension_before": null,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 2,
+   "climax": false,
+   "tension_after": null,
+   "triggers_fired": [
+    "M-1"
+   ]
+  }
+ ],
+ "transcript": [
+  {
+   "session": 1,
+   "scene": 0,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Session begins. Each player has Ysolde 3 FP, Aldous 3 FP, Morwen 3 FP, Mire 3 FP. Face-up: Rising Floodwaters [H-03], The Drowned Priest [T-04].",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Rain hammers the plank walkways of Hollowmoot as lanterns gutter behind oiled paper, and the market thins early — the quarantine bells rang twice today already. A woman named Senna shoves through the crowd toward you, drenched to the bone, a fish-gutting knife still in her fist like she forgot to put it down. She says her boy Tomas went out at dusk three nights running, chasing a sound only he could hear, and last night he didn't come back — the neighbors saw him wading south toward the drowned belltower of Saint Orrin's, past the old causeway markers. She's heard what you four are, heard your names in this town for better or worse, and she's out of coin but not out of desperation. Behind her, an Order acolyte in a dripping grey cowl watches from the tea-stall awning, listening a little too closely.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Your boy Tomas — we'll find him. I've heard the sounds of the drowned places before, and I know that part of the marsh. Show us where you last saw him, and we'll bring him home.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde steps forward and gently takes Senna's knife hand, her voice steady despite the Order agent watching from the tea-stall awning. She meets Senna's eyes, making a promise she intends to keep, while staying aware of the grey-cowled figure in her peripheral vision—dangerous ground to walk, but a child is missing and the Order watches anyway.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "That grey wool marks you as his. This boy doesn't go to the drowned temple—not while I'm breathing.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous turns sharply on the acolyte lingering beneath the tea-stall awning, rain streaming down his weathered coat. He strides across the wet plankway and plants himself directly in front of them—between Senna and the figure in grey—close enough they can't see past him to the desperate mother. His eyes are steady, certain with the weight of having been drowned and come back.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "The sound Tomas heard—I know it, and so do you, underneath the fear. Tell me everything: what exactly did he say he heard, and which direction did the neighbors see him wade?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen turns toward Senna as the crowd parts around them, taking in the knife still clenched in her fist, the soaked clothes, the raw edge of desperation. She steps closer, her voice dropping low and certain, while her eyes flick once toward the acolyte watching from the tea-stall awning—not with fear, but with recognition.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "That boy didn't wander off on his own—the Drowned Priest's still calling to them. I know how this works.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(I notice the grey-cowled acolyte watching Senna like a fisherman marking prey from the tea-stall awning. My Order training makes the pattern unmistakable: the cult doesn't recruit, it lures. I scan the thinning crowd, seeing the signs in other faces—boys moving with that eerie purpose, staring at something only they can hear. The blight has a voice, and it knows which children will listen.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "I don't know if the boy lives, and that fear gnaws at me like drowned teeth. But I won't lie to a priest—and I swear to you, I'll find him, or burn this whole cursed marsh searching.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — attack with Rapport: dice - - - 0, invoking Fortune-Teller Who Reads the Rain, Sole Survivor of the Wreck [AL-HC], Only survivor of the barge, marked by drowned ghosts [AL-A1] → Good (+3) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — create advantage with Notice: dice - - 0 -, invoking Raised in the Order's orphanage, trained to the watch drills [MI-A1] → Fair (+2) vs Average (+1): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Aldous doesn't shout — he doesn't need to. He simply plants himself in the acolyte's line of sight, close enough that the grey cowl has to tip back to meet his eyes, and something in that gaunt, drowned-eyed stare makes the acolyte's nerve break first. They melt back into the tea-stall's steam and are gone into the rain before Senna even notices they were there, leaving behind only a wet footprint on the planks and the sense that word will travel fast now. Meanwhile Mire's practiced eye sweeps the thinning market and the pattern clicks into place ugly and clear: two other boys near the fish-stalls stand with that same slack, listening stillness, heads canted toward the south wind, ignored by parents too tired or too afraid to notice. It isn't just Tomas. The Drowned Priest is working this whole crowd, and Mire could swear the acolyte's route away leads toward Wick Lane.\n\nSenna grips Ysolde's hand tighter, hope and terror warring on her face, while Morwen presses for details — she says Tomas kept humming under his breath at meals this past week, a tune none of them knew, and that the neighbors last saw him wading south past the old causeway marker, toward where the belltower's shadow falls at low tide.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Take us to the causeway marker, Senna. The marsh and I have history—your boy's not lost yet.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde releases Senna's hand and nods to the others. She leads the group south along the plankways toward the causeway markers, moving quickly but not panicked. The rain drums overhead as they leave the market's warm lights behind and head toward the marsh's darker edge.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "Look at me, not the sound. I've drowned and come back from that voice—it only takes you cold and down, like it tried to take me.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous pushes through the thinning market crowd toward the slack-eyed boy near the fish-stalls, his grip closing on the child's shoulder like iron. He pulls the boy to face him, forcing those wandering eyes to meet his own—eyes marked by drowning, eyes that have already stared down the Priest's pull and refused to break. Not a blow, but a presence meant to be louder than any distant bell.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "That tune Tomas heard—it's one of the old ones, something the blight knows. The Priest is channeling it through his drowned voice. Once we understand which song, we find them all.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen stands with Senna, her gaze steady as rain runs down her coat. She speaks with the weight of someone who has survived what most have not. \"This isn't the Priest's invention. He's learned to resonate with something older, something that knows exactly which children will answer. If we can identify the song, we don't just save Tomas—we find every marked child before they wade past return.\")",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Look at me. Not the sound—me. I know that voice because it trained me, and I'm telling you it's a lie.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire strides directly into the path of the two slack-eyed boys at the fish-stalls, planting herself so they have to see her instead of that distant south wind. She uses the sharp, uncompromising authority of a warden trained since childhood in the Order's watch-drills—the same tone that called acolytes to heel in the orphanage dormitory. She meets their dazed eyes and speaks, cutting through whatever whisper the Drowned Priest has wound into their skulls.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "My shout drove them straight toward the water. We go now or they're gone.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — attack with Empathy: dice - 0 - +, invoking Only survivor of the barge, marked by drowned ghosts [AL-A1], Fortune-Teller Who Reads the Rain, Sole Survivor of the Wreck [AL-HC] → Fantastic (+6) vs Fair (+2): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen — create advantage with Lore: dice + - 0 + → Great (+4) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — overcome with Provoke: dice + - - 0, invoking The Drowned Priest Targets Vulnerable Boys [A-1.1.1] → Good (+3) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Aldous doesn't let go until the fog behind the boy's eyes finally clears — and when it does, the kid gasps like he's breaking the surface of deep water, blurting a fragment of the tune he can't stop hearing before he even knows he's said it. Morwen listens, and something in her cold, professional certainty cracks open: this isn't a hymn, it's a summoning cadence, old as the drowned stones themselves, and now that she's heard it named aloud she'll know it wherever it plays again. But Mire's victory turns ugly fast — her drill-sergeant bark snaps the two fish-stall boys awake, yes, but it also rips through the crowd's nerves like a struck bell, and half a dozen half-listening children flinch and bolt, not toward safety but south, wading fast for the causeway markers before anyone can grab a sleeve. Senna's grip goes bruising-tight on Ysolde's arm. There's no more time to plan in the dry light of the market — the marsh is already pulling its next mouthful of children toward the belltower, and the party is committed, moving south past the old causeway stones with the rain closing in behind them like a door.",
+   "visible_to": "all"
+  }
+ ],
+ "costs": [
+  {
+   "event": "free_compel",
+   "scene": 1,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Cannot Lie to a Priest",
+   "text": "The acolyte, cool and unruffled behind Aldous's challenge, asks him plainly: 'Do you truly believe the boy still lives, fortune-teller? Or do you only tell this mother what she needs to hear?' Aldous's trouble won't let him lie — he must answer honestly, in front of Senna, even if the truth is that ",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Aldous"
+  },
+  {
+   "event": "free_compel",
+   "scene": 1,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Vengeance Over Sense",
+   "text": "Mire's hard warden-voice edges into a shove and a shout at the slack-eyed boys — instead of snapping them out of it, the sudden aggression spooks them, and they bolt for the marsh's edge before anyone can stop them.",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Mire"
+  }
+ ],
+ "referee": {
+  "violations": [
+   {
+    "session": 1,
+    "scene": 1,
+    "agent": "GM",
+    "section": "§3",
+    "issue": "active opposition from unknown NPC The Grey-Cowled Acolyte",
+    "source": "engine"
+   }
+  ],
+  "ambiguities": [
+   {
+    "id": "AMB-12",
+    "section": "§8",
+    "issue": "Stress box values are unspecified.",
+    "interim_ruling": "Fate Core: boxes 1 and 2; Physique/Will +1/+2 adds a 3 box, +3 or more adds 3 and 4.",
+    "detail": "stress boxes built with Fate Core values",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "section": "§Conflict/Passive opposition (Rolls)",
+    "issue": "Engine refused active NPC opposition for the unstatted 'Grey-Cowled Acolyte' (event 11 target), but no interim ruling was logged before play continued. Rolls at events 11, 12, 18, 19, and 20 all proceeded against a flat +2 'passive' opposition sourced from a target_card (T-04) tag instead of an NPC roll, with no recorded table decision on how to substitute for the refused active-opposition roll.",
+    "interim_ruling": "Table treated the unstatted acolyte/hive threat as passive opposition at Average(+1) plus 1 for the single opposing table aspect drawn each time (=+2), per the passive-opposition formula, rather than rolling 4dF for the NPC.",
+    "scene": 1,
+    "source": "referee"
+   },
+   {
+    "section": "§Compels / §Conflict",
+    "issue": "Mire's accepted trouble compel (event 17, 'Vengeance Over Sense') establishes in the fiction that the two boys 'bolt for the marsh's edge before anyone can stop them' — yet the Overcome roll for the very same approach (event 16 declare → event 20 roll, 'Mire strides directly into the path of the two slack-eyed boys') still resolves as a success afterward, with no rule stating whether a compelled complication should void, delay, or coexist with an already-declared action.",
+    "interim_ruling": "The table let the compelled complication and the subsequent Overcome roll both stand, resolving event 20 as a success despite the boys having already been narrated as fleeing in event 17.",
+    "scene": 1,
+    "source": "referee"
+   }
+  ],
+  "cost_checks": [
+   {
+    "event_id": 10,
+    "used_drawn_card": false,
+    "note": "draw_id is empty; this was an improvised free compel (Cannot Lie to a Priest) with no card drawn, so there is no drawn-card tag text to check for use.",
+    "scene": 1
+   },
+   {
+    "event_id": 17,
+    "used_drawn_card": false,
+    "note": "draw_id is empty; this was an improvised free compel (Vengeance Over Sense) with no card drawn, so there is no drawn-card tag text to check for use.",
+    "scene": 1
+   }
+  ],
+  "friction": [
+   {
+    "scene": 1,
+    "text": "Both compels in the scene (events 10, 17) were improvised with no draw_id, running parallel to any deck-draw cost mechanism without a logged rationale for why the deck wasn't consulted."
+   },
+   {
+    "scene": 1,
+    "text": "The passive-opposition fallback (target_card T-04) was reused across five separate rolls after an engine refusal of active NPC opposition, without an explicit logged GM ruling adopting that substitution."
+   },
+   {
+    "scene": 1,
+    "text": "Mire's Overcome declare (event 16) and its roll (event 20) are separated by an unrelated Aldous attack roll, an unrelated Morwen create-advantage roll, and a scene-altering compel (event 17), making it hard to audit exactly which fictional state (boys present vs. boys having already fled) the eventual roll was resolving against."
+   }
+  ]
+ },
+ "surveys": [],
+ "interview": null,
+ "chronicle": null,
+ "state_end": {
+  "tension": 3,
+  "fp": {
+   "Ysolde": 3,
+   "Aldous": 0,
+   "Morwen": 3,
+   "Mire": 3
+  },
+  "surfaced": [],
+  "deck_player_cards": {},
+  "guarantee_pulled": [],
+  "guarantee_failed": [],
+  "deck_left": [],
+  "draws": 0,
+  "turns": {
+   "Ysolde": 2,
+   "Aldous": 2,
+   "Morwen": 2,
+   "Mire": 2
+  }
+ },
+ "notes": [],
+ "metrics": {},
+ "tokens": {
+  "prompt": 157370,
+  "completion": 60512,
+  "cost_usd": 0.8117,
+  "calls": 21
+ },
+ "llm_calls": 21,
+ "models": {
+  "gm": "claude-sonnet-5",
+  "player": "claude-haiku-4-5-20251001",
+  "referee": "claude-sonnet-5",
+  "interviewer": "claude-haiku-4-5-20251001"
+ },
+ "elapsed_s": 463.8
+}

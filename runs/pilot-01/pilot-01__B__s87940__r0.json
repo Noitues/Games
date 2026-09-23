@@ -4,7 +4,7 @@
  "arm": "B",
  "seed": 87940,
  "spec_version": "0.1.0",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 0,
@@ -2649,6 +2649,385 @@
    "notes": "triggers fired: ['B-02']",
    "event_type": "scene_end",
    "improvised": false
+  },
+  {
+   "event_id": 115,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Scene 5 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false
+  },
+  {
+   "event_id": 116,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Can the party get Corren, Sela, and Morwen safely off the drowning temple grounds before the Cartel enforcers collect on what they think the party owes them?",
+   "event_type": "frame",
+   "improvised": false
+  },
+  {
+   "event_id": 117,
+   "session": 1,
+   "scene": 5,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Ysolde steps directly toward the enforcer leader, meeting his gaze with the steady composure of someone who pays what she owes and knows her own value. She read",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 118,
+   "session": 1,
+   "scene": 5,
+   "actor": "Aldous",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Aldous steps forward into the rising floodwater, his rain-soaked form moving with the absolute certainty of someone who has read these marshes a thousand times.",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 119,
+   "session": 1,
+   "scene": 5,
+   "actor": "Morwen",
+   "action": "attack",
+   "skill": "Fight",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Despite Mire's grip on her shoulder and blood soaking through her torn leg, Morwen straightens up with absolute defiance blazing in her eyes. She plants her wei",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 120,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "create_advantage",
+   "skill": "Provoke",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Mire steps forward with Morwen steady at her side, planting herself squarely between the Cartel and her people. Her stance is perfect militia bearing—submission",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 121,
+   "session": 1,
+   "scene": 5,
+   "actor": "Morwen",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "MO-TR",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": "",
+   "notes": "The leader's eyes flick to Morwen mid-threat — 'Wait. You're her. The famous one from the temple.' Her fame turns her from an obstacle into a prize; he presses his men to take her alive rather than le",
+   "event_type": "compel",
+   "improvised": true,
+   "compel_forced": false
+  },
+  {
+   "event_id": 122,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "MI-TR",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Even as she frames this as a practical, debts-and-survival appeal, some part of Mire wants blood for the hostages line the leader just implied — her hand drifts to her blade a half-second too soon, an",
+   "event_type": "compel",
+   "improvised": true,
+   "compel_forced": false
+  },
+  {
+   "event_id": 123,
+   "session": 1,
+   "scene": 5,
+   "actor": "Aldous",
+   "action": "Create Advantage: Aldous steps forward into the rising floodwater, his rain-so",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "- - 0 +",
+   "total": "+3",
+   "opposition": "+3",
+   "result": "tie",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.5.16 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "opposing_tags": [
+    "swallows fords overnight [H-03]",
+    "know every hidden ford [T-03]"
+   ],
+   "target_card": "H-03",
+   "target_npc": "",
+   "shifts": 0,
+   "cost_mode": "improvised"
+  },
+  {
+   "event_id": 124,
+   "session": 1,
+   "scene": 5,
+   "actor": "Morwen",
+   "action": "Attack: Despite Mire's grip on her shoulder and blood soaking throug",
+   "skill": "Fight +2",
+   "tags_invoked": "Vowed to stand against the Wardens' torches for one more house [MO-A3]",
+   "fp_spent": 1,
+   "dice": "+ + + +",
+   "total": "+8",
+   "opposition": "+5 (NPC + 0 - +)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "GM invokes: Too Famous to Hide [MO-TR]",
+   "event_type": "roll",
+   "improvised": false,
+   "opposing_tags": [],
+   "target_card": "T-03",
+   "target_npc": "Cartel Enforcer Leader",
+   "shifts": 3,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 125,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "Create Advantage: Mire steps forward with Morwen steady at her side, planting ",
+   "skill": "Provoke +2",
+   "tags_invoked": "Keeper of the last stilt-house on Wick Lane, mortgaged to the Blackwater Cartel [MI-A2]",
+   "fp_spent": 1,
+   "dice": "+ - - 0",
+   "total": "+3",
+   "opposition": "+2 (NPC 0 - 0 -)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "GM invokes: Vengeance Over Sense [MI-TR]; aspect A-1.5.17 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "opposing_tags": [],
+   "target_card": "T-03",
+   "target_npc": "Cartel Enforcer Leader",
+   "shifts": 1,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 126,
+   "session": 1,
+   "scene": 5,
+   "actor": "Aldous",
+   "action": "Defend vs Cartel Enforcers (pair)",
+   "skill": "Athletics +2",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "- 0 - 0",
+   "total": "+0",
+   "opposition": "+1",
+   "result": "hit",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "While the leader talks and blades come out near Morwen, the two flanking enforcers wade in through the shallows with the",
+   "event_type": "defend",
+   "improvised": false
+  },
+  {
+   "event_id": 127,
+   "session": 1,
+   "scene": 5,
+   "actor": "Aldous",
+   "action": "Absorb 1 physical",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "; box 1",
+   "event_type": "harm",
+   "improvised": false
+  },
+  {
+   "event_id": 128,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Cost (tie)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Aldous finds the hidden line through the marsh, but tracing it means wading out past the reed break, eyes down on the water instead of the enforcers — he gets the ford, but he's left himself wide open",
+   "event_type": "cost",
+   "improvised": true,
+   "cost_valid": null,
+   "for_event": 123
+  },
+  {
+   "event_id": 129,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Hostile invoke payouts",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Morwen, Mire",
+   "event_type": "fp",
+   "improvised": false
+  },
+  {
+   "event_id": 130,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Scene 5 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "scene_end",
+   "improvised": false
+  },
+  {
+   "event_id": 131,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "FP: Ysolde=1, Aldous=3, Morwen=1, Mire=8",
+   "event_type": "session_end",
+   "improvised": false
   }
  ],
  "scenes": [
@@ -2700,6 +3079,17 @@
    "triggers_fired": [
     "B-02"
    ]
+  },
+  {
+   "index": 5,
+   "tension_before": null,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 1,
+   "climax": false,
+   "tension_after": null,
+   "triggers_fired": []
   }
  ],
  "transcript": [
@@ -3974,6 +4364,158 @@
    "kind": "narration",
    "text": "Aldous doesn't argue theology—he simply looks, and looks true. The hive-lines at Corren's wrist aren't spreading the way a claiming should; they're guttering, thinning with every ragged breath the boy takes in his mother's arms, like a candle starved of air rather than a fire catching hold. He says so plainly, and this time even Vessa leans in to see it for herself, her scarred hand hovering an inch from the boy's skin without touching. She doesn't concede the law. She never will. But she doesn't call for fire either—not with the evidence pulsing faint and fading right in front of her own eyes. Ysolde, refusing to let the Prioress's judgment settle any deeper into her, simply turns her back on the old woman's warning and gathers the others toward the stair; Mire hauls Morwen upright with an arm under her shoulder, blood and rainwater mixing on the flooded stone as they go. Brother Ansel watches them pass without moving to stop them, his eyes on Corren rather than his superior. At the gallery door, Vessa's voice follows them once more—flat, cold, final for now: \"Go, then. But the mark isn't gone, only quiet. If it wakes again, girl, I won't ask twice.\" Outside, the swarm-song still drones from the shattered belltower and the water is still climbing the temple steps behind you, but Corren breathes, and Sela holds him, and for tonight that's the whole of the answer you came for.",
    "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "You come down out of the dry gallery into the flooded nave, Mire half-carrying Morwen, Sela clutching Corren like she'll never let go again — and find your way to the causeway blocked. Three figures wait at the water's edge where your boat should be, hooked spears resting easy on their shoulders, cudgels at their belts: Cartel muscle, and they know Ysolde's face. \"Heard there was a rescue up at the drowned bell,\" their leader calls over the rain, not unfriendly, not friendly either. \"Heard the boy's marked. Heard the Order's watching this temple close now. Debts get called in on nights like this, cook — and you owe the Blackwater more than coin.\" Behind you, water is already lapping at the temple's lowest step, climbing fast; whatever happens here, it happens before that stair goes under.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "You know I keep my debts. The question is what shape that takes tonight, and whether we settle it now or after the water stops climbing.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde steps directly toward the enforcer leader, meeting his gaze with the steady composure of someone who pays what she owes and knows her own value. She reads him like she reads people at night-barge tables—not as an obstacle, but as someone with a job, a need, a boundary she understands. She doesn't run from the Cartel; she negotiates with them. The water lapping at the temple steps behind her doesn't make her desperate, just honest about time.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "I read every ford from here to Gullet plain as the rain itself. We don't need their boats—we have another way.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous steps forward into the rising floodwater, his rain-soaked form moving with the absolute certainty of someone who has read these marshes a thousand times. He reads the swollen water the way he reads scripture—the rain's patterns, the hidden channels carved deep by the flood, the shallow bars where stone breaks the surface. The drowned ghosts that mark him gather close at his shoulders, sharpening his perception into diamond clarity. He looks past the Cartel's blockade, reads the terrain they don't know, and finds it: a ford that runs through the marsh where their heavy boats cannot follow.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "I just pulled a marked soul back from the hive's own grip. You picked the wrong night to block my way.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Despite Mire's grip on her shoulder and blood soaking through her torn leg, Morwen straightens up with absolute defiance blazing in her eyes. She plants her weight forward, meeting the enforcer leader's gaze with the fury of someone who just proved she'll stand against impossible odds. Her hand moves toward her weapon, not drawing it yet—but the threat is clear and unmistakable.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "You know who I am—the Blackwater owns my house and I pay what I owe, on time. The water rising doesn't care about debts, and neither should we. We move, we live, and I keep paying.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire steps forward with Morwen steady at her side, planting herself squarely between the Cartel and her people. Her stance is perfect militia bearing—submission and authority balanced like water. She invokes her standing as a responsible debtor, mortgaged to the Blackwater Cartel (MI-A2), appealing to their practical interests as the floodwater rises behind them. The clock is running, and she makes that clear.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "You recognize the name? Then you know I stand against fire and flood alike—and everyone fool enough to stand between me and the people I've sworn to protect. My friends pass, or we do this the hard way.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "The leader's eyes narrow as he tracks the movement at my hip. I feel it the moment the negotiation breaks—the shift from practical to personal. My jaw tightens. They want to talk about hostages? About leverage over people I'm trying to keep alive?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — create advantage with Notice: dice - - 0 + → Good (+3) vs Good (+3): TIE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen — attack with Fight: dice + + + +, invoking Vowed to stand against the Wardens' torches for one more house [MO-A3] → Legendary (+8) vs Superb (+5): SUCCESS WITH STYLE (Cartel Enforcer Leader mild consequence)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — create advantage with Provoke: dice + - - 0, invoking Keeper of the last stilt-house on Wick Lane, mortgaged to the Blackwater Cartel [MI-A2] → Good (+3) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Cartel Enforcers (pair) attacks Aldous (physical): Average (+1) vs Aldous's Athletics Mediocre (+0) — hit for 1",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Aldous finds the hidden line through the marsh, but tracing it means wading out past the reed break, eyes down on the water instead of the enforcers — he gets the ford, but he's left himself wide open for the pair closing in behind him.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Morwen's strike lands with a fury that surprises even her — the enforcer leader reels back with blood streaming from a gashed cheek, his cudgel forgotten in his hand, and for one long second the rain-slick standoff hangs on whether he'll call for blood in return. Mire doesn't let him get there. She plants the truth of it right in front of him — she's a debtor who pays, not a mark to be squeezed, and there's a flood climbing the temple steps behind all of them that doesn't care whose side anyone's on. The leader's eyes flick to the water, to his bleeding face, to the two flanking men already knee-deep and grappling — and something in his shoulders changes: this was never a fight worth dying in, just a debt worth threatening over. Meanwhile Aldous, half-turned toward the reeds tracing the hidden ford in the water's patterns, takes a spear-hook across the arm for his trouble — a shallow tearing line, more startling than crippling, but enough to nearly cost him his footing. He keeps it. The ford is there now, plain as scripture to anyone who looks where he points: a shallow spine of old stone running clear past the Cartel's boats, out toward drier ground. \"Debts don't drown, cook,\" the leader spits at Ysolde, pressing a hand to his cheek, \"but tonight I'm not fool enough to chase you into a flood for coin.\" He waves his men back. The three of them melt toward their moored boat as the water reaches the temple's lowest step behind you — and Aldous leads the party out along the hidden ford, Sela and Corren stumbling between them, Mire's shoulder still braced under Morwen's weight, the swarm-song fading slowly behind into rain and distance.",
+   "visible_to": "all"
   }
  ],
  "costs": [
@@ -4147,6 +4689,38 @@
    "improvised": true,
    "accepted": false,
    "owner": "Ysolde"
+  },
+  {
+   "event": "free_compel",
+   "scene": 5,
+   "draw_id": "",
+   "valid": null,
+   "tag": "MO-TR",
+   "text": "The leader's eyes flick to Morwen mid-threat — 'Wait. You're her. The famous one from the temple.' Her fame turns her from an obstacle into a prize; he presses his men to take her alive rather than let the party simply pass, complicating any easy retreat.",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Morwen"
+  },
+  {
+   "event": "free_compel",
+   "scene": 5,
+   "draw_id": "",
+   "valid": null,
+   "tag": "MI-TR",
+   "text": "Even as she frames this as a practical, debts-and-survival appeal, some part of Mire wants blood for the hostages line the leader just implied — her hand drifts to her blade a half-second too soon, and the leader reads it as a threat rather than the reasonable plea she intended.",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Mire"
+  },
+  {
+   "event": "tie",
+   "scene": 5,
+   "draw_id": "",
+   "valid": null,
+   "tag": "",
+   "text": "Aldous finds the hidden line through the marsh, but tracing it means wading out past the reed break, eyes down on the water instead of the enforcers — he gets the ford, but he's left himself wide open for the pair closing in behind him.",
+   "improvised": true,
+   "mode": "improvised"
   }
  ],
  "referee": {
@@ -4336,6 +4910,27 @@
     "interim_ruling": "The major cost was resolved as a purely narrative injury (GM-invented cost) rather than being logged against a physical stress/consequence track.",
     "scene": 4,
     "source": "referee"
+   },
+   {
+    "section": "Conflict: attack vs defence — \"Named NPCs roll 4dF + their rating as active opposition\"",
+    "issue": "Event 126 (Aldous defends vs 'Cartel Enforcers (pair)') uses a flat opposition value (+1) with no dice shown for the opposing side, rather than an active 4dF+rating roll for named NPCs. It's unclear whether a paired mook group counts as 'named NPCs' (requiring active rolls) or falls under the passive opposition ladder (Average +1, +1 per opposing aspect).",
+    "interim_ruling": "Table treated the enforcer pair as passive opposition (Average +1, no opposing aspects present) rather than as individually-rolling named NPCs.",
+    "scene": 5,
+    "source": "referee"
+   },
+   {
+    "section": "Fate points — hostile invokes vs. Compels",
+    "issue": "Morwen's and Mire's trouble aspects (MO-TR, MI-TR) were each used twice in the same scene: first as an accepted compel (immediate +1 FP each, events 121/122), then again as a GM hostile invoke boosting NPC opposition against the same characters in the very next rolls (events 124/125, paid out again at scene end via event 129). The rules only bar reusing the same aspect 'once per roll'; they don't say whether the same trouble can be compelled and then hostile-invoked again in the same scene/same continuous beat.",
+    "interim_ruling": "Table allowed it as two distinct mechanical beats (compel, then separate hostile invoke on a later roll), each generating its own fate-point payout to the affected player.",
+    "scene": 5,
+    "source": "referee"
+   },
+   {
+    "section": "Scenes — resolution of declared actions",
+    "issue": "Ysolde's declared action (event 117) has no follow-up roll, defend, or cost/resolution entry anywhere in the scene log. The rules don't specify whether every declared action must resolve mechanically or can remain pure color/roleplay.",
+    "interim_ruling": "Treated as an unresolved color beat requiring no roll; no mechanical consequence was tracked for it.",
+    "scene": 5,
+    "source": "referee"
    }
   ],
   "cost_checks": [
@@ -4484,19 +5079,142 @@
    {
     "scene": 4,
     "text": "Several roleplay 'declare' events (98, 99, 101, 107, 109, 110) carry no skill or resolution data, interleaving freeform narration with mechanical rolls in a way that makes it harder to trace which fictional beats actually drove which dice results."
+   },
+   {
+    "scene": 5,
+    "text": "The tie-cost for Aldous (event 128) narratively sets him up as 'wide open,' and the very next defend roll (126) has him taking a hit from the enforcer pair — the causal link is implied by fiction but not explicitly tagged/cross-referenced in the log, making the chain a bit opaque on replay."
+   },
+   {
+    "scene": 5,
+    "text": "Both Morwen's and Mire's troubles get spent twice in quick succession (compel then hostile invoke) within the same short scene, which reads as efficient FP economy for the GM but stacks complications on the same two characters back-to-back."
+   },
+   {
+    "scene": 5,
+    "text": "Collapsing the two flanking enforcers into a single static +1 'pair' opposition for the defend roll (126) sacrifices tactical distinction between the two attackers, and it's not clear from the log whether that was a deliberate simplification or a shortcut."
    }
   ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "optimizer",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 6,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When Sister Prioress Vessa's iron certainty cracked at seeing the hive-marks fade—Ysolde reading the mercy beneath doctrine, Aldous confirming it with his supernatural sight, Morwen paying blood to crack her composure. It was everything Ysolde is: reading what people are afraid to believe, speaking to the person beneath the armor.",
+    "most_frustrating": "The Cartel confrontation at the end felt rushed and action-heavy compared to the earlier reading/negotiation moments. Wish I had more space to deeply read the enforcer leader instead of falling into combat-adjacent threat posturing. Also wanted to push harder on whether Ysolde genuinely owes the Cartel or is playing that debt—felt like I dodged it rather than engaged with it.",
+    "background_used": "Well-integrated. The exile, the secrets-hearing, and both Order and Cartel connections all came into play naturally. The reading-people aspect threaded through every major scene. Didn't feel forced. The specific oath against the traitor didn't come up, but what did use felt earned, not shoehorned in.",
+    "wanted_but_couldnt": "A deeper exploration of Ysolde's actual standing with the Cartel—is she genuinely indebted or playing them? More nuanced negotiation/reading with the enforcer leader rather than the combat-framing that took over. And more opportunity to use her \"hears secrets\" aspect beyond reading faces—discovering something that changed how she approached later scenes.",
+    "one_sentence": "My backstory as the exiled cook who reads secrets was core to how I solved every problem this session, though the specific oath against the traitor I swore remained unexplored."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "protector",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When Aldous read plain that Corren's hive-marks were fading, not spreading, and that reading broke through Sister Prioress Vessa's certainty. The character's core concept—reading truth in uncertain situations—did exactly what it exists to do and literally saved a boy's life.",
+    "most_frustrating": "The compel about not lying to a priest came at the moment when Aldous needed to project absolute certainty about Corren's state. Having to voice uncertainty right before proving himself right created the right emotional beat but tugged slightly against the narrative momentum.",
+    "background_used": "Excellent. Every core aspect was woven in naturally: the rain-reading as the mechanism of salvation, the drowned ghosts' marks as supernatural perception that mattered, the vow to cross souls as the mission driver, and the conflict with the Order as the central scene. It felt organic, not forced or referenced externally.",
+    "wanted_but_couldnt": "I would have liked to explore the drowned ghosts' actual voice and perspective more deeply, rather than just the mechanical perception they grant. They're mentioned often but remain somewhat abstract—I wanted to hear what they actually whisper.",
+    "one_sentence": "My backstory wasn't just present but mechanically central to the story—the rain-reading was how we won, the soul-saving vow was the entire mission, and the ghost-marks manifested as perception that mattered in real moments."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "instigator",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Walking past Ansel's stalled censers into the belltower, using Order training as armor against an authority I was supposed to submit to—it proved the childhood they made me wasn't wasted, even torn and weaponless and desperate.",
+    "most_frustrating": "The severe consequence from the Pikemaw left me unable to stand independently for hours of play—every victory afterward felt earned but pyrrhic, watching the climax from Mire's shoulder rather than standing in it myself.",
+    "background_used": "Good. Both aspects of my Order upbringing and my vow to stand against the Wardens' torches were woven throughout and earned, not forced. The Prioress activating 'Too Famous to Hide' felt organic to the world, not a gotcha—she knew my name because my name means something in the Sallowmere.",
+    "wanted_but_couldnt": "End the session standing on my own two feet. Morwen bought her victories with blood—she broke the Prioress's certainty, saved Corren, stood against the Cartel—but she spent everything to do it, and by the final scene she was running on fumes someone else was lending her.",
+    "one_sentence": "The backstory was used well—woven in organically, central to every major choice, feeling like an expression of who Morwen is rather than a trap set to punish her."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "tactician",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 5,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Stepping between Morwen and the Order's censers, using militia bearing and authority-language to hold the line through presence and discipline rather than steel. That felt like Mire's exact purpose—holding ground the way she was trained, in a moment where force wouldn't have worked.",
+    "most_frustrating": "Mire was strong support but not the emotional center. Her aspects—especially being a marked enemy of the Causeway Wardens—didn't get full engagement. She held the line for someone else's rescue rather than fighting for something that cuts into her own history.",
+    "background_used": "Good. My Order training fired at the right moments (recognizing the hive-mark on Corren, speaking the watch-drill language to hold Brother Ansel steady, understanding militia bearing). The mortgaged house and Cartel debt activated at the end. But the specific aspect about being cast out by Captain Verrick and marked enemy of the Wardens stayed backgrounded rather than becoming a real conflict.",
+    "wanted_but_couldnt": "A direct personal reckoning with someone who wronged Mire—especially Captain Verrick or the Causeway Wardens proper. I wanted her vengeance-nature to drive events rather than just supporting others' emotional cores, or at least have that tension come alive as a real complication.",
+    "one_sentence": "My training and debt-obligations shaped key moments well and mattered when they came up, but my core conflict with the Wardens and my vengeful nature remained backgrounded rather than central to the story."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Ysolde",
+    "turns": 27,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Aldous",
+    "turns": 22,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Morwen",
+    "turns": 25,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Mire",
+    "turns": 28,
+    "references_to_others_background": 0
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "A mother's plea led the party into Saint Orrin's Drowned Temple, where Morwen's voice broke the swarm-song's hold and pulled Corren back from the hive — scarred but himself. Ysolde, Aldous, Morwen and Mire then bent Sister Prioress Vessa's iron doctrine without breaking it, buying the boy a reprieve the Order will be watching closely. Fleeing the rising flood, they talked and bled their way past Cartel enforcers at the water's edge, Aldous finding a hidden ford that carried them all out ahead of the drowning stair.",
+  "closing_tension": null,
+  "reverberations": {
+   "growth": {},
+   "clocks": [],
+   "mutations": [],
+   "retired": []
+  },
+  "retired": []
+ },
  "state_end": {
   "tension": 3,
   "fp": {
    "Ysolde": 1,
    "Aldous": 3,
-   "Morwen": 0,
-   "Mire": 7
+   "Morwen": 1,
+   "Mire": 8
   },
   "surfaced": [],
   "deck_player_cards": {},
@@ -4505,26 +5223,128 @@
   "deck_left": [],
   "draws": 0,
   "turns": {
-   "Ysolde": 11,
-   "Aldous": 11,
-   "Morwen": 11,
-   "Mire": 11
+   "Ysolde": 12,
+   "Aldous": 12,
+   "Morwen": 12,
+   "Mire": 12
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 1396389,
-  "completion": 370888,
-  "cost_usd": 5.8695,
-  "calls": 109
+ "metrics": {
+  "arm": "B",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Aldous",
+   "Mire",
+   "Morwen",
+   "Ysolde"
+  ],
+  "backstory_all_players": true,
+  "deck_surfaced_all_players": null,
+  "deck_draws": 0,
+  "draw_costs": 0,
+  "draw_cost_used_card_rate_engine": null,
+  "draw_cost_used_card_rate_referee": 0.0,
+  "fp_end": {
+   "Ysolde": 1,
+   "Aldous": 3,
+   "Morwen": 1,
+   "Mire": 8
+  },
+  "fp_end_mean": 3.25,
+  "fp_earned": {
+   "Morwen": 5,
+   "Mire": 7,
+   "Ysolde": 1,
+   "Aldous": 3
+  },
+  "fp_spent": {
+   "Morwen": 7,
+   "Ysolde": 3,
+   "Aldous": 3,
+   "Mire": 2
+  },
+  "compels_accepted": 12,
+  "compels_refused": 1,
+  "compels_deck": 0,
+  "compels_free": 13,
+  "turns": {
+   "Ysolde": 12,
+   "Aldous": 12,
+   "Morwen": 12,
+   "Mire": 12
+  },
+  "turn_gini": 0.0,
+  "invokes": {
+   "Morwen": 11,
+   "Ysolde": 3,
+   "Aldous": 4,
+   "Mire": 3
+  },
+  "invoke_gini": 0.2976,
+  "tension_trajectory": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "clock_marks": 0,
+  "violations": 9,
+  "violations_engine": 4,
+  "violations_referee": 5,
+  "ambiguities": 18,
+  "ambiguity_ids": [
+   "AMB-12",
+   "AMB-19",
+   "AMB-23",
+   "Compels",
+   "Compels / Deck-draw subsystem",
+   "Conflict",
+   "Conflict (Consequences)",
+   "Conflict (physical vs mental tracks)",
+   "Conflict: attack vs defence — \"Named NPCs roll 4dF + their rating as active opposition\"",
+   "Costs on a tie (boost ownership)",
+   "Fate points (GM per-scene allocation)",
+   "Fate points / Aspects and invokes",
+   "Fate points — hostile invokes vs. Compels",
+   "Scenes — resolution of declared actions"
+  ],
+  "gm_improvised_complications": 19,
+  "card_supplied_complications": 0,
+  "improvisation_share": 1.0,
+  "guarantee_pulled": 0,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6.75,
+   "involvement": 6.75,
+   "connection": 6.25,
+   "control": 5.75,
+   "play_again": 7
+  },
+  "involvement_var_within": 0.188,
+  "personality": {
+   "Ysolde": "optimizer",
+   "Aldous": "protector",
+   "Morwen": "instigator",
+   "Mire": "tactician"
+  }
  },
- "llm_calls": 109,
+ "tokens": {
+  "prompt": 1784372,
+  "completion": 462220,
+  "cost_usd": 7.363,
+  "calls": 132
+ },
+ "llm_calls": 130,
  "models": {
   "gm": "claude-sonnet-5",
   "player": "claude-haiku-4-5-20251001",
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 2762.8
+ "elapsed_s": 3566.1
 }
