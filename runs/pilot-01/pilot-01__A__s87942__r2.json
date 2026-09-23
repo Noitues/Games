@@ -4,7 +4,7 @@
  "arm": "A",
  "seed": 87942,
  "spec_version": "0.1.0",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 2,
@@ -2755,6 +2755,652 @@
    "notes": "",
    "event_type": "scene_end",
    "improvised": false
+  },
+  {
+   "event_id": 123,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Scene 5 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false
+  },
+  {
+   "event_id": 124,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Scene test",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "1",
+   "total": "",
+   "opposition": "",
+   "result": "altered",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "d6=1 vs Tension 1",
+   "event_type": "scene_test",
+   "improvised": false
+  },
+  {
+   "event_id": 125,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Draw (altered_scene)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "deck now 3",
+   "event_type": "draw",
+   "improvised": false
+  },
+  {
+   "event_id": 126,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail + T-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "drawn from Session Deck",
+   "event_type": "rail_add",
+   "improvised": false
+  },
+  {
+   "event_id": 127,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Does the party fight or bargain their way past the Enforcers with Brennan still theirs, or do they get pushed deeper into Saint Orrin's — toward the Hive Mother's nest — to escape them?",
+   "event_type": "frame",
+   "improvised": false
+  },
+  {
+   "event_id": 128,
+   "session": 1,
+   "scene": 5,
+   "actor": "Ysolde",
+   "action": "create_advantage",
+   "skill": "Contacts",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Ysolde steps forward deliberately, placing herself between the armed Enforcers and her companions. She moves with control and respect—not the posture of a priso",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 129,
+   "session": 1,
+   "scene": 5,
+   "actor": "Aldous",
+   "action": "attack",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Aldous's weathered eyes track the flood's pattern around the Cartel enforcers—the subtle lean and pull of the water that marks exactly where they entered throug",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 130,
+   "session": 1,
+   "scene": 5,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Morwen reads the Enforcer formation in a heartbeat—mercenaries doing calculation before commitment, not yet attacking. She doesn't turn to fight through them; i",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 131,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "attack",
+   "skill": "Fight",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Mire steps forward into the shallow water, placing herself squarely between the Enforcers and Brennan. Her weapon rises with the steady discipline of trained mi",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 132,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Chooses vengeance over sense",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-04",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Mire doesn't wait for a plan — she goes straight for the Leader's throat, driven by every old grudge against men who think they can just take people. It opens a gap in the party's formation that a sec",
+   "event_type": "compel",
+   "improvised": true,
+   "compel_forced": false
+  },
+  {
+   "event_id": 133,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail + MI-06",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "story draw (free_compel_accepted)",
+   "event_type": "rail_add",
+   "improvised": false
+  },
+  {
+   "event_id": 134,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "Story draw (free_compel_accepted)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "",
+   "event_type": "story_draw",
+   "improvised": false
+  },
+  {
+   "event_id": 135,
+   "session": 1,
+   "scene": 5,
+   "actor": "Ysolde",
+   "action": "Create Advantage: Ysolde steps forward deliberately, placing herself between t",
+   "skill": "Contacts +3",
+   "tags_invoked": "Trusted by the Blackwater Cartel [YS-04]",
+   "fp_spent": 1,
+   "dice": "+ - - 0",
+   "total": "+4",
+   "opposition": "+2 (NPC - - + +)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "aspect A-1.5.8 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "opposing_tags": [],
+   "target_card": "YS-04",
+   "target_npc": "Cartel Enforcer Leader",
+   "shifts": 2,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 136,
+   "session": 1,
+   "scene": 5,
+   "actor": "Aldous",
+   "action": "Attack: Aldous's weathered eyes track the flood's pattern around the",
+   "skill": "Notice +4",
+   "tags_invoked": "Reads the flood's rise [AL-03]",
+   "fp_spent": 1,
+   "dice": "0 - + 0",
+   "total": "+6",
+   "opposition": "+3 (NPC + 0 - +)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Cartel Enforcer Leader",
+   "shifts": 3,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 137,
+   "session": 1,
+   "scene": 5,
+   "actor": "Aldous",
+   "action": "Peek",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MO-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "left on top",
+   "event_type": "peek",
+   "improvised": false
+  },
+  {
+   "event_id": 138,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail - T-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "left_play: taken out in conflict (Cartel Enforcer Leader)",
+   "event_type": "rail_remove",
+   "improvised": false
+  },
+  {
+   "event_id": 139,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "T-03 leaves play",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "taken out in conflict (Cartel Enforcer Leader)",
+   "event_type": "card_leaves_play",
+   "improvised": false
+  },
+  {
+   "event_id": 140,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "Attack: Mire steps forward into the shallow water, placing herself s",
+   "skill": "Fight +4",
+   "tags_invoked": "Trained young in watch drills [MI-01]",
+   "fp_spent": 1,
+   "dice": "+ + - 0",
+   "total": "+7",
+   "opposition": "+4 (NPC 0 0 0 0)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "GM invokes: hooked spears and cudgels [T-03]",
+   "event_type": "roll",
+   "improvised": false,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Cartel Enforcer Leader",
+   "shifts": 3,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 141,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "Peek",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MO-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "moved to bottom",
+   "event_type": "peek",
+   "improvised": false
+  },
+  {
+   "event_id": 142,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "1->1",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "resolved -1",
+   "event_type": "tension",
+   "improvised": false
+  },
+  {
+   "event_id": 143,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Brennan",
+   "event_type": "story_add",
+   "improvised": false
+  },
+  {
+   "event_id": 144,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Trigger fired: B-05",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "deck_at_most:3",
+   "event_type": "trigger",
+   "improvised": false
+  },
+  {
+   "event_id": 145,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Scene 5 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "triggers fired: ['B-05']",
+   "event_type": "scene_end",
+   "improvised": false
+  },
+  {
+   "event_id": 146,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-04 1/5",
+   "tension": 1,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false
+  },
+  {
+   "event_id": 147,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "3",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false
+  },
+  {
+   "event_id": 148,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "1",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false
+  },
+  {
+   "event_id": 149,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "T-02 -> T-02v2",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Denied Her Chosen Boy",
+   "event_type": "mutation",
+   "improvised": false
+  },
+  {
+   "event_id": 150,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "F-01 -> F-01v2",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "scarred by the party",
+   "event_type": "mutation",
+   "improvised": false
+  },
+  {
+   "event_id": 151,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "T-03 -> T-03v2",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "scarred by the party",
+   "event_type": "mutation",
+   "improvised": false
+  },
+  {
+   "event_id": 152,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "FP: Ysolde=4, Aldous=0, Morwen=0, Mire=1",
+   "event_type": "session_end",
+   "improvised": false
   }
  ],
  "scenes": [
@@ -2805,6 +3451,19 @@
    "climax": false,
    "tension_after": 1,
    "triggers_fired": []
+  },
+  {
+   "index": 5,
+   "tension_before": 1,
+   "scene_test": 1,
+   "outcome": "altered",
+   "beat": null,
+   "rounds": 1,
+   "climax": false,
+   "tension_after": 1,
+   "triggers_fired": [
+    "B-05"
+   ]
   }
  ],
  "transcript": [
@@ -3591,6 +4250,126 @@
    "kind": "narration",
    "text": "Between the three of you, the swarm-song loses its grip. Ysolde's counter-hymn closes around Brennan's own defiance — *hold to Brennan, your name is yours* — and something in him finally answers, hand closing around hers instead of flinching from it. Aldous doesn't wait for the boy to decide twice; he reads the stair's last open breath the way he's read eleven years of drowned omens and simply *takes* Brennan across it, ferryman-certain, refusing to let the water claim one more soul on his watch. Mire's grip seals the choice — she hauls him up bodily, soldier-steady, already counting the seconds since that bell rang out overhead. The black water of the vault falls away below you as you climb, the swarm-song's pressure thinning with every step, until Brennan is standing — shaking, soaked, but standing, on his own feet, *not yet* still on his lips but sounding now like a vow instead of a plea. He's not free of the Hive Mother's voice. But he's yours, pulled back from the edge of her nest with his name still his. Above, through the flooded stairwell, you can hear it — boots on wet stone, low voices calling to each other in the dark. The Cartel heard that bell, and they're already coming down to see what rang it.",
    "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The boots on the stair never reach you — because the Enforcers already know a faster way in. They've come up through the temple's flooded side-channels, the same hidden fords they use to move Cartel cargo, and they're not stacked above you on the stairwell at all: they're already between you and the stair's top, blades and hooked spears braced in the shin-deep water of the nave, cutting off the route back toward the Causeway entirely. Their leader — soaked, patient, counting heads — doesn't shout an order to attack. He shouts a number, like Brennan is cargo with a price on him. The only ways out now are through them, or deeper into the temple, toward the belltower and the swarm-song you were trying to leave behind.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "The Cartels know me. Before you trade that knowledge for a body and blood in these waters, you should ask yourselves what your people will say when they hear you made that choice.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde steps forward deliberately, placing herself between the armed Enforcers and her companions. She moves with control and respect—not the posture of a prisoner or victim, but someone with standing. Her torch is steady, her voice level. When she speaks, it's with the familiarity of someone who understands Cartel business from the inside, and it carries the weight of the people who know her name.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "You came up through the hidden ways—but I've read these waters for eleven years, and I've been marked by the drowned. Brennan leaves here as himself, not as your cargo.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous's weathered eyes track the flood's pattern around the Cartel enforcers—the subtle lean and pull of the water that marks exactly where they entered through the temple's hidden passages. He moves without hesitation, with the absolute certainty of a ferryman claiming a soul, launching himself at the Enforcer Leader through the rising water, reading every shift in the current to anticipate the man's movements before they come. The flood itself becomes his guide, and he moves like something born to it.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "The belltower is sanctuary—the Order's wards hold there, stronger than any blade they carry. We go *through* the temple, deeper. Follow me.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen reads the Enforcer formation in a heartbeat—mercenaries doing calculation before commitment, not yet attacking. She doesn't turn to fight through them; instead, she grips Brennan's shoulder and pivots toward the deeper temple, away from the blocked stair. Her stride carries the certainty of someone who knows Order wards better than any Cartel thug. One hand keeps Brennan moving; her eyes stay fixed on the Enforcer leader just long enough to make clear the decision is made—they're going deep, toward the belltower, where the wards held against worse things than mercenary steel. There's no hesitation in her movement, only absolute forward momentum.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "You're not taking him. Step back, or we settle this.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire steps forward into the shallow water, placing herself squarely between the Enforcers and Brennan. Her weapon rises with the steady discipline of trained militia, eyes sharp and certain on the leader. This is her line, and she still holds it—the same stance she held before Captain Verrick cast her out, the same certainty she's kept since the Temple Orphanage drilled watch into her bones. She's not stopping.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "I've watched men like you take everything—my badge, my oath, my choice. Not him. Not again.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde — create advantage with Contacts: dice + - - 0, invoking Trusted by the Blackwater Cartel [YS-04] → Great (+4) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — attack with Notice: dice 0 - + 0, invoking Reads the flood's rise [AL-03] → Fantastic (+6) vs Good (+3): SUCCESS WITH STYLE (Cartel Enforcer Leader mild consequence)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — attack with Fight: dice + + - 0, invoking Trained young in watch drills [MI-01] → Epic (+7) vs Great (+4): SUCCESS WITH STYLE (Cartel Enforcer Leader taken out)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Aldous doesn't wait to see if the leader will listen — he reads the shift of weight before the man's spear-arm even moves and closes the distance through the flooded nave like the water itself is throwing him forward, opening a bloody line across the Enforcer's ribs. The leader staggers, and that's the opening Mire needed: she's inside his reach a heartbeat later, and whatever discipline Captain Verrick once drilled into her comes out clean and final — the Enforcer Leader goes down hard in the shin-deep water and doesn't get back up. For one frozen second the rest of the Cartel crew just stares at their fallen boss, spears half-raised, and Ysolde's steady, familiar voice — the voice of someone who knows their business from the inside — is enough to keep them from closing ranks and finishing what he started. One of them, backing off toward the flooded side-channel, points at Mire and spits her name like a debt collector marking a ledger: *\"The boss'll hear about this. Your tab just got longer, girl.\"* It's not a threat meant for tonight — it's a promise for later, and it lands the way Cartel promises always do. But tonight the way back to the stair is open. Morwen doesn't wait for an invitation — she's already turning Brennan toward the exit, away from the belltower and whatever's still waiting up there in the swarm-song's dark, and the others fall in around her, Brennan's hand still gripped tight in Ysolde's. You climb out of Saint Orrin's Drowned Temple with the boy alive, himself, and yours — the Enforcers scattered, their leader bleeding in the black water behind you, and the flood still climbing at your backs.",
+   "visible_to": "all"
   }
  ],
  "costs": [
@@ -3741,6 +4520,39 @@
    "improvised": true,
    "accepted": true,
    "owner": "Aldous"
+  },
+  {
+   "event": "altered",
+   "scene": 5,
+   "draw_id": "T-03",
+   "valid": false,
+   "tag": "",
+   "text": "The boots on the stair never reach you — because the Enforcers already know a faster way in. They've come up through the temple's flooded side-channels, the same hidden fords they use to move Cartel cargo, and they're not stacked above you on the stairwell at all: they're already between you and the",
+   "improvised": false,
+   "card": {
+    "id": "T-03",
+    "type": "THREAT",
+    "owner": "GM",
+    "title": "Cartel Enforcers",
+    "power_tags": [
+     "hooked spears and cudgels",
+     "know every hidden ford",
+     "take hostages for leverage"
+    ],
+    "weakness": "Paid by the Day",
+    "clock": "0/4"
+   }
+  },
+  {
+   "event": "free_compel",
+   "scene": 5,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Chooses vengeance over sense",
+   "text": "Mire doesn't wait for a plan — she goes straight for the Leader's throat, driven by every old grudge against men who think they can just take people. It opens a gap in the party's formation that a second Enforcer, unseen until now, starts to move through toward Brennan.",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Mire"
   }
  ],
  "referee": {
@@ -3770,10 +4582,25 @@
     "source": "engine"
    },
    {
+    "session": 1,
+    "scene": 5,
+    "agent": "GM",
+    "section": "§6",
+    "issue": "altered scene did not use a tag of the drawn card (T-03): {}",
+    "source": "engine"
+   },
+   {
     "section": "§8 (GM cards) / §3 (situation aspects)",
     "issue": "T-02 is removed from the rail with the note 'overcome with success with style' at events 110-111, but the Overcome roll that would justify this (event 112, Ysolde, target_card T-02, success_with_style, note 'T-02 overcome with style') is logged AFTER the card has already left play. The same pattern recurs for F-01: it leaves play at events 114-115 with note 'overcome with success with style,' but the corresponding Overcome roll (event 116, Aldous, target_card F-01, success_with_style, note 'F-01 overcome with style') is logged after the removal. In both cases the effect (card removed) precedes its stated cause (the winning roll), which cannot happen under §8's rule that a GM card 'leaves play when... overcome with success with style.' Compounding this, T-02 is targeted again at event 118 (Mire, Overcome, success_with_style) after it had already left play at 110-111, crediting a second 'overcome with style' removal on a card that was no longer a face-up situation aspect and should not have been a valid target at all.",
     "event_id": 110,
     "scene": 4,
+    "source": "referee"
+   },
+   {
+    "event_id": 140,
+    "section": "§3 (Which tags are live / rail invokes) and §8 (GM cards)",
+    "issue": "GM invokes T-03's power tag 'hooked spears and cudgels' as opposition on Mire's attack roll, but T-03 had already been removed from the rail two events earlier (event 138: 'Rail - T-03', event 139: 'T-03 leaves play — taken out in conflict'). §3 states 'Every face-up card on the rail is a situation aspect. Anyone can invoke its tags if the fiction supports it,' which implies a card that is no longer face-up on the rail is not invokable, and §8 treats a GM card that has left play as gone (to Session Discard or post-session evaluation), not as a live source of invokes. Invoking a dead card's tag mid-scene after its removal breaks this chain.",
+    "scene": 5,
     "source": "referee"
    }
   ],
@@ -3803,6 +4630,15 @@
     "interim_ruling": "Yes, GLOBAL cards placed on the rail give the GM 1 free invoke that scene.",
     "detail": "H-03",
     "scene": 0,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-20",
+    "section": "§4 vs §6",
+    "issue": "§6 Altered scene draws a card, but §4's closed list of draw triggers omits it.",
+    "interim_ruling": "§6 is more specific: Altered scenes draw.",
+    "detail": "",
+    "scene": 5,
     "source": "engine"
    },
    {
@@ -3867,6 +4703,20 @@
     "interim_ruling": "The table allowed T-02 to be credited with a second 'overcome with style' removal narration (event 112, and again referenced at 118) even after it had already left the rail (events 110-111), effectively double-crediting removal of a single card.",
     "scene": 4,
     "source": "referee"
+   },
+   {
+    "section": "§8 (Harm and card loss / GM cards)",
+    "issue": "The spec says a GM card 'leaves play when it is taken out in a conflict, overcome with success with style, or its clock fills,' but T-03's clock was never marked (0/4) and there is no defined stress/consequence track for a THREAT card (unlike named NPCs, which roll 4dF + rating separately). It's unclear what event actually constitutes 'taken out in a conflict' for a THREAT card when the roll was resolved against a separately-tracked 'Cartel Enforcer Leader' NPC rather than against the card's own clock.",
+    "interim_ruling": "The table treated Aldous's success-with-style roll against the Cartel Enforcer Leader (shifts 3) as sufficient to immediately remove the associated face-up THREAT card (T-03) from the rail, without requiring its clock to fill.",
+    "scene": 5,
+    "source": "referee"
+   },
+   {
+    "section": "§6A (Resolving a story draw)",
+    "issue": "The rule requires that a compel accepted outside a deck draw trigger a Story Pile draw whose 'complication must involve the drawn NPC or move the drawn thread.' The log records the MI-06 story draw and its free invoke grant, but no complication text tied to MI-06's tags is logged anywhere in the scene, so compliance with the tag-use requirement cannot be confirmed from the log.",
+    "interim_ruling": "The table proceeded on the assumption that MI-06 was folded into the ongoing scene narration (the gap in formation / second Enforcer moving on Brennan) without a separately logged, tag-cited complication line.",
+    "scene": 5,
+    "source": "referee"
    }
   ],
   "cost_checks": [
@@ -3929,6 +4779,18 @@
     "used_drawn_card": false,
     "note": "Story Pile draw (AL-06) triggered by Aldous's free compel per §6A. No event in this scene shows AL-06's tags actually being used to shape a complication or lead — and per the ambiguity above, the compel it was supposed to attach to (event 106) was already fully written before this draw occurred. AL-06 was placed face-up with a free invoke (event 108) but its required narrative tie-in is not evidenced in the log.",
     "scene": 4
+   },
+   {
+    "event_id": 125,
+    "used_drawn_card": false,
+    "note": "Altered-scene draw of T-03. The framing text ('flooded side-channels, the same hidden fords they use to move Cartel cargo') loosely echoes the power tag 'know every hidden ford' but never explicitly cites a T-03 tag, and the structured 'tag' field is blank. The engine already flagged this as a §6 refusal ('did not use a tag of the drawn card'); confirmed here as a non-compliant draw cost.",
+    "scene": 5
+   },
+   {
+    "event_id": 134,
+    "used_drawn_card": false,
+    "note": "Story Pile draw MI-06 (triggered by Mire's accepted free compel). No complication text or tag citation for MI-06 is present anywhere in the scene 5 log, so the §6A requirement that 'the complication must involve the drawn NPC or move the drawn thread' cannot be verified as met.",
+    "scene": 5
    }
   ],
   "friction": [
@@ -3979,17 +4841,187 @@
    {
     "scene": 4,
     "text": "The §6A Story Pile trigger for non-deck compels fires only after the compel's complication is already accepted and narrated (event 106 before the AL-06 draw at 108-109), making the rule's own requirement that the complication 'involve the drawn NPC or move the drawn thread' impossible to satisfy in real play order."
+   },
+   {
+    "scene": 5,
+    "text": "GM invoked a card's tag (T-03) after that card had already left play/the rail, a clear timing violation that undercuts trust in the invoke-tracking around card removal."
+   },
+   {
+    "scene": 5,
+    "text": "No defined mechanism specifies how a THREAT card (with its own clock) gets 'taken out in a conflict' when the fictional target is tracked as a separate named NPC and the card's own clock never advanced — this forced an improvised interim ruling."
+   },
+   {
+    "scene": 5,
+    "text": "The altered-scene draw's cost text paraphrases rather than explicitly cites the drawn card's tag, and the log leaves the 'tag' field blank, making automated and manual tag-use verification unreliable even when the fiction plausibly reflects the card."
    }
   ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "protector",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When Brennan's hand finally closed around Ysolde's instead of flinching away. That moment crystallized everything the session had been building toward—Tamsin's knowledge actually *mattering*, stepping into danger for someone else's salvation, the concrete reality of pulling someone back from the dark. It was emotionally earned and mechanically clean.",
+    "most_frustrating": "The compel on Tamsin's Scroll Case, accepting it meant burning bridges I didn't fully get to understand yet. But that's the system working right—it *should* hurt. If I had to name something: maybe that the flood's rush meant we couldn't linger with what abandoning Tamsin's life's work actually *cost* her emotionally, beyond \"ink washes away, but the wards live in my bones.\" That line works, but I wanted to sit in that grief a beat longer.",
+    "background_used": "Yes, heavily and well. Every card got invoked: Tamsin's Scroll Case was the solution, the Stiltfolk water-reading threaded through the descent, the Cartel connection defused the final confrontation without needing to kill more than necessary, the Barge That Burned's \"step into danger for the crew\" drove every choice. The GM clearly read Ysolde's sheet and built the session *into* it, not around it. It landed as earned, not forced.",
+    "wanted_but_couldnt": "I wanted deeper space to understand what Tamsin was protecting in that archive beyond Brennan's immediate need—hints of the Order's role, why that cache was hidden there, what knowledge was drowning with the scrolls. But honestly? The session moved at the right pace. That's setup for later, not a frustration with this one.",
+    "one_sentence": "Ysolde's backstory felt woven through every major beat—not ornamental, but necessary to the solution and to why she's willing to burn her safety for strangers—so it landed very well."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "instigator",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 7,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When Aldous gripped Brennan on that submerged stair and the GM narrated him as \"ferryman-certain, refusing to let the water claim one more soul on his watch\"—that moment perfectly married the mechanics, the roleplay, and the character's entire reason for existing. Eleven years of reading the drowned, the Ferryman's Vow, the \"marked by ghosts\" weight—it all crystallized into one action that *felt* necessary.",
+    "most_frustrating": "The session moved in a single clear direction with high momentum, which was good for pacing but meant there wasn't room to explore tangent choices or lean into Aldous's trauma around deep water/drowning. The Panic tag from AL-01 stayed set-aside, so it never came into play. That's not really the GM's fault—it's just how one-session flow works.",
+    "background_used": "Extensively and well. The water-reading wasn't something I had to ask for; it emerged naturally from every challenge. \"Served under Captain Verrick\" grounded the toll-gate scene. \"Vowed to cross every soul\" and \"Voice like a confession\" made the archive confrontation land. \"Marked by drowned ghosts\" colored how Aldous understood Brennan's danger. None of it felt forced or shoehorned. This was really solid integration.",
+    "wanted_but_couldnt": "I didn't get to have a direct confrontation or reckoning with Captain Verrick himself—only mentioned his name. That felt like setup for later, which is fine. Also, the specific details of Aldous's trauma from the Sunken Barge (the card set-aside) didn't come up, but again, that's by design. No real regrets here.",
+    "one_sentence": "Aldous's backstory wasn't just used—it was load-bearing; every major obstacle required something specific from his history, and none of it ever felt artificial or punitive."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "tactician",
+   "scores": {
+    "fun": 7,
+    "involvement": 6,
+    "connection": 6,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The false panel swinging open and the bell ringing — Morwen's moment of weakness (bracing against the swarm-song pressure) became the trigger that exposed the Cartel cache and immediately forced her into crisis-leadership. Narratively perfect, and it handed her the responsibility to lead the escape.",
+    "most_frustrating": "I wanted to engage more *actively* with the hive-song as an exorcist — not just defend against it or help shield Brennan, but actually *command* it or perform rite against it. The song was described as a presence, something tasting and breathing; I wanted Morwen's untouched clarity to let her do more than react. Also, the escape sequence compressed fast enough that I didn't get to explore what the belltower's Order sanctuary actually *means* or how Morwen's knowledge of it functions tactically.",
+    "background_used": "Good. My exorcist identity, untouched-by-swarm immunity, knowledge of Order wards, and willingness to sacrifice/lead were all used meaningfully. The false panel discovery tied directly to my action (bracing against the song) and had immediate consequences. My weakness ('Cannot move unseen') was thematically active without being heavy-handed — Ysolde had to use Cartel connections instead of covert movement. The session didn't shy away from who Morwen is.",
+    "wanted_but_couldnt": "I wanted to use exorcism *actively* — rituals, commands, something that engages Morwen's core training against the swarm-song rather than just defending against it. I also wanted more exploration of the belltower as Order sanctuary and what that means in practical, mechanical terms for keeping the hive at bay.",
+    "one_sentence": "Morwen's exorcist clarity and willingness to lead were central to the crisis, but the session's emotional weight and personal stakes tilted toward Mire's oath-debt and Ysolde's teacher-legacy, leaving Morwen's own deeper drive less explored."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "optimizer",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Taking down the Cartel Enforcer Leader while defending Brennan—Mire's entire journey (disgraced, in debt, holding the line anyway) crystallized into one clean action that meant something real.",
+    "most_frustrating": "The bell rang and the Cartel appeared immediately. Mechanically fair but narratively abrupt—went from rescue to full combat gauntlet with no breathing room to process what we'd just done.",
+    "background_used": "Sister Aveline, oath to Brennan, militia training, Verrick's disgracing, Cartel debt—all woven in direct and earned. The orphanage oath compel especially landed right because it reframed the entire mission.",
+    "wanted_but_couldnt": "More direct negotiation or leverage of Mire's Cartel connections rather than pure combat. Also wanted more personal time with Sister Aveline to establish the emotional weight of the oath before being pushed into action.",
+    "one_sentence": "Mire's backstory was central to the plot and her specific skills (militia training, Notice) made visible differences in key moments, but rapid pacing left less room for personal emotional beats to land."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Ysolde",
+    "turns": 19,
+    "references_to_others_background": 1
+   },
+   {
+    "name": "Aldous",
+    "turns": 18,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Morwen",
+    "turns": 14,
+    "references_to_others_background": 1
+   },
+   {
+    "name": "Mire",
+    "turns": 17,
+    "references_to_others_background": 0
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "Test summary.",
+  "closing_tension": 1,
+  "reverberations": {
+   "growth": {
+    "AL-02": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "MI-01": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "YS-02": {
+     "added": 2,
+     "total": 2,
+     "evolve": false
+    },
+    "AL-01": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "MI-04": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    }
+   },
+   "clocks": [
+    "F-04 1/5"
+   ],
+   "mutations": [
+    {
+     "from": "T-02",
+     "to": "T-02v2"
+    },
+    {
+     "from": "F-01",
+     "to": "F-01v2"
+    },
+    {
+     "from": "T-03",
+     "to": "T-03v2"
+    }
+   ],
+   "retired": []
+  },
+  "retired": [
+   {
+    "card": "N-02",
+    "how": "story pile over limit",
+    "session": 1
+   }
+  ]
+ },
  "state_end": {
   "tension": 1,
   "fp": {
-   "Ysolde": 5,
-   "Aldous": 1,
+   "Ysolde": 4,
+   "Aldous": 0,
    "Morwen": 0,
    "Mire": 1
   },
@@ -4006,33 +5038,133 @@
   "guarantee_pulled": [],
   "guarantee_failed": [],
   "deck_left": [
-   "T-03",
-   "MO-03",
    "AL-01",
-   "L-03"
+   "L-03",
+   "MO-03"
   ],
-  "draws": 3,
+  "draws": 4,
   "turns": {
-   "Ysolde": 7,
-   "Aldous": 7,
-   "Morwen": 7,
-   "Mire": 7
+   "Ysolde": 8,
+   "Aldous": 8,
+   "Morwen": 8,
+   "Mire": 8
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 1327802,
-  "completion": 267963,
-  "cost_usd": 4.5201,
-  "calls": 78
+ "metrics": {
+  "arm": "A",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Aldous",
+   "Mire",
+   "Ysolde"
+  ],
+  "backstory_all_players": false,
+  "deck_surfaced_all_players": false,
+  "deck_draws": 4,
+  "draw_costs": 6,
+  "draw_cost_used_card_rate_engine": 0.833,
+  "draw_cost_used_card_rate_referee": 0.5,
+  "fp_end": {
+   "Ysolde": 4,
+   "Aldous": 0,
+   "Morwen": 0,
+   "Mire": 1
+  },
+  "fp_end_mean": 1.25,
+  "fp_earned": {
+   "Aldous": 2,
+   "Mire": 2,
+   "Ysolde": 2
+  },
+  "fp_spent": {
+   "Aldous": 5,
+   "Mire": 4,
+   "Ysolde": 1,
+   "Morwen": 3
+  },
+  "compels_accepted": 6,
+  "compels_refused": 0,
+  "compels_deck": 2,
+  "compels_free": 4,
+  "turns": {
+   "Ysolde": 8,
+   "Aldous": 8,
+   "Morwen": 8,
+   "Mire": 8
+  },
+  "turn_gini": 0.0,
+  "invokes": {
+   "Aldous": 5,
+   "Mire": 4,
+   "Ysolde": 1,
+   "Morwen": 3
+  },
+  "invoke_gini": 0.25,
+  "tension_trajectory": [
+   3,
+   2,
+   1,
+   1,
+   1,
+   1
+  ],
+  "clock_marks": 1,
+  "violations": 6,
+  "violations_engine": 4,
+  "violations_referee": 2,
+  "ambiguities": 15,
+  "ambiguity_ids": [
+   "AMB-01",
+   "AMB-12",
+   "AMB-20",
+   "AMB-22",
+   "§3",
+   "§3 (Outcomes and deck draws table) vs. Fate Core baseline for Create an Advantage",
+   "§3 (live tags) / §4 (Session Deck)",
+   "§5 step 5 (Beat Frame owner answers a GM question)",
+   "§5/§7 (Beat Frame triggers)",
+   "§6 (Adjusting Tension at scene end)",
+   "§6 Adjusting Tension",
+   "§6A",
+   "§6A (Resolving a story draw)",
+   "§8 (Harm and card loss / GM cards)",
+   "§8 / §3"
+  ],
+  "gm_improvised_complications": 4,
+  "card_supplied_complications": 6,
+  "improvisation_share": 0.4,
+  "guarantee_pulled": 0,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6.75,
+   "involvement": 6.75,
+   "connection": 6.75,
+   "control": 5.5,
+   "play_again": 7
+  },
+  "involvement_var_within": 0.188,
+  "personality": {
+   "Ysolde": "protector",
+   "Aldous": "instigator",
+   "Morwen": "tactician",
+   "Mire": "optimizer"
+  }
  },
- "llm_calls": 78,
+ "tokens": {
+  "prompt": 1769429,
+  "completion": 353398,
+  "cost_usd": 5.9396,
+  "calls": 99
+ },
+ "llm_calls": 99,
  "models": {
   "gm": "claude-sonnet-5",
   "player": "claude-haiku-4-5-20251001",
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 2153.8
+ "elapsed_s": 2874.7
 }
