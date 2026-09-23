@@ -63,9 +63,17 @@ def play_one(args: tuple) -> dict:
     make_policy = _policy_factory(spec.get("ai", "1.0.0"))
     p1_cfg = spec.get("p1_config") or {}
     p2_cfg = spec.get("p2_config") or {}
+    p1_tier, p2_tier = spec["p1"], spec["p2"]
+    pool = spec.get("personality_pool")
+    if pool:
+        # A play-test evening, not a mirror: each side draws an appetite. The
+        # pair is drawn from the game index so both seats of a swapped pair see
+        # the same two personalities in opposite seats.
+        prng = random.Random(spec["seed"] * 104_729 + (i // 2))
+        p1_tier, p2_tier = prng.sample(list(pool), 2) if len(pool) > 1 else (pool[0], pool[0])
     pols = {}
-    seats = (("north", spec["p1"], p1_cfg), ("south", spec["p2"], p2_cfg)) if first == "north" \
-        else (("north", spec["p2"], p2_cfg), ("south", spec["p1"], p1_cfg))
+    seats = (("north", p1_tier, p1_cfg), ("south", p2_tier, p2_cfg)) if first == "north" \
+        else (("north", p2_tier, p2_cfg), ("south", p1_tier, p1_cfg))
     for t, tier, pcfg in seats:
         pols[t] = make_policy(tier, spec["seed"] * 7919 + i * 31 + (0 if t == "north" else 1),
                               spec.get("temperature", 0.3), config=dict(pcfg), team=t)

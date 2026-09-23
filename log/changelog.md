@@ -151,3 +151,44 @@ now settled almost entirely by structures.
 Raising the Nexus as well pushes the tail past the round limit and fails the 95%
 floor. Raising tower HP alone lengthens the siege - the phase that actually fills
 the rounds - and leaves the close-out decisive.
+
+## Iteration 5 - ai 1.3.0: flank awareness and personalities
+
+| artefact | version | change |
+|---|---|---|
+| ai | 1.2.0 -> 1.3.0 | Flank terms in the shared evaluation, and five personality profiles built on the T2 macro weights. 1.2.0 stays frozen, so batches 0008-0035 remain reproducible. |
+| engine | 0.3.x | `personality_pool` in a sim request: each side draws an appetite per game. Reports read per personality (Part 9c). |
+| tests | - | 117. |
+
+### Flank awareness
+
+A hidden hexgroup beside a lane is a gank avenue, and under RQ-036 walking up
+to one reveals it. The evaluation now prices both halves of that: `flank_risk`
+penalises standing beside a hexgroup that holds enemies, `flank_watch` rewards
+standing beside an empty one, which denies it as an approach. The visible
+effect is a laner favouring the side of its lane away from the dangerous
+hexgroup rather than walking down the middle - which matters most in mid, where
+both river hexgroups are in reach. `group_bias` was added alongside for the
+personalities that want to fight together.
+
+### Personalities
+
+| name | wants |
+|---|---|
+| warder | vision and safety: buys Control Wards eagerly, spends them on sight, keeps out of reach |
+| brawler | the five-on-five: stays grouped, hunts kills |
+| sieger | the map: towers, wave state, the Nexus behind them |
+| objective | the clock: Dragon, Baron, and the camps that buy them |
+| laner | the lane: farms, keeps its distance, punishes a mistake |
+
+These are not the exploit policies. Each is meant to be a reasonable way to
+play, so a batch of mixed match-ups reads more like a play-test evening than a
+mirror does: a mirror measures the game against one taste, a spread measures it
+against several, which is what a balance number should survive.
+
+Buying a card and holding it turned out to be opposite appetites - a warder
+wants a hand full of Control Wards *and* wants to spend them immediately - so
+the policy now prices them separately.
+
+`batch_0036` is a plumbing check only (8 games). A real personality read needs
+a proper batch; 8 games says nothing about which personality is strongest.

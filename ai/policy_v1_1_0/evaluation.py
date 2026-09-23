@@ -36,6 +36,10 @@ W = {
     "enemy_cd": 0.0,            # enemy cards stuck on the cooldown track
     "struct_focus": 0.0,        # extra pull toward enemy structures
     "conceal_bias": 0.0,        # value of standing inside a hidden hexgroup (RQ-032)
+    # --- flank awareness, off by default (ai 1.3.0 turns them on) ---
+    "flank_risk": 0.0,          # standing beside a hidden hexgroup that holds enemies
+    "flank_watch": 0.0,         # standing beside an empty one, denying it as an approach
+    "group_bias": 0.0,          # own champions keeping within reach of each other
 }
 
 # Macro profile for T2: lane and jungle assignment, objective setups, recall
@@ -55,6 +59,47 @@ def _lane_cost(state: GameState, c) -> float:
     else:
         targets = board.lane_paths[c.team][lane]
     return min(hex_distance(c.hexpos, h) for h in targets)
+
+
+def flank_read(state: GameState, team: str):
+    """How the hidden hexgroups beside each champion look from ``team``.
+
+    A hidden hexgroup next to a lane is a gank avenue. One holding enemies is a
+    threat to stand beside - under Rules 3.1 walking up to it reveals it, which
+    is useful, but it also puts you in reach of whatever was waiting. An empty
+    one is worth watching precisely so it cannot be used.
+
+    Returns (threat, watch) keyed by champion uid.
+    """
+    board = state.board
+    foe = other(team)
+    enemies_in = {}
+    for c in state.champs.values():
+        if c.alive and c.team == foe:
+            t = board.tile_of[c.hexpos]
+            enemies_in[t] = enemies_in.get(t, 0) + 1
+    threat, watch = {}, {}
+    mask = state.hidden_mask
+    for c in state.champs.values():
+        if not c.alive or c.team != team:
+            continue
+        own_tile = board.tile_of[c.hexpos]
+        th = wa = 0
+        seen = set()
+        for nb in board.neighbors.get(c.hexpos, ()):
+            t = board.tile_of.get(nb)
+            if t is None or t == own_tile or t in seen:
+                continue
+            seen.add(t)
+            if not (mask >> t & 1):
+                continue
+            n = enemies_in.get(t, 0)
+            if n:
+                th += n
+            else:
+                wa += 1
+        threat[c.uid], watch[c.uid] = th, wa
+    return threat, watch
 
 
 def predicted_world_damage(state: GameState, c) -> int:
@@ -87,6 +132,10 @@ def evaluate(state: GameState, team: str, w: Optional[Dict[str, float]] = None) 
             score += (-w["tower_enemy"] * s.chips if s.team == foe else w["tower_own"] * s.chips)
     live_major = [m for m in state.monsters.values() if m.alive and m.mtype in MAJOR]
     home = board.nexus[team]
+    flank_on = w["flank_risk"] or w["flank_watch"]
+    threat, watch = flank_read(state, team) if flank_on else ({}, {})
+    allies = [c.hexpos for c in state.champs.values()
+              if c.alive and c.team == team] if w["group_bias"] else []
     for c in state.champs.values():
         own = c.team == team
         if not c.alive:
@@ -110,6 +159,13 @@ def evaluate(state: GameState, team: str, w: Optional[Dict[str, float]] = None) 
                 score += w["recall_value"]
             if w["conceal_bias"] and (state.hidden_mask >> board.tile_of[c.hexpos] & 1):
                 score += w["conceal_bias"]
+            if flank_on:
+                score -= w["flank_risk"] * threat.get(c.uid, 0)
+                score += w["flank_watch"] * watch.get(c.uid, 0)
+            if w["group_bias"] and len(allies) > 1:
+                near = sorted(hex_distance(c.hexpos, h) for h in allies if h != c.hexpos)
+                if near:
+                    score -= w["group_bias"] * near[0]
         else:
             score += w["incoming_enemy"] * dmg
             if dmg >= c.hp + c.shield:

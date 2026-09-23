@@ -34,6 +34,8 @@ def main() -> None:
     spec["p1"] = spec["matchup"]["p1"]
     spec["p2"] = spec["matchup"]["p2"]
     spec["temperature"] = spec["matchup"].get("temperature", 0.3)
+    if spec["matchup"].get("personality_pool"):
+        spec["personality_pool"] = spec["matchup"]["personality_pool"]
     kits = load_roster(spec["roster_path"])
     spec["costs"] = {cid: {k: v.get("cost", 0) for k, v in kit["abilities"].items()}
                      for cid, kit in kits.items()}

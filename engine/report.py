@@ -26,6 +26,7 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
     champ_apshare: Dict[str, List[float]] = defaultdict(list)
     champ_items: Dict[str, Counter] = defaultdict(Counter)
     champ_conceal: Dict[str, List[int]] = defaultdict(list)
+    tier_w: Dict[str, List[int]] = defaultdict(list)
     total_uses = total_conceal = total_edge = total_acts = 0
     role_w: Dict[str, List[int]] = defaultdict(list)
     role_ap: Dict[str, List[float]] = defaultdict(list)
@@ -110,6 +111,9 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
             first_tower_rounds.append(rnd)
             if w is not None:
                 first_tower_win.append(int(team == w))
+        for team, tier in (r.get("tiers") or {}).items():
+            if w is not None:
+                tier_w[tier].append(int(team == w))
         for a in r["anomalies"]:
             anomalies[a.split("(")[0].strip()] += 1
 
@@ -254,6 +258,10 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
             "roster_mean_ap_per_round": roster_ap_mean,
         },
         "items": item_rows,
+        "personalities": {
+            t: dict(zip(("wr", "wr_lo", "wr_hi"), wilson(sum(v), len(v))), games=len(v))
+            for t, v in sorted(tier_w.items())
+        } if len(tier_w) > 1 else {},
         "concealment": {
             "attacks_from_concealment_per_game": total_conceal / max(1, n),
             "share_of_all_ability_uses": (100 * total_conceal / total_uses) if total_uses else 0.0,
@@ -393,6 +401,13 @@ def to_markdown(s: dict) -> str:
         nw = "-" if i["non_owner_wr"] is None else f"{i['non_owner_wr']:.1f}%"
         df = "-" if i["wr_diff"] is None else f"{i['wr_diff']:+.1f}"
         L.append(f"| {i['item']} | {i['cost']} | {i['purchases_per_game']:.2f} | {ow} | {nw} | {df} |")
+    pers = s.get("personalities") or {}
+    if pers:
+        L += ["", "## 9c. Personalities", "",
+              "| policy | games | win rate [95% CI] |", "|---|---|---|"]
+        for t, v in sorted(pers.items(), key=lambda kv: -kv[1]["wr"]):
+            L += [f"| {t} | {v['games']} | {v['wr']:.1f} [{v['wr_lo']:.1f}, {v['wr_hi']:.1f}] |"]
+        L += [""]
     c = s.get("concealment", {})
     L += ["", "## 9b. Concealment (RQ-032)", "",
           f"- attacks made from inside a hidden hexgroup on something outside it: "

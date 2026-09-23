@@ -85,6 +85,21 @@ class T1Greedy(Policy):
                 return a
         return scored[0][1]
 
+    def card_value(self, card: str) -> float:
+        """How dear a card is to hold on to, subtracted from the gain of playing
+        it. A personality that lives on vision prices a Control Ward low - even
+        below zero - so it plays them freely."""
+        return self.weights.get("cards", {}).get(card, CARD_VALUE.get(card, 0.0))
+
+    def card_buy_value(self, card: str) -> float:
+        """How much a personality wants to *buy* the card, which is a separate
+        appetite from how tightly it holds one: a warder wants a hand full of
+        Control Wards and wants to spend them the moment it has them."""
+        return self.weights.get("buy", {}).get(card, CARD_VALUE.get(card, 0.0))
+
+    def shop_priority(self, role: str):
+        return self.weights.get("shop", {}).get(role, SHOP_PRIORITY[role])
+
     def choose_card_play(self, state, activation, legal):
         if not legal:
             return None
@@ -98,7 +113,7 @@ class T1Greedy(Policy):
                 gain = self.value(s) - before
             except Exception:
                 continue
-            gain -= CARD_VALUE.get(play.card, 0.0)      # keep cards for later
+            gain -= self.card_value(play.card)          # keep cards for later
             if gain > best_s:
                 best, best_s = play, gain
         return best
@@ -113,12 +128,12 @@ class T1Greedy(Policy):
                 c = champs.get(p.champ)
                 if c is None:
                     continue
-                prio = SHOP_PRIORITY[c.role]
+                prio = self.shop_priority(c.role)
                 if p.item not in prio:
                     continue
                 key = (0, prio.index(p.item), c.uid)
             else:
-                key = (1, 5 - CARD_VALUE.get(p.item, 0.0) * 2, p.item)
+                key = (1, 5 - self.card_buy_value(p.item) * 2, p.item)
             if best_key is None or key < best_key:
                 best, best_key = p, key
         # Spend down: keep nothing, unspent AP is lost (Rules 5.4).
