@@ -91,11 +91,35 @@ def play_one(args: tuple) -> dict:
     return out
 
 
-def run_batch(spec: dict, workers: int = 0) -> List[dict]:
+def run_batch(spec: dict, workers: int = 0, checkpoint: Optional[str] = None) -> List[dict]:
+    """Play every game in the spec. With `checkpoint`, each finished game is
+    appended to that JSONL file as it completes and games already in it are
+    not replayed, so a run killed part-way (the cloud container is reclaimed
+    when idle) resumes where it stopped instead of starting over."""
     n = spec["games"]
-    jobs = [(i, spec) for i in range(n)]
+    done: Dict[int, dict] = {}
+    if checkpoint and os.path.exists(checkpoint):
+        with open(checkpoint) as fh:
+            for line in fh:
+                if line.strip():
+                    r = json.loads(line)
+                    if r.get("game_index", -1) < n:
+                        done[r["game_index"]] = r
+    jobs = [(i, spec) for i in range(n) if i not in done]
+    spec["resumed_games"] = len(done)
     workers = workers or min(os.cpu_count() or 1, 8)
+
+    def keep(r: dict) -> None:
+        done[r["game_index"]] = r
+        if checkpoint:
+            with open(checkpoint, "a") as fh:
+                fh.write(json.dumps(r) + "\n")
+
     if workers == 1:
-        return [play_one(j) for j in jobs]
-    with Pool(workers) as pool:
-        return pool.map(play_one, jobs, chunksize=max(1, n // (workers * 8)))
+        for j in jobs:
+            keep(play_one(j))
+    elif jobs:
+        with Pool(workers) as pool:
+            for r in pool.imap_unordered(play_one, jobs, chunksize=1):
+                keep(r)
+    return [done[i] for i in range(n)]

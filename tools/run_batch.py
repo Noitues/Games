@@ -26,6 +26,8 @@ def main() -> None:
     ap.add_argument("--baseline", default=None)
     ap.add_argument("--dump-raw", action="store_true",
                     help="write per-game results to reports/raw/<batch>.jsonl.gz")
+    ap.add_argument("--no-checkpoint", action="store_true",
+                    help="do not write or resume from reports/raw/<batch>.partial.jsonl")
     args = ap.parse_args()
 
     with open(args.request) as fh:
@@ -47,9 +49,16 @@ def main() -> None:
         tests = {"summary": t.stdout.strip().splitlines()[-1] if t.stdout else "no output",
                  "returncode": t.returncode}
 
+    checkpoint = None
+    if not args.no_checkpoint:
+        os.makedirs(os.path.join(ROOT, "reports", "raw"), exist_ok=True)
+        checkpoint = os.path.join(ROOT, "reports", "raw", f"{spec['batch_id']}.partial.jsonl")
     t0 = time.time()
-    results = run_batch(spec, workers=args.workers)
+    results = run_batch(spec, workers=args.workers, checkpoint=checkpoint)
     spec["runtime_s"] = time.time() - t0
+    if spec.get("resumed_games"):
+        print(f"{spec['batch_id']}: resumed with {spec['resumed_games']} games from {checkpoint}; "
+              f"runtime covers the remainder only")
 
     baseline = None
     if args.baseline and os.path.exists(args.baseline):
@@ -76,6 +85,8 @@ def main() -> None:
         with open(os.path.join(ROOT, "reports", f"{spec['batch_id']}_replays.json"), "w") as fh:
             json.dump([{"game": r["game_index"], "winner": r["winner"], "rounds": r["rounds"],
                         "picks": r["picks"], "events": r["replay"]} for r in replays], fh, indent=2)
+    if checkpoint and os.path.exists(checkpoint):
+        os.remove(checkpoint)
     print(f"{spec['batch_id']}: {len(results)} games in {spec['runtime_s']:.1f}s -> {out_md}")
     for c in summary["scorecard"]:
         print(f"  [{c['verdict']:<13}] {c['check']}: {c['value']}")
