@@ -2717,6 +2717,400 @@
     "Fenwick": 3
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 92,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Scene 4 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 93,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Scene test",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "5",
+   "total": "",
+   "opposition": "",
+   "result": "as_planned",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "d6=5 vs Tension 4",
+   "event_type": "scene_test",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 94,
+   "session": 1,
+   "scene": 4,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "Can the party steady themselves — Hask's fever, Fenwick's grief, the debts pressing on all of them — before the marsh or something worse finds them here?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 95,
+   "session": 1,
+   "scene": 4,
+   "actor": "Maud",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "Maud settles beside Hask with the weight of old habit, one hand finding his shoulder the way a shield-wall soldier touches the injured — steady, certain, no was",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 96,
+   "session": 1,
+   "scene": 4,
+   "actor": "Hask",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "Hask stares at his trembling palms—something dark under the nails from things he did in the delirium that he can't remember and doesn't want to. He's still wrac",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 97,
+   "session": 1,
+   "scene": 4,
+   "actor": "Eira",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "Eira keeps her eyes on the dark treeline as she moves to Hask's side, kneeling to check his pulse and skin heat with steady, practiced hands.",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 98,
+   "session": 1,
+   "scene": 4,
+   "actor": "Fenwick",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "Fenwick tears his gaze from the dark treeline and pushes himself upright, his hands already reaching for his pack with sharp, urgent movements. There's a desper",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 99,
+   "session": 1,
+   "scene": 4,
+   "actor": "Fenwick",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Bonded to Bren, once his surveying partner, now hive-touched",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "FE-02",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "Fenwick's need to chase Bren's trail right now overrides his judgment — he starts breaking camp before Hask can stand, and if the party follows him north immediately, Hask marches straight through the",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 100,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Rail + FE-06",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "FE-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "story draw (free_compel_accepted)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 101,
+   "session": 1,
+   "scene": 4,
+   "actor": "Fenwick",
+   "action": "Story draw (free_compel_accepted)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "FE-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "",
+   "event_type": "story_draw",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 102,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "4->5",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "against the players 1 (hostile invokes 0 + compels 1) vs friendly invokes 0 (§6, spec 0.3.1)",
+   "event_type": "tension",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 103,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Weight FE-06",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "FE-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "1->2 (drawn/featured this scene)",
+   "event_type": "story_weight",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 104,
+   "session": 1,
+   "scene": 4,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "Careful Boots in the North Dark",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 105,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Scene 4 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -2756,6 +3150,17 @@
    "rounds": 1,
    "climax": false,
    "tension_after": 4,
+   "triggers_fired": []
+  },
+  {
+   "index": 4,
+   "tension_before": 4,
+   "scene_test": 5,
+   "outcome": "as_planned",
+   "beat": null,
+   "rounds": 1,
+   "climax": false,
+   "tension_after": 5,
    "triggers_fired": []
   }
  ],
@@ -3295,6 +3700,102 @@
    "kind": "narration",
    "text": "Maud doesn't move an inch, and something in that stillness breaks the enforcers' nerve — a heartbeat of hesitation that Hask reads like current on water, using it to haul himself past them into the dark channel he's known since before he could walk. Fenwick follows on Bren's last gift, 'north and dark' still burning behind his eyes, cutting a line through the reeds no spear can trace. But Eira's gambit curdles: 'You burned Three Elms on purpose,' she says, and the enforcer boss's face goes cold and flat — whatever chance there was of a bought passage dies right there, replaced by a debt collector's grudge with a face now. Steel flashes for Hask's leg as he scrambles up, fever-weak, and the hook bites — but it's a shallow, glancing wound, absorbed in the scramble, and then the willows swallow all four of them whole, the enforcers' shouts already fading into rain and reed-hiss behind. They've got the route. They've got each other. They do not, yet, have Bren.",
    "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The channel spits you out onto a low hummock of reed-root and drowned stone, barely wider than a cottage floor, but it's dry enough to kneel on. Rain still hisses through the willows, but here, for a moment, no spears, no barge-creak, no swarm-song — just the four of you, breathing. Hask shivers hard against Rill's flank, the fever's grip not yet broken, while Fenwick stares north into the dark like Bren's voice is still cutting a line through it. Maud checks hands and packs for what the crossing cost them; Eira watches the treeline, counting the seconds since anything last moved out there. The question isn't whether you rest — it's whether you can afford to, and what you'll owe by the time you're moving again.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Maud",
+   "kind": "speech",
+   "text": "We hold here two hours and no longer. Eira, deep-well water if the reeds have it — boiled if we can risk the fire. Fenwick, north-facing watch. Hask, you stay down; fever needs cool and time, not another march.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Maud",
+   "kind": "action",
+   "text": "(Maud settles beside Hask with the weight of old habit, one hand finding his shoulder the way a shield-wall soldier touches the injured — steady, certain, no wasted movement. She reads his fever like water-sign, the heat coming off him all wrong, and her jaw tightens with recognition. The Pilgrim Road burned into her every memory of marsh-sickness: sweat that won't cool, breath that comes wrong, the sweet-sick smell of bad water settling in the blood. She looks across the hummock at the others — Fenwick staring north like Bren's voice is still cutting a line through the dark, Eira's hawk-eyes never leaving the treeline, Rill shaking against her master's leg — and something settles in her, the old steel coming back. Someone has to hold the line. Tonight it's her.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Hask",
+   "kind": "speech",
+   "text": "Bren's out there in the dark. But first I need to know what I did with these hands when the fever had me.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Hask",
+   "kind": "action",
+   "text": "(Hask stares at his trembling palms—something dark under the nails from things he did in the delirium that he can't remember and doesn't want to. He's still wracked with fever-shakes, pressed against Rill's steady flank for balance, eyes tracking the dark treeline to the north where Fenwick keeps staring like Bren's voice might still be cutting a line through the rain.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Eira",
+   "kind": "speech",
+   "text": "Hask, let me check your hands. The fever's getting worse.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Eira",
+   "kind": "action",
+   "text": "(Eira keeps her eyes on the dark treeline as she moves to Hask's side, kneeling to check his pulse and skin heat with steady, practiced hands.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Fenwick",
+   "kind": "speech",
+   "text": "I can't stay here. We move now, or I go alone. Bren's out there and the trail won't wait for us to rest.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Fenwick",
+   "kind": "action",
+   "text": "(Fenwick tears his gaze from the dark treeline and pushes himself upright, his hands already reaching for his pack with sharp, urgent movements. There's a desperation burning behind his eyes—the need to move, to follow, to not lose Bren a second time. His voice cuts through the rain-sound: 'North and dark. That's the channel to Saint Orrins, the drowned temple. Bren knew it. I know it.')",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Fenwick",
+   "kind": "speech",
+   "text": "The trail is fresh. Bren went north—I know these channels better than anyone alive, and I won't sit here watching the rain drown the only lead we have. If the rest of you won't move, I'm going alone.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Fenwick accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Fenwick's hand is already on his pack strap when Maud crosses the hummock in three strides and grips his wrist — not to stop him, but to make him look at her. \"You go alone, you die alone, and Bren stays lost.\" It isn't kindness; it's the shield-wall soldier's math. Fenwick's jaw works, and the compel lands where it has to: the one surviving copy of the Order's false relic map is still tucked against his ribs, and just *having* it has made him a marked man since the day he took it. He can't leave it behind, and he can't stop reading it by feel in the dark, tracing the line that points away from Saint Orrin's Drowned Temple toward whatever Bren actually found. He accepts it — the weight of it, the fate point that comes with — and forces himself to crouch back down, map pressed flat under his palm, waiting. Eira gets her water boiled thin and bitter over a cupped, smothered flame, easing it past Hask's cracked lips while Rill presses close enough to shiver in time with him; the fever doesn't break, but it stops climbing, held level for now by Eira's steady hands and the plague-ward chants she learned before she had words for anything else. Two hours come and go with nothing louder than rain and Hask's ragged breathing — until, right at the edge of them, Fenwick swears he hears it: not the swarm-song, but boots. Careful ones. Someone out there knows how to move without splashing, and they're circling toward the hummock from the north — exactly the direction the map points.",
+   "visible_to": "all"
   }
  ],
  "costs": [
@@ -3423,6 +3924,17 @@
    "placebo": false,
    "tag_in_text": true,
    "repaired": true
+  },
+  {
+   "event": "free_compel",
+   "scene": 4,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Bonded to Bren, once his surveying partner, now hive-touched",
+   "text": "Fenwick's need to chase Bren's trail right now overrides his judgment — he starts breaking camp before Hask can stand, and if the party follows him north immediately, Hask marches straight through the worst of his fever instead of breaking it, risking a collapse deeper in the mire.",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Fenwick"
   }
  ],
  "referee": {
@@ -3472,12 +3984,12 @@
  "interview": null,
  "chronicle": null,
  "state_end": {
-  "tension": 4,
+  "tension": 5,
   "fp": {
    "Maud": 3,
    "Hask": 0,
    "Eira": 1,
-   "Fenwick": 3
+   "Fenwick": 4
   },
   "surfaced": [
    "EI-03",
@@ -3499,21 +4011,21 @@
   ],
   "draws": 5,
   "turns": {
-   "Maud": 4,
-   "Hask": 4,
-   "Eira": 4,
-   "Fenwick": 4
+   "Maud": 5,
+   "Hask": 5,
+   "Eira": 5,
+   "Fenwick": 5
   }
  },
  "notes": [],
  "metrics": {},
  "tokens": {
-  "prompt": 773317,
-  "completion": 122531,
-  "cost_usd": 2.1623,
-  "calls": 53
+  "prompt": 918349,
+  "completion": 147004,
+  "cost_usd": 2.501,
+  "calls": 61
  },
- "llm_calls": 53,
+ "llm_calls": 61,
  "call_log": [
   {
    "seq": 1,
@@ -3938,6 +4450,70 @@
    "cached": false,
    "prompt_tokens": 44867,
    "completion_tokens": 2672
+  },
+  {
+   "seq": 21,
+   "agent": "GM",
+   "kind": "gm_frame",
+   "cached": false,
+   "prompt_tokens": 37046,
+   "completion_tokens": 905
+  },
+  {
+   "seq": 9,
+   "agent": "Fenwick",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4558,
+   "completion_tokens": 3772
+  },
+  {
+   "seq": 9,
+   "agent": "Maud",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4497,
+   "completion_tokens": 4631
+  },
+  {
+   "seq": 10,
+   "agent": "Hask",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4537,
+   "completion_tokens": 4709
+  },
+  {
+   "seq": 9,
+   "agent": "Eira",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4545,
+   "completion_tokens": 5273
+  },
+  {
+   "seq": 22,
+   "agent": "GM",
+   "kind": "gm_adjudicate",
+   "cached": false,
+   "prompt_tokens": 43947,
+   "completion_tokens": 2932
+  },
+  {
+   "seq": 10,
+   "agent": "Fenwick",
+   "kind": "player_compel",
+   "cached": false,
+   "prompt_tokens": 5131,
+   "completion_tokens": 877
+  },
+  {
+   "seq": 23,
+   "agent": "GM",
+   "kind": "gm_narrate",
+   "cached": false,
+   "prompt_tokens": 40771,
+   "completion_tokens": 1374
   }
  ],
  "models": {
@@ -3946,5 +4522,5 @@
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 849.3
+ "elapsed_s": 983.3
 }

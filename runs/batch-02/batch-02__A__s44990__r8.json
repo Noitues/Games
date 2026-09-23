@@ -4,7 +4,7 @@
  "arm": "A",
  "seed": 44990,
  "spec_version": "0.3.1",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 8,
@@ -4205,6 +4205,174 @@
     "Fenwick": 1
    },
    "gm_fp": 2
+  },
+  {
+   "event_id": 143,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "1",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 4,
+    "Hask": 4,
+    "Eira": 1,
+    "Fenwick": 1
+   },
+   "gm_fp": 2
+  },
+  {
+   "event_id": 144,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-02 1/5",
+   "tension": 4,
+   "notes": "off-screen d6=6",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 4,
+    "Hask": 4,
+    "Eira": 1,
+    "Fenwick": 1
+   },
+   "gm_fp": 2
+  },
+  {
+   "event_id": 145,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "3",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 4,
+    "Hask": 4,
+    "Eira": 1,
+    "Fenwick": 1
+   },
+   "gm_fp": 2
+  },
+  {
+   "event_id": 146,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "2",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 4,
+    "Hask": 4,
+    "Eira": 1,
+    "Fenwick": 1
+   },
+   "gm_fp": 2
+  },
+  {
+   "event_id": 147,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "L-05 -> L-05v2",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "Its Secret Channels Now Known to the Party",
+   "event_type": "mutation",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 4,
+    "Hask": 4,
+    "Eira": 1,
+    "Fenwick": 1
+   },
+   "gm_fp": 2
+  },
+  {
+   "event_id": 148,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "FP: Maud=4, Hask=4, Eira=1, Fenwick=1",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 4,
+    "Hask": 4,
+    "Eira": 1,
+    "Fenwick": 1
+   },
+   "gm_fp": 2
   }
  ],
  "scenes": [
@@ -5146,7 +5314,19 @@
    "owner": "Maud",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "MA-02",
+    "type": "ROOTS",
+    "owner": "PC-MAUD",
+    "title": "Hollowmoot's Faithful",
+    "power_tags": [
+     "Trusted by the drowned congregation of Hollowmoot",
+     "Can rally a crowd with a word",
+     "Knows every family's secret grief"
+    ],
+    "weakness": "Cant refuse a desperate plea"
+   }
   },
   {
    "event": "altered",
@@ -5156,7 +5336,19 @@
    "tag": "Knows every family's secret grief",
    "text": "The shielded lantern doesn't just light empty stone — it catches a woman huddled against the far wall, soaked to the bone, rocking in time with the counting-song like it's a hymn she can't stop singing back. Hask knows a civilian panic-freeze when he sees one and holds Eira back with a flat hand. Th",
    "improvised": false,
-   "tag_in_text": true
+   "tag_in_text": true,
+   "card": {
+    "id": "MA-02",
+    "type": "ROOTS",
+    "owner": "PC-MAUD",
+    "title": "Hollowmoot's Faithful",
+    "power_tags": [
+     "Trusted by the drowned congregation of Hollowmoot",
+     "Can rally a crowd with a word",
+     "Knows every family's secret grief"
+    ],
+    "weakness": "Cant refuse a desperate plea"
+   }
   },
   {
    "event": "tie",
@@ -5168,7 +5360,20 @@
    "improvised": false,
    "mode": "gm_card",
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "L-03",
+    "type": "LOCATION",
+    "owner": "GM",
+    "title": "Hollowmoot",
+    "power_tags": [
+     "stilt-town market",
+     "gossip-heavy taverns",
+     "Warden watchtower"
+    ],
+    "weakness": "Quarantine Bells Ring Often",
+    "clock": "0/4"
+   }
   },
   {
    "event": "beat_fill",
@@ -5179,7 +5384,19 @@
    "text": "The betrayer is Rell, a cousin from Hask's own ferry-line family — someone who poled boats beside him as a child and knows the Gullet Ford as well as he does.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "HA-01",
+    "type": "ROOTS",
+    "owner": "PC-HASK",
+    "title": "Born on the Ferry Lines",
+    "power_tags": [
+     "Child of the Gullet Ford ferry family",
+     "Can pole a boat through any current",
+     "Knows the drowned roads beneath the water"
+    ],
+    "weakness": "Distrusts anyone whos never worked a ferry"
+   }
   },
   {
    "event": "beat_fill",
@@ -5190,7 +5407,19 @@
    "text": "The cartel's people cornered Rell and squeezed: they want Fenwick's forbidden knowledge of every hidden channel between Hollowmoot and the reeds, and Rell's price for keeping her own family dry was to lead the enforcers straight to the party.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "FE-01",
+    "type": "ROOTS",
+    "owner": "PC-FENWICK",
+    "title": "Cast Out from the Stilt Villages",
+    "power_tags": [
+     "Exiled from the Stiltfolk Clans for forbidden mapmaking",
+     "Knows every hidden channel between Hollowmoot and the reeds",
+     "Draws maps no one else dares make"
+    ],
+    "weakness": "No clan will shelter him"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -5205,7 +5434,19 @@
    "owner": "Hask",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "HA-01",
+    "type": "ROOTS",
+    "owner": "PC-HASK",
+    "title": "Born on the Ferry Lines",
+    "power_tags": [
+     "Child of the Gullet Ford ferry family",
+     "Can pole a boat through any current",
+     "Knows the drowned roads beneath the water"
+    ],
+    "weakness": "Distrusts anyone whos never worked a ferry"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -5220,7 +5461,19 @@
    "owner": "Fenwick",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "FE-01",
+    "type": "ROOTS",
+    "owner": "PC-FENWICK",
+    "title": "Cast Out from the Stilt Villages",
+    "power_tags": [
+     "Exiled from the Stiltfolk Clans for forbidden mapmaking",
+     "Knows every hidden channel between Hollowmoot and the reeds",
+     "Draws maps no one else dares make"
+    ],
+    "weakness": "No clan will shelter him"
+   }
   },
   {
    "event": "compel:backstory guarantee (extra card)",
@@ -5235,7 +5488,19 @@
    "owner": "Eira",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "EI-04",
+    "type": "REACH",
+    "owner": "PC-EIRA",
+    "title": "The Cartels Ledger",
+    "power_tags": [
+     "Owes the Blackwater Cartel for smuggled medicine",
+     "Knows the Wick Lane Cellars hidden paths",
+     "Can move unseen through smuggler tunnels"
+    ],
+    "weakness": "The Cartel calls in favors at the worst times"
+   }
   }
  ],
  "referee": {
@@ -5287,6 +5552,11 @@
     "section": "§3",
     "issue": "invoke on a tag that is not live for them: ('HA-01', 'Can pole a boat through any current')",
     "source": "engine"
+   },
+   {
+    "section": "§6A ('Resolving a story draw', step 3) and §7 (rail 5-card limit)",
+    "issue": "Story Pile cards MA-05 (drawn scene 1, event 12-13) and EI-05 (drawn scene 2, event 29-30) were placed face-up on the rail but were never returned to their Story Pile / removed from the rail at any subsequent scene-end cleanup (§6A: 'At scene end, return it and its echo slips to its pile and reshuffle, unless it was retired'). Neither card was retired. As a direct consequence, the rail exceeded the 5-card §7 limit without a compensating discard at multiple points - most clearly at event 29, where adding EI-05 brought the rail to 6 cards (H-01, L-05, MA-05, L-02, T-03, EI-05) with no eviction logged.",
+    "source": "referee"
    }
   ],
   "ambiguities": [
@@ -5361,14 +5631,228 @@
     "detail": "event 130",
     "scene": 5,
     "source": "engine"
+   },
+   {
+    "section": "§7 (rail limit) / §6A (pile cleanup)",
+    "issue": "The rail-overflow rule only says to remove 'the oldest non-GLOBAL GM card' when the 5-card limit is exceeded. It does not say what to do when the overflow is caused by a Story Pile card (as at event 29, adding EI-05 when the rail already held H-01, L-05, MA-05, L-02, T-03 = 5 cards) or by another non-GM addition. The table's interim behaviour was to add the card anyway with no eviction, letting the rail run over 5 cards for the rest of the session.",
+    "interim_ruling": "No eviction occurred for the overflow; the log shows the rail exceeding 5 cards at several points (events 29, 53, 58, 85) with only sporadic single-card 'rail limit' discards later (events 101, 105, 109) that never fully corrected the backlog.",
+    "source": "referee"
+   },
+   {
+    "section": "§10 Step B ('Evaluate threats that left play')",
+    "issue": "Step B is written for 'threats' that left play, and its procedure (mutate with a version suffix, or retire) most naturally reads as covering THREAT/FACTION cards. At event 147 it was applied to L-05, a LOCATION card, producing L-05v2. It is unspecified whether Step B's mutate/retire treatment is meant to cover any GM card type that left play (LOCATION, HAZARD, CULTURE) or is limited to THREAT/FACTION.",
+    "interim_ruling": "The table applied Step B to the LOCATION card L-05 as if it were a 'threat', mutating it into L-05v2.",
+    "source": "referee"
+   },
+   {
+    "section": "§4 step 4 (refusal cost) / engine refusal follow-up",
+    "issue": "The engine refused the GM's attempted refusal-cost for Fenwick's declined compel at event 104 (it tried to use FE-01's own 'Warden watchtower' tag instead of a face-up GM tag, as required when a compel is refused). No corrected cost event appears anywhere later in the log to replace the refused one, so it's unclear whether a valid face-up-GM-tag cost was ever actually applied for that refusal.",
+    "interim_ruling": "Not recorded; the refused cost attempt has no visible replacement in the log.",
+    "source": "referee"
    }
   ],
-  "cost_checks": [],
-  "friction": []
+  "cost_checks": [
+   {
+    "event_id": 56,
+    "used_drawn_card": true,
+    "note": "Altered-scene draw MA-02 changed a scene element using power tag 'Knows every family's secret grief' (used in the fiction discovering Yara)."
+   },
+   {
+    "event_id": 57,
+    "used_drawn_card": true,
+    "note": "Surfacing compel on MA-02 used its weakness tag 'Cant refuse a desperate plea', quoted plainly in the narration."
+   },
+   {
+    "event_id": 90,
+    "used_drawn_card": true,
+    "note": "Tie/minor-cost draw L-03 used its weakness tag 'Quarantine Bells Ring Often', named and used in the fiction."
+   },
+   {
+    "event_id": 99,
+    "used_drawn_card": true,
+    "note": "Beat Frame WHO blank filled from HA-01 using power tag 'Child of the Gullet Ford ferry family', used in the fiction (Rell as Hask's ferry-family cousin)."
+   },
+   {
+    "event_id": 99,
+    "used_drawn_card": true,
+    "note": "Beat Frame WHY blank filled from FE-01 using power tag 'Knows every hidden channel between Hollowmoot and the reeds', used in the fiction (the cartel's price for Rell)."
+   },
+   {
+    "event_id": 100,
+    "used_drawn_card": true,
+    "note": "Surfacing compel on HA-01 used its weakness tag 'Distrusts anyone whos never worked a ferry', quoted and used in the fiction."
+   },
+   {
+    "event_id": 104,
+    "used_drawn_card": true,
+    "note": "The compel offer itself correctly used FE-01's weakness tag 'No clan will shelter him'. (Separately, the GM's refusal-cost after the refusal did NOT use a valid drawn/face-up GM tag - already caught by the engine; see ambiguity list.)"
+   },
+   {
+    "event_id": 108,
+    "used_drawn_card": true,
+    "note": "Extra pulled-card compel on EI-04 used its weakness tag 'The Cartel calls in favors at the worst times', quoted and used in the fiction."
+   }
+  ],
+  "friction": [
+   {
+    "text": "Two Story Pile draws (MA-05 in scene 1, EI-05 in scene 2) were placed face-up on the rail per §6A but never show a corresponding scene-end rail_remove/return-to-pile event anywhere in the rest of the log, unlike every other rail card. This made it hard to reconstruct the true rail state and rail-limit compliance for scenes 2-5."
+   },
+   {
+    "text": "The compact log omits any corrected cost event after the engine's refusal of the GM's invalid refusal-cost at event 104, so it's impossible to confirm from the log alone whether §4's 'GM builds the cost from a face-up GM tag instead' was ever satisfied for that refusal."
+   },
+   {
+    "text": "Card ID prefixes are inconsistent across categories: most Story Pile cards use an 'S' prefix (SN-01, SEI-01, SMA-01, SFE-01, SHA-01) but the two earliest Story Pile draws (MA-05, EI-05) reuse the player's plain binder-style prefix, which is easy to mistake for a Session Deck/binder card ID during review."
+   }
+  ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "optimizer",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When Maud reached Yara in the black water and spoke her dead son's name—breaking through the hive-influence with the weight of genuine grief shared and witnessed. It was quiet, powerful, and played directly to what Maud is: someone who knows Hollowmoot's sorrows intimately and can hold people through them when magic and force can't.",
+    "most_frustrating": "Sister Orla's compel to carry the relic candle felt like a mechanical obligation that never connected to anything that followed—not the puzzle, not the combat, not Yara's situation. I accepted expecting it would matter, but it just... didn't. That gap between setup and payoff was the one rough patch.",
+    "background_used": "Yara Bell landed perfectly—the GM wove her directly from Maud's past into emotional stakes that mattered. Hollowmoot's connections came through naturally too. The relic candle from Sister Orla felt more imposed and disconnected (see frustration above).",
+    "wanted_but_couldnt": "I wanted to press harder on Sella—the recurring Warden's informant with mysterious allegiances. When her notes appeared, I wanted to chase that thread deeper, but the action moved into the immediate threat (Rell's betrayal). Realistic pacing, but a thread I wish had more room to unravel.",
+    "one_sentence": "Maud's past felt honored and active in play—the GM made her the anchor point for other characters' trust, leaning hard into \"still holds the line\" as her core, and that landed exactly right."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "protector",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 7,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The moment Rell appears leading the enforcers, and then speaks her line: \"I'm saving myself, Hask, the way you taught me.\" A perfectly aimed blade at everything Hask believes about trust and second chances. The recognition hit first, then the wound landed exactly where it meant to.",
+    "most_frustrating": "Taking the 6-point mental hit to his judgment from Rell's words left Hask frozen mid-conflict, doubting himself when he needed to act. It was narratively perfect and that's why it stung—I couldn't defend against a blow about his own choices.",
+    "background_used": "Yes—Rell was Hask's own ferry-line cousin, someone he personally trained and believed in. The GM didn't make it random or unfair; the betrayal was rooted in Hask's own investment in her. It landed as good storytelling even though it hurt like it should.",
+    "wanted_but_couldnt": "I wanted to reach Rell before she committed fully, to find some moment where Hask could offer another way out. But the story needed her betrayal to be absolute, and the combat didn't allow for that kind of appeal. I accept it, but it's what I wish I could have attempted.",
+    "one_sentence": "My backstory was weaponized perfectly—not unfairly, but as the specific blade that would wound Hask most because it came from someone he chose to trust and taught to survive."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "instigator",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 6,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Finding Sella's handwriting in the seam. That moment—recognizing her mark, realizing she was knee-deep in this conspiracy—it pulled everything together. It was the first thread that made sense, and it made me *need* to escalate. The setting was perfect, the discovery earned, and mechanically I got to invoke \"The Informers Debt\" in a way that felt like the card actually mattered.",
+    "most_frustrating": "Not getting to chase Sella directly. She was there in her handwriting, in her betrayal, but not *there*—and the debt between us still feels unresolved. I wanted to follow that thread and didn't get the chance. Also, having Hask block my forward movement once, though in hindsight that was good theater; I just wanted to *go* and couldn't.",
+    "background_used": "All four cards got touched, which was excellent—but unevenly. \"Born Behind the Quarantine Fence\" was invoked and used meaningfully when I panicked in the tight space; \"The Informers Debt\" came alive when I found Sella's mark; \"The Cartel's Ledger\" got called in on the compel. \"The Massacre at Three Elms\" and my oath about the Wardens felt present (the quarantine cadence, the Warden conspiracy) but not *foregrounded*. The GM clearly read the sheet and wove threads together—that landed good. I just wanted the full constellation to burn brighter, particularly the thing I'm actually sworn to prove.",
+    "wanted_but_couldnt": "Confront Sella directly—which makes narrative sense, she wasn't there, but the debt feels like it should come due soon and I'm impatient. Also wanted to dig deeper into *why* the quarantine wardens' cadence is being used by the Drowned Priest, but that's probably a later session question. The mystery is good; I just wanted more pieces before I left those cellars.",
+    "one_sentence": "My background got used skillfully—three of my four cards came alive in ways that mattered—but \"The Massacre at Three Elms\" felt present only as atmosphere, not as the weight Eira actually carries, and I left the session with Sella still a ghost I'm hunting instead of a confrontation I can close."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "tactician",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 6,
+    "control": 6,
+    "play_again": 6
+   },
+   "free_text": {
+    "best_moment": "Recognizing the quarantine cadence in Yara's singing and connecting it to Bren's old survey notation. That moment crystallized why Fenwick matters to this story—his expertise and his haunted knowledge of Bren's patterns let him see what everyone else missed, and it changed everything about what was really happening beneath Wick Lane.",
+    "most_frustrating": "The Rell betrayal was visceral and well-played, but it landed on Hask's wound, not Fenwick's. My maps were the prize they were after, but I didn't get a personal moment confronting that—it was all action and escape. Would have liked more room to actually *use* Fenwick's planning and scouting nature instead of just reacting to discovered danger.",
+    "background_used": "All of it landed excellently. Bren haunted every discovery (not forced—earned through play), the oath to him felt genuinely tested when I refused the compel, the Holdfast channels became the story's spine. The Cartel debt provided the frame. Nothing felt tacked on; it all emerged from the fiction naturally.",
+    "wanted_but_couldnt": "I wanted to scout deeper before committing—Fenwick *plans* before risking things. The cellar's pace didn't really allow for that; discovery and danger came too fast. Also wanted a quieter moment with Bren's echoes, something more than just recognizing patterns. The escape was brilliant but almost felt like it happened *to* Fenwick rather than him choosing it deliberately.",
+    "one_sentence": "Bren's ghost and the forbidden oath made Fenwick essential to this story, and refusing to break it for the Cartel felt like the truest thing he could do."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Maud",
+    "turns": 15,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Hask",
+    "turns": 14,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Eira",
+    "turns": 16,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Fenwick",
+    "turns": 14,
+    "references_to_others_background": 0
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "Cornered in the Wick Lane Cellars by cartel enforcers and Hask's own cousin Rell, the party broke the ambush through blade, grit, and Eira's intimate knowledge of the tunnels, taking down both enforcers and subduing Rell despite the wound her betrayal left in Hask's trust. With Yara safe in Maud's care and the maps to the Holdfast still slung across Fenwick's back, they escaped Hollowmoot's tolling quarantine bells through a hidden drowned channel Fenwick traced beneath the cellar floor. The cartel's play for the Holdfast maps has failed for now, but Rell's fate — and the debt she was squeezed to pay — remains an open wound in the family Hask thought he could always trust.",
+  "closing_tension": 4,
+  "reverberations": {
+   "growth": {
+    "EI-01": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "MA-02": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "HA-01": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "EI-04": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    }
+   },
+   "clocks": [
+    "F-02 1/5"
+   ],
+   "mutations": [
+    {
+     "from": "L-05",
+     "to": "L-05v2"
+    }
+   ],
+   "retired": []
+  },
+  "retired": [
+   {
+    "card": "N-02",
+    "how": "story pile over limit",
+    "session": 1
+   }
+  ]
+ },
  "state_end": {
   "tension": 4,
   "fp": {
@@ -5408,14 +5892,113 @@
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 1298646,
-  "completion": 198193,
-  "cost_usd": 3.4143,
-  "calls": 86
+ "metrics": {
+  "arm": "A",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Eira",
+   "Fenwick",
+   "Hask",
+   "Maud"
+  ],
+  "backstory_all_players": true,
+  "deck_surfaced_all_players": true,
+  "deck_draws": 2,
+  "draw_costs": 8,
+  "draw_cost_used_card_rate_engine": 1.0,
+  "draw_cost_tag_in_text_rate": 1.0,
+  "draw_cost_repaired": 4,
+  "draw_cost_used_card_rate_referee": 1.0,
+  "fp_end": {
+   "Maud": 4,
+   "Hask": 4,
+   "Eira": 1,
+   "Fenwick": 1
+  },
+  "fp_end_mean": 2.5,
+  "fp_earned": {
+   "Maud": 2,
+   "Eira": 2,
+   "Hask": 2
+  },
+  "fp_spent": {
+   "Hask": 1,
+   "Eira": 4,
+   "Fenwick": 2,
+   "Maud": 1
+  },
+  "compels_accepted": 5,
+  "compels_refused": 1,
+  "compels_deck": 4,
+  "compels_free": 2,
+  "turns": {
+   "Maud": 7,
+   "Hask": 7,
+   "Eira": 7,
+   "Fenwick": 7
+  },
+  "turn_gini": 0.0,
+  "invokes": {
+   "Hask": 1,
+   "Eira": 5,
+   "Fenwick": 1,
+   "Maud": 1
+  },
+  "invoke_gini": 0.375,
+  "tension_trajectory": [
+   3,
+   4,
+   3,
+   4,
+   3,
+   4
+  ],
+  "clock_marks": 1,
+  "violations": 7,
+  "violations_engine": 6,
+  "violations_referee": 1,
+  "ambiguities": 11,
+  "ambiguity_ids": [
+   "AMB-01",
+   "AMB-12",
+   "AMB-20",
+   "AMB-22",
+   "AMB-27",
+   "§10 Step B ('Evaluate threats that left play')",
+   "§4 step 4 (refusal cost) / engine refusal follow-up",
+   "§7 (rail limit) / §6A (pile cleanup)"
+  ],
+  "gm_improvised_complications": 2,
+  "card_supplied_complications": 8,
+  "improvisation_share": 0.2,
+  "guarantee_pulled": 3,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6.25,
+   "involvement": 6.5,
+   "connection": 6.5,
+   "control": 5.75,
+   "play_again": 6.75
+  },
+  "involvement_var_within": 0.25,
+  "personality": {
+   "Maud": "optimizer",
+   "Hask": "protector",
+   "Eira": "instigator",
+   "Fenwick": "tactician"
+  },
+  "elapsed_min": 33.9,
+  "cost_usd": 4.2693
  },
- "llm_calls": 86,
+ "tokens": {
+  "prompt": 1494309,
+  "completion": 256468,
+  "cost_usd": 4.2693,
+  "calls": 94
+ },
+ "llm_calls": 93,
  "call_log": [
   {
    "seq": 1,
@@ -6104,6 +6687,62 @@
    "cached": false,
    "prompt_tokens": 48014,
    "completion_tokens": 1506
+  },
+  {
+   "seq": 29,
+   "agent": "GM",
+   "kind": "gm_post",
+   "cached": false,
+   "prompt_tokens": 21738,
+   "completion_tokens": 866
+  },
+  {
+   "seq": 1,
+   "agent": "Referee",
+   "kind": "referee",
+   "cached": false,
+   "prompt_tokens": 27480,
+   "completion_tokens": 28905
+  },
+  {
+   "seq": 1,
+   "agent": "Hask#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11737,
+   "completion_tokens": 1621
+  },
+  {
+   "seq": 1,
+   "agent": "Maud#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11643,
+   "completion_tokens": 1644
+  },
+  {
+   "seq": 1,
+   "agent": "Fenwick#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11692,
+   "completion_tokens": 1910
+  },
+  {
+   "seq": 1,
+   "agent": "Eira#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11678,
+   "completion_tokens": 2224
+  },
+  {
+   "seq": 1,
+   "agent": "Interviewer",
+   "kind": "interviewer",
+   "cached": false,
+   "prompt_tokens": 9878,
+   "completion_tokens": 19594
   }
  ],
  "models": {
@@ -6112,5 +6751,5 @@
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 1476.2
+ "elapsed_s": 2036.9
 }
