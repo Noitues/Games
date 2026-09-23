@@ -47,3 +47,26 @@ The judge scored each session alone, from a story-only, redacted transcript.
 
 - **Placeholder GM output.** 2 of 217 GM frame/narration calls returned the placeholder "Test narration.". One cut scene 2 of the Arm B reference session short: it ended with that line. The other was replaced before play and never reached a transcript. The judge caught it and scored B's worst moment accordingly, so B's single score is somewhat understated.
 - **Fixed for future batches:** a GM frame or narration that is under 40 characters, or starts with "test", "placeholder" or similar, gets one re-ask (`agents.py`, logged as `placeholder_retry`). batch-02 itself was not re-run.
+
+## Update: 5 B and 5 C sessions, judge v2 (strict world-driven backstory question)
+
+- **Batch extended** with B and C on seeds 2–5, so batch-02 now holds A ×10, B ×5 and C ×5; seeds 1–5 have all three arms.
+- **Judge question sharpened.** A player bringing up their own history no longer counts. `world_driven` means the GM or the world introduced an event from that character's background that the players did not set up.
+- **All 20 sessions were re-judged blind** under the new question (`runs/batch-02/_judgments_v2.json`).
+
+| Judge (1–10) | A (n=10) | B (n=5) | C (n=5) |
+| --- | --- | --- | --- |
+| overall | 7.1 [6.8, 7.4] | 6.6 [5.8, 7.4] | 6.8 [6.4, 7.0] |
+| backstory score (world side) | **5.4** [4.8, 6.1] | **3.2** [2.4, 4.1] | **4.1** [3.3, 5.0] |
+| share of characters whose background was world-driven | 0.80 | 0.45 | 0.70 |
+| sessions where *every* character's background was world-driven | 0.40 | 0.00 | 0.20 |
+| lurker backstory score | 6.4 (n=5) | 3.0 (n=2) | 6.0 (n=2) |
+
+Paired by seed (seeds 1–5, same characters and personalities in every arm):
+
+- **A − B:** backstory +1.50, with A ahead on 4 of 5 seeds; world-driven characters +1.0 per session; overall +0.4. **The Scene-Deck clearly weaves backstory in more than baseline Fate, and doesn't cost enjoyment.**
+- **A − C:** backstory +0.60 (mixed: 3 seeds up, 1 down, 1 flat); world-driven characters ±0; overall +0.2. **Against the placebo, the backstory advantage is small and not established at n = 5.** Much of A's gain over B comes from the structure (drawn complications, compels, Beat Frames), not from the backstory content specifically. The GM ties the generic placebo complications to characters' pasts anyway.
+- **Enjoyment ("overall") does not separate the arms.** The confidence intervals overlap.
+- **The lurker comparison** favours A and C over B (6.4 / 6.0 vs 3.0), but with only 2 lurkers each in B and C.
+
+This is the brief's key A-vs-C question. It is still open, and it would need more paired seeds; the per-seed A − C spread (−2 to +2.25) suggests about 20+.

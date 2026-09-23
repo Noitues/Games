@@ -2,250 +2,249 @@
 
 Selected as: referee-flagged. Status: complete.
 
-Characters: Maud (lurker); Hask (method_actor); Eira (storyteller); Fenwick (rules_lawyer)
+Characters: Petra (optimizer); Anselm (protector); Caddock (instigator); Yarrow (tactician)
 
 
 ## Scene 0
 
-> _Session begins. Each player has Maud 3 FP, Hask 3 FP, Eira 3 FP, Fenwick 3 FP. Face-up: Rising Floodwaters [H-03], The Causeway Wardens [F-03]._
+> _Session begins. Each player has Petra 3 FP, Anselm 3 FP, Caddock 3 FP, Yarrow 3 FP. Face-up: Endless Rain [H-01], The Causeway Wardens [F-03]._
 
 
 ## Scene 1
 
-**GM:** Rain needles down onto slick stone as you crest the last rise and see it: the Ashwater Causeway, a raised spine of old road running north through black water, chained shut at both ends by the Causeway Wardens' toll gates. Torchlight gutters at the near gate, where a knot of soaked, underfed militia check papers and packs by lantern-light, and somewhere behind you the flood is already licking at the low ground you just crossed. The gate captain's bell is ready to ring the quarantine alarm at the first sign of hive-sickness or trouble. You have until the tide turns and the gate chains go up for the night — after that, this is the only dry way north, and it will be closed to you.
+**GM:** Rain hammers the stones of the Ashwater Causeway, sheeting off the chain-gate and the hunched shoulders of a dozen soaked travelers waiting their turn. Torches gutter under oilcloth as two Wardens — more boys than men — check hands and necks for hive-marks by lamplight, ledger open, coin box chained to a post. Somewhere behind you a mule screams and won't go near the water; somewhere ahead, an old woman is arguing that her toll was paid last week and the ledger says otherwise. Petra, you know this gate — you grew up spitting distance from it, and you know at least one of these Wardens by name. The rest of you are strangers here, wet to the bone, and the crowd is starting to look less like travelers and more like a line the Wardens are afraid of.
 
-**Maud:** Captain Orsa. Is the Causeway still clear to the north?
+**Petra:** I grew up here at this gate. The ledger gets muddled in this rain—she paid, I'm certain. These folk are with me.
 
-**Maud:** (Maud steps up to the checkpoint with the others, taking in the militia and the rising water beyond with a practiced eye. She's walked this road before. She nods slightly to the Gate Captain.)
+**Petra:** (Petra steps forward through the crowd with the ease of someone who grew up spitting distance from this gate. She approaches the Wardens and greets them with familiar recognition, then turns her attention to the old woman's toll dispute, using her intimate knowledge of the Ashwater Tollgate to help settle the confusion. She'll vouch for her travel companions next.)
 
-**Hask:** Captain Orsa? Hask, of the Gullet Ford line. We're stilt-folk moving north before the flood swallows the low roads—the water's already at our heels.
+**Anselm:** I'm Anselm—an exorcist. Your ledger-work matters, but let me help you check the marks. Two eyes are better than two boys drowning in rain and doubt.
 
-**Hask:** (Hask walks up to the gate with the easy confidence of someone who's grown up around water-folk and fords. He names himself by his family line, the way a marsh person does. Rill pads close beside him, the hound's hive-scent marking them both as clan-trusted. Hask's eyes are on the Captain—not hostile, not pleading, just direct as the rising tide behind them.)
+**Anselm:** (Anselm moves through the crowd toward the Wardens' station, shoulders squared against the downpour. He keeps his hands visible and his voice level—no judgment in it, only respect for the work they're doing. He positions himself at their shoulder to observe their method closely, ready to lend both presence and expertise to settle the crowd's rising fear.)
 
-**Eira:** Gate Captain Orsa? I'm Eira, a midwife out of Sallow's Teeth. There's a woman in labor waiting on the north side, and the floodwaters won't care about our paperwork—I need passage before that gate chain goes up.
+**Caddock:** Everyone here knows you're terrified. So let's stop pretending this checkpoint is anything but fear keeping us in line.
 
-**Eira:** (Eira walks through the knot of soaked militia with the assured step of someone who moves confidently through crisis. She's as wet and weathered as anyone here, but her posture is steady. She reads Orsa's face carefully—the exhaustion, the fear—and keeps her own expression open and direct. A midwife learns to read the fear in a room quickly. She reaches the gate captain's lamplight, meeting her eyes with the calm certainty of someone who has delivered in worse weather than this.)
+**Caddock:** (Caddock steps forward into the lantern light, her voice cutting through the rain and the crowd's murmur. She speaks clearly to everyone—Wardens and travelers alike—calling out the truth everyone already knows. The Wardens are frightened, and it's their fear, not any real authority, that keeps this line docile.)
 
-**Fenwick:** Captain Orsa, I'm Fenwick. I need passage north before the gate closes for the night. What's your procedure—are you just checking papers, or is there something else you're looking for tonight?
+**Yarrow:** Stay loose and watch the Wardens' eyes, not their hands.
 
-**Fenwick:** (Fenwick steps into the torchlight, picking his way carefully between the militia. He takes in the state of the Wardens—soaked, nervous, watching the dark water with one eye always on the bell. He presents himself to Gate Captain Orsa with his hands visible and his travel papers ready.)
+**Yarrow:** (Yarrow steps back from the immediate press of the wet crowd, body language calm but eyes sharp. With the practiced ease of someone who's stood militia watch, he reads the moment—the Wardens' rigid fear, the crowd's simmering resentment. This isn't about late tolls or routine hive-marks.)
 
-**GM:** Orsa turns from the ledger table, rain sheeting off her hood, and takes the four of you in with the flat, tired eyes of someone who's done this a hundred times tonight already. "Captain Orsa, still breathing, still counting heads," she says. To Maud: "Clear as far as I know — for now. Chains go up when the bell says so, not before, not after." To Hask, her gaze flicks to Rill and softens half a degree — stilt-folk and their hounds she trusts more than most. "Ford's drowning, is it. Figures." To Eira, the mention of a labouring woman gets a harder look, weighing truth against the dozen sob stories she's heard today. "Sallow's Teeth's a fair walk from here for a midwife's errand." And to Fenwick, she taps the ledger. "Papers, yes. And I look at hands, throats, eyes — anyone favoring a wound, anyone who won't meet my lamp straight on. Blight doesn't knock first." Behind her, a warden begins uncoiling the chain, testing its weight. The bell-rope sways in the wind, close enough to reach. "You want through tonight, you'll queue like everyone else — and you'll let me look."
+**Caddock:** I'm speaking truth standing here in the wet dark — you're terrified, and that terror is what's dangerous at this gate, not my words. I won't take that back.
 
-**Maud:** I'm ready for your inspection, Captain.
+> _Caddock accepts a compel._
 
-**Maud:** (Maud nods slightly to Orsa and steps forward to queue for inspection. Her movements are steady and practiced—she's walked this causeway before, understands the routine. She meets the lamplight without hesitation, hands visible, letting the Gate Captain look.)
+> _Caddock — create advantage with Empathy: dice + - + + → Superb (+5) vs Great (+4): SUCCESS_
 
-**Hask:** Sound practice, Captain. Rill would warn me before I'd warn myself—her nose doesn't lie. Take your look, we're clean as reed-water.
+> _Yarrow — create advantage with Notice: dice + - + 0 → Superb (+5) vs Average (+1): SUCCESS WITH STYLE_
 
-**Hask:** (Hask steps up to the torchlight without hesitation, meeting Orsa's lamp-gaze steady. He keeps his hands visible and open, turning his throat and palms toward her for inspection. Rill sits at his heel, calm and trusting, a hound that knows the way of checkpoints.)
+**GM:** Caddock's words land like a slap — travelers straighten, murmurs turn to nods, and even old Sergeant Kell's jaw tightens like she's been caught out. The crowd's mood tips visibly: less a line to be managed, more a wall watching two frightened boys with ledgers. Yarrow, meanwhile, has clocked something the others missed — the way Tomas's eyes keep cutting toward the reed-dark water past the chain-gate, not at the crowd at all. He leans in to Petra: "They're not afraid of us. They're afraid of something out there." The rain keeps sheeting down, and the old woman's toll dispute still hangs unresolved in the lamplight, waiting on Petra's word.
 
-**Eira:** Of course, Captain. I've nothing to hide, and the woman waiting has less time than we do.
+**Petra:** Kell, I've known you since we were both small. Your ledger's right here—she paid. But I need to know what's really got you frightened. What's in the water?
 
-**Eira:** (Eira steps forward to meet Orsa's inspection without hesitation, meeting the captain's eyes straight on. She rolls up her sleeves to show her hands and throat clearly, tilts her face toward the lamplight so Orsa can see her eyes unshaded. There's no tension in her body, no evasion—just the quiet, assured presence of someone accustomed to stepping into crisis. She's delivered in worse than this, and it shows in the steadiness of her breath, the clarity of her gaze. When Orsa looks at her, she'll see the weathering of someone who works at the edge of life and death, not someone spinning tales.)
+**Petra:** (Petra steps to the ledger with the ease of someone born here, runs a finger down the rain-smudged entries, and nods to the old woman. "Your toll was paid, Kell—here, three days back, see the mark? The rain's made the ink run." She glances at Warden Tomas, then back to Sergeant Kell with a softer voice. "But that's not what's worrying you two, is it? Not the ledger. Not the crowd." She steps closer to the chain-gate, closer to where Tomas keeps looking toward the dark water. "What's out there?")
 
-**Fenwick:** I've crossed this causeway before, Captain—I know better than to waste your time or risk bringing trouble through your gate. Look as thoroughly as you need to.
+**Anselm:** Your fear's pointed the right way. There's something out there—in the water. Let me look.
 
-**Fenwick:** (Fenwick steps forward into the lamplight without hesitation, hands still visible and open. He extends his travel papers to Orsa with a steady hand and stands motionless for her inspection, meeting her eyes directly. He's clearly spent hard days on the road—his cloak is soaked through, his face weathered by rain and wind—but there's nothing fevered in his bearing, no tremor or wound-favoring that would catch a practiced eye.)
+**Anselm:** (Anselm shoulders through the crowd and past the lantern-light, peering out through the chain-gate into the rain-soaked darkness. His exorcist's eye searches the reed-dark water for hive-sign—the phosphorescent shimmer of infection, shapes moving wrong, the particular wrongness he learned to recognize at the Drowned Mill.)
 
-**Eira:** Sella. I didn't expect to see you here.
+**Caddock:** The crowd knows you're terrified of something out there. They can see it in your hands. So tell us what's waiting in that water, or step aside and let people through who aren't afraid.
 
-> _Eira accepts a compel._
+**Caddock:** (Caddock strides forward to the Wardens' station, and the hostile crowd parts for her like she's cutting a path through resistant flesh. She plants herself close enough to read every tremor in Kell and Tomas's faces—the way a midwife reads a laboring body. She lets the crowd's full weight press against her back, using their newfound hostility like a weapon, letting these two boys *feel* how many eyes are watching them break.)
 
-**GM:** Sella straightens from where she's been murmuring numbers to a warden clerk, and for a heartbeat her face is unreadable — then it closes like a shutter. "Eira," she says, flat, careful not to let Orsa hear the weight in it. Eira's composure cracks just enough to show: her hands still, her breath catches, and the easy midwife's calm she wore a second ago slips. Orsa notices the hitch — not dramatic, but a captain who reads faces for a living catches it anyway. She glances between the two women, and something behind her eyes sharpens, filing the moment away rather than acting on it yet. "You two know each other," Orsa says. Not a question. Sella says nothing, which says everything. The queue holds; the inspection isn't over.
+**Yarrow:** You're watching the water, not the crowd. So what are we looking at out there, Tomas? I've kept lines before. That's not traveler-fear in your eyes.
 
-**Maud:** Maud says nothing, just watches.
+**Yarrow:** (Yarrow moves from the crowd toward the chain-gate, positioning himself beside Warden Tomas with the easy confidence of someone who's stood similar watches. His body language shifts from observer to fellow guard—not mocking their fear, but acknowledging it as real. He keeps his hands visible, his gaze steady on the dark water beyond the gate where Tomas keeps looking.)
 
-**Maud:** (Maud stays in her place at the checkpoint, watching the exchange between Eira and Sella unfold. Her hands remain visible and still, her posture steady. She reads Orsa's face and the weight of the silence—the captain's sharp attention, the way she's filing away the moment rather than acting yet. Maud's seen this kind of inspection before; she knows how to wait.)
+**Petra:** Tomas, you know me—and you know what that mark means. But you're not afraid of me. What's in that water?
 
-**Hask:** Captain, the marsh is small. Eira walks from Sallow's Teeth to the reeds the same as we do—knowing someone before doesn't mean trouble. We're clean, you've looked, and that woman waiting won't care about old roads crossing.
+> _Petra accepts a compel._
 
-**Hask:** (Hask meets Orsa's eyes steady, Rill settled calm at his heel. He speaks plainly, the way a stilt-man does—no evasion, no performance, just fact. He's giving the Captain an easy way through this, naming what he sees without flinching from it.)
+> _Anselm — create advantage with Lore: dice - - - -, invoking Exorcist Uncertain the Hive Has Souls [AN-HC], Survivor of the Drowned Mill, Haunted by His Sister's Cry [AN-A1] → Great (+4) vs Fair (+2): SUCCESS_
 
-**Eira:** An old acquaintance, Captain. Water under the bridge now — and there's a woman in labor waiting on the north side of that causeway.
+> _Caddock — create advantage with Empathy: dice 0 0 - -, invoking Crowd Turning Against the Wardens [A-1.1.1] → Good (+3) vs Fair (+2): SUCCESS_
 
-**Eira:** (Eira's breath steadies. The hitch in her composure was real, but she's been trained by a lifetime of midwifery to master her fear in a crisis — and this is just another crisis. She meets Orsa's gaze again, her hands still visible, her throat clear, her face open to the lamplight. Her voice is calm, professional, carrying the weight of someone who has delivered babies through worse weather than suspicion. She doesn't elaborate or defend. She just stands steady, waiting for the inspection to complete, her focus already on what comes next: the causeway, the rising flood, the woman waiting.)
+**GM:** Anselm's eyes go distant and cold as he stares into the reeds — and then he sees it: not shapes, but a *rhythm*, a slow, deliberate ripple moving against the current, like something enormous shifting its weight in the dark. He doesn't flinch, but his breath catches. "That's not hive-sign," he mutters. "That's something that *knows* we're watching it back." Beside him, Caddock has Tomas cornered against the chain-post, the crowd's silence pressing in tighter than any threat could — and the boy's composure finally cracks. His ledger hand trembles; the toll-box chain rattles where he's gripping it too hard. "It comes up under the water," Tomas blurts, not to Petra, not to Caddock, but to all of them, to the rain, to no one. "Not every night. Just — sometimes. Something big enough to rock the pilings. Sergeant Kell said if word got out, we'd lose the whole crossing to panic — so we don't write it in the ledger. We just watch the water." Kell's jaw is a hard, ashamed line; she doesn't contradict him.
 
-**Fenwick:** Clean and ready, Captain.
+**Petra:** Hold on. Let me listen with more than my ears—I can hear things in the dark that you can't. What's that song coming from beneath the causeway?
 
-**Fenwick:** (Fenwick stands steady in the torchlight for Orsa's inspection, palms open and throat clear. He keeps his attention on the captain, his bearing calm and cooperative—his gaze doesn't drift to Eira or Sella, signaling clearly he's not involved in whatever just passed between them.)
+**Petra:** (Petra closes her eyes against the hammering rain, her expression going distant and focused. She reaches toward the dark water with the sense that's always marked her apart—the gift of hearing what others can't. Every nerve turns toward that slow, deliberate ripple in the reeds, toward the song beneath the gate that only she has learned to listen for.)
 
-**GM:** Orsa finishes the inspection with a warden's economical thoroughness — hands, throats, eyes, the whole cold litany — and finds nothing that rings her bell. But she doesn't let the queue move yet. She looks once more between Eira and Sella, weighing that hitch of recognition, and then makes her choice: she lets it go, filed away rather than acted on. "Move through," she says, waving the chain-warden back. "Tide's turning and I've got no patience left for old grudges tonight." The gate groans open just wide enough, and one by one you slip past the lantern-light onto the long stone spine of the Causeway, black water hissing at the stones on either side. Behind you, Sella watches you go with an expression she doesn't let Orsa see. Ahead, the north end waits — and somewhere past it, a woman in labor, a war captain's trail, a debt to the Cartel, and all the other roads you've carried onto this one.
+**Anselm:** This isn't hive-corruption. It thinks, it knows we're watching. That changes everything about how we respond.
+
+**Anselm:** (Anselm's gaze remains locked on the reed-dark water, his mind processing the terrible knowledge he's gained. The rhythm he sees—deliberate, purposeful—bears no resemblance to the mindless hunger of hive-corruption he survived at the Drowned Mill. This creature thinks. When he turns to address them, his voice carries the weight of hard-won expertise.)
+
+**Caddock:** You've both seen it. Now so will I.
+
+**Caddock:** (Caddock pushes past Tomas to the chain-gate's edge, grabs one of the hanging lanterns from its hook, and holds it out over the reed-dark water. She leans forward like a midwife reading the signs of labor in flesh—searching the ripples, the disturbances, reading what moves in her marsh.)
+
+**Yarrow:** You did right, Tomas. That secret was eating you both alive. Now—is it coming up tonight? We need to know what we're facing before panic takes this crowd.
+
+**Yarrow:** (Yarrow moves into the space between Tomas and the surge of the crowd, his militia training asserting itself. He reads the rain-dark water like an opponent's stance—the current, the rhythm beneath the storm—and lets his hand find where Brack would be at his side. When he speaks, his voice is steady: the voice of someone who's held militia lines before and knows that control matters more than blame.)
+
+**Petra:** I can hear it calling—it knows I'm listening and I can't—
+
+> _Petra accepts a compel._
+
+> _Petra — create advantage with Notice: dice - + + + → Fantastic (+6) vs Average (+1): SUCCESS WITH STYLE_
+
+> _Anselm — create advantage with Lore: dice 0 0 - 0, invoking Something Moves in the Reed-Dark Water [A-1.1.3] → Superb (+5) vs Average (+1): SUCCESS WITH STYLE_
+
+**GM:** Petra's eyes snap open, breath ragged — the song is real, rising from beneath the causeway itself, and for one terrible heartbeat it seems to *know her name* before she wrenches her attention back to the lamplight and the living. "It's not hive-song," she gasps. "It's older than that. It's calling — but not to feed." Anselm nods grimly beside her, confirming what his own reading told him: whatever moves in that water is patient, aware, deliberate — nothing like the mindless hive-touched he's put down before. Kell watches the two of them with the face of someone who's carried this alone for months and finally set it down. She unhooks the chain herself. "Go," she says, voice cracking. "Go before the bells start again and I have to explain to the captain why half of Hollowmoot heard what you just heard." Tomas waves the crowd through behind them, the old woman's toll forgotten, ledger abandoned in the rain — and the party crosses onto the Ashwater Causeway with the swarm-song still faintly threading the dark behind them, and the unsettling certainty that something in Saint Orrin's belltower now knows exactly who's coming for it.
 
 
 ## Scene 2
 
-**Eira:** The truth Sella owes me: She was there when Captain Merk gave the order to burn Three Elms as a 'containment measure.' She signed the ledger, approved the condemned supplies—she knows it was deliberate murder, that they burned people alive and called it plague policy. Years ago I sheltered her from Warden retaliation when she was caught stealing medicine for the sick. In that shelter, bound by shared mercy, she promised she'd someday tell me the truth. She refuses because it would destroy her usefulness to the Wardens entirely. When she opens her mouth to name me, I freeze—that old quarantine-house terror rising, hands going still, breath catching. But before her words land, I lunge forward and reach for her, begging.
+**GM:** The line at the chain-gate has stopped moving entirely. Sergeant Kell barks for her boys to close ranks, torches guttering as the rain redoubles, and the crowd — already primed by Caddock's words — starts pressing forward with ugly, frightened purpose. Somewhere below, through timber and floodwater, the swarm-song rises again, and this time more than Petra and Anselm seem to hear it: a woman near the gate claps her hands over her ears and screams that it's calling her name. Kell's hand drops to her belt. If the party doesn't do something in the next few breaths, either the Wardens open with steel or the crowd surges the chain and someone drowns in the crush.
 
-**Eira:** Tell them about Three Elms, Sella. Tell them what you signed, what you saw. Tell them the truth instead of destroying me.
+**Petra:** The song isn't attacking—it's drowning, just like we are! I've heard its voice since I was a child—it's calling for shelter, not blood!
 
-> _Eira accepts the compel on 'The Informers Debt'._
+**Petra:** (Petra steps forward between Kell's guards and the crowd, planting herself as an anchor point. She draws on everything her years as a bell-ringer's apprentice have taught her—the language of songs, the rhythms of sound, the way to speak to things that are frightened and drowning. Her voice cuts through the chaos steady and clear, the hard-won authority of someone whose whole life has been about ringing lost people home.)
 
-> _Beat: Sella — the informer Eira has history with, who still feeds names to the Wardens — is WHO turns on the party. She was never neutral; she's been walking the toll line all along, cataloguing faces for Orsa's ledger, and Eira's is one of them. turns on the party, because The WHY is the causeway itself: the toll gate and chains funnel everyone through one choke point Sella controls. She can't slip past the party unseen, and she can't let a debt she owes the Wardens go unpaid — so she chooses now, at the chains, to name them.._
+**Anselm:** Sergeant Kell, hold. I know what's calling from below the causeway, and it won't be answered by your blade—only by your people dying. Stand with me instead.
 
-**GM:** Eira's hand is still stretched toward her, empty air where Sella's sleeve was a heartbeat ago, when Sella straightens, wipes rain from her face, and turns to Captain Orsa instead. "Captain," she says, voice pitched to carry over the chains, "this one's Three Elms. Eira, the midwife who's been telling folk we burned it on purpose." The queue at the gate goes very quiet. Warden hands drift to torches and toll-poles, and the chains — still down, still between the party and the north road — suddenly feel like a cage instead of a fence. Sella won't meet Eira's eyes; she just keeps talking, fast, like a debt finally being paid off in the worst possible coin.
+**Anselm:** (Anselm moves fast, stepping directly between Kell and the crowd before she can draw. He plants himself—hands open, unthreatening, but solid and immovable as a stone wall. His eyes are cold and certain, the look of someone who has stood in worse dark places and lived.)
 
-**Maud:** (Maud steps to stand shoulder-to-shoulder with Eira, hand dropping to rest on her weapon. She turns to face Orsa, and her gaze is steady—neither aggressive nor afraid. The posture of someone who has held lines before.)
+**Caddock:** Look at me—not it, me. You hear your name down there? Good. That means you're alive enough to *answer*. But you answer to me right now, not to that thing. Breathe.
 
-**Hask:** East side, where the stones have fallen—water's shallower there, we can wade it if we move now.
+**Caddock:** (Caddock pushes through the crowd and grabs the screaming woman by the shoulders, forcing eye contact, using her bulk and presence to anchor her to the moment. She's seen this before—the moment when someone breaks. Her grip is firm, her voice cuts through the rain and the panic like a midwife calling a mother back from the edge.)
 
-**Hask:** (Hask drops to one knee at the causeway's edge, his hunting eyes cutting across the dark water. Rill whines and presses against his leg, sensing the urgency. The marsh taught him to read current and depth like text, and there—at the eastern foot where the ancient stones have crumbled into the flood—the water runs shallower than the rest, almost waist-deep, with a current fierce but manageable for someone who knows how to read it.)
+**Yarrow:** I've got the line, Sergeant—stand your people down! Everyone back from the gate, NOW!
 
-**Eira:** You swore me an oath in that shelter, Sella. Tell them what you approved that night—tell them Three Elms was deliberate.
+**Yarrow:** (I step forward into the space between Kell's Wardens and the surging crowd, shoulders squared, my bearing that of a militia guard who's held worse chaos than this. My voice cuts sharp through the rain—not a plea, but a command that carries the weight of years standing the line.)
 
-**Eira:** (Eira's hand falls. The quarantine-house panic rises—suffocating, trapped—then hardens into something sharp. She steps forward through the rain and fixes her eyes on Sella with a midwife's intensity: searching for truth buried beneath fear. She knows Sella's face, her habits, her breaking points. She's reading her the way she reads every frightened woman in labor. She knows exactly what she's looking at: not just a scared informer, but a woman who signed the ledger while children burned.)
+**Petra:** The words catch in my throat—my own name, pulled up from the depths like a hook through my ribs. For one awful heartbeat I can't breathe, can't move. My hand's still raised, but it's trembling now, and everyone can see it.
 
-**Fenwick:** The water doesn't follow the chains—I know every ford and hidden channel through these floodlands. We have another way north.
+> _Petra accepts a compel._
 
-**Fenwick:** (Fenwick's gaze is sharp, reading the terrain and light like a page in one of his maps. He steps forward, positioning himself between the advancing tension and his companions, voice steady and low.)
+> _Petra — overcome with Rapport: dice + + 0 0 → Superb (+5) vs Fair (+2): SUCCESS WITH STYLE_
 
-**Eira:** Tell them, Sella—*tell them*—what you signed that night. Tell them the truth instead of—
+> _Anselm — overcome with Physique: dice + + 0 0 → Superb (+5) vs Good (+3): SUCCESS_
 
-*[Voice cracks, breath catching tight as quarantine-house walls]*
+> _Caddock — create advantage with Empathy: dice + 0 + 0 → Superb (+5) vs Average (+1): SUCCESS WITH STYLE_
 
-—instead of destroying me.
-
-> _Eira accepts a compel._
-
-> _Hask — create advantage with Notice: dice + 0 - + → Superb (+5) vs Fair (+2): SUCCESS WITH STYLE_
-
-> _Eira — attack with Empathy: dice + + - +, invoking Knows Sella the informers face and habits [EI-02] → Legendary (+8) vs Superb (+5): SUCCESS WITH STYLE (Sella mild consequence)_
-
-> _Fenwick — create advantage with Lore: dice + - - 0, invoking Knows which cellars and routes the Cartel values most [FE-03] → Superb (+5) vs Fair (+2): SUCCESS WITH STYLE_
-
-> _Captain Orsa attacks Eira (mental): Good (+3) vs Eira's Will Good (+3) — defended_
-
-**GM:** Sella's mouth is still open on Eira's name when the truth catches up with her — Eira's words land like a blade, and something in the informer's face cracks wide open. "The ledger," Sella chokes out, loud enough for the whole queue to hear, "Merk signed it as containment. I signed the supply order. I knew." The confession detonates through the waiting crowd faster than Orsa can silence it, and for one crucial breath every warden eye is on Sella instead of the party. Orsa's hand snaps out toward Eira's mind, a cold command to freeze and stand down — but Eira holds her ground, that quarantine-house panic burned away by the satisfaction of finally being believed. In the chaos, Hask's read of the shallow eastern ford and Fenwick's knowledge of the hidden water channel converge: the party slips past the stalled chain-line entirely, wading the crumbled stones while Orsa is still trying to get her Wardens' attention back off the informer who just confessed to war crimes in front of half of Hollowmoot. By the time the captain remembers the four strangers at all, they're shadows in the rain on the wrong side of the causeway to stop.
+**GM:** Test narration.
 
 
 ## Scene 3
 
-**Hask:** An old apothecary's lodge, built on stilts where the river branches off. My family marked the channel to reach it—when the blight came, we helped the healer hide her cure-books in the rafters before everything drowned. The acolytes have found the marked channel, and they know exactly what they're searching for now.
+**GM:** Sergeant Kell's voice cracks as she screams for the chain-gate to close — torches swing wild, and the crowd, already primed by Caddock's words, surges against two boys who look ready to either bolt or start swinging. Beneath the timbers, the swarm-song rises louder than before, and this time the whole crowd hears it: a low, wet harmony threading up through the planks like the causeway itself is singing back. Chains rattle. Someone screams that the boards are moving. Kell's hand drops to her belt as she looks for someone — anyone — to blame before this becomes a riot.
 
-**Hask:** That grip's all wrong—you've never worked a ferry, have you? Move aside. I'll take the pole.
+**Petra:** Sergeant, wait! The song—it's not hungry. It's not attacking. I hear it, I *know* it. It's calling, but not to feed. If you start swinging steel now, you'll give the crowd a reason to riot, and the causeway will break all on its own.
 
-> _Hask accepts the compel on 'Born on the Ferry Lines'._
+**Petra:** (Petra raises her voice to cut through the panic, meeting Sergeant Kell's eyes. She plants herself between the surging crowd and the Wardens, one hand raised to ask for attention.)
 
-> _Beat: the Drowned Priest's acolytes seizes the party's goal at the sunken shrine-road beneath Gullet Ford — a drowned crossing only the old ferry families like Hask's ever knew how to find using word passed hand to hand through Hollowmoot's gossip-heavy taverns, tipping the acolytes off hours before the party could move._
+**Anselm:** Listen! What calls from below is not the hive. I know this darkness—it does not hunger for you. Hold steady!
 
-**GM:** The channel Hask's family marked in secret is churned white with wake — a dozen shallow-draft boats already crowd the drowned shrine-road, acolytes wading chest-deep in the black water with lanterns lashed to poles. Someone up on the tilted apothecary lodge is already prying rafter-boards loose, and a soaked bundle wrapped in oilcloth — the healer's cure-books, the ones Hask's family bled to hide — is passed hand to hand down a human chain toward a waiting barge. A gaunt acolyte in temple-white stands thigh-deep at the lodge's broken door, chanting low, drawing the swarm-song out of the belltower distance like he's calling it home. Hask, this is your family's channel, your family's secret — and it's crawling with them because someone in Hollowmoot's taverns couldn't keep their mouth shut.
+**Anselm:** (Anselm steps into the center of the chaos, planting himself where all can see him. His face is steady, his eyes cold and certain—the eyes of someone who has stared into darkness and refused to flinch. He raises his voice to cut through the panic and the rain, speaking with the authority of one who knows these waters.)
 
-**Maud:** Not on my watch.
+**Caddock:** Don't blame me for this, Sergeant. Your hand comes off that belt, or you and I have a problem.
 
-**Maud:** (Maud moves through the water toward the Chanting Acolyte at the lodge door, her weapon raised to stop them and disrupt their work.)
+**Caddock:** (Caddock steps forward with commanding presence, placing herself directly between Kell and the crowd. She doesn't flinch from Kell's gaze or the hand dropping toward her belt. Her entire posture radiates authority and readiness.)
 
-**Hask:** I'll not have this! These waters belong to my family!
+**Yarrow:** Sergeant Kell—the gate is sound. I've held worse posts. Stand your people.
 
-**Hask:** (Hask wades hard into the black water, moving with the certainty of someone who's spent his whole life here. The drowned roads are his family's sacred charge—every channel marked, every current known—and these grave-robbers won't take what his family bled to hide. He drives toward the gaunt acolyte at the lodge door with fury burning in his eyes.)
+**Yarrow:** (Yarrow steps into the gap between the crowd and the closing chain-gate, planting himself with deliberate weight and authority. His presence becomes an anchor point—the bearing of someone trained to hold a line in desperate times. He scans the faces in the lamplight, reading which way the panic will break, and stands firm.)
 
-**Eira:** "Those books didn't get written for temple vaults. They were written in desperation by people trying to save the dying. Every page is a life someone fought for. Are you going to steal that fight and bury it?"
+**Caddock:** So that's how it's going to be, then? You want to give these people a reason to stampede, go ahead. But you'll have to get through me first.
 
-**Eira:** (Eira wades into the black water, her voice steady against the gaunt acolyte's chanting. She speaks of the Three Elms dead—names she still carries—and the fevered children who live because someone *tried* to save them. She's not arguing theology. She's invoking the healer's oath that came before the Order, before the lockdown of knowledge: the duty to heal. Every moment they pass those books toward the barge is a moment she names aloud—a child's pain, a mother's loss, a life that could have been saved.)
+> _Caddock accepts a compel._
 
-**Fenwick:** Stop that chanting—you're calling the Hive down on all of us!
+> _Anselm — overcome with Lore: dice + - + + → Fantastic (+6) vs Fair (+2): SUCCESS WITH STYLE_
 
-**Fenwick:** (Fenwick crouches low and wades through the black water toward the broken lodge, using the darkness and ripples to mask his approach. He recognizes the chant pattern immediately—a Hive-calling, the same kind of thing Bren used to warn him about in hushed tones years ago. He moves to close the distance and strike before the ritual fully takes hold.)
+> _Caddock — attack with Physique: dice + - + +, invoking Last of Marrowreed Village, Burned by the Wardens [CA-A1], Guardian of the Wick Lane Cellars [CA-A3] → Beyond Legendary (+10) vs Fantastic (+6): SUCCESS WITH STYLE (Sergeant Kell mild consequence)_
 
-> _Maud — attack with Fight: dice + 0 + -, invoking Never breaks a shield-wall [MA-03] → Fantastic (+6) vs Good (+3): SUCCESS WITH STYLE (Chanting Acolyte mild consequence)_
+> _Yarrow — create advantage with Notice: dice - + 0 + → Superb (+5) vs Fair (+2): SUCCESS WITH STYLE_
 
-> _Hask — attack with Fight: dice - - - 0, invoking Child of the Gullet Ford ferry family [HA-01], Knows the drowned roads beneath the water [HA-01], Can pole a boat through any current [HA-01] → Great (+4) vs Good (+3): SUCCESS (Chanting Acolyte stress 2)_
-
-> _Eira — create advantage with Empathy: dice - - + 0 → Good (+3) vs Fair (+2): SUCCESS_
-
-> _Fenwick — attack with Stealth: dice 0 0 + +, invoking Bonded to Bren, once his surveying partner, now hive-touched [FE-02] → Fantastic (+6) vs Superb (+5): SUCCESS (Chanting Acolyte taken out)_
-
-**GM:** The chant breaks mid-syllable into a wet, strangled gasp as Fenwick's blade finds him — the gaunt acolyte folds sideways into the black water and does not rise, the swarm-song he was drawing down guttering out like a snuffed candle. For one heartbeat the whole flooded lodge goes silent: no chanting, no lantern-bearers calling orders, just rain and the slosh of four furious strangers who just proved this water is not theirs to take. Maud's opening strike had already staggered the line at the door, Hask drove them back with the fury of a man defending his own blood, and Eira's words — Three Elms, the dead children, the healer's oath — cut through the acolytes' certainty enough that the human chain passing the oilcloth bundle falters, hands hesitating on the healer's cure-books. In the confusion, Hask wades past the broken lodge door and wrenches the bundle free from a boat-hand too stunned to fight for it, hauling his family's stolen legacy back up out of the drowned road. The remaining acolytes, leaderless and rattled by Eira's naming of the dead, scatter their lanterns and shove off into the dark rather than press the fight — Caught Between Doctrine and Conscience, the fight seems to have gone out of at least a few of them. The channel is yours again, for now, and the books are wet but whole in Hask's arms.
+**GM:** Anselm's voice carries over the rain like a bell tolling truth, and something in his utter certainty breaks the crowd's panic — hands lower, breath catches, and for one long moment the only sound is the swarm-song threading up through the timbers, no longer a threat but a mystery shared by everyone listening. Caddock doesn't wait for Kell's hand to finish its drop; she closes the last step between them and plants a finger in the sergeant's chest hard enough to rock her back, voice low and merciless, and Kell — outmatched, outnumbered, and very visibly rattled — flinches back with a fresh welt of humiliation she'll carry into the next fight. Yarrow's stillness does the rest: he simply stands in the gap between crowd and gate like he's held that exact ground a hundred times before, and the line, impossibly, holds — Wardens lower their torches, travelers stop pressing, and the words 'the line holds' pass through the crowd like a held breath finally released. Sergeant Kell straightens, wipes rain and blood from her split lip, and barks at her boys to stand down the chain — beaten, but not broken, and marking every one of you for it.
 
 
 ## Scene 4
 
-**GM:** The dead acolyte sinks and the silence breaks into chaos — lanterns bob wildly as the remaining pilgrims scatter or scream for their fallen brother, and somewhere above the drowned belltower the swarm-song rises again, hungrier now. Orsa's warden skiff is still lashed at the channel mouth, and the apothecary lodge groans on its rotten pilings, half its rafters already stripped. You have maybe minutes before either the tide turns or the acolytes remember you're only four. Fenwick knows this lodge — knows Bren worked a healer's cache here once — and the oilcloth bundle the acolytes were prying loose might be exactly what Hollowmoot needs, or exactly what the Order of the Dry Saint will burn a house down to get back.
+**GM:** The swarm-song crests into a single shuddering note, and the timbers underfoot answer it — a groan, then a lurch, as the flood surges hard against the pilings. Sergeant Kell staggers, torch hissing out, and screams the order no one wants to hear: 'Close the gate! CLOSE IT!' Chains rattle and the crowd shrieks, caught between the rising water behind them and a gate about to seal them out of Hollowmoot for good. Below, through the boards, something vast shifts its weight — patient, unhurried, listening to see what the little creatures above will do.
 
-**Maud:** Look to me. We hold steady here.
+**Petra:** It's not feeding—it's *listening!* The song beneath us speaks no hunger, only patience. Stand firm!
 
-**Maud:** (Maud steps forward into the chaos, shoulders squared, meeting the frightened eyes of the acolytes. She plants herself between them and the scattering pilgrims, her voice cutting sharp and clear through the panic — the voice of someone who has held shield-walls together.)
+**Petra:** (Petra's eyes snap shut as the causeway lurches beneath her feet. She presses her palms flat against the soaked boards, rain streaming down her face, and in the chaos of screaming travelers and rattling chains, she *listens*—truly listens—with the gift that marks her apprenticeship. Deep within the wood, beneath the floodwater, she hears it: vast, patient, ancient. Not the swarm-hive's fractured hunger-shriek clawing upward to devour. Not appetite. Pure, patient *listening*. She breathes through it, plants her feet firm against the surge, and raises her voice like a bell.)
 
-**Hask:** Rill, come!
+**Anselm:** Hold! Formation toward the keep—orderly or everyone dies. Move *now*.
 
-**Hask:** (Hask's eyes snap across the flooded lodge - reading the scattering acolytes, the dark water where Rill will surface, the pale oilcloth bundle still snagged in the rafters above. He moves hard toward his hound, already calculating the fastest way through this chaos and out.)
+**Anselm:** (Anselm pushes into the surging crowd, using his frame to halt the forward crush and create a barrier between the panicking bodies and the closing gate. His voice cuts through the shrieks—not asking, commanding. He won't let people trample each other to death.)
 
-**Eira:** Don't run—you're safer together. I'm here to help.
+**Caddock:** Not a chance, Sergeant—nobody closes this gate while people are still fighting for air!
 
-**Eira:** (Eira moves through the chaos toward the frightened survivors, her voice steady and grounding, calling them together rather than letting fear scatter them. She stands between them and the rising waters like she's stood between so many mothers and death—unwilling to let the marsh have them without a fight.)
+**Caddock:** (Caddock surges forward through the panicked crowd toward the chain mechanism, her broad shoulders cutting through the chaos as she plants herself between the gate and the crowd, reaching out to seize the chain or lever before it can close.)
 
-**Fenwick:** I know this place—the cache is upstairs, away from the water. Move!
+**Yarrow:** Kell, wait—look at how the water's moving! That's not mindless surge, that's something with a purpose beneath us. Let me read what it's actually doing before you seal it all in.
 
-**Fenwick:** (Fenwick moves through the chaos with purpose, his knowledge of Bren's caching habits pulling him toward the upper levels where supplies would be kept dry and safe from the rising tide. He grabs for the oilcloth bundle as he moves, keeping low and calling urgently to the others.)
+**Yarrow:** (Yarrow moves toward the edge of the causeway, eyes locked on the churning water beneath the timbers. His hands grip the railing as he reads the movement like he's read weir-gates his whole life—watching where the current pushes, how the flood piles against the pilings, the rhythm of that vast thing's weight shifting below. He's looking for pattern in the chaos, for the truth beneath Kell's fear.)
 
-**Fenwick:** Bren? No, no no—step aside, friend. We can still get you out of this place. Just step aside.
+**Petra:** It's not—it's not *hungry*, it's just—it's saying—
 
-> _Fenwick accepts a compel._
+> _Petra accepts a compel._
 
-**Maud:** Show me where.
+**Caddock:** You think I'm scared of you, Sergeant? Close this gate over my corpse—these people walk free, and you'll have to go *through* me to stop it.
 
-> _Maud accepts a compel._
+> _Caddock accepts a compel._
 
-> _Maud — create advantage with Rapport: dice 0 0 - -, invoking Can rally a crowd with a word [MA-02] → Great (+4) vs Average (+1): SUCCESS WITH STYLE_
+> _Petra — create advantage with Notice: dice 0 0 0 0 → Great (+4) vs Fair (+2): SUCCESS_
 
-> _Hask — overcome with Notice: dice 0 + 0 0 → Superb (+5) vs Fair (+2): SUCCESS WITH STYLE_
+> _Anselm — overcome with Physique: dice - + - -, invoking Survivor of the Drowned Mill, Haunted by His Sister's Cry [AN-A1] → Good (+3) vs Average (+1): SUCCESS_
 
-> _Eira — create advantage with Empathy: dice - + - 0, invoking Delivered babies in the ruins, remembers every name lost [EI-03] → Superb (+5) vs Fair (+2): SUCCESS WITH STYLE_
+> _Caddock — overcome with Physique: dice - + + 0 → Superb (+5) vs Mediocre (+0): SUCCESS WITH STYLE_
 
-> _Fenwick — overcome with Lore: dice - - - +, invoking Bonded to Bren, once his surveying partner, now hive-touched [FE-02] → Great (+4) vs Fair (+2): SUCCESS_
+> _Yarrow — create advantage with Notice: dice + + 0 0 → Fantastic (+6) vs Fair (+2): SUCCESS WITH STYLE_
 
-> _Frightened Acolyte Survivors attacks Maud (mental): Mediocre (+0) vs Maud's Will Fair (+2) — defended_
-
-**GM:** Maud plants her line and it holds — "Standing Firm Against the Flood" isn't just words now, it's her arms locked wide, her voice cutting through the panic until the scattering pilgrims stop scattering and start listening, even as a knot of them claw at her to get past; she doesn't move, and one by one they stop trying. Hask reads the whole drowning lodge in a glance and Rill surfaces exactly where he needed her, already paddling toward the fastest line out through the wreckage. Eira gathers the frightened survivors to her like she's done a hundred times before at Three Elms — and one of them, an older woman with a Warden's tattoo scarred half-off her wrist, grabs Eira's sleeve and whispers that she saw what really happened there, that she's been hiding in Hollowmoot ever since afraid to speak. Fenwick shoulders up into the rafters and gets a hand on the oilcloth bundle — heavy, dry, unmistakably Bren's old cache — but below him a gaunt shape rises dripping from the black water, survey tools still slung across its ruined chest, and stops. Bren doesn't lunge. He just stands there in the flooded doorway, head cocked, staring up at Fenwick with something that might be recognition flickering behind the hive-blank eyes. The swarm-song swells overhead. You have the bundle, you have the survivors rallied, and you have maybe one clear window before that hesitation breaks.
+**GM:** Caddock's hands close on the chain-lever like iron on iron, and she doesn't just hold it — she wrenches the whole mechanism sideways, jamming the gate wide with a groan of tortured metal that no Warden boy is getting closed again without a crowbar. Anselm's bulk becomes a living wall, funneling the shrieking crowd into something like order, bodies moving instead of trampling. Petra's voice rides over it all, bell-clear: 'It's not hunger — it's patience!' — and something in that certainty steadies even Kell, who lowers her torch an inch. Then Yarrow shouts from the rail, reading the water true: the surge isn't random, it's *pulling back*, the vast shape beneath easing its weight off the pilings like it's granting passage rather than taking it. Kell stares at the retreating current, at her jammed gate, at a midwife twice her size daring her to try again, and makes the only call left to her: 'Let them through. Let them ALL through.' The crowd pours across the causeway into Hollowmoot, soaked and sobbing and alive, as the swarm-song beneath the boards fades to a low, satisfied hum — patient, watching, waiting for another day.
 
 
 ## Scene 5
 
-**Maud:** I needed coin to get Thom Waites clear—my sister's nephew, shrine-keeper—before Orsa's inquiry closed in. The Blackwater Cartel ran him downriver to Three Elms. Rennick says we settle through favors: he wants information on the shrine, the hive-touched, how far the Mother's reach extends. He's betting the silver will loosen my tongue.
+**GM:** The gate hangs wide on Caddock's ruined chain, and the crowd doesn't wait for permission — they pour past the sputtering torches in a shrieking mass, mothers with children on their hips, old men slipping on wet stone. But the swarm-song hasn't stopped; if anything it's louder, and out past the last torchlight the reeds are thrashing where nothing human should be moving. Sergeant Kell, torch dead, drags her remaining boys into a knot at the gate's mouth, more terrified than useless. Something pale breaches the black water at the causeway's edge — not swimming, wading, spear-fast despite the flood — and the crowd's shrieking changes pitch.
 
-**Maud:** No. The line holds.
+**Petra:** Stop! The song brought it up—listen, it carries no hunger, it's not hive-touched, it's *answering* something!
 
-> _Maud refuses the compel on 'The Silver Debt'._
+**Petra:** (Petra's breath catches as the pale thing breaches the water. Instead of panic, she listens—really listens, the way her master taught her. The swarm-song threads through the creature's emergence like a guide-line, and she hears no aggression in that harmony, no feed-hunger-swarm that would mark a hive-touched thing. This is something else entirely. The song sings it up from the deep, something called without voice, and understanding blooms in her like a bell's resonance spreading outward.)
 
-**Fenwick:** It's the submerged archive beneath Saint Orrin's outer shrine—where Bren and I cached our maps of the temple's true structure before my exile. No one knows because those maps showed things the Order would burn me for and the Stiltfolk would kill for. Bren made me swear to keep it secret even after the hive took him, and that's a promise I've kept.
+**Anselm:** Get behind me and keep moving!
 
-**Fenwick:** If we're spotted near that watch-post, there's no going back for me—no clan will take me in after that. But it's worth the risk. That archive holds Bren's final maps, made before the hive took him completely.
+**Anselm:** (Anselm barrels forward through the panicking crowd, his broad shoulders parting bodies like a river around stone. He reaches the causeway's edge and plants himself there, between the pale wading creature and the fleeing people, his eyes tracking its every movement with the intensity of a man who has spent his life studying things that should not exist.)
 
-> _Fenwick accepts the compel on 'Cast Out from the Stilt Villages'._
+**Caddock:** Not on my watch. Get back, all of you — this thing walks over me first.
 
-> _Beat: Rennick, the Blackwater Cartel collector who holds Maud's silver debt, wading up out of the dark with a lantern and a ledger, come to call it in before the flood takes the road begs the party to go to The shrine sits at the end of a drowned channel that shows on no warden chart — but Fenwick, who knows every hidden channel between Hollowmoot and the reeds, traces the way through the reeds without hesitation., because her son followed the swarm-song into the belltower._
+**Caddock:** (Caddock plants herself square in the creature's path, shoulders braced, meeting the pale wading shape head-on with every bit of her bulk and strength. She doesn't flinch from the water or the flood — she's a swamp midwife, and this is her ground.)
 
-**GM:** The rain hasn't slowed, and neither has Rennick. He comes up out of the black water like something that belongs there, lantern held high, ledger clutched against his chest in an oilskin sleeve, and finds Maud with the ease of a man who always knows where his debtors stand. "Line holds, does it," he says, not quite a question, already writing something in the margin. He doesn't press further — not yet — but his eyes cut to the others, cataloguing. Behind you, Fenwick has already found the channel no warden chart shows, the one he swore to Bren he'd never draw again, and it opens dark and narrow through the reeds toward the outer shrine of Saint Orrin's, where his and Bren's cached maps wait beneath the water — and where, somewhere above, a mother's son climbed toward a song that doesn't let go.
+**Yarrow:** Hold steady, Sergeant—I'm looking. Tell me what you see.
 
-**Maud:** Silver doesn't change what needs doing here.
+**Yarrow:** (Yarrow plants himself beside Sergeant Kell at the gate's mouth, invoking Last of the Weir-Keepers, Trusted by the Stiltfolk. His eyes cut through the rain and darkness, separating shadow from substance, reading the waters as only he can—the shape of the thing wading toward them, its gait, its purpose.)
 
-**Maud:** (Maud holds her ground, shoulders squared against the rain, her eyes steady on Rennick—not defiant, just fixed. The line holds.)
+**Petra:** No—no, wait, it's singing *me*—it knows my—
 
-**Hask:** My family marked this channel. I can get us through where the Mother's song can't follow—but we move now, quiet, before the water rises any higher and seals us in.
+> _Petra accepts a compel._
 
-**Hask:** (Hask steps to the channel's edge and crouches, reading the black water with the certainty of someone born to the marshes. His fingers trace the invisible current-path his family marked in secret, and he nods—sharp, final. When he rises, his gaze has already catalogued the scattered lanterns and wading pilgrims, the gaps between them where a small group might slip through unseen.)
+> _Petra — create advantage with Notice: dice - 0 0 +, invoking Bell-Ringer's Apprentice Who Hears the Swarm-Song [PE-HC] → Fantastic (+6) vs Fair (+2): SUCCESS WITH STYLE_
 
-**Eira:** I've been to Three Elms — I know what the hive takes. But if any part of him is still himself, still fighting, there's hope. I'm going in.
+> _Anselm — overcome with Physique: dice - - + - → Average (+1) vs Fair (+2): SUCCESS MAJOR COST_
 
-**Eira:** (Eira's face settles into that focused calm that people recognize—the midwife's mask she wears when she's delivering through a storm. Her hands move through her kit with practiced efficiency, checking vials of medicine, bundles of herbs, things that have helped her walk through impossible births a hundred times. She looks at Fenwick's dark channel opening through the reeds, at the belltower rising above the flooded shrine where a song that doesn't let go is drawing someone's child deeper into itself. Then she steps toward the water. She's delivered too many babies into a burning world not to try one more time.)
+> _Caddock — attack with Physique: dice 0 - - 0, invoking Swamp Midwife Who Delivers in Any Weather [CA-HC], Guardian of the Wick Lane Cellars [CA-A3] → Fantastic (+6) vs Good (+3): SUCCESS WITH STYLE (Hive-Touched Pack mild consequence)_
 
-**Fenwick:** The shrine's that way, Rennick. Bren's archive is beneath it, and I mean to reach it.
+> _Yarrow — overcome with Notice: dice - - - 0, invoking Last of the Weir-Keepers, Trusted by the Stiltfolk [YA-A1] → Good (+3) vs Fair (+2): SUCCESS_
 
-**Fenwick:** (Fenwick turns from Rennick's calculating gaze toward the dark channel cutting through the reeds, rain pattering on his shoulders. The swarm-song rises from the drowned belltower ahead—hungry, urgent. He doesn't hesitate.)
+> _Hive-Touched Pack attacks Caddock (physical): Average (+1) vs Caddock's Athletics Average (+1) — defended_
 
-**GM:** Rennick watches Maud not move, and something in his face settles into cold arithmetic rather than anger — he clicks his ledger shut. "Line holds," he echoes again, softer this time, and there's no threat in it, just a debt being carried forward instead of collected. "Silver waits. It always does." He doesn't follow as the party turns for the channel — he only marks the page, and wades back into the dark the way he came. Behind you, Fenwick has already committed past the point of no return: the hidden channel he swore to Bren he'd never draw again now lies open to whoever finds this place next, and he knows it. Hask cuts the lead, poling them through gaps in the scattered, panicking pilgrims with a current-sense bred into his bones, while Eira checks her kit one last time, the midwife's calm settling over her like armor. The reeds close behind the boats, the swarm-song rising louder ahead from the drowned belltower, and the outer shrine of Saint Orrin's — and Bren's buried archive beneath it — waits at the channel's end.
+**GM:** Anselm holds his ground against the pale wading thing, planting himself as a wall between it and the fleeing crowd — but the creature's shoulder catches him in the surge, hurling him off the causeway edge into the black flood. He goes under hard, the current dragging him toward the reeds, and comes up gasping without his satchel of relics — the exorcist's tools lost to the Sallowmere.
+
+**GM:** Petra's voice cuts through the chaos like a struck bell: 'It carries no hunger!' and the truth of it settles over the causeway like a held breath — the pale thing isn't hive-touched, isn't hunting, it's answering the song, same as her. Caddock doesn't wait to find out if Petra's right about the hive-touched pack snapping at her heels; she puts her whole weight into a driving blow that folds one of them over a hooked spear, and the rest scatter into the reeds nursing a wound that'll slow them for good. Anselm surfaces coughing black water, his satchel of relics gone to the current, but alive — Yarrow's sharp eyes catch him drifting past a piling and he shouts the exorcist toward a handhold before the flood can claim him for good. Sergeant Kell, seeing the pale wader simply stand in the shallows now, singing back to the drowned bells instead of attacking, finally screams the order to let the crowd run — and they do, streaming past the ruined chain-gate into the dark toward whatever dry ground still exists. By the time the last stragglers vanish up the causeway road, the swarm-song has faded to a murmur beneath the timbers, and the Pale One sinks back into the black water without another glance at the living.
 
 
 ## Player feedback
 
-- **lurker** scores {'fun': 6, 'involvement': 6, 'connection': 5, 'control': 6, 'play_again': 7}: best — S4 - "Look to me. We hold steady here." - Maud's quiet strength actually stops the panic. Not flashy, just the core of who she is working perfectly. That's her superpower. | frustrating — The stretch where Rennick confronts her feels like it could have been heavier. Also: the "disgraced militia guard" concept didn't get explored—no reckoning with what the disgrace *is*, no militia colleagues, no deeper history with the Causeway and Orsa beyond a checkpoint interaction. Held the line, but the *why* it matters felt distant. | background — Good. The core concept—"disgraced militia guard who still holds the line"—got a perfect, earned moment in S4. The "holds the line" part was validated completely. The disgrace, the militia identity, the Causeway history... those existed but weren't deeply explored. No unfairness, but room for depth.
-- **method_actor** scores {'fun': 7, 'involvement': 7, 'connection': 7, 'control': 6, 'play_again': 7}: best — The drowned lodge fight—Hask charging in with fury to defend his family's legacy. Visceral, identity-driven, mechanically supported, and it mattered. | frustrating — Nothing significant. If anything, I wanted more exploration of the Ford's current state and maybe one moment where Hask taught someone water-reading—but that's "wanted more," not a real complaint. | background — Born on the Ferry Lines was woven throughout every major scene—the marked channels, the ferry family reputation, the compel about the ferry grip, chances to demonstrate actual expertise. Rill was present and relevant. Not forced, perfectly integrated.
-- **storyteller** scores {'fun': 7, 'involvement': 6, 'connection': 7, 'control': 5, 'play_again': 7}: best — The gate confrontation with Sella. Eira's card "The Informers Debt" became real, personal, and wounding—but then that Empathy roll at the end broke through Sella's defenses and forced the confession about Three Elms public, at exactly the moment when the chaos created our escape route. It was vulnerable, it mattered mechanically, and it proved Eira was right all along. | frustrating — After the gate escape, I felt like I was following Hask's family knowledge and Fenwick's archive-secrets. Eira gathered survivors and made good choices, but I wished I'd had more agency in what direction we took or what we solved, rather than supporting other characters' plot threads. | background — Good. The Sella confrontation was excellent—my card triggered exactly as written, with real emotional weight. Three Elms was woven in thematically throughout. The quarantine-house panic compel landed with genuine weight. Though: the pregnant woman waiting on the north side kind of disappeared from the story once we got through the gate—was she ever real, or just a pretext to push through?
-- **rules_lawyer** scores {'fun': 6, 'involvement': 6, 'connection': 7, 'control': 6, 'play_again': 7}: best — Bren emerging from the water at the lodge with that flicker of possible recognition—it crystallized Fenwick's central emotional conflict and made the later choice to break his oath feel genuinely costly rather than forced. | frustrating — The causeway gate scene moved quickly from negotiation to escape once Sella turned on the party. I was working a social angle with Orsa and wanted more time to explore that angle before the action accelerated. | background — Yes—FE-02 (Bren) appeared at the lodge, FE-03 (Cartel debt) brought Rennick into play, and FE-01 (Cast Out) was compelled when revealing the archive. How it landed: good. All three were organic to the story, thematically appropriate, and didn't feel forced or unfairly stacked against me.
+- **optimizer** scores {'fun': 6, 'involvement': 7, 'connection': 7, 'control': 5, 'play_again': 7}: best — When Petra heard the swarm-song calling her name and understood it carried no hunger—only patience. That moment crystallized everything: her unique gift actually revealed hidden truth that changed the scene's outcome. It's what being a bell-ringer's apprentice who hears the swarm-song *means*. | frustrating — Getting frozen/compelled at key moments when I wanted to take more active mechanical actions. I accepted five compels (which was thematic and got me FP back), but it meant I was mostly the anchor-point and voice while Caddock jammed gates and Anselm took hits. I wanted to *do* something more. Also: the vow to "Ring Everyone Home Before the Flood" hasn't become a real mechanical driver yet—it's sitting there waiting to matter. | background — Good. The Ashwater Tollgate was used immediately and organically—knowing Kell, the ledger dispute, Petra's familiarity with that ground. The bell-ringer apprentice concept threaded throughout the whole sequence. No forced beats.
+- **protector** scores {'fun': 6, 'involvement': 6, 'connection': 5, 'control': 5, 'play_again': 7}: best — When Anselm recognizes the presence beneath the water as intelligent and purposeful, not hive-corruption—"That's not hive-sign, that's something that knows we're watching it back." His expertise reframed the entire threat from combat problem to mystery to understand. | frustrating — Being knocked into the flood and rescued by Yarrow felt like things happening to Anselm rather than him making critical choices in the climax. I wanted agency in how that moment resolved. | background — good
+- **instigator** scores {'fun': 7, 'involvement': 7, 'connection': 7, 'control': 6, 'play_again': 7}: best — Jamming the gate open against Kell's order—pure Caddock. Strength, defiance of corrupt authority, and protection all in one action that actually changed the situation. | frustrating — The creature's nature resolved through Petra's certainty before I could really wrestle with whether to fight or protect. | background — Very well. 'Last of Marrowreed Village, Burned by the Wardens' was invoked directly in combat. The Wardens as corrupt authority felt personal and earned, not grafted on.
+- **tactician** scores {'fun': 6, 'involvement': 6, 'connection': 5, 'control': 5, 'play_again': 7}: best — S4 when I read the water's true pattern during the panic—SUCCESS WITH STYLE showing the creature granting passage, not attacking. That felt like Yarrow's expertise actually *mattering* in a crucial moment, not just confirming what others already knew. | frustrating — After establishing the situation with my initial Notice reads, the focus shifted to Petra's direct song-connection and Caddock's physical strength. I wanted more agency beyond reading and holding the line—maybe attempt something more direct with the creature, or invoke Brack more meaningfully in the chaos. | background — Good. The weir-keeper and militia guard aspects came up naturally and earned, not forced. The disgrace and the promise mostly stayed dormant, which isn't unfair—just untouched by this particular crisis.
 
 ## Referee / engine violations
 
-- S1 §3/§11: compel names card EI-02, which is not in play for Eira (not theirs, or in the Session Deck / set aside)
-- S2 §7: reported fictional trigger fiction:the party leaves the road or causeway that is not an unused fictional trigger
-- S5 §7: reported fictional trigger fiction:the party leaves the road or causeway that is not an unused fictional trigger
-- SNone §7 (The rail): Rail exceeded the 5-card cap and stayed over-limit across multiple events instead of being corrected on the triggering add. In scene 4, adding MA-06 (event 104) brought the rail to 6 face-up cards (H-03, EI-06, H-05, T-02, FE-05, MA-06); three rolls (events 106, 108, 110) were resolved with the rail still over-limit, and the corrective removal (-H-05) did not happen until event 111. A similar 1-add delay occurred in scene 2 when EI-02 (event 38) pushed the rail to 6 and the correction (-F-01) was not logged until event 46, after an intervening compel and scene frame.
-- SNone §6A (Story Piles — resolving a story draw): Story card EI-06 was drawn and placed face-up on the rail in scene 1 (events 16-17) but is never logged as returned to its pile at any scene end (no 'Rail - EI-06' event appears anywhere in the log, including scene 1, scene 2 or scene 4 cleanup), contrary to '(a story card) at scene end ... return it and its echo slips to its pile and reshuffle, unless it was retired.' It was instead redrawn/re-added twice more (events 47-48, 112-113) while apparently still resident on the rail, directly contributing to the rail-limit overflow noted above.
+- S4 §7: reported fictional trigger fiction:the party enters a settlement that is not an unused fictional trigger
+- S5 §7: reported fictional trigger fiction:the party enters a settlement that is not an unused fictional trigger

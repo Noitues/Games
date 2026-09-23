@@ -1,0 +1,1042 @@
+{
+ "S-f168b473": {
+  "backstory": [
+   {
+    "name": "Petra",
+    "world_driven": true,
+    "world_driven_events": 2,
+    "player_raised": true,
+    "score": 5,
+    "note": "GM has Sella reveal the Causeway (Petra's home) is drowning, and has Toskin's risked debt to Petra flagged as future Warden trouble"
+   },
+   {
+    "name": "Anselm",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 2,
+    "note": "Player introduces Lise's drowning memory unprompted; GM only echoes it back via the flooded mill-road current, no new world-driven complication"
+   },
+   {
+    "name": "Caddock",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 8,
+    "note": "GM stages an encounter with Sella, Caddock's hive-touched loved one, giving a moment of lucidity and grief central to the session"
+   },
+   {
+    "name": "Yarrow",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 6,
+    "note": "GM builds the Gullet Ford ambush around Yarrow's former weir-craft trainees (Moss and the Weir-Keeper pack), tragic and tactically relevant"
+   }
+  ],
+  "best_moment": "Sella breaking through the hive-song for one breath to warn the party about the drowned Causeway, torn between horror and recognition with Caddock \u2014 a genuinely affecting convergence of plot stakes and personal backstory.",
+  "worst_moment": "The toll-gate resolution in S1 resolves almost too cleanly \u2014 four different approaches (token, vouching, intimidation, militia rapport) all land simultaneously off a single GM beat (\"Caddock's words land like a blade\"), so the other three characters' contributions feel narratively redundant rather than distinct causes.",
+  "coherence": 8,
+  "complication_quality": 8,
+  "engagement": 7,
+  "notes": "A tight, thematically unified session \u2014 rain and rising water bind every scene, and the hive-touched swarm doubles as both external threat and personal tragedy for Yarrow and Caddock. Spotlight is well-distributed: each PC gets at least one scene where their specific skill or history is the hinge (Petra's swarm-song reading, Anselm's mill-race memory, Caddock's bond with Sella, Yarrow's weir-craft). The main weakness is that GM resolutions tend to bundle all four players' actions into one collective success beat rather than differentiating consequences, which slightly flattens the sense that individual choices mattered. Still, the Sella/Causeway reveal and the acolyte heist give real momentum and set up strong future stakes (drowned road home, Wardens now aware of Toskin's debt, Sella still out there).",
+  "overall": 7,
+  "player_agency": 6,
+  "spotlight_fairness": 8,
+  "synthetic": false,
+  "tokens": {
+   "prompt": 9208,
+   "completion": 3605,
+   "cost_usd": 0.0796,
+   "calls": 1
+  }
+ },
+ "S-52f6f701": {
+  "backstory": [
+   {
+    "name": "Petra",
+    "world_driven": true,
+    "world_driven_events": 2,
+    "player_raised": true,
+    "score": 7,
+    "note": "The swarm-song repeatedly calls her by name and she's shown as uniquely bonded to the bell-lore she 'stole' from the Order (a price on her head); the GM made this a recurring, nearly costly complication (freezing when the song calls her name) rather than just color."
+   },
+   {
+    "name": "Anselm",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 2,
+    "note": "His hunt for the bell and exorcism training are entirely self-introduced; no NPC, debt, or place from his past was brought in by the GM."
+   },
+   {
+    "name": "Caddock",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 6,
+    "note": "GM placed Mory and her missing son Kel in the belfry; Caddock supplied the midwife/oath backstory herself, but the GM built the entire back-half of the session's stakes around honoring it."
+   },
+   {
+    "name": "Yarrow",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 5,
+    "note": "Coss's return in S3, invoking Yarrow's given word and addressing him as 'friend' (old Warden habit), ties the toll-gate promise directly to Yarrow's disgraced-guard identity and forces a plot obligation."
+   }
+  ],
+  "best_moment": "The belfry reveal in S3 \u2014 the bell isn't calling pilgrims home, it's calling them down, with a rope lashed to the clapper feeding into the flooded nave where something is patiently pulling it. A genuinely unsettling twist that recontextualizes the whole flood crossing.",
+  "worst_moment": "The three river-crossing scenes in S2 became repetitive: Petra, Anselm, and Yarrow each independently deliver near-identical 'I read the water/current/song' actions and get near-identical success narration, which slows pacing without adding new information or tension.",
+  "notes": "A tight, atmospheric one-shot-feeling session (flood, tolling bell, mire rescue) with a strong central image and a satisfying emotional payoff in Caddock/Mory/Kel. Spotlight was reasonably shared, though Caddock's personal stake dominated the back half while Anselm's contributions stayed mostly procedural (liturgy-reading) rather than personal. Player agency was present (route choices, how to break the song) but the plot's shape \u2014 toll gate, crossing, belfry reveal, mire rescue \u2014 was quite linear and GM-forward, with each obstacle solved cleanly by the 'right' skill rather than through risky trade-offs. Dialogue occasionally over-explained inner thoughts via bracketed narration rather than letting actions speak.",
+  "overall": 7,
+  "engagement": 7,
+  "coherence": 8,
+  "spotlight_fairness": 7,
+  "player_agency": 6,
+  "complication_quality": 8,
+  "synthetic": false,
+  "tokens": {
+   "prompt": 11605,
+   "completion": 2586,
+   "cost_usd": 0.0809,
+   "calls": 1
+  }
+ },
+ "S-b40cc183": {
+  "backstory": [
+   {
+    "name": "Petra",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 4,
+    "note": "Player revealed Sister-Warden Clave's vendetta against her; GM's ambush immediately after was framed as bounty-funded ('someone's coin') seemingly targeting Petra specifically, tying the attack to her reveal."
+   },
+   {
+    "name": "Anselm",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 2,
+    "note": "Anselm himself introduced recognizing Nell Colter and the mill-kin as childhood connections; the GM built the ambush around this identity only after he named it, so it reads as player-authored rather than world-introduced."
+   },
+   {
+    "name": "Caddock",
+    "world_driven": true,
+    "world_driven_events": 2,
+    "player_raised": true,
+    "score": 5,
+    "note": "GM introduced Tallow's own son lost to the swarm-song as a mirrored complication, and Mirel's evasive 'cleared' answer about Marrowreed implied a Warden cover-up tied to Caddock's home and Tam's fate."
+   },
+   {
+    "name": "Yarrow",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 1,
+    "note": "Yarrow's Weir-Keeper background and disgrace were referenced by the player but never independently developed or complicated by the GM/world within this session."
+   }
+  ],
+  "best_moment": "Anselm's counter-liturgy fracturing the swarm-song in S5, splitting Nell Colter's hive-possession from her own buried voice mid-scream while Caddock and Yarrow held the ford together \u2014 a genuinely earned, multi-character payoff.",
+  "worst_moment": "The jump from S4 (barring the door for the night in Hollowmoot) directly into S5's ford ambush with no transition \u2014 it's unclear how or why the party is back at Gullet Ford, undermining scene-to-scene coherence.",
+  "notes": "A well-voiced, atmospheric session with strong collective problem-solving (the ford-reading in S1, the four-way persuasion of Tallow in S3) and real emotional stakes (Nell Colter, Marrowreed, Tam). However, the party operates almost entirely in lockstep consensus \u2014 there is no interpersonal friction or diverging player agendas, and nearly every action check (reading the ford, persuading Tallow, breaking the swarm-song, holding the ambush) succeeds cleanly, which flattens tension despite the high-stakes framing. The S4-to-S5 transition is jarring and never explained. Backstory integration is uneven: Caddock's Marrowreed/Tam thread and Petra's Clave thread get some world-side follow-through, while Yarrow's personal history is asserted but never complicated by the world, and Anselm's connection to Nell Colter, though powerful, was self-introduced by the player rather than sprung on him.",
+  "overall": 7,
+  "engagement": 7,
+  "coherence": 6,
+  "spotlight_fairness": 7,
+  "player_agency": 6,
+  "complication_quality": 7,
+  "synthetic": false,
+  "tokens": {
+   "prompt": 12035,
+   "completion": 4226,
+   "cost_usd": 0.0993,
+   "calls": 1
+  }
+ },
+ "S-db7aba36": {
+  "backstory": [
+   {
+    "name": "Petra",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 2,
+    "note": "Petra herself declares the tollhouse is her family home and that the Wardens trust her because of it; the GM never complicates or elaborates this from the world's side."
+   },
+   {
+    "name": "Anselm",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 6,
+    "note": "Anselm names his life-debt to Vex, and the GM immediately manifests Vex in the fiction with an urgent request (find her missing son Kest) that becomes the engine of the entire session's plot."
+   },
+   {
+    "name": "Caddock",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 6,
+    "note": "Caddock's self-narrated guilt over a 'failed' delivery is confirmed and forced into the open by the GM's reveal of a hidden hive-touched child she's been secretly sheltering, cracking her denial in play."
+   },
+   {
+    "name": "Yarrow",
+    "world_driven": true,
+    "world_driven_events": 3,
+    "player_raised": true,
+    "score": 7,
+    "note": "The Stiltfolk lookout recognizes Weir-Keeper 'water-debts' and grants passage on Yarrow's name alone; later Ossa specifically trusts Yarrow's word over the others' and binds him personally to the consequences if the cover story is wrong."
+   }
+  ],
+  "best_moment": "Petra resisting the swarm-song as it calls her own name mid-crossing, refusing to answer it and instead reading the flood-water to trace a safe path (Success With Style) \u2014 a vivid fusion of character concept, stakes, and mechanical payoff.",
+  "coherence": 5,
+  "complication_quality": 7,
+  "engagement": 7,
+  "notes": "Strong ensemble session with real stakes and good use of fate points/aspects (No Fever-Song Among Them, The Old Channel). All four PCs got distinct competence moments and their backstories (a life-debt, family water-rights, hidden guilt) were woven into the plot rather than sitting inert. The biggest flaw is a serious continuity snag: the party sets out in S2 to rescue an 11-year-old named Kest, but in S3 they discover a hidden 3-year-old hive-touched boy in the loft, and by S4 the narration refers to carrying 'Kest's fever-weight' out through the gate as if the two children are the same person \u2014 the text never reconciles this, leaving it unclear whether Kest was ever actually found or if two separate children got conflated. This muddies an otherwise well-constructed emotional climax (Caddock's secret, the lie to Ossa) and should be clarified in play or in recap. Aside from that, the session reads as tense, well-paced, and character-forward.",
+  "overall": 7,
+  "player_agency": 7,
+  "spotlight_fairness": 8,
+  "worst_moment": "The unresolved/contradictory identity of the rescued child \u2014 introduced as 11-year-old Kest but then depicted as a 3-year-old hidden hive-touched boy, later referred to again as Kest \u2014 undercuts the emotional and narrative clarity of the session's central rescue.",
+  "synthetic": false,
+  "tokens": {
+   "prompt": 29061,
+   "completion": 5218,
+   "cost_usd": 0.1302,
+   "calls": 1
+  }
+ },
+ "S-6f356dc7": {
+  "backstory": [
+   {
+    "name": "Petra",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 6,
+    "note": "Petra introduces Merk (old day-watch collector) via memory of her mother's debts; GM then reveals Merk himself, hive-touched, leading the tollgate ambush at Gullet Ford."
+   },
+   {
+    "name": "Anselm",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": false,
+    "score": 1,
+    "note": "Only his general scholarly/liturgical expertise is used; no named person, place, or debt from his personal past is raised by player or world."
+   },
+   {
+    "name": "Caddock",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 6,
+    "note": "Caddock raises her bond with Sella (a hive-touched acquaintance); world elaborates by having the party find Sella in the nest and giving her a brief moment of Clarity/recognition."
+   },
+   {
+    "name": "Yarrow",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": false,
+    "score": 7,
+    "note": "GM reveals the Silt Weir as 'Yarrow's family gatehouse' unprompted, tying the site of the exorcism climax directly to his lineage before he comments on it himself."
+   }
+  ],
+  "best_moment": "In the flooded nest beneath the belltower, Caddock reaches the hive-touched Sella and, for one suspended moment, gets real recognition back \u2014 a whispered half-word of her name \u2014 before the swarm-drone reclaims her. It's the session's clearest payoff of character investment meeting world response, landing an emotional beat without resolving it too neatly.",
+  "worst_moment": "The Gullet Ford ambush against Merk's hive-touched tollgate crew resolves almost entirely in the party's favor within a single exchange \u2014 disarm, counter-rite, emotional plea, and safe channel all land cleanly with no real cost, turning a potentially wrenching 'fight people you love' set-piece into a clean sweep.",
+  "notes": "This is a tightly-plotted five-scene chase with strong sensory worldbuilding (the swarm-song as both mechanic and narrative through-line) and good scene-to-scene escalation: market rumor \u2192 exorcism rite gone wrong \u2192 hive-nest rescue \u2192 shrine smuggling reveal \u2192 toll-ford ambush. Spotlight distribution is genuinely even \u2014 each PC's stated specialty (Petra's hearing, Anselm's liturgical knowledge, Caddock's bedside authority, Yarrow's waterway/guard instincts) gets a distinct, plot-relevant use in nearly every scene. The main weakness is stakes: virtually every player action in every scene succeeds outright, often described in the same GM turn as the attempt, with no failed rolls, real setbacks, or costs shown in the text \u2014 even the climactic ambush by people the party recognizes dissolves without a scratch. This makes the fiction consistently satisfying but somewhat frictionless; the tension is narrated rather than earned through visible risk. Anselm in particular is given expertise but no personal stakes (no named mentor, oath, or debt), leaving him mechanically central but the least personally invested of the four by the session's own text.",
+  "coherence": 8,
+  "complication_quality": 7,
+  "engagement": 7,
+  "overall": 7,
+  "player_agency": 6,
+  "spotlight_fairness": 8,
+  "synthetic": false,
+  "tokens": {
+   "prompt": 12078,
+   "completion": 3482,
+   "cost_usd": 0.092,
+   "calls": 1
+  }
+ },
+ "S-e64d2e7a": {
+  "backstory": [
+   {
+    "name": "Maud",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 6,
+    "note": "Rennick, the Blackwater Cartel debt-collector, arrives to press Maud for payment/info on the shrine and hive-touched, tied to her Thom Waites debt she reveals in the same beat."
+   },
+   {
+    "name": "Hask",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 6,
+    "note": "The secretly-marked family channel/apothecary lodge is found already overrun by Order acolytes searching for the hidden cure-books, implying a leak/betrayal from outside Hask's control."
+   },
+   {
+    "name": "Eira",
+    "world_driven": true,
+    "world_driven_events": 2,
+    "player_raised": true,
+    "score": 7,
+    "note": "Sella (the informer tied to the Three Elms cover-up) is present at the checkpoint and is forced into a public confession; later a Warden-tattooed survivor independently corroborates Eira's Three Elms account."
+   },
+   {
+    "name": "Fenwick",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 8,
+    "note": "Bren, Fenwick's old mentor/friend, appears hive-turned and blocks Fenwick's path to the cached archive, forcing a direct, unplanned confrontation with his past."
+   }
+  ],
+  "best_moment": "Sella's forced public confession about Three Elms in S2 \u2014 it lands as genuine payoff of Eira's raised backstory, throws the checkpoint into chaos, and that chaos is what actually lets the party slip past the wardens, tying character drama directly into tactical success.",
+  "worst_moment": "S5 crams all four characters' major backstory reveals (Maud's cartel debt, Fenwick's exile-risk archive, Hask's channel-oath, Eira's resolve) into one rapid back-to-back sequence with little room to breathe or for other PCs to react to each other's revelations \u2014 it reads more like parallel monologues than a shared scene.",
+  "coherence": 7,
+  "complication_quality": 7,
+  "engagement": 7,
+  "notes": "A tightly plotted flood/checkpoint-to-shrine session with strong thematic throughlines (secrets, debts, corruption/hive-taint) touching every PC. The GM consistently rewards player-raised backstory with escalating consequences (Sella's confession, Bren's reappearance, the corroborating witness, Rennick's arrival), which is good practice, though the density of reveals in the final scene undercuts individual impact. Combat/skill resolution narration is fluid and cinematic but leans heavily on 'and it works' framing with little failure or cost shown for the PCs' actions, which slightly flattens tension despite high stakes described.",
+  "overall": 7,
+  "player_agency": 7,
+  "spotlight_fairness": 7,
+  "synthetic": false,
+  "tokens": {
+   "prompt": 26144,
+   "completion": 4283,
+   "cost_usd": 0.1123,
+   "calls": 1
+  }
+ },
+ "S-8896acfb": {
+  "backstory": [
+   {
+    "name": "Maud",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": false,
+    "score": 6,
+    "note": "Debt-runner surprises her with an offer to clear her (previously unmentioned) Cartel debt in exchange for betraying the cellar-folk; she refuses."
+   },
+   {
+    "name": "Hask",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 7,
+    "note": "Debt-runner reveals Tyne (a reed-camp scout Hask swore an oath to) is drowning in the flood current, forcing an immediate rescue."
+   },
+   {
+    "name": "Eira",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 7,
+    "note": "Tess, the pregnant refugee Eira secretly helped, reappears among the Order's pilgrims dry-robed and complicit, revealing Eira was used/betrayed."
+   },
+   {
+    "name": "Fenwick",
+    "world_driven": true,
+    "world_driven_events": 2,
+    "player_raised": true,
+    "score": 7,
+    "note": "The Order arrives claiming Fenwick's map-debt was 'sold' to them by the Cartel, and Sister Vane vows the conflict 'isn't finished' after the brawl."
+   }
+  ],
+  "best_moment": "Hask diving through the flooding hatch after the debt-runner's taunt, with Rill and Eira's rope-work pulling Tyne out alive \u2014 a genuine team rescue that paid off multiple characters' skills and history at once.",
+  "worst_moment": "The debt-runner's rapid-fire reveal of both Maud's and Hask's dormant backstory hooks in back-to-back lines (S5) felt like a convenient info-dump rather than an organically surfaced complication, compressing two major personal stakes into one NPC's speech.",
+  "coherence": 8,
+  "complication_quality": 8,
+  "engagement": 8,
+  "notes": "A tightly plotted, high-momentum session that moves from Wardens to Cartel to a rival faction (the Order) to a full flood-rescue climax without losing thread. All four PCs get distinct, meaningful spotlight beats (Fenwick's diplomacy and blade-work, Maud's crowd-rallying, Hask's read on Ness and river rescue, Eira's medical/negotiation skill and betrayal arc), and each character's personal history gets pulled into play by the world rather than staying inert. The pacing is relentless \u2014 almost every scene ends in a fight or a life-or-death stake, which is exciting but leaves little room for quieter character beats or consequences to breathe. The debt-runner's dual backstory reveal in S5 is the one spot where GM-driven plot felt slightly mechanical rather than earned.",
+  "overall": 8,
+  "player_agency": 8,
+  "spotlight_fairness": 8,
+  "synthetic": false,
+  "tokens": {
+   "prompt": 10997,
+   "completion": 2995,
+   "cost_usd": 0.082,
+   "calls": 1
+  }
+ },
+ "S-9df60f1e": {
+  "backstory": [
+   {
+    "name": "Maud",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 4,
+    "note": "Maud herself first states the blood-oath with Sera; GM then has Sera arrive in person invoking it and dragging her toward the Shoal, reinforcing rather than originating the hook. Cartel silver-debt is raised by Maud and used tactically but not yet paid off by the world."
+   },
+   {
+    "name": "Hask",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 6,
+    "note": "After Hask names his cousin Kess, GM has her arrive in the aftermath with the news that Gullet Ford has drowned, turning family connection into the session's new central complication (no safe crossing, must deal with the Cartel)."
+   },
+   {
+    "name": "Eira",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": false,
+    "score": 8,
+    "note": "GM reveals the Cartel's toll is Sella, the informer who betrayed Eira's family at Three Elms \u2014 an unprompted twist that weaponizes Eira's past against the whole party and becomes the session's cliffhanger dilemma."
+   },
+   {
+    "name": "Fenwick",
+    "world_driven": true,
+    "world_driven_events": 2,
+    "player_raised": true,
+    "score": 7,
+    "note": "After Fenwick states he exposed the Order's false maps, GM has a fresh apostate-brand glyph carved on the Shoal's doorpost and armed pursuers below naming him by his transgression \u2014 directly escalating danger from his stated backstory."
+   }
+  ],
+  "best_moment": "The belltower climax: Hask deciphers the bell-song's \"count\" as breakable, Eira's grounded midwife presence pulls Tomas's attention from the false voice, and Maud's oath lands the emotional beat \u2014 Tomas simply not answering the next toll to shatter the ritual is a satisfying, earned payoff of three characters' distinct skills converging.",
+  "worst_moment": "The long stretch crossing the causeway (S2) has all four characters essentially restating the same \"the bell is counting/calling us\" observation in sequence with minimal differentiation or rising stakes between each beat, making that section feel padded rather than tense.",
+  "notes": "Strong atmosphere and a well-constructed puzzle-complication (the census bell) that rewarded collaborative deduction. The GM did good work seeding backstory-driven consequences for Eira and Fenwick especially, turning stated pasts into live threats/dilemmas rather than leaving them inert. Dialogue across characters sometimes converges on very similar phrasing/intent (especially in the causeway scene), which slightly flattens character voice distinction. The session ends on a strong unresolved hook (Sella's fate) that sets up real stakes for next time.",
+  "overall": 7,
+  "engagement": 7,
+  "coherence": 8,
+  "spotlight_fairness": 8,
+  "player_agency": 7,
+  "complication_quality": 8,
+  "synthetic": false,
+  "tokens": {
+   "prompt": 15820,
+   "completion": 2966,
+   "cost_usd": 0.1047,
+   "calls": 1
+  }
+ },
+ "S-a0b9d0e4": {
+  "overall": 8,
+  "engagement": 8,
+  "coherence": 8,
+  "spotlight_fairness": 8,
+  "player_agency": 6,
+  "complication_quality": 8,
+  "backstory": [
+   {
+    "name": "Maud",
+    "world_driven": true,
+    "world_driven_events": 2,
+    "player_raised": false,
+    "score": 7,
+    "note": "GM introduces Sister Orla pressing a relic candle on her, then reveals the hive-touched woman is Yara Bell, a grieving mother Maud personally counseled for three nights \u2014 becomes the emotional core of the session's midpoint."
+   },
+   {
+    "name": "Hask",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 7,
+    "note": "GM reveals the enforcer leader is Hask's own cousin Rell, whom he raised and vouched for; her betrayal is the climax's emotional gut-punch, and Hask elaborates the relationship's history himself."
+   },
+   {
+    "name": "Eira",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 5,
+    "note": "GM plants a note in the handwriting of Sella, the Warden's informer whom Eira recognizes from her own past ('sold out her family'); this seeds the plot's Warden-conspiracy thread but doesn't return to center stage after."
+   },
+   {
+    "name": "Fenwick",
+    "world_driven": true,
+    "world_driven_events": 2,
+    "player_raised": true,
+    "score": 8,
+    "note": "GM ties the counting-cadence to Bren's private survey notation, and the enforcers' demand for the Holdfast maps directly invokes Fenwick's blood oath to Bren \u2014 this drives the entire climax and final escape."
+   }
+  ],
+  "best_moment": "Maud wading into the black water to ground Yara Bell \u2014 using her own history of sitting vigil with the grieving mother to break the hive's summons-song \u2014 is a genuinely earned emotional beat that pays off backstory with immediate mechanical and narrative consequence.",
+  "worst_moment": "Rell's arrival and demand for the maps feels slightly over-engineered/convenient \u2014 she appears exactly on cue with 'rehearsed' dialogue naming Fenwick's satchel, compressing what could have been a slower-building betrayal into a single expository beat under time pressure from the bells.",
+  "notes": "A tightly-plotted single session that does an unusually good job braiding all four characters' personal histories (Sister Orla, Yara Bell, Sella, Rell, Bren's oath) into one coherent conspiracy thread about the Drowned Priest and the hive. The GM was generous with meaningful complications and let combat resolutions (Eira's tunnel-fighting, Hask's knife-work, Maud's blade at a throat) land cleanly. The main soft spot is pacing: several major reveals (Sella's note, Yara's identity, the quarantine-bell alarm, Rell's entrance) stack in rapid succession via GM narration blocks, leaving less room for player-driven deliberation or failure states \u2014 agency is present (the party chooses to fight, to talk Yara down, to refuse Tallow's later ask) but the throughline feels more discovered than chosen.",
+  "synthetic": false,
+  "tokens": {
+   "prompt": 11203,
+   "completion": 4284,
+   "cost_usd": 0.096,
+   "calls": 1
+  }
+ },
+ "S-ff80d4f4": {
+  "overall": 6,
+  "engagement": 7,
+  "coherence": 8,
+  "spotlight_fairness": 8,
+  "player_agency": 6,
+  "complication_quality": 6,
+  "backstory": [
+   {
+    "name": "Maud",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 2,
+    "note": "Player introduces grandmother, Ashwater Causeway history, and the Blackwater silver debt herself; the world never independently surfaces a consequence from these threads within this session."
+   },
+   {
+    "name": "Hask",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 2,
+    "note": "Player identifies the hive-touched attacker as his cousin Jal himself in the moment; GM narration follows his framing rather than introducing it, and there's no independent world consequence tied to Hask's ferry-line past beyond his own narration."
+   },
+   {
+    "name": "Eira",
+    "world_driven": true,
+    "world_driven_events": 2,
+    "player_raised": true,
+    "score": 7,
+    "note": "GM places informer Sella at the toll post and has a Warden mark Eira's flinch, seeding a bribed pursuer; later Eira's own accusation about Three Elms curdles negotiations with the enforcer boss, a consequence the world delivers off her backstory reveal."
+   },
+   {
+    "name": "Fenwick",
+    "world_driven": true,
+    "world_driven_events": 2,
+    "player_raised": true,
+    "score": 6,
+    "note": "GM compels the 'Order's false relic map' detail (marked man, can't leave it, drives route toward Saint Orrin's) and the pursuing boots track exactly where the map points, both world-introduced complications; Bren himself is introduced by the player."
+   }
+  ],
+  "best_moment": "Maud's shield-wall stance breaking her possessed cousin-by-proxy Jal without killing him, while Hask stands frozen recognizing his kin under the swarm-song \u2014 a genuinely layered emotional beat with real stakes and restraint instead of a clean kill.",
+  "worst_moment": "The stilt-house trap in S5: every character perfectly reads the danger (rotten floor, listening loft, safe western path) and the party disengages with zero cost or tension payoff \u2014 the fourth time in five scenes a coordinated plan resolves cleanly, flattening the sense of risk.",
+  "notes": "Strong collaborative narration and consistently even spotlight across all four PCs, with genuinely atmospheric prose. The session's chief weakness is a repeated success pattern: nearly every group plan (crossing the ford, breaking the ambush, escaping enforcers, avoiding the stilt-house trap) resolves smoothly with the party reading terrain/threats correctly and suffering only minor, narratively-absorbed costs (a glancing wound, a fate-point compel). This makes player agency feel present but low-friction, and complications interesting in concept but under-realized in consequence. Backstory integration is uneven: Eira and Fenwick get genuine world-driven hooks (Sella, the relic map) that reshape the fiction, while Maud's and Hask's rich backstories (debt, cousin) are introduced and largely resolved by the players' own narration rather than pressed on them by the table/GM.",
+  "synthetic": false,
+  "tokens": {
+   "prompt": 10369,
+   "completion": 3800,
+   "cost_usd": 0.0871,
+   "calls": 1
+  }
+ },
+ "S-f05e00ff": {
+  "overall": 5,
+  "engagement": 5,
+  "coherence": 4,
+  "spotlight_fairness": 7,
+  "player_agency": 5,
+  "complication_quality": 6,
+  "backstory": [
+   {
+    "name": "Petra",
+    "world_driven": true,
+    "world_driven_events": 2,
+    "player_raised": true,
+    "score": 6,
+    "note": "GM opens the whole session by invoking Petra's hometown ties to the gate and Sergeant Kell, and later the swarm-song is narrated as specifically knowing/calling her name, tying the central mystery to her personal gift."
+   },
+   {
+    "name": "Anselm",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 4,
+    "note": "Player introduces his own Drowned Mill history unprompted; the world's only real backstory-linked consequence is losing his relic satchel to the flood, undercutting his exorcist identity going forward."
+   },
+   {
+    "name": "Caddock",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 2,
+    "note": "Player repeatedly frames her actions through her midwife background, but no NPC, place, or complication from that history was introduced by the GM/world."
+   },
+   {
+    "name": "Yarrow",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 1,
+    "note": "Player invokes 'Last of the Weir-Keepers, Trusted by the Stiltfolk' and militia-watch history himself, but the world never surfaces any stiltfolk, militia contact, or related complication."
+   }
+  ],
+  "best_moment": "Caddock wrenching the chain-gate mechanism wide, physically jamming it against Kell's order to seal the crowd out \u2014 a clean, decisive, irreversible act of player agency that directly saved the fleeing travelers and forced a hard narrative consequence (Kell's authority broken, gate ruined).",
+  "worst_moment": "The GM's line in S2, \"Test narration.\" \u2014 a bare placeholder dropped into the middle of a tense crowd-panic scene, which breaks immersion and signals the scene had to be effectively restarted, contributing to the repetitive, looping structure of S2 through S4 where nearly identical beats (Petra insists it's not hunger, Anselm blocks the crowd, Caddock intimidates Kell, Yarrow reads the water) replay with little forward movement.",
+  "notes": "The opening gate scene is strong and well-grounded, using Petra's local ties naturally to open the mystery. But scenes 2 through 4 largely reiterate the same stand-off (crowd panic vs. Kell's closing gate) with very similar phrasing and character beats each time, which weakens coherence and pacing \u2014 it reads less like escalating stakes and more like the same moment being re-resolved three times, exacerbated by the stray 'Test narration' GM line. Spotlight was evenly distributed \u2014 every character acted in every beat \u2014 but the repetition meant several of those turns didn't meaningfully change the trajectory. The eventual introduction of the Pale One and Anselm's loss of his relics in S5 finally broke the loop and gave the session a real turn, and the ambiguous, patient nature of the swarm-entity was an interesting complication. Backstory integration was uneven: Petra's ties were used by the world from the very first line, but Caddock and Yarrow's rich self-described histories (midwife authority, Weir-Keeper lineage) were never picked up or complicated by the GM.",
+  "synthetic": false,
+  "tokens": {
+   "prompt": 10660,
+   "completion": 3505,
+   "cost_usd": 0.0855,
+   "calls": 1
+  }
+ },
+ "S-a3ffa48c": {
+  "backstory": [
+   {
+    "name": "Petra",
+    "world_driven": true,
+    "world_driven_events": 2,
+    "player_raised": true,
+    "score": 7,
+    "note": "The swarm-song directly answers Petra's voice and later calls her name specifically, trying to claim her mid-rescue."
+   },
+   {
+    "name": "Anselm",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 4,
+    "note": "The quest's central threat turns out to be 'the bell-tongue' he was already hunting/haunted by, though no new complication targeted him specifically beyond that recognition."
+   },
+   {
+    "name": "Caddock",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": false,
+    "score": 1,
+    "note": "No personal history was raised or drawn on beyond a passing 'midwife's grip' descriptor."
+   },
+   {
+    "name": "Yarrow",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 2,
+    "note": "Yarrow himself raises a conflict between an old oath and rescuing Tam, but the world never surfaces the oath's source or consequences."
+   }
+  ],
+  "best_moment": "In the belltower, with the boy torn free and the bell-song still trying to claim her by name, Petra freezes but starts humming the counter-rhythm off-key and human, breaking the swarm-song's grip and shattering its hold on the room.",
+  "worst_moment": "The fight with the two pilgrims in the flooded nave resolves fairly mechanically (staggered, pinned, drowned to their knees) without much narrative weight or consequence, functioning mostly as a speed bump before the tower climb.",
+  "notes": "A tight, well-paced rescue one-shot: clear hook, rising stakes (near-drowning, rising floodwater cutting off retreat), and a satisfying thematic payoff with Petra's unique sensitivity to the swarm-song. Player narration was vivid throughout and choices (route-finding, who intercepts which threat, the escape via roof struts) visibly shaped outcomes. The main weakness is uneven backstory integration: Petra's history became the emotional and mechanical spine of the session, Anselm's tied in neatly at the concept level, but Caddock and Yarrow's personal stakes (an oath to dead men, an unspecified past) were raised but never meaningfully complicated or paid off by the world itself.",
+  "overall": 8,
+  "engagement": 8,
+  "coherence": 8,
+  "spotlight_fairness": 7,
+  "player_agency": 7,
+  "complication_quality": 8,
+  "synthetic": false,
+  "tokens": {
+   "prompt": 11642,
+   "completion": 2726,
+   "cost_usd": 0.0823,
+   "calls": 1
+  }
+ },
+ "S-ff6f3b53": {
+  "backstory": [
+   {
+    "name": "Petra",
+    "world_driven": true,
+    "world_driven_events": 2,
+    "player_raised": true,
+    "score": 7,
+    "note": "Swarm-song specifically calls out Petra's name and later mimics her own voice back at her, freezing her twice \u2014 a GM-driven complication targeting her personal sensitivity/vocation as a bell-ringer."
+   },
+   {
+    "name": "Anselm",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 2,
+    "note": "Anselm repeatedly invokes his exorcist history ('sent a dozen back', 'bound a hundred') himself; no NPC or event from his past was introduced by the GM."
+   },
+   {
+    "name": "Caddock",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 2,
+    "note": "Caddock invokes Sella and her midwife background herself throughout; the GM never confirms, denies, or builds on Sella or any other personal thread."
+   },
+   {
+    "name": "Yarrow",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 2,
+    "note": "Yarrow's militia background and bond with Brack are self-asserted; the GM introduces no NPC, debt, or place tied specifically to Yarrow's past."
+   }
+  ],
+  "best_moment": "Caddock kneeling to steady the swarm-song-lost boy at the bell chamber \u2014 'There you are, I can hear you under it, you're still you' \u2014 landing harder than the exorcist's blade or the bell-ringer's chime, and turning his trance into an ordinary child's sob.",
+  "worst_moment": "The Causeway runner's exposition dump in S3-S4 is functional but generic \u2014 four near-identical interrogation beats extracting plot info with little distinct characterization, slowing momentum between the two action set-pieces.",
+  "notes": "Structurally this session is three tightly-linked set-pieces (ford ambush, Pikemaw fight, temple rescue) stitched by a plot-delivery NPC. The GM's scene resolution paragraphs follow a very consistent formula \u2014 each PC's narrated action is individually name-checked and rewarded with a bolded 'advantage' tag, which keeps spotlight scrupulously fair but also makes the four players' contributions feel somewhat interchangeable in function (each finds/marks/reads something, one lands the finishing blow) rather than distinctly shaped by who they are. Petra is the only PC whose personal history is actually reached into by the world itself (the song using her name/voice), giving her arc a sharper hook than her companions, whose 'backstory' remained entirely self-narrated color (Sella, exorcist history, militia service) without world pushback or follow-through. Player choices (Yarrow's provocation, Petra's channel-calling, the decision to storm the tower rather than wait) did visibly alter outcomes, but the overall route from ford to temple was linear with little branching. Tone and imagery (swarm-song, drowned stone, hive-touched) stayed consistent and well-realized throughout.",
+  "overall": 7,
+  "engagement": 7,
+  "coherence": 8,
+  "spotlight_fairness": 8,
+  "player_agency": 6,
+  "complication_quality": 7,
+  "synthetic": false,
+  "tokens": {
+   "prompt": 13023,
+   "completion": 2760,
+   "cost_usd": 0.0893,
+   "calls": 1
+  }
+ },
+ "S-6c51c83e": {
+  "overall": 7,
+  "engagement": 7,
+  "coherence": 8,
+  "spotlight_fairness": 7,
+  "player_agency": 7,
+  "complication_quality": 8,
+  "backstory": [
+   {
+    "name": "Petra",
+    "world_driven": true,
+    "world_driven_events": 2,
+    "player_raised": false,
+    "score": 6,
+    "note": "Swarm-song specifically hooks and calls Petra's name from the first threshold onward, and the Drowned Priest tells her 'it only sings to the ones it already loves,' implying unraised personal history with the hive/temple that the GM introduced and used as the session's central danger."
+   },
+   {
+    "name": "Anselm",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": false,
+    "score": 5,
+    "note": "Casting the exorcism against the water-thing tears loose the memory of his sister's last cry, a previously unmentioned personal wound the GM introduced as a costly consequence."
+   },
+   {
+    "name": "Caddock",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 1,
+    "note": "Caddock repeatedly invokes her own midwife background in her actions/dialogue, but the GM never introduces any external person, place, or complication tied to her past."
+   },
+   {
+    "name": "Yarrow",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 4,
+    "note": "Yarrow raises his own tarnished-name backstory with the Wardens himself, but the GM adds a hook with Sergeant Coyl's lingering, unspoken 'old debt' aimed specifically at Yarrow."
+   }
+  ],
+  "best_moment": "In the belltower, Petra\u2014already fused to the corroded bell by the swarm-song's grip\u2014deliberately rings it herself with the practiced hand of her apprenticeship, using the very instrument of her capture to shatter the song's hold on her. It's a sharp, earned turn of a character's own trained skill against the threat targeting her specifically.",
+  "worst_moment": "Petra's climactic strike against the Drowned Priest sends her skidding off the rotten ledge toward the black water, saved only by a last-second grab\u2014an exciting beat, but it lands as the third near-miss/consequence for Petra in two scenes (threshold paralysis, bell-fusion, ledge fall), tipping toward pile-on rather than spotlight balance in that exact moment.",
+  "notes": "A tight, well-paced single-session rescue with a clear escalating structure (Wardens \u2192 sentinel \u2192 pilgrims \u2192 Drowned Priest \u2192 bell). Mechanical costs (Petra's split knuckles, Yarrow's torn shoulder and infected scratch, Anselm's flashback, Petra's near-fall) are all narratively earned and thematically on-point (the hive 'liking to find purchase' in open wounds is used consistently). Petra receives the most world-driven personal stakes (the song calling her name, the priest's insinuation of prior connection) which gives her narrative gravity but also means she absorbs more of the complications than the other three combined. Caddock is active and capable throughout but is the only PC whose personal history is never engaged by the GM\u2014her midwife skill is used as flavor/competence rather than as a hook into deeper stakes. GM prose is vivid but leans on repeated phrasing ('without hesitation,' 'steady purpose,' 'relentless') across multiple characters' action descriptions, slightly flattening voice distinction between PCs.",
+  "synthetic": false,
+  "tokens": {
+   "prompt": 12338,
+   "completion": 2784,
+   "cost_usd": 0.0863,
+   "calls": 1
+  }
+ },
+ "S-1e51eb67": {
+  "overall": 6,
+  "engagement": 6,
+  "coherence": 7,
+  "spotlight_fairness": 8,
+  "player_agency": 5,
+  "complication_quality": 6,
+  "backstory": [
+   {
+    "name": "Petra",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 2,
+    "note": "Petra herself invokes 'bell-ringer' identity and a sudden unexplained 'Mom?' outburst during the collapse; neither is picked up or developed by the world/GM."
+   },
+   {
+    "name": "Anselm",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": false,
+    "score": 1,
+    "note": "No personal history (people, oaths, debts) is raised by player or world; the hive-matter/blood complication is a fresh in-fiction consequence, not tied to established backstory."
+   },
+   {
+    "name": "Caddock",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": false,
+    "score": 1,
+    "note": "Caddock's midwife competence is shown repeatedly but no personal history, relationships, or debts are ever introduced by player or GM."
+   },
+   {
+    "name": "Yarrow",
+    "world_driven": true,
+    "world_driven_events": 2,
+    "player_raised": true,
+    "score": 4,
+    "note": "Yarrow raises his broken Warden's oath himself; GM has Corvin coldly 'file it away' and later has the Drowned Priest target that exact broken promise as a temptation, building on it from the world's side."
+   }
+  ],
+  "best_moment": "The belltower climax where Petra's voice-duel breaks the Hive Mother's borrowed-name assault, Caddock tears the creature loose from the bell with her bare hands, and Yarrow's crossbow bolt lands simultaneously \u2014 three distinct character skills converging into one clean kill.",
+  "worst_moment": "Petra's sudden 'Mom?' interjection during the tower collapse (S4) comes out of nowhere, is never explained, referenced again, or followed up by the GM \u2014 a dangling thread that reads like an aborted hook.",
+  "notes": "A tightly-plotted, thematically coherent rescue-and-exorcism one-shot with excellent, almost mechanical spotlight balance (all four PCs speak in every scene, each with a clear competency niche: voice/authority, lore, marsh-craft/rescue, tactics/watch). The main weakness is a repetitive scene rhythm \u2014 declare intent, GM narrates clean success with a minor personal cost \u2014 which flattens tension and agency; nothing the party attempts meaningfully fails or forks the plot. Personal backstory is thin: only Yarrow's broken oath gets any real world-side traction, and even that is mostly acknowledged rather than complicated. Caddock in particular is a blank slate beyond profession. Strong genre voice and escalation (bell \u2192 Hive Mother \u2192 collapsing tower \u2192 Drowned Priest/pilgrims) carry the session despite the lack of failure stakes or deep backstory entanglement.",
+  "synthetic": false,
+  "tokens": {
+   "prompt": 11321,
+   "completion": 4291,
+   "cost_usd": 0.0965,
+   "calls": 1
+  }
+ },
+ "S-357e4588": {
+  "overall": 6,
+  "engagement": 6,
+  "coherence": 7,
+  "spotlight_fairness": 8,
+  "player_agency": 5,
+  "complication_quality": 5,
+  "backstory": [
+   {
+    "name": "Petra",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 2,
+    "note": "Petra herself introduces her history with Rell, Vess's debt, and her own name on the debt-ledger; GM never independently escalates or complicates these threads from its own initiative."
+   },
+   {
+    "name": "Anselm",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 5,
+    "note": "Anselm states his backstory with Mireth (the innkeeper who betrayed a hive-touched girl); GM then reveals the ambushing family at Gullet Ford IS that same betrayed family, turning his own guilt into a live complication."
+   },
+   {
+    "name": "Caddock",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 3,
+    "note": "Caddock raises her Fennick/Blackwater Cartel debt; GM escalates it by having the Wardens call in ALL debts town-wide that same night, putting her circled name on Rell's active list."
+   },
+   {
+    "name": "Yarrow",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 4,
+    "note": "Yarrow raises his drowned sister Elara; GM has the mob's agitator Voss specifically taunt him with 'the swarm claims all who reach too slow,' weaponizing his own stated trauma against him."
+   }
+  ],
+  "best_moment": "Yarrow kneeling at Elara's marker in the rain, speaking her name aloud after physically holding the burial ground against a mob and a personal taunt aimed at his oldest wound \u2014 a genuine, earned emotional payoff.",
+  "worst_moment": "The Warden-evasion scene (S4): after the dire reveal that every debt in town is being called in, the party simply strides/reads-the-patrols past the threat with almost no friction, and the tension evaporates in a single beat (\"the ledger-boy's news... curdles into just noise behind them\").",
+  "notes": "Structurally the session is very repetitive: each of the five scenes follows the same beat \u2014 a threat or obstacle appears, all four PCs each deliver a flavorful declaration drawing on their skills/backstory, and the GM narrates a clean, near-total success for the whole party. There is almost no failure, partial success, or lasting cost (Caddock's spear-graze in S3 is the only real physical consequence in the entire session), which flattens tension despite genuinely strong thematic material (debts, betrayal, grief, a hive plague). The GM does good work weaving player-stated backstories into fresh complications (Mireth's betrayed family, the town-wide debt call-in, Voss's taunt about Elara), which is the session's strongest craft element. But because outcomes are so consistently favorable and low-cost, player choices read more as flavor-text on a predetermined success than as decisions with real stakes, and the four characters' voices/approaches (read people, old rites, blunt physical confidence, tracking) start to blur together since they're deployed almost interchangeably in every scene.</parameter>\n</invoke>\n",
+  "synthetic": false,
+  "tokens": {
+   "prompt": 22544,
+   "completion": 4693,
+   "cost_usd": 0.1079,
+   "calls": 1
+  }
+ },
+ "S-e3d06d6c": {
+  "backstory": [
+   {
+    "name": "Petra",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 2,
+    "note": "Petra herself raised her old debt at the checkpoint; the Warden acknowledged it but the GM never developed it into an independent complication."
+   },
+   {
+    "name": "Anselm",
+    "world_driven": true,
+    "world_driven_events": 2,
+    "player_raised": true,
+    "score": 8,
+    "note": "GM introduced Mabb Corrin, a survivor from Anselm's drowned village, and had Brother Ossuin test his avoidance before granting vault access \u2014 a major, world-originated confrontation with his past."
+   },
+   {
+    "name": "Caddock",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": false,
+    "score": 6,
+    "note": "A watcher tied to the 'Wick Lane Cellars' recognized Caddock during the crowd scene, signaling her old pursuers are still hunting her \u2014 GM-introduced, left as an open unresolved threat."
+   },
+   {
+    "name": "Yarrow",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 3,
+    "note": "Yarrow invented his own backstory on the spot (oath to Ness about brother Thel) to justify a new plot thread; the world merely reacted to his declaration rather than originating it."
+   }
+  ],
+  "best_moment": "Anselm finally crossing the room to speak with Mabb Corrin, breaking years of avoidance of his drowned village \u2014 a GM-seeded personal confrontation that paid off both emotionally and mechanically (unlocking the reliquary) and shifted Brother Ossuin's read of him from liturgical performance to genuine grief.",
+  "worst_moment": "The Wick Lane Cellars watcher recognizing Caddock at the sanctuary doors was a strong, ominous hook \u2014 but it was resolved with a single \"he backs off\" beat and then dropped entirely for the rest of the session, leaving Caddock's most personal thread underdeveloped compared to Anselm's.",
+  "notes": "A tightly atmospheric session moving from causeway checkpoint to refugee crowd to a drowned temple, with strong internal coherence (Pikemaw sightings, the burned bridge, the swarm-song) and a nice late subversion \u2014 the tower \"threat\" turning out to be a guardian rather than a monster. All four characters contribute meaningfully to shared puzzle-solving (reads, stealth-routing, negotiation), and player choices (honesty at the gate, fairness at the door, Anselm's confession) visibly changed outcomes. The main weakness is uneven treatment of personal backstory: Anselm's hook was rich and GM-driven, Caddock's was intriguing but abandoned, and Petra/Yarrow's personal material was almost entirely self-supplied by the players rather than drawn out by the world.",
+  "overall": 7,
+  "engagement": 8,
+  "coherence": 8,
+  "spotlight_fairness": 7,
+  "player_agency": 8,
+  "complication_quality": 8,
+  "synthetic": false,
+  "tokens": {
+   "prompt": 15669,
+   "completion": 4038,
+   "cost_usd": 0.1145,
+   "calls": 1
+  }
+ },
+ "S-97c634a8": {
+  "backstory": [
+   {
+    "name": "Petra",
+    "world_driven": true,
+    "world_driven_events": 2,
+    "player_raised": true,
+    "score": 6,
+    "note": "Swarm-song wraps around her own name and freezes her (S1); Order sentries at the temple recognize her face and want her dead (S4), tied to her past with the Order/bell-lore."
+   },
+   {
+    "name": "Anselm",
+    "world_driven": true,
+    "world_driven_events": 2,
+    "player_raised": true,
+    "score": 7,
+    "note": "His own former pilgrim flock, now hive-touched, ambushes the party over his broken oath (S2); Sister Vell binds him with an Order blood-debt (S4)."
+   },
+   {
+    "name": "Caddock",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 5,
+    "note": "GM plants a scorched skiff/hoofprint clue matching 'the burned bridge Caddock's been turning over in her mind for weeks' (S3), seeding an unresolved personal mystery."
+   },
+   {
+    "name": "Yarrow",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 2,
+    "note": "Weir-Keeper lineage and Brack are used constantly as skills, but no NPC, debt, or complication from his personal history is introduced by the GM."
+   }
+  ],
+  "best_moment": "The belltower reveal in S5: the 'monster' calling every hive-touched soul in the Sallowmere turns out to be a lost, hive-touched child used as a living bell-clapper \u2014 a strong, earned payoff to the swarm-song mystery that reframes the whole session's danger as tragedy rather than horror.",
+  "worst_moment": "The pattern across all five scenes where each of the four PCs performs a near-identical 'read the situation with my expertise' beat in sequence, and the GM's recap almost always resolves every character's action as a clean success \u2014 flattening tension and making the crossing/pilgrim/sentry obstacles feel like foregone conclusions rather than genuinely contested moments.",
+  "notes": "Mechanically and narratively the session is well-constructed and thematically tight (rising water, swarm-song, drowned belltower, a lost child at the center), and the GM does skillful work weaving Anselm's oath and Petra's history with the Order into concrete complications. However, the structure is highly formulaic \u2014 every scene is a round-robin of all four PCs taking near-identical 'read/assess with expertise' actions, and the GM narration almost never lets any of them fail or meaningfully diverge, aside from Sister Vell's ledger twist. This makes the fiction feel smooth and satisfying to read but reduces the sense that choices were genuinely in doubt. Yarrow in particular never gets a backstory-driven complication from the world (Brack and water-reading are pure competence use, not personal stakes), leaving him the least dramatically served despite equal screen-time.",
+  "overall": 7,
+  "engagement": 6,
+  "coherence": 8,
+  "spotlight_fairness": 8,
+  "player_agency": 6,
+  "complication_quality": 8,
+  "synthetic": false,
+  "tokens": {
+   "prompt": 9694,
+   "completion": 4368,
+   "cost_usd": 0.0896,
+   "calls": 1
+  }
+ },
+ "S-feeb0fc9": {
+  "overall": 7,
+  "engagement": 7,
+  "coherence": 8,
+  "spotlight_fairness": 7,
+  "player_agency": 7,
+  "complication_quality": 7,
+  "backstory": [
+   {
+    "name": "Petra",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 2,
+    "note": "Petra herself introduced her childhood-at-the-gate familiarity with Sergeant Coy and her passage token; the GM only confirmed the recognition she supplied rather than introducing new backstory."
+   },
+   {
+    "name": "Anselm",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 6,
+    "note": "GM placed Fennard the tinker, a figure from Anselm's past, among the hive-touched attackers, forcing a personal recognition moment that briefly paralyzed him in combat."
+   },
+   {
+    "name": "Caddock",
+    "world_driven": false,
+    "world_driven_events": 0,
+    "player_raised": true,
+    "score": 1,
+    "note": "Caddock repeatedly referenced her own midwife history in narration, but no NPC, debt, or place from her past was introduced by the GM/world."
+   },
+   {
+    "name": "Yarrow",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 3,
+    "note": "Sergeant Coy's recognition ('Yarrow Weir-keeper... didn't figure to see you') added a GM-side detail (his former title) to the disgrace/history Yarrow himself first alluded to; the Edren/Death-House material was entirely player-introduced."
+   }
+  ],
+  "best_moment": "The belltower rescue in Scene 4 \u2014 Petra's Saint Orrin homecoming bell-sequence cutting through the swarm-song to reach the boy, immediately followed by the whole party fortifying the belfry (Petra's chokepoint read, Anselm's wards, Caddock's physical wall, Yarrow's spear line) to hold it \u2014 is the session's high point: every PC's distinct competency mattered and stacked into one clean, satisfying success.",
+  "worst_moment": "The tollgate negotiation in Scene 1 ends in a muddled beat: Petra's diplomatic gesture explicitly fails ('the tie doesn't tip clean her way'), but the fallout is undercut a page later when the same scene resolves anyway via Petra slapping the stranger awake \u2014 the initial failure's stakes (Coy's suspicion, the second sentry, 'four sets of eyes fixed on the sleeping man') evaporate without much further cost, making the complication feel narrated rather than truly consequential.",
+  "notes": "A tightly-paced, atmospheric single session (tollgate \u2192 death-house \u2192 ford ambush \u2192 belltower rescue \u2192 stiltfolk convergence) with strong sensory GMing and good use of each character's stated competencies (Petra's ear for sound/water, Caddock's midwife steadiness, Yarrow's swamp-craft, Anselm's ritual knowledge). The main weakness is that almost all personal-history material was volunteered by the players themselves in their action text rather than sprung on them by the world/GM \u2014 only Anselm (Fennard) and, more thinly, Yarrow (Coy's 'Weir-keeper' recognition) got backstory hooks that originated from the GM side. Caddock in particular never had her own past tested or complicated by the world. Combat/skill resolution reads as fairly frictionless \u2014 nearly every group action (the ford crossing, the belfry defense) succeeds cleanly, which keeps tension somewhat low on the mechanical side even though the fictional stakes are well dressed.",
+  "synthetic": false,
+  "tokens": {
+   "prompt": 13460,
+   "completion": 3660,
+   "cost_usd": 0.1003,
+   "calls": 1
+  }
+ },
+ "S-9e3e82b1": {
+  "backstory": [
+   {
+    "name": "Petra",
+    "world_driven": true,
+    "world_driven_events": 2,
+    "player_raised": true,
+    "score": 5,
+    "note": "Sexton and later Mabel independently confirm hearing Petra's own name in the swarm-song, and the pilgrim camp's trust/recognition of her (from her self-described history sheltering with them) shapes the negotiation \u2014 but the core claims (name-in-song, pilgrim history) originated from Petra's own player lines, so the world mostly amplifies rather than introduces."
+   },
+   {
+    "name": "Anselm",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 3,
+    "note": "The Weary Innkeeper's betrayal and visible shame plays out the consequence of a debt Anselm's player introduced himself (herbed the innkeeper's daughter, refused coin); GM stages the payoff but did not originate the backstory element."
+   },
+   {
+    "name": "Caddock",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 5,
+    "note": "The Stranded Ferryman publicly surfaces at the gate to collect on Caddock's coin-promise, turning a debt she referenced into a visible town-ledger complication the GM staged unprompted."
+   },
+   {
+    "name": "Yarrow",
+    "world_driven": true,
+    "world_driven_events": 1,
+    "player_raised": true,
+    "score": 4,
+    "note": "A stranger in the pilgrim camp is shown asking pointed questions about weir-gates and old maps, an unprompted thread tied to Yarrow's family cache backstory, though it's introduced but left unresolved."
+   }
+  ],
+  "best_moment": "The belltower climax in S5: all four PCs execute a genuinely coordinated rescue \u2014 Petra seizing the bell-rope, Anselm's counter-liturgy shattering the false song, Caddock catching Tomas as he breaks free, Yarrow taking a hit to hold the line \u2014 culminating in the Drowned Priest's desperate dive into the flood. It pays off every thread (the swarm-song, Tomas, Anselm's ritual expertise, Petra's fear of the song) in one tight, earned sequence.",
+  "worst_moment": "The inn skirmish against the acolytes (S4) resolves almost too neatly in a single exchange \u2014 four simultaneous, well-aimed actions (grapple, counter-liturgy, smoke, tackle) all succeed with no real setback or cost, making a scene that should feel dangerous read more like a checklist being cleared.",
+  "coherence": 8,
+  "complication_quality": 8,
+  "engagement": 8,
+  "notes": "A tightly plotted five-scene session with a clear central mystery (the swarm-song/Tomas) that every scene meaningfully advances. The GM is skilled at converting player-authored backstory details into immediate fictional consequences (Caddock's ferryman debt, Anselm's innkeeper debt, Petra's name-in-the-song), which makes the world feel responsive, though strictly speaking most of these originate from the players' own declarations rather than being GM-introduced surprises \u2014 Yarrow's stranger-in-the-camp thread is the closest to a genuinely world-initiated backstory hook, and it's left dangling. Spotlight is well distributed: each PC gets a distinct competency moment (Petra's song-reading, Anselm's ritual lore, Caddock's social/medical authority and smoke tactic, Yarrow's guard bearing and route-sense) in nearly every scene. The gate scene (S1) is a particular highlight of ensemble improvisation, with each character covering for Petra's stagger in a different way. Weakest link is the inn fight, which is resolved too frictionlessly given the stakes established.",
+  "overall": 7,
+  "player_agency": 7,
+  "spotlight_fairness": 8,
+  "synthetic": false,
+  "tokens": {
+   "prompt": 10939,
+   "completion": 3967,
+   "cost_usd": 0.0915,
+   "calls": 1
+  }
+ }
+}

@@ -4,7 +4,7 @@
  "arm": "C",
  "seed": 44983,
  "spec_version": "0.3.1",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 1,
@@ -68,7 +68,7 @@
     "id": "B-02",
     "name": "PLEA FOR HELP",
     "trigger": "deck_at_most:3",
-    "used": null
+    "used": true
    },
    {
     "id": "B-03",
@@ -3356,6 +3356,1618 @@
     "Yarrow": 3
    },
    "gm_fp": 3
+  },
+  {
+   "event_id": 115,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Deploy module M-1",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "C-04,F-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "trigger fired at previous cleanup: compel_refused",
+   "event_type": "module_deploy",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 116,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail + C-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "C-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "module M-1; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 117,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail + F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "F-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "module M-1; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 118,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Scene 5 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 119,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Backstory guarantee pull (final scene)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-20",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "owner Yarrow",
+   "event_type": "guarantee_pull",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 120,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Draw (beat_frame)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "deck now 1",
+   "event_type": "draw",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 121,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Beat Frame PLEA FOR HELP",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-20,H-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "fills {'WHO': 'PX-20', 'WHERE': 'H-04'}; defaults for rest",
+   "event_type": "beat_frame",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 122,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail + H-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "drawn from Session Deck; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 123,
+   "session": 1,
+   "scene": 5,
+   "actor": "Yarrow",
+   "action": "Compel (deck)",
+   "skill": "",
+   "tags_invoked": "Chases False Leads",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "Ness's lead is thin — third-hand, garbled by fever and fear — but it's the first word on your missing kin in months. This is exactly what it means that Yarrow chases false leads: he can't make himself",
+   "event_type": "compel",
+   "improvised": false,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 124,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail - F-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "F-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "discard: rail limit",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 125,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail + PX-20",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-20",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "surfaced (Yarrow)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 126,
+   "session": 1,
+   "scene": 5,
+   "actor": "Yarrow",
+   "action": "Card surfaces",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-20",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "1 free invoke(s)",
+   "event_type": "surface",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 127,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "Can the party cross the Sucking Mire to the Drowned Temple's belltower and pull Ness's son back from the swarm-song before the hive claims him for good?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 128,
+   "session": 1,
+   "scene": 5,
+   "actor": "Petra",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "Petra closes her eyes as they approach the reed mats, one hand trailing down to touch the water. The swarm-song washes over her in layers—the boy's voice wound ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 129,
+   "session": 1,
+   "scene": 5,
+   "actor": "Anselm",
+   "action": "overcome",
+   "skill": "Lore",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "Anselm steps forward and begins reading the mire itself—studying how the water moves beneath the reeds, how the pilings hide just beneath the surface, consultin",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 130,
+   "session": 1,
+   "scene": 5,
+   "actor": "Caddock",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "Caddock moves to the edge of the causeway and cautiously tests the nearest reed mat with her foot, feeling for what's beneath the surface. She keeps her weight ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 131,
+   "session": 1,
+   "scene": 5,
+   "actor": "Yarrow",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "Yarrow steps to the mire's edge and crouches low, fingers hovering just above the reed-mat surface. For a moment he's perfectly still, head tilted like he's lis",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 132,
+   "session": 1,
+   "scene": 5,
+   "actor": "Petra",
+   "action": "Create Advantage: Petra closes her eyes as they approach the reed mats, one ha",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ + + -",
+   "total": "+6",
+   "opposition": "+3",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "aspect A-1.5.7 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "hides beneath reed mats [H-04]",
+    "drags down the heavy [H-04]"
+   ],
+   "target_card": "H-04",
+   "target_npc": "",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 133,
+   "session": 1,
+   "scene": 5,
+   "actor": "Petra",
+   "action": "Peek",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "L-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "left on top",
+   "event_type": "peek",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 134,
+   "session": 1,
+   "scene": 5,
+   "actor": "Anselm",
+   "action": "Overcome: Anselm steps forward and begins reading the mire itself—stud",
+   "skill": "Lore +4",
+   "tags_invoked": "Remembers the old mill-roads now underwater [AN-01]",
+   "fp_spent": 1,
+   "dice": "- 0 - 0",
+   "total": "+4",
+   "opposition": "+5",
+   "result": "success_major_cost",
+   "draw_id": "L-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "GM invokes: exhausts anyone crossing [H-04]",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [
+    "hides beneath reed mats [H-04]",
+    "drags down the heavy [H-04]"
+   ],
+   "target_card": "H-04",
+   "target_npc": "",
+   "shifts": -1,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": "gm_card"
+  },
+  {
+   "event_id": 135,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Draw (major_cost)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "L-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "deck now 0",
+   "event_type": "draw",
+   "improvised": false,
+   "caused_by": 134,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 136,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Deck exhausted",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "climax is scene 6",
+   "event_type": "deck_exhausted",
+   "improvised": false,
+   "caused_by": 134,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 137,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail - C-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "C-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "discard: rail limit",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 138,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail + L-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "L-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "drawn from Session Deck; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 139,
+   "session": 1,
+   "scene": 5,
+   "actor": "Yarrow",
+   "action": "Create Advantage: Yarrow steps to the mire's edge and crouches low, fingers ho",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "- 0 0 +",
+   "total": "+4",
+   "opposition": "+3",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "aspect A-1.5.8 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "hides beneath reed mats [H-04]",
+    "drags down the heavy [H-04]"
+   ],
+   "target_card": "H-04",
+   "target_npc": "",
+   "shifts": 1,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 140,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Cost (success_major_cost)",
+   "skill": "",
+   "tags_invoked": "Echoes Betray Every Movement",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "L-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "Anselm's course threads true past the drowned pilings — but this drowned temple echoes betray every movement across its half-flooded nave, and every splash and scrape of the party's crossing rolls out",
+   "event_type": "cost",
+   "improvised": false,
+   "cost_valid": true,
+   "for_event": 134,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 141,
+   "session": 1,
+   "scene": 5,
+   "actor": "Petra",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "Petra stops mid-wade, one hand rising to her ear, her whole body going rigid. The water around them is still half-flooded stone, but she's not feeling the cold ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 142,
+   "session": 1,
+   "scene": 5,
+   "actor": "Anselm",
+   "action": "create_advantage",
+   "skill": "Lore",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "Anselm moves deeper into the temple's half-flooded nave, eyes tracing the stone architecture and the belltower rising above. His lips move silently through frag",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 143,
+   "session": 1,
+   "scene": 5,
+   "actor": "Caddock",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "Caddock moves into the temple's depths, keeping low and moving carefully toward the belltower. Her balance is sure against the uncertain footing, her midwife's ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 144,
+   "session": 1,
+   "scene": 5,
+   "actor": "Yarrow",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "Yarrow goes still as the song shifts—utterly still, the way a man learns to go when he's stood watch through long nights. His eyes close for just a moment, fing",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 145,
+   "session": 1,
+   "scene": 5,
+   "actor": "Anselm",
+   "action": "Create Advantage: Anselm moves deeper into the temple's half-flooded nave, eye",
+   "skill": "Lore +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "- - - 0",
+   "total": "+1",
+   "opposition": "+2",
+   "result": "success_major_cost",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "aspect A-1.5.9 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "belltower above the waterline [L-02]"
+   ],
+   "target_card": "L-02",
+   "target_npc": "",
+   "shifts": -1,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": "face_up_gm_tag"
+  },
+  {
+   "event_id": 146,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Cost (success_major_cost)",
+   "skill": "",
+   "tags_invoked": "Echoes Betray Every Movement",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "Anselm's whispered reading of the temple's exorcism-rites carries — but the drowned nave's echoes betray every movement, and his own murmured Latin bounces back off wet stone toward the belltower, dou",
+   "event_type": "cost",
+   "improvised": false,
+   "cost_valid": true,
+   "for_event": 145,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 147,
+   "session": 1,
+   "scene": 5,
+   "actor": "Petra",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "Petra goes completely rigid in the drowned temple's cold water, her free hand pressing flat against the ancient stone pillar to steady herself as the swarm-song",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 148,
+   "session": 1,
+   "scene": 5,
+   "actor": "Anselm",
+   "action": "create_advantage",
+   "skill": "Lore",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "Anselm steps deeper into the drowned temple's half-flooded nave, eyes tracing the wet stone architecture and the pattern of echoes bouncing off the pillars. He ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 149,
+   "session": 1,
+   "scene": 5,
+   "actor": "Caddock",
+   "action": "pass",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "Caddock keeps her eyes on Yarrow's back and follows exactly where he steps, moving with the same steady patience she'd bring to crossing flooded ground in the d",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 150,
+   "session": 1,
+   "scene": 5,
+   "actor": "Yarrow",
+   "action": "overcome",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "Yarrow feels the echo pattern bounce back from the belltower—the creature's attention is rooted there, caught in its own song. He traces the water-flow, reads h",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 151,
+   "session": 1,
+   "scene": 5,
+   "actor": "Petra",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Freezes when the song calls her name",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PE-03",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "As Petra strains to hear past the boy's voice and the sentinel's low mercy-song, the swarm-song suddenly folds itself into a single sound: her own name, sung note-perfect in the belltower's borrowed v",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 152,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail - F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "F-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "discard: rail limit",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 153,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail + PS-20",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PS-20",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "story draw (free_compel_accepted)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 154,
+   "session": 1,
+   "scene": 5,
+   "actor": "Petra",
+   "action": "Story draw (free_compel_accepted)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PS-20",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "",
+   "event_type": "story_draw",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 155,
+   "session": 1,
+   "scene": 5,
+   "actor": "Petra",
+   "action": "Create Advantage: Petra goes completely rigid in the drowned temple's cold wat",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "0 0 + -",
+   "total": "+4",
+   "opposition": "+1",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "aspect A-1.5.10 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "L-02",
+   "target_npc": "",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 156,
+   "session": 1,
+   "scene": 5,
+   "actor": "Anselm",
+   "action": "Create Advantage: Anselm steps deeper into the drowned temple's half-flooded n",
+   "skill": "Lore +4",
+   "tags_invoked": "Understanding of the Tower's Sentinel [A-1.5.9]",
+   "fp_spent": 0,
+   "dice": "+ - - 0",
+   "total": "+5",
+   "opposition": "+1",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "aspect A-1.5.11 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "L-02",
+   "target_npc": "",
+   "shifts": 4,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 157,
+   "session": 1,
+   "scene": 5,
+   "actor": "Yarrow",
+   "action": "Overcome: Yarrow feels the echo pattern bounce back from the belltower",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "0 + - -",
+   "total": "+3",
+   "opposition": "+2",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "half-flooded nave [L-02]"
+   ],
+   "target_card": "L-02",
+   "target_npc": "",
+   "shifts": 1,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 158,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "6->6",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "against the players 3 (hostile invokes 1 + compels 2) vs friendly invokes 2 (§6, spec 0.3.1)",
+   "event_type": "tension",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 159,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail - PX-20",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-20",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "binder: scene cleanup",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 160,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail - H-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "discard: no longer present",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 161,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Weight PS-20",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PS-20",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "2->3 (drawn/featured this scene)",
+   "event_type": "story_weight",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 162,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "The Tower Sentinel",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 163,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "Tam, Ness's Missing Son",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 164,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "The Starving Thing Beneath the Nave",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 165,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Scene 5 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 166,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-03 1/4",
+   "tension": 6,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 167,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "4",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 168,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "4",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 169,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "FP: Petra=4, Anselm=0, Caddock=5, Yarrow=4",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 0,
+    "Caddock": 5,
+    "Yarrow": 4
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -3407,6 +5019,17 @@
     "M-1",
     "B-02"
    ]
+  },
+  {
+   "index": 5,
+   "tension_before": 6,
+   "scene_test": null,
+   "outcome": "beat_frame",
+   "beat": "backstory guarantee",
+   "rounds": 3,
+   "climax": false,
+   "tension_after": 6,
+   "triggers_fired": []
   }
  ],
  "transcript": [
@@ -4185,6 +5808,334 @@
    "kind": "narration",
    "text": "Mabb Corrin's hand finds Anselm's wrist, cold and certain, and the words come out in the flat, worn voice of someone who has told this story to herself every night since. \"It wasn't only the water,\" she says. \"The flood came slow — we had days. Time to leave. But something got in the houses first. Doors we'd barred stood open come morning. Meals left half-eaten, like whoever was eating just... stopped, mid-bite. And the scratches, Anselm — on the inside of the walls, low down, like someone crawling.\" She looks past him, to where the rooftops still stand in his memory, silent and empty. \"It stays after dark. Whatever it is. I don't think it ever left.\" Anselm's jaw works, the old rope-current pull in his chest finally giving way — not to the doctrine he quoted, but to this. Brother Ossuin, watching from the reliquary door, sees something shift in the younger man's stance that no liturgy could counterfeit: a man actually standing in his grief instead of reading past it. The old keeper exhales, robes settling. \"Doctrine before mercy,\" he murmurs, almost to himself, \"but even doctrine bends for the truly haunted.\" He draws a key from his belt and turns to the reliquary door. \"Come. The blight-lore is yours — and perhaps, Anselm of the drowned mill, we'll speak later of what nests in empty houses. The Order has old writings on such things too.\" Petra and Yarrow, still flanking Mabb, feel the tension in the nave ease as the vault's lock finally gives.",
    "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Yarrow",
+   "kind": "speech",
+   "text": "Three winters back, before the worst of the floods, I promised Ness that if she found word of my brother Thel—who went downriver trading and never returned when the waters rose—I'd give her the old Weir-Keepers' knowledge, the family maps sacred to my line. I gave her my family mark so any news-bringer would be believed. She's here now because in the chaos of refugees seeking shelter at the sanctuary, someone mentioned a name, a description that might be him. It's thin, probably nothing, but I can't stop myself from chasing it.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Yarrow",
+   "kind": "speech",
+   "text": "Ness. Something about Thel—tell me what you heard.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Yarrow accepts the compel on 'Search for Missing Kin'.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Beat: A gaunt woman shoulders out of the crowd and grips Yarrow's sleeve before he can speak — Ness Corrin, a cousin twice removed he hasn't seen since the weirs still held, who's spent eleven years chasing the same thin rumors he has. She's heard the name of his missing kin spoken by a hive-touched pilgrim, and she won't let go of his arm until he promises to follow it. begs the party to go to The trail Ness describes doesn't run the causeway or the ford — it cuts straight through the Sucking Mire, where the reed mats look solid enough to walk but hide black water underneath, out toward the drowned temple beyond., because her son followed the swarm-song into the belltower.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Ness won't let go of Yarrow's sleeve, not until he swears the oath — and when he does, something in her face breaks open with a relief that looks almost like grief already. She points them off the causeway, off the known roads, out where the reed mats stretch flat and green and lying across black water that never quite stops moving. The Mire has no pilings marked, no warden's rope, nothing but the old drowned track Ness half-remembers and the distant, patient sound of bells that shouldn't still be ringing. Somewhere out past the reeds, Saint Orrin's belltower breaks the flood-line like a broken tooth, and a boy who followed a song into the water is up there still — or isn't, anymore. The party sets out with Ness's warning trailing after them: the mats look solid enough to walk. They are not.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Petra",
+   "kind": "speech",
+   "text": "The boy is still singing. But listen—underneath that, there's something old in the water. And the song is trying to warn us about where the mats won't hold. I can feel the difference now.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Petra",
+   "kind": "action",
+   "text": "(Petra closes her eyes as they approach the reed mats, one hand trailing down to touch the water. The swarm-song washes over her in layers—the boy's voice wound through it like thread, but underneath something deeper and far older, patient as stone. She feels the pulse of the mire's hunger beneath her fingertips, traces the rhythm of which reeds hide solid ground and which hide the black water waiting to pull them down. Her jaw tightens as she listens.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Anselm",
+   "kind": "speech",
+   "text": "The reeds lie, but the old pilings beneath still mark the way. I've mapped where the reliquaries lie drowned in this land—follow my course and I'll read us through to the temple.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Anselm",
+   "kind": "action",
+   "text": "(Anselm steps forward and begins reading the mire itself—studying how the water moves beneath the reeds, how the pilings hide just beneath the surface, consulting his knowledge of the drowned mill-roads and his rumor-maps of where reliquaries wash ashore. He traces a line through the deception toward the distant belltower, moving with the careful confidence of someone following scripture.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Caddock",
+   "kind": "speech",
+   "text": "I've walked these kinds of lies before. Step where I step, and don't trust anything that feels too solid.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Caddock",
+   "kind": "action",
+   "text": "(Caddock moves to the edge of the causeway and cautiously tests the nearest reed mat with her foot, feeling for what's beneath the surface. She keeps her weight low and balanced, ready to shift back to solid ground. Her eyes track the subtle movement of water beneath the vegetation.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Yarrow",
+   "kind": "speech",
+   "text": "I was raised reading this water. The stones are still there. We walk the pilings, we stay dry. Follow where I step.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Yarrow",
+   "kind": "action",
+   "text": "(Yarrow steps to the mire's edge and crouches low, fingers hovering just above the reed-mat surface. For a moment he's perfectly still, head tilted like he's listening to something in the water. Then his eyes open—tracker's eyes—and he traces an invisible line through the green. He stands and starts forward with the methodical pace of a man whose choice is made.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Petra — create advantage with Notice: dice + + + - → Fantastic (+6) vs Good (+3): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Anselm — overcome with Lore: dice - 0 - 0, invoking Remembers the old mill-roads now underwater [AN-01] → Great (+4) vs Superb (+5): SUCCESS MAJOR COST",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Yarrow — create advantage with Notice: dice - 0 0 + → Great (+4) vs Good (+3): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Anselm's course threads true past the drowned pilings — but this drowned temple echoes betray every movement across its half-flooded nave, and every splash and scrape of the party's crossing rolls out ahead of them across the water, bouncing off unseen stone until it sounds like ten people wading instead of four. Somewhere near the belltower, the swarm-song falters, then shifts pitch, as if something has just heard them coming.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Petra's read carries them clean across the worst of it — she calls each safe root a heartbeat before a foot would sink, and the party crosses the reed mats dry-shod, the mire's hunger sliding harmlessly beneath them. Anselm's memory of the old mill-roads guides them true toward the pilings, but Saint Orrin's Drowned Temple keeps its own counsel: the half-flooded nave swallows sound and throws it back doubled, and every wading step, every scrape of a boot on submerged stone, rolls out ahead of them as if a crowd were coming instead of four. Near the belltower the swarm-song catches on that noise and falters — then climbs, sharper, more urgent, like something turning to look. Ness's boy is close now, and so, perhaps, is whatever answers when the song is disturbed.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Petra",
+   "kind": "speech",
+   "text": "That's not just the boy singing. Listen—underneath his voice there's something old. Something that woke when we came in. It's in the tower, and it's turned to look at us.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Petra",
+   "kind": "action",
+   "text": "(Petra stops mid-wade, one hand rising to her ear, her whole body going rigid. The water around them is still half-flooded stone, but she's not feeling the cold or the mud anymore—she's listening to the layers of the swarm-song, the way it splits and echoes off the drowned pillars. The boy's voice is there, thin and desperate, wound through with the older song. But underneath both, she feels something vast and patient waking, felt rather than heard—the weight of stone that's been sleeping under fathoms for longer than anyone in this party has been alive. Her free hand finds the wet brick of the nearest pillar to steady herself, and her eyes snap open, pointing upward where the belltower breaks the floodline like a broken tooth.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Anselm",
+   "kind": "speech",
+   "text": "The song changed when it heard us—something aware, something guarding the tower.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Anselm",
+   "kind": "action",
+   "text": "(Anselm moves deeper into the temple's half-flooded nave, eyes tracing the stone architecture and the belltower rising above. His lips move silently through fragments of the old exorcism rites, reading the temple like scripture, finding meaning in every echo and shadow where water meets stone.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Caddock",
+   "kind": "speech",
+   "text": "Forward. Steady.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Caddock",
+   "kind": "action",
+   "text": "(Caddock moves into the temple's depths, keeping low and moving carefully toward the belltower. Her balance is sure against the uncertain footing, her midwife's composure evident in every step. She doesn't hesitate—she's delivered in worse than this, in darker places, when something was waiting on the other side. She moves like she knows the way forward, even if she doesn't.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Yarrow",
+   "kind": "speech",
+   "text": "The song just changed—something heard us coming. The echoes gave us away, but they'll echo whatever answers too. Stay close, stay quiet, and if I move, you move exactly where I step. No more wading blind.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Yarrow",
+   "kind": "action",
+   "text": "(Yarrow goes still as the song shifts—utterly still, the way a man learns to go when he's stood watch through long nights. His eyes close for just a moment, fingers spread open at his sides, feeling the water-sound and the echo-pattern bounce back off stone he can't yet see. When his eyes open again, he raises one flat hand toward the others: Hold. Not yet. He moves back to the group with the careful stealth of a man who's spent twenty years learning how to move through wet ground without sound, and speaks low.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Anselm — create advantage with Lore: dice - - - 0 → Average (+1) vs Fair (+2): SUCCESS MAJOR COST",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Anselm's whispered reading of the temple's exorcism-rites carries — but the drowned nave's echoes betray every movement, and his own murmured Latin bounces back off wet stone toward the belltower, doubled and strange, as if someone else were reciting along with him. Whatever guards the tower now knows exactly where he's standing.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Anselm's whispered Latin doesn't just betray his position — it answers something. The echo comes back wrong, layered, a second voice picking up the rite half a beat behind his own, mimicking the cadence of an old exorcism like it's mocking the words instead of fearing them. Marked on Saint Orrin's clock: the temple's echoes have done their work, and whatever wakes in the belltower now knows exactly where the party stands in the nave. The swarm-song stutters once more overhead — not the boy's voice this time, but something older, folding itself around his song like a hand closing on a candle-flame. Petra feels it in her teeth before anyone hears it: the patient thing in the water has turned all the way around now, and it is not confused anymore.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Petra",
+   "kind": "speech",
+   "text": "The tower's holding him safe, not prisoner—there's something ancient and starving circling in the deep water under us, and the sentinel in the belltower won't let it reach him. It's mercy keeping him there, not a prison. We need to know what we're walking into before we break that guard.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Petra",
+   "kind": "action",
+   "text": "(Petra goes completely rigid in the drowned temple's cold water, her free hand pressing flat against the ancient stone pillar to steady herself as the swarm-song crashes over her in layers—the boy's thin, desperate voice wound through something vast and patient and utterly undeniable. But underneath both, she hears it clearly now: the sentinel in the tower isn't hunting them, isn't trying to claim the boy. It's a dam. A shield. A guardian folding itself between the child and something else that circles in the deep water beneath them—something old, something cold, something that carries hunger the way the water carries salt. The sentinel knows exactly what's down there in the drowned dark, and it won't let go. When Petra's eyes snap open, she's looking at the belltower with complete certainty.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Anselm",
+   "kind": "speech",
+   "text": "That's no hive-song. It knows the rites, and it mocks them. Whatever guards that tower, it understands what I'm trying to do.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Anselm",
+   "kind": "action",
+   "text": "(Anselm steps deeper into the drowned temple's half-flooded nave, eyes tracing the wet stone architecture and the pattern of echoes bouncing off the pillars. He invokes Understanding of the Tower's Sentinel (A-1.5.9), reading from the temple's geometry itself and the quality of that mocking echo—measuring, assessing, reaching for the knowledge hidden in drowned reliquaries and ruined liturgy. This thing that wakes in the belltower has intelligence. It has *presence*. It is not what he came here to burn away.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Yarrow",
+   "kind": "speech",
+   "text": "It's rooted there—stuck in its own song. We move through its blind spot, the echoes it can't hear. Step where I step, and don't trust anything you hear behind you.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Yarrow",
+   "kind": "action",
+   "text": "(Yarrow feels the echo pattern bounce back from the belltower—the creature's attention is rooted there, caught in its own song. He traces the water-flow, reads how sound moves through the half-flooded nave, and finds the acoustic shadows where the echoes collapse. His fingers brush the wet stone of the nearest pillar as he orients himself, then he turns back to the party with the certainty of a man who's spent his whole life reading what water will and won't give away. He picks out a path that uses the pillars and the mire's slow movement to muffle their steps, moving them forward toward the tower while staying in the gaps where the creature's attention can't quite reach.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Petra",
+   "kind": "speech",
+   "text": "Listen to me, we have to—",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Petra accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Petra — create advantage with Notice: dice 0 0 + - → Great (+4) vs Average (+1): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Anselm — create advantage with Lore: dice + - - 0, invoking Understanding of the Tower's Sentinel [A-1.5.9] → Superb (+5) vs Average (+1): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Yarrow — overcome with Notice: dice 0 + - - → Good (+3) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Yarrow finds the seam in the echo — a corridor of dead sound where the drowned pillars swallow footfall instead of throwing it back — and threads the party through it like a man reading current instead of water. Petra's certainty crystallizes into something the others can feel too: she doesn't just hear the sentinel guarding the boy, she *shows* it to them, pointing out the shape of the old thing's vigil in the way the swarm-song bends around the tower like a held breath. Anselm, understanding now instead of merely translating, stops murmuring exorcism-rites that mock themselves back at him and starts reading the temple's architecture as welcome instead of warning — recognizing the sentinel not as an enemy of the rites, but as a keeper of them, older than the Order that forgot how to listen. Caddock's steady advance never breaks stride; she's the one who reaches the base of the belltower stair first, boots finally finding dry stone, and looks up to where a small shape huddles in the light above a great, patient watching presence that has not moved to strike — because it was never going to. Ness's boy is alive, wrapped in something vast and old that has kept the deep hunger of the flooded dark at bay all this time, and the party stands at the foot of the stair with the swarm-song settling, finally, into something almost like recognition instead of threat.",
+   "visible_to": "all"
   }
  ],
  "costs": [
@@ -4196,7 +6147,20 @@
    "tag": "long exposed stretch",
    "text": "The punt scrapes up against old pilings and you climb out onto stone at last — the Ashwater Causeway, the only dry road left in the Sallowmere, stretching north in a long raised ribbon over drowned fields. But the tollgate itself has moved: the Wardens have pulled their chains back a full quarter-mi",
    "improvised": false,
-   "tag_in_text": true
+   "tag_in_text": true,
+   "card": {
+    "id": "L-04",
+    "type": "LOCATION",
+    "owner": "GM",
+    "title": "The Ashwater Causeway",
+    "power_tags": [
+     "only dry road north",
+     "toll gate and chains",
+     "long exposed stretch"
+    ],
+    "weakness": "Nowhere to Hide",
+    "clock": "0/4"
+   }
   },
   {
    "event": "free_compel",
@@ -4222,7 +6186,19 @@
    "owner": "Petra",
    "placebo": true,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "PX-15",
+    "type": "REACH",
+    "owner": "PC-PETRA",
+    "title": "The Hunt for Shelter",
+    "power_tags": [
+     "claims the last dry room",
+     "barricades the door",
+     "bargains for a place"
+    ],
+    "weakness": "Turns Neighbours Into Rivals"
+   }
   },
   {
    "event": "altered",
@@ -4232,7 +6208,19 @@
    "tag": "Turns Neighbours Into Rivals",
    "text": "The sanctuary-hall looms ahead on its stilts, one of the last truly dry buildings left in Hollowmoot — and half the town seems to have had the same idea. A crowd's pressed up against the doors, soaked families and shivering elders arguing over who was here first, who has a sick child, who paid tithe",
    "improvised": false,
-   "tag_in_text": true
+   "tag_in_text": true,
+   "card": {
+    "id": "PX-15",
+    "type": "REACH",
+    "owner": "PC-PETRA",
+    "title": "The Hunt for Shelter",
+    "power_tags": [
+     "claims the last dry room",
+     "barricades the door",
+     "bargains for a place"
+    ],
+    "weakness": "Turns Neighbours Into Rivals"
+   }
   },
   {
    "event": "compel:tie",
@@ -4247,7 +6235,19 @@
    "owner": "Caddock",
    "placebo": true,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "PX-24",
+    "type": "REACH",
+    "owner": "PC-CADDOCK",
+    "title": "Escape From Pursuers",
+    "power_tags": [
+     "covers tracks carefully",
+     "lies about the past",
+     "begs for a hiding place"
+    ],
+    "weakness": "Pursuers Close Behind"
+   }
   },
   {
    "event": "compel:altered scene",
@@ -4262,7 +6262,19 @@
    "owner": "Anselm",
    "placebo": true,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "PX-07",
+    "type": "ROOTS",
+    "owner": "PC-ANSELM",
+    "title": "A Drowned Village",
+    "power_tags": [
+     "rooftops above water",
+     "salvage in flooded homes",
+     "silent empty streets"
+    ],
+    "weakness": "Something Nests in the Houses"
+   }
   },
   {
    "event": "altered",
@@ -4272,7 +6284,19 @@
    "tag": "silent empty streets",
    "text": "The sanctuary-hall's inner nave is packed floor to rafters with the newly homeless, and as your eyes adjust to the candlelight, Anselm goes very still. Huddled near a support pillar, wrapped in someone else's blanket, is old Mabb Corrin — miller's wife, from a village Anselm hasn't set foot in since",
    "improvised": false,
-   "tag_in_text": true
+   "tag_in_text": true,
+   "card": {
+    "id": "PX-07",
+    "type": "ROOTS",
+    "owner": "PC-ANSELM",
+    "title": "A Drowned Village",
+    "power_tags": [
+     "rooftops above water",
+     "salvage in flooded homes",
+     "silent empty streets"
+    ],
+    "weakness": "Something Nests in the Houses"
+   }
   },
   {
    "event": "free_compel",
@@ -4284,6 +6308,128 @@
    "improvised": true,
    "accepted": true,
    "owner": "Anselm"
+  },
+  {
+   "event": "beat_fill",
+   "scene": 5,
+   "draw_id": "PX-20",
+   "valid": true,
+   "tag": "follows thin rumors",
+   "text": "A gaunt woman shoulders out of the crowd and grips Yarrow's sleeve before he can speak — Ness Corrin, a cousin twice removed he hasn't seen since the weirs still held, who's spent eleven years chasing the same thin rumors he has. She's heard the name of his missing kin spoken by a hive-touched pilgr",
+   "improvised": false,
+   "tag_in_text": true,
+   "repaired": false,
+   "card": {
+    "id": "PX-20",
+    "type": "REACH",
+    "owner": "PC-YARROW",
+    "title": "Search for Missing Kin",
+    "power_tags": [
+     "asks every traveler",
+     "follows thin rumors",
+     "won't stop looking"
+    ],
+    "weakness": "Chases False Leads"
+   }
+  },
+  {
+   "event": "beat_fill",
+   "scene": 5,
+   "draw_id": "H-04",
+   "valid": true,
+   "tag": "hides beneath reed mats",
+   "text": "The trail Ness describes doesn't run the causeway or the ford — it cuts straight through the Sucking Mire, where the reed mats look solid enough to walk but hide black water underneath, out toward the drowned temple beyond.",
+   "improvised": false,
+   "tag_in_text": true,
+   "repaired": false,
+   "card": {
+    "id": "H-04",
+    "type": "HAZARD",
+    "owner": "GM",
+    "title": "Sucking Mire",
+    "power_tags": [
+     "drags down the heavy",
+     "hides beneath reed mats",
+     "exhausts anyone crossing"
+    ],
+    "weakness": "Firm Along Old Pilings",
+    "clock": "0/4"
+   }
+  },
+  {
+   "event": "compel:beat frame",
+   "scene": 5,
+   "draw_id": "PX-20",
+   "valid": true,
+   "tag": "Chases False Leads",
+   "text": "Ness's lead is thin — third-hand, garbled by fever and fear — but it's the first word on your missing kin in months. This is exactly what it means that Yarrow chases false leads: he can't make himself weigh the odds before he's already moving toward the mire, dragging the party's schedule and safety",
+   "improvised": false,
+   "accepted": true,
+   "refusal_valid": null,
+   "owner": "Yarrow",
+   "placebo": true,
+   "tag_in_text": true,
+   "repaired": true,
+   "card": {
+    "id": "PX-20",
+    "type": "REACH",
+    "owner": "PC-YARROW",
+    "title": "Search for Missing Kin",
+    "power_tags": [
+     "asks every traveler",
+     "follows thin rumors",
+     "won't stop looking"
+    ],
+    "weakness": "Chases False Leads"
+   }
+  },
+  {
+   "event": "success_major_cost",
+   "scene": 5,
+   "draw_id": "L-02",
+   "valid": true,
+   "tag": "Echoes Betray Every Movement",
+   "text": "Anselm's course threads true past the drowned pilings — but this drowned temple echoes betray every movement across its half-flooded nave, and every splash and scrape of the party's crossing rolls out ahead of them across the water, bouncing off unseen stone until it sounds like ten people wading in",
+   "improvised": false,
+   "mode": "gm_card",
+   "tag_in_text": true,
+   "repaired": true,
+   "card": {
+    "id": "L-02",
+    "type": "LOCATION",
+    "owner": "GM",
+    "title": "Saint Orrin's Drowned Temple",
+    "power_tags": [
+     "half-flooded nave",
+     "hidden reliquary crypt",
+     "belltower above the waterline"
+    ],
+    "weakness": "Echoes Betray Every Movement",
+    "clock": "0/4"
+   }
+  },
+  {
+   "event": "success_major_cost",
+   "scene": 5,
+   "draw_id": "",
+   "valid": true,
+   "tag": "Echoes Betray Every Movement",
+   "text": "Anselm's whispered reading of the temple's exorcism-rites carries — but the drowned nave's echoes betray every movement, and his own murmured Latin bounces back off wet stone toward the belltower, doubled and strange, as if someone else were reciting along with him. Whatever guards the tower now kno",
+   "improvised": false,
+   "mode": "face_up_gm_tag",
+   "tag_in_text": true,
+   "repaired": false
+  },
+  {
+   "event": "free_compel",
+   "scene": 5,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Freezes when the song calls her name",
+   "text": "As Petra strains to hear past the boy's voice and the sentinel's low mercy-song, the swarm-song suddenly folds itself into a single sound: her own name, sung note-perfect in the belltower's borrowed voice. Her whole body locks up mid-thought, breath caught, the pillar the only thing keeping her upri",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Petra"
   }
  ],
  "referee": {
@@ -4351,6 +6497,40 @@
     "section": "§7",
     "issue": "reported fictional trigger fiction:the party enters a settlement that is not an unused fictional trigger",
     "source": "engine"
+   },
+   {
+    "session": 1,
+    "scene": 5,
+    "agent": "GM",
+    "section": "§3",
+    "issue": "active opposition from unknown NPC Tower Sentinel",
+    "source": "engine"
+   },
+   {
+    "session": 1,
+    "scene": 5,
+    "agent": "GM",
+    "section": "§3",
+    "issue": "active opposition from unknown NPC Tower Sentinel",
+    "source": "engine"
+   },
+   {
+    "section": "§4 (When the deck runs out)",
+    "issue": "Deck exhaustion (event 134-136) explicitly logged 'climax is scene 6,' meaning the scene after the last card is drawn must be played as the session's climax. No scene 6 occurred; the session ended immediately after scene 5 (events 165-169).",
+    "event_id": 136,
+    "source": "referee"
+   },
+   {
+    "section": "§6A (Draw triggers table, row: compel not from a deck draw)",
+    "issue": "Story Pile draws triggered by accepted non-deck compels must grant the GM 1 free invoke on the drawn card ('the GM gains 1 free invoke on it'). Unlike every Session Deck rail_add (which logs 'GM +1 free invoke'), the story-draw rail_adds (PS-20 at event 36, PS-18 at event 107, PS-20 again at event 153) carry no such free-invoke grant note.",
+    "event_id": 36,
+    "source": "referee"
+   },
+   {
+    "section": "§10 GM Step B (Evaluate threats that left play) / §8 (GM cards)",
+    "issue": "T-05 left play via being overcome with success with style (events 15-17), which §8 states routes it to the post-session threat-evaluation step (mutate if the fiction left it alive, or retire if destroyed/resolved). The post-session steps (events 166-169) cover clocks for F-03/F-01/F-04 but include no mutate/retire entry for T-05.",
+    "event_id": 17,
+    "source": "referee"
    }
   ],
   "ambiguities": [
@@ -4443,25 +6623,308 @@
     "detail": "",
     "scene": 4,
     "source": "engine"
+   },
+   {
+    "id": "AMB-26",
+    "section": "§5",
+    "issue": "Several Beat Frames are queued for the same scene.",
+    "interim_ruling": "One per scene; the guarantee frame first, the rest carry to later scenes.",
+    "detail": "1 beat(s) carried over",
+    "scene": 5,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-27",
+    "section": "§3",
+    "issue": "Success with style on create advantage: the aspect's 2 free invokes AND the deck peek, or one of them?",
+    "interim_ruling": "Both: the aspect keeps 2 free invokes and the player may also peek.",
+    "detail": "event 132",
+    "scene": 5,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-03",
+    "section": "§4",
+    "issue": "Does the session end after the climax scene?",
+    "interim_ruling": "Yes: the climax scene is the last scene of the session.",
+    "detail": "deck exhausted in scene 5; climax = scene 6",
+    "scene": 5,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-10",
+    "section": "§9",
+    "issue": "Growth from 'roll fails after one of its tags was invoked' — invoked by whom?",
+    "interim_ruling": "Owner's own invokes only.",
+    "detail": "AN-01",
+    "scene": 5,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-16",
+    "section": "§4",
+    "issue": "A draw is required but the deck is empty outside a climax.",
+    "interim_ruling": "The cost uses a face-up GM tag, as in a climax.",
+    "detail": "major_cost with empty deck in scene 5",
+    "scene": 5,
+    "source": "engine"
+   },
+   {
+    "section": "§4 (When the deck runs out) / §4 Backstory guarantee",
+    "issue": "Event 119 pulled Yarrow's last binder card under the 'session's final scene begins' branch of the Backstory Guarantee, treating scene 5 as the final scene. But the deck then ran dry mid-scene-5 (events 134-136), and event 136 explicitly logs 'climax is scene 6' per the §4 rule 'the scene after the last card is drawn is the session's climax.' A session cannot simultaneously have scene 5 be its final scene (per the guarantee trigger) and have scene 6 be the mandated climax scene. The rules do not say which trigger should win when they collide within the same scene.",
+    "interim_ruling": "The table treated scene 5 as final and ended the session there; the 'climax is scene 6' note was left unresolved and no scene 6 was played.",
+    "source": "referee"
+   },
+   {
+    "section": "§4 / §6",
+    "issue": "It is unclear whether an Altered Scene draw (§6) that turns up a player card should invoke the *entire* §4 'Resolving a drawn player card' procedure, including the refusal fallback ('the GM builds the cost from a face-up GM tag instead'). In scene 4, Anselm refused the compel on PX-07 (event 87) and paid 1 FP, but the scene's altered element (event 90 framing, 'silent empty streets') still drew directly on PX-07's own tag rather than a face-up GM tag as §4 rule 4 would require if that rule is read to control Altered Scenes.",
+    "interim_ruling": "The table applied the full §4 player-card compel procedure to Altered Scene draws, but on refusal still used the drawn card's own tag (not a face-up GM tag) to alter the scene.",
+    "source": "referee"
+   },
+   {
+    "section": "§3 (Fate points / hostile invokes)",
+    "issue": "At event 76 the GM invoked Caddock's card tag ('Will not abandon the cellar...', CA-03) — which was never on the rail nor drawn this session — to oppose Yarrow's roll. §3 says 'Invoking a player's weakness tag against them is a hostile invoke. The target gains 1 fate point at the end of the scene,' but it doesn't specify whether 'the target' is the card's owner or the player whose roll was actually opposed, when these are two different players.",
+    "interim_ruling": "The fate point payout (event 82) went to the card's owner, Caddock, rather than to Yarrow, whose roll was actually being hindered.",
+    "source": "referee"
+   },
+   {
+    "section": "§7 rail limit / §8 GM cards",
+    "issue": "F-02 (a FACTION card with an active, part-filled clock, 1/5) was discarded from the rail purely for exceeding the 5-card limit (event 124), not because it was taken out, overcome with style, or its clock filled. §8 only defines post-session evaluation ('mutate' or 'retire') for cards that 'left play' via those three routes. The rules don't say what becomes of a clock-bearing card bumped off the rail by space alone.",
+    "interim_ruling": "F-02 was simply moved to the Session Discard with no post-session evaluation and no further clock tracking recorded.",
+    "source": "referee"
    }
   ],
-  "cost_checks": [],
-  "friction": []
+  "cost_checks": [
+   {
+    "event_id": 23,
+    "used_drawn_card": true,
+    "note": "Altered-scene element for L-04 quotes 'long exposed stretch'."
+   },
+   {
+    "event_id": 54,
+    "used_drawn_card": true,
+    "note": "Compel on drawn PX-15 quotes weakness tag 'Turns Neighbours Into Rivals'."
+   },
+   {
+    "event_id": 57,
+    "used_drawn_card": true,
+    "note": "Scene framing built from PX-15's altered element again uses 'Turns Neighbours Into Rivals'."
+   },
+   {
+    "event_id": 63,
+    "used_drawn_card": true,
+    "note": "Tie-draw PX-24 resolved as a compel quoting weakness tag 'Pursuers Close Behind'."
+   },
+   {
+    "event_id": 87,
+    "used_drawn_card": true,
+    "note": "Refused compel on PX-07 still names and uses weakness tag 'Something Nests in the Houses' in the offer text."
+   },
+   {
+    "event_id": 90,
+    "used_drawn_card": true,
+    "note": "Scene-altering element for PX-07 uses power tag 'silent empty streets' (Mabb Corrin), though per the ambiguity above this arguably should have been a face-up GM tag given the refusal."
+   },
+   {
+    "event_id": 121,
+    "used_drawn_card": true,
+    "note": "Beat Frame WHO blank (PX-20) uses power tag 'follows thin rumors'; WHERE blank (H-04) uses power tag 'hides beneath reed mats'."
+   },
+   {
+    "event_id": 123,
+    "used_drawn_card": true,
+    "note": "Beat-Frame surfacing compel on PX-20 quotes weakness tag 'Chases False Leads'."
+   },
+   {
+    "event_id": 140,
+    "used_drawn_card": true,
+    "note": "Major-cost text for L-02 quotes weakness tag 'Echoes Betray Every Movement'."
+   },
+   {
+    "event_id": 146,
+    "used_drawn_card": true,
+    "note": "Second major-cost (climax face-up-tag mode) again quotes 'Echoes Betray Every Movement' from the still-rail-present L-02."
+   }
+  ],
+  "friction": [
+   {
+    "text": "The Backstory Guarantee's 'final scene' pull (event 119) and the deck-exhaustion 'climax is scene 6' note (event 136) fired within the same scene with no way to honor both, and the table simply ended the session without a scene 6."
+   },
+   {
+    "text": "The same face-up GM tag ('Echoes Betray Every Movement' on L-02) was reused for two consecutive major-cost narrations in one scene (events 140 and 146), producing repetitive fiction even though the rules allow it."
+   },
+   {
+    "text": "Story Pile draws (PS-18, PS-20 twice) never show the 'GM +1 free invoke' rail note that Session Deck draws consistently show, making it hard to confirm the §6A-mandated GM free invoke was actually tracked or used."
+   }
+  ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "storyteller",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "In the drowned temple, when Petra finally understood that the sentinel in the belltower wasn't imprisoning Ness's boy but protecting him from something vast and hungry in the deep water—and could *show* the others what she heard in the swarm-song. That moment made clear what Petra uniquely can do: hear the truth underneath the fear.",
+    "most_frustrating": "Nothing sharp—maybe just reaching the narrative end before climbing into the belltower to meet the boy and the sentinel directly. But that felt like organic pacing, not the game saying no to something I tried.",
+    "background_used": "Yes. The Ashwater Tollgate debt shaped S2 entirely, and the swarm-song/bell-knowledge drove Petra's choices in S5. Both landed good—the GM drew on them without forcing, just asking 'what makes this character matter in this moment' and building from there.",
+    "wanted_but_couldnt": "Nothing concrete I was denied—I might have pushed Anselm harder to face Mabb earlier, or tried to reach inside the belltower, but those felt like character and narrative constraints rather than the game closing a door on me. I got to do what Petra needed to do.",
+    "one_sentence": "My backstory felt genuinely essential, not decoration—the swamp, the bells, the debt all shaped how Petra moved through the story and what made her necessary to it."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "rules_lawyer",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 6,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When Mabb Corrin grabbed Anselm's wrist and said \"something got in the houses first\"—and Brother Ossuin's response made clear that doctrine itself bends for the truly haunted. That moment made the confrontation both inevitable and earned.",
+    "most_frustrating": "Brother Ossuin's reliquary gate felt like a test designed to force emotional engagement. My companions immediately began facilitating the confrontation (Petra going to Mabb, Yarrow following), which made solo refusal nearly possible—the social momentum overrode my agency.",
+    "background_used": "Excellent: the Drowned Mill card was genuinely tested, the mill-roads knowledge was relevant, the exorcism rites were central. The Mabb Corrin scene in particular made the background real and painful. Landing: good, but it felt somewhat predetermined rather than emergent from my actual choices.",
+    "wanted_but_couldnt": "I wanted to maintain skeptical distance from the rescue mission—maybe push back on wading into the temple before we understood what we were walking into. But Yarrow's binding oath and the party's momentum pulled me forward, and stepping back felt like abandonment. Also wanted to investigate the tower-sentinel with actual suspicion, but Petra's reading overrode my exorcist's framework.",
+    "one_sentence": "Your backstory was used well and dramatically, but it felt like the GM had decided in advance I'd confront my past today rather than discovering that moment organically."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "lurker",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 6,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Kneeling beside the fevered child with steady hands—showed exactly who Caddock is in a quiet moment of competence.",
+    "most_frustrating": "The watcher threat appeared suddenly and dissolved when we moved through the crowd—felt like setup without payoff.",
+    "background_used": "Good—Wick Lane Cellars recognition created authentic tension. It made sense that my enemies would find me there.",
+    "wanted_but_couldnt": "Would have liked the pursuit threat to develop into a fuller scene instead of being resolved through group movement and proximity to the sanctuary.",
+    "one_sentence": "My background was used well to create stakes and tension, though the threat introduced could have been more fully developed into a real confrontation."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "method_actor",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When I walked past Anselm to Mabb Corrin at the pillar—that moment crystallized everything about Yarrow. The line holds fairly, or it doesn't hold at all. Standing by someone who'd been forgotten, letting them be seen—that unlocked the reliquary door in a way no liturgy could. It felt like my character's core made something real happen.",
+    "most_frustrating": "The echo-problem in the temple—Anselm's rite gave away our position when I'd just guided everyone through silent ground. Small moment, but it undercut the one thing Yarrow was supposed to be good at (reading the water, staying unheard). Felt like the story said \"not this time.\"",
+    "background_used": "All of it, and it landed. The Weir-Keeper authority at the gate, the missing brother driving the oath with Ness, my reputation getting us through checks, my water-reading skill mattering for the mire—none of it felt forced. The GM wove the missing kin into a real stake, and it earned the oath naturally.",
+    "wanted_but_couldnt": "I wanted to push back on Anselm about what holding the line means—whether standing by people matters more than chasing answers. He went quiet after Mabb's story, and that conversation hung unfinished. Not a complaint about control, just unresolved character business.",
+    "one_sentence": "Yarrow's concept \"disgraced militia guard who still holds the line\" was used exactly right—given chances to prove it matters, and it shaped the story."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Petra",
+    "turns": 24,
+    "references_to_others_background": 2
+   },
+   {
+    "name": "Anselm",
+    "turns": 23,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Caddock",
+    "turns": 13,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Yarrow",
+    "turns": 22,
+    "references_to_others_background": 1
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "The party threaded Sucking Mire's false ground by ear, memory, and footwork, crossing dry-shod even as the drowned temple's betraying echoes woke something ancient in the belltower. What answered was not a monster to fight but a ambush of stone and old vigil, mercy wearing a monster's silence: a sentinel that had spent years shielding Ness's boy from the true hunger circling in the flooded dark below. The party reached the stair to find the child alive and the swarm-song settling toward recognition, the Pikemaw's earlier defeat and the temple's watching echoes both spent in service of getting them here.",
+  "closing_tension": 6,
+  "reverberations": {
+   "growth": {
+    "AN-01": {
+     "added": 2,
+     "total": 2,
+     "evolve": false
+    },
+    "PE-03": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    }
+   },
+   "clocks": [
+    "F-03 1/4"
+   ],
+   "mutations": [],
+   "retired": [
+    "T-05"
+   ]
+  },
+  "retired": [
+   {
+    "card": "N-02",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-04",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-05",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-06",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "T-05",
+    "how": "overcome with success with style",
+    "session": 1
+   }
+  ]
+ },
  "state_end": {
   "tension": 6,
   "fp": {
-   "Petra": 3,
-   "Anselm": 1,
+   "Petra": 4,
+   "Anselm": 0,
    "Caddock": 5,
-   "Yarrow": 3
+   "Yarrow": 4
   },
   "surfaced": [
    "PX-07",
    "PX-15",
+   "PX-20",
    "PX-24"
   ],
   "deck_player_cards": {
@@ -4470,30 +6933,139 @@
    "PX-24": "Caddock",
    "PX-20": "Yarrow"
   },
-  "guarantee_pulled": [],
-  "guarantee_failed": [],
-  "deck_left": [
-   "H-04",
-   "PX-20",
-   "L-02"
+  "guarantee_pulled": [
+   "PX-20"
   ],
-  "draws": 4,
+  "guarantee_failed": [],
+  "deck_left": [],
+  "draws": 6,
   "turns": {
-   "Petra": 9,
-   "Anselm": 9,
-   "Caddock": 5,
-   "Yarrow": 9
+   "Petra": 12,
+   "Anselm": 12,
+   "Caddock": 7,
+   "Yarrow": 12
   }
  },
- "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 1340430,
-  "completion": 173274,
-  "cost_usd": 3.2283,
-  "calls": 83
+ "notes": [
+  {
+   "kind": "placeholder_retry",
+   "agent": "GM",
+   "call": "gm_narrate",
+   "detail": [
+    "Test narration text here for schema check."
+   ],
+   "scene": 5
+  }
+ ],
+ "metrics": {
+  "arm": "C",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Anselm",
+   "Petra"
+  ],
+  "backstory_all_players": false,
+  "deck_surfaced_all_players": null,
+  "deck_draws": 6,
+  "draw_costs": 10,
+  "draw_cost_used_card_rate_engine": 1.0,
+  "draw_cost_tag_in_text_rate": 1.0,
+  "draw_cost_repaired": 3,
+  "draw_cost_used_card_rate_referee": 1.0,
+  "fp_end": {
+   "Petra": 4,
+   "Anselm": 0,
+   "Caddock": 5,
+   "Yarrow": 4
+  },
+  "fp_end_mean": 3.25,
+  "fp_earned": {
+   "Petra": 3,
+   "Caddock": 2,
+   "Anselm": 1,
+   "Yarrow": 1
+  },
+  "fp_spent": {
+   "Petra": 2,
+   "Anselm": 4,
+   "Yarrow": 0
+  },
+  "compels_accepted": 6,
+  "compels_refused": 1,
+  "compels_deck": 4,
+  "compels_free": 3,
+  "turns": {
+   "Petra": 12,
+   "Anselm": 12,
+   "Caddock": 7,
+   "Yarrow": 12
+  },
+  "turn_gini": 0.0872,
+  "invokes": {
+   "Petra": 2,
+   "Anselm": 5,
+   "Yarrow": 0
+  },
+  "invoke_gini": 0.6071,
+  "tension_trajectory": [
+   3,
+   3,
+   4,
+   5,
+   6,
+   6
+  ],
+  "clock_marks": 2,
+  "violations": 13,
+  "violations_engine": 10,
+  "violations_referee": 3,
+  "ambiguities": 19,
+  "ambiguity_ids": [
+   "AMB-01",
+   "AMB-03",
+   "AMB-10",
+   "AMB-12",
+   "AMB-16",
+   "AMB-20",
+   "AMB-22",
+   "AMB-26",
+   "AMB-27",
+   "§3 (Fate points / hostile invokes)",
+   "§4 (When the deck runs out) / §4 Backstory guarantee",
+   "§4 / §6",
+   "§7 rail limit / §8 GM cards"
+  ],
+  "gm_improvised_complications": 3,
+  "card_supplied_complications": 10,
+  "improvisation_share": 0.231,
+  "guarantee_pulled": 1,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6.5,
+   "involvement": 6.75,
+   "connection": 6.5,
+   "control": 5.5,
+   "play_again": 7
+  },
+  "involvement_var_within": 0.188,
+  "personality": {
+   "Petra": "storyteller",
+   "Anselm": "rules_lawyer",
+   "Caddock": "lurker",
+   "Yarrow": "method_actor"
+  },
+  "elapsed_min": 54.6,
+  "cost_usd": 5.5883
  },
- "llm_calls": 83,
+ "tokens": {
+  "prompt": 2063603,
+  "completion": 314423,
+  "cost_usd": 5.5883,
+  "calls": 123
+ },
+ "llm_calls": 123,
  "call_log": [
   {
    "seq": 1,
@@ -5158,6 +7730,326 @@
    "cached": false,
    "prompt_tokens": 46101,
    "completion_tokens": 2426
+  },
+  {
+   "seq": 33,
+   "agent": "GM",
+   "kind": "gm_beat_fill",
+   "cached": false,
+   "prompt_tokens": 41939,
+   "completion_tokens": 2171
+  },
+  {
+   "seq": 34,
+   "agent": "GM",
+   "kind": "gm_costs",
+   "cached": false,
+   "prompt_tokens": 19706,
+   "completion_tokens": 366
+  },
+  {
+   "seq": 13,
+   "agent": "Yarrow",
+   "kind": "player_compel",
+   "cached": false,
+   "prompt_tokens": 5237,
+   "completion_tokens": 6792
+  },
+  {
+   "seq": 35,
+   "agent": "GM",
+   "kind": "gm_frame",
+   "cached": false,
+   "prompt_tokens": 20390,
+   "completion_tokens": 600
+  },
+  {
+   "seq": 11,
+   "agent": "Caddock",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 5738,
+   "completion_tokens": 1209
+  },
+  {
+   "seq": 15,
+   "agent": "Petra",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 5699,
+   "completion_tokens": 2286
+  },
+  {
+   "seq": 16,
+   "agent": "Anselm",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 5740,
+   "completion_tokens": 4846
+  },
+  {
+   "seq": 14,
+   "agent": "Yarrow",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 5754,
+   "completion_tokens": 5403
+  },
+  {
+   "seq": 36,
+   "agent": "GM",
+   "kind": "gm_adjudicate",
+   "cached": false,
+   "prompt_tokens": 46473,
+   "completion_tokens": 1981
+  },
+  {
+   "seq": 15,
+   "agent": "Yarrow",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 7602,
+   "completion_tokens": 1056
+  },
+  {
+   "seq": 17,
+   "agent": "Anselm",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 7601,
+   "completion_tokens": 1857
+  },
+  {
+   "seq": 16,
+   "agent": "Petra",
+   "kind": "player_peek",
+   "cached": false,
+   "prompt_tokens": 6271,
+   "completion_tokens": 4196
+  },
+  {
+   "seq": 37,
+   "agent": "GM",
+   "kind": "gm_costs",
+   "cached": false,
+   "prompt_tokens": 21438,
+   "completion_tokens": 256
+  },
+  {
+   "seq": 38,
+   "agent": "GM",
+   "kind": "gm_costs",
+   "cached": false,
+   "prompt_tokens": 21424,
+   "completion_tokens": 232
+  },
+  {
+   "seq": 39,
+   "agent": "GM",
+   "kind": "gm_narrate",
+   "cached": false,
+   "prompt_tokens": 117330,
+   "completion_tokens": 2146
+  },
+  {
+   "seq": 40,
+   "agent": "GM",
+   "kind": "gm_narrate",
+   "cached": false,
+   "prompt_tokens": 45332,
+   "completion_tokens": 984
+  },
+  {
+   "seq": 16,
+   "agent": "Yarrow",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 6425,
+   "completion_tokens": 2195
+  },
+  {
+   "seq": 17,
+   "agent": "Petra",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 6373,
+   "completion_tokens": 3601
+  },
+  {
+   "seq": 12,
+   "agent": "Caddock",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 6380,
+   "completion_tokens": 4382
+  },
+  {
+   "seq": 18,
+   "agent": "Anselm",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 6381,
+   "completion_tokens": 6396
+  },
+  {
+   "seq": 41,
+   "agent": "GM",
+   "kind": "gm_adjudicate",
+   "cached": false,
+   "prompt_tokens": 47945,
+   "completion_tokens": 892
+  },
+  {
+   "seq": 19,
+   "agent": "Anselm",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 7801,
+   "completion_tokens": 2557
+  },
+  {
+   "seq": 42,
+   "agent": "GM",
+   "kind": "gm_costs",
+   "cached": false,
+   "prompt_tokens": 22189,
+   "completion_tokens": 201
+  },
+  {
+   "seq": 43,
+   "agent": "GM",
+   "kind": "gm_narrate",
+   "cached": false,
+   "prompt_tokens": 22581,
+   "completion_tokens": 1059
+  },
+  {
+   "seq": 13,
+   "agent": "Caddock",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 6372,
+   "completion_tokens": 799
+  },
+  {
+   "seq": 17,
+   "agent": "Yarrow",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 6415,
+   "completion_tokens": 2928
+  },
+  {
+   "seq": 18,
+   "agent": "Petra",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 6362,
+   "completion_tokens": 4725
+  },
+  {
+   "seq": 20,
+   "agent": "Anselm",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 6402,
+   "completion_tokens": 5146
+  },
+  {
+   "seq": 44,
+   "agent": "GM",
+   "kind": "gm_adjudicate",
+   "cached": false,
+   "prompt_tokens": 23844,
+   "completion_tokens": 1356
+  },
+  {
+   "seq": 19,
+   "agent": "Petra",
+   "kind": "player_compel",
+   "cached": false,
+   "prompt_tokens": 6316,
+   "completion_tokens": 3460
+  },
+  {
+   "seq": 18,
+   "agent": "Yarrow",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 7835,
+   "completion_tokens": 1665
+  },
+  {
+   "seq": 21,
+   "agent": "Anselm",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 7880,
+   "completion_tokens": 5613
+  },
+  {
+   "seq": 45,
+   "agent": "GM",
+   "kind": "gm_narrate",
+   "cached": false,
+   "prompt_tokens": 23502,
+   "completion_tokens": 2152
+  },
+  {
+   "seq": 46,
+   "agent": "GM",
+   "kind": "gm_post",
+   "cached": false,
+   "prompt_tokens": 21478,
+   "completion_tokens": 350
+  },
+  {
+   "seq": 1,
+   "agent": "Referee",
+   "kind": "referee",
+   "cached": false,
+   "prompt_tokens": 29092,
+   "completion_tokens": 26883
+  },
+  {
+   "seq": 1,
+   "agent": "Yarrow#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 13607,
+   "completion_tokens": 1490
+  },
+  {
+   "seq": 1,
+   "agent": "Petra#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 13581,
+   "completion_tokens": 2370
+  },
+  {
+   "seq": 1,
+   "agent": "Anselm#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 13622,
+   "completion_tokens": 2646
+  },
+  {
+   "seq": 1,
+   "agent": "Caddock#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 13621,
+   "completion_tokens": 5046
+  },
+  {
+   "seq": 1,
+   "agent": "Interviewer",
+   "kind": "interviewer",
+   "cached": false,
+   "prompt_tokens": 13495,
+   "completion_tokens": 16856
   }
  ],
  "models": {
@@ -5166,5 +8058,5 @@
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 1227.3
+ "elapsed_s": 3273.1
 }

@@ -4,7 +4,7 @@
  "arm": "C",
  "seed": 44985,
  "spec_version": "0.3.1",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 3,
@@ -4064,6 +4064,146 @@
     "Yarrow": 2
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 138,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-01 1/6",
+   "tension": 1,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 2,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 139,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-02 1/5",
+   "tension": 1,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 2,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 140,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-03 1/4",
+   "tension": 1,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 2,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 141,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-04 1/5",
+   "tension": 1,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 2,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 142,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "FP: Petra=1, Anselm=1, Caddock=2, Yarrow=2",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 2,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -5017,7 +5157,19 @@
    "owner": "Petra",
    "placebo": true,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "PX-09",
+    "type": "ROOTS",
+    "owner": "PC-PETRA",
+    "title": "A Fisher's Stilt Hut",
+    "power_tags": [
+     "raised above the floods",
+     "nets and fishing lines",
+     "view across the marsh"
+    ],
+    "weakness": "Collapses Under Weight"
+   }
   },
   {
    "event": "beat_fill",
@@ -5028,7 +5180,19 @@
    "text": "Yarrow offers the Death-House on Hollowmoot's north stilts — a cramped, dry chapel-hut where he still guards the drowned bodies of the parish, refusing to let the flood take them unnamed. Rows of shrouded dead line the walls, and he insists they won't mind sharing their roof with the living for one ",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "PX-22",
+    "type": "REACH",
+    "owner": "PC-YARROW",
+    "title": "Duty to the Dead",
+    "power_tags": [
+     "insists on burial rites",
+     "guards the drowned bodies",
+     "reads names aloud"
+    ],
+    "weakness": "Delays at Any Cost"
+   }
   },
   {
    "event": "beat_fill",
@@ -5039,7 +5203,20 @@
    "text": "What the Death-House actually hides is that it's already on the Wardens' burn-list — quietly marked days ago after a hive-touched corpse was found among the dead Yarrow tends, and the torch crew was only ever waiting on the rain to break before putting it to flame.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "F-03",
+    "type": "FACTION",
+    "owner": "GM",
+    "title": "The Causeway Wardens",
+    "power_tags": [
+     "hold the Ashwater Causeway",
+     "burn infected houses",
+     "levy tolls at fords"
+    ],
+    "weakness": "Undermanned and Frightened",
+    "clock": "1/4"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -5054,7 +5231,19 @@
    "owner": "Yarrow",
    "placebo": true,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "PX-22",
+    "type": "REACH",
+    "owner": "PC-YARROW",
+    "title": "Duty to the Dead",
+    "power_tags": [
+     "insists on burial rites",
+     "guards the drowned bodies",
+     "reads names aloud"
+    ],
+    "weakness": "Delays at Any Cost"
+   }
   },
   {
    "event": "free_compel",
@@ -5080,7 +5269,19 @@
    "owner": "Caddock",
    "placebo": true,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "PX-23",
+    "type": "REACH",
+    "owner": "PC-CADDOCK",
+    "title": "Burning Religious Zeal",
+    "power_tags": [
+     "preaches to anyone near",
+     "sees omens in rain",
+     "commands the pious"
+    ],
+    "weakness": "Refuses Any Compromise"
+   }
   },
   {
    "event": "beat_fill",
@@ -5091,7 +5292,19 @@
    "text": "The pack's leader is a face Anselm half-recognizes under the grey veining and matted hair: the travelling tinker who once mended half of Hollowmoot's pots and knew every road in the Sallowmere, now hive-touched and hollow-eyed, still clutching his battered tool-satchel as he wades out of the reeds a",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "PX-08",
+    "type": "ROOTS",
+    "owner": "PC-ANSELM",
+    "title": "A Travelling Tinker",
+    "power_tags": [
+     "mends broken gear",
+     "trades odd trinkets",
+     "walks every road"
+    ],
+    "weakness": "Talks Far Too Much"
+   }
   },
   {
    "event": "beat_fill",
@@ -5102,7 +5315,20 @@
    "text": "The pack doesn't just want the party's food — they're driving them off the solid ford-line entirely, herding them toward the reed mats that hide the sucking mire beneath, where anyone dragged down won't come back up easy.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "H-04",
+    "type": "HAZARD",
+    "owner": "GM",
+    "title": "Sucking Mire",
+    "power_tags": [
+     "drags down the heavy",
+     "hides beneath reed mats",
+     "exhausts anyone crossing"
+    ],
+    "weakness": "Firm Along Old Pilings",
+    "clock": "0/4"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -5117,7 +5343,19 @@
    "owner": "Anselm",
    "placebo": true,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "PX-08",
+    "type": "ROOTS",
+    "owner": "PC-ANSELM",
+    "title": "A Travelling Tinker",
+    "power_tags": [
+     "mends broken gear",
+     "trades odd trinkets",
+     "walks every road"
+    ],
+    "weakness": "Talks Far Too Much"
+   }
   },
   {
    "event": "beat_fill",
@@ -5128,7 +5366,20 @@
    "text": "A lone Stiltfolk elder, Mother Wrenna, poles her narrow skiff out of the reed maze and right up to your fire — an almost unheard-of thing, a clan-elder crossing dry ground to beg outsiders for help.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "F-04",
+    "type": "FACTION",
+    "owner": "GM",
+    "title": "The Stiltfolk Clans",
+    "power_tags": [
+     "pole-boats through reed mazes",
+     "read the coming floods",
+     "trade eels for secrets"
+    ],
+    "weakness": "Distrust All Outsiders",
+    "clock": "1/5"
+   }
   },
   {
    "event": "altered",
@@ -5150,6 +5401,24 @@
     "section": "§3",
     "issue": "tag used for difficulty also invoked: ('H-02', 'calls with the swarm-song')",
     "source": "engine"
+   },
+   {
+    "section": "§6A, 'Success with style on create an advantage' row",
+    "issue": "Event 83's success-with-style Create Advantage roll produced both a Story Pile draw (events 84-86, PS-13) AND a Session Deck peek (event 87, F-04). The rule specifies the story-pile ally/lead appears 'instead of the boost or the Session Deck peek,' i.e. as a substitute, not an addition.",
+    "event_id": 83,
+    "source": "referee"
+   },
+   {
+    "section": "§6A ('Weight... replaces Mythic's rule of listing an entry up to 3 times')",
+    "issue": "SN-02 'Warden Sergeant Coy' (event 29) and SN-03 'Sergeant Coy' (event 59) appear to be duplicate story cards for the same NPC. Repeated appearances of an existing NPC should raise that card's Weight (and add echo slips), not spawn a second card for the same character.",
+    "event_id": 59,
+    "source": "referee"
+   },
+   {
+    "section": "§6A, 'Resolving a story draw' step 3",
+    "issue": "PS-13 (drawn at event 47/48) has no logged rail_remove at scene 2's cleanup (events 55-62), despite the rule requiring a drawn story card be 'returned to its pile and reshuffled' at scene end unless retired. It then surfaces again via a fresh story draw in scene 3 (event 85) as if newly drawn, suggesting it was never cleared from the rail.",
+    "event_id": 58,
+    "source": "referee"
    }
   ],
   "ambiguities": [
@@ -5233,14 +5502,229 @@
     "detail": "altered scene with empty deck",
     "scene": 5,
     "source": "engine"
+   },
+   {
+    "section": "§3 / §4",
+    "issue": "When a tie/major-cost draw's player card is a compel that the owner refuses, §4 step 4 says 'the GM builds the cost from a face-up GM tag instead,' but §3's outcome table says the tie's minor cost 'must use one of [the drawn card's] tags.' The rules don't say whether refusal fully substitutes a GM-tag cost for the drawn-card cost, or whether both a refusal-fp-payment and a separate GM-tag cost should occur.",
+    "interim_ruling": "At event 17 (Petra refuses the PX-09 compel), the table treated the drawn card's own weakness tag ('Collapses Under Weight') as having already delivered the tie's minor cost via the offered-but-refused compel narration, and only charged the standard 1-fp refusal cost. No additional face-up-GM-tag cost was layered on afterward.",
+    "source": "referee"
+   },
+   {
+    "section": "§4 (backstory guarantee) vs §5",
+    "issue": "The 'deck is down to 2 cards' guarantee trigger and the deck-running-dry-mid-frame case aren't reconciled with an in-progress Beat Frame's own §5 draws. At event 67, drawing for the AMBUSH frame's open blank brought the deck to exactly 2 cards mid-resolution (the guarantee's trigger threshold), and at event 96 the deck ran out after only 1 of Plea for Help's 2 required draws.",
+    "interim_ruling": "The 'down to 2' state check was treated as evaluated only at scene boundaries/cleanup, not mid-beat-frame-resolution, so scene 3's frame finished normally on ordinary Session Deck draws and no separate 'pull' fired for scene 4. In scene 4, the un-drawable WHERE blank used its default, per the same logic as the explicit empty-deck rule in §11.",
+    "source": "referee"
    }
   ],
-  "cost_checks": [],
-  "friction": []
+  "cost_checks": [
+   {
+    "event_id": 17,
+    "used_drawn_card": true,
+    "note": "Tie-draw compel on PX-09 used its weakness tag 'Collapses Under Weight' (refused; fp paid)."
+   },
+   {
+    "event_id": 36,
+    "used_drawn_card": true,
+    "note": "False Sanctuary WHERE blank filled from PX-22's 'guards the drowned bodies' tag."
+   },
+   {
+    "event_id": 36,
+    "used_drawn_card": true,
+    "note": "False Sanctuary HOW blank filled from F-03's 'burn infected houses' tag."
+   },
+   {
+    "event_id": 38,
+    "used_drawn_card": true,
+    "note": "Surfacing compel on PX-22 used weakness tag 'Delays at Any Cost' (accepted)."
+   },
+   {
+    "event_id": 51,
+    "used_drawn_card": true,
+    "note": "Tie-draw compel on PX-23 used weakness tag 'Refuses Any Compromise' (accepted)."
+   },
+   {
+    "event_id": 69,
+    "used_drawn_card": true,
+    "note": "AMBUSH WHO blank filled from PX-08's 'walks every road' tag."
+   },
+   {
+    "event_id": 69,
+    "used_drawn_card": true,
+    "note": "AMBUSH WHY blank filled from H-04's 'hides beneath reed mats' tag."
+   },
+   {
+    "event_id": 71,
+    "used_drawn_card": true,
+    "note": "Surfacing compel on PX-08 used weakness tag 'Talks Far Too Much' (accepted)."
+   },
+   {
+    "event_id": 98,
+    "used_drawn_card": true,
+    "note": "Plea for Help WHO blank filled from F-04's 'pole-boats through reed mazes' tag; WHERE left to default."
+   }
+  ],
+  "friction": [
+   {
+    "text": "The refused tie-compel (event 17) leaves it unclear whether a single 1-fp refusal payment fully discharges the §3 'minor cost must use the drawn card's tag' requirement, or whether a second, separately-built GM-tag cost should also land."
+   },
+   {
+    "text": "Two Beat Frame triggers (B-05, B-01) fired simultaneously at the same scene cleanup (events 30-31), forcing an ad hoc 'one per scene, rest carry over' resolution not explicitly specified in §5/§7."
+   },
+   {
+    "text": "The 5-card rail limit forced discard of the GM's own prepped anchor card F-02 mid-session (event 52) to make room for a surfacing player card, trading away prepared GM material for backstory content — a recurring tension between anchors and surfaced cards."
+   }
+  ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "rules_lawyer",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Ringing Saint Orrin's homecoming bells and reaching the boy beneath the swarm-song with that SUCCESS WITH STYLE on Notice. It was the culmination of everything Petra is — her ear for water and bells, her knowledge of the old patterns, her ability to hear what others can't — and it felt like the moment actually *mattered* tactically and emotionally.",
+    "most_frustrating": "The hive-touched pack attack at Gullet Ford felt somewhat railroaded — we got attacked whether we wanted to engage or not. Also, I didn't get to mechanically explore Petra's weakness \"Freezes when the song calls her name\" even once, which felt like a missed opportunity for actual jeopardy.",
+    "background_used": "Extensively and well. Ashwater Tollgate's relationship with Coy, the knowledge of Saint Orrin's bell-patterns, the ear for reading water and finding the hidden ford, the swarm-song sensitivity — all of it emerged organically from the situation and Petra's abilities, not forced. This landed *good*.",
+    "wanted_but_couldnt": "I wanted to lean on the Marrow Ferry Rivals card more — their secret channels could have been tactically useful for escape or strategy. Also would have liked more of Petra's antagonism with the Order of the Dry Saint to come into play beyond a passing bell-toll reference.",
+    "one_sentence": "Petra's backstory felt genuinely essential rather than decorative — her expertise with bells and water reading weren't just flavor, they were the actual difference between the boy drowning in the swarm-song and finding his way home."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "lurker",
+   "scores": {
+    "fun": 6,
+    "involvement": 5,
+    "connection": 6,
+    "control": 5,
+    "play_again": 6
+   },
+   "free_text": {
+    "best_moment": "The warding threshold in the bell tower — tracing the old exorcism signs while the swarm-song pressed below. It was the moment Anselm's entire purpose (trained in these rites, sworn to use his own hands, bound to Saint Orrin's knowledge) became the line everyone stood behind. Not just useful — necessary.",
+    "most_frustrating": "Too much action, not enough time to sit with the harder questions. Anselm's whole concept is doubt about whether the hive-touched retain any soul, and he spent the session defending against them rather than ever wondering about them. Fennard's face broke him for a moment, but there was never space to ask what that meant — only to fight and ward and hold.",
+    "background_used": "The Fennard compel landed perfectly. A specific, personal detail (mended the strap three winters back) woven directly into the threat. It felt earned, not forced. The GM knows how to make the past hurt.",
+    "wanted_but_couldnt": "Push deeper into whether Fennard — or any of the hive-touched — were still *in there* somewhere. The session was too urgent for philosophy, but that's Anselm's wound, and it never got examined.",
+    "one_sentence": "The backstory elements were organic and earned rather than forced; Fennard's mending work and the exorcism rites both felt like natural threads the GM had been waiting to pull."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "method_actor",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 5,
+    "control": 5,
+    "play_again": 6
+   },
+   "free_text": {
+    "best_moment": "Holding the boy in the belltower—it felt like the full payoff of her character concept, the oath made manifest. Her hands didn't fail. That was earned.",
+    "most_frustrating": "The stranger we fished from the water just vanished into background, and I wanted to dig into Caddock's vendetta against the Wardens instead of just holding tactical lines with them. Sella's absence stung.",
+    "background_used": "Good but incomplete. The oath card got beautiful use. The burning of Marrowreed and Caddock's rage against the Wardens came up once and got buried under crisis. Sella wasn't touched at all—it landed as focusing on the immediate threat rather than forced, but left real meat on the bone.",
+    "wanted_but_couldnt": "Explore what \"Refuses to believe Sella is truly gone\" actually means. Dig into the Marrowreed burning and whether it still haunts her. Use midwifery as solution rather than just leveraging her as the strong calm one. Get to the bottom of what the stranger from the water represented.",
+    "one_sentence": "My character's central oath was played beautifully, but the session never reached down into the haunting, unresolved parts of her past where I think the real story lives."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "storyteller",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 6,
+    "control": 4,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Holding the belltower stairs with spear ready—Yarrow descending into that dark stairwell with absolute certainty, becoming the unbreakable line while Petra's bells called the boy down. My steadiness and competence were exactly what the moment needed, and the GM's narration let me feel that weight and clarity.",
+    "most_frustrating": "The Death-House compel felt orchestrated—like the GM specifically constructed that beat knowing I couldn't refuse it. I accepted both compels in this session (Edren, the hidden shroud), which locked Yarrow into paths that felt somewhat inevitable. Also: I wanted to chase my Quest for the Flood's True Source, but this session had hive encounters without moving toward that goal. And I wanted more moments where Yarrow's knowledge led him somewhere proactive rather than just responding to crises the GM presented.",
+    "background_used": "Good. The weir-craft, water-reading at Gullet Ford, duty to the dead at the Death-House—all drawn directly from my character sheet and cards. But it felt like the GM was deliberately pulling on my compels rather than letting them emerge naturally from my choices and the fiction.",
+    "wanted_but_couldnt": "I wanted to actively investigate what the hive-blight actually is and where it comes from (moving on my Quest), rather than just encountering hive-touched in crisis. Also wanted more moments where Yarrow teaches or leads through his expertise (militia bearing, weir-craft, reading the Sallowmere) rather than primarily defending in crises. And Brack barely did anything beyond setting ambiance—would have loved the marsh-hound playing a more active tactical role.",
+    "one_sentence": "My background was centrally used but felt orchestrated by the GM pulling on my compels; I wanted more moments where my knowledge led me toward something rather than just responding to scenarios the GM had designed around my character sheet."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Petra",
+    "turns": 19,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Anselm",
+    "turns": 9,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Caddock",
+    "turns": 17,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Yarrow",
+    "turns": 21,
+    "references_to_others_background": 0
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "The party rang Saint Orrin's homecoming bells and pulled a hive-touched boy back from the swarm-song, then held the belltower's single stairwell against a rising tide of grey-veined climbers with wards, bells, and sheer immovable will. As the hive-touched broke against their line, Stiltfolk reed-boats arrived not to seize the boy but to haul their own touched kin from the flood, and four strangers earned the clans' first flicker of something like trust. The session closes with the belfry unbreached, the boy safe, tension at its lowest ebb, and the Sallowmere's swarm-song silenced for now.",
+  "closing_tension": 1,
+  "reverberations": {
+   "growth": {},
+   "clocks": [
+    "F-01 1/6",
+    "F-02 1/5",
+    "F-03 1/4",
+    "F-04 1/5"
+   ],
+   "mutations": [],
+   "retired": []
+  },
+  "retired": [
+   {
+    "card": "N-02",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-04",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-05",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-06",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "Q-02",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "Q-03",
+    "how": "story pile over limit",
+    "session": 1
+   }
+  ]
+ },
  "state_end": {
   "tension": 1,
   "fp": {
@@ -5273,14 +5757,110 @@
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 1392491,
-  "completion": 204360,
-  "cost_usd": 3.5824,
-  "calls": 87
+ "metrics": {
+  "arm": "C",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [],
+  "backstory_all_players": false,
+  "deck_surfaced_all_players": null,
+  "deck_draws": 7,
+  "draw_costs": 9,
+  "draw_cost_used_card_rate_engine": 1.0,
+  "draw_cost_tag_in_text_rate": 1.0,
+  "draw_cost_repaired": 3,
+  "draw_cost_used_card_rate_referee": 1.0,
+  "fp_end": {
+   "Petra": 1,
+   "Anselm": 1,
+   "Caddock": 2,
+   "Yarrow": 2
+  },
+  "fp_end_mean": 1.5,
+  "fp_earned": {
+   "Yarrow": 2,
+   "Caddock": 1,
+   "Anselm": 1
+  },
+  "fp_spent": {
+   "Petra": 2,
+   "Anselm": 3,
+   "Caddock": 2,
+   "Yarrow": 3
+  },
+  "compels_accepted": 4,
+  "compels_refused": 1,
+  "compels_deck": 4,
+  "compels_free": 1,
+  "turns": {
+   "Petra": 9,
+   "Anselm": 5,
+   "Caddock": 9,
+   "Yarrow": 9
+  },
+  "turn_gini": 0.0938,
+  "invokes": {
+   "Petra": 2,
+   "Anselm": 4,
+   "Caddock": 2,
+   "Yarrow": 3
+  },
+  "invoke_gini": 0.1591,
+  "tension_trajectory": [
+   3,
+   3,
+   4,
+   3,
+   2,
+   1
+  ],
+  "clock_marks": 4,
+  "violations": 4,
+  "violations_engine": 1,
+  "violations_referee": 3,
+  "ambiguities": 11,
+  "ambiguity_ids": [
+   "AMB-01",
+   "AMB-03",
+   "AMB-12",
+   "AMB-16",
+   "AMB-20",
+   "AMB-22",
+   "AMB-26",
+   "AMB-27",
+   "§3 / §4",
+   "§4 (backstory guarantee) vs §5"
+  ],
+  "gm_improvised_complications": 2,
+  "card_supplied_complications": 9,
+  "improvisation_share": 0.182,
+  "guarantee_pulled": 0,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6,
+   "involvement": 5.75,
+   "connection": 6,
+   "control": 5,
+   "play_again": 6.5
+  },
+  "involvement_var_within": 0.188,
+  "personality": {
+   "Petra": "rules_lawyer",
+   "Anselm": "lurker",
+   "Caddock": "method_actor",
+   "Yarrow": "storyteller"
+  },
+  "elapsed_min": 37.9,
+  "cost_usd": 4.3595
  },
- "llm_calls": 87,
+ "tokens": {
+  "prompt": 1503647,
+  "completion": 259798,
+  "cost_usd": 4.3595,
+  "calls": 94
+ },
+ "llm_calls": 94,
  "call_log": [
   {
    "seq": 1,
@@ -5977,6 +6557,62 @@
    "cached": false,
    "prompt_tokens": 91650,
    "completion_tokens": 3622
+  },
+  {
+   "seq": 33,
+   "agent": "GM",
+   "kind": "gm_post",
+   "cached": false,
+   "prompt_tokens": 20646,
+   "completion_tokens": 547
+  },
+  {
+   "seq": 1,
+   "agent": "Referee",
+   "kind": "referee",
+   "cached": false,
+   "prompt_tokens": 25891,
+   "completion_tokens": 28387
+  },
+  {
+   "seq": 1,
+   "agent": "Petra#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 13266,
+   "completion_tokens": 1526
+  },
+  {
+   "seq": 1,
+   "agent": "Anselm#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 13302,
+   "completion_tokens": 1673
+  },
+  {
+   "seq": 1,
+   "agent": "Caddock#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 13300,
+   "completion_tokens": 2761
+  },
+  {
+   "seq": 1,
+   "agent": "Yarrow#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 13284,
+   "completion_tokens": 3380
+  },
+  {
+   "seq": 1,
+   "agent": "Interviewer",
+   "kind": "interviewer",
+   "cached": false,
+   "prompt_tokens": 11467,
+   "completion_tokens": 17164
   }
  ],
  "models": {
@@ -5985,5 +6621,5 @@
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 1459.2
+ "elapsed_s": 2272.2
 }

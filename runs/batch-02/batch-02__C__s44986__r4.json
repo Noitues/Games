@@ -4,7 +4,7 @@
  "arm": "C",
  "seed": 44986,
  "spec_version": "0.3.1",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 4,
@@ -3887,6 +3887,174 @@
     "Yarrow": 0
    },
    "gm_fp": 1
+  },
+  {
+   "event_id": 133,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-03 1/4",
+   "tension": 3,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 5,
+    "Anselm": 1,
+    "Caddock": 0,
+    "Yarrow": 0
+   },
+   "gm_fp": 1
+  },
+  {
+   "event_id": 134,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock T-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "T-02 1/6",
+   "tension": 3,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 5,
+    "Anselm": 1,
+    "Caddock": 0,
+    "Yarrow": 0
+   },
+   "gm_fp": 1
+  },
+  {
+   "event_id": 135,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "4",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 5,
+    "Anselm": 1,
+    "Caddock": 0,
+    "Yarrow": 0
+   },
+   "gm_fp": 1
+  },
+  {
+   "event_id": 136,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-02 1/5",
+   "tension": 3,
+   "notes": "off-screen d6=6",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 5,
+    "Anselm": 1,
+    "Caddock": 0,
+    "Yarrow": 0
+   },
+   "gm_fp": 1
+  },
+  {
+   "event_id": 137,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-04 1/5",
+   "tension": 3,
+   "notes": "off-screen d6=6",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 5,
+    "Anselm": 1,
+    "Caddock": 0,
+    "Yarrow": 0
+   },
+   "gm_fp": 1
+  },
+  {
+   "event_id": 138,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "FP: Petra=5, Anselm=1, Caddock=0, Yarrow=0",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 5,
+    "Anselm": 1,
+    "Caddock": 0,
+    "Yarrow": 0
+   },
+   "gm_fp": 1
   }
  ],
  "scenes": [
@@ -4721,7 +4889,19 @@
    "owner": "Caddock",
    "placebo": true,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "PX-01",
+    "type": "ROOTS",
+    "owner": "PC-CADDOCK",
+    "title": "A Stranded Ferryman",
+    "power_tags": [
+     "knows the flooded channels",
+     "owns a leaking punt",
+     "hears river gossip"
+    ],
+    "weakness": "Owes Everyone Money"
+   }
   },
   {
    "event": "beat_fill",
@@ -4732,7 +4912,20 @@
    "text": "An old temple sexton, half-crushed when the nave floor gave way beneath him, drags himself into Hollowmoot on a makeshift crutch — the stones buried three of his fellow pilgrims and he alone crawled free.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "H-06",
+    "type": "HAZARD",
+    "owner": "GM",
+    "title": "Collapsing Temple Stones",
+    "power_tags": [
+     "floors give way underfoot",
+     "echoes carry for miles",
+     "buries the careless"
+    ],
+    "weakness": "Groans Before It Falls",
+    "clock": "0/4"
+   }
   },
   {
    "event": "beat_fill",
@@ -4743,7 +4936,19 @@
    "text": "He begs you to go to Saint Orrin's Drowned Temple, where the bells still ring out over the flood and pilgrims still answer their call no matter who they bury.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "C-04",
+    "type": "CULTURE",
+    "owner": "GM",
+    "title": "Pray to the Dry Saint",
+    "power_tags": [
+     "pilgrims seek dry ground",
+     "relics sold as charms",
+     "temple bells command obedience"
+    ],
+    "weakness": "Faith Blinds to Rot"
+   }
   },
   {
    "event": "free_compel",
@@ -4765,7 +4970,19 @@
    "text": "the pilgrim band's crowded camp huddled beneath the sunken pilgrim's gate, dozens packed shoulder to shoulder for the safety of numbers",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "PX-05",
+    "type": "ROOTS",
+    "owner": "PC-PETRA",
+    "title": "A Pilgrim Band",
+    "power_tags": [
+     "safety in numbers",
+     "shares scant bread",
+     "sings loud hymns"
+    ],
+    "weakness": "Slow and Noisy"
+   }
   },
   {
    "event": "beat_fill",
@@ -4776,7 +4993,19 @@
    "text": "a whispered rumor of hidden silver buried somewhere in the reliquary crypt, passed pilgrim to pilgrim until half the camp believes it",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "PX-21",
+    "type": "REACH",
+    "owner": "PC-YARROW",
+    "title": "Rumor of Buried Treasure",
+    "power_tags": [
+     "whispers of hidden silver",
+     "draws greedy strangers",
+     "a half-burned map"
+    ],
+    "weakness": "Treasure Hunters Turn Violent"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -4791,7 +5020,19 @@
    "owner": "Petra",
    "placebo": true,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "PX-05",
+    "type": "ROOTS",
+    "owner": "PC-PETRA",
+    "title": "A Pilgrim Band",
+    "power_tags": [
+     "safety in numbers",
+     "shares scant bread",
+     "sings loud hymns"
+    ],
+    "weakness": "Slow and Noisy"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -4806,7 +5047,19 @@
    "owner": "Yarrow",
    "placebo": true,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "PX-21",
+    "type": "REACH",
+    "owner": "PC-YARROW",
+    "title": "Rumor of Buried Treasure",
+    "power_tags": [
+     "whispers of hidden silver",
+     "draws greedy strangers",
+     "a half-burned map"
+    ],
+    "weakness": "Treasure Hunters Turn Violent"
+   }
   },
   {
    "event": "beat_fill",
@@ -4817,7 +5070,19 @@
    "text": "The goal is seized at the Weary Innkeeper's dry common room — the one dry room in flooded Hollowmoot where half the town, including your party, has been sheltering supplies and whispered plans.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "PX-03",
+    "type": "ROOTS",
+    "owner": "PC-ANSELM",
+    "title": "A Weary Innkeeper",
+    "power_tags": [
+     "keeps a dry common room",
+     "hears every rumor",
+     "hides guests for coin"
+    ],
+    "weakness": "Sells Out Lodgers"
+   }
   },
   {
    "event": "beat_fill",
@@ -4828,7 +5093,20 @@
    "text": "The Drowned Priest's fanatical acolytes flood in through the common room's side door at his signal, moving as one body, singing low, and simply take what they came for before anyone can stop them.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "T-04",
+    "type": "THREAT",
+    "owner": "GM",
+    "title": "The Drowned Priest",
+    "power_tags": [
+     "preaches the blight is holy",
+     "leads fanatical acolytes",
+     "knows the temple's secret ways"
+    ],
+    "weakness": "Craves Public Martyrdom",
+    "clock": "0/5"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -4843,7 +5121,19 @@
    "owner": "Anselm",
    "placebo": true,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "PX-03",
+    "type": "ROOTS",
+    "owner": "PC-ANSELM",
+    "title": "A Weary Innkeeper",
+    "power_tags": [
+     "keeps a dry common room",
+     "hears every rumor",
+     "hides guests for coin"
+    ],
+    "weakness": "Sells Out Lodgers"
+   }
   }
  ],
  "referee": {
@@ -4871,6 +5161,24 @@
     "section": "§7",
     "issue": "reported fictional trigger fiction:the party leaves the road or causeway that is not an unused fictional trigger",
     "source": "engine"
+   },
+   {
+    "section": "§6A",
+    "issue": "Story cards drawn via story_draw (PS-06 at event 12, PS-10 at event 48) are never shown being returned to their pile at the following scene-end cleanup, contradicting 'At scene end, return it and its echo slips to its pile and reshuffle, unless it was retired.' PS-10 is then drawn a second time (event 80) while apparently still face-up on the rail from event 48, with no intervening removal.",
+    "event_id": 48,
+    "source": "referee"
+   },
+   {
+    "section": "§7",
+    "issue": "As a consequence of the story-pile cleanup lapse above, the rail exceeds its stated 5-card face-up limit: after event 48 (Rail + PS-10) the rail holds 6 face-up cards (H-02, PS-06, T-02, H-06, C-04, PS-10) with no removal event logged to bring it back to 5, violating 'The rail holds at most 5 face-up cards.'",
+    "event_id": 48,
+    "source": "referee"
+   },
+   {
+    "section": "§6A",
+    "issue": "Petra's success-with-style Create Advantage at event 78 was resolved with BOTH the optional story-pile ally draw (events 80-81, PS-10) AND the standard Session Deck peek (event 82), even though the rule states these are alternatives: 'Instead of the boost or the Session Deck peek, an ally or lead from the pile appears.'",
+    "event_id": 78,
+    "source": "referee"
    }
   ],
   "ambiguities": [
@@ -4927,14 +5235,241 @@
     "detail": "deck exhausted in scene 4; climax = scene 5",
     "scene": 4,
     "source": "engine"
+   },
+   {
+    "section": "§3 / §6A",
+    "issue": "The tag-use paragraph says a cost, compel, twist or Beat Frame blank built from a card's tag must use that tag in the fiction, explicitly naming 'compel' — but the very next paragraph carves out an exemption saying 'compels...are still made up at the table' and that the rule 'covers only the deck-draw costs in the table.' It's unclear whether ordinary (non-deck-draw) compels like Petra's 'Freezes when the song calls her name' (events 11, 46) are bound by the tag-use requirement.",
+    "interim_ruling": "The table applied the stricter reading in practice — both free compels narrated the tag explicitly — so no dispute arose, but the rule text itself is contradictory and should be clarified.",
+    "source": "referee"
+   },
+   {
+    "section": "§3 / §7",
+    "issue": "Anchor cards placed face-up during pre-session prep (§7) grant the GM 1 free invoke 'to be used within that scene' (§3). Prep happens before any scene begins (scene 0 is not part of the scene loop of §7), so it's unclear whether that free invoke expires before Scene 1 starts or carries into the first real scene.",
+    "interim_ruling": "At event 20 the GM invoked L-03's 'Warden watchtower' tag in Scene 1 with no fate point spent and no fresh free-invoke grant logged, implying the table treated the prep-time anchor free invoke as valid through the first scene of play.",
+    "source": "referee"
+   },
+   {
+    "section": "§6A",
+    "issue": "The Weight track is stated to 'replace Mythic's rule of listing an entry up to 3 times,' implying a recurring named NPC should have its existing story card's Weight increased rather than a new card being written. Tomas, the Sexton's Grandson already exists as story card SN-01 (added scene 2), but a second card SN-04 with the same title is added in scene 5 instead of weighting SN-01.",
+    "interim_ruling": "The table created a duplicate card (SN-04) for the same NPC rather than re-using/weighting SN-01; the rules do not explicitly forbid this, so it was allowed to stand.",
+    "source": "referee"
    }
   ],
-  "cost_checks": [],
-  "friction": []
+  "cost_checks": [
+   {
+    "event_id": 11,
+    "used_drawn_card": false,
+    "note": "Free compel (no draw_id) is not a deck-draw cost, so the tag-use rule of §3 does not strictly apply; the tag was named in the fiction anyway."
+   },
+   {
+    "event_id": 22,
+    "used_drawn_card": true,
+    "note": "Tie minor cost correctly built from PX-01's weakness tag 'Owes Everyone Money', used plainly in the narration."
+   },
+   {
+    "event_id": 37,
+    "used_drawn_card": true,
+    "note": "Beat Frame WHO blank filled from H-06's power tag 'buries the careless', used in text."
+   },
+   {
+    "event_id": 37,
+    "used_drawn_card": true,
+    "note": "Beat Frame WHERE blank filled from C-04's power tag 'temple bells command obedience', used in text."
+   },
+   {
+    "event_id": 46,
+    "used_drawn_card": false,
+    "note": "Free compel (no draw_id), not a deck-draw cost; tag referenced anyway."
+   },
+   {
+    "event_id": 64,
+    "used_drawn_card": true,
+    "note": "Beat Frame WHERE blank filled from PX-05's power tag 'safety in numbers', used in text."
+   },
+   {
+    "event_id": 64,
+    "used_drawn_card": true,
+    "note": "Beat Frame HOW blank filled from PX-21's power tag 'whispers of hidden silver', used in text."
+   },
+   {
+    "event_id": 65,
+    "used_drawn_card": true,
+    "note": "Surfacing compel correctly built from PX-05's weakness tag 'Slow and Noisy'."
+   },
+   {
+    "event_id": 69,
+    "used_drawn_card": true,
+    "note": "Surfacing compel correctly built from PX-21's weakness tag 'Treasure Hunters Turn Violent'."
+   },
+   {
+    "event_id": 95,
+    "used_drawn_card": true,
+    "note": "Beat Frame WHERE blank filled from PX-03's power tag 'keeps a dry common room', used in text."
+   },
+   {
+    "event_id": 95,
+    "used_drawn_card": true,
+    "note": "Beat Frame HOW blank filled from T-04's power tag 'leads fanatical acolytes', used in text."
+   },
+   {
+    "event_id": 97,
+    "used_drawn_card": true,
+    "note": "Surfacing compel built from PX-03's weakness tag 'Sells Out Lodgers'; source data flags this cost as 'repaired', meaning it was initially non-compliant (named the tag without using it) and was rewritten per §3 before being logged — correct self-correction, not a standing violation."
+   }
+  ],
+  "friction": [
+   {
+    "text": "Story-pile cards drawn by story_draw events (PS-06 in scene 1, PS-10 in scene 2) are never logged as returned to their pile at scene-end cleanup (§6A), which then causes rail overcrowding and the same story card (PS-10) being 'drawn' again in a later scene while still sitting face-up on the rail — a clear break in the intended pile-cycling rhythm that the table had to work around ad hoc."
+   },
+   {
+    "text": "The §6A 'success with style on create an advantage' rule frames the story-pile ally and the Session Deck peek as mutually exclusive ('instead of'), but nothing in the engine or table process stopped both being granted on the same roll (event 78's story draw plus event 82's peek), suggesting the two-benefit choice isn't clearly gated anywhere in implementation."
+   },
+   {
+    "text": "Whether a pre-session anchor's one-time free invoke survives into the first scene of play, or expires before play starts (since 'scene 0' prep isn't part of the formal scene loop), is not addressed anywhere in §3/§4/§7, forcing a table-level judgment call each time an anchor sits unused through prep."
+   }
+  ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "instigator",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The belltower. Petra hears her own name in the swarm-song and doesn't flinch this time—that was the arc payoff from scene one. Then physically wresting the bell-rope from the Drowned Priest, Anselm's liturgy shattering the false song, Tomas breaking free and running to Caddock. It all landed together.",
+    "most_frustrating": "The treasure-rumor subplot with the pilgrims felt introduced rather than organic—I handled it through RP, but it read as manufactured complication. Also, I wanted direct Order confrontation instead of the Drowned Priest as a stand-in for the enmity; the Priest works, but it sidesteps the core \"marked enemy\" tension.",
+    "background_used": "Good. The pilgrim-band shelter created genuine moral weight and community payoff. My vow to ring everyone home was central to the whole session. My stolen bell-lore justified why I led. The Marrow Ferry rivals and Ashwater Tollgate connections were partly used (the Warden scene) but could have gone deeper. The Order enmity was implied throughout but never directly confronted—felt like set-up rather than active threat.",
+    "wanted_but_couldnt": "I wanted to use the Marrow Ferry connections to reach the temple faster and see how \"old rival still owes her a debt\" played out under pressure. I also wanted direct confrontation with an actual Order member—someone to challenge my stolen bell-lore face-to-face, not just hive-touched cultists. The Drowned Priest's death left that thread hanging.",
+    "one_sentence": "My vow and stolen bell-lore carried real weight and drove the session, the pilgrim-band payoff was earned, but the Order enmity stayed atmospheric rather than active."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "tactician",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 6,
+    "control": 5,
+    "play_again": 6
+   },
+   "free_text": {
+    "best_moment": "The belltower confrontation—specifically when Anselm's invocation of \"Knows the old exorcism rites of Saint Orrin\" shattered the Drowned Priest's false swarm-song. It felt earned through his established obsession, and his knowledge was essential to saving Tomas. The moment made the character's years of study pay off in a way that mattered.",
+    "most_frustrating": "The Weary Innkeeper compel landed as something that happened to Anselm rather than something he engaged with dramatically. I would have liked more direct confrontation with that betrayal—the chance to confront the innkeeper about selling him out, rather than the plot beat occurring offscreen and simply becoming a setup for the acolyte attack.",
+    "background_used": "Good. Saint Orrin's bell-tongue obsession was woven in naturally—the sexton's mention of Tomas crying out in the old bell-tongue, the ritual details Anselm recognized, his knowledge being central to the climax. The Weary Innkeeper compel added weight, but felt somewhat abrupt. Overall: the character's obsessions mattered; the past debts created stakes, though I'd have preferred more active engagement with that betrayal.",
+    "wanted_but_couldnt": "I wanted more investigative play—Anselm's Investigate skill (3) felt sidelined in favor of action beats. I also wanted to see his \"Oath Never to Be Healed by Another's Hand\" actually tested under pressure, maybe by taking damage that required refusing aid to stay true to the character's core belief. Those options never quite emerged in the flow.",
+    "one_sentence": "Anselm's obsession with Saint Orrin's rites felt well-used and proved essential to victory, but his Oath and investigative nature could have created more internal dramatic tension if they'd been pushed harder against the session's events."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "optimizer",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 6,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Invoking all three power tags from my oath in the belltower—unshakeable calm, finest midwife reputation, steady hands—in one empathy roll against the Drowned Priest, hitting Epic (+7) against Fantastic (+6) to pull Tomas free. That was Caddock at her core, all three facets of her identity converging in one moment.",
+    "most_frustrating": "I burned through my entire fate point economy in the climactic moment by invoking three tags at once—I'm now at 0 FP with zero cushion for future complications. I was trying to play to win mechanically but made a costly resource management mistake. Also, the Marrowreed Village grudge against the Causeway Wardens never surfaced despite that opening gate scene being perfect territory for it.",
+    "background_used": "The oath about never losing a child was woven organically into the final confrontation and landed well. Sella's hive-touched shadow appeared once when I was reading the sexton's description, but the deeper wounds—Marrowreed's burning, Sella's haunting absence, the Wick Lane underworld ties—stayed completely untouched. It wasn't forced or ignored, just surface.",
+    "wanted_but_couldnt": "Confront the Weary Innkeeper's betrayal harder and let Caddock's real anger break through her professional calm. Also wanted the ferryman debt to come due and actually matter later, and wanted to explore what Sella's loss means when Caddock refuses to believe she's truly gone.",
+    "one_sentence": "The oath felt organic and her moment mattered mechanically, but the harder edges of her past—Marrowreed's trauma, Sella's ghost, the underworld ties—never got to complicate her story."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "protector",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 6,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The charge up the spiral stair — Yarrow taking the bell clapper's iron kiss across his ribs without flinching, the Beyond Legendary result, and his willingness to plant himself between the Drowned Priest and everyone else. That moment crystallized his whole concept: disgraced guard, still holding the line, putting others' safety above his own.",
+    "most_frustrating": "The buried treasure compel resolved quickly without much real consequence or follow-up — Yarrow named it and shut it down, which felt right for the character, but then it just... didn't come up again. Also wanted more chances to use Brack and his actual weir-keeper expertise (water-reading, family maps) mechanically, not just flavor text.",
+    "background_used": "Good. The buried treasure tie to his family history and the weir-gates felt earned and thematic — a moment where Yarrow rejected greed in favor of duty, which is exactly who he is. The pilgrim camp scene where Brack caught the stranger asking too many questions about old maps was a nice touch too.",
+    "wanted_but_couldnt": "Wanted to do more with his Notice of the terrain and weir-knowledge (the maps, reading water-flow, navigating the flooded approach) and lean harder into what makes Yarrow a Weir-Keeper specifically, not just a guard. Brack felt underutilized — the bond is core to him, but the dog was mostly just present.",
+    "one_sentence": "Yarrow's concept of \"disgraced guard still holding the line\" was used faithfully throughout — he was always the one stepping into danger for others, always the boundary-holder, and that felt earned and thematic rather than forced."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Petra",
+    "turns": 17,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Anselm",
+    "turns": 14,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Caddock",
+    "turns": 13,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Yarrow",
+    "turns": 13,
+    "references_to_others_background": 0
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "The party stormed Saint Orrin's belltower and broke the swarm-song at its source: Petra seized the bell-rope, Anselm's true liturgy shattered the false hymn, and Caddock caught Tomas as he stumbled free of its pull while Yarrow held the stair against the Priest himself. Wounded and stripped of his rope and his song, the Drowned Priest threw himself through the shattered louvre into the black flood rather than be taken, vanishing beneath Saint Orrin's as the temple groaned toward collapse. Hollowmoot's missing are not all safe, and the belltower is silent now, but something in the water below still remembers the words he taught it.",
+  "closing_tension": 3,
+  "reverberations": {
+   "growth": {
+    "PE-03": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    }
+   },
+   "clocks": [
+    "F-03 1/4",
+    "T-02 1/6",
+    "F-02 1/5",
+    "F-04 1/5"
+   ],
+   "mutations": [],
+   "retired": []
+  },
+  "retired": [
+   {
+    "card": "N-02",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-04",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-05",
+    "how": "story pile over limit",
+    "session": 1
+   }
+  ]
+ },
  "state_end": {
   "tension": 3,
   "fp": {
@@ -4979,14 +5514,111 @@
    "scene": 5
   }
  ],
- "metrics": {},
- "tokens": {
-  "prompt": 1172046,
-  "completion": 164953,
-  "cost_usd": 2.9106,
-  "calls": 69
+ "metrics": {
+  "arm": "C",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Petra"
+  ],
+  "backstory_all_players": false,
+  "deck_surfaced_all_players": null,
+  "deck_draws": 6,
+  "draw_costs": 10,
+  "draw_cost_used_card_rate_engine": 1.0,
+  "draw_cost_tag_in_text_rate": 1.0,
+  "draw_cost_repaired": 1,
+  "draw_cost_used_card_rate_referee": 0.833,
+  "fp_end": {
+   "Petra": 5,
+   "Anselm": 1,
+   "Caddock": 0,
+   "Yarrow": 0
+  },
+  "fp_end_mean": 1.5,
+  "fp_earned": {
+   "Petra": 3,
+   "Caddock": 1,
+   "Yarrow": 1,
+   "Anselm": 1
+  },
+  "fp_spent": {
+   "Petra": 1,
+   "Caddock": 4,
+   "Yarrow": 4,
+   "Anselm": 3
+  },
+  "compels_accepted": 6,
+  "compels_refused": 0,
+  "compels_deck": 4,
+  "compels_free": 2,
+  "turns": {
+   "Petra": 6,
+   "Anselm": 6,
+   "Caddock": 6,
+   "Yarrow": 6
+  },
+  "turn_gini": 0.0,
+  "invokes": {
+   "Petra": 3,
+   "Caddock": 4,
+   "Yarrow": 4,
+   "Anselm": 3
+  },
+  "invoke_gini": 0.0714,
+  "tension_trajectory": [
+   3,
+   4,
+   5,
+   5,
+   4,
+   3
+  ],
+  "clock_marks": 4,
+  "violations": 6,
+  "violations_engine": 3,
+  "violations_referee": 3,
+  "ambiguities": 9,
+  "ambiguity_ids": [
+   "AMB-01",
+   "AMB-03",
+   "AMB-12",
+   "AMB-22",
+   "AMB-27",
+   "§3 / §6A",
+   "§3 / §7",
+   "§6A"
+  ],
+  "gm_improvised_complications": 2,
+  "card_supplied_complications": 10,
+  "improvisation_share": 0.167,
+  "guarantee_pulled": 1,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6.5,
+   "involvement": 6.75,
+   "connection": 6.25,
+   "control": 5.75,
+   "play_again": 6.75
+  },
+  "involvement_var_within": 0.188,
+  "personality": {
+   "Petra": "instigator",
+   "Anselm": "tactician",
+   "Caddock": "optimizer",
+   "Yarrow": "protector"
+  },
+  "elapsed_min": 33.5,
+  "cost_usd": 3.6548
  },
- "llm_calls": 69,
+ "tokens": {
+  "prompt": 1274594,
+  "completion": 219853,
+  "cost_usd": 3.6548,
+  "calls": 76
+ },
+ "llm_calls": 76,
  "call_log": [
   {
    "seq": 1,
@@ -5539,6 +6171,62 @@
    "cached": false,
    "prompt_tokens": 92238,
    "completion_tokens": 3780
+  },
+  {
+   "seq": 26,
+   "agent": "GM",
+   "kind": "gm_post",
+   "cached": false,
+   "prompt_tokens": 20091,
+   "completion_tokens": 641
+  },
+  {
+   "seq": 1,
+   "agent": "Referee",
+   "kind": "referee",
+   "cached": false,
+   "prompt_tokens": 26637,
+   "completion_tokens": 27346
+  },
+  {
+   "seq": 1,
+   "agent": "Petra#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11500,
+   "completion_tokens": 1872
+  },
+  {
+   "seq": 1,
+   "agent": "Anselm#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11535,
+   "completion_tokens": 2002
+  },
+  {
+   "seq": 1,
+   "agent": "Yarrow#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11530,
+   "completion_tokens": 1918
+  },
+  {
+   "seq": 1,
+   "agent": "Caddock#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11544,
+   "completion_tokens": 4962
+  },
+  {
+   "seq": 1,
+   "agent": "Interviewer",
+   "kind": "interviewer",
+   "cached": false,
+   "prompt_tokens": 9711,
+   "completion_tokens": 16159
   }
  ],
  "models": {
@@ -5547,5 +6235,5 @@
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 1203.6
+ "elapsed_s": 2011.1
 }
