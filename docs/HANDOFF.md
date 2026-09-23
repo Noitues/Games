@@ -27,7 +27,8 @@ never confirmed) and `reveal_radius` is **2** (ruled, but only probed on T1).
 |---|---|
 | **P-0009** — raise `dragon_ap_each` from 1, personality batch | the objective lever the lead designer approved. The knob is wired and deliberately still at 1; nothing else is pending on it. |
 | a T2 read at reveal radius 2 | the ruling was made on T1 probes. The direction was clear, the magnitude was not. |
-| champion balance | only after the two above, and read on a mixed personality field. See §3. |
+| **the personality state machine** (§9) | a team AI that switches personality on the game state, bred over generations. Changes the field champion balance is measured in, so it comes first. |
+| champion balance | only after the three above, and read on a mixed field. See §3. |
 
 A 120-game T2 personality batch costs about 70–90 minutes on 4 cores.
 
@@ -134,13 +135,17 @@ In order:
    personality batch against `batch_0038`. Target: the sieger below 60% and the
    spread below 25 points.
 2. **A T2 read at reveal radius 2**, since the ruling rests on T1 probes.
-3. **Champion balance**, on a mixed personality field, not a mirror. RQ-028
-   still applies: with 5 champions per role a champion plays 40% of games, so
+3. **Make the team AI a state machine over the personalities** (§9). This comes
+   before champion balance because it changes the field the roster is measured
+   in, exactly as the objective lever does.
+4. **Champion balance**, on a mixed field, not a mirror — and once §9 has a
+   winner, against that rather than against fixed personalities. RQ-028 still
+   applies: with 5 champions per role a champion plays 40% of games, so
    ±2.2-point verdicts need roughly 5,000 games. Consider a T1 sweep to find
-   outliers and a T2 personality batch to confirm only those.
-4. **Pacing last**, as ruled. `tower_hp` 16 has never been confirmed, and both
+   outliers and a T2 batch to confirm only those.
+5. **Pacing last**, as ruled. `tower_hp` 16 has never been confirmed, and both
    P-0006 and P-0008 moved game length underneath it.
-5. **Re-run the exploit sweep.** The Phase 5 gate was met under rules 1.0.0.
+6. **Re-run the exploit sweep.** The Phase 5 gate was met under rules 1.0.0.
 
 ## 8. Map of the repository
 
@@ -158,3 +163,81 @@ In order:
 
 Patches record their own verdicts, including the two that failed. Read
 `log/patches/` before re-running any economy lever.
+
+## 9. Next AI step: a state machine over the personalities
+
+The five personalities in ai 1.3.0 are fixed for a whole game, which is not how
+anyone plays. A team opens on lane discipline, groups when an objective is up,
+sieges when it is ahead, and wards when it is behind. The next step is to make
+the team AI a **state machine whose states are the personalities and whose
+transitions read the game state**, then to breed the transition logic rather
+than hand-tune it.
+
+### 9.1 The machine
+
+A candidate is a pair: the set of states it may occupy (any subset of
+`warder`, `brawler`, `sieger`, `objective`, `laner`, or new ones) and the
+transition logic between them. Re-evaluate the machine once per round at
+Upkeep, not per activation — switching personality mid-round makes the snake
+order incoherent and the logs unreadable.
+
+Signals the transition logic may read, all already on `GameState`:
+
+| signal | why it should matter |
+|---|---|
+| round number and band | opening, mid-game, closing play differ |
+| towers standing, own vs enemy | ahead on the map → siege; behind → ward and farm |
+| Nexus chips, own vs enemy | how close either side is to winning |
+| champions alive, and HP pool | a won fight is the moment to group |
+| Dragon or Baron alive, and its respawn round | an objective coming up should pull a team to it |
+| AP per round, own vs enemy | who can afford to contest |
+| champion deaths in the last round or two | reacting to a lost fight rather than repeating it |
+
+Worth trying across iterations, not just threshold tweaks: pure time-scripted
+machines (round bands only), pure reactive ones (differentials only), hysteresis
+so a machine cannot oscillate every round, a "commit" timer that locks a state
+for N rounds once entered, and two-state minimal machines as a control — if a
+two-state machine matches a five-state one, the extra states are decoration.
+
+### 9.2 The tournament
+
+Ten candidates per generation, evenly spread across the batch so each plays
+roughly the same number of games, drawn per game the way `personality_pool`
+already draws personalities (`engine/batch.py`). Rank them, keep the **top 2**,
+and fill the next generation with **8 new** candidates — mutations of the
+survivors, crossovers between them, and at least two unrelated designs so the
+search cannot collapse into one family. Repeat.
+
+Four things will decide whether this produces a real answer or a dressed-up
+coin flip:
+
+- **Sample size per candidate.** Ten candidates in a 200-game batch is 40 games
+  each, an interval of roughly ±15 points. Ranking on that promotes luck, not
+  skill. Budget at least 60–80 games per candidate per generation, so 300–400
+  games per generation, and expect 4–5 hours of T2 on 4 cores. Screening early
+  generations on T1 is reasonable; confirming the survivors on T2 is not
+  optional, because §6 records what happened the last time a decision rested on
+  T1 alone.
+- **Select on the lower confidence bound, not the point estimate.** Promoting
+  the top 2 by raw win rate promotes whoever got the kindest draw. Sorting by
+  `wr_lo` promotes candidates that are probably good.
+- **Keep a fixed anchor in every batch.** In a field of evolving agents a 55%
+  win rate in generation 5 means nothing next to 55% in generation 1, because
+  the opposition changed underneath it. Put plain `T2_search` in every
+  generation as a constant share of the field and report every candidate's
+  record against it; that number is comparable across generations and the
+  head-to-head one is not.
+- **Log the state occupancy.** Record which state each team was in per round,
+  the way the concealment metrics are recorded, so a winning machine can be
+  read and explained rather than just scored. A machine that wins while sitting
+  in one state all game has discovered that the state machine is unnecessary,
+  which is itself a finding worth having.
+
+### 9.3 What it is for
+
+Two things, in order of importance. It makes the field a champion is measured
+in resemble a played game rather than a fixed script, which is what §3 says the
+balance numbers need. And it is a second, independent read on RQ-037: if every
+surviving machine converges on sieging regardless of game state, that is the
+strategy imbalance confirming itself from a direction that has nothing to do
+with how the personalities were hand-written.
