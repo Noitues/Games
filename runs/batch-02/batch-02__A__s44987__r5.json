@@ -4,7 +4,7 @@
  "arm": "A",
  "seed": 44987,
  "spec_version": "0.3.1",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 5,
@@ -4165,6 +4165,146 @@
     "Fenwick": 2
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 143,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-01 1/6",
+   "tension": 4,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 1,
+    "Hask": 2,
+    "Eira": 6,
+    "Fenwick": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 144,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-03 1/4",
+   "tension": 4,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 1,
+    "Hask": 2,
+    "Eira": 6,
+    "Fenwick": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 145,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock T-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "T-02 1/6",
+   "tension": 4,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 1,
+    "Hask": 2,
+    "Eira": 6,
+    "Fenwick": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 146,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "4",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 1,
+    "Hask": 2,
+    "Eira": 6,
+    "Fenwick": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 147,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "FP: Maud=1, Hask=2, Eira=6, Fenwick=2",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 1,
+    "Hask": 2,
+    "Eira": 6,
+    "Fenwick": 2
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -5085,7 +5225,19 @@
    "text": "Sella — the informer Eira has history with, who still feeds names to the Wardens — is WHO turns on the party. She was never neutral; she's been walking the toll line all along, cataloguing faces for Orsa's ledger, and Eira's is one of them.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "EI-02",
+    "type": "ROOTS",
+    "owner": "PC-EIRA",
+    "title": "The Informers Debt",
+    "power_tags": [
+     "Knows Sella the informers face and habits",
+     "Sella still works for the Causeway Wardens",
+     "Owed a truth Sella will never give freely"
+    ],
+    "weakness": "Loses composure whenever Sella is mentioned"
+   }
   },
   {
    "event": "beat_fill",
@@ -5096,7 +5248,20 @@
    "text": "The WHY is the causeway itself: the toll gate and chains funnel everyone through one choke point Sella controls. She can't slip past the party unseen, and she can't let a debt she owes the Wardens go unpaid — so she chooses now, at the chains, to name them.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "L-04",
+    "type": "LOCATION",
+    "owner": "GM",
+    "title": "The Ashwater Causeway",
+    "power_tags": [
+     "only dry road north",
+     "toll gate and chains",
+     "long exposed stretch"
+    ],
+    "weakness": "Nowhere to Hide",
+    "clock": "0/4"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -5111,7 +5276,19 @@
    "owner": "Eira",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "EI-02",
+    "type": "ROOTS",
+    "owner": "PC-EIRA",
+    "title": "The Informers Debt",
+    "power_tags": [
+     "Knows Sella the informers face and habits",
+     "Sella still works for the Causeway Wardens",
+     "Owed a truth Sella will never give freely"
+    ],
+    "weakness": "Loses composure whenever Sella is mentioned"
+   }
   },
   {
    "event": "free_compel",
@@ -5133,7 +5310,19 @@
    "text": "the sunken shrine-road beneath Gullet Ford — a drowned crossing only the old ferry families like Hask's ever knew how to find",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "HA-01",
+    "type": "ROOTS",
+    "owner": "PC-HASK",
+    "title": "Born on the Ferry Lines",
+    "power_tags": [
+     "Child of the Gullet Ford ferry family",
+     "Can pole a boat through any current",
+     "Knows the drowned roads beneath the water"
+    ],
+    "weakness": "Distrusts anyone whos never worked a ferry"
+   }
   },
   {
    "event": "beat_fill",
@@ -5144,7 +5333,20 @@
    "text": "word passed hand to hand through Hollowmoot's gossip-heavy taverns, tipping the acolytes off hours before the party could move",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "L-03",
+    "type": "LOCATION",
+    "owner": "GM",
+    "title": "Hollowmoot",
+    "power_tags": [
+     "stilt-town market",
+     "gossip-heavy taverns",
+     "Warden watchtower"
+    ],
+    "weakness": "Quarantine Bells Ring Often",
+    "clock": "0/4"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -5159,7 +5361,19 @@
    "owner": "Hask",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "HA-01",
+    "type": "ROOTS",
+    "owner": "PC-HASK",
+    "title": "Born on the Ferry Lines",
+    "power_tags": [
+     "Child of the Gullet Ford ferry family",
+     "Can pole a boat through any current",
+     "Knows the drowned roads beneath the water"
+    ],
+    "weakness": "Distrusts anyone whos never worked a ferry"
+   }
   },
   {
    "event": "free_compel",
@@ -5192,7 +5406,19 @@
    "text": "Rennick, the Blackwater Cartel collector who holds Maud's silver debt, wading up out of the dark with a lantern and a ledger, come to call it in before the flood takes the road",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "MA-04",
+    "type": "REACH",
+    "owner": "PC-MAUD",
+    "title": "The Silver Debt",
+    "power_tags": [
+     "Owes coin to the Blackwater Cartel",
+     "Always knows the price of everything",
+     "Skilled at skimming tolls unnoticed"
+    ],
+    "weakness": "Will sell information for enough silver"
+   }
   },
   {
    "event": "beat_fill",
@@ -5203,7 +5429,19 @@
    "text": "The shrine sits at the end of a drowned channel that shows on no warden chart — but Fenwick, who knows every hidden channel between Hollowmoot and the reeds, traces the way through the reeds without hesitation.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "FE-01",
+    "type": "ROOTS",
+    "owner": "PC-FENWICK",
+    "title": "Cast Out from the Stilt Villages",
+    "power_tags": [
+     "Exiled from the Stiltfolk Clans for forbidden mapmaking",
+     "Knows every hidden channel between Hollowmoot and the reeds",
+     "Draws maps no one else dares make"
+    ],
+    "weakness": "No clan will shelter him"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -5218,7 +5456,19 @@
    "owner": "Maud",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "MA-04",
+    "type": "REACH",
+    "owner": "PC-MAUD",
+    "title": "The Silver Debt",
+    "power_tags": [
+     "Owes coin to the Blackwater Cartel",
+     "Always knows the price of everything",
+     "Skilled at skimming tolls unnoticed"
+    ],
+    "weakness": "Will sell information for enough silver"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -5233,7 +5483,19 @@
    "owner": "Fenwick",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "FE-01",
+    "type": "ROOTS",
+    "owner": "PC-FENWICK",
+    "title": "Cast Out from the Stilt Villages",
+    "power_tags": [
+     "Exiled from the Stiltfolk Clans for forbidden mapmaking",
+     "Knows every hidden channel between Hollowmoot and the reeds",
+     "Draws maps no one else dares make"
+    ],
+    "weakness": "No clan will shelter him"
+   }
   }
  ],
  "referee": {
@@ -5261,6 +5523,18 @@
     "section": "§7",
     "issue": "reported fictional trigger fiction:the party leaves the road or causeway that is not an unused fictional trigger",
     "source": "engine"
+   },
+   {
+    "section": "§7 (The rail)",
+    "issue": "Rail exceeded the 5-card cap and stayed over-limit across multiple events instead of being corrected on the triggering add. In scene 4, adding MA-06 (event 104) brought the rail to 6 face-up cards (H-03, EI-06, H-05, T-02, FE-05, MA-06); three rolls (events 106, 108, 110) were resolved with the rail still over-limit, and the corrective removal (-H-05) did not happen until event 111. A similar 1-add delay occurred in scene 2 when EI-02 (event 38) pushed the rail to 6 and the correction (-F-01) was not logged until event 46, after an intervening compel and scene frame.",
+    "event_id": 104,
+    "source": "referee"
+   },
+   {
+    "section": "§6A (Story Piles — resolving a story draw)",
+    "issue": "Story card EI-06 was drawn and placed face-up on the rail in scene 1 (events 16-17) but is never logged as returned to its pile at any scene end (no 'Rail - EI-06' event appears anywhere in the log, including scene 1, scene 2 or scene 4 cleanup), contrary to '(a story card) at scene end ... return it and its echo slips to its pile and reshuffle, unless it was retired.' It was instead redrawn/re-added twice more (events 47-48, 112-113) while apparently still resident on the rail, directly contributing to the rail-limit overflow noted above.",
+    "event_id": 16,
+    "source": "referee"
    }
   ],
   "ambiguities": [
@@ -5326,14 +5600,234 @@
     "detail": "event 110",
     "scene": 4,
     "source": "engine"
+   },
+   {
+    "section": "§3 / §4 / §11 (live tags vs. compels)",
+    "issue": "The engine refused a compel formally tied to EI-02 while that card sat unsurfaced in the Session Deck (not live). The GM then issued an equivalent, textually identical compel about 'Sella' as an improvised, non-card-linked event (no draw_id, no free invoke, no surfacing). The rules restrict invoking a non-live card's tags (§3) but never say whether a GM may narrate a compel that reproduces a not-yet-surfaced card's tag content without mechanically touching the card.",
+    "interim_ruling": "Treated as valid: since the compel was not formally attached to the card (no draw_id, no surfacing, no free invoke granted), it was ruled an ordinary made-up Fate compel under the 'rest of Fate runs as normal' clause rather than a use of the deck-locked card.",
+    "source": "referee"
+   },
+   {
+    "section": "§6A / §7 (rail limit vs. repeated story draws)",
+    "issue": "When a Story Pile card is drawn again while an earlier, uncleared copy of the same card is still face-up on the rail (EI-06 recurring at events 47 and 112), the rules don't say whether this should overwrite/refresh the existing rail slot or add a second instance, and don't reconcile this with the 5-card rail cap.",
+    "interim_ruling": "The table treated each draw as a fresh rail_add, compounding the rail count rather than deduplicating the existing card.",
+    "source": "referee"
+   },
+   {
+    "section": "§5 step 3 (Beat Frame blank-filling fallback)",
+    "issue": "For frames where none of the drawn cards' native types match any open blank (RIVAL CLAIM: ROOTS/LOCATION vs. open WHERE/HOW; PLEA FOR HELP: REACH/ROOTS vs. open WHO/WHERE), the rules give a 'first open blank still empty' fallback but don't specify the processing order when multiple cards are drawn simultaneously for the same frame.",
+    "interim_ruling": "Cards were resolved strictly in draw order, each filling the first still-open blank when its native type didn't match, producing internally consistent but type-mismatched fills (e.g., ROOTS→WHERE, LOCATION→HOW).",
+    "source": "referee"
    }
   ],
-  "cost_checks": [],
-  "friction": []
+  "cost_checks": [
+   {
+    "event_id": 34,
+    "used_drawn_card": true,
+    "note": "Beat Frame BETRAYAL: EI-02 fills WHO using tag 'Sella still works for the Causeway Wardens', quoted/used in the fill text."
+   },
+   {
+    "event_id": 34,
+    "used_drawn_card": true,
+    "note": "Beat Frame BETRAYAL: L-04 fills WHY using tag 'toll gate and chains', used in the fill text."
+   },
+   {
+    "event_id": 36,
+    "used_drawn_card": true,
+    "note": "Surfacing compel on EI-02 uses weakness tag 'Loses composure whenever Sella is mentioned' directly in the narration (flagged repaired but tag_in_text true in final form)."
+   },
+   {
+    "event_id": 67,
+    "used_drawn_card": true,
+    "note": "Beat Frame RIVAL CLAIM: HA-01 fills WHERE using tag 'Knows the drowned roads beneath the water', used in fill text."
+   },
+   {
+    "event_id": 67,
+    "used_drawn_card": true,
+    "note": "Beat Frame RIVAL CLAIM: L-03 fills HOW using tag 'gossip-heavy taverns', used in fill text."
+   },
+   {
+    "event_id": 69,
+    "used_drawn_card": true,
+    "note": "Surfacing compel on HA-01 uses weakness tag 'Distrusts anyone who's never worked a ferry' directly in the narration."
+   },
+   {
+    "event_id": 126,
+    "used_drawn_card": true,
+    "note": "Beat Frame PLEA FOR HELP: MA-04 fills WHO using tag 'Owes coin to the Blackwater Cartel', used in fill text."
+   },
+   {
+    "event_id": 126,
+    "used_drawn_card": true,
+    "note": "Beat Frame PLEA FOR HELP: FE-01 fills WHERE using tag 'Knows every hidden channel between Hollowmoot and the reeds', used in fill text."
+   },
+   {
+    "event_id": 127,
+    "used_drawn_card": true,
+    "note": "Surfacing compel on MA-04 uses weakness tag 'Will sell information for enough silver' in the narration; refused, owner paid 1 FP per §4."
+   },
+   {
+    "event_id": 130,
+    "used_drawn_card": true,
+    "note": "Surfacing compel on FE-01 uses weakness tag 'No clan will shelter him' directly in the narration; accepted."
+   }
+  ],
+  "friction": [
+   {
+    "text": "Scene 4 ran three rolls (events 106, 108, 110) with 6 cards face-up on the rail — one over the §7 cap — because story card EI-06 was never cleared back to its pile after its first draw in scene 1, so overflow correction lagged well behind the triggering add."
+   },
+   {
+    "text": "The GM's first attempt to compel Eira with EI-02 while it was still in the Session Deck was bounced by the engine mid-scene, forcing an improvised, non-card-linked compel with matching flavor text to keep the scene moving — a rough seam between deck-lock rules and ordinary Fate compels."
+   },
+   {
+    "text": "gm_fp_spent is logged only once in the whole session (event 51) despite many GM-opposed rolls across five scenes, leaving the table with almost no visibility into whether the GM's 1-fate-point-per-player-per-scene budget was tracked or overspent."
+   }
+  ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "lurker",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 5,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "S4 - \"Look to me. We hold steady here.\" - Maud's quiet strength actually stops the panic. Not flashy, just the core of who she is working perfectly. That's her superpower.",
+    "most_frustrating": "The stretch where Rennick confronts her feels like it could have been heavier. Also: the \"disgraced militia guard\" concept didn't get explored—no reckoning with what the disgrace *is*, no militia colleagues, no deeper history with the Causeway and Orsa beyond a checkpoint interaction. Held the line, but the *why* it matters felt distant.",
+    "background_used": "Good. The core concept—\"disgraced militia guard who still holds the line\"—got a perfect, earned moment in S4. The \"holds the line\" part was validated completely. The disgrace, the militia identity, the Causeway history... those existed but weren't deeply explored. No unfairness, but room for depth.",
+    "wanted_but_couldnt": "More about what \"disgraced\" means in Maud's actual world—encountering militia she served with, understanding the fracture between her loyalty and her exile. The Rennick debt moment could have been heavier. More texture around the Causeway itself and whether Orsa remembers her.",
+    "one_sentence": "The core concept worked perfectly when it mattered; the disgrace and militia past exist but stayed at the surface."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "method_actor",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The drowned lodge fight—Hask charging in with fury to defend his family's legacy. Visceral, identity-driven, mechanically supported, and it mattered.",
+    "most_frustrating": "Nothing significant. If anything, I wanted more exploration of the Ford's current state and maybe one moment where Hask taught someone water-reading—but that's \"wanted more,\" not a real complaint.",
+    "background_used": "Born on the Ferry Lines was woven throughout every major scene—the marked channels, the ferry family reputation, the compel about the ferry grip, chances to demonstrate actual expertise. Rill was present and relevant. Not forced, perfectly integrated.",
+    "wanted_but_couldnt": "More depth on what's happening to Hask's family and the Ford currently. Details about what's in the cure-books. But these are scope limits, not game failures.",
+    "one_sentence": "Hask's family background wasn't just acknowledged—it was woven into every major scene in ways that made his expertise matter mechanically and emotionally."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "storyteller",
+   "scores": {
+    "fun": 7,
+    "involvement": 6,
+    "connection": 7,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The gate confrontation with Sella. Eira's card \"The Informers Debt\" became real, personal, and wounding—but then that Empathy roll at the end broke through Sella's defenses and forced the confession about Three Elms public, at exactly the moment when the chaos created our escape route. It was vulnerable, it mattered mechanically, and it proved Eira was right all along.",
+    "most_frustrating": "After the gate escape, I felt like I was following Hask's family knowledge and Fenwick's archive-secrets. Eira gathered survivors and made good choices, but I wished I'd had more agency in what direction we took or what we solved, rather than supporting other characters' plot threads.",
+    "background_used": "Good. The Sella confrontation was excellent—my card triggered exactly as written, with real emotional weight. Three Elms was woven in thematically throughout. The quarantine-house panic compel landed with genuine weight. Though: the pregnant woman waiting on the north side kind of disappeared from the story once we got through the gate—was she ever real, or just a pretext to push through?",
+    "wanted_but_couldnt": "I wanted to push harder on extracting the full truth from Sella—she confessed to the burning, but there's more she knows, and the compel on my panic cut that short. Also wanted to actually meet and help that woman in labor I supposedly rushed to deliver for, and more moments where Eira's healer knowledge mattered beyond gathering frightened people and talking about oaths.",
+    "one_sentence": "My character's core cards became major plot hooks at exactly the right moment and created real vulnerability, but I'm sharing the narrative focus with equally strong backgrounds and sometimes feel like I'm supporting others' storylines rather than driving my own."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "rules_lawyer",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Bren emerging from the water at the lodge with that flicker of possible recognition—it crystallized Fenwick's central emotional conflict and made the later choice to break his oath feel genuinely costly rather than forced.",
+    "most_frustrating": "The causeway gate scene moved quickly from negotiation to escape once Sella turned on the party. I was working a social angle with Orsa and wanted more time to explore that angle before the action accelerated.",
+    "background_used": "Yes—FE-02 (Bren) appeared at the lodge, FE-03 (Cartel debt) brought Rennick into play, and FE-01 (Cast Out) was compelled when revealing the archive. How it landed: good. All three were organic to the story, thematically appropriate, and didn't feel forced or unfairly stacked against me.",
+    "wanted_but_couldnt": "More time working the social angle at the causeway checkpoint before the escape, and deeper discussion of what actually makes those maps so dangerous—to both the Order of the Dry Saint and to the Stiltfolk. There's lore there I wanted to explore.",
+    "one_sentence": "Fenwick's background was woven expertly into the narrative—each of his cards touched the story organically, making his choices feel genuinely costly without being unfair."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Maud",
+    "turns": 13,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Hask",
+    "turns": 16,
+    "references_to_others_background": 1
+   },
+   {
+    "name": "Eira",
+    "turns": 18,
+    "references_to_others_background": 1
+   },
+   {
+    "name": "Fenwick",
+    "turns": 15,
+    "references_to_others_background": 0
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "The party drove deeper into the Sallowmere's drowned heart, refusing a cartel debt, sacrificing old secrets, and following a mother's desperate plea into a channel no warden chart shows. Fenwick broke his oath to Bren by opening the hidden way to Saint Orrin's outer shrine, while Hask and Eira committed everything to reach a boy lost to the swarm-song before the Hive Mother's belltower. As the boats slip through the reeds toward the flooded shrine, the party stands poised at the threshold of the Hive Mother's domain, debts unpaid and promises broken behind them.",
+  "closing_tension": 4,
+  "reverberations": {
+   "growth": {
+    "EI-02": {
+     "added": 2,
+     "total": 2,
+     "evolve": false
+    },
+    "HA-01": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "FE-02": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "MA-02": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "FE-01": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    }
+   },
+   "clocks": [
+    "F-01 1/6",
+    "F-03 1/4",
+    "T-02 1/6"
+   ],
+   "mutations": [],
+   "retired": []
+  },
+  "retired": []
+ },
  "state_end": {
   "tension": 4,
   "fp": {
@@ -5371,14 +5865,113 @@
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 1365337,
-  "completion": 194528,
-  "cost_usd": 3.3467,
-  "calls": 81
+ "metrics": {
+  "arm": "A",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Eira",
+   "Fenwick",
+   "Hask",
+   "Maud"
+  ],
+  "backstory_all_players": true,
+  "deck_surfaced_all_players": true,
+  "deck_draws": 4,
+  "draw_costs": 10,
+  "draw_cost_used_card_rate_engine": 1.0,
+  "draw_cost_tag_in_text_rate": 1.0,
+  "draw_cost_repaired": 5,
+  "draw_cost_used_card_rate_referee": 1.0,
+  "fp_end": {
+   "Maud": 1,
+   "Hask": 2,
+   "Eira": 6,
+   "Fenwick": 2
+  },
+  "fp_end_mean": 2.75,
+  "fp_earned": {
+   "Eira": 4,
+   "Hask": 1,
+   "Fenwick": 2,
+   "Maud": 1
+  },
+  "fp_spent": {
+   "Hask": 2,
+   "Eira": 1,
+   "Fenwick": 3,
+   "Maud": 3
+  },
+  "compels_accepted": 7,
+  "compels_refused": 1,
+  "compels_deck": 4,
+  "compels_free": 4,
+  "turns": {
+   "Maud": 7,
+   "Hask": 7,
+   "Eira": 7,
+   "Fenwick": 7
+  },
+  "turn_gini": 0.0,
+  "invokes": {
+   "Hask": 3,
+   "Eira": 2,
+   "Fenwick": 3,
+   "Maud": 2
+  },
+  "invoke_gini": 0.1,
+  "tension_trajectory": [
+   3,
+   4,
+   5,
+   4,
+   3,
+   4
+  ],
+  "clock_marks": 3,
+  "violations": 5,
+  "violations_engine": 3,
+  "violations_referee": 2,
+  "ambiguities": 10,
+  "ambiguity_ids": [
+   "AMB-01",
+   "AMB-12",
+   "AMB-22",
+   "AMB-27",
+   "§3 / §4 / §11 (live tags vs. compels)",
+   "§5 step 3 (Beat Frame blank-filling fallback)",
+   "§6A / §7 (rail limit vs. repeated story draws)"
+  ],
+  "gm_improvised_complications": 4,
+  "card_supplied_complications": 10,
+  "improvisation_share": 0.286,
+  "guarantee_pulled": 2,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6.5,
+   "involvement": 6.25,
+   "connection": 6.5,
+   "control": 5.75,
+   "play_again": 7
+  },
+  "involvement_var_within": 0.188,
+  "personality": {
+   "Maud": "lurker",
+   "Hask": "method_actor",
+   "Eira": "storyteller",
+   "Fenwick": "rules_lawyer"
+  },
+  "elapsed_min": 31.1,
+  "cost_usd": 4.1038
  },
- "llm_calls": 80,
+ "tokens": {
+  "prompt": 1512493,
+  "completion": 249129,
+  "cost_usd": 4.1038,
+  "calls": 88
+ },
+ "llm_calls": 87,
  "call_log": [
   {
    "seq": 1,
@@ -6019,6 +6612,62 @@
    "cached": false,
    "prompt_tokens": 42689,
    "completion_tokens": 2020
+  },
+  {
+   "seq": 29,
+   "agent": "GM",
+   "kind": "gm_post",
+   "cached": false,
+   "prompt_tokens": 62305,
+   "completion_tokens": 1000
+  },
+  {
+   "seq": 1,
+   "agent": "Referee",
+   "kind": "referee",
+   "cached": false,
+   "prompt_tokens": 27760,
+   "completion_tokens": 25430
+  },
+  {
+   "seq": 1,
+   "agent": "Eira#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11784,
+   "completion_tokens": 2479
+  },
+  {
+   "seq": 1,
+   "agent": "Maud#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11747,
+   "completion_tokens": 2920
+  },
+  {
+   "seq": 1,
+   "agent": "Hask#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11782,
+   "completion_tokens": 4520
+  },
+  {
+   "seq": 1,
+   "agent": "Fenwick#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11804,
+   "completion_tokens": 4645
+  },
+  {
+   "seq": 1,
+   "agent": "Interviewer",
+   "kind": "interviewer",
+   "cached": false,
+   "prompt_tokens": 9974,
+   "completion_tokens": 13607
   }
  ],
  "models": {
@@ -6027,5 +6676,5 @@
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 1403.3
+ "elapsed_s": 1864.6
 }
