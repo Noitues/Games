@@ -4,7 +4,7 @@
  "arm": "A",
  "seed": 44985,
  "spec_version": "0.3.1",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 3,
@@ -3692,6 +3692,146 @@
     "Yarrow": 3
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 127,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-01 1/6",
+   "tension": 6,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 4,
+    "Caddock": 5,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 128,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-02 1/5",
+   "tension": 6,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 4,
+    "Caddock": 5,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 129,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-03 1/4",
+   "tension": 6,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 4,
+    "Caddock": 5,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 130,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-04 1/5",
+   "tension": 6,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 4,
+    "Caddock": 5,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 131,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 6,
+   "notes": "FP: Petra=1, Anselm=4, Caddock=5, Yarrow=3",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 4,
+    "Caddock": 5,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -4611,7 +4751,19 @@
    "text": "Lieutenant Vex of the Blackwater Cartel, soaked to the bone and stripped of her usual swagger, corners Anselm at the gate — the debt she owes him has finally come due, and she's calling it in not for coin but for names she loves.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "AN-02",
+    "type": "ROOTS",
+    "owner": "PC-ANSELM",
+    "title": "Favor of Blackwater Lieutenant Vex",
+    "power_tags": [
+     "Vex owes him a life-debt",
+     "Knows the Wick Lane Cellars' passwords",
+     "Access to Cartel smuggling routes"
+    ],
+    "weakness": "Vex's favors always cost more later"
+   }
   },
   {
    "event": "beat_fill",
@@ -4622,7 +4774,20 @@
    "text": "a half-drowned Stiltfolk watch-camp in the reed maze below the temple, the last post that can still read the coming floods before the water swallows the low channels for good",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "F-04",
+    "type": "FACTION",
+    "owner": "GM",
+    "title": "The Stiltfolk Clans",
+    "power_tags": [
+     "pole-boats through reed mazes",
+     "read the coming floods",
+     "trade eels for secrets"
+    ],
+    "weakness": "Distrust All Outsiders",
+    "clock": "1/5"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -4637,7 +4802,19 @@
    "owner": "Anselm",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "AN-02",
+    "type": "ROOTS",
+    "owner": "PC-ANSELM",
+    "title": "Favor of Blackwater Lieutenant Vex",
+    "power_tags": [
+     "Vex owes him a life-debt",
+     "Knows the Wick Lane Cellars' passwords",
+     "Access to Cartel smuggling routes"
+    ],
+    "weakness": "Vex's favors always cost more later"
+   }
   },
   {
    "event": "free_compel",
@@ -4659,7 +4836,19 @@
    "text": "The shelter is the old tollgate keeper's house at Hollowmoot's edge, Petra's own childhood roof — the Wardens still wave travelers past its door on the strength of her free passage token, never thinking to look inside.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "PE-01",
+    "type": "ROOTS",
+    "owner": "PC-PETRA",
+    "title": "Raised at the Ashwater Tollgate",
+    "power_tags": [
+     "Knows every toll-taker on the Causeway",
+     "Ear for reading water levels and weather",
+     "Free passage token from the Wardens"
+    ],
+    "weakness": "Owes back-taxes she can't pay"
+   }
   },
   {
    "event": "beat_fill",
@@ -4670,7 +4859,19 @@
    "text": "It hides a birth gone wrong: weeks back Caddock delivered a child in that loft who came out hive-marked, and Cannot Admit Fault, Even to Save a Life — she will not say her hands ever lost one to the blight, so she's kept the boy hidden up there ever since, tending him alone in the dark rather than c",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "CA-04",
+    "type": "REACH",
+    "owner": "PC-CADDOCK",
+    "title": "Oath: My Hands Have Never Lost a Child",
+    "power_tags": [
+     "Unshakeable calm in any birth, any storm",
+     "Reputation as the finest midwife in the Sallowmere",
+     "Steady hands that never falter under pressure"
+    ],
+    "weakness": "Cannot admit fault, even to save a life"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -4685,7 +4886,19 @@
    "owner": "Petra",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "PE-01",
+    "type": "ROOTS",
+    "owner": "PC-PETRA",
+    "title": "Raised at the Ashwater Tollgate",
+    "power_tags": [
+     "Knows every toll-taker on the Causeway",
+     "Ear for reading water levels and weather",
+     "Free passage token from the Wardens"
+    ],
+    "weakness": "Owes back-taxes she can't pay"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -4700,7 +4913,19 @@
    "owner": "Caddock",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "CA-04",
+    "type": "REACH",
+    "owner": "PC-CADDOCK",
+    "title": "Oath: My Hands Have Never Lost a Child",
+    "power_tags": [
+     "Unshakeable calm in any birth, any storm",
+     "Reputation as the finest midwife in the Sallowmere",
+     "Steady hands that never falter under pressure"
+    ],
+    "weakness": "Cannot admit fault, even to save a life"
+   }
   },
   {
    "event": "free_compel",
@@ -4726,7 +4951,19 @@
    "owner": "Yarrow",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "YA-04",
+    "type": "REACH",
+    "owner": "PC-YARROW",
+    "title": "Cursed to Keep Every Promise Made",
+    "power_tags": [
+     "Word of honor respected even by enemies",
+     "Causeway Wardens still call him 'friend' out of habit",
+     "Disgraced but not distrusted, not yet"
+    ],
+    "weakness": "A promise made in anger still binds him"
+   }
   },
   {
    "event": "altered",
@@ -4736,7 +4973,19 @@
    "tag": "Causeway Wardens still call him 'friend' out of habit",
    "text": "Rain sheets sideways across the causeway stones as you come down off the tollhouse steps, Kest's fever-weight slung between Caddock's shoulder and Anselm's arm, his breath rattling in that thin, wrong rhythm none of you want to name. At the gate, torchlight gutters on wet chain-links — and it's Ossa",
    "improvised": false,
-   "tag_in_text": true
+   "tag_in_text": true,
+   "card": {
+    "id": "YA-04",
+    "type": "REACH",
+    "owner": "PC-YARROW",
+    "title": "Cursed to Keep Every Promise Made",
+    "power_tags": [
+     "Word of honor respected even by enemies",
+     "Causeway Wardens still call him 'friend' out of habit",
+     "Disgraced but not distrusted, not yet"
+    ],
+    "weakness": "A promise made in anger still binds him"
+   }
   },
   {
    "event": "free_compel",
@@ -4757,7 +5006,20 @@
    "tag": "burn infected houses",
    "text": "You've barely cleared the tollgate when the smell hits — pitch smoke, not woodsmoke, rolling low over the water. Ahead, where Petra meant to cut straight through Miller's Row, a knot of Wardens in oilskins are burning an infected house, torches to the stilts of a place someone marked hive-touched, i",
    "improvised": false,
-   "tag_in_text": true
+   "tag_in_text": true,
+   "card": {
+    "id": "F-03",
+    "type": "FACTION",
+    "owner": "GM",
+    "title": "The Causeway Wardens",
+    "power_tags": [
+     "hold the Ashwater Causeway",
+     "burn infected houses",
+     "levy tolls at fords"
+    ],
+    "weakness": "Undermanned and Frightened",
+    "clock": "1/4"
+   }
   },
   {
    "event": "free_compel",
@@ -4788,6 +5050,18 @@
     "section": "§4",
     "issue": "refusal cost not built from a face-up GM tag: {'card_id': 'F-03', 'tag': 'Undermanned and Frightened', 'text': \"If Petra refuses this compel, the terrified, understrength Wardens overreact instead — a jumpy patrol torches the tollgate house's outbuilding on mere rumor of blight, and the party has to fight the fire and the panic at once.\"}",
     "source": "engine"
+   },
+   {
+    "section": "§6A",
+    "issue": "Drawn story cards (CA-06, drawn events 72/73 in Scene 3 and again 97/98 in Scene 4; PE-05, drawn event 116/117 in Scene 5) are never logged as being returned to their pile at scene end. §6A's 'Resolving a story draw' step 3 mandates: 'At scene end, return it and its echo slips to its pile and reshuffle, unless it was retired.' Scene cleanup logs (events 74–80, 99–105, 123–126) show binder returns and rail discards for other card types but no equivalent removal for the story cards, and none were retired.",
+    "event_id": 72,
+    "source": "referee"
+   },
+   {
+    "section": "§6A",
+    "issue": "The draw-trigger table specifies that on a 'player accepts a compel that did not come from a deck draw' story draw, 'the GM gains 1 free invoke on it.' None of the three story draws in the log (events 72–73, 97–98, 116–117) show a corresponding free-invoke grant, unlike every other card-surfacing event in the log (e.g. events 2, 3, 27, 30, 61, 64, 82, 83, 89), which explicitly log 'GM +1 free invoke' or a 'surface' row with 'N free invoke(s).'",
+    "event_id": 97,
+    "source": "referee"
    }
   ],
   "ambiguities": [
@@ -4862,14 +5136,236 @@
     "detail": "event 121",
     "scene": 5,
     "source": "engine"
+   },
+   {
+    "section": "§5",
+    "issue": "In the PLEA FOR HELP beat (event 26), both drawn cards' types (ROOTS→WHO and FACTION→WHO) nominally map to the same single 'WHO' blank, since the frame's only other open blank ('WHERE') isn't in either card's type-to-blank list. The rules don't state which of two simultaneously-drawn cards gets the type-matching blank versus falls through to the 'first open blank still empty' rule.",
+    "interim_ruling": "The table resolved cards in draw order: the first card drawn (AN-02, ROOTS) took the matching WHO blank; the second (F-04, FACTION), finding WHO already filled, fell through to the remaining open blank (WHERE) per the fallback clause. Same situation recurred in event 58 (FALSE SANCTUARY), where neither ROOTS (PE-01) nor REACH (CA-04) maps to WHERE/HOW at all, so both fell through in draw order.",
+    "source": "referee"
+   },
+   {
+    "section": "§6",
+    "issue": "Altered scene text is defined as changing 'who is there, the location, or the weather.' The F-03 draw (event 108) instead introduced a new ongoing event/hazard (Wardens actively burning an infected house) rather than swapping an existing who/where/weather element.",
+    "interim_ruling": "The table treated 'element' broadly enough to include a new complicating action tied to the drawn tag, rather than restricting Altered scenes strictly to substituting who/where/weather.",
+    "source": "referee"
+   },
+   {
+    "section": "§3/§7",
+    "issue": "The GM anchor card F-02 (non-GLOBAL) is placed face-up during pre-session prep (event 3, scene 0), before any scene formally begins, and is granted a free invoke at that time. §3 says a GM card's free invoke on the rail 'must be used within that scene,' but scene 0 is not a played scene.",
+    "interim_ruling": "The free invoke from the scene-0 anchor placement was treated as usable during the session's first scene (Scene 1).",
+    "source": "referee"
    }
   ],
-  "cost_checks": [],
-  "friction": []
+  "cost_checks": [
+   {
+    "event_id": 26,
+    "used_drawn_card": true,
+    "note": "AN-02 WHO fill uses power tag 'Vex owes him a life-debt' explicitly in the frame narration."
+   },
+   {
+    "event_id": 26,
+    "used_drawn_card": true,
+    "note": "F-04 WHERE fill (fallback slot) uses power tag 'read the coming floods' explicitly."
+   },
+   {
+    "event_id": 28,
+    "used_drawn_card": true,
+    "note": "Beat-frame surfacing compel on AN-02 correctly built from its weakness tag 'Vex's favors always cost more later,' used directly in the fiction."
+   },
+   {
+    "event_id": 58,
+    "used_drawn_card": true,
+    "note": "PE-01 WHERE fill (fallback slot) uses power tag 'Free passage token from the Wardens.'"
+   },
+   {
+    "event_id": 58,
+    "used_drawn_card": true,
+    "note": "CA-04 HOW fill (fallback slot) uses weakness tag 'Cannot admit fault, even to save a life'; flagged as needing repair before it counted (repaired=true), then used."
+   },
+   {
+    "event_id": 59,
+    "used_drawn_card": true,
+    "note": "Compel on PE-01 correctly used weakness tag 'Owes back-taxes she can't pay' in the fiction. (The compel's REFUSAL cost was separately rejected by the engine for not using a face-up GM tag per §4 — already listed under engine refusals, not re-flagged here.)"
+   },
+   {
+    "event_id": 62,
+    "used_drawn_card": true,
+    "note": "Beat-frame surfacing compel on CA-04 used its weakness tag directly (after repair)."
+   },
+   {
+    "event_id": 86,
+    "used_drawn_card": true,
+    "note": "Altered-scene element change used YA-04's power tag \"Causeway Wardens still call him 'friend' out of habit\" (a who-is-there change), in text."
+   },
+   {
+    "event_id": 87,
+    "used_drawn_card": true,
+    "note": "Altered-scene compel on YA-04 used weakness tag 'A promise made in anger still binds him' (after repair), used in text."
+   },
+   {
+    "event_id": 108,
+    "used_drawn_card": true,
+    "note": "Altered-scene element change used F-03's power tag 'burn infected houses' explicitly in text."
+   }
+  ],
+  "friction": [
+   {
+    "text": "GM fate point fields (gm_fp, gm_fp_spent) are never populated anywhere in the log, making it impossible to verify the §3 rule that the GM receives 1 fate point per player at scene start and that unspent GM points don't carry over."
+   },
+   {
+    "text": "The same weakness tag on Caddock's CA-04 ('Cannot admit fault, even to save a life') was compelled and accepted three times across two consecutive scenes (events 62, 70, 95) with no friendly invokes offsetting it, driving Tension to its ceiling (6) by Scene 3 and keeping it pinned there — a heavy, repetitive escalation that the table may want to watch for pacing."
+   },
+   {
+    "text": "Story-card rail bookkeeping (see violations above) is inconsistently logged, making it hard to audit the 5-card rail limit and free-invoke economy whenever story draws are involved."
+   }
+  ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "rules_lawyer",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 7,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Reading the water path through Miller's Row while the swarm-song called my name. Petra accepted the compel, got caught in the song's pull, then succeeded with style—and that success had real weight. It combined her core ability (Notice + reading water) with her core conflict (the song's pull), and she won through her own skill, not rescue. It felt like Petra's story.",
+    "most_frustrating": "Two things: First, the hidden hive-marked boy reveal. It was excellent storytelling, but I was reacting to Caddock's secret rather than making meaningful choices about it. Second, the S5 compel when the song called Petra's name—refusing it was technically possible but cost a fate point I didn't have, which meant the \"choice\" was really no choice at all. Felt slightly railroaded into accepting.",
+    "background_used": "Well. The toll-gate knowledge, Petra's unique swarm-song hearing, her childhood home—all woven naturally into the story's engine. \"Raised at the Ashwater Tollgate\" and \"Vow to Ring Everyone Home\" were central without feeling forced. The weakness on the song (freezes when it calls her name) fired as intended—creates drama without being cheap.",
+    "wanted_but_couldnt": "More agency in the Caddock confrontation—I wanted to push back, investigate her reasoning, have real back-and-forth before accepting the situation. Also wanted to activate more of her relationship background (the Marrows, Vex, her contacts) more actively rather than just being told about debts coming due.",
+    "one_sentence": "Petra's backstory felt integrated naturally into the story's stakes without being weaponized unfairly—her abilities and history were the engine, not the obstacle."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "lurker",
+   "scores": {
+    "fun": 5,
+    "involvement": 5,
+    "connection": 6,
+    "control": 5,
+    "play_again": 6
+   },
+   "free_text": {
+    "best_moment": "Examining the hidden hive-marked child in the loft. For a moment, Anselm's exorcist knowledge actually mattered—he could read the signs with professional precision: the flat eyes, the wrong flush, the patient swarm-song threading thin beneath the boy's breath. It was the closest he got to doing what he came into the world to do.",
+    "most_frustrating": "As an exorcist confronted with a hive-marked child and a hive-touched boy being carried through floodwater, Anselm never got to actually *perform* exorcism—no rites, no purification, no moment where his specific skills and calling mattered beyond observation. The narrative momentum swept past the horror and the hard questions into rescue and escape.",
+    "background_used": "The Favor compel hit perfectly—Vex's life-debt pulled Anselm into the story organically and personally. The drowning-trauma echo (sister's death paralleling Kest's danger) landed well, and the water-knowledge felt implicit and right. About a quarter of Anselm's cards came into active play. GOOD, but the Saint Orrin lore and the Oath stayed dormant.",
+    "wanted_but_couldnt": "Perform actual exorcism work on the discovered child. Sit with the moral weight of what Caddock had hidden—Anselm would have questions about how long the blight sat in that boy, whether any of him was still human, whether hiding it from the Wardens was mercy or complicity. The story moved too fast to let him confront that.",
+    "one_sentence": "My background was engaged directly through compel and thematic echo, but I ended up playing support in other people's big moments rather than driving my own character arc."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "method_actor",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The loft revelation when Caddock's denial cracked—watching a midwife who built her entire identity on \"my hands never lose a child\" confront the undeniable proof she'd hidden for weeks. That moment of psychological failure felt earned and genuinely devastating.",
+    "most_frustrating": "The compels kept forcing Caddock into denial and evasion (her flaw worked exactly as designed), but it left me hungry to problem-solve the Kest situation differently. I could see paths forward; her character flaw just kept locking me out of taking them.",
+    "background_used": "Yes—thoroughly. My oath, my refusal to admit fault, my midwife expertise all drove the hidden child subplot. The GM didn't force it; it emerged from answering the question of how the boy came to be hidden. The compels were fair. Good.",
+    "wanted_but_couldnt": "Find a way to help Kest and keep him safe without lying to the Wardens—Caddock's psychological flaw locked me into evasion and denial when I wanted to find a workaround. The game was working as intended; I just wanted more agency to problem-solve.",
+    "one_sentence": "My character's core flaw was weaponized against me in the best way—it created genuine conflict and didn't feel arbitrary or punitive, just inevitable."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "storyteller",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Finding the old channel through deep water by invoking \"Reads water-flow like other men read faces\" — the Weir-Keeper heritage actually *solved a problem* mechanically and narratively. Also the moment Ossa looked to Yarrow specifically for his word instead of the others, making his oath actually matter.",
+    "most_frustrating": "Ossa's compel forced Yarrow to vouch for Kest as fever-sick when everyone knew better. Dramatically clever but it felt like the character was made to break his own code without choosing to. Also wanted more time to engage with the hive-marked boy in the loft—there was rich conflict there with his quest and oath that got swept past.",
+    "background_used": "Heavily, and it landed well. Weir-Keeper knowledge was functional—finding the old channel, Stiltfolk recognition, Ossa's deference to his word. None of it felt forced or unearned. This was good integration, not decoration.",
+    "wanted_but_couldnt": "Press harder on what's actually happening to Kest and whether Yarrow's oath to Ossa now locks him into protecting a lie. There was real character conflict there about truth, promises, and the blight that the narrative moved past too quickly.",
+    "one_sentence": "Yarrow's Weir-Keeper background felt genuinely central to the story and used with respect, though the compel from Ossa bound him to a choice his character would probably have refused if given the chance."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Petra",
+    "turns": 20,
+    "references_to_others_background": 1
+   },
+   {
+    "name": "Anselm",
+    "turns": 13,
+    "references_to_others_background": 1
+   },
+   {
+    "name": "Caddock",
+    "turns": 19,
+    "references_to_others_background": 1
+   },
+   {
+    "name": "Yarrow",
+    "turns": 17,
+    "references_to_others_background": 1
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "Fleeing the burning of Miller's Row, the party carried the fevered boy Kest around the Wardens' torches and chains, cutting through deep, hive-haunted water that only a toll-keeper's ear and a Weir-Keeper's blood could read safely. Petra broke the swarm-song's grip on her own name at the last instant, Caddock bulled through the cold current without losing her footing, and Yarrow found the ghost of an old drowned channel that gave the whole party a hidden road to safety. They slipped past Miller's Row unseen and unchallenged, buying Kest distance from both the fire and the Wardens' chains, though his breath still rattles wrong in Anselm's arms as the session closes.</parameter>\n</invoke>\n",
+  "closing_tension": 6,
+  "reverberations": {
+   "growth": {
+    "AN-02": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "CA-04": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "YA-04": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "PE-03": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    }
+   },
+   "clocks": [
+    "F-01 1/6",
+    "F-02 1/5",
+    "F-03 1/4",
+    "F-04 1/5"
+   ],
+   "mutations": [],
+   "retired": []
+  },
+  "retired": [
+   {
+    "card": "N-02",
+    "how": "story pile over limit",
+    "session": 1
+   }
+  ]
+ },
  "state_end": {
   "tension": 6,
   "fp": {
@@ -4904,14 +5400,113 @@
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 1464891,
-  "completion": 176427,
-  "cost_usd": 3.4114,
-  "calls": 83
+ "metrics": {
+  "arm": "A",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Anselm",
+   "Caddock",
+   "Petra",
+   "Yarrow"
+  ],
+  "backstory_all_players": true,
+  "deck_surfaced_all_players": true,
+  "deck_draws": 6,
+  "draw_costs": 10,
+  "draw_cost_used_card_rate_engine": 1.0,
+  "draw_cost_tag_in_text_rate": 1.0,
+  "draw_cost_repaired": 4,
+  "draw_cost_used_card_rate_referee": 1.0,
+  "fp_end": {
+   "Petra": 1,
+   "Anselm": 4,
+   "Caddock": 5,
+   "Yarrow": 3
+  },
+  "fp_end_mean": 3.25,
+  "fp_earned": {
+   "Anselm": 1,
+   "Caddock": 3,
+   "Yarrow": 1,
+   "Petra": 1
+  },
+  "fp_spent": {
+   "Petra": 3,
+   "Caddock": 1,
+   "Yarrow": 1
+  },
+  "compels_accepted": 6,
+  "compels_refused": 3,
+  "compels_deck": 4,
+  "compels_free": 5,
+  "turns": {
+   "Petra": 8,
+   "Anselm": 6,
+   "Caddock": 8,
+   "Yarrow": 8
+  },
+  "turn_gini": 0.05,
+  "invokes": {
+   "Petra": 0,
+   "Caddock": 1,
+   "Yarrow": 1
+  },
+  "invoke_gini": 0.5,
+  "tension_trajectory": [
+   3,
+   4,
+   5,
+   6,
+   6,
+   6
+  ],
+  "clock_marks": 4,
+  "violations": 4,
+  "violations_engine": 2,
+  "violations_referee": 2,
+  "ambiguities": 11,
+  "ambiguity_ids": [
+   "AMB-01",
+   "AMB-12",
+   "AMB-20",
+   "AMB-22",
+   "AMB-26",
+   "AMB-27",
+   "§3/§7",
+   "§5",
+   "§6"
+  ],
+  "gm_improvised_complications": 5,
+  "card_supplied_complications": 10,
+  "improvisation_share": 0.333,
+  "guarantee_pulled": 0,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 5.75,
+   "involvement": 6.5,
+   "connection": 6.75,
+   "control": 5.5,
+   "play_again": 6.75
+  },
+  "involvement_var_within": 0.75,
+  "personality": {
+   "Petra": "rules_lawyer",
+   "Anselm": "lurker",
+   "Caddock": "method_actor",
+   "Yarrow": "storyteller"
+  },
+  "elapsed_min": 32.9,
+  "cost_usd": 4.2391
  },
- "llm_calls": 82,
+ "tokens": {
+  "prompt": 1634104,
+  "completion": 240064,
+  "cost_usd": 4.2391,
+  "calls": 90
+ },
+ "llm_calls": 89,
  "call_log": [
   {
    "seq": 1,
@@ -5568,6 +6163,62 @@
    "cached": false,
    "prompt_tokens": 44346,
    "completion_tokens": 2388
+  },
+  {
+   "seq": 33,
+   "agent": "GM",
+   "kind": "gm_post",
+   "cached": false,
+   "prompt_tokens": 84260,
+   "completion_tokens": 1488
+  },
+  {
+   "seq": 1,
+   "agent": "Referee",
+   "kind": "referee",
+   "cached": false,
+   "prompt_tokens": 25830,
+   "completion_tokens": 29388
+  },
+  {
+   "seq": 1,
+   "agent": "Yarrow#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 12185,
+   "completion_tokens": 2031
+  },
+  {
+   "seq": 1,
+   "agent": "Petra#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 12167,
+   "completion_tokens": 2038
+  },
+  {
+   "seq": 1,
+   "agent": "Caddock#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 12199,
+   "completion_tokens": 2595
+  },
+  {
+   "seq": 1,
+   "agent": "Anselm#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 12204,
+   "completion_tokens": 3717
+  },
+  {
+   "seq": 1,
+   "agent": "Interviewer",
+   "kind": "interviewer",
+   "cached": false,
+   "prompt_tokens": 10368,
+   "completion_tokens": 22380
   }
  ],
  "models": {
@@ -5576,5 +6227,5 @@
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 1386.1
+ "elapsed_s": 1972.5
 }

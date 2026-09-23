@@ -1,0 +1,1006 @@
+{
+ "run_id": "batch-02__A__s44989__r7",
+ "batch_id": "batch-02",
+ "arm": "A",
+ "seed": 44989,
+ "spec_version": "0.3.1",
+ "status": "partial",
+ "error": null,
+ "backend": "claude_cli",
+ "run_index": 7,
+ "cohort_id": "batch-02-cohort01",
+ "assignments": [
+  {
+   "character_id": "CH-1",
+   "name": "Maud",
+   "personality_id": "method_actor",
+   "seat": 0
+  },
+  {
+   "character_id": "CH-2",
+   "name": "Hask",
+   "personality_id": "storyteller",
+   "seat": 1
+  },
+  {
+   "character_id": "CH-3",
+   "name": "Eira",
+   "personality_id": "rules_lawyer",
+   "seat": 2
+  },
+  {
+   "character_id": "CH-4",
+   "name": "Fenwick",
+   "personality_id": "lurker",
+   "seat": 3
+  }
+ ],
+ "prep_packet": {
+  "anchors": [
+   "H-03",
+   "L-04"
+  ],
+  "environment": [
+   "L-02",
+   "T-05",
+   "L-01"
+  ],
+  "modules": [
+   {
+    "id": "M-1",
+    "cards": [
+     "T-04",
+     "F-04"
+    ],
+    "trigger": "fiction:the party leaves the road or causeway"
+   },
+   {
+    "id": "M-2",
+    "cards": [
+     "L-05",
+     "F-01"
+    ],
+    "trigger": "deck_at_most:3"
+   }
+  ],
+  "beat_frames": [
+   {
+    "id": "B-02",
+    "name": "PLEA FOR HELP",
+    "trigger": "tension_at_least:4",
+    "used": null
+   },
+   {
+    "id": "B-06",
+    "name": "BAD NEWS",
+    "trigger": "fiction:the party enters a settlement",
+    "used": null
+   },
+   {
+    "id": "B-01",
+    "name": "AMBUSH",
+    "trigger": "compel_refused",
+    "used": null
+   }
+  ]
+ },
+ "events": [
+  {
+   "event_id": 1,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Session start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "FP: Maud=3, Hask=3, Eira=3, Fenwick=3",
+   "event_type": "session_start",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 2,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + H-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "anchor; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 3,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + L-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "L-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "anchor; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 4,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Build Session Deck",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "7 cards: 3 GM + 4 player",
+   "event_type": "deck_built",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 5,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 6,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Can the party get themselves (and whatever they're escorting/carrying) across the Ashwater Causeway before the Wardens' toll gate — or the rising water — closes on them?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 7,
+   "session": 1,
+   "scene": 1,
+   "actor": "Maud",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Maud comes to a halt at the rise, her whole body going still. That bell isn't right—it carries a note that makes her militia-trained skin prickle. She turns to ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 8,
+   "session": 1,
+   "scene": 1,
+   "actor": "Hask",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Hask approaches the Wardens' gate slowly and deliberately, one hand on Rill's neck, his eyes never leaving the dark floodwater beyond the chains. He reads the c",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 9,
+   "session": 1,
+   "scene": 1,
+   "actor": "Eira",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Eira strides toward the huddle of Wardens under the awning, water streaming off her cloak, her gaze steady on Warden Sergeant Coy. She's not hurried—a midwife l",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 10,
+   "session": 1,
+   "scene": 1,
+   "actor": "Fenwick",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Fenwick pulls up short on the causeway, rain soaking through his weathered coat. He tilts his head, listening past the wind and rain toward that strange bell so",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 11,
+   "session": 1,
+   "scene": 1,
+   "actor": "Maud",
+   "action": "Create Advantage: Maud comes to a halt at the rise, her whole body going still",
+   "skill": "Notice +2",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ - + +",
+   "total": "+4",
+   "opposition": "+0 (NPC - + - -)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "aspect A-1.1.1 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "L-04",
+   "target_npc": "Warden Sergeant Coy",
+   "shifts": 4,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 12,
+   "session": 1,
+   "scene": 1,
+   "actor": "Maud",
+   "action": "Peek",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "HA-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "left on top",
+   "event_type": "peek",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 13,
+   "session": 1,
+   "scene": 1,
+   "actor": "Maud",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Maud steps forward, her military posture settling into place like she's worn it a thousand times before. She fixes Sergeant Coy with that same penetrating stare",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 14,
+   "session": 1,
+   "scene": 1,
+   "actor": "Hask",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Hask steps forward with Rill close at his side, his gaze fixed on Warden Sergeant Coy with the intensity of someone reading danger in water and weather. He stop",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 15,
+   "session": 1,
+   "scene": 1,
+   "actor": "Eira",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Eira closes the distance to Coy, water streaming off her cloak, her eyes meeting his with absolute steadiness. She doesn't raise her voice, but there's somethin",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 16,
+   "session": 1,
+   "scene": 1,
+   "actor": "Fenwick",
+   "action": "pass",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Fenwick moves closer to the toll gate slowly and quietly, his attention split between the frightened wardens and the water beyond the chains. He listens more th",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 17,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "3->3",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "against the players 0 (hostile invokes 0 + compels 0) vs friendly invokes 0 (§6, spec 0.3.1)",
+   "event_type": "tension",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 18,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Warden Sergeant Coy",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 19,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  }
+ ],
+ "scenes": [
+  {
+   "index": 1,
+   "tension_before": 3,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 2,
+   "climax": false,
+   "tension_after": 3,
+   "triggers_fired": []
+  }
+ ],
+ "transcript": [
+  {
+   "session": 1,
+   "scene": 0,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Session begins. Each player has Maud 3 FP, Hask 3 FP, Eira 3 FP, Fenwick 3 FP. Face-up: Rising Floodwaters [H-03], The Ashwater Causeway [L-04].",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Rain needles down sideways as you crest the last rise onto the Ashwater Causeway, the only dry road left running north out of the drowned country. Chain-hung toll lanterns swing in the wind ahead, where a knot of Causeway Wardens huddles under an oilcloth awning by the gate, pikes stacked, ledger open against the wet. Behind you the water has already crept over the low ground you crossed an hour ago — the road you're on may be the only way anyone's leaving today. Somewhere out past the chains, a bell that shouldn't be ringing carries faint and wrong across the flood.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Maud",
+   "kind": "speech",
+   "text": "That bell isn't the toll bell. And those wardens are scared half to death.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Maud",
+   "kind": "action",
+   "text": "(Maud comes to a halt at the rise, her whole body going still. That bell isn't right—it carries a note that makes her militia-trained skin prickle. She turns to study the wardens under their awning: their stances too tense, eyes that keep sliding away from each other. Whatever's happening here, it isn't a normal toll crossing.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Hask",
+   "kind": "speech",
+   "text": "Rill, stay close. That bell—I've never heard anything like it in all my years working the marshes, and the water's moving wrong.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Hask",
+   "kind": "action",
+   "text": "(Hask approaches the Wardens' gate slowly and deliberately, one hand on Rill's neck, his eyes never leaving the dark floodwater beyond the chains. He reads the current like text, watching how it moves against the causeway, how fast it's truly rising. His jaw tightens. This is his country, and something in it has changed.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Eira",
+   "kind": "speech",
+   "text": "That bell's been ringing since we crested the rise. It shouldn't be ringing at all, and you know it. What's behind that gate, Sergeant, and how long before the floodwater makes this question academic?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Eira",
+   "kind": "action",
+   "text": "(Eira strides toward the huddle of Wardens under the awning, water streaming off her cloak, her gaze steady on Warden Sergeant Coy. She's not hurried—a midwife learns not to rush when answers matter—but the water at her heels drives urgency into every step.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Fenwick",
+   "kind": "speech",
+   "text": "That bell shouldn't be ringing.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Fenwick",
+   "kind": "action",
+   "text": "(Fenwick pulls up short on the causeway, rain soaking through his weathered coat. He tilts his head, listening past the wind and rain toward that strange bell sound from the flood. His hand moves absently to the oilcloth map-case at his side as his eyes trace the position of the bell's echo, mapping it mentally. He studies the wardens at the gate, then the water rising behind them, before moving forward quietly toward the toll.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Maud — create advantage with Notice: dice + - + + → Great (+4) vs Mediocre (+0): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Maud goes rigid, eyes narrowing on the gate detail, and it clicks all at once: those Wardens aren't guarding a toll, they're guarding a secret, and they're terrified of what's out past the chains. She reads it in the way Sergeant Coy's hand keeps drifting to his belt knife, in how two of the younger Wardens won't look at the water at all. Whatever's making that bell ring, the Wardens already know — and they've been hoping no one asks. Eira presses the sergeant, and this time he doesn't deflect; something in the set of Maud's stare has cracked his composure.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Maud",
+   "kind": "speech",
+   "text": "Sergeant Coy. That bell shouldn't be ringing, and we both know it. Your people are terrified—I can see it eating at you. I've stood the line like you have. So speak true: what waits beyond those chains?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Maud",
+   "kind": "action",
+   "text": "(Maud steps forward, her military posture settling into place like she's worn it a thousand times before. She fixes Sergeant Coy with that same penetrating stare that already cracked his composure. There's no cruelty in her gaze—just the hard certainty of someone who's stood a line and learned to read fear on a soldier's face.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Hask",
+   "kind": "speech",
+   "text": "Sergeant, I've worked these waters my whole life. That bell shouldn't be ringing, and the current's all wrong. If there's people out past those chains, I need to know now. What happened out there?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Hask",
+   "kind": "action",
+   "text": "(Hask steps forward with Rill close at his side, his gaze fixed on Warden Sergeant Coy with the intensity of someone reading danger in water and weather. He stops just short of the awning, letting the question hang in the rain-soaked air—direct, quiet, demanding.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Eira",
+   "kind": "speech",
+   "text": "The bell, Sergeant—whatever's making it ring, you and your men already know what it is. I've held too many babies born from too much suffering to accept another lie. Tell me what's past those chains, and tell me now.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Eira",
+   "kind": "action",
+   "text": "(Eira closes the distance to Coy, water streaming off her cloak, her eyes meeting his with absolute steadiness. She doesn't raise her voice, but there's something unshakeable in her that makes silence unbearable.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Coy's jaw works twice before anything comes out, and when it does it comes out fast, like a man finally setting down something too heavy to carry alone. \"It's not a toll bell,\" he says, voice cracking. \"Temple bell — Saint Orrin's, out past the flood line. Been ringing on and off for a fortnight. First it was the hive-touched wandering in off the Ford, quiet at first, then not. We lost two Wardens to the water trying to turn them back. Three nights ago the bell started up proper, and it hasn't stopped since, and folk who hear it too long start walking toward it whether they mean to or not.\" He glances at his own men, then back at Maud, shame and relief fighting on his face. \"We've been letting people through fast and asking no questions, because the longer anyone stands on this road listening, the worse it gets. You want my honest counsel? Cross now, cross quiet, and don't let that bell get inside your skull.\" He waves the gate open himself, chains rattling back, and the toll ledger goes forgotten on the table as his men usher you through into the long gray stretch of the causeway, the drowned country opening up on both sides and that wrong bell carrying clearer now, unhidden by the awning's noise.",
+   "visible_to": "all"
+  }
+ ],
+ "costs": [],
+ "referee": {
+  "violations": [],
+  "ambiguities": [
+   {
+    "id": "AMB-01",
+    "section": "brief",
+    "issue": "Arm A lists 'Attention', which the spec never defines.",
+    "interim_ruling": "Not modelled.",
+    "detail": "Arm definition lists Attention; not modelled.",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-12",
+    "section": "§8",
+    "issue": "Stress box values are unspecified.",
+    "interim_ruling": "Fate Core: boxes 1 and 2; Physique/Will +1/+2 adds a 3 box, +3 or more adds 3 and 4.",
+    "detail": "stress boxes built with Fate Core values",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-22",
+    "section": "§3/§7",
+    "issue": "Does a GLOBAL anchor give the GM a free invoke like a GM card?",
+    "interim_ruling": "Yes, GLOBAL cards placed on the rail give the GM 1 free invoke that scene.",
+    "detail": "H-03",
+    "scene": 0,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-27",
+    "section": "§3",
+    "issue": "Success with style on create advantage: the aspect's 2 free invokes AND the deck peek, or one of them?",
+    "interim_ruling": "Both: the aspect keeps 2 free invokes and the player may also peek.",
+    "detail": "event 11",
+    "scene": 1,
+    "source": "engine"
+   }
+  ],
+  "cost_checks": [],
+  "friction": []
+ },
+ "surveys": [],
+ "interview": null,
+ "chronicle": null,
+ "state_end": {
+  "tension": 3,
+  "fp": {
+   "Maud": 3,
+   "Hask": 3,
+   "Eira": 3,
+   "Fenwick": 3
+  },
+  "surfaced": [],
+  "deck_player_cards": {
+   "MA-01": "Maud",
+   "HA-01": "Hask",
+   "EI-01": "Eira",
+   "FE-04": "Fenwick"
+  },
+  "guarantee_pulled": [],
+  "guarantee_failed": [],
+  "deck_left": [
+   "HA-01",
+   "MA-01",
+   "FE-04",
+   "EI-01",
+   "T-05",
+   "L-01",
+   "L-02"
+  ],
+  "draws": 0,
+  "turns": {
+   "Maud": 2,
+   "Hask": 2,
+   "Eira": 2,
+   "Fenwick": 1
+  }
+ },
+ "notes": [],
+ "metrics": {},
+ "tokens": {
+  "prompt": 174753,
+  "completion": 22302,
+  "cost_usd": 0.5329,
+  "calls": 14
+ },
+ "llm_calls": 14,
+ "call_log": [
+  {
+   "seq": 1,
+   "agent": "GM",
+   "kind": "gm_frame",
+   "cached": false,
+   "prompt_tokens": 17424,
+   "completion_tokens": 514
+  },
+  {
+   "seq": 1,
+   "agent": "Eira",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 3732,
+   "completion_tokens": 1001
+  },
+  {
+   "seq": 1,
+   "agent": "Fenwick",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 3749,
+   "completion_tokens": 1380
+  },
+  {
+   "seq": 1,
+   "agent": "Hask",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 3723,
+   "completion_tokens": 1480
+  },
+  {
+   "seq": 1,
+   "agent": "Maud",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 3689,
+   "completion_tokens": 3537
+  },
+  {
+   "seq": 2,
+   "agent": "GM",
+   "kind": "gm_adjudicate",
+   "cached": false,
+   "prompt_tokens": 40267,
+   "completion_tokens": 1082
+  },
+  {
+   "seq": 2,
+   "agent": "Maud",
+   "kind": "player_peek",
+   "cached": false,
+   "prompt_tokens": 4278,
+   "completion_tokens": 1680
+  },
+  {
+   "seq": 3,
+   "agent": "GM",
+   "kind": "gm_narrate",
+   "cached": false,
+   "prompt_tokens": 18872,
+   "completion_tokens": 311
+  },
+  {
+   "seq": 2,
+   "agent": "Fenwick",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4492,
+   "completion_tokens": 863
+  },
+  {
+   "seq": 2,
+   "agent": "Hask",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4463,
+   "completion_tokens": 1991
+  },
+  {
+   "seq": 2,
+   "agent": "Eira",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4473,
+   "completion_tokens": 2815
+  },
+  {
+   "seq": 3,
+   "agent": "Maud",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4464,
+   "completion_tokens": 3678
+  },
+  {
+   "seq": 4,
+   "agent": "GM",
+   "kind": "gm_adjudicate",
+   "cached": false,
+   "prompt_tokens": 41719,
+   "completion_tokens": 993
+  },
+  {
+   "seq": 5,
+   "agent": "GM",
+   "kind": "gm_narrate",
+   "cached": false,
+   "prompt_tokens": 19408,
+   "completion_tokens": 977
+  }
+ ],
+ "models": {
+  "gm": "claude-sonnet-5",
+  "player": "claude-haiku-4-5-20251001",
+  "referee": "claude-sonnet-5",
+  "interviewer": "claude-haiku-4-5-20251001"
+ },
+ "elapsed_s": 154.7
+}

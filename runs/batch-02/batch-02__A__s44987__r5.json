@@ -1,0 +1,1355 @@
+{
+ "run_id": "batch-02__A__s44987__r5",
+ "batch_id": "batch-02",
+ "arm": "A",
+ "seed": 44987,
+ "spec_version": "0.3.1",
+ "status": "partial",
+ "error": null,
+ "backend": "claude_cli",
+ "run_index": 5,
+ "cohort_id": "batch-02-cohort01",
+ "assignments": [
+  {
+   "character_id": "CH-1",
+   "name": "Maud",
+   "personality_id": "lurker",
+   "seat": 0
+  },
+  {
+   "character_id": "CH-2",
+   "name": "Hask",
+   "personality_id": "method_actor",
+   "seat": 1
+  },
+  {
+   "character_id": "CH-3",
+   "name": "Eira",
+   "personality_id": "storyteller",
+   "seat": 2
+  },
+  {
+   "character_id": "CH-4",
+   "name": "Fenwick",
+   "personality_id": "rules_lawyer",
+   "seat": 3
+  }
+ ],
+ "prep_packet": {
+  "anchors": [
+   "H-03",
+   "F-03"
+  ],
+  "environment": [
+   "L-04",
+   "L-05",
+   "L-03"
+  ],
+  "modules": [
+   {
+    "id": "M-1",
+    "cards": [
+     "H-05",
+     "T-02"
+    ],
+    "trigger": "fiction:the party leaves the road or causeway"
+   },
+   {
+    "id": "M-2",
+    "cards": [
+     "F-01",
+     "F-02"
+    ],
+    "trigger": "tension_at_least:4"
+   }
+  ],
+  "beat_frames": [
+   {
+    "id": "B-03",
+    "name": "BETRAYAL",
+    "trigger": "deck_at_most:3",
+    "used": null
+   },
+   {
+    "id": "B-04",
+    "name": "RIVAL CLAIM",
+    "trigger": "scene_start:3",
+    "used": null
+   },
+   {
+    "id": "B-02",
+    "name": "PLEA FOR HELP",
+    "trigger": "roll_fails_against:F-03",
+    "used": null
+   }
+  ]
+ },
+ "events": [
+  {
+   "event_id": 1,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Session start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "FP: Maud=3, Hask=3, Eira=3, Fenwick=3",
+   "event_type": "session_start",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 2,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + H-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "anchor; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 3,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "F-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "anchor; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 4,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Build Session Deck",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "7 cards: 3 GM + 4 player",
+   "event_type": "deck_built",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 5,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 6,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Can the party get themselves (and whatever/whoever they're escorting or carrying) across the Ashwater Causeway before the Wardens close the toll gate for the night — without the Wardens finding what t",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 7,
+   "session": 1,
+   "scene": 1,
+   "actor": "Maud",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Maud steps up to the checkpoint with the others, taking in the militia and the rising water beyond with a practiced eye. She's walked this road before. She nods",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 8,
+   "session": 1,
+   "scene": 1,
+   "actor": "Hask",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Hask walks up to the gate with the easy confidence of someone who's grown up around water-folk and fords. He names himself by his family line, the way a marsh p",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 9,
+   "session": 1,
+   "scene": 1,
+   "actor": "Eira",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Eira walks through the knot of soaked militia with the assured step of someone who moves confidently through crisis. She's as wet and weathered as anyone here, ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 10,
+   "session": 1,
+   "scene": 1,
+   "actor": "Fenwick",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Fenwick steps into the torchlight, picking his way carefully between the militia. He takes in the state of the Wardens—soaked, nervous, watching the dark water ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 11,
+   "session": 1,
+   "scene": 1,
+   "actor": "Maud",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Maud nods slightly to Orsa and steps forward to queue for inspection. Her movements are steady and practiced—she's walked this causeway before, understands the ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 12,
+   "session": 1,
+   "scene": 1,
+   "actor": "Hask",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Hask steps up to the torchlight without hesitation, meeting Orsa's lamp-gaze steady. He keeps his hands visible and open, turning his throat and palms toward he",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 13,
+   "session": 1,
+   "scene": 1,
+   "actor": "Eira",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Eira steps forward to meet Orsa's inspection without hesitation, meeting the captain's eyes straight on. She rolls up her sleeves to show her hands and throat c",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 14,
+   "session": 1,
+   "scene": 1,
+   "actor": "Fenwick",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Fenwick steps forward into the lamplight without hesitation, hands still visible and open. He extends his travel papers to Orsa with a steady hand and stands mo",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 3,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 15,
+   "session": 1,
+   "scene": 1,
+   "actor": "Eira",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Sella still works for the Causeway Wardens",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "As Orsa's lamp swings past, a wiry warden aide steps up beside the captain to whisper a report — and freezes. It's Sella, the informer Eira has history with, now working the Wardens' checkpoint. Sella",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 4,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 16,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Rail + EI-06",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "EI-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "story draw (free_compel_accepted)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 4,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 17,
+   "session": 1,
+   "scene": 1,
+   "actor": "Eira",
+   "action": "Story draw (free_compel_accepted)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "EI-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "story_draw",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 4,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 18,
+   "session": 1,
+   "scene": 1,
+   "actor": "Maud",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Maud stays in her place at the checkpoint, watching the exchange between Eira and Sella unfold. Her hands remain visible and still, her posture steady. She read",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 4,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 19,
+   "session": 1,
+   "scene": 1,
+   "actor": "Hask",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Hask meets Orsa's eyes steady, Rill settled calm at his heel. He speaks plainly, the way a stilt-man does—no evasion, no performance, just fact. He's giving the",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 4,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 20,
+   "session": 1,
+   "scene": 1,
+   "actor": "Eira",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Eira's breath steadies. The hitch in her composure was real, but she's been trained by a lifetime of midwifery to master her fear in a crisis — and this is just",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 4,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 21,
+   "session": 1,
+   "scene": 1,
+   "actor": "Fenwick",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Fenwick stands steady in the torchlight for Orsa's inspection, palms open and throat clear. He keeps his attention on the captain, his bearing calm and cooperat",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 4,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 22,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "3->4",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "against the players 1 (hostile invokes 0 + compels 1) vs friendly invokes 0 (§6, spec 0.3.1)",
+   "event_type": "tension",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 4,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 23,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Weight EI-06",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "EI-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "1->2 (drawn/featured this scene)",
+   "event_type": "story_weight",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 4,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 24,
+   "session": 1,
+   "scene": 1,
+   "actor": "Eira",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SEI-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "Sella, the Warden's Informer",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 4,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 25,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Trigger fired: M-2",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "tension_at_least:4",
+   "event_type": "trigger",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 4,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 26,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 4,
+   "notes": "triggers fired: ['M-2']",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 3,
+    "Eira": 4,
+    "Fenwick": 3
+   },
+   "gm_fp": 4
+  }
+ ],
+ "scenes": [
+  {
+   "index": 1,
+   "tension_before": 3,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 3,
+   "climax": false,
+   "tension_after": 4,
+   "triggers_fired": [
+    "M-2"
+   ]
+  }
+ ],
+ "transcript": [
+  {
+   "session": 1,
+   "scene": 0,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Session begins. Each player has Maud 3 FP, Hask 3 FP, Eira 3 FP, Fenwick 3 FP. Face-up: Rising Floodwaters [H-03], The Causeway Wardens [F-03].",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Rain needles down onto slick stone as you crest the last rise and see it: the Ashwater Causeway, a raised spine of old road running north through black water, chained shut at both ends by the Causeway Wardens' toll gates. Torchlight gutters at the near gate, where a knot of soaked, underfed militia check papers and packs by lantern-light, and somewhere behind you the flood is already licking at the low ground you just crossed. The gate captain's bell is ready to ring the quarantine alarm at the first sign of hive-sickness or trouble. You have until the tide turns and the gate chains go up for the night — after that, this is the only dry way north, and it will be closed to you.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Maud",
+   "kind": "speech",
+   "text": "Captain Orsa. Is the Causeway still clear to the north?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Maud",
+   "kind": "action",
+   "text": "(Maud steps up to the checkpoint with the others, taking in the militia and the rising water beyond with a practiced eye. She's walked this road before. She nods slightly to the Gate Captain.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Hask",
+   "kind": "speech",
+   "text": "Captain Orsa? Hask, of the Gullet Ford line. We're stilt-folk moving north before the flood swallows the low roads—the water's already at our heels.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Hask",
+   "kind": "action",
+   "text": "(Hask walks up to the gate with the easy confidence of someone who's grown up around water-folk and fords. He names himself by his family line, the way a marsh person does. Rill pads close beside him, the hound's hive-scent marking them both as clan-trusted. Hask's eyes are on the Captain—not hostile, not pleading, just direct as the rising tide behind them.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Eira",
+   "kind": "speech",
+   "text": "Gate Captain Orsa? I'm Eira, a midwife out of Sallow's Teeth. There's a woman in labor waiting on the north side, and the floodwaters won't care about our paperwork—I need passage before that gate chain goes up.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Eira",
+   "kind": "action",
+   "text": "(Eira walks through the knot of soaked militia with the assured step of someone who moves confidently through crisis. She's as wet and weathered as anyone here, but her posture is steady. She reads Orsa's face carefully—the exhaustion, the fear—and keeps her own expression open and direct. A midwife learns to read the fear in a room quickly. She reaches the gate captain's lamplight, meeting her eyes with the calm certainty of someone who has delivered in worse weather than this.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Fenwick",
+   "kind": "speech",
+   "text": "Captain Orsa, I'm Fenwick. I need passage north before the gate closes for the night. What's your procedure—are you just checking papers, or is there something else you're looking for tonight?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Fenwick",
+   "kind": "action",
+   "text": "(Fenwick steps into the torchlight, picking his way carefully between the militia. He takes in the state of the Wardens—soaked, nervous, watching the dark water with one eye always on the bell. He presents himself to Gate Captain Orsa with his hands visible and his travel papers ready.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Orsa turns from the ledger table, rain sheeting off her hood, and takes the four of you in with the flat, tired eyes of someone who's done this a hundred times tonight already. \"Captain Orsa, still breathing, still counting heads,\" she says. To Maud: \"Clear as far as I know — for now. Chains go up when the bell says so, not before, not after.\" To Hask, her gaze flicks to Rill and softens half a degree — stilt-folk and their hounds she trusts more than most. \"Ford's drowning, is it. Figures.\" To Eira, the mention of a labouring woman gets a harder look, weighing truth against the dozen sob stories she's heard today. \"Sallow's Teeth's a fair walk from here for a midwife's errand.\" And to Fenwick, she taps the ledger. \"Papers, yes. And I look at hands, throats, eyes — anyone favoring a wound, anyone who won't meet my lamp straight on. Blight doesn't knock first.\" Behind her, a warden begins uncoiling the chain, testing its weight. The bell-rope sways in the wind, close enough to reach. \"You want through tonight, you'll queue like everyone else — and you'll let me look.\"",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Maud",
+   "kind": "speech",
+   "text": "I'm ready for your inspection, Captain.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Maud",
+   "kind": "action",
+   "text": "(Maud nods slightly to Orsa and steps forward to queue for inspection. Her movements are steady and practiced—she's walked this causeway before, understands the routine. She meets the lamplight without hesitation, hands visible, letting the Gate Captain look.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Hask",
+   "kind": "speech",
+   "text": "Sound practice, Captain. Rill would warn me before I'd warn myself—her nose doesn't lie. Take your look, we're clean as reed-water.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Hask",
+   "kind": "action",
+   "text": "(Hask steps up to the torchlight without hesitation, meeting Orsa's lamp-gaze steady. He keeps his hands visible and open, turning his throat and palms toward her for inspection. Rill sits at his heel, calm and trusting, a hound that knows the way of checkpoints.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Eira",
+   "kind": "speech",
+   "text": "Of course, Captain. I've nothing to hide, and the woman waiting has less time than we do.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Eira",
+   "kind": "action",
+   "text": "(Eira steps forward to meet Orsa's inspection without hesitation, meeting the captain's eyes straight on. She rolls up her sleeves to show her hands and throat clearly, tilts her face toward the lamplight so Orsa can see her eyes unshaded. There's no tension in her body, no evasion—just the quiet, assured presence of someone accustomed to stepping into crisis. She's delivered in worse than this, and it shows in the steadiness of her breath, the clarity of her gaze. When Orsa looks at her, she'll see the weathering of someone who works at the edge of life and death, not someone spinning tales.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Fenwick",
+   "kind": "speech",
+   "text": "I've crossed this causeway before, Captain—I know better than to waste your time or risk bringing trouble through your gate. Look as thoroughly as you need to.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Fenwick",
+   "kind": "action",
+   "text": "(Fenwick steps forward into the lamplight without hesitation, hands still visible and open. He extends his travel papers to Orsa with a steady hand and stands motionless for her inspection, meeting her eyes directly. He's clearly spent hard days on the road—his cloak is soaked through, his face weathered by rain and wind—but there's nothing fevered in his bearing, no tremor or wound-favoring that would catch a practiced eye.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Eira",
+   "kind": "speech",
+   "text": "Sella. I didn't expect to see you here.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Eira accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Sella straightens from where she's been murmuring numbers to a warden clerk, and for a heartbeat her face is unreadable — then it closes like a shutter. \"Eira,\" she says, flat, careful not to let Orsa hear the weight in it. Eira's composure cracks just enough to show: her hands still, her breath catches, and the easy midwife's calm she wore a second ago slips. Orsa notices the hitch — not dramatic, but a captain who reads faces for a living catches it anyway. She glances between the two women, and something behind her eyes sharpens, filing the moment away rather than acting on it yet. \"You two know each other,\" Orsa says. Not a question. Sella says nothing, which says everything. The queue holds; the inspection isn't over.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Maud",
+   "kind": "speech",
+   "text": "Maud says nothing, just watches.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Maud",
+   "kind": "action",
+   "text": "(Maud stays in her place at the checkpoint, watching the exchange between Eira and Sella unfold. Her hands remain visible and still, her posture steady. She reads Orsa's face and the weight of the silence—the captain's sharp attention, the way she's filing away the moment rather than acting yet. Maud's seen this kind of inspection before; she knows how to wait.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Hask",
+   "kind": "speech",
+   "text": "Captain, the marsh is small. Eira walks from Sallow's Teeth to the reeds the same as we do—knowing someone before doesn't mean trouble. We're clean, you've looked, and that woman waiting won't care about old roads crossing.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Hask",
+   "kind": "action",
+   "text": "(Hask meets Orsa's eyes steady, Rill settled calm at his heel. He speaks plainly, the way a stilt-man does—no evasion, no performance, just fact. He's giving the Captain an easy way through this, naming what he sees without flinching from it.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Eira",
+   "kind": "speech",
+   "text": "An old acquaintance, Captain. Water under the bridge now — and there's a woman in labor waiting on the north side of that causeway.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Eira",
+   "kind": "action",
+   "text": "(Eira's breath steadies. The hitch in her composure was real, but she's been trained by a lifetime of midwifery to master her fear in a crisis — and this is just another crisis. She meets Orsa's gaze again, her hands still visible, her throat clear, her face open to the lamplight. Her voice is calm, professional, carrying the weight of someone who has delivered babies through worse weather than suspicion. She doesn't elaborate or defend. She just stands steady, waiting for the inspection to complete, her focus already on what comes next: the causeway, the rising flood, the woman waiting.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Fenwick",
+   "kind": "speech",
+   "text": "Clean and ready, Captain.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Fenwick",
+   "kind": "action",
+   "text": "(Fenwick stands steady in the torchlight for Orsa's inspection, palms open and throat clear. He keeps his attention on the captain, his bearing calm and cooperative—his gaze doesn't drift to Eira or Sella, signaling clearly he's not involved in whatever just passed between them.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Orsa finishes the inspection with a warden's economical thoroughness — hands, throats, eyes, the whole cold litany — and finds nothing that rings her bell. But she doesn't let the queue move yet. She looks once more between Eira and Sella, weighing that hitch of recognition, and then makes her choice: she lets it go, filed away rather than acted on. \"Move through,\" she says, waving the chain-warden back. \"Tide's turning and I've got no patience left for old grudges tonight.\" The gate groans open just wide enough, and one by one you slip past the lantern-light onto the long stone spine of the Causeway, black water hissing at the stones on either side. Behind you, Sella watches you go with an expression she doesn't let Orsa see. Ahead, the north end waits — and somewhere past it, a woman in labor, a war captain's trail, a debt to the Cartel, and all the other roads you've carried onto this one.",
+   "visible_to": "all"
+  }
+ ],
+ "costs": [
+  {
+   "event": "free_compel",
+   "scene": 1,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Sella still works for the Causeway Wardens",
+   "text": "As Orsa's lamp swings past, a wiry warden aide steps up beside the captain to whisper a report — and freezes. It's Sella, the informer Eira has history with, now working the Wardens' checkpoint. Sella's eyes lock on Eira's face, and her mouth opens like she's about to say something the whole line wi",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Eira"
+  }
+ ],
+ "referee": {
+  "violations": [
+   {
+    "session": 1,
+    "scene": 1,
+    "agent": "GM",
+    "section": "§3/§11",
+    "issue": "compel names card EI-02, which is not in play for Eira (not theirs, or in the Session Deck / set aside)",
+    "source": "engine"
+   }
+  ],
+  "ambiguities": [
+   {
+    "id": "AMB-01",
+    "section": "brief",
+    "issue": "Arm A lists 'Attention', which the spec never defines.",
+    "interim_ruling": "Not modelled.",
+    "detail": "Arm definition lists Attention; not modelled.",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-12",
+    "section": "§8",
+    "issue": "Stress box values are unspecified.",
+    "interim_ruling": "Fate Core: boxes 1 and 2; Physique/Will +1/+2 adds a 3 box, +3 or more adds 3 and 4.",
+    "detail": "stress boxes built with Fate Core values",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-22",
+    "section": "§3/§7",
+    "issue": "Does a GLOBAL anchor give the GM a free invoke like a GM card?",
+    "interim_ruling": "Yes, GLOBAL cards placed on the rail give the GM 1 free invoke that scene.",
+    "detail": "H-03",
+    "scene": 0,
+    "source": "engine"
+   }
+  ],
+  "cost_checks": [],
+  "friction": []
+ },
+ "surveys": [],
+ "interview": null,
+ "chronicle": null,
+ "state_end": {
+  "tension": 4,
+  "fp": {
+   "Maud": 3,
+   "Hask": 3,
+   "Eira": 4,
+   "Fenwick": 3
+  },
+  "surfaced": [],
+  "deck_player_cards": {
+   "MA-04": "Maud",
+   "HA-01": "Hask",
+   "EI-02": "Eira",
+   "FE-01": "Fenwick"
+  },
+  "guarantee_pulled": [],
+  "guarantee_failed": [],
+  "deck_left": [
+   "EI-02",
+   "L-04",
+   "MA-04",
+   "FE-01",
+   "HA-01",
+   "L-03",
+   "L-05"
+  ],
+  "draws": 0,
+  "turns": {
+   "Maud": 3,
+   "Hask": 3,
+   "Eira": 3,
+   "Fenwick": 3
+  }
+ },
+ "notes": [],
+ "metrics": {},
+ "tokens": {
+  "prompt": 376139,
+  "completion": 39634,
+  "cost_usd": 0.8808,
+  "calls": 21
+ },
+ "llm_calls": 20,
+ "call_log": [
+  {
+   "seq": 1,
+   "agent": "GM",
+   "kind": "gm_frame",
+   "cached": false,
+   "prompt_tokens": 17419,
+   "completion_tokens": 584
+  },
+  {
+   "seq": 1,
+   "agent": "Hask",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 3758,
+   "completion_tokens": 1259
+  },
+  {
+   "seq": 1,
+   "agent": "Eira",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 3763,
+   "completion_tokens": 2235
+  },
+  {
+   "seq": 1,
+   "agent": "Fenwick",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 3784,
+   "completion_tokens": 2822
+  },
+  {
+   "seq": 1,
+   "agent": "Maud",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 3727,
+   "completion_tokens": 3155
+  },
+  {
+   "seq": 2,
+   "agent": "GM",
+   "kind": "gm_adjudicate",
+   "cached": false,
+   "prompt_tokens": 40393,
+   "completion_tokens": 847
+  },
+  {
+   "seq": 3,
+   "agent": "GM",
+   "kind": "gm_narrate",
+   "cached": false,
+   "prompt_tokens": 18680,
+   "completion_tokens": 654
+  },
+  {
+   "seq": 2,
+   "agent": "Fenwick",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4641,
+   "completion_tokens": 1172
+  },
+  {
+   "seq": 2,
+   "agent": "Maud",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4584,
+   "completion_tokens": 1187
+  },
+  {
+   "seq": 2,
+   "agent": "Hask",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4614,
+   "completion_tokens": 1253
+  },
+  {
+   "seq": 2,
+   "agent": "Eira",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4617,
+   "completion_tokens": 5222
+  },
+  {
+   "seq": 4,
+   "agent": "GM",
+   "kind": "gm_adjudicate",
+   "cached": false,
+   "prompt_tokens": 43711,
+   "completion_tokens": 1957
+  },
+  {
+   "seq": 3,
+   "agent": "Eira",
+   "kind": "player_compel",
+   "cached": false,
+   "prompt_tokens": 5117,
+   "completion_tokens": 3443
+  },
+  {
+   "seq": 5,
+   "agent": "GM",
+   "kind": "gm_narrate",
+   "cached": false,
+   "prompt_tokens": 41475,
+   "completion_tokens": 1224
+  },
+  {
+   "seq": 3,
+   "agent": "Maud",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 5479,
+   "completion_tokens": 1040
+  },
+  {
+   "seq": 4,
+   "agent": "Eira",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 5525,
+   "completion_tokens": 1596
+  },
+  {
+   "seq": 3,
+   "agent": "Hask",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 5513,
+   "completion_tokens": 2404
+  },
+  {
+   "seq": 3,
+   "agent": "Fenwick",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 5539,
+   "completion_tokens": 3662
+  },
+  {
+   "seq": 6,
+   "agent": "GM",
+   "kind": "gm_adjudicate",
+   "cached": false,
+   "prompt_tokens": 45325,
+   "completion_tokens": 1220
+  },
+  {
+   "seq": 7,
+   "agent": "GM",
+   "kind": "gm_narrate",
+   "cached": false,
+   "prompt_tokens": 21063,
+   "completion_tokens": 651
+  }
+ ],
+ "models": {
+  "gm": "claude-sonnet-5",
+  "player": "claude-haiku-4-5-20251001",
+  "referee": "claude-sonnet-5",
+  "interviewer": "claude-haiku-4-5-20251001"
+ },
+ "elapsed_s": 300.0
+}
