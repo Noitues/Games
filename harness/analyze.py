@@ -345,7 +345,7 @@ def judge_batch(batch_id: str, runs: list[dict], parallel: int = 8) -> dict:
     done_runs = [r for r in runs if r["status"] == "complete"]
     mp = session_blinding(batch_id, done_runs)
     by_run = {v: k for k, v in mp.items()}
-    path = ROOT / "runs" / batch_id / "_judgments.json"
+    path = ROOT / "runs" / batch_id / "_judgments_v2.json"   # v2: strict world-driven backstory question
     judged = json.loads(path.read_text()) if path.exists() else {}
     todo = [r for r in done_runs if by_run[r["run_id"]] not in judged]
     backend = "scripted" if all(r["backend"] == "scripted" for r in done_runs) else "claude_cli"
@@ -360,8 +360,13 @@ def judge_batch(batch_id: str, runs: list[dict], parallel: int = 8) -> dict:
             "Score 1-10: overall (would you want to have been at this table?), engagement, coherence (does the story "
             "hang together), spotlight_fairness (did every player get meaningful moments?), player_agency (did player "
             "choices change what happened?), complication_quality (were the problems that arose interesting and "
-            "fitting?). For EACH character: did their personal background (their past, people, places, oaths) visibly "
-            "drive events? used true/false, score 1-10, one-line note. Then best_moment, worst_moment, notes."),
+            "fitting?).\n\nThen, for EACH character, judge their personal background (their past, people, places, oaths, "
+            "debts) STRICTLY. Players often bring up their own history in their own lines; that does NOT count here. "
+            "world_driven = true only if the GM or the world introduced an event, person, place or complication that "
+            "comes from that character's background and that the players did not set up themselves. "
+            "world_driven_events = how many such events. player_raised = true if the player brought up their own "
+            "background themselves. score 1-10 = how much the story's events were shaped by this character's "
+            "background from the world's side (1 = never, 10 = central). One-line note naming the event(s). Then best_moment, worst_moment, notes."),
             {"names": names})
         return sid, {**out, "synthetic": backend == "scripted", "tokens": client.meter.as_dict()}
     with ThreadPoolExecutor(max_workers=parallel) as ex:
@@ -385,19 +390,24 @@ def compile_judgments(batch_id: str, runs: list[dict], judged: dict, seed: int =
         a = {"sessions": len(items), "synthetic": any(jd.get("synthetic") for _, jd in items)}
         for k in JUDGE_SCORES:
             a[k] = mean_ci([jd.get(k) for _, jd in items], seed)
-        used, score, lurk = [], [], []
+        wd, wd_n, pr, score, lurk = [], [], [], [], []
         for r, jd in items:
             pers = {x["name"]: x["personality_id"] for x in r["assignments"]}
             for b in jd.get("backstory", []):
-                used.append(1.0 if b.get("used") else 0.0)
+                wd.append(1.0 if b.get("world_driven") else 0.0)
+                wd_n.append(b.get("world_driven_events"))
+                pr.append(1.0 if b.get("player_raised") else 0.0)
                 score.append(b.get("score"))
                 if pers.get(b.get("name")) == "lurker":
                     lurk.append(b.get("score"))
-        a["backstory_used_rate"] = mean_ci(used, seed)
+        a["backstory_world_driven_rate"] = mean_ci(wd, seed)
+        a["backstory_world_driven_events"] = mean_ci(wd_n, seed)
+        a["backstory_player_raised_rate"] = mean_ci(pr, seed)
         a["backstory_score"] = mean_ci(score, seed)
         a["lurker_backstory_score"] = mean_ci(lurk, seed)
-        a["all_players_backstory_used"] = mean_ci(
-            [1.0 if jd.get("backstory") and all(b.get("used") for b in jd["backstory"]) else 0.0 for _, jd in items], seed)
+        a["all_players_world_driven"] = mean_ci(
+            [1.0 if jd.get("backstory") and all(b.get("world_driven") for b in jd["backstory"]) else 0.0
+             for _, jd in items], seed)
         out[arm] = a
     return out
 
@@ -456,8 +466,8 @@ def write_report(batch_id: str, runs: list[dict], agg: dict, prefs: dict, concl:
               "tension vocabulary or card IDs) under a random session ID. Scores were joined to arms only afterwards._", "",
               "| Score (1–10) | " + " | ".join(f"{a} ({jc[a]['sessions']} sessions)" for a in jarms) + " |",
               "| --- |" + " --- |" * len(jarms)]
-        for k in JUDGE_SCORES + ["backstory_score", "backstory_used_rate", "all_players_backstory_used",
-                                 "lurker_backstory_score"]:
+        for k in JUDGE_SCORES + ["backstory_score", "backstory_world_driven_rate", "backstory_world_driven_events",
+                                 "all_players_world_driven", "backstory_player_raised_rate", "lurker_backstory_score"]:
             L.append(f"| {k} | " + " | ".join(fmt_ci(jc[a][k]) for a in jarms) + " |")
         if any(jc[a]["synthetic"] for a in jarms):
             L.append("")

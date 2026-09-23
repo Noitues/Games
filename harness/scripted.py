@@ -300,7 +300,8 @@ class Scripted:
         s = lambda: rng.randint(3, 8)
         return {"overall": s(), "engagement": s(), "coherence": s(), "spotlight_fairness": s(), "player_agency": s(),
                 "complication_quality": s(),
-                "backstory": [{"name": n, "used": rng.random() < 0.6, "score": s(), "note": "synthetic"} for n in ctx["names"]],
+                "backstory": [{"name": n, "world_driven": rng.random() < 0.6, "world_driven_events": rng.randint(0, 3),
+                               "player_raised": rng.random() < 0.8, "score": s(), "note": "synthetic"} for n in ctx["names"]],
                 "best_moment": "synthetic", "worst_moment": "synthetic", "notes": "synthetic"}
 
     def k_analyst(self, rng, ctx):
