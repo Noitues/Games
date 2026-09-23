@@ -1,0 +1,901 @@
+{
+ "run_id": "batch-02__A__s44986__r4",
+ "batch_id": "batch-02",
+ "arm": "A",
+ "seed": 44986,
+ "spec_version": "0.3.1",
+ "status": "partial",
+ "error": null,
+ "backend": "claude_cli",
+ "run_index": 4,
+ "cohort_id": "batch-02-cohort00",
+ "assignments": [
+  {
+   "character_id": "CH-1",
+   "name": "Petra",
+   "personality_id": "instigator",
+   "seat": 0
+  },
+  {
+   "character_id": "CH-2",
+   "name": "Anselm",
+   "personality_id": "tactician",
+   "seat": 1
+  },
+  {
+   "character_id": "CH-3",
+   "name": "Caddock",
+   "personality_id": "optimizer",
+   "seat": 2
+  },
+  {
+   "character_id": "CH-4",
+   "name": "Yarrow",
+   "personality_id": "protector",
+   "seat": 3
+  }
+ ],
+ "prep_packet": {
+  "anchors": [
+   "H-02",
+   "L-03"
+  ],
+  "environment": [
+   "T-04",
+   "H-06",
+   "C-04"
+  ],
+  "modules": [
+   {
+    "id": "M-1",
+    "cards": [
+     "L-02",
+     "T-02"
+    ],
+    "trigger": "tension_at_least:4"
+   },
+   {
+    "id": "M-2",
+    "cards": [
+     "H-04",
+     "F-03"
+    ],
+    "trigger": "scene_start:3"
+   }
+  ],
+  "beat_frames": [
+   {
+    "id": "B-02",
+    "name": "PLEA FOR HELP",
+    "trigger": "fiction:the party leaves the road or causeway",
+    "used": null
+   },
+   {
+    "id": "B-05",
+    "name": "FALSE SANCTUARY",
+    "trigger": "roll_fails_against:L-03",
+    "used": null
+   },
+   {
+    "id": "B-04",
+    "name": "RIVAL CLAIM",
+    "trigger": "fiction:the party enters a settlement",
+    "used": null
+   }
+  ]
+ },
+ "events": [
+  {
+   "event_id": 1,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Session start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "FP: Petra=3, Anselm=3, Caddock=3, Yarrow=3",
+   "event_type": "session_start",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 2,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + H-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "anchor; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 3,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + L-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "L-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "anchor; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 4,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Build Session Deck",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "7 cards: 3 GM + 4 player",
+   "event_type": "deck_built",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 5,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 6,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Can the party get what they need out of Hollowmoot's market before the Wardens' quarantine bells shut the town down around them?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 7,
+   "session": 1,
+   "scene": 1,
+   "actor": "Petra",
+   "action": "overcome",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Petra pushes deeper into the market crowd, tilting her head and closing her eyes to block out the rain and merchant voices. She's listening—really listening—to ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 8,
+   "session": 1,
+   "scene": 1,
+   "actor": "Anselm",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Anselm approaches a knot of refugees near the tavern, listening to their whispered conversations about the missing boy. He recognizes at least one miller's wido",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 9,
+   "session": 1,
+   "scene": 1,
+   "actor": "Caddock",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Caddock pushes deeper into the market crowd, rain streaming off her cloak, shoulders set against the weight of the storm. She's known here—people part for her, ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 10,
+   "session": 1,
+   "scene": 1,
+   "actor": "Yarrow",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Yarrow pushes through the press of refugees with the bearing of an old guardsman, eyes sharp and tracking. He watches where people cluster and where they delibe",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 11,
+   "session": 1,
+   "scene": 1,
+   "actor": "Petra",
+   "action": "Overcome: Petra pushes deeper into the market crowd, tilting her head ",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ 0 - 0",
+   "total": "+4",
+   "opposition": "+2",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "calls with the swarm-song [H-02]"
+   ],
+   "target_card": "H-02",
+   "target_npc": "",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 12,
+   "session": 1,
+   "scene": 1,
+   "actor": "Yarrow",
+   "action": "Create Advantage: Yarrow pushes through the press of refugees with the bearing",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "0 - 0 +",
+   "total": "+4",
+   "opposition": "+1",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "aspect A-1.1.1 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 13,
+   "session": 1,
+   "scene": 1,
+   "actor": "Yarrow",
+   "action": "Peek",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "YA-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "left on top",
+   "event_type": "peek",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 14,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "3->3",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "against the players 0 (hostile invokes 0 + compels 0) vs friendly invokes 0 (§6, spec 0.3.1)",
+   "event_type": "tension",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 15,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Warden with the Bandaged Hand",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 16,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Who is the boy calling through the swarm-song?",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 17,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Trigger fired: B-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "fiction:the party enters a settlement",
+   "event_type": "trigger",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 18,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "triggers fired: ['B-04']",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  }
+ ],
+ "scenes": [
+  {
+   "index": 1,
+   "tension_before": 3,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 1,
+   "climax": false,
+   "tension_after": 3,
+   "triggers_fired": [
+    "B-04"
+   ]
+  }
+ ],
+ "transcript": [
+  {
+   "session": 1,
+   "scene": 0,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Session begins. Each player has Petra 3 FP, Anselm 3 FP, Caddock 3 FP, Yarrow 3 FP. Face-up: The Hive Blight [H-02], Hollowmoot [L-03].",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Rain hammers the plank roofs of Hollowmoot as you push through the crowded stilt-market, duckboards slick underfoot and lanternlight smeared gold through the downpour. Refugees haggle over dry rope and boiled water while Warden watchmen pace the causeway gate above, halberds catching the light. Gossip runs thick as river-mud in the tavern doorways — talk of a boy gone missing near the temple, of the swarm-song carrying farther than it used to. Somewhere close, the Hive Blight itself seems to breathe in the wet air, and everyone here knows it.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Petra",
+   "kind": "speech",
+   "text": "The song's thicker today, closer than it should be... and there's something new woven through it, like a voice caught in the chorus. That boy—he's tangled up in this, isn't he?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Petra",
+   "kind": "action",
+   "text": "(Petra pushes deeper into the market crowd, tilting her head and closing her eyes to block out the rain and merchant voices. She's listening—really listening—to the swarm-song's cadence, letting it flow through her, tracing its source through the wet air.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Anselm",
+   "kind": "speech",
+   "text": "You look worried—and I know why. This boy went missing near the temple: what did he look like? Was there anything odd about him, or did anyone report hearing the swarm-song before he vanished?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Anselm",
+   "kind": "action",
+   "text": "(Anselm approaches a knot of refugees near the tavern, listening to their whispered conversations about the missing boy. He recognizes at least one miller's widow among them and nods to her, keeping his attention on the Warden watchtower above while his hands rest near the salts and herbs in his coat—the tools of his trade.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Caddock",
+   "kind": "speech",
+   "text": "A boy gone missing in weather like this? That means mothers will be frantic—fear damages pregnancies. I need to know the truth of what's happened.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Caddock",
+   "kind": "action",
+   "text": "(Caddock pushes deeper into the market crowd, rain streaming off her cloak, shoulders set against the weight of the storm. She's known here—people part for her, the swamp midwife, and her eyes are sharp for detail: who's panicked, who's feverish, who's showing the early signs. She angles toward the tavern doorways where the gossip runs thickest, her weathered hands settling on the herbal pouch at her belt as she listens.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Yarrow",
+   "kind": "speech",
+   "text": "The swarm-song's carrying farther than before—you're all right to fear it. But I need the truth of where that boy went missing, and whether any of you have actually seen fresh hive-touched near the temple or if it's just the song getting in your heads.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Yarrow",
+   "kind": "action",
+   "text": "(Yarrow pushes through the press of refugees with the bearing of an old guardsman, eyes sharp and tracking. He watches where people cluster and where they deliberately avoid, listens for the edge of genuine terror beneath the market gossip, and marks which wardens look most on edge—the ones who know something worse than what's being said aloud.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Petra — overcome with Notice: dice + 0 - 0 → Great (+4) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Yarrow — create advantage with Notice: dice 0 - 0 + → Great (+4) vs Average (+1): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Petra lets the market noise fall away and finds the thread she's after: beneath the ordinary swarm-song drone there's a second voice, thin and human, calling in time with the bells of Saint Orrin's — the missing boy, still alive, still walking toward the belltower on his own two feet. She opens her eyes with the direction fixed in her like a compass needle. Meanwhile Yarrow's old guardsman instincts pay off better than he hoped: he clocks the exact cluster of Wardens by the watchtower stair who go quiet and trade looks every time the boy's name comes up, and one of them — a younger woman with a bandaged hand — flinches at the word 'temple' like it cost her something. Anselm's gentle questions and Caddock's sharp midwife's eye confirm the shape of it: no one's seen fresh hive-touched in the market itself, but three families have lost someone to the causeway road north in the last fortnight, all in the direction of the ruin. The picture is clear enough to act on, and clear enough to be dangerous — you know where the boy went and who in Hollowmoot is hiding what they know about it, and the quarantine bells haven't rung yet.",
+   "visible_to": "all"
+  }
+ ],
+ "costs": [],
+ "referee": {
+  "violations": [],
+  "ambiguities": [
+   {
+    "id": "AMB-01",
+    "section": "brief",
+    "issue": "Arm A lists 'Attention', which the spec never defines.",
+    "interim_ruling": "Not modelled.",
+    "detail": "Arm definition lists Attention; not modelled.",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-12",
+    "section": "§8",
+    "issue": "Stress box values are unspecified.",
+    "interim_ruling": "Fate Core: boxes 1 and 2; Physique/Will +1/+2 adds a 3 box, +3 or more adds 3 and 4.",
+    "detail": "stress boxes built with Fate Core values",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-22",
+    "section": "§3/§7",
+    "issue": "Does a GLOBAL anchor give the GM a free invoke like a GM card?",
+    "interim_ruling": "Yes, GLOBAL cards placed on the rail give the GM 1 free invoke that scene.",
+    "detail": "H-02",
+    "scene": 0,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-27",
+    "section": "§3",
+    "issue": "Success with style on create advantage: the aspect's 2 free invokes AND the deck peek, or one of them?",
+    "interim_ruling": "Both: the aspect keeps 2 free invokes and the player may also peek.",
+    "detail": "event 12",
+    "scene": 1,
+    "source": "engine"
+   }
+  ],
+  "cost_checks": [],
+  "friction": []
+ },
+ "surveys": [],
+ "interview": null,
+ "chronicle": null,
+ "state_end": {
+  "tension": 3,
+  "fp": {
+   "Petra": 3,
+   "Anselm": 3,
+   "Caddock": 3,
+   "Yarrow": 3
+  },
+  "surfaced": [],
+  "deck_player_cards": {
+   "PE-01": "Petra",
+   "AN-03": "Anselm",
+   "CA-02": "Caddock",
+   "YA-02": "Yarrow"
+  },
+  "guarantee_pulled": [],
+  "guarantee_failed": [],
+  "deck_left": [
+   "YA-02",
+   "AN-03",
+   "C-04",
+   "PE-01",
+   "T-04",
+   "H-06",
+   "CA-02"
+  ],
+  "draws": 0,
+  "turns": {
+   "Petra": 1,
+   "Anselm": 1,
+   "Caddock": 1,
+   "Yarrow": 1
+  }
+ },
+ "notes": [],
+ "metrics": {},
+ "tokens": {
+  "prompt": 73473,
+  "completion": 7158,
+  "cost_usd": 0.2614,
+  "calls": 5
+ },
+ "llm_calls": 9,
+ "call_log": [
+  {
+   "seq": 1,
+   "agent": "GM",
+   "kind": "gm_frame",
+   "cached": true,
+   "prompt_tokens": 0,
+   "completion_tokens": 0
+  },
+  {
+   "seq": 1,
+   "agent": "Anselm",
+   "kind": "player_declare",
+   "cached": true,
+   "prompt_tokens": 0,
+   "completion_tokens": 0
+  },
+  {
+   "seq": 1,
+   "agent": "Petra",
+   "kind": "player_declare",
+   "cached": true,
+   "prompt_tokens": 0,
+   "completion_tokens": 0
+  },
+  {
+   "seq": 1,
+   "agent": "Caddock",
+   "kind": "player_declare",
+   "cached": true,
+   "prompt_tokens": 0,
+   "completion_tokens": 0
+  },
+  {
+   "seq": 1,
+   "agent": "Yarrow",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 3753,
+   "completion_tokens": 1570
+  },
+  {
+   "seq": 2,
+   "agent": "GM",
+   "kind": "gm_adjudicate",
+   "cached": false,
+   "prompt_tokens": 19929,
+   "completion_tokens": 1225
+  },
+  {
+   "seq": 2,
+   "agent": "Petra",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 5039,
+   "completion_tokens": 762
+  },
+  {
+   "seq": 2,
+   "agent": "Yarrow",
+   "kind": "player_peek",
+   "cached": false,
+   "prompt_tokens": 4463,
+   "completion_tokens": 1097
+  },
+  {
+   "seq": 3,
+   "agent": "GM",
+   "kind": "gm_narrate",
+   "cached": false,
+   "prompt_tokens": 40289,
+   "completion_tokens": 2504
+  }
+ ],
+ "models": {
+  "gm": "claude-sonnet-5",
+  "player": "claude-haiku-4-5-20251001",
+  "referee": "claude-sonnet-5",
+  "interviewer": "claude-haiku-4-5-20251001"
+ },
+ "elapsed_s": 87.8
+}

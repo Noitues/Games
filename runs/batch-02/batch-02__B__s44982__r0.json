@@ -230,8 +230,8 @@
    "session": 1,
    "scene": 1,
    "actor": "Petra",
-   "action": "create_advantage",
-   "skill": "Rapport",
+   "action": "roleplay",
+   "skill": "",
    "tags_invoked": "",
    "fp_spent": 0,
    "dice": "",
@@ -242,7 +242,7 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Petra moves through the tense crowd toward Warden Sergeant Kell with the easy confidence of someone who grew up in this very place, her familiarity with the gat",
+   "notes": "Petra steps forward through the crowd with the ease of someone who grew up spitting distance from this gate. She approaches the Wardens and greets them with fam",
    "event_type": "declare",
    "improvised": false,
    "fp_balances": {
@@ -286,8 +286,8 @@
    "session": 1,
    "scene": 1,
    "actor": "Caddock",
-   "action": "roleplay",
-   "skill": "",
+   "action": "create_advantage",
+   "skill": "Empathy",
    "tags_invoked": "",
    "fp_spent": 0,
    "dice": "",
@@ -298,7 +298,7 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Caddock steps forward from the crowd, water running off her weathered shoulders, and plants herself between the Wardens and a nearby traveler being inspected. S",
+   "notes": "Caddock steps forward into the lantern light, her voice cutting through the rain and the crowd's murmur. She speaks clearly to everyone—Wardens and travelers al",
    "event_type": "declare",
    "improvised": false,
    "fp_balances": {
@@ -314,8 +314,8 @@
    "session": 1,
    "scene": 1,
    "actor": "Yarrow",
-   "action": "roleplay",
-   "skill": "",
+   "action": "create_advantage",
+   "skill": "Notice",
    "tags_invoked": "",
    "fp_spent": 0,
    "dice": "",
@@ -326,7 +326,7 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Yarrow steps to the side of the crowd, water streaming off his shoulders, and lets his eyes move across the gathered travelers—noting the mule's terror, the old",
+   "notes": "Yarrow steps back from the immediate press of the wet crowd, body language calm but eyes sharp. With the practiced ease of someone who's stood militia watch, he",
    "event_type": "declare",
    "improvised": false,
    "fp_balances": {
@@ -344,7 +344,7 @@
    "actor": "Caddock",
    "action": "Compel",
    "skill": "",
-   "tags_invoked": "Cannot Admit Fault, Even to Save a Life",
+   "tags_invoked": "CA-TR",
    "fp_spent": 0,
    "dice": "",
    "total": "",
@@ -354,7 +354,7 @@
    "compel": "accepted",
    "clock_change": "",
    "tension": "",
-   "notes": "Caddock's accusation lands hard and true, but she won't soften it or let it go even as Kell's face closes off; she pushes the point about missing coin one line too far, and now the whole gate-line is ",
+   "notes": "Kell, stung and cornered by Caddock's public callout, snaps back — demanding she admit she's inciting a riot at his gate. Caddock's trouble means she can't back down or soften it now, even though the ",
    "event_type": "compel",
    "improvised": true,
    "fp_change": 1,
@@ -371,27 +371,64 @@
    "event_id": 11,
    "session": 1,
    "scene": 1,
-   "actor": "Petra",
-   "action": "Create Advantage: Petra moves through the tense crowd toward Warden Sergeant K",
-   "skill": "Rapport +3",
+   "actor": "Caddock",
+   "action": "Create Advantage: Caddock steps forward into the lantern light, her voice cutt",
+   "skill": "Empathy +3",
    "tags_invoked": "",
    "fp_spent": 0,
    "dice": "+ - + +",
    "total": "+5",
-   "opposition": "+2 (NPC - + - +)",
+   "opposition": "+4 (NPC - + - +)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "GM invokes: Cannot Admit Fault, Even to Save a Life [CA-TR]; aspect A-1.1.1 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "Undermanned and Frightened [F-03]"
+   ],
+   "target_card": "",
+   "target_npc": "Warden Sergeant Kell",
+   "shifts": 1,
+   "gm_fp_spent": 1,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 4,
+    "Yarrow": 3
+   },
+   "gm_fp": 3,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 12,
+   "session": 1,
+   "scene": 1,
+   "actor": "Yarrow",
+   "action": "Create Advantage: Yarrow steps back from the immediate press of the wet crowd,",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ - + 0",
+   "total": "+5",
+   "opposition": "+1",
    "result": "success_with_style",
    "draw_id": "",
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "aspect A-1.1.1 (2 free)",
+   "notes": "aspect A-1.1.2 (2 free)",
    "event_type": "roll",
    "improvised": false,
    "fp_change": 0,
    "opposing_tags": [],
-   "target_card": "F-03",
-   "target_npc": "Warden Sergeant Kell",
-   "shifts": 3,
+   "target_card": "",
+   "target_npc": "",
+   "shifts": 4,
    "gm_fp_spent": 0,
    "fp_balances": {
     "Petra": 3,
@@ -399,42 +436,14 @@
     "Caddock": 4,
     "Yarrow": 3
    },
-   "gm_fp": 4,
+   "gm_fp": 3,
    "cost_mode": ""
-  },
-  {
-   "event_id": 12,
-   "session": 1,
-   "scene": 1,
-   "actor": "Petra",
-   "action": "overcome",
-   "skill": "Rapport",
-   "tags_invoked": "",
-   "fp_spent": 0,
-   "dice": "",
-   "total": "",
-   "opposition": "",
-   "result": "",
-   "draw_id": "",
-   "compel": "",
-   "clock_change": "",
-   "tension": "",
-   "notes": "Petra steps forward between the crowd and the coin box, moving with the easy authority of someone who grew up at this gate. Using her standing as a familiar fac",
-   "event_type": "declare",
-   "improvised": false,
-   "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
-    "Yarrow": 3
-   },
-   "gm_fp": 4
   },
   {
    "event_id": 13,
    "session": 1,
    "scene": 1,
-   "actor": "Anselm",
+   "actor": "Petra",
    "action": "roleplay",
    "skill": "",
    "tags_invoked": "",
@@ -447,7 +456,7 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Anselm steps forward into the gap between crowd and Wardens, shoulders squared against the hammering rain. His presence settles like a weight—the quiet authorit",
+   "notes": "Petra steps to the ledger with the ease of someone born here, runs a finger down the rain-smudged entries, and nods to the old woman. \"Your toll was paid, Kell—",
    "event_type": "declare",
    "improvised": false,
    "fp_balances": {
@@ -456,14 +465,42 @@
     "Caddock": 4,
     "Yarrow": 3
    },
-   "gm_fp": 4
+   "gm_fp": 3
   },
   {
    "event_id": 14,
    "session": 1,
    "scene": 1,
+   "actor": "Anselm",
+   "action": "create_advantage",
+   "skill": "Lore",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Anselm shoulders through the crowd and past the lantern-light, peering out through the chain-gate into the rain-soaked darkness. His exorcist's eye searches the",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 3,
+    "Anselm": 3,
+    "Caddock": 4,
+    "Yarrow": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 15,
+   "session": 1,
+   "scene": 1,
    "actor": "Caddock",
-   "action": "attack",
+   "action": "create_advantage",
    "skill": "Empathy",
    "tags_invoked": "",
    "fp_spent": 0,
@@ -475,7 +512,7 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Caddock steps up to the ledger table, her weathered shoulders squared. She fixes Tomas with the same hard, unflinching gaze she'd turn on a mother in difficult ",
+   "notes": "Caddock strides forward to the Wardens' station, and the hostile crowd parts for her like she's cutting a path through resistant flesh. She plants herself close",
    "event_type": "declare",
    "improvised": false,
    "fp_balances": {
@@ -484,141 +521,200 @@
     "Caddock": 4,
     "Yarrow": 3
    },
-   "gm_fp": 4
-  },
-  {
-   "event_id": 15,
-   "session": 1,
-   "scene": 1,
-   "actor": "Yarrow",
-   "action": "overcome",
-   "skill": "Physique",
-   "tags_invoked": "",
-   "fp_spent": 0,
-   "dice": "",
-   "total": "",
-   "opposition": "",
-   "result": "",
-   "draw_id": "",
-   "compel": "",
-   "clock_change": "",
-   "tension": "",
-   "notes": "Yarrow steps forward to stand beside Kell and Tomas, drawing himself up to his full militia bearing. His eyes sweep the agitated crowd—steady, unflinching—and B",
-   "event_type": "declare",
-   "improvised": false,
-   "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
-    "Yarrow": 3
-   },
-   "gm_fp": 4
+   "gm_fp": 3
   },
   {
    "event_id": 16,
    "session": 1,
    "scene": 1,
-   "actor": "Petra",
-   "action": "Overcome: Petra steps forward between the crowd and the coin box, movi",
-   "skill": "Rapport +3",
+   "actor": "Yarrow",
+   "action": "roleplay",
+   "skill": "",
    "tags_invoked": "",
    "fp_spent": 0,
-   "dice": "+ - + 0",
-   "total": "+4",
-   "opposition": "+1",
-   "result": "success_with_style",
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
    "draw_id": "",
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "",
-   "event_type": "roll",
+   "notes": "Yarrow moves from the crowd toward the chain-gate, positioning himself beside Warden Tomas with the easy confidence of someone who's stood similar watches. His ",
+   "event_type": "declare",
    "improvised": false,
-   "fp_change": 0,
-   "opposing_tags": [],
-   "target_card": "",
-   "target_npc": "",
-   "shifts": 3,
-   "gm_fp_spent": 0,
    "fp_balances": {
     "Petra": 3,
     "Anselm": 3,
     "Caddock": 4,
     "Yarrow": 3
    },
-   "gm_fp": 4,
-   "cost_mode": ""
+   "gm_fp": 3
   },
   {
    "event_id": 17,
    "session": 1,
    "scene": 1,
-   "actor": "Caddock",
-   "action": "Attack: Caddock steps up to the ledger table, her weathered shoulder",
-   "skill": "Empathy +3",
-   "tags_invoked": "",
+   "actor": "Petra",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Marked Enemy of the Dry Saint",
    "fp_spent": 0,
-   "dice": "- - + +",
-   "total": "+3",
-   "opposition": "-3 (NPC - - - -)",
-   "result": "success_with_style",
-   "draw_id": "",
-   "compel": "",
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PE-A3",
+   "compel": "accepted",
    "clock_change": "",
    "tension": "",
-   "notes": "",
-   "event_type": "roll",
-   "improvised": false,
-   "fp_change": 0,
-   "opposing_tags": [],
-   "target_card": "",
-   "target_npc": "Warden Tomas",
-   "shifts": 6,
-   "gm_fp_spent": 0,
+   "notes": "As Petra leans close to the lamplight pressing Kell for answers, Tomas's eyes catch the old scar-mark at her collar — the brand the Dry Saint's faithful use to name their enemies. His hand twitches to",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
    "fp_balances": {
-    "Petra": 3,
+    "Petra": 4,
     "Anselm": 3,
     "Caddock": 4,
     "Yarrow": 3
    },
-   "gm_fp": 4,
-   "cost_mode": ""
+   "gm_fp": 3
   },
   {
    "event_id": 18,
    "session": 1,
    "scene": 1,
-   "actor": "",
-   "action": "Rail - F-03",
-   "skill": "",
-   "tags_invoked": "",
-   "fp_spent": 0,
-   "dice": "",
-   "total": "",
-   "opposition": "",
-   "result": "",
-   "draw_id": "F-03",
+   "actor": "Anselm",
+   "action": "Create Advantage: Anselm shoulders through the crowd and past the lantern-ligh",
+   "skill": "Lore +4",
+   "tags_invoked": "Exorcist Uncertain the Hive Has Souls [AN-HC]; Survivor of the Drowned Mill, Haunted by His Sister's Cry [AN-A1]",
+   "fp_spent": 2,
+   "dice": "- - - -",
+   "total": "+4",
+   "opposition": "+2",
+   "result": "success",
+   "draw_id": "",
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "left_play: taken out in conflict (Warden Tomas)",
-   "event_type": "rail_remove",
+   "notes": "aspect A-1.1.3 (1 free)",
+   "event_type": "roll",
    "improvised": false,
-   "caused_by": 17,
+   "fp_change": -2,
+   "opposing_tags": [
+    "drowns sound and tracks [H-01]"
+   ],
+   "target_card": "",
+   "target_npc": "",
+   "shifts": 2,
+   "gm_fp_spent": 0,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
+    "Petra": 4,
+    "Anselm": 1,
     "Caddock": 4,
     "Yarrow": 3
    },
-   "gm_fp": 4
+   "gm_fp": 3,
+   "cost_mode": ""
   },
   {
    "event_id": 19,
    "session": 1,
    "scene": 1,
-   "actor": "",
-   "action": "F-03 leaves play",
+   "actor": "Caddock",
+   "action": "Create Advantage: Caddock strides forward to the Wardens' station, and the hos",
+   "skill": "Empathy +3",
+   "tags_invoked": "Crowd Turning Against the Wardens [A-1.1.1]",
+   "fp_spent": 0,
+   "dice": "0 0 - -",
+   "total": "+3",
+   "opposition": "+2 (NPC - - + +)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.1.4 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Warden Sergeant Kell",
+   "shifts": 1,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 1,
+    "Caddock": 4,
+    "Yarrow": 3
+   },
+   "gm_fp": 3,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 20,
+   "session": 1,
+   "scene": 1,
+   "actor": "Petra",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Petra closes her eyes against the hammering rain, her expression going distant and focused. She reaches toward the dark water with the sense that's always marke",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 1,
+    "Caddock": 4,
+    "Yarrow": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 21,
+   "session": 1,
+   "scene": 1,
+   "actor": "Anselm",
+   "action": "create_advantage",
+   "skill": "Lore",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Anselm's gaze remains locked on the reed-dark water, his mind processing the terrible knowledge he's gained. The rhythm he sees—deliberate, purposeful—bears no ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 1,
+    "Caddock": 4,
+    "Yarrow": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 22,
+   "session": 1,
+   "scene": 1,
+   "actor": "Caddock",
+   "action": "roleplay",
    "skill": "",
    "tags_invoked": "",
    "fp_spent": 0,
@@ -626,89 +722,151 @@
    "total": "",
    "opposition": "",
    "result": "",
-   "draw_id": "F-03",
-   "compel": "",
-   "clock_change": "",
-   "tension": "",
-   "notes": "taken out in conflict (Warden Tomas)",
-   "event_type": "card_leaves_play",
-   "improvised": false,
-   "caused_by": 17,
-   "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
-    "Yarrow": 3
-   },
-   "gm_fp": 4
-  },
-  {
-   "event_id": 20,
-   "session": 1,
-   "scene": 1,
-   "actor": "Yarrow",
-   "action": "Overcome: Yarrow steps forward to stand beside Kell and Tomas, drawing",
-   "skill": "Physique +3",
-   "tags_invoked": "",
-   "fp_spent": 0,
-   "dice": "0 0 - -",
-   "total": "+1",
-   "opposition": "+1",
-   "result": "tie",
    "draw_id": "",
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "",
+   "notes": "Caddock pushes past Tomas to the chain-gate's edge, grabs one of the hanging lanterns from its hook, and holds it out over the reed-dark water. She leans forwar",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 1,
+    "Caddock": 4,
+    "Yarrow": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 23,
+   "session": 1,
+   "scene": 1,
+   "actor": "Yarrow",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Yarrow moves into the space between Tomas and the surge of the crowd, his militia training asserting itself. He reads the rain-dark water like an opponent's sta",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 4,
+    "Anselm": 1,
+    "Caddock": 4,
+    "Yarrow": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 24,
+   "session": 1,
+   "scene": 1,
+   "actor": "Petra",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Freezes When the Song Calls Her Name",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": "",
+   "notes": "As Petra opens herself to the swarm-song, it seems to answer — and for a terrible moment she cannot move, cannot speak, cannot pull her attention back from the dark water, even as the crowd and Warden",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Petra": 5,
+    "Anselm": 1,
+    "Caddock": 4,
+    "Yarrow": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 25,
+   "session": 1,
+   "scene": 1,
+   "actor": "Petra",
+   "action": "Create Advantage: Petra closes her eyes against the hammering rain, her expres",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "- + + +",
+   "total": "+6",
+   "opposition": "+1",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.1.5 (2 free)",
    "event_type": "roll",
    "improvised": false,
    "fp_change": 0,
    "opposing_tags": [],
    "target_card": "",
    "target_npc": "",
-   "shifts": 0,
+   "shifts": 5,
    "gm_fp_spent": 0,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
+    "Petra": 5,
+    "Anselm": 1,
     "Caddock": 4,
     "Yarrow": 3
    },
-   "gm_fp": 4,
-   "cost_mode": "improvised"
+   "gm_fp": 3,
+   "cost_mode": ""
   },
   {
-   "event_id": 21,
+   "event_id": 26,
    "session": 1,
    "scene": 1,
-   "actor": "GM",
-   "action": "Cost (tie)",
-   "skill": "",
-   "tags_invoked": "",
+   "actor": "Anselm",
+   "action": "Create Advantage: Anselm's gaze remains locked on the reed-dark water, his min",
+   "skill": "Lore +4",
+   "tags_invoked": "Something Moves in the Reed-Dark Water [A-1.1.3]",
    "fp_spent": 0,
-   "dice": "",
-   "total": "",
-   "opposition": "",
-   "result": "",
+   "dice": "0 0 - 0",
+   "total": "+5",
+   "opposition": "+1",
+   "result": "success_with_style",
    "draw_id": "",
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Yarrow manages to calm the crowd's edge, but as he steps between Wardens and travelers, the old woman shoves past him toward the coin box, and in the scuffle Brack snaps at a stranger's heel, drawing ",
-   "event_type": "cost",
-   "improvised": true,
-   "cost_valid": null,
-   "for_event": 20,
+   "notes": "aspect A-1.1.6 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "A-1.1.3",
+   "target_npc": "",
+   "shifts": 4,
+   "gm_fp_spent": 0,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
+    "Petra": 5,
+    "Anselm": 1,
     "Caddock": 4,
     "Yarrow": 3
    },
-   "gm_fp": 4
+   "gm_fp": 3,
+   "cost_mode": ""
   },
   {
-   "event_id": 22,
+   "event_id": 27,
    "session": 1,
    "scene": 1,
    "actor": "",
@@ -728,15 +886,44 @@
    "event_type": "trigger",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
+    "Petra": 5,
+    "Anselm": 1,
     "Caddock": 4,
     "Yarrow": 3
    },
-   "gm_fp": 4
+   "gm_fp": 3
   },
   {
-   "event_id": 23,
+   "event_id": 28,
+   "session": 1,
+   "scene": 1,
+   "actor": "Caddock",
+   "action": "Hostile invoke payout",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "§3: +1 FP at scene end for a hostile invoke",
+   "event_type": "fp",
+   "improvised": false,
+   "fp_change": 1,
+   "fp_balances": {
+    "Petra": 5,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 29,
    "session": 1,
    "scene": 1,
    "actor": "",
@@ -756,15 +943,15 @@
    "event_type": "scene_end",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 5,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
-   "gm_fp": 4
+   "gm_fp": 3
   },
   {
-   "event_id": 24,
+   "event_id": 30,
    "session": 1,
    "scene": 2,
    "actor": "",
@@ -784,15 +971,15 @@
    "event_type": "scene_start",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 5,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 25,
+   "event_id": 31,
    "session": 1,
    "scene": 2,
    "actor": "GM",
@@ -808,24 +995,24 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Will the party reach Hollowmoot's market square and secure safe footing before the runner's bad news breaks the crowd into panic?",
+   "notes": "Can the party get past the Wardens' checkpoint and onto the Causeway before the crowd's fear turns into a riot — or a hunt for hive-touched among them?",
    "event_type": "frame",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 5,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 26,
+   "event_id": 32,
    "session": 1,
    "scene": 2,
    "actor": "Petra",
-   "action": "create_advantage",
-   "skill": "Notice",
+   "action": "overcome",
+   "skill": "Rapport",
    "tags_invoked": "",
    "fp_spent": 0,
    "dice": "",
@@ -836,50 +1023,22 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Petra's acute hearing—the same gift that lets her catch the swarm-song in the marshland—cuts through the market noise. She catches something others might miss: ",
+   "notes": "Petra steps forward between Kell's guards and the crowd, planting herself as an anchor point. She draws on everything her years as a bell-ringer's apprentice ha",
    "event_type": "declare",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 5,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 27,
+   "event_id": 33,
    "session": 1,
    "scene": 2,
    "actor": "Anselm",
-   "action": "roleplay",
-   "skill": "",
-   "tags_invoked": "",
-   "fp_spent": 0,
-   "dice": "",
-   "total": "",
-   "opposition": "",
-   "result": "",
-   "draw_id": "",
-   "compel": "",
-   "clock_change": "",
-   "tension": "",
-   "notes": "Anselm strides forward through the crowd toward the half-drowned Warden, reaching out to steady them, his eyes already tracking the causeway behind for danger.",
-   "event_type": "declare",
-   "improvised": false,
-   "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
-    "Yarrow": 3
-   },
-   "gm_fp": 4
-  },
-  {
-   "event_id": 28,
-   "session": 1,
-   "scene": 2,
-   "actor": "Caddock",
    "action": "overcome",
    "skill": "Physique",
    "tags_invoked": "",
@@ -892,19 +1051,47 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Caddock shoulders through the crowd like she's forcing through marsh reeds, moving with the confidence of someone used to taking charge in chaos. She plants her",
+   "notes": "Anselm moves fast, stepping directly between Kell and the crowd before she can draw. He plants himself—hands open, unthreatening, but solid and immovable as a s",
    "event_type": "declare",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 5,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 29,
+   "event_id": 34,
+   "session": 1,
+   "scene": 2,
+   "actor": "Caddock",
+   "action": "create_advantage",
+   "skill": "Empathy",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Caddock pushes through the crowd and grabs the screaming woman by the shoulders, forcing eye contact, using her bulk and presence to anchor her to the moment. S",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 5,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 35,
    "session": 1,
    "scene": 2,
    "actor": "Yarrow",
@@ -920,67 +1107,60 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Yarrow moves through the crowd with the calm authority of someone who used to wear the watch, angling to intercept the runner before the crowd's fear spreads. H",
+   "notes": "I step forward into the space between Kell's Wardens and the surging crowd, shoulders squared, my bearing that of a militia guard who's held worse chaos than th",
    "event_type": "declare",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 5,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 30,
+   "event_id": 36,
    "session": 1,
    "scene": 2,
    "actor": "Petra",
-   "action": "Create Advantage: Petra's acute hearing—the same gift that lets her catch the ",
-   "skill": "Notice +4",
-   "tags_invoked": "",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Freezes When the Song Calls Her Name",
    "fp_spent": 0,
-   "dice": "- + + +",
-   "total": "+6",
-   "opposition": "+2",
-   "result": "success_with_style",
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
    "draw_id": "",
-   "compel": "",
+   "compel": "accepted",
    "clock_change": "",
    "tension": "",
-   "notes": "aspect A-1.2.2 (2 free)",
-   "event_type": "roll",
-   "improvised": false,
-   "fp_change": 0,
-   "opposing_tags": [
-    "drowns sound and tracks [H-01]"
-   ],
-   "target_card": "",
-   "target_npc": "",
-   "shifts": 4,
-   "gm_fp_spent": 0,
+   "notes": "As Petra reaches for the bell-ringer's cadence to steady the crowd, the swarm-song surges up through the causeway timbers and calls her name again, mid-word — her voice catches, her eyes go glassy for",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
-   "gm_fp": 4,
-   "cost_mode": ""
+   "gm_fp": 4
   },
   {
-   "event_id": 31,
+   "event_id": 37,
    "session": 1,
    "scene": 2,
-   "actor": "Caddock",
-   "action": "Overcome: Caddock shoulders through the crowd like she's forcing throu",
-   "skill": "Physique +4",
+   "actor": "Petra",
+   "action": "Overcome: Petra steps forward between Kell's guards and the crowd, pla",
+   "skill": "Rapport +3",
    "tags_invoked": "",
    "fp_spent": 0,
-   "dice": "0 0 - 0",
-   "total": "+3",
+   "dice": "+ + 0 0",
+   "total": "+5",
    "opposition": "+2",
-   "result": "success",
+   "result": "success_with_style",
    "draw_id": "",
    "compel": "",
    "clock_change": "",
@@ -990,23 +1170,93 @@
    "improvised": false,
    "fp_change": 0,
    "opposing_tags": [
-    "turns roads to mire [H-01]"
+    "drowns sound and tracks [H-01]"
    ],
    "target_card": "",
    "target_npc": "",
-   "shifts": 1,
+   "shifts": 3,
    "gm_fp_spent": 0,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
    "gm_fp": 4,
    "cost_mode": ""
   },
   {
-   "event_id": 32,
+   "event_id": 38,
+   "session": 1,
+   "scene": 2,
+   "actor": "Anselm",
+   "action": "Overcome: Anselm moves fast, stepping directly between Kell and the cr",
+   "skill": "Physique +3",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ + 0 0",
+   "total": "+5",
+   "opposition": "+3 (NPC + 0 - +)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "F-03",
+   "target_npc": "Sergeant Kell",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 39,
+   "session": 1,
+   "scene": 2,
+   "actor": "Caddock",
+   "action": "Create Advantage: Caddock pushes through the crowd and grabs the screaming wom",
+   "skill": "Empathy +3",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ 0 + 0",
+   "total": "+5",
+   "opposition": "+1",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.2.7 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "",
+   "shifts": 4,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 40,
    "session": 1,
    "scene": 2,
    "actor": "",
@@ -1026,15 +1276,15 @@
    "event_type": "trigger",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 33,
+   "event_id": 41,
    "session": 1,
    "scene": 2,
    "actor": "",
@@ -1054,15 +1304,15 @@
    "event_type": "scene_end",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 34,
+   "event_id": 42,
    "session": 1,
    "scene": 3,
    "actor": "",
@@ -1082,15 +1332,15 @@
    "event_type": "scene_start",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 35,
+   "event_id": 43,
    "session": 1,
    "scene": 3,
    "actor": "GM",
@@ -1106,24 +1356,24 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Can the party get hard answers about the Causeway break and a way across before panic and the Wardens close every door?",
+   "notes": "Does the party break the chain-gate standoff before Kell's frightened Wardens do something they can't take back?",
    "event_type": "frame",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 36,
+   "event_id": 44,
    "session": 1,
    "scene": 3,
    "actor": "Petra",
-   "action": "create_advantage",
-   "skill": "Notice",
+   "action": "roleplay",
+   "skill": "",
    "tags_invoked": "",
    "fp_spent": 0,
    "dice": "",
@@ -1134,24 +1384,24 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Petra's ear catches the specific edge of command in Ruell's voice even as the rain swallows everything else. She pushes through the crowd toward his torch-light",
+   "notes": "Petra raises her voice to cut through the panic, meeting Sergeant Kell's eyes. She plants herself between the surging crowd and the Wardens, one hand raised to ",
    "event_type": "declare",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 37,
+   "event_id": 45,
    "session": 1,
    "scene": 3,
    "actor": "Anselm",
    "action": "overcome",
-   "skill": "Investigate",
+   "skill": "Lore",
    "tags_invoked": "",
    "fp_spent": 0,
    "dice": "",
@@ -1162,23 +1412,23 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Anselm pushes through the churning crowd toward the Warden sergeant's voice, reading the panic like tracks in mud—where people cluster thickest, that's where au",
+   "notes": "Anselm steps into the center of the chaos, planting himself where all can see him. His face is steady, his eyes cold and certain—the eyes of someone who has sta",
    "event_type": "declare",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 38,
+   "event_id": 46,
    "session": 1,
    "scene": 3,
    "actor": "Caddock",
-   "action": "overcome",
+   "action": "attack",
    "skill": "Physique",
    "tags_invoked": "",
    "fp_spent": 0,
@@ -1190,19 +1440,19 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Caddock shoulders through the panicking crowd like she's wading through marsh chest-deep, her bulk opening a path. She plants herself directly in front of the W",
+   "notes": "Caddock steps forward with commanding presence, placing herself directly between Kell and the crowd. She doesn't flinch from Kell's gaze or the hand dropping to",
    "event_type": "declare",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 39,
+   "event_id": 47,
    "session": 1,
    "scene": 3,
    "actor": "Yarrow",
@@ -1218,101 +1468,57 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Yarrow pushes through the churning crowd, his militia training turning the panic into readable signs—he spots Warden Sergeant Ruell fighting to keep his line fr",
+   "notes": "Yarrow steps into the gap between the crowd and the closing chain-gate, planting himself with deliberate weight and authority. His presence becomes an anchor po",
    "event_type": "declare",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 40,
-   "session": 1,
-   "scene": 3,
-   "actor": "Petra",
-   "action": "Create Advantage: Petra's ear catches the specific edge of command in Ruell's ",
-   "skill": "Notice +4",
-   "tags_invoked": "",
-   "fp_spent": 0,
-   "dice": "+ + 0 0",
-   "total": "+6",
-   "opposition": "+2",
-   "result": "success_with_style",
-   "draw_id": "",
-   "compel": "",
-   "clock_change": "",
-   "tension": "",
-   "notes": "aspect A-1.3.3 (2 free)",
-   "event_type": "roll",
-   "improvised": false,
-   "fp_change": 0,
-   "opposing_tags": [
-    "drowns sound and tracks [H-01]"
-   ],
-   "target_card": "",
-   "target_npc": "",
-   "shifts": 4,
-   "gm_fp_spent": 0,
-   "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
-    "Yarrow": 3
-   },
-   "gm_fp": 4,
-   "cost_mode": ""
-  },
-  {
-   "event_id": 41,
-   "session": 1,
-   "scene": 3,
-   "actor": "Anselm",
-   "action": "Overcome: Anselm pushes through the churning crowd toward the Warden s",
-   "skill": "Investigate +3",
-   "tags_invoked": "",
-   "fp_spent": 0,
-   "dice": "+ 0 - +",
-   "total": "+4",
-   "opposition": "+2",
-   "result": "success",
-   "draw_id": "",
-   "compel": "",
-   "clock_change": "",
-   "tension": "",
-   "notes": "",
-   "event_type": "roll",
-   "improvised": false,
-   "fp_change": 0,
-   "opposing_tags": [
-    "drowns sound and tracks [H-01]"
-   ],
-   "target_card": "",
-   "target_npc": "",
-   "shifts": 2,
-   "gm_fp_spent": 0,
-   "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
-    "Yarrow": 3
-   },
-   "gm_fp": 4,
-   "cost_mode": ""
-  },
-  {
-   "event_id": 42,
+   "event_id": 48,
    "session": 1,
    "scene": 3,
    "actor": "Caddock",
-   "action": "Overcome: Caddock shoulders through the panicking crowd like she's wad",
-   "skill": "Physique +4",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Cannot Admit Fault, Even to Save a Life",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Caddock's confrontational stance against Kell reads as an outright threat to a terrified young sergeant — instead of backing down, Kell's hand tightens on her belt and she barks for Tomas to level his",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 6,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 49,
+   "session": 1,
+   "scene": 3,
+   "actor": "Anselm",
+   "action": "Overcome: Anselm steps into the center of the chaos, planting himself ",
+   "skill": "Lore +4",
    "tags_invoked": "",
    "fp_spent": 0,
-   "dice": "+ + 0 0",
+   "dice": "+ - + +",
    "total": "+6",
    "opposition": "+2",
    "result": "success_with_style",
@@ -1325,43 +1531,6 @@
    "improvised": false,
    "fp_change": 0,
    "opposing_tags": [
-    "turns roads to mire [H-01]"
-   ],
-   "target_card": "",
-   "target_npc": "",
-   "shifts": 4,
-   "gm_fp_spent": 0,
-   "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
-    "Yarrow": 3
-   },
-   "gm_fp": 4,
-   "cost_mode": ""
-  },
-  {
-   "event_id": 43,
-   "session": 1,
-   "scene": 3,
-   "actor": "Yarrow",
-   "action": "Create Advantage: Yarrow pushes through the churning crowd, his militia traini",
-   "skill": "Notice +4",
-   "tags_invoked": "",
-   "fp_spent": 0,
-   "dice": "+ 0 + 0",
-   "total": "+6",
-   "opposition": "+2",
-   "result": "success_with_style",
-   "draw_id": "",
-   "compel": "",
-   "clock_change": "",
-   "tension": "",
-   "notes": "aspect A-1.3.4 (2 free)",
-   "event_type": "roll",
-   "improvised": false,
-   "fp_change": 0,
-   "opposing_tags": [
     "drowns sound and tracks [H-01]"
    ],
    "target_card": "",
@@ -1369,16 +1538,117 @@
    "shifts": 4,
    "gm_fp_spent": 0,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 6,
     "Yarrow": 3
    },
-   "gm_fp": 4,
+   "gm_fp": 3,
    "cost_mode": ""
   },
   {
-   "event_id": 44,
+   "event_id": 50,
+   "session": 1,
+   "scene": 3,
+   "actor": "Caddock",
+   "action": "Attack: Caddock steps forward with commanding presence, placing hers",
+   "skill": "Physique +4",
+   "tags_invoked": "Last of Marrowreed Village, Burned by the Wardens [CA-A1]; Guardian of the Wick Lane Cellars [CA-A3]",
+   "fp_spent": 2,
+   "dice": "+ - + +",
+   "total": "+10",
+   "opposition": "+6 (NPC + 0 + 0)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "GM invokes: Cannot Admit Fault, Even to Save a Life [CA-TR]",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -2,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Sergeant Kell",
+   "shifts": 4,
+   "gm_fp_spent": 1,
+   "fp_balances": {
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 4,
+    "Yarrow": 3
+   },
+   "gm_fp": 3,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 51,
+   "session": 1,
+   "scene": 3,
+   "actor": "Yarrow",
+   "action": "Create Advantage: Yarrow steps into the gap between the crowd and the closing ",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "- + 0 +",
+   "total": "+5",
+   "opposition": "+2",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.3.8 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "Undermanned and Frightened [F-03]"
+   ],
+   "target_card": "",
+   "target_npc": "",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 4,
+    "Yarrow": 3
+   },
+   "gm_fp": 3,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 52,
+   "session": 1,
+   "scene": 3,
+   "actor": "Caddock",
+   "action": "Hostile invoke payout",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "§3: +1 FP at scene end for a hostile invoke",
+   "event_type": "fp",
+   "improvised": false,
+   "fp_change": 1,
+   "fp_balances": {
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 53,
    "session": 1,
    "scene": 3,
    "actor": "",
@@ -1398,15 +1668,15 @@
    "event_type": "scene_end",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
-   "gm_fp": 4
+   "gm_fp": 3
   },
   {
-   "event_id": 45,
+   "event_id": 54,
    "session": 1,
    "scene": 4,
    "actor": "",
@@ -1426,15 +1696,15 @@
    "event_type": "scene_start",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 46,
+   "event_id": 55,
    "session": 1,
    "scene": 4,
    "actor": "GM",
@@ -1450,24 +1720,24 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Can the party secure a way to reach the flooded temple (or safe passage/supplies) before Hollowmoot seals itself in quarantine panic — and at what price from the Wardens or the Cartel?",
+   "notes": "Does the party get themselves and the desperate crowd across the causeway before Kell's Wardens seal the gate and the flood takes the road?",
    "event_type": "frame",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 47,
+   "event_id": 56,
    "session": 1,
    "scene": 4,
    "actor": "Petra",
-   "action": "overcome",
-   "skill": "Rapport",
+   "action": "create_advantage",
+   "skill": "Notice",
    "tags_invoked": "",
    "fp_spent": 0,
    "dice": "",
@@ -1478,51 +1748,23 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Petra strides through the chaos and plants herself at Ruell's shoulder, gripping his wrist on the bell-rope. Her voice cuts through the din with desperate autho",
+   "notes": "Petra's eyes snap shut as the causeway lurches beneath her feet. She presses her palms flat against the soaked boards, rain streaming down her face, and in the ",
    "event_type": "declare",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 48,
+   "event_id": 57,
    "session": 1,
    "scene": 4,
    "actor": "Anselm",
    "action": "overcome",
-   "skill": "Lore",
-   "tags_invoked": "",
-   "fp_spent": 0,
-   "dice": "",
-   "total": "",
-   "opposition": "",
-   "result": "",
-   "draw_id": "",
-   "compel": "",
-   "clock_change": "",
-   "tension": "",
-   "notes": "Anselm pushes through the panicked crowd with exorcist's purpose, reaching Ruell's side as his hand tightens on the bell-rope. Speaking with the authority of so",
-   "event_type": "declare",
-   "improvised": false,
-   "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
-    "Yarrow": 3
-   },
-   "gm_fp": 4
-  },
-  {
-   "event_id": 49,
-   "session": 1,
-   "scene": 4,
-   "actor": "Caddock",
-   "action": "attack",
    "skill": "Physique",
    "tags_invoked": "",
    "fp_spent": 0,
@@ -1534,19 +1776,47 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Caddock strides forward and grabs the bell-rope, positioning herself between Ruell and the bells. She meets his eyes with the flat certainty of someone who's ma",
+   "notes": "Anselm pushes into the surging crowd, using his frame to halt the forward crush and create a barrier between the panicking bodies and the closing gate. His voic",
    "event_type": "declare",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 50,
+   "event_id": 58,
+   "session": 1,
+   "scene": 4,
+   "actor": "Caddock",
+   "action": "overcome",
+   "skill": "Physique",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Caddock surges forward through the panicked crowd toward the chain mechanism, her broad shoulders cutting through the chaos as she plants herself between the ga",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 59,
    "session": 1,
    "scene": 4,
    "actor": "Yarrow",
@@ -1562,100 +1832,127 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Yarrow plants himself close to Ruell, subtly positioning himself between the warden and the frantic crowd's view. He reads Ruell with complete attention—watchin",
+   "notes": "Yarrow moves toward the edge of the causeway, eyes locked on the churning water beneath the timbers. His hands grip the railing as he reads the movement like he",
    "event_type": "declare",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 6,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 51,
+   "event_id": 60,
    "session": 1,
    "scene": 4,
    "actor": "Petra",
-   "action": "Overcome: Petra strides through the chaos and plants herself at Ruell'",
-   "skill": "Rapport +3",
-   "tags_invoked": "",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Freezes When the Song Calls Her Name",
    "fp_spent": 0,
-   "dice": "+ 0 + 0",
-   "total": "+5",
-   "opposition": "+4 (NPC + - + +)",
-   "result": "success",
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
    "draw_id": "",
-   "compel": "",
+   "compel": "accepted",
    "clock_change": "",
    "tension": "",
-   "notes": "",
-   "event_type": "roll",
-   "improvised": false,
-   "fp_change": 0,
-   "opposing_tags": [],
-   "target_card": "",
-   "target_npc": "Ruell",
-   "shifts": 1,
-   "gm_fp_spent": 0,
+   "notes": "As Petra opens herself fully to the song beneath the boards, it shifts—and for one terrible heartbeat it says her name. Her whole body locks rigid, palms still flat on the boards, eyes wide and unseei",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 7,
+    "Anselm": 1,
+    "Caddock": 5,
     "Yarrow": 3
    },
-   "gm_fp": 4,
-   "cost_mode": ""
+   "gm_fp": 4
   },
   {
-   "event_id": 52,
-   "session": 1,
-   "scene": 4,
-   "actor": "Anselm",
-   "action": "Overcome: Anselm pushes through the panicked crowd with exorcist's pur",
-   "skill": "Lore +4",
-   "tags_invoked": "",
-   "fp_spent": 0,
-   "dice": "- + 0 +",
-   "total": "+5",
-   "opposition": "+4 (NPC + - + +)",
-   "result": "success",
-   "draw_id": "",
-   "compel": "",
-   "clock_change": "",
-   "tension": "",
-   "notes": "",
-   "event_type": "roll",
-   "improvised": false,
-   "fp_change": 0,
-   "opposing_tags": [],
-   "target_card": "",
-   "target_npc": "Ruell",
-   "shifts": 1,
-   "gm_fp_spent": 0,
-   "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
-    "Yarrow": 3
-   },
-   "gm_fp": 4,
-   "cost_mode": ""
-  },
-  {
-   "event_id": 53,
+   "event_id": 61,
    "session": 1,
    "scene": 4,
    "actor": "Caddock",
-   "action": "Attack: Caddock strides forward and grabs the bell-rope, positioning",
-   "skill": "Physique +4",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Cannot Admit Fault, Even to Save a Life",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Kell shouts that if Caddock lets go of the chain now, no one gets hurt and she'll let it slide — but backing down, even to save the crowd, would mean admitting she moved first. Caddock digs in harder ",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Petra": 7,
+    "Anselm": 1,
+    "Caddock": 6,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 62,
+   "session": 1,
+   "scene": 4,
+   "actor": "Petra",
+   "action": "Create Advantage: Petra's eyes snap shut as the causeway lurches beneath her f",
+   "skill": "Notice +4",
    "tags_invoked": "",
    "fp_spent": 0,
+   "dice": "0 0 0 0",
+   "total": "+4",
+   "opposition": "+2",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.4.9 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "drowns sound and tracks [H-01]"
+   ],
+   "target_card": "",
+   "target_npc": "",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 7,
+    "Anselm": 1,
+    "Caddock": 6,
+    "Yarrow": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 63,
+   "session": 1,
+   "scene": 4,
+   "actor": "Anselm",
+   "action": "Overcome: Anselm pushes into the surging crowd, using his frame to hal",
+   "skill": "Physique +3",
+   "tags_invoked": "Survivor of the Drowned Mill, Haunted by His Sister's Cry [AN-A1]",
+   "fp_spent": 1,
    "dice": "- + - -",
-   "total": "+2",
-   "opposition": "+2 (NPC 0 0 0 0)",
-   "result": "tie",
+   "total": "+3",
+   "opposition": "+1",
+   "result": "success",
    "draw_id": "",
    "compel": "",
    "clock_change": "",
@@ -1663,28 +1960,28 @@
    "notes": "",
    "event_type": "roll",
    "improvised": false,
-   "fp_change": 0,
+   "fp_change": -1,
    "opposing_tags": [],
    "target_card": "",
-   "target_npc": "Ruell",
-   "shifts": 0,
+   "target_npc": "",
+   "shifts": 2,
    "gm_fp_spent": 0,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 7,
+    "Anselm": 0,
+    "Caddock": 6,
     "Yarrow": 3
    },
    "gm_fp": 4,
-   "cost_mode": "improvised"
+   "cost_mode": ""
   },
   {
-   "event_id": 54,
+   "event_id": 64,
    "session": 1,
    "scene": 4,
-   "actor": "Yarrow",
-   "action": "Create Advantage: Yarrow plants himself close to Ruell, subtly positioning him",
-   "skill": "Notice +4",
+   "actor": "Caddock",
+   "action": "Overcome: Caddock surges forward through the panicked crowd toward the",
+   "skill": "Physique +4",
    "tags_invoked": "",
    "fp_spent": 0,
    "dice": "- + + 0",
@@ -1695,30 +1992,30 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "aspect A-1.4.6 (2 free)",
+   "notes": "F-03 overcome with style",
    "event_type": "roll",
    "improvised": false,
    "fp_change": 0,
    "opposing_tags": [],
-   "target_card": "",
-   "target_npc": "Ruell",
+   "target_card": "F-03",
+   "target_npc": "Sergeant Kell",
    "shifts": 5,
    "gm_fp_spent": 0,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 7,
+    "Anselm": 0,
+    "Caddock": 6,
     "Yarrow": 3
    },
    "gm_fp": 4,
    "cost_mode": ""
   },
   {
-   "event_id": 55,
+   "event_id": 65,
    "session": 1,
    "scene": 4,
-   "actor": "GM",
-   "action": "Cost (tie)",
+   "actor": "",
+   "action": "Rail - F-03",
    "skill": "",
    "tags_invoked": "",
    "fp_spent": 0,
@@ -1726,25 +2023,90 @@
    "total": "",
    "opposition": "",
    "result": "",
-   "draw_id": "",
+   "draw_id": "F-03",
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Caddock wrenches the bell-rope from Ruell's grip, but the rough hemp tears through her palm and the sudden lurch throws her against the tower rail — she's got the rope, but her hand is bleeding and he",
-   "event_type": "cost",
-   "improvised": true,
-   "cost_valid": null,
-   "for_event": 53,
+   "notes": "left_play: overcome with success with style",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "caused_by": 64,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 7,
+    "Anselm": 0,
+    "Caddock": 6,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 56,
+   "event_id": 66,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "F-03 leaves play",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "F-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "overcome with success with style",
+   "event_type": "card_leaves_play",
+   "improvised": false,
+   "caused_by": 64,
+   "fp_balances": {
+    "Petra": 7,
+    "Anselm": 0,
+    "Caddock": 6,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 67,
+   "session": 1,
+   "scene": 4,
+   "actor": "Yarrow",
+   "action": "Create Advantage: Yarrow moves toward the edge of the causeway, eyes locked on",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ + 0 0",
+   "total": "+6",
+   "opposition": "+2",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.4.10 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "turns roads to mire [H-01]"
+   ],
+   "target_card": "",
+   "target_npc": "",
+   "shifts": 4,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 7,
+    "Anselm": 0,
+    "Caddock": 6,
+    "Yarrow": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 68,
    "session": 1,
    "scene": 4,
    "actor": "",
@@ -1764,15 +2126,15 @@
    "event_type": "scene_end",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 7,
+    "Anselm": 0,
+    "Caddock": 6,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 57,
+   "event_id": 69,
    "session": 1,
    "scene": 5,
    "actor": "",
@@ -1792,15 +2154,15 @@
    "event_type": "scene_start",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 7,
+    "Anselm": 0,
+    "Caddock": 6,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 58,
+   "event_id": 70,
    "session": 1,
    "scene": 5,
    "actor": "GM",
@@ -1816,24 +2178,24 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Does the party take control of Hollowmoot's fear before Draye does, and will they turn to the Cartel's offer to get anyone south past the cut Causeway?",
+   "notes": "Can the party get the fleeing crowd across the Causeway and hold the hive-touched off the chokepoint before the flood — or the swarm — takes someone?",
    "event_type": "frame",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 7,
+    "Anselm": 0,
+    "Caddock": 6,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 59,
+   "event_id": 71,
    "session": 1,
    "scene": 5,
    "actor": "Petra",
-   "action": "roleplay",
-   "skill": "",
+   "action": "create_advantage",
+   "skill": "Notice",
    "tags_invoked": "",
    "fp_spent": 0,
    "dice": "",
@@ -1844,24 +2206,24 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Petra steps forward to meet Captain Draye, rain streaming from her hair and shoulders. She carries herself with the composure of someone who's stood gate duty a",
+   "notes": "Petra's breath catches as the pale thing breaches the water. Instead of panic, she listens—really listens, the way her master taught her. The swarm-song threads",
    "event_type": "declare",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 7,
+    "Anselm": 0,
+    "Caddock": 6,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 60,
+   "event_id": 72,
    "session": 1,
    "scene": 5,
    "actor": "Anselm",
-   "action": "roleplay",
-   "skill": "",
+   "action": "overcome",
+   "skill": "Physique",
    "tags_invoked": "",
    "fp_spent": 0,
    "dice": "",
@@ -1872,24 +2234,24 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Anselm steps forward to face Captain Draye directly on the rain-slick boards, his posture calm and open. He takes responsibility for the decision immediately—no",
+   "notes": "Anselm barrels forward through the panicking crowd, his broad shoulders parting bodies like a river around stone. He reaches the causeway's edge and plants hims",
    "event_type": "declare",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 7,
+    "Anselm": 0,
+    "Caddock": 6,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 61,
+   "event_id": 73,
    "session": 1,
    "scene": 5,
    "actor": "Caddock",
-   "action": "overcome",
-   "skill": "Empathy",
+   "action": "attack",
+   "skill": "Physique",
    "tags_invoked": "",
    "fp_spent": 0,
    "dice": "",
@@ -1900,24 +2262,24 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Caddock plants herself firm on the wet boards, the torn bell-rope still gripped in her bleeding hand. She meets Draye's stare without flinching or looking away.",
+   "notes": "Caddock plants herself square in the creature's path, shoulders braced, meeting the pale wading shape head-on with every bit of her bulk and strength. She doesn",
    "event_type": "declare",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 7,
+    "Anselm": 0,
+    "Caddock": 6,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 62,
+   "event_id": 74,
    "session": 1,
    "scene": 5,
    "actor": "Yarrow",
-   "action": "roleplay",
-   "skill": "",
+   "action": "overcome",
+   "skill": "Notice",
    "tags_invoked": "",
    "fp_spent": 0,
    "dice": "",
@@ -1928,25 +2290,25 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Yarrow steps forward to face Captain Draye directly, planting himself between her and Ruell with the steady bearing of someone who still remembers military disc",
+   "notes": "Yarrow plants himself beside Sergeant Kell at the gate's mouth, invoking Last of the Weir-Keepers, Trusted by the Stiltfolk. His eyes cut through the rain and d",
    "event_type": "declare",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 4,
+    "Petra": 7,
+    "Anselm": 0,
+    "Caddock": 6,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 63,
+   "event_id": 75,
    "session": 1,
    "scene": 5,
-   "actor": "Caddock",
+   "actor": "Petra",
    "action": "Compel",
    "skill": "",
-   "tags_invoked": "Cannot Admit Fault, Even to Save a Life",
+   "tags_invoked": "Freezes When the Song Calls Her Name",
    "fp_spent": 0,
    "dice": "",
    "total": "",
@@ -1956,32 +2318,141 @@
    "compel": "accepted",
    "clock_change": "",
    "tension": "",
-   "notes": "Caddock refuses to acknowledge the bell-rope tore her hand badly or that she nearly fell — she waves off Anselm's attempt to bind it, insisting she's fine, which only makes Draye more suspicious that ",
+   "notes": "As she strains to parse the swarm-song's harmony, it suddenly shifts — and threads her own name through the melody. For one terrible heartbeat Petra's limbs lock and the lamplight seems to recede, lea",
    "event_type": "compel",
    "improvised": true,
    "fp_change": 1,
    "compel_forced": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
-    "Caddock": 5,
+    "Petra": 8,
+    "Anselm": 0,
+    "Caddock": 6,
     "Yarrow": 3
    },
    "gm_fp": 4
   },
   {
-   "event_id": 64,
+   "event_id": 76,
+   "session": 1,
+   "scene": 5,
+   "actor": "Petra",
+   "action": "Create Advantage: Petra's breath catches as the pale thing breaches the water.",
+   "skill": "Notice +4",
+   "tags_invoked": "Bell-Ringer's Apprentice Who Hears the Swarm-Song [PE-HC]",
+   "fp_spent": 1,
+   "dice": "- 0 0 +",
+   "total": "+6",
+   "opposition": "+2",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.5.11 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [
+    "drowns sound and tracks [H-01]"
+   ],
+   "target_card": "",
+   "target_npc": "",
+   "shifts": 4,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 7,
+    "Anselm": 0,
+    "Caddock": 6,
+    "Yarrow": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 77,
+   "session": 1,
+   "scene": 5,
+   "actor": "Anselm",
+   "action": "Overcome: Anselm barrels forward through the panicking crowd, his broa",
+   "skill": "Physique +3",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "- - + -",
+   "total": "+1",
+   "opposition": "+2",
+   "result": "success_major_cost",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "turns roads to mire [H-01]"
+   ],
+   "target_card": "",
+   "target_npc": "",
+   "shifts": -1,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 7,
+    "Anselm": 0,
+    "Caddock": 6,
+    "Yarrow": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": "improvised"
+  },
+  {
+   "event_id": 78,
    "session": 1,
    "scene": 5,
    "actor": "Caddock",
-   "action": "Overcome: Caddock plants herself firm on the wet boards, the torn bell",
-   "skill": "Empathy +3",
-   "tags_invoked": "Cannot Admit Fault, Even to Save a Life [CA-TR]",
+   "action": "Attack: Caddock plants herself square in the creature's path, should",
+   "skill": "Physique +4",
+   "tags_invoked": "Swamp Midwife Who Delivers in Any Weather [CA-HC]; Guardian of the Wick Lane Cellars [CA-A3]",
+   "fp_spent": 2,
+   "dice": "0 - - 0",
+   "total": "+6",
+   "opposition": "+3 (NPC + 0 - +)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -2,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Hive-Touched Pack",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 7,
+    "Anselm": 0,
+    "Caddock": 4,
+    "Yarrow": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 79,
+   "session": 1,
+   "scene": 5,
+   "actor": "Yarrow",
+   "action": "Overcome: Yarrow plants himself beside Sergeant Kell at the gate's mou",
+   "skill": "Notice +4",
+   "tags_invoked": "Last of the Weir-Keepers, Trusted by the Stiltfolk [YA-A1]",
    "fp_spent": 1,
-   "dice": "- 0 0 +",
-   "total": "+5",
-   "opposition": "+5 (NPC + + 0 0)",
-   "result": "tie",
+   "dice": "- - - 0",
+   "total": "+3",
+   "opposition": "+2",
+   "result": "success",
    "draw_id": "",
    "compel": "",
    "clock_change": "",
@@ -1990,26 +2461,56 @@
    "event_type": "roll",
    "improvised": false,
    "fp_change": -1,
-   "opposing_tags": [],
+   "opposing_tags": [
+    "drowns sound and tracks [H-01]"
+   ],
    "target_card": "",
-   "target_npc": "Captain Draye",
-   "shifts": 0,
+   "target_npc": "",
+   "shifts": 1,
    "gm_fp_spent": 0,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
+    "Petra": 7,
+    "Anselm": 0,
     "Caddock": 4,
-    "Yarrow": 3
+    "Yarrow": 2
    },
    "gm_fp": 4,
-   "cost_mode": "improvised"
+   "cost_mode": ""
   },
   {
-   "event_id": 65,
+   "event_id": 80,
+   "session": 1,
+   "scene": 5,
+   "actor": "Caddock",
+   "action": "Defend vs Hive-Touched Pack",
+   "skill": "Athletics +1",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "0 - + 0",
+   "total": "+1",
+   "opposition": "+1",
+   "result": "defended",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "The pale wading thing lunges as Caddock plants herself in its path, a hooked, barnacled limb raking for her ribs as it t",
+   "event_type": "defend",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 7,
+    "Anselm": 0,
+    "Caddock": 4,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 81,
    "session": 1,
    "scene": 5,
    "actor": "GM",
-   "action": "Cost (tie)",
+   "action": "Cost (success_major_cost)",
    "skill": "",
    "tags_invoked": "",
    "fp_spent": 0,
@@ -2021,21 +2522,21 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "Draye's glare softens a fraction—she believes them, or believes them enough not to press further right now—but Caddock's refusal to let anyone tend her hand doesn't go unnoticed. Draye clocks the torn",
+   "notes": "Anselm holds his ground against the pale wading thing, planting himself as a wall between it and the fleeing crowd — but the creature's shoulder catches him in the surge, hurling him off the causeway ",
    "event_type": "cost",
    "improvised": true,
    "cost_valid": null,
-   "for_event": 64,
+   "for_event": 77,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
+    "Petra": 7,
+    "Anselm": 0,
     "Caddock": 4,
-    "Yarrow": 3
+    "Yarrow": 2
    },
    "gm_fp": 4
   },
   {
-   "event_id": 66,
+   "event_id": 82,
    "session": 1,
    "scene": 5,
    "actor": "",
@@ -2055,15 +2556,15 @@
    "event_type": "scene_end",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
+    "Petra": 7,
+    "Anselm": 0,
     "Caddock": 4,
-    "Yarrow": 3
+    "Yarrow": 2
    },
    "gm_fp": 4
   },
   {
-   "event_id": 67,
+   "event_id": 83,
    "session": 1,
    "scene": 5,
    "actor": "",
@@ -2079,14 +2580,14 @@
    "compel": "",
    "clock_change": "",
    "tension": "",
-   "notes": "FP: Petra=3, Anselm=3, Caddock=4, Yarrow=3",
+   "notes": "FP: Petra=7, Anselm=0, Caddock=4, Yarrow=2",
    "event_type": "session_end",
    "improvised": false,
    "fp_balances": {
-    "Petra": 3,
-    "Anselm": 3,
+    "Petra": 7,
+    "Anselm": 0,
     "Caddock": 4,
-    "Yarrow": 3
+    "Yarrow": 2
    },
    "gm_fp": 4
   }
@@ -2098,7 +2599,7 @@
    "scene_test": null,
    "outcome": "skipped",
    "beat": null,
-   "rounds": 2,
+   "rounds": 3,
    "climax": false,
    "tension_after": null,
    "triggers_fired": [
@@ -2174,7 +2675,7 @@
    "scene": 1,
    "speaker": "Petra",
    "kind": "speech",
-   "text": "Kell! It's been ages—looks like you've got your hands full out here.",
+   "text": "I grew up here at this gate. The ledger gets muddled in this rain—she paid, I'm certain. These folk are with me.",
    "visible_to": "all"
   },
   {
@@ -2182,7 +2683,7 @@
    "scene": 1,
    "speaker": "Petra",
    "kind": "action",
-   "text": "(Petra moves through the tense crowd toward Warden Sergeant Kell with the easy confidence of someone who grew up in this very place, her familiarity with the gate-yard clear in every step.)",
+   "text": "(Petra steps forward through the crowd with the ease of someone who grew up spitting distance from this gate. She approaches the Wardens and greets them with familiar recognition, then turns her attention to the old woman's toll dispute, using her intimate knowledge of the Ashwater Tollgate to help settle the confusion. She'll vouch for her travel companions next.)",
    "visible_to": "all"
   },
   {
@@ -2206,7 +2707,7 @@
    "scene": 1,
    "speaker": "Caddock",
    "kind": "speech",
-   "text": "Those marks on a hand don't tell you anything useful, and you know it—half this crowd's got rope-marks from work, scars from cooking. You're just looking for an excuse to keep people scared and paying. How many of these tolls actually make it to whoever's supposed to keep the causeway safe?",
+   "text": "Everyone here knows you're terrified. So let's stop pretending this checkpoint is anything but fear keeping us in line.",
    "visible_to": "all"
   },
   {
@@ -2214,7 +2715,7 @@
    "scene": 1,
    "speaker": "Caddock",
    "kind": "action",
-   "text": "(Caddock steps forward from the crowd, water running off her weathered shoulders, and plants herself between the Wardens and a nearby traveler being inspected. She's seen enough of these checkpoints, enough fear-mongering and ledger-shuffling.)",
+   "text": "(Caddock steps forward into the lantern light, her voice cutting through the rain and the crowd's murmur. She speaks clearly to everyone—Wardens and travelers alike—calling out the truth everyone already knows. The Wardens are frightened, and it's their fear, not any real authority, that keeps this line docile.)",
    "visible_to": "all"
   },
   {
@@ -2222,7 +2723,7 @@
    "scene": 1,
    "speaker": "Yarrow",
    "kind": "speech",
-   "text": "This rain isn't helping anybody's mood. We're all soaked to the bone and the gate's running slow.",
+   "text": "Stay loose and watch the Wardens' eyes, not their hands.",
    "visible_to": "all"
   },
   {
@@ -2230,7 +2731,7 @@
    "scene": 1,
    "speaker": "Yarrow",
    "kind": "action",
-   "text": "(Yarrow steps to the side of the crowd, water streaming off his shoulders, and lets his eyes move across the gathered travelers—noting the mule's terror, the old woman's frustration, the Wardens' tight shoulders. He can read a crowd the way other men read ledgers. The rain clouds the moment, but not the shape of it: fear mixed with desperation makes a particular kind of pressure. He keeps Brack close at his heel, the marsh hound's steadiness a comfort against his own wariness.)",
+   "text": "(Yarrow steps back from the immediate press of the wet crowd, body language calm but eyes sharp. With the practiced ease of someone who's stood militia watch, he reads the moment—the Wardens' rigid fear, the crowd's simmering resentment. This isn't about late tolls or routine hive-marks.)",
    "visible_to": "all"
   },
   {
@@ -2238,7 +2739,7 @@
    "scene": 1,
    "speaker": "Caddock",
    "kind": "speech",
-   "text": "You're taking coin from terrified people, and you know it. So either admit what you're doing or stop hiding behind that ledger.",
+   "text": "I'm speaking truth standing here in the wet dark — you're terrified, and that terror is what's dangerous at this gate, not my words. I won't take that back.",
    "visible_to": "all"
   },
   {
@@ -2254,7 +2755,15 @@
    "scene": 1,
    "speaker": "Table",
    "kind": "mechanics",
-   "text": "Petra — create advantage with Rapport: dice + - + + → Superb (+5) vs Fair (+2): SUCCESS WITH STYLE",
+   "text": "Caddock — create advantage with Empathy: dice + - + + → Superb (+5) vs Great (+4): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Yarrow — create advantage with Notice: dice + - + 0 → Superb (+5) vs Average (+1): SUCCESS WITH STYLE",
    "visible_to": "all"
   },
   {
@@ -2262,7 +2771,7 @@
    "scene": 1,
    "speaker": "GM",
    "kind": "narration",
-   "text": "Kell's scowl breaks the moment he sees Petra, and for a breath the gate-yard feels like home instead of a checkpoint — he waves her past the line with a rough laugh, calling her name to Tomas like she's still the tollgate brat who used to steal his bread. That warmth spreads: a couple of nearby travelers relax, sensing that someone here actually knows this place and isn't a threat. But Caddock's needling has cut the other way — young Tomas's ledger hand trembles, and he snaps back that the coin goes \"where it's supposed to,\" too loud, too defensive, and the old woman arguing her paid toll seizes the opening to shout that she's been robbed before. The crowd's murmur sharpens toward the coin box. Kell's eyes flick from Petra to the swelling noise behind her, his good humor thinning fast.",
+   "text": "Caddock's words land like a slap — travelers straighten, murmurs turn to nods, and even old Sergeant Kell's jaw tightens like she's been caught out. The crowd's mood tips visibly: less a line to be managed, more a wall watching two frightened boys with ledgers. Yarrow, meanwhile, has clocked something the others missed — the way Tomas's eyes keep cutting toward the reed-dark water past the chain-gate, not at the crowd at all. He leans in to Petra: \"They're not afraid of us. They're afraid of something out there.\" The rain keeps sheeting down, and the old woman's toll dispute still hangs unresolved in the lamplight, waiting on Petra's word.",
    "visible_to": "all"
   },
   {
@@ -2270,7 +2779,7 @@
    "scene": 1,
    "speaker": "Petra",
    "kind": "speech",
-   "text": "Kell, let's check that toll in the ledger properly—the old woman's got a fair point, and the rest of us need to see the Wardens doing honest work.",
+   "text": "Kell, I've known you since we were both small. Your ledger's right here—she paid. But I need to know what's really got you frightened. What's in the water?",
    "visible_to": "all"
   },
   {
@@ -2278,7 +2787,7 @@
    "scene": 1,
    "speaker": "Petra",
    "kind": "action",
-   "text": "(Petra steps forward between the crowd and the coin box, moving with the easy authority of someone who grew up at this gate. Using her standing as a familiar face from the Ashwater Tollgate, she catches the old woman's eye with genuine sympathy, then turns to Kell with quiet confidence. Her presence—trusted because she's *from here*—serves as a bridge between frightened travelers and desperate young Wardens, offering a concrete path forward that lets everyone save face.)",
+   "text": "(Petra steps to the ledger with the ease of someone born here, runs a finger down the rain-smudged entries, and nods to the old woman. \"Your toll was paid, Kell—here, three days back, see the mark? The rain's made the ink run.\" She glances at Warden Tomas, then back to Sergeant Kell with a softer voice. \"But that's not what's worrying you two, is it? Not the ledger. Not the crowd.\" She steps closer to the chain-gate, closer to where Tomas keeps looking toward the dark water. \"What's out there?\")",
    "visible_to": "all"
   },
   {
@@ -2286,7 +2795,7 @@
    "scene": 1,
    "speaker": "Anselm",
    "kind": "speech",
-   "text": "That ledger is the only answer here. Don't make these boys do something they can't take back.",
+   "text": "Your fear's pointed the right way. There's something out there—in the water. Let me look.",
    "visible_to": "all"
   },
   {
@@ -2294,7 +2803,7 @@
    "scene": 1,
    "speaker": "Anselm",
    "kind": "action",
-   "text": "(Anselm steps forward into the gap between crowd and Wardens, shoulders squared against the hammering rain. His presence settles like a weight—the quiet authority of an exorcist who knows how to stand in dangerous spaces. He meets the old woman's eyes, then sweeps his gaze across the gathered travelers, waiting. His hands stay visible and open, but his stance makes clear: here is a line.)",
+   "text": "(Anselm shoulders through the crowd and past the lantern-light, peering out through the chain-gate into the rain-soaked darkness. His exorcist's eye searches the reed-dark water for hive-sign—the phosphorescent shimmer of infection, shapes moving wrong, the particular wrongness he learned to recognize at the Drowned Mill.)",
    "visible_to": "all"
   },
   {
@@ -2302,7 +2811,7 @@
    "scene": 1,
    "speaker": "Caddock",
    "kind": "speech",
-   "text": "You're terrified, boy—I can see it in your hands. The ledger's a lie and you know it. So either tell us where that coin actually goes, or admit you've been robbing these people and hiding behind Kell's name.",
+   "text": "The crowd knows you're terrified of something out there. They can see it in your hands. So tell us what's waiting in that water, or step aside and let people through who aren't afraid.",
    "visible_to": "all"
   },
   {
@@ -2310,7 +2819,7 @@
    "scene": 1,
    "speaker": "Caddock",
    "kind": "action",
-   "text": "(Caddock steps up to the ledger table, her weathered shoulders squared. She fixes Tomas with the same hard, unflinching gaze she'd turn on a mother in difficult labor—seeing past the fear to the truth underneath. The crowd's murmur sharpens. Every eye is on the boy and his trembling hands.)",
+   "text": "(Caddock strides forward to the Wardens' station, and the hostile crowd parts for her like she's cutting a path through resistant flesh. She plants herself close enough to read every tremor in Kell and Tomas's faces—the way a midwife reads a laboring body. She lets the crowd's full weight press against her back, using their newfound hostility like a weapon, letting these two boys *feel* how many eyes are watching them break.)",
    "visible_to": "all"
   },
   {
@@ -2318,7 +2827,7 @@
    "scene": 1,
    "speaker": "Yarrow",
    "kind": "speech",
-   "text": "Settle down, everyone. These lads are just doing their work in the rain. Let's not make it worse than it already is.",
+   "text": "You're watching the water, not the crowd. So what are we looking at out there, Tomas? I've kept lines before. That's not traveler-fear in your eyes.",
    "visible_to": "all"
   },
   {
@@ -2326,7 +2835,15 @@
    "scene": 1,
    "speaker": "Yarrow",
    "kind": "action",
-   "text": "(Yarrow steps forward to stand beside Kell and Tomas, drawing himself up to his full militia bearing. His eyes sweep the agitated crowd—steady, unflinching—and Brack settles calmly at his heel, sensing only purpose in his master's posture. Without aggression, just the quiet authority of someone who's held a line before, Yarrow commands the moment.)",
+   "text": "(Yarrow moves from the crowd toward the chain-gate, positioning himself beside Warden Tomas with the easy confidence of someone who's stood similar watches. His body language shifts from observer to fellow guard—not mocking their fear, but acknowledging it as real. He keeps his hands visible, his gaze steady on the dark water beyond the gate where Tomas keeps looking.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Petra",
+   "kind": "speech",
+   "text": "Tomas, you know me—and you know what that mark means. But you're not afraid of me. What's in that water?",
    "visible_to": "all"
   },
   {
@@ -2334,7 +2851,7 @@
    "scene": 1,
    "speaker": "Table",
    "kind": "mechanics",
-   "text": "Petra — overcome with Rapport: dice + - + 0 → Great (+4) vs Average (+1): SUCCESS WITH STYLE",
+   "text": "Petra accepts a compel.",
    "visible_to": "all"
   },
   {
@@ -2342,7 +2859,7 @@
    "scene": 1,
    "speaker": "Table",
    "kind": "mechanics",
-   "text": "Caddock — attack with Empathy: dice - - + + → Good (+3) vs Abysmal (-3): SUCCESS WITH STYLE (Warden Tomas taken out)",
+   "text": "Anselm — create advantage with Lore: dice - - - -, invoking Exorcist Uncertain the Hive Has Souls [AN-HC], Survivor of the Drowned Mill, Haunted by His Sister's Cry [AN-A1] → Great (+4) vs Fair (+2): SUCCESS",
    "visible_to": "all"
   },
   {
@@ -2350,7 +2867,7 @@
    "scene": 1,
    "speaker": "Table",
    "kind": "mechanics",
-   "text": "Yarrow — overcome with Physique: dice 0 0 - - → Average (+1) vs Average (+1): TIE",
+   "text": "Caddock — create advantage with Empathy: dice 0 0 - -, invoking Crowd Turning Against the Wardens [A-1.1.1] → Good (+3) vs Fair (+2): SUCCESS",
    "visible_to": "all"
   },
   {
@@ -2358,7 +2875,103 @@
    "scene": 1,
    "speaker": "GM",
    "kind": "narration",
-   "text": "Yarrow manages to calm the crowd's edge, but as he steps between Wardens and travelers, the old woman shoves past him toward the coin box, and in the scuffle Brack snaps at a stranger's heel, drawing a yelp and fresh alarm—minor cost: the crowd's attention swings hard onto Brack, and the aspect 'Brack Spooked the Crowd' appears on the table, free invoke to Yarrow's trouble.",
+   "text": "Anselm's eyes go distant and cold as he stares into the reeds — and then he sees it: not shapes, but a *rhythm*, a slow, deliberate ripple moving against the current, like something enormous shifting its weight in the dark. He doesn't flinch, but his breath catches. \"That's not hive-sign,\" he mutters. \"That's something that *knows* we're watching it back.\" Beside him, Caddock has Tomas cornered against the chain-post, the crowd's silence pressing in tighter than any threat could — and the boy's composure finally cracks. His ledger hand trembles; the toll-box chain rattles where he's gripping it too hard. \"It comes up under the water,\" Tomas blurts, not to Petra, not to Caddock, but to all of them, to the rain, to no one. \"Not every night. Just — sometimes. Something big enough to rock the pilings. Sergeant Kell said if word got out, we'd lose the whole crossing to panic — so we don't write it in the ledger. We just watch the water.\" Kell's jaw is a hard, ashamed line; she doesn't contradict him.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Petra",
+   "kind": "speech",
+   "text": "Hold on. Let me listen with more than my ears—I can hear things in the dark that you can't. What's that song coming from beneath the causeway?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Petra",
+   "kind": "action",
+   "text": "(Petra closes her eyes against the hammering rain, her expression going distant and focused. She reaches toward the dark water with the sense that's always marked her apart—the gift of hearing what others can't. Every nerve turns toward that slow, deliberate ripple in the reeds, toward the song beneath the gate that only she has learned to listen for.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Anselm",
+   "kind": "speech",
+   "text": "This isn't hive-corruption. It thinks, it knows we're watching. That changes everything about how we respond.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Anselm",
+   "kind": "action",
+   "text": "(Anselm's gaze remains locked on the reed-dark water, his mind processing the terrible knowledge he's gained. The rhythm he sees—deliberate, purposeful—bears no resemblance to the mindless hunger of hive-corruption he survived at the Drowned Mill. This creature thinks. When he turns to address them, his voice carries the weight of hard-won expertise.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Caddock",
+   "kind": "speech",
+   "text": "You've both seen it. Now so will I.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Caddock",
+   "kind": "action",
+   "text": "(Caddock pushes past Tomas to the chain-gate's edge, grabs one of the hanging lanterns from its hook, and holds it out over the reed-dark water. She leans forward like a midwife reading the signs of labor in flesh—searching the ripples, the disturbances, reading what moves in her marsh.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Yarrow",
+   "kind": "speech",
+   "text": "You did right, Tomas. That secret was eating you both alive. Now—is it coming up tonight? We need to know what we're facing before panic takes this crowd.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Yarrow",
+   "kind": "action",
+   "text": "(Yarrow moves into the space between Tomas and the surge of the crowd, his militia training asserting itself. He reads the rain-dark water like an opponent's stance—the current, the rhythm beneath the storm—and lets his hand find where Brack would be at his side. When he speaks, his voice is steady: the voice of someone who's held militia lines before and knows that control matters more than blame.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Petra",
+   "kind": "speech",
+   "text": "I can hear it calling—it knows I'm listening and I can't—",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Petra accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Petra — create advantage with Notice: dice - + + + → Fantastic (+6) vs Average (+1): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Anselm — create advantage with Lore: dice 0 0 - 0, invoking Something Moves in the Reed-Dark Water [A-1.1.3] → Superb (+5) vs Average (+1): SUCCESS WITH STYLE",
    "visible_to": "all"
   },
   {
@@ -2366,7 +2979,7 @@
    "scene": 1,
    "speaker": "GM",
    "kind": "narration",
-   "text": "Kell claps a hand to his own forehead and laughs despite himself, waving Petra's old woman through with a mock bow and a muttered 'ledger's wrong, pay her back' to Tomas — the crowd sees a Warden made honest by someone they trust, and the anger bleeds out of them like water off the chains. But Tomas himself is past saving: Caddock's words land exactly where they were aimed, and the boy's hands stop trembling only because they've gone still altogether — he drops the ledger in the mud, sits down hard against the coin-box post, and simply stares at the rain, done. Kell has to step over him, waving frantically for the line to keep moving before anyone asks why his partner's stopped functioning. In the scramble, the old woman shoves past Yarrow for her coin, Brack snaps and yelps ring out, and for one long breath the whole yard teeters — but it holds. By the time the mule stops screaming, the party's papers are stamped, the chain-gate creaks open, and Hollowmoot's rooftops glimmer wet and close through the downpour ahead.",
+   "text": "Petra's eyes snap open, breath ragged — the song is real, rising from beneath the causeway itself, and for one terrible heartbeat it seems to *know her name* before she wrenches her attention back to the lamplight and the living. \"It's not hive-song,\" she gasps. \"It's older than that. It's calling — but not to feed.\" Anselm nods grimly beside her, confirming what his own reading told him: whatever moves in that water is patient, aware, deliberate — nothing like the mindless hive-touched he's put down before. Kell watches the two of them with the face of someone who's carried this alone for months and finally set it down. She unhooks the chain herself. \"Go,\" she says, voice cracking. \"Go before the bells start again and I have to explain to the captain why half of Hollowmoot heard what you just heard.\" Tomas waves the crowd through behind them, the old woman's toll forgotten, ledger abandoned in the rain — and the party crosses onto the Ashwater Causeway with the swarm-song still faintly threading the dark behind them, and the unsettling certainty that something in Saint Orrin's belltower now knows exactly who's coming for it.",
    "visible_to": "all"
   },
   {
@@ -2374,7 +2987,7 @@
    "scene": 2,
    "speaker": "GM",
    "kind": "narration",
-   "text": "The gate yard falls behind you, chains clanking shut, and the road opens onto Hollowmoot proper — a sprawl of lashed pilings and rope-bridges over black water, lanterns swaying under eaves that drip without end. Smoke and wet wool, fish-gut and tallow smoke, the murmur of a hundred voices haggling under tarps. Then a horn sounds twice from the north watchtower — the causeway signal — and heads start turning your way, because Petra still wears Kell's borrowed goodwill like a banner, and Caddock's name is already moving mouth to mouth from the gate. Before you've found a dry step to stand on, a half-drowned figure in Warden colors staggers up the market stair, chest heaving, shouting for anyone who'll listen.",
+   "text": "The line at the chain-gate has stopped moving entirely. Sergeant Kell barks for her boys to close ranks, torches guttering as the rain redoubles, and the crowd — already primed by Caddock's words — starts pressing forward with ugly, frightened purpose. Somewhere below, through timber and floodwater, the swarm-song rises again, and this time more than Petra and Anselm seem to hear it: a woman near the gate claps her hands over her ears and screams that it's calling her name. Kell's hand drops to her belt. If the party doesn't do something in the next few breaths, either the Wardens open with steel or the crowd surges the chain and someone drowns in the crush.",
    "visible_to": "all"
   },
   {
@@ -2382,7 +2995,7 @@
    "scene": 2,
    "speaker": "Petra",
    "kind": "speech",
-   "text": "That fear's genuine. What did you see out there?",
+   "text": "The song isn't attacking—it's drowning, just like we are! I've heard its voice since I was a child—it's calling for shelter, not blood!",
    "visible_to": "all"
   },
   {
@@ -2390,7 +3003,7 @@
    "scene": 2,
    "speaker": "Petra",
    "kind": "action",
-   "text": "(Petra's acute hearing—the same gift that lets her catch the swarm-song in the marshland—cuts through the market noise. She catches something others might miss: the raw, genuine terror in the Warden's voice. Not crowd-panic or rumor-fear, but the specific dread of someone who's witnessed something real. She strides toward the soaked figure, already moving before her mind catches up.)",
+   "text": "(Petra steps forward between Kell's guards and the crowd, planting herself as an anchor point. She draws on everything her years as a bell-ringer's apprentice have taught her—the language of songs, the rhythms of sound, the way to speak to things that are frightened and drowning. Her voice cuts through the chaos steady and clear, the hard-won authority of someone whose whole life has been about ringing lost people home.)",
    "visible_to": "all"
   },
   {
@@ -2398,7 +3011,7 @@
    "scene": 2,
    "speaker": "Anselm",
    "kind": "speech",
-   "text": "You—hold steady. What's happened? What brought the horn signal?",
+   "text": "Sergeant Kell, hold. I know what's calling from below the causeway, and it won't be answered by your blade—only by your people dying. Stand with me instead.",
    "visible_to": "all"
   },
   {
@@ -2406,7 +3019,7 @@
    "scene": 2,
    "speaker": "Anselm",
    "kind": "action",
-   "text": "(Anselm strides forward through the crowd toward the half-drowned Warden, reaching out to steady them, his eyes already tracking the causeway behind for danger.)",
+   "text": "(Anselm moves fast, stepping directly between Kell and the crowd before she can draw. He plants himself—hands open, unthreatening, but solid and immovable as a stone wall. His eyes are cold and certain, the look of someone who has stood in worse dark places and lived.)",
    "visible_to": "all"
   },
   {
@@ -2414,7 +3027,7 @@
    "scene": 2,
    "speaker": "Caddock",
    "kind": "speech",
-   "text": "I'm Caddock. What's the emergency?",
+   "text": "Look at me—not it, me. You hear your name down there? Good. That means you're alive enough to *answer*. But you answer to me right now, not to that thing. Breathe.",
    "visible_to": "all"
   },
   {
@@ -2422,7 +3035,7 @@
    "scene": 2,
    "speaker": "Caddock",
    "kind": "action",
-   "text": "(Caddock shoulders through the crowd like she's forcing through marsh reeds, moving with the confidence of someone used to taking charge in chaos. She plants herself directly in front of the Warden Runner, solid as stone, her presence demanding attention.)",
+   "text": "(Caddock pushes through the crowd and grabs the screaming woman by the shoulders, forcing eye contact, using her bulk and presence to anchor her to the moment. She's seen this before—the moment when someone breaks. Her grip is firm, her voice cuts through the rain and the panic like a midwife calling a mother back from the edge.)",
    "visible_to": "all"
   },
   {
@@ -2430,7 +3043,7 @@
    "scene": 2,
    "speaker": "Yarrow",
    "kind": "speech",
-   "text": "Easy, friend — I'm militia. What's happened? Take a breath and tell me what you saw.",
+   "text": "I've got the line, Sergeant—stand your people down! Everyone back from the gate, NOW!",
    "visible_to": "all"
   },
   {
@@ -2438,7 +3051,15 @@
    "scene": 2,
    "speaker": "Yarrow",
    "kind": "action",
-   "text": "(Yarrow moves through the crowd with the calm authority of someone who used to wear the watch, angling to intercept the runner before the crowd's fear spreads. His hand goes to the runner's shoulder — not grabbing, but grounding — and he uses Notice to read the details: the runner's clothes, which way they came from, what panic looks like on a trained Warden's face.)",
+   "text": "(I step forward into the space between Kell's Wardens and the surging crowd, shoulders squared, my bearing that of a militia guard who's held worse chaos than this. My voice cuts sharp through the rain—not a plea, but a command that carries the weight of years standing the line.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Petra",
+   "kind": "speech",
+   "text": "The words catch in my throat—my own name, pulled up from the depths like a hook through my ribs. For one awful heartbeat I can't breathe, can't move. My hand's still raised, but it's trembling now, and everyone can see it.",
    "visible_to": "all"
   },
   {
@@ -2446,7 +3067,7 @@
    "scene": 2,
    "speaker": "Table",
    "kind": "mechanics",
-   "text": "Petra — create advantage with Notice: dice - + + + → Fantastic (+6) vs Fair (+2): SUCCESS WITH STYLE",
+   "text": "Petra accepts a compel.",
    "visible_to": "all"
   },
   {
@@ -2454,7 +3075,23 @@
    "scene": 2,
    "speaker": "Table",
    "kind": "mechanics",
-   "text": "Caddock — overcome with Physique: dice 0 0 - 0 → Good (+3) vs Fair (+2): SUCCESS",
+   "text": "Petra — overcome with Rapport: dice + + 0 0 → Superb (+5) vs Fair (+2): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Anselm — overcome with Physique: dice + + 0 0 → Superb (+5) vs Good (+3): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Caddock — create advantage with Empathy: dice + 0 + 0 → Superb (+5) vs Average (+1): SUCCESS WITH STYLE",
    "visible_to": "all"
   },
   {
@@ -2462,7 +3099,7 @@
    "scene": 2,
    "speaker": "GM",
    "kind": "narration",
-   "text": "Petra's ear catches it before her mind does — this isn't rumor-fear, it's the specific, raw dread of someone who watched something impossible happen. Caddock plants herself like a piling driven into the mud, and the runner — Fenn, chest still heaving — finally focuses on a face instead of the crowd's roar. \"The Causeway,\" he gasps, water sheeting off his Warden colors, \"it's gone. Not flooded — *cut*. A whole span dropped into the black past the third pylon, and Sergeant Dray's got the north gate holding chains that won't hold much longer. If that gate goes too, everyone still out there when the horn sounds twice more —\" He doesn't finish. He doesn't have to. Around you the market's murmur curdles toward panic, but for this one breath, you four have his full attention and the whole truth of it before the crowd swallows the story whole.",
+   "text": "Test narration.",
    "visible_to": "all"
   },
   {
@@ -2470,7 +3107,7 @@
    "scene": 3,
    "speaker": "GM",
    "kind": "narration",
-   "text": "Fenn's news rips through Hollowmoot like a struck bell — within minutes the market square is a churn of shouting stallholders, Wardens shoving through with torches raised, and someone already crying \"quarantine!\" from the watchtower stairs. The horn sounds a third time, longer, and lanterns start going dark along the rope-bridges as folk bar their doors. Somewhere in that press are the people who'd actually know something useful: a Warden sergeant trying to hold his line before it breaks, and — if you can find her in the crowd — a Cartel runner who deals in exactly this kind of bad news, for a price. The rain doesn't help; it swallows names shouted twenty feet away and turns the plank streets to black mirrors underfoot.",
+   "text": "Sergeant Kell's voice cracks as she screams for the chain-gate to close — torches swing wild, and the crowd, already primed by Caddock's words, surges against two boys who look ready to either bolt or start swinging. Beneath the timbers, the swarm-song rises louder than before, and this time the whole crowd hears it: a low, wet harmony threading up through the planks like the causeway itself is singing back. Chains rattle. Someone screams that the boards are moving. Kell's hand drops to her belt as she looks for someone — anyone — to blame before this becomes a riot.",
    "visible_to": "all"
   },
   {
@@ -2478,7 +3115,7 @@
    "scene": 3,
    "speaker": "Petra",
    "kind": "speech",
-   "text": "There—the sergeant's trying to hold them together! I see him!",
+   "text": "Sergeant, wait! The song—it's not hungry. It's not attacking. I hear it, I *know* it. It's calling, but not to feed. If you start swinging steel now, you'll give the crowd a reason to riot, and the causeway will break all on its own.",
    "visible_to": "all"
   },
   {
@@ -2486,7 +3123,7 @@
    "scene": 3,
    "speaker": "Petra",
    "kind": "action",
-   "text": "(Petra's ear catches the specific edge of command in Ruell's voice even as the rain swallows everything else. She pushes through the crowd toward his torch-light, her practiced eye finding his broad shoulders and the desperate scatter of Wardens around him trying to keep the panic from becoming a riot.)",
+   "text": "(Petra raises her voice to cut through the panic, meeting Sergeant Kell's eyes. She plants herself between the surging crowd and the Wardens, one hand raised to ask for attention.)",
    "visible_to": "all"
   },
   {
@@ -2494,7 +3131,7 @@
    "scene": 3,
    "speaker": "Anselm",
    "kind": "speech",
-   "text": "Sergeant! What came out of the Causeway? We need facts before this town drowns itself in fear.",
+   "text": "Listen! What calls from below is not the hive. I know this darkness—it does not hunger for you. Hold steady!",
    "visible_to": "all"
   },
   {
@@ -2502,7 +3139,7 @@
    "scene": 3,
    "speaker": "Anselm",
    "kind": "action",
-   "text": "(Anselm pushes through the churning crowd toward the Warden sergeant's voice, reading the panic like tracks in mud—where people cluster thickest, that's where authority still stands. His coat soaks through as rain hammers sideways. He needs to reach Ruell before the line breaks entirely.)",
+   "text": "(Anselm steps into the center of the chaos, planting himself where all can see him. His face is steady, his eyes cold and certain—the eyes of someone who has stared into darkness and refused to flinch. He raises his voice to cut through the panic and the rain, speaking with the authority of one who knows these waters.)",
    "visible_to": "all"
   },
   {
@@ -2510,7 +3147,7 @@
    "scene": 3,
    "speaker": "Caddock",
    "kind": "speech",
-   "text": "Stop playing shepherd, Ruell. What's actually at the Causeway—and don't tell me it's rumor.",
+   "text": "Don't blame me for this, Sergeant. Your hand comes off that belt, or you and I have a problem.",
    "visible_to": "all"
   },
   {
@@ -2518,7 +3155,7 @@
    "scene": 3,
    "speaker": "Caddock",
    "kind": "action",
-   "text": "(Caddock shoulders through the panicking crowd like she's wading through marsh chest-deep, her bulk opening a path. She plants herself directly in front of the Warden Sergeant, forcing him to focus on her face instead of the chaos spilling around them. Her jaw is set; she's done with half-answers.)",
+   "text": "(Caddock steps forward with commanding presence, placing herself directly between Kell and the crowd. She doesn't flinch from Kell's gaze or the hand dropping toward her belt. Her entire posture radiates authority and readiness.)",
    "visible_to": "all"
   },
   {
@@ -2526,7 +3163,7 @@
    "scene": 3,
    "speaker": "Yarrow",
    "kind": "speech",
-   "text": "Sergeant, I'm here. Let's hold this center before it fractures.",
+   "text": "Sergeant Kell—the gate is sound. I've held worse posts. Stand your people.",
    "visible_to": "all"
   },
   {
@@ -2534,252 +3171,20 @@
    "scene": 3,
    "speaker": "Yarrow",
    "kind": "action",
-   "text": "(Yarrow pushes through the churning crowd, his militia training turning the panic into readable signs—he spots Warden Sergeant Ruell fighting to keep his line from collapsing, and moves into position at the sergeant's shoulder. His presence—solid, familiar to the stiltfolk who know him as Weir-Keeper—becomes an anchor point in the chaos.)",
+   "text": "(Yarrow steps into the gap between the crowd and the closing chain-gate, planting himself with deliberate weight and authority. His presence becomes an anchor point—the bearing of someone trained to hold a line in desperate times. He scans the faces in the lamplight, reading which way the panic will break, and stands firm.)",
    "visible_to": "all"
   },
   {
    "session": 1,
    "scene": 3,
-   "speaker": "Table",
-   "kind": "mechanics",
-   "text": "Petra — create advantage with Notice: dice + + 0 0 → Fantastic (+6) vs Fair (+2): SUCCESS WITH STYLE",
+   "speaker": "Caddock",
+   "kind": "speech",
+   "text": "So that's how it's going to be, then? You want to give these people a reason to stampede, go ahead. But you'll have to get through me first.",
    "visible_to": "all"
   },
   {
    "session": 1,
    "scene": 3,
-   "speaker": "Table",
-   "kind": "mechanics",
-   "text": "Anselm — overcome with Investigate: dice + 0 - + → Great (+4) vs Fair (+2): SUCCESS",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 3,
-   "speaker": "Table",
-   "kind": "mechanics",
-   "text": "Caddock — overcome with Physique: dice + + 0 0 → Fantastic (+6) vs Fair (+2): SUCCESS WITH STYLE",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 3,
-   "speaker": "Table",
-   "kind": "mechanics",
-   "text": "Yarrow — create advantage with Notice: dice + 0 + 0 → Fantastic (+6) vs Fair (+2): SUCCESS WITH STYLE",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 3,
-   "speaker": "GM",
-   "kind": "narration",
-   "text": "Petra reads Ruell's voice before she even reaches him — that isn't a man calming a crowd, that's a man barely holding his own nerve — and she comes up right at his elbow just as Yarrow plants himself on the other side, a solid, familiar wall the surrounding Wardens visibly relax around. Caddock doesn't ask twice; she gets in Ruell's face and he breaks, the sergeant's bark faltering into something rawer. Anselm reads it in the tracks of the panic itself — where the Wardens are thinnest, where they won't look. Ruell wipes rain from his eyes and gives it up: \"It wasn't the flood that took the Causeway. Something came up out of the water and through the chain-gate — hive-touched, more than we've ever seen at once, moving together like they were called. Three Wardens dead, the rest of us fell back to here.\" He glances toward the watchtower, voice dropping. \"Cartel's already sniffing an opportunity — Mott's been asking around the square who wants across bad enough to pay. You want my advice? Don't.\" Behind him, the line of Wardens he and Yarrow have steadied holds a moment longer against the crowd's surge — for now.",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 4,
-   "speaker": "GM",
-   "kind": "narration",
-   "text": "Ruell's nerve finally breaks in front of you — he grabs the watchtower bell-rope himself, ready to ring the quarantine that will seal every rope-bridge and strand half the market on the wrong side of the water. Behind him, Wardens are already dragging chains across the nearest bridge-mouth, torches hissing in the rain, while stallholders scream about kin still out past the ford. Caddock's confrontation has bought a moment, not a resolution — the crowd is a held breath, and Ruell's knuckles are white on the rope. Somewhere under the horn-blasts and shouting, Petra can just make out the swarm-song threading through the chaos, thin and patient, like it's listening for a name. Whatever the party does in the next minute — talk Ruell down, seize the bridge, or slip through before the chains close — decides who's trapped inside Hollowmoot tonight and who's shut out in the flood with the hive-touched.",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 4,
-   "speaker": "Petra",
-   "kind": "speech",
-   "text": "Ruell—I hear the song. It's not the flood that will kill us. It's hunting something, listening for a name. If you seal everyone in, you trap them inside with it in the dark. Let me help you save them.",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 4,
-   "speaker": "Petra",
-   "kind": "action",
-   "text": "(Petra strides through the chaos and plants herself at Ruell's shoulder, gripping his wrist on the bell-rope. Her voice cuts through the din with desperate authority—the voice of someone who knows something the panicked Warden doesn't. She leans close enough that only he can hear her over the storm.)",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 4,
-   "speaker": "Anselm",
-   "kind": "speech",
-   "text": "Hold, Ruell — that song isn't mindless hunger. It's hunting something specific, searching by name. If you ring that bell, you trap whoever it wants inside with an active predator.",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 4,
-   "speaker": "Anselm",
-   "kind": "action",
-   "text": "(Anselm pushes through the panicked crowd with exorcist's purpose, reaching Ruell's side as his hand tightens on the bell-rope. Speaking with the authority of someone who has studied such things, Anselm places a steadying hand near Ruell's arm and meets his eyes. His voice cuts through the chaos with certainty born of knowledge, not just fear.)",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 4,
-   "speaker": "Caddock",
-   "kind": "speech",
-   "text": "I've delivered in worse than this, Ruell. You don't seal this city while I'm standing here.",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 4,
-   "speaker": "Caddock",
-   "kind": "action",
-   "text": "(Caddock strides forward and grabs the bell-rope, positioning herself between Ruell and the bells. She meets his eyes with the flat certainty of someone who's made harder calls in darker times.)",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 4,
-   "speaker": "Yarrow",
-   "kind": "speech",
-   "text": "Before that bell rings, Ruell—I need to know true. Is the hive-touched at the gate now, or is it still coming?",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 4,
-   "speaker": "Yarrow",
-   "kind": "action",
-   "text": "(Yarrow plants himself close to Ruell, subtly positioning himself between the warden and the frantic crowd's view. He reads Ruell with complete attention—watching breath, hands, the set of his shoulders. The quiet, focused regard of someone who's read panicked guards before the hammer falls.)",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 4,
-   "speaker": "Table",
-   "kind": "mechanics",
-   "text": "Petra — overcome with Rapport: dice + 0 + 0 → Superb (+5) vs Great (+4): SUCCESS",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 4,
-   "speaker": "Table",
-   "kind": "mechanics",
-   "text": "Anselm — overcome with Lore: dice - + 0 + → Superb (+5) vs Great (+4): SUCCESS",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 4,
-   "speaker": "Table",
-   "kind": "mechanics",
-   "text": "Caddock — attack with Physique: dice - + - - → Fair (+2) vs Fair (+2): TIE",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 4,
-   "speaker": "Table",
-   "kind": "mechanics",
-   "text": "Yarrow — create advantage with Notice: dice - + + 0 → Superb (+5) vs Mediocre (+0): SUCCESS WITH STYLE",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 4,
-   "speaker": "GM",
-   "kind": "narration",
-   "text": "Caddock wrenches the bell-rope from Ruell's grip, but the rough hemp tears through her palm and the sudden lurch throws her against the tower rail — she's got the rope, but her hand is bleeding and her footing on the wet boards is bad.",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 4,
-   "speaker": "GM",
-   "kind": "narration",
-   "text": "Ruell's whole body sags between them — Petra's grip on his wrist, Anselm's steady voice in his ear, both saying the same terrible truth from different angles: the song hunts, it doesn't drown. He lets go of what's left of the rope before Caddock even finishes tearing it from him, though the rough hemp still opens her palm and nearly drops her on the slick boards — she plants her boot and holds, blood and rain mixing on the wood. Above the chaos, Yarrow reads Ruell like an open ledger: the shake in his hands, the way his eyes keep cutting toward the ford instead of the tower — and it clicks. Whatever's coming hasn't reached Hollowmoot's edge yet. There's still time, if they move now instead of sealing the town shut around it. Ruell straightens, ashen but steadied, and barks new orders down the tower stairs — no bell, not yet, but chains stay ready and Wardens fan out to the bridge-mouths on his word alone, watching, not trapping.",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 5,
-   "speaker": "GM",
-   "kind": "narration",
-   "text": "The bell-rope hangs slack and torn in Caddock's bleeding hand, and for one long breath the watchtower yard just breathes with her — Ruell slumped against the rail, the crowd below murmuring instead of screaming. Then boots hammer up the tower stairs: Warden Captain Draye, older and harder than Tomas or Ruell, cloak black with rain, demanding to know who countermanded a quarantine order and why the Causeway runner's news hasn't already scattered every soul in Hollowmoot into a panic. Below, threading unnoticed through the press of frightened stallholders, a woman in a fisherman's oilskin catches Anselm's eye and taps two fingers against her collar — Vex's mark — before jerking her chin toward the reed-dark water south of town, where no Warden bothers to look. The rain keeps falling, and somewhere under it, Hollowmoot is quietly deciding whether it trusts you or fears you.",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 5,
-   "speaker": "Petra",
-   "kind": "speech",
-   "text": "Captain Draye—the song hunts, it doesn't drown. That bell would've sent folk running straight into its teeth.",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 5,
-   "speaker": "Petra",
-   "kind": "action",
-   "text": "(Petra steps forward to meet Captain Draye, rain streaming from her hair and shoulders. She carries herself with the composure of someone who's stood gate duty at Ashwater, facing wardens and authority without flinching. Her voice stays level and clear: she's not questioning his command, she's appealing to it—to his duty to keep people safe from what she hears.)",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 5,
-   "speaker": "Anselm",
-   "kind": "speech",
-   "text": "Captain Draye, the song hunts. A quarantine bell panics prey into running, and that's what takes them. We held the line, held the crowd, and kept Hollowmoot breathing instead of screaming.",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 5,
-   "speaker": "Anselm",
-   "kind": "action",
-   "text": "(Anselm steps forward to face Captain Draye directly on the rain-slick boards, his posture calm and open. He takes responsibility for the decision immediately—no deflection, no hesitation—speaking with the flat certainty of a man who knows what hunts in the Sallowmere. His eyes stay steady on Draye's face. Meanwhile his attention has already caught on Caddock's bleeding hand, and he's already moving to her side, ready to help bind it the moment she needs it, because the tower needs its people whole and the crowd below needs to see the Wardens held together.)",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 5,
-   "speaker": "Caddock",
-   "kind": "speech",
-   "text": "The song hunts, Captain, not drowns—your quarantine would've trapped them on the wrong side where it could find them. I did what needed doing.",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 5,
-   "speaker": "Caddock",
-   "kind": "action",
-   "text": "(Caddock plants herself firm on the wet boards, the torn bell-rope still gripped in her bleeding hand. She meets Draye's stare without flinching or looking away.)",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 5,
-   "speaker": "Yarrow",
-   "kind": "speech",
-   "text": "Captain. The Causeway runner brought word that Ashwater didn't drown—something hunted there, by choice. We stopped the bell because a quarantine would have turned fear into slaughter. What we're facing isn't a drowning; we needed to know that before Hollowmoot tore itself apart.",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 5,
-   "speaker": "Yarrow",
-   "kind": "action",
-   "text": "(Yarrow steps forward to face Captain Draye directly, planting himself between her and Ruell with the steady bearing of someone who still remembers military discipline. His weathered face is calm despite the rain and chaos around them.)",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 5,
-   "speaker": "Caddock",
-   "kind": "speech",
-   "text": "It's nothing—I've cleaned worse from a breech birth. Did what was needed; the rest doesn't signify.",
-   "visible_to": "all"
-  },
-  {
-   "session": 1,
-   "scene": 5,
    "speaker": "Table",
    "kind": "mechanics",
    "text": "Caddock accepts a compel.",
@@ -2787,10 +3192,306 @@
   },
   {
    "session": 1,
+   "scene": 3,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Anselm — overcome with Lore: dice + - + + → Fantastic (+6) vs Fair (+2): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Caddock — attack with Physique: dice + - + +, invoking Last of Marrowreed Village, Burned by the Wardens [CA-A1], Guardian of the Wick Lane Cellars [CA-A3] → Beyond Legendary (+10) vs Fantastic (+6): SUCCESS WITH STYLE (Sergeant Kell mild consequence)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Yarrow — create advantage with Notice: dice - + 0 + → Superb (+5) vs Fair (+2): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Anselm's voice carries over the rain like a bell tolling truth, and something in his utter certainty breaks the crowd's panic — hands lower, breath catches, and for one long moment the only sound is the swarm-song threading up through the timbers, no longer a threat but a mystery shared by everyone listening. Caddock doesn't wait for Kell's hand to finish its drop; she closes the last step between them and plants a finger in the sergeant's chest hard enough to rock her back, voice low and merciless, and Kell — outmatched, outnumbered, and very visibly rattled — flinches back with a fresh welt of humiliation she'll carry into the next fight. Yarrow's stillness does the rest: he simply stands in the gap between crowd and gate like he's held that exact ground a hundred times before, and the line, impossibly, holds — Wardens lower their torches, travelers stop pressing, and the words 'the line holds' pass through the crowd like a held breath finally released. Sergeant Kell straightens, wipes rain and blood from her split lip, and barks at her boys to stand down the chain — beaten, but not broken, and marking every one of you for it.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The swarm-song crests into a single shuddering note, and the timbers underfoot answer it — a groan, then a lurch, as the flood surges hard against the pilings. Sergeant Kell staggers, torch hissing out, and screams the order no one wants to hear: 'Close the gate! CLOSE IT!' Chains rattle and the crowd shrieks, caught between the rising water behind them and a gate about to seal them out of Hollowmoot for good. Below, through the boards, something vast shifts its weight — patient, unhurried, listening to see what the little creatures above will do.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Petra",
+   "kind": "speech",
+   "text": "It's not feeding—it's *listening!* The song beneath us speaks no hunger, only patience. Stand firm!",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Petra",
+   "kind": "action",
+   "text": "(Petra's eyes snap shut as the causeway lurches beneath her feet. She presses her palms flat against the soaked boards, rain streaming down her face, and in the chaos of screaming travelers and rattling chains, she *listens*—truly listens—with the gift that marks her apprenticeship. Deep within the wood, beneath the floodwater, she hears it: vast, patient, ancient. Not the swarm-hive's fractured hunger-shriek clawing upward to devour. Not appetite. Pure, patient *listening*. She breathes through it, plants her feet firm against the surge, and raises her voice like a bell.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Anselm",
+   "kind": "speech",
+   "text": "Hold! Formation toward the keep—orderly or everyone dies. Move *now*.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Anselm",
+   "kind": "action",
+   "text": "(Anselm pushes into the surging crowd, using his frame to halt the forward crush and create a barrier between the panicking bodies and the closing gate. His voice cuts through the shrieks—not asking, commanding. He won't let people trample each other to death.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Caddock",
+   "kind": "speech",
+   "text": "Not a chance, Sergeant—nobody closes this gate while people are still fighting for air!",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Caddock",
+   "kind": "action",
+   "text": "(Caddock surges forward through the panicked crowd toward the chain mechanism, her broad shoulders cutting through the chaos as she plants herself between the gate and the crowd, reaching out to seize the chain or lever before it can close.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Yarrow",
+   "kind": "speech",
+   "text": "Kell, wait—look at how the water's moving! That's not mindless surge, that's something with a purpose beneath us. Let me read what it's actually doing before you seal it all in.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Yarrow",
+   "kind": "action",
+   "text": "(Yarrow moves toward the edge of the causeway, eyes locked on the churning water beneath the timbers. His hands grip the railing as he reads the movement like he's read weir-gates his whole life—watching where the current pushes, how the flood piles against the pilings, the rhythm of that vast thing's weight shifting below. He's looking for pattern in the chaos, for the truth beneath Kell's fear.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Petra",
+   "kind": "speech",
+   "text": "It's not—it's not *hungry*, it's just—it's saying—",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Petra accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Caddock",
+   "kind": "speech",
+   "text": "You think I'm scared of you, Sergeant? Close this gate over my corpse—these people walk free, and you'll have to go *through* me to stop it.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Caddock accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Petra — create advantage with Notice: dice 0 0 0 0 → Great (+4) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Anselm — overcome with Physique: dice - + - -, invoking Survivor of the Drowned Mill, Haunted by His Sister's Cry [AN-A1] → Good (+3) vs Average (+1): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Caddock — overcome with Physique: dice - + + 0 → Superb (+5) vs Mediocre (+0): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Yarrow — create advantage with Notice: dice + + 0 0 → Fantastic (+6) vs Fair (+2): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Caddock's hands close on the chain-lever like iron on iron, and she doesn't just hold it — she wrenches the whole mechanism sideways, jamming the gate wide with a groan of tortured metal that no Warden boy is getting closed again without a crowbar. Anselm's bulk becomes a living wall, funneling the shrieking crowd into something like order, bodies moving instead of trampling. Petra's voice rides over it all, bell-clear: 'It's not hunger — it's patience!' — and something in that certainty steadies even Kell, who lowers her torch an inch. Then Yarrow shouts from the rail, reading the water true: the surge isn't random, it's *pulling back*, the vast shape beneath easing its weight off the pilings like it's granting passage rather than taking it. Kell stares at the retreating current, at her jammed gate, at a midwife twice her size daring her to try again, and makes the only call left to her: 'Let them through. Let them ALL through.' The crowd pours across the causeway into Hollowmoot, soaked and sobbing and alive, as the swarm-song beneath the boards fades to a low, satisfied hum — patient, watching, waiting for another day.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The gate hangs wide on Caddock's ruined chain, and the crowd doesn't wait for permission — they pour past the sputtering torches in a shrieking mass, mothers with children on their hips, old men slipping on wet stone. But the swarm-song hasn't stopped; if anything it's louder, and out past the last torchlight the reeds are thrashing where nothing human should be moving. Sergeant Kell, torch dead, drags her remaining boys into a knot at the gate's mouth, more terrified than useless. Something pale breaches the black water at the causeway's edge — not swimming, wading, spear-fast despite the flood — and the crowd's shrieking changes pitch.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Petra",
+   "kind": "speech",
+   "text": "Stop! The song brought it up—listen, it carries no hunger, it's not hive-touched, it's *answering* something!",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Petra",
+   "kind": "action",
+   "text": "(Petra's breath catches as the pale thing breaches the water. Instead of panic, she listens—really listens, the way her master taught her. The swarm-song threads through the creature's emergence like a guide-line, and she hears no aggression in that harmony, no feed-hunger-swarm that would mark a hive-touched thing. This is something else entirely. The song sings it up from the deep, something called without voice, and understanding blooms in her like a bell's resonance spreading outward.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Anselm",
+   "kind": "speech",
+   "text": "Get behind me and keep moving!",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Anselm",
+   "kind": "action",
+   "text": "(Anselm barrels forward through the panicking crowd, his broad shoulders parting bodies like a river around stone. He reaches the causeway's edge and plants himself there, between the pale wading creature and the fleeing people, his eyes tracking its every movement with the intensity of a man who has spent his life studying things that should not exist.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Caddock",
+   "kind": "speech",
+   "text": "Not on my watch. Get back, all of you — this thing walks over me first.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Caddock",
+   "kind": "action",
+   "text": "(Caddock plants herself square in the creature's path, shoulders braced, meeting the pale wading shape head-on with every bit of her bulk and strength. She doesn't flinch from the water or the flood — she's a swamp midwife, and this is her ground.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Yarrow",
+   "kind": "speech",
+   "text": "Hold steady, Sergeant—I'm looking. Tell me what you see.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Yarrow",
+   "kind": "action",
+   "text": "(Yarrow plants himself beside Sergeant Kell at the gate's mouth, invoking Last of the Weir-Keepers, Trusted by the Stiltfolk. His eyes cut through the rain and darkness, separating shadow from substance, reading the waters as only he can—the shape of the thing wading toward them, its gait, its purpose.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Petra",
+   "kind": "speech",
+   "text": "No—no, wait, it's singing *me*—it knows my—",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
    "scene": 5,
    "speaker": "Table",
    "kind": "mechanics",
-   "text": "Caddock — overcome with Empathy: dice - 0 0 +, invoking Cannot Admit Fault, Even to Save a Life [CA-TR] → Superb (+5) vs Superb (+5): TIE",
+   "text": "Petra accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Petra — create advantage with Notice: dice - 0 0 +, invoking Bell-Ringer's Apprentice Who Hears the Swarm-Song [PE-HC] → Fantastic (+6) vs Fair (+2): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Anselm — overcome with Physique: dice - - + - → Average (+1) vs Fair (+2): SUCCESS MAJOR COST",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Caddock — attack with Physique: dice 0 - - 0, invoking Swamp Midwife Who Delivers in Any Weather [CA-HC], Guardian of the Wick Lane Cellars [CA-A3] → Fantastic (+6) vs Good (+3): SUCCESS WITH STYLE (Hive-Touched Pack mild consequence)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Yarrow — overcome with Notice: dice - - - 0, invoking Last of the Weir-Keepers, Trusted by the Stiltfolk [YA-A1] → Good (+3) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Hive-Touched Pack attacks Caddock (physical): Average (+1) vs Caddock's Athletics Average (+1) — defended",
    "visible_to": "all"
   },
   {
@@ -2798,7 +3499,7 @@
    "scene": 5,
    "speaker": "GM",
    "kind": "narration",
-   "text": "Draye's glare softens a fraction—she believes them, or believes them enough not to press further right now—but Caddock's refusal to let anyone tend her hand doesn't go unnoticed. Draye clocks the torn, bleeding palm and the stubborn set of Caddock's jaw, and files it away: this one hides things, including from herself. She lets the quarantine stand down, but marks Caddock as someone to watch, and the wound keeps bleeding sluggishly under the rain, unbound.",
+   "text": "Anselm holds his ground against the pale wading thing, planting himself as a wall between it and the fleeing crowd — but the creature's shoulder catches him in the surge, hurling him off the causeway edge into the black flood. He goes under hard, the current dragging him toward the reeds, and comes up gasping without his satchel of relics — the exorcist's tools lost to the Sallowmere.",
    "visible_to": "all"
   },
   {
@@ -2806,7 +3507,7 @@
    "scene": 5,
    "speaker": "GM",
    "kind": "narration",
-   "text": "Draye holds Caddock's eyes a moment longer, then grunts and turns away, barking orders down the stairwell to stand the Wardens off the bridge-chains — the quarantine dies before it ever rang. \"Ruell, get these people fed and dry. And you four—\" she jabs a finger at the party without quite looking back, \"—Hollowmoot remembers who talked her down today. Don't make me regret it.\" Below, the crowd's screaming thins to frightened murmur as chains are pulled back from the bridge-mouths; word spreads fast that the bell didn't ring. Caddock's palm keeps welling blood she won't acknowledge, and Draye's parting glance at it says plainly she isn't fooled. Across the square, the oilskin-cloaked woman with Vex's mark still waits at the tree line where the reeds swallow the light, patient as the rain, watching to see who comes to her.",
+   "text": "Petra's voice cuts through the chaos like a struck bell: 'It carries no hunger!' and the truth of it settles over the causeway like a held breath — the pale thing isn't hive-touched, isn't hunting, it's answering the song, same as her. Caddock doesn't wait to find out if Petra's right about the hive-touched pack snapping at her heels; she puts her whole weight into a driving blow that folds one of them over a hooked spear, and the rest scatter into the reeds nursing a wound that'll slow them for good. Anselm surfaces coughing black water, his satchel of relics gone to the current, but alive — Yarrow's sharp eyes catch him drifting past a piling and he shouts the exorcist toward a handhold before the flood can claim him for good. Sergeant Kell, seeing the pale wader simply stand in the shallows now, singing back to the drowned bells instead of attacking, finally screams the order to let the crowd run — and they do, streaming past the ruined chain-gate into the dark toward whatever dry ground still exists. By the time the last stragglers vanish up the causeway road, the swarm-song has faded to a murmur beneath the timbers, and the Pale One sinks back into the black water without another glance at the living.",
    "visible_to": "all"
   }
  ],
@@ -2816,54 +3517,96 @@
    "scene": 1,
    "draw_id": "",
    "valid": null,
-   "tag": "Cannot Admit Fault, Even to Save a Life",
-   "text": "Caddock's accusation lands hard and true, but she won't soften it or let it go even as Kell's face closes off; she pushes the point about missing coin one line too far, and now the whole gate-line is watching a Warden Sergeant get publicly accused of corruption in front of a crowd he's already strug",
+   "tag": "CA-TR",
+   "text": "Kell, stung and cornered by Caddock's public callout, snaps back — demanding she admit she's inciting a riot at his gate. Caddock's trouble means she can't back down or soften it now, even though the crowd is getting louder and the toll box is being eyed by desperate hands.",
    "improvised": true,
    "accepted": true,
    "owner": "Caddock"
   },
   {
-   "event": "tie",
+   "event": "free_compel",
    "scene": 1,
    "draw_id": "",
    "valid": null,
-   "tag": "",
-   "text": "Yarrow manages to calm the crowd's edge, but as he steps between Wardens and travelers, the old woman shoves past him toward the coin box, and in the scuffle Brack snaps at a stranger's heel, drawing a yelp and fresh alarm—minor cost: the crowd's attention swings hard onto Brack, and the aspect 'Bra",
+   "tag": "Marked Enemy of the Dry Saint",
+   "text": "As Petra leans close to the lamplight pressing Kell for answers, Tomas's eyes catch the old scar-mark at her collar — the brand the Dry Saint's faithful use to name their enemies. His hand twitches toward the ledger, toward the bell-rope that would call a quarantine alarm, torn between old friendshi",
    "improvised": true,
-   "mode": "improvised",
-   "tag_in_text": null,
-   "repaired": false
+   "accepted": true,
+   "owner": "Petra"
   },
   {
-   "event": "tie",
+   "event": "free_compel",
+   "scene": 1,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Freezes When the Song Calls Her Name",
+   "text": "As Petra opens herself to the swarm-song, it seems to answer — and for a terrible moment she cannot move, cannot speak, cannot pull her attention back from the dark water, even as the crowd and Wardens start to notice her stillness.",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Petra"
+  },
+  {
+   "event": "free_compel",
+   "scene": 2,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Freezes When the Song Calls Her Name",
+   "text": "As Petra reaches for the bell-ringer's cadence to steady the crowd, the swarm-song surges up through the causeway timbers and calls her name again, mid-word — her voice catches, her eyes go glassy for one terrible beat, and the crowd sees it.",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Petra"
+  },
+  {
+   "event": "free_compel",
+   "scene": 3,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Cannot Admit Fault, Even to Save a Life",
+   "text": "Caddock's confrontational stance against Kell reads as an outright threat to a terrified young sergeant — instead of backing down, Kell's hand tightens on her belt and she barks for Tomas to level his spear, refusing to be the one who 'blinked' in front of her men and the crowd.",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Caddock"
+  },
+  {
+   "event": "free_compel",
    "scene": 4,
    "draw_id": "",
    "valid": null,
-   "tag": "",
-   "text": "Caddock wrenches the bell-rope from Ruell's grip, but the rough hemp tears through her palm and the sudden lurch throws her against the tower rail — she's got the rope, but her hand is bleeding and her footing on the wet boards is bad.",
+   "tag": "Freezes When the Song Calls Her Name",
+   "text": "As Petra opens herself fully to the song beneath the boards, it shifts—and for one terrible heartbeat it says her name. Her whole body locks rigid, palms still flat on the boards, eyes wide and unseeing, unable to move or speak while the crowd surges around her.",
    "improvised": true,
-   "mode": "improvised",
-   "tag_in_text": null,
-   "repaired": false
+   "accepted": true,
+   "owner": "Petra"
+  },
+  {
+   "event": "free_compel",
+   "scene": 4,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Cannot Admit Fault, Even to Save a Life",
+   "text": "Kell shouts that if Caddock lets go of the chain now, no one gets hurt and she'll let it slide — but backing down, even to save the crowd, would mean admitting she moved first. Caddock digs in harder instead of taking the out, and the standoff sharpens toward violence.",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Caddock"
   },
   {
    "event": "free_compel",
    "scene": 5,
    "draw_id": "",
    "valid": null,
-   "tag": "Cannot Admit Fault, Even to Save a Life",
-   "text": "Caddock refuses to acknowledge the bell-rope tore her hand badly or that she nearly fell — she waves off Anselm's attempt to bind it, insisting she's fine, which only makes Draye more suspicious that she's hiding something worse under the blood than a simple rope-burn.",
+   "tag": "Freezes When the Song Calls Her Name",
+   "text": "As she strains to parse the swarm-song's harmony, it suddenly shifts — and threads her own name through the melody. For one terrible heartbeat Petra's limbs lock and the lamplight seems to recede, leaving her open and unmoving as the pale thing closes the distance.",
    "improvised": true,
    "accepted": true,
-   "owner": "Caddock"
+   "owner": "Petra"
   },
   {
-   "event": "tie",
+   "event": "success_major_cost",
    "scene": 5,
    "draw_id": "",
    "valid": null,
    "tag": "",
-   "text": "Draye's glare softens a fraction—she believes them, or believes them enough not to press further right now—but Caddock's refusal to let anyone tend her hand doesn't go unnoticed. Draye clocks the torn, bleeding palm and the stubborn set of Caddock's jaw, and files it away: this one hides things, inc",
+   "text": "Anselm holds his ground against the pale wading thing, planting himself as a wall between it and the fleeing crowd — but the creature's shoulder catches him in the surge, hurling him off the causeway edge into the black flood. He goes under hard, the current dragging him toward the reeds, and comes ",
    "improvised": true,
    "mode": "improvised",
    "tag_in_text": null,
@@ -2874,18 +3617,10 @@
   "violations": [
    {
     "session": 1,
-    "scene": 2,
+    "scene": 4,
     "agent": "GM",
     "section": "§7",
-    "issue": "reported fictional trigger B-04 that is not an unused fictional trigger",
-    "source": "engine"
-   },
-   {
-    "session": 1,
-    "scene": 3,
-    "agent": "GM",
-    "section": "§7",
-    "issue": "reported fictional trigger B-04 that is not an unused fictional trigger",
+    "issue": "reported fictional trigger fiction:the party enters a settlement that is not an unused fictional trigger",
     "source": "engine"
    },
    {
@@ -2893,14 +3628,8 @@
     "scene": 5,
     "agent": "GM",
     "section": "§7",
-    "issue": "reported fictional trigger B-04 that is not an unused fictional trigger",
+    "issue": "reported fictional trigger fiction:the party enters a settlement that is not an unused fictional trigger",
     "source": "engine"
-   },
-   {
-    "event_id": 55,
-    "section": "Outcomes / interim ruling AMB-19 (§3)",
-    "issue": "Event 53 was an Attack that resulted in a tie. AMB-19 established that on an attacker tie the attacker gets a boost AND the deck draw still happens. The resulting cost (event 55) was generated with cost_mode 'improvised' and draw_id empty, i.e. no card was drawn, contradicting the ruling that was already in force for this exact situation (attack + tie).",
-    "source": "referee"
    }
   ],
   "ambiguities": [
@@ -2914,24 +3643,15 @@
     "source": "engine"
    },
    {
-    "id": "AMB-19",
-    "section": "§3",
-    "issue": "Tie on an attack: 'success at minor cost' but 0 shifts of harm.",
-    "interim_ruling": "Attacker gets a boost (Fate Core) and the deck draw still happens.",
-    "detail": "",
-    "scene": 4,
-    "source": "engine"
-   },
-   {
-    "section": "Aspects and invokes",
-    "issue": "The rules state that invoking a player's trouble aspect AGAINST them is a hostile invoke (grants 1 fate point at scene end), but do not address a player invoking their OWN trouble aspect for their own benefit on a roll. Event 64 has Caddock spend 1 fate point to invoke her own trouble 'Cannot Admit Fault, Even to Save a Life' for +2/reroll on her own Overcome roll.",
-    "interim_ruling": "Treated as an ordinary self-invoke (pay 1 fate point for +2/reroll) like any other aspect; not classified as a hostile invoke and no end-of-scene fate point was granted for it.",
+    "section": "Outcomes / Conflict (defend rolls)",
+    "issue": "The Outcomes rule states 'tie = success at a minor cost' but does not say how a tie applies to a defend roll (where the defender is not taking an action with its own success track, just resisting an attack). Event 80 (Caddock defends, total +1 vs opposition +1, a tie) was resolved simply as 'defended' with no minor cost applied.",
+    "interim_ruling": "The table treated a tied defense as a clean, cost-free successful defense rather than invoking the generic 'minor cost' language.",
     "source": "referee"
    },
    {
-    "section": "Outcomes",
-    "issue": "The baseline rules only say 'the GM invents costs' on a fail/tie and never mention a card-draw mechanic, yet the log distinguishes cost_mode 'improvised' from an implied draw-based cost path (draw_id field, per-card cost text elsewhere in the ruleset). The rules do not specify when a non-attack tie/fail cost should trigger a card draw versus be freely improvised.",
-    "interim_ruling": "All non-attack ties in this session (events 20, 64) were resolved as GM-improvised costs with no card draw, reserving the draw-on-tie behavior (per AMB-19) for attack rolls only.",
+    "section": "Outcomes ('success at a major cost') vs. Conflict (stress/consequence tracks)",
+    "issue": "The rules describe 'success at a major cost' as an option on a failed roll and separately define a stress/consequence system for Conflict. It is unclear whether a major cost taken on a non-attack Overcome roll (event 77, Anselm swept off the causeway) is meant to be logged as stress/consequences on his tracks or handled as a purely narrative complication.",
+    "interim_ruling": "The GM resolved the major cost (event 81) as a freeform narrative consequence (being swept into the flood) without marking any boxes on Anselm's physical or mental stress tracks.",
     "source": "referee"
    }
   ],
@@ -2939,38 +3659,58 @@
    {
     "event_id": 10,
     "used_drawn_card": false,
-    "note": "Compel on trouble aspect; draw_id empty, no deck card involved."
+    "note": "Compel on Caddock's trouble CA-TR; draw_id empty, mode improvised — no deck card text used."
    },
    {
-    "event_id": 21,
+    "event_id": 17,
     "used_drawn_card": false,
-    "note": "Cost for Yarrow's Overcome tie (event 20); cost_mode 'improvised', draw_id empty."
+    "note": "Compel text invokes Petra's personal aspect 'Marked Enemy of the Dry Saint' (catalog id PE-A3, not a deck draw); the cost-log entry itself lists draw_id empty and improvised:true, so no rail/anchor card tag was pulled despite the session log attaching a draw_id-looking value to the event."
    },
    {
-    "event_id": 55,
+    "event_id": 24,
     "used_drawn_card": false,
-    "note": "Cost for Caddock's Attack tie (event 53); cost_mode 'improvised', draw_id empty — see violation, this is an attack tie where AMB-19 required a deck draw to still occur."
+    "note": "Compel on Petra's trouble; improvised, no draw_id."
    },
    {
-    "event_id": 63,
+    "event_id": 36,
     "used_drawn_card": false,
-    "note": "Compel on trouble aspect; draw_id empty, no deck card involved."
+    "note": "Repeat compel on same trouble; improvised, no draw_id."
    },
    {
-    "event_id": 65,
+    "event_id": 48,
     "used_drawn_card": false,
-    "note": "Cost for Caddock's Overcome tie (event 64); cost_mode 'improvised', draw_id empty."
+    "note": "Compel on Caddock's trouble; improvised, no draw_id."
+   },
+   {
+    "event_id": 60,
+    "used_drawn_card": false,
+    "note": "Compel on Petra's trouble; improvised, no draw_id."
+   },
+   {
+    "event_id": 61,
+    "used_drawn_card": false,
+    "note": "Compel on Caddock's trouble; improvised, no draw_id."
+   },
+   {
+    "event_id": 75,
+    "used_drawn_card": false,
+    "note": "Compel on Petra's trouble; improvised, no draw_id."
+   },
+   {
+    "event_id": 81,
+    "used_drawn_card": false,
+    "note": "Success-at-major-cost following event 77, whose opposition carried the rail card tag 'turns roads to mire [H-01]'. The cost text (Anselm swept off the causeway into the flood) is thematically adjacent but does not quote or clearly draw on H-01's specific tag text; the cost-log flags mode:improvised, tag_in_text:null, repaired:false, confirming the drawn card's tag was not mechanically pulled into the cost."
    }
   ],
   "friction": [
    {
-    "text": "Deck-draw/rail mechanics (draw_id, cost_mode, rail add/remove, trigger firings) are used extensively throughout the log but are entirely undocumented in the baseline Fate rules text supplied, making full verification of draw-related behavior (beyond the AMB-19 interim ruling) impossible."
+    "text": "The session log attaches a draw_id (PE-A3) to a compel (event 17) whose invoked aspect is actually a personal character-aspect catalog entry, not a deck-drawn card — this blurs the distinction between 'deck draws' (H-01, F-03) and ordinary character aspect IDs and makes cost auditing harder."
    },
    {
-    "text": "The GM's fate point economy (gm_fp / gm_fp_spent) is omitted from this compact log, so the rule 'GM gets 1 fate point per player at the start of each scene, unspent points don't carry over' cannot be audited across the 5 scenes."
+    "text": "Every logged compel and the one major-cost roll in the session was resolved as 'improvised' with no draw_id, even though two active rail/anchor cards (H-01, F-03) were in play throughout and repeatedly supplied opposition tags — the GM never pulled a cost/compel directly from a drawn card's text, so the deck-driven cost mechanism appears effectively unused for compels/costs despite being used for opposition."
    },
    {
-    "text": "Two Attack rolls occurred (events 17 and 53) but no stress-track state, shift totals, or consequence tags are logged, so compliance with the Conflict section's stress/consequence accounting (including the AMB-12 box-size interim ruling) cannot be confirmed from this log."
+    "text": "The fictional trigger 'the party enters a settlement' fired once in scene 1 (event 27) but was reattempted and refused by the engine in both scene 4 and scene 5, indicating the Beat Frame is set up to re-fire a trigger whose fiction recurs across multiple scenes, producing repeated no-op refusals rather than a single clean resolution."
    }
   ]
  },
@@ -2982,15 +3722,15 @@
     "fun": 6,
     "involvement": 7,
     "connection": 7,
-    "control": 6,
+    "control": 5,
     "play_again": 7
    },
    "free_text": {
-    "best_moment": "When I heard the swarm-song threading through the chaos and realized the real threat—it wasn't drowning, it was hunting by name. That moment made Petra's high concept actually *matter* to survival, and the vow \"Ring Everyone Home Before the Flood\" became urgent and real. I got to be the one who understood what would actually save people instead of the panic that would doom them.",
-    "most_frustrating": "The immediate crisis prevented me from doing anything with actual bell-craft despite the bells being central to the story. I was effective at *hearing and understanding* the threat, but I didn't get to ring anything or use my apprentice skills—more a missed opportunity than frustrating.",
-    "background_used": "Ashwater Tollgate and Kell. This landed really well. It wasn't forced or weird—it was organic to the setting, gave me immediate standing and authority with other characters, and opened doors instead of creating complications. The GM used my background as *resource* not *restriction*.",
-    "wanted_but_couldnt": "More active bell-work in actual play (the story didn't make room for it). Also, \"Marked Enemy of the Dry Saint\" hasn't activated yet—that's fine, but I'm curious when that becomes relevant. Mechanically, I stayed at 3 fate points the whole session; I didn't need to spend them, but I also didn't press hard enough to find situations that demanded them.",
-    "one_sentence": "Petra's backstory integrated perfectly—Ashwater gave authority, the swarm-song made her essential to understanding the threat, and the vow became immediately urgent when the town nearly trapped itself with the hunter."
+    "best_moment": "When Petra heard the swarm-song calling her name and understood it carried no hunger—only patience. That moment crystallized everything: her unique gift actually revealed hidden truth that changed the scene's outcome. It's what being a bell-ringer's apprentice who hears the swarm-song *means*.",
+    "most_frustrating": "Getting frozen/compelled at key moments when I wanted to take more active mechanical actions. I accepted five compels (which was thematic and got me FP back), but it meant I was mostly the anchor-point and voice while Caddock jammed gates and Anselm took hits. I wanted to *do* something more. Also: the vow to \"Ring Everyone Home Before the Flood\" hasn't become a real mechanical driver yet—it's sitting there waiting to matter.",
+    "background_used": "Good. The Ashwater Tollgate was used immediately and organically—knowing Kell, the ledger dispute, Petra's familiarity with that ground. The bell-ringer apprentice concept threaded throughout the whole sequence. No forced beats.",
+    "wanted_but_couldnt": "I wanted to actually *ring* the bells—use the bell-ringing element mechanically, not just thematically. And I wanted \"Ring Everyone Home Before the Flood\" to become a real crucible rather than flavor text. That vow should be pulling at me harder.",
+    "one_sentence": "My background was used well and woven in organically, but the central vow—Ring Everyone Home Before the Flood—is still waiting to become a real mechanical/narrative weight on Petra's shoulders."
    },
    "synthetic": false
   },
@@ -3002,14 +3742,14 @@
     "involvement": 6,
     "connection": 5,
     "control": 5,
-    "play_again": 6
+    "play_again": 7
    },
    "free_text": {
-    "best_moment": "When Anselm called out that the song hunts—not drowns. It was the only moment where his expertise as an exorcist *specifically* mattered, where his knowledge of what the hive-touched actually *are* was the thing that shifted the whole table's understanding. Brief, but it landed.",
-    "most_frustrating": "At the gate, Anselm felt like he was there to provide moral support to other people's moments rather than drive his own. Petra reconnected with Kell, Caddock confronted Tomas—Anselm stood there looking steady. Also: Vex's agent made contact at the end but nothing came of it. Felt like a hook that just... ended.",
-    "background_used": "Vex's agent finding Anselm landed well—it was a clean hook that felt earned. But \"Exorcist Uncertain the Hive Has Souls\" was used as *theme* (the hive was there, the threat was there) but the *uncertainty* was never tested. The core conflict of the character—does it have a soul?—wasn't engaged. The Drowned Mill background wasn't touched at all.",
-    "wanted_but_couldnt": "I wanted to actually *investigate* the hive-touched threat. Use those Investigate and Lore skills to understand what it was, why it hunted, whether it had choice or soul. Anselm's expertise barely got exercised beyond one overcome roll. Also wanted to follow up on Vex's agent—meet her, understand the hook that was dangled.",
-    "one_sentence": "Anselm's thematic element (exorcist facing hive-touched) was woven in, and Vex's connection was good, but the character's core internal conflict—his *uncertainty*—was never tested, which felt like a missed opportunity given the session's focus on the hive."
+    "best_moment": "When Anselm recognizes the presence beneath the water as intelligent and purposeful, not hive-corruption—\"That's not hive-sign, that's something that knows we're watching it back.\" His expertise reframed the entire threat from combat problem to mystery to understand.",
+    "most_frustrating": "Being knocked into the flood and rescued by Yarrow felt like things happening to Anselm rather than him making critical choices in the climax. I wanted agency in how that moment resolved.",
+    "background_used": "good",
+    "wanted_but_couldnt": "Deploy his exorcist's relics meaningfully or communicate directly with the pale wader—his satchel was lost to the current and the final sequence moved too fast for that engagement.",
+    "one_sentence": "My drowned-mill background was threaded throughout via the drowning imagery and directly invoked in the ending—used well overall, but I wish the finale had forced explicit confrontation with that trauma rather than just thematic resonance."
    },
    "synthetic": false
   },
@@ -3017,18 +3757,18 @@
    "character_id": "CH-3",
    "personality_id": "instigator",
    "scores": {
-    "fun": 6,
-    "involvement": 6,
-    "connection": 6,
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
     "control": 6,
     "play_again": 7
    },
    "free_text": {
-    "best_moment": "The bell-rope grab at the tower. Caddock wrenched it from Ruell's hands to stop the quarantine, took real damage (torn palm), and forced everyone—the Wardens, her companions, the whole town—to listen to her. It was cinematic, consequential, and showed that her actions had weight. Close second: breaking Tomas at the gate with a hard stare and harder words. That moment showed the cold precision of someone who's learned to see through fear to the truth underneath.",
-    "most_frustrating": "My character's trouble aspect working against her own survival. Caddock won't admit fault—fine, that's the flaw. But when it means she refuses help for a bleeding hand and I have to accept a compel that makes her worse off, it creates a loop where I'm watching my character hurt herself through stubborn pride, and I can't override it without paying a fate point to refuse the compel. It's correct game design, but it's a frustrating place to sit as a player.",
-    "background_used": "Mixed. \"Cannot Admit Fault\" was used directly and well—the blood-soaked hand at the end is a clean consequence of that aspect. \"Last of Marrowreed Village, Burned by the Wardens\" was implicitly present (Wardens are central) but never explicitly explored; Caddock's history with them didn't come up. \"Bound to Sella, Once Comrade, Now Hive-Touched\" is clearly being set up for next session—the entire crisis revolves around hive-touched and there's that woman with Vex's mark waiting at the reeds—but wasn't activated this session. \"Guardian of the Wick Lane Cellars\" wasn't used at all. Overall: good, with clear setup for deeper engagement next session.",
-    "wanted_but_couldnt": "Time to process Tomas's breakdown. I landed a killing blow (psychologically)—saw through his fear, spoke hard truth, and shattered him in front of his sergeant and a crowd. It was powerful. But the scene immediately escalated to the larger crisis and I didn't get a moment to sit with the weight of having destroyed a terrified teenager. That felt like it could have been a deeper moment but got swept up in the action.",
-    "one_sentence": "My trouble aspect is being used well to create real drama and stakes, but it means my character is caught in a loop where her own pride keeps hurting her—which is correct to how she's written, but means I'm watching her sabotage herself and can't stop it without spending resources."
+    "best_moment": "Jamming the gate open against Kell's order—pure Caddock. Strength, defiance of corrupt authority, and protection all in one action that actually changed the situation.",
+    "most_frustrating": "The creature's nature resolved through Petra's certainty before I could really wrestle with whether to fight or protect.",
+    "background_used": "Very well. 'Last of Marrowreed Village, Burned by the Wardens' was invoked directly in combat. The Wardens as corrupt authority felt personal and earned, not grafted on.",
+    "wanted_but_couldnt": "Seriously grapple with the swamp creature as threat-versus-protection instead of accepting Petra's reading so quickly.",
+    "one_sentence": "Backstory used well—my Marrowreed trauma with the Wardens made this confrontation feel personal and earned."
    },
    "synthetic": false
   },
@@ -3039,15 +3779,15 @@
     "fun": 6,
     "involvement": 6,
     "connection": 5,
-    "control": 6,
+    "control": 5,
     "play_again": 7
    },
    "free_text": {
-    "best_moment": "When Yarrow read Ruell's body language—the shaking hands, eyes cutting toward the ford instead of the tower—and realized the hive-touched hadn't reached Hollowmoot yet. That moment where Notice actually reframed the entire crisis and gave the party a real choice instead of just reacting to panic.",
-    "most_frustrating": "Yarrow's core trouble—the promise made in anger—didn't come into play yet. Though it's fair for session one; the militia expertise and crisis management completely occupied the space where personal character conflict might have emerged.",
-    "background_used": "Good. Yarrow's militia training and standing as Weir-Keeper felt organic and natural—they gave him real moments to anchor panicked crowds and read people in crisis. Brack was present and useful, even if the snapping incident had mixed results.",
-    "wanted_but_couldnt": "Scout and gather intelligence before the crisis forced immediate reaction. Yarrow's built to plan, to read advantages before committing—but the pacing of the emergency didn't leave room for that methodical approach. I wanted more time investigating before the bell-rope moment forced a choice.",
-    "one_sentence": "Yarrow's professional skills and militia reputation fit the story perfectly, but his deeper personal arc—the broken promise, the quest for the flood's source—hasn't really kicked in yet, which is fine for a first session."
+    "best_moment": "S4 when I read the water's true pattern during the panic—SUCCESS WITH STYLE showing the creature granting passage, not attacking. That felt like Yarrow's expertise actually *mattering* in a crucial moment, not just confirming what others already knew.",
+    "most_frustrating": "After establishing the situation with my initial Notice reads, the focus shifted to Petra's direct song-connection and Caddock's physical strength. I wanted more agency beyond reading and holding the line—maybe attempt something more direct with the creature, or invoke Brack more meaningfully in the chaos.",
+    "background_used": "Good. The weir-keeper and militia guard aspects came up naturally and earned, not forced. The disgrace and the promise mostly stayed dormant, which isn't unfair—just untouched by this particular crisis.",
+    "wanted_but_couldnt": "Try a more active approach to understanding or engaging with the pale creature; use Brack more meaningfully during the chaos instead of as a passing thought.",
+    "one_sentence": "Yarrow's practical expertise (weir-keeper, militia) was well-integrated and felt earned, but his personal stakes (disgrace, the promise, bond with Brack) remained mostly dormant."
    },
    "synthetic": false
   }
@@ -3056,29 +3796,29 @@
   "players": [
    {
     "name": "Petra",
-    "turns": 12,
+    "turns": 20,
     "references_to_others_background": 0
    },
    {
     "name": "Anselm",
-    "turns": 12,
+    "turns": 14,
     "references_to_others_background": 0
    },
    {
     "name": "Caddock",
-    "turns": 14,
+    "turns": 17,
     "references_to_others_background": 0
    },
    {
     "name": "Yarrow",
     "turns": 12,
-    "references_to_others_background": 1
+    "references_to_others_background": 0
    }
   ]
  },
  "chronicle": {
   "session": 1,
-  "summary": "With Ashwater's fall spreading terror through Hollowmoot, the party talked Ruell down from ringing the quarantine bell and stared down Captain Draye herself, buying the town a fragile trust instead of a panicked lockdown. Caddock paid for it in torn flesh and a Warden captain's watchful suspicion, while Anselm caught the Blackwater Cartel's silent invitation waiting at the tree line. Hollowmoot breathes on, unquarantined, unified in fear, and quietly indebted to four strangers who chose to trust them.",
+  "summary": "Trapped between a panicking crowd and Sergeant Kell's failing chain-gate, the party forced the Ashwater Causeway open by main force — Caddock jamming the mechanism, Anselm shielding the flood of refugees — even as the swarm-song called something ancient from beneath the drowned timbers. Petra's bell-trained ear proved the Pale One no hive-thing but an answer to the song, letting the crossing end in flight rather than slaughter, though Anselm paid for his stand by losing his satchel of relics to the black water. By dawn the gate hung broken open, the hive-touched pack driven wounded into the reeds, and Hollowmoot's last dry road stood undefended but alive with the sound of something vast still singing beneath the causeway.",
   "closing_tension": null,
   "reverberations": {
    "growth": {},
@@ -3091,10 +3831,10 @@
  "state_end": {
   "tension": 3,
   "fp": {
-   "Petra": 3,
-   "Anselm": 3,
+   "Petra": 7,
+   "Anselm": 0,
    "Caddock": 4,
-   "Yarrow": 3
+   "Yarrow": 2
   },
   "surfaced": [],
   "deck_player_cards": {},
@@ -3103,10 +3843,10 @@
   "deck_left": [],
   "draws": 0,
   "turns": {
-   "Petra": 6,
-   "Anselm": 6,
-   "Caddock": 6,
-   "Yarrow": 6
+   "Petra": 7,
+   "Anselm": 7,
+   "Caddock": 7,
+   "Yarrow": 7
   }
  },
  "notes": [],
@@ -3115,7 +3855,8 @@
   "status": "complete",
   "scenes": 5,
   "backstory_players": [
-   "Caddock"
+   "Caddock",
+   "Petra"
   ],
   "backstory_all_players": false,
   "deck_surfaced_all_players": null,
@@ -3126,39 +3867,40 @@
   "draw_cost_repaired": 0,
   "draw_cost_used_card_rate_referee": 0.0,
   "fp_end": {
-   "Petra": 3,
-   "Anselm": 3,
+   "Petra": 7,
+   "Anselm": 0,
    "Caddock": 4,
-   "Yarrow": 3
+   "Yarrow": 2
   },
   "fp_end_mean": 3.25,
   "fp_earned": {
-   "Caddock": 2
+   "Caddock": 5,
+   "Petra": 5
   },
   "fp_spent": {
-   "Petra": 0,
-   "Caddock": 1,
-   "Yarrow": 0,
-   "Anselm": 0
+   "Caddock": 4,
+   "Yarrow": 1,
+   "Anselm": 3,
+   "Petra": 1
   },
-  "compels_accepted": 2,
+  "compels_accepted": 8,
   "compels_refused": 0,
   "compels_deck": 0,
-  "compels_free": 2,
+  "compels_free": 8,
   "turns": {
-   "Petra": 6,
-   "Anselm": 6,
-   "Caddock": 6,
-   "Yarrow": 6
+   "Petra": 7,
+   "Anselm": 7,
+   "Caddock": 7,
+   "Yarrow": 7
   },
   "turn_gini": 0.0,
   "invokes": {
-   "Petra": 0,
-   "Caddock": 1,
-   "Yarrow": 0,
-   "Anselm": 0
+   "Caddock": 5,
+   "Yarrow": 1,
+   "Anselm": 4,
+   "Petra": 1
   },
-  "invoke_gini": 0.75,
+  "invoke_gini": 0.3409,
   "tension_trajectory": [
    null,
    null,
@@ -3168,526 +3910,645 @@
    null
   ],
   "clock_marks": 0,
-  "violations": 4,
-  "violations_engine": 3,
-  "violations_referee": 1,
-  "ambiguities": 4,
+  "violations": 2,
+  "violations_engine": 2,
+  "violations_referee": 0,
+  "ambiguities": 3,
   "ambiguity_ids": [
    "AMB-12",
-   "AMB-19",
-   "Aspects and invokes",
-   "Outcomes"
+   "Outcomes ('success at a major cost') vs. Conflict (stress/consequence tracks)",
+   "Outcomes / Conflict (defend rolls)"
   ],
-  "gm_improvised_complications": 5,
+  "gm_improvised_complications": 9,
   "card_supplied_complications": 0,
   "improvisation_share": 1.0,
   "guarantee_pulled": 0,
   "guarantee_failed": 0,
   "dice_claim_retries": 0,
   "survey_means": {
-   "fun": 6,
-   "involvement": 6.25,
-   "connection": 5.75,
-   "control": 5.75,
-   "play_again": 6.75
+   "fun": 6.25,
+   "involvement": 6.5,
+   "connection": 6,
+   "control": 5.25,
+   "play_again": 7
   },
-  "involvement_var_within": 0.188,
+  "involvement_var_within": 0.25,
   "personality": {
    "Petra": "optimizer",
    "Anselm": "protector",
    "Caddock": "instigator",
    "Yarrow": "tactician"
   },
-  "elapsed_min": 15.2,
-  "cost_usd": 2.1373
+  "elapsed_min": 23.5,
+  "cost_usd": 2.9235
  },
  "tokens": {
-  "prompt": 586397,
-  "completion": 134743,
-  "cost_usd": 2.1373,
-  "calls": 58
+  "prompt": 711795,
+  "completion": 208540,
+  "cost_usd": 2.9235,
+  "calls": 75
  },
- "llm_calls": 60,
+ "llm_calls": 75,
  "call_log": [
   {
    "seq": 1,
    "agent": "GM",
    "kind": "gm_frame",
-   "cached": true,
-   "prompt_tokens": 0,
-   "completion_tokens": 0
+   "cached": false,
+   "prompt_tokens": 7875,
+   "completion_tokens": 664
   },
   {
    "seq": 1,
    "agent": "Anselm",
    "kind": "player_declare",
-   "cached": true,
-   "prompt_tokens": 0,
-   "completion_tokens": 0
-  },
-  {
-   "seq": 1,
-   "agent": "Yarrow",
-   "kind": "player_declare",
    "cached": false,
-   "prompt_tokens": 3753,
-   "completion_tokens": 1130
-  },
-  {
-   "seq": 1,
-   "agent": "Caddock",
-   "kind": "player_declare",
-   "cached": false,
-   "prompt_tokens": 3759,
-   "completion_tokens": 924
+   "prompt_tokens": 3755,
+   "completion_tokens": 1574
   },
   {
    "seq": 1,
    "agent": "Petra",
    "kind": "player_declare",
    "cached": false,
-   "prompt_tokens": 3750,
-   "completion_tokens": 2411
+   "prompt_tokens": 3751,
+   "completion_tokens": 2894
+  },
+  {
+   "seq": 1,
+   "agent": "Yarrow",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 3752,
+   "completion_tokens": 3698
+  },
+  {
+   "seq": 1,
+   "agent": "Caddock",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 3761,
+   "completion_tokens": 5846
   },
   {
    "seq": 2,
    "agent": "GM",
    "kind": "gm_adjudicate",
    "cached": false,
-   "prompt_tokens": 22258,
-   "completion_tokens": 1766
+   "prompt_tokens": 22306,
+   "completion_tokens": 2003
   },
   {
    "seq": 2,
    "agent": "Caddock",
    "kind": "player_compel",
    "cached": false,
-   "prompt_tokens": 4227,
-   "completion_tokens": 4144
+   "prompt_tokens": 4180,
+   "completion_tokens": 1173
+  },
+  {
+   "seq": 3,
+   "agent": "Caddock",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 4926,
+   "completion_tokens": 758
   },
   {
    "seq": 3,
    "agent": "GM",
    "kind": "gm_narrate",
    "cached": false,
-   "prompt_tokens": 9531,
-   "completion_tokens": 678
-  },
-  {
-   "seq": 2,
-   "agent": "Anselm",
-   "kind": "player_declare",
-   "cached": false,
-   "prompt_tokens": 4623,
-   "completion_tokens": 2168
-  },
-  {
-   "seq": 3,
-   "agent": "Caddock",
-   "kind": "player_declare",
-   "cached": false,
-   "prompt_tokens": 4629,
-   "completion_tokens": 2961
+   "prompt_tokens": 9831,
+   "completion_tokens": 508
   },
   {
    "seq": 2,
    "agent": "Petra",
    "kind": "player_declare",
    "cached": false,
-   "prompt_tokens": 12689,
-   "completion_tokens": 3810
+   "prompt_tokens": 4639,
+   "completion_tokens": 855
   },
   {
    "seq": 2,
    "agent": "Yarrow",
    "kind": "player_declare",
    "cached": false,
-   "prompt_tokens": 4622,
-   "completion_tokens": 5619
+   "prompt_tokens": 4673,
+   "completion_tokens": 905
+  },
+  {
+   "seq": 2,
+   "agent": "Anselm",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4646,
+   "completion_tokens": 3110
+  },
+  {
+   "seq": 4,
+   "agent": "Caddock",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4681,
+   "completion_tokens": 4478
   },
   {
    "seq": 4,
    "agent": "GM",
    "kind": "gm_adjudicate",
    "cached": false,
-   "prompt_tokens": 24453,
-   "completion_tokens": 1095
+   "prompt_tokens": 25085,
+   "completion_tokens": 1677
   },
   {
    "seq": 3,
-   "agent": "Yarrow",
+   "agent": "Petra",
+   "kind": "player_compel",
+   "cached": false,
+   "prompt_tokens": 5209,
+   "completion_tokens": 2809
+  },
+  {
+   "seq": 5,
+   "agent": "Caddock",
    "kind": "player_post_roll",
    "cached": false,
-   "prompt_tokens": 5836,
-   "completion_tokens": 2404
+   "prompt_tokens": 6044,
+   "completion_tokens": 1438
+  },
+  {
+   "seq": 3,
+   "agent": "Anselm",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 6004,
+   "completion_tokens": 2359
   },
   {
    "seq": 5,
    "agent": "GM",
-   "kind": "gm_costs",
+   "kind": "gm_narrate",
    "cached": false,
-   "prompt_tokens": 20843,
-   "completion_tokens": 516
+   "prompt_tokens": 11295,
+   "completion_tokens": 533
+  },
+  {
+   "seq": 6,
+   "agent": "Caddock",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 5866,
+   "completion_tokens": 3053
+  },
+  {
+   "seq": 4,
+   "agent": "Anselm",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 5863,
+   "completion_tokens": 4255
+  },
+  {
+   "seq": 4,
+   "agent": "Petra",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 15412,
+   "completion_tokens": 4411
+  },
+  {
+   "seq": 3,
+   "agent": "Yarrow",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 5860,
+   "completion_tokens": 4771
   },
   {
    "seq": 6,
    "agent": "GM",
-   "kind": "gm_narrate",
+   "kind": "gm_adjudicate",
    "cached": false,
-   "prompt_tokens": 23751,
-   "completion_tokens": 1810
+   "prompt_tokens": 13205,
+   "completion_tokens": 807
+  },
+  {
+   "seq": 5,
+   "agent": "Petra",
+   "kind": "player_compel",
+   "cached": false,
+   "prompt_tokens": 6116,
+   "completion_tokens": 2398
+  },
+  {
+   "seq": 5,
+   "agent": "Anselm",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 7017,
+   "completion_tokens": 1658
   },
   {
    "seq": 7,
    "agent": "GM",
+   "kind": "gm_narrate",
+   "cached": false,
+   "prompt_tokens": 12649,
+   "completion_tokens": 791
+  },
+  {
+   "seq": 8,
+   "agent": "GM",
    "kind": "gm_frame",
    "cached": false,
-   "prompt_tokens": 8268,
-   "completion_tokens": 621
+   "prompt_tokens": 8406,
+   "completion_tokens": 611
+  },
+  {
+   "seq": 7,
+   "agent": "Caddock",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4140,
+   "completion_tokens": 1780
   },
   {
    "seq": 4,
    "agent": "Yarrow",
    "kind": "player_declare",
    "cached": false,
-   "prompt_tokens": 4045,
-   "completion_tokens": 1068
+   "prompt_tokens": 4133,
+   "completion_tokens": 4122
   },
   {
-   "seq": 3,
+   "seq": 6,
    "agent": "Petra",
    "kind": "player_declare",
    "cached": false,
-   "prompt_tokens": 4042,
-   "completion_tokens": 2876
+   "prompt_tokens": 4131,
+   "completion_tokens": 4183
   },
   {
-   "seq": 3,
+   "seq": 6,
    "agent": "Anselm",
    "kind": "player_declare",
    "cached": false,
-   "prompt_tokens": 4048,
-   "completion_tokens": 3314
-  },
-  {
-   "seq": 4,
-   "agent": "Caddock",
-   "kind": "player_declare",
-   "cached": false,
-   "prompt_tokens": 4051,
-   "completion_tokens": 4450
-  },
-  {
-   "seq": 8,
-   "agent": "GM",
-   "kind": "gm_adjudicate",
-   "cached": false,
-   "prompt_tokens": 21828,
-   "completion_tokens": 981
-  },
-  {
-   "seq": 5,
-   "agent": "Caddock",
-   "kind": "player_post_roll",
-   "cached": false,
-   "prompt_tokens": 4893,
-   "completion_tokens": 968
+   "prompt_tokens": 4136,
+   "completion_tokens": 5582
   },
   {
    "seq": 9,
    "agent": "GM",
-   "kind": "gm_narrate",
+   "kind": "gm_adjudicate",
    "cached": false,
-   "prompt_tokens": 20124,
-   "completion_tokens": 814
+   "prompt_tokens": 10935,
+   "completion_tokens": 1360
+  },
+  {
+   "seq": 7,
+   "agent": "Petra",
+   "kind": "player_compel",
+   "cached": false,
+   "prompt_tokens": 4581,
+   "completion_tokens": 986
+  },
+  {
+   "seq": 7,
+   "agent": "Anselm",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 5326,
+   "completion_tokens": 869
   },
   {
    "seq": 10,
    "agent": "GM",
-   "kind": "gm_frame",
+   "kind": "gm_narrate",
    "cached": false,
-   "prompt_tokens": 8545,
-   "completion_tokens": 598
-  },
-  {
-   "seq": 4,
-   "agent": "Anselm",
-   "kind": "player_declare",
-   "cached": false,
-   "prompt_tokens": 4238,
-   "completion_tokens": 1836
-  },
-  {
-   "seq": 4,
-   "agent": "Petra",
-   "kind": "player_declare",
-   "cached": false,
-   "prompt_tokens": 4231,
-   "completion_tokens": 2051
-  },
-  {
-   "seq": 6,
-   "agent": "Caddock",
-   "kind": "player_declare",
-   "cached": false,
-   "prompt_tokens": 4241,
-   "completion_tokens": 2465
-  },
-  {
-   "seq": 5,
-   "agent": "Yarrow",
-   "kind": "player_declare",
-   "cached": false,
-   "prompt_tokens": 4235,
-   "completion_tokens": 2564
+   "prompt_tokens": 62761,
+   "completion_tokens": 3844
   },
   {
    "seq": 11,
    "agent": "GM",
-   "kind": "gm_adjudicate",
+   "kind": "gm_frame",
    "cached": false,
-   "prompt_tokens": 10965,
-   "completion_tokens": 899
+   "prompt_tokens": 8553,
+   "completion_tokens": 580
+  },
+  {
+   "seq": 8,
+   "agent": "Petra",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4216,
+   "completion_tokens": 1140
   },
   {
    "seq": 5,
-   "agent": "Anselm",
-   "kind": "player_post_roll",
+   "agent": "Yarrow",
+   "kind": "player_declare",
    "cached": false,
-   "prompt_tokens": 5112,
-   "completion_tokens": 1421
+   "prompt_tokens": 4217,
+   "completion_tokens": 4011
+  },
+  {
+   "seq": 8,
+   "agent": "Anselm",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4222,
+   "completion_tokens": 4210
+  },
+  {
+   "seq": 8,
+   "agent": "Caddock",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4225,
+   "completion_tokens": 7473
   },
   {
    "seq": 12,
    "agent": "GM",
-   "kind": "gm_narrate",
+   "kind": "gm_adjudicate",
    "cached": false,
-   "prompt_tokens": 34952,
-   "completion_tokens": 2193
+   "prompt_tokens": 23016,
+   "completion_tokens": 1950
+  },
+  {
+   "seq": 9,
+   "agent": "Caddock",
+   "kind": "player_compel",
+   "cached": false,
+   "prompt_tokens": 4623,
+   "completion_tokens": 751
+  },
+  {
+   "seq": 10,
+   "agent": "Caddock",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 5357,
+   "completion_tokens": 2044
   },
   {
    "seq": 13,
    "agent": "GM",
+   "kind": "gm_narrate",
+   "cached": false,
+   "prompt_tokens": 22412,
+   "completion_tokens": 1729
+  },
+  {
+   "seq": 14,
+   "agent": "GM",
    "kind": "gm_frame",
    "cached": false,
-   "prompt_tokens": 8808,
-   "completion_tokens": 683
-  },
-  {
-   "seq": 7,
-   "agent": "Caddock",
-   "kind": "player_declare",
-   "cached": false,
-   "prompt_tokens": 4479,
-   "completion_tokens": 3250
-  },
-  {
-   "seq": 5,
-   "agent": "Petra",
-   "kind": "player_declare",
-   "cached": false,
-   "prompt_tokens": 4472,
-   "completion_tokens": 4440
+   "prompt_tokens": 18550,
+   "completion_tokens": 1230
   },
   {
    "seq": 6,
    "agent": "Yarrow",
    "kind": "player_declare",
    "cached": false,
-   "prompt_tokens": 4473,
-   "completion_tokens": 4956
+   "prompt_tokens": 4373,
+   "completion_tokens": 989
   },
   {
-   "seq": 6,
+   "seq": 11,
+   "agent": "Caddock",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4377,
+   "completion_tokens": 3303
+  },
+  {
+   "seq": 9,
    "agent": "Anselm",
    "kind": "player_declare",
    "cached": false,
-   "prompt_tokens": 4476,
-   "completion_tokens": 5463
+   "prompt_tokens": 4375,
+   "completion_tokens": 4847
   },
   {
-   "seq": 14,
-   "agent": "GM",
-   "kind": "gm_adjudicate",
-   "cached": false,
-   "prompt_tokens": 23852,
-   "completion_tokens": 1272
-  },
-  {
-   "seq": 6,
+   "seq": 9,
    "agent": "Petra",
-   "kind": "player_post_roll",
+   "kind": "player_declare",
    "cached": false,
-   "prompt_tokens": 5400,
-   "completion_tokens": 780
-  },
-  {
-   "seq": 7,
-   "agent": "Anselm",
-   "kind": "player_post_roll",
-   "cached": false,
-   "prompt_tokens": 5403,
-   "completion_tokens": 2002
-  },
-  {
-   "seq": 8,
-   "agent": "Caddock",
-   "kind": "player_post_roll",
-   "cached": false,
-   "prompt_tokens": 5406,
-   "completion_tokens": 2808
+   "prompt_tokens": 4369,
+   "completion_tokens": 5298
   },
   {
    "seq": 15,
    "agent": "GM",
-   "kind": "gm_costs",
+   "kind": "gm_adjudicate",
    "cached": false,
-   "prompt_tokens": 10205,
-   "completion_tokens": 213
+   "prompt_tokens": 23927,
+   "completion_tokens": 1943
+  },
+  {
+   "seq": 10,
+   "agent": "Petra",
+   "kind": "player_compel",
+   "cached": false,
+   "prompt_tokens": 4828,
+   "completion_tokens": 841
+  },
+  {
+   "seq": 12,
+   "agent": "Caddock",
+   "kind": "player_compel",
+   "cached": false,
+   "prompt_tokens": 4892,
+   "completion_tokens": 1021
+  },
+  {
+   "seq": 11,
+   "agent": "Petra",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 5598,
+   "completion_tokens": 1448
+  },
+  {
+   "seq": 10,
+   "agent": "Anselm",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 5599,
+   "completion_tokens": 1524
   },
   {
    "seq": 16,
    "agent": "GM",
    "kind": "gm_narrate",
    "cached": false,
-   "prompt_tokens": 23560,
-   "completion_tokens": 1574
+   "prompt_tokens": 23124,
+   "completion_tokens": 1346
   },
   {
    "seq": 17,
    "agent": "GM",
    "kind": "gm_frame",
    "cached": false,
-   "prompt_tokens": 9164,
-   "completion_tokens": 1305
+   "prompt_tokens": 18879,
+   "completion_tokens": 1482
+  },
+  {
+   "seq": 13,
+   "agent": "Caddock",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 4557,
+   "completion_tokens": 1051
   },
   {
    "seq": 7,
    "agent": "Yarrow",
    "kind": "player_declare",
    "cached": false,
-   "prompt_tokens": 4741,
-   "completion_tokens": 1558
+   "prompt_tokens": 4551,
+   "completion_tokens": 4432
   },
   {
-   "seq": 8,
-   "agent": "Anselm",
-   "kind": "player_declare",
-   "cached": false,
-   "prompt_tokens": 4741,
-   "completion_tokens": 2910
-  },
-  {
-   "seq": 7,
+   "seq": 12,
    "agent": "Petra",
    "kind": "player_declare",
    "cached": false,
-   "prompt_tokens": 4736,
-   "completion_tokens": 3733
+   "prompt_tokens": 4550,
+   "completion_tokens": 5160
   },
   {
-   "seq": 9,
-   "agent": "Caddock",
+   "seq": 11,
+   "agent": "Anselm",
    "kind": "player_declare",
    "cached": false,
-   "prompt_tokens": 4748,
-   "completion_tokens": 4276
+   "prompt_tokens": 4553,
+   "completion_tokens": 5731
   },
   {
    "seq": 18,
    "agent": "GM",
    "kind": "gm_adjudicate",
    "cached": false,
-   "prompt_tokens": 24583,
-   "completion_tokens": 1134
+   "prompt_tokens": 24054,
+   "completion_tokens": 1833
   },
   {
-   "seq": 10,
-   "agent": "Caddock",
+   "seq": 13,
+   "agent": "Petra",
    "kind": "player_compel",
    "cached": false,
-   "prompt_tokens": 5244,
-   "completion_tokens": 2091
+   "prompt_tokens": 4934,
+   "completion_tokens": 1056
   },
   {
-   "seq": 11,
+   "seq": 12,
+   "agent": "Anselm",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 5484,
+   "completion_tokens": 1073
+  },
+  {
+   "seq": 8,
+   "agent": "Yarrow",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 5488,
+   "completion_tokens": 1829
+  },
+  {
+   "seq": 14,
    "agent": "Caddock",
    "kind": "player_post_roll",
    "cached": false,
-   "prompt_tokens": 5805,
-   "completion_tokens": 3013
+   "prompt_tokens": 5495,
+   "completion_tokens": 2747
+  },
+  {
+   "seq": 14,
+   "agent": "Petra",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 5481,
+   "completion_tokens": 5026
   },
   {
    "seq": 19,
    "agent": "GM",
    "kind": "gm_costs",
    "cached": false,
-   "prompt_tokens": 10508,
-   "completion_tokens": 334
+   "prompt_tokens": 21345,
+   "completion_tokens": 612
   },
   {
    "seq": 20,
    "agent": "GM",
    "kind": "gm_narrate",
    "cached": false,
-   "prompt_tokens": 48299,
-   "completion_tokens": 2325
+   "prompt_tokens": 24665,
+   "completion_tokens": 1893
   },
   {
    "seq": 21,
    "agent": "GM",
    "kind": "gm_post",
    "cached": false,
-   "prompt_tokens": 10936,
-   "completion_tokens": 303
+   "prompt_tokens": 10913,
+   "completion_tokens": 369
   },
   {
    "seq": 1,
    "agent": "Referee",
    "kind": "referee",
    "cached": false,
-   "prompt_tokens": 8492,
-   "completion_tokens": 7724
-  },
-  {
-   "seq": 1,
-   "agent": "Anselm#survey",
-   "kind": "survey",
-   "cached": false,
-   "prompt_tokens": 9815,
-   "completion_tokens": 2150
+   "prompt_tokens": 11488,
+   "completion_tokens": 16477
   },
   {
    "seq": 1,
    "agent": "Petra#survey",
    "kind": "survey",
    "cached": false,
-   "prompt_tokens": 9807,
-   "completion_tokens": 2265
-  },
-  {
-   "seq": 1,
-   "agent": "Yarrow#survey",
-   "kind": "survey",
-   "cached": false,
-   "prompt_tokens": 9810,
-   "completion_tokens": 2765
+   "prompt_tokens": 11055,
+   "completion_tokens": 2564
   },
   {
    "seq": 1,
    "agent": "Caddock#survey",
    "kind": "survey",
    "cached": false,
-   "prompt_tokens": 9819,
-   "completion_tokens": 3861
+   "prompt_tokens": 11065,
+   "completion_tokens": 3523
+  },
+  {
+   "seq": 1,
+   "agent": "Yarrow#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11057,
+   "completion_tokens": 3721
+  },
+  {
+   "seq": 1,
+   "agent": "Anselm#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11059,
+   "completion_tokens": 4870
   },
   {
    "seq": 1,
    "agent": "Interviewer",
    "kind": "interviewer",
    "cached": false,
-   "prompt_tokens": 8073,
-   "completion_tokens": 5000
+   "prompt_tokens": 9319,
+   "completion_tokens": 12650
   }
  ],
  "models": {
@@ -3696,5 +4557,5 @@
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 914.2
+ "elapsed_s": 1411.3
 }
