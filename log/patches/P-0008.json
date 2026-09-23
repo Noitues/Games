@@ -1,11 +1,25 @@
 {
   "patch_id": "P-0008",
-  "from": { "rules": "1.6.0", "roster": "1.6.0", "ai": "1.3.0" },
-  "to": { "rules": "1.6.1" },
+  "from": {
+    "rules": "1.6.0",
+    "roster": "1.6.0",
+    "ai": "1.3.0"
+  },
+  "to": {
+    "rules": "1.6.1"
+  },
   "lever_class": "economy",
   "changes": [
-    { "target": "rules:7.champion_kill_ap", "from": 1, "to": 3 },
-    { "target": "rules:6.4.death_bands", "from": "2 / 3 / 4 by round band", "to": "3 / 4 / 5" }
+    {
+      "target": "rules:7.champion_kill_ap",
+      "from": 1,
+      "to": 3
+    },
+    {
+      "target": "rules:6.4.death_bands",
+      "from": "2 / 3 / 4 by round band",
+      "to": "3 / 4 / 5"
+    }
   ],
   "evidence": "batch_0037, 120 games with five personalities drawn per game: sieger 86.5% [74.7, 93.3] against brawler 21.2% [12.2, 34.0], intervals nowhere near overlapping. A policy that groups and hunts kills loses four games in five to one that ignores it and hits towers.",
   "hypothesis": "Fighting is mispriced, not merely unrewarded. A kill pays 1 AP and a few rounds of the victim's cooldown; a tower pays 11 chips, which is 11 AP, and moves the win condition. Tripling what a kill pays and lengthening the window it opens should make the fight worth having without touching what the map is for.",
@@ -13,5 +27,45 @@
   "revert_if": "Median game length leaves 13-16 rounds, or any personality clears 80%, or champion kills per game more than double (a kill snowball is not the goal).",
   "side_effects": "Longer death timers mean a killed champion misses more of the game, which is a pacing lever as well as an economy one - games may shorten. Kills feeding AP couples combat to the shop, so item timings move. The warder and brawler should gain most; the sieger should lose least, since it was never fighting.",
   "pillar_change": false,
-  "note": "The two map-shaped levers - pricing objectives higher, or making towers need a wave present - are pillar-adjacent and were left alone for the lead designer."
+  "note": "The two map-shaped levers - pricing objectives higher, or making towers need a wave present - are pillar-adjacent and were left alone for the lead designer.",
+  "result": {
+    "verdict": "PASS on both metrics - adopted, but the field is not level yet",
+    "batches": {
+      "before": "batch_0037",
+      "after": "batch_0038",
+      "held_constant": "rules 1.6.0, roster 1.6.0, ai 1.3.0, tower HP 16, reveal radius 1"
+    },
+    "personalities": {
+      "sieger": [
+        86.5,
+        70.7
+      ],
+      "objective": [
+        68.2,
+        45.2
+      ],
+      "laner": [
+        52.2,
+        55.6
+      ],
+      "warder": [
+        21.7,
+        34.2
+      ],
+      "brawler": [
+        21.2,
+        35.4
+      ]
+    },
+    "success_metric": {
+      "brawler_above_35": "35.4% - met, barely",
+      "spread_below_40": "65 -> 36 points - met"
+    },
+    "revert_checks": {
+      "median_length": "15 rounds, in band",
+      "no_personality_above_80": "sieger 70.7%",
+      "kills_not_doubled": "2.52 -> 3.01 per game, up 19%"
+    },
+    "reading": "Pricing the fight worked: the two playstyles that were being punished for fighting gained 13 and 14 points, and the spread closed by nearly half. It did not level the field - the sieger still wins 70.7% and its interval [58.0, 80.8] sits clear of everything below the laner. Half the original gap is still there, so the objective lever the lead designer approved has work left to do. Note this batch ran at reveal radius 1, since it was launched before that ruling."
+  }
 }

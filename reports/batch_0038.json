@@ -1,0 +1,1348 @@
+{
+  "header": {
+    "batch_id": "batch_0038",
+    "rules": "1.6.0",
+    "roster": "1.6.0",
+    "ai": "1.3.0",
+    "games": 120,
+    "seed": 3801,
+    "matchup": {
+      "p1": "T2_search",
+      "p2": "T2_search",
+      "temperature": 0.3
+    },
+    "seat_swap": true,
+    "team_sampling": "random_by_role_no_duplicates",
+    "runtime_s": 4122.997503042221,
+    "generated": "2026-09-23 06:33:07",
+    "engine_tests": {}
+  },
+  "scorecard": [
+    {
+      "check": "Champion win rate within 45-55%",
+      "value": "1 FAIL / 24 INCONCLUSIVE of 25",
+      "verdict": "FAIL"
+    },
+    {
+      "check": "AP-cost ability usage 40-70% of affordable rounds",
+      "value": "50/58 abilities outside the band; roster mean 19.5%; 13 champions >15pp from it",
+      "verdict": "FAIL"
+    },
+    {
+      "check": "Priority (first player) win rate 48-52%",
+      "value": "48.3% [39.6, 57.2]",
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "check": "Median game length 13-18 rounds",
+      "value": "15.0 [14.0, 15.5]",
+      "verdict": "PASS"
+    },
+    {
+      "check": ">=95% of games end by Nexus kill before round 20",
+      "value": "96.7% [91.7, 98.7]",
+      "verdict": "INCONCLUSIVE"
+    },
+    {
+      "check": "No champion above 1.5x roster-mean AP per round",
+      "value": "ashwyn, pallas, quillan, sable, wisp (roster mean 2.45 AP/round)",
+      "verdict": "FAIL"
+    },
+    {
+      "check": "North vs South win rate 48-52%",
+      "value": "north 60.0% [51.1, 68.3]",
+      "verdict": "INCONCLUSIVE"
+    }
+  ],
+  "champions": [
+    {
+      "id": "ashwyn",
+      "wr": 60.60606060606061,
+      "wr_lo": 48.54840080039292,
+      "wr_hi": 71.49699950538046,
+      "games": 66,
+      "ap_per_round": 5.401799741405355,
+      "ap_rel": 2.2085938206306635,
+      "usage": {
+        "Q": 3.644646924829157,
+        "W": 71.98177676537586,
+        "E": 0.0,
+        "R": 16.514806378132118
+      },
+      "kills": 0.06060606060606061,
+      "deaths": 0.5151515151515151,
+      "rounds_dead": 1.5,
+      "rounds_cd": 0.0,
+      "conceal_attacks": 7.878787878787879,
+      "ap_share": 30.955580989672914,
+      "items": [
+        [
+          "ionian_charm",
+          66
+        ],
+        [
+          "long_sword",
+          66
+        ],
+        [
+          "longbow",
+          66
+        ]
+      ]
+    },
+    {
+      "id": "bastion",
+      "wr": 57.89473684210527,
+      "wr_lo": 42.192345343670546,
+      "wr_hi": 72.14749884224129,
+      "games": 38,
+      "ap_per_round": 2.3177970938002304,
+      "ap_rel": 0.947660517587255,
+      "usage": {
+        "Q": 81.92307692307692,
+        "W": 0.0,
+        "E": 0.0,
+        "R": 4.423076923076923
+      },
+      "kills": 0.2631578947368421,
+      "deaths": 0.15789473684210525,
+      "rounds_dead": 0.5,
+      "rounds_cd": 0.9210526315789473,
+      "conceal_attacks": 6.5,
+      "ap_share": 15.224382288874967,
+      "items": [
+        [
+          "cloth_armor",
+          38
+        ],
+        [
+          "long_sword",
+          38
+        ],
+        [
+          "ruby_crystal",
+          38
+        ]
+      ]
+    },
+    {
+      "id": "bramblehide",
+      "wr": 48.07692307692308,
+      "wr_lo": 35.104114445455515,
+      "wr_hi": 61.314317231943946,
+      "games": 52,
+      "ap_per_round": 1.9927958661168943,
+      "ap_rel": 0.8147796746236003,
+      "usage": {
+        "Q": 3.2367972742759794,
+        "W": 25.7679180887372,
+        "E": 0.5110732538330494,
+        "R": 29.814814814814813
+      },
+      "kills": 0.15384615384615385,
+      "deaths": 0.11538461538461539,
+      "rounds_dead": 0.34615384615384615,
+      "rounds_cd": 3.4615384615384617,
+      "conceal_attacks": 6.826923076923077,
+      "ap_share": 12.276823778038688,
+      "items": [
+        [
+          "long_sword",
+          52
+        ],
+        [
+          "ruby_crystal",
+          52
+        ],
+        [
+          "vampiric_blade",
+          52
+        ]
+      ]
+    },
+    {
+      "id": "brixa",
+      "wr": 50.0,
+      "wr_lo": 36.11893708270325,
+      "wr_hi": 63.88106291729675,
+      "games": 46,
+      "ap_per_round": 1.5633233365810093,
+      "ap_rel": 0.639184424841756,
+      "usage": {
+        "Q": 44.27934621099554,
+        "W": 3.5661218424962855,
+        "E": 6.686478454680535,
+        "R": 0.7429420505200595
+      },
+      "kills": 0.13043478260869565,
+      "deaths": 0.17391304347826086,
+      "rounds_dead": 0.45652173913043476,
+      "rounds_cd": 0.6739130434782609,
+      "conceal_attacks": 7.586956521739131,
+      "ap_share": 9.843521965830478,
+      "items": [
+        [
+          "long_sword",
+          46
+        ],
+        [
+          "longbow",
+          46
+        ],
+        [
+          "ruby_crystal",
+          46
+        ]
+      ]
+    },
+    {
+      "id": "corvane",
+      "wr": 37.5,
+      "wr_lo": 25.215266760868204,
+      "wr_hi": 51.63723648078473,
+      "games": 48,
+      "ap_per_round": 0.551563619916948,
+      "ap_rel": 0.22551372893292865,
+      "usage": {
+        "Q": 48.72727272727273,
+        "W": 0.3929273084479371,
+        "E": 0.36363636363636365,
+        "R": 2.0080321285140563
+      },
+      "kills": 0.041666666666666664,
+      "deaths": 0.4791666666666667,
+      "rounds_dead": 1.3958333333333333,
+      "rounds_cd": 3.5208333333333335,
+      "conceal_attacks": 4.916666666666667,
+      "ap_share": 3.813685345316703,
+      "items": [
+        [
+          "boots",
+          48
+        ],
+        [
+          "cloth_armor",
+          48
+        ],
+        [
+          "longbow",
+          48
+        ]
+      ]
+    },
+    {
+      "id": "dax",
+      "wr": 64.28571428571429,
+      "wr_lo": 51.193887801399526,
+      "wr_hi": 75.5434282923501,
+      "games": 56,
+      "ap_per_round": 1.4226412584571306,
+      "ap_rel": 0.5816647863338236,
+      "usage": {
+        "Q": 10.124826629681,
+        "W": 41.19278779472954,
+        "E": 1.941747572815534,
+        "R": 12.343966712898752
+      },
+      "kills": 0.16071428571428573,
+      "deaths": 0.3392857142857143,
+      "rounds_dead": 0.9642857142857143,
+      "rounds_cd": 1.25,
+      "conceal_attacks": 6.678571428571429,
+      "ap_share": 9.138908464309305,
+      "items": [
+        [
+          "long_sword",
+          56
+        ],
+        [
+          "longbow",
+          56
+        ],
+        [
+          "vampiric_blade",
+          56
+        ]
+      ]
+    },
+    {
+      "id": "grivven",
+      "wr": 45.65217391304348,
+      "wr_lo": 32.15473378228458,
+      "wr_hi": 59.81981894019872,
+      "games": 46,
+      "ap_per_round": 2.7036096713332873,
+      "ap_rel": 1.1054048464133754,
+      "usage": {
+        "Q": 6.896551724137931,
+        "W": 0.9404388714733543,
+        "E": 1.6129032258064515,
+        "R": 68.96551724137932
+      },
+      "kills": 0.0,
+      "deaths": 0.2826086956521739,
+      "rounds_dead": 0.8695652173913043,
+      "rounds_cd": 7.695652173913044,
+      "conceal_attacks": 4.282608695652174,
+      "ap_share": 17.458226340822367,
+      "items": [
+        [
+          "boots",
+          46
+        ],
+        [
+          "longbow",
+          46
+        ],
+        [
+          "ruby_crystal",
+          46
+        ]
+      ]
+    },
+    {
+      "id": "kaelis",
+      "wr": 41.66666666666667,
+      "wr_lo": 28.84966777841157,
+      "wr_hi": 55.71866771602373,
+      "games": 48,
+      "ap_per_round": 1.2378737558594375,
+      "ap_rel": 0.5061202670946748,
+      "usage": {
+        "Q": 19.774919614147908,
+        "W": 3.8585209003215435,
+        "E": 2.2508038585209005,
+        "R": 14.630225080385852
+      },
+      "kills": 0.14583333333333334,
+      "deaths": 0.2916666666666667,
+      "rounds_dead": 0.8125,
+      "rounds_cd": 1.3125,
+      "conceal_attacks": 5.395833333333333,
+      "ap_share": 8.123623482709478,
+      "items": [
+        [
+          "cloth_armor",
+          48
+        ],
+        [
+          "long_sword",
+          48
+        ],
+        [
+          "ruby_crystal",
+          48
+        ]
+      ]
+    },
+    {
+      "id": "kestrel",
+      "wr": 55.88235294117647,
+      "wr_lo": 39.453899256203066,
+      "wr_hi": 71.11651775375785,
+      "games": 34,
+      "ap_per_round": 1.9219155160638948,
+      "ap_rel": 0.785799351282242,
+      "usage": {
+        "Q": 60.47120418848168,
+        "W": 12.827225130890053,
+        "E": 0.0,
+        "R": 20.821114369501466
+      },
+      "kills": 0.11764705882352941,
+      "deaths": 0.11764705882352941,
+      "rounds_dead": 0.29411764705882354,
+      "rounds_cd": 3.3529411764705883,
+      "conceal_attacks": 7.0588235294117645,
+      "ap_share": 10.961201067560866,
+      "items": [
+        [
+          "long_sword",
+          34
+        ],
+        [
+          "longbow",
+          34
+        ],
+        [
+          "ruby_crystal",
+          34
+        ]
+      ]
+    },
+    {
+      "id": "lumen",
+      "wr": 35.0,
+      "wr_lo": 22.13452887317629,
+      "wr_hi": 50.494119162742315,
+      "games": 40,
+      "ap_per_round": 0.8862820354954645,
+      "ap_rel": 0.3623675664847942,
+      "usage": {
+        "Q": 61.40939597315436,
+        "W": 0.16778523489932887,
+        "E": 0.0,
+        "R": 0.16778523489932887
+      },
+      "kills": 0.05,
+      "deaths": 0.125,
+      "rounds_dead": 0.35,
+      "rounds_cd": 0.025,
+      "conceal_attacks": 8.075,
+      "ap_share": 6.207867188632845,
+      "items": [
+        [
+          "boots",
+          40
+        ],
+        [
+          "longbow",
+          40
+        ],
+        [
+          "ruby_crystal",
+          40
+        ]
+      ]
+    },
+    {
+      "id": "marrow",
+      "wr": 48.0,
+      "wr_lo": 34.79713528657805,
+      "wr_hi": 61.48825510995539,
+      "games": 50,
+      "ap_per_round": 2.5937774322340887,
+      "ap_rel": 1.0604985529199016,
+      "usage": {
+        "Q": 7.115135834411384,
+        "W": 0.25839793281653745,
+        "E": 0.25839793281653745,
+        "R": 41.16847826086956
+      },
+      "kills": 0.06,
+      "deaths": 0.06,
+      "rounds_dead": 0.18,
+      "rounds_cd": 0.0,
+      "conceal_attacks": 8.34,
+      "ap_share": 15.570488366766575,
+      "items": [
+        [
+          "cloth_armor",
+          50
+        ],
+        [
+          "long_sword",
+          50
+        ],
+        [
+          "ruby_crystal",
+          50
+        ]
+      ]
+    },
+    {
+      "id": "mossgrove",
+      "wr": 36.53846153846153,
+      "wr_lo": 24.800699873813393,
+      "wr_hi": 50.1283218679829,
+      "games": 52,
+      "ap_per_round": 1.2217723064755097,
+      "ap_rel": 0.4995369868334765,
+      "usage": {
+        "Q": 35.38732394366197,
+        "W": 4.577464788732394,
+        "E": 0.0,
+        "R": 5.105633802816901
+      },
+      "kills": 0.19230769230769232,
+      "deaths": 0.23076923076923078,
+      "rounds_dead": 0.75,
+      "rounds_cd": 3.3846153846153846,
+      "conceal_attacks": 5.673076923076923,
+      "ap_share": 7.879659358808724,
+      "items": [
+        [
+          "boots",
+          52
+        ],
+        [
+          "long_sword",
+          52
+        ],
+        [
+          "ruby_crystal",
+          52
+        ]
+      ]
+    },
+    {
+      "id": "noctis",
+      "wr": 37.5,
+      "wr_lo": 25.215266760868204,
+      "wr_hi": 51.63723648078473,
+      "games": 48,
+      "ap_per_round": 1.6541058638751167,
+      "ap_rel": 0.676302003871229,
+      "usage": {
+        "Q": 72.56011315417256,
+        "W": 0.0,
+        "E": 17.397454031117398,
+        "R": 0.6568144499178982
+      },
+      "kills": 0.125,
+      "deaths": 0.3541666666666667,
+      "rounds_dead": 1.0,
+      "rounds_cd": 0.125,
+      "conceal_attacks": 8.25,
+      "ap_share": 12.623978977255787,
+      "items": [
+        [
+          "ionian_charm",
+          48
+        ],
+        [
+          "longbow",
+          48
+        ],
+        [
+          "ruby_crystal",
+          48
+        ]
+      ]
+    },
+    {
+      "id": "orrin",
+      "wr": 42.0,
+      "wr_lo": 29.375003354711982,
+      "wr_hi": 55.76655823142176,
+      "games": 50,
+      "ap_per_round": 1.8801243574966477,
+      "ap_rel": 0.7687125100465088,
+      "usage": {
+        "Q": 7.277628032345014,
+        "W": 38.55755894590846,
+        "E": 1.0781671159029649,
+        "R": 0.1347708894878706
+      },
+      "kills": 0.12,
+      "deaths": 0.24,
+      "rounds_dead": 0.64,
+      "rounds_cd": 0.0,
+      "conceal_attacks": 7.58,
+      "ap_share": 11.727173075869466,
+      "items": [
+        [
+          "long_sword",
+          50
+        ],
+        [
+          "longbow",
+          50
+        ],
+        [
+          "ruby_crystal",
+          50
+        ]
+      ]
+    },
+    {
+      "id": "ossuar",
+      "wr": 42.857142857142854,
+      "wr_lo": 29.11765117618606,
+      "wr_hi": 57.79376012189541,
+      "games": 42,
+      "ap_per_round": 2.3054933107868756,
+      "ap_rel": 0.9426299610256365,
+      "usage": {
+        "Q": 9.89247311827957,
+        "W": 2.277904328018223,
+        "E": 0.0,
+        "R": 59.91379310344828
+      },
+      "kills": 0.09523809523809523,
+      "deaths": 0.09523809523809523,
+      "rounds_dead": 0.35714285714285715,
+      "rounds_cd": 3.8333333333333335,
+      "conceal_attacks": 6.619047619047619,
+      "ap_share": 12.948449106888187,
+      "items": [
+        [
+          "cloth_armor",
+          42
+        ],
+        [
+          "long_sword",
+          42
+        ],
+        [
+          "ruby_crystal",
+          42
+        ]
+      ]
+    },
+    {
+      "id": "pallas",
+      "wr": 48.0,
+      "wr_lo": 34.79713528657805,
+      "wr_hi": 61.48825510995539,
+      "games": 50,
+      "ap_per_round": 4.321297035867469,
+      "ap_rel": 1.7668166884030934,
+      "usage": {
+        "Q": 2.6315789473684212,
+        "W": 0.4048582995951417,
+        "E": 0.8097165991902834,
+        "R": 86.8995633187773
+      },
+      "kills": 0.08,
+      "deaths": 0.28,
+      "rounds_dead": 0.68,
+      "rounds_cd": 4.42,
+      "conceal_attacks": 6.28,
+      "ap_share": 25.259341754800534,
+      "items": [
+        [
+          "boots",
+          50
+        ],
+        [
+          "cloth_armor",
+          50
+        ],
+        [
+          "longbow",
+          50
+        ]
+      ]
+    },
+    {
+      "id": "quillan",
+      "wr": 59.09090909090909,
+      "wr_lo": 44.4097537410319,
+      "wr_hi": 72.31214437245028,
+      "games": 44,
+      "ap_per_round": 5.231517133068639,
+      "ap_rel": 2.138971632741947,
+      "usage": {
+        "Q": 7.28476821192053,
+        "W": 8.650519031141869,
+        "E": 0.0,
+        "R": 74.66887417218543
+      },
+      "kills": 0.022727272727272728,
+      "deaths": 0.4772727272727273,
+      "rounds_dead": 1.3636363636363635,
+      "rounds_cd": 0.0,
+      "conceal_attacks": 8.636363636363637,
+      "ap_share": 30.416642746280647,
+      "items": [
+        [
+          "ionian_charm",
+          44
+        ],
+        [
+          "longbow",
+          44
+        ],
+        [
+          "ruby_crystal",
+          44
+        ]
+      ]
+    },
+    {
+      "id": "rictus",
+      "wr": 54.166666666666664,
+      "wr_lo": 40.2910745456498,
+      "wr_hi": 67.42475770713254,
+      "games": 48,
+      "ap_per_round": 1.3552607079309869,
+      "ap_rel": 0.554115400083526,
+      "usage": {
+        "Q": 12.353923205342237,
+        "W": 3.1719532554257097,
+        "E": 30.434782608695652,
+        "R": 0.9727626459143969
+      },
+      "kills": 0.1875,
+      "deaths": 0.2916666666666667,
+      "rounds_dead": 0.8541666666666666,
+      "rounds_cd": 2.1666666666666665,
+      "conceal_attacks": 6.395833333333333,
+      "ap_share": 8.160808139526965,
+      "items": [
+        [
+          "long_sword",
+          48
+        ],
+        [
+          "ruby_crystal",
+          48
+        ],
+        [
+          "boots",
+          47
+        ]
+      ]
+    },
+    {
+      "id": "sable",
+      "wr": 46.0,
+      "wr_lo": 32.96965219222435,
+      "wr_hi": 59.601128600842536,
+      "games": 50,
+      "ap_per_round": 6.2834590653584455,
+      "ap_rel": 2.569071333311947,
+      "usage": {
+        "Q": 2.7656477438136826,
+        "W": 52.838427947598255,
+        "E": 0.0,
+        "R": 32.02328966521106
+      },
+      "kills": 0.1,
+      "deaths": 0.1,
+      "rounds_dead": 0.26,
+      "rounds_cd": 0.98,
+      "conceal_attacks": 8.8,
+      "ap_share": 35.908469155955665,
+      "items": [
+        [
+          "ionian_charm",
+          50
+        ],
+        [
+          "longbow",
+          50
+        ],
+        [
+          "ruby_crystal",
+          50
+        ]
+      ]
+    },
+    {
+      "id": "sylphine",
+      "wr": 63.04347826086957,
+      "wr_lo": 48.60009642338971,
+      "wr_hi": 75.47624540916037,
+      "games": 46,
+      "ap_per_round": 1.4063120276994956,
+      "ap_rel": 0.5749883747907362,
+      "usage": {
+        "Q": 13.62962962962963,
+        "W": 0.591715976331361,
+        "E": 0.4437869822485207,
+        "R": 8.136094674556213
+      },
+      "kills": 0.15217391304347827,
+      "deaths": 0.17391304347826086,
+      "rounds_dead": 0.5,
+      "rounds_cd": 0.06521739130434782,
+      "conceal_attacks": 6.173913043478261,
+      "ap_share": 8.604922596652441,
+      "items": [
+        [
+          "long_sword",
+          46
+        ],
+        [
+          "ruby_crystal",
+          46
+        ],
+        [
+          "vampiric_blade",
+          46
+        ]
+      ]
+    },
+    {
+      "id": "thornjaw",
+      "wr": 50.0,
+      "wr_lo": 35.52598959637448,
+      "wr_hi": 64.47401040362553,
+      "games": 42,
+      "ap_per_round": 1.3414523239877068,
+      "ap_rel": 0.5484696684922084,
+      "usage": {
+        "Q": 11.594202898550725,
+        "W": 4.669887278582931,
+        "E": 2.4154589371980677,
+        "R": 1.4492753623188406
+      },
+      "kills": 0.2619047619047619,
+      "deaths": 0.09523809523809523,
+      "rounds_dead": 0.2619047619047619,
+      "rounds_cd": 0.11904761904761904,
+      "conceal_attacks": 6.9523809523809526,
+      "ap_share": 8.292623981550676,
+      "items": [
+        [
+          "long_sword",
+          42
+        ],
+        [
+          "ruby_crystal",
+          42
+        ],
+        [
+          "vampiric_blade",
+          41
+        ]
+      ]
+    },
+    {
+      "id": "vellum",
+      "wr": 40.625,
+      "wr_lo": 25.51963484266544,
+      "wr_hi": 57.739975124617125,
+      "games": 32,
+      "ap_per_round": 2.7811591381238725,
+      "ap_rel": 1.1371119220818875,
+      "usage": {
+        "Q": 6.084656084656085,
+        "W": 0.0,
+        "E": 0.7936507936507936,
+        "R": 79.55182072829132
+      },
+      "kills": 0.125,
+      "deaths": 0.4375,
+      "rounds_dead": 1.34375,
+      "rounds_cd": 2.71875,
+      "conceal_attacks": 5.34375,
+      "ap_share": 18.501497417917413,
+      "items": [
+        [
+          "ionian_charm",
+          32
+        ],
+        [
+          "longbow",
+          32
+        ],
+        [
+          "ruby_crystal",
+          32
+        ]
+      ]
+    },
+    {
+      "id": "veyra",
+      "wr": 38.88888888888889,
+      "wr_lo": 27.0419338291165,
+      "wr_hi": 52.21170146179232,
+      "games": 54,
+      "ap_per_round": 1.449539794459385,
+      "ap_rel": 0.5926625913696568,
+      "usage": {
+        "Q": 2.049780380673499,
+        "W": 68.5212298682284,
+        "E": 0.0,
+        "R": 6.588579795021962
+      },
+      "kills": 0.16666666666666666,
+      "deaths": 0.2962962962962963,
+      "rounds_dead": 0.9074074074074074,
+      "rounds_cd": 1.3703703703703705,
+      "conceal_attacks": 6.537037037037037,
+      "ap_share": 9.642355347859347,
+      "items": [
+        [
+          "long_sword",
+          54
+        ],
+        [
+          "longbow",
+          54
+        ],
+        [
+          "vampiric_blade",
+          53
+        ]
+      ]
+    },
+    {
+      "id": "vurmak",
+      "wr": 58.06451612903226,
+      "wr_lo": 45.66558474484658,
+      "wr_hi": 69.52241409222806,
+      "games": 62,
+      "ap_per_round": 1.5648163274911004,
+      "ap_rel": 0.6397948529687022,
+      "usage": {
+        "Q": 16.50485436893204,
+        "W": 0.970873786407767,
+        "E": 0.6472491909385113,
+        "R": 57.92880258899677
+      },
+      "kills": 0.14516129032258066,
+      "deaths": 0.3064516129032258,
+      "rounds_dead": 0.8548387096774194,
+      "rounds_cd": 4.145161290322581,
+      "conceal_attacks": 4.870967741935484,
+      "ap_share": 9.836849671893667,
+      "items": [
+        [
+          "long_sword",
+          62
+        ],
+        [
+          "ruby_crystal",
+          62
+        ],
+        [
+          "cloth_armor",
+          61
+        ]
+      ]
+    },
+    {
+      "id": "wisp",
+      "wr": 76.78571428571429,
+      "wr_lo": 64.23184678498916,
+      "wr_hi": 85.90062089079139,
+      "games": 56,
+      "ap_per_round": 5.755548703885308,
+      "ap_rel": 2.353228536834428,
+      "usage": {
+        "Q": 3.351206434316354,
+        "W": 82.97587131367293,
+        "E": 0.6702412868632708,
+        "R": 6.8245125348189415
+      },
+      "kills": 0.05357142857142857,
+      "deaths": 0.26785714285714285,
+      "rounds_dead": 0.7142857142857143,
+      "rounds_cd": 0.0,
+      "conceal_attacks": 7.660714285714286,
+      "ap_share": 30.09522187747384,
+      "items": [
+        [
+          "boots",
+          56
+        ],
+        [
+          "longbow",
+          56
+        ],
+        [
+          "ruby_crystal",
+          56
+        ]
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "role": "ADC",
+      "wr": 50.0,
+      "lo": 43.72426897852553,
+      "hi": 56.27573102147447,
+      "ap_per_round": 1.6216969928255727
+    },
+    {
+      "role": "Jungle",
+      "wr": 50.0,
+      "lo": 43.72426897852553,
+      "hi": 56.27573102147447,
+      "ap_per_round": 1.4718392076548037
+    },
+    {
+      "role": "Mid",
+      "wr": 50.0,
+      "lo": 43.72426897852553,
+      "hi": 56.27573102147447,
+      "ap_per_round": 4.45530276642361
+    },
+    {
+      "role": "Support",
+      "wr": 50.0,
+      "lo": 43.72426897852553,
+      "hi": 56.27573102147447,
+      "ap_per_round": 3.0194498302838086
+    },
+    {
+      "role": "Top",
+      "wr": 50.0,
+      "lo": 43.72426897852553,
+      "hi": 56.27573102147447,
+      "ap_per_round": 1.962635136728595
+    }
+  ],
+  "game": {
+    "length_median": 15.0,
+    "length_p10": 12,
+    "length_p90": 18,
+    "histogram": {
+      "11": 8,
+      "12": 8,
+      "13": 17,
+      "14": 20,
+      "15": 18,
+      "16": 10,
+      "17": 15,
+      "18": 12,
+      "19": 5,
+      "20": 7
+    },
+    "end_reasons": {
+      "nexus": 116,
+      "round_limit_towers": 3,
+      "round_limit_kills": 1
+    },
+    "draws": 0,
+    "priority_wr": 48.333333333333336,
+    "priority_ci": [
+      39.583644301054434,
+      57.18641958700792
+    ],
+    "north_wr": 60.0,
+    "north_ci": [
+      51.05602479246307,
+      68.32359187916286
+    ]
+  },
+  "objectives": {
+    "dragon_rounds_median": 9,
+    "baron_rounds_median": 11,
+    "takes_per_game": {
+      "dragon": 2.058333333333333,
+      "baron": 0.9083333333333333
+    },
+    "win_rate_if_secured": {
+      "dragon": 42.51012145748988,
+      "baron": 52.293577981651374
+    },
+    "camp_clears_per_game": {
+      "krugs": 6.366666666666666,
+      "wolves": 6.491666666666666,
+      "raptors": 6.733333333333333,
+      "blue_buff": 3.8333333333333335,
+      "red_buff": 3.841666666666667,
+      "dragon": 2.058333333333333,
+      "baron": 0.9083333333333333
+    }
+  },
+  "structures": {
+    "first_tower_round_median": 6.0,
+    "first_tower_round_p10": 4,
+    "first_tower_round_p90": 8,
+    "games_with_a_tower_down": 1.0,
+    "first_tower_wr": 78.33333333333333
+  },
+  "economy": {
+    "ap_per_team_round_by_source": {
+      "base": 3.4544206479956068,
+      "chips_structure": 4.64168039538715,
+      "chips_wave": 3.5804503020318506,
+      "chips_monster": 4.029379461834157,
+      "blue_buff": 0.2482152663371774,
+      "champion_kill": 0.24052718286655683,
+      "red_buff": 0.171334431630972
+    },
+    "ap_per_team_round_by_use": {
+      "abilities": 2.417078528281164,
+      "shop": 11.93712246018671,
+      "wasted": 0.0
+    },
+    "roster_mean_ap_per_round": 2.445809496950812
+  },
+  "items": [
+    {
+      "item": "boots",
+      "cost": 4,
+      "purchases_per_game": 2.0,
+      "owner_wr": 52.260397830018086,
+      "non_owner_wr": 23.404255319148938,
+      "wr_diff": 28.856142510869148
+    },
+    {
+      "item": "cloth_armor",
+      "cost": 5,
+      "purchases_per_game": 1.9916666666666667,
+      "owner_wr": 52.82112845138055,
+      "non_owner_wr": 43.596730245231605,
+      "wr_diff": 9.224398206148948
+    },
+    {
+      "item": "control_ward",
+      "cost": 2,
+      "purchases_per_game": 1.325,
+      "owner_wr": null,
+      "non_owner_wr": 50.0,
+      "wr_diff": null
+    },
+    {
+      "item": "frost_charm",
+      "cost": 2,
+      "purchases_per_game": 1.0333333333333334,
+      "owner_wr": null,
+      "non_owner_wr": 50.0,
+      "wr_diff": null
+    },
+    {
+      "item": "health_potion",
+      "cost": 2,
+      "purchases_per_game": 1.8666666666666667,
+      "owner_wr": null,
+      "non_owner_wr": 50.0,
+      "wr_diff": null
+    },
+    {
+      "item": "ionian_charm",
+      "cost": 8,
+      "purchases_per_game": 2.0,
+      "owner_wr": 52.4390243902439,
+      "non_owner_wr": 30.597014925373134,
+      "wr_diff": 21.842009464870767
+    },
+    {
+      "item": "long_sword",
+      "cost": 6,
+      "purchases_per_game": 2.0,
+      "owner_wr": 50.262881177707676,
+      "non_owner_wr": 48.99598393574297,
+      "wr_diff": 1.2668972419647062
+    },
+    {
+      "item": "longbow",
+      "cost": 6,
+      "purchases_per_game": 2.0,
+      "owner_wr": 50.0,
+      "non_owner_wr": 50.0,
+      "wr_diff": 0.0
+    },
+    {
+      "item": "ruby_crystal",
+      "cost": 4,
+      "purchases_per_game": 2.0,
+      "owner_wr": 50.12531328320802,
+      "non_owner_wr": 0.0,
+      "wr_diff": 50.12531328320802
+    },
+    {
+      "item": "stopwatch",
+      "cost": 3,
+      "purchases_per_game": 1.8333333333333333,
+      "owner_wr": null,
+      "non_owner_wr": 50.0,
+      "wr_diff": null
+    },
+    {
+      "item": "swift_tonic",
+      "cost": 1,
+      "purchases_per_game": 1.9916666666666667,
+      "owner_wr": null,
+      "non_owner_wr": 50.0,
+      "wr_diff": null
+    },
+    {
+      "item": "vampiric_blade",
+      "cost": 5,
+      "purchases_per_game": 1.9916666666666667,
+      "owner_wr": 51.17056856187291,
+      "non_owner_wr": 46.53465346534654,
+      "wr_diff": 4.635915096526375
+    }
+  ],
+  "personalities": {
+    "T2_brawler": {
+      "wr": 35.41666666666667,
+      "wr_lo": 23.433644125604857,
+      "wr_hi": 49.56094298965691,
+      "games": 48
+    },
+    "T2_laner": {
+      "wr": 55.55555555555556,
+      "wr_lo": 42.375646526775256,
+      "wr_hi": 67.99753582777035,
+      "games": 54
+    },
+    "T2_objective": {
+      "wr": 45.23809523809524,
+      "wr_lo": 31.223393233454466,
+      "wr_hi": 60.050880965266515,
+      "games": 42
+    },
+    "T2_sieger": {
+      "wr": 70.6896551724138,
+      "wr_lo": 57.98709910321587,
+      "wr_hi": 80.8218172090378,
+      "games": 58
+    },
+    "T2_warder": {
+      "wr": 34.21052631578947,
+      "wr_lo": 21.21241517995941,
+      "wr_hi": 50.10789644821693,
+      "games": 38
+    }
+  },
+  "concealment": {
+    "attacks_from_concealment_per_game": 67.80833333333334,
+    "share_of_all_ability_uses": 57.62339777636145,
+    "champion_snipes_per_game": 9.408333333333333,
+    "snipes_share_of_all_ability_uses": 54.43665462785922,
+    "activations_ending_beside_an_enemy_hexgroup": 56.9970051728832
+  },
+  "anomalies": {},
+  "top_flags": [
+    {
+      "severity": 26.785714285714292,
+      "flag": "champion win rate: wisp",
+      "evidence": "WR 76.8% [64.2, 85.9]"
+    },
+    {
+      "severity": 21.38142666623894,
+      "flag": "economy outlier: sable",
+      "evidence": "6.28 AP/round = 2.57x roster mean"
+    },
+    {
+      "severity": 17.064570736688562,
+      "flag": "economy outlier: wisp",
+      "evidence": "5.76 AP/round = 2.35x roster mean"
+    },
+    {
+      "severity": 15.0,
+      "flag": "ability usage: ashwyn.R",
+      "evidence": "used in 16.5% of affordable rounds with a legal target"
+    },
+    {
+      "severity": 15.0,
+      "flag": "ability usage: bastion.W",
+      "evidence": "used in 0.0% of affordable rounds with a legal target"
+    }
+  ],
+  "delta": {
+    "baseline": "batch_0037",
+    "champions": {
+      "ashwyn": {
+        "wr_delta": -6.893939393939391,
+        "ap_delta": -0.21272525200508774,
+        "significant_holm": false
+      },
+      "bastion": {
+        "wr_delta": 3.132832080200501,
+        "ap_delta": -0.07817080517795194,
+        "significant_holm": false
+      },
+      "bramblehide": {
+        "wr_delta": -9.817813765182187,
+        "ap_delta": 0.12868491562314266,
+        "significant_holm": false
+      },
+      "brixa": {
+        "wr_delta": 12.5,
+        "ap_delta": 0.19414918580130558,
+        "significant_holm": false
+      },
+      "corvane": {
+        "wr_delta": 0.0,
+        "ap_delta": -0.014748619525612572,
+        "significant_holm": false
+      },
+      "dax": {
+        "wr_delta": 25.952380952380956,
+        "ap_delta": -0.1203757531976517,
+        "significant_holm": false
+      },
+      "grivven": {
+        "wr_delta": 10.235507246376805,
+        "ap_delta": -0.09014223397531262,
+        "significant_holm": false
+      },
+      "kaelis": {
+        "wr_delta": -6.410256410256409,
+        "ap_delta": -0.05510317175371293,
+        "significant_holm": false
+      },
+      "kestrel": {
+        "wr_delta": -4.117647058823529,
+        "ap_delta": 0.019985342157133656,
+        "significant_holm": false
+      },
+      "lumen": {
+        "wr_delta": -1.0,
+        "ap_delta": 0.08263987081459989,
+        "significant_holm": false
+      },
+      "marrow": {
+        "wr_delta": -6.0,
+        "ap_delta": 0.09981426047293018,
+        "significant_holm": false
+      },
+      "mossgrove": {
+        "wr_delta": -11.675824175824182,
+        "ap_delta": -0.07917096219498143,
+        "significant_holm": false
+      },
+      "noctis": {
+        "wr_delta": -5.0,
+        "ap_delta": -0.025328357626635878,
+        "significant_holm": false
+      },
+      "orrin": {
+        "wr_delta": -8.0,
+        "ap_delta": 0.12353736098245549,
+        "significant_holm": false
+      },
+      "ossuar": {
+        "wr_delta": -1.3736263736263723,
+        "ap_delta": -0.22607424297792722,
+        "significant_holm": false
+      },
+      "pallas": {
+        "wr_delta": -12.416666666666664,
+        "ap_delta": 0.05727190622701528,
+        "significant_holm": false
+      },
+      "quillan": {
+        "wr_delta": 9.090909090909093,
+        "ap_delta": -0.10473267439196388,
+        "significant_holm": false
+      },
+      "rictus": {
+        "wr_delta": 10.416666666666664,
+        "ap_delta": 0.14543361972493218,
+        "significant_holm": false
+      },
+      "sable": {
+        "wr_delta": -16.06896551724138,
+        "ap_delta": -0.050116484360211544,
+        "significant_holm": false
+      },
+      "sylphine": {
+        "wr_delta": 18.92583120204604,
+        "ap_delta": 0.02076689258005704,
+        "significant_holm": false
+      },
+      "thornjaw": {
+        "wr_delta": -4.6875,
+        "ap_delta": -0.08150908295384252,
+        "significant_holm": false
+      },
+      "vellum": {
+        "wr_delta": 10.267857142857146,
+        "ap_delta": 0.01427682951707876,
+        "significant_holm": false
+      },
+      "veyra": {
+        "wr_delta": -26.111111111111107,
+        "ap_delta": -0.2204679596544059,
+        "significant_holm": false
+      },
+      "vurmak": {
+        "wr_delta": 8.064516129032263,
+        "ap_delta": 0.14338492033460137,
+        "significant_holm": false
+      },
+      "wisp": {
+        "wr_delta": -5.822981366459615,
+        "ap_delta": -0.12343509293736155,
+        "significant_holm": false
+      }
+    },
+    "game": {
+      "length_median_delta": 0.0,
+      "nexus_rate_delta": 3.3333333333333326
+    }
+  }
+}
