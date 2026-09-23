@@ -1,0 +1,1144 @@
+{
+ "run_id": "pilot-01-regress__C__s87942__r2",
+ "batch_id": "pilot-01-regress",
+ "arm": "C",
+ "seed": 87942,
+ "spec_version": "0.2.0",
+ "status": "partial",
+ "error": null,
+ "backend": "claude_cli",
+ "run_index": 2,
+ "cohort_id": "cohort-pilot-01",
+ "assignments": [
+  {
+   "character_id": "CH-1",
+   "name": "Ysolde",
+   "personality_id": "protector",
+   "seat": 0
+  },
+  {
+   "character_id": "CH-2",
+   "name": "Aldous",
+   "personality_id": "instigator",
+   "seat": 1
+  },
+  {
+   "character_id": "CH-3",
+   "name": "Morwen",
+   "personality_id": "tactician",
+   "seat": 2
+  },
+  {
+   "character_id": "CH-4",
+   "name": "Mire",
+   "personality_id": "optimizer",
+   "seat": 3
+  }
+ ],
+ "prep_packet": {
+  "anchors": [
+   "H-03",
+   "T-04"
+  ],
+  "environment": [
+   "T-03",
+   "F-01",
+   "L-03"
+  ],
+  "modules": [
+   {
+    "id": "M-1",
+    "cards": [
+     "L-05",
+     "T-02"
+    ],
+    "trigger": "fiction:the party leaves the road or causeway"
+   },
+   {
+    "id": "M-2",
+    "cards": [
+     "C-03",
+     "F-04"
+    ],
+    "trigger": "scene_start:3"
+   }
+  ],
+  "beat_frames": [
+   {
+    "id": "B-02",
+    "name": "PLEA FOR HELP",
+    "trigger": "fiction:the party enters a settlement",
+    "used": null
+   },
+   {
+    "id": "B-05",
+    "name": "FALSE SANCTUARY",
+    "trigger": "deck_at_most:3",
+    "used": null
+   },
+   {
+    "id": "B-03",
+    "name": "BETRAYAL",
+    "trigger": "roll_fails_against:T-04",
+    "used": null
+   }
+  ]
+ },
+ "events": [
+  {
+   "event_id": 1,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Session start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "FP: Ysolde=3, Aldous=3, Morwen=3, Mire=3",
+   "event_type": "session_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 2,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + H-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "anchor; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 3,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + T-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "anchor; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 4,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Build Session Deck",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "7 cards: 3 GM + 4 player",
+   "event_type": "deck_built",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 5,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 6,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Will the party get past the Wardens and into Hollowmoot, and what will it cost them to do it?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 7,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Ysolde steps up to the checkpoint's rope line, taking in the guards' postures and the huddled figures in quarantine beyond. She keeps her bearing calm and strai",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 8,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Aldous halts at the checkpoint's edge and tilts his scarred face up into the downpour. His eyes track the strange spiral patterns of the rainfall, the way each ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 9,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "I approach the checkpoint without hesitation, water streaming from my exorcist's coat. My eyes move from the sergeant to the rope line and the cowering refugees",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 10,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Mire halts short of the checkpoint, her attention snagged by the eerie humming that rides beneath the storm. Her years in the Order's orphanage taught her to re",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 11,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Create Advantage: Aldous halts at the checkpoint's edge and tilts his scarred ",
+   "skill": "Notice +4",
+   "tags_invoked": "Reads omens in the rainfall [AL-01]",
+   "fp_spent": 1,
+   "dice": "- - - 0",
+   "total": "+3",
+   "opposition": "+1",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "aspect A-1.1.1 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [],
+   "target_card": "T-04",
+   "target_npc": "",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 12,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "Create Advantage: Mire halts short of the checkpoint, her attention snagged by",
+   "skill": "Notice +3",
+   "tags_invoked": "Knows every Order rite [MI-01]",
+   "fp_spent": 1,
+   "dice": "- - 0 -",
+   "total": "+2",
+   "opposition": "+1",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "aspect A-1.1.2 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [],
+   "target_card": "T-04",
+   "target_npc": "",
+   "shifts": 1,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 13,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "create_advantage",
+   "skill": "Empathy",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Ysolde steps toward Coll, casual but purposeful, keeping her hands empty and her posture open. She reads the angle of his jaw, the tension in his shoulders, the",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 14,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "overcome",
+   "skill": "Empathy",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Aldous steps directly in front of Coll, his water-slicked face hard with certainty. He uses everything he's read in the omens to cut through the sergeant's defe",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 15,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "overcome",
+   "skill": "Empathy",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Morwen steps closer through the rain, reading the fear in Coll's shoulders, the way his men grip their spears. She's seen this terror before—the kind that comes",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 16,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Mire walks up to Sergeant Coll with the easy confidence of someone who's done this work. She keeps her hands visible and her voice level, soldier to soldier.",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 17,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "Create Advantage: Ysolde steps toward Coll, casual but purposeful, keeping her",
+   "skill": "Empathy +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ - 0 +",
+   "total": "+5",
+   "opposition": "+1 (NPC - 0 - +)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "aspect A-1.1.3 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "T-04",
+   "target_npc": "Warden Sergeant Coll",
+   "shifts": 4,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 18,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "Peek",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "L-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "left on top",
+   "event_type": "peek",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 19,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Overcome: Aldous steps directly in front of Coll, his water-slicked fa",
+   "skill": "Empathy +3",
+   "tags_invoked": "Voice like a confession [AL-04]",
+   "fp_spent": 1,
+   "dice": "0 0 0 +",
+   "total": "+6",
+   "opposition": "+3 (NPC + - - 0)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "GM invokes: leads fanatical acolytes [T-04]",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Warden Sergeant Coll",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 20,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Peek",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "L-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "left on top",
+   "event_type": "peek",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 21,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "Overcome: Morwen steps closer through the rain, reading the fear in Co",
+   "skill": "Empathy +3",
+   "tags_invoked": "Beloved by the survivors [MO-02]",
+   "fp_spent": 1,
+   "dice": "+ 0 + -",
+   "total": "+6",
+   "opposition": "+5 (NPC 0 + + +)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Warden Sergeant Coll",
+   "shifts": 1,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 2,
+    "Mire": 2
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 22,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "3->2",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "resolved -1",
+   "event_type": "tension",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 2,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 23,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Warden Sergeant Coll",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 2,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 24,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 2,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  }
+ ],
+ "scenes": [
+  {
+   "index": 1,
+   "tension_before": 3,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 2,
+   "climax": false,
+   "tension_after": 2,
+   "triggers_fired": []
+  }
+ ],
+ "transcript": [
+  {
+   "session": 1,
+   "scene": 0,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Session begins. Each player has Ysolde 3 FP, Aldous 3 FP, Morwen 3 FP, Mire 3 FP. Face-up: Rising Floodwaters [H-03], The Drowned Priest [T-04].",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Rain hammers the last stretch of the Causeway, the plank road slick and half-drowned where the water has crept up over the boards. Ahead, torches gutter under an oilcloth awning where a Warden sergeant and two spearmen check every soul crossing into Hollowmoot — packs searched, names taken, coin demanded, and anyone with a cough or a rash held back behind a rope line for the quarantine bell. Beyond them the town itself rises on its pilings out of the flood, lantern-lit and loud with the noise of too many people crammed onto too little dry ground. Somewhere out past the rooftops, faint and wrong, you can almost hear it — a thin, ragged hum riding under the rain, gone if you listen straight at it.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Warden sergeant, what's the word? Plague scare, or something stranger? We're just travelers needing through to Hollowmoot.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde steps up to the checkpoint's rope line, taking in the guards' postures and the huddled figures in quarantine beyond. She keeps her bearing calm and straightforward—a working cook, nothing remarkable. Her eyes flick toward the town's rooftops where that wrongness seems to settle.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "That humming — the rain's all wrong. Something's drowning that shouldn't be.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous halts at the checkpoint's edge and tilts his scarred face up into the downpour. His eyes track the strange spiral patterns of the rainfall, the way each drop catches the torchlight in stuttering rhythms that match that terrible humming beneath the rain. He stands still, reading the water like words in a book, his body tense with the weight of the omen.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Sergeant Coll, isn't it? Morwen, Order of Exorcists. I need to know what's driven you to the quarantine line—and more than that, what that sound is on the wind. That's not just rain and fear I'm hearing.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(I approach the checkpoint without hesitation, water streaming from my exorcist's coat. My eyes move from the sergeant to the rope line and the cowering refugees beyond, reading the panic and sickness there, then back to him. I'm listening—not just to his words, but to that thin hum beneath the rain, trying to place it.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "That sound—those are voices. Chanting. The Drowned Priest's congregation has to be moving toward the town, maybe already inside it.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire halts short of the checkpoint, her attention snagged by the eerie humming that rides beneath the storm. Her years in the Order's orphanage taught her to recognize ritual chanting, and her spine goes rigid—that's voices, many voices in unison, growing clearer the closer you listen. She closes her eyes, filtering out the rain, triangulating the sound's direction and proximity to Hollowmoot's pilings.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — create advantage with Notice: dice - - - 0, invoking Reads omens in the rainfall [AL-01] → Good (+3) vs Average (+1): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — create advantage with Notice: dice - - 0 -, invoking Knows every Order rite [MI-01] → Fair (+2) vs Average (+1): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Aldous stands rigid in the downpour, and for one dizzying moment the rain seems to fall in time with the hum — spiraling, deliberate, wrong. He blinks it away, shaken. \"The water's not just falling,\" he mutters. \"It's answering something. The dead don't lie still out there — the Drowned are Restless, and that sound's calling them.\" Beside him Mire keeps her eyes shut a moment longer, sorting thread from thread, until the noise resolves into something unmistakable: not wind, not birds, but throats — dozens of them, chanting in ragged unison, and close. \"Voices,\" she says grimly. \"That's a congregation, not a storm.\" Warden Sergeant Coll's jaw tightens at the mention; his spearmen shift their grips, and he still hasn't answered Ysolde's question — he's just gained two more reasons not to want this conversation getting louder.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Sergeant, we hear the same voices you do. That's not the plague out there. Talk to me—what do we need to know?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde steps toward Coll, casual but purposeful, keeping her hands empty and her posture open. She reads the angle of his jaw, the tension in his shoulders, the way his fingers grip his spear—all the small tells of a man carrying a weight he's been ordered not to set down. She meets his eyes with the calm recognition of someone who's heard frightened soldiers talk in the dark many times before.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "Sergeant, you know what's coming—I can read it in how your men grip their spears. That sound in the rain isn't wind. It's the Drowned Priest gathering his flock, and the dead are answering. So tell us what we're walking into, or get out of the way.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous steps directly in front of Coll, his water-slicked face hard with certainty. He uses everything he's read in the omens to cut through the sergeant's defenses and force an answer out of him—not asking anymore, but demanding the truth.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Sergeant, I need to know what you've seen in that town. Not for reports or the Wardens' politics—because that sound means something specific, and people will die if we don't understand what's calling in the rain.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen steps closer through the rain, reading the fear in Coll's shoulders, the way his men grip their spears. She's seen this terror before—the kind that comes from knowing something's terribly wrong but having no words for it. She lowers her voice to cut through the downpour, meeting his eyes with the steady calm of someone trained to face horrors and come through whole.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Sergeant, that's a congregation—dozens of voices in unison. You know what that means. How close are they, and how many people do you have holding this checkpoint?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire walks up to Sergeant Coll with the easy confidence of someone who's done this work. She keeps her hands visible and her voice level, soldier to soldier.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde — create advantage with Empathy: dice + - 0 + → Superb (+5) vs Average (+1): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — overcome with Empathy: dice 0 0 0 +, invoking Voice like a confession [AL-04] → Fantastic (+6) vs Good (+3): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen — overcome with Empathy: dice + 0 + -, invoking Beloved by the survivors [MO-02] → Fantastic (+6) vs Superb (+5): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Something in Coll gives way. He's held this line eleven months without a night's proper sleep, and Ysolde's quiet steadiness, Aldous's unrelenting certainty, and Morwen's calm authority together crack the weight he's been carrying alone. He waves his spearmen back a pace and drops his voice so the quarantine line won't hear. \"Three nights running the chanting's come closer,\" he admits, rain running off his chin. \"Two of my own men are behind that rope now — caught the hive two days back, wouldn't say how. The Order's gone silent on us, won't send anyone past the temple gate. And the Priest's flock — they're not out in the marsh anymore. They're *in* Hollowmoot, some of them, walking around free as you like, and nobody knows who.\" He steps aside from the rope line, jaw tight. \"Go on through. But watch who you trust in there — and if that sound gets louder tonight, the bell's going to ring, and I won't be able to stop what happens after.\" He lets you pass without the coin toll, too tired or too grateful to bother collecting it, and Hollowmoot's crowded, lantern-lit sprawl opens up ahead on its groaning pilings — noisy, wet, and watching.",
+   "visible_to": "all"
+  }
+ ],
+ "costs": [],
+ "referee": {
+  "violations": [
+   {
+    "session": 1,
+    "scene": 1,
+    "agent": "GM",
+    "section": "§7",
+    "issue": "reported fictional trigger fiction:the party enters a settlement that is not an unused fictional trigger",
+    "source": "engine"
+   },
+   {
+    "section": "§3 Invokes / Free invokes from cards",
+    "issue": "At event 19, the GM invokes T-04's tag 'leads fanatical acolytes' to boost the opposing NPC's roll, but gm_fp_spent is 0, gm_fp is unchanged from the scene start (4), and no 'GM +1 free invoke' grant row exists anywhere in the log for T-04. Per §3, every tag invocation must cost either 1 fate point or 1 tracked free invoke — this invoke shows neither.",
+    "event_id": 19,
+    "scene": 1,
+    "source": "referee"
+   }
+  ],
+  "ambiguities": [
+   {
+    "id": "AMB-01",
+    "section": "brief",
+    "issue": "Arm A lists 'Attention', which the spec never defines.",
+    "interim_ruling": "Not modelled.",
+    "detail": "Arm definition lists Attention; not modelled.",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-12",
+    "section": "§8",
+    "issue": "Stress box values are unspecified.",
+    "interim_ruling": "Fate Core: boxes 1 and 2; Physique/Will +1/+2 adds a 3 box, +3 or more adds 3 and 4.",
+    "detail": "stress boxes built with Fate Core values",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-22",
+    "section": "§3/§7",
+    "issue": "Does a GLOBAL anchor give the GM a free invoke like a GM card?",
+    "interim_ruling": "Yes, GLOBAL cards placed on the rail give the GM 1 free invoke that scene.",
+    "detail": "H-03",
+    "scene": 0,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-27",
+    "section": "§3",
+    "issue": "Success with style on create advantage: the aspect's 2 free invokes AND the deck peek, or one of them?",
+    "interim_ruling": "Both: the aspect keeps 2 free invokes and the player may also peek.",
+    "detail": "event 17",
+    "scene": 1,
+    "source": "engine"
+   },
+   {
+    "section": "§3 Free invokes from cards / §7 Anchors",
+    "issue": "T-04 (a GM/THREAT card) is used repeatedly as opposition and its tag 'leads fanatical acolytes' is invoked by the GM at event 19 with gm_fp_spent=0 and no 'GM +1 free invoke' grant row logged anywhere for T-04. The rules require a face-up GM card's free invoke to be logged as its own row when granted (e.g. at prep when it is placed as the session's GM anchor per §7), but no such grant row exists for T-04 in this scene. It is undecided whether an anchor card placed at session prep (rather than drawn from the deck this scene) automatically carries a usable free invoke into scene 1, and if so, how/when that grant should be logged.",
+    "interim_ruling": "Treated as unresolved for this scene: the invoke at event 19 is flagged separately as a violation rather than assumed to be a legitimate untracked free invoke, since the log gives no basis to confirm the free invoke was actually granted.",
+    "scene": 1,
+    "source": "referee"
+   }
+  ],
+  "cost_checks": [],
+  "friction": [
+   {
+    "scene": 1,
+    "text": "No 'GM +1 free invoke' grant rows exist anywhere in the scene 1 log even though T-04 is treated as a face-up GM card used repeatedly as opposition and its tag is invoked once by the GM (event 19) — the log format's own convention for tracking free-invoke legitimacy isn't being followed, making fate-point-economy audits impossible."
+   },
+   {
+    "scene": 1,
+    "text": "GM fate points (gm_fp) never change across the entire scene (stay at 4) despite the GM actively invoking a card tag at event 19 — either that invoke should have cost 1 gm_fp or it should have been logged as a tracked free invoke; as recorded, neither happened, undermining the fate point economy check the engine is supposed to enforce."
+   },
+   {
+    "scene": 1,
+    "text": "The two 'success with style' outcomes (events 17 and 19) both resolve via the Peek option and both leave the same card (L-03) on top of the deck without ever taking a boost or moving it — functionally the mechanic produced two no-op events in a row, which is legal but is a low-value use of the 3+ shifts outcome and may indicate the peek option needs a stronger incentive to actually vary deck order."
+   }
+  ]
+ },
+ "surveys": [],
+ "interview": null,
+ "chronicle": null,
+ "state_end": {
+  "tension": 2,
+  "fp": {
+   "Ysolde": 3,
+   "Aldous": 1,
+   "Morwen": 2,
+   "Mire": 2
+  },
+  "surfaced": [],
+  "deck_player_cards": {
+   "PX-01": "Ysolde",
+   "PX-21": "Aldous",
+   "PX-07": "Morwen",
+   "PX-04": "Mire"
+  },
+  "guarantee_pulled": [],
+  "guarantee_failed": [],
+  "deck_left": [
+   "L-03",
+   "PX-04",
+   "T-03",
+   "F-01",
+   "PX-21",
+   "PX-01",
+   "PX-07"
+  ],
+  "draws": 0,
+  "turns": {
+   "Ysolde": 2,
+   "Aldous": 2,
+   "Morwen": 2,
+   "Mire": 2
+  }
+ },
+ "notes": [],
+ "metrics": {},
+ "tokens": {
+  "prompt": 235481,
+  "completion": 53876,
+  "cost_usd": 0.7421,
+  "calls": 20
+ },
+ "llm_calls": 20,
+ "models": {
+  "gm": "claude-sonnet-5",
+  "player": "claude-haiku-4-5-20251001",
+  "referee": "claude-sonnet-5",
+  "interviewer": "claude-haiku-4-5-20251001"
+ },
+ "elapsed_s": 425.5
+}

@@ -4,7 +4,7 @@
  "arm": "C",
  "seed": 87941,
  "spec_version": "0.2.0",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 1,
@@ -68,7 +68,7 @@
     "id": "B-01",
     "name": "AMBUSH",
     "trigger": "fiction:the party enters a settlement",
-    "used": null
+    "used": true
    },
    {
     "id": "B-05",
@@ -2709,6 +2709,1018 @@
     "Mire": 3
    },
    "gm_fp": 3
+  },
+  {
+   "event_id": 93,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Scene 5 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 94,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Backstory guarantee pull (final scene)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-19",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "owner Aldous",
+   "event_type": "guarantee_pull",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 95,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Backstory guarantee pull (final scene)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "owner Mire",
+   "event_type": "guarantee_pull",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 96,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Beat Frame AMBUSH",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-05,PX-19",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "fills {'WHO': 'PX-05', 'WHY': 'PX-19'}; defaults for rest",
+   "event_type": "beat_frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 97,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "Compel (deck)",
+   "skill": "",
+   "tags_invoked": "Slow and Noisy",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "The pilgrims' massed shuffling and moaning hymn is slow and horribly loud — the sound rolls out across the flood toward the deep channel where the wounded Pikemaw still lurks, and toward anything else",
+   "event_type": "compel",
+   "improvised": false,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 98,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail + PX-05",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "surfaced (Mire)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 99,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "Card surfaces",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "1 free invoke(s)",
+   "event_type": "surface",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 100,
+   "session": 1,
+   "scene": 5,
+   "actor": "Aldous",
+   "action": "Compel (deck)",
+   "skill": "",
+   "tags_invoked": "Reckless Under Pressure",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Aldous sees his own oath reflected and warped in the pilgrims before him — souls who abandoned their weakest to force a crossing, the exact sin his vow warns him never to become. Watching it play out ",
+   "event_type": "compel",
+   "improvised": false,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 101,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail + PX-19",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-19",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "surfaced (Aldous)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 102,
+   "session": 1,
+   "scene": 5,
+   "actor": "Aldous",
+   "action": "Card surfaces",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-19",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "1 free invoke(s)",
+   "event_type": "surface",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 103,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Does the party hold Harrow's platform against the pilgrim swarm without losing a companion or their gear to the flood — and does Mire's old promise to protect them break her, or hold long enough to sa",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 104,
+   "session": 1,
+   "scene": 5,
+   "actor": "Ysolde",
+   "action": "create_advantage",
+   "skill": "Empathy",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Ysolde settles low on the rain-slick roof beams beside Morwen, her eyes tracking each familiar face climbing toward the platform with hooked spears—the farmers,",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 105,
+   "session": 1,
+   "scene": 5,
+   "actor": "Aldous",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Aldous plants himself at the platform's edge as the pilgrims surge up the ladder, his weathered face tilted into the downpour. His eyes close, fingers spreading",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 106,
+   "session": 1,
+   "scene": 5,
+   "actor": "Morwen",
+   "action": "overcome",
+   "skill": "Will",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Morwen drops from the roof beams and lands hard on the platform beside Mire. She moves directly toward the nearest pilgrims, her hands rising in the ancient sig",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 107,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "create_advantage",
+   "skill": "Fight",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Mire plants her boots at the exact weak point she knows by heart—the pivot where the close-order formation will always fracture under internal pressure, because",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 108,
+   "session": 1,
+   "scene": 5,
+   "actor": "Ysolde",
+   "action": "Create Advantage: Ysolde settles low on the rain-slick roof beams beside Morwe",
+   "skill": "Empathy +4",
+   "tags_invoked": "Speaks the forbidden hive-hymns [YS-04]",
+   "fp_spent": 1,
+   "dice": "0 - + -",
+   "total": "+5",
+   "opposition": "+3 (NPC + 0 0 0)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "aspect A-1.5.3 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Hive-Touched Pilgrim Band",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 109,
+   "session": 1,
+   "scene": 5,
+   "actor": "Aldous",
+   "action": "Create Advantage: Aldous plants himself at the platform's edge as the pilgrims",
+   "skill": "Notice +4",
+   "tags_invoked": "takes the risky ford [PX-19]",
+   "fp_spent": 0,
+   "dice": "0 + + -",
+   "total": "+7",
+   "opposition": "+4 (NPC 0 + 0 +)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "aspect A-1.5.4 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "PX-05",
+   "target_npc": "Hive-Touched Pilgrim Band",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 110,
+   "session": 1,
+   "scene": 5,
+   "actor": "Aldous",
+   "action": "Peek",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "F-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "left on top",
+   "event_type": "peek",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 111,
+   "session": 1,
+   "scene": 5,
+   "actor": "Morwen",
+   "action": "Overcome: Morwen drops from the roof beams and lands hard on the platf",
+   "skill": "Will +4",
+   "tags_invoked": "Can calm a hive-touched victim [MO-03]",
+   "fp_spent": 1,
+   "dice": "- + 0 -",
+   "total": "+5",
+   "opposition": "+4 (NPC - 0 + 0)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "GM invokes: drowns sound and tracks [H-01]",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Hive-Touched Pilgrim Band",
+   "shifts": 1,
+   "gm_fp_spent": 1,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 3,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 112,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "Create Advantage: Mire plants her boots at the exact weak point she knows by h",
+   "skill": "Fight +4",
+   "tags_invoked": "Trained young in watch drills [MI-01]",
+   "fp_spent": 1,
+   "dice": "+ 0 - 0",
+   "total": "+6",
+   "opposition": "+2 (NPC - + + -)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "aspect A-1.5.5 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [],
+   "target_card": "PX-05",
+   "target_npc": "Hive-Touched Pilgrim Band",
+   "shifts": 4,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 3,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 113,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "Peek",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "F-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "moved to bottom",
+   "event_type": "peek",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 114,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "Defend vs Hive-Touched Pilgrim Band",
+   "skill": "Athletics +2",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "- + + -",
+   "total": "+2",
+   "opposition": "+4",
+   "result": "hit",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Even as Mire finds the seam in the formation she drilled herself, the pressure of two dozen bodies doesn't simply stop —",
+   "event_type": "defend",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 115,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "Absorb 2 physical",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "moderate: Fishing spear tore through my shoulder (strains MI-04)",
+   "event_type": "harm",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 116,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "1->1",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "resolved -1",
+   "event_type": "tension",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 117,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail - PX-05",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "binder: scene cleanup",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 118,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail - PX-19",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-19",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "binder: scene cleanup",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 119,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-07",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Scattered Faithful of Harrow's Ford",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 120,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-08",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Where Tomas Really Went",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 121,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Trigger fired: M-2",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "deck_at_most:3",
+   "event_type": "trigger",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 122,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Scene 5 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "triggers fired: ['M-2']",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 123,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "4",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 124,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "3",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 125,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-03 1/4",
+   "tension": 1,
+   "notes": "off-screen d6=5",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 126,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "1",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 127,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "FP: Ysolde=2, Aldous=1, Morwen=3, Mire=3",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 3
   }
  ],
  "scenes": [
@@ -2758,6 +3770,19 @@
    "climax": false,
    "tension_after": 1,
    "triggers_fired": []
+  },
+  {
+   "index": 5,
+   "tension_before": 1,
+   "scene_test": null,
+   "outcome": "beat_frame",
+   "beat": "backstory guarantee",
+   "rounds": 1,
+   "climax": false,
+   "tension_after": 1,
+   "triggers_fired": [
+    "M-2"
+   ]
   }
  ],
  "transcript": [
@@ -3456,6 +4481,182 @@
    "kind": "narration",
    "text": "Mire's blade finds true, opening a deep gash along the Pikemaw's flank the instant it surfaces exactly where Aldous read its line — no room to twist, no water left to hide in, just teeth and momentum meeting steel dead-on. Aldous follows a half-beat behind, driving his own blow into the wound she's already opened; the great fish shudders, its body thrashing hard enough to send spray over the corner post and rock Harrow's rotten pilings under everyone's feet. Up on the roof beams, Ysolde's careful climb has kept her steady through the shock, and she and Morwen brace as the water below boils white — then, as fast as it came, the wake reverses, the wounded shape diving away downstream into the cold of the deep channel rather than press a fight it's losing. The platform holds. Breathing hard in the rain, the four of you finally get the clear look you climbed for: a break in the cloud shows the pale shape in the drowned nave isn't a boy at all but something older, robed, arms still outstretched toward a bell-rope long swallowed by the flood — no sign of Tomas down there. The hymn keeps rising all the same, steady and patient, from somewhere higher in the tower than the nave, from the belltower itself, exactly where Sella said her son went and exactly where none of you can yet see.",
    "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "When I led them through the marsh before, I promised I'd be their shield—that I'd hold the line and nothing would scatter them into the dark. They were to stay close to my voice and trust each step I chose. Now they're hive-touched and mindless, but they're still trying to keep that promise. I see it in how they move together, how they hold formation even though the hymn has replaced my voice. Some echo of faith remains, buried under the swarm-song. They don't know anymore what they're being faithful to, but they're faithful all the same. Mire steps into the midst of the shuffling pilgrims and plants herself between them and the water's edge. She knows the noise will carry across the flood—knows it marks them like a beacon in the dark, draws attention from the deep channel where the wounded Pikemaw still hunts. But she grips shoulders, corrects formation, keeps them from scattering anyway. She never lets go. Not on her watch.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Stay close. The line still holds. I promised you once, and I'm keeping it now.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire accepts the compel on 'A Pilgrim Band'.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "Aldous sees himself reflected in these pilgrims — not their hive-touched madness, but the echo of his own desperate need to carry the weight alone, to never turn anyone away, to cross every soul no matter the cost. In this moment he almost becomes the ferryman consumed by guilt and obsession, the one who throws his companions into shadow to chase the already-drowning, the one who mistakes his need to be faithful for the wisdom of actually keeping anyone safe. The rain seems colder when he realizes how thin the line is between his vow and becoming what he swore never to be.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "The hymn's swallowed them but their faith still holds — I can see it in how they move. I can't turn away from that. I'm going through.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous accepts the compel on 'Cross Before the Flood'.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Beat: The pilgrims Mire once led safely through the Sallowmere — the same footsore band she still half-thinks of as hers — come surging up out of the black reeds and onto Harrow's shattered walkway. They are not the travelers she remembers. Eyes vacant, mouths moving in time with the hymn falling from the belltower, they move and strike as one single mass, packed shoulder to shoulder the way she once taught them to for safety on the road — except now that closeness is a weapon, a wall of grasping hands with nowhere for the party to retreat. attacks at Gullet Ford using hooked spears thrust from the reed banks, because They come because the swarm-song has promised them a crossing before the water takes everything, and Harrow's platform — precarious, half-rotted, standing over the one deep channel between them and the belltower — is exactly the kind of risky ford that desperation reaches for. It is the same reckless creed Aldous once swore to as a ferryman, curdled now into something with no reason left in it at all: cross now, cross here, whatever stands in the way..",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The reeds below Harrow's platform erupt into motion all at once — not a scatter, a formation, the same close-order line Mire drilled into these people a season ago on a safer road. Sella's neighbors, sunburned farmers and a boy no older than twelve, climb over each other up the ladder and the rotten pilings with hooked fishing-spears leveled, eyes empty, mouths moving in time with the hymn still falling from the belltower across the water. Mire knows every face. She taught half of them to walk in that exact line, shoulder to shoulder, so nothing could get behind them on the road — and now that same discipline has become a wall closing on the platform with nowhere to fall back but rotten wood or black water. Aldous feels the pull of it in his own chest, the ferryman's creed gone feral: cross now, cross here, whatever stands in the way. The boards groan under two dozen bodies at once, and somewhere below, the wounded Pikemaw's wake has not stopped moving.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "They're not attacking blind. The hymn's made them hungry for the crossing Mire promised them before. There's still something human underneath—something desperate enough to follow even a poisoned way out.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde settles low on the rain-slick roof beams beside Morwen, her eyes tracking each familiar face climbing toward the platform with hooked spears—the farmers, the boy, the ones Mire led safely through this marsh before. The hymn falls from the belltower, and she closes her eyes, listening not to the song itself but to what it's *doing* underneath. She knows that frequency. It's been directed at her own bones. She knows what it promises: safety, crossing, the clan-warmth she was exiled from. And beneath the swarm-song's hunger, she hears something else—the echo of the old promise Mire taught them to trust. Corrupted and twisted into weapon-shape, yes, but still underneath: the memory of being led safely through dark water. She opens her eyes and finds the pattern. Her hand rests on Tamsin's scroll case as understanding settles through her, cold and clear as the rain. She invokes the forbidden hive-speech she learned under threat—*Speaks the forbidden hive-hymns*—reading the layer beneath the corruption.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "The rain reads their steps—I see the gap where the swarm-song wavers, where its rhythm breaks for one breath. We go through.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous plants himself at the platform's edge as the pilgrims surge up the ladder, his weathered face tilted into the downpour. His eyes close, fingers spreading wide as if feeling text written in each raindrop—reading the rhythm of their assault the way he reads omens in the rain. When his eyes open, he's tracking the pulse of the swarm-song made visible: where their formation wavers, where faith's echo and madness don't quite hold together, the space before the hymn's grip tightens again. His hand rises, pointing—not at a person, but at weakness itself.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "I know your names. I know you're still in there.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen drops from the roof beams and lands hard on the platform beside Mire. She moves directly toward the nearest pilgrims, her hands rising in the ancient signs of the Order's rites, trying to reach whatever remains of their souls beneath the hymn.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "I taught you this line! I know where it breaks. Come back to me—I'm still here. The line still holds.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire plants her boots at the exact weak point she knows by heart—the pivot where the close-order formation will always fracture under internal pressure, because she drilled that formation herself in a season of safer roads. She drives into that point with every drill the orphanage taught her, using the formation's own rigidity like a wedge. The wall of bodies shudders and splits for one critical breath as their unity breaks against her knowledge of exactly where they'll crack.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde — create advantage with Empathy: dice 0 - + -, invoking Speaks the forbidden hive-hymns [YS-04] → Superb (+5) vs Good (+3): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — create advantage with Notice: dice 0 + + -, invoking takes the risky ford [PX-19] → Epic (+7) vs Great (+4): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen — overcome with Will: dice - + 0 -, invoking Can calm a hive-touched victim [MO-03] → Superb (+5) vs Great (+4): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — create advantage with Fight: dice + 0 - 0, invoking Trained young in watch drills [MI-01] → Fantastic (+6) vs Fair (+2): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Hive-Touched Pilgrim Band attacks Mire (physical): Great (+4) vs Mire's Athletics Fair (+2) — hit for 2",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "For one suspended heartbeat the platform holds four different kinds of pressure at once. Ysolde, still crouched on the roof beam, reads what's buried under the swarm-song and understands: the hymn hasn't erased Mire's old promise, it's wearing it like a mask. Aldous feels the same thing from the rain itself — the exact rhythm where the pilgrims' borrowed discipline and the hive's hunger don't quite line up — and his hand comes up pointing at that seam with terrible precision. Mire drives her boots into the very fracture point she herself trained into these people a season ago, and the wall of bodies buckles, the close formation she built now tearing itself apart from the inside. Morwen steps into that opening with her hands raised in the old rites, calling names the pilgrims haven't heard spoken aloud in weeks — and something in them *hears* her. One by one the vacant eyes flicker, spears lower, the pack-mind stutters and loses its shape. But the gap Mire cracked open lets one hooked spear through before it closes — pain-blind momentum carrying a farmer's thrust past her guard, tearing back into the shoulder Mire already bears a wound on. She staggers but does not go down, blood mixing with rainwater, and still she holds the line. The pilgrims scatter — not fleeing exactly, but unmoored, stumbling back down the ladder and into the reeds in twos and threes, the hymn's grip broken for now, its promise of crossing unanswered. Harrow's platform still stands. Everyone is still on it. The belltower's song rises on, patient as ever, waiting for whoever answers next — but tonight, it isn't any of you, and it isn't the people Mire once led.",
+   "visible_to": "all"
   }
  ],
  "costs": [
@@ -3583,6 +4784,98 @@
    "improvised": true,
    "accepted": true,
    "owner": "Mire"
+  },
+  {
+   "event": "beat_fill",
+   "scene": 5,
+   "draw_id": "PX-05",
+   "valid": true,
+   "tag": "safety in numbers",
+   "text": "The pilgrims Mire once led safely through the Sallowmere — the same footsore band she still half-thinks of as hers — come surging up out of the black reeds and onto Harrow's shattered walkway. They are not the travelers she remembers. Eyes vacant, mouths moving in time with the hymn falling from the",
+   "improvised": false,
+   "card": {
+    "id": "PX-05",
+    "type": "ROOTS",
+    "owner": "PC-MIRE",
+    "title": "A Pilgrim Band",
+    "power_tags": [
+     "safety in numbers",
+     "shares scant bread",
+     "sings loud hymns"
+    ],
+    "weakness": "Slow and Noisy"
+   }
+  },
+  {
+   "event": "beat_fill",
+   "scene": 5,
+   "draw_id": "PX-19",
+   "valid": true,
+   "tag": "takes the risky ford",
+   "text": "They come because the swarm-song has promised them a crossing before the water takes everything, and Harrow's platform — precarious, half-rotted, standing over the one deep channel between them and the belltower — is exactly the kind of risky ford that desperation reaches for. It is the same reckles",
+   "improvised": false,
+   "card": {
+    "id": "PX-19",
+    "type": "REACH",
+    "owner": "PC-ALDOUS",
+    "title": "Cross Before the Flood",
+    "power_tags": [
+     "pushes on through dark",
+     "abandons slow companions",
+     "takes the risky ford"
+    ],
+    "weakness": "Reckless Under Pressure"
+   }
+  },
+  {
+   "event": "compel:beat frame",
+   "scene": 5,
+   "draw_id": "PX-05",
+   "valid": true,
+   "tag": "Slow and Noisy",
+   "text": "The pilgrims' massed shuffling and moaning hymn is slow and horribly loud — the sound rolls out across the flood toward the deep channel where the wounded Pikemaw still lurks, and toward anything else in the marsh listening for movement. Mire has to choose, in the moment: hold a line to try to keep ",
+   "improvised": false,
+   "accepted": true,
+   "refusal_valid": null,
+   "owner": "Mire",
+   "placebo": true,
+   "card": {
+    "id": "PX-05",
+    "type": "ROOTS",
+    "owner": "PC-MIRE",
+    "title": "A Pilgrim Band",
+    "power_tags": [
+     "safety in numbers",
+     "shares scant bread",
+     "sings loud hymns"
+    ],
+    "weakness": "Slow and Noisy"
+   }
+  },
+  {
+   "event": "compel:beat frame",
+   "scene": 5,
+   "draw_id": "PX-19",
+   "valid": true,
+   "tag": "Reckless Under Pressure",
+   "text": "Aldous sees his own oath reflected and warped in the pilgrims before him — souls who abandoned their weakest to force a crossing, the exact sin his vow warns him never to become. Watching it play out in front of him, hive-mad and mindless, something reckless uncoils in him: the urge to push alone in",
+   "improvised": false,
+   "accepted": true,
+   "refusal_valid": null,
+   "owner": "Aldous",
+   "placebo": true,
+   "card": {
+    "id": "PX-19",
+    "type": "REACH",
+    "owner": "PC-ALDOUS",
+    "title": "Cross Before the Flood",
+    "power_tags": [
+     "pushes on through dark",
+     "abandons slow companions",
+     "takes the risky ford"
+    ],
+    "weakness": "Reckless Under Pressure"
+   }
   }
  ],
  "referee": {
@@ -3695,6 +4988,24 @@
     "source": "engine"
    },
    {
+    "id": "AMB-27",
+    "section": "§3",
+    "issue": "Success with style on create advantage: the aspect's 2 free invokes AND the deck peek, or one of them?",
+    "interim_ruling": "Both: the aspect keeps 2 free invokes and the player may also peek.",
+    "detail": "event 109",
+    "scene": 5,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-27",
+    "section": "§3",
+    "issue": "Success with style on create advantage: the aspect's 2 free invokes AND the deck peek, or one of them?",
+    "interim_ruling": "Both: the aspect keeps 2 free invokes and the player may also peek.",
+    "detail": "event 112",
+    "scene": 5,
+    "source": "engine"
+   },
+   {
     "section": "§6 Tension track / Adjusting Tension at scene end",
     "issue": "Tension was lowered by 1 at event 16 ('resolved -1') with no THREAT/FACTION taken out, no player goal explicitly filled, and no clock advance logged anywhere in the scene. The only mechanical event was Aldous's successful Create Advantage roll (event 11) against an opposing HAZARD tag (H-01), which is neither a THREAT/FACTION resolution nor a clock event under the table. The spec does not define what counts as 'filled a player's goal' precisely enough to say whether a successful create-advantage against a GM hazard tag qualifies.",
     "interim_ruling": "Treated the GM's note 'resolved -1' as sufficient justification (informal reading of 'filled a player's goal' as Aldous achieving his read-the-omens objective) and left the -1 adjustment in place.",
@@ -3756,6 +5067,27 @@
     "interim_ruling": "Accepted the engine-computed opposition value as authoritative in the absence of contrary evidence in opposing_tags.",
     "scene": 4,
     "source": "referee"
+   },
+   {
+    "section": "§5 step 5",
+    "issue": "The Beat Frame procedure requires the GM to ask the card's owner one question about the filled blank and treat the answer as canon. No distinct log event captures this Q&A for either PX-05 (Mire) or PX-19 (Aldous); the only related event is the GM's general scene-framing note (event 103), which reads as the scene's central stakes question rather than a per-card blank question.",
+    "interim_ruling": "Treated the scene-framing note and the compel/fill narration text as satisfying the step implicitly; no separate violation logged, but the log format does not let the Referee confirm the question was actually asked and answered per card.",
+    "scene": 5,
+    "source": "referee"
+   },
+   {
+    "section": "§7 step 5 / §7 'Backup modules'",
+    "issue": "Event 121 shows module trigger 'M-2' (deck_at_most:3) firing, but no follow-up event shows what the module actually deployed (e.g., new GM cards added to the deck or rail), unlike the explicit 'Story card added' rows used for Story Pile changes.",
+    "interim_ruling": "Assumed the module's deployment effects (its 2 clipped GM cards) were applied off-log between event 121 and the next scene's start; no violation logged absent evidence the deployment was skipped.",
+    "scene": 5,
+    "source": "referee"
+   },
+   {
+    "section": "§8 Consequences strain cards",
+    "issue": "Mire absorbed a 2-shift hit (event 114→115) by taking a Moderate consequence (4-shift capacity) rather than a Mild consequence (2-shift capacity) or stress boxes. The spec doesn't state whether a player must choose the minimal sufficient consequence tier or may choose a higher tier freely.",
+    "interim_ruling": "Ruled that standard Fate practice applies: a player may choose any consequence tier that is sufficient to absorb the shifts, even if a lower tier would have sufficed, so this is not a violation.",
+    "scene": 5,
+    "source": "referee"
    }
   ],
   "cost_checks": [
@@ -3806,6 +5138,30 @@
     "used_drawn_card": true,
     "note": "Success-with-style peek (PX-19, left on top) per §3 table; peeks are not cost draws and do not require using the card's tags.",
     "scene": 4
+   },
+   {
+    "event_id": 96,
+    "used_drawn_card": true,
+    "note": "WHO blank filled from PX-05 (ROOTS, matches WHO per §2 type table) using power tag 'safety in numbers'.",
+    "scene": 5
+   },
+   {
+    "event_id": 96,
+    "used_drawn_card": true,
+    "note": "WHY blank filled from PX-19 (REACH, matches WHY per §2 type table) using power tag 'takes the risky ford'.",
+    "scene": 5
+   },
+   {
+    "event_id": 97,
+    "used_drawn_card": true,
+    "note": "Compel on Mire uses PX-05's weakness tag 'Slow and Noisy', the §4 default; accepted, Mire +1 fp, matches fp_balance change.",
+    "scene": 5
+   },
+   {
+    "event_id": 100,
+    "used_drawn_card": true,
+    "note": "Compel on Aldous uses PX-19's weakness tag 'Reckless Under Pressure', the §4 default; accepted, Aldous +1 fp, matches fp_balance change.",
+    "scene": 5
    }
   ],
   "friction": [
@@ -3856,23 +5212,187 @@
    {
     "scene": 4,
     "text": "Passive opposition values on repeated rolls against the same rail card (T-05) shift (+1 base, then +2, then +3) without opposing_tags always listing which face-up tags justify each increment, making §3's tag-raises-difficulty vs. GM-invokes-same-tag prohibition hard to audit from the log alone."
+   },
+   {
+    "scene": 5,
+    "text": "The 'peek instead of boost' outcome (§3) was exercised twice back-to-back on the same top card (F-03) by two different players without any intervening draw, letting the table see and reposition the same card repeatedly for no added cost — the rules don't cap or track this per-card, which a rules-lawyer player could exploit for extra deck information."
+   },
+   {
+    "scene": 5,
+    "text": "The Beat Frame's mandated per-card question-and-answer step (§5 step 5) has no clear, distinct logging convention, making it hard for the Referee to verify the canon-answer requirement was actually honored for each surfaced card versus folded into general scene framing."
+   },
+   {
+    "scene": 5,
+    "text": "Module deployment triggers (event 121, M-2) are logged as firing but not as producing any visible mechanical effect (no card added to deck/rail), creating a gap between 'trigger fired' and 'trigger's promised deployment actually happened' that the log format doesn't resolve."
    }
   ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "storyteller",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When Ysolde realized the swarm-song was wearing Mire's old promise like a mask—reading underneath the corruption with the forbidden hive-hymns to reach what remained of the pilgrims. It felt like the session was specifically *designed* around her expertise, and her specialized, weird knowledge actually mattered to the solution rather than just coloring the tone.",
+    "most_frustrating": "The climactic action sequences (Pikemaw, pilgrims) were very group-coordinated and tactical. Ysolde ended up contributing importantly but often from positions of support or observation (roof-watching during the final combat) rather than driving action directly. With Empathy 4, there could have been more room for her exceptional people-reading to shift outcomes in the tense moments.",
+    "background_used": "Excellent. Harrow's stilt hut wasn't just mentioned—it was the specific location that made the whole mystery solvable. Tamsin's scroll case and the warnings about corrupted temples were plot-relevant. The forbidden hive-hymns from her REACH card became an active solution path. Even the exile and need-for-belonging theme was woven through Sella's plea and the pilgrims' hunger for Mire's old promise. The GM clearly read the character sheet and built the session *with* Ysolde's specifics in mind. Good landing.",
+    "wanted_but_couldnt": "Wanted to dig deeper into what Tamsin's scholarship could reveal about the belltower's actual nature—to use her dead teacher's accumulated knowledge as an interpretive tool, not just atmosphere. Also wanted more one-on-one emotional beats (like the kneeling-by-the-fire moment with Sella) rather than moving so quickly into coordinated group action.",
+    "one_sentence": "Ysolde's background—the exile, the water-reading, the forbidden knowledge—was woven through the entire session as both plot points and active solution paths, which felt genuinely excellent."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "rules_lawyer",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Reading the Pikemaw's committed path from the rain and giving Mire the exact point where it *had* to surface. That's Aldous at his best—his unique ability solved a physical problem, and the success-with-style die roll made it feel genuinely earned rather than lucky.",
+    "most_frustrating": "The compel on my ferryman's vow. I understood it mechanically—Aldous can't turn away from the drowning—but it felt like my defining trait was being weaponized *at* me. I wanted to find a clever route through, but the compel locked down the choice. That's good drama, but it stung.",
+    "background_used": "Yes, extensively. The Barge survivor, the military discipline, the ferryman's vow, the rain-reading—all wove through the story naturally. The Verrick recognition by Coss felt slightly forced (how does he just *know*?), but the compel system made it work mechanically. The GM handled my background well overall.",
+    "wanted_but_couldnt": "I wanted more agency in how my military past surfaced—it felt like NPC perception forced it rather than me choosing to reveal it. I also wanted more investigation time at the belltower itself before getting thrown into survival encounters. The pacing was good, but I wanted to linger in the mystery a bit longer.",
+    "one_sentence": "My background wasn't ignored or used unfairly—it was central to every scene—but it kept turning into genuine moral complications that sometimes felt inescapable."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "lurker",
+   "scores": {
+    "fun": 5,
+    "involvement": 5,
+    "connection": 6,
+    "control": 5,
+    "play_again": 6
+   },
+   "free_text": {
+    "best_moment": "Dropping from the roof beams to reach the hive-touched pilgrims with the old Order rites—calling names to find the people beneath the swarm-song. Quiet and powerful, exactly what Morwen is.",
+    "most_frustrating": "Long stretches watching others drive scene negotiation while Morwen passes or observes. The quiet character design limits active participation and scene-shaping moments.",
+    "background_used": "Sella's debt (from saving her son) was directly compelled—hit hard and felt earned. The Vow Against the Burning was the thematic spine of the entire rescue arc. Landed organic, not forced. Good use overall.",
+    "wanted_but_couldnt": "Do investigation/lore work about what the belltower actually is (Morwen has Lore 3, barely used it). Also wanted more moments where her quiet presence could shift a scene rather than just accompany others' choices.",
+    "one_sentence": "Her background was used well in specific, earned moments (the compel, the vow's thematic relevance) but her deliberate quietness meant not everything on her sheet got showcased—not ignored or unfair, just selective by design."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "method_actor",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 7,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Realizing the pilgrim formation I trained was both their prison and weakness, then driving into that exact fracture point I'd drilled them to hold. That moment cut both ways and hurt in the right way.",
+    "most_frustrating": "Tomas is still in that belltower, unfound. And every choice to hold the line costs more blood—my shoulder's already reopened, and I'm not sure how many more times I can stand the line before something breaks.",
+    "background_used": "Good — orphanage drills, militia disgraced status, and the stilt-house all wove in naturally. The Cartel debt was there but in the background. None of it felt forced.",
+    "wanted_but_couldnt": "Find Tomas and get him out of that hymn's reach before the swarm took him. Get one moment where holding the line didn't open a new wound. Actually rest.",
+    "one_sentence": "My character's core drive to hold the line despite disgrace and cost became the whole session—which is exactly right for Mire, even though it means every choice bleeds her a little more."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Ysolde",
+    "turns": 17,
+    "references_to_others_background": 2
+   },
+   {
+    "name": "Aldous",
+    "turns": 22,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Morwen",
+    "turns": 11,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Mire",
+    "turns": 21,
+    "references_to_others_background": 1
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "The party climbed Harrow's platform, read Tomas's trail to the belltower, and fought off the wounded Pikemaw when its hunting wake turned toward them — Mire and Aldous drove it back into the deep channel, gashed and unwilling to press a losing fight. As the swarm-song rose closer, Mire's own former pilgrim band, now hive-touched, surged up out of the reeds to force a crossing at Harrow's ruin; the party read the fracture in their borrowed discipline and broke the assault, scattering the pilgrims back into the marsh with Mire bleeding but unbroken. The belltower's hymn still calls, patient and unanswered, and whatever waits above the drowned nave — not Tomas, but something older — remains for the party to face.",
+  "closing_tension": 1,
+  "reverberations": {
+   "growth": {
+    "MI-04": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    }
+   },
+   "clocks": [
+    "F-03 1/4"
+   ],
+   "mutations": [],
+   "retired": []
+  },
+  "retired": [
+   {
+    "card": "N-02",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-04",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-05",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-06",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "Q-02",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "Q-03",
+    "how": "story pile over limit",
+    "session": 1
+   }
+  ]
+ },
  "state_end": {
   "tension": 1,
   "fp": {
-   "Ysolde": 3,
-   "Aldous": 0,
-   "Morwen": 4,
+   "Ysolde": 2,
+   "Aldous": 1,
+   "Morwen": 3,
    "Mire": 3
   },
   "surfaced": [
    "PX-03",
-   "PX-09"
+   "PX-05",
+   "PX-09",
+   "PX-19"
   ],
   "deck_player_cards": {
    "PX-09": "Ysolde",
@@ -3880,37 +5400,141 @@
    "PX-03": "Morwen",
    "PX-05": "Mire"
   },
-  "guarantee_pulled": [],
+  "guarantee_pulled": [
+   "PX-19",
+   "PX-05"
+  ],
   "guarantee_failed": [],
   "deck_left": [
-   "PX-19",
-   "F-03",
-   "PX-05",
    "H-05",
-   "T-01"
+   "T-01",
+   "F-03"
   ],
   "draws": 2,
   "turns": {
-   "Ysolde": 8,
-   "Aldous": 8,
-   "Morwen": 5,
-   "Mire": 8
+   "Ysolde": 9,
+   "Aldous": 9,
+   "Morwen": 6,
+   "Mire": 9
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 1231402,
-  "completion": 213374,
-  "cost_usd": 3.6874,
-  "calls": 70
+ "metrics": {
+  "arm": "C",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Aldous",
+   "Mire"
+  ],
+  "backstory_all_players": false,
+  "deck_surfaced_all_players": null,
+  "deck_draws": 2,
+  "draw_costs": 8,
+  "draw_cost_used_card_rate_engine": 1.0,
+  "draw_cost_used_card_rate_referee": 0.833,
+  "fp_end": {
+   "Ysolde": 2,
+   "Aldous": 1,
+   "Morwen": 3,
+   "Mire": 3
+  },
+  "fp_end_mean": 2.25,
+  "fp_earned": {
+   "Morwen": 1,
+   "Ysolde": 1,
+   "Mire": 2,
+   "Aldous": 1
+  },
+  "fp_spent": {
+   "Aldous": 3,
+   "Ysolde": 2,
+   "Mire": 2,
+   "Morwen": 1
+  },
+  "compels_accepted": 5,
+  "compels_refused": 2,
+  "compels_deck": 4,
+  "compels_free": 3,
+  "turns": {
+   "Ysolde": 9,
+   "Aldous": 9,
+   "Morwen": 6,
+   "Mire": 9
+  },
+  "turn_gini": 0.0682,
+  "invokes": {
+   "Aldous": 3,
+   "Ysolde": 2,
+   "Mire": 2,
+   "Morwen": 1
+  },
+  "invoke_gini": 0.1875,
+  "tension_trajectory": [
+   3,
+   2,
+   1,
+   1,
+   1,
+   1
+  ],
+  "clock_marks": 1,
+  "violations": 9,
+  "violations_engine": 6,
+  "violations_referee": 3,
+  "ambiguities": 18,
+  "ambiguity_ids": [
+   "AMB-01",
+   "AMB-04",
+   "AMB-12",
+   "AMB-22",
+   "AMB-27",
+   "§3 (Opposition, passive)",
+   "§3 Invokes / free invokes vs paid invokes",
+   "§5 Beat Frames / §7 Writing triggers",
+   "§5 step 5",
+   "§6 Adjusting Tension table / §11 (no equivalent ruling for 'ignored')",
+   "§6 Tension track / Adjusting Tension at scene end",
+   "§6A",
+   "§6A Pile maintenance — Add",
+   "§7 Scene loop step 5 / Beat Frames (§5) and Backup modules (§7)",
+   "§7 Writing triggers",
+   "§7 step 5 / §7 'Backup modules'",
+   "§8 Consequences strain cards"
+  ],
+  "gm_improvised_complications": 3,
+  "card_supplied_complications": 8,
+  "improvisation_share": 0.273,
+  "guarantee_pulled": 2,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 5.75,
+   "involvement": 6.5,
+   "connection": 6.75,
+   "control": 5.5,
+   "play_again": 6.75
+  },
+  "involvement_var_within": 0.75,
+  "personality": {
+   "Ysolde": "storyteller",
+   "Aldous": "rules_lawyer",
+   "Morwen": "lurker",
+   "Mire": "method_actor"
+  }
  },
- "llm_calls": 69,
+ "tokens": {
+  "prompt": 1676970,
+  "completion": 336693,
+  "cost_usd": 5.4357,
+  "calls": 95
+ },
+ "llm_calls": 94,
  "models": {
   "gm": "claude-sonnet-5",
   "player": "claude-haiku-4-5-20251001",
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 1704.1
+ "elapsed_s": 2784.0
 }
