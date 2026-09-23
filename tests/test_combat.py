@@ -158,20 +158,20 @@ def test_champion_in_a_hidden_tile_cannot_be_targeted_from_outside(state, board)
     t = board.tile_index["Mid River"]
     hider, shooter = state.champs["n_ashwyn"], state.champs["s_dax"]
     _clear_the_edges(state, board, t, keep=(hider.uid, shooter.uid),
-                     reserved=((0, 0), (3, -2)))
+                     reserved=((0, 0), (-5, -1)))
     # The shooter has to stand off the edge: under RQ-036 an adjacent enemy
     # reveals an occupied hexgroup, and a revealed champion is targetable.
-    hider.hexpos, shooter.hexpos = (0, 0), (3, -2)
+    hider.hexpos, shooter.hexpos = (0, 0), (-5, -1)
     state.touch()
     state.refresh_visibility()
     assert state.hidden_mask >> t & 1
     assert state.hidden_mask >> t & 1, "nobody is standing on the edge"
-    seen = [u.uid for u, _ in units_within(state, state.node_of_unit(shooter), 4,
+    seen = [u.uid for u, _ in units_within(state, state.node_of_unit(shooter), 9,
                                            "south", "enemy_champion", shooter.hexpos)]
     assert hider.uid not in seen
     # Only champions are concealed: north's mid T1, also inside a hidden tile,
     # is still a legal target at plain hex range.
-    seen_any = [u.uid for u, _ in units_within(state, state.node_of_unit(shooter), 4,
+    seen_any = [u.uid for u, _ in units_within(state, state.node_of_unit(shooter), 9,
                                                "south", "enemy_any", shooter.hexpos)]
     assert "n_mid_T1" in seen_any
 

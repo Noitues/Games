@@ -34,6 +34,10 @@ DEFAULT_CONFIG = {
     "kill_ap": 1,
     "death_band_bonus": 0,      # added to the death-track position (Rules 6.4)
     "dragon_cap": 2,
+    # What holding a Dragon card is worth per round. Raising it is the
+    # objective lever from RQ-037: an objective worth fighting over pulls teams
+    # into each other, which is the fight the game was not paying for.
+    "dragon_ap_each": 1,
     "tower_hits_champion": 2,
     "tower_hits_wave": 1,
     "monster_hits": 1,
@@ -47,9 +51,8 @@ DEFAULT_CONFIG = {
     # on an adjacent hex. Cover works at a distance, not at arm's length.
     "adjacency_reveal": True,
     # How close an enemy champion has to be to reveal an occupied hexgroup.
-    # 1 is the rule as written (standing on the edge looks in). At 2 it matches
-    # the reach cap from P-0007, so anything that can hit you can see you.
-    "reveal_radius": 1,
+    # 2 matches the P-0007 reach cap: anything that can hit you can see you.
+    "reveal_radius": 2,
     # RQ-034's ambush gate, retired by RQ-036 but kept switchable.
     "ambush_gate": False,
     # Enumeration caps (engine performance; reported under Anomalies).

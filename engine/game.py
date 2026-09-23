@@ -83,7 +83,8 @@ def upkeep(state: GameState, game: "Game") -> None:
     for t in TEAMS:                                      # step 4
         ts = state.teams[t]
         ts.ap = 0
-        ts.gain(cfg["ap_base"] + min(ts.dragons, cfg["dragon_cap"]), "base")
+        ts.gain(cfg["ap_base"]
+                + min(ts.dragons, cfg["dragon_cap"]) * cfg.get("dragon_ap_each", 1), "base")
 
     order = [state.priority, other(state.priority)]
     for team in order:                                   # step 5

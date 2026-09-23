@@ -165,3 +165,10 @@ The mixed field produced 2 champions clearly off 50% against 7 in the
 simply wider intervals from mixed match-ups, so it is not yet evidence that the
 roster is better balanced than the mirror said - only that the mirror was
 measuring against one taste.
+
+## Iteration 6 - the lead designer's rulings on RQ-036 and RQ-037
+
+| id | ruling | status |
+|---|---|---|
+| RQ-036a | **Sight reaches as far as a damage step: reveal radius 2.** While sight reached 1 and abilities reached 2 there was a band in which a champion could fire without ever being seen, and simulation found it was where most of the shooting happened - the P-0007 reach cap moved sniping barely at all (65.6 to 63.5 a game) because it narrowed that band rather than closing it. At radius 2 the two numbers are equal: if you can hit it, you can see it. Probes put champion snipes down about a fifth and champion combat up about 40%. Rules 1.7.0. | ruled, implemented |
+| RQ-037a | **Objectives may be priced higher; towers may not be made to need a wave.** The objective lever is approved as a way to pull teams into each other; the map-shaped alternative - a tower that only falls while your wave is present - is rejected. `dragon_ap_each` is wired as a config knob and is not yet changed from 1: P-0008 is in flight and pricing two things at once would make neither attributable. | ruled, one lever pending |

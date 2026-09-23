@@ -22,9 +22,9 @@ def test_flip_back_when_one_team_remains(state, board, game):
     state.touch()
     state.refresh_visibility(placer=game.placer)
     assert not state.hidden_mask >> t & 1
-    # (2, -1) still borders Mid River, and under RQ-036 an adjacent enemy keeps
-    # an occupied hexgroup revealed. Step off the edge entirely to flip back.
-    state.champs["s_dax"].hexpos = (3, -2)
+    # Sight reaches 2 hexes (Rules 1.7.0), so stepping one hex off the edge is
+    # not enough: the watcher has to leave the neighbourhood to let it flip back.
+    state.champs["s_dax"].hexpos = (-5, -1)
     state.touch()
     state.refresh_visibility(placer=game.placer)
     assert state.hidden_mask >> t & 1
@@ -143,7 +143,7 @@ def test_an_adjacent_enemy_reveals_an_occupied_hexgroup(state, board, game):
     """RQ-036: cover works at a distance, not at arm's length."""
     t = board.tile_index["Mid River"]
     state.champs["n_ashwyn"].hexpos = (0, 0)          # hiding inside
-    state.champs["s_dax"].hexpos = (3, -2)            # far away: still hidden
+    state.champs["s_dax"].hexpos = (-5, -1)           # out of sight: still hidden
     state.touch()
     state.refresh_visibility(placer=game.placer)
     assert state.hidden_mask >> t & 1
@@ -199,3 +199,23 @@ def test_camp_clearing_from_cover_is_untouched(state, board, game):
     state.refresh_visibility(placer=game.placer)
     apply_plan(state, c, "Q", (m.uid,))
     assert state.hidden_mask >> tile & 1
+
+
+def test_sight_reaches_as_far_as_a_damage_step(state, board, game):
+    """Rules 1.7.0: reveal radius 2, matching the P-0007 reach cap. While sight
+    reached 1 and abilities reached 2 there was a band to shoot from unseen."""
+    t = board.tile_index["Mid River"]
+    state.champs["n_ashwyn"].hexpos = (0, 0)
+    for c in state.champs.values():
+        if c.team == "south":
+            c.hexpos = state.board.fountain["south"]
+    state.champs["s_dax"].hexpos = (-3, 0)        # exactly two hexes off
+    state.touch()
+    state.refresh_visibility(placer=game.placer)
+    assert not state.hidden_mask >> t & 1, "attack range and sight are the same distance"
+
+    state.config["reveal_radius"] = 1
+    state.hidden_mask |= 1 << t
+    state.touch()
+    state.refresh_visibility(placer=game.placer)
+    assert state.hidden_mask >> t & 1, "at radius 1 that same champion sees nothing"
