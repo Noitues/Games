@@ -32,5 +32,73 @@
   "success_metric": "In a T2 mirror: ashwyn and quillan fall below 2.0x the roster-mean AP per round, and no champion sits above 2.5x.",
   "revert_if": "Median game length leaves 13-15 rounds, or mean AP per team-round falls by more than 20%, or ashwyn's or quillan's win-rate CI falls wholly outside [30, 70].",
   "side_effects": "Two champions lose their signature reach. quillan's R was a bare AREA and could not remain an ultimate once reach was fixed - k jumps from 6 to 12 gross, either under the per-ability floor or over the spread cap - so it gained a slow rider and its W line came back from n5 to n4. Four champions with reach-1 AREAs (sable, wisp, pallas, grivven) are untouched by this patch and will probably still sit above 1.5x; if they do, the next lever is on the conversion itself rather than the geometry, and that touches the chip-equals-AP pillar, so it is the lead designer's call.",
-  "pillar_change": false
+  "pillar_change": false,
+  "result": {
+    "verdict": "partial - the mechanism is confirmed, the target is not met",
+    "batches": {
+      "before": "batch_0033 (roster 1.4.1)",
+      "after": "batch_0034 (roster 1.5.0)",
+      "held_constant": "rules 1.4.0 hidden-zone rules, ai 1.2.0, T2 mirror, tower HP 16"
+    },
+    "the_two_it_touched": {
+      "ashwyn": {
+        "ap_per_round": [
+          8.59,
+          5.65
+        ],
+        "x_mean": [
+          3.33,
+          2.25
+        ]
+      },
+      "quillan": {
+        "ap_per_round": [
+          6.79,
+          5.24
+        ],
+        "x_mean": [
+          2.63,
+          2.08
+        ]
+      }
+    },
+    "the_three_it_did_not": {
+      "sable": {
+        "ap_per_round": [
+          5.97,
+          6.4
+        ],
+        "x_mean": [
+          2.31,
+          2.54
+        ]
+      },
+      "wisp": {
+        "ap_per_round": [
+          5.63,
+          5.99
+        ],
+        "x_mean": [
+          2.18,
+          2.38
+        ]
+      },
+      "pallas": {
+        "ap_per_round": [
+          3.93,
+          4.49
+        ],
+        "x_mean": [
+          1.52,
+          1.79
+        ]
+      }
+    },
+    "success_metric": {
+      "target": "ashwyn and quillan below 2.0x, nobody above 2.5x",
+      "verdict": "MISS - 2.25x and 2.08x, and sable now leads at 2.54x"
+    },
+    "reading": "Reach was the right lever and the evidence is unambiguous: the two AREAs it touched lost 34% and 23% of their absolute income, which no pricing change had managed. But it only reaches the champions who had reach to lose. The three reach-1 AREA engines went up in absolute terms as well as relative, because the roster mean barely moved (2.58 to 2.51) while they kept farming - they were never earning from reach, they earn from standing next to several units at once. Geometry has now been spent. What is left is the conversion itself, and that is the chip-equals-AP pillar, so it is the lead designer's call.",
+    "note_on_revert": "Median length read 16 rounds, outside the 13-15 band named in revert_if, but tower HP is still the untuned placeholder of 16 and pacing is deliberately being tuned last. Not reverted on that basis; the pacing phase inherits it."
+  }
 }
