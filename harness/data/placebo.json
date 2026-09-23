@@ -1,0 +1,754 @@
+{
+  "deck_cards": [
+    {
+      "id": "PX-01",
+      "type": "ROOTS",
+      "owner": "PLACEBO",
+      "title": "A Stranded Ferryman",
+      "power_tags": [
+        "knows the flooded channels",
+        "owns a leaking punt",
+        "hears river gossip"
+      ],
+      "weakness": "Owes Everyone Money",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "A ferryman whose crossing has washed away, willing to guide for a meal."
+    },
+    {
+      "id": "PX-02",
+      "type": "ROOTS",
+      "owner": "PLACEBO",
+      "title": "A Roadside Shrine",
+      "power_tags": [
+        "dry roof over altar",
+        "offerings left by travelers",
+        "carved warning marks"
+      ],
+      "weakness": "Watched by Desperate Eyes",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "A small wayside shrine, one of the few dry spots on the road."
+    },
+    {
+      "id": "PX-03",
+      "type": "ROOTS",
+      "owner": "PLACEBO",
+      "title": "A Weary Innkeeper",
+      "power_tags": [
+        "keeps a dry common room",
+        "hears every rumor",
+        "hides guests for coin"
+      ],
+      "weakness": "Sells Out Lodgers",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "A tired innkeeper who has seen too many guests not come back."
+    },
+    {
+      "id": "PX-04",
+      "type": "ROOTS",
+      "owner": "PLACEBO",
+      "title": "An Abandoned Mill",
+      "power_tags": [
+        "stout stone walls",
+        "grain loft above water",
+        "creaking waterwheel"
+      ],
+      "weakness": "Rotten Floorboards Everywhere",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "A drowned watermill standing alone in the flood."
+    },
+    {
+      "id": "PX-05",
+      "type": "ROOTS",
+      "owner": "PLACEBO",
+      "title": "A Pilgrim Band",
+      "power_tags": [
+        "safety in numbers",
+        "shares scant bread",
+        "sings loud hymns"
+      ],
+      "weakness": "Slow and Noisy",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "A band of pilgrims walking toward any promise of dry ground."
+    },
+    {
+      "id": "PX-06",
+      "type": "ROOTS",
+      "owner": "PLACEBO",
+      "title": "A Reed-Cutter Family",
+      "power_tags": [
+        "knows hidden reed paths",
+        "sharp reed sickles",
+        "keeps a dry loft"
+      ],
+      "weakness": "Terrified of Strangers",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "A family who cut reeds for thatch and now barely survive."
+    },
+    {
+      "id": "PX-07",
+      "type": "ROOTS",
+      "owner": "PLACEBO",
+      "title": "A Drowned Village",
+      "power_tags": [
+        "rooftops above water",
+        "salvage in flooded homes",
+        "silent empty streets"
+      ],
+      "weakness": "Something Nests in the Houses",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "A village lost to the flood, roofs poking from the water."
+    },
+    {
+      "id": "PX-08",
+      "type": "ROOTS",
+      "owner": "PLACEBO",
+      "title": "A Travelling Tinker",
+      "power_tags": [
+        "mends broken gear",
+        "trades odd trinkets",
+        "walks every road"
+      ],
+      "weakness": "Talks Far Too Much",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "A tinker with a cart full of wet junk and news."
+    },
+    {
+      "id": "PX-09",
+      "type": "ROOTS",
+      "owner": "PLACEBO",
+      "title": "A Fisher's Stilt Hut",
+      "power_tags": [
+        "raised above the floods",
+        "nets and fishing lines",
+        "view across the marsh"
+      ],
+      "weakness": "Collapses Under Weight",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "A lone hut on stilts in open water."
+    },
+    {
+      "id": "PX-10",
+      "type": "ROOTS",
+      "owner": "PLACEBO",
+      "title": "A Deserted Watchtower",
+      "power_tags": [
+        "sees for miles",
+        "signal fire brazier",
+        "narrow defensible stair"
+      ],
+      "weakness": "Visible From Everywhere",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "An old watchtower on a knoll, long abandoned."
+    },
+    {
+      "id": "PX-11",
+      "type": "ROOTS",
+      "owner": "PLACEBO",
+      "title": "A Grieving Widow",
+      "power_tags": [
+        "knows the local dead",
+        "keeps an old spear",
+        "offers a dry barn"
+      ],
+      "weakness": "Blames Any Outsider",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "A widow who lost her family to the flood and wants someone to blame."
+    },
+    {
+      "id": "PX-12",
+      "type": "ROOTS",
+      "owner": "PLACEBO",
+      "title": "A Hedge Herbalist",
+      "power_tags": [
+        "brews fever remedies",
+        "knows poison plants",
+        "trades cures for favours"
+      ],
+      "weakness": "Remedies Sometimes Fail",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "A herbalist living at the edge of the reeds."
+    },
+    {
+      "id": "PX-13",
+      "type": "REACH",
+      "owner": "PLACEBO",
+      "title": "Desperate Hunger",
+      "power_tags": [
+        "drives risky bargains",
+        "steals when unwatched",
+        "trades food for loyalty"
+      ],
+      "weakness": "Weak From Starving",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "Someone here is hungry enough to do anything."
+    },
+    {
+      "id": "PX-14",
+      "type": "REACH",
+      "owner": "PLACEBO",
+      "title": "A Debt Called In",
+      "power_tags": [
+        "demands payment now",
+        "threatens with witnesses",
+        "offers a way to settle"
+      ],
+      "weakness": "Violence if Unpaid",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "An old debt comes due at the worst time."
+    },
+    {
+      "id": "PX-15",
+      "type": "REACH",
+      "owner": "PLACEBO",
+      "title": "The Hunt for Shelter",
+      "power_tags": [
+        "claims the last dry room",
+        "barricades the door",
+        "bargains for a place"
+      ],
+      "weakness": "Turns Neighbours Into Rivals",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "Everyone needs a dry place tonight, and there aren't enough."
+    },
+    {
+      "id": "PX-16",
+      "type": "REACH",
+      "owner": "PLACEBO",
+      "title": "Fear of the Blight",
+      "power_tags": [
+        "sees hive marks everywhere",
+        "demands proof of health",
+        "reaches for the torch"
+      ],
+      "weakness": "Panics at a Cough",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "Terror of the hive makes people cruel."
+    },
+    {
+      "id": "PX-17",
+      "type": "REACH",
+      "owner": "PLACEBO",
+      "title": "Promise of Reward",
+      "power_tags": [
+        "offers coin for help",
+        "hints at more later",
+        "pays half up front"
+      ],
+      "weakness": "Reward Never Materialises",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "Someone is offering pay for a dangerous job."
+    },
+    {
+      "id": "PX-18",
+      "type": "REACH",
+      "owner": "PLACEBO",
+      "title": "An Old Grudge",
+      "power_tags": [
+        "remembers every slight",
+        "waits for the chance",
+        "gathers like-minded friends"
+      ],
+      "weakness": "Strikes at the Wrong Moment",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "A long-held grudge finally finds its opening."
+    },
+    {
+      "id": "PX-19",
+      "type": "REACH",
+      "owner": "PLACEBO",
+      "title": "Cross Before the Flood",
+      "power_tags": [
+        "pushes on through dark",
+        "abandons slow companions",
+        "takes the risky ford"
+      ],
+      "weakness": "Reckless Under Pressure",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "The water is rising and there is no time."
+    },
+    {
+      "id": "PX-20",
+      "type": "REACH",
+      "owner": "PLACEBO",
+      "title": "Search for Missing Kin",
+      "power_tags": [
+        "asks every traveler",
+        "follows thin rumors",
+        "won't stop looking"
+      ],
+      "weakness": "Chases False Leads",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "Someone is looking for family lost in the flood."
+    },
+    {
+      "id": "PX-21",
+      "type": "REACH",
+      "owner": "PLACEBO",
+      "title": "Rumor of Buried Treasure",
+      "power_tags": [
+        "whispers of hidden silver",
+        "draws greedy strangers",
+        "a half-burned map"
+      ],
+      "weakness": "Treasure Hunters Turn Violent",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "A rumour of valuables in the flooded ruins."
+    },
+    {
+      "id": "PX-22",
+      "type": "REACH",
+      "owner": "PLACEBO",
+      "title": "Duty to the Dead",
+      "power_tags": [
+        "insists on burial rites",
+        "guards the drowned bodies",
+        "reads names aloud"
+      ],
+      "weakness": "Delays at Any Cost",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "The dead must be honoured, whatever the danger."
+    },
+    {
+      "id": "PX-23",
+      "type": "REACH",
+      "owner": "PLACEBO",
+      "title": "Burning Religious Zeal",
+      "power_tags": [
+        "preaches to anyone near",
+        "sees omens in rain",
+        "commands the pious"
+      ],
+      "weakness": "Refuses Any Compromise",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "Faith hardened into certainty."
+    },
+    {
+      "id": "PX-24",
+      "type": "REACH",
+      "owner": "PLACEBO",
+      "title": "Escape From Pursuers",
+      "power_tags": [
+        "covers tracks carefully",
+        "lies about the past",
+        "begs for a hiding place"
+      ],
+      "weakness": "Pursuers Close Behind",
+      "track": {
+        "kind": "growth",
+        "size": 3
+      },
+      "blurb": "Someone is running, and whoever chases them is not far behind."
+    }
+  ],
+  "story_cards": [
+    {
+      "id": "PS-01",
+      "type": "NPC",
+      "owner": "PLACEBO",
+      "title": "A Lost Child",
+      "power_tags": [
+        "slips through tiny gaps",
+        "knows a hidden path",
+        "cries at the worst moment"
+      ],
+      "weakness": "Wanders Off Alone",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "A small child alone in the rain."
+    },
+    {
+      "id": "PS-02",
+      "type": "NPC",
+      "owner": "PLACEBO",
+      "title": "A Wounded Warden",
+      "power_tags": [
+        "carries an official seal",
+        "knows patrol times",
+        "still handy with a spear"
+      ],
+      "weakness": "Bleeding and Feverish",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "A militia guard left behind by his patrol."
+    },
+    {
+      "id": "PS-03",
+      "type": "NPC",
+      "owner": "PLACEBO",
+      "title": "A Suspicious Peddler",
+      "power_tags": [
+        "sells almost anything",
+        "knows back roads",
+        "bribes the right people"
+      ],
+      "weakness": "Cheats Every Customer",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "A peddler with too many dry goods for these times."
+    },
+    {
+      "id": "PS-04",
+      "type": "NPC",
+      "owner": "PLACEBO",
+      "title": "A Feverish Pilgrim",
+      "power_tags": [
+        "prays with fierce conviction",
+        "carries a holy relic",
+        "sees true visions sometimes"
+      ],
+      "weakness": "Might Be Hive-Touched",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "A pilgrim burning with fever, or something worse."
+    },
+    {
+      "id": "PS-05",
+      "type": "NPC",
+      "owner": "PLACEBO",
+      "title": "A Smuggler's Runner",
+      "power_tags": [
+        "knows the cellar routes",
+        "carries coded messages",
+        "fast on the rooftops"
+      ],
+      "weakness": "Sells Out to Anyone",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "A young runner for whichever gang pays."
+    },
+    {
+      "id": "PS-06",
+      "type": "NPC",
+      "owner": "PLACEBO",
+      "title": "A Mute Boatwright",
+      "power_tags": [
+        "patches any hull",
+        "owns a dry workshop",
+        "signs with quick hands"
+      ],
+      "weakness": "Easily Misunderstood",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "A silent craftsman who keeps boats afloat."
+    },
+    {
+      "id": "PS-07",
+      "type": "NPC",
+      "owner": "PLACEBO",
+      "title": "A Grave-Digger",
+      "power_tags": [
+        "knows every burial ground",
+        "strong digging arms",
+        "unafraid of the dead"
+      ],
+      "weakness": "Robs the Graves",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "A digger with more work than ever."
+    },
+    {
+      "id": "PS-08",
+      "type": "NPC",
+      "owner": "PLACEBO",
+      "title": "A Deserter Soldier",
+      "power_tags": [
+        "trained with the spear",
+        "knows military signals",
+        "sleeps light"
+      ],
+      "weakness": "Hunted as a Deserter",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "A soldier who walked away from a hopeless post."
+    },
+    {
+      "id": "PS-09",
+      "type": "NPC",
+      "owner": "PLACEBO",
+      "title": "A Starving Hound",
+      "power_tags": [
+        "follows scent through water",
+        "barks at the hive-touched",
+        "loyal once fed"
+      ],
+      "weakness": "Bites When Cornered",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "A lean, half-wild dog."
+    },
+    {
+      "id": "PS-10",
+      "type": "NPC",
+      "owner": "PLACEBO",
+      "title": "A Travelling Preacher",
+      "power_tags": [
+        "draws a crowd fast",
+        "speaks of hidden sins",
+        "offers shelter to followers"
+      ],
+      "weakness": "Stirs Up Mobs",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "A wandering preacher with a loud voice."
+    },
+    {
+      "id": "PS-11",
+      "type": "THREAD",
+      "owner": "PLACEBO",
+      "title": "Who Left These Tracks?",
+      "power_tags": [
+        "bare footprints in mud",
+        "a torn scrap of cloth",
+        "tracks lead to water"
+      ],
+      "weakness": "Leads Off the Safe Road",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "Fresh tracks where no one should be."
+    },
+    {
+      "id": "PS-12",
+      "type": "THREAD",
+      "owner": "PLACEBO",
+      "title": "What Is in the Sealed Crate?",
+      "power_tags": [
+        "heavy iron-banded crate",
+        "strange markings on lid",
+        "someone wants it back"
+      ],
+      "weakness": "Draws Armed Owners",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "A crate washed up with an unbroken seal."
+    },
+    {
+      "id": "PS-13",
+      "type": "THREAD",
+      "owner": "PLACEBO",
+      "title": "Why Did the Bells Stop?",
+      "power_tags": [
+        "silence from the village",
+        "a bell-rope cut clean",
+        "smoke on the horizon"
+      ],
+      "weakness": "Walks Into Unknown Danger",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "The warning bells went quiet all at once."
+    },
+    {
+      "id": "PS-14",
+      "type": "THREAD",
+      "owner": "PLACEBO",
+      "title": "Who Poisoned the Well?",
+      "power_tags": [
+        "sick villagers talking",
+        "a stranger seen nearby",
+        "a bitter smell"
+      ],
+      "weakness": "Sickens Those Who Investigate",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "A village's only clean water has gone bad."
+    },
+    {
+      "id": "PS-15",
+      "type": "THREAD",
+      "owner": "PLACEBO",
+      "title": "Where Does This Path Lead?",
+      "power_tags": [
+        "fresh-cut reed stakes",
+        "a hidden marker stone",
+        "a watching figure"
+      ],
+      "weakness": "Gets the Party Lost",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "A path through the reeds that someone keeps clear."
+    },
+    {
+      "id": "PS-16",
+      "type": "THREAD",
+      "owner": "PLACEBO",
+      "title": "What Did the Dying Man Mean?",
+      "power_tags": [
+        "his last whispered word",
+        "a ring on his finger",
+        "a key in his boot"
+      ],
+      "weakness": "Makes Enemies of His Killers",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "A stranger's last words before he died."
+    },
+    {
+      "id": "PS-17",
+      "type": "THREAD",
+      "owner": "PLACEBO",
+      "title": "Who Is Following Us?",
+      "power_tags": [
+        "a lantern behind us",
+        "snapped reeds at night",
+        "a shape in the rain"
+      ],
+      "weakness": "Splits the Party's Attention",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "Someone has been keeping pace with the party for days."
+    },
+    {
+      "id": "PS-18",
+      "type": "THREAD",
+      "owner": "PLACEBO",
+      "title": "Why Is the Village Empty?",
+      "power_tags": [
+        "meals left half-eaten",
+        "doors left open",
+        "scratches on the walls"
+      ],
+      "weakness": "Stays After Dark",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "A village abandoned in a hurry."
+    },
+    {
+      "id": "PS-19",
+      "type": "THREAD",
+      "owner": "PLACEBO",
+      "title": "What Lies Under the Water?",
+      "power_tags": [
+        "a shape beneath the surface",
+        "bubbles rising steadily",
+        "a drowned stone stair"
+      ],
+      "weakness": "Requires Diving Deep",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "Something is down there in the flood."
+    },
+    {
+      "id": "PS-20",
+      "type": "THREAD",
+      "owner": "PLACEBO",
+      "title": "Who Burned the Bridge?",
+      "power_tags": [
+        "charred timbers still warm",
+        "an oil flask dropped",
+        "hoofprints heading away"
+      ],
+      "weakness": "Strands the Party",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "The only bridge is burning and someone made sure of it."
+    }
+  ]
+}

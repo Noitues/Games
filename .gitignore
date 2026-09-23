@@ -1,0 +1,8 @@
+cache/
+__pycache__/
+*.pyc
+runs/*/*.tmp
+runs/scripted-*/
+runs/smoke/
+runs/llm-probe/
+harness/cohorts/smoke-*

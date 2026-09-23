@@ -1,0 +1,710 @@
+{
+  "name": "The Sallowmere",
+  "setting": "The Sallowmere is a lowland of rivers, reed and ruined temples that has been drowning for eleven years. The rain has not stopped in all that time, and the floodwaters climb a finger's width each week. Hollowmoot, a crowded stilt-town, is the last real settlement; the Ashwater Causeway is its only dry road north, and Gullet Ford the only crossing south. A blight called the hive spreads through wounds and bad water, making its victims hive-touched: feral, pain-blind, and drawn to a swarm-song that seems to come from the flooded belltower of Saint Orrin's Drowned Temple. The shrunken Order of the Dry Saint guards what lore survives, while a renegade Drowned Priest preaches that the hive is holy. The Causeway Wardens burn infected houses and tax every crossing, the Blackwater Cartel smuggles food and people through hidden cellars, and the Stiltfolk Clans watch it all from the reeds. Play it grounded: cold hands, wet rope, hard choices about who gets the last dry bed.",
+  "cards": [
+    {
+      "id": "H-01",
+      "type": "HAZARD",
+      "owner": "GLOBAL",
+      "title": "Endless Rain",
+      "power_tags": [
+        "soaks every supply",
+        "drowns sound and tracks",
+        "turns roads to mire"
+      ],
+      "weakness": "Sudden Lulls Expose Movement",
+      "track": {
+        "kind": "clock",
+        "size": 8
+      },
+      "blurb": "The rain never stops in the Sallowmere; it rots food, hides footprints and makes every road a slog."
+    },
+    {
+      "id": "H-02",
+      "type": "HAZARD",
+      "owner": "GLOBAL",
+      "title": "The Hive Blight",
+      "power_tags": [
+        "turns people hive-touched",
+        "spreads through open wounds",
+        "calls with the swarm-song"
+      ],
+      "weakness": "Recoils From Smoke and Fire",
+      "track": {
+        "kind": "clock",
+        "size": 6
+      },
+      "blurb": "A creeping blight that makes the infected feral and bound to a distant swarm-song; smoke and fire drive it back."
+    },
+    {
+      "id": "H-03",
+      "type": "HAZARD",
+      "owner": "GLOBAL",
+      "title": "Rising Floodwaters",
+      "power_tags": [
+        "swallows fords overnight",
+        "cuts off escape routes",
+        "hides the drowned dead"
+      ],
+      "weakness": "Recedes Briefly at Low Tide",
+      "track": {
+        "kind": "clock",
+        "size": 8
+      },
+      "blurb": "The marsh swells a little more each week; fords vanish, roads drown and the dead float up."
+    },
+    {
+      "id": "H-04",
+      "type": "HAZARD",
+      "owner": "GM",
+      "title": "Sucking Mire",
+      "power_tags": [
+        "drags down the heavy",
+        "hides beneath reed mats",
+        "exhausts anyone crossing"
+      ],
+      "weakness": "Firm Along Old Pilings",
+      "track": {
+        "kind": "clock",
+        "size": 4
+      },
+      "blurb": "Bottomless black mud under innocent-looking reed mats; the old pilings are the only safe line."
+    },
+    {
+      "id": "H-05",
+      "type": "HAZARD",
+      "owner": "GM",
+      "title": "Marsh Fever",
+      "power_tags": [
+        "spreads through bad water",
+        "weakens the strongest fighter",
+        "brings feverish visions"
+      ],
+      "weakness": "Broken by Willowbark Tea",
+      "track": {
+        "kind": "clock",
+        "size": 5
+      },
+      "blurb": "A shaking fever from foul water that saps strength and brings visions easily mistaken for the blight."
+    },
+    {
+      "id": "H-06",
+      "type": "HAZARD",
+      "owner": "GM",
+      "title": "Collapsing Temple Stones",
+      "power_tags": [
+        "floors give way underfoot",
+        "echoes carry for miles",
+        "buries the careless"
+      ],
+      "weakness": "Groans Before It Falls",
+      "track": {
+        "kind": "clock",
+        "size": 4
+      },
+      "blurb": "Waterlogged temple masonry that can drop a floor or a ceiling at the worst moment."
+    },
+    {
+      "id": "T-01",
+      "type": "THREAT",
+      "owner": "GM",
+      "title": "Hive-Touched Pack",
+      "power_tags": [
+        "feral hunting pack",
+        "hooked spears and nets",
+        "ignores pain entirely"
+      ],
+      "weakness": "Maddened by Bright Fire",
+      "track": {
+        "kind": "clock",
+        "size": 6
+      },
+      "blurb": "Villagers taken by the blight who now hunt in packs along the fords with the hooked spears they once fished with."
+    },
+    {
+      "id": "T-02",
+      "type": "THREAT",
+      "owner": "GM",
+      "title": "The Hive Mother",
+      "power_tags": [
+        "commands the hive-touched",
+        "speaks through the infected",
+        "nests in a drowned belltower"
+      ],
+      "weakness": "Bound to Her Nest",
+      "track": {
+        "kind": "clock",
+        "size": 6
+      },
+      "blurb": "Something vast and patient in the flooded belltower of Saint Orrin's; the swarm-song is her voice."
+    },
+    {
+      "id": "T-03",
+      "type": "THREAT",
+      "owner": "GM",
+      "title": "Cartel Enforcers",
+      "power_tags": [
+        "hooked spears and cudgels",
+        "know every hidden ford",
+        "take hostages for leverage"
+      ],
+      "weakness": "Paid by the Day",
+      "track": {
+        "kind": "clock",
+        "size": 4
+      },
+      "blurb": "Blackwater Cartel muscle who collect debts, guard cargo and break anyone who talks."
+    },
+    {
+      "id": "T-04",
+      "type": "THREAT",
+      "owner": "GM",
+      "title": "The Drowned Priest",
+      "power_tags": [
+        "preaches the blight is holy",
+        "leads fanatical acolytes",
+        "knows the temple's secret ways"
+      ],
+      "weakness": "Craves Public Martyrdom",
+      "track": {
+        "kind": "clock",
+        "size": 5
+      },
+      "blurb": "A renegade priest of the Dry Saint who teaches that the hive is salvation and feeds the faithful to it."
+    },
+    {
+      "id": "T-05",
+      "type": "THREAT",
+      "owner": "GM",
+      "title": "The Pikemaw",
+      "power_tags": [
+        "drags swimmers under",
+        "capsizes small boats",
+        "hunts by the vibration"
+      ],
+      "weakness": "Sluggish in Cold Mornings",
+      "track": {
+        "kind": "clock",
+        "size": 5
+      },
+      "blurb": "A pike the size of a barge that haunts the deep channels near Gullet Ford."
+    },
+    {
+      "id": "F-01",
+      "type": "FACTION",
+      "owner": "GM",
+      "title": "The Blackwater Cartel",
+      "power_tags": [
+        "smuggles through hidden cellars",
+        "bribes the ferry wardens",
+        "owns the night barges"
+      ],
+      "weakness": "Greedy Rival Lieutenants",
+      "track": {
+        "kind": "clock",
+        "size": 6
+      },
+      "blurb": "The smuggling cartel that moves food, medicine and people through the flooded region for a ruinous price."
+    },
+    {
+      "id": "F-02",
+      "type": "FACTION",
+      "owner": "GM",
+      "title": "Order of the Dry Saint",
+      "power_tags": [
+        "tends temple sanctuaries",
+        "hoards blight-cure lore",
+        "commands pilgrim loyalty"
+      ],
+      "weakness": "Doctrine Before Mercy",
+      "track": {
+        "kind": "clock",
+        "size": 5
+      },
+      "blurb": "The old temple order, shrunken and frightened, that still holds the only dry ground and the oldest books."
+    },
+    {
+      "id": "F-03",
+      "type": "FACTION",
+      "owner": "GM",
+      "title": "The Causeway Wardens",
+      "power_tags": [
+        "hold the Ashwater Causeway",
+        "burn infected houses",
+        "levy tolls at fords"
+      ],
+      "weakness": "Undermanned and Frightened",
+      "track": {
+        "kind": "clock",
+        "size": 4
+      },
+      "blurb": "Hollowmoot's militia, too few and too scared, who keep order with tolls, chains and torches."
+    },
+    {
+      "id": "F-04",
+      "type": "FACTION",
+      "owner": "GM",
+      "title": "The Stiltfolk Clans",
+      "power_tags": [
+        "pole-boats through reed mazes",
+        "read the coming floods",
+        "trade eels for secrets"
+      ],
+      "weakness": "Distrust All Outsiders",
+      "track": {
+        "kind": "clock",
+        "size": 5
+      },
+      "blurb": "Marsh clans living in stilt villages who know the water better than anyone and trust no one from the dry roads."
+    },
+    {
+      "id": "L-01",
+      "type": "LOCATION",
+      "owner": "GM",
+      "title": "Gullet Ford",
+      "power_tags": [
+        "waist-deep churning crossing",
+        "reed banks for ambush",
+        "sunken cart wreck"
+      ],
+      "weakness": "Impassable in Flood",
+      "track": {
+        "kind": "clock",
+        "size": 4
+      },
+      "blurb": "The main crossing of the Sallow river, narrow, fast and overlooked by tall reeds."
+    },
+    {
+      "id": "L-02",
+      "type": "LOCATION",
+      "owner": "GM",
+      "title": "Saint Orrin's Drowned Temple",
+      "power_tags": [
+        "half-flooded nave",
+        "hidden reliquary crypt",
+        "belltower above the waterline"
+      ],
+      "weakness": "Echoes Betray Every Movement",
+      "track": {
+        "kind": "clock",
+        "size": 4
+      },
+      "blurb": "The great temple of the Dry Saint, now half under water, its belltower the only part still dry."
+    },
+    {
+      "id": "L-03",
+      "type": "LOCATION",
+      "owner": "GM",
+      "title": "Hollowmoot",
+      "power_tags": [
+        "stilt-town market",
+        "gossip-heavy taverns",
+        "Warden watchtower"
+      ],
+      "weakness": "Quarantine Bells Ring Often",
+      "track": {
+        "kind": "clock",
+        "size": 4
+      },
+      "blurb": "The last real town, built on pilings, crowded with refugees and suspicion."
+    },
+    {
+      "id": "L-04",
+      "type": "LOCATION",
+      "owner": "GM",
+      "title": "The Ashwater Causeway",
+      "power_tags": [
+        "only dry road north",
+        "toll gate and chains",
+        "long exposed stretch"
+      ],
+      "weakness": "Nowhere to Hide",
+      "track": {
+        "kind": "clock",
+        "size": 4
+      },
+      "blurb": "A raised stone road across open water, gated by the Wardens and watched from both ends."
+    },
+    {
+      "id": "L-05",
+      "type": "LOCATION",
+      "owner": "GM",
+      "title": "The Wick Lane Cellars",
+      "power_tags": [
+        "smuggler cellar warren",
+        "dry stored goods",
+        "secret river hatch"
+      ],
+      "weakness": "Floods When the Rain Rises",
+      "track": {
+        "kind": "clock",
+        "size": 4
+      },
+      "blurb": "Linked cellars under Hollowmoot's Wick Lane where the cartel keeps its goods and its secrets."
+    },
+    {
+      "id": "C-01",
+      "type": "CULTURE",
+      "owner": "GM",
+      "title": "Hide From Weather",
+      "power_tags": [
+        "shelter is sacred",
+        "doors barred at dusk",
+        "strangers share the fire"
+      ],
+      "weakness": "Barred Doors Strand Travelers",
+      "track": {
+        "kind": "none",
+        "size": 0
+      },
+      "blurb": "No one refuses a dry hearth by day, but after dusk every door in the marsh is barred."
+    },
+    {
+      "id": "C-02",
+      "type": "CULTURE",
+      "owner": "GM",
+      "title": "Burn the Touched",
+      "power_tags": [
+        "fire cleanses the hive",
+        "neighbours inform on neighbours",
+        "ash marks on doors"
+      ],
+      "weakness": "Burns the Innocent Too",
+      "track": {
+        "kind": "none",
+        "size": 0
+      },
+      "blurb": "Fear of the blight has made informing and burning a civic duty."
+    },
+    {
+      "id": "C-03",
+      "type": "CULTURE",
+      "owner": "GM",
+      "title": "Every Crossing Owes",
+      "power_tags": [
+        "tolls at every crossing",
+        "favours bind for life",
+        "debts written in ledgers"
+      ],
+      "weakness": "Debt Feuds Turn Bloody",
+      "track": {
+        "kind": "none",
+        "size": 0
+      },
+      "blurb": "Nothing crosses water for free here; debts are inherited and collected."
+    },
+    {
+      "id": "C-04",
+      "type": "CULTURE",
+      "owner": "GM",
+      "title": "Pray to the Dry Saint",
+      "power_tags": [
+        "pilgrims seek dry ground",
+        "relics sold as charms",
+        "temple bells command obedience"
+      ],
+      "weakness": "Faith Blinds to Rot",
+      "track": {
+        "kind": "none",
+        "size": 0
+      },
+      "blurb": "Folk still pray to the saint who promised dry land, and follow anyone wearing his colours."
+    }
+  ],
+  "beat_frames": [
+    {
+      "id": "B-01",
+      "name": "AMBUSH",
+      "sentence": "{WHO} attacks at {WHERE} using {HOW}, because {WHY}.",
+      "blanks": [
+        "WHO",
+        "WHERE",
+        "HOW",
+        "WHY"
+      ],
+      "open": [
+        "WHO",
+        "WHY"
+      ],
+      "defaults": {
+        "WHO": "a hive-touched pack",
+        "WHERE": "Gullet Ford",
+        "HOW": "hooked spears thrust from the reed banks",
+        "WHY": "they are starving and the party carries food"
+      },
+      "stakes": "A companion or pack animal is dragged into the water and the party's food and dry gear are lost.",
+      "stakes_clock": "T-01"
+    },
+    {
+      "id": "B-02",
+      "name": "PLEA FOR HELP",
+      "sentence": "{WHO} begs the party to go to {WHERE}, because {WHY}.",
+      "blanks": [
+        "WHO",
+        "WHERE",
+        "WHY"
+      ],
+      "open": [
+        "WHO",
+        "WHERE"
+      ],
+      "defaults": {
+        "WHO": "a soaked Hollowmoot mother",
+        "WHERE": "Saint Orrin's Drowned Temple",
+        "WHY": "her son followed the swarm-song into the belltower"
+      },
+      "stakes": "The one they came to save is lost to the hive and Hollowmoot blames the party.",
+      "stakes_clock": "T-02"
+    },
+    {
+      "id": "B-03",
+      "name": "BETRAYAL",
+      "sentence": "{WHO} turns on the party, because {WHY}.",
+      "blanks": [
+        "WHO",
+        "WHY"
+      ],
+      "open": [
+        "WHO",
+        "WHY"
+      ],
+      "defaults": {
+        "WHO": "the party's hired cartel guide",
+        "WHY": "the Blackwater Cartel has put a price on the party"
+      },
+      "stakes": "The party loses its route, its coin or a hostage to the cartel.",
+      "stakes_clock": "F-01"
+    },
+    {
+      "id": "B-04",
+      "name": "RIVAL CLAIM",
+      "sentence": "{WHO} seizes the party's goal at {WHERE} using {HOW}.",
+      "blanks": [
+        "WHO",
+        "WHERE",
+        "HOW"
+      ],
+      "open": [
+        "WHERE",
+        "HOW"
+      ],
+      "defaults": {
+        "WHO": "the Drowned Priest's acolytes",
+        "WHERE": "the reliquary crypt under Saint Orrin's",
+        "HOW": "a crowd of fervent pilgrims as a human wall"
+      },
+      "stakes": "The goal passes into the Drowned Priest's hands and his following grows.",
+      "stakes_clock": "T-04"
+    },
+    {
+      "id": "B-05",
+      "name": "FALSE SANCTUARY",
+      "sentence": "Shelter at {WHERE} hides {HOW}.",
+      "blanks": [
+        "WHERE",
+        "HOW"
+      ],
+      "open": [
+        "WHERE",
+        "HOW"
+      ],
+      "defaults": {
+        "WHERE": "a dry stilt-house in Hollowmoot",
+        "HOW": "a hive-touched family locked in the loft"
+      },
+      "stakes": "Someone in the party is exposed to the blight and the Wardens mark them for burning.",
+      "stakes_clock": null
+    },
+    {
+      "id": "B-06",
+      "name": "BAD NEWS",
+      "sentence": "{WHO} arrives with word that {WHY} has happened.",
+      "blanks": [
+        "WHO",
+        "WHY"
+      ],
+      "open": [
+        "WHO",
+        "WHY"
+      ],
+      "defaults": {
+        "WHO": "a half-drowned Warden runner",
+        "WHY": "the Ashwater Causeway has been cut by the flood"
+      },
+      "stakes": "The party's way home is cut and they must pay the cartel or wait out the water.",
+      "stakes_clock": null
+    }
+  ],
+  "gm_story_pile": [
+    {
+      "id": "N-01",
+      "type": "NPC",
+      "owner": "GM",
+      "title": "Mother Hessaly, Ford Warden",
+      "power_tags": [
+        "knows every ford's depth",
+        "shelters the desperate",
+        "hears who crosses when"
+      ],
+      "weakness": "Sells Secrets to Pay Debts",
+      "track": {
+        "kind": "weight",
+        "size": 2
+      },
+      "blurb": "The old warden of Gullet Ford, kind to strays and deep in debt to the cartel."
+    },
+    {
+      "id": "N-02",
+      "type": "NPC",
+      "owner": "GM",
+      "title": "Brother Caddock",
+      "power_tags": [
+        "reads old temple script",
+        "nurses blight fevers",
+        "keeps the reliquary key"
+      ],
+      "weakness": "Secretly Hive-Touched",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "A gentle young acolyte of the Dry Saint hiding blight marks under his sleeves."
+    },
+    {
+      "id": "N-03",
+      "type": "NPC",
+      "owner": "GM",
+      "title": "Ottile Brand, Cartel Lieutenant",
+      "power_tags": [
+        "commands the night barges",
+        "bribes Causeway Wardens",
+        "never forgets a debt"
+      ],
+      "weakness": "Plotting Against Her Boss",
+      "track": {
+        "kind": "weight",
+        "size": 2
+      },
+      "blurb": "The Blackwater Cartel's sharpest lieutenant, patient and ambitious."
+    },
+    {
+      "id": "N-04",
+      "type": "NPC",
+      "owner": "GM",
+      "title": "Captain Rusk Varro",
+      "power_tags": [
+        "commands the toll gate",
+        "orders house burnings",
+        "veteran spear fighter"
+      ],
+      "weakness": "Terrified of Infection",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "Captain of the Causeway Wardens, hard, tired and one bad night from panic."
+    },
+    {
+      "id": "N-05",
+      "type": "NPC",
+      "owner": "GM",
+      "title": "Yarrow Nine-Poles",
+      "power_tags": [
+        "poles through reed mazes",
+        "reads coming floods",
+        "trades eels for news"
+      ],
+      "weakness": "Openly Hates the Order",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "A Stiltfolk trader who will guide outsiders for the right gossip."
+    },
+    {
+      "id": "N-06",
+      "type": "NPC",
+      "owner": "GM",
+      "title": "Old Tamsin the Bell-Ringer",
+      "power_tags": [
+        "rings warnings nobody heeds",
+        "lucid though hive-touched",
+        "hears the swarm-song clearly"
+      ],
+      "weakness": "Slipping Into the Hive",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "A half-touched old woman who still climbs a Hollowmoot bell tower to warn of what the hive plans."
+    },
+    {
+      "id": "Q-01",
+      "type": "THREAD",
+      "owner": "GM",
+      "title": "Who Is Feeding the Hive?",
+      "power_tags": [
+        "bodies left at the fords",
+        "cartel barge manifests",
+        "a Dry Saint seal found"
+      ],
+      "weakness": "Angers the Order",
+      "track": {
+        "kind": "weight",
+        "size": 2
+      },
+      "blurb": "Someone is deliberately delivering people to the hive-touched."
+    },
+    {
+      "id": "Q-02",
+      "type": "THREAD",
+      "owner": "GM",
+      "title": "Where Did Hollowmoot's Children Go?",
+      "power_tags": [
+        "footprints toward the temple",
+        "a toy in cellar mud",
+        "a Warden looked away"
+      ],
+      "weakness": "Accusations Split the Town",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "Six children vanished from Hollowmoot in a single night."
+    },
+    {
+      "id": "Q-03",
+      "type": "THREAD",
+      "owner": "GM",
+      "title": "Is There a Cure in the Reliquary?",
+      "power_tags": [
+        "Caddock's half-read scroll",
+        "sealed crypt beneath the nave",
+        "pilgrims claim miracles"
+      ],
+      "weakness": "False Hope Gets People Killed",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "Rumour says the Dry Saint left a cure for the blight in his crypt."
+    },
+    {
+      "id": "Q-04",
+      "type": "THREAD",
+      "owner": "GM",
+      "title": "What Sank the Causeway Barge?",
+      "power_tags": [
+        "cargo washed ashore",
+        "a fevered survivor",
+        "the cartel denies everything"
+      ],
+      "weakness": "Draws the Pikemaw",
+      "track": {
+        "kind": "weight",
+        "size": 1
+      },
+      "blurb": "A cartel barge full of grain went down near the Causeway with no storm to blame."
+    }
+  ]
+}

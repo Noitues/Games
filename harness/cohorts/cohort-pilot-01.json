@@ -1,0 +1,610 @@
+{
+ "cohort_id": "cohort-pilot-01",
+ "seed": 1001,
+ "picks": [
+  {
+   "name": "Ysolde",
+   "concept": "Night-barge cook who hears the crew's secrets",
+   "origin": "a clan exile from the stilt villages",
+   "bond": "a teacher's annotated scroll case",
+   "drive": "avenge a betrayal",
+   "flaw": "sworn enemy of the Order"
+  },
+  {
+   "name": "Aldous",
+   "concept": "Fortune-teller who reads the rain",
+   "origin": "the only survivor of a sunken barge",
+   "bond": "a militia captain you once served",
+   "drive": "get everyone across before the flood",
+   "flaw": "can't lie to a priest"
+  },
+  {
+   "name": "Morwen",
+   "concept": "Exorcist who is not sure the hive has souls",
+   "origin": "an orphan of the first hive outbreak",
+   "bond": "a band of pilgrims you once guided",
+   "drive": "never let another house burn",
+   "flaw": "too famous to hide"
+  },
+  {
+   "name": "Mire",
+   "concept": "Disgraced militia guard who still holds the line",
+   "origin": "raised in a temple orphanage",
+   "bond": "a stilt-house that is the last home you have",
+   "drive": "buy freedom from the cartel",
+   "flaw": "vengeance over sense"
+  }
+ ],
+ "generation_prompt": "Write 4 player characters for a Fate game set in The Sallowmere.\n\nSetting:\nThe Sallowmere is a lowland of rivers, reed and ruined temples that has been drowning for eleven years. The rain has not stopped in all that time, and the floodwaters climb a finger's width each week. Hollowmoot, a crowded stilt-town, is the last real settlement; the Ashwater Causeway is its only dry road north, and Gullet Ford the only crossing south. A blight called the hive spreads through wounds and bad water, making its victims hive-touched: feral, pain-blind, and drawn to a swarm-song that seems to come from the flooded belltower of Saint Orrin's Drowned Temple. The shrunken Order of the Dry Saint guards what lore survives, while a renegade Drowned Priest preaches that the hive is holy. The Causeway Wardens burn infected houses and tax every crossing, the Blackwater Cartel smuggles food and people through hidden cellars, and the Stiltfolk Clans watch it all from the reeds. Play it grounded: cold hands, wet rope, hard choices about who gets the last dry bed.\n\nNamed places and groups you may tie characters to: Gullet Ford, Hollowmoot, Order of the Dry Saint, Saint Orrin's Drowned Temple, The Ashwater Causeway, The Blackwater Cartel, The Causeway Wardens, The Stiltfolk Clans, The Wick Lane Cellars.\n\nEach character needs:\n- binder: exactly 4 theme cards in this order: 2 ROOTS (an origin, a person, a place or a comfort), then 2 REACH (an oath, a burden, a power or a goal). Each card: a title, exactly 3 power tags (2-5 words each, each names one thing the character can do, has or is) and 1 weakness tag that can plausibly cause trouble in a scene. At least one ROOTS power tag must name a specific named person, group or place.\n- story_cards: exactly 2: one NPC drawn from a ROOTS tag, one THREAD (an open question) drawn from a REACH tag, same tag format.\n- skills (Fate Core skill names only: Athletics, Burglary, Contacts, Crafts, Deceive, Drive, Empathy, Fight, Investigate, Lore, Notice, Physique, Provoke, Rapport, Resources, Shoot, Stealth, Will): one great, two good, three fair, four average, all different.\n- approaches (Careful, Clever, Flashy, Forceful, Quick, Sneaky): one +3, two +2, two +1, one +0.\n- fae: the SAME character in Fate Accelerated form: a high concept, a trouble that mirrors one card weakness, and 3 aspects that compress the four cards (keep the same named people and places).\n\nUse these seeds, one per character, in order:\n[\n {\n  \"name\": \"Ysolde\",\n  \"concept\": \"Night-barge cook who hears the crew's secrets\",\n  \"origin\": \"a clan exile from the stilt villages\",\n  \"bond\": \"a teacher's annotated scroll case\",\n  \"drive\": \"avenge a betrayal\",\n  \"flaw\": \"sworn enemy of the Order\"\n },\n {\n  \"name\": \"Aldous\",\n  \"concept\": \"Fortune-teller who reads the rain\",\n  \"origin\": \"the only survivor of a sunken barge\",\n  \"bond\": \"a militia captain you once served\",\n  \"drive\": \"get everyone across before the flood\",\n  \"flaw\": \"can't lie to a priest\"\n },\n {\n  \"name\": \"Morwen\",\n  \"concept\": \"Exorcist who is not sure the hive has souls\",\n  \"origin\": \"an orphan of the first hive outbreak\",\n  \"bond\": \"a band of pilgrims you once guided\",\n  \"drive\": \"never let another house burn\",\n  \"flaw\": \"too famous to hide\"\n },\n {\n  \"name\": \"Mire\",\n  \"concept\": \"Disgraced militia guard who still holds the line\",\n  \"origin\": \"raised in a temple orphanage\",\n  \"bond\": \"a stilt-house that is the last home you have\",\n  \"drive\": \"buy freedom from the cartel\",\n  \"flaw\": \"vengeance over sense\"\n }\n]\n\nMake the four characters distinct in role, and give each at least one tie to another character's people or places only if it arises naturally.",
+ "model": "claude-sonnet-5",
+ "source": "llm",
+ "errors": [
+  "attempt 1: Ysolde: binder must be 2 ROOTS then 2 REACH"
+ ],
+ "characters": [
+  {
+   "id": "CH-1",
+   "name": "Ysolde",
+   "pronouns": "she/her",
+   "concept": "Night-barge cook who hears the crew's secrets",
+   "skills": {
+    "Empathy": 4,
+    "Rapport": 3,
+    "Contacts": 3,
+    "Crafts": 2,
+    "Stealth": 2,
+    "Notice": 2,
+    "Athletics": 1,
+    "Investigate": 1,
+    "Will": 1,
+    "Deceive": 1
+   },
+   "approaches": {
+    "Clever": 3,
+    "Sneaky": 2,
+    "Quick": 2,
+    "Careful": 1,
+    "Forceful": 1,
+    "Flashy": 0
+   },
+   "binder": [
+    {
+     "id": "YS-01",
+     "type": "ROOTS",
+     "owner": "PC-YSOLDE",
+     "title": "Exiled from the Reed-Kin",
+     "power_tags": [
+      "Exiled by the Stiltfolk Clans",
+      "Reads river currents like kin",
+      "Knows every hidden channel"
+     ],
+     "weakness": "No clan will shelter me",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": ""
+    },
+    {
+     "id": "YS-02",
+     "type": "ROOTS",
+     "owner": "PC-YSOLDE",
+     "title": "Old Tamsin's Scroll Case",
+     "power_tags": [
+      "Teacher's annotated scroll case",
+      "Can decipher Order ciphers",
+      "Trained by a dead scholar"
+     ],
+     "weakness": "Ink runs in hard rain",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": ""
+    },
+    {
+     "id": "YS-03",
+     "type": "REACH",
+     "owner": "PC-YSOLDE",
+     "title": "The Barge That Burned",
+     "power_tags": [
+      "Sworn to ruin the traitor",
+      "Knows who betrayed the crew",
+      "Never forgets a debt"
+     ],
+     "weakness": "Rage before reason",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": ""
+    },
+    {
+     "id": "YS-04",
+     "type": "REACH",
+     "owner": "PC-YSOLDE",
+     "title": "Marked Heretic of the Dry Saint",
+     "power_tags": [
+      "Hunted by the Order",
+      "Speaks the forbidden hive-hymns",
+      "Trusted by the Blackwater Cartel"
+     ],
+     "weakness": "Order agents know my face",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": ""
+    }
+   ],
+   "story_cards": [
+    {
+     "id": "YS-05",
+     "type": "NPC",
+     "owner": "PC-YSOLDE",
+     "title": "Reed-Mother Kessa",
+     "power_tags": [
+      "Speaks for the Stiltfolk Clans",
+      "Never forgives a broken oath",
+      "Knows the old reed-paths"
+     ],
+     "weakness": "Softens for kin in danger",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": ""
+    },
+    {
+     "id": "YS-06",
+     "type": "THREAD",
+     "owner": "PC-YSOLDE",
+     "title": "Who Sold the Barge?",
+     "power_tags": [
+      "Someone inside the crew talked",
+      "Wardens paid for the tip",
+      "Suspects a name, no proof"
+     ],
+     "weakness": "Chasing it draws Warden eyes",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": ""
+    }
+   ],
+   "fae": {
+    "high_concept": "Exiled Cook of the Night-Barge Who Hears Everything",
+    "trouble": "Order Agents Know My Face",
+    "aspects": [
+     "Cast out by the Stiltfolk Clans, kept afloat by Old Tamsin's scroll case",
+     "Sworn to ruin the traitor who sold the barge crew",
+     "Trusted by the Blackwater Cartel, hunted by the Order of the Dry Saint"
+    ]
+   }
+  },
+  {
+   "id": "CH-2",
+   "name": "Aldous",
+   "pronouns": "he/him",
+   "concept": "Fortune-teller who reads the rain",
+   "skills": {
+    "Notice": 4,
+    "Lore": 3,
+    "Empathy": 3,
+    "Rapport": 2,
+    "Investigate": 2,
+    "Athletics": 2,
+    "Contacts": 1,
+    "Will": 1,
+    "Deceive": 1,
+    "Physique": 1
+   },
+   "approaches": {
+    "Careful": 3,
+    "Clever": 2,
+    "Quick": 2,
+    "Flashy": 1,
+    "Forceful": 1,
+    "Sneaky": 0
+   },
+   "binder": [
+    {
+     "id": "AL-01",
+     "type": "ROOTS",
+     "owner": "PC-ALDOUS",
+     "title": "Sole Survivor of the Sunken Barge",
+     "power_tags": [
+      "Only one who remembers",
+      "Reads omens in the rainfall",
+      "Marked by drowned ghosts"
+     ],
+     "weakness": "Panics near deep water",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": ""
+    },
+    {
+     "id": "AL-02",
+     "type": "ROOTS",
+     "owner": "PC-ALDOUS",
+     "title": "Captain Verrick's Old Discipline",
+     "power_tags": [
+      "Served under Captain Verrick",
+      "Knows the Wardens' drill signals",
+      "Old militia discipline"
+     ],
+     "weakness": "Verrick now commands the Wardens",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": ""
+    },
+    {
+     "id": "AL-03",
+     "type": "REACH",
+     "owner": "PC-ALDOUS",
+     "title": "Ferryman's Vow",
+     "power_tags": [
+      "Vowed to cross every soul",
+      "Reads the flood's rise",
+      "Knows every safe ford"
+     ],
+     "weakness": "Can't turn away a crowd",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": ""
+    },
+    {
+     "id": "AL-04",
+     "type": "REACH",
+     "owner": "PC-ALDOUS",
+     "title": "Truth Before the Dry Saint",
+     "power_tags": [
+      "Cannot lie to a priest",
+      "Trusted by the Order",
+      "Voice like a confession"
+     ],
+     "weakness": "Priests pry loose any secret",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": ""
+    }
+   ],
+   "story_cards": [
+    {
+     "id": "AL-05",
+     "type": "NPC",
+     "owner": "PC-ALDOUS",
+     "title": "Captain Verrick of the Causeway Wardens",
+     "power_tags": [
+      "Commands the Ashwater Causeway",
+      "Once Aldous's mentor",
+      "Burns the infected houses"
+     ],
+     "weakness": "Old loyalty still tugs at him",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": ""
+    },
+    {
+     "id": "AL-06",
+     "type": "THREAD",
+     "owner": "PC-ALDOUS",
+     "title": "The Flood's True Hour",
+     "power_tags": [
+      "Waters rise faster than told",
+      "Gullet Ford may not hold",
+      "Someone must choose who crosses"
+     ],
+     "weakness": "Truth of it could cause panic",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": ""
+    }
+   ],
+   "fae": {
+    "high_concept": "Fortune-Teller Who Reads the Rain, Sole Survivor of the Wreck",
+    "trouble": "Cannot Lie to a Priest",
+    "aspects": [
+     "Only survivor of the barge, marked by drowned ghosts",
+     "Trained under Captain Verrick, now at odds with the Causeway Wardens",
+     "Vowed to cross every soul at Gullet Ford before the flood"
+    ]
+   }
+  },
+  {
+   "id": "CH-3",
+   "name": "Morwen",
+   "pronouns": "she/her",
+   "concept": "Exorcist who is not sure the hive has souls",
+   "skills": {
+    "Will": 4,
+    "Lore": 3,
+    "Empathy": 3,
+    "Fight": 2,
+    "Rapport": 2,
+    "Notice": 2,
+    "Athletics": 1,
+    "Physique": 1,
+    "Investigate": 1,
+    "Contacts": 1
+   },
+   "approaches": {
+    "Forceful": 3,
+    "Careful": 2,
+    "Clever": 2,
+    "Flashy": 1,
+    "Quick": 1,
+    "Sneaky": 0
+   },
+   "binder": [
+    {
+     "id": "MO-01",
+     "type": "ROOTS",
+     "owner": "PC-MORWEN",
+     "title": "Orphan of the First Outbreak",
+     "power_tags": [
+      "Survived the first hive outbreak",
+      "Untouched by the swarm-song",
+      "Raised in the Order's care"
+     ],
+     "weakness": "Haunted by the first victims",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": ""
+    },
+    {
+     "id": "MO-02",
+     "type": "ROOTS",
+     "owner": "PC-MORWEN",
+     "title": "The Pilgrim Band",
+     "power_tags": [
+      "Guided pilgrims safe to Hollowmoot",
+      "Beloved by the survivors",
+      "Knows the safest reed-paths"
+     ],
+     "weakness": "Pilgrims call her for every crisis",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": ""
+    },
+    {
+     "id": "MO-03",
+     "type": "REACH",
+     "owner": "PC-MORWEN",
+     "title": "Vow Against the Burning",
+     "power_tags": [
+      "Stands against the Wardens' torches",
+      "Can calm a hive-touched victim",
+      "Knows rites older than Order"
+     ],
+     "weakness": "Risks everything for one house",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": ""
+    },
+    {
+     "id": "MO-04",
+     "type": "REACH",
+     "owner": "PC-MORWEN",
+     "title": "The Exorcist of Hollowmoot",
+     "power_tags": [
+      "Known by name everywhere",
+      "Sought by the Drowned Priest",
+      "Every stranger knows her face"
+     ],
+     "weakness": "Cannot move unseen",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": ""
+    }
+   ],
+   "story_cards": [
+    {
+     "id": "MO-05",
+     "type": "NPC",
+     "owner": "PC-MORWEN",
+     "title": "Brother Fennic, Pilgrim Survivor",
+     "power_tags": [
+      "Owes Morwen his life twice",
+      "Settled now in Hollowmoot",
+      "Spreads her legend everywhere"
+     ],
+     "weakness": "His gratitude makes him reckless",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": ""
+    },
+    {
+     "id": "MO-06",
+     "type": "THREAD",
+     "owner": "PC-MORWEN",
+     "title": "Do the Hive-Touched Have Souls?",
+     "power_tags": [
+      "Her rites work, unexplained",
+      "Drowned Priest calls hive holy",
+      "Saint Orrin's Temple holds answers"
+     ],
+     "weakness": "Doubt could break her mid-rite",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": ""
+    }
+   ],
+   "fae": {
+    "high_concept": "Exorcist Who Doubts the Hive Has Souls",
+    "trouble": "Too Famous to Hide",
+    "aspects": [
+     "Orphan of the first outbreak, raised in the Order's care",
+     "Beloved guide of the pilgrim band now settled in Hollowmoot",
+     "Vowed to stand against the Wardens' torches for one more house"
+    ]
+   }
+  },
+  {
+   "id": "CH-4",
+   "name": "Mire",
+   "pronouns": "she/her",
+   "concept": "Disgraced militia guard who still holds the line",
+   "skills": {
+    "Fight": 4,
+    "Physique": 3,
+    "Notice": 3,
+    "Athletics": 2,
+    "Provoke": 2,
+    "Stealth": 2,
+    "Contacts": 1,
+    "Will": 1,
+    "Investigate": 1,
+    "Resources": 1
+   },
+   "approaches": {
+    "Forceful": 3,
+    "Quick": 2,
+    "Careful": 2,
+    "Sneaky": 1,
+    "Clever": 1,
+    "Flashy": 0
+   },
+   "binder": [
+    {
+     "id": "MI-01",
+     "type": "ROOTS",
+     "owner": "PC-MIRE",
+     "title": "Raised in the Temple Orphanage",
+     "power_tags": [
+      "Raised in the Order's orphanage",
+      "Trained young in watch drills",
+      "Knows every Order rite"
+     ],
+     "weakness": "Never had a family of blood",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": ""
+    },
+    {
+     "id": "MI-02",
+     "type": "ROOTS",
+     "owner": "PC-MIRE",
+     "title": "The Last Stilt-House",
+     "power_tags": [
+      "Keeper of a stilt-house",
+      "Neighbors trust her to hold",
+      "Last dry roof she owns"
+     ],
+     "weakness": "The Cartel holds the mortgage",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": ""
+    },
+    {
+     "id": "MI-03",
+     "type": "REACH",
+     "owner": "PC-MIRE",
+     "title": "Debt to the Blackwater Cartel",
+     "power_tags": [
+      "Owes blood-debt to the Cartel",
+      "Knows the Wick Lane Cellars",
+      "Does dirty work to pay"
+     ],
+     "weakness": "The debt only seems to grow",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": ""
+    },
+    {
+     "id": "MI-04",
+     "type": "REACH",
+     "owner": "PC-MIRE",
+     "title": "Disgraced by Captain Verrick",
+     "power_tags": [
+      "Cast out by Captain Verrick",
+      "Still fights like she's badged",
+      "Marked enemy of the Wardens"
+     ],
+     "weakness": "Chooses vengeance over sense",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": ""
+    }
+   ],
+   "story_cards": [
+    {
+     "id": "MI-05",
+     "type": "NPC",
+     "owner": "PC-MIRE",
+     "title": "Old Pell of Wick Lane",
+     "power_tags": [
+      "Elder of the Wick Lane",
+      "Vouches for Mire's debt",
+      "Remembers her before the disgrace"
+     ],
+     "weakness": "Too old and sick to help",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": ""
+    },
+    {
+     "id": "MI-06",
+     "type": "THREAD",
+     "owner": "PC-MIRE",
+     "title": "The Debt That Never Shrinks",
+     "power_tags": [
+      "Cartel keeps padding the ledger",
+      "Someone above the boss decides",
+      "Freedom costs more than gold"
+     ],
+     "weakness": "Asking questions invites punishment",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": ""
+    }
+   ],
+   "fae": {
+    "high_concept": "Disgraced Warden Who Still Holds the Line on Wick Lane",
+    "trouble": "Vengeance Over Sense",
+    "aspects": [
+     "Raised in the Order's orphanage, trained to the watch drills",
+     "Keeper of the last stilt-house on Wick Lane, mortgaged to the Blackwater Cartel",
+     "Cast out by Captain Verrick, marked enemy of the Causeway Wardens"
+    ]
+   }
+  }
+ ]
+}
