@@ -4,7 +4,7 @@
  "arm": "C",
  "seed": 44984,
  "spec_version": "0.3.1",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 2,
@@ -3760,6 +3760,174 @@
     "Yarrow": 1
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 127,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-04 1/5",
+   "tension": 3,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 3,
+    "Yarrow": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 128,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock T-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "T-03 1/4",
+   "tension": 3,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 3,
+    "Yarrow": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 129,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock T-05",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "T-05 1/5",
+   "tension": 3,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 3,
+    "Yarrow": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 130,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "4",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 3,
+    "Yarrow": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 131,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "2",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 3,
+    "Yarrow": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 132,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "FP: Petra=1, Anselm=1, Caddock=3, Yarrow=1",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 3,
+    "Yarrow": 1
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -4550,7 +4718,19 @@
    "owner": "Yarrow",
    "placebo": true,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "PX-09",
+    "type": "ROOTS",
+    "owner": "PC-YARROW",
+    "title": "A Fisher's Stilt Hut",
+    "power_tags": [
+     "raised above the floods",
+     "nets and fishing lines",
+     "view across the marsh"
+    ],
+    "weakness": "Collapses Under Weight"
+   }
   },
   {
    "event": "beat_fill",
@@ -4561,7 +4741,20 @@
    "text": "A ragged column of Order pilgrims, bound to the Dry Saint's word and driven forward by their masters' command, come wading out of the rain at Gullet Ford.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "F-02",
+    "type": "FACTION",
+    "owner": "GM",
+    "title": "Order of the Dry Saint",
+    "power_tags": [
+     "tends temple sanctuaries",
+     "hoards blight-cure lore",
+     "commands pilgrim loyalty"
+    ],
+    "weakness": "Doctrine Before Mercy",
+    "clock": "0/5"
+   }
   },
   {
    "event": "beat_fill",
@@ -4572,7 +4765,19 @@
    "text": "This is the same pilgrim band that once shared its scant bread with Anselm on the road — now the bread is gone, the rain hasn't stopped, and they've decided the party's dry stores belong to them instead.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "PX-05",
+    "type": "ROOTS",
+    "owner": "PC-ANSELM",
+    "title": "A Pilgrim Band",
+    "power_tags": [
+     "safety in numbers",
+     "shares scant bread",
+     "sings loud hymns"
+    ],
+    "weakness": "Slow and Noisy"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -4587,7 +4792,19 @@
    "owner": "Anselm",
    "placebo": true,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "PX-05",
+    "type": "ROOTS",
+    "owner": "PC-ANSELM",
+    "title": "A Pilgrim Band",
+    "power_tags": [
+     "safety in numbers",
+     "shares scant bread",
+     "sings loud hymns"
+    ],
+    "weakness": "Slow and Noisy"
+   }
   },
   {
    "event": "beat_fill",
@@ -4598,7 +4815,19 @@
    "text": "Coz Marrow wades out of the reeds with two hard-eyed cousins at his back, calling in the debt he's owed — not in coin, but in a crossing. He says Petra knows exactly what she promised him, and he's brought witnesses so she can't pretend otherwise.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "PX-14",
+    "type": "REACH",
+    "owner": "PC-PETRA",
+    "title": "A Debt Called In",
+    "power_tags": [
+     "demands payment now",
+     "threatens with witnesses",
+     "offers a way to settle"
+    ],
+    "weakness": "Violence if Unpaid"
+   }
   },
   {
    "event": "beat_fill",
@@ -4609,7 +4838,19 @@
    "text": "Coz wades closer, rain sluicing off his hood, and lays out the deal plain: he'll call the old debt square if Caddock and the rest guide him and his kin to Saint Orrin's Drowned Temple. 'I'm not asking you to work for free,' he says, and true to his word he offers coin for help — half now, pressed in",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "PX-17",
+    "type": "REACH",
+    "owner": "PC-CADDOCK",
+    "title": "Promise of Reward",
+    "power_tags": [
+     "offers coin for help",
+     "hints at more later",
+     "pays half up front"
+    ],
+    "weakness": "Reward Never Materialises"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -4624,7 +4865,19 @@
    "owner": "Petra",
    "placebo": true,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "PX-14",
+    "type": "REACH",
+    "owner": "PC-PETRA",
+    "title": "A Debt Called In",
+    "power_tags": [
+     "demands payment now",
+     "threatens with witnesses",
+     "offers a way to settle"
+    ],
+    "weakness": "Violence if Unpaid"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -4639,7 +4892,19 @@
    "owner": "Caddock",
    "placebo": true,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "PX-17",
+    "type": "REACH",
+    "owner": "PC-CADDOCK",
+    "title": "Promise of Reward",
+    "power_tags": [
+     "offers coin for help",
+     "hints at more later",
+     "pays half up front"
+    ],
+    "weakness": "Reward Never Materialises"
+   }
   },
   {
    "event": "free_compel",
@@ -4662,7 +4927,19 @@
    "improvised": false,
    "mode": "gm_card",
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "C-03",
+    "type": "CULTURE",
+    "owner": "GM",
+    "title": "Every Crossing Owes",
+    "power_tags": [
+     "tolls at every crossing",
+     "favours bind for life",
+     "debts written in ledgers"
+    ],
+    "weakness": "Debt Feuds Turn Bloody"
+   }
   },
   {
    "event": "free_compel",
@@ -4709,6 +4986,42 @@
     "section": "§3",
     "issue": "active opposition from unknown NPC The Swarm-Voice",
     "source": "engine"
+   },
+   {
+    "section": "§7 (rail limit)",
+    "issue": "Rail exceeded the 5-card limit with no immediate correction: after event 59 (Rail + PX-17) the rail held 6 cards (H-02, L-01, PS-09, F-02, PX-14, PX-17). No removal occurred until event 68, several events later and triggered by an unrelated story draw, not by the overflow itself.",
+    "event_id": 59,
+    "source": "referee"
+   },
+   {
+    "section": "§7 (rail limit)",
+    "issue": "Immediately after the event-68 removal, adding PS-20 (event 69) brought the rail back to 6 cards (H-02, PS-09, F-02, PX-14, PX-17, PS-20) with no further removal, again violating the 5-card cap.",
+    "event_id": 69,
+    "source": "referee"
+   },
+   {
+    "section": "§7 (rail limit)",
+    "issue": "In scene 4, adding F-04 then T-05 (events 80-81, module M-2 deploy) brought the rail to 6 cards (H-02, PS-09, F-02, PS-20, F-04, T-05); drawing C-03 at event 93 pushed it to 7. No rail-limit removal was logged; the eventual removals of F-04/T-05 (events 97-98) were tagged 'discard: no longer present' at scene cleanup, not a rail-limit correction.",
+    "event_id": 81,
+    "source": "referee"
+   },
+   {
+    "section": "§6A (Story Pile cleanup)",
+    "issue": "Story cards must return to their pile at scene end unless retired. PS-09 (drawn scene 1, event 12-13) was never removed from the rail at the scene 1, 2, or 3 cleanups (only its Weight was updated at event 25); it stayed face-up as a permanent situation aspect instead of cycling back to Petra's Story Pile.",
+    "event_id": 24,
+    "source": "referee"
+   },
+   {
+    "section": "§6A (Story Pile cleanup)",
+    "issue": "PS-20 (drawn scene 3, event 69-70) was likewise never returned to Caddock's Story Pile at scene 3's cleanup (events 73-78 remove PX-14/PX-17 but not PS-20), and remained on the rail into subsequent scenes.",
+    "event_id": 76,
+    "source": "referee"
+   },
+   {
+    "section": "§6A (success-with-style create-advantage row)",
+    "issue": "The rule states the pile draw comes 'instead of the boost or the Session Deck peek.' Caddock's success-with-style Create Advantage (event 67) triggered both a Story Pile draw (PS-20, events 69-70) and a Session Deck peek (event 71, card C-01 moved to bottom) from the same single roll, stacking two mutually-exclusive SWS benefits.",
+    "event_id": 71,
+    "source": "referee"
    }
   ],
   "ambiguities": [
@@ -4783,14 +5096,215 @@
     "detail": "event 117",
     "scene": 5,
     "source": "engine"
+   },
+   {
+    "section": "§7 (rail)",
+    "issue": "The rule 'if a card would exceed the limit, the GM removes the oldest non-GLOBAL GM card' does not say exactly when the check must fire relative to same-scene additions (surfacing, story draws, drawn cards) that stack up quickly. In this session the rail hit 6 cards at event 59 (H-02, L-01, PS-09, F-02, PX-14, PX-17) with no removal, and the removal that eventually happened (event 68) was triggered by a later, unrelated story-draw event rather than by the overflow itself.",
+    "interim_ruling": "Table treated the limit as checked only when a story/GM free-invoke draw needed rail space, not on every rail_add; overflow was tolerated for several events before being partially corrected.",
+    "source": "referee"
+   },
+   {
+    "section": "§6A cleanup",
+    "issue": "§6A says a drawn story card returns to its pile 'at scene end...unless it was retired,' with no option to keep it on the rail (that option exists only for GM cards, §4). The log shows Weight updates for story cards at scene cleanup (e.g. PS-09 at event 25, PS-20 at event 76) but no matching rail_remove, so it's unclear whether the table's practice of leaving story cards face-up across scenes was an intended house-rule extension of the GM-card 'keep' option to story cards, or an oversight.",
+    "interim_ruling": "Table left surfaced story cards on the rail indefinitely (no scene-end return observed for PS-09 or PS-20) rather than returning them to their pile each scene end.",
+    "source": "referee"
+   },
+   {
+    "section": "§6A (success-with-style create-advantage row)",
+    "issue": "The table says a Player Story Pile draw on SWS create-advantage comes 'instead of the boost or the Session Deck peek.' It doesn't explicitly say whether that exclusivity can be waived if the player still wants to look at the deck afterward for information only (not as the SWS benefit).",
+    "interim_ruling": "At event 67/69/71 the table granted Caddock both the story pile draw (PS-20) and a Session Deck peek on the same success-with-style roll.",
+    "source": "referee"
    }
   ],
-  "cost_checks": [],
-  "friction": []
+  "cost_checks": [
+   {
+    "event_id": 20,
+    "used_drawn_card": true,
+    "note": "Tie draw PX-09 (Yarrow's ROOTS card); minor cost used its weakness tag 'Collapses Under Weight' in the narration."
+   },
+   {
+    "event_id": 31,
+    "used_drawn_card": true,
+    "note": "Beat Frame AMBUSH: F-02 fills WHO via 'commands pilgrim loyalty' and PX-05 fills WHY via 'shares scant bread', both quoted in the frame narration."
+   },
+   {
+    "event_id": 33,
+    "used_drawn_card": true,
+    "note": "Surfacing compel on PX-05 used its weakness tag 'Slow and Noisy' plainly in the text."
+   },
+   {
+    "event_id": 54,
+    "used_drawn_card": true,
+    "note": "Beat Frame PLEA FOR HELP: PX-14 fills WHO via 'threatens with witnesses' and PX-17 fills WHERE via 'offers coin for help', both used in the narration."
+   },
+   {
+    "event_id": 55,
+    "used_drawn_card": true,
+    "note": "Surfacing compel on PX-14 used its weakness tag 'Violence if Unpaid' directly in the text."
+   },
+   {
+    "event_id": 58,
+    "used_drawn_card": true,
+    "note": "Surfacing compel on PX-17 used its weakness tag 'Reward Never Materialises' directly in the text."
+   },
+   {
+    "event_id": 95,
+    "used_drawn_card": true,
+    "note": "Success-at-major-cost draw C-03; cost used C-03's own weakness tag 'Debt Feuds Turn Bloody' as required by the outcomes table ('must use its weakness tag or a GM threat tag')."
+   }
+  ],
+  "friction": [
+   {
+    "text": "Several deck-draw costs/compels needed a GM 'repair' pass (flagged 'repaired: true' for PX-09, PX-05, PX-14, PX-17) before they satisfied the 'cost must use the tag' rule (§3), suggesting the first-draft narration routinely under-used the drawn tag."
+   },
+   {
+    "text": "The 5-card rail limit was exceeded repeatedly (scenes 3 and 4) because removal was only triggered incidentally by story draws rather than checked at every rail_add, creating a backlog of stale cards (H-02, L-01, F-02, PS-09) crowding the rail."
+   },
+   {
+    "text": "Story cards (PS-09, PS-20) were never returned to their Story Pile at scene end, so they sat on the rail for multiple scenes as permanent situation aspects, which both muddies 'what's live' bookkeeping and directly drove the rail-limit overflow above."
+   }
+  ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "protector",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When I identified the pilgrims as hive-touched in S2 — that moment where I named something true that the others hadn't articulated yet, and it shifted the entire frame. Petra *heard* what was wrong with them when everyone else saw bandits or madness. It felt like her hard-won knowledge actually mattered.",
+    "most_frustrating": "Nothing significant — maybe just that there wasn't room for more direct back-and-forth with Coz when he showed up in S3, but that's a minor thing with multiple characters present and real narrative momentum. Not a real complaint.",
+    "background_used": "Good — excellent, actually. Every card saw play: Ashwater Tollgate's water-reading in S1, Marrow Ferry Rivals with Coz's actual appearance in S3, the Vow being the entire plot spine, and the Enemy status making the S4 confrontation with the Order mean something. The GM clearly read my cards and built around them.",
+    "wanted_but_couldnt": "A more direct bell-lore showdown with the Order's own knowledge — matching expertise against expertise rather than just using certainty to bypass them. Though S4 worked well as written, it would've been satisfying to out-know them at their own game specifically.",
+    "one_sentence": "My backstory was the session's spine: every card lit up when it needed to, every compel landed where it hurt most, and the whole mystery of the hive-touched child in the bell is exactly the weight Petra's vow was built to carry."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "instigator",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Breaking through the sentry line at the belltower with my lore about Saint Orrin's true rites. My knowledge actually meant something concrete in the world—it opened the door that grey robes and spears couldn't close.",
+    "most_frustrating": "Sister Vell's blood-debt. It felt punitive—like succeeding on the lore roll was secretly a trap. Narratively it's rich and I understand the cost mechanics, but it stung to watch the Order write my name into a ledger I didn't volunteer for.",
+    "background_used": "Perfectly. The hunt for the bell-tongue drove the entire session's spine, and the drowned mill background anchored me in the ford fight. Both invokes felt organic and necessary, not forced. The GM let my obsession become the story's skeleton.",
+    "wanted_but_couldnt": "I wanted more time to actually *read* what the bell itself was singing before the scene pivoted to rescuing the child. The escalation kept pushing me forward toward the next problem, which is Anselm's nature—but I would have liked one more moment to sit with the bell-tongue's meaning before it became \"save the hive-touched girl.\"",
+    "one_sentence": "My obsession with the bell-tongue was the beating heart of the entire session and it felt right—even when it led me into blood-debt and harder moral questions I'm not sure my character can answer."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "tactician",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 5,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When Caddock recognized the scorched skiff and hoofprints at the tower's base—the same signature as the burned bridge she's been turning over for weeks. It was the moment her personal history suddenly intersected with the present action, and it felt earned.",
+    "most_frustrating": "The compel on \"Promise of Reward\" sets up an obligation (Kess's borrowed coin), but it doesn't really force Caddock to grapple with what that debt *costs* her emotionally or mechanically. It's a setup without yet being a test.",
+    "background_used": "Good. The burned bridge callback felt personal and earned—that was the session's best moment for me. But across four cards and the whole session, only one card tag got invoked (Sella's hive-touched trust), so broader background potential is still on the table.",
+    "wanted_but_couldnt": "Test Caddock's defining oath—\"My Hands Have Never Lost a Child\"—against the hive-touched girl in the belltower. She's there, wounded, singing through the hive. But the session ends at discovery, so that reckoning hasn't come yet.",
+    "one_sentence": "Caddock's core qualities (steady calm, oath-bound midwife) shaped how she acted, but her personal stakes haven't yet forced her to choose between her oath and survival."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "optimizer",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 5,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Reading the water around chaos at Gullet Ford and calling the safe line true. That's when Yarrow's expertise genuinely mattered and others had to trust it—the moment his knowledge *solved* something nobody else could see.",
+    "most_frustrating": "The compel on \"A Fisher's Stilt Hut\" landed without context—I don't even know what that card is—and more broadly: while my rolls were successful, the narrative momentum (bell-mystery, the child, the blood-debt) belonged to Petra and Anselm. Yarrow's been the reliable supporting tool, not the character whose choices drive the mystery forward.",
+    "background_used": "Weir-keeper knowledge landed well—the water-reading and channel-finding felt earned by the concept. Brack was used effectively but mostly as a practical scout. The deeper stuff (the fallen weirs, the weight of keeping promises, the disgrace) hasn't been engaged yet—it's background, not burden.",
+    "wanted_but_couldnt": "I wanted Yarrow's water-reading to be the lens that *understood* the hive-child—that his sense of flow and channels could perceive something about her connection to something distant or drawing. Instead Petra's bell-knowledge and Anselm's exorcism did the real discovery. Yarrow found her, but didn't *read* her.",
+    "one_sentence": "My backstory was used competently for mechanics but hasn't yet engaged its emotional weight—the disgrace, the loneliness of holding lines alone, or what a promise made in anger actually costs him."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Petra",
+    "turns": 14,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Anselm",
+    "turns": 11,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Caddock",
+    "turns": 12,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Yarrow",
+    "turns": 11,
+    "references_to_others_background": 0
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "The party crossed Gullet Ford and fought through the Drowned Priest's pilgrim column to reach Saint Orrin's belltower, talking down or bypassing the Order's sentries even as Sister Vell scrawled a blood-debt against Anselm in her ledger. At the top of the tower they found the true source of the swarm-song: not a monster or a mad priest, but a hive-touched child used as a living bell-clapper to call every infected soul in the Sallowmere. The session ends on the hard question of what to do with her, with the Order's debt still unclosed and the Cartel's enforcers untested.",
+  "closing_tension": 3,
+  "reverberations": {
+   "growth": {
+    "PE-03": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "AN-03": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    }
+   },
+   "clocks": [
+    "F-04 1/5",
+    "T-03 1/4",
+    "T-05 1/5"
+   ],
+   "mutations": [],
+   "retired": []
+  },
+  "retired": [
+   {
+    "card": "N-02",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-04",
+    "how": "story pile over limit",
+    "session": 1
+   }
+  ]
+ },
  "state_end": {
   "tension": 3,
   "fp": {
@@ -4825,14 +5339,111 @@
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 910837,
-  "completion": 155486,
-  "cost_usd": 2.6348,
-  "calls": 67
+ "metrics": {
+  "arm": "C",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Anselm",
+   "Petra"
+  ],
+  "backstory_all_players": false,
+  "deck_surfaced_all_players": null,
+  "deck_draws": 6,
+  "draw_costs": 9,
+  "draw_cost_used_card_rate_engine": 1.0,
+  "draw_cost_tag_in_text_rate": 1.0,
+  "draw_cost_repaired": 5,
+  "draw_cost_used_card_rate_referee": 1.0,
+  "fp_end": {
+   "Petra": 1,
+   "Anselm": 1,
+   "Caddock": 3,
+   "Yarrow": 1
+  },
+  "fp_end_mean": 1.5,
+  "fp_earned": {
+   "Petra": 2,
+   "Yarrow": 1,
+   "Anselm": 2,
+   "Caddock": 1
+  },
+  "fp_spent": {
+   "Anselm": 4,
+   "Caddock": 1,
+   "Yarrow": 3,
+   "Petra": 4
+  },
+  "compels_accepted": 6,
+  "compels_refused": 1,
+  "compels_deck": 4,
+  "compels_free": 3,
+  "turns": {
+   "Petra": 5,
+   "Anselm": 5,
+   "Caddock": 5,
+   "Yarrow": 5
+  },
+  "turn_gini": 0.0,
+  "invokes": {
+   "Anselm": 4,
+   "Caddock": 2,
+   "Yarrow": 3,
+   "Petra": 3
+  },
+  "invoke_gini": 0.125,
+  "tension_trajectory": [
+   3,
+   4,
+   3,
+   3,
+   2,
+   3
+  ],
+  "clock_marks": 3,
+  "violations": 10,
+  "violations_engine": 4,
+  "violations_referee": 6,
+  "ambiguities": 11,
+  "ambiguity_ids": [
+   "AMB-01",
+   "AMB-12",
+   "AMB-22",
+   "AMB-27",
+   "§6A (success-with-style create-advantage row)",
+   "§6A cleanup",
+   "§7 (rail)"
+  ],
+  "gm_improvised_complications": 3,
+  "card_supplied_complications": 9,
+  "improvisation_share": 0.25,
+  "guarantee_pulled": 0,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6,
+   "involvement": 6.25,
+   "connection": 6,
+   "control": 5.75,
+   "play_again": 7
+  },
+  "involvement_var_within": 0.188,
+  "personality": {
+   "Petra": "protector",
+   "Anselm": "instigator",
+   "Caddock": "tactician",
+   "Yarrow": "optimizer"
+  },
+  "elapsed_min": 27.6,
+  "cost_usd": 3.4135
  },
- "llm_calls": 67,
+ "tokens": {
+  "prompt": 1156095,
+  "completion": 207227,
+  "cost_usd": 3.4135,
+  "calls": 75
+ },
+ "llm_calls": 74,
  "call_log": [
   {
    "seq": 1,
@@ -5369,6 +5980,62 @@
    "cached": false,
    "prompt_tokens": 44054,
    "completion_tokens": 2383
+  },
+  {
+   "seq": 25,
+   "agent": "GM",
+   "kind": "gm_post",
+   "cached": false,
+   "prompt_tokens": 83924,
+   "completion_tokens": 1253
+  },
+  {
+   "seq": 1,
+   "agent": "Referee",
+   "kind": "referee",
+   "cached": false,
+   "prompt_tokens": 26749,
+   "completion_tokens": 23798
+  },
+  {
+   "seq": 1,
+   "agent": "Yarrow#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 10548,
+   "completion_tokens": 1856
+  },
+  {
+   "seq": 1,
+   "agent": "Petra#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 10523,
+   "completion_tokens": 2219
+  },
+  {
+   "seq": 1,
+   "agent": "Caddock#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 10549,
+   "completion_tokens": 2515
+  },
+  {
+   "seq": 1,
+   "agent": "Anselm#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 10552,
+   "completion_tokens": 3421
+  },
+  {
+   "seq": 1,
+   "agent": "Interviewer",
+   "kind": "interviewer",
+   "cached": false,
+   "prompt_tokens": 8728,
+   "completion_tokens": 15507
   }
  ],
  "models": {
@@ -5377,5 +6044,5 @@
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 1186.8
+ "elapsed_s": 1656.0
 }
