@@ -1,7 +1,14 @@
 # Handoff — Hex-Nexus Balance Lab
 
 Written at the lead designer's request. Everything below is on
-`claude/hex-nexus-multiagent-prompts-aivg93`, pushed. Nothing is running.
+`claude/hex-nexus-multiagent-prompts-aivg93`, pushed.
+
+> **Update, 2026-09-23 (later session).** `batch_0039` (the T2 read at reveal
+> radius 2) is done and written up as RQ-038 in `log/decisions.md`: the sight
+> ruling holds, but it moved median length to 18 and Nexus kills to 78%. The
+> personality field did not move. `batch_0040` (P-0009, `dragon_ap_each` 2)
+> is running against it; its record is `log/patches/P-0009.json`. This note
+> will be folded into the sections below when P-0009 is judged.
 
 ## 1. Where the lab stands
 

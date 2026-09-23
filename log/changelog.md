@@ -192,3 +192,16 @@ the policy now prices them separately.
 
 `batch_0036` is a plumbing check only (8 games). A real personality read needs
 a proper batch; 8 games says nothing about which personality is strongest.
+
+## Iteration 7 - P-0009 and the T2 read at reveal radius 2
+
+| artefact | version | change |
+|---|---|---|
+| rules | 1.7.0 | unchanged. Rules 1.7.0 (reveal radius 2) read on T2 for the first time: `batch_0039`. |
+| tests | - | 119, all passing. |
+
+### Iteration 7 batches
+
+| batch | matchup | games | result |
+|---|---|---|---|
+| batch_0039 | T2 personality pool, P-0008 values, rules 1.7.0 | 120 | The T2 read at reveal radius 2 (RQ-038), paired with batch_0038 by seed. Snipes down as the T1 probes said (true snipes 54.4% -> 40.2% of uses), champion-kill AP up 70%, but median length 15 -> 18 and Nexus kills 96.7% -> 78.3%. Personality field unchanged: sieger 69.0%, spread 40. |

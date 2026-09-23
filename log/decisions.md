@@ -172,3 +172,30 @@ measuring against one taste.
 |---|---|---|
 | RQ-036a | **Sight reaches as far as a damage step: reveal radius 2.** While sight reached 1 and abilities reached 2 there was a band in which a champion could fire without ever being seen, and simulation found it was where most of the shooting happened - the P-0007 reach cap moved sniping barely at all (65.6 to 63.5 a game) because it narrowed that band rather than closing it. At radius 2 the two numbers are equal: if you can hit it, you can see it. Probes put champion snipes down about a fifth and champion combat up about 40%. Rules 1.7.0. | ruled, implemented |
 | RQ-037a | **Objectives may be priced higher; towers may not be made to need a wave.** The objective lever is approved as a way to pull teams into each other; the map-shaped alternative - a tower that only falls while your wave is present - is rejected. `dragon_ap_each` is wired as a config knob and is not yet changed from 1: P-0008 is in flight and pricing two things at once would make neither attributable. | ruled, one lever pending |
+
+## Iteration 7 - the T2 read at reveal radius 2, and the objective lever
+
+| id | question | finding | status |
+|---|---|---|---|
+| RQ-038 | Does the RQ-036a ruling (reveal radius 2) hold on T2, and what does it cost? | **The direction holds and the cost is pacing.** `batch_0039` re-runs `batch_0038` unchanged under rules 1.7.0, same seed, so the draws pair. Concealment moved the way the T1 probes said: attacks from cover 67.8 to 57.3 a game, true snipes from 54.4% to 40.2% of all uses, and AP paid for champion kills per team-round 0.24 to 0.41. Sight now reaching as far as a damage step also reaches as far as a tower dive, and that is the cost: the first tower falls in round 8 rather than 6, structure income drops from 4.64 to 3.73 AP per team-round, median game length goes from 15 to **18** rounds, and games ending by Nexus kill fall from 96.7% to **78.3%**, 26 of 120 games hitting the round limit. The stalled games are not the sieger's (8.6% of its games reach the limit) but the warder's (36.8%), brawler's (27.1%) and objective's (23.8%): the teams that were already not sieging now cannot close either, because a defender sees the dive coming. Typical limit game: towers 3-3 or 3-2, both sides at the inner towers. The personality field did not move: sieger 69.0%, laner 59.3%, objective 47.6%, brawler 35.4%, warder 28.9%, spread 40 from 36, every change inside its interval. | **HUMAN** |
+
+### What is being asked
+
+Rules 1.7.0 stands on its merits - it closed the unseen firing band, which is
+what RQ-036a set out to do - but it moved the game out of the pacing band that
+P-0002 and P-0003 put it in, and pacing is ruled to be tuned last. Two of the
+scorecard's pacing checks now fail (median length 18, Nexus kills 78.3%).
+`tower_hp` 16 is the number under this: it was a placeholder from the T2
+pacing sweep, never confirmed, chosen when a tower could be hit from a hex the
+defender could not see. The lab's recommendation is to leave the ruling alone
+and treat the placeholder as the lever, but that is a pacing patch, and the
+lead designer moved pacing last. Options, none applied:
+
+1. Bring `tower_hp` down from 16 (towards P-0002's 11) and re-read pacing on T2.
+2. Leave pacing where it is until champion balance is done, accepting that
+   every batch until then reads at median 18 with a fifth of games unresolved.
+3. Something map-shaped - the lab has no evidence for a specific one.
+
+P-0009 (`batch_0040`) is read against `batch_0039`, so its verdict is not
+confounded by this; but its pre-registered revert condition on median length
+must be read as a delta from 18, since the baseline is already outside 13-16.
