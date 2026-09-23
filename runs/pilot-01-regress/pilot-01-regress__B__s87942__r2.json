@@ -1,0 +1,1082 @@
+{
+ "run_id": "pilot-01-regress__B__s87942__r2",
+ "batch_id": "pilot-01-regress",
+ "arm": "B",
+ "seed": 87942,
+ "spec_version": "0.2.0",
+ "status": "partial",
+ "error": null,
+ "backend": "claude_cli",
+ "run_index": 2,
+ "cohort_id": "cohort-pilot-01",
+ "assignments": [
+  {
+   "character_id": "CH-1",
+   "name": "Ysolde",
+   "personality_id": "protector",
+   "seat": 0
+  },
+  {
+   "character_id": "CH-2",
+   "name": "Aldous",
+   "personality_id": "instigator",
+   "seat": 1
+  },
+  {
+   "character_id": "CH-3",
+   "name": "Morwen",
+   "personality_id": "tactician",
+   "seat": 2
+  },
+  {
+   "character_id": "CH-4",
+   "name": "Mire",
+   "personality_id": "optimizer",
+   "seat": 3
+  }
+ ],
+ "prep_packet": {
+  "anchors": [
+   "H-03",
+   "T-04"
+  ],
+  "environment": [
+   "T-03",
+   "F-01",
+   "L-03"
+  ],
+  "modules": [
+   {
+    "id": "M-1",
+    "cards": [
+     "L-05",
+     "T-02"
+    ],
+    "trigger": "fiction:the party leaves the road or causeway"
+   },
+   {
+    "id": "M-2",
+    "cards": [
+     "C-03",
+     "F-04"
+    ],
+    "trigger": "scene_start:3"
+   }
+  ],
+  "beat_frames": [
+   {
+    "id": "B-02",
+    "name": "PLEA FOR HELP",
+    "trigger": "fiction:the party enters a settlement",
+    "used": null
+   },
+   {
+    "id": "B-05",
+    "name": "FALSE SANCTUARY",
+    "trigger": "deck_at_most:3",
+    "used": null
+   },
+   {
+    "id": "B-03",
+    "name": "BETRAYAL",
+    "trigger": "roll_fails_against:T-04",
+    "used": null
+   }
+  ]
+ },
+ "events": [
+  {
+   "event_id": 1,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Session start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "FP: Ysolde=3, Aldous=3, Morwen=3, Mire=3",
+   "event_type": "session_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 2,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + H-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "anchor",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 3,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + T-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "anchor",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 4,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 5,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Will the party brave the drowning road to Saint Orrin's Drowned Temple to save the mother's son before the ford disappears and Hollowmoot's suspicion turns on them?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 6,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Ysolde reaches out and steadies the soaked woman with a firm hand on her shoulder, meeting her eyes with the quiet certainty of someone who knows what it means ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 7,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "overcome",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Aldous shoulders through the market throng toward the woman, rain streaming off his cloak like scripture. He reads the downpour in real time—the water is rising",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 8,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Morwen gently but firmly takes Tessa's shoulders, meeting her eyes with the steady confidence of someone who has faced the hive before and lived. She doesn't fl",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 9,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Mire moves through the press of bodies with the steady authority of someone trained to command, stepping into Tessa's reach. She meets the soaked woman's eyes w",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 10,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Too Famous to Hide",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": "",
+   "notes": "The Warden at the watchtower rail suddenly straightens, recognizing her face from Order pamphlets and temple carvings. He starts shoving through the crowd toward the group, calling out her name loud e",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 11,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Overcome: Aldous shoulders through the market throng toward the woman,",
+   "skill": "Notice +4",
+   "tags_invoked": "Fortune-Teller Who Reads the Rain, Sole Survivor of the Wreck [AL-HC]",
+   "fp_spent": 1,
+   "dice": "- - - 0",
+   "total": "+3",
+   "opposition": "+2",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [
+    "swallows fords overnight [H-03]"
+   ],
+   "target_card": "H-03",
+   "target_npc": "",
+   "shifts": 1,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 12,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "overcome",
+   "skill": "Empathy",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Ysolde steps forward to meet the Warden as he descends, placing herself calmly between him and the rest of the group. Her hands are open, her posture unthreaten",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 13,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Aldous steps directly into the Warden's path, shoulders squared against the downpour, and the drowned dead press close against his shadow—the Warden will feel i",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 14,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "create_advantage",
+   "skill": "Rapport",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Morwen steps forward to meet the Warden before he can close the distance to Tessa, her shoulders squared and her eyes steady. She doesn't defer or retreat, but ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 15,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "create_advantage",
+   "skill": "Provoke",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Mire moves with trained efficiency, positioning herself directly between the descending Warden and Tessa. She mirrors his stance, hand resting on her belt, meet",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 16,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Vengeance Over Sense",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Mire's stance stops being a negotiation and starts looking like a challenge—her hand drifts to her belt like she wants this to come to blows, and the Warden's whistle-hand twitches toward the signal c",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 17,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "Overcome: Ysolde steps forward to meet the Warden as he descends, plac",
+   "skill": "Empathy +4",
+   "tags_invoked": "Exiled Cook of the Night-Barge Who Hears Everything [YS-HC]",
+   "fp_spent": 1,
+   "dice": "- - 0 -",
+   "total": "+3",
+   "opposition": "+1",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 18,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "Create Advantage: Morwen steps forward to meet the Warden before he can close ",
+   "skill": "Rapport +2",
+   "tags_invoked": "Exorcist Who Doubts the Hive Has Souls [MO-HC]",
+   "fp_spent": 1,
+   "dice": "- 0 - +",
+   "total": "+3",
+   "opposition": "+1",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.1.1 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 19,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "Create Advantage: Mire moves with trained efficiency, positioning herself dire",
+   "skill": "Provoke +2",
+   "tags_invoked": "Disgraced Warden Who Still Holds the Line on Wick Lane [MI-HC]",
+   "fp_spent": 1,
+   "dice": "+ - 0 +",
+   "total": "+5",
+   "opposition": "+1",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.1.2 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "",
+   "shifts": 4,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 20,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  }
+ ],
+ "scenes": [
+  {
+   "index": 1,
+   "tension_before": null,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 2,
+   "climax": false,
+   "tension_after": null,
+   "triggers_fired": []
+  }
+ ],
+ "transcript": [
+  {
+   "session": 1,
+   "scene": 0,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Session begins. Each player has Ysolde 3 FP, Aldous 3 FP, Morwen 3 FP, Mire 3 FP. Face-up: Rising Floodwaters [H-03], The Drowned Priest [T-04].",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Rain hammers the plank walkways of Hollowmoot, and the quarantine bell has not stopped its tired, wet clang since noon. Lanterns gutter under sagging eaves as the crowd in the market square press close around a woman soaked to the bone, her shawl plastered to her shoulders, mud to her knees from wading the last stretch of causeway. She catches sight of you—strangers, capable-looking, still dry enough to have somewhere better to be—and shoves through the press of bodies to grab at sleeves and coat-hems. \"My boy,\" she says, voice cracking, \"he heard the singing from the belltower. Saint Orrin's. He's not right anymore, I know he's not, but he's still mine. Please. The water's rising, it'll take the ford by morning tide, and after that—\" She doesn't finish. Behind her, someone mutters the word \"hive-touched\" like a curse, and a Warden at the watchtower rail is already watching the four of you a little too closely.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Your boy's still yours, no matter what took him—I've seen enough good people twisted by this blight to know the difference between corruption and the soul underneath. We'll help you find him, I promise.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde reaches out and steadies the soaked woman with a firm hand on her shoulder, meeting her eyes with the quiet certainty of someone who knows what it means to be cast out. She can feel the Warden's gaze burning into her back, but she doesn't look away from Tessa's face. Some things are worth the risk of being seen.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "Your boy heard singing from the belltower—that's not madness, that's the hive marking one of its own. We have until dawn tide swallows the ford. Tell me everything about him, *now*.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous shoulders through the market throng toward the woman, rain streaming off his cloak like scripture. He reads the downpour in real time—the water is rising with *purpose*, speaking in tongues only he can decipher. His eyes lock onto Tessa, and he plants himself squarely before her, ignoring the Warden's weight of attention at the rail. The drowned dead cling to him always; they always *know* when a soul is slipping away.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "I know what \"not right\" means, and I know you're not cursed for loving him anyway. Tell me quickly—what's your boy's name, and when did he hear the singing?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen gently but firmly takes Tessa's shoulders, meeting her eyes with the steady confidence of someone who has faced the hive before and lived. She doesn't flinch at the word \"hive-touched\"—her whole life has been shaped by the first outbreak—and she tilts her body slightly to shield the conversation from the Warden's gaze, drawing Tessa close like someone bringing bad news to the kitchen table. Her voice is low, practical, but not cold: the voice of someone who has learned when hope is possible and when it isn't.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "I know that look—I wore the grey too. We'll find your boy before the water takes the ford.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire moves through the press of bodies with the steady authority of someone trained to command, stepping into Tessa's reach. She meets the soaked woman's eyes without flinching, even as she feels the Warden's gaze from the watchtower rake across her back. Her jaw sets, and she puts a calloused hand on Tessa's shoulder—a grip that says this isn't negotiable. She'll hold this line, whether the wardens like it or not.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Tessa, listen to me—I'm known here, and that Warden knows my face. Stay close to the others and don't panic. Let me handle this.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — overcome with Notice: dice - - - 0, invoking Fortune-Teller Who Reads the Rain, Sole Survivor of the Wreck [AL-HC] → Good (+3) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Aldous doesn't wait for an invitation. He plants himself in front of Tessa and reads the rain the way other men read a ledger—the slant of it, the color of the runoff sluicing off the eaves, the particular urgency in how it's falling. \"The ford holds till first light, maybe less,\" he says, flat and certain. \"After that it's gone till low tide finds it again, and low tide won't come soon enough to matter.\" Tessa's breath catches; she gives them the boy's name—Corin—and says he slipped out three nights back, drawn toward the belltower like a man walking in his sleep. But Morwen's attempt to keep this quiet fails her: the Warden at the tower rail has already placed her face, and there's no unseeing a name like hers in a crowd this size. \"That's the Exorcist,\" someone hisses, and heads turn. The Warden starts down the ladder toward the square, hand resting meaningfully on the truncheon at his belt, and the quarantine bell gives one more tired clang as if in answer.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Warden, you see what we see—the blight, the water, the time bleeding away. We're not spreading sickness. We're here to find the boy before he's lost entirely, and before the ford drowns him with us.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde steps forward to meet the Warden as he descends, placing herself calmly between him and the rest of the group. Her hands are open, her posture unthreatening but steady—the stance of someone who has faced down her own fears and knows how to meet another person's with clarity. She reads the weight on his shoulders: duty, fear, exhaustion in equal measure. She'll speak to that.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "Get out of our way, Warden. That boy's still salvageable, and the flood won't wait for your authority.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous steps directly into the Warden's path, shoulders squared against the downpour, and the drowned dead press close against his shadow—the Warden will feel it if he's got any sense. His eyes are hollow and certain, the eyes of a man who has already looked into the dark beneath the flood and come back marked. He reaches back for Tessa's arm and starts moving through the crowd toward the belltower, not running, not breaking stride. Just walking. Like a man certain that no Causeway Warden will dare stop him.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Warden, I know what you're trying to protect—and so am I. That boy needs an exorcist, not torches. Give me till dawn tide. You know my work here.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen steps forward to meet the Warden before he can close the distance to Tessa, her shoulders squared and her eyes steady. She doesn't defer or retreat, but her voice carries respect—she knows he's trying to protect the city same as she is. She invokes her work as a known exorcist, her long connection to Hollowmoot's pilgrim band, and the simple truth that a boy hive-touched needs an exorcist far more than he needs a pyre. She's not begging permission; she's establishing why she belongs here and why this work matters.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "I've still got business with this woman, Warden. Stand down.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire moves with trained efficiency, positioning herself directly between the descending Warden and Tessa. She mirrors his stance, hand resting on her belt, meeting his eyes with the quiet certainty of someone who knows exactly what it means to wear grey—and what it means to be cast out. She hasn't forgotten how to hold a line, disgraced or not.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "You want to test me, grey coat? I still remember the drills. I still remember how to hold.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde — overcome with Empathy: dice - - 0 -, invoking Exiled Cook of the Night-Barge Who Hears Everything [YS-HC] → Good (+3) vs Average (+1): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen — create advantage with Rapport: dice - 0 - +, invoking Exorcist Who Doubts the Hive Has Souls [MO-HC] → Good (+3) vs Average (+1): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — create advantage with Provoke: dice + - 0 +, invoking Disgraced Warden Who Still Holds the Line on Wick Lane [MI-HC] → Superb (+5) vs Average (+1): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The Warden's boots hit the last rung and stop. Ysolde's steady voice cuts through the rain—not pleading, just true, reading the exhaustion under his grey coat—and something in his shoulders loosens half a step. Morwen doesn't retreat either; she names herself, and the crowd murmurs it back to him: the Exorcist, the one who walked into the Drowned Temple once already and came out whole. Mire finishes it, planting herself boot-to-boot with him like she's still got a badge to back the stance, and for a long, rain-hammered moment the Warden just looks at the four of them—cast-outs, exiles, a fortune-teller with dead men's eyes—and decides they're not worth the paperwork tonight. \"Ford's gone by first light,\" he says at last, stepping back. \"Whatever you're doing, do it fast, and don't let me hear the bell ring for you.\" Aldous is already twenty feet gone, Tessa's arm in his, walking toward the causeway like the flood itself is clearing a path for him. The others fall in behind, Hollowmoot's suspicious eyes on their backs, the quarantine bell tolling once more into the dark as the town shrinks behind them and the road to Saint Orrin's opens up, drowning, ahead.",
+   "visible_to": "all"
+  }
+ ],
+ "costs": [
+  {
+   "event": "free_compel",
+   "scene": 1,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Too Famous to Hide",
+   "text": "The Warden at the watchtower rail suddenly straightens, recognizing her face from Order pamphlets and temple carvings. He starts shoving through the crowd toward the group, calling out her name loud enough for half the market to hear, forcing the party to deal with him before they can slip away towa",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Morwen"
+  },
+  {
+   "event": "free_compel",
+   "scene": 1,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Vengeance Over Sense",
+   "text": "Mire's stance stops being a negotiation and starts looking like a challenge—her hand drifts to her belt like she wants this to come to blows, and the Warden's whistle-hand twitches toward the signal cord that'll bring more grey coats down from the tower.",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Mire"
+  }
+ ],
+ "referee": {
+  "violations": [
+   {
+    "session": 1,
+    "scene": 1,
+    "agent": "GM",
+    "section": "§3",
+    "issue": "active opposition from unknown NPC Warden",
+    "source": "engine"
+   },
+   {
+    "session": 1,
+    "scene": 1,
+    "agent": "GM",
+    "section": "§3",
+    "issue": "active opposition from unknown NPC Warden",
+    "source": "engine"
+   },
+   {
+    "session": 1,
+    "scene": 1,
+    "agent": "GM",
+    "section": "§3",
+    "issue": "active opposition from unknown NPC Warden",
+    "source": "engine"
+   },
+   {
+    "session": 1,
+    "scene": 1,
+    "agent": "GM",
+    "section": "§7",
+    "issue": "reported fictional trigger fiction:the party leaves the road or causeway that is not an unused fictional trigger",
+    "source": "engine"
+   }
+  ],
+  "ambiguities": [
+   {
+    "id": "AMB-12",
+    "section": "§8",
+    "issue": "Stress box values are unspecified.",
+    "interim_ruling": "Fate Core: boxes 1 and 2; Physique/Will +1/+2 adds a 3 box, +3 or more adds 3 and 4.",
+    "detail": "stress boxes built with Fate Core values",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "section": "Rolls / opposition (\"Named NPCs roll 4dF + their rating as active opposition\")",
+    "issue": "The Warden was introduced as a named NPC and the GM attempted to use him as active opposition three separate times (events tied to 12–19), but he had no established rating, so the engine refused each attempt. The rules do not say what opposition mode applies to a named NPC who has no defined rating.",
+    "interim_ruling": "The table fell back to passive ladder opposition (Average +1, +1 per opposing table aspect) for all three rolls against the Warden (events 17, 18, 19) instead of rolling 4dF for him.",
+    "scene": 1,
+    "source": "referee"
+   },
+   {
+    "section": "Compels (\"the GM may offer a compel on any player aspect or trouble\")",
+    "issue": "Both compels in the log (event 10 'Too Famous to Hide', event 16 'Vengeance Over Sense') are logged with the affected player as the 'actor' of the Compel action rather than the GM, leaving it unclear whether these were GM-offered compels merely logged under the target's name, or player-suggested self-compels.",
+    "interim_ruling": "Both were processed as ordinary accepted compels (+1 fate point to the affected player, complication introduced), regardless of who nominally initiated them.",
+    "scene": 1,
+    "source": "referee"
+   },
+   {
+    "section": "Aspects and invokes (\"Each aspect once per roll\")",
+    "issue": "Event 11's tags_invoked field lists what could be read as two aspect names separated by a comma ('Fortune-Teller Who Reads the Rain, Sole Survivor of the Wreck [AL-HC]') but only 1 fate point was spent and only a single +2 was applied, which is only valid if this is one aspect with a comma in its title, not two invoked aspects.",
+    "interim_ruling": "Treated as a single aspect (one invoke, +2, 1 fp), consistent with the math shown (total +3 = dice -3 + skill +4 + invoke +2).",
+    "scene": 1,
+    "source": "referee"
+   }
+  ],
+  "cost_checks": [
+   {
+    "event_id": 10,
+    "used_drawn_card": false,
+    "note": "Free compel 'Too Famous to Hide' has no draw_id (empty) — it was an improvised/table aspect compel, not tied to a deck draw, so there is no drawn card to check against.",
+    "scene": 1
+   },
+   {
+    "event_id": 16,
+    "used_drawn_card": false,
+    "note": "Free compel 'Vengeance Over Sense' has no draw_id (empty) — improvised compel, not a deck-draw cost, so there is no drawn card whose tags could or should have been used.",
+    "scene": 1
+   }
+  ],
+  "friction": [
+   {
+    "scene": 1,
+    "text": "Three engine refusals for 'active opposition from unknown NPC Warden' show the GM repeatedly tried to roll an NPC that had no defined rating before settling on passive opposition, slowing the scene."
+   },
+   {
+    "scene": 1,
+    "text": "An engine refusal flagged a reported fictional trigger ('the party leaves the road or causeway') as not an unused trigger, suggesting a mismatch between the table's narration and the module's trigger-tracking state during the Warden confrontation."
+   },
+   {
+    "scene": 1,
+    "text": "Four players each declared near-identical roleplay/create-advantage actions to intercept the same Warden (events 12–15) before any rolls resolved, creating redundant declarations and spotlight congestion rather than efficient turn resolution."
+   }
+  ]
+ },
+ "surveys": [],
+ "interview": null,
+ "chronicle": null,
+ "state_end": {
+  "tension": 3,
+  "fp": {
+   "Ysolde": 2,
+   "Aldous": 2,
+   "Morwen": 3,
+   "Mire": 3
+  },
+  "surfaced": [],
+  "deck_player_cards": {},
+  "guarantee_pulled": [],
+  "guarantee_failed": [],
+  "deck_left": [],
+  "draws": 0,
+  "turns": {
+   "Ysolde": 2,
+   "Aldous": 2,
+   "Morwen": 2,
+   "Mire": 2
+  }
+ },
+ "notes": [],
+ "metrics": {},
+ "tokens": {
+  "prompt": 162282,
+  "completion": 50627,
+  "cost_usd": 0.7666,
+  "calls": 20
+ },
+ "llm_calls": 20,
+ "models": {
+  "gm": "claude-sonnet-5",
+  "player": "claude-haiku-4-5-20251001",
+  "referee": "claude-sonnet-5",
+  "interviewer": "claude-haiku-4-5-20251001"
+ },
+ "elapsed_s": 386.2
+}
