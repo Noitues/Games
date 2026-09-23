@@ -1,0 +1,24 @@
+{
+  "batch_id": "batch_0033",
+  "rules": "1.4.0",
+  "roster": "1.4.1",
+  "ai": "1.2.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3
+  },
+  "games": 80,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 3301,
+  "replays": 2,
+  "config_overrides": {
+    "tower_hp": 16
+  },
+  "extra": [
+    "RQ-036: play freely from cover, and an adjacent enemy champion reveals an occupied hexgroup. Retires the RQ-034 ambush gate and the flip-on-acting rule.",
+    "Watching for the two behaviours the ruling predicts: activations ending on a hexgroup edge (both sides legible) should rise, and champions should keep away from enemy-occupied hexgroups.",
+    "Compare with batch_0032 (same roster and AI, rules 1.3.0 with the ambush gate)."
+  ]
+}
