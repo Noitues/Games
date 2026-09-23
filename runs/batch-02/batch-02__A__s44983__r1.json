@@ -4,7 +4,7 @@
  "arm": "A",
  "seed": 44983,
  "spec_version": "0.3.1",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 1,
@@ -3877,6 +3877,202 @@
     "Yarrow": 2
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 133,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-02 1/5",
+   "tension": 5,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 5,
+    "Anselm": 2,
+    "Caddock": 4,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 134,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-03 1/4",
+   "tension": 5,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 5,
+    "Anselm": 2,
+    "Caddock": 4,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 135,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock T-05",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "T-05 1/5",
+   "tension": 5,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 5,
+    "Anselm": 2,
+    "Caddock": 4,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 136,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "4",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 5,
+    "Anselm": 2,
+    "Caddock": 4,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 137,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "4",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 5,
+    "Anselm": 2,
+    "Caddock": 4,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 138,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "L-02 -> L-02v2",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "belltower now known safe ground, its bell-pattern broken by ",
+   "event_type": "mutation",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 5,
+    "Anselm": 2,
+    "Caddock": 4,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 139,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "FP: Petra=5, Anselm=2, Caddock=4, Yarrow=2",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 5,
+    "Anselm": 2,
+    "Caddock": 4,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -4707,7 +4903,20 @@
    "tag": "belltower above the waterline",
    "text": "The causeway stones vanish under black water a hundred yards ahead of you — the flood has beaten you to it, chains and all. There's no going around; the only landmark left in the grey murk is the temple's belltower, a dark finger jutting above the waterline far off to the north. Petra swears under h",
    "improvised": false,
-   "tag_in_text": true
+   "tag_in_text": true,
+   "card": {
+    "id": "L-02",
+    "type": "LOCATION",
+    "owner": "GM",
+    "title": "Saint Orrin's Drowned Temple",
+    "power_tags": [
+     "half-flooded nave",
+     "hidden reliquary crypt",
+     "belltower above the waterline"
+    ],
+    "weakness": "Echoes Betray Every Movement",
+    "clock": "0/4"
+   }
   },
   {
    "event": "free_compel",
@@ -4733,7 +4942,19 @@
    "owner": "Yarrow",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "YA-04",
+    "type": "REACH",
+    "owner": "PC-YARROW",
+    "title": "Cursed to Keep Every Promise Made",
+    "power_tags": [
+     "Word of honor respected even by enemies",
+     "Causeway Wardens still call him 'friend' out of habit",
+     "Disgraced but not distrusted, not yet"
+    ],
+    "weakness": "A promise made in anger still binds him"
+   }
   },
   {
    "event": "altered",
@@ -4743,7 +4964,19 @@
    "tag": "Causeway Wardens still call him 'friend' out of habit",
    "text": "The belltower rises black and dripping ahead, its bell-song threading through the rain. A skiff scrapes stone behind you, and there's Coss, half-frozen, ledger long since ruined, hauling himself onto the temple steps. 'Friend,' he calls out to Yarrow, still using the old word out of habit even now, ",
    "improvised": false,
-   "tag_in_text": true
+   "tag_in_text": true,
+   "card": {
+    "id": "YA-04",
+    "type": "REACH",
+    "owner": "PC-YARROW",
+    "title": "Cursed to Keep Every Promise Made",
+    "power_tags": [
+     "Word of honor respected even by enemies",
+     "Causeway Wardens still call him 'friend' out of habit",
+     "Disgraced but not distrusted, not yet"
+    ],
+    "weakness": "A promise made in anger still binds him"
+   }
   },
   {
    "event": "compel:altered scene",
@@ -4758,7 +4991,19 @@
    "owner": "Petra",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "PE-03",
+    "type": "REACH",
+    "owner": "PC-PETRA",
+    "title": "Vow to Ring Everyone Home",
+    "power_tags": [
+     "Hears the swarm-song before others do",
+     "Knows Saint Orrin's bell-patterns by heart",
+     "Can read the flood's rising rhythm"
+    ],
+    "weakness": "Freezes when the song calls her name"
+   }
   },
   {
    "event": "altered",
@@ -4768,7 +5013,19 @@
    "tag": "Hears the swarm-song before others do",
    "text": "Petra's hand stays locked to the bronze, her name still coiling through the swarm-song — and it's in that frozen breath that she hears it: a second voice threading under the bell-tone, thin and human, humming the same pattern back. Not the bell ringing itself, then. Someone is up here with you, tuck",
    "improvised": false,
-   "tag_in_text": true
+   "tag_in_text": true,
+   "card": {
+    "id": "PE-03",
+    "type": "REACH",
+    "owner": "PC-PETRA",
+    "title": "Vow to Ring Everyone Home",
+    "power_tags": [
+     "Hears the swarm-song before others do",
+     "Knows Saint Orrin's bell-patterns by heart",
+     "Can read the flood's rising rhythm"
+    ],
+    "weakness": "Freezes when the song calls her name"
+   }
   },
   {
    "event": "compel:tie",
@@ -4783,7 +5040,19 @@
    "owner": "Anselm",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "AN-02",
+    "type": "ROOTS",
+    "owner": "PC-ANSELM",
+    "title": "Favor of Blackwater Lieutenant Vex",
+    "power_tags": [
+     "Vex owes him a life-debt",
+     "Knows the Wick Lane Cellars' passwords",
+     "Access to Cartel smuggling routes"
+    ],
+    "weakness": "Vex's favors always cost more later"
+   }
   },
   {
    "event": "beat_fill",
@@ -4794,7 +5063,19 @@
    "text": "A gaunt, soot-scarred woman claws her way up the belfry stairs — one of the Marrowreed survivors Caddock knows by name, someone he thought had stayed safe behind in Hollowmoot.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "CA-01",
+    "type": "ROOTS",
+    "owner": "PC-CADDOCK",
+    "title": "Last of Marrowreed Village",
+    "power_tags": [
+     "Knows every survivor of the burning by name",
+     "Grudge-list against the Causeway Wardens",
+     "Skilled at vanishing into burned ground"
+    ],
+    "weakness": "Can't hear 'for the greater good' without rage"
+   }
   },
   {
    "event": "beat_fill",
@@ -4805,7 +5086,20 @@
    "text": "the reed-choked shallows south of the temple, where innocent-looking mats of woven reed hide the sucking black mire beneath",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": false
+   "repaired": false,
+   "card": {
+    "id": "H-04",
+    "type": "HAZARD",
+    "owner": "GM",
+    "title": "Sucking Mire",
+    "power_tags": [
+     "drags down the heavy",
+     "hides beneath reed mats",
+     "exhausts anyone crossing"
+    ],
+    "weakness": "Firm Along Old Pilings",
+    "clock": "0/4"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -4820,7 +5114,19 @@
    "owner": "Caddock",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "CA-01",
+    "type": "ROOTS",
+    "owner": "PC-CADDOCK",
+    "title": "Last of Marrowreed Village",
+    "power_tags": [
+     "Knows every survivor of the burning by name",
+     "Grudge-list against the Causeway Wardens",
+     "Skilled at vanishing into burned ground"
+    ],
+    "weakness": "Can't hear 'for the greater good' without rage"
+   }
   }
  ],
  "referee": {
@@ -4832,6 +5138,18 @@
     "section": "§3/§11",
     "issue": "compel names card PE-03, which is not in play for Petra (not theirs, or in the Session Deck / set aside)",
     "source": "engine"
+   },
+   {
+    "section": "§4, Resolving a drawn player card, step 4",
+    "event_id": 101,
+    "issue": "Anselm refused the compel offered on AN-02 (drawn on the scene 4 tie) and paid 1 fate point (fp_spent 1), which is correct so far. But the rule requires that on refusal 'the GM builds the cost from a face-up GM tag instead.' No subsequent event before scene 4 ends (event 111) shows any cost, twist, or complication built from a face-up GM tag (only unrelated story-pile maintenance and an unrelated hostile-invoke payout appear). The required replacement cost was never delivered.",
+    "source": "referee"
+   },
+   {
+    "section": "§10, GM step B (Evaluate threats that left play)",
+    "event_id": 138,
+    "issue": "L-02 left play via success with style (events 70-72) and was mutated post-session into L-02v2 (event 138), consistent with 'the fiction left the threat alive... it mutates.' But the rule also requires the mutation to 'add 1 clock segment' along with the version suffix. Unlike the other post-session clock events (133-135), which explicitly carry a clock_change field, event 138 shows no clock_change, indicating the required clock-segment bump was not applied.",
+    "source": "referee"
    }
   ],
   "ambiguities": [
@@ -4915,14 +5233,224 @@
     "detail": "1 beat(s) carried over",
     "scene": 5,
     "source": "engine"
+   },
+   {
+    "section": "§3 (outcome table) vs §4 (Resolving a drawn player card)",
+    "issue": "When a tie or major-cost draw (§3) turns up a card that happens to be a player card, it's unclear whether the 'minor/major cost must use one of its tags' language is satisfied by simply running the §4 compel-and-surface procedure instead of building an independent cost. This happened at event 99-101 (tie draws AN-02, a player card), logged with an explicit 'cost_mode: player_card_compel' flag, showing the table substituted the §4 compel procedure for the §3 minor-cost requirement.",
+    "interim_ruling": "The table treated the offered compel (using the drawn card's weakness tag) as satisfying the tie's minor-cost requirement, deferring to §4's player-card procedure over §3's generic 'built from any tag' language. (This does not resolve what happens on refusal — see violations.)",
+    "source": "referee"
+   },
+   {
+    "section": "§5/§6 vs §4",
+    "issue": "When an Altered-scene draw (§6) turns up a card owned by a player, the table applied BOTH the §6 scene-alteration effect (using one power tag to change 'who is there') AND the full §4 'resolving a drawn player card' procedure (compel on the weakness tag, surfacing, free invoke) from the SAME single draw. This occurred with YA-04 (scene 3, events 55-60) and PE-03 (scene 4, events 85-89). Neither §4 nor §6 explicitly say a single draw can trigger two independent tag-based effects.",
+    "interim_ruling": "The table let one draw do double duty: the weakness tag drove the compel/surface procedure and a separate power tag drove the scene alteration, both charged against the same single draw.",
+    "source": "referee"
+   },
+   {
+    "section": "§6A (Resolving a story draw, step 3) vs §7 (rail limit)",
+    "issue": "Story-pile draws PE-06 (event 12, scene 1) and SPE-01 (event 35, scene 2, first appearance on rail) are never shown leaving the rail with an explicit rail_remove event, unlike every other rail card in the log (T-05, YA-04, C-01, F-02, PE-03, AN-02, CA-01 all get logged rail_remove rows at cleanup). Rail-count arithmetic at events 52-53 (adding C-01 and F-02) only works if PE-06 and SPE-01 had already left the rail, so cleanup evidently happened, but the log doesn't record it.",
+    "interim_ruling": "Assumed the story cards were returned to their pile per §6A step 3 even though the log omits the corresponding rail_remove rows; treated as a logging gap rather than a rule breach.",
+    "source": "referee"
    }
   ],
-  "cost_checks": [],
-  "friction": []
+  "cost_checks": [
+   {
+    "event_id": 20,
+    "used_drawn_card": true,
+    "note": "L-02 altered-scene tag 'belltower above the waterline' used to change the location element."
+   },
+   {
+    "event_id": 57,
+    "used_drawn_card": true,
+    "note": "YA-04 weakness tag 'A promise made in anger still binds him' used for the surfacing compel; flagged 'repaired' in the source list, meaning the narration initially needed correction to satisfy the tag-use rule before it was accepted."
+   },
+   {
+    "event_id": 55,
+    "used_drawn_card": true,
+    "note": "Same YA-04 draw also used its power tag 'Causeway Wardens still call him friend out of habit' to alter the scene (Coss's arrival) — second, separate use of one draw."
+   },
+   {
+    "event_id": 87,
+    "used_drawn_card": true,
+    "note": "PE-03 weakness tag 'Freezes when the song calls her name' used for the surfacing compel."
+   },
+   {
+    "event_id": 85,
+    "used_drawn_card": true,
+    "note": "Same PE-03 draw also used its power tag 'Hears the swarm-song before others do' to alter the scene (revealing a second presence) — second, separate use of one draw."
+   },
+   {
+    "event_id": 101,
+    "used_drawn_card": true,
+    "note": "AN-02 weakness tag 'Vex's favors always cost more later' was correctly used in the compel offer; the tag-use itself is fine, but the required follow-up cost after refusal was never built (see violations)."
+   },
+   {
+    "event_id": 118,
+    "used_drawn_card": true,
+    "note": "CA-01 tag 'Knows every survivor of the burning by name' filled the WHO blank correctly."
+   },
+   {
+    "event_id": 118,
+    "used_drawn_card": true,
+    "note": "H-04 tag 'hides beneath reed mats' filled the WHERE blank (HAZARD's own HOW-type slot was already unavailable, so it correctly fell to the first empty blank per §5 step 3)."
+   },
+   {
+    "event_id": 120,
+    "used_drawn_card": true,
+    "note": "CA-01 weakness tag 'Can't hear \"for the greater good\" without rage' used for the Beat Frame surfacing compel; flagged 'repaired' in the source list, same pattern as event 57."
+   }
+  ],
+  "friction": [
+   {
+    "text": "Two cost narrations (YA-04's compel at event 57 and CA-01's Beat Frame compel at event 120) needed to be 'repaired' before they satisfied the §3 'the cost must use the tag' rule, suggesting the rule is easy to under-apply in first-draft narration."
+   },
+   {
+    "text": "Story-pile draws (PE-06, SPE-01) never get an explicit rail_remove logged at scene cleanup the way every other rail card does, forcing rail-limit compliance to be inferred rather than confirmed from the log."
+   },
+   {
+    "text": "The same Session Deck draw was pressed into double duty twice this session (YA-04 in scene 3, PE-03 in scene 4) — one tag for the §4 compel/surface procedure and a different tag for the §6 scene alteration — which works but isn't spelled out anywhere as intended behavior, so it took table judgment each time."
+   }
+  ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "storyteller",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 7,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Breaking the humming pilgrim free with that \"name-shaped silence\"—a roll that landed Beyond Legendary, and a moment where Petra's specific, hard-won knowledge of the bell-patterns did something nobody else at that table could do. It felt earned and necessary.",
+    "most_frustrating": "The \"overcome\" compels on Petra's swarm-song weakness froze her twice in fast succession, which made narrative sense but left me wanting moments where I could *choose* how Petra responds to hearing her name rather than just being locked in place until someone else moved. That's the mechanic working as designed, but it narrowed the kinds of choices I could make.",
+    "background_used": "good. Ashwater's water-craft, the stolen bell-lore, Petra's relationship to Saint Orrin's patterns, and Coss's back-taxes all threaded through naturally. The GM didn't just reference her past—it became the literal structure of how the mystery unfolded. That landed really well.",
+    "wanted_but_couldnt": "I wanted a beat or two to hesitate, to negotiate with Coss differently, or to approach the mire with more caution rather than conviction. Petra moved forward decisively throughout (which was *her*), but I would have liked one choice point where I could slow down and choose a different approach.",
+    "one_sentence": "Petra's entire character concept was the literal solution to the session's mystery, which made playing her feel essential, even when the swarm-song's pull on her vow stripped away some agency in how she responded."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "rules_lawyer",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 7,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Finding the fresh chisel-marks gouging out the closing rite-lines. That was my Lore roll that proved the bell had been deliberately sabotaged—not the hive speaking, but something *else* with intent. It made Anselm's expertise the thing that actually mattered, and it cracked open a real mystery instead of just another haunting.",
+    "most_frustrating": "Wanted to press harder on whether Kel is actually being saved or just temporarily separated from the hive—to sit in that doubt about whether the hive has souls worth keeping. The session moved fast from \"rescue the child\" to \"victory\" without letting Anselm wrestle with his core question. Also wanted more time excavating the bell itself: maker's marks, the full ritual that was broken, who sabotaged it and *why*. Felt like the scene swept me forward on narrative momentum when Anselm would naturally resist and ask harder questions.",
+    "background_used": "Excellent. The Drowned Mill gave me the ford-finding, Saint Orrin's bell is literally my character's obsession, the rites of severance were the lynchpin of both exorcism sequences. The GM built this session directly around threads from my character sheet. It landed well, but I notice I was being *led* to these moments rather than discovering them—the bell called, I followed. That's good GMing, but worth noting for pacing next time.",
+    "wanted_but_couldnt": "Slow down. Push back against the narrative momentum and question whether we should run into the mire without understanding what the song has actually done to Kel. Anselm is cautious—he should have resisted the heroic escalation and demanded more investigation before the rescue. The hive ambiguity got sacrificed for action pacing.",
+    "one_sentence": "My obsessions and expertise were honored, my rites and knowledge mattered in life-death ways, but the session bypassed Anselm's defining doubt—whether saving people from the hive is even possible, or just prolonging something darker."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "lurker",
+   "scores": {
+    "fun": 5,
+    "involvement": 5,
+    "connection": 5,
+    "control": 4,
+    "play_again": 6
+   },
+   "free_text": {
+    "best_moment": "The rescue of Kel in S5. It hit everything at once: Caddock's background (Marrowreed, Mory, the oath sworn to protect children), her specialized knowledge actually mattering (knowing the ground, her midwife's calm), and finally taking the lead instead of following. The compel on \"Last of Marrowreed Village\" felt earned, and the payoff was immediate and real.",
+    "most_frustrating": "S1-S3 left Caddock on the sidelines. I played her quiet as written, but that meant I didn't speak up and no one addressed her directly, so I ended up barely present. The bell-song stuff was Petra's and Anselm's arc. I would have appreciated the GM calling on Caddock by name more often to give her entry points into the conversation.",
+    "background_used": "Good. Marrowreed and Mory were invoked directly and meaningfully—not forced, felt organic to the story. The weakness tag \"Can't hear 'for the greater good' without rage\" was triggered appropriately by Caddock's own realization. Her \"Knows every survivor of the burning by name\" power tag got real use. It landed well because it was tied to actual stakes (a child in danger, an oath she'd sworn).",
+    "wanted_but_couldnt": "I wanted to explore what Kel's partial hive-touch means for Caddock's oath (\"My Hands Have Never Lost a Child\") — does that break it? Can she live with that? The moment passed too fast to sit with the tension there. I also would have appreciated more agency earlier; being quiet is correct for the character, but it meant I wasn't making choices, just narrating reactions.",
+    "one_sentence": "My background was used well and meaningfully—but only in the final section, leaving the first half feeling disconnected from Caddock's story."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "method_actor",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 6,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When Yarrow spotted the rope lashed to the bell's clapper before the others—that pure Notice moment revealed the bell wasn't calling pilgrims home but down, and it changed everything about what answer the Warden captain would carry back. It was Yarrow's specific skill doing the crucial finding.",
+    "most_frustrating": "Yarrow kept positioning himself as guide and point-person—\"I'll read the water,\" \"Let me take point,\" \"Follow my lead\"—but Petra and Anselm's successes-with-style kept pulling the narrative forward while I was landing solid successes that supported their wins rather than driving the story myself. Wanted more of the spotlight as the navigator, not just the steady hand at the back.",
+    "background_used": "Good. The weir-keeper heritage came alive naturally—old mill-race knowledge, family maps of the waterways implied in his navigation, the Warden bonds from militia service, Brack's warnings, the ability to read current and footing. The promise-compel on \"Cursed to Keep Every Promise Made\" landed perfectly thematic: disgraced but still honoring his word. It all felt earned, not forced.",
+    "wanted_but_couldnt": "I wanted Yarrow to have at least one major success-with-style moment where his specific expertise (water-reading, militia training, weir-keeper knowledge) solved something big before anyone else could. The rope-spotting was good, but Petra and Anselm got the flashy saves. Also wanted more space to lead rather than support.",
+    "one_sentence": "The background was used well—all four cards touched the story naturally without feeling forced or unfair."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Petra",
+    "turns": 19,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Anselm",
+    "turns": 17,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Caddock",
+    "turns": 8,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Yarrow",
+    "turns": 17,
+    "references_to_others_background": 0
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "The party crossed the drowning causeway and flooded temple ford by trusting Petra and Anselm's read of the current, then followed the swarm-song into Saint Orrin's belltower, where Petra broke a stranger pilgrim free of the bell-pattern. Caddock's old vow to Marrowreed's dead pulled the party south into the Sucking Mire, where the Mire nearly claimed Caddock before Yarrow's weir-sense found the firm pilings and the group tore young Kel from both mud and song. The session closed with Kel alive but hive-marked, Mory's grief turned to relief, and the mire's safe line now known to the party.",
+  "closing_tension": 5,
+  "reverberations": {
+   "growth": {
+    "YA-04": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "PE-03": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "CA-01": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    }
+   },
+   "clocks": [
+    "F-02 1/5",
+    "F-03 1/4",
+    "T-05 1/5"
+   ],
+   "mutations": [
+    {
+     "from": "L-02",
+     "to": "L-02v2"
+    }
+   ],
+   "retired": []
+  },
+  "retired": []
+ },
  "state_end": {
   "tension": 5,
   "fp": {
@@ -4959,14 +5487,112 @@
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 1349941,
-  "completion": 167488,
-  "cost_usd": 3.1547,
-  "calls": 83
+ "metrics": {
+  "arm": "A",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Anselm",
+   "Caddock",
+   "Petra",
+   "Yarrow"
+  ],
+  "backstory_all_players": true,
+  "deck_surfaced_all_players": true,
+  "deck_draws": 5,
+  "draw_costs": 9,
+  "draw_cost_used_card_rate_engine": 1.0,
+  "draw_cost_tag_in_text_rate": 1.0,
+  "draw_cost_repaired": 2,
+  "draw_cost_used_card_rate_referee": 1.0,
+  "fp_end": {
+   "Petra": 5,
+   "Anselm": 2,
+   "Caddock": 4,
+   "Yarrow": 2
+  },
+  "fp_end_mean": 3.25,
+  "fp_earned": {
+   "Petra": 4,
+   "Yarrow": 1,
+   "Caddock": 1
+  },
+  "fp_spent": {
+   "Petra": 2,
+   "Anselm": 1,
+   "Yarrow": 2
+  },
+  "compels_accepted": 5,
+  "compels_refused": 1,
+  "compels_deck": 4,
+  "compels_free": 2,
+  "turns": {
+   "Petra": 8,
+   "Anselm": 8,
+   "Caddock": 3,
+   "Yarrow": 8
+  },
+  "turn_gini": 0.1389,
+  "invokes": {
+   "Petra": 3,
+   "Anselm": 1,
+   "Yarrow": 2
+  },
+  "invoke_gini": 0.4167,
+  "tension_trajectory": [
+   3,
+   4,
+   4,
+   5,
+   4,
+   5
+  ],
+  "clock_marks": 3,
+  "violations": 3,
+  "violations_engine": 1,
+  "violations_referee": 2,
+  "ambiguities": 12,
+  "ambiguity_ids": [
+   "AMB-01",
+   "AMB-12",
+   "AMB-20",
+   "AMB-22",
+   "AMB-26",
+   "AMB-27",
+   "§3 (outcome table) vs §4 (Resolving a drawn player card)",
+   "§5/§6 vs §4",
+   "§6A (Resolving a story draw, step 3) vs §7 (rail limit)"
+  ],
+  "gm_improvised_complications": 2,
+  "card_supplied_complications": 9,
+  "improvisation_share": 0.182,
+  "guarantee_pulled": 1,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 5.75,
+   "involvement": 6,
+   "connection": 6.25,
+   "control": 4.75,
+   "play_again": 6.75
+  },
+  "involvement_var_within": 0.5,
+  "personality": {
+   "Petra": "storyteller",
+   "Anselm": "rules_lawyer",
+   "Caddock": "lurker",
+   "Yarrow": "method_actor"
+  },
+  "elapsed_min": 28.2,
+  "cost_usd": 3.8804
  },
- "llm_calls": 83,
+ "tokens": {
+  "prompt": 1494810,
+  "completion": 217535,
+  "cost_usd": 3.8804,
+  "calls": 90
+ },
+ "llm_calls": 90,
  "call_log": [
   {
    "seq": 1,
@@ -5631,6 +6257,62 @@
    "cached": false,
    "prompt_tokens": 43138,
    "completion_tokens": 2341
+  },
+  {
+   "seq": 33,
+   "agent": "GM",
+   "kind": "gm_post",
+   "cached": false,
+   "prompt_tokens": 63774,
+   "completion_tokens": 1139
+  },
+  {
+   "seq": 1,
+   "agent": "Referee",
+   "kind": "referee",
+   "cached": false,
+   "prompt_tokens": 25224,
+   "completion_tokens": 26205
+  },
+  {
+   "seq": 1,
+   "agent": "Petra#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11513,
+   "completion_tokens": 1934
+  },
+  {
+   "seq": 1,
+   "agent": "Yarrow#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11538,
+   "completion_tokens": 2030
+  },
+  {
+   "seq": 1,
+   "agent": "Anselm#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11552,
+   "completion_tokens": 2084
+  },
+  {
+   "seq": 1,
+   "agent": "Caddock#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11552,
+   "completion_tokens": 2842
+  },
+  {
+   "seq": 1,
+   "agent": "Interviewer",
+   "kind": "interviewer",
+   "cached": false,
+   "prompt_tokens": 9716,
+   "completion_tokens": 13813
   }
  ],
  "models": {
@@ -5639,5 +6321,5 @@
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 1248.5
+ "elapsed_s": 1694.2
 }
