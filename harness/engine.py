@@ -20,7 +20,7 @@ from typing import Any
 
 from rulings import Rulings
 
-SPEC_VERSION = "0.1.0"
+SPEC_VERSION = "0.2.0"
 
 LADDER = {-2: "Terrible", -1: "Poor", 0: "Mediocre", 1: "Average", 2: "Fair", 3: "Good",
           4: "Great", 5: "Superb", 6: "Fantastic", 7: "Epic", 8: "Legendary"}
@@ -148,6 +148,7 @@ class RollCtx:
     hostile_invokes: list[tuple[str, str]]
     player_invokes: list[tuple[str, str]] = field(default_factory=list)
     fp_spent: int = 0
+    gm_fp_spent: int = 0
     bonus: int = 0
     gm_bonus: int = 0
     description: str = ""
@@ -215,6 +216,8 @@ class Engine:
         self.rolled_against_this_session: set[str] = set()
         self.scene_flags: dict[str, Any] = {}
         self._eid = itertools.count(1)
+        self._cause: int | None = None
+        self.immediate_surface: list[str] = []     # v0.2.0: guarantee pulls during the final scene
         self._aid = itertools.count(1)
         self.story_featured: set[str] = set()
         self.draws_this_session = 0
@@ -295,7 +298,11 @@ class Engine:
                 "dice": "", "total": "", "opposition": "", "result": "", "draw_id": "",
                 "compel": "", "clock_change": "", "tension": self.tension if self.arm["tension"] else "",
                 "notes": "", "event_type": "", "improvised": False}
+        if self._cause is not None and "caused_by" not in row:
+            base["caused_by"] = self._cause
         base.update(row)
+        base["fp_balances"] = {c.name: c.fp for c in self.chars.values()}
+        base["gm_fp"] = self.gm_fp
         self.events.append(base)
         return base
 
@@ -434,6 +441,8 @@ class Engine:
             self.gm_fp = self.arm["gm_fp_flat"]
         # Deploy modules that fired at the previous cleanup.
         for m in self.queued_modules:
+            self.log(event_type="module_deploy", action=f"Deploy module {m['id']}", draw_id=",".join(m["cards"]),
+                     notes=f"trigger fired at previous cleanup: {m.get('trigger')}")
             for cid in m["cards"]:
                 self.place_on_rail(cid, reason=f"module {m['id']}", gm_free_invoke=True)
         self.queued_modules = []
@@ -467,6 +476,7 @@ class Engine:
             if card.owner == "GLOBAL":
                 self.fire("AMB-22", cid)
             self.free_invokes[("GM", cid)] = self.free_invokes.get(("GM", cid), 0) + 1
+            reason += "; GM +1 free invoke"
         while len(self.rail) > RAIL_LIMIT:
             victim = next((x for x in self.rail if self.cards[x].owner == "GM"
                            and self.cards[x].origin == "world" and x != cid), None)
@@ -533,12 +543,36 @@ class Engine:
                 self.log(event_type="guarantee_pull", action="Backstory guarantee pull", draw_id=cid,
                          notes=f"owner {self.name(self.deck_player_cards[cid])}")
             if unsurfaced:
-                self.fire("AMB-02", f"pulled {unsurfaced}")
+                if self.is_final_scene():
+                    # v0.2.0 §4: pulled during the final scene -> revealed and resolved at once.
+                    self.immediate_surface += unsurfaced
                 if not self.deck and self.climax_scene is None:
                     self.climax_scene = self.scene + 1
 
     def peek(self) -> str | None:
         return self.deck[0] if self.deck else None
+
+    def compel_card_ok(self, pid: str, cid: str | None) -> bool:
+        """H4: a compel may name only a card of that player that is in play (§3/§11)."""
+        if cid is None:
+            return True
+        ch = self.chars[pid]
+        return cid in ch.binder and ch.card_state.get(cid) in ("binder", "rail")
+
+    def is_final_scene(self) -> bool:
+        return bool(self.scene_flags.get("is_climax")) or self.scene_in_session >= self.max_scenes
+
+    def final_scene_guarantee(self) -> list[str]:
+        """v0.2.0 §4: at the start of the final scene, pull every unsurfaced player card from the deck."""
+        if not self.arm["deck"] or not self.is_final_scene():
+            return []
+        pulled = [cid for cid in self.deck if cid in self.deck_player_cards]
+        for cid in pulled:
+            self.deck.remove(cid)
+            self.guarantee_pulled.append(cid)
+            self.log(event_type="guarantee_pull", action="Backstory guarantee pull (final scene)", draw_id=cid,
+                     notes=f"owner {self.name(self.deck_player_cards[cid])}")
+        return pulled
 
     def peek_move_to_bottom(self) -> None:
         if len(self.deck) > 1:
@@ -585,7 +619,7 @@ class Engine:
             self.scene_flags["compel_refused"] = True
         ev = self.log(event_type="compel", actor=ch.name, action="Compel" + (" (deck)" if from_deck else ""),
                       tags_invoked=tag, compel="accepted" if accept else "refused",
-                      fp_spent=0 if accept else 1, draw_id=card_id or "",
+                      fp_spent=0 if accept else 1, fp_change=1 if accept else -1, draw_id=card_id or "",
                       notes=text[:200], improvised=not from_deck,
                       compel_forced=forced)
         return {"accepted": accept, "forced": forced, "event": ev}
@@ -654,9 +688,12 @@ class Engine:
             if not self._gm_can_invoke(key):
                 self.violation("GM", "§3", f"GM invoke on a tag not in play: {key}")
                 continue
+            had_free = self.free_invokes.get(("GM", key[0]), 0) > 0
             if not self._pay("GM", key[0], prefer_free=inv.get("pay", "free") == "free"):
                 self.violation("GM", "§3", f"GM cannot pay for invoke {key}")
                 continue
+            if not had_free:
+                ctx.gm_fp_spent += 1
             gm_inv.append(key)
             ctx.gm_bonus += 2
             wcard = self.cards[key[0]]
@@ -683,6 +720,7 @@ class Engine:
                 self.violation("GM", "§3", "hostile invoke with no GM fate points")
                 continue
             self.gm_fp -= 1
+            ctx.gm_fp_spent += 1
             hostile.append((cid, card.weakness))
             self.hostile_payouts.append(tpid)
             ctx.gm_bonus += 2
@@ -782,6 +820,24 @@ class Engine:
             outcome = "success"
         else:
             outcome = "success_with_style"
+        opp_str = f"{ctx.opp_total:+d}"
+        if ctx.opp_kind == "active":
+            opp_str += f" (NPC {fmt_dice(ctx.opp_dice or [])})"
+        gm_note = ""
+        if ctx.gm_invokes or ctx.hostile_invokes:
+            gm_note = "GM invokes: " + "; ".join(f"{t} [{c}]" for c, t in ctx.gm_invokes + ctx.hostile_invokes)
+        # H2: the roll row is logged before anything it causes; later rows carry caused_by.
+        ev = self.log(event_type="roll", actor=name,
+                      action=f"{ctx.action.replace('_', ' ').title()}: {ctx.description[:60]}",
+                      skill=f"{ctx.skill} {ctx.skill_rating:+d}",
+                      tags_invoked="; ".join(f"{t} [{c}]" for c, t in ctx.player_invokes),
+                      fp_spent=ctx.fp_spent, fp_change=-ctx.fp_spent, dice=fmt_dice(ctx.dice),
+                      total=f"{ctx.total:+d}", opposition=opp_str, result=outcome,
+                      opposing_tags=[f"{t} [{c}]" for c, t in ctx.opposing_tags],
+                      target_card=ctx.target_card or "", target_npc=ctx.target_npc or "", shifts=s,
+                      gm_fp_spent=ctx.gm_fp_spent)
+        ctx.event_id = ev["event_id"]
+        self._cause = ev["event_id"]
         needs_cost = outcome in ("tie", "success_major_cost")
         draw_reason = {"tie": "tie", "success_major_cost": "major_cost"}.get(outcome)
         drawn = None
@@ -817,24 +873,10 @@ class Engine:
                     clock_notes.append(self.mark_clock(cid, 1, why=f"failed roll by {name}"))
                     self.scene_flags["failed_against"].add(cid)
         effects = self._apply_action_effects(ctx, outcome, use_story_ally)
-        tags_str = "; ".join(f"{t} [{c}]" for c, t in ctx.player_invokes)
-        opp_str = f"{ctx.opp_total:+d}"
-        if ctx.opp_kind == "active":
-            opp_str += f" (NPC {fmt_dice(ctx.opp_dice or [])})"
-        gm_note = ""
-        if ctx.gm_invokes or ctx.hostile_invokes:
-            gm_note = "GM invokes: " + "; ".join(f"{t} [{c}]" for c, t in ctx.gm_invokes + ctx.hostile_invokes)
-        ev = self.log(event_type="roll", actor=name,
-                      action=f"{ctx.action.replace('_', ' ').title()}: {ctx.description[:60]}",
-                      skill=f"{ctx.skill} {ctx.skill_rating:+d}", tags_invoked=tags_str,
-                      fp_spent=ctx.fp_spent, dice=fmt_dice(ctx.dice), total=f"{ctx.total:+d}",
-                      opposition=opp_str, result=outcome, draw_id=drawn or "",
-                      clock_change="; ".join(n for n in clock_notes if n),
-                      notes="; ".join(x for x in [gm_note, effects.get("note", "")] if x),
-                      opposing_tags=[f"{t} [{c}]" for c, t in ctx.opposing_tags],
-                      target_card=ctx.target_card or "", target_npc=ctx.target_npc or "",
-                      shifts=s, cost_mode=cost_mode or "")
-        ctx.event_id = ev["event_id"]
+        self._cause = None
+        ev.update(draw_id=drawn or "", clock_change="; ".join(n for n in clock_notes if n),
+                  notes="; ".join(x for x in [gm_note, effects.get("note", "")] if x), cost_mode=cost_mode or "",
+                  fp_balances={c.name: c.fp for c in self.chars.values()}, gm_fp=self.gm_fp)
         return {"outcome": outcome, "shifts": s, "drawn": drawn, "cost_mode": cost_mode,
                 "event_id": ev["event_id"], "effects": effects, "clock_notes": clock_notes}
 
@@ -1021,7 +1063,7 @@ class Engine:
         ch.fp += gain
         ch.out_of_scene = True
         ch.conceded_scene = self.scene
-        self.log(event_type="concede", actor=ch.name, action="Concede", fp_spent=-gain,
+        self.log(event_type="concede", actor=ch.name, action="Concede", fp_spent=-gain, fp_change=gain,
                  notes=f"+{gain} FP" + (f"; sacrificed {sac}" if sac else ""))
         story = None
         if self.arm["story_piles"]:
@@ -1237,7 +1279,10 @@ class Engine:
             for d in self.scene_flags["story_drawn"]:
                 if d["card"]:
                     c = self.cards[d["card"]]
+                    before = c.track_size
                     c.track_size = min(3, c.track_size + 1)
+                    self.log(event_type="story_weight", action=f"Weight {c.id}", draw_id=c.id,
+                             notes=f"{before}->{c.track_size} (drawn/featured this scene)")
             for sc in report.get("new_story_cards", [])[:3]:
                 owner = self.pid_by_name(sc.get("pile", "")) if sc.get("pile", "GM") != "GM" else None
                 if self.arm["placebo"] and owner is not None:
@@ -1250,9 +1295,8 @@ class Engine:
         # Hostile invoke payouts (§3), mild consequence recovery (§8), free invokes expire (§4).
         for pid in self.hostile_payouts:
             self.chars[pid].fp += 1
-        if self.hostile_payouts:
-            self.log(event_type="fp", action="Hostile invoke payouts",
-                     notes=", ".join(self.name(p) for p in self.hostile_payouts))
+            self.log(event_type="fp", actor=self.name(pid), action="Hostile invoke payout", fp_change=1,
+                     notes="§3: +1 FP at scene end for a hostile invoke")
         self.hostile_payouts = []
         for ch in self.chars.values():
             m = ch.consequences["mild"]
@@ -1272,7 +1316,6 @@ class Engine:
             for cid in self.guarantee_pulled:
                 if cid not in self.surfaced:
                     self.guarantee_failed.append(cid)
-                    self.fire("AMB-25", cid)
         self.log(event_type="scene_end", action=f"Scene {self.scene} end",
                  notes=f"triggers fired: {fired}" if fired else "")
         return {"tension_delta": delta, "triggers_fired": fired, "session_over": is_last}

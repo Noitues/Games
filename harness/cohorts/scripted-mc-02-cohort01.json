@@ -1,0 +1,612 @@
+{
+ "cohort_id": "scripted-mc-02-cohort01",
+ "seed": 20946,
+ "picks": [
+  {
+   "name": "Dorran",
+   "concept": "Orphan pickpocket from the Hollowmoot stilts",
+   "origin": "left for dead at a flooded ford",
+   "bond": "a debt-holder who wants you back",
+   "drive": "answer what the first victims shared",
+   "flaw": "won't leave the wounded"
+  },
+  {
+   "name": "Ines",
+   "concept": "Weir-keeper who opens and closes the floodgates",
+   "origin": "from a family of bell-ringers",
+   "bond": "a temple where you left friends behind",
+   "drive": "atone for leaving friends behind",
+   "flaw": "family feud with a stilt clan"
+  },
+  {
+   "name": "Orrin",
+   "concept": "Marsh hunter raised by the stilt clans",
+   "origin": "grew up among eel-fishers",
+   "bond": "an informer who sold out your family",
+   "drive": "buy freedom from the cartel",
+   "flaw": "trusts no outsider"
+  },
+  {
+   "name": "Yarrow",
+   "concept": "Fen herbalist who treats the hive-touched",
+   "origin": "the only survivor of a sunken barge",
+   "bond": "a landlord who hides fugitives",
+   "drive": "prove the Wardens ordered a massacre",
+   "flaw": "blames outsiders"
+  }
+ ],
+ "generation_prompt": "Write 4 player characters for a Fate game set in The Sallowmere.\n\nSetting:\nThe Sallowmere is a lowland of rivers, reed and ruined temples that has been drowning for eleven years. The rain has not stopped in all that time, and the floodwaters climb a finger's width each week. Hollowmoot, a crowded stilt-town, is the last real settlement; the Ashwater Causeway is its only dry road north, and Gullet Ford the only crossing south. A blight called the hive spreads through wounds and bad water, making its victims hive-touched: feral, pain-blind, and drawn to a swarm-song that seems to come from the flooded belltower of Saint Orrin's Drowned Temple. The shrunken Order of the Dry Saint guards what lore survives, while a renegade Drowned Priest preaches that the hive is holy. The Causeway Wardens burn infected houses and tax every crossing, the Blackwater Cartel smuggles food and people through hidden cellars, and the Stiltfolk Clans watch it all from the reeds. Play it grounded: cold hands, wet rope, hard choices about who gets the last dry bed.\n\nNamed places and groups you may tie characters to: Gullet Ford, Hollowmoot, Order of the Dry Saint, Saint Orrin's Drowned Temple, The Ashwater Causeway, The Blackwater Cartel, The Causeway Wardens, The Stiltfolk Clans, The Wick Lane Cellars.\n\nEach character needs:\n- binder: exactly 4 theme cards in this order: 2 ROOTS (an origin, a person, a place or a comfort), then 2 REACH (an oath, a burden, a power or a goal). Each card: a title, exactly 3 power tags (2-5 words each, each names one thing the character can do, has or is) and 1 weakness tag that can plausibly cause trouble in a scene. At least one ROOTS power tag must name a specific named person, group or place.\n- story_cards: exactly 2: one NPC drawn from a ROOTS tag, one THREAD (an open question) drawn from a REACH tag, same tag format.\n- skills (Fate Core skill names only: Athletics, Burglary, Contacts, Crafts, Deceive, Drive, Empathy, Fight, Investigate, Lore, Notice, Physique, Provoke, Rapport, Resources, Shoot, Stealth, Will): one great, two good, three fair, four average, all different.\n- approaches (Careful, Clever, Flashy, Forceful, Quick, Sneaky): one +3, two +2, two +1, one +0.\n- fae: the SAME character in Fate Accelerated form: a high concept, a trouble that mirrors one card weakness, and 3 aspects that compress the four cards (keep the same named people and places).\n\nUse these seeds, one per character, in order:\n[\n {\n  \"name\": \"Dorran\",\n  \"concept\": \"Orphan pickpocket from the Hollowmoot stilts\",\n  \"origin\": \"left for dead at a flooded ford\",\n  \"bond\": \"a debt-holder who wants you back\",\n  \"drive\": \"answer what the first victims shared\",\n  \"flaw\": \"won't leave the wounded\"\n },\n {\n  \"name\": \"Ines\",\n  \"concept\": \"Weir-keeper who opens and closes the floodgates\",\n  \"origin\": \"from a family of bell-ringers\",\n  \"bond\": \"a temple where you left friends behind\",\n  \"drive\": \"atone for leaving friends behind\",\n  \"flaw\": \"family feud with a stilt clan\"\n },\n {\n  \"name\": \"Orrin\",\n  \"concept\": \"Marsh hunter raised by the stilt clans\",\n  \"origin\": \"grew up among eel-fishers\",\n  \"bond\": \"an informer who sold out your family\",\n  \"drive\": \"buy freedom from the cartel\",\n  \"flaw\": \"trusts no outsider\"\n },\n {\n  \"name\": \"Yarrow\",\n  \"concept\": \"Fen herbalist who treats the hive-touched\",\n  \"origin\": \"the only survivor of a sunken barge\",\n  \"bond\": \"a landlord who hides fugitives\",\n  \"drive\": \"prove the Wardens ordered a massacre\",\n  \"flaw\": \"blames outsiders\"\n }\n]\n\nMake the four characters distinct in role, and give each at least one tie to another character's people or places only if it arises naturally.",
+ "model": null,
+ "source": "templates",
+ "errors": [],
+ "characters": [
+  {
+   "id": "CH-1",
+   "name": "Pim Quillon",
+   "pronouns": "they/them",
+   "concept": "Travelling ballad-singer and silver-tongued forger",
+   "skills": {
+    "Deceive": 4,
+    "Rapport": 3,
+    "Contacts": 3,
+    "Empathy": 2,
+    "Crafts": 2,
+    "Notice": 2,
+    "Burglary": 1,
+    "Stealth": 1,
+    "Resources": 1,
+    "Athletics": 1
+   },
+   "approaches": {
+    "Flashy": 3,
+    "Clever": 2,
+    "Sneaky": 2,
+    "Quick": 1,
+    "Careful": 1,
+    "Forceful": 0
+   },
+   "binder": [
+    {
+     "id": "PQ-01",
+     "type": "ROOTS",
+     "owner": "PC-PIM",
+     "title": "The Drowned Lamb Tavern",
+     "power_tags": [
+      "the Drowned Lamb's stage",
+      "a room kept for me",
+      "landlord Fenwick's trust"
+     ],
+     "weakness": "Tab Long Overdue",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Pim's theme cards: The Drowned Lamb Tavern."
+    },
+    {
+     "id": "PQ-02",
+     "type": "ROOTS",
+     "owner": "PC-PIM",
+     "title": "A Song in Every Town",
+     "power_tags": [
+      "knows every marsh ballad",
+      "welcome at any hearth",
+      "collects travelers' news"
+     ],
+     "weakness": "Too Famous to Hide",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Pim's theme cards: A Song in Every Town."
+    },
+    {
+     "id": "PQ-03",
+     "type": "REACH",
+     "owner": "PC-PIM",
+     "title": "Forged Papers",
+     "power_tags": [
+      "forges Warden travel passes",
+      "copies temple seals",
+      "perfect borrowed handwriting"
+     ],
+     "weakness": "A Forgery Traced Back",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Pim's theme cards: Forged Papers."
+    },
+    {
+     "id": "PQ-04",
+     "type": "REACH",
+     "owner": "PC-PIM",
+     "title": "The Ballad of the Blight",
+     "power_tags": [
+      "sings people to courage",
+      "remembers every rumor",
+      "turns crowds with verse"
+     ],
+     "weakness": "Can't Resist an Audience",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Pim's theme cards: The Ballad of the Blight."
+    }
+   ],
+   "story_cards": [
+    {
+     "id": "PQ-05",
+     "type": "NPC",
+     "owner": "PC-PIM",
+     "title": "Fenwick, Landlord of the Drowned Lamb",
+     "power_tags": [
+      "hears every Hollowmoot secret",
+      "hides guests in the cellar",
+      "waters the ale"
+     ],
+     "weakness": "Pays Off the Wardens",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Pim's past and goals: Fenwick, Landlord of the Drowned Lamb."
+    },
+    {
+     "id": "PQ-06",
+     "type": "THREAD",
+     "owner": "PC-PIM",
+     "title": "Who Bought the Forged Pass?",
+     "power_tags": [
+      "a pass seen at Ashwater",
+      "the buyer's cartel ring",
+      "Fenwick's sly wink"
+     ],
+     "weakness": "Exposes Pim's Forgeries",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Pim's past and goals: Who Bought the Forged Pass?."
+    }
+   ],
+   "fae": {
+    "high_concept": "Travelling Ballad-Singer and Silver-Tongued Forger",
+    "trouble": "Can't Resist an Audience",
+    "aspects": [
+     "Fenwick Keeps My Room at the Drowned Lamb",
+     "I Can Forge Any Warden Pass or Temple Seal",
+     "A Song Welcome at Every Marsh Hearth"
+    ]
+   },
+   "template_id": "TPL-08"
+  },
+  {
+   "id": "CH-2",
+   "name": "Brannoc Veil",
+   "pronouns": "he/him",
+   "concept": "Disgraced Causeway Warden who still holds the line",
+   "skills": {
+    "Fight": 4,
+    "Physique": 3,
+    "Athletics": 3,
+    "Will": 2,
+    "Notice": 2,
+    "Provoke": 2,
+    "Shoot": 1,
+    "Empathy": 1,
+    "Lore": 1,
+    "Contacts": 1
+   },
+   "approaches": {
+    "Forceful": 3,
+    "Careful": 2,
+    "Quick": 2,
+    "Flashy": 1,
+    "Clever": 1,
+    "Sneaky": 0
+   },
+   "binder": [
+    {
+     "id": "BV-01",
+     "type": "ROOTS",
+     "owner": "PC-BRANNOC",
+     "title": "The Ashwater Toll Gate",
+     "power_tags": [
+      "held the Ashwater Causeway",
+      "knows Warden patrol routes",
+      "Captain Varro's old sergeant"
+     ],
+     "weakness": "Deserted His Post",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Brannoc's theme cards: The Ashwater Toll Gate."
+    },
+    {
+     "id": "BV-02",
+     "type": "ROOTS",
+     "owner": "PC-BRANNOC",
+     "title": "My Sister Maud",
+     "power_tags": [
+      "Maud's Hollowmoot market stall",
+      "hears market gossip through Maud",
+      "Maud patches my gear"
+     ],
+     "weakness": "Hiding Maud's Hive Marks",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Brannoc's theme cards: My Sister Maud."
+    },
+    {
+     "id": "BV-03",
+     "type": "REACH",
+     "owner": "PC-BRANNOC",
+     "title": "Oath of the Unburned",
+     "power_tags": [
+      "no house burns tonight",
+      "stands between mob and victim",
+      "draws every angry eye"
+     ],
+     "weakness": "Cannot Walk Away",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Brannoc's theme cards: Oath of the Unburned."
+    },
+    {
+     "id": "BV-04",
+     "type": "REACH",
+     "owner": "PC-BRANNOC",
+     "title": "The Hooked Spear",
+     "power_tags": [
+      "reaches through reed cover",
+      "drags riders from saddles",
+      "heavy veteran's weapon"
+     ],
+     "weakness": "Too Heavy for Swimming",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Brannoc's theme cards: The Hooked Spear."
+    }
+   ],
+   "story_cards": [
+    {
+     "id": "BV-05",
+     "type": "NPC",
+     "owner": "PC-BRANNOC",
+     "title": "Maud Veil",
+     "power_tags": [
+      "runs a Hollowmoot stall",
+      "trades in market gossip",
+      "hides her hive marks"
+     ],
+     "weakness": "Growing Feral at Night",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Brannoc's past and goals: Maud Veil."
+    },
+    {
+     "id": "BV-06",
+     "type": "THREAD",
+     "owner": "PC-BRANNOC",
+     "title": "Who Ordered the Cressbank Burning?",
+     "power_tags": [
+      "a sealed Warden order",
+      "a survivor's scorched cloak",
+      "Varro's evasive silence"
+     ],
+     "weakness": "Makes the Wardens Enemies",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Brannoc's past and goals: Who Ordered the Cressbank Burning?."
+    }
+   ],
+   "fae": {
+    "high_concept": "Disgraced Causeway Warden Who Still Holds the Line",
+    "trouble": "Hiding Maud's Hive Marks",
+    "aspects": [
+     "Captain Varro's Old Sergeant from the Ashwater Toll Gate",
+     "Oath of the Unburned: No House Burns Tonight",
+     "A Hooked Spear Too Heavy for Swimming"
+    ]
+   },
+   "template_id": "TPL-01"
+  },
+  {
+   "id": "CH-3",
+   "name": "Lark Dunmere",
+   "pronouns": "she/her",
+   "concept": "Gullet Ford ferry pilot who knows every current",
+   "skills": {
+    "Drive": 4,
+    "Athletics": 3,
+    "Physique": 3,
+    "Notice": 2,
+    "Contacts": 2,
+    "Fight": 2,
+    "Rapport": 1,
+    "Provoke": 1,
+    "Resources": 1,
+    "Shoot": 1
+   },
+   "approaches": {
+    "Quick": 3,
+    "Forceful": 2,
+    "Flashy": 2,
+    "Careful": 1,
+    "Clever": 1,
+    "Sneaky": 0
+   },
+   "binder": [
+    {
+     "id": "LD-01",
+     "type": "ROOTS",
+     "owner": "PC-LARK",
+     "title": "The Gullet Ford Ferry",
+     "power_tags": [
+      "my flat ferry Tern",
+      "knows Gullet Ford's depths",
+      "ferry rope and winch"
+     ],
+     "weakness": "Ferry Debt to the Cartel",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Lark's theme cards: The Gullet Ford Ferry."
+    },
+    {
+     "id": "LD-02",
+     "type": "ROOTS",
+     "owner": "PC-LARK",
+     "title": "The Dunmere Boat-Family",
+     "power_tags": [
+      "Dunmere cousins on every channel",
+      "family boathouse at Cressbank",
+      "Grandfather Aldous's river charts"
+     ],
+     "weakness": "Family Feud With Heronsgate",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Lark's theme cards: The Dunmere Boat-Family."
+    },
+    {
+     "id": "LD-03",
+     "type": "REACH",
+     "owner": "PC-LARK",
+     "title": "Outrun the Flood",
+     "power_tags": [
+      "reads the rising water",
+      "poles through white water",
+      "fearless in storms"
+     ],
+     "weakness": "Takes Stupid River Risks",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Lark's theme cards: Outrun the Flood."
+    },
+    {
+     "id": "LD-04",
+     "type": "REACH",
+     "owner": "PC-LARK",
+     "title": "Get Everyone Across",
+     "power_tags": [
+      "carries the desperate free",
+      "strong back and shoulders",
+      "hauls people from water"
+     ],
+     "weakness": "Overloads the Boat",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Lark's theme cards: Get Everyone Across."
+    }
+   ],
+   "story_cards": [
+    {
+     "id": "LD-05",
+     "type": "NPC",
+     "owner": "PC-LARK",
+     "title": "Grandfather Aldous Dunmere",
+     "power_tags": [
+      "keeps the old river charts",
+      "remembers the great flood",
+      "mends boats by touch"
+     ],
+     "weakness": "Too Frail to Travel",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Lark's past and goals: Grandfather Aldous Dunmere."
+    },
+    {
+     "id": "LD-06",
+     "type": "THREAD",
+     "owner": "PC-LARK",
+     "title": "What Makes the Water Rise?",
+     "power_tags": [
+      "the weir bells ringing",
+      "water rising without rain",
+      "stiltfolk leaving early"
+     ],
+     "weakness": "Leads Into Flood Country",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Lark's past and goals: What Makes the Water Rise?."
+    }
+   ],
+   "fae": {
+    "high_concept": "Gullet Ford Ferry Pilot Who Knows Every Current",
+    "trouble": "Takes Stupid River Risks",
+    "aspects": [
+     "My Ferry Tern Owes the Cartel",
+     "Dunmere Cousins and Grandfather Aldous's Charts on Every Channel",
+     "I'll Get Everyone Across"
+    ]
+   },
+   "template_id": "TPL-07"
+  },
+  {
+   "id": "CH-4",
+   "name": "Wren Tallow",
+   "pronouns": "they/them",
+   "concept": "Blackwater Cartel runner who wants out",
+   "skills": {
+    "Stealth": 4,
+    "Burglary": 3,
+    "Deceive": 3,
+    "Drive": 2,
+    "Contacts": 2,
+    "Notice": 2,
+    "Athletics": 1,
+    "Fight": 1,
+    "Resources": 1,
+    "Provoke": 1
+   },
+   "approaches": {
+    "Sneaky": 3,
+    "Quick": 2,
+    "Clever": 2,
+    "Flashy": 1,
+    "Careful": 1,
+    "Forceful": 0
+   },
+   "binder": [
+    {
+     "id": "WT-01",
+     "type": "ROOTS",
+     "owner": "PC-WREN",
+     "title": "The Wick Lane Cellars",
+     "power_tags": [
+      "knows hidden cellar routes",
+      "stash under Wick Lane",
+      "uses the secret river hatch"
+     ],
+     "weakness": "Cartel Watches the Cellars",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Wren's theme cards: The Wick Lane Cellars."
+    },
+    {
+     "id": "WT-02",
+     "type": "ROOTS",
+     "owner": "PC-WREN",
+     "title": "The Night Barge Crew",
+     "power_tags": [
+      "Old Jory's barge crew",
+      "cartel passwords and signs",
+      "free passage on barges"
+     ],
+     "weakness": "The Cartel Owns My Debt",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Wren's theme cards: The Night Barge Crew."
+    },
+    {
+     "id": "WT-03",
+     "type": "REACH",
+     "owner": "PC-WREN",
+     "title": "Buy My Way Out",
+     "power_tags": [
+      "hoarded smuggled silver",
+      "sells what I overhear",
+      "always has an exit"
+     ],
+     "weakness": "Abandons Friends When Cornered",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Wren's theme cards: Buy My Way Out."
+    },
+    {
+     "id": "WT-04",
+     "type": "REACH",
+     "owner": "PC-WREN",
+     "title": "Never Caught",
+     "power_tags": [
+      "slips through reed channels",
+      "quiet as the rain",
+      "reads a guard's boredom"
+     ],
+     "weakness": "Reckless Show-Off",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Wren's theme cards: Never Caught."
+    }
+   ],
+   "story_cards": [
+    {
+     "id": "WT-05",
+     "type": "NPC",
+     "owner": "PC-WREN",
+     "title": "Old Jory, Barge-Master",
+     "power_tags": [
+      "pilots the night barges",
+      "owes Wren a life",
+      "knows cartel schedules"
+     ],
+     "weakness": "Drinks When Frightened",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Wren's past and goals: Old Jory, Barge-Master."
+    },
+    {
+     "id": "WT-06",
+     "type": "THREAD",
+     "owner": "PC-WREN",
+     "title": "Who Took My Silver Stash?",
+     "power_tags": [
+      "a missing strongbox key",
+      "a rival runner's new boots",
+      "tracks to Gullet Ford"
+     ],
+     "weakness": "The Cartel Notices the Hunt",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Wren's past and goals: Who Took My Silver Stash?."
+    }
+   ],
+   "fae": {
+    "high_concept": "Blackwater Cartel Runner Who Wants Out",
+    "trouble": "Abandons Friends When Cornered",
+    "aspects": [
+     "I Know Every Cellar Under Wick Lane",
+     "Old Jory's Night Barge Will Always Carry Me, But the Cartel Owns My Debt",
+     "Quiet as the Rain, Reckless as a Show-Off"
+    ]
+   },
+   "template_id": "TPL-03"
+  }
+ ]
+}

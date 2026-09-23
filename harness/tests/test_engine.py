@@ -78,7 +78,63 @@ class DeckTests(unittest.TestCase):
         self.assertTrue(e.session_over)
 
 
+class GuaranteeV020Tests(unittest.TestCase):
+    def test_final_scene_pulls_every_unsurfaced_player_card(self):
+        e = make()
+        e.scene_in_session = e.max_scenes
+        pulled = e.final_scene_guarantee()
+        self.assertEqual(sorted(pulled), sorted(e.deck_player_cards))
+        self.assertFalse(any(c in e.deck_player_cards for c in e.deck))
+        beat = e.next_beat_for_scene()
+        self.assertTrue(beat["guarantee"])
+        self.assertEqual(sorted(beat["cards"]), sorted(pulled))
+
+    def test_not_final_scene_pulls_nothing(self):
+        e = make()
+        self.assertEqual(e.final_scene_guarantee(), [])
+
+    def test_pull_at_two_during_final_scene_surfaces_immediately(self):
+        e = make()
+        e.scene_in_session = e.max_scenes
+        players = list(e.deck_player_cards)
+        e.deck = [c for c in e.deck if c not in players[:1]] + players[:1]
+        while len(e.deck) > 2:
+            cid = e.draw("tie")
+            if e.is_player_deck_card(cid):
+                e.surface(cid)
+        self.assertIn(players[0], e.immediate_surface)
+
+    def test_roll_row_logged_before_the_draw_it_causes(self):
+        e = make()
+        pid = first_pid(e)
+        for _ in range(80):
+            ctx = e.begin_roll(pid, action="overcome", skill="Notice", target_card=None, target_npc=None, opp={})
+            res = e.finalize_roll(ctx, take_major_cost=False)
+            if res["drawn"]:
+                roll = next(r for r in e.events if r["event_id"] == res["event_id"])
+                draw = next(r for r in e.events if r.get("event_type") == "draw" and r["draw_id"] == res["drawn"])
+                self.assertLess(roll["event_id"], draw["event_id"])
+                self.assertEqual(draw["caused_by"], roll["event_id"])
+                self.assertEqual(roll["draw_id"], res["drawn"])
+                return
+        self.fail("no tie in 80 rolls")
+
+
 class CompelTests(unittest.TestCase):
+    def test_compel_cannot_name_a_card_in_the_deck(self):
+        e = make()
+        cid, pid = next(iter(e.deck_player_cards.items()))
+        self.assertFalse(e.compel_card_ok(pid, cid))
+        live = next(c for c in e.chars[pid].binder if e.chars[pid].card_state[c] == "binder")
+        self.assertTrue(e.compel_card_ok(pid, live))
+
+    def test_compel_logs_fp_change_and_balances(self):
+        e = make()
+        pid = first_pid(e)
+        r = e.resolve_compel(pid, True, card_id=None, tag="t", from_deck=False, text="x")
+        self.assertEqual(r["event"]["fp_change"], 1)
+        self.assertEqual(r["event"]["fp_balances"][e.name(pid)], e.chars[pid].fp)
+
     def test_surface_compel_accept(self):
         e = make()
         cid, pid = next(iter(e.deck_player_cards.items()))

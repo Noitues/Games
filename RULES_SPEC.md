@@ -1,6 +1,6 @@
 # Scene-Deck Engine for Fate — Playtest Rules Spec
 
-As of Sep 22, 2026
+As of Sep 23, 2026 — version 0.2.0 (see CHANGELOG.md)
 
 ## 1. Overview
 
@@ -145,7 +145,13 @@ The card goes face-up on the rail. The GM gains 1 free invoke on it and builds t
 
 The scene after the last card is drawn is the session's climax. During the climax, ties and costs use face-up GM tags instead of draws.
 
-**Backstory guarantee:** if a player's card has not surfaced when the deck is down to 2 cards, the GM pulls it out and uses it in the next Beat Frame. Every player's card surfaces at least once per session.
+**Backstory guarantee:** every player's card surfaces at least once per session. The GM pulls a player's card out of the deck, unsurfaced, at the first of these moments:
+
+- **The deck is down to 2 cards.** The pulled card opens the next scene in a Beat Frame. That Beat Frame is triggered by this rule, overriding the §7 rule that frames are never forced; it replaces that scene's scene test.
+- **The session's final scene begins.** Every player card still in the deck is pulled and opens that scene in a Beat Frame, as above.
+- **The deck reaches 2 cards during the final scene.** The pulled card is revealed at once and resolved as in "Resolving a drawn player card".
+
+Pulled cards fill the frame's open blanks before any draw. If more cards are pulled than the frame has open blanks, each extra card is revealed at the start of that scene and resolved as in "Resolving a drawn player card"; it can arrive as a memory, a messenger, news or an omen (§11).
 
 ## 5. Beat Frames (the adlib engine)
 

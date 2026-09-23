@@ -8,6 +8,7 @@ exists. See docs/design_notes.md for the prose version.
 
 from __future__ import annotations
 
+# AMB-02 and AMB-25 were resolved by spec 0.2.0 (§4 backstory guarantee) and no longer fire.
 RULINGS: dict[str, dict[str, str]] = {
     "AMB-01": {"section": "brief", "issue": "Arm A lists 'Attention', which the spec never defines.",
                "interim_ruling": "Not modelled."},
@@ -57,6 +58,8 @@ RULINGS: dict[str, dict[str, str]] = {
                "interim_ruling": "It is queued for the start of the next scene."},
     "AMB-25": {"section": "§4", "issue": "Backstory guarantee pulled a card but no scene remains.",
                "interim_ruling": "Guarantee fails and is recorded; nothing is invented."},
+    "AMB-27": {"section": "§3", "issue": "Success with style on create advantage: the aspect's 2 free invokes AND the deck peek, or one of them?",
+               "interim_ruling": "Both: the aspect keeps 2 free invokes and the player may also peek."},
     "AMB-26": {"section": "§5", "issue": "Several Beat Frames are queued for the same scene.",
                "interim_ruling": "One per scene; the guarantee frame first, the rest carry to later scenes."},
 }

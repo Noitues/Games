@@ -1,0 +1,612 @@
+{
+ "cohort_id": "scripted-mc-02-cohort04",
+ "seed": 499604,
+ "picks": [
+  {
+   "name": "Gwenna",
+   "concept": "Ferry pilot who knows every current",
+   "origin": "came south with a pilgrim band",
+   "bond": "a hidden shrine only you know",
+   "drive": "buy freedom from the cartel",
+   "flaw": "owes the cartel"
+  },
+  {
+   "name": "Eira",
+   "concept": "Ex-cartel enforcer seeking penance",
+   "origin": "from a village the Wardens burned",
+   "bond": "an informer who sold out your family",
+   "drive": "protect a secret cellar",
+   "flaw": "family feud with a stilt clan"
+  },
+  {
+   "name": "Tobiah",
+   "concept": "Mapmaker redrawing a drowning country",
+   "origin": "grew up running cargo through cellars",
+   "bond": "a weir that holds back a valley",
+   "drive": "hold the Causeway open",
+   "flaw": "terrified of deep water"
+  },
+  {
+   "name": "Aldous",
+   "concept": "Old soldier who fought the first hive outbreak",
+   "origin": "born in a quarantine house",
+   "bond": "a village you failed to save",
+   "drive": "find where the floodwaters come from",
+   "flaw": "preaches at the worst times"
+  }
+ ],
+ "generation_prompt": "Write 4 player characters for a Fate game set in The Sallowmere.\n\nSetting:\nThe Sallowmere is a lowland of rivers, reed and ruined temples that has been drowning for eleven years. The rain has not stopped in all that time, and the floodwaters climb a finger's width each week. Hollowmoot, a crowded stilt-town, is the last real settlement; the Ashwater Causeway is its only dry road north, and Gullet Ford the only crossing south. A blight called the hive spreads through wounds and bad water, making its victims hive-touched: feral, pain-blind, and drawn to a swarm-song that seems to come from the flooded belltower of Saint Orrin's Drowned Temple. The shrunken Order of the Dry Saint guards what lore survives, while a renegade Drowned Priest preaches that the hive is holy. The Causeway Wardens burn infected houses and tax every crossing, the Blackwater Cartel smuggles food and people through hidden cellars, and the Stiltfolk Clans watch it all from the reeds. Play it grounded: cold hands, wet rope, hard choices about who gets the last dry bed.\n\nNamed places and groups you may tie characters to: Gullet Ford, Hollowmoot, Order of the Dry Saint, Saint Orrin's Drowned Temple, The Ashwater Causeway, The Blackwater Cartel, The Causeway Wardens, The Stiltfolk Clans, The Wick Lane Cellars.\n\nEach character needs:\n- binder: exactly 4 theme cards in this order: 2 ROOTS (an origin, a person, a place or a comfort), then 2 REACH (an oath, a burden, a power or a goal). Each card: a title, exactly 3 power tags (2-5 words each, each names one thing the character can do, has or is) and 1 weakness tag that can plausibly cause trouble in a scene. At least one ROOTS power tag must name a specific named person, group or place.\n- story_cards: exactly 2: one NPC drawn from a ROOTS tag, one THREAD (an open question) drawn from a REACH tag, same tag format.\n- skills (Fate Core skill names only: Athletics, Burglary, Contacts, Crafts, Deceive, Drive, Empathy, Fight, Investigate, Lore, Notice, Physique, Provoke, Rapport, Resources, Shoot, Stealth, Will): one great, two good, three fair, four average, all different.\n- approaches (Careful, Clever, Flashy, Forceful, Quick, Sneaky): one +3, two +2, two +1, one +0.\n- fae: the SAME character in Fate Accelerated form: a high concept, a trouble that mirrors one card weakness, and 3 aspects that compress the four cards (keep the same named people and places).\n\nUse these seeds, one per character, in order:\n[\n {\n  \"name\": \"Gwenna\",\n  \"concept\": \"Ferry pilot who knows every current\",\n  \"origin\": \"came south with a pilgrim band\",\n  \"bond\": \"a hidden shrine only you know\",\n  \"drive\": \"buy freedom from the cartel\",\n  \"flaw\": \"owes the cartel\"\n },\n {\n  \"name\": \"Eira\",\n  \"concept\": \"Ex-cartel enforcer seeking penance\",\n  \"origin\": \"from a village the Wardens burned\",\n  \"bond\": \"an informer who sold out your family\",\n  \"drive\": \"protect a secret cellar\",\n  \"flaw\": \"family feud with a stilt clan\"\n },\n {\n  \"name\": \"Tobiah\",\n  \"concept\": \"Mapmaker redrawing a drowning country\",\n  \"origin\": \"grew up running cargo through cellars\",\n  \"bond\": \"a weir that holds back a valley\",\n  \"drive\": \"hold the Causeway open\",\n  \"flaw\": \"terrified of deep water\"\n },\n {\n  \"name\": \"Aldous\",\n  \"concept\": \"Old soldier who fought the first hive outbreak\",\n  \"origin\": \"born in a quarantine house\",\n  \"bond\": \"a village you failed to save\",\n  \"drive\": \"find where the floodwaters come from\",\n  \"flaw\": \"preaches at the worst times\"\n }\n]\n\nMake the four characters distinct in role, and give each at least one tie to another character's people or places only if it arises naturally.",
+ "model": null,
+ "source": "templates",
+ "errors": [],
+ "characters": [
+  {
+   "id": "CH-1",
+   "name": "Agathe Sorrel",
+   "pronouns": "she/her",
+   "concept": "Fen herbalist who treats the hive-touched",
+   "skills": {
+    "Empathy": 4,
+    "Lore": 3,
+    "Crafts": 3,
+    "Will": 2,
+    "Rapport": 2,
+    "Notice": 2,
+    "Physique": 1,
+    "Stealth": 1,
+    "Investigate": 1,
+    "Contacts": 1
+   },
+   "approaches": {
+    "Careful": 3,
+    "Clever": 2,
+    "Quick": 2,
+    "Sneaky": 1,
+    "Flashy": 1,
+    "Forceful": 0
+   },
+   "binder": [
+    {
+     "id": "AS-01",
+     "type": "ROOTS",
+     "owner": "PC-AGATHE",
+     "title": "Sorrel Cottage at Cressbank",
+     "power_tags": [
+      "dry herb loft",
+      "sick-beds for the touched",
+      "hidden from Warden eyes"
+     ],
+     "weakness": "The Wardens Would Burn It",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Agathe's theme cards: Sorrel Cottage at Cressbank."
+    },
+    {
+     "id": "AS-02",
+     "type": "ROOTS",
+     "owner": "PC-AGATHE",
+     "title": "Mother Bettony's Teaching",
+     "power_tags": [
+      "Mother Bettony's recipe book",
+      "knows willowbark and hemlock",
+      "midwife to half Cressbank"
+     ],
+     "weakness": "Bettony's Remedies Sometimes Kill",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Agathe's theme cards: Mother Bettony's Teaching."
+    },
+    {
+     "id": "AS-03",
+     "type": "REACH",
+     "owner": "PC-AGATHE",
+     "title": "Oath to Treat Everyone",
+     "power_tags": [
+      "treats friend and foe",
+      "calms the feral touched",
+      "steady hands under pressure"
+     ],
+     "weakness": "Won't Leave the Wounded",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Agathe's theme cards: Oath to Treat Everyone."
+    },
+    {
+     "id": "AS-04",
+     "type": "REACH",
+     "owner": "PC-AGATHE",
+     "title": "The Blight in My Blood",
+     "power_tags": [
+      "hears the swarm-song faintly",
+      "the hive-touched ignore me",
+      "spots infection early"
+     ],
+     "weakness": "Hive Marks Spreading Slowly",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Agathe's theme cards: The Blight in My Blood."
+    }
+   ],
+   "story_cards": [
+    {
+     "id": "AS-05",
+     "type": "NPC",
+     "owner": "PC-AGATHE",
+     "title": "Mother Bettony",
+     "power_tags": [
+      "brews forbidden remedies",
+      "knows every Cressbank family",
+      "hides from the Order"
+     ],
+     "weakness": "Memory Failing With Age",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Agathe's past and goals: Mother Bettony."
+    },
+    {
+     "id": "AS-06",
+     "type": "THREAD",
+     "owner": "PC-AGATHE",
+     "title": "Why Do the Touched Spare Me?",
+     "power_tags": [
+      "the swarm-song grows louder",
+      "a feral child follows me",
+      "an acolyte asks questions"
+     ],
+     "weakness": "The Order Would Take Me",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Agathe's past and goals: Why Do the Touched Spare Me?."
+    }
+   ],
+   "fae": {
+    "high_concept": "Fen Herbalist Who Treats the Hive-Touched",
+    "trouble": "Won't Leave the Wounded",
+    "aspects": [
+     "Sick-Beds Hidden at Sorrel Cottage in Cressbank",
+     "Mother Bettony's Recipe Book",
+     "The Blight Sings Faintly in My Blood"
+    ]
+   },
+   "template_id": "TPL-04"
+  },
+  {
+   "id": "CH-2",
+   "name": "Wren Tallow",
+   "pronouns": "they/them",
+   "concept": "Blackwater Cartel runner who wants out",
+   "skills": {
+    "Stealth": 4,
+    "Burglary": 3,
+    "Deceive": 3,
+    "Drive": 2,
+    "Contacts": 2,
+    "Notice": 2,
+    "Athletics": 1,
+    "Fight": 1,
+    "Resources": 1,
+    "Provoke": 1
+   },
+   "approaches": {
+    "Sneaky": 3,
+    "Quick": 2,
+    "Clever": 2,
+    "Flashy": 1,
+    "Careful": 1,
+    "Forceful": 0
+   },
+   "binder": [
+    {
+     "id": "WT-01",
+     "type": "ROOTS",
+     "owner": "PC-WREN",
+     "title": "The Wick Lane Cellars",
+     "power_tags": [
+      "knows hidden cellar routes",
+      "stash under Wick Lane",
+      "uses the secret river hatch"
+     ],
+     "weakness": "Cartel Watches the Cellars",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Wren's theme cards: The Wick Lane Cellars."
+    },
+    {
+     "id": "WT-02",
+     "type": "ROOTS",
+     "owner": "PC-WREN",
+     "title": "The Night Barge Crew",
+     "power_tags": [
+      "Old Jory's barge crew",
+      "cartel passwords and signs",
+      "free passage on barges"
+     ],
+     "weakness": "The Cartel Owns My Debt",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Wren's theme cards: The Night Barge Crew."
+    },
+    {
+     "id": "WT-03",
+     "type": "REACH",
+     "owner": "PC-WREN",
+     "title": "Buy My Way Out",
+     "power_tags": [
+      "hoarded smuggled silver",
+      "sells what I overhear",
+      "always has an exit"
+     ],
+     "weakness": "Abandons Friends When Cornered",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Wren's theme cards: Buy My Way Out."
+    },
+    {
+     "id": "WT-04",
+     "type": "REACH",
+     "owner": "PC-WREN",
+     "title": "Never Caught",
+     "power_tags": [
+      "slips through reed channels",
+      "quiet as the rain",
+      "reads a guard's boredom"
+     ],
+     "weakness": "Reckless Show-Off",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Wren's theme cards: Never Caught."
+    }
+   ],
+   "story_cards": [
+    {
+     "id": "WT-05",
+     "type": "NPC",
+     "owner": "PC-WREN",
+     "title": "Old Jory, Barge-Master",
+     "power_tags": [
+      "pilots the night barges",
+      "owes Wren a life",
+      "knows cartel schedules"
+     ],
+     "weakness": "Drinks When Frightened",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Wren's past and goals: Old Jory, Barge-Master."
+    },
+    {
+     "id": "WT-06",
+     "type": "THREAD",
+     "owner": "PC-WREN",
+     "title": "Who Took My Silver Stash?",
+     "power_tags": [
+      "a missing strongbox key",
+      "a rival runner's new boots",
+      "tracks to Gullet Ford"
+     ],
+     "weakness": "The Cartel Notices the Hunt",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Wren's past and goals: Who Took My Silver Stash?."
+    }
+   ],
+   "fae": {
+    "high_concept": "Blackwater Cartel Runner Who Wants Out",
+    "trouble": "Abandons Friends When Cornered",
+    "aspects": [
+     "I Know Every Cellar Under Wick Lane",
+     "Old Jory's Night Barge Will Always Carry Me, But the Cartel Owns My Debt",
+     "Quiet as the Rain, Reckless as a Show-Off"
+    ]
+   },
+   "template_id": "TPL-03"
+  },
+  {
+   "id": "CH-3",
+   "name": "Isolde Marrow",
+   "pronouns": "she/her",
+   "concept": "Temple archivist hunting a cure in drowned scrolls",
+   "skills": {
+    "Lore": 4,
+    "Investigate": 3,
+    "Will": 3,
+    "Notice": 2,
+    "Empathy": 2,
+    "Crafts": 2,
+    "Rapport": 1,
+    "Stealth": 1,
+    "Resources": 1,
+    "Athletics": 1
+   },
+   "approaches": {
+    "Clever": 3,
+    "Careful": 2,
+    "Sneaky": 2,
+    "Quick": 1,
+    "Flashy": 1,
+    "Forceful": 0
+   },
+   "binder": [
+    {
+     "id": "IM-01",
+     "type": "ROOTS",
+     "owner": "PC-ISOLDE",
+     "title": "The Reliquary of Saint Orrin",
+     "power_tags": [
+      "knows Saint Orrin's crypts",
+      "reads old temple script",
+      "holds a bent reliquary key"
+     ],
+     "weakness": "Drawn Back to Drowned Halls",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Isolde's theme cards: The Reliquary of Saint Orrin."
+    },
+    {
+     "id": "IM-02",
+     "type": "ROOTS",
+     "owner": "PC-ISOLDE",
+     "title": "Brother Anselm, My Teacher",
+     "power_tags": [
+      "Brother Anselm's annotated scrolls",
+      "letters of temple introduction",
+      "Anselm's lessons in patience"
+     ],
+     "weakness": "Anselm Serves the Drowned Priest",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Isolde's theme cards: Brother Anselm, My Teacher."
+    },
+    {
+     "id": "IM-03",
+     "type": "REACH",
+     "owner": "PC-ISOLDE",
+     "title": "The Cure Must Exist",
+     "power_tags": [
+      "charts the blight's spread",
+      "tests remedies on herself",
+      "reads symptoms like text"
+     ],
+     "weakness": "Obsessed Past Good Sense",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Isolde's theme cards: The Cure Must Exist."
+    },
+    {
+     "id": "IM-04",
+     "type": "REACH",
+     "owner": "PC-ISOLDE",
+     "title": "Hoarded Knowledge",
+     "power_tags": [
+      "remembers forgotten saints' names",
+      "translates sealed inscriptions",
+      "knows marsh folk remedies"
+     ],
+     "weakness": "Condescends to the Unlettered",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Isolde's theme cards: Hoarded Knowledge."
+    }
+   ],
+   "story_cards": [
+    {
+     "id": "IM-05",
+     "type": "NPC",
+     "owner": "PC-ISOLDE",
+     "title": "Brother Anselm",
+     "power_tags": [
+      "preaches beside the Drowned Priest",
+      "keeps Isolde's old letters",
+      "knows the reliquary wards"
+     ],
+     "weakness": "Torn Between Faith and Pupil",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Isolde's past and goals: Brother Anselm."
+    },
+    {
+     "id": "IM-06",
+     "type": "THREAD",
+     "owner": "PC-ISOLDE",
+     "title": "What Did the First Victims Share?",
+     "power_tags": [
+      "her chart of infections",
+      "a pattern near fords",
+      "a burned parish register"
+     ],
+     "weakness": "Requires Handling Infected Dead",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Isolde's past and goals: What Did the First Victims Share?."
+    }
+   ],
+   "fae": {
+    "high_concept": "Temple Archivist Hunting a Cure in Drowned Scrolls",
+    "trouble": "Obsessed Past Good Sense",
+    "aspects": [
+     "I Hold the Key to Saint Orrin's Reliquary",
+     "Brother Anselm Taught Me, Then Chose the Drowned Priest",
+     "I Remember What Everyone Else Forgot"
+    ]
+   },
+   "template_id": "TPL-02"
+  },
+  {
+   "id": "CH-4",
+   "name": "Lark Dunmere",
+   "pronouns": "she/her",
+   "concept": "Gullet Ford ferry pilot who knows every current",
+   "skills": {
+    "Drive": 4,
+    "Athletics": 3,
+    "Physique": 3,
+    "Notice": 2,
+    "Contacts": 2,
+    "Fight": 2,
+    "Rapport": 1,
+    "Provoke": 1,
+    "Resources": 1,
+    "Shoot": 1
+   },
+   "approaches": {
+    "Quick": 3,
+    "Forceful": 2,
+    "Flashy": 2,
+    "Careful": 1,
+    "Clever": 1,
+    "Sneaky": 0
+   },
+   "binder": [
+    {
+     "id": "LD-01",
+     "type": "ROOTS",
+     "owner": "PC-LARK",
+     "title": "The Gullet Ford Ferry",
+     "power_tags": [
+      "my flat ferry Tern",
+      "knows Gullet Ford's depths",
+      "ferry rope and winch"
+     ],
+     "weakness": "Ferry Debt to the Cartel",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Lark's theme cards: The Gullet Ford Ferry."
+    },
+    {
+     "id": "LD-02",
+     "type": "ROOTS",
+     "owner": "PC-LARK",
+     "title": "The Dunmere Boat-Family",
+     "power_tags": [
+      "Dunmere cousins on every channel",
+      "family boathouse at Cressbank",
+      "Grandfather Aldous's river charts"
+     ],
+     "weakness": "Family Feud With Heronsgate",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Lark's theme cards: The Dunmere Boat-Family."
+    },
+    {
+     "id": "LD-03",
+     "type": "REACH",
+     "owner": "PC-LARK",
+     "title": "Outrun the Flood",
+     "power_tags": [
+      "reads the rising water",
+      "poles through white water",
+      "fearless in storms"
+     ],
+     "weakness": "Takes Stupid River Risks",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Lark's theme cards: Outrun the Flood."
+    },
+    {
+     "id": "LD-04",
+     "type": "REACH",
+     "owner": "PC-LARK",
+     "title": "Get Everyone Across",
+     "power_tags": [
+      "carries the desperate free",
+      "strong back and shoulders",
+      "hauls people from water"
+     ],
+     "weakness": "Overloads the Boat",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Lark's theme cards: Get Everyone Across."
+    }
+   ],
+   "story_cards": [
+    {
+     "id": "LD-05",
+     "type": "NPC",
+     "owner": "PC-LARK",
+     "title": "Grandfather Aldous Dunmere",
+     "power_tags": [
+      "keeps the old river charts",
+      "remembers the great flood",
+      "mends boats by touch"
+     ],
+     "weakness": "Too Frail to Travel",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Lark's past and goals: Grandfather Aldous Dunmere."
+    },
+    {
+     "id": "LD-06",
+     "type": "THREAD",
+     "owner": "PC-LARK",
+     "title": "What Makes the Water Rise?",
+     "power_tags": [
+      "the weir bells ringing",
+      "water rising without rain",
+      "stiltfolk leaving early"
+     ],
+     "weakness": "Leads Into Flood Country",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Lark's past and goals: What Makes the Water Rise?."
+    }
+   ],
+   "fae": {
+    "high_concept": "Gullet Ford Ferry Pilot Who Knows Every Current",
+    "trouble": "Takes Stupid River Risks",
+    "aspects": [
+     "My Ferry Tern Owes the Cartel",
+     "Dunmere Cousins and Grandfather Aldous's Charts on Every Channel",
+     "I'll Get Everyone Across"
+    ]
+   },
+   "template_id": "TPL-07"
+  }
+ ]
+}

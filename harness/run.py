@@ -222,6 +222,8 @@ class Session:
         rec = {"index": e.scene, "tension_before": e.tension if self.arm["tension"] else None,
                "scene_test": None, "outcome": "", "beat": None, "rounds": 0, "climax": info["is_climax"]}
         self.addressed = set()
+        if self.arm["deck"]:
+            e.final_scene_guarantee()   # spec 0.2.0 §4
         beat = e.next_beat_for_scene() if self.arm["beat_frames"] else None
         plan = self.gm.ask("gm_frame", self.gm_prompt(
             "Plan the next scene: state it and frame it assuming it plays as planned."
@@ -385,6 +387,10 @@ class Session:
             r = self.player_card_compel(cid, reason="beat frame", question=q or {"question": "What is this to you?"},
                                         offer=offer)
             answers[e.name(pid)] = r["answer"]
+        # Spec 0.2.0 §4: pulled cards beyond the frame's open blanks surface at once (memory, messenger, news, omen).
+        for cid in (pulled or []):
+            if cid not in filled["cards"] and cid not in e.surfaced:
+                self.player_card_compel(cid, reason="backstory guarantee (extra card)")
         values = dict(frame["defaults"])
         values.update({b: t for b, t in texts.items() if t})
         try:
@@ -455,9 +461,10 @@ class Session:
             if not pid or e.chars[pid].out_of_scene:
                 continue
             cid = c.get("card_id") or None
-            if cid and cid not in e.chars[pid].binder:
-                e.violation("GM", "§3", f"compel names a card {cid} that is not {e.name(pid)}'s")
-                cid = None
+            if cid and not e.compel_card_ok(pid, cid):
+                e.violation("GM", "§3/§11", f"compel names card {cid}, which is not in play for {e.name(pid)} "
+                            "(not theirs, or in the Session Deck / set aside)")
+                continue
             ans = self.players[pid].ask("player_compel", self.p_prompt(
                 pid, f"The GM offers a compel on '{c.get('tag', '')}': \"{c.get('complication', '')}\". Accept (gain 1 "
                 "fate point) or refuse (pay 1)?"), self.base_ctx(pid, call="compel", from_deck=False))
@@ -501,6 +508,13 @@ class Session:
         # Costs for ties / major costs.
         if pending_costs:
             self.resolve_costs(pending_costs)
+        # Spec 0.2.0 §4: a guarantee pull during the final scene is revealed and resolved at once.
+        while e.immediate_surface:
+            cid = e.immediate_surface.pop(0)
+            if cid not in e.surfaced:
+                self.player_card_compel(cid, reason="backstory guarantee (final scene)")
+                results.append({"player": e.name(e.deck_player_cards[cid]), "action": "backstory guarantee",
+                                "outcome": f"card {cid} surfaced"})
         n = self.narrate(final=final, results=results, story=story_this_round)
         over = bool(n.get("scene_over")) or final
         return over, (n.get("end") or {}) if over else None
@@ -560,6 +574,8 @@ class Session:
             pk = self.players[pid].ask("player_peek", self.p_prompt(
                 pid, "Success with style: you may look at the top card of the Session Deck and leave it or move it to "
                 "the bottom.", {"top_card": e.cards[top].brief()}), self.base_ctx(pid, call="peek", top=top))
+            if ctx.action == "create_advantage":
+                e.fire("AMB-27", f"event {res['event_id']}")
             if pk.get("move_to_bottom"):
                 e.peek_move_to_bottom()
             e.log(event_type="peek", actor=name, action="Peek", draw_id=top,
@@ -720,7 +736,12 @@ class Session:
                 c["card"] = e.cards[c["draw_id"]].brief()
         eng_v = [v for v in e.violations if v["scene"] == e.scene]
         fired = [a for a in e.rulings.fired if a["scene"] == e.scene]
-        prompt = (f"Scene {e.scene} event log (one row per event):\n{j(rows)}\n\nCosts, compels and Beat Frame fills "
+        prompt = ("Log fields: fp_change = the actor's fate point change from this event; fp_balances = every "
+                  "player's fate points after it; gm_fp = the GM's remaining fate points; gm_fp_spent = GM points paid on "
+                  "that roll (free invokes cost none); caused_by = the event_id of the roll that caused this row. Story "
+                  "Weight changes, module deployments and GM free-invoke grants ('GM +1 free invoke' in rail notes) are "
+                  "logged as their own rows.\n\n"
+                  f"Scene {e.scene} event log (one row per event):\n{j(rows)}\n\nCosts, compels and Beat Frame fills "
                   f"with the drawn card:\n{j(cost_rows)}\n\nEngine refusals already recorded:\n{j(eng_v)}\n\n"
                   f"Interim rulings the engine applied:\n{j([{k: a[k] for k in ('id', 'section', 'interim_ruling')} for a in fired])}"
                   "\n\nReport violations, ambiguities (not already covered by the interim rulings above), a cost_check per "

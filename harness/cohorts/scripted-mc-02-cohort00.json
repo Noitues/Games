@@ -1,0 +1,612 @@
+{
+ "cohort_id": "scripted-mc-02-cohort00",
+ "seed": 821161,
+ "picks": [
+  {
+   "name": "Ivo",
+   "concept": "Innkeeper's heir carrying a debt-ledger",
+   "origin": "born under a Warden watchtower",
+   "bond": "a stilt-house that is the last home you have",
+   "drive": "carry the dying to dry ground",
+   "flaw": "condescends to the unlettered"
+  },
+  {
+   "name": "Sabine",
+   "concept": "Beekeeper who understands the swarm too well",
+   "origin": "a novice of a flooded temple",
+   "bond": "a cartel lieutenant who favours you",
+   "drive": "master the swarm-song in your blood",
+   "flaw": "trusts no outsider"
+  },
+  {
+   "name": "Hessaly",
+   "concept": "Ratcatcher of the flooded cellars",
+   "origin": "child of a ferry family",
+   "bond": "a tavern that keeps your room",
+   "drive": "get everyone across before the flood",
+   "flaw": "slow to trust healers"
+  },
+  {
+   "name": "Yarrow",
+   "concept": "Cartel accountant who kept a second ledger",
+   "origin": "came south with a pilgrim band",
+   "bond": "a hidden shrine only you know",
+   "drive": "never let another house burn",
+   "flaw": "sworn enemy of the Order"
+  }
+ ],
+ "generation_prompt": "Write 4 player characters for a Fate game set in The Sallowmere.\n\nSetting:\nThe Sallowmere is a lowland of rivers, reed and ruined temples that has been drowning for eleven years. The rain has not stopped in all that time, and the floodwaters climb a finger's width each week. Hollowmoot, a crowded stilt-town, is the last real settlement; the Ashwater Causeway is its only dry road north, and Gullet Ford the only crossing south. A blight called the hive spreads through wounds and bad water, making its victims hive-touched: feral, pain-blind, and drawn to a swarm-song that seems to come from the flooded belltower of Saint Orrin's Drowned Temple. The shrunken Order of the Dry Saint guards what lore survives, while a renegade Drowned Priest preaches that the hive is holy. The Causeway Wardens burn infected houses and tax every crossing, the Blackwater Cartel smuggles food and people through hidden cellars, and the Stiltfolk Clans watch it all from the reeds. Play it grounded: cold hands, wet rope, hard choices about who gets the last dry bed.\n\nNamed places and groups you may tie characters to: Gullet Ford, Hollowmoot, Order of the Dry Saint, Saint Orrin's Drowned Temple, The Ashwater Causeway, The Blackwater Cartel, The Causeway Wardens, The Stiltfolk Clans, The Wick Lane Cellars.\n\nEach character needs:\n- binder: exactly 4 theme cards in this order: 2 ROOTS (an origin, a person, a place or a comfort), then 2 REACH (an oath, a burden, a power or a goal). Each card: a title, exactly 3 power tags (2-5 words each, each names one thing the character can do, has or is) and 1 weakness tag that can plausibly cause trouble in a scene. At least one ROOTS power tag must name a specific named person, group or place.\n- story_cards: exactly 2: one NPC drawn from a ROOTS tag, one THREAD (an open question) drawn from a REACH tag, same tag format.\n- skills (Fate Core skill names only: Athletics, Burglary, Contacts, Crafts, Deceive, Drive, Empathy, Fight, Investigate, Lore, Notice, Physique, Provoke, Rapport, Resources, Shoot, Stealth, Will): one great, two good, three fair, four average, all different.\n- approaches (Careful, Clever, Flashy, Forceful, Quick, Sneaky): one +3, two +2, two +1, one +0.\n- fae: the SAME character in Fate Accelerated form: a high concept, a trouble that mirrors one card weakness, and 3 aspects that compress the four cards (keep the same named people and places).\n\nUse these seeds, one per character, in order:\n[\n {\n  \"name\": \"Ivo\",\n  \"concept\": \"Innkeeper's heir carrying a debt-ledger\",\n  \"origin\": \"born under a Warden watchtower\",\n  \"bond\": \"a stilt-house that is the last home you have\",\n  \"drive\": \"carry the dying to dry ground\",\n  \"flaw\": \"condescends to the unlettered\"\n },\n {\n  \"name\": \"Sabine\",\n  \"concept\": \"Beekeeper who understands the swarm too well\",\n  \"origin\": \"a novice of a flooded temple\",\n  \"bond\": \"a cartel lieutenant who favours you\",\n  \"drive\": \"master the swarm-song in your blood\",\n  \"flaw\": \"trusts no outsider\"\n },\n {\n  \"name\": \"Hessaly\",\n  \"concept\": \"Ratcatcher of the flooded cellars\",\n  \"origin\": \"child of a ferry family\",\n  \"bond\": \"a tavern that keeps your room\",\n  \"drive\": \"get everyone across before the flood\",\n  \"flaw\": \"slow to trust healers\"\n },\n {\n  \"name\": \"Yarrow\",\n  \"concept\": \"Cartel accountant who kept a second ledger\",\n  \"origin\": \"came south with a pilgrim band\",\n  \"bond\": \"a hidden shrine only you know\",\n  \"drive\": \"never let another house burn\",\n  \"flaw\": \"sworn enemy of the Order\"\n }\n]\n\nMake the four characters distinct in role, and give each at least one tie to another character's people or places only if it arises naturally.",
+ "model": null,
+ "source": "templates",
+ "errors": [],
+ "characters": [
+  {
+   "id": "CH-1",
+   "name": "Isolde Marrow",
+   "pronouns": "she/her",
+   "concept": "Temple archivist hunting a cure in drowned scrolls",
+   "skills": {
+    "Lore": 4,
+    "Investigate": 3,
+    "Will": 3,
+    "Notice": 2,
+    "Empathy": 2,
+    "Crafts": 2,
+    "Rapport": 1,
+    "Stealth": 1,
+    "Resources": 1,
+    "Athletics": 1
+   },
+   "approaches": {
+    "Clever": 3,
+    "Careful": 2,
+    "Sneaky": 2,
+    "Quick": 1,
+    "Flashy": 1,
+    "Forceful": 0
+   },
+   "binder": [
+    {
+     "id": "IM-01",
+     "type": "ROOTS",
+     "owner": "PC-ISOLDE",
+     "title": "The Reliquary of Saint Orrin",
+     "power_tags": [
+      "knows Saint Orrin's crypts",
+      "reads old temple script",
+      "holds a bent reliquary key"
+     ],
+     "weakness": "Drawn Back to Drowned Halls",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Isolde's theme cards: The Reliquary of Saint Orrin."
+    },
+    {
+     "id": "IM-02",
+     "type": "ROOTS",
+     "owner": "PC-ISOLDE",
+     "title": "Brother Anselm, My Teacher",
+     "power_tags": [
+      "Brother Anselm's annotated scrolls",
+      "letters of temple introduction",
+      "Anselm's lessons in patience"
+     ],
+     "weakness": "Anselm Serves the Drowned Priest",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Isolde's theme cards: Brother Anselm, My Teacher."
+    },
+    {
+     "id": "IM-03",
+     "type": "REACH",
+     "owner": "PC-ISOLDE",
+     "title": "The Cure Must Exist",
+     "power_tags": [
+      "charts the blight's spread",
+      "tests remedies on herself",
+      "reads symptoms like text"
+     ],
+     "weakness": "Obsessed Past Good Sense",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Isolde's theme cards: The Cure Must Exist."
+    },
+    {
+     "id": "IM-04",
+     "type": "REACH",
+     "owner": "PC-ISOLDE",
+     "title": "Hoarded Knowledge",
+     "power_tags": [
+      "remembers forgotten saints' names",
+      "translates sealed inscriptions",
+      "knows marsh folk remedies"
+     ],
+     "weakness": "Condescends to the Unlettered",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Isolde's theme cards: Hoarded Knowledge."
+    }
+   ],
+   "story_cards": [
+    {
+     "id": "IM-05",
+     "type": "NPC",
+     "owner": "PC-ISOLDE",
+     "title": "Brother Anselm",
+     "power_tags": [
+      "preaches beside the Drowned Priest",
+      "keeps Isolde's old letters",
+      "knows the reliquary wards"
+     ],
+     "weakness": "Torn Between Faith and Pupil",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Isolde's past and goals: Brother Anselm."
+    },
+    {
+     "id": "IM-06",
+     "type": "THREAD",
+     "owner": "PC-ISOLDE",
+     "title": "What Did the First Victims Share?",
+     "power_tags": [
+      "her chart of infections",
+      "a pattern near fords",
+      "a burned parish register"
+     ],
+     "weakness": "Requires Handling Infected Dead",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Isolde's past and goals: What Did the First Victims Share?."
+    }
+   ],
+   "fae": {
+    "high_concept": "Temple Archivist Hunting a Cure in Drowned Scrolls",
+    "trouble": "Obsessed Past Good Sense",
+    "aspects": [
+     "I Hold the Key to Saint Orrin's Reliquary",
+     "Brother Anselm Taught Me, Then Chose the Drowned Priest",
+     "I Remember What Everyone Else Forgot"
+    ]
+   },
+   "template_id": "TPL-02"
+  },
+  {
+   "id": "CH-2",
+   "name": "Hask Orrow",
+   "pronouns": "he/him",
+   "concept": "Lapsed acolyte of the Dry Saint with a burning voice",
+   "skills": {
+    "Will": 4,
+    "Rapport": 3,
+    "Lore": 3,
+    "Provoke": 2,
+    "Empathy": 2,
+    "Fight": 2,
+    "Physique": 1,
+    "Notice": 1,
+    "Contacts": 1,
+    "Deceive": 1
+   },
+   "approaches": {
+    "Flashy": 3,
+    "Forceful": 2,
+    "Careful": 2,
+    "Clever": 1,
+    "Quick": 1,
+    "Sneaky": 0
+   },
+   "binder": [
+    {
+     "id": "HO-01",
+     "type": "ROOTS",
+     "owner": "PC-HASK",
+     "title": "The Lost Acolytes",
+     "power_tags": [
+      "Callum and Tove, my acolytes",
+      "Saint Orrin's prayer rites",
+      "the temple's bell signals"
+     ],
+     "weakness": "Left Callum and Tove Behind",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Hask's theme cards: The Lost Acolytes."
+    },
+    {
+     "id": "HO-02",
+     "type": "ROOTS",
+     "owner": "PC-HASK",
+     "title": "The Hollowmoot Chapel",
+     "power_tags": [
+      "Hollowmoot faithful follow me",
+      "a dry chapel sanctuary",
+      "the chapel tithe box"
+     ],
+     "weakness": "They Expect Miracles",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Hask's theme cards: The Hollowmoot Chapel."
+    },
+    {
+     "id": "HO-03",
+     "type": "REACH",
+     "owner": "PC-HASK",
+     "title": "Voice of the Dry Saint",
+     "power_tags": [
+      "sermon stills a mob",
+      "blessings steady the frightened",
+      "chants drown the swarm-song"
+     ],
+     "weakness": "Speaks Hard Truths at Bad Times",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Hask's theme cards: Voice of the Dry Saint."
+    },
+    {
+     "id": "HO-04",
+     "type": "REACH",
+     "owner": "PC-HASK",
+     "title": "Oath Against the Drowned Priest",
+     "power_tags": [
+      "knows the heretic's scripture",
+      "spots the Priest's followers",
+      "vowed to unmask him"
+     ],
+     "weakness": "Hunted by the Fanatics",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Hask's theme cards: Oath Against the Drowned Priest."
+    }
+   ],
+   "story_cards": [
+    {
+     "id": "HO-05",
+     "type": "NPC",
+     "owner": "PC-HASK",
+     "title": "Brother Callum, Hive-Touched",
+     "power_tags": [
+      "leads a feral pack",
+      "remembers Hask's voice",
+      "knows the temple passages"
+     ],
+     "weakness": "Moments of Terrible Lucidity",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Hask's past and goals: Brother Callum, Hive-Touched."
+    },
+    {
+     "id": "HO-06",
+     "type": "THREAD",
+     "owner": "PC-HASK",
+     "title": "What Does the Drowned Priest Want?",
+     "power_tags": [
+      "sermons that mention a queen",
+      "acolytes carrying cartel coin",
+      "the sealed reliquary crypt"
+     ],
+     "weakness": "Draws His Fanatics Down",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Hask's past and goals: What Does the Drowned Priest Want?."
+    }
+   ],
+   "fae": {
+    "high_concept": "Lapsed Acolyte of the Dry Saint With a Burning Voice",
+    "trouble": "Left Callum and Tove Behind",
+    "aspects": [
+     "The Hollowmoot Chapel Faithful Expect Miracles",
+     "My Sermon Can Still a Mob",
+     "Sworn to Unmask the Drowned Priest"
+    ]
+   },
+   "template_id": "TPL-06"
+  },
+  {
+   "id": "CH-3",
+   "name": "Pim Quillon",
+   "pronouns": "they/them",
+   "concept": "Travelling ballad-singer and silver-tongued forger",
+   "skills": {
+    "Deceive": 4,
+    "Rapport": 3,
+    "Contacts": 3,
+    "Empathy": 2,
+    "Crafts": 2,
+    "Notice": 2,
+    "Burglary": 1,
+    "Stealth": 1,
+    "Resources": 1,
+    "Athletics": 1
+   },
+   "approaches": {
+    "Flashy": 3,
+    "Clever": 2,
+    "Sneaky": 2,
+    "Quick": 1,
+    "Careful": 1,
+    "Forceful": 0
+   },
+   "binder": [
+    {
+     "id": "PQ-01",
+     "type": "ROOTS",
+     "owner": "PC-PIM",
+     "title": "The Drowned Lamb Tavern",
+     "power_tags": [
+      "the Drowned Lamb's stage",
+      "a room kept for me",
+      "landlord Fenwick's trust"
+     ],
+     "weakness": "Tab Long Overdue",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Pim's theme cards: The Drowned Lamb Tavern."
+    },
+    {
+     "id": "PQ-02",
+     "type": "ROOTS",
+     "owner": "PC-PIM",
+     "title": "A Song in Every Town",
+     "power_tags": [
+      "knows every marsh ballad",
+      "welcome at any hearth",
+      "collects travelers' news"
+     ],
+     "weakness": "Too Famous to Hide",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Pim's theme cards: A Song in Every Town."
+    },
+    {
+     "id": "PQ-03",
+     "type": "REACH",
+     "owner": "PC-PIM",
+     "title": "Forged Papers",
+     "power_tags": [
+      "forges Warden travel passes",
+      "copies temple seals",
+      "perfect borrowed handwriting"
+     ],
+     "weakness": "A Forgery Traced Back",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Pim's theme cards: Forged Papers."
+    },
+    {
+     "id": "PQ-04",
+     "type": "REACH",
+     "owner": "PC-PIM",
+     "title": "The Ballad of the Blight",
+     "power_tags": [
+      "sings people to courage",
+      "remembers every rumor",
+      "turns crowds with verse"
+     ],
+     "weakness": "Can't Resist an Audience",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Pim's theme cards: The Ballad of the Blight."
+    }
+   ],
+   "story_cards": [
+    {
+     "id": "PQ-05",
+     "type": "NPC",
+     "owner": "PC-PIM",
+     "title": "Fenwick, Landlord of the Drowned Lamb",
+     "power_tags": [
+      "hears every Hollowmoot secret",
+      "hides guests in the cellar",
+      "waters the ale"
+     ],
+     "weakness": "Pays Off the Wardens",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Pim's past and goals: Fenwick, Landlord of the Drowned Lamb."
+    },
+    {
+     "id": "PQ-06",
+     "type": "THREAD",
+     "owner": "PC-PIM",
+     "title": "Who Bought the Forged Pass?",
+     "power_tags": [
+      "a pass seen at Ashwater",
+      "the buyer's cartel ring",
+      "Fenwick's sly wink"
+     ],
+     "weakness": "Exposes Pim's Forgeries",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Pim's past and goals: Who Bought the Forged Pass?."
+    }
+   ],
+   "fae": {
+    "high_concept": "Travelling Ballad-Singer and Silver-Tongued Forger",
+    "trouble": "Can't Resist an Audience",
+    "aspects": [
+     "Fenwick Keeps My Room at the Drowned Lamb",
+     "I Can Forge Any Warden Pass or Temple Seal",
+     "A Song Welcome at Every Marsh Hearth"
+    ]
+   },
+   "template_id": "TPL-08"
+  },
+  {
+   "id": "CH-4",
+   "name": "Brannoc Veil",
+   "pronouns": "he/him",
+   "concept": "Disgraced Causeway Warden who still holds the line",
+   "skills": {
+    "Fight": 4,
+    "Physique": 3,
+    "Athletics": 3,
+    "Will": 2,
+    "Notice": 2,
+    "Provoke": 2,
+    "Shoot": 1,
+    "Empathy": 1,
+    "Lore": 1,
+    "Contacts": 1
+   },
+   "approaches": {
+    "Forceful": 3,
+    "Careful": 2,
+    "Quick": 2,
+    "Flashy": 1,
+    "Clever": 1,
+    "Sneaky": 0
+   },
+   "binder": [
+    {
+     "id": "BV-01",
+     "type": "ROOTS",
+     "owner": "PC-BRANNOC",
+     "title": "The Ashwater Toll Gate",
+     "power_tags": [
+      "held the Ashwater Causeway",
+      "knows Warden patrol routes",
+      "Captain Varro's old sergeant"
+     ],
+     "weakness": "Deserted His Post",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Brannoc's theme cards: The Ashwater Toll Gate."
+    },
+    {
+     "id": "BV-02",
+     "type": "ROOTS",
+     "owner": "PC-BRANNOC",
+     "title": "My Sister Maud",
+     "power_tags": [
+      "Maud's Hollowmoot market stall",
+      "hears market gossip through Maud",
+      "Maud patches my gear"
+     ],
+     "weakness": "Hiding Maud's Hive Marks",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Brannoc's theme cards: My Sister Maud."
+    },
+    {
+     "id": "BV-03",
+     "type": "REACH",
+     "owner": "PC-BRANNOC",
+     "title": "Oath of the Unburned",
+     "power_tags": [
+      "no house burns tonight",
+      "stands between mob and victim",
+      "draws every angry eye"
+     ],
+     "weakness": "Cannot Walk Away",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Brannoc's theme cards: Oath of the Unburned."
+    },
+    {
+     "id": "BV-04",
+     "type": "REACH",
+     "owner": "PC-BRANNOC",
+     "title": "The Hooked Spear",
+     "power_tags": [
+      "reaches through reed cover",
+      "drags riders from saddles",
+      "heavy veteran's weapon"
+     ],
+     "weakness": "Too Heavy for Swimming",
+     "track": {
+      "kind": "growth",
+      "size": 3
+     },
+     "blurb": "One of Brannoc's theme cards: The Hooked Spear."
+    }
+   ],
+   "story_cards": [
+    {
+     "id": "BV-05",
+     "type": "NPC",
+     "owner": "PC-BRANNOC",
+     "title": "Maud Veil",
+     "power_tags": [
+      "runs a Hollowmoot stall",
+      "trades in market gossip",
+      "hides her hive marks"
+     ],
+     "weakness": "Growing Feral at Night",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Brannoc's past and goals: Maud Veil."
+    },
+    {
+     "id": "BV-06",
+     "type": "THREAD",
+     "owner": "PC-BRANNOC",
+     "title": "Who Ordered the Cressbank Burning?",
+     "power_tags": [
+      "a sealed Warden order",
+      "a survivor's scorched cloak",
+      "Varro's evasive silence"
+     ],
+     "weakness": "Makes the Wardens Enemies",
+     "track": {
+      "kind": "weight",
+      "size": 1
+     },
+     "blurb": "A story card from Brannoc's past and goals: Who Ordered the Cressbank Burning?."
+    }
+   ],
+   "fae": {
+    "high_concept": "Disgraced Causeway Warden Who Still Holds the Line",
+    "trouble": "Hiding Maud's Hive Marks",
+    "aspects": [
+     "Captain Varro's Old Sergeant from the Ashwater Toll Gate",
+     "Oath of the Unburned: No House Burns Tonight",
+     "A Hooked Spear Too Heavy for Swimming"
+    ]
+   },
+   "template_id": "TPL-01"
+  }
+ ]
+}
