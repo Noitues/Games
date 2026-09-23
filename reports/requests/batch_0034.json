@@ -1,0 +1,23 @@
+{
+  "batch_id": "batch_0034",
+  "rules": "1.5.0",
+  "roster": "1.5.0",
+  "ai": "1.2.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3
+  },
+  "games": 120,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 3401,
+  "replays": 2,
+  "config_overrides": {
+    "tower_hp": 16
+  },
+  "extra": [
+    "P-0006: AREA loses its range step. Judge against batch_0033 (same rules otherwise, roster 1.4.1): ashwyn and quillan should fall below 2.0x the roster-mean AP per round.",
+    "Also carries the RQ-036 hidden-zone rules, so this is the roster the champion-balance phase will run on."
+  ]
+}
