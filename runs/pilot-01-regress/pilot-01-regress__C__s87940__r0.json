@@ -68,7 +68,7 @@
     "id": "B-02",
     "name": "PLEA FOR HELP",
     "trigger": "compel_refused",
-    "used": null
+    "used": true
    },
    {
     "id": "B-03",
@@ -3119,6 +3119,426 @@
     "Mire": 1
    },
    "gm_fp": 2
+  },
+  {
+   "event_id": 104,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Scene 4 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 105,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Draw (beat_frame)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "deck now 2",
+   "event_type": "draw",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 106,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Backstory guarantee pull",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "owner Ysolde",
+   "event_type": "guarantee_pull",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 107,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Backstory guarantee pull",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-09",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "owner Morwen",
+   "event_type": "guarantee_pull",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 108,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Beat Frame PLEA FOR HELP",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "fills {'WHO': 'H-04', 'WHERE': None}; defaults for rest",
+   "event_type": "beat_frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 109,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Rail + H-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "drawn from Session Deck; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 110,
+   "session": 1,
+   "scene": 4,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Can the party reach the boy in the belltower before the swarm-song, the mire, or the temple's own faithful claim him first — or is he already lost to the hive?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 111,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Ysolde reaches out immediately and catches the mother's clawed hand, pulling her fully into the skiff. She wraps one arm around the shaking woman to steady her,",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 112,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Aldous catches the mother as she grasps at the gunwale, holding her steady with both hands. His voice carries the certainty of someone who has heard the Order's",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 113,
+   "session": 1,
+   "scene": 4,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Morwen grasps the mother's shaking hands with absolute certainty, meeting her eyes directly. Despite blood still running from her shoulder wound, she's already ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 114,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Mire abandons her pole and grabs the mother's arm with the firm grip of a militia guard trained to pull someone back from drowning. She hauls her fully into the",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 115,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "2->2",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "no change",
+   "event_type": "tension",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 116,
+   "session": 1,
+   "scene": 4,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "The Hollowmoot Mother",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 117,
+   "session": 1,
+   "scene": 4,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Corren, Lost to the Swarm-Song",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 118,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Scene 4 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 1,
+    "Aldous": 1,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -3159,6 +3579,17 @@
    "triggers_fired": [
     "B-02"
    ]
+  },
+  {
+   "index": 4,
+   "tension_before": 2,
+   "scene_test": null,
+   "outcome": "beat_frame",
+   "beat": "trigger compel_refused",
+   "rounds": 1,
+   "climax": false,
+   "tension_after": 2,
+   "triggers_fired": []
   }
  ],
  "transcript": [
@@ -3809,6 +4240,94 @@
    "kind": "narration",
    "text": "Ysolde reads the last of it in a heartbeat — the seam of deep water opens exactly where she promised, and she leans the pole hard, driving the skiff into the hidden channel while guards flounder in water too shallow to follow. Morwen's will finishes what her voice started: Ilsbet's doctrine catches in her throat, her knees buckle, and she goes down cold into the shallows, the chant dying with her — and for one breath every pilgrim-guard on both banks simply stops, staring at the novice who sent them here. Aldous should press the advantage, but his eyes snag on a bloated shape half-sunk in the reeds — a face he knows, a name he swore he'd say aloud — and he stalls at the gunwale, murmuring rites over the dead while the guards' hesitation burns away and they surge back into motion around him. Mire takes the opening she has, driving her pole into the guards' line hard enough to scatter two of them and buy the skiff its gap, but a cudgel catches her ribs in the churn — and worse, one of the guards wading toward her stops cold, staring: the grieving widow who lost her husband to an outsider's carelessness, now armed and screaming Mire's name like an accusation older than tonight. It's enough noise, enough doctrine broken, enough bodies in the water that the line simply can't close fast enough. The skiff shoots the hidden channel, Ilsbet's chant silent behind them, the pilgrim-guards wading uselessly in their wake as Gullet Ford falls away into rain and reed-shadow — through, but marked, all of them, by what they left standing on that crossing.",
    "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Beat: A Hollowmoot mother stumbles out of the reeds and into the party's path, mud to the elbows, shaking — she went under herself in a stretch of black water where the ground hides beneath the reed mats, and only clawed free by chance, catching an old sunken piling underfoot before it dragged her down for good. She has no more strength left to search alone. begs the party to go to Saint Orrin's Drowned Temple, because her son followed the swarm-song into the belltower.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The mother crashes out of the black reeds so suddenly the skiff nearly capsizes catching her — mud to the elbows, shaking so hard her teeth click, one hand still clawed into a fist around nothing. She went under herself not twenty yards back, she says, where the reed mats lie flat and green and hide the mire beneath like a lie; only an old sunken piling under her boot kept the marsh from taking her too. She has no strength left to search. Her son followed the swarm-song two nights ago — everyone in Hollowmoot knows the belltower took him, the way it's taken others, and she points a shaking arm past the drowned rooftops to where Saint Orrin's Drowned Temple broods on the grey water, its belfry the one thing still standing above the flood. She doesn't ask. She begs — grabbing at whoever's nearest, salt-cracked lips forming the boy's name over and over like a rite of her own.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "I've got you—you're safe now. Tell me your son's name, tell me everything about the song he heard, every detail you remember. I know these waters, I know this hunger they carry, and I read currents the way your boy reads air.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde reaches out immediately and catches the mother's clawed hand, pulling her fully into the skiff. She wraps one arm around the shaking woman to steady her, her grip firm and certain—the kind of hold that says *I will not let you slip*. Her eyes meet the mother's without pity, only recognition: this is drowning, and Ysolde knows drowning intimately. She draws the woman down to sit, still holding her hand, already running through what the belltower will demand, already feeling the reed-currents and the broken ground beneath it. Her voice stays low and steady: we don't leave people to the swarm. Not while I draw breath.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "What is your son's name? Tell me, and I swear it—we go to that tower, and we bring him back or we go down trying. The rain shows me the path, and my vow stands above fear.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous catches the mother as she grasps at the gunwale, holding her steady with both hands. His voice carries the certainty of someone who has heard the Order's truest teachings and knows the weight of promises kept. He looks directly into her eyes—no hesitation, no lies—and nods once toward Saint Orrin's distant belltower, already reading the rain's fall as if the sky itself is marking the way.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Your son's name—tell me his name. I am going into that belltower, and I am bringing him out. Does he still answer when you call, or has the song taken him completely?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen grasps the mother's shaking hands with absolute certainty, meeting her eyes directly. Despite blood still running from her shoulder wound, she's already turning to assess the path toward Saint Orrin's Drowned Temple, her exorcist's mind already working through the rites she'll need. She speaks with the flat authority of someone who has walked into burning houses and refused to break.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "I hold lines for exactly this reason. Tell me your son's name and what the belltower looked like when he went—we're going there now, and I need to know what we're walking into.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire abandons her pole and grabs the mother's arm with the firm grip of a militia guard trained to pull someone back from drowning. She hauls her fully into the skiff, finding her stable footing, then meets the woman's eyes—not with comfort, but with the steady certainty of someone drilled since childhood in watch-duty. There's no hesitation in her posture; she's already committed.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Names spill out of her in a rush — \"Corren. My boy is Corren, nine years old, quick as a minnow\" — and something in her unclenches just to have said it aloud to people who are actually looking at her instead of past her. She tells you what she remembers: the swarm-song rising thin and sweet over the rooftops two nights running, Corren going still at the window each time, and how on the third night she woke to an empty bed and his wet footprints leading toward the water. The belltower's been visible from Hollowmoot for years, half-drowned and leaning, but no one goes near it — not since the bells stopped ringing on their own and started ringing *with* the song instead. She doesn't know if he still answers his name. She hasn't dared call it too loud, in case something else answers first. What she does know, and tells you with sudden fierce clarity through her shaking, is the safe line in — an old pilgrim's causeway of sunken pilings that still runs firm beneath the mire, if you know where to set your feet. Ysolde marks it. Mire braces her against the last of the shivering, gets her wrapped and steady, and points her back toward the smoke of Hollowmoot with instructions to wait, to trust, to not follow. The mother goes, walking backward through the reeds for as long as she can still see the skiff, until the rain and the rushes take her from view — and ahead, past drowned rooftops and black water, Saint Orrin's belfry waits, silent now, its bells not ringing at all.\n\nThe party turns the skiff's nose toward the temple. Whatever answers there, you're going in.",
+   "visible_to": "all"
   }
  ],
  "costs": [
@@ -3938,6 +4457,28 @@
     ],
     "weakness": "Delays at Any Cost"
    }
+  },
+  {
+   "event": "beat_fill",
+   "scene": 4,
+   "draw_id": "H-04",
+   "valid": true,
+   "tag": "hides beneath reed mats",
+   "text": "A Hollowmoot mother stumbles out of the reeds and into the party's path, mud to the elbows, shaking — she went under herself in a stretch of black water where the ground hides beneath the reed mats, and only clawed free by chance, catching an old sunken piling underfoot before it dragged her down fo",
+   "improvised": false,
+   "card": {
+    "id": "H-04",
+    "type": "HAZARD",
+    "owner": "GM",
+    "title": "Sucking Mire",
+    "power_tags": [
+     "drags down the heavy",
+     "hides beneath reed mats",
+     "exhausts anyone crossing"
+    ],
+    "weakness": "Firm Along Old Pilings",
+    "clock": "0/4"
+   }
   }
  ],
  "referee": {
@@ -3975,6 +4516,13 @@
     "issue": "Event 73 is a numeric tie (Ysolde's defend total +1 equals opposition +1) but is resolved as a plain 'defended' result with no shift landing, no minor-cost, and no GM deck draw. This directly contradicts the table's own already-established interim ruling AMB-23 for the identical situation type ('the attack lands for 1 shift'), with no new ruling logged to justify the divergent treatment.",
     "event_id": 73,
     "scene": 3,
+    "source": "referee"
+   },
+   {
+    "section": "§5 Beat Frames, Procedure step 2 ('Draw 1 card per open blank')",
+    "issue": "PLEA FOR HELP opened with 2 open blanks (WHO and WHERE) and the deck was not empty when the frame triggered (3 cards present, per event 105's own draw). Only one card (H-04) was drawn for the frame; the WHERE blank was defaulted instead of being filled by a second draw, because the backstory-guarantee pulls (events 106-107) consumed the remaining cards first. §11's only comparable ordering rule (for ties during a Beat Frame) gives the frame's own draws priority over other triggered draws, which was not honored here.",
+    "event_id": 108,
+    "scene": 4,
     "source": "referee"
    }
   ],
@@ -4108,6 +4656,20 @@
     "interim_ruling": "Ties on a defend roll are treated as standard Fate defense (defender succeeds, no shift lands, no minor-cost draw).",
     "scene": 3,
     "source": "referee"
+   },
+   {
+    "section": "§4 (Backstory guarantee) vs §11 (tie-during-Beat-Frame ordering)",
+    "issue": "The spec never states whether the 'deck is down to 2 cards' guarantee check can fire mid-resolution of an in-progress Beat Frame, interrupting that frame's own remaining per-blank draws. The only comparable ordering rule in the spec ('A tie happens while a Beat Frame is resolving: Resolve the Beat Frame's draws first, then the tie's draw', §11) implies Beat Frame draws should take priority over other triggered draws, but this is not stated for the backstory-guarantee trigger specifically.",
+    "interim_ruling": "The table let the guarantee check fire immediately after the Beat Frame's first blank-draw (event 105) emptied the deck to 2, before the frame's second blank (WHERE) could draw; this consumed the remaining cards via guarantee pulls (106-107) and forced WHERE to default.",
+    "scene": 4,
+    "source": "referee"
+   },
+   {
+    "section": "§4 (Backstory guarantee, 'The deck is down to 2 cards')",
+    "issue": "The rule text describes the trigger producing 'the pulled card' (singular). It does not say whether, when the deck reaches exactly 2 cards and both remaining cards are unsurfaced player cards belonging to different players, one or both should be pulled at that single trigger moment.",
+    "interim_ruling": "The table pulled both remaining cards (PX-04/Ysolde and PX-09/Morwen) at the single 'deck down to 2' trigger, rather than pulling only one and leaving the other in the (now 1-card) deck.",
+    "scene": 4,
+    "source": "referee"
    }
   ],
   "cost_checks": [
@@ -4158,6 +4720,12 @@
     "used_drawn_card": true,
     "note": "PX-22 (Aldous's REACH card) drawn for Mire's major-cost roll (event 85); the resulting compel used its weakness tag 'Delays at Any Cost,' satisfying the major-cost requirement to use the weakness tag.",
     "scene": 3
+   },
+   {
+    "event_id": 108,
+    "used_drawn_card": true,
+    "note": "PLEA FOR HELP's WHO blank was filled from H-04 (HAZARD, drawn from the Session Deck, type-mismatched to WHO per §5 step 3) using its actual power tag 'hides beneath reed mats' to describe how the mother got trapped — a real drawn-card tag was used, matching §5 step 4/§3 free-invoke intent.",
+    "scene": 4
    }
   ],
   "friction": [
@@ -4196,6 +4764,18 @@
    {
     "scene": 3,
     "text": "Inconsistent tie resolution between event 73 (defend tie treated as a plain success, no cost) and the table's own AMB-23 precedent (tie treated as 'the attack lands for 1 shift'), risking uneven treatment of numerically identical outcomes within the same session."
+   },
+   {
+    "scene": 4,
+    "text": "The Beat Frame PLEA FOR HELP has two open blanks (WHO, WHERE) per §5, but only one card (H-04) was actually drawn for it; the WHERE blank defaulted because the intervening backstory-guarantee pulls (events 106-107) emptied the deck first. This is a procedural violation of §5's 'draw 1 card per open blank' unless the guarantee-pull-preempts-frame-draw ordering is explicitly sanctioned, which it currently isn't."
+   },
+   {
+    "scene": 4,
+    "text": "Two player cards (PX-04, PX-09) were pulled simultaneously under one 'deck down to 2 cards' trigger, though the rule's wording ('the pulled card') suggests a single card — a source of real ambiguity for how the backstory guarantee scales when multiple unsurfaced player cards land in the final 2."
+   },
+   {
+    "scene": 4,
+    "text": "H-04's GM free invoke, granted when it hit the rail (event 109), was never spent in scene 4 because no rolls occurred; it simply expired at cleanup, muting the mechanical payoff of drawing and surfacing that HAZARD."
    }
   ]
  },
@@ -4220,35 +4800,34 @@
    "PX-09": "Morwen",
    "PX-11": "Mire"
   },
-  "guarantee_pulled": [],
-  "guarantee_failed": [],
-  "deck_left": [
-   "H-04",
+  "guarantee_pulled": [
    "PX-04",
    "PX-09"
   ],
-  "draws": 4,
+  "guarantee_failed": [],
+  "deck_left": [],
+  "draws": 5,
   "turns": {
-   "Ysolde": 5,
-   "Aldous": 5,
-   "Morwen": 5,
-   "Mire": 5
+   "Ysolde": 6,
+   "Aldous": 6,
+   "Morwen": 6,
+   "Mire": 6
   }
  },
  "notes": [],
  "metrics": {},
  "tokens": {
-  "prompt": 944685,
-  "completion": 247011,
-  "cost_usd": 3.8737,
-  "calls": 66
+  "prompt": 1186151,
+  "completion": 278361,
+  "cost_usd": 4.5877,
+  "calls": 76
  },
- "llm_calls": 66,
+ "llm_calls": 76,
  "models": {
   "gm": "claude-sonnet-5",
   "player": "claude-haiku-4-5-20251001",
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 2403.7
+ "elapsed_s": 2673.8
 }

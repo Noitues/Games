@@ -1,0 +1,1396 @@
+{
+ "run_id": "pilot-01-regress__A__s87942__r2",
+ "batch_id": "pilot-01-regress",
+ "arm": "A",
+ "seed": 87942,
+ "spec_version": "0.2.0",
+ "status": "partial",
+ "error": null,
+ "backend": "claude_cli",
+ "run_index": 2,
+ "cohort_id": "cohort-pilot-01",
+ "assignments": [
+  {
+   "character_id": "CH-1",
+   "name": "Ysolde",
+   "personality_id": "protector",
+   "seat": 0
+  },
+  {
+   "character_id": "CH-2",
+   "name": "Aldous",
+   "personality_id": "instigator",
+   "seat": 1
+  },
+  {
+   "character_id": "CH-3",
+   "name": "Morwen",
+   "personality_id": "tactician",
+   "seat": 2
+  },
+  {
+   "character_id": "CH-4",
+   "name": "Mire",
+   "personality_id": "optimizer",
+   "seat": 3
+  }
+ ],
+ "prep_packet": {
+  "anchors": [
+   "H-03",
+   "T-04"
+  ],
+  "environment": [
+   "T-03",
+   "F-01",
+   "L-03"
+  ],
+  "modules": [
+   {
+    "id": "M-1",
+    "cards": [
+     "L-05",
+     "T-02"
+    ],
+    "trigger": "fiction:the party leaves the road or causeway"
+   },
+   {
+    "id": "M-2",
+    "cards": [
+     "C-03",
+     "F-04"
+    ],
+    "trigger": "scene_start:3"
+   }
+  ],
+  "beat_frames": [
+   {
+    "id": "B-02",
+    "name": "PLEA FOR HELP",
+    "trigger": "fiction:the party enters a settlement",
+    "used": null
+   },
+   {
+    "id": "B-05",
+    "name": "FALSE SANCTUARY",
+    "trigger": "deck_at_most:3",
+    "used": null
+   },
+   {
+    "id": "B-03",
+    "name": "BETRAYAL",
+    "trigger": "roll_fails_against:T-04",
+    "used": null
+   }
+  ]
+ },
+ "events": [
+  {
+   "event_id": 1,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Session start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "FP: Ysolde=3, Aldous=3, Morwen=3, Mire=3",
+   "event_type": "session_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 2,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + H-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "anchor; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 3,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + T-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "anchor; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 4,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Build Session Deck",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "7 cards: 3 GM + 4 player",
+   "event_type": "deck_built",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 5,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 6,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Does the party get into Hollowmoot clean, or does the crossing cost them something before they've even arrived?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 7,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Ysolde steps forward from the crowd and approaches Sergeant Bray at the checkpoint. She studies the warden's face—reading the exhaustion, the fear, the weight o",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 8,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Aldous strides forward into the rain toward the checkpoint, his eyes sharp and cutting. He reads the sergeant—her exhaustion, the weight of her impossible comma",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 9,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Morwen walks up to the checkpoint openly, her exorcist's vestments unmistakable in the rain-grey light. She makes no attempt to hide or slip past—there's no poi",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 10,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Mire approaches the checkpoint with steady steps, rain streaming off her shoulders. She doesn't try to slip through the crowd—she walks straight toward Sergeant",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 11,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Served under Captain Verrick",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "AL-02",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Bray's eyes narrow at the way Aldous squares his shoulders and calls the count of the line — old militia drill, the kind Verrick's Wardens still use. She asks, sharp: 'You served under the Captain. Wh",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 12,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Rail + AL-06",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "AL-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "story draw (free_compel_accepted)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 13,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Story draw (free_compel_accepted)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "AL-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "story_draw",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 14,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Create Advantage: Aldous strides forward into the rain toward the checkpoint, ",
+   "skill": "Notice +4",
+   "tags_invoked": "Reads the flood's rise [AL-03]",
+   "fp_spent": 1,
+   "dice": "- - 0 -",
+   "total": "+3",
+   "opposition": "-1 (NPC - - - 0)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "story ally AL-05",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [],
+   "target_card": "H-03",
+   "target_npc": "Sergeant Bray, Causeway Warden",
+   "shifts": 4,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 15,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Rail + AL-05",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "AL-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "story draw (sws_create_advantage)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "caused_by": 14,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 16,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Story draw (sws_create_advantage)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "AL-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "story_draw",
+   "improvised": false,
+   "caused_by": 14,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 17,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Peek",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "left on top",
+   "event_type": "peek",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 18,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Ysolde watches the recognition settle across Sergeant Bray's face at Aldous's words, sees the exhaustion carved into her shoulders and the weariness of her ward",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 19,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "overcome",
+   "skill": "Empathy",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Aldous steps directly into Sergeant Bray's line of sight, shoulders squared. He reads the weight on her—duty crushing against the rising water, impossible choic",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 20,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Morwen steps forward through the checkpoint, rainwater running off her exorcist's vestments. She meets Bray's eyes for a moment—a look of shared understanding b",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 21,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Mire's jaw tightens as Verrick's name hangs in the rain-soaked air. She watches Aldous work the sergeant with old drill-signals, and for a moment something bitt",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 22,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Marked enemy of the Wardens",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-04",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "As Mire falls in step behind Aldous, Sergeant Bray's eyes catch on her face and narrow — a name from Verrick's own black-list, read aloud at every checkpoint muster. Bray's hand drops to her belt and ",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 23,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Rail + MI-05",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "story draw (free_compel_accepted)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 24,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "Story draw (free_compel_accepted)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "story_draw",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 25,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Overcome: Aldous steps directly into Sergeant Bray's line of sight, sh",
+   "skill": "Empathy +3",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ - 0 +",
+   "total": "+4",
+   "opposition": "+1 (NPC - 0 - +)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Sergeant Bray, Causeway Warden",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 26,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Peek",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "moved to bottom",
+   "event_type": "peek",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 27,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "3->2",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "resolved -1",
+   "event_type": "tension",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 28,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Weight AL-06",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "AL-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "1->2 (drawn/featured this scene)",
+   "event_type": "story_weight",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 29,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Weight AL-05",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "AL-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "1->2 (drawn/featured this scene)",
+   "event_type": "story_weight",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 30,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Weight MI-05",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "1->2 (drawn/featured this scene)",
+   "event_type": "story_weight",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 31,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Trigger fired: B-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "fiction:the party enters a settlement",
+   "event_type": "trigger",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 32,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "triggers fired: ['B-02']",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  }
+ ],
+ "scenes": [
+  {
+   "index": 1,
+   "tension_before": 3,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 2,
+   "climax": false,
+   "tension_after": 2,
+   "triggers_fired": [
+    "B-02"
+   ]
+  }
+ ],
+ "transcript": [
+  {
+   "session": 1,
+   "scene": 0,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Session begins. Each player has Ysolde 3 FP, Aldous 3 FP, Morwen 3 FP, Mire 3 FP. Face-up: Rising Floodwaters [H-03], The Drowned Priest [T-04].",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Rain needles down in grey sheets as your boots find the last dry stretch of the Causeway, planks slick and crowded with carts, cages of eels, and refugees clutching whatever they could carry out of the lowlands. Ahead, torches gutter at the Warden checkpoint where Hollowmoot's stilt-town rises out of the flood like a drowned man's ribs, and a bell somewhere in the market tower tolls the hour, too close to a quarantine bell for comfort. A Warden sergeant is working the line hard, checking wrists for the telltale weeping sores of the hive, and turning back anyone who can't pay the crossing toll or answer for themselves. Behind you the water has already swallowed the ford you crossed an hour ago. Whatever brought each of you to this crossing, tonight it's the only way in, and the only way in runs through her.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Sergeant Bray, yes? That's hard work you're doing. My companions and I are trying to get into Hollowmoot. What do we need to make this crossing easy for you?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde steps forward from the crowd and approaches Sergeant Bray at the checkpoint. She studies the warden's face—reading the exhaustion, the fear, the weight of her duty—and moves at an unhurried pace that conveys calm confidence. She addresses the sergeant directly, meeting her eyes with quiet competence and an expression that suggests she understands the difficulty of this moment.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "The water speaks, Sergeant. We're out of time, and you know it.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous strides forward into the rain toward the checkpoint, his eyes sharp and cutting. He reads the sergeant—her exhaustion, the weight of her impossible command, the rising water that renders her protocols meaningless. When he meets her gaze, something about him makes her truly seen.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Sergeant, I'm Morwen of Hollowmoot. I see you're being thorough with the crossing—how bad is it back in the lowlands?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen walks up to the checkpoint openly, her exorcist's vestments unmistakable in the rain-grey light. She makes no attempt to hide or slip past—there's no point, not when every stranger knows her face. She watches the sergeant's hands, her eyes, reading whether the refugees ahead are merely being turned back or if something worse is happening at this checkpoint.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Sergeant. I'm crossing tonight—what's the toll?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire approaches the checkpoint with steady steps, rain streaming off her shoulders. She doesn't try to slip through the crowd—she walks straight toward Sergeant Bray, her posture upright and her gaze direct, the bearing of someone accustomed to watch drills and line work.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "I learned discipline from the Captain, but the rain speaks truths no warden's colors can change. The water's rising, Sergeant—time is what matters at the crossing tonight.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — create advantage with Notice: dice - - 0 -, invoking Reads the flood's rise [AL-03] → Good (+3) vs Poor (-1): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Sergeant Bray's hand stalls halfway through her tally-marks. Something in the set of Aldous's shoulders, the clipped cadence of his words, snags at her—old drill-signals, the kind only one commander ever drilled into anyone on this stretch of water. \"You served under Verrick,\" she says, not a question, and for a moment the checkpoint's whole grinding machinery of tolls and wrist-checks seems to forget itself. She glances back down the line at her exhausted Wardens, at the water already lapping the planks where the ford used to be, and something in her posture loosens—not trust, not yet, but recognition. \"The Captain never let anyone forget the flood doesn't wait for paperwork,\" she mutters, waving the next cart through without checking its cargo. Whatever else happens tonight, Bray now owes that old discipline a debt, and Verrick's name hangs in the air between you and this checkpoint like a key not yet turned.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "That's the work that matters, Sergeant.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde watches the recognition settle across Sergeant Bray's face at Aldous's words, sees the exhaustion carved into her shoulders and the weariness of her wardens. She steps forward into the moment with quiet authority born of years keeping crews alive, moving to stand beside Aldous. Her eyes stay steady on Bray's. \"You've held this line well in a hard night,\" she says. \"Let us through—and there's hot food waiting for your people when you can break.\")",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "Sergeant, you know what Verrick taught—read the rain, not the orders. The water's rising faster than they told you it would. That ford has maybe an hour before it drowns. Let us through now, or everyone behind us dies waiting for paperwork.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous steps directly into Sergeant Bray's line of sight, shoulders squared. He reads the weight on her—duty crushing against the rising water, impossible choices already made for her by the flood. When he speaks, it's quiet and certain, the voice of someone who has read a thousand storms in the rain. He doesn't ask. He tells her what the water is telling him, and pushes her to act.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "You know my name, Sergeant—you know what I do in Hollowmoot. These people come with me, and we'll be swift.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen steps forward through the checkpoint, rainwater running off her exorcist's vestments. She meets Bray's eyes for a moment—a look of shared understanding between those who've seen what the swarm can do—then nods back at Aldous, acknowledging the old discipline and loyalty that just opened this door. She positions herself at the threshold, ready to lead the group through, her mere presence an anchor point in the chaos of the checkpoint.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "That name still opens doors, I see. Let's use it while it does.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire's jaw tightens as Verrick's name hangs in the rain-soaked air. She watches Aldous work the sergeant with old drill-signals, and for a moment something bitter crosses her face—the old discipline, the old chains. But the water is rising, and the checkpoint is open. She steps forward into the space Aldous opened, keeping pace with the group as they move toward the checkpoint, her boots steady on the slick planks.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "I know how this reads, Sergeant. I was Verrick's too, once. I'll step aside.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — overcome with Empathy: dice + - 0 + → Great (+4) vs Average (+1): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Sergeant Bray exhales, long and ragged, and steps back from her tally-board like it's suddenly too heavy to hold. \"Go,\" she says, waving the four of you past the checkpoint torches without another glance at wrists or coin-pouches. \"Verrick's people, straight through.\" But her eyes catch on Mire a beat longer than the rest — something in the disgraced warden's bearing, the ghost of a badge she no longer wears — and Bray's mouth tightens into a thin, unreadable line before she turns back to the groaning line of refugees behind you. The gate of sharpened stakes and rope swings wide, and Hollowmoot opens up ahead: stilt-houses lashed together over black water, lantern-light smearing gold across the rain, and somewhere down toward Wick Lane, an old woman named Pell who still remembers Mire before the disgrace, and might yet vouch for what's owed. You're through, clean and dry-shod, the ford behind you already gone under for the night.",
+   "visible_to": "all"
+  }
+ ],
+ "costs": [
+  {
+   "event": "free_compel",
+   "scene": 1,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Served under Captain Verrick",
+   "text": "Bray's eyes narrow at the way Aldous squares his shoulders and calls the count of the line — old militia drill, the kind Verrick's Wardens still use. She asks, sharp: 'You served under the Captain. Why aren't you wearing his colors now?' The question hangs, and the line behind them stalls while she ",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Aldous"
+  },
+  {
+   "event": "free_compel",
+   "scene": 1,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Marked enemy of the Wardens",
+   "text": "As Mire falls in step behind Aldous, Sergeant Bray's eyes catch on her face and narrow — a name from Verrick's own black-list, read aloud at every checkpoint muster. Bray's hand drops to her belt and she calls for Mire to step aside for questioning even as the others are waved through, threatening t",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Mire"
+  }
+ ],
+ "referee": {
+  "violations": [],
+  "ambiguities": [
+   {
+    "id": "AMB-01",
+    "section": "brief",
+    "issue": "Arm A lists 'Attention', which the spec never defines.",
+    "interim_ruling": "Not modelled.",
+    "detail": "Arm definition lists Attention; not modelled.",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-12",
+    "section": "§8",
+    "issue": "Stress box values are unspecified.",
+    "interim_ruling": "Fate Core: boxes 1 and 2; Physique/Will +1/+2 adds a 3 box, +3 or more adds 3 and 4.",
+    "detail": "stress boxes built with Fate Core values",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-22",
+    "section": "§3/§7",
+    "issue": "Does a GLOBAL anchor give the GM a free invoke like a GM card?",
+    "interim_ruling": "Yes, GLOBAL cards placed on the rail give the GM 1 free invoke that scene.",
+    "detail": "H-03",
+    "scene": 0,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-27",
+    "section": "§3",
+    "issue": "Success with style on create advantage: the aspect's 2 free invokes AND the deck peek, or one of them?",
+    "interim_ruling": "Both: the aspect keeps 2 free invokes and the player may also peek.",
+    "detail": "event 14",
+    "scene": 1,
+    "source": "engine"
+   },
+   {
+    "section": "§6A (draw triggers table, row 1)",
+    "issue": "For both compel-triggered Story Pile draws in this scene (event 11 → AL-06; event 22 → MI-05), the compel's complication was fully narrated and already accepted (fp awarded) in the same event row before the pile card was revealed in the following rows. The rule requires 'the complication must involve the drawn NPC or move the drawn thread,' but the complication text pre-dates the draw, so it's unclear how the draw is supposed to retroactively satisfy that requirement, or whether the drawn card is instead meant to seed only the scene's continuing fiction rather than the original compel sentence.",
+    "interim_ruling": "Treated the drawn card (AL-06 / MI-05) as informing the ongoing narration and any follow-up beats rather than requiring the compel's original sentence to be rewritten around it; the free invoke and Weight bump were still applied.",
+    "scene": 1,
+    "source": "referee"
+   },
+   {
+    "section": "§6A (draw triggers table, GM free invoke column)",
+    "issue": "The rule states the GM gains 1 free invoke on the pile card drawn from a non-deck compel, but the log shows no explicit 'GM +1 free invoke' row for either AL-06 (after event 11) or MI-05 (after event 22), unlike the rail_add/story_draw rows that were logged. It's unspecified whether the grant must appear as its own logged row or can be implicit.",
+    "interim_ruling": "Assumed the grant occurred silently at the same moment as the rail_add row and simply wasn't given its own line; treated the free invoke as available to the GM for the rest of the scene.",
+    "scene": 1,
+    "source": "referee"
+   }
+  ],
+  "cost_checks": [
+   {
+    "event_id": 11,
+    "used_drawn_card": false,
+    "note": "Compel on Aldous's 'Served under Captain Verrick' was fully written and accepted in this same event; the triggered Story Pile draw (AL-06) wasn't revealed until the following rows (12–13), so the compel text as logged could not have used AL-06's tags.",
+    "scene": 1
+   },
+   {
+    "event_id": 22,
+    "used_drawn_card": false,
+    "note": "Compel on Mire's 'Marked enemy of the Wardens' was fully written and accepted in this event; the triggered Story Pile draw (MI-05) wasn't revealed until rows 23–24, so the compel text as logged could not have used MI-05's tags.",
+    "scene": 1
+   },
+   {
+    "event_id": 14,
+    "used_drawn_card": true,
+    "note": "Success-with-style create-advantage roll used its §6A pile-draw option instead of a boost; the note 'story ally AL-05' indicates the drawn card itself is the appearing ally/lead, which is exactly how this row's mechanic is meant to work — the card doesn't need to be referenced beforehand.",
+    "scene": 1
+   }
+  ],
+  "friction": [
+   {
+    "scene": 1,
+    "text": "Compel-triggered Story Pile draws (§6A) happen structurally after the compel's complication is already written and accepted, making the 'must involve the drawn NPC/thread' requirement hard to verify or enforce in the moment — this occurred twice in one scene (AL-06, MI-05)."
+   },
+   {
+    "scene": 1,
+    "text": "No logged confirmation that the GM's mandated free invoke from a compel-triggered pile draw was actually granted (no 'GM +1 free invoke' rows for AL-06 or MI-05), even though the format is said to log such grants as their own rows."
+   },
+   {
+    "scene": 1,
+    "text": "The single success-with-style create-advantage roll (event 14) triggered both a Session Deck peek AND a Story Pile ally draw, when §3/§6A phrase these as alternatives ('instead of'); this required an ad hoc ruling (AMB-27) rather than being resolved by the text itself."
+   }
+  ]
+ },
+ "surveys": [],
+ "interview": null,
+ "chronicle": null,
+ "state_end": {
+  "tension": 2,
+  "fp": {
+   "Ysolde": 3,
+   "Aldous": 3,
+   "Morwen": 3,
+   "Mire": 4
+  },
+  "surfaced": [],
+  "deck_player_cards": {
+   "YS-02": "Ysolde",
+   "AL-01": "Aldous",
+   "MO-03": "Morwen",
+   "MI-01": "Mire"
+  },
+  "guarantee_pulled": [],
+  "guarantee_failed": [],
+  "deck_left": [
+   "YS-02",
+   "T-03",
+   "F-01",
+   "MO-03",
+   "AL-01",
+   "L-03",
+   "MI-01"
+  ],
+  "draws": 0,
+  "turns": {
+   "Ysolde": 2,
+   "Aldous": 2,
+   "Morwen": 2,
+   "Mire": 2
+  }
+ },
+ "notes": [],
+ "metrics": {},
+ "tokens": {
+  "prompt": 231694,
+  "completion": 54709,
+  "cost_usd": 0.9384,
+  "calls": 19
+ },
+ "llm_calls": 19,
+ "models": {
+  "gm": "claude-sonnet-5",
+  "player": "claude-haiku-4-5-20251001",
+  "referee": "claude-sonnet-5",
+  "interviewer": "claude-haiku-4-5-20251001"
+ },
+ "elapsed_s": 464.5
+}

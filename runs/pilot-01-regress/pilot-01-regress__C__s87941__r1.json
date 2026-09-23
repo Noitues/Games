@@ -1807,6 +1807,908 @@
     "Mire": 3
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 62,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Scene 4 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 63,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Scene test",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "4",
+   "total": "",
+   "opposition": "",
+   "result": "as_planned",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "d6=4 vs Tension 1",
+   "event_type": "scene_test",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 64,
+   "session": 1,
+   "scene": 4,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Do they reach Old Harrow's platform safely, and what does the belltower's sightline reveal about Tomas and the thing that's singing?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 65,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Ysolde climbs onto the platform with careful steps, testing Harrow's weathered boards—one hand always near a solid brace. She finds the cloth scrap snagged on t",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 66,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Aldous moves immediately to the scrap of cloth snagged on the nail, his weathered fingers tracing its weave and the freshness of the water-stain with the care o",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 67,
+   "session": 1,
+   "scene": 4,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Morwen climbs onto the high platform and moves immediately to examine the scrap of cloth caught on the nail. She pulls it free carefully—water-stained linen, de",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 68,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Mire climbs the platform with the easy movements of someone who's patrolled stilt-walks for years. Her eyes catch on the scrap of cloth immediately—militia gray",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 69,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Marked by drowned ghosts",
+   "fp_spent": 1,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "AL-01",
+   "compel": "refused",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "As Aldous stares down at the pale shape drifting in the drowned nave, it resolves for one gut-lurching instant into a face he recognizes from the Sunken Barge — a dead crewmate, or something wearing t",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": -1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 70,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Ysolde's eyes snap to the wake cutting through the black water—she reads the ripple pattern like Harrow taught her, understanding at once what's moving beneath ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 71,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Aldous grips the railing and tilts his face into the downpour, eyes closing. The knowledge that marks him—the water's own language, taught by the drowned he sur",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 72,
+   "session": 1,
+   "scene": 4,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Morwen steps back from the railing in one sharp motion, her dark eyes fixed on the water below where the wrong wake cuts toward the platform. She turns toward t",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 73,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Mire's hand clears her sword as she spins to face the black water. She plants herself at the platform's edge, rain streaming down her scarred face, shoulders sq",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 74,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Chooses vengeance over sense",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-04",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Instead of falling back to the roof with the others, Mire plants herself alone at the platform's edge to meet the Pikemaw head-on — cutting off her own retreat and leaving her the only target it can r",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 75,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Rail + PS-09",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PS-09",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "story draw (free_compel_accepted)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 76,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "Story draw (free_compel_accepted)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PS-09",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "",
+   "event_type": "story_draw",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 77,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "Create Advantage: Aldous grips the railing and tilts his face into the downpou",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "- - - +",
+   "total": "+2",
+   "opposition": "+1",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "aspect A-1.4.2 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "T-05",
+   "target_npc": "",
+   "shifts": 1,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 78,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "overcome",
+   "skill": "Stealth",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Ysolde climbs with controlled, careful movements—weight centered, each step placed to minimize vibration through the weathered beams. She reaches the roof with ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 79,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "attack",
+   "skill": "Athletics",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Aldous abandons the platform's back edge and plants himself beside Mire at the corner post, blade drawn. His face is turned into the downpour, reading what the ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 80,
+   "session": 1,
+   "scene": 4,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Morwen reaches the roof beams and plants herself beside Ysolde, dark eyes fixed on the platform below where Mire holds her ground at the corner post. Her hand g",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 81,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "attack",
+   "skill": "Fight",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "The water roils beneath the corner post as the Pikemaw's massive shape begins to surface. I plant my feet firm and lift my sword, rain-slick and ready. As it br",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 82,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "Overcome: Ysolde climbs with controlled, careful movements—weight cent",
+   "skill": "Stealth +2",
+   "tags_invoked": "Reads river currents like kin [YS-01]",
+   "fp_spent": 1,
+   "dice": "0 - - +",
+   "total": "+3",
+   "opposition": "+2",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [
+    "hunts by the vibration [T-05]"
+   ],
+   "target_card": "T-05",
+   "target_npc": "",
+   "shifts": 1,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 83,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "Attack: Aldous abandons the platform's back edge and plants himself ",
+   "skill": "Athletics +2",
+   "tags_invoked": "Reading the Deep Hunter's Turn [A-1.4.2]",
+   "fp_spent": 0,
+   "dice": "0 - + +",
+   "total": "+5",
+   "opposition": "+1",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "T-05",
+   "target_npc": "",
+   "shifts": 4,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 84,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "Peek",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "moved to bottom",
+   "event_type": "peek",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 85,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "Attack: The water roils beneath the corner post as the Pikemaw's mas",
+   "skill": "Fight +4",
+   "tags_invoked": "Trained young in watch drills [MI-01]",
+   "fp_spent": 1,
+   "dice": "0 + 0 0",
+   "total": "+7",
+   "opposition": "+3",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "GM invokes: drags swimmers under [T-05]",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [],
+   "target_card": "T-05",
+   "target_npc": "",
+   "shifts": 4,
+   "gm_fp_spent": 1,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 3,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 86,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "Peek",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PX-19",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "left on top",
+   "event_type": "peek",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 87,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "1->1",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "fled/bypassed +1, resolved -1",
+   "event_type": "tension",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 88,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Rail - T-05",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "discard: no longer present",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 89,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Weight PS-09",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PS-09",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "1->2 (drawn/featured this scene)",
+   "event_type": "story_weight",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 90,
+   "session": 1,
+   "scene": 4,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Where Is Tomas?",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 91,
+   "session": 1,
+   "scene": 4,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "The Robed Figure in the Nave",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 92,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Scene 4 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 3
   }
  ],
  "scenes": [
@@ -1842,6 +2744,17 @@
    "outcome": "beat_frame",
    "beat": "trigger compel_refused",
    "rounds": 1,
+   "climax": false,
+   "tension_after": 1,
+   "triggers_fired": []
+  },
+  {
+   "index": 4,
+   "tension_before": 1,
+   "scene_test": 4,
+   "outcome": "as_planned",
+   "beat": null,
+   "rounds": 3,
    "climax": false,
    "tension_after": 1,
    "triggers_fired": []
@@ -2271,6 +3184,278 @@
    "kind": "narration",
    "text": "Sella clutches the key back into Ysolde's palm — \"Bring him home, or bring me word\" — and lets Mire pull her to her feet before backing toward the fire to wait out the night alone with her fear. The four of you move fast: cloaks resettled over damp shoulders, blades checked, Aldous murmuring the rhythm of the drowned hymn under his breath like a man counting a tide. Outside, the posted Warden doesn't so much as turn his head as you slip past him down the ladder-stair — his eyes are still fixed on the belltower's black shape, same as Coss's were, same as everyone's in this town who knows enough to be afraid and not enough to say why. Hollowmoot's doors are bolted tight behind you now, the crier's bell long silent, and the stilt-walks empty out into open water and reed as you strike north for the ford — Mire reading the shallows from old patrol-memory, Ysolde's hand never far from Tamsin's scroll case, Morwen watching the dark for any shape that moves wrong. Somewhere ahead, past the restless black channel where the Pikemaw is said to wait, Old Harrow's stilt hut leans out over the flood with its dead owner's sightline to Saint Orrin's belltower — and the hymn's next verse is already rising to meet you.",
    "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The ford opens ahead of you in the dark, black water pocked with rain, the reed-banks pressing close on either side — the kind of channel where the Pikemaw is said to wait beneath the surface for a careless splash. Mire reads the shallows from old patrol-memory, choosing a path through the reeds that keeps you off the deep water where a hull or a leg might draw the wrong attention. You cross without incident, cold to the bone, and Old Harrow's stilt hut rises out of the flood ahead — leaning, three winters unrepaired, but its high platform holding steady enough to climb. From up there the marsh falls away in every direction, and Saint Orrin's belltower stands black and unmistakable against the clouds, close enough now to see detail: something pale caught in the drowned nave below it, and — if you look hard enough at the platform boards themselves — a scrap of cloth snagged on a nail, water-stained but recent. Tomas came this way.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Look—that cloth's recent, caught when he was moving fast. The boy came here, and the hymn had already named him by then. It wasn't hunger calling to him; it was recognition.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde climbs onto the platform with careful steps, testing Harrow's weathered boards—one hand always near a solid brace. She finds the cloth scrap snagged on the nail and examines it closely: damp but not days-old, the weave familiar as any fisher's son might wear. She tucks it into her pocket alongside Harrow's key, then moves to the platform's edge to peer down into the drowned nave, squinting through rain and gathering dark. The pale shape in the water below catches her eye and holds it. Her free hand rests on Tamsin's scroll case at her hip—the dead scholar's warnings about drowned temples rising in her memory like the hymn itself.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "The cloth is days fresh, not weeks—Tomas came through here running, not walking, following that hymn like it knew his name. That pale thing below... the rain remembers it, and now it waits to see if anyone else will answer its call.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous moves immediately to the scrap of cloth snagged on the nail, his weathered fingers tracing its weave and the freshness of the water-stain with the care of a man who reads text written in rainfall. Days old, not weeks—he can feel Tomas's fear in how it caught and held. He straightens and looks down into the drowned nave below the belltower, where something pale drifts slightly with the water's restless rhythm. The hymn rises louder now, almost close enough to touch, and Aldous closes his eyes. He tilts his face up into the downpour, lips moving silently in sync with the water's fall, counting something only the drowned—and those they've marked—can hear. When he opens his eyes again, there's a gravity in them that settles into the shoulders of everyone watching him.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Tomas went in. The drowned hymn pulled him toward the belltower, and I can still feel it from here—like a hook drawing him deeper into whatever waits inside.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen climbs onto the high platform and moves immediately to examine the scrap of cloth caught on the nail. She pulls it free carefully—water-stained linen, definitely recent—and turns to face Saint Orrin's belltower. Her dark eyes track the pale shape caught in the drowned nave below, and her hand moves to rest on the railing as she studies it. The swarm-song's faint pulse carries through the rain, and she closes her eyes for a moment, listening.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "That's fresh—maybe three, four days in this rain. That's militia issue, and it didn't get snagged by accident. Tomas came this way, and something on that tower answered him.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire climbs the platform with the easy movements of someone who's patrolled stilt-walks for years. Her eyes catch on the scrap of cloth immediately—militia gray, water-stained but not days old. She carefully frees it from the nail and holds it up to the thin light, her jaw tightening as she recognizes the weave. Then she turns to face the belltower directly, her gaze tracking from the pale shape caught in the nave up to the tower's dark silhouette. She calls the others up to join her at the platform's highest point, holding out the cloth for them to see.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "I know that face—one of the Barge crew the water took. But I'm marked to read the drowned, not run from them. What omen is the rain showing us?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous refuses a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Aldous refuses to give the drowned thing a name he doesn't want to speak — he pays down the memory with a fate point and holds his voice steady, but the effort costs him something visible: his hand goes white-knuckled on the rail, and the platform's old boards groan sharply under the shift of his weight as he leans out too far, staring down. That groan doesn't just carry — Endless Rain has drowned every other sound in the marsh for eleven years, and a sharp new noise on flat black water travels exactly the way the rain doesn't. Below, near the drowned nave, something changes the pattern of the ripples — not the pale shape, which doesn't move at all, but the water around it, a long low wake cutting against the current toward the base of Harrow's platform. Mire's the one who clocks it first, cataloguing the wrongness of it from old patrol-instinct: that's not wind-chop, that's a hunter reading vibration through the water, and it's coming from downstream, from the deep channel you just crossed. The belltower's hymn rises another half-step above you, patient as ever, while beneath your feet three winters of rot and a startled shout have just told something enormous exactly where you're standing.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "That creature's hunting vibration through the water—it's coming from deep channel and it's fast. Roof, now. Move quiet; every footfall carries through the flood. The platform won't hold if it strikes, but the roof was built to weather anything this marsh could send.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde's eyes snap to the wake cutting through the black water—she reads the ripple pattern like Harrow taught her, understanding at once what's moving beneath the surface and where it's coming from. The deep channel. Fast. Her hand finds Tamsin's scroll case at her hip, grounding herself in the scholar's warnings about things that hunger in deep water, and she turns to the others with the calm authority of someone who's kept a crew alive when worse came calling. She points sharply upward to the platform's highest point—the roof beams that weathered three winters of marsh-storms.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "The water's singing—I can feel it in every drop of rain, in the ripples beneath us. It's tracking our vibration through the deep channel, but the deep channel's its shape, its hunger. We can use that.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous grips the railing and tilts his face into the downpour, eyes closing. The knowledge that marks him—the water's own language, taught by the drowned he survived—sings through his bones. He can read the massive thing's approach like text written in every raindrop, trace its committed path through the deep water, understand the geometry of its hunger. His eyes open, pointing downstream where the current runs strongest, where its weight commits it to one trajectory. He's not reading fear. He's reading fact.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "It's coming. Move.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen steps back from the railing in one sharp motion, her dark eyes fixed on the water below where the wrong wake cuts toward the platform. She turns toward the ladder and gestures sharply to the others—no hesitation, no question. Her hand is already on the rail, ready to descend.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Get inside—I'm holding this!",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire's hand clears her sword as she spins to face the black water. She plants herself at the platform's edge, rain streaming down her scarred face, shoulders squared between her companions and the approaching wake. Three winters disgraced and deeper in debt with every breath, but right now—on rotting boards with the Pikemaw hunting in the dark—she's exactly what she was raised to be. Her eyes track the water's pattern like old patrol drills taught her, watching the wake cut against the current. The line holds. She holds it.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Get to the roof—I've held worse positions than this. The line doesn't break.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — create advantage with Notice: dice - - - + → Fair (+2) vs Average (+1): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Aldous's eyes stay shut a beat longer than rain alone explains, and when they open he's already pointing — not at where the wake is, but at where it has to go. \"It's committed — that current, that depth, it can't turn tight. It'll come up right there, under the corner post.\" The knowledge settles over the platform like a held breath: everyone can see the Pikemaw's line now, the one place its full weight has to surface. Mire plants her boots exactly there, sword bared, rain sluicing off the blade, while Ysolde and Morwen haul themselves up the last rungs toward the roof beams, boards groaning under the shift of weight Aldous's own shout cost them. The black water below goes taut, the wake drawing itself into a straight, terrible line toward the post Mire has chosen to hold.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde climbs with controlled, careful movements—weight centered, each step placed to minimize vibration through the weathered beams. She reaches the roof with practiced silence, pulling herself up to the high vantage where Harrow once stood watching the temple. Rain streams off her face as she settles into position, eyes immediately scanning down to the corner post where Mire waits with sword bared, then across the dark water toward the belltower's black shape.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "I read what the rain is telling us, and it says I don't leave you to face this alone. Whatever answers from the deep—I'll meet it with you.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous abandons the platform's back edge and plants himself beside Mire at the corner post, blade drawn. His face is turned into the downpour, reading what the rain knows of the creature's coming. When the Pikemaw surfaces, he's ready to meet it shoulder to shoulder with Mire, refusing to turn away despite the deep water's hunger calling beneath them both.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen reaches the roof beams and plants herself beside Ysolde, dark eyes fixed on the platform below where Mire holds her ground at the corner post. Her hand grips the weathered wood as she watches the black water, tracking the creature's approach, listening to the hymn carried on the rain. She waits—steady and certain.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Come on then—the line holds!",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(The water roils beneath the corner post as the Pikemaw's massive shape begins to surface. I plant my feet firm and lift my sword, rain-slick and ready. As it breaks the surface toward me, I move to strike—all the militia training from the orphanage drills, all the years of patrol work, focused down to this single moment of holding the line.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde — overcome with Stealth: dice 0 - - +, invoking Reads river currents like kin [YS-01] → Good (+3) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — attack with Athletics: dice 0 - + +, invoking Reading the Deep Hunter's Turn [A-1.4.2] → Superb (+5) vs Average (+1): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — attack with Fight: dice 0 + 0 0, invoking Trained young in watch drills [MI-01] → Epic (+7) vs Good (+3): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Mire's blade finds true, opening a deep gash along the Pikemaw's flank the instant it surfaces exactly where Aldous read its line — no room to twist, no water left to hide in, just teeth and momentum meeting steel dead-on. Aldous follows a half-beat behind, driving his own blow into the wound she's already opened; the great fish shudders, its body thrashing hard enough to send spray over the corner post and rock Harrow's rotten pilings under everyone's feet. Up on the roof beams, Ysolde's careful climb has kept her steady through the shock, and she and Morwen brace as the water below boils white — then, as fast as it came, the wake reverses, the wounded shape diving away downstream into the cold of the deep channel rather than press a fight it's losing. The platform holds. Breathing hard in the rain, the four of you finally get the clear look you climbed for: a break in the cloud shows the pale shape in the drowned nave isn't a boy at all but something older, robed, arms still outstretched toward a bell-rope long swallowed by the flood — no sign of Tomas down there. The hymn keeps rising all the same, steady and patient, from somewhere higher in the tower than the nave, from the belltower itself, exactly where Sella said her son went and exactly where none of you can yet see.",
+   "visible_to": "all"
   }
  ],
  "costs": [
@@ -2376,6 +3561,28 @@
     ],
     "weakness": "Collapses Under Weight"
    }
+  },
+  {
+   "event": "free_compel",
+   "scene": 4,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Marked by drowned ghosts",
+   "text": "As Aldous stares down at the pale shape drifting in the drowned nave, it resolves for one gut-lurching instant into a face he recognizes from the Sunken Barge — a dead crewmate, or something wearing their shape. He staggers back from the platform edge, breath ragged, and has to be steadied by the ot",
+   "improvised": true,
+   "accepted": false,
+   "owner": "Aldous"
+  },
+  {
+   "event": "free_compel",
+   "scene": 4,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Chooses vengeance over sense",
+   "text": "Instead of falling back to the roof with the others, Mire plants herself alone at the platform's edge to meet the Pikemaw head-on — cutting off her own retreat and leaving her the only target it can reach.",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Mire"
   }
  ],
  "referee": {
@@ -2397,10 +3604,56 @@
     "source": "engine"
    },
    {
+    "session": 1,
+    "scene": 4,
+    "agent": "GM",
+    "section": "§3",
+    "issue": "active opposition from unknown NPC The Pikemaw",
+    "source": "engine"
+   },
+   {
+    "session": 1,
+    "scene": 4,
+    "agent": "GM",
+    "section": "§3",
+    "issue": "NPC action with unknown NPC or target: {'npc': 'The Pikemaw', 'target': 'Mire', 'harm': 'physical', 'description': \"The wake breaks against the platform's pilings and the Pikemaw surges up out of the black water in a churn of rain and rot-smelling spray, jaws wide, driving straight at the one figure who hasn't given ground.\"}",
+    "source": "engine"
+   },
+   {
+    "session": 1,
+    "scene": 4,
+    "agent": "GM",
+    "section": "§3",
+    "issue": "active opposition from unknown NPC T-05",
+    "source": "engine"
+   },
+   {
+    "session": 1,
+    "scene": 4,
+    "agent": "GM",
+    "section": "§3",
+    "issue": "active opposition from unknown NPC T-05",
+    "source": "engine"
+   },
+   {
     "section": "§6 Adjusting Tension at scene end",
     "issue": "Event 31 lowers Tension from 2 to 1 with note 'resolved -1', but nothing in the scene 2 log shows a THREAT or FACTION being resolved or a player's goal being filled (the scene consists only of roleplay declares and one refused compel). Per the table, with none of the listed conditions met, the change should have been 0.",
     "event_id": 31,
     "scene": 2,
+    "source": "referee"
+   },
+   {
+    "section": "§6A",
+    "event_id": 76,
+    "issue": "The story-pile card PS-09 was drawn and resolved after the triggering compel's complication (event 74) had already been fully narrated and resolved, so the drawn card could not have been used to build the complication as the trigger-table row requires ('the complication must involve the drawn NPC or move the drawn thread').",
+    "scene": 4,
+    "source": "referee"
+   },
+   {
+    "section": "§6A",
+    "event_id": 75,
+    "issue": "No 'GM +1 free invoke' row is logged for the PS-09 story draw, though the compel-accepted trigger row grants the GM a free invoke on the drawn card.",
+    "scene": 4,
     "source": "referee"
    }
   ],
@@ -2430,6 +3683,15 @@
     "interim_ruling": "Yes, GLOBAL cards placed on the rail give the GM 1 free invoke that scene.",
     "detail": "H-01",
     "scene": 0,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-04",
+    "section": "§6",
+    "issue": "Do tension adjustment rows stack?",
+    "interim_ruling": "All applicable rows are summed, then clamped to 1-6.",
+    "detail": "fled/bypassed +1, resolved -1",
+    "scene": 4,
     "source": "engine"
    },
    {
@@ -2480,6 +3742,20 @@
     "interim_ruling": "Assumed SN-03 (tied to Morwen's surfaced PX-03 card) went to Morwen's Player Story Pile, and SN-04 (an open world question not clearly tied to one PC) went to the GM Story Pile, per the letter of the rule, but this was not confirmed in the log.",
     "scene": 3,
     "source": "referee"
+   },
+   {
+    "section": "§6A",
+    "issue": "The rules require that a story-pile draw triggered by an accepted non-deck compel must have its complication 'involve the drawn NPC or move the drawn thread', but do not specify whether the card must be drawn before the complication is narrated. In this scene, Mire's compel and its full complication text were resolved at event 74, and the PS-09 story draw only happened afterward (events 75-76), with no later reference tying PS-09's content back into the narration.",
+    "interim_ruling": "Treated the post-hoc draw as satisfying the letter of the trigger table (a draw did occur on the qualifying Fate event) even though it could not have shaped the already-fixed complication; logged for table awareness rather than blocking play.",
+    "scene": 4,
+    "source": "referee"
+   },
+   {
+    "section": "§3 (Opposition, passive)",
+    "issue": "At event 82 opposition was +2 with one logged opposing tag on T-05; at event 85 (same target card, same scene) opposition rose to +3 with an empty opposing_tags list, while the GM simultaneously paid 1 fp to invoke a T-05 tag on that same roll. The spec forbids a tag that set the difficulty from also being invoked by the GM on that roll, but the log doesn't show which tag(s), if any, produced the +3, so it can't be confirmed whether the invoked tag overlapped with a difficulty-setting tag.",
+    "interim_ruling": "Accepted the engine-computed opposition value as authoritative in the absence of contrary evidence in opposing_tags.",
+    "scene": 4,
+    "source": "referee"
    }
   ],
   "cost_checks": [
@@ -2512,6 +3788,24 @@
     "used_drawn_card": true,
     "note": "Surfacing compel on Ysolde used PX-09's weakness tag 'Collapses Under Weight' as the compel default, per §4.",
     "scene": 3
+   },
+   {
+    "event_id": 76,
+    "used_drawn_card": false,
+    "note": "Story-pile card PS-09 was drawn only after Mire's compel complication (event 74) had already been fully narrated; the log shows no subsequent narration tying PS-09's NPC/thread content into the scene, so the drawn card's tags were not demonstrably used to build the complication as §6A requires.",
+    "scene": 4
+   },
+   {
+    "event_id": 84,
+    "used_drawn_card": true,
+    "note": "Success-with-style peek (T-01, moved to bottom) per §3 table; peeks are not cost draws and do not require using the card's tags.",
+    "scene": 4
+   },
+   {
+    "event_id": 86,
+    "used_drawn_card": true,
+    "note": "Success-with-style peek (PX-19, left on top) per §3 table; peeks are not cost draws and do not require using the card's tags.",
+    "scene": 4
    }
   ],
   "friction": [
@@ -2550,6 +3844,18 @@
    {
     "scene": 3,
     "text": "Story card 'Add' events (SN-03, SN-04) don't record destination pile, making it hard to audit pile size limits (5 per player, 12 for GM) or ownership ties purely from the log."
+   },
+   {
+    "scene": 4,
+    "text": "Story-pile draws are logged as happening after the compel complication they're supposed to inform has already been fully written, making it impossible to verify the card actually shaped the fiction as §6A demands — the draw reads as a rubber stamp rather than a content source."
+   },
+   {
+    "scene": 4,
+    "text": "The §6A-mandated GM free invoke for the compel-triggered story draw (PS-09) is never logged as its own row, even though the log format explicitly calls out that such grants should be recorded separately, leaving the reward for that trigger unverifiable."
+   },
+   {
+    "scene": 4,
+    "text": "Passive opposition values on repeated rolls against the same rail card (T-05) shift (+1 base, then +2, then +3) without opposing_tags always listing which face-up tags justify each increment, making §3's tag-raises-difficulty vs. GM-invokes-same-tag prohibition hard to audit from the log alone."
    }
   ]
  },
@@ -2559,8 +3865,8 @@
  "state_end": {
   "tension": 1,
   "fp": {
-   "Ysolde": 4,
-   "Aldous": 1,
+   "Ysolde": 3,
+   "Aldous": 0,
    "Morwen": 4,
    "Mire": 3
   },
@@ -2577,34 +3883,34 @@
   "guarantee_pulled": [],
   "guarantee_failed": [],
   "deck_left": [
-   "T-01",
    "PX-19",
    "F-03",
    "PX-05",
-   "H-05"
+   "H-05",
+   "T-01"
   ],
   "draws": 2,
   "turns": {
-   "Ysolde": 5,
-   "Aldous": 5,
-   "Morwen": 2,
-   "Mire": 5
+   "Ysolde": 8,
+   "Aldous": 8,
+   "Morwen": 5,
+   "Mire": 8
   }
  },
  "notes": [],
  "metrics": {},
  "tokens": {
-  "prompt": 707199,
-  "completion": 108033,
-  "cost_usd": 2.002,
-  "calls": 42
+  "prompt": 1231402,
+  "completion": 213374,
+  "cost_usd": 3.6874,
+  "calls": 70
  },
- "llm_calls": 42,
+ "llm_calls": 69,
  "models": {
   "gm": "claude-sonnet-5",
   "player": "claude-haiku-4-5-20251001",
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 906.9
+ "elapsed_s": 1704.1
 }

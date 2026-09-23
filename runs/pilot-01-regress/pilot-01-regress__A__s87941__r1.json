@@ -4,7 +4,7 @@
  "arm": "A",
  "seed": 87941,
  "spec_version": "0.2.0",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 1,
@@ -3425,6 +3425,1431 @@
     "Mire": 4
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 116,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Scene 4 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "CLIMAX",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 117,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Scene test",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "3",
+   "total": "",
+   "opposition": "",
+   "result": "as_planned",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "d6=3 vs Tension 1",
+   "event_type": "scene_test",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 118,
+   "session": 1,
+   "scene": 4,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Can the party silence the Hive Mother and pull the boy out of the belltower before Saint Orrin's Drowned Temple comes down around them?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 119,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "overcome",
+   "skill": "Empathy",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "I climb carefully toward the belltower stairs, footsteps deliberate despite the groaning stone. I don't reach for a weapon—instead, I speak in the low, warm voi",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 120,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Aldous moves deeper into the flooded nave, hand trailing across the submerged stone-work, feeling the vibration of the building's slow failure through palm and ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 121,
+   "session": 1,
+   "scene": 4,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Morwen steps carefully into the flooded temple, letting the rising water accept her without resistance. She moves with measured calm toward the base of the half",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 122,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Mire doesn't hesitate. She moves toward the stairs to the belltower, her grip tight on her spear. The groaning stone makes her jaw tighten—she's heard that soun",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 123,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Chooses vengeance over sense",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-04",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Desperate to reach this boy after losing Kael, Mire takes the collapsing stairs two at a time without testing them — a tread gives way beneath her with a groan that echoes through the whole nave, and ",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 5
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 124,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Rail + SMI-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SMI-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "story draw (free_compel_accepted)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 5
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 125,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "Story draw (free_compel_accepted)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SMI-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "",
+   "event_type": "story_draw",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 5
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 126,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "Overcome: I climb carefully toward the belltower stairs, footsteps del",
+   "skill": "Empathy +4",
+   "tags_invoked": "Speaks the forbidden hive-hymns [YS-04]; Trained by a dead scholar [YS-02]",
+   "fp_spent": 2,
+   "dice": "+ - + -",
+   "total": "+8",
+   "opposition": "+9 (NPC + 0 + +)",
+   "result": "success_major_cost",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "GM invokes: speaks through the infected [T-02]",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -2,
+   "opposing_tags": [],
+   "target_card": "T-02",
+   "target_npc": "The Hive Mother",
+   "shifts": -1,
+   "gm_fp_spent": 1,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 5
+   },
+   "gm_fp": 3,
+   "cost_mode": "face_up_gm_tag"
+  },
+  {
+   "event_id": 127,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "Create Advantage: Aldous moves deeper into the flooded nave, hand trailing acr",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "0 0 0 0",
+   "total": "+4",
+   "opposition": "+2",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "aspect A-1.4.8 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "drowns sound and tracks [H-01]"
+   ],
+   "target_card": "H-06",
+   "target_npc": "",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 5
+   },
+   "gm_fp": 3,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 128,
+   "session": 1,
+   "scene": 4,
+   "actor": "GM",
+   "action": "Cost (success_major_cost)",
+   "skill": "",
+   "tags_invoked": "speaks through the infected",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Ysolde's voice climbs the stairwell and finds Tomas — but something colder answers through his slack mouth before the boy can. The Hive Mother speaks through the infected, borrowing Tomas's throat to ",
+   "event_type": "cost",
+   "improvised": false,
+   "cost_valid": true,
+   "for_event": 126,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 5
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 129,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Ysolde climbs with careful, deliberate steps, one hand trailing along the wet stone. She reads it like she reads water-currents—tracing where the pressure gathe",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 5
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 130,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Aldous presses his palm flat against the submerged stone, reading the vibrations of the failing temple. His hand traces the web of stress and fracture running t",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 5
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 131,
+   "session": 1,
+   "scene": 4,
+   "actor": "Morwen",
+   "action": "create_advantage",
+   "skill": "Will",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Morwen's voice rises in the measured cadence of the old rites, deeper and more insistent, reaching toward the boy in the belltower. Each word presses steady and",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 5
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 132,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "overcome",
+   "skill": "Physique",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Mire charges up the half-collapsed stairs without hesitation, spear held ready. She muscles through each broken step with pure militia discipline, using her kno",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 5
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 133,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Never had a family of blood",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-01",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Tomas's cry from above burns away every ounce of caution — Mire abandons Aldous's marked safe line along the thick outer stones and drives straight up the failing center stairs toward the boy, the way",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 6
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 134,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Rail + MI-06",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "story draw (free_compel_accepted)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 6
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 135,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "Story draw (free_compel_accepted)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "",
+   "event_type": "story_draw",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 6
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 136,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "Create Advantage: Ysolde climbs with careful, deliberate steps, one hand trail",
+   "skill": "Notice +2",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ - 0 0",
+   "total": "+2",
+   "opposition": "+4",
+   "result": "success_major_cost",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "GM invokes: speaks through the infected [T-02]; aspect A-1.4.9 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "floors give way underfoot [H-06]"
+   ],
+   "target_card": "H-06",
+   "target_npc": "",
+   "shifts": -2,
+   "gm_fp_spent": 1,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 6
+   },
+   "gm_fp": 2,
+   "cost_mode": "face_up_gm_tag"
+  },
+  {
+   "event_id": 137,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "Create Advantage: Aldous presses his palm flat against the submerged stone, re",
+   "skill": "Notice +4",
+   "tags_invoked": "The Stones Groan Before They Fall [A-1.4.8]",
+   "fp_spent": 0,
+   "dice": "0 + - -",
+   "total": "+5",
+   "opposition": "+2",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "aspect A-1.4.10 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "buries the careless [H-06]"
+   ],
+   "target_card": "H-06",
+   "target_npc": "",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 6,
+    "Mire": 6
+   },
+   "gm_fp": 2,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 138,
+   "session": 1,
+   "scene": 4,
+   "actor": "Morwen",
+   "action": "Create Advantage: Morwen's voice rises in the measured cadence of the old rite",
+   "skill": "Will +4",
+   "tags_invoked": "Can calm a hive-touched victim [MO-03]; Knows rites older than Order [MO-03]",
+   "fp_spent": 2,
+   "dice": "- + 0 +",
+   "total": "+9",
+   "opposition": "+8 (NPC + 0 + 0)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "GM invokes: commands the hive-touched [T-02]; aspect A-1.4.11 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -2,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "The Hive Mother",
+   "shifts": 1,
+   "gm_fp_spent": 1,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 6
+   },
+   "gm_fp": 1,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 139,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "Overcome: Mire charges up the half-collapsed stairs without hesitation",
+   "skill": "Physique +3",
+   "tags_invoked": "Trained young in watch drills [MI-01]; Safe Stones to Climb [A-1.4.10]",
+   "fp_spent": 2,
+   "dice": "0 0 - -",
+   "total": "+5",
+   "opposition": "+2",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "H-06 overcome with style",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -2,
+   "opposing_tags": [
+    "floors give way underfoot [H-06]"
+   ],
+   "target_card": "H-06",
+   "target_npc": "",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 1,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 140,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Rail - H-06",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "left_play: overcome with success with style",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "caused_by": 139,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 1
+  },
+  {
+   "event_id": 141,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "H-06 leaves play",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "overcome with success with style",
+   "event_type": "card_leaves_play",
+   "improvised": false,
+   "caused_by": 139,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 1
+  },
+  {
+   "event_id": 142,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "Defend vs The Hive Mother",
+   "skill": "Will +1",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "0 - - -",
+   "total": "-2",
+   "opposition": "+6",
+   "result": "hit",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Through Tomas's slack mouth the drowned-bell voice answers Ysolde word for word, twisting her own anchor-hymn back at he",
+   "event_type": "defend",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 1
+  },
+  {
+   "event_id": 143,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "Absorb 8 mental",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "mild: The Hive Mother Knows My Name (strains YS-04); severe: The Hive Mother Knows My Name (strains YS-04)",
+   "event_type": "harm",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 1
+  },
+  {
+   "event_id": 144,
+   "session": 1,
+   "scene": 4,
+   "actor": "GM",
+   "action": "Cost (success_major_cost)",
+   "skill": "",
+   "tags_invoked": "speaks through the infected",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Ysolde reads the stair's fracture-lines true enough to find a path forward — but as she does, the Hive Mother borrows Tomas's throat again, right above her, cold and delighted: \"Still climbing, little",
+   "event_type": "cost",
+   "improvised": false,
+   "cost_valid": true,
+   "for_event": 136,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 1
+  },
+  {
+   "event_id": 145,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "overcome",
+   "skill": "Empathy",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Ysolde catches herself on the slick stone, breathing through the shock of the Hive Mother's cold voice needling into her mind. But her hand finds the safe line ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 1
+  },
+  {
+   "event_id": 146,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "create_advantage",
+   "skill": "Empathy",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Aldous closes his eyes and lets the Hive Mother's voice wash through him without resistance, reading it the way he reads drowning minds and the pressure-pattern",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 1
+  },
+  {
+   "event_id": 147,
+   "session": 1,
+   "scene": 4,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Morwen climbs carefully up the half-collapsed stairs, one hand trailing the safe stone Aldous marked. Her voice doesn't waver—the rite-cadence deepens, each wor",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 1
+  },
+  {
+   "event_id": 148,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "attack",
+   "skill": "Fight",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Mire reaches the belltower and drives forward without hesitation, spear thrusting at the shadows coiling around Tomas. Her strikes are sharp and fierce—militia ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 1
+  },
+  {
+   "event_id": 149,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "Overcome: Ysolde catches herself on the slick stone, breathing through",
+   "skill": "Empathy +4",
+   "tags_invoked": "Reading the Building's Dying Pattern [A-1.4.9]",
+   "fp_spent": 0,
+   "dice": "+ 0 - +",
+   "total": "+7",
+   "opposition": "+5 (NPC + - 0 -)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "GM invokes: speaks through the infected [T-02]",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "The Hive Mother",
+   "shifts": 2,
+   "gm_fp_spent": 1,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 0,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 150,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "Create Advantage: Aldous closes his eyes and lets the Hive Mother's voice wash",
+   "skill": "Empathy +3",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ 0 + 0",
+   "total": "+5",
+   "opposition": "+3 (NPC - 0 + -)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "aspect A-1.4.12 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "T-02",
+   "target_npc": "The Hive Mother",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 0,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 151,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "Attack: Mire reaches the belltower and drives forward without hesita",
+   "skill": "Fight +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "0 + 0 +",
+   "total": "+6",
+   "opposition": "+3 (NPC 0 - - +)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "The Hive Mother",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 0,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 152,
+   "session": 1,
+   "scene": 4,
+   "actor": "Morwen",
+   "action": "Defend vs The Hive Mother",
+   "skill": "Will +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ + 0 +",
+   "total": "+7",
+   "opposition": "+4",
+   "result": "defended",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "As Morwen climbs closer, the cold amused voice turns from Ysolde toward her for the first time — Tomas's slack mouth mur",
+   "event_type": "defend",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 153,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "1->1",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "fled/bypassed +1, resolved -1",
+   "event_type": "tension",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 154,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Weight SMI-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SMI-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "1->2 (drawn/featured this scene)",
+   "event_type": "story_weight",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 155,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Weight MI-06",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "1->2 (drawn/featured this scene)",
+   "event_type": "story_weight",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 156,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SMI-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Tomas, Pulled From the Song",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 157,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Scene 4 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 158,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Clock F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-03 1/4",
+   "tension": 1,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 159,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Clock T-05",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "T-05 1/5",
+   "tension": 1,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 160,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Off-screen F-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "4",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 161,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Off-screen F-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "3",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 162,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Clock F-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-04 1/5",
+   "tension": 1,
+   "notes": "off-screen d6=5",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 163,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "FP: Ysolde=0, Aldous=0, Morwen=4, Mire=4",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 0,
+    "Aldous": 0,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 0
   }
  ],
  "scenes": [
@@ -3463,6 +4888,17 @@
    "beat": "backstory guarantee",
    "rounds": 2,
    "climax": false,
+   "tension_after": 1,
+   "triggers_fired": []
+  },
+  {
+   "index": 4,
+   "tension_before": 1,
+   "scene_test": 3,
+   "outcome": "as_planned",
+   "beat": null,
+   "rounds": 3,
+   "climax": true,
    "tension_after": 1,
    "triggers_fired": []
   }
@@ -4195,6 +5631,366 @@
    "kind": "narration",
    "text": "Ysolde's voice climbs over the spear-clatter, speaking the forbidden hymns not as the swarm sings them but as a person would — a name offered instead of a command — and something in the front line simply *stops*. Two, three of the hive-touched crumple where they stand, hands going to their own skulls as if trying to claw the song back out, the Moment of Lucidity tearing wider under her words until the whole pack's rhythm comes apart at the seams (the pack takes a mild consequence: their unity is broken). Aldous reads the fracture spreading and calls it true to Mire — The Swarm's Hold Is Fracturing becomes as real and visible as the rope-strain and the rising water — though in the same breath something ancient rides one twitching throat back at him: \"I hear you, little soldier,\" says a voice that is not the orphan's, cold and amused and very far away, and Aldous understands with sudden certainty that the belltower already knows they're coming. Morwen never stops — the rite-cadence presses on, steady as a heartbeat, holding the door open that Ysolde forced ajar. And Mire finishes it: her spear drives forward in short, disciplined arcs that never once turn toward Kael, herding the rest of the pack backward step by step until the current takes them — the swarm scatters and goes down into the black water all at once, pain-blind bodies swept from the bank, gone under and gone quiet. When the water settles, the ford is empty. No hooked spear reached Aldous's throat, no rope snapped, no pack or provisions were lost to the flood — and Kael is nowhere among the still shapes at the water's edge. Whether the current carried him to shore somewhere downstream or dragged him under with the rest, none of them can say; only that Mire's spear never touched him, and the reeds where he vanished give back nothing but rain.",
    "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The flooded causeway climbs at last toward Saint Orrin's Drowned Temple, its roofline breaking the grey water like the ribs of something long dead. Inside, the nave is a black lake threaded with drifting pews and the drowned faces of old icons, water at your waists and rising, every footstep answered by a groan from stone that has held too long against too much rain. The swarm-song is not distant anymore — it comes from directly above, from the one dry place left in the whole ruin: the belltower, where a small shape crouches motionless against the bell-ropes, and shadows move slow and patient in the dark around him. Something vast shifts up there too, unseen but felt, a presence that already knows your names. The stairs to the tower are half-collapsed, echoing every sound you make back at you tenfold, and the whole building seems to be listening for the moment you're careless.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Tomas, I know that song—I know how it drowns everything else. But you're still under there. Listen for your own name.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(I climb carefully toward the belltower stairs, footsteps deliberate despite the groaning stone. I don't reach for a weapon—instead, I speak in the low, warm voice I use to hold crew through the darkest watches, the one that says your fear won't shake me, I have time. I speak the forbidden hive-hymns the way a person would speak them, not as hunger-song but as an anchor, reaching toward the human underneath the Hive Mother's pull with each step up the echoing stairs. My hand trails the stone as I climb, reading the temple's weakness, steadying myself—and steadying him, if he can hear me.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "The collapse has a rhythm—listen. The stones sing before they break. This temple's dying like anything dies: loud, and readable.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous moves deeper into the flooded nave, hand trailing across the submerged stone-work, feeling the vibration of the building's slow failure through palm and wrist. His eyes track the fractures in the arch, trace the pattern of groans echoing down from the half-collapsed stairs. He reads it the way he reads rainfall on still water: where the pressure gathers, where the breaking-point races toward, where stone will hold one more step. The belltower groans above them, patient and inevitable as the rising water, and Aldous marks every word it speaks.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "He's still alive up there. The song hasn't finished with him yet.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen steps carefully into the flooded temple, letting the rising water accept her without resistance. She moves with measured calm toward the base of the half-collapsed stairs, listening to the swarm-song as if reading an old text—studying its rhythm, its hunger, the shape of the boy still held in its grip. Her hand settles steady on her blessed iron, and her eyes do not leave the belltower's dark mouth.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Tomas is up there. I'm going up after him.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire doesn't hesitate. She moves toward the stairs to the belltower, her grip tight on her spear. The groaning stone makes her jaw tighten—she's heard that sound before in the older guard posts, the sound of something about to give way. But she climbs anyway, testing each step with the quick, sharp movements of someone trained to hold ground, not to move carefully. Kael vanished into the water. At least this boy she can still reach.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Tomas! Stay with me—I'm coming!",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde — overcome with Empathy: dice + - + -, invoking Speaks the forbidden hive-hymns [YS-04], Trained by a dead scholar [YS-02] → Legendary (+8) vs Beyond Legendary (+9): SUCCESS MAJOR COST",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — create advantage with Notice: dice 0 0 0 0 → Great (+4) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Ysolde's voice climbs the stairwell and finds Tomas — but something colder answers through his slack mouth before the boy can. The Hive Mother speaks through the infected, borrowing Tomas's throat to greet Ysolde by name, syllable by syllable, in a voice like drowned bells: she knows exactly who is climbing to her now. Ysolde still forces the anchor-hymn through, and for a moment Tomas's own eyes flicker up at her — but the effort costs her: the belltower's presence has fixed on her specifically, and its cold voice will keep answering back at her wherever she goes in this temple.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Tomas's head lolls back, and the cold voice pours out of him one more time, almost fond: \"Climb faster, little sailor. I'll be waiting.\" Then the boy's own eyes roll up white again, lost beneath the swarm-song's weight — but not gone, not yet; Ysolde bought that much. The belltower's presence settles over her now like a hand on the back of the neck, patient and unshakeable, marking her as the one it means to answer wherever she moves in this ruin. Aldous reads the dying building around them with a soldier's eye, hand still pressed to the wet stone, and calls the pattern true before Mire's boots ever hit the first broken step: **The Stones Groan Before They Fall** — a warning, not a guess, in the rhythm of every crack and shudder working up through the nave. Mire doesn't wait for it. She's already three steps up the collapsing stair, spear in hand, calling Tomas's name into the dark above, and the temple answers her with a long, low moan of stone bearing too much water for too many years.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "The stones sing before they break—just like water. Your name is still under there, Tomas. Hold to it while I hold to you.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde climbs with careful, deliberate steps, one hand trailing along the wet stone. She reads it like she reads water-currents—tracing where the pressure gathers, where the fractures run, where the next failure will come. The tower stairs confess their secrets to her fingertips, and she finds the path forward in the groaning dark. Her voice doesn't stop, steady and low, speaking the hive-hymns in that person-way: anchoring Tomas underneath the Hive Mother's weight.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "Mire, the outer edge where it was built thick—step there and climb, the inside runs with water and ready to fail!",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous presses his palm flat against the submerged stone, reading the vibrations of the failing temple. His hand traces the web of stress and fracture running through the stairwell, feeling where pressure concentrates and where stone still holds strength against the endless water above. His eyes follow the stress-patterns up the broken stairs with the certainty of one who reads omens in rainfall and knows the body-language of things about to break. The safe route marks itself: which stones will bear Mire's weight, which corners hold load, where the inner faces run with water and are ready to surrender.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "The rites reach deeper than hunger. Hold to my voice, Tomas.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen's voice rises in the measured cadence of the old rites, deeper and more insistent, reaching toward the boy in the belltower. Each word presses steady and deliberate against the Hive Mother's song, offering Tomas an anchor stronger than hunger—something real to hold to besides the swarm-song's pull. Her hand stays steady on her blessed iron as she climbs her voice higher into the groaning dark.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Tomas! I've got you—stay with me!",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire charges up the half-collapsed stairs without hesitation, spear held ready. She muscles through each broken step with pure militia discipline, using her knowledge of the temple's layout from years of orphanage watch drills to find the strongest handholds and read where the stone will hold. The groaning of the ruin answers every step, echoing up the stairwell, but she powers through—boots scraping for purchase, grip iron on the wall, driving upward toward the dark above.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Tomas! I'm coming—don't let the song take you under, not like Kael!",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde — create advantage with Notice: dice + - 0 0 → Fair (+2) vs Great (+4): SUCCESS MAJOR COST",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — create advantage with Notice: dice 0 + - -, invoking The Stones Groan Before They Fall [A-1.4.8] → Superb (+5) vs Fair (+2): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen — create advantage with Will: dice - + 0 +, invoking Can calm a hive-touched victim [MO-03], Knows rites older than Order [MO-03] → Beyond Legendary (+9) vs Legendary (+8): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — overcome with Physique: dice 0 0 - -, invoking Trained young in watch drills [MI-01], Safe Stones to Climb [A-1.4.10] → Superb (+5) vs Fair (+2): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "The Hive Mother attacks Ysolde (mental): Fantastic (+6) vs Ysolde's Will Terrible (-2) — hit for 8",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Ysolde reads the stair's fracture-lines true enough to find a path forward — but as she does, the Hive Mother borrows Tomas's throat again, right above her, cold and delighted: \"Still climbing, little sailor?\" The voice needles straight into her focus; she flinches, boot skidding off the safe line she'd just traced, and has to grab stone to keep from going down the stairwell — the advantage is hers, but she's rattled, off-balance, and the belltower now knows exactly how close she's gotten.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Test narration.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Tomas... listen... your name is Tomas... follow it down from the song, follow it back... I have you underneath it. I'm not stopping.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde catches herself on the slick stone, breathing through the shock of the Hive Mother's cold voice needling into her mind. But her hand finds the safe line Aldous marked with her fingertips, her boot steadies on the dry side of the stair, and she doesn't break. Her voice climbs with her—lower and warmer now, speaking the forbidden hive-hymns the way a person speaks to another drowning in darkness. Each word is an anchor cast down through the swarm-song's weight, a thread of self to follow back toward that flicker of Tomas's own eyes still visible beneath the white. Her hand trails the groaning stone as she climbs on, reading it like water, steadying herself and steadying him with every footstep.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "She needles because she can't hold, Ysolde—just like the swarm-song fractured before. Listen through the cold, listen for where her voice breaks.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous closes his eyes and lets the Hive Mother's voice wash through him without resistance, reading it the way he reads drowning minds and the pressure-pattern of the deep. The cold needling that hit Ysolde follows a seam—a fracture line—a sign that her grip cannot hold everywhere at once. He's talked to drowned ghosts through rainfall and knows when consciousness is fracturing under too much weight. He reads her grasp the same way: thin where she strains, stretched too far to be iron-tight.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "I'm coming, Tomas. Hold to what's real.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen climbs carefully up the half-collapsed stairs, one hand trailing the safe stone Aldous marked. Her voice doesn't waver—the rite-cadence deepens, each word reaching harder into the belltower's dark, pressing steady against the swarm-song's weight. She climbs close enough now to feel the Hive Mother's attention shift toward her, but the rites hold firm.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "I'm here, Tomas! Hold on! Don't let the song take you!",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire reaches the belltower and drives forward without hesitation, spear thrusting at the shadows coiling around Tomas. Her strikes are sharp and fierce—militia discipline and desperation wound together—each attack a refusal to let this child drown in the swarm like the others.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde — overcome with Empathy: dice + 0 - +, invoking Reading the Building's Dying Pattern [A-1.4.9] → Epic (+7) vs Superb (+5): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — create advantage with Empathy: dice + 0 + 0 → Superb (+5) vs Good (+3): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — attack with Fight: dice 0 + 0 + → Fantastic (+6) vs Good (+3): SUCCESS WITH STYLE (The Hive Mother stress 3)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "The Hive Mother attacks Morwen (mental): Great (+4) vs Morwen's Will Epic (+7) — defended",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Mire's spear drives home and the shadow-coil around Tomas convulses — the Hive Mother's borrowed voice tears into a shriek that isn't Tomas's at all, high and furious and, for the first time, afraid. Aldous reads the wound the way he reads a fracture line, calling out exactly where her grip has cracked, and Morwen plants herself between that cold mocking voice and the others, the old rite-cadence never once breaking under its taunts. It's enough. Ysolde's steady hymn-work finally surfaces the boy underneath — Tomas's own eyes come up, wet and terrified and *his*, just as the Hive Mother's hold shudders loose and Mire hauls him free of the ropes, one arm locked around him like she couldn't do for Kael. The temple answers the violence done to its mistress with a groan that stops being a warning and becomes the thing itself — stone gives way above and below all at once, the belltower folding into the black water as the party half-carries, half-drags Tomas down through the collapsing nave and out into the rain, the swarm-song behind them curdling into something wounded, distant, and silent by the time they reach open water.\n\nThe Hive Mother is not dead — something that vast, bound to her nest, doesn't die from one spear-wound — but her voice is gone from the air, her belltower is rubble and floodwater, and the boy in Mire's arms is breathing, lucid, alive, and entirely his own.",
+   "visible_to": "all"
   }
  ],
  "costs": [
@@ -4460,6 +6256,48 @@
    "text": "As Aldous reads the fracture in the swarm-song, something colder answers back through it — one of the hive-touched jerks upright, eyes rolling white, and the Hive Mother's voice slides out of its ruined throat for a single breath: \"I hear you, little soldier.\" It costs Aldous nothing but a chill dow",
    "improvised": false,
    "mode": "face_up_gm_tag"
+  },
+  {
+   "event": "free_compel",
+   "scene": 4,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Chooses vengeance over sense",
+   "text": "Desperate to reach this boy after losing Kael, Mire takes the collapsing stairs two at a time without testing them — a tread gives way beneath her with a groan that echoes through the whole nave, and she's left clinging over a drop into the black water below, the temple's ruin (H-06) creaking one st",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Mire"
+  },
+  {
+   "event": "success_major_cost",
+   "scene": 4,
+   "draw_id": "",
+   "valid": true,
+   "tag": "speaks through the infected",
+   "text": "Ysolde's voice climbs the stairwell and finds Tomas — but something colder answers through his slack mouth before the boy can. The Hive Mother speaks through the infected, borrowing Tomas's throat to greet Ysolde by name, syllable by syllable, in a voice like drowned bells: she knows exactly who is ",
+   "improvised": false,
+   "mode": "face_up_gm_tag"
+  },
+  {
+   "event": "free_compel",
+   "scene": 4,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Never had a family of blood",
+   "text": "Tomas's cry from above burns away every ounce of caution — Mire abandons Aldous's marked safe line along the thick outer stones and drives straight up the failing center stairs toward the boy, the way she once wished someone had come for Kael.",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Mire"
+  },
+  {
+   "event": "success_major_cost",
+   "scene": 4,
+   "draw_id": "",
+   "valid": true,
+   "tag": "speaks through the infected",
+   "text": "Ysolde reads the stair's fracture-lines true enough to find a path forward — but as she does, the Hive Mother borrows Tomas's throat again, right above her, cold and delighted: \"Still climbing, little sailor?\" The voice needles straight into her focus; she flinches, boot skidding off the safe line s",
+   "improvised": false,
+   "mode": "face_up_gm_tag"
   }
  ],
  "referee": {
@@ -4499,6 +6337,20 @@
     "issue": "Same sequencing violation as event 53: the Story Pile draw for MO-06 (events 60-61) happened after the triggering compel (event 58) was already narrated and accepted, so the drawn card could not have shaped the complication as required.",
     "event_id": 61,
     "scene": 2,
+    "source": "referee"
+   },
+   {
+    "section": "§6A, Draw triggers / Resolving a story draw",
+    "issue": "Story Pile card SMI-01, drawn because Mire accepted a non-deck compel (event 123), is never referenced by its NPC/thread content in the compel's complication text or any later narration in the scene (only its Weight is incremented at cleanup, event 154). The rule requires 'the complication must involve the drawn NPC or move the drawn thread.'",
+    "event_id": 125,
+    "scene": 4,
+    "source": "referee"
+   },
+   {
+    "section": "§6A, Draw triggers / Resolving a story draw",
+    "issue": "Story Pile card MI-06, drawn because Mire accepted a second non-deck compel (event 133), is likewise never referenced in the compel text or subsequent narration; only its Weight is incremented at cleanup (event 155). Same requirement violated as above.",
+    "event_id": 135,
+    "scene": 4,
     "source": "referee"
    }
   ],
@@ -4567,6 +6419,33 @@
     "source": "engine"
    },
    {
+    "id": "AMB-10",
+    "section": "§9",
+    "issue": "Growth from 'roll fails after one of its tags was invoked' — invoked by whom?",
+    "interim_ruling": "Owner's own invokes only.",
+    "detail": "YS-04",
+    "scene": 4,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-10",
+    "section": "§9",
+    "issue": "Growth from 'roll fails after one of its tags was invoked' — invoked by whom?",
+    "interim_ruling": "Owner's own invokes only.",
+    "detail": "YS-02",
+    "scene": 4,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-04",
+    "section": "§6",
+    "issue": "Do tension adjustment rows stack?",
+    "interim_ruling": "All applicable rows are summed, then clamped to 1-6.",
+    "detail": "fled/bypassed +1, resolved -1",
+    "scene": 4,
+    "source": "engine"
+   },
+   {
     "section": "§4 (Resolving a drawn player card, step 4) / §3 outcomes table",
     "issue": "The spec doesn't say whether the deck draws for the major-cost roll (event 16) and the two tie rolls (events 19, 21) must be resolved in order before the next roll proceeds. Here all three draws (F-03, AL-04, YS-01) happened back-to-back before any of the three costs were resolved.",
     "interim_ruling": "Allowed deferred/batched resolution; each cost/compel event was matched to its triggering roll via the for_event/caused_by fields rather than resolution order, and no rule was read to forbid this.",
@@ -4606,6 +6485,20 @@
     "issue": "The table's -1 row applies only when 'the party resolved a THREAT or filled a player's goal.' Event 62-64 applied -1 tension for successfully countering H-05, which is a HAZARD, not a THREAT/FACTION, and the scene notes don't identify a filled player goal.",
     "interim_ruling": "HAZARD cards were treated as equivalent to THREAT/FACTION for the -1 tension row.",
     "scene": 2,
+    "source": "referee"
+   },
+   {
+    "section": "§6A",
+    "issue": "The spec doesn't state whether a Story Pile draw triggered by an accepted compel must occur before the compel's complication is narrated (so the drawn card can shape it) or may occur after (as pure flavor). In this log the compel text at event 123 was fully narrated before SMI-01 was drawn at 124-125, and the compel text at event 133 was fully narrated before MI-06 was drawn at 134-135, so the drawn cards could not have informed the complications as written.",
+    "interim_ruling": "The table treated the draw as happening after the compel was already fixed, and did not go back to weave the drawn card's tags into the complication text or later scene narration.",
+    "scene": 4,
+    "source": "referee"
+   },
+   {
+    "section": "§3 (Opposition, active NPC)",
+    "issue": "The rules cap passive opposition at Great (+4) but say nothing about a ceiling for active Named-NPC opposition (here the Hive Mother rolls totals of +8/+9). It's unclear whether Named NPC ratings are meant to be unbounded or should also respect some ladder ceiling.",
+    "interim_ruling": "Treated as unbounded, per 'Named NPCs roll 4dF + their rating as active opposition, as in Fate' with no stated cap.",
+    "scene": 4,
     "source": "referee"
    }
   ],
@@ -4675,6 +6568,42 @@
     "used_drawn_card": true,
     "note": "Beat-frame surface compel on MI-01 uses its weakness tag 'Never had a family of blood', the default per §4 step 2. Compliant.",
     "scene": 3
+   },
+   {
+    "event_id": 123,
+    "used_drawn_card": false,
+    "note": "Free-form compel on Mire's own live card tag (MI-04, 'Chooses vengeance over sense'), not a Session Deck draw compel; this is the trigger for the SMI-01 story draw, but the complication text was fixed before that card existed.",
+    "scene": 4
+   },
+   {
+    "event_id": 125,
+    "used_drawn_card": false,
+    "note": "SMI-01 is drawn per §6A row 1 (compel not from a deck draw), but its tags never appear in the preceding compel text (already written) or in any subsequent event this scene. Only Weight is bumped at cleanup (154).",
+    "scene": 4
+   },
+   {
+    "event_id": 128,
+    "used_drawn_card": false,
+    "note": "No deck draw occurred here (session is in climax, so per §4 'ties and costs use face-up GM tags instead of draws'). The major cost correctly uses face-up GM threat tag 'speaks through the infected [T-02]', satisfying the climax substitute for the drawn-card requirement.",
+    "scene": 4
+   },
+   {
+    "event_id": 133,
+    "used_drawn_card": false,
+    "note": "Free-form compel on Mire's own live card tag (MI-01, 'Never had a family of blood'), not a Session Deck draw compel; triggers the MI-06 story draw, but again the complication text precedes and never incorporates that draw.",
+    "scene": 4
+   },
+   {
+    "event_id": 135,
+    "used_drawn_card": false,
+    "note": "MI-06 is drawn per §6A row 1 but its tags never surface in narration; only Weight is bumped at cleanup (155).",
+    "scene": 4
+   },
+   {
+    "event_id": 144,
+    "used_drawn_card": false,
+    "note": "Again no deck draw (climax mode); cost correctly built from face-up GM threat tag 'speaks through the infected [T-02]', compliant with §4's climax substitution rule.",
+    "scene": 4
    }
   ],
   "friction": [
@@ -4713,18 +6642,200 @@
    {
     "scene": 3,
     "text": "Two GM invoke attempts were rejected by the engine in this single scene (double-invoking a tag on one roll, and invoking a card tag not actually in play) — a higher-than-expected rate of illegal invoke attempts for one scene, suggesting the tag-legality bookkeeping (which tags are face-up/live, and the once-per-roll invoke limit) is error-prone in practice even though the engine catches it before it lands."
+   },
+   {
+    "scene": 4,
+    "text": "Story Pile draws from accepted compels (SMI-01, MI-06) were mechanically triggered and Weight-tracked but never actually used in the fiction, undercutting §6A's core purpose of surfacing NPCs/threads through play."
+   },
+   {
+    "scene": 4,
+    "text": "The same GM threat tag ('speaks through the infected [T-02]') was reused for both major-cost narrations in the scene (events 128 and 144), making the climax's forced costs feel repetitive even though each use was individually rules-compliant."
+   },
+   {
+    "scene": 4,
+    "text": "GM fate points were fully spent (4→0) by roughly two-thirds through the scene, leaving no budget for further paid invokes in the climax's final rolls, which is legal but tightly constrains GM options going into the highest-stakes moment."
    }
   ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "storyteller",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 6,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Scene 3 when Ysolde speaks the forbidden hymns in a person-voice instead of hunger-song and the front line simply stops—it showed exactly why she matters: she can reach the human underneath the swarm-madness when no one else can.",
+    "most_frustrating": "Getting shaken by the Hive Mother's cold voice in Scene 4 after I'd read the stairs correctly, losing the advantage I'd created, and then watching Mire strike the final blow while Ysolde's hymn-work was essential but supporting—I wanted the resolution to belong more to the character doing the deepest reaching.",
+    "background_used": "good—the forbidden hymns shaped the entire climax and gave Ysolde a signature role, and the exile-brand at Gullet Ford created immediate stakes that mattered. But the exile landed more as a complication imposed on her than as an asset she brought, which felt asymmetrical.",
+    "wanted_but_couldnt": "I wanted to strike the final blow against the Hive Mother rather than just anchor Tomas through it, and I wanted to explore whether using the forbidden hymns was itself a corruption—whether the Hive Mother's attention to Ysolde was something she was inviting with each hymn spoken. The hymns were her tool, but the victory belonged to Mire.",
+    "one_sentence": "Used well, especially the heretical knowledge as my signature ability, though the exile felt like a complication imposed rather than an asset I brought, and the climax was shaped by my reaching but resolved by Mire's final strike."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "rules_lawyer",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When I read the hive-touched pack's fracture in the swarm-song and called it true to the whole group—that Superb roll captured everything Aldous is about: reading patterns, being precise, helping others understand what's really happening. The GM built that entire conflict around what my character can do, and it paid off in a way that felt specific to Aldous, not generic.",
+    "most_frustrating": "Being somewhat sidelined as the reader and advisor in the belltower climax. Aldous reads patterns beautifully, but I wanted more direct heroic agency in that final confrontation rather than calling out structural advice while others fought. Also: running dry on fate points early (for refusing compels to hold to his character) meant I couldn't push back on later complications when I wanted to.",
+    "background_used": "Good—my survivor background and omens-reading were woven throughout naturally. The Ferryman's Vow came up at the ford crossing, the old militia discipline shaped how I understood structural failure and siege positioning, and the drowning/ghosts themes ran through every major scene. None of it was forced; it was the foundation the GM built the challenges around.",
+    "wanted_but_couldnt": "I wanted more direct heroic action in the belltower instead of reading patterns and calling advice. Also wished for moments where \"Cannot lie to a priest\" came into active play against a priest—that power tag got refused when offered as a compel, but never actually activated during play.",
+    "one_sentence": "Aldous's identity as a survivor and reader of omens was genuinely central to how challenges were built, making each obstacle feel personally tailored to my character rather than generic."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "lurker",
+   "scores": {
+    "fun": 6,
+    "involvement": 5,
+    "connection": 6,
+    "control": 4,
+    "play_again": 6
+   },
+   "free_text": {
+    "best_moment": "Tomas's own eyes coming up \"wet and terrified and *his*\" after the rites held and Mire brought him free—proof that the old calming rites work, that souls don't vanish under the swarm-song, that Morwen's refusal to burn was right.",
+    "most_frustrating": "Multiple compels pulled me along the story's path instead of letting me choose how to engage. I wanted to investigate, strategize, maybe find another way into the belltower besides walking into the Hive Mother's teeth—but the narrative momentum didn't leave room for that.",
+    "background_used": "The Drowned Priest, Kael, Tomas—every thread connected to my past or my vow. It was integrated and earned, not forced. It landed well.",
+    "wanted_but_couldnt": "I wanted to use Morwen's Lore and investigative skills to find another way forward, something unexpected. I wanted more agency in choosing how to engage rather than reacting to what the GM presented. As written, I was quiet and reactive—which fits the character—but it meant I was following story beats instead of making them.",
+    "one_sentence": "My background was used well and felt like real consequences, but mostly in ways that pulled me into situations rather than letting me choose my path."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "method_actor",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The Gullet Ford combat with the hive-touched orphans — specifically the moment where Mire's spear-arm refused to turn hostile toward Kael even as she held the line against the rest of the pack. It was a perfect collision of character motivation, mechanical resolution, and dramatic weight: I couldn't strike him because of who he was to me, and the fiction respected that choice while keeping the stakes real.",
+    "most_frustrating": "Not being able to save Kael the way we saved Tomas. I wanted a redemption moment — to reach him, anchor him back to himself, bring him out lucid and alive. But the current took him, he vanished into the water, and I never got the chance to do for him what I failed to do when I left the orphanage. It's good storytelling, but it left the wound open.",
+    "background_used": "Good. The GM asked directly about Kael and why I abandoned him, and my answer became the emotional spine of the entire session. The compel on \"Raised in the Temple Orphanage\" at the ford was devastating in the best way — it made the choice between my safety and the orphans' impossible. The orphanage, the watch drills, the temple layout, Kael's significance: all of it was woven in thoughtfully, not forced.",
+    "wanted_but_couldnt": "I wanted to save Kael the way the party saved Tomas — to reach him under the swarm-song, anchor him back to himself, bring him out whole and his own. The story's logic didn't permit it, and I respect that, but it meant I couldn't close that particular wound in Mire's history.",
+    "one_sentence": "Your orphanage background was the emotional core of this session, used to create real moral conflict and personal stakes, and it was used thoughtfully — not against you, even when the outcome wasn't the redemption you hoped for."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Ysolde",
+    "turns": 18,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Aldous",
+    "turns": 21,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Morwen",
+    "turns": 20,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Mire",
+    "turns": 20,
+    "references_to_others_background": 1
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "The party fought their way through Gullet Ford, breaking the Hive-Touched Pack's unity with hymn and spear and driving them under the flood, though the boy Kael vanished into the current rather than falling to their blades. At Saint Orrin's Drowned Temple they climbed the crumbling belltower stairs, and while Ysolde bought Tomas's mind back thread by thread against the Hive Mother's mocking voice, Mire wounded the creature itself and hauled the boy free just as the temple gave way beneath them. The party escaped through the collapsing nave with Tomas alive and lucid, leaving the Hive Mother wounded and silent in her ruined, flooded belltower, and Ysolde marked as someone the Hive Mother now knows by name.",
+  "closing_tension": 1,
+  "reverberations": {
+   "growth": {
+    "YS-02": {
+     "added": 2,
+     "total": 2,
+     "evolve": false
+    },
+    "YS-01": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "MO-04": {
+     "added": 2,
+     "total": 2,
+     "evolve": false
+    },
+    "MO-03": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "MI-01": {
+     "added": 2,
+     "total": 2,
+     "evolve": false
+    },
+    "MI-04": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "YS-04": {
+     "added": 2,
+     "total": 2,
+     "evolve": false
+    }
+   },
+   "clocks": [
+    "F-03 1/4",
+    "T-05 1/5",
+    "F-04 1/5"
+   ],
+   "mutations": [],
+   "retired": [
+    "T-01",
+    "H-06"
+   ]
+  },
+  "retired": [
+   {
+    "card": "N-02",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "T-01",
+    "how": "overcome with success with style",
+    "session": 1
+   },
+   {
+    "card": "H-06",
+    "how": "overcome with success with style",
+    "session": 1
+   }
+  ]
+ },
  "state_end": {
   "tension": 1,
   "fp": {
-   "Ysolde": 2,
+   "Ysolde": 0,
    "Aldous": 0,
-   "Morwen": 6,
+   "Morwen": 4,
    "Mire": 4
   },
   "surfaced": [
@@ -4746,26 +6857,127 @@
   "deck_left": [],
   "draws": 6,
   "turns": {
-   "Ysolde": 6,
-   "Aldous": 6,
-   "Morwen": 5,
-   "Mire": 6
+   "Ysolde": 9,
+   "Aldous": 9,
+   "Morwen": 8,
+   "Mire": 9
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 1292361,
-  "completion": 236057,
-  "cost_usd": 4.1481,
-  "calls": 63
+ "metrics": {
+  "arm": "A",
+  "status": "complete",
+  "scenes": 4,
+  "backstory_players": [
+   "Aldous",
+   "Mire",
+   "Morwen",
+   "Ysolde"
+  ],
+  "backstory_all_players": true,
+  "deck_surfaced_all_players": true,
+  "deck_draws": 6,
+  "draw_costs": 9,
+  "draw_cost_used_card_rate_engine": 1.0,
+  "draw_cost_used_card_rate_referee": 0.471,
+  "fp_end": {
+   "Ysolde": 0,
+   "Aldous": 0,
+   "Morwen": 4,
+   "Mire": 4
+  },
+  "fp_end_mean": 2,
+  "fp_earned": {
+   "Ysolde": 1,
+   "Morwen": 3,
+   "Mire": 3
+  },
+  "fp_spent": {
+   "Aldous": 3,
+   "Ysolde": 4,
+   "Mire": 2,
+   "Morwen": 2
+  },
+  "compels_accepted": 7,
+  "compels_refused": 3,
+  "compels_deck": 4,
+  "compels_free": 6,
+  "turns": {
+   "Ysolde": 9,
+   "Aldous": 9,
+   "Morwen": 8,
+   "Mire": 9
+  },
+  "turn_gini": 0.0214,
+  "invokes": {
+   "Ysolde": 5,
+   "Aldous": 2,
+   "Mire": 2,
+   "Morwen": 2
+  },
+  "invoke_gini": 0.2045,
+  "tension_trajectory": [
+   3,
+   2,
+   1,
+   1,
+   1
+  ],
+  "clock_marks": 3,
+  "violations": 7,
+  "violations_engine": 2,
+  "violations_referee": 5,
+  "ambiguities": 18,
+  "ambiguity_ids": [
+   "AMB-01",
+   "AMB-03",
+   "AMB-04",
+   "AMB-10",
+   "AMB-12",
+   "AMB-16",
+   "AMB-22",
+   "AMB-27",
+   "§3 (Opposition, active NPC)",
+   "§4 (Resolving a drawn player card, step 4) / §3 outcomes table",
+   "§4 step 4",
+   "§5 (Beat Frame procedure, step 4)",
+   "§5 (Beat Frame procedure, steps 5–6)",
+   "§6 (Tension adjustment table)",
+   "§6A"
+  ],
+  "gm_improvised_complications": 6,
+  "card_supplied_complications": 9,
+  "improvisation_share": 0.4,
+  "guarantee_pulled": 1,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6.5,
+   "involvement": 6.25,
+   "connection": 6.5,
+   "control": 5.5,
+   "play_again": 6.75
+  },
+  "involvement_var_within": 0.688,
+  "personality": {
+   "Ysolde": "storyteller",
+   "Aldous": "rules_lawyer",
+   "Morwen": "lurker",
+   "Mire": "method_actor"
+  }
  },
- "llm_calls": 63,
+ "tokens": {
+  "prompt": 1998852,
+  "completion": 386211,
+  "cost_usd": 6.6811,
+  "calls": 101
+ },
+ "llm_calls": 101,
  "models": {
   "gm": "claude-sonnet-5",
   "player": "claude-haiku-4-5-20251001",
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 1987.1
+ "elapsed_s": 3196.3
 }
