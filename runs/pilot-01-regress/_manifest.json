@@ -1,0 +1,28 @@
+{
+ "batch_id": "pilot-01-regress",
+ "arms": [
+  "A",
+  "B",
+  "C"
+ ],
+ "seeds": [
+  87940,
+  87941,
+  87942
+ ],
+ "backend": "claude_cli",
+ "models": {
+  "player": "claude-haiku-4-5-20251001",
+  "gm": "claude-sonnet-5",
+  "referee": "claude-sonnet-5",
+  "interviewer": "claude-haiku-4-5-20251001",
+  "analyst": "claude-sonnet-5",
+  "chargen": "claude-sonnet-5",
+  "strong": "claude-opus-5-5"
+ },
+ "max_scenes": 5,
+ "token_cap_run": 4000000,
+ "token_cap_batch": 40000000,
+ "cohort_id": "cohort-pilot-01",
+ "started": "2026-09-23T04:49:44"
+}
