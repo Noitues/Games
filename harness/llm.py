@@ -31,6 +31,9 @@ MODELS = {
     "chargen": "claude-sonnet-5",
     "strong": "claude-opus-5-5",
 }
+# Thinking effort per role: nearly all completion tokens were hidden thinking in the first probe.
+EFFORT = {"player": "low", "interviewer": "low", "gm": "medium", "referee": "medium", "analyst": "medium",
+          "chargen": "medium"}
 
 # Hard dice-claim patterns: an agent stating dice faces or a roll result it was never given.
 DICE_CLAIM = [
@@ -138,7 +141,7 @@ class LLMClient:
             self.meter.check()
             if self.batch_meter:
                 self.batch_meter.check()
-            out, usage = self._claude(model, system, prompt, schema)
+            out, usage = self._claude(model, system, prompt, schema, EFFORT.get(role, "low"))
         self.meter.add(*usage)
         if self.batch_meter:
             self.batch_meter.add(*usage)
@@ -149,7 +152,7 @@ class LLMClient:
                                          "output": out}, ensure_ascii=False))
         return out
 
-    def _claude(self, model: str, system: str, prompt: str, schema: dict) -> tuple[dict, tuple]:
+    def _claude(self, model: str, system: str, prompt: str, schema: dict, effort: str) -> tuple[dict, tuple]:
         env = {k: v for k, v in os.environ.items()
                if k not in ("CLAUDE_CODE_SESSION_ID", "CLAUDECODE", "CLAUDE_CODE_ENTRYPOINT")}
         last_err = ""
@@ -157,7 +160,7 @@ class LLMClient:
             with tempfile.TemporaryDirectory(prefix="sde_agent_") as td:
                 sp = Path(td) / "system.txt"
                 sp.write_text(system)
-                cmd = ["claude", "-p", "--model", model, "--output-format", "json",
+                cmd = ["claude", "-p", "--model", model, "--effort", effort, "--output-format", "json",
                        "--system-prompt-file", str(sp), "--tools", "", "--no-session-persistence",
                        "--setting-sources", "", "--strict-mcp-config",
                        "--json-schema", json.dumps(schema)]
