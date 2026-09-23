@@ -1,6 +1,6 @@
 # Scene-Deck Engine for Fate — Playtest Rules Spec
 
-As of Sep 23, 2026 — version 0.3.0 (see CHANGELOG.md)
+As of Sep 23, 2026 — version 0.3.1 (see CHANGELOG.md)
 
 ## 1. Overview
 
@@ -213,15 +213,15 @@ If the Session Deck is empty, Altered scenes use a face-up GM card, and Interrup
 
 **Adjusting Tension at scene end**
 
-Compare the scene's invokes with its compels:
+Tension rises when more went against the players than they could answer, and falls when they stayed in control. Count the scene's:
 
-- **Invokes:** every invoke made during the scene by anyone (players and GM, free or paid, including hostile invokes).
-- **Compels:** every compel offered during the scene, accepted or refused (including surfacing compels from the Session Deck).
+- **Against the players:** every hostile invoke (any invoke by the GM or an NPC that works against a player's roll, including invoking a player's weakness) plus every compel offered (accepted or refused, including surfacing compels from the Session Deck).
+- **Friendly invokes:** every invoke a player made in their own favour, free or paid.
 
 | Result | Change |
 | --- | --- |
-| More invokes than compels | −1 |
-| More compels than invokes | +1 |
+| More against the players than friendly invokes | +1 |
+| More friendly invokes than against the players | −1 |
 | Equal | 0 |
 
 Tension never goes below 1 or above 6. It carries over between sessions; record it in the Chronicle.

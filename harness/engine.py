@@ -20,7 +20,7 @@ from typing import Any
 
 from rulings import Rulings
 
-SPEC_VERSION = "0.3.0"
+SPEC_VERSION = "0.3.1"
 
 LADDER = {-2: "Terrible", -1: "Poor", 0: "Mediocre", 1: "Average", 2: "Fair", 3: "Good",
           4: "Great", 5: "Superb", 6: "Fantastic", 7: "Epic", 8: "Legendary"}
@@ -452,7 +452,7 @@ class Engine:
         """Begin a scene. Returns what the orchestrator must handle before framing."""
         self.scene += 1
         self.scene_in_session += 1
-        self.scene_flags = {"invokes": 0, "compels": 0, "clock_advanced": False, "failed_against": set(), "compel_refused": False,
+        self.scene_flags = {"friendly_invokes": 0, "hostile_invokes": 0, "compels": 0, "clock_advanced": False, "failed_against": set(), "compel_refused": False,
                             "rolls_against": set(), "story_drawn": [], "draws": [],
                             "is_climax": self.climax_scene == self.scene}
         self.scene_aspects = []
@@ -719,7 +719,7 @@ class Engine:
             if not had_free:
                 ctx.gm_fp_spent += 1
             gm_inv.append(key)
-            self.scene_flags["invokes"] = self.scene_flags.get("invokes", 0) + 1
+            self.scene_flags["hostile_invokes"] = self.scene_flags.get("hostile_invokes", 0) + 1
             ctx.gm_bonus += 2
             wcard = self.cards[key[0]]
             wowner = self.owner_pid(wcard) if wcard.origin in ("player", "placebo") else None
@@ -747,7 +747,7 @@ class Engine:
             self.gm_fp -= 1
             ctx.gm_fp_spent += 1
             hostile.append((cid, card.weakness))
-            self.scene_flags["invokes"] = self.scene_flags.get("invokes", 0) + 1
+            self.scene_flags["hostile_invokes"] = self.scene_flags.get("hostile_invokes", 0) + 1
             self.hostile_payouts.append(tpid)
             ctx.gm_bonus += 2
         ctx.gm_invokes, ctx.hostile_invokes = gm_inv, hostile
@@ -826,7 +826,7 @@ class Engine:
             if not paid_free:
                 ctx.fp_spent += 1
             ctx.player_invokes.append(key)
-            self.scene_flags["invokes"] = self.scene_flags.get("invokes", 0) + 1
+            self.scene_flags["friendly_invokes"] = self.scene_flags.get("friendly_invokes", 0) + 1
             ctx.bonus += 2
             applied.append(f"{key[1]} [{key[0]}]")
             card = self.cards[key[0]]
@@ -1256,8 +1256,10 @@ class Engine:
         delta = 0
         parts = []
         if self.arm["tension"] and self.arm.get("tension_rule") == "invokes_vs_compels":
-            inv, comp = self.scene_flags.get("invokes", 0), self.scene_flags.get("compels", 0)
-            delta = -1 if inv > comp else (1 if comp > inv else 0)
+            # Spec 0.3.1 §6: things that went against the players vs. the players staying in control.
+            friendly = self.scene_flags.get("friendly_invokes", 0)
+            against = self.scene_flags.get("hostile_invokes", 0) + self.scene_flags.get("compels", 0)
+            delta = 1 if against > friendly else (-1 if friendly > against else 0)
             before = self.tension
             self.tension = max(1, min(6, self.tension + delta))
             for c in [c for c in report.get("resolved_threats", []) if self.cards.get(c)
@@ -1265,7 +1267,9 @@ class Engine:
                 if c in self.rail:
                     self.card_leaves_play(c, "resolved")
             self.log(event_type="tension", action="Adjust tension", result=f"{before}->{self.tension}",
-                     notes=f"invokes {inv} vs compels {comp} (§6, spec 0.3.0)")
+                     notes=f"against the players {against} (hostile invokes "
+                           f"{self.scene_flags.get('hostile_invokes', 0)} + compels {self.scene_flags.get('compels', 0)}) "
+                           f"vs friendly invokes {friendly} (§6, spec 0.3.1)")
         elif self.arm["tension"]:
             fled = [c for c in report.get("fled_or_bypassed", []) if c in self.appeared_this_session
                     and self.cards.get(c) and self.cards[c].type in ("THREAT", "FACTION")]

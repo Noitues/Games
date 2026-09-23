@@ -127,26 +127,30 @@ class SpecV030Tests(unittest.TestCase):
         self.assertTrue(tag_used_in_text("Echoes Betray Every Movement", "every echo betrays their movement"))
         self.assertFalse(tag_used_in_text("drags swimmers under", "Something goes wrong at the ford."))
 
-    def _tension_after(self, invokes, compels):
+    def _tension_after(self, friendly, hostile, compels):
         e = make()
         e.tension = 3
-        e.scene_flags["invokes"], e.scene_flags["compels"] = invokes, compels
+        e.scene_flags.update(friendly_invokes=friendly, hostile_invokes=hostile, compels=compels)
         e.end_scene({})
         return e.tension
 
-    def test_tension_invokes_vs_compels(self):
-        self.assertEqual(self._tension_after(3, 1), 2)
-        self.assertEqual(self._tension_after(1, 3), 4)
-        self.assertEqual(self._tension_after(2, 2), 3)
+    def test_tension_against_vs_friendly(self):
+        self.assertEqual(self._tension_after(3, 1, 1), 2)   # players stayed in control
+        self.assertEqual(self._tension_after(1, 1, 1), 4)   # more went against them
+        self.assertEqual(self._tension_after(2, 1, 1), 3)   # even
+        self.assertEqual(self._tension_after(0, 0, 0), 3)
 
     def test_counters_increment(self):
         e = make()
         pid = first_pid(e)
         e.resolve_compel(pid, True, card_id=None, tag="t", from_deck=False, text="x")
         opt = e.invokable_for(pid)[0]
-        ctx = e.begin_roll(pid, action="overcome", skill="Notice", target_card=None, target_npc=None, opp={})
+        c, t = e.rail_gm_tags()[0]
+        ctx = e.begin_roll(pid, action="overcome", skill="Notice", target_card=None, target_npc=None,
+                           opp={"gm_invokes": [{"card_id": c, "tag": t}]})
         e.apply_player_invokes(ctx, [{"source_id": opt["source_id"], "tag": opt["tag"]}])
-        self.assertEqual((e.scene_flags["invokes"], e.scene_flags["compels"]), (1, 1))
+        f = e.scene_flags
+        self.assertEqual((f["friendly_invokes"], f["hostile_invokes"], f["compels"]), (1, 1, 1))
 
 
 class CompelTests(unittest.TestCase):

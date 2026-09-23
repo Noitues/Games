@@ -4,6 +4,10 @@ Every rule patch to `RULES_SPEC.md`, with the spec version it produced. Harness-
 
 ## Spec
 
+### 0.3.1 — 2026-09-23
+- **§6 Tension, revised:** at scene end, compare *against the players* (every hostile invoke by the GM/NPCs, including weakness invokes, plus every compel offered) with the players' *friendly invokes*. More against → +1; more friendly → −1; equal → 0. Intent: tension rises when things went against the players and falls when they stayed in control.
+- **Evidence:** under 0.3.0's invokes-vs-compels rule, the probe run fell 3 → 1 by scene 2 and stayed there. Players' own invokes outnumbered compels in almost every scene, and GM invokes counted on the players' side.
+
 ### 0.3.0 — 2026-09-23
 - **§3 The cost must use the tag.** A cost, compel, twist or Beat Frame blank built from a tag must use that tag in its narration: quote it, or restate it plainly. Naming a tag without using it doesn't count, and the GM rewrites it. The harness checks each text (at least half the tag's content words, 5-letter stems, or a verbatim quote), gives the GM one rewrite, and logs a §3 violation if it still fails. Evidence: across both pilot batches, the Referee judged only 51–61% of Arm A deck costs as actually using the drawn card, while the engine's tag-name check passed 93–100%.
 - **§6 Tension adjustment replaced.** At scene end, compare the invokes made during the scene (anyone, free or paid, including hostile) with the compels offered (accepted or refused, including surfacing compels): more invokes → −1, more compels → +1, equal → 0. Evidence: under the old table, tension sat at 1 in 20 of 36 A/C scene boundaries across both pilots, because "resolved a threat" was applied generously. The old table survives as the `A_tension_v01` variant.
