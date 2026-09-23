@@ -229,3 +229,28 @@ Levers a designer might reach for, none applied and all pillar-adjacent:
 
 The AI is not the confound here. The objective personality already goes to the
 pit and takes the Dragon; what it cannot do is turn the card into towers.
+
+| id | question | finding | status |
+|---|---|---|---|
+| RQ-040 | Does any way of switching between the personalities beat sieging from round 1? (Handoff §9, generation 1) | **Not in generation 1, and the field says why.** `batch_0041`, 400 games, ai 1.4.0: eight machines drawn per game with two fixed anchors, ranked on the lower confidence bound. Top three: `SM_g1_clock3` 66.7% [54.1, 77.3] (lane, then objectives, then siege from round 9), `SM_g1_clock2` 61.0% [50.2, 70.8] (lane, then siege from round 4), `SM_g1_ap_lead` 59.7% [48.2, 70.3] (siege when ahead on income). `T2_sieger` itself 57.4% [45.5, 68.4]. All three winners spend most of the game in the sieger state (48%, 81%, 43% of rounds); the three machines that sit in sieger 40% of rounds or more average 62.5% and the five that do not average 45.1%. The two that live in the objective state - `SM_g1_objective_window` (85% objective) 40.7% and the five-state `SM_g1_full` (74% objective) 37.2% - finish at the bottom beside plain `T2_search` at 38.6%. **No machine's lower bound clears the sieger's point estimate**, so nothing is shown to beat sieging; the best two differ from it only by opening on the lane. This is RQ-037 confirmed from a direction that has nothing to do with how the personalities were written, and RQ-039 again: any time spent at the pit is time lost. The head-to-head records against the anchors are 2-14 games each and say nothing yet; ten tiers over 400 games is too thin for a per-pair number. | lab; generation 2 queued |
+
+### What generation 1 settles and what it does not
+
+Settled: the state machine has, so far, rediscovered the sieger. Every state
+other than sieger costs win rate in proportion to the time spent in it, with
+one possible exception - a laning opening. Both clocks open on `laner` and
+both sit above the pure sieger on the point estimate, which is the one place
+a second generation might find something real.
+
+Not settled: whether that opening is real (intervals overlap by 20 points),
+and whether a reactive machine could beat a clock if given the right signal -
+`SM_g1_ap_lead`, the one reactive machine in the top three, switched 3.8 times
+a game and still landed on sieger 43% of the time.
+
+Generation 2 keeps the two clocks and breeds eight around them: the length of
+the laning opening (rounds 3, 5, 6), whether the objective band earns its
+place (clock3 with the band shortened or removed), crossovers of a lane
+opening with the income signal, and two unrelated designs as required. The
+anchors need more games: generation 2 should draw an anchor in one seat of
+half the games rather than treating anchors as two more tiers, so the
+against-anchor record is worth reading.

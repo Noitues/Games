@@ -3,7 +3,7 @@
 Written at the lead designer's request. Everything below is on
 `claude/hex-nexus-multiagent-prompts-aivg93`, pushed.
 
-Written at the lead designer's request; extended after batches 0039 and 0040.
+Written at the lead designer's request; extended after batches 0039-0041.
 Nothing is running.
 
 ## 1. Where the lab stands
@@ -14,11 +14,11 @@ Nothing is running.
 | 1 AI calibration | closed on RQ-031 (gate lowered to 60%) |
 | 2 Correctness and pacing | **deferred on purpose, and now broken by a ruling.** Rules 1.7.0 moved median length to 18 and Nexus kills to 78% on T2 (RQ-038). Waiting on the lead designer. |
 | 3 Economy | **partly done, stuck on a pillar question.** See §4. The objective lever (P-0009) was tried and is inert; see §3. |
-| 4 Champion balance | **not started, and should not start yet.** See §3. |
+| 4 Champion balance | **not started, and should not start yet.** See §3. The §9 state machine now exists (ai 1.4.0) and generation 1 has run; it has so far rediscovered the sieger. |
 | 5 Robustness | exploit gate met under rules 1.0.0; needs a re-run, the game has changed six times since |
 | 6 Release candidate | not started |
 
-Versions: rules **1.7.0**, roster **1.6.0**, ai **1.3.0**, **119 tests** (~2m20s), all passing on 2026-09-23.
+Versions: rules **1.7.0**, roster **1.6.0**, ai **1.4.0**, **139 tests** (~3m), all passing on 2026-09-23.
 
 `engine/config.py` holds the live knobs. `tower_hp` **16** is a placeholder from
 the T2 pacing sweep, never confirmed, and `reveal_radius` **2** has now been read
@@ -33,15 +33,17 @@ defaults in `config.py`; carry them forward in any new request.
 |---|---|
 | ~~P-0009~~ | **done, failed** (`batch_0040`, RQ-039). Pricing the Dragon in AP changed nothing; `dragon_ap_each` is back at 1. |
 | ~~a T2 read at reveal radius 2~~ | **done** (`batch_0039`, RQ-038). Direction held; pacing broke. Waiting on the lead designer. |
-| **the personality state machine** (§9) | a team AI that switches personality on the game state, bred over generations. Now the next step: it changes the field champion balance is measured in, and it is the one remaining way to ask whether anything beats the sieger. |
-| champion balance | only after §9 has a winner, and read on a mixed field. See §3. |
+| ~~the personality state machine, generation 1~~ | **built and run** (ai 1.4.0, `batch_0041`, RQ-040). Nothing beats sieging; the two clocks that open on the lane sit above the pure sieger on the point estimate, inside overlapping intervals. Survivors: `SM_g1_clock3`, `SM_g1_clock2`. |
+| **generation 2** | eight machines bred around the two clocks (see §9.4), with the anchors given a real share of games. `ai/policy_v1_4_0/machines/gen2.json` is the file to write; the request pattern is `batch_0041`. |
+| champion balance | only after §9 has a winner - or after generation 2 confirms there is none, in which case the field is the sieger with a laning opening. See §3. |
 
 Two RULE-Qs are open for the lead designer before anything pacing-adjacent is
 touched: **RQ-038** (reveal radius 2 broke pacing; `tower_hp` 16 is the
 obvious lever) and **RQ-039** (objectives priced in AP are inert; what should
 they pay in?).
 
-A 120-game T2 personality batch costs 65–80 minutes on 4 cores.
+A 120-game T2 personality batch costs 65–80 minutes on 4 cores; a 400-game
+generation costs about 3h15m.
 
 ## 3. The finding that should govern what happens next
 
@@ -82,6 +84,25 @@ when secured. Shop spend runs 11 AP a team-round against 2.4 on abilities.
 margin.** A tower is the only thing on the map that converts activations
 directly into the win condition. That is RQ-037 restated from the economy
 side, and it is why the levers left are pillar-adjacent (RQ-039 lists four).
+
+The state machine (§9) then said the same thing from a third direction.
+`batch_0041`, generation 1, ranked on the lower confidence bound:
+
+| policy | games | win rate [95% CI] | occupancy |
+|---|---|---|---|
+| SM_g1_clock3 (lane → objective → siege from r9) | 60 | 66.7 [54.1, 77.3] | sieger 48%, laner 26%, objective 26% |
+| SM_g1_clock2 (lane → siege from r4) | 82 | 61.0 [50.2, 70.8] | sieger 81%, laner 19% |
+| SM_g1_ap_lead (siege when ahead on income) | 72 | 59.7 [48.2, 70.3] | sieger 43%, objective 42%, laner 15% |
+| T2_sieger | 68 | 57.4 [45.5, 68.4] | - |
+| SM_g1_map_commit | 78 | 52.6 [41.6, 63.3] | laner 59%, sieger 22%, warder 19% |
+| SM_g1_fight | 82 | 50.0 [39.4, 60.6] | laner 60%, brawler 21%, sieger 17% |
+| SM_g1_map | 106 | 45.3 [36.1, 54.8] | laner 59%, warder 23%, sieger 18% |
+| SM_g1_objective_window | 86 | 40.7 [30.9, 51.3] | objective 85%, sieger 15% |
+| T2_search | 88 | 38.6 [29.1, 49.1] | - |
+| SM_g1_full | 78 | 37.2 [27.3, 48.3] | objective 74%, laner 16%, sieger 7% |
+
+Win rate tracks time spent in the sieger state and nothing else. The one
+thread worth pulling is the laning opening both clocks share.
 
 The consequence for Phase 4 is the important part. A champion win rate read in
 a field where sieging wins is mostly a measure of that champion's siege
@@ -163,10 +184,11 @@ python tools/run_batch.py reports/requests/batch_0038.json --workers 4   # the p
 
 In order:
 
-1. **Make the team AI a state machine over the personalities** (§9). It is
-   now the first item: both number levers have been tried, and §9 is the one
-   remaining way to ask whether any way of playing beats the sieger. Read it
-   against `batch_0039` values (P-0008 overrides, `dragon_ap_each` 1).
+1. **State machine, generation 2** (§9.4). Write `gen2.json`, give the
+   anchors a real share of games, run 400 games, rank on the lower bound.
+   If no machine's lower bound clears the sieger's point estimate a second
+   time, stop breeding: the answer is "siege, perhaps after a short laning
+   opening", and that is the field champion balance is measured in.
 2. **Champion balance**, on a mixed field, not a mirror — and once §9 has a
    winner, against that rather than against fixed personalities. RQ-028 still
    applies: with 5 champions per role a champion plays 40% of games, so
@@ -179,12 +201,17 @@ In order:
    objective lever; `log/patches/P-0009.json` records why.
 5. **Re-run the exploit sweep.** The Phase 5 gate was met under rules 1.0.0.
 
-Running sims in this environment: the cloud container is reclaimed after
-roughly an hour idle and a detached run dies with it (`batch_0040` was lost
-once this way and re-run). Launch a batch in the background, then keep the
-session active with a scheduled check-in every 30 minutes until it reports.
-Raw per-game dumps (`--dump-raw`) go to `reports/raw/`, which is gitignored;
-the per-personality Dragon and AP figures above were computed from them.
+Running sims in this environment: the cloud container is torn down whenever
+the session goes idle with nothing harness-tracked running - sometimes within
+15 minutes - and a detached run dies with it (`batch_0040` was lost once,
+`batch_0041` twice). Two things make long runs survivable, and both are now
+in place: `run_batch` checkpoints every finished game to
+`reports/raw/<batch>.partial.jsonl` and resumes from it on relaunch; and a
+harness `Monitor` tailing the checkpoint file, re-armed every 30 minutes,
+kept the container alive for the whole of `batch_0041`'s 3h15m. Scheduled
+check-ins every 15-30 minutes are the backup that relaunches from the
+checkpoint if it dies anyway. Raw per-game dumps (`--dump-raw`) go to
+`reports/raw/`, which is gitignored.
 
 ## 8. Map of the repository
 
@@ -280,3 +307,29 @@ balance numbers need. And it is a second, independent read on RQ-037: if every
 surviving machine converges on sieging regardless of game state, that is the
 strategy imbalance confirming itself from a direction that has nothing to do
 with how the personalities were hand-written.
+
+### 9.4 Generation 1 result, and the generation 2 plan
+
+Built as ai 1.4.0 (`ai/policy_v1_4_0`): a machine is a JSON spec - default
+state, commit timer, ordered rules over the flat signals in `SIGNALS` - so it
+can be bred without touching code; `validate_machine` fails loudly on a typo.
+Occupancy is logged per round and read in report section 9d. Generation 1 is
+`batch_0041` (table in §3, RQ-040 in the decisions log).
+
+Survivors: `SM_g1_clock3` and `SM_g1_clock2`. Generation 2 should hold:
+
+- mutations of the clocks: laning opening ending at round 3, 5 and 6; clock3
+  with the objective band cut to rounds 5-6, and with it removed (which is
+  clock2 at round 5, the control);
+- crossovers: a lane opening followed by `SM_g1_ap_lead`'s income rule; a
+  lane opening followed by `SM_g1_map_commit`'s tower rule;
+- two unrelated designs, as the protocol requires - for instance a machine
+  that sieges from round 1 and drops to `warder` only when two champions
+  down, and a `brawler`-opening machine, since no generation-1 machine opened
+  on a fight.
+
+Change the draw before running it: with ten tiers over 400 games each pair
+met 2-14 times, so the against-anchor record was unreadable. Draw an anchor
+into one seat of half the games (a spec field, in `engine/batch.py` beside
+`personality_pool`) so each machine meets each anchor 20+ times.
+
