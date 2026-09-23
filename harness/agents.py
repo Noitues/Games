@@ -180,6 +180,11 @@ def leak_check(text: str) -> list[str]:
     return [w for w in BANNED_FOR_PLAYERS if re.search(r"(?<![a-z])" + re.escape(w) + r"(?![a-z])", low)]
 
 
+def placeholder(text: str) -> bool:
+    t = (text or "").strip().lower()
+    return len(t) < 40 or t.startswith(("test", "placeholder", "lorem", "todo", "tbd"))
+
+
 class DiceClaimError(Exception):
     pass
 
@@ -202,6 +207,12 @@ class Agent:
                 raise AssertionError(f"prompt leak to player {self.name}: {leaks}")
         out = self.client.call(role=self.role, agent=self.name, kind=kind, system=self.system,
                                prompt=prompt, schema=schema, ctx=ctx)
+        if self.role == "gm" and kind in ("gm_frame", "gm_narrate") and placeholder(out.get("narration", "")):
+            # batch-02: 2 of 217 GM narrations came back as "Test narration." Re-ask once.
+            self.on_note("placeholder_retry", self.name, kind, [out.get("narration", "")[:80]])
+            out = self.client.call(role=self.role, agent=self.name, kind=kind, system=self.system,
+                                   prompt=prompt + "\n\nIMPORTANT: your previous answer was a placeholder. Write the "
+                                   "real in-fiction narration now (2-6 sentences).", schema=schema, ctx=ctx)
         if self.role in ("player", "gm"):
             claims = dice_claims(out)
             if claims:

@@ -54,3 +54,6 @@ Every rule patch to `RULES_SPEC.md`, with the spec version it produced. Harness-
   - The "plan scene" call is skipped when a Beat Frame opens the scene.
   - The default batch parallelism is now 6.
   - The run record keeps a per-call token log (`call_log`) for profiling.
+
+### 2026-09-23 — after batch-02
+- A GM frame or narration returned as a placeholder (under 40 characters, or starting with "test", "placeholder" or similar) is re-asked once. batch-02 had 2 such outputs out of 217, and one truncated the Arm B reference session's scene 2.

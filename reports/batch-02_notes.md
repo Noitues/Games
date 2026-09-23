@@ -42,3 +42,8 @@ The judge scored each session alone, from a story-only, redacted transcript.
 1. **Sharpen the judge's backstory question**, so that player-initiated backstory talk doesn't count.
 2. **Size the B and C comparison.** One reference session each gives no power for A-vs-B or A-vs-C claims. At about $3–4 per session, 5 each would add about $35.
 3. **Deck draws below target (4.6).** Accept it, since the guarantee covers surfacing, or shrink the deck. The spec §13 variant is 2 GM cards + 1 per player.
+
+## Data-quality issue found after the run
+
+- **Placeholder GM output.** 2 of 217 GM frame/narration calls returned the placeholder "Test narration.". One cut scene 2 of the Arm B reference session short: it ended with that line. The other was replaced before play and never reached a transcript. The judge caught it and scored B's worst moment accordingly, so B's single score is somewhat understated.
+- **Fixed for future batches:** a GM frame or narration that is under 40 characters, or starts with "test", "placeholder" or similar, gets one re-ask (`agents.py`, logged as `placeholder_retry`). batch-02 itself was not re-run.
