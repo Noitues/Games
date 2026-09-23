@@ -113,3 +113,21 @@ def test_area_has_no_range_step(kits):
             for step in kit["abilities"][key]["steps"]:
                 if step["icon"] == "AREA":
                     assert step.get("range", 1) == 1, f"{kit['id']}.{key}"
+
+
+def test_damage_reach_is_capped(kits):
+    """P-0007: anything longer lets a champion fight from outside the range at
+    which a hexgroup reveals it (Rules 3.1, 14.2)."""
+    for kit in kits.values():
+        long_steps = 0
+        for key in ("Q", "W", "E", "R"):
+            for step in kit["abilities"][key]["steps"]:
+                if step["icon"] in ("HIT", "AREA"):
+                    reach = step.get("range", 1)
+                    assert reach <= 3, f"{kit['id']}.{key}"
+                    if reach == 3:
+                        long_steps += 1
+                        assert kit["role"] == "ADC", f"{kit['id']}.{key} reaches 3 but is not an ADC"
+                elif step["icon"] == "LINE":
+                    assert step.get("n", 1) <= 3, f"{kit['id']}.{key}"
+        assert long_steps <= 1, f"{kit['id']} keeps more than one reach-3 ability"

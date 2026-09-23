@@ -51,7 +51,18 @@ def step_variants(step: dict):
     return out
 
 
-def ability_variants(ab: dict, points: str, limit: int = 110):
+def within_reach_cap(ab: dict, reach_cap: int, line_cap: int) -> bool:
+    """P-0007: the refit may not buy budget back by lengthening an ability."""
+    for st in ab["steps"]:
+        if st["icon"] in ("HIT", "AREA") and st.get("range", 1) > reach_cap:
+            return False
+        if st["icon"] == "LINE" and st.get("n", 1) > line_cap:
+            return False
+    return True
+
+
+def ability_variants(ab: dict, points: str, limit: int = 110, reach_cap: int = 99,
+                     line_cap: int = 99):
     """Candidate rewrites of one ability, with an edit count."""
     seen = {}
     step_options = [step_variants(s) for s in ab["steps"]]
@@ -84,14 +95,23 @@ def ability_variants(ab: dict, points: str, limit: int = 110):
                 if key not in seen or seen[key][1] > edits:
                     seen[key] = (cand, edits)
     out = [(c, e, ability_net(c, points), ability_gross(c, points)) for c, e in seen.values()
-           if ability_net(c, points) >= POINTS[points]["min_net"]]
+           if ability_net(c, points) >= POINTS[points]["min_net"]
+           and within_reach_cap(c, reach_cap, line_cap)]
     out.sort(key=lambda t: (t[1], abs(t[2] - 6)))
     return out[:limit]
 
 
 def refit(kit: dict, points: str):
     best = None
-    variants = {k: ability_variants(kit["abilities"][k], points) for k in "QWER"}
+    # An ADC keeps one reach-3 ability; everyone else caps at 2 (Rules 14.2).
+    longest = None
+    if kit.get("role") == "ADC":
+        longest = max("QWER", key=lambda k: max(
+            [st.get("range", 1) for st in kit["abilities"][k]["steps"]
+             if st["icon"] in ("HIT", "AREA")] or [0]))
+    variants = {k: ability_variants(kit["abilities"][k], points,
+                                    reach_cap=3 if k == longest else 2, line_cap=3)
+                for k in "QWER"}
     if not all(variants.values()):
         return None
     # Stats carry the champion's identity - a 9 HP tank that becomes a 6 HP
@@ -104,8 +124,10 @@ def refit(kit: dict, points: str):
         target = 22 - stat_points({"hp": hp, "speed": sp})
         for r_cand, r_edits, r_net, r_gross in variants["R"]:
             for q, w, e in itertools.product(variants["Q"], variants["W"], variants["E"]):
-                if max(q[3], w[3], e[3]) >= r_gross:
+                if max(q[3], w[3], e[3]) > r_gross:
                     continue                       # R must stay the biggest gross
+                                                   # (validate_kit allows a tie,
+                                                   #  so the fitter must too)
                 cap = POINTS[points].get("max_r_ratio")
                 if cap and r_gross > cap * (q[3] + w[3] + e[3]) / 3.0:
                     continue                       # and must not dwarf them

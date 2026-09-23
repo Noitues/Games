@@ -257,7 +257,7 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
         "concealment": {
             "attacks_from_concealment_per_game": total_conceal / max(1, n),
             "share_of_all_ability_uses": (100 * total_conceal / total_uses) if total_uses else 0.0,
-            "activations_ending_on_a_hexgroup_edge": (100 * total_edge / total_acts) if total_acts else 0.0,
+            "activations_ending_beside_an_enemy_hexgroup": (100 * total_edge / total_acts) if total_acts else 0.0,
         },
         "anomalies": dict(anomalies),
         "top_flags": flags,
@@ -398,8 +398,8 @@ def to_markdown(s: dict) -> str:
           f"- attacks made from inside a hidden hexgroup on something outside it: "
           f"{c.get('attacks_from_concealment_per_game', 0):.2f} per game",
           f"- that is {c.get('share_of_all_ability_uses', 0):.1f}% of all ability uses",
-          f"- activations ending on a hexgroup edge: "
-          f"{c.get('activations_ending_on_a_hexgroup_edge', 0):.1f}%", ""]
+          f"- activations ending beside an enemy-held hexgroup (looking in): "
+          f"{c.get('activations_ending_beside_an_enemy_hexgroup', 0):.1f}%", ""]
     L += ["", "## 10. Anomalies", ""]
     L.append("None." if not s["anomalies"] else
              "\n".join(f"- {k}: {v} games" for k, v in s["anomalies"].items()))

@@ -1,0 +1,23 @@
+{
+  "batch_id": "batch_0035",
+  "rules": "1.6.0",
+  "roster": "1.6.0",
+  "ai": "1.2.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3
+  },
+  "games": 120,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 3501,
+  "replays": 2,
+  "config_overrides": {
+    "tower_hp": 16
+  },
+  "extra": [
+    "P-0007: damage reach capped at 2, one reach-3 ability per ADC, LINE at most 3 long.",
+    "Judge against batch_0034: kills per game should hold or rise, and the share of ability uses made from cover should fall below 45%."
+  ]
+}

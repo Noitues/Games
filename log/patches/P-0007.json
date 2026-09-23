@@ -1,0 +1,17 @@
+{
+  "patch_id": "P-0007",
+  "from": { "rules": "1.5.0", "roster": "1.5.0", "ai": "1.2.0" },
+  "to": { "rules": "1.6.0", "roster": "1.6.0" },
+  "lever_class": "ability numbers",
+  "changes": [
+    { "target": "rules:14.2.constraints.reach", "from": null, "to": "a damage step reaches at most 2; one ability per ADC may reach 3" },
+    { "target": "rules:14.2.constraints.line", "from": null, "to": "a LINE is at most 3 hexes long" },
+    { "target": "roster:8 steps", "from": "reach 3 and 4, LINE n4", "to": "reach 2, one ADC ability at 3, LINE n3" }
+  ],
+  "evidence": "Under RQ-036 a hexgroup is revealed by an enemy champion standing adjacent to it, so any ability that reaches 2 or more can be fired from cover without ever exposing the user. 13 damage steps sat at reach 3 or more, all in Mid, ADC and Support; Top and Jungle already averaged about 1.2.",
+  "hypothesis": "The adjacency reveal only bites at range 1, so it cannot stop sniping on its own - the range band has to come down to meet it. Shortening reach should push champions to step into the open to fight, which is the behaviour the lead designer asked for, without touching the hidden-hexgroup pillar again.",
+  "success_metric": "Champion kills per game hold or rise against batch_0034, and the share of ability uses made from inside a hidden hexgroup falls below 45%.",
+  "revert_if": "Median game length leaves 13-15 rounds, or champion kills per game fall below the batch_0034 level, or any ADC's win-rate CI falls wholly outside [30, 70].",
+  "side_effects": "Three ADCs keep a single reach-3 ability and lose the rest of their range; quillan loses the longest poke in the roster (reach 4). Mid and Support lose their stand-off game entirely, which will move win rates - that is what the champion-balance phase is for.",
+  "pillar_change": false
+}

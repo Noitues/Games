@@ -284,9 +284,19 @@ def apply_activation(state: GameState, act: Activation, game: "Game") -> None:
     if act.dest is not None and act.dest != state.node_of_unit(c):
         move_unit(state, c, act.dest, state.node_of_unit(c))
     c.activations += 1
-    if any(state.board.tile_of.get(nb) not in (None, state.board.tile_of[c.hexpos])
-           for nb in state.board.neighbors.get(c.hexpos, ())):
-        c.edge_rounds += 1          # RQ-036: hovering where both hexgroups are legible
+    # RQ-036 predicts two behaviours. This counts the first: ending an
+    # activation on the edge of a hexgroup that holds enemies, which is the
+    # move that looks into it. Merely bordering some other hexgroup is not
+    # interesting - nearly every hex does.
+    own = state.board.tile_of[c.hexpos]
+    sets = state.tile_team_sets()
+    for nb in state.board.neighbors.get(c.hexpos, ()):
+        t = state.board.tile_of.get(nb)
+        if t is None or t == own:
+            continue
+        if any(team != c.team for team in sets.get(t, ())):
+            c.edge_rounds += 1
+            break
     if act.flip_entry is not None:
         start = state.node_of_unit(c) if act.dest is None else act.dest
         state.force_visible(act.flip_entry, placer=game.placer)
