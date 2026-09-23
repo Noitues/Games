@@ -678,6 +678,400 @@
     "Mire": 3
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 21,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Scene 2 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 22,
+   "session": 1,
+   "scene": 2,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Can the party reach Saint Orrin's Drowned Temple before the rising water swallows the causeway — and what do they find waiting on the drowning road?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 23,
+   "session": 1,
+   "scene": 2,
+   "actor": "Ysolde",
+   "action": "overcome",
+   "skill": "Stealth",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Ysolde raises a fist to signal the others, her eyes fixed on the kneeling figures ahead. She crouches low in the black water and takes Tessa's arm, guiding her ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 24,
+   "session": 1,
+   "scene": 2,
+   "actor": "Aldous",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Aldous plants his feet and reads the rain like scripture. The drowned dead clustered at his shadow whisper secrets the water has been keeping—the priest's hold ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 25,
+   "session": 1,
+   "scene": 2,
+   "actor": "Morwen",
+   "action": "create_advantage",
+   "skill": "Lore",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Morwen raises a hand to halt the group, her eyes fixed on the kneeling figures in the water ahead. The wet chorus—neither singing nor speaking—carries the parti",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 26,
+   "session": 1,
+   "scene": 2,
+   "actor": "Mire",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Mire immediately shifts into position at the group's vanguard, moving with practiced militia discipline through the rising water. Eyes sharp despite the murk an",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 27,
+   "session": 1,
+   "scene": 2,
+   "actor": "Ysolde",
+   "action": "Overcome: Ysolde raises a fist to signal the others, her eyes fixed on",
+   "skill": "Stealth +2",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "0 0 0 +",
+   "total": "+3",
+   "opposition": "+1 (NPC + - - 0)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "leads fanatical acolytes [T-04]"
+   ],
+   "target_card": "",
+   "target_npc": "Kneeling Acolytes of the Drowned Priest",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 28,
+   "session": 1,
+   "scene": 2,
+   "actor": "Aldous",
+   "action": "Create Advantage: Aldous plants his feet and reads the rain like scripture. Th",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "0 + + +",
+   "total": "+7",
+   "opposition": "+1",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.2.3 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "T-04",
+   "target_npc": "",
+   "shifts": 6,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 29,
+   "session": 1,
+   "scene": 2,
+   "actor": "Morwen",
+   "action": "Create Advantage: Morwen raises a hand to halt the group, her eyes fixed on th",
+   "skill": "Lore +3",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ 0 + -",
+   "total": "+4",
+   "opposition": "+1",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.2.4 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 30,
+   "session": 1,
+   "scene": 2,
+   "actor": "Mire",
+   "action": "Create Advantage: Mire immediately shifts into position at the group's vanguar",
+   "skill": "Notice +3",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ 0 - +",
+   "total": "+4",
+   "opposition": "+1",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.2.5 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "H-03",
+   "target_npc": "",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 31,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Trigger fired: M-1",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "fiction:the party leaves the road or causeway",
+   "event_type": "trigger",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 32,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Trigger fired: M-2",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "scene_start:3",
+   "event_type": "trigger",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 33,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Scene 2 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "triggers fired: ['M-1', 'M-2']",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -691,6 +1085,20 @@
    "climax": false,
    "tension_after": null,
    "triggers_fired": []
+  },
+  {
+   "index": 2,
+   "tension_before": null,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 1,
+   "climax": false,
+   "tension_after": null,
+   "triggers_fired": [
+    "M-1",
+    "M-2"
+   ]
   }
  ],
  "transcript": [
@@ -917,6 +1325,118 @@
    "kind": "narration",
    "text": "The Warden's boots hit the last rung and stop. Ysolde's steady voice cuts through the rain—not pleading, just true, reading the exhaustion under his grey coat—and something in his shoulders loosens half a step. Morwen doesn't retreat either; she names herself, and the crowd murmurs it back to him: the Exorcist, the one who walked into the Drowned Temple once already and came out whole. Mire finishes it, planting herself boot-to-boot with him like she's still got a badge to back the stance, and for a long, rain-hammered moment the Warden just looks at the four of them—cast-outs, exiles, a fortune-teller with dead men's eyes—and decides they're not worth the paperwork tonight. \"Ford's gone by first light,\" he says at last, stepping back. \"Whatever you're doing, do it fast, and don't let me hear the bell ring for you.\" Aldous is already twenty feet gone, Tessa's arm in his, walking toward the causeway like the flood itself is clearing a path for him. The others fall in behind, Hollowmoot's suspicious eyes on their backs, the quarantine bell tolling once more into the dark as the town shrinks behind them and the road to Saint Orrin's opens up, drowning, ahead.",
    "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The causeway out of Hollowmoot is already ankle-deep and climbing, plank bridges groaning under black water that wasn't there an hour ago. Tessa stumbles along behind you, gasping Corin's name like a prayer, while somewhere ahead — carried wrong-way on the wind, threading under the rain — comes a low, wet chorus of voices in unison, not quite singing, not quite speaking. Half-submerged shrines lean drunkenly out of the flood on either side, and near one of them a huddle of grey, sodden figures kneel in the rising water, unmoving, faces turned toward the sound. They haven't seen you yet. The belltower of Saint Orrin's rises distant and black through the murk, and the water is climbing a finger's width with every breath you take.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Keep close, keep low, don't speak. We move like we're not here.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde raises a fist to signal the others, her eyes fixed on the kneeling figures ahead. She crouches low in the black water and takes Tessa's arm, guiding her firmly but gently away from the shrines. Moving slowly, deliberately, she picks a path through the deeper water along the causeway's edge—where the darkness pools thickest and the sound of their footsteps will be swallowed by the rain. Her body stays between Tessa and the acolytes, shielding her as they slip past like ghosts through the flood.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "Don't meet their eyes. The priest's singing has their full attention—they're drinking it like drowning men drink water. We move now, quiet and fast, and they won't know we passed.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous plants his feet and reads the rain like scripture. The drowned dead clustered at his shadow whisper secrets the water has been keeping—the priest's hold runs deep through those figures, binds them to the tower's chorus, pulls them toward something that hasn't fully surfaced yet. He reads the slant of the flood, the exact angle of their kneeling bodies turned away from the causeway, and understands: there's a window. A brief one. The priest's reach is stretched thin across too many souls at once.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Hold. Those are his acolytes, and that chorus is his song calling to Corin. We need to understand what we're walking into before the water traps us between his work and the rising tide.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen raises a hand to halt the group, her eyes fixed on the kneeling figures in the water ahead. The wet chorus—neither singing nor speaking—carries the particular weight of the hive's influence that only an exorcist trained in the Order's care recognizes. She listens intently, drawing on years of knowledge earned in the wreckage of the first outbreak. This is the Drowned Priest's work; she's certain of it. The pattern of it is written in every tone.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Stay close. I'm reading what's ahead before we move into it.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire immediately shifts into position at the group's vanguard, moving with practiced militia discipline through the rising water. Eyes sharp despite the murk and rain, she scans the kneeling figures ahead, reading their stillness, their direction, the pattern of that wet chorus on the wind. Her shoulders set into the stance of someone who's spent years holding a line, and she signals the others to match her pace and stay ready.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde — overcome with Stealth: dice 0 0 0 + → Good (+3) vs Average (+1): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — create advantage with Notice: dice 0 + + + → Epic (+7) vs Average (+1): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen — create advantage with Lore: dice + 0 + - → Great (+4) vs Average (+1): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — create advantage with Notice: dice + 0 - + → Great (+4) vs Average (+1): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Ysolde reads the dark water and finds the deepest channel where sound drowns to nothing, drawing Tessa along in her wake like they were never here at all. Aldous watches the acolytes' hunched shoulders and realizes the priest's grip on them is stretched thin tonight — spread too wide across too many kneeling souls — and he marks exactly when their attention will slacken. Morwen listens to the wrong-way chorus and hears it for what it is: not a hymn but a summons, the Drowned Priest's voice pulling the hive-touched toward the belltower note by note, and now she could name the pattern to anyone who asked. Mire holds the vanguard, matching the group's pace to the rhythm Aldous found, and not one grey-robed head turns as the party slips past the shrine, boots silent under the rain's own noise. By the time the kneeling figures stir again, the causeway behind is already vanishing under black water, and ahead — closer now, wet stone rising sheer from the flood — stands Saint Orrin's Drowned Temple, its belltower leaning black against the storm, the chorus swelling louder with every step toward the doors.",
+   "visible_to": "all"
   }
  ],
  "costs": [
@@ -1008,6 +1528,20 @@
     "interim_ruling": "Treated as a single aspect (one invoke, +2, 1 fp), consistent with the math shown (total +3 = dice -3 + skill +4 + invoke +2).",
     "scene": 1,
     "source": "referee"
+   },
+   {
+    "section": "Rolls (passive opposition vs. named NPC active opposition)",
+    "issue": "Event 27 (Ysolde vs. 'Kneeling Acolytes of the Drowned Priest') logs opposition as a flat '+1 (NPC + - - 0)'. The rules say passive opposition is Average(+1) +1 per directly-opposing table aspect (max Great +4), OR a named NPC rolls 4dF+rating as active opposition. Here an opposing aspect is explicitly listed (opposing_tags: 'leads fanatical acolytes [T-04]'), which per the passive formula should push opposition to +2, but the log keeps it at +1. Meanwhile a full 4dF NPC roll ('+ - - 0') is displayed but never added into the opposition total, suggesting an active-NPC roll was rolled but not used. The rules text does not say what to do when a named NPC also has an opposing aspect tag, or how to treat a rolled-but-unused NPC dice string.",
+    "interim_ruling": "Table appears to have applied a flat Average(+1) opposition, ignored the opposing aspect's +1 bonus, and disregarded the rolled NPC dice entirely, using only the flat ladder value against Ysolde's total.",
+    "scene": 2,
+    "source": "referee"
+   },
+   {
+    "section": "Aspects and invokes / deck-card tags (target_card, opposing_tags fields)",
+    "issue": "Events 27, 28 and 30 reference card tags (T-04, T-04, H-03) via opposing_tags/target_card fields, but no corresponding draw event with a draw_id appears anywhere in this scene's log, and the costs/compels/fills list for this scene is empty. The baseline rules provided say nothing about how card tags enter play absent a logged draw, so it cannot be confirmed whether these tags were legitimately in play (e.g., drawn in an earlier, unlogged scene) or improperly reused.",
+    "interim_ruling": "Treated as pre-existing/persistent tags carried over from a prior draw not covered in this excerpt; no cost was charged for their use here.",
+    "scene": 2,
+    "source": "referee"
    }
   ],
   "cost_checks": [
@@ -1036,6 +1570,18 @@
    {
     "scene": 1,
     "text": "Four players each declared near-identical roleplay/create-advantage actions to intercept the same Warden (events 12–15) before any rolls resolved, creating redundant declarations and spotlight congestion rather than efficient turn resolution."
+   },
+   {
+    "scene": 2,
+    "text": "All four PCs rolled create-advantage/overcome actions this scene with fp_spent 0 and no aspect invokes recorded, despite each having named aspects and situation aspects (from earlier successes) available — the rules permit but don't require invokes, so this is a pacing/engagement note rather than a violation."
+   },
+   {
+    "scene": 2,
+    "text": "The opposition math shown in event 27 mixes passive-ladder notation with an unused NPC dice roll, making it hard to audit whether the +1 vs. Ysolde's Stealth was calculated correctly (see ambiguity above)."
+   },
+   {
+    "scene": 2,
+    "text": "No compels were offered during a scene explicitly built around fanatical acolytes and character troubles (e.g., nothing hooked Aldous's or Morwen's aspects into a compel), which is allowed but represents an unused story lever."
    }
   ]
  },
@@ -1057,26 +1603,26 @@
   "deck_left": [],
   "draws": 0,
   "turns": {
-   "Ysolde": 2,
-   "Aldous": 2,
-   "Morwen": 2,
-   "Mire": 2
+   "Ysolde": 3,
+   "Aldous": 3,
+   "Morwen": 3,
+   "Mire": 3
   }
  },
  "notes": [],
  "metrics": {},
  "tokens": {
-  "prompt": 162282,
-  "completion": 50627,
-  "cost_usd": 0.7666,
-  "calls": 20
+  "prompt": 257039,
+  "completion": 76241,
+  "cost_usd": 1.203,
+  "calls": 29
  },
- "llm_calls": 20,
+ "llm_calls": 29,
  "models": {
   "gm": "claude-sonnet-5",
   "player": "claude-haiku-4-5-20251001",
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 386.2
+ "elapsed_s": 553.1
 }

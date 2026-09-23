@@ -4,7 +4,7 @@
  "arm": "A",
  "seed": 87940,
  "spec_version": "0.2.0",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 0,
@@ -5380,6 +5380,146 @@
     "Mire": 1
    },
    "gm_fp": 3
+  },
+  {
+   "event_id": 181,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "2",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 182,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "4",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 183,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "4",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 184,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "T-01 -> T-01v2",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Scattered Into the Reeds by Fire",
+   "event_type": "mutation",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 3
+  },
+  {
+   "event_id": 185,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "FP: Ysolde=3, Aldous=4, Morwen=0, Mire=1",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 1
+   },
+   "gm_fp": 3
   }
  ],
  "scenes": [
@@ -7480,9 +7620,177 @@
    }
   ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "optimizer",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Facing Coster at the mire's edge and conceding to protect everyone else. It crystallized every thread of Ysolde's character—the Cartel debt, loyalty to the crew, willingness to sacrifice—into one moment that was both narratively powerful and mechanically brilliant (+3 fate points for controlling the narrative outcome).",
+    "most_frustrating": "Minimal frustration, but: wanted more time to leverage Contacts and the \"hears crew's secrets\" concept through downtime roleplay, and one early failed Notice roll (Terrible) against the Wardens meant the Order patrol's suspicion lingered even after I succeeded with style convincing them. Neither ruined anything, just felt like momentum over reward.",
+    "background_used": "Good. Tamsin's scroll case and the connection to Elara landing as a specific callback felt earned and meaningful. The scroll case weakness (ink runs in hard rain) was compelled directly into the plot. The deeper mystery of Ysolde's original exile from the Reed-Kin remains untouched, which actually makes me curious to explore it next session rather than feeling ignored.",
+    "wanted_but_couldnt": "More negotiation/Contacts approach to Coster before the conflict turned violent. The table moved fast into stakes-and-steel, which was right dramatically, but I would have enjoyed one more exchange trying to work the ledger before accepting the fight. (That said: mechanically, conceding was my optimal play, so this is wistfulness, not a real complaint.)",
+    "one_sentence": "Ysolde's backstory was woven expertly into the narrative through Tamsin and the Cartel, making her essential to solving multiple problems, though the specifics of her exile from the Reed-Kin clans remain a mystery waiting to be told."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "protector",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 7,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The Legendary roll reading the Sucking Mire — rain-reading proved it was essential, not decoration, and then again in the belltower when my sense of air pockets gave Toma solid ground. These moments made Aldous genuinely necessary.",
+    "most_frustrating": "The ending. I had read the hidden ford and was ready to guide everyone to safety — the whole ferryman fantasy. Ysolde's concession was powerful and brilliant for her, but it meant my readied tools never got used. I wanted to cross that soul myself.",
+    "background_used": "Extensively and well. Verrick shaped the Warden threat, rain-reading got real mechanical payoff, the ferryman's vow framed each choice. The \"Panics near deep water\" weakness was invoked for drama but didn't mechanically cost me — more atmospheric than punishing. Good overall, though the weakness could have had more teeth.",
+    "wanted_but_couldnt": "Actually guide the escape using the hidden ford I'd read. The concession happened before I could spend that prepared advantage. Not unfair — just a missed moment where Aldous could have been the one who got everyone to safety.",
+    "one_sentence": "My backstory was woven through completely and the rain-reading gained real mechanical weight, but I wish the ending had let me guide the party to safety rather than watch someone else sacrifice herself to end the crisis."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "instigator",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 6,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Pulling Toma from the belltower with the ancient rites. It was pure Morwen—untouched by the swarm-song, speaking words older than Order doctrine, doing exactly what she was made to do. The moment when the boy's eyes snapped back to recognition felt like everything her character exists for, and the question it raised about souls and the hive landed right in her concept's heart.",
+    "most_frustrating": "Ysolde conceding at the cartel confrontation cut my escalation short. I had Morwen charging in with rite-words rising, ready to force the issue through Will and ancient power, but then the scene was resolved by someone else taking the exit. I wanted to see how that would have played out fully.",
+    "background_used": "The exorcist powers and untouched nature were used extensively and brilliantly—the GM leaned on those hard. But the deeper story elements from my character cards—being an orphan of the first outbreak, leading the pilgrim band to safety—those stayed background texture rather than becoming active complications or connections. Good use of concept; less depth on personal story.",
+    "wanted_but_couldnt": "I wanted the Order tension to develop more—there's clearly friction between Morwen's old rites and the Order's newer doctrine, and that showed up in scenes but never became a real pressure point. I also wanted to fight through the final cartel encounter instead of having it resolved by Ysolde's concession.",
+    "one_sentence": "My powers and concept were used brilliantly and at the center of everything, but the deeper story of who I am—orphan, survivor, pilgrim guide—stayed as backdrop instead of becoming active."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "tactician",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 6,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Standing on the narrow plank walkway and refusing to move—it crystallized \"still holds the line\" into a single image of temple-drilled discipline that felt like the exact moment Mire's character concept proved itself real. The free invoke on \"Holding the Narrow Line\" was earned.",
+    "most_frustrating": "The final confrontation had so many moving pieces (Ysolde sacrificing herself, the water path collapsing, Coster's leverage) that I lost track of where I actually had agency versus where the plot was moving regardless. Tactically frustrating—dramatically effective, but it stung to watch the party genuinely lose something.",
+    "background_used": "All four cards were woven in naturally—orphanage drills showed up in stance and discipline, the stilt-house in knowing how pilings work, the Cartel ledger as the driving tension, and the militia disgrace in recognizing Warden formations and choosing to hold ground. None of it felt forced. Good.",
+    "wanted_but_couldnt": "No strong frustration here. The game let me make real choices about when to step in and what to risk. I couldn't prevent Ysolde's sacrifice, but that was her call, not something I was blocked from trying.",
+    "one_sentence": "The background felt integrated—it provided meaningful competencies (reading ground, holding formations, knowing Cartel culture) and thematic constraints without being used against me unfairly."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Ysolde",
+    "turns": 20,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Aldous",
+    "turns": 20,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Morwen",
+    "turns": 19,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Mire",
+    "turns": 23,
+    "references_to_others_background": 0
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "The party crossed the drowned reed-flats to Saint Orrin's belltower and pulled Toma back from the swarm-song's grip through Morwen's ancient rites, Ysolde's reading of the hymn's hidden call, Aldous's rain-sense, and Mire's sure footing across the mire. Escaping toward Hollowmoot, they were cornered by Cartel collector Coster and his enforcers collecting on Mire's old debt; Morwen broke the spearman holding Elara hostage and Mire drew blood from Coster himself, but it was Ysolde who bought the party's freedom, conceding herself into the Collector's service so the others could flee. Aldous's hidden ford carried Toma, Elara, Morwen and Mire safely through the black water and clear of the enforcers, leaving Ysolde behind as the price of everyone else's passage home.",
+  "closing_tension": 1,
+  "reverberations": {
+   "growth": {
+    "MO-03": {
+     "added": 2,
+     "total": 2,
+     "evolve": false
+    },
+    "AL-02": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "MI-01": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "YS-02": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "MI-03": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "AL-01": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "MI-04": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    }
+   },
+   "clocks": [],
+   "mutations": [
+    {
+     "from": "T-01",
+     "to": "T-01v2"
+    }
+   ],
+   "retired": []
+  },
+  "retired": [
+   {
+    "card": "N-02",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "YS-03",
+    "how": "sacrificed in concession",
+    "session": 1
+   },
+   {
+    "card": "N-04",
+    "how": "story pile over limit",
+    "session": 1
+   }
+  ]
+ },
  "state_end": {
   "tension": 1,
   "fp": {
@@ -7517,19 +7825,125 @@
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 2206580,
-  "completion": 437734,
-  "cost_usd": 7.4623,
-  "calls": 122
+ "metrics": {
+  "arm": "A",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Aldous",
+   "Mire",
+   "Morwen",
+   "Ysolde"
+  ],
+  "backstory_all_players": true,
+  "deck_surfaced_all_players": true,
+  "deck_draws": 6,
+  "draw_costs": 9,
+  "draw_cost_used_card_rate_engine": 1.0,
+  "draw_cost_used_card_rate_referee": 0.611,
+  "fp_end": {
+   "Ysolde": 3,
+   "Aldous": 4,
+   "Morwen": 0,
+   "Mire": 1
+  },
+  "fp_end_mean": 2,
+  "fp_earned": {
+   "Morwen": 2,
+   "Aldous": 2,
+   "Mire": 3,
+   "Ysolde": 4
+  },
+  "fp_spent": {
+   "Ysolde": 4,
+   "Aldous": 2,
+   "Mire": 5,
+   "Morwen": 5
+  },
+  "compels_accepted": 8,
+  "compels_refused": 0,
+  "compels_deck": 4,
+  "compels_free": 4,
+  "turns": {
+   "Ysolde": 11,
+   "Aldous": 11,
+   "Morwen": 11,
+   "Mire": 11
+  },
+  "turn_gini": 0.0,
+  "invokes": {
+   "Ysolde": 8,
+   "Aldous": 4,
+   "Mire": 7,
+   "Morwen": 6
+  },
+  "invoke_gini": 0.13,
+  "tension_trajectory": [
+   3,
+   2,
+   1,
+   1,
+   1,
+   1
+  ],
+  "clock_marks": 0,
+  "violations": 18,
+  "violations_engine": 12,
+  "violations_referee": 6,
+  "ambiguities": 20,
+  "ambiguity_ids": [
+   "AMB-01",
+   "AMB-03",
+   "AMB-12",
+   "AMB-19",
+   "AMB-22",
+   "AMB-27",
+   "§3",
+   "§3 (Opposition, passive / Invokes)",
+   "§3 Outcomes and deck draws (Tie row)",
+   "§4 (Outcomes and deck draws) / climax override in §4 ('When the deck runs out')",
+   "§4 step 2 (Resolving a drawn player card)",
+   "§5",
+   "§5 (Beat Frame procedure, step 5)",
+   "§6 Adjusting Tension",
+   "§6A",
+   "§6A (Draw triggers table)",
+   "§6A (pile maintenance — Add)",
+   "§8 (Consequences strain cards / Card destruction)"
+  ],
+  "gm_improvised_complications": 4,
+  "card_supplied_complications": 9,
+  "improvisation_share": 0.308,
+  "guarantee_pulled": 1,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6.25,
+   "involvement": 6.25,
+   "connection": 6.5,
+   "control": 5.5,
+   "play_again": 7
+  },
+  "involvement_var_within": 0.188,
+  "personality": {
+   "Ysolde": "optimizer",
+   "Aldous": "protector",
+   "Morwen": "instigator",
+   "Mire": "tactician"
+  }
  },
- "llm_calls": 122,
+ "tokens": {
+  "prompt": 2304660,
+  "completion": 466367,
+  "cost_usd": 7.877,
+  "calls": 128
+ },
+ "llm_calls": 128,
  "models": {
   "gm": "claude-sonnet-5",
   "player": "claude-haiku-4-5-20251001",
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 3606.7
+ "elapsed_s": 3825.2
 }
