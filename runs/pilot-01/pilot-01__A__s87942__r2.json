@@ -68,7 +68,7 @@
     "id": "B-02",
     "name": "PLEA FOR HELP",
     "trigger": "fiction:the party enters a settlement",
-    "used": null
+    "used": true
    },
    {
     "id": "B-05",
@@ -646,6 +646,540 @@
    "notes": "",
    "event_type": "scene_end",
    "improvised": false
+  },
+  {
+   "event_id": 27,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Scene 2 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false
+  },
+  {
+   "event_id": 28,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Scene test",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "2",
+   "total": "",
+   "opposition": "",
+   "result": "interrupt",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "d6=2 vs Tension 2",
+   "event_type": "scene_test",
+   "improvised": false
+  },
+  {
+   "event_id": 29,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Draw (beat_frame)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "deck now 6",
+   "event_type": "draw",
+   "improvised": false
+  },
+  {
+   "event_id": 30,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Draw (beat_frame)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "YS-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "deck now 5",
+   "event_type": "draw",
+   "improvised": false
+  },
+  {
+   "event_id": 31,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Beat Frame PLEA FOR HELP",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-01,YS-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "fills {'WHO': 'MI-01', 'WHERE': 'YS-02'}; defaults for rest",
+   "event_type": "beat_frame",
+   "improvised": false
+  },
+  {
+   "event_id": 32,
+   "session": 1,
+   "scene": 2,
+   "actor": "Mire",
+   "action": "Compel (deck)",
+   "skill": "",
+   "tags_invoked": "Never had a family of blood",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-01",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Sister Aveline seizes Mire's hands and says the boy in her care — the closest thing to a little brother Mire ever had — followed the swarm-song into the belltower three nights ago; she begs Mire by th",
+   "event_type": "compel",
+   "improvised": false,
+   "compel_forced": false
+  },
+  {
+   "event_id": 33,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Rail + MI-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "surfaced (Mire)",
+   "event_type": "rail_add",
+   "improvised": false
+  },
+  {
+   "event_id": 34,
+   "session": 1,
+   "scene": 2,
+   "actor": "Mire",
+   "action": "Card surfaces",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "1 free invoke(s)",
+   "event_type": "surface",
+   "improvised": false
+  },
+  {
+   "event_id": 35,
+   "session": 1,
+   "scene": 2,
+   "actor": "Ysolde",
+   "action": "Compel (deck)",
+   "skill": "",
+   "tags_invoked": "Ink runs in hard rain",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "YS-02",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "The moment Ysolde hears where the boy went — Tamsin's old archive-vault under the drowned belltower — she knows the only ciphers that could safely guide anyone through its flooded secret ways are in h",
+   "event_type": "compel",
+   "improvised": false,
+   "compel_forced": false
+  },
+  {
+   "event_id": 36,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Rail + YS-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "YS-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "surfaced (Ysolde)",
+   "event_type": "rail_add",
+   "improvised": false
+  },
+  {
+   "event_id": 37,
+   "session": 1,
+   "scene": 2,
+   "actor": "Ysolde",
+   "action": "Card surfaces",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "YS-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "1 free invoke(s)",
+   "event_type": "surface",
+   "improvised": false
+  },
+  {
+   "event_id": 38,
+   "session": 1,
+   "scene": 2,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Can the party reach the flooded archive-vault beneath Saint Orrin's and pull Brennan out before the hive-song claims him for good?",
+   "event_type": "frame",
+   "improvised": false
+  },
+  {
+   "event_id": 39,
+   "session": 1,
+   "scene": 2,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Ysolde shifts the scroll case slightly against her chest to shelter it fully from the downpour, then reaches out with her free hand to rest it on Aveline's shou",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 40,
+   "session": 1,
+   "scene": 2,
+   "actor": "Aldous",
+   "action": "overcome",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Aldous steps forward without hesitation, his weathered eyes fixed on the water-patterns running through Hollowmoot's streets and gutters. He's reading the flood",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 41,
+   "session": 1,
+   "scene": 2,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Morwen moves to take hold of Sister Aveline's free arm, anchoring her against the downpour and the indifferent crowd surging past. Her dark eyes are sharp, read",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 42,
+   "session": 1,
+   "scene": 2,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Mire grips Sister Aveline's hand firmly, meeting her eyes with steady resolve. She releases the old woman and turns toward the temple, moving through the rain-s",
+   "event_type": "declare",
+   "improvised": false
+  },
+  {
+   "event_id": 43,
+   "session": 1,
+   "scene": 2,
+   "actor": "Aldous",
+   "action": "Overcome: Aldous steps forward without hesitation, his weathered eyes ",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "0 + + +",
+   "total": "+7",
+   "opposition": "+2",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "opposing_tags": [
+    "swallows fords overnight [H-03]"
+   ],
+   "target_card": "H-03",
+   "target_npc": "",
+   "shifts": 5,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 44,
+   "session": 1,
+   "scene": 2,
+   "actor": "Aldous",
+   "action": "Peek",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "left on top",
+   "event_type": "peek",
+   "improvised": false
+  },
+  {
+   "event_id": 45,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "2->1",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "resolved -1",
+   "event_type": "tension",
+   "improvised": false
+  },
+  {
+   "event_id": 46,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Rail - MI-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "binder: scene cleanup",
+   "event_type": "rail_remove",
+   "improvised": false
+  },
+  {
+   "event_id": 47,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Rail - YS-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "YS-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "binder: scene cleanup",
+   "event_type": "rail_remove",
+   "improvised": false
+  },
+  {
+   "event_id": 48,
+   "session": 1,
+   "scene": 2,
+   "actor": "Mire",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SMI-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Sister Aveline",
+   "event_type": "story_add",
+   "improvised": false
+  },
+  {
+   "event_id": 49,
+   "session": 1,
+   "scene": 2,
+   "actor": "Mire",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SMI-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Is Brennan Still Himself?",
+   "event_type": "story_add",
+   "improvised": false
+  },
+  {
+   "event_id": 50,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Trigger fired: M-2",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "scene_start:3",
+   "event_type": "trigger",
+   "improvised": false
+  },
+  {
+   "event_id": 51,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Scene 2 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "triggers fired: ['M-2']",
+   "event_type": "scene_end",
+   "improvised": false
   }
  ],
  "scenes": [
@@ -659,6 +1193,19 @@
    "climax": false,
    "tension_after": 2,
    "triggers_fired": []
+  },
+  {
+   "index": 2,
+   "tension_before": 2,
+   "scene_test": 2,
+   "outcome": "interrupt",
+   "beat": "interrupt",
+   "rounds": 1,
+   "climax": false,
+   "tension_after": 1,
+   "triggers_fired": [
+    "M-2"
+   ]
   }
  ],
  "transcript": [
@@ -861,6 +1408,150 @@
    "kind": "narration",
    "text": "Doss's shoulders drop like a rope finally cut. He doesn't answer Mire's offer with words at first — he just looks past all four of them, out at the black water beyond the torchlight, the way a man looks at a grave he visits too often. \"My girl went upriver to the temple two months back,\" he finally says, low enough that the queue can't hear. \"Said she heard singing. I check every throat, every palm, telling myself I'll know her if she comes through hive-touched, and I won't have to be the one who — \" He doesn't finish it. He doesn't have to. He steps back from the gate, waves the hooked pole toward the dark beyond it, and calls out to his men to \"let the line move, we're behind schedule.\" The refugees surge forward, grateful and uncomprehending. As Ysolde, Aldous, Morwen and Mire pass through, Doss catches Aldous's sleeve just once. \"If you hear that song out there,\" he says, \"and you find a girl who still knows her own name — bring her back. I don't care what she's carrying.\" Then he turns back to his ledger, and the four of them walk on into Hollowmoot — stilt-town lanterns smeared gold through the downpour, the watchtower bell silent above the crowded market lanes.",
    "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Sister Aveline held me the night I first understood I was truly alone—that no blood-family was coming to claim me. She taught me that holding the line for those who cannot hold it themselves is the closest thing to family an orphan like me could have. She made me swear on temple stone to protect Brennan, a boy in her care, to keep him sane and his own in the dark. I owe her everything: the only love I've ever known, and an oath written in my blood.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "You made me swear to hold the line for him, Sister. I'm going into that belltower, and I'm bringing Brennan back—or I'm not coming back at all.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire accepts the compel on 'Raised in the Temple Orphanage'.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Ysolde pulls her scroll case from her pack without hesitation, rain already beading on the leather. She checks the seal, her jaw set with grim determination, and begins moving toward the belltower. Down there are Tamsin's true ward-ciphers—counter-hymns to the blight she spent her final years perfecting. They might shield someone like Brennan from the hive-singing and corruption. I've never been back to that archive since the night I found her body in the rising water, and I'm terrified her knowledge, whatever it was worth, wasn't enough to save her. Using those ciphers again means I can't pretend anymore—I become exactly what the Order hunts, and there's no going back from it.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "\"I'm the only one who knows those wards—Tamsin made sure of that. Brennan gets out, whatever it costs. Let's move.\"",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde accepts the compel on 'Old Tamsin's Scroll Case'.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Beat: Sister Aveline — the old caretaker of the Temple orphanage who raised Mire herself, soaked to the bone and half-frantic — pushes through the toll-gate crowd toward them. begs the party to go to the flooded Order archive-vault beneath Saint Orrin's, where Old Tamsin once taught Ysolde to read the ciphers now half-drowned in its stacks, because her son followed the swarm-song into the belltower.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Sister Aveline doesn't let go of Mire's sleeve even once they're past the gate and into the lantern-lit crush of Hollowmoot's market lanes — her grip is an old woman's, but frantic with it. \"The vault under the temple, the one Tamsin kept,\" she gasps, water sheeting off her habit, \"Brennan went down after the singing before anyone could stop him, and the stair floods a little more with every tide.\" Behind her the crowd churns past, indifferent, refugees and eel-sellers shouting over the rain, while somewhere out past the rooftops the drowned belltower waits, dark and patient. Ysolde already has the scroll case open against her chest, shielding Tamsin's ciphers from the wet with her own body, jaw tight at the thought of that stair, that water, that name. Aveline's free hand closes over Mire's like she's sealing the oath all over again: go now, or go too late.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Sister, your boy knows his own name—Mire will make sure of it. I have what we need to shield him from the song, and we're not leaving him down there in the dark.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde shifts the scroll case slightly against her chest to shelter it fully from the downpour, then reaches out with her free hand to rest it on Aveline's shoulder—not to pull her away, but to steady her. Her jaw is set, her eyes clear despite the fear underneath. She's already made her choice, already become what the Order hunts. Now she just needs Aveline to understand: they are going down into that archive, they are bringing Brennan back, and she will not leave either Mire or this old woman standing alone in the rain.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "I've read the flood's rise for eleven years in the rain. The vault lies beneath the temple—I know the way through the water. Move with me, now.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous steps forward without hesitation, his weathered eyes fixed on the water-patterns running through Hollowmoot's streets and gutters. He's reading the flood like text written in rain—where it flows, where it pools, where the current runs strongest toward the temple square. He turns to face the group with absolute certainty, rain streaming down his face, and starts moving with the authority of someone who has walked every ford and measured every tide.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Sister, I know Mire will hold this line. But tell us plainly—how deep does the water run in that vault now? And when Brennan went down after the singing, did he still know his own name?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen moves to take hold of Sister Aveline's free arm, anchoring her against the downpour and the indifferent crowd surging past. Her dark eyes are sharp, reading every tremor in the old woman's grip, the shape of her panic, searching for the one detail that will tell them whether Brennan is still himself or already lost to the hive-song. She glances once at Ysolde's scroll case, then back toward the temple and belltower, already tracing the path they'll need to take through Hollowmoot's flooded lanes.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Sister, I'm going. I'll bring him back or I won't come back at all.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire grips Sister Aveline's hand firmly, meeting her eyes with steady resolve. She releases the old woman and turns toward the temple, moving through the rain-soaked market with the bearing of a soldier stepping into the line. Ysolde is already moving with her, scroll case in hand. There's no hesitation left to give—only duty.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — overcome with Notice: dice 0 + + + → Epic (+7) vs Fair (+2): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Aldous reads the water like scripture — the pull of current through gutter and gully, the place where the flood eddies back on itself and reveals a half-submerged stair no local would risk. He doesn't just find a way toward Saint Orrin's; he finds the *right* way, the one that keeps them ahead of the rising tide instead of racing it. \"This way — now, while the water still lets us,\" he calls, already moving. Sister Aveline releases Mire's hand at last, murmuring a blessing in the old rite over all four of them, and stays behind at the gate to wait for a return she can't be sure will come. Ysolde shields Tamsin's scroll case against her chest as they leave the lantern-lit market lanes behind, the crowd's noise fading into the hiss of rain on black water, the drowned belltower a darker shape against the dark sky ahead. Behind them, Hollowmoot's dry boards give way to flooded alley and half-sunk causeway — the road is gone, and there is only the water now, and the song waiting at the end of it.",
+   "visible_to": "all"
   }
  ],
  "costs": [
@@ -874,6 +1565,98 @@
    "improvised": true,
    "accepted": true,
    "owner": "Aldous"
+  },
+  {
+   "event": "beat_fill",
+   "scene": 2,
+   "draw_id": "MI-01",
+   "valid": true,
+   "tag": "Raised in the Order's orphanage",
+   "text": "Sister Aveline — the old caretaker of the Temple orphanage who raised Mire herself, soaked to the bone and half-frantic — pushes through the toll-gate crowd toward them.",
+   "improvised": false,
+   "card": {
+    "id": "MI-01",
+    "type": "ROOTS",
+    "owner": "PC-MIRE",
+    "title": "Raised in the Temple Orphanage",
+    "power_tags": [
+     "Raised in the Order's orphanage",
+     "Trained young in watch drills",
+     "Knows every Order rite"
+    ],
+    "weakness": "Never had a family of blood"
+   }
+  },
+  {
+   "event": "beat_fill",
+   "scene": 2,
+   "draw_id": "YS-02",
+   "valid": true,
+   "tag": "Trained by a dead scholar",
+   "text": "the flooded Order archive-vault beneath Saint Orrin's, where Old Tamsin once taught Ysolde to read the ciphers now half-drowned in its stacks",
+   "improvised": false,
+   "card": {
+    "id": "YS-02",
+    "type": "ROOTS",
+    "owner": "PC-YSOLDE",
+    "title": "Old Tamsin's Scroll Case",
+    "power_tags": [
+     "Teacher's annotated scroll case",
+     "Can decipher Order ciphers",
+     "Trained by a dead scholar"
+    ],
+    "weakness": "Ink runs in hard rain"
+   }
+  },
+  {
+   "event": "compel:beat frame",
+   "scene": 2,
+   "draw_id": "MI-01",
+   "valid": true,
+   "tag": "Never had a family of blood",
+   "text": "Sister Aveline seizes Mire's hands and says the boy in her care — the closest thing to a little brother Mire ever had — followed the swarm-song into the belltower three nights ago; she begs Mire by the only family bond either of them ever had to go bring him back, and Mire cannot pretend this is jus",
+   "improvised": false,
+   "accepted": true,
+   "refusal_valid": null,
+   "owner": "Mire",
+   "placebo": false,
+   "card": {
+    "id": "MI-01",
+    "type": "ROOTS",
+    "owner": "PC-MIRE",
+    "title": "Raised in the Temple Orphanage",
+    "power_tags": [
+     "Raised in the Order's orphanage",
+     "Trained young in watch drills",
+     "Knows every Order rite"
+    ],
+    "weakness": "Never had a family of blood"
+   }
+  },
+  {
+   "event": "compel:beat frame",
+   "scene": 2,
+   "draw_id": "YS-02",
+   "valid": true,
+   "tag": "Ink runs in hard rain",
+   "text": "The moment Ysolde hears where the boy went — Tamsin's old archive-vault under the drowned belltower — she knows the only ciphers that could safely guide anyone through its flooded secret ways are in her own scroll case, and the case is already damp; if she carries it out into this rain to use it, th",
+   "improvised": false,
+   "accepted": true,
+   "refusal_valid": null,
+   "owner": "Ysolde",
+   "placebo": false,
+   "card": {
+    "id": "YS-02",
+    "type": "ROOTS",
+    "owner": "PC-YSOLDE",
+    "title": "Old Tamsin's Scroll Case",
+    "power_tags": [
+     "Teacher's annotated scroll case",
+     "Can decipher Order ciphers",
+     "Trained by a dead scholar"
+    ],
+    "weakness": "Ink runs in hard rain"
+   }
   }
  ],
  "referee": {
@@ -884,6 +1667,14 @@
     "agent": "GM",
     "section": "§7",
     "issue": "reported fictional trigger fiction:the party enters a settlement that is not an unused fictional trigger",
+    "source": "engine"
+   },
+   {
+    "session": 1,
+    "scene": 2,
+    "agent": "GM",
+    "section": "§7",
+    "issue": "reported fictional trigger fiction:the party leaves the road or causeway that is not an unused fictional trigger",
     "source": "engine"
    }
   ],
@@ -935,6 +1726,20 @@
     "interim_ruling": "Treated the engine's refusal as authoritative: the trigger was considered already spent/invalid, so no Beat Frame drew cards for this scene; the table moved on without disputing it.",
     "scene": 1,
     "source": "referee"
+   },
+   {
+    "section": "§6 Adjusting Tension",
+    "issue": "The Tension adjustment table only lists a -1 change for 'The party resolved a THREAT or filled a player's goal.' In event 45 the GM applied -1 after Aldous overcame H-03 with success with style. H-03 appears to be a HAZARD card (per §2, HAZARD IDs use an H- prefix), and HAZARD is not listed in the -1 row. §8 does say a GM card 'leaves play' when overcome with success with style, but the Tension table does not say every GM-card exit qualifies for -1, only THREAT/FACTION resolution.",
+    "interim_ruling": "Treated 'the party resolved a THREAT' as covering any GM/GLOBAL clocked card (including HAZARD) that leaves play via §8's success-with-style/taken-out/clock-fill conditions, since the spirit of the row (removing a standing danger) applies equally to HAZARD cards.",
+    "scene": 2,
+    "source": "referee"
+   },
+   {
+    "section": "§5 step 5 (Beat Frame owner answers a GM question)",
+    "issue": "The rules require the drawn player card's owner to answer one GM question about the filled blank, with the answer becoming canon. The log shows generic 'roleplay/declare' rows for the scene (events 39-42) but no row explicitly tagged as the GM's question or the owner's canonical answer for either MI-01 or YS-02.",
+    "interim_ruling": "Treated the surrounding roleplay/declare narration in the framed scene as satisfying the question-and-answer step implicitly, without a dedicated event type to confirm it.",
+    "scene": 2,
+    "source": "referee"
    }
   ],
   "cost_checks": [
@@ -943,6 +1748,36 @@
     "used_drawn_card": true,
     "note": "This was a standard (non-deck-draw) Fate compel on a live card tag, not a §4 Session Deck draw cost — the provided cost-check record correctly shows draw_id as blank. The compel text ('reaching for a slate to send word up the line to Verrick's watchtower...') directly used the invoked tag 'Verrick now commands the Wardens' from card AL-02, satisfying the general compel requirement that the aspect drive the complication. No §3-table deck-draw cost (tie/major-cost/minor-cost) occurred anywhere in this scene, so no other cost_check entries apply.",
     "scene": 1
+   },
+   {
+    "event_id": 31,
+    "used_drawn_card": true,
+    "note": "MI-01 (ROOTS) fills ◆WHO using power tag 'Raised in the Order's orphanage', per §5.4.",
+    "scene": 2
+   },
+   {
+    "event_id": 31,
+    "used_drawn_card": true,
+    "note": "YS-02 (ROOTS) fills ◆WHERE using power tag 'Trained by a dead scholar'; correctly overflowed to the remaining open blank per §5.3 since both drawn cards were ROOTS (which only maps to WHO).",
+    "scene": 2
+   },
+   {
+    "event_id": 32,
+    "used_drawn_card": true,
+    "note": "Compel on MI-01 uses its weakness tag 'Never had a family of blood', the default per §4 step 2.",
+    "scene": 2
+   },
+   {
+    "event_id": 35,
+    "used_drawn_card": true,
+    "note": "Compel on YS-02 uses its weakness tag 'Ink runs in hard rain', the default per §4 step 2.",
+    "scene": 2
+   },
+   {
+    "event_id": 44,
+    "used_drawn_card": false,
+    "note": "Success-with-style peek of T-03 (deck top card) is not a deck-draw cost under the §3 outcomes table; the rule only requires the player to choose leave-or-bottom, not to use any tag. No violation.",
+    "scene": 2
    }
   ],
   "friction": [
@@ -957,6 +1792,18 @@
    {
     "scene": 1,
     "text": "The -1 Tension adjustment at scene end (event 24) lacked a clearly logged trigger condition (no THREAT/FACTION card was ever placed face-up or tracked with a clock in this scene), making it hard to audit against the §6 table without inferring intent."
+   },
+   {
+    "scene": 2,
+    "text": "The scene test result was an odd d6-vs-Tension edge case (2 vs Tension 2, even and at-or-below) leading straight into an Interrupt; the GM's initial framing of the trigger as the Beat Frame's own fictional trigger ('the party leaves the road') was rejected by the engine (§7), showing the GM conflated an Interrupt-triggered Beat Frame with a normally-triggered one — worth clarifying in the spec that an Interrupt deploys 'any prepared Beat Frame' regardless of its own trigger text."
+   },
+   {
+    "scene": 2,
+    "text": "Two ROOTS cards were drawn for the same Beat Frame (MI-01 and YS-02), both nominally mapping to WHO; the overflow-to-next-blank rule in §5.3 handled it, but this is a fragile edge case that could easily be misapplied by a less careful GM, especially combined with the 'type mismatch' scenario called out in §12 scenario 4."
+   },
+   {
+    "scene": 2,
+    "text": "No explicit fate-point-gain event is logged when Mire and Ysolde accept their compels (§4 step 3 says the owner gains 1 fate point), making it hard for the Referee to audit fate-point arithmetic purely from this scene's log even though the engine is trusted to enforce it."
    }
   ]
  },
@@ -964,14 +1811,17 @@
  "interview": null,
  "chronicle": null,
  "state_end": {
-  "tension": 2,
+  "tension": 1,
   "fp": {
-   "Ysolde": 3,
+   "Ysolde": 4,
    "Aldous": 3,
    "Morwen": 3,
-   "Mire": 3
+   "Mire": 4
   },
-  "surfaced": [],
+  "surfaced": [
+   "MI-01",
+   "YS-02"
+  ],
   "deck_player_cards": {
    "YS-02": "Ysolde",
    "AL-01": "Aldous",
@@ -981,36 +1831,34 @@
   "guarantee_pulled": [],
   "guarantee_failed": [],
   "deck_left": [
-   "MI-01",
-   "YS-02",
    "T-03",
    "F-01",
    "MO-03",
    "AL-01",
    "L-03"
   ],
-  "draws": 0,
+  "draws": 2,
   "turns": {
-   "Ysolde": 2,
-   "Aldous": 2,
-   "Morwen": 2,
-   "Mire": 2
+   "Ysolde": 3,
+   "Aldous": 3,
+   "Morwen": 3,
+   "Mire": 3
   }
  },
  "notes": [],
  "metrics": {},
  "tokens": {
-  "prompt": 223068,
-  "completion": 57176,
-  "cost_usd": 0.9006,
-  "calls": 19
+  "prompt": 464220,
+  "completion": 97668,
+  "cost_usd": 1.6802,
+  "calls": 32
  },
- "llm_calls": 19,
+ "llm_calls": 32,
  "models": {
   "gm": "claude-sonnet-5",
   "player": "claude-haiku-4-5-20251001",
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 436.6
+ "elapsed_s": 811.1
 }
