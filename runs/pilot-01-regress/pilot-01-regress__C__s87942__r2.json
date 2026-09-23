@@ -4,7 +4,7 @@
  "arm": "C",
  "seed": 87942,
  "spec_version": "0.2.0",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 2,
@@ -4215,6 +4215,174 @@
     "Mire": 3
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 143,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-04 1/5",
+   "tension": 1,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 144,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "3",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 145,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "1",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 146,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "1",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 147,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "T-02 -> T-02v2",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Driven Beneath the Shrine-House, Still Watching",
+   "event_type": "mutation",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 148,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "FP: Ysolde=3, Aldous=1, Morwen=1, Mire=3",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 1,
+    "Mire": 3
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -5775,9 +5943,164 @@
    }
   ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "protector",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 7,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The shrine-house ferryman scene. It made concrete the decade of unrepaid kindness Ysolde owed, turning it into a moment of mutual care while holding against the hive's pull. Vulnerable, specific to her character, and collaborative with Morwen's rites.",
+    "most_frustrating": "The investigation felt linear (mill → cistern → shrine-house) with limited room to suggest alternate approaches or take real investigative initiative. I followed the GM's breadcrumbs faithfully, which worked, but I wanted more agency in charting the path.",
+    "background_used": "Very well. The ferryman and exile threads created authentic emotional weight and real stakes at the toll with Ket. The decade-long debt earned the compel truthfully. Other threads (The Barge That Burned, Teacher's Scrolls) haven't surfaced yet but have space to land.",
+    "wanted_but_couldnt": "More investigative agency—chances to propose *how* to find the hive rather than following the GM's plot path. Some control over whether to help the ferryman rather than having compels decide it, though I recognize that's how compels work.",
+    "one_sentence": "Ysolde's background felt genuinely integrated, particularly the ferryman and exile threads, which gave real weight and texture to her choices throughout."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "instigator",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 7,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The flood crossing. Aldous's deepest trauma—panic near deep water, marked by drowned ghosts—became his greatest asset when he had to guide everyone across to Tomas. That moment of transmuting terror into power, where \"The dead are with me in this water\" flipped from something that breaks him into something that saves everyone, felt like genuine character transcendence. The GM let him be broken *and* capable at the same time.",
+    "most_frustrating": "I wanted Aldous to escalate toward the source of the hive threat itself rather than continually responding to its effects—to face the Priest or the core directly instead of always rescuing people from what it leaves behind. This isn't a GM failure; it's my preference for head-on escalation clashing with the GM's story structure (symptoms first, source later). Good narrative instinct on their part; just wanted more.",
+    "background_used": "Extensively and well. The Sunken Barge (sole survivor, treasure map, ghost-sense), the ferryman's vow, the panic near deep water, the rain-reading—all felt earned and central. The treasure map rumor particularly landed because it came from Aldous's own tavern-mouth, not arbitrarily imposed. Complications from the background created meaningful moments rather than cheap obstacles. The GM used his scars as tools, not punishment.",
+    "wanted_but_couldnt": "More active investigation toward the hive's core and the Priest's motivations. Wanted to use my Contacts skill more directly—to network, dig into underworld knowledge—instead of mostly responding to situations the GM presented. Also wished for clearer insight into what the Priest actually wants beyond \"consume everything.\"",
+    "one_sentence": "Aldous's backstory wasn't texture or flavor text—it was the foundation the entire narrative was built on, with vulnerabilities transformed into assets exactly when the story needed them most."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "tactician",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The ferryman scene—when Morwen's rites caught something stubborn in him still fighting the hive's pull, and she anchored him back to himself with ward-signs instead of just diagnosing his doom. It was the perfect expression of her character: she doesn't burn victims or cast them out, she *reaches* for what's still human and holds it steady. That moment crystallized everything about who she is.",
+    "most_frustrating": "Nothing substantial. The tie on the cistern Lore roll could have stung, but the GM spent it on a compel that deepened the stakes instead of just negating the discovery. Well done.",
+    "background_used": "Extensively and well. The entire back half—cistern investigation, ferryman rescue—was built around hive-victims and Morwen's deep experience surviving the first outbreak. Her knowledge of rites older than the Order felt organic to the story rather than extracted. The way Ket deferred to her as \"the Exorcist\" and the ferryman's fevered recognition of what she could do: all of it landed. Her background wasn't performed *for* the table; it was woven into why the story needed her.",
+    "wanted_but_couldnt": "Nothing I can point to. I wanted Morwen active in reading the hive-presence itself, and the cistern + ferryman sequences gave me exactly that—investigation and diagnosis and the delicate work of refusing to let the hive have people. Good pacing, good opportunities.",
+    "one_sentence": "Morwen's backstory—the trauma, the exorcism, the Sallowmere knowledge, the refusal to burn victims—was central to the session's shape, not grafted on or used against her, and every scene let her live into those themes."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "optimizer",
+   "scores": {
+    "fun": 7,
+    "involvement": 6,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The mill crossing. Mire grabbed Aldous by the shoulder and led everyone through the flood using her personal knowledge of the place and the waterwheel's current-break—it was pure competent tactical action informed by her past, and nobody else could have done it. That's what holding the line actually means.",
+    "most_frustrating": "The party's direction was set by NPCs and story momentum—Sella sent us to the mill, Ket guided us to the cistern and shrine-house. Mire responded excellently to each scene, but I never got to *choose* where we were hunting. She had tactical control but not strategic control.",
+    "background_used": "The abandoned mill and Sella worked perfectly—organic and earned rather than forced. Mire's militia training and toughness drove her problem-solving the whole session. But the Cartel angle (that Cartel boy who guided the poisoner in) never got pulled, and her disgrace by Verrick and vendetta against the Wardens barely surfaced. Good landing, but could've gone deeper.",
+    "wanted_but_couldnt": "Wanted to pursue the Cartel connection more directly—that boy who guided the poisoner in is exactly Mire's ground to hunt. Also wanted her disgraced Warden status to create more friction or direct confrontation, since \"cast out by Captain Verrick\" is central to who she is, not just background flavor.",
+    "one_sentence": "Mire's background made her the natural tactical leader in crisis moments, but her Cartel debt and personal vendetta didn't get enough activation to feel like they mattered to this story."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Ysolde",
+    "turns": 18,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Aldous",
+    "turns": 20,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Morwen",
+    "turns": 18,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Mire",
+    "turns": 16,
+    "references_to_others_background": 0
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "The party paid Ket's toll in truth, traced a deliberately-poisoned cistern to hive-work matching the Drowned Priest's acolyte markings, and followed a false rumor of silver to a hidden shrine-house — where Ysolde's stranded ferryman lay half-claimed by the hive's song, hooks sunk deep but not yet closed. Working together, Aldous read the wrongness in the water, Morwen anchored the ferryman's failing will with old ward-rites, and Mire sealed the gap in the floor, driving back whatever nested below before it could finish what it started. The thing in the dark went still and watching rather than destroyed — the Stiltfolk's water is safe for tonight, but something patient still waits beneath the shrine-house, and Aldous now carries both a buried debt of gratitude repaid and a fresh crowd of treasure-hunters drawn by his half-charred map.",
+  "closing_tension": 1,
+  "reverberations": {
+   "growth": {
+    "AL-01": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "YS-01": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    }
+   },
+   "clocks": [
+    "F-04 1/5"
+   ],
+   "mutations": [
+    {
+     "from": "T-02",
+     "to": "T-02v2"
+    }
+   ],
+   "retired": []
+  },
+  "retired": [
+   {
+    "card": "N-02",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-04",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-05",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-06",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "Q-02",
+    "how": "story pile over limit",
+    "session": 1
+   }
+  ]
+ },
  "state_end": {
   "tension": 1,
   "fp": {
@@ -5816,19 +6139,119 @@
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 1681677,
-  "completion": 292320,
-  "cost_usd": 5.2418,
-  "calls": 95
+ "metrics": {
+  "arm": "C",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Aldous",
+   "Ysolde"
+  ],
+  "backstory_all_players": false,
+  "deck_surfaced_all_players": null,
+  "deck_draws": 3,
+  "draw_costs": 8,
+  "draw_cost_used_card_rate_engine": 1.0,
+  "draw_cost_used_card_rate_referee": 0.818,
+  "fp_end": {
+   "Ysolde": 3,
+   "Aldous": 1,
+   "Morwen": 1,
+   "Mire": 3
+  },
+  "fp_end_mean": 2,
+  "fp_earned": {
+   "Mire": 1,
+   "Aldous": 2,
+   "Ysolde": 2,
+   "Morwen": 1
+  },
+  "fp_spent": {
+   "Aldous": 4,
+   "Mire": 1,
+   "Ysolde": 2,
+   "Morwen": 3
+  },
+  "compels_accepted": 6,
+  "compels_refused": 0,
+  "compels_deck": 4,
+  "compels_free": 2,
+  "turns": {
+   "Ysolde": 9,
+   "Aldous": 9,
+   "Morwen": 9,
+   "Mire": 9
+  },
+  "turn_gini": 0.0,
+  "invokes": {
+   "Aldous": 4,
+   "Mire": 2,
+   "Ysolde": 2,
+   "Morwen": 3
+  },
+  "invoke_gini": 0.1591,
+  "tension_trajectory": [
+   3,
+   2,
+   1,
+   1,
+   1,
+   1
+  ],
+  "clock_marks": 1,
+  "violations": 8,
+  "violations_engine": 3,
+  "violations_referee": 5,
+  "ambiguities": 16,
+  "ambiguity_ids": [
+   "AMB-01",
+   "AMB-12",
+   "AMB-22",
+   "AMB-27",
+   "§3 Free invokes from cards / §7 Anchors",
+   "§3 outcome table vs. Fate Core baseline for Create Advantage ties",
+   "§4 (Resolving a drawn player card - compel default vs. power-tag exception)",
+   "§5 (Beat Frame procedure, step 5)",
+   "§5 step 5 (Beat Frame procedure)",
+   "§6A (\"Pile maintenance\" / \"Add\" rule)",
+   "§6A (Draw triggers table, row: \"A player accepts a compel that did not come from a deck draw\")",
+   "§6A draw trigger table, row 1 ('A player accepts a compel that did not come from a deck draw')",
+   "§8 (opposition tag vs. target card)",
+   "§8 / §11 (card leaves play / roll-against-card)"
+  ],
+  "gm_improvised_complications": 2,
+  "card_supplied_complications": 8,
+  "improvisation_share": 0.2,
+  "guarantee_pulled": 2,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6.75,
+   "involvement": 6.75,
+   "connection": 7,
+   "control": 6,
+   "play_again": 7
+  },
+  "involvement_var_within": 0.188,
+  "personality": {
+   "Ysolde": "protector",
+   "Aldous": "instigator",
+   "Morwen": "tactician",
+   "Mire": "optimizer"
+  }
  },
- "llm_calls": 95,
+ "tokens": {
+  "prompt": 1775972,
+  "completion": 320293,
+  "cost_usd": 5.6416,
+  "calls": 101
+ },
+ "llm_calls": 101,
  "models": {
   "gm": "claude-sonnet-5",
   "player": "claude-haiku-4-5-20251001",
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 2465.9
+ "elapsed_s": 2705.8
 }

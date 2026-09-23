@@ -1,0 +1,2251 @@
+{
+ "arms": {
+  "A": {
+   "runs": 3,
+   "backstory_all_players_rate": {
+    "n": 3,
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0
+   },
+   "deck_surfaced_all_players_rate": {
+    "n": 3,
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0
+   },
+   "deck_draws": {
+    "n": 3,
+    "mean": 6,
+    "lo": 6,
+    "hi": 6
+   },
+   "fp_end_mean": {
+    "n": 3,
+    "mean": 2.333,
+    "lo": 2,
+    "hi": 3
+   },
+   "turn_gini": {
+    "n": 3,
+    "mean": 0.007,
+    "lo": 0.0,
+    "hi": 0.021
+   },
+   "invoke_gini": {
+    "n": 3,
+    "mean": 0.286,
+    "lo": 0.13,
+    "hi": 0.523
+   },
+   "clock_marks": {
+    "n": 3,
+    "mean": 2,
+    "lo": 0,
+    "hi": 3
+   },
+   "violations": {
+    "n": 3,
+    "mean": 10,
+    "lo": 5,
+    "hi": 18
+   },
+   "violations_engine": {
+    "n": 3,
+    "mean": 5.667,
+    "lo": 2,
+    "hi": 12
+   },
+   "violations_referee": {
+    "n": 3,
+    "mean": 4.333,
+    "lo": 2,
+    "hi": 6
+   },
+   "ambiguities": {
+    "n": 3,
+    "mean": 19,
+    "lo": 18,
+    "hi": 20
+   },
+   "scenes": {
+    "n": 3,
+    "mean": 4.333,
+    "lo": 4,
+    "hi": 5
+   },
+   "compels_accepted": {
+    "n": 3,
+    "mean": 7.667,
+    "lo": 7,
+    "hi": 8
+   },
+   "compels_refused": {
+    "n": 3,
+    "mean": 1,
+    "lo": 0,
+    "hi": 3
+   },
+   "gm_improvised_complications": {
+    "n": 3,
+    "mean": 4.667,
+    "lo": 4,
+    "hi": 6
+   },
+   "card_supplied_complications": {
+    "n": 3,
+    "mean": 9.333,
+    "lo": 9,
+    "hi": 10
+   },
+   "improvisation_share": {
+    "n": 3,
+    "mean": 0.331,
+    "lo": 0.286,
+    "hi": 0.4
+   },
+   "draw_cost_used_card_rate_engine": {
+    "n": 3,
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0
+   },
+   "draw_cost_used_card_rate_referee": {
+    "n": 3,
+    "mean": 0.576,
+    "lo": 0.471,
+    "hi": 0.647
+   },
+   "guarantee_failed": {
+    "n": 3,
+    "mean": 0,
+    "lo": 0,
+    "hi": 0
+   },
+   "involvement_var_within": {
+    "n": 3,
+    "mean": 0.355,
+    "lo": 0.188,
+    "hi": 0.688
+   },
+   "compel_accept_ratio": 0.885,
+   "fp_flow_by_personality": {
+    "instigator": {
+     "earned": 2,
+     "spent": 5,
+     "end": 0.5
+    },
+    "lurker": {
+     "earned": 3,
+     "spent": 2,
+     "end": 4
+    },
+    "method_actor": {
+     "earned": 3,
+     "spent": 2,
+     "end": 4
+    },
+    "optimizer": {
+     "earned": 3.5,
+     "spent": 2,
+     "end": 4.5
+    },
+    "protector": {
+     "earned": 1.5,
+     "spent": 2.5,
+     "end": 2.5
+    },
+    "rules_lawyer": {
+     "earned": 0,
+     "spent": 3,
+     "end": 0
+    },
+    "storyteller": {
+     "earned": 1,
+     "spent": 4,
+     "end": 0
+    },
+    "tactician": {
+     "earned": 2.5,
+     "spent": 3,
+     "end": 2.5
+    }
+   },
+   "tension_distribution": {
+    "1": 9,
+    "2": 4,
+    "3": 3
+   },
+   "survey": {
+    "fun": {
+     "n": 12,
+     "mean": 6.417,
+     "lo": 6.167,
+     "hi": 6.667
+    },
+    "involvement": {
+     "n": 12,
+     "mean": 6.417,
+     "lo": 6.083,
+     "hi": 6.75
+    },
+    "connection": {
+     "n": 12,
+     "mean": 6.5,
+     "lo": 6.083,
+     "hi": 6.833
+    },
+    "control": {
+     "n": 12,
+     "mean": 5.667,
+     "lo": 5.25,
+     "hi": 6
+    },
+    "play_again": {
+     "n": 12,
+     "mean": 6.917,
+     "lo": 6.75,
+     "hi": 7
+    }
+   },
+   "survey_by_personality": {
+    "instigator": {
+     "fun": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "involvement": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "connection": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "control": {
+      "n": 2,
+      "mean": 5.5,
+      "lo": 5,
+      "hi": 6
+     },
+     "play_again": {
+      "n": 2,
+      "mean": 7,
+      "lo": 7,
+      "hi": 7
+     }
+    },
+    "lurker": {
+     "fun": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "involvement": {
+      "n": 1,
+      "mean": 5,
+      "lo": null,
+      "hi": null
+     },
+     "connection": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "control": {
+      "n": 1,
+      "mean": 4,
+      "lo": null,
+      "hi": null
+     },
+     "play_again": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     }
+    },
+    "method_actor": {
+     "fun": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     },
+     "involvement": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     },
+     "connection": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     },
+     "control": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "play_again": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     }
+    },
+    "optimizer": {
+     "fun": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "involvement": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "connection": {
+      "n": 2,
+      "mean": 6,
+      "lo": 5,
+      "hi": 7
+     },
+     "control": {
+      "n": 2,
+      "mean": 6,
+      "lo": 6,
+      "hi": 6
+     },
+     "play_again": {
+      "n": 2,
+      "mean": 7,
+      "lo": 7,
+      "hi": 7
+     }
+    },
+    "protector": {
+     "fun": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "involvement": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "connection": {
+      "n": 2,
+      "mean": 7,
+      "lo": 7,
+      "hi": 7
+     },
+     "control": {
+      "n": 2,
+      "mean": 5.5,
+      "lo": 5,
+      "hi": 6
+     },
+     "play_again": {
+      "n": 2,
+      "mean": 7,
+      "lo": 7,
+      "hi": 7
+     }
+    },
+    "rules_lawyer": {
+     "fun": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     },
+     "involvement": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     },
+     "connection": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     },
+     "control": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "play_again": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     }
+    },
+    "storyteller": {
+     "fun": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "involvement": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "connection": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "control": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "play_again": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     }
+    },
+    "tactician": {
+     "fun": {
+      "n": 2,
+      "mean": 6,
+      "lo": 6,
+      "hi": 6
+     },
+     "involvement": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "connection": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "control": {
+      "n": 2,
+      "mean": 6,
+      "lo": 6,
+      "hi": 6
+     },
+     "play_again": {
+      "n": 2,
+      "mean": 7,
+      "lo": 7,
+      "hi": 7
+     }
+    }
+   },
+   "complaints": {
+    "other": 6,
+    "dice/luck": 2,
+    "agency/control": 2,
+    "spotlight/ignored": 2,
+    "pacing": 1,
+    "rules/confusion": 1
+   },
+   "ambiguity_ids": {
+    "AMB-01": 3,
+    "AMB-03": 3,
+    "AMB-12": 3,
+    "AMB-22": 3,
+    "AMB-27": 3,
+    "\u00a76A": 3,
+    "AMB-19": 2,
+    "\u00a75": 2,
+    "\u00a73": 1,
+    "\u00a73 (Opposition, passive / Invokes)": 1,
+    "\u00a73 Outcomes and deck draws (Tie row)": 1,
+    "\u00a74 (Outcomes and deck draws) / climax override in \u00a74 ('When the deck runs out')": 1,
+    "\u00a74 step 2 (Resolving a drawn player card)": 1,
+    "\u00a75 (Beat Frame procedure, step 5)": 1,
+    "\u00a76 Adjusting Tension": 1,
+    "\u00a76A (Draw triggers table)": 1,
+    "\u00a76A (pile maintenance \u2014 Add)": 1,
+    "\u00a78 (Consequences strain cards / Card destruction)": 1,
+    "AMB-04": 1,
+    "AMB-10": 1,
+    "AMB-16": 1,
+    "\u00a73 (Opposition, active NPC)": 1,
+    "\u00a74 (Resolving a drawn player card, step 4) / \u00a73 outcomes table": 1,
+    "\u00a74 step 4": 1,
+    "\u00a75 (Beat Frame procedure, step 4)": 1,
+    "\u00a75 (Beat Frame procedure, steps 5\u20136)": 1,
+    "\u00a76 (Tension adjustment table)": 1,
+    "\u00a73 Invokes / Free invokes from cards": 1,
+    "\u00a74 Cleanup at scene end / \u00a77 Backup modules": 1,
+    "\u00a74 When the deck runs out / Outcomes table": 1,
+    "\u00a75 Beat Frame procedure, step 5": 1,
+    "\u00a75.4": 1,
+    "\u00a76A (draw triggers table, GM free invoke column)": 1,
+    "\u00a76A (draw triggers table, row 1)": 1,
+    "\u00a77": 1,
+    "\u00a77 The rail / \u00a72 card provenance": 1
+   }
+  },
+  "B": {
+   "runs": 3,
+   "backstory_all_players_rate": {
+    "n": 3,
+    "mean": 0.333,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "deck_draws": {
+    "n": 3,
+    "mean": 0,
+    "lo": 0,
+    "hi": 0
+   },
+   "fp_end_mean": {
+    "n": 3,
+    "mean": 1.5,
+    "lo": 0.5,
+    "hi": 2
+   },
+   "turn_gini": {
+    "n": 3,
+    "mean": 0.02,
+    "lo": 0.0,
+    "hi": 0.061
+   },
+   "invoke_gini": {
+    "n": 3,
+    "mean": 0.272,
+    "lo": 0.094,
+    "hi": 0.472
+   },
+   "clock_marks": {
+    "n": 3,
+    "mean": 0,
+    "lo": 0,
+    "hi": 0
+   },
+   "violations": {
+    "n": 3,
+    "mean": 5.333,
+    "lo": 2,
+    "hi": 10
+   },
+   "violations_engine": {
+    "n": 3,
+    "mean": 4,
+    "lo": 1,
+    "hi": 10
+   },
+   "violations_referee": {
+    "n": 3,
+    "mean": 1.333,
+    "lo": 0,
+    "hi": 3
+   },
+   "ambiguities": {
+    "n": 3,
+    "mean": 12.667,
+    "lo": 11,
+    "hi": 14
+   },
+   "scenes": {
+    "n": 3,
+    "mean": 5,
+    "lo": 5,
+    "hi": 5
+   },
+   "compels_accepted": {
+    "n": 3,
+    "mean": 4.667,
+    "lo": 3,
+    "hi": 6
+   },
+   "compels_refused": {
+    "n": 3,
+    "mean": 1,
+    "lo": 0,
+    "hi": 2
+   },
+   "gm_improvised_complications": {
+    "n": 3,
+    "mean": 7.333,
+    "lo": 7,
+    "hi": 8
+   },
+   "card_supplied_complications": {
+    "n": 3,
+    "mean": 0,
+    "lo": 0,
+    "hi": 0
+   },
+   "improvisation_share": {
+    "n": 3,
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0
+   },
+   "draw_cost_used_card_rate_engine": {
+    "n": 0,
+    "mean": null,
+    "lo": null,
+    "hi": null
+   },
+   "draw_cost_used_card_rate_referee": {
+    "n": 3,
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0
+   },
+   "guarantee_failed": {
+    "n": 3,
+    "mean": 0,
+    "lo": 0,
+    "hi": 0
+   },
+   "involvement_var_within": {
+    "n": 3,
+    "mean": 0.229,
+    "lo": 0.188,
+    "hi": 0.25
+   },
+   "compel_accept_ratio": 0.824,
+   "fp_flow_by_personality": {
+    "instigator": {
+     "earned": 1,
+     "spent": 3.5,
+     "end": 0.5
+    },
+    "lurker": {
+     "earned": 1,
+     "spent": 4,
+     "end": 0
+    },
+    "method_actor": {
+     "earned": 2,
+     "spent": 4,
+     "end": 1
+    },
+    "optimizer": {
+     "earned": 3,
+     "spent": 3,
+     "end": 3.5
+    },
+    "protector": {
+     "earned": 0.5,
+     "spent": 1,
+     "end": 2.5
+    },
+    "rules_lawyer": {
+     "earned": 0,
+     "spent": 3,
+     "end": 0
+    },
+    "storyteller": {
+     "earned": 0,
+     "spent": 2,
+     "end": 1
+    },
+    "tactician": {
+     "earned": 1,
+     "spent": 2.5,
+     "end": 1.5
+    }
+   },
+   "tension_distribution": {},
+   "survey": {
+    "fun": {
+     "n": 12,
+     "mean": 6.333,
+     "lo": 6.083,
+     "hi": 6.583
+    },
+    "involvement": {
+     "n": 12,
+     "mean": 6.417,
+     "lo": 6.167,
+     "hi": 6.75
+    },
+    "connection": {
+     "n": 12,
+     "mean": 6.25,
+     "lo": 5.833,
+     "hi": 6.583
+    },
+    "control": {
+     "n": 12,
+     "mean": 5.667,
+     "lo": 5.25,
+     "hi": 6
+    },
+    "play_again": {
+     "n": 12,
+     "mean": 6.917,
+     "lo": 6.75,
+     "hi": 7
+    }
+   },
+   "survey_by_personality": {
+    "instigator": {
+     "fun": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "involvement": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "connection": {
+      "n": 2,
+      "mean": 5.5,
+      "lo": 5,
+      "hi": 6
+     },
+     "control": {
+      "n": 2,
+      "mean": 6,
+      "lo": 6,
+      "hi": 6
+     },
+     "play_again": {
+      "n": 2,
+      "mean": 7,
+      "lo": 7,
+      "hi": 7
+     }
+    },
+    "lurker": {
+     "fun": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "involvement": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "connection": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     },
+     "control": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "play_again": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     }
+    },
+    "method_actor": {
+     "fun": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "involvement": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     },
+     "connection": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "control": {
+      "n": 1,
+      "mean": 5,
+      "lo": null,
+      "hi": null
+     },
+     "play_again": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     }
+    },
+    "optimizer": {
+     "fun": {
+      "n": 2,
+      "mean": 6,
+      "lo": 6,
+      "hi": 6
+     },
+     "involvement": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "connection": {
+      "n": 2,
+      "mean": 5.5,
+      "lo": 5,
+      "hi": 6
+     },
+     "control": {
+      "n": 2,
+      "mean": 6,
+      "lo": 6,
+      "hi": 6
+     },
+     "play_again": {
+      "n": 2,
+      "mean": 7,
+      "lo": 7,
+      "hi": 7
+     }
+    },
+    "protector": {
+     "fun": {
+      "n": 2,
+      "mean": 7,
+      "lo": 7,
+      "hi": 7
+     },
+     "involvement": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "connection": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "control": {
+      "n": 2,
+      "mean": 6,
+      "lo": 6,
+      "hi": 6
+     },
+     "play_again": {
+      "n": 2,
+      "mean": 7,
+      "lo": 7,
+      "hi": 7
+     }
+    },
+    "rules_lawyer": {
+     "fun": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "involvement": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "connection": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     },
+     "control": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "play_again": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     }
+    },
+    "storyteller": {
+     "fun": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "involvement": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "connection": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "control": {
+      "n": 1,
+      "mean": 4,
+      "lo": null,
+      "hi": null
+     },
+     "play_again": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     }
+    },
+    "tactician": {
+     "fun": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "involvement": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "connection": {
+      "n": 2,
+      "mean": 7,
+      "lo": 7,
+      "hi": 7
+     },
+     "control": {
+      "n": 2,
+      "mean": 5.5,
+      "lo": 5,
+      "hi": 6
+     },
+     "play_again": {
+      "n": 2,
+      "mean": 7,
+      "lo": 7,
+      "hi": 7
+     }
+    }
+   },
+   "complaints": {
+    "other": 7,
+    "spotlight/ignored": 3,
+    "rules/confusion": 2,
+    "agency/control": 1,
+    "unfair/punishing": 1
+   },
+   "ambiguity_ids": {
+    "AMB-12": 3,
+    "AMB-19": 2,
+    "Compels": 2,
+    "Conflict": 2,
+    "Aspects and invokes / Compels": 2,
+    "Deck/module/rail subsystem (events 38\u201340)": 1,
+    "Rolls (Passive opposition vs. Named NPC active opposition)": 1,
+    "Rolls (passive/active opposition)": 1,
+    "\u00a73 (Rolls \u2014 passive opposition)": 1,
+    "\u00a7Scenes / \u00a7Fate points (GM refresh)": 1,
+    "AMB-23": 1,
+    "Aspects and invokes": 1,
+    "Aspects and invokes / Conflict (scope of baseline rules)": 1,
+    "Deck-draw / target_card sourcing": 1,
+    "Fate points": 1,
+    "Outcomes / GM invents costs": 1,
+    "Rolls (passive vs. active opposition)": 1,
+    "Aspects and invokes (\"Each aspect once per roll\")": 1,
+    "Aspects and invokes / Fate points (trouble aspects)": 1,
+    "Aspects and invokes / deck-card tags (target_card, opposing_tags fields)": 1,
+    "Compels (\"the GM may offer a compel on any player aspect or trouble\")": 1,
+    "Fate points (GM refresh)": 1,
+    "Outcomes (tie = success at a minor cost) / cost generation": 1,
+    "Rolls (passive opposition vs. named NPC active opposition)": 1,
+    "Rolls / Named NPC active opposition": 1,
+    "Rolls / opposition (\"Named NPCs roll 4dF + their rating as active opposition\")": 1,
+    "Scenes": 1
+   }
+  },
+  "C": {
+   "runs": 3,
+   "backstory_all_players_rate": {
+    "n": 3,
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0
+   },
+   "deck_surfaced_all_players_rate": {
+    "n": 0,
+    "mean": null,
+    "lo": null,
+    "hi": null
+   },
+   "deck_draws": {
+    "n": 3,
+    "mean": 3.333,
+    "lo": 2,
+    "hi": 5
+   },
+   "fp_end_mean": {
+    "n": 3,
+    "mean": 1.833,
+    "lo": 1.25,
+    "hi": 2.25
+   },
+   "turn_gini": {
+    "n": 3,
+    "mean": 0.023,
+    "lo": 0.0,
+    "hi": 0.068
+   },
+   "invoke_gini": {
+    "n": 3,
+    "mean": 0.157,
+    "lo": 0.125,
+    "hi": 0.188
+   },
+   "clock_marks": {
+    "n": 3,
+    "mean": 1,
+    "lo": 1,
+    "hi": 1
+   },
+   "violations": {
+    "n": 3,
+    "mean": 7.667,
+    "lo": 6,
+    "hi": 9
+   },
+   "violations_engine": {
+    "n": 3,
+    "mean": 3,
+    "lo": 0,
+    "hi": 6
+   },
+   "violations_referee": {
+    "n": 3,
+    "mean": 4.667,
+    "lo": 3,
+    "hi": 6
+   },
+   "ambiguities": {
+    "n": 3,
+    "mean": 18.333,
+    "lo": 16,
+    "hi": 21
+   },
+   "scenes": {
+    "n": 3,
+    "mean": 5,
+    "lo": 5,
+    "hi": 5
+   },
+   "compels_accepted": {
+    "n": 3,
+    "mean": 5.667,
+    "lo": 5,
+    "hi": 6
+   },
+   "compels_refused": {
+    "n": 3,
+    "mean": 1,
+    "lo": 0,
+    "hi": 2
+   },
+   "gm_improvised_complications": {
+    "n": 3,
+    "mean": 2.667,
+    "lo": 2,
+    "hi": 3
+   },
+   "card_supplied_complications": {
+    "n": 3,
+    "mean": 8.333,
+    "lo": 8,
+    "hi": 9
+   },
+   "improvisation_share": {
+    "n": 3,
+    "mean": 0.241,
+    "lo": 0.2,
+    "hi": 0.273
+   },
+   "draw_cost_used_card_rate_engine": {
+    "n": 3,
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0
+   },
+   "draw_cost_used_card_rate_referee": {
+    "n": 3,
+    "mean": 0.807,
+    "lo": 0.769,
+    "hi": 0.833
+   },
+   "guarantee_failed": {
+    "n": 3,
+    "mean": 0,
+    "lo": 0,
+    "hi": 0
+   },
+   "involvement_var_within": {
+    "n": 3,
+    "mean": 0.313,
+    "lo": 0,
+    "hi": 0.75
+   },
+   "compel_accept_ratio": 0.85,
+   "fp_flow_by_personality": {
+    "instigator": {
+     "earned": 1.5,
+     "spent": 3.5,
+     "end": 1
+    },
+    "lurker": {
+     "earned": 1,
+     "spent": 1,
+     "end": 3
+    },
+    "method_actor": {
+     "earned": 2,
+     "spent": 2,
+     "end": 3
+    },
+    "optimizer": {
+     "earned": 1.5,
+     "spent": 2.5,
+     "end": 2.5
+    },
+    "protector": {
+     "earned": 2,
+     "spent": 3,
+     "end": 2
+    },
+    "rules_lawyer": {
+     "earned": 1,
+     "spent": 3,
+     "end": 1
+    },
+    "storyteller": {
+     "earned": 1,
+     "spent": 2,
+     "end": 2
+    },
+    "tactician": {
+     "earned": 1,
+     "spent": 3,
+     "end": 1
+    }
+   },
+   "tension_distribution": {
+    "1": 9,
+    "2": 4,
+    "3": 5
+   },
+   "survey": {
+    "fun": {
+     "n": 12,
+     "mean": 6.167,
+     "lo": 5.833,
+     "hi": 6.5
+    },
+    "involvement": {
+     "n": 12,
+     "mean": 6.417,
+     "lo": 6,
+     "hi": 6.75
+    },
+    "connection": {
+     "n": 12,
+     "mean": 6.667,
+     "lo": 6.417,
+     "hi": 6.917
+    },
+    "control": {
+     "n": 12,
+     "mean": 5.5,
+     "lo": 5.167,
+     "hi": 5.917
+    },
+    "play_again": {
+     "n": 12,
+     "mean": 6.833,
+     "lo": 6.583,
+     "hi": 7
+    }
+   },
+   "survey_by_personality": {
+    "instigator": {
+     "fun": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "involvement": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "connection": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "control": {
+      "n": 2,
+      "mean": 6,
+      "lo": 5,
+      "hi": 7
+     },
+     "play_again": {
+      "n": 2,
+      "mean": 7,
+      "lo": 7,
+      "hi": 7
+     }
+    },
+    "lurker": {
+     "fun": {
+      "n": 1,
+      "mean": 5,
+      "lo": null,
+      "hi": null
+     },
+     "involvement": {
+      "n": 1,
+      "mean": 5,
+      "lo": null,
+      "hi": null
+     },
+     "connection": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "control": {
+      "n": 1,
+      "mean": 5,
+      "lo": null,
+      "hi": null
+     },
+     "play_again": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     }
+    },
+    "method_actor": {
+     "fun": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "involvement": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     },
+     "connection": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     },
+     "control": {
+      "n": 1,
+      "mean": 5,
+      "lo": null,
+      "hi": null
+     },
+     "play_again": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     }
+    },
+    "optimizer": {
+     "fun": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "involvement": {
+      "n": 2,
+      "mean": 6,
+      "lo": 6,
+      "hi": 6
+     },
+     "connection": {
+      "n": 2,
+      "mean": 7,
+      "lo": 7,
+      "hi": 7
+     },
+     "control": {
+      "n": 2,
+      "mean": 5.5,
+      "lo": 5,
+      "hi": 6
+     },
+     "play_again": {
+      "n": 2,
+      "mean": 7,
+      "lo": 7,
+      "hi": 7
+     }
+    },
+    "protector": {
+     "fun": {
+      "n": 2,
+      "mean": 6,
+      "lo": 6,
+      "hi": 6
+     },
+     "involvement": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "connection": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "control": {
+      "n": 2,
+      "mean": 5,
+      "lo": 5,
+      "hi": 5
+     },
+     "play_again": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     }
+    },
+    "rules_lawyer": {
+     "fun": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "involvement": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     },
+     "connection": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     },
+     "control": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "play_again": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     }
+    },
+    "storyteller": {
+     "fun": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "involvement": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     },
+     "connection": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     },
+     "control": {
+      "n": 1,
+      "mean": 6,
+      "lo": null,
+      "hi": null
+     },
+     "play_again": {
+      "n": 1,
+      "mean": 7,
+      "lo": null,
+      "hi": null
+     }
+    },
+    "tactician": {
+     "fun": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "involvement": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "connection": {
+      "n": 2,
+      "mean": 6.5,
+      "lo": 6,
+      "hi": 7
+     },
+     "control": {
+      "n": 2,
+      "mean": 5.5,
+      "lo": 5,
+      "hi": 6
+     },
+     "play_again": {
+      "n": 2,
+      "mean": 7,
+      "lo": 7,
+      "hi": 7
+     }
+    }
+   },
+   "complaints": {
+    "other": 6,
+    "dice/luck": 3,
+    "agency/control": 3,
+    "rules/confusion": 2,
+    "pacing": 1
+   },
+   "ambiguity_ids": {
+    "AMB-01": 3,
+    "AMB-12": 3,
+    "AMB-22": 3,
+    "AMB-27": 3,
+    "AMB-04": 2,
+    "\u00a76A": 2,
+    "AMB-23": 1,
+    "\u00a73": 1,
+    "\u00a74 (Backstory guarantee) vs \u00a711 (tie-during-Beat-Frame ordering)": 1,
+    "\u00a74 (Backstory guarantee, 'The deck is down to 2 cards')": 1,
+    "\u00a74 (climax rule) / \u00a74 (backstory guarantee, 'session's final scene begins')": 1,
+    "\u00a74 / \u00a76A": 1,
+    "\u00a75 step 5 (Beat Frame procedure, canon question)": 1,
+    "\u00a76": 1,
+    "\u00a76 Adjusting Tension table": 1,
+    "\u00a77": 1,
+    "\u00a77 / \u00a74 / \u00a75": 1,
+    "\u00a73 (Opposition, passive)": 1,
+    "\u00a73 Invokes / free invokes vs paid invokes": 1,
+    "\u00a75 Beat Frames / \u00a77 Writing triggers": 1,
+    "\u00a75 step 5": 1,
+    "\u00a76 Adjusting Tension table / \u00a711 (no equivalent ruling for 'ignored')": 1,
+    "\u00a76 Tension track / Adjusting Tension at scene end": 1,
+    "\u00a76A Pile maintenance \u2014 Add": 1,
+    "\u00a77 Scene loop step 5 / Beat Frames (\u00a75) and Backup modules (\u00a77)": 1,
+    "\u00a77 Writing triggers": 1,
+    "\u00a77 step 5 / \u00a77 'Backup modules'": 1,
+    "\u00a78 Consequences strain cards": 1,
+    "\u00a73 Free invokes from cards / \u00a77 Anchors": 1,
+    "\u00a73 outcome table vs. Fate Core baseline for Create Advantage ties": 1,
+    "\u00a74 (Resolving a drawn player card - compel default vs. power-tag exception)": 1,
+    "\u00a75 (Beat Frame procedure, step 5)": 1,
+    "\u00a75 step 5 (Beat Frame procedure)": 1,
+    "\u00a76A (\"Pile maintenance\" / \"Add\" rule)": 1,
+    "\u00a76A (Draw triggers table, row: \"A player accepts a compel that did not come from a deck draw\")": 1,
+    "\u00a76A draw trigger table, row 1 ('A player accepts a compel that did not come from a deck draw')": 1,
+    "\u00a78 (opposition tag vs. target card)": 1,
+    "\u00a78 / \u00a711 (card leaves play / roll-against-card)": 1
+   }
+  }
+ },
+ "status_counts": {
+  "complete": 9
+ },
+ "paired": {
+  "A-B": {
+   "involvement": {
+    "all": {
+     "n": 12,
+     "mean": 0,
+     "lo": -0.333,
+     "hi": 0.333
+    },
+    "by_personality": {
+     "instigator": {
+      "n": 2,
+      "mean": 0,
+      "lo": -1,
+      "hi": 1
+     },
+     "lurker": {
+      "n": 1,
+      "mean": -1,
+      "lo": null,
+      "hi": null
+     },
+     "method_actor": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "optimizer": {
+      "n": 2,
+      "mean": 0,
+      "lo": 0,
+      "hi": 0
+     },
+     "protector": {
+      "n": 2,
+      "mean": 0,
+      "lo": 0,
+      "hi": 0
+     },
+     "rules_lawyer": {
+      "n": 1,
+      "mean": 1,
+      "lo": null,
+      "hi": null
+     },
+     "storyteller": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "tactician": {
+      "n": 2,
+      "mean": 0,
+      "lo": 0,
+      "hi": 0
+     }
+    }
+   },
+   "connection": {
+    "all": {
+     "n": 12,
+     "mean": 0.25,
+     "lo": -0.167,
+     "hi": 0.667
+    },
+    "by_personality": {
+     "instigator": {
+      "n": 2,
+      "mean": 1,
+      "lo": 1,
+      "hi": 1
+     },
+     "lurker": {
+      "n": 1,
+      "mean": -1,
+      "lo": null,
+      "hi": null
+     },
+     "method_actor": {
+      "n": 1,
+      "mean": 1,
+      "lo": null,
+      "hi": null
+     },
+     "optimizer": {
+      "n": 2,
+      "mean": 0.5,
+      "lo": 0,
+      "hi": 1
+     },
+     "protector": {
+      "n": 2,
+      "mean": 0.5,
+      "lo": 0,
+      "hi": 1
+     },
+     "rules_lawyer": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "storyteller": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "tactician": {
+      "n": 2,
+      "mean": -0.5,
+      "lo": -1,
+      "hi": 0
+     }
+    }
+   },
+   "fun": {
+    "all": {
+     "n": 12,
+     "mean": 0.083,
+     "lo": -0.25,
+     "hi": 0.417
+    },
+    "by_personality": {
+     "instigator": {
+      "n": 2,
+      "mean": 0,
+      "lo": 0,
+      "hi": 0
+     },
+     "lurker": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "method_actor": {
+      "n": 1,
+      "mean": 1,
+      "lo": null,
+      "hi": null
+     },
+     "optimizer": {
+      "n": 2,
+      "mean": 0.5,
+      "lo": 0,
+      "hi": 1
+     },
+     "protector": {
+      "n": 2,
+      "mean": -0.5,
+      "lo": -1,
+      "hi": 0
+     },
+     "rules_lawyer": {
+      "n": 1,
+      "mean": 1,
+      "lo": null,
+      "hi": null
+     },
+     "storyteller": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "tactician": {
+      "n": 2,
+      "mean": -0.5,
+      "lo": -1,
+      "hi": 0
+     }
+    }
+   },
+   "control": {
+    "all": {
+     "n": 12,
+     "mean": 0,
+     "lo": -0.583,
+     "hi": 0.583
+    },
+    "by_personality": {
+     "instigator": {
+      "n": 2,
+      "mean": -0.5,
+      "lo": -1,
+      "hi": 0
+     },
+     "lurker": {
+      "n": 1,
+      "mean": -2,
+      "lo": null,
+      "hi": null
+     },
+     "method_actor": {
+      "n": 1,
+      "mean": 1,
+      "lo": null,
+      "hi": null
+     },
+     "optimizer": {
+      "n": 2,
+      "mean": 0,
+      "lo": 0,
+      "hi": 0
+     },
+     "protector": {
+      "n": 2,
+      "mean": -0.5,
+      "lo": -1,
+      "hi": 0
+     },
+     "rules_lawyer": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "storyteller": {
+      "n": 1,
+      "mean": 2,
+      "lo": null,
+      "hi": null
+     },
+     "tactician": {
+      "n": 2,
+      "mean": 0.5,
+      "lo": 0,
+      "hi": 1
+     }
+    }
+   }
+  },
+  "A-C": {
+   "involvement": {
+    "all": {
+     "n": 12,
+     "mean": 0,
+     "lo": -0.25,
+     "hi": 0.25
+    },
+    "by_personality": {
+     "instigator": {
+      "n": 2,
+      "mean": 0,
+      "lo": 0,
+      "hi": 0
+     },
+     "lurker": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "method_actor": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "optimizer": {
+      "n": 2,
+      "mean": 0.5,
+      "lo": 0,
+      "hi": 1
+     },
+     "protector": {
+      "n": 2,
+      "mean": 0,
+      "lo": 0,
+      "hi": 0
+     },
+     "rules_lawyer": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "storyteller": {
+      "n": 1,
+      "mean": -1,
+      "lo": null,
+      "hi": null
+     },
+     "tactician": {
+      "n": 2,
+      "mean": 0,
+      "lo": 0,
+      "hi": 0
+     }
+    }
+   },
+   "connection": {
+    "all": {
+     "n": 12,
+     "mean": -0.167,
+     "lo": -0.583,
+     "hi": 0.167
+    },
+    "by_personality": {
+     "instigator": {
+      "n": 2,
+      "mean": 0,
+      "lo": 0,
+      "hi": 0
+     },
+     "lurker": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "method_actor": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "optimizer": {
+      "n": 2,
+      "mean": -1,
+      "lo": -2,
+      "hi": 0
+     },
+     "protector": {
+      "n": 2,
+      "mean": 0.5,
+      "lo": 0,
+      "hi": 1
+     },
+     "rules_lawyer": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "storyteller": {
+      "n": 1,
+      "mean": -1,
+      "lo": null,
+      "hi": null
+     },
+     "tactician": {
+      "n": 2,
+      "mean": 0,
+      "lo": 0,
+      "hi": 0
+     }
+    }
+   },
+   "fun": {
+    "all": {
+     "n": 12,
+     "mean": 0.25,
+     "lo": -0.167,
+     "hi": 0.583
+    },
+    "by_personality": {
+     "instigator": {
+      "n": 2,
+      "mean": 0,
+      "lo": 0,
+      "hi": 0
+     },
+     "lurker": {
+      "n": 1,
+      "mean": 1,
+      "lo": null,
+      "hi": null
+     },
+     "method_actor": {
+      "n": 1,
+      "mean": 1,
+      "lo": null,
+      "hi": null
+     },
+     "optimizer": {
+      "n": 2,
+      "mean": 0,
+      "lo": -1,
+      "hi": 1
+     },
+     "protector": {
+      "n": 2,
+      "mean": 0.5,
+      "lo": 0,
+      "hi": 1
+     },
+     "rules_lawyer": {
+      "n": 1,
+      "mean": 1,
+      "lo": null,
+      "hi": null
+     },
+     "storyteller": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "tactician": {
+      "n": 2,
+      "mean": -0.5,
+      "lo": -1,
+      "hi": 0
+     }
+    }
+   },
+   "control": {
+    "all": {
+     "n": 12,
+     "mean": 0.167,
+     "lo": -0.25,
+     "hi": 0.583
+    },
+    "by_personality": {
+     "instigator": {
+      "n": 2,
+      "mean": -0.5,
+      "lo": -1,
+      "hi": 0
+     },
+     "lurker": {
+      "n": 1,
+      "mean": -1,
+      "lo": null,
+      "hi": null
+     },
+     "method_actor": {
+      "n": 1,
+      "mean": 1,
+      "lo": null,
+      "hi": null
+     },
+     "optimizer": {
+      "n": 2,
+      "mean": 0.5,
+      "lo": 0,
+      "hi": 1
+     },
+     "protector": {
+      "n": 2,
+      "mean": 0.5,
+      "lo": 0,
+      "hi": 1
+     },
+     "rules_lawyer": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "storyteller": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "tactician": {
+      "n": 2,
+      "mean": 0.5,
+      "lo": 0,
+      "hi": 1
+     }
+    }
+   }
+  },
+  "C-B": {
+   "involvement": {
+    "all": {
+     "n": 12,
+     "mean": 0,
+     "lo": -0.417,
+     "hi": 0.417
+    },
+    "by_personality": {
+     "instigator": {
+      "n": 2,
+      "mean": 0,
+      "lo": -1,
+      "hi": 1
+     },
+     "lurker": {
+      "n": 1,
+      "mean": -1,
+      "lo": null,
+      "hi": null
+     },
+     "method_actor": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "optimizer": {
+      "n": 2,
+      "mean": -0.5,
+      "lo": -1,
+      "hi": 0
+     },
+     "protector": {
+      "n": 2,
+      "mean": 0,
+      "lo": 0,
+      "hi": 0
+     },
+     "rules_lawyer": {
+      "n": 1,
+      "mean": 1,
+      "lo": null,
+      "hi": null
+     },
+     "storyteller": {
+      "n": 1,
+      "mean": 1,
+      "lo": null,
+      "hi": null
+     },
+     "tactician": {
+      "n": 2,
+      "mean": 0,
+      "lo": 0,
+      "hi": 0
+     }
+    }
+   },
+   "connection": {
+    "all": {
+     "n": 12,
+     "mean": 0.417,
+     "lo": -0.083,
+     "hi": 0.917
+    },
+    "by_personality": {
+     "instigator": {
+      "n": 2,
+      "mean": 1,
+      "lo": 1,
+      "hi": 1
+     },
+     "lurker": {
+      "n": 1,
+      "mean": -1,
+      "lo": null,
+      "hi": null
+     },
+     "method_actor": {
+      "n": 1,
+      "mean": 1,
+      "lo": null,
+      "hi": null
+     },
+     "optimizer": {
+      "n": 2,
+      "mean": 1.5,
+      "lo": 1,
+      "hi": 2
+     },
+     "protector": {
+      "n": 2,
+      "mean": 0,
+      "lo": -1,
+      "hi": 1
+     },
+     "rules_lawyer": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "storyteller": {
+      "n": 1,
+      "mean": 1,
+      "lo": null,
+      "hi": null
+     },
+     "tactician": {
+      "n": 2,
+      "mean": -0.5,
+      "lo": -1,
+      "hi": 0
+     }
+    }
+   },
+   "fun": {
+    "all": {
+     "n": 12,
+     "mean": -0.167,
+     "lo": -0.5,
+     "hi": 0.083
+    },
+    "by_personality": {
+     "instigator": {
+      "n": 2,
+      "mean": 0,
+      "lo": 0,
+      "hi": 0
+     },
+     "lurker": {
+      "n": 1,
+      "mean": -1,
+      "lo": null,
+      "hi": null
+     },
+     "method_actor": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "optimizer": {
+      "n": 2,
+      "mean": 0.5,
+      "lo": 0,
+      "hi": 1
+     },
+     "protector": {
+      "n": 2,
+      "mean": -1,
+      "lo": -1,
+      "hi": -1
+     },
+     "rules_lawyer": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "storyteller": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "tactician": {
+      "n": 2,
+      "mean": 0,
+      "lo": 0,
+      "hi": 0
+     }
+    }
+   },
+   "control": {
+    "all": {
+     "n": 12,
+     "mean": -0.167,
+     "lo": -0.667,
+     "hi": 0.417
+    },
+    "by_personality": {
+     "instigator": {
+      "n": 2,
+      "mean": 0,
+      "lo": -1,
+      "hi": 1
+     },
+     "lurker": {
+      "n": 1,
+      "mean": -1,
+      "lo": null,
+      "hi": null
+     },
+     "method_actor": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "optimizer": {
+      "n": 2,
+      "mean": -0.5,
+      "lo": -1,
+      "hi": 0
+     },
+     "protector": {
+      "n": 2,
+      "mean": -1,
+      "lo": -1,
+      "hi": -1
+     },
+     "rules_lawyer": {
+      "n": 1,
+      "mean": 0,
+      "lo": null,
+      "hi": null
+     },
+     "storyteller": {
+      "n": 1,
+      "mean": 2,
+      "lo": null,
+      "hi": null
+     },
+     "tactician": {
+      "n": 2,
+      "mean": 0,
+      "lo": -1,
+      "hi": 1
+     }
+    }
+   }
+  },
+  "lurker_involvement": {
+   "A": {
+    "n": 1,
+    "mean": 5,
+    "lo": null,
+    "hi": null
+   },
+   "B": {
+    "n": 1,
+    "mean": 6,
+    "lo": null,
+    "hi": null
+   },
+   "C": {
+    "n": 1,
+    "mean": 5,
+    "lo": null,
+    "hi": null
+   }
+  }
+ }
+}

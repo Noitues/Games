@@ -24,5 +24,12 @@
  "token_cap_run": 4000000,
  "token_cap_batch": 40000000,
  "cohort_id": "cohort-pilot-01",
- "started": "2026-09-23T04:49:44"
+ "started": "2026-09-23T04:49:44",
+ "finished": "2026-09-23T06:36:01",
+ "batch_tokens": {
+  "prompt": 14294065,
+  "completion": 3092920,
+  "cost_usd": 52.8004,
+  "calls": 905
+ }
 }

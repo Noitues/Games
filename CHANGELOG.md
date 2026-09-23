@@ -8,7 +8,7 @@ Every rule patch to `RULES_SPEC.md`, with the spec version it produced. Harness-
 - **§4 Backstory guarantee** now also fires **at the start of the session's final scene**, pulling every player card still in the deck, and **during the final scene** if the deck reaches 2 (the card is resolved at once). A guarantee Beat Frame is explicitly forced (it overrides §7's "never forced" and replaces that scene's test). Pulled cards beyond the frame's open blanks surface at the start of the scene as a memory, messenger, news or omen.
 - **Evidence:** pilot-01 had 0/3 Arm A sessions with every player's card surfaced (target 100%). All three ended with 3 cards still in the deck, so the "down to 2 cards" condition never triggered. Scripted Monte Carlo (40 seeds) went 97% → 100% under the patch, with turn and invoke Gini unchanged (0.08 / 0.36).
 - Resolves interim rulings AMB-02 and AMB-25, which the engine no longer fires.
-- Regression batch on the pilot's seeds: `pilot-01-regress` (see reports).
+- Regression on the pilot's seeds (`pilot-01-regress`): Arm A all-players-surfaced 0/3 → 3/3; draws 4.0 → 6.0 per session; turn Gini 0.02 → 0.01; invoke Gini 0.25 → 0.29 (within noise). No spotlight regression. See `reports/pilot-01-regress_notes.md`.
 
 ### 0.1.0 — 2026-09-22
 - Initial spec as supplied. No patches yet: the brief allows patches only between batches, after the human review gate, and only on repeated structural evidence (a rule with 3 or more ambiguities).
