@@ -1,0 +1,877 @@
+{
+ "run_id": "pilot-01-regress__C__s87941__r1",
+ "batch_id": "pilot-01-regress",
+ "arm": "C",
+ "seed": 87941,
+ "spec_version": "0.2.0",
+ "status": "partial",
+ "error": null,
+ "backend": "claude_cli",
+ "run_index": 1,
+ "cohort_id": "cohort-pilot-01",
+ "assignments": [
+  {
+   "character_id": "CH-1",
+   "name": "Ysolde",
+   "personality_id": "storyteller",
+   "seat": 0
+  },
+  {
+   "character_id": "CH-2",
+   "name": "Aldous",
+   "personality_id": "rules_lawyer",
+   "seat": 1
+  },
+  {
+   "character_id": "CH-3",
+   "name": "Morwen",
+   "personality_id": "lurker",
+   "seat": 2
+  },
+  {
+   "character_id": "CH-4",
+   "name": "Mire",
+   "personality_id": "method_actor",
+   "seat": 3
+  }
+ ],
+ "prep_packet": {
+  "anchors": [
+   "H-01",
+   "L-02"
+  ],
+  "environment": [
+   "H-05",
+   "T-01",
+   "F-03"
+  ],
+  "modules": [
+   {
+    "id": "M-1",
+    "cards": [
+     "C-01",
+     "T-05"
+    ],
+    "trigger": "scene_start:3"
+   },
+   {
+    "id": "M-2",
+    "cards": [
+     "H-06",
+     "T-02"
+    ],
+    "trigger": "deck_at_most:3"
+   }
+  ],
+  "beat_frames": [
+   {
+    "id": "B-01",
+    "name": "AMBUSH",
+    "trigger": "fiction:the party enters a settlement",
+    "used": null
+   },
+   {
+    "id": "B-05",
+    "name": "FALSE SANCTUARY",
+    "trigger": "clock_fills:L-02",
+    "used": null
+   },
+   {
+    "id": "B-02",
+    "name": "PLEA FOR HELP",
+    "trigger": "compel_refused",
+    "used": null
+   }
+  ]
+ },
+ "events": [
+  {
+   "event_id": 1,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Session start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "FP: Ysolde=3, Aldous=3, Morwen=3, Mire=3",
+   "event_type": "session_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 2,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + H-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "anchor; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 3,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + L-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "L-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "anchor; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 4,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Build Session Deck",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "7 cards: 3 GM + 4 player",
+   "event_type": "deck_built",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 5,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 6,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Do they reach Hollowmoot's gate and dry shelter before the town bars its doors at dusk?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 7,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Ysolde's jaw tightens as the thin, wrong bell-sound carries through the rain. She quickens her pace along the black timber causeway, eyes fixed on Hollowmoot's ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 8,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Aldous halts on the causeway and closes his eyes, rain streaming down his face. He tilts his head to catch that thin, wrong sound, reading it like he reads the ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 9,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "pass",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Morwen keeps pace quietly with the others, her hood pulled low against the rain, watching the distant lights of Hollowmoot emerge through the grey.",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 10,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Mire's hand settles on the hilt of her blade, her jaw tightening. The years of watch drills snap into place as she scans the grey sheets ahead, tracking the way",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 11,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Create Advantage: Aldous halts on the causeway and closes his eyes, rain strea",
+   "skill": "Notice +4",
+   "tags_invoked": "Reads omens in the rainfall [AL-01]",
+   "fp_spent": 1,
+   "dice": "- - - 0",
+   "total": "+3",
+   "opposition": "+2",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "aspect A-1.1.1 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [
+    "drowns sound and tracks [H-01]"
+   ],
+   "target_card": "L-02",
+   "target_npc": "",
+   "shifts": 1,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 12,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Ysolde squeezes Aldous's wrist once in firm acknowledgment, her other hand moving instinctively to Tamsin's scroll case at her hip as if drawing strength from h",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 13,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Aldous keeps his grip on Ysolde's sleeve, his other hand raised to signal the others. He's counting the rhythm silently, his rain-soaked face turned toward the ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 14,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "pass",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Morwen accepts the omen Aldous has read without comment, her grey eyes moving between the belltower and the rain-curtain. She waits for the next lull in that wr",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 15,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Mire nods sharply at Aldous, drawing her blade with a soft ring of steel—not for threat, but for readiness. She moves to the front of the group, gesturing them ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 16,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "3->2",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "resolved -1",
+   "event_type": "tension",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 17,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Warden on the Gate-Stair",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 18,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  }
+ ],
+ "scenes": [
+  {
+   "index": 1,
+   "tension_before": 3,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 2,
+   "climax": false,
+   "tension_after": 2,
+   "triggers_fired": []
+  }
+ ],
+ "transcript": [
+  {
+   "session": 1,
+   "scene": 0,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Session begins. Each player has Ysolde 3 FP, Aldous 3 FP, Morwen 3 FP, Mire 3 FP. Face-up: Endless Rain [H-01], Saint Orrin's Drowned Temple [L-02].",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The causeway is a spine of black timber and drowned stone, and the four of you have walked it since first light with the rain never once letting up. Ahead, through the grey curtain, the stilt-legs of Hollowmoot rise out of the flood like a heron's roost, cook-smoke bent flat by the wind. Behind you the Sallowmere stretches away in sheets of standing water, reed-tops nodding, the old road already swallowed to a rumor beneath the mire. Somewhere off in the wet a bell that isn't a bell — thin, wrong, almost sung — carries and fades. You need to reach the gate before Hollowmoot bars its doors at dark, or spend the night in open water with whatever the rain is hiding.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "That sound—the temples make it, or something in them makes it. We need Hollowmoot's gate open before dark, or we're spending the night in the water with whatever that is.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde's jaw tightens as the thin, wrong bell-sound carries through the rain. She quickens her pace along the black timber causeway, eyes fixed on Hollowmoot's distant stilt-legs rising through the grey curtain. Her hand moves instinctively to the scroll case at her hip—Tamsin's dead scholar's voice echoing in her memory, warnings annotated in margins about temple sounds, Order wards, and the things that dwell in drowned places.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "That bell—it's coming from the drowned temple ahead. The rain carries its voice for a reason.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous halts on the causeway and closes his eyes, rain streaming down his face. He tilts his head to catch that thin, wrong sound, reading it like he reads the rainfall itself.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "That sound in the rain—that's no natural bell. Stay sharp, everyone. We move toward the gate, but we keep our eyes open.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire's hand settles on the hilt of her blade, her jaw tightening. The years of watch drills snap into place as she scans the grey sheets ahead, tracking the way the sound moves through the water. Her shoulders set into the familiar stance of someone expecting trouble and ready to meet it head-on.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — create advantage with Notice: dice - - - 0, invoking Reads omens in the rainfall [AL-01] → Good (+3) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Aldous goes still on the causeway, rain sheeting off his hood, and lets the wrong-bell sound wash over him the way he's learned to read the rain itself — its rhythm, its pauses, the way it bends. It isn't random. The tone stutters every few heartbeats, like something vast drawing breath before it sings again, and beneath it he catches the shape of the thing: not a bell at all, but a voice, and it is calling from the belltower, not the nave. He opens his eyes and grabs Ysolde's sleeve. \"It pulses — there's a rhythm to it, like it's breathing. When it stops, that's when something's listening instead of singing. We can move in the gaps.\" The others feel it too now, an omen read clean out of the storm: the safest moment to move will be the quiet between two verses of that drowned hymn.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "The Order stitches hymns into drowned temples—Tamsin's scrolls taught me their language. When it breathes out, we move. Now.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde squeezes Aldous's wrist once in firm acknowledgment, her other hand moving instinctively to Tamsin's scroll case at her hip as if drawing strength from her dead teacher's warnings. She turns sharply to Morwen and Mire with a savage nod, jaw set hard. As the thin, wrong bell-voice reaches its peak and holds for one shuddering breath, she watches it—waiting, waiting—and then as it fractures into silence, she steps forward into the rain-curtain, gesturing urgently for the others to follow in the gaps Aldous has found, moving through the pauses between verses of that drowned hymn like a crew threading needles in a storm.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "Listen—when it sings, that's our moment. When the voice rises, we move. The instant it stops, we go absolutely still. Those gaps between verses are when it listens, when it hunts. Ready yourselves.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous keeps his grip on Ysolde's sleeve, his other hand raised to signal the others. He's counting the rhythm silently, his rain-soaked face turned toward the sound, waiting for the next verse to surge through the storm. When it does, he'll pull them forward along the causeway toward Hollowmoot's gate.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "The gaps—that's when we move. Aldous, you count that rhythm for us; I'll hold point and get us to the gate before dark catches us.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire nods sharply at Aldous, drawing her blade with a soft ring of steel—not for threat, but for readiness. She moves to the front of the group, gesturing them into the tight formation she learned in the Temple Orphanage's watch drills. As the wrong-bell swells toward its listening silence, she signals forward, leading them into the gap between verses, her eyes fixed on Hollowmoot's distant stilt-legs rising through the grey curtain. She holds the line the way she was trained to, even disgraced.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Aldous's count never breaks. Three times the wrong-bell rises and holds and cracks into silence, and three times Mire drives them forward through the gap like she's still running a Wardens' drill — Ysolde close behind with a hand pressed to Tamsin's scroll case to keep the rain from its pages, Morwen bringing up the rear with an eye on the black water either side of the causeway. On the last silence they hit the gate-stair at a run, timbers slick and canting underfoot, just as a soaked Warden on the parapet above shouts down for the bar to drop. He sees four shapes lunge out of the grey — weighs them for a breath, torch guttering — and waves them through instead of through the eye of a nocked crossbow. The gate-bar slams home behind them with a boom that briefly, blessedly, drowns out the belltower's voice. Hollowmoot closes around you: crowded stilt-walks, dripping eaves, the smell of woodsmoke and too many wet bodies in too little dry space — and somewhere behind you, out in the flood, the drowned hymn starts its next verse to an audience that got away.",
+   "visible_to": "all"
+  }
+ ],
+ "costs": [],
+ "referee": {
+  "violations": [
+   {
+    "session": 1,
+    "scene": 1,
+    "agent": "GM",
+    "section": "§7",
+    "issue": "reported fictional trigger fiction:the party enters a settlement that is not an unused fictional trigger",
+    "source": "engine"
+   }
+  ],
+  "ambiguities": [
+   {
+    "id": "AMB-01",
+    "section": "brief",
+    "issue": "Arm A lists 'Attention', which the spec never defines.",
+    "interim_ruling": "Not modelled.",
+    "detail": "Arm definition lists Attention; not modelled.",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-12",
+    "section": "§8",
+    "issue": "Stress box values are unspecified.",
+    "interim_ruling": "Fate Core: boxes 1 and 2; Physique/Will +1/+2 adds a 3 box, +3 or more adds 3 and 4.",
+    "detail": "stress boxes built with Fate Core values",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-22",
+    "section": "§3/§7",
+    "issue": "Does a GLOBAL anchor give the GM a free invoke like a GM card?",
+    "interim_ruling": "Yes, GLOBAL cards placed on the rail give the GM 1 free invoke that scene.",
+    "detail": "H-01",
+    "scene": 0,
+    "source": "engine"
+   },
+   {
+    "section": "§6 Tension track / Adjusting Tension at scene end",
+    "issue": "Tension was lowered by 1 at event 16 ('resolved -1') with no THREAT/FACTION taken out, no player goal explicitly filled, and no clock advance logged anywhere in the scene. The only mechanical event was Aldous's successful Create Advantage roll (event 11) against an opposing HAZARD tag (H-01), which is neither a THREAT/FACTION resolution nor a clock event under the table. The spec does not define what counts as 'filled a player's goal' precisely enough to say whether a successful create-advantage against a GM hazard tag qualifies.",
+    "interim_ruling": "Treated the GM's note 'resolved -1' as sufficient justification (informal reading of 'filled a player's goal' as Aldous achieving his read-the-omens objective) and left the -1 adjustment in place.",
+    "scene": 1,
+    "source": "referee"
+   },
+   {
+    "section": "§3 Invokes / free invokes vs paid invokes",
+    "issue": "Event 11's notes read 'aspect A-1.1.1 (1 free)' while fp_spent is 1 and fp_change is -1 (Aldous 3->2), i.e. the invoke was actually paid for, not free. It's unclear whether '(1 free)' is leftover numbering notation or an indication that a free invoke should have applied instead of a paid one.",
+    "interim_ruling": "Followed the fp ledger (fp_spent=1, balance drop) as authoritative over the ambiguous note text, treating the invoke as paid.",
+    "scene": 1,
+    "source": "referee"
+   }
+  ],
+  "cost_checks": [],
+  "friction": [
+   {
+    "scene": 1,
+    "text": "The tension-adjustment justification ('resolved -1') doesn't map cleanly onto any row of the §6 tension table, making it hard to verify without a clearer definition of 'filled a player's goal.'"
+   },
+   {
+    "scene": 1,
+    "text": "The '(1 free)' annotation on a fp-paid invoke (event 11) creates confusion between free-invoke bookkeeping and paid-invoke bookkeeping in the log format."
+   },
+   {
+    "scene": 1,
+    "text": "A GM Beat Frame/module trigger attempt was refused by the engine mid-scene ('not an unused fictional trigger'), suggesting the GM tried to fire a trigger outside the prescribed cleanup step 5 timing (§7 Scene loop) — the spec's trigger-deployment timing could be stated more explicitly to prevent such attempts."
+   }
+  ]
+ },
+ "surveys": [],
+ "interview": null,
+ "chronicle": null,
+ "state_end": {
+  "tension": 2,
+  "fp": {
+   "Ysolde": 3,
+   "Aldous": 2,
+   "Morwen": 3,
+   "Mire": 3
+  },
+  "surfaced": [],
+  "deck_player_cards": {
+   "PX-09": "Ysolde",
+   "PX-19": "Aldous",
+   "PX-03": "Morwen",
+   "PX-05": "Mire"
+  },
+  "guarantee_pulled": [],
+  "guarantee_failed": [],
+  "deck_left": [
+   "PX-03",
+   "PX-09",
+   "T-01",
+   "PX-19",
+   "F-03",
+   "PX-05",
+   "H-05"
+  ],
+  "draws": 0,
+  "turns": {
+   "Ysolde": 2,
+   "Aldous": 2,
+   "Morwen": 0,
+   "Mire": 2
+  }
+ },
+ "notes": [],
+ "metrics": {},
+ "tokens": {
+  "prompt": 226229,
+  "completion": 29400,
+  "cost_usd": 0.5073,
+  "calls": 15
+ },
+ "llm_calls": 15,
+ "models": {
+  "gm": "claude-sonnet-5",
+  "player": "claude-haiku-4-5-20251001",
+  "referee": "claude-sonnet-5",
+  "interviewer": "claude-haiku-4-5-20251001"
+ },
+ "elapsed_s": 230.4
+}
