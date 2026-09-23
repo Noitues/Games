@@ -38,7 +38,9 @@
  "generation_prompt": "Write 4 player characters for a Fate game set in The Sallowmere.\n\nSetting:\nThe Sallowmere is a lowland of rivers, reed and ruined temples that has been drowning for eleven years. The rain has not stopped in all that time, and the floodwaters climb a finger's width each week. Hollowmoot, a crowded stilt-town, is the last real settlement; the Ashwater Causeway is its only dry road north, and Gullet Ford the only crossing south. A blight called the hive spreads through wounds and bad water, making its victims hive-touched: feral, pain-blind, and drawn to a swarm-song that seems to come from the flooded belltower of Saint Orrin's Drowned Temple. The shrunken Order of the Dry Saint guards what lore survives, while a renegade Drowned Priest preaches that the hive is holy. The Causeway Wardens burn infected houses and tax every crossing, the Blackwater Cartel smuggles food and people through hidden cellars, and the Stiltfolk Clans watch it all from the reeds. Play it grounded: cold hands, wet rope, hard choices about who gets the last dry bed.\n\nNamed places and groups you may tie characters to: Gullet Ford, Hollowmoot, Order of the Dry Saint, Saint Orrin's Drowned Temple, The Ashwater Causeway, The Blackwater Cartel, The Causeway Wardens, The Stiltfolk Clans, The Wick Lane Cellars.\n\nEach character needs:\n- binder: exactly 4 theme cards in this order: 2 ROOTS (an origin, a person, a place or a comfort), then 2 REACH (an oath, a burden, a power or a goal). Each card: a title, exactly 3 power tags (2-5 words each, each names one thing the character can do, has or is) and 1 weakness tag that can plausibly cause trouble in a scene. At least one ROOTS power tag must name a specific named person, group or place.\n- story_cards: exactly 2: one NPC drawn from a ROOTS tag, one THREAD (an open question) drawn from a REACH tag, same tag format.\n- skills (Fate Core skill names only: Athletics, Burglary, Contacts, Crafts, Deceive, Drive, Empathy, Fight, Investigate, Lore, Notice, Physique, Provoke, Rapport, Resources, Shoot, Stealth, Will): one great, two good, three fair, four average, all different.\n- approaches (Careful, Clever, Flashy, Forceful, Quick, Sneaky): one +3, two +2, two +1, one +0.\n- fae: the SAME character in Fate Accelerated form: a high concept, a trouble that mirrors one card weakness, and 3 aspects that compress the four cards (keep the same named people and places).\n\nUse these seeds, one per character, in order:\n[\n {\n  \"name\": \"Maud\",\n  \"concept\": \"Disgraced militia guard who still holds the line\",\n  \"origin\": \"came south with a pilgrim band\",\n  \"bond\": \"a congregation that expects miracles\",\n  \"drive\": \"avenge a betrayal\",\n  \"flaw\": \"greedy for silver\"\n },\n {\n  \"name\": \"Hask\",\n  \"concept\": \"Marsh hunter raised by the stilt clans\",\n  \"origin\": \"child of a ferry family\",\n  \"bond\": \"a loyal marsh hound\",\n  \"drive\": \"atone for leaving friends behind\",\n  \"flaw\": \"takes stupid river risks\"\n },\n {\n  \"name\": \"Eira\",\n  \"concept\": \"Swamp midwife who delivers in any weather\",\n  \"origin\": \"born in a quarantine house\",\n  \"bond\": \"an informer who sold out your family\",\n  \"drive\": \"prove the Wardens ordered a massacre\",\n  \"flaw\": \"owes the cartel\"\n },\n {\n  \"name\": \"Fenwick\",\n  \"concept\": \"Mapmaker redrawing a drowning country\",\n  \"origin\": \"a clan exile from the stilt villages\",\n  \"bond\": \"an old comrade now hive-touched\",\n  \"drive\": \"buy freedom from the cartel\",\n  \"flaw\": \"sworn enemy of the Order\"\n }\n]\n\nMake the four characters distinct in role, and give each at least one tie to another character's people or places only if it arises naturally.",
  "model": "claude-sonnet-5",
  "source": "llm",
- "errors": [],
+ "errors": [
+  "attempt 1: Maud: binder must be 2 ROOTS then 2 REACH"
+ ],
  "characters": [
   {
    "id": "CH-1",
@@ -46,23 +48,23 @@
    "pronouns": "she/her",
    "concept": "Disgraced militia guard who still holds the line",
    "skills": {
-    "Fight": 4,
-    "Physique": 3,
-    "Provoke": 3,
-    "Rapport": 2,
+    "Rapport": 4,
+    "Fight": 3,
+    "Empathy": 3,
     "Notice": 2,
+    "Contacts": 2,
     "Will": 2,
-    "Contacts": 1,
-    "Deceive": 1,
     "Athletics": 1,
-    "Investigate": 1
+    "Investigate": 1,
+    "Provoke": 1,
+    "Resources": 1
    },
    "approaches": {
     "Forceful": 3,
     "Careful": 2,
-    "Quick": 2,
+    "Sneaky": 2,
+    "Quick": 1,
     "Clever": 1,
-    "Sneaky": 1,
     "Flashy": 0
    },
    "binder": [
@@ -70,13 +72,13 @@
      "id": "MA-01",
      "type": "ROOTS",
      "owner": "PC-MAUD",
-     "title": "Came South With the Pilgrim Band",
+     "title": "The Pilgrim Road South",
      "power_tags": [
-      "Marched the Ashwater Causeway twice",
-      "Trained by the Causeway Wardens",
-      "Knows the pilgrim hymns by heart"
+      "Marched the Ashwater Causeway with the Ashfield Pilgrims",
+      "Reads weather and water like scripture",
+      "Never loses the trail"
      ],
-     "weakness": "Flinches at drowning bells",
+     "weakness": "Flinches at abandoned shrines",
      "track": {
       "kind": "growth",
       "size": 3
@@ -87,13 +89,13 @@
      "id": "MA-02",
      "type": "ROOTS",
      "owner": "PC-MAUD",
-     "title": "A Congregation That Expects Miracles",
+     "title": "Hollowmoot's Faithful",
      "power_tags": [
-      "Trusted by Pastor Ilsbet's flock",
-      "Can rally a frightened crowd",
-      "Free bed at the pilgrim hall"
+      "Trusted by the drowned congregation of Hollowmoot",
+      "Can rally a crowd with a word",
+      "Knows every family's secret grief"
      ],
-     "weakness": "Can't refuse a plea for help",
+     "weakness": "Cant refuse a desperate plea",
      "track": {
       "kind": "growth",
       "size": 3
@@ -104,13 +106,13 @@
      "id": "MA-03",
      "type": "REACH",
      "owner": "PC-MAUD",
-     "title": "Oath Against the Warden Who Sold Us Out",
+     "title": "The Oath of the Broken Line",
      "power_tags": [
-      "Hunts Warden-Captain Reeve",
-      "Knows the Wardens' patrol codes",
-      "Never forgets a face"
+      "Sworn to find the militia captain who sold them out",
+      "Never breaks a shield-wall",
+      "Reads a liars tell in a heartbeat"
      ],
-     "weakness": "Blind fury when Reeve is near",
+     "weakness": "Rage overrides judgment when the traitor is near",
      "track": {
       "kind": "growth",
       "size": 3
@@ -121,13 +123,13 @@
      "id": "MA-04",
      "type": "REACH",
      "owner": "PC-MAUD",
-     "title": "A Purse That's Never Full",
+     "title": "The Silver Debt",
      "power_tags": [
-      "Knows the going bribe rate",
-      "Skims tolls without getting caught",
-      "Owes debts to three lenders"
+      "Owes coin to the Blackwater Cartel",
+      "Always knows the price of everything",
+      "Skilled at skimming tolls unnoticed"
      ],
-     "weakness": "Will sell information for coin",
+     "weakness": "Will sell information for enough silver",
      "track": {
       "kind": "growth",
       "size": 3
@@ -140,13 +142,13 @@
      "id": "MA-05",
      "type": "NPC",
      "owner": "PC-MAUD",
-     "title": "Pastor Ilsbet",
+     "title": "Sister Orla, Voice of the Drowned Congregation",
      "power_tags": [
-      "Leads the pilgrim congregation at Hollowmoot",
-      "Believes Maud is chosen for a miracle",
-      "Knows secret rites of Saint Orrin"
+      "Leads prayer vigils atop the stilt-walks",
+      "Believes Maud is blessed by the Dry Saint",
+      "Has ears in every household of Hollowmoot"
      ],
-     "weakness": "Desperate enough to believe false miracles",
+     "weakness": "Will risk lives for a sign",
      "track": {
       "kind": "weight",
       "size": 1
@@ -157,13 +159,13 @@
      "id": "MA-06",
      "type": "THREAD",
      "owner": "PC-MAUD",
-     "title": "Where Is Captain Reeve Hiding?",
+     "title": "Where did Captain Voss go after the betrayal?",
      "power_tags": [
-      "Reeve vanished after the Gullet Ford massacre",
-      "Rumors place him among Warden officers",
-      "Someone in Hollowmoot knows the truth"
+      "Last seen crossing at Gullet Ford",
+      "Rumored to serve the Causeway Wardens now",
+      "May know why the militia line broke"
      ],
-     "weakness": "Chasing this could expose Maud's own graft",
+     "weakness": "Chasing this ignores the silver debt piling up",
      "track": {
       "kind": "weight",
       "size": 1
@@ -172,12 +174,12 @@
     }
    ],
    "fae": {
-    "high_concept": "Disgraced Warden Who Still Holds the Line",
-    "trouble": "Greedy for Silver, Even Now",
+    "high_concept": "Disgraced Militia Guard Who Still Holds the Line",
+    "trouble": "Will Sell Information for Enough Silver",
     "aspects": [
-     "Marched the Ashwater Causeway With the Pilgrim Band",
-     "Pastor Ilsbet's Flock Expects a Miracle",
-     "Hunting Warden-Captain Reeve for the Gullet Ford Betrayal"
+     "Marched the Ashwater Causeway with the Ashfield Pilgrims, now trusted by Hollowmoots Faithful",
+     "Sworn to find the militia captain who betrayed the line",
+     "Owes coin to the Blackwater Cartel"
     ]
    }
   },
@@ -187,23 +189,23 @@
    "pronouns": "he/him",
    "concept": "Marsh hunter raised by the stilt clans",
    "skills": {
-    "Athletics": 4,
-    "Notice": 3,
-    "Physique": 3,
-    "Stealth": 2,
+    "Notice": 4,
+    "Athletics": 3,
+    "Stealth": 3,
+    "Physique": 2,
+    "Investigate": 2,
     "Empathy": 2,
-    "Contacts": 2,
     "Fight": 1,
-    "Investigate": 1,
-    "Crafts": 1,
+    "Shoot": 1,
+    "Drive": 1,
     "Will": 1
    },
    "approaches": {
     "Quick": 3,
-    "Forceful": 2,
+    "Sneaky": 2,
     "Careful": 2,
+    "Forceful": 1,
     "Flashy": 1,
-    "Sneaky": 1,
     "Clever": 0
    },
    "binder": [
@@ -211,13 +213,13 @@
      "id": "HA-01",
      "type": "ROOTS",
      "owner": "PC-HASK",
-     "title": "Child of the Ferry Family",
+     "title": "Born on the Ferry Lines",
      "power_tags": [
-      "Raised on the Gullet Ford ferry",
-      "Adopted by the Stiltfolk Clans",
-      "Reads river current like text"
+      "Child of the Gullet Ford ferry family",
+      "Can pole a boat through any current",
+      "Knows the drowned roads beneath the water"
      ],
-     "weakness": "Distrusted by dry-landers as clan-raised",
+     "weakness": "Distrusts anyone whos never worked a ferry",
      "track": {
       "kind": "growth",
       "size": 3
@@ -228,13 +230,13 @@
      "id": "HA-02",
      "type": "ROOTS",
      "owner": "PC-HASK",
-     "title": "Reed, the Marsh Hound",
+     "title": "Rill, the Marsh Hound",
      "power_tags": [
-      "Bonded to Reed, an unshakeable tracker",
-      "Reed can scent the hive-touched",
-      "Never truly alone in the reeds"
+      "Bonded to Rill, a hive-scent hunting hound",
+      "Rill can track through flood and reed",
+      "Trusted completely by the Stiltfolk Clans"
      ],
-     "weakness": "Won't abandon Reed to save himself",
+     "weakness": "Wont leave Rill behind, even when its suicide",
      "track": {
       "kind": "growth",
       "size": 3
@@ -245,13 +247,13 @@
      "id": "HA-03",
      "type": "REACH",
      "owner": "PC-HASK",
-     "title": "Oath to the Friends I Left Behind",
+     "title": "The Ones Left in the Reeds",
      "power_tags": [
-      "Swore to return for Marrow Camp survivors",
-      "Knows hidden paths to Wick Lane Cellars",
-      "Carries guilt like a second skin"
+      "Sworn to return for the clanmates abandoned at the old camp",
+      "Never forgets a face from the reed-villages",
+      "Moves silent as marsh-mist to reach the lost"
      ],
-     "weakness": "Freezes when reminded of that night",
+     "weakness": "Haunted by the names of those left behind",
      "track": {
       "kind": "growth",
       "size": 3
@@ -262,13 +264,13 @@
      "id": "HA-04",
      "type": "REACH",
      "owner": "PC-HASK",
-     "title": "Born to Dare the Flood",
+     "title": "The Currents Dare",
      "power_tags": [
-      "Swims rapids others won't touch",
-      "Fastest ferryman on the Sallowmere",
-      "Never calls a crossing impossible"
+      "Will cross any flood if dared",
+      "Reads white water others cant",
+      "Numb to fear once committed"
      ],
-     "weakness": "Takes the risk even when it's stupid",
+     "weakness": "Cant back down from a river once started, even to drown",
      "track": {
       "kind": "growth",
       "size": 3
@@ -281,13 +283,13 @@
      "id": "HA-05",
      "type": "NPC",
      "owner": "PC-HASK",
-     "title": "Clan-Elder Vosk",
+     "title": "Old Corrin, Keeper of the Gullet Ford Ferry",
      "power_tags": [
-      "Speaks for the Stiltfolk Clans in Hollowmoot",
-      "Remembers Hask's ferry-family debt",
-      "Controls who the clans will shelter"
+      "Runs the last legal ferry at Gullet Ford",
+      "Knows Hask abandoned the family trade",
+      "Still leaves a lantern lit for Hasks return"
      ],
-     "weakness": "Suspicious of any clan-child who left",
+     "weakness": "Too proud to ask Hask for help",
      "track": {
       "kind": "weight",
       "size": 1
@@ -298,13 +300,13 @@
      "id": "HA-06",
      "type": "THREAD",
      "owner": "PC-HASK",
-     "title": "What Happened at Marrow Camp?",
+     "title": "Are the clanmates at the old camp still alive?",
      "power_tags": [
-      "Marrow Camp went silent after the swarm-song spread",
-      "Wick Lane Cellars smugglers passed through there",
-      "A survivor's token washed up at Gullet Ford"
+      "Old camp lies past the hive-songs reach",
+      "No word has come in two years",
+      "The Stiltfolk Clans forbid speaking of it"
      ],
-     "weakness": "Searching draws hive-touched attention",
+     "weakness": "Searching means crossing hive-touched water",
      "track": {
       "kind": "weight",
       "size": 1
@@ -313,12 +315,12 @@
     }
    ],
    "fae": {
-    "high_concept": "Marsh Hunter Who Swims Where Others Won't",
-    "trouble": "Takes the Risk Even When the Smart Move Is No",
+    "high_concept": "Marsh Hunter Raised by the Stiltfolk Clans",
+    "trouble": "Cant Back Down From a River Once Started",
     "aspects": [
-     "Raised on the Gullet Ford Ferry, Adopted by the Stiltfolk Clans",
-     "Reed, My Hound, Finds What Others Miss",
-     "Sworn to Return for the Marrow Camp Survivors"
+     "Child of the Gullet Ford ferry family, bonded to Rill the marsh hound",
+     "Sworn to return for the clanmates left in the reeds",
+     "Trusted by the Stiltfolk Clans, distrusted by everyone else"
     ]
    }
   },
@@ -330,35 +332,35 @@
    "skills": {
     "Empathy": 4,
     "Lore": 3,
-    "Rapport": 3,
+    "Crafts": 3,
+    "Stealth": 2,
     "Contacts": 2,
-    "Investigate": 2,
-    "Notice": 2,
-    "Deceive": 1,
-    "Stealth": 1,
-    "Will": 1,
-    "Physique": 1
+    "Will": 2,
+    "Athletics": 1,
+    "Notice": 1,
+    "Rapport": 1,
+    "Resources": 1
    },
    "approaches": {
     "Careful": 3,
     "Clever": 2,
     "Sneaky": 2,
+    "Flashy": 1,
     "Forceful": 1,
-    "Quick": 1,
-    "Flashy": 0
+    "Quick": 0
    },
    "binder": [
     {
      "id": "EI-01",
      "type": "ROOTS",
      "owner": "PC-EIRA",
-     "title": "Born in the Quarantine House",
+     "title": "Born Behind the Quarantine Fence",
      "power_tags": [
-      "Survived the Hollowmoot quarantine ward",
-      "Knows hive-blight symptoms better than any healer",
-      "Delivered a hundred babies since the floods"
+      "Born in the Hollowmoot quarantine house",
+      "Immune to hive-fevers worst effects",
+      "Knows the old plague wards by heart"
      ],
-     "weakness": "Panics near sealed quarantine doors",
+     "weakness": "Panics when locked in small spaces",
      "track": {
       "kind": "growth",
       "size": 3
@@ -369,13 +371,13 @@
      "id": "EI-02",
      "type": "ROOTS",
      "owner": "PC-EIRA",
-     "title": "The Informer Who Sold Us Out",
+     "title": "The Informers Debt",
      "power_tags": [
-      "Knows Bettin Marsh, the informer, on sight",
-      "Understands the Cartel's informant network",
-      "Owed a debt of blood, not silver"
+      "Knows Sella the informers face and habits",
+      "Sella still works for the Causeway Wardens",
+      "Owed a truth Sella will never give freely"
      ],
-     "weakness": "Can't think straight when Bettin's nearby",
+     "weakness": "Loses composure whenever Sella is mentioned",
      "track": {
       "kind": "growth",
       "size": 3
@@ -386,13 +388,13 @@
      "id": "EI-03",
      "type": "REACH",
      "owner": "PC-EIRA",
-     "title": "Goal: Prove the Wardens Ordered the Massacre",
+     "title": "The Massacre at Three Elms",
      "power_tags": [
-      "Collected testimony from quarantine survivors",
-      "Knows the burned house was full when it burned",
-      "Trusted enough that people whisper her the truth"
+      "Sworn to prove the Causeway Wardens burned Three Elms deliberately",
+      "Delivered babies in the ruins, remembers every name lost",
+      "Trusted by survivors to tell the truth"
      ],
-     "weakness": "Obsession blinds her to present danger",
+     "weakness": "Will accuse before she has proof",
      "track": {
       "kind": "growth",
       "size": 3
@@ -403,13 +405,13 @@
      "id": "EI-04",
      "type": "REACH",
      "owner": "PC-EIRA",
-     "title": "Debt to the Blackwater Cartel",
+     "title": "The Cartels Ledger",
      "power_tags": [
-      "Owes the Blackwater Cartel a standing favor",
-      "Knows the Wick Lane Cellars smuggling routes",
-      "Cartel midwives get safe passage"
+      "Owes the Blackwater Cartel for smuggled medicine",
+      "Knows the Wick Lane Cellars hidden paths",
+      "Can move unseen through smuggler tunnels"
      ],
-     "weakness": "The Cartel can call in the debt anytime",
+     "weakness": "The Cartel calls in favors at the worst times",
      "track": {
       "kind": "growth",
       "size": 3
@@ -422,13 +424,13 @@
      "id": "EI-05",
      "type": "NPC",
      "owner": "PC-EIRA",
-     "title": "Bettin Marsh",
+     "title": "Sella, the Wardens Informer",
      "power_tags": [
-      "Sold Eira's family to the Wardens",
-      "Now works both Cartel and Wardens",
-      "Knows secrets that could clear or damn Eira"
+      "Reports to the Causeway Wardens for coin",
+      "Once sold out Eiras family to save herself",
+      "Knows secrets Eira desperately needs"
      ],
-     "weakness": "Terrified of being found by Eira",
+     "weakness": "Terrified of being caught by the Cartel",
      "track": {
       "kind": "weight",
       "size": 1
@@ -439,13 +441,13 @@
      "id": "EI-06",
      "type": "THREAD",
      "owner": "PC-EIRA",
-     "title": "Who Gave the Burn Order at the Quarantine House?",
+     "title": "What really happened at Three Elms?",
      "power_tags": [
-      "A Warden ledger lists the house as 'cleared' beforehand",
-      "Causeway Wardens brass deny any order was given",
-      "One surviving Warden might talk, for a price"
+      "Warden records of the burning are sealed",
+      "A survivor may still be hiding in Hollowmoot",
+      "The Order of the Dry Saint investigated and went silent"
      ],
-     "weakness": "Digging marks Eira as a Warden target",
+     "weakness": "Digging further draws Warden attention",
      "track": {
       "kind": "weight",
       "size": 1
@@ -454,12 +456,12 @@
     }
    ],
    "fae": {
-    "high_concept": "Swamp Midwife Who Delivers Life in the Drowning Dark",
-    "trouble": "Obsession Blinds Her to Present Danger",
+    "high_concept": "Swamp Midwife Who Delivers in Any Weather",
+    "trouble": "Will Accuse Before She Has Proof",
     "aspects": [
-     "Survived the Hollowmoot Quarantine House",
-     "Bettin Marsh Sold My Family to the Wardens",
-     "Owes the Blackwater Cartel a Debt of Passage"
+     "Born behind the Hollowmoot quarantine fence, immune to the worst of the hive",
+     "Hunts the truth about the Wardens massacre at Three Elms",
+     "Owes the Blackwater Cartel, knows the Wick Lane Cellars hidden paths"
     ]
    }
   },
@@ -469,16 +471,16 @@
    "pronouns": "he/him",
    "concept": "Mapmaker redrawing a drowning country",
    "skills": {
-    "Investigate": 4,
+    "Lore": 4,
+    "Investigate": 3,
     "Crafts": 3,
-    "Lore": 3,
-    "Notice": 2,
+    "Stealth": 2,
     "Contacts": 2,
-    "Athletics": 2,
+    "Notice": 2,
+    "Athletics": 1,
     "Deceive": 1,
-    "Stealth": 1,
-    "Rapport": 1,
-    "Will": 1
+    "Will": 1,
+    "Rapport": 1
    },
    "approaches": {
     "Clever": 3,
@@ -493,13 +495,13 @@
      "id": "FE-01",
      "type": "ROOTS",
      "owner": "PC-FENWICK",
-     "title": "Exiled from the Stiltfolk Clans",
+     "title": "Cast Out from the Stilt Villages",
      "power_tags": [
-      "Cast out by the Stiltfolk Clans for mapping their ways",
-      "Knows every channel from Hollowmoot to Gullet Ford",
+      "Exiled from the Stiltfolk Clans for forbidden mapmaking",
+      "Knows every hidden channel between Hollowmoot and the reeds",
       "Draws maps no one else dares make"
      ],
-     "weakness": "No clan will shelter him now",
+     "weakness": "No clan will shelter him",
      "track": {
       "kind": "growth",
       "size": 3
@@ -510,13 +512,13 @@
      "id": "FE-02",
      "type": "ROOTS",
      "owner": "PC-FENWICK",
-     "title": "Old Comrade, Now Hive-Touched",
+     "title": "Bren, Lost to the Hive",
      "power_tags": [
-      "Bound by memory to Corrin, now hive-touched",
-      "Recognizes early signs of the hive before others",
-      "Still carries Corrin's old surveying tools"
+      "Bonded to Bren, once his surveying partner, now hive-touched",
+      "Can still read Brens old notes and codes",
+      "Knows where Bren was last seen near Saint Orrins Drowned Temple"
      ],
-     "weakness": "Hesitates to strike anything that looks like Corrin",
+     "weakness": "Cant bring himself to kill Bren if it comes to that",
      "track": {
       "kind": "growth",
       "size": 3
@@ -527,13 +529,13 @@
      "id": "FE-03",
      "type": "REACH",
      "owner": "PC-FENWICK",
-     "title": "Goal: Buy My Freedom from the Blackwater Cartel",
+     "title": "The Price of Freedom",
      "power_tags": [
-      "Owes the Blackwater Cartel his mapmaking skill",
-      "Knows which Wick Lane Cellars routes the Cartel hides",
-      "One more true map could clear his debt"
+      "Owes the Blackwater Cartel a debt of maps and passage-routes",
+      "One more job buys full freedom",
+      "Knows which cellars and routes the Cartel values most"
      ],
-     "weakness": "The Cartel doesn't want him free",
+     "weakness": "The Cartel keeps moving the price",
      "track": {
       "kind": "growth",
       "size": 3
@@ -544,13 +546,13 @@
      "id": "FE-04",
      "type": "REACH",
      "owner": "PC-FENWICK",
-     "title": "Sworn Enemy of the Order of the Dry Saint",
+     "title": "Enemy of the Dry Saint",
      "power_tags": [
-      "Publicly denounced the Order's lies",
-      "Knows which Order lore is forged",
-      "Marked for death by Order zealots"
+      "Marked as an enemy by the Order of the Dry Saint",
+      "Exposed their false relic maps once, publicly",
+      "Recognized on sight by Order agents"
      ],
-     "weakness": "Order agents recognize him on sight",
+     "weakness": "Order agents will move against him first, ask later",
      "track": {
       "kind": "growth",
       "size": 3
@@ -563,13 +565,13 @@
      "id": "FE-05",
      "type": "NPC",
      "owner": "PC-FENWICK",
-     "title": "Corrin",
+     "title": "Bren, the Hive-Touched Surveyor",
      "power_tags": [
-      "Once Fenwick's surveying partner, now hive-touched",
-      "Drawn toward the swarm-song at Saint Orrin's Drowned Temple",
-      "Fragments of the old Corrin still surface"
+      "Once Fenwicks mapping partner, now feral and hive-touched",
+      "Drawn toward the swarm-song at Saint Orrins Drowned Temple",
+      "Still carries Fenwicks old survey tools"
      ],
-     "weakness": "Dangerous and unpredictable in the reeds",
+     "weakness": "Flashes of memory make him hesitate before attacking",
      "track": {
       "kind": "weight",
       "size": 1
@@ -580,13 +582,13 @@
      "id": "FE-06",
      "type": "THREAD",
      "owner": "PC-FENWICK",
-     "title": "What Is the Order of the Dry Saint Really Hiding?",
+     "title": "What did the Orders false relic maps hide?",
      "power_tags": [
-      "Forged pages found in the Order's archive",
-      "The true temple map contradicts Order teaching",
-      "A defector inside the Order might confirm it"
+      "The maps pointed away from Saint Orrins Drowned Temple",
+      "Order agents killed to protect the secret once",
+      "Fenwick has one surviving copy"
      ],
-     "weakness": "Proving it means returning to Order territory",
+     "weakness": "Possessing it makes him a marked man",
      "track": {
       "kind": "weight",
       "size": 1
@@ -595,12 +597,12 @@
     }
    ],
    "fae": {
-    "high_concept": "Exiled Mapmaker Redrawing a Drowning Country",
-    "trouble": "Marked for Death by the Order of the Dry Saint",
+    "high_concept": "Mapmaker Redrawing a Drowning Country",
+    "trouble": "The Cartel Keeps Moving the Price",
     "aspects": [
-     "Cast Out by the Stiltfolk Clans for Mapping Their Ways",
-     "Corrin, Once My Partner, Now Hive-Touched",
-     "Owes the Blackwater Cartel One Last True Map"
+     "Exiled from the Stiltfolk Clans, knows every hidden channel",
+     "Bonded to Bren, lost to the hive near Saint Orrins Drowned Temple",
+     "Marked enemy of the Order of the Dry Saint, indebted to the Blackwater Cartel"
     ]
    }
   }
