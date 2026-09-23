@@ -12,11 +12,11 @@ MONSTER_REWARD_CARDS = {"blue_buff": "blue_buff", "red_buff": "red_buff"}
 
 
 # --------------------------------------------------------------------- basics
-def death_track_pos(rnd: int) -> int:
+def death_track_pos(rnd: int, bonus: int = 0) -> int:
     for upper, pos in DEATH_BANDS:
         if rnd <= upper:
-            return pos
-    return 4
+            return pos + bonus
+    return 4 + bonus
 
 
 @lru_cache(maxsize=16)
@@ -239,9 +239,10 @@ def kill_champion(state: GameState, victim: Champion, killer_team: Optional[str]
     victim.hp = 0
     victim.deaths += 1
     victim.shield = 0
-    victim.track = death_track_pos(state.round)
+    victim.track = death_track_pos(state.round,
+                                   state.config.get("death_band_bonus", 0))
     if killer_team is not None:
-        state.teams[killer_team].gain(1, "champion_kill")
+        state.teams[killer_team].gain(state.config.get("kill_ap", 1), "champion_kill")
         state.teams[killer_team].kills += 1
         killer_uid = attacker.uid if attacker is not None else None
         for uid, rnd in victim.damaged_by.items():

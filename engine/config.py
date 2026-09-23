@@ -27,6 +27,12 @@ DEFAULT_CONFIG = {
     "wave_speed": 2,
     "baron_wave_bonus": 2,
     "ap_base": 3,
+    # RQ-037: what a champion kill is worth. At 1 AP a kill pays a eleventh of
+    # a tower, which is why a policy that hunts kills loses to one that ignores
+    # them. These are the two number levers on that; the map-shaped ones are
+    # the lead designer's.
+    "kill_ap": 1,
+    "death_band_bonus": 0,      # added to the death-track position (Rules 6.4)
     "dragon_cap": 2,
     "tower_hits_champion": 2,
     "tower_hits_wave": 1,

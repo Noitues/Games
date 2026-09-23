@@ -241,3 +241,20 @@ def test_line_catches_by_hex_and_skips_concealed_champions(state, board):
     state.touch()
     caught = line_targets(state, shooter.hexpos, (0, 1), 6, "north", "enemy_any", src_tile)
     assert exposed.uid in [u.uid for u in caught]
+
+
+def test_a_kill_pays_what_the_config_says(state, board):
+    """RQ-037 / P-0008: the two number levers on what a fight is worth."""
+    from engine.resolve import deal_hits, death_track_pos
+    state.config["kill_ap"] = 3
+    state.config["death_band_bonus"] = 1
+    victim = state.champs["s_dax"]
+    killer = state.champs["n_ashwyn"]
+    victim.hp = 1
+    state.teams["north"].ap = 0
+    state.round = 3
+    state.touch()
+    deal_hits(state, "north", victim, 1, "chips_champion", killer)
+    assert not victim.alive
+    assert state.teams["north"].ap == 3
+    assert victim.track == death_track_pos(3, 1) == 3
