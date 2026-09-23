@@ -3554,6 +3554,516 @@
     "Yarrow": 3
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 121,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Scene 5 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "CLIMAX",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 122,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Scene test",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "1",
+   "total": "",
+   "opposition": "",
+   "result": "altered",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "d6=1 vs Tension 2",
+   "event_type": "scene_test",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 123,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Can the party hold the belltower and get everyone off the spire alive — and will the Stiltfolk boats prove allies or rivals before the swarm reaches the bells?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 124,
+   "session": 1,
+   "scene": 5,
+   "actor": "Petra",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Petra positions herself at the belfry entrance, the boy secure and conscious behind her. Her sharp eyes trace the flooded stairway below—the narrow choke-point,",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 125,
+   "session": 1,
+   "scene": 5,
+   "actor": "Anselm",
+   "action": "create_advantage",
+   "skill": "Lore",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Anselm bolts up the belltower stairs, pulling worn herbs and Saint Orrin's weathered liturgy from his pack. He traces binding signs in the air with shaking fing",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 126,
+   "session": 1,
+   "scene": 5,
+   "actor": "Caddock",
+   "action": "create_advantage",
+   "skill": "Physique",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Caddock pulls the boy to safety, checks his vital signs with practiced hands, then plants herself at the stairwell entrance. Her powerful frame fills the narrow",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 127,
+   "session": 1,
+   "scene": 5,
+   "actor": "Yarrow",
+   "action": "create_advantage",
+   "skill": "Athletics",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Yarrow moves into the stairwell entrance with his spear ready, his broad frame completely filling the narrow passage. He stations the rescued boy safely in the ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 128,
+   "session": 1,
+   "scene": 5,
+   "actor": "Petra",
+   "action": "Create Advantage: Petra positions herself at the belfry entrance, the boy secu",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ + + +",
+   "total": "+8",
+   "opposition": "+2",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "aspect A-1.5.5 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "calls with the swarm-song [H-02]"
+   ],
+   "target_card": "H-02",
+   "target_npc": "",
+   "shifts": 6,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 129,
+   "session": 1,
+   "scene": 5,
+   "actor": "Anselm",
+   "action": "Create Advantage: Anselm bolts up the belltower stairs, pulling worn herbs and",
+   "skill": "Lore +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "0 0 0 +",
+   "total": "+5",
+   "opposition": "+2",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "aspect A-1.5.6 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "spreads through open wounds [H-02]"
+   ],
+   "target_card": "H-02",
+   "target_npc": "",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 3,
+    "Yarrow": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 130,
+   "session": 1,
+   "scene": 5,
+   "actor": "Caddock",
+   "action": "Create Advantage: Caddock pulls the boy to safety, checks his vital signs with",
+   "skill": "Physique +4",
+   "tags_invoked": "Unshakeable calm in any birth, any storm [CA-04]",
+   "fp_spent": 1,
+   "dice": "0 - 0 0",
+   "total": "+5",
+   "opposition": "+2",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "aspect A-1.5.7 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [
+    "turns people hive-touched [H-02]"
+   ],
+   "target_card": "",
+   "target_npc": "",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 2,
+    "Yarrow": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 131,
+   "session": 1,
+   "scene": 5,
+   "actor": "Yarrow",
+   "action": "Create Advantage: Yarrow moves into the stairwell entrance with his spear read",
+   "skill": "Athletics +3",
+   "tags_invoked": "Reads water-flow like other men read faces [YA-03]",
+   "fp_spent": 1,
+   "dice": "+ - - 0",
+   "total": "+4",
+   "opposition": "+2 (NPC - + - +)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "aspect A-1.5.8 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Fennard the Tinker (hive-touched)",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 2,
+    "Yarrow": 2
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 132,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "2->1",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "against the players 0 (hostile invokes 0 + compels 0) vs friendly invokes 2 (§6, spec 0.3.1)",
+   "event_type": "tension",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 2,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 133,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail - F-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "F-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "discard: no longer present",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 2,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 134,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail - F-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "F-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "discard: no longer present",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 2,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 135,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-07",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "Mother Wrenna, Stiltfolk Poler",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 2,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 136,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-08",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "The Stiltfolk's Uneasy Thaw",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 2,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 137,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Scene 5 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 1,
+    "Anselm": 1,
+    "Caddock": 2,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -3605,6 +4115,17 @@
    "rounds": 3,
    "climax": false,
    "tension_after": 2,
+   "triggers_fired": []
+  },
+  {
+   "index": 5,
+   "tension_before": 2,
+   "scene_test": 1,
+   "outcome": "altered",
+   "beat": null,
+   "rounds": 1,
+   "climax": true,
+   "tension_after": 1,
    "triggers_fired": []
   }
  ],
@@ -4368,6 +4889,118 @@
    "kind": "narration",
    "text": "Caddock and Yarrow break into the belfry together, and there he is — a reed-thin boy no older than ten, crouched in the rafters with grey veins just beginning to thread up his forearm, mouth moving in time with a song that isn't his. But Petra's bells are louder here, right at the source, and the boy's true voice is right underneath them now, no longer buried. Caddock doesn't hesitate — she wraps him up the way she's caught a thousand newborns, steady hands, steady voice, murmuring \"I've got you, I've got you\" until his shaking stops. Yarrow holds the stair below with his spear, watching the dark for anything the song might still call up, but nothing comes; whatever else roosts in this tower, it lets this one go. Anselm reaches the belfry last and presses blessed salt into the fresh wound on the boy's arm before the hive can take root — his own hands, his own rites, no one else's, just as he swore. Down at the waterline Mother Wrenna sees them silhouetted against the tower's dark mouth and starts wading in before the skiff even touches stone, sobbing her son's name. The bells go quiet in Petra's hands as the boy answers his mother, hoarse but himself, and the swarm-song, for now, has lost this round.",
    "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The swarm answers the bells, but it isn't alone — through the rain, low reed-boats slide out of the maze toward the temple, pole-arms flashing, and for a moment you can't tell if they're coming to fight the hive-touched or to take the boy for themselves. Mother Wrenna curses under her breath and grips the gunwale: \"Stiltfolk. They know that bell-pattern too.\" Below, grey shapes wade up through the flooded nave toward the stairs, and now there are two currents converging on the tower at once — one hungry, one unreadable. Whatever help or hindrance the clan-folk bring, you'll have to hold the belfry and get everyone off the spire alive before the water decides who else it swallows.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Petra",
+   "kind": "speech",
+   "text": "Hold here at the stairs. They can't come at us faster than one at a time in that well—we have the bells, we have the height, we have the line.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Petra",
+   "kind": "action",
+   "text": "(Petra positions herself at the belfry entrance, the boy secure and conscious behind her. Her sharp eyes trace the flooded stairway below—the narrow choke-point, the way climbers must funnel up one at a time into her reach. She's read water and weather her whole life; she reads this bottleneck with the same calm certainty. Her voice steadies everyone in the tower.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Anselm",
+   "kind": "speech",
+   "text": "I'm warding the threshold.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Anselm",
+   "kind": "action",
+   "text": "(Anselm bolts up the belltower stairs, pulling worn herbs and Saint Orrin's weathered liturgy from his pack. He traces binding signs in the air with shaking fingers, whispering the old exorcism words to seal the threshold against the grey-veined hunger climbing below.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Caddock",
+   "kind": "speech",
+   "text": "I've delivered babies in typhoons and floods and fires. I'm not losing one to this.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Caddock",
+   "kind": "action",
+   "text": "(Caddock pulls the boy to safety, checks his vital signs with practiced hands, then plants herself at the stairwell entrance. Her powerful frame fills the narrow gap, feet braced, body a physical wall between the ascending swarm and the child at her back.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Yarrow",
+   "kind": "speech",
+   "text": "Hold the high ground behind me—boy goes to the rafters. His scarred hands steady on the spear shaft as he settles into the stairwell entrance like a man returning to an old duty. The hive-touched will find nothing soft here, and we'll see what those pole-folk want before they get close enough to take it.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Yarrow",
+   "kind": "action",
+   "text": "(Yarrow moves into the stairwell entrance with his spear ready, his broad frame completely filling the narrow passage. He stations the rescued boy safely in the rafters behind him, with Petra, Anselm, and Caddock positioned where they can support his line or move toward the windows if escape becomes necessary. His stance is old militia discipline—unmovable, economical, weighted—with sightlines open both down through the spiral stairs where grey shapes are wading up through the flooded nave, and out toward where the Stiltfolk reed-boats are cutting their approach through the temple's reflected sky.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Petra — create advantage with Notice: dice + + + + → Legendary (+8) vs Fair (+2): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Anselm — create advantage with Lore: dice 0 0 0 + → Superb (+5) vs Fair (+2): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Caddock — create advantage with Physique: dice 0 - 0 0, invoking Unshakeable calm in any birth, any storm [CA-04] → Superb (+5) vs Fair (+2): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Yarrow — create advantage with Athletics: dice + - - 0, invoking Reads water-flow like other men read faces [YA-03] → Great (+4) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The belfry becomes a fortress in the space of a breath. Petra's read of the stairwell proves flawless — every hive-touched climber funnels into a single killing line, no more than one abreast, and her calm voice keeps the boy steady behind her. Anselm's warding signs flare pale gold at the threshold, the old exorcism-words biting into the swarm-song itself so that the grey-veined climbers flinch and stumble at the last step, as if the air itself refuses them passage. Caddock plants herself in the gap like a birthing-room wall nothing gets past, unshakeable, and the first hive-touched to reach her simply cannot find a way around that calm, immovable bulk. Below, Yarrow reads the water and the reed-boats both — the Stiltfolk poles aren't cutting toward the swarm's flank to join the slaughter, they're cutting toward the temple's dry stones, clan-folk already reaching up gaffs and lines not for the boy but for their own kin caught in the grey tide. Mother Wrenna's curse turns to relief: \"They're not here for him. They're here for their own — and maybe, now, for us.\" The hive-touched break against warded threshold and midwife's wall and spearman's line all at once, the swarm-song guttering under Petra's bells and Anselm's binding until the climbers below simply stop, confused, drowning in the flood's own choir instead of Saint Orrin's. By the time the Stiltfolk boats bump against the temple stone, hauling their own touched kin from the water, the belfry stands unbreached, the boy safe in the rafters, and clan-eyes look up at four strangers holding the line with something that isn't quite trust — but isn't the arrow-nocked distrust of before either.",
+   "visible_to": "all"
   }
  ],
  "costs": [
@@ -4496,6 +5129,16 @@
    "improvised": false,
    "tag_in_text": true,
    "repaired": false
+  },
+  {
+   "event": "altered",
+   "scene": 5,
+   "draw_id": "",
+   "valid": true,
+   "tag": "pole-boats through reed mazes",
+   "text": "The swarm answers the bells, but it isn't alone — through the rain, low reed-boats slide out of the maze toward the temple, pole-arms flashing, and for a moment you can't tell if they're coming to fight the hive-touched or to take the boy for themselves. Mother Wrenna curses under her breath and gri",
+   "improvised": true,
+   "tag_in_text": true
   }
  ],
  "referee": {
@@ -4572,6 +5215,24 @@
     "detail": "deck exhausted in scene 4; climax = scene 5",
     "scene": 4,
     "source": "engine"
+   },
+   {
+    "id": "AMB-20",
+    "section": "§4 vs §6",
+    "issue": "§6 Altered scene draws a card, but §4's closed list of draw triggers omits it.",
+    "interim_ruling": "§6 is more specific: Altered scenes draw.",
+    "detail": "",
+    "scene": 5,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-16",
+    "section": "§4",
+    "issue": "A draw is required but the deck is empty outside a climax.",
+    "interim_ruling": "The cost uses a face-up GM tag, as in a climax.",
+    "detail": "altered scene with empty deck",
+    "scene": 5,
+    "source": "engine"
    }
   ],
   "cost_checks": [],
@@ -4581,12 +5242,12 @@
  "interview": null,
  "chronicle": null,
  "state_end": {
-  "tension": 2,
+  "tension": 1,
   "fp": {
    "Petra": 1,
    "Anselm": 1,
-   "Caddock": 3,
-   "Yarrow": 3
+   "Caddock": 2,
+   "Yarrow": 2
   },
   "surfaced": [
    "PX-08",
@@ -4605,21 +5266,21 @@
   "deck_left": [],
   "draws": 7,
   "turns": {
-   "Petra": 8,
-   "Anselm": 4,
-   "Caddock": 8,
-   "Yarrow": 8
+   "Petra": 9,
+   "Anselm": 5,
+   "Caddock": 9,
+   "Yarrow": 9
   }
  },
  "notes": [],
  "metrics": {},
  "tokens": {
-  "prompt": 1165888,
-  "completion": 172689,
-  "cost_usd": 3.1002,
-  "calls": 77
+  "prompt": 1392491,
+  "completion": 204360,
+  "cost_usd": 3.5824,
+  "calls": 87
  },
- "llm_calls": 77,
+ "llm_calls": 87,
  "call_log": [
   {
    "seq": 1,
@@ -5236,6 +5897,86 @@
    "cached": false,
    "prompt_tokens": 46617,
    "completion_tokens": 1808
+  },
+  {
+   "seq": 29,
+   "agent": "GM",
+   "kind": "gm_frame",
+   "cached": false,
+   "prompt_tokens": 39322,
+   "completion_tokens": 1743
+  },
+  {
+   "seq": 30,
+   "agent": "GM",
+   "kind": "gm_frame",
+   "cached": false,
+   "prompt_tokens": 39651,
+   "completion_tokens": 1592
+  },
+  {
+   "seq": 12,
+   "agent": "Caddock",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 5168,
+   "completion_tokens": 3791
+  },
+  {
+   "seq": 12,
+   "agent": "Anselm",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 5173,
+   "completion_tokens": 4514
+  },
+  {
+   "seq": 14,
+   "agent": "Yarrow",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 5155,
+   "completion_tokens": 5199
+  },
+  {
+   "seq": 15,
+   "agent": "Petra",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 5135,
+   "completion_tokens": 5555
+  },
+  {
+   "seq": 31,
+   "agent": "GM",
+   "kind": "gm_adjudicate",
+   "cached": false,
+   "prompt_tokens": 21831,
+   "completion_tokens": 1126
+  },
+  {
+   "seq": 13,
+   "agent": "Caddock",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 6765,
+   "completion_tokens": 1856
+  },
+  {
+   "seq": 15,
+   "agent": "Yarrow",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 6753,
+   "completion_tokens": 2673
+  },
+  {
+   "seq": 32,
+   "agent": "GM",
+   "kind": "gm_narrate",
+   "cached": false,
+   "prompt_tokens": 91650,
+   "completion_tokens": 3622
   }
  ],
  "models": {
@@ -5244,5 +5985,5 @@
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 1282.4
+ "elapsed_s": 1459.2
 }

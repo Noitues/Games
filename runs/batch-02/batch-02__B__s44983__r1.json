@@ -4,7 +4,7 @@
  "arm": "B",
  "seed": 44983,
  "spec_version": "0.3.1",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 1,
@@ -2603,6 +2603,34 @@
     "Yarrow": 0
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 85,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "FP: Petra=8, Anselm=2, Caddock=2, Yarrow=0",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 8,
+    "Anselm": 2,
+    "Caddock": 2,
+    "Yarrow": 0
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -3716,14 +3744,204 @@
     "detail": "",
     "scene": 3,
     "source": "engine"
+   },
+   {
+    "section": "Outcomes / Conflict",
+    "issue": "The rules say a tie is 'success at a minor cost' and a fail may be taken as 'success at a major cost', with 'the GM invents costs,' but never specify whether such a cost must manifest as mechanical stress/consequence damage or can be purely narrative. In the log, the major cost at event 41-42 (Yarrow falling through the floor into black water) and the minor cost at event 49-52 (Anselm's numbed arm/distraction) were both resolved as pure narration with no stress-track or consequence entries logged anywhere in the session.",
+    "interim_ruling": "Table treated all success-at-a-cost outcomes as purely narrative complications; no stress boxes or consequence slots were marked for these costs.",
+    "source": "referee"
+   },
+   {
+    "section": "Aspects and invokes / Compels",
+    "issue": "The same apparent trouble aspect for Petra is referenced under two different tag identifiers across the log: the full phrase 'Freezes When the Song Calls Her Name' (events 10, 24, 38, 47, 70) and the short code 'PE-TR' (event 57), with near-identical fictional text. The rules do not define how trouble aspects should be tagged/identified consistently for compel bookkeeping.",
+    "interim_ruling": "Table treated 'PE-TR' and 'Freezes When the Song Calls Her Name' as the same aspect and paid the standard +1 fate point compel award.",
+    "source": "referee"
+   },
+   {
+    "section": "Compels",
+    "issue": "The rules state the GM 'may offer a compel on any player aspect or trouble whenever the story calls for it' but set no cap on how often the same aspect can be compelled within a single scene. Scene 3 alone saw Petra's trouble aspect compelled three separate times (events 38, 47, 57), each paying a fresh fate point.",
+    "interim_ruling": "All three same-scene compels on the same aspect were accepted and each paid out 1 fate point, with no reduction or scene-level cap applied.",
+    "source": "referee"
    }
   ],
-  "cost_checks": [],
-  "friction": []
+  "cost_checks": [
+   {
+    "event_id": 10,
+    "used_drawn_card": false,
+    "note": "draw_id empty; compel text improvised by GM, no deck card involved"
+   },
+   {
+    "event_id": 15,
+    "used_drawn_card": false,
+    "note": "draw_id empty; compel text improvised by GM, no deck card involved"
+   },
+   {
+    "event_id": 24,
+    "used_drawn_card": false,
+    "note": "draw_id empty; compel text improvised by GM, no deck card involved"
+   },
+   {
+    "event_id": 38,
+    "used_drawn_card": false,
+    "note": "draw_id empty; compel text improvised by GM, no deck card involved"
+   },
+   {
+    "event_id": 42,
+    "used_drawn_card": false,
+    "note": "success_major_cost narrative (event 41's roll) is marked improvised with draw_id empty; no drawn card tags referenced"
+   },
+   {
+    "event_id": 47,
+    "used_drawn_card": false,
+    "note": "draw_id empty; compel text improvised by GM, no deck card involved"
+   },
+   {
+    "event_id": 52,
+    "used_drawn_card": false,
+    "note": "tie-cost narrative (event 49's roll) is marked improvised with draw_id empty; no drawn card tags referenced"
+   },
+   {
+    "event_id": 57,
+    "used_drawn_card": false,
+    "note": "draw_id empty; compel tagged PE-TR, improvised by GM, no deck card involved"
+   },
+   {
+    "event_id": 58,
+    "used_drawn_card": false,
+    "note": "draw_id empty; compel tagged AN-TR, improvised by GM, no deck card involved"
+   },
+   {
+    "event_id": 70,
+    "used_drawn_card": false,
+    "note": "draw_id empty; compel text improvised by GM, no deck card involved"
+   }
+  ],
+  "friction": [
+   {
+    "text": "Petra's trouble aspect 'Freezes When the Song Calls Her Name' was compelled 6 times across the session (once per scene 1 and 2, three times in scene 3, once in scene 4), driving her fate point total to 8 versus 0-2 for the other three players by session end — a stark economy imbalance the rules' compel-frequency silence does nothing to check."
+   },
+   {
+    "text": "No cost in the entire log (major cost at event 41/42, minor cost/tie at event 49/52) was ever matched to an actual deck-draw card (all draw_id fields are empty and marked improvised), despite the interim ruling AMB-19 stating 'the deck draw still happens' for at least one roll type — worth confirming the deck-draw pipeline is actually firing for cost generation."
+   },
+   {
+    "text": "The same trouble aspect is tracked under two different tag spellings ('Freezes When the Song Calls Her Name' vs 'PE-TR'), which could cause downstream bookkeeping/engine matching errors if the two are ever treated as distinct aspects."
+   }
+  ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "storyteller",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When Petra hummed off-key to shatter the bell's hold on her—the moment she used her core ability (hearing the swarm-song) to overcome her core trouble (freezing when it calls her name). It felt like a triumph of character defiance rather than just luck or outside help.",
+    "most_frustrating": "The repeated compels on my trouble left Petra paralyzed multiple times, especially when the song called her name right as she was trying to save Tam. That helplessness was intense—though I recognize it was dramatically earned and ultimately satisfying, not unfair.",
+    "background_used": "Yes, extensively and well. The bell-ringer apprenticeship wasn't just flavor—knowing the escape routes saved the party, understanding bell-tone and rhythm was mechanically essential, and the vow to \"ring everyone home\" was directly invoked and felt materially important to the story. Good integration.",
+    "wanted_but_couldnt": "I wanted to learn more about or confront the Dry Saint (my marked enemy) or understand what the swarm-song actually *wants*. The urgency and danger didn't allow for deeper investigation, which is probably right for the pacing but left that thread dangling.",
+    "one_sentence": "My bell-ringer apprenticeship was used expertly—it gave me specific knowledge and abilities that made Petra essential to solving the crisis, giving real mechanical weight to the narrative."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "rules_lawyer",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 7,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When Yarrow went under and my sister's cry came flooding back—the compel made my PTSD feel visceral and real rather than just mechanical. GM played my trauma perfectly.",
+    "most_frustrating": "The bell-tongue mystery remains unsolved. I'm an exorcist uncertain if the hive has souls, and we silenced the bell and rescued Tam, but I still don't know what it *is* or how to truly stop it. Good hook, but unsatisfying.",
+    "background_used": "good — The Drowned Mill trauma and the bell-tongue hunt were both woven in seamlessly, not forced. My backstory made my choices and reactions carry more weight.",
+    "wanted_but_couldnt": "A chance to study the bell-tongue artifact directly with Lore, to investigate the black sheen and interrogate whether it has consciousness. Combat moved too fast for deliberate investigation.",
+    "one_sentence": "My backstory was used well—the bell-tongue hunt and the Drowned Mill trauma were organic to every scene and made me feel like a character with real stakes, not just a passenger."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "lurker",
+   "scores": {
+    "fun": 5,
+    "involvement": 6,
+    "connection": 4,
+    "control": 5,
+    "play_again": 6
+   },
+   "free_text": {
+    "best_moment": "When I hauled Yarrow from the black water with a grip born from years of delivering people safely through dangerous conditions—then stood immovable in the tower doorway like \"wet stone.\" Those moments made it clear that Caddock's strength and steadiness meant something when it mattered most.",
+    "most_frustrating": "None of Caddock's specific history came into play. Marrowreed Village, Sella, the Wardens, the Cellars—all of it incidental. The story felt like it could have happened to any character with swamp-adjacent skills. I wanted the hive-touched pilgrims to matter *personally* to Caddock, not just tactically.",
+    "background_used": "Partially; surface-level. The setting and scenario suited my profession well—marshland, rescue mission, physical endurance—but my actual relationships and history were never engaged. The fit was thematic but not personal.",
+    "wanted_but_couldnt": "More mechanical opportunities to invoke my aspects for bonuses (my trouble aspect never created a complication), and narrative space for Caddock's history to matter—something about Sella in those pilgrims, or the Wardens' shadow over this place, or even just a reason to care beyond \"there's a boy to save.\"",
+    "one_sentence": "My character concept fit the adventure perfectly, but my backstory felt incidental rather than woven in—I was the right skill set for the wrong reasons."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "method_actor",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When Yarrow went under in the flooded nave and clawed his way back up through the black water — it made him genuinely hold the line against drowning itself, and Brack's frantic barking was the rope that pulled him back to air.",
+    "most_frustrating": "Wanted one concrete detail about the oath he broke — just a name, a face, a ghost of a reason — so the choice would hit even harder.",
+    "background_used": "Yes. The compel on his trouble aspect felt organic and created real tension. Militia expertise, weir-keeper skills, and Brack's bond all got mechanical use. The oath breaking became a character-defining choice. Good.",
+    "wanted_but_couldnt": "Have a bigger role in investigating the swarm-song mystery — that felt like Petra's domain, and I wanted more detective work where Yarrow's Notice and background mattered.",
+    "one_sentence": "Yarrow's backstory felt used as a genuine engine for character tension and meaningful moral choice, not just flavor text."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Petra",
+    "turns": 22,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Anselm",
+    "turns": 17,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Caddock",
+    "turns": 12,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Yarrow",
+    "turns": 17,
+    "references_to_others_background": 0
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "The party followed a swarm-song into Saint Orrin's Drowned Temple, fought back the hive-touched pilgrims through the flooded nave, and Yarrow tore Tam free of the bronze bell's hold just as the tower fell silent. As newly purposeful hive-touched surged up the drowned stair, Petra's instinct for the bell-keeper's hidden escape route got the party — and the rescued boy — out across the roof struts and away, leaving their hunters clawing at empty stone below. Hollowmoot's flood keeps rising, the bell is quiet for now, but something down in that temple learned to move with purpose tonight.",
+  "closing_tension": null,
+  "reverberations": {
+   "growth": {},
+   "clocks": [],
+   "mutations": [],
+   "retired": []
+  },
+  "retired": []
+ },
  "state_end": {
   "tension": 3,
   "fp": {
@@ -3746,14 +3964,110 @@
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 667991,
-  "completion": 170602,
-  "cost_usd": 2.5775,
-  "calls": 71
+ "metrics": {
+  "arm": "B",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Anselm",
+   "Petra",
+   "Yarrow"
+  ],
+  "backstory_all_players": false,
+  "deck_surfaced_all_players": null,
+  "deck_draws": 0,
+  "draw_costs": 0,
+  "draw_cost_used_card_rate_engine": null,
+  "draw_cost_tag_in_text_rate": null,
+  "draw_cost_repaired": 0,
+  "draw_cost_used_card_rate_referee": 0.0,
+  "fp_end": {
+   "Petra": 8,
+   "Anselm": 2,
+   "Caddock": 2,
+   "Yarrow": 0
+  },
+  "fp_end_mean": 3,
+  "fp_earned": {
+   "Petra": 6,
+   "Yarrow": 1,
+   "Anselm": 1
+  },
+  "fp_spent": {
+   "Anselm": 2,
+   "Yarrow": 4,
+   "Petra": 1,
+   "Caddock": 1
+  },
+  "compels_accepted": 8,
+  "compels_refused": 0,
+  "compels_deck": 0,
+  "compels_free": 8,
+  "turns": {
+   "Petra": 8,
+   "Anselm": 8,
+   "Caddock": 6,
+   "Yarrow": 8
+  },
+  "turn_gini": 0.05,
+  "invokes": {
+   "Anselm": 2,
+   "Yarrow": 4,
+   "Petra": 1,
+   "Caddock": 1
+  },
+  "invoke_gini": 0.3125,
+  "tension_trajectory": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "clock_marks": 0,
+  "violations": 2,
+  "violations_engine": 2,
+  "violations_referee": 0,
+  "ambiguities": 6,
+  "ambiguity_ids": [
+   "AMB-12",
+   "AMB-19",
+   "AMB-23",
+   "Aspects and invokes / Compels",
+   "Compels",
+   "Outcomes / Conflict"
+  ],
+  "gm_improvised_complications": 10,
+  "card_supplied_complications": 0,
+  "improvisation_share": 1.0,
+  "guarantee_pulled": 0,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6.25,
+   "involvement": 6.5,
+   "connection": 6.25,
+   "control": 5.25,
+   "play_again": 6.75
+  },
+  "involvement_var_within": 0.25,
+  "personality": {
+   "Petra": "storyteller",
+   "Anselm": "rules_lawyer",
+   "Caddock": "lurker",
+   "Yarrow": "method_actor"
+  },
+  "elapsed_min": 24.8,
+  "cost_usd": 3.1862
  },
- "llm_calls": 71,
+ "tokens": {
+  "prompt": 794523,
+  "completion": 218098,
+  "cost_usd": 3.1862,
+  "calls": 79
+ },
+ "llm_calls": 78,
  "call_log": [
   {
    "seq": 1,
@@ -4322,6 +4636,62 @@
    "cached": false,
    "prompt_tokens": 11892,
    "completion_tokens": 761
+  },
+  {
+   "seq": 24,
+   "agent": "GM",
+   "kind": "gm_post",
+   "cached": false,
+   "prompt_tokens": 11249,
+   "completion_tokens": 339
+  },
+  {
+   "seq": 1,
+   "agent": "Referee",
+   "kind": "referee",
+   "cached": false,
+   "prompt_tokens": 10941,
+   "completion_tokens": 10017
+  },
+  {
+   "seq": 1,
+   "agent": "Anselm#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11684,
+   "completion_tokens": 1893
+  },
+  {
+   "seq": 1,
+   "agent": "Petra#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11670,
+   "completion_tokens": 2159
+  },
+  {
+   "seq": 1,
+   "agent": "Yarrow#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11687,
+   "completion_tokens": 3109
+  },
+  {
+   "seq": 1,
+   "agent": "Caddock#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 11695,
+   "completion_tokens": 3317
+  },
+  {
+   "seq": 1,
+   "agent": "Interviewer",
+   "kind": "interviewer",
+   "cached": false,
+   "prompt_tokens": 9936,
+   "completion_tokens": 25077
   }
  ],
  "models": {
@@ -4330,5 +4700,5 @@
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 1062.9
+ "elapsed_s": 1485.8
 }
