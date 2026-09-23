@@ -4,7 +4,7 @@
  "arm": "B",
  "seed": 87940,
  "spec_version": "0.2.0",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 0,
@@ -1162,6 +1162,1155 @@
     "Mire": 2
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 38,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Deploy module M-1",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "C-02,T-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "trigger fired at previous cleanup: fiction:the party leaves the road or causeway",
+   "event_type": "module_deploy",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 3,
+    "Morwen": 2,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 39,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Rail + C-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "C-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "module M-1",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 3,
+    "Morwen": 2,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 40,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Rail + T-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "module M-1",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 3,
+    "Morwen": 2,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 41,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Scene 4 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 3,
+    "Morwen": 2,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 42,
+   "session": 1,
+   "scene": 4,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Can the party reach Tomas atop the belltower and pull him free of the swarm-song before the hive finishes claiming him — and before the Drowned Priest's flock stops them?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 3,
+    "Morwen": 2,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 43,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Ysolde raises her voice through the rain and the humming, holding Sera's fishing hook high so the light catches it. She steps forward across the broken stone, m",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 3,
+    "Morwen": 2,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 44,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Aldous closes his eyes and lets the rain fall heavy across his face. His fingers twitch in the familiar pattern of reading water-signs—tracing the temperature s",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 3,
+    "Morwen": 2,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 45,
+   "session": 1,
+   "scene": 4,
+   "actor": "Morwen",
+   "action": "attack",
+   "skill": "Will",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Morwen strides forward across the broken pillars without hesitation, rain streaming down her face. She draws deep on the exorcist's will the Order drilled into ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 3,
+    "Morwen": 2,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 46,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Mire steps carefully onto the broken temple stones, her trained eyes tracking the priest's movements. She watches how his upraised hand guides the swarm-song li",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 3,
+    "Morwen": 2,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 47,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Cannot Lie to a Priest",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": "",
+   "notes": "The Drowned Priest's ruined face turns from the belltower toward Aldous — the only one of you he seems to truly see — and asks, in a voice like water through a drowned throat, whether he means to stea",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 4,
+    "Morwen": 2,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 48,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "Create Advantage: Aldous closes his eyes and lets the rain fall heavy across h",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "- 0 + 0",
+   "total": "+4",
+   "opposition": "+1",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.4.2 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 4,
+    "Morwen": 2,
+    "Mire": 2
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 49,
+   "session": 1,
+   "scene": 4,
+   "actor": "Morwen",
+   "action": "Attack: Morwen strides forward across the broken pillars without hes",
+   "skill": "Will +4",
+   "tags_invoked": "Exorcist Who Doubts the Hive Has Souls [MO-HC]; Vowed to stand against the Wardens' torches for one more house [MO-A3]",
+   "fp_spent": 2,
+   "dice": "- - - -",
+   "total": "+4",
+   "opposition": "+4 (NPC 0 0 0 +)",
+   "result": "tie",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -2,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "The Drowned Priest",
+   "shifts": 0,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4,
+   "cost_mode": "improvised"
+  },
+  {
+   "event_id": 50,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "Create Advantage: Mire steps carefully onto the broken temple stones, her trai",
+   "skill": "Notice +3",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ - + 0",
+   "total": "+4",
+   "opposition": "+1",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.4.4 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 51,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "Defend vs Swaying Pilgrim-Flock",
+   "skill": "Will +1",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "- - - -",
+   "total": "-3",
+   "opposition": "+0",
+   "result": "hit",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "As Ysolde steps into the open ground between priest and boy, the pilgrims' swaying breaks rhythm — half a dozen half-lid",
+   "event_type": "defend",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 52,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "Absorb 3 mental",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "; box 3",
+   "event_type": "harm",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 53,
+   "session": 1,
+   "scene": 4,
+   "actor": "GM",
+   "action": "Cost (tie)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Morwen's binding words strike true and the priest staggers, his grip on the bell-song fraying for an instant — but the backlash of severing that much devotion floods back through her own outstretched ",
+   "event_type": "cost",
+   "improvised": true,
+   "cost_valid": null,
+   "for_event": 49,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 54,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "attack",
+   "skill": "Empathy",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Ysolde plants her feet on the broken temple stone, rain streaming down her weathered face. She raises Sera's fishing hook like a beacon, an anchor—and she doesn",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 55,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "overcome",
+   "skill": "Empathy",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Aldous raises his hands toward the belltower, fingers spread as if cradling something impossibly fragile. Invoking the connection that still holds—The Boy's Thr",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 56,
+   "session": 1,
+   "scene": 4,
+   "actor": "Morwen",
+   "action": "attack",
+   "skill": "Will",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Morwen surges forward across the broken pillars without hesitation, reaching out toward the ruined priest. She pours everything into the connection she just sha",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 57,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "attack",
+   "skill": "Fight",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Mire plants herself between the swaying pilgrims and Morwen, weapon drawn, moving into the stance that held Wick Lane a hundred nights—feet set, shoulders squar",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 58,
+   "session": 1,
+   "scene": 4,
+   "actor": "Ysolde",
+   "action": "Attack: Ysolde plants her feet on the broken temple stone, rain stre",
+   "skill": "Empathy +4",
+   "tags_invoked": "Exiled Cook of the Night-Barge Who Hears Everything [YS-HC]; The Boy's Thread [A-1.4.2]",
+   "fp_spent": 2,
+   "dice": "- - 0 -",
+   "total": "+5",
+   "opposition": "+3 (NPC - 0 0 +)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -2,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "The Drowned Priest",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 59,
+   "session": 1,
+   "scene": 4,
+   "actor": "Aldous",
+   "action": "Overcome: Aldous raises his hands toward the belltower, fingers spread",
+   "skill": "Empathy +3",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ 0 0 +",
+   "total": "+5",
+   "opposition": "+1",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "A-1.4.2",
+   "target_npc": "",
+   "shifts": 4,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 60,
+   "session": 1,
+   "scene": 4,
+   "actor": "Morwen",
+   "action": "Attack: Morwen surges forward across the broken pillars without hesi",
+   "skill": "Will +4",
+   "tags_invoked": "Boost: Morwen strides forward across  [A-1.4.3]",
+   "fp_spent": 0,
+   "dice": "- 0 + 0",
+   "total": "+6",
+   "opposition": "+3 (NPC 0 0 - +)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "The Drowned Priest",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 61,
+   "session": 1,
+   "scene": 4,
+   "actor": "Mire",
+   "action": "Attack: Mire plants herself between the swaying pilgrims and Morwen,",
+   "skill": "Fight +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ 0 - +",
+   "total": "+5",
+   "opposition": "+1 (NPC 0 - 0 0)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Swaying Pilgrim-Flock",
+   "shifts": 4,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 62,
+   "session": 1,
+   "scene": 4,
+   "actor": "",
+   "action": "Scene 4 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 63,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Scene 5 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 64,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Can the party get Tomas out of the drowned temple grounds before the rising water and the hive-touched pack cut off the way back to Hollowmoot?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 65,
+   "session": 1,
+   "scene": 5,
+   "actor": "Ysolde",
+   "action": "create_advantage",
+   "skill": "Empathy",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Ysolde closes her eyes as the Hive-Touched Pack's humming rises from the reeds. She tilts her face toward the sound, settling into the listening stance that hel",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 66,
+   "session": 1,
+   "scene": 5,
+   "actor": "Aldous",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Aldous closes his eyes as rain streams down his face, fingers twitching through the familiar water-reading gesture. The drowned voices that mark him press close",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 67,
+   "session": 1,
+   "scene": 5,
+   "actor": "Morwen",
+   "action": "attack",
+   "skill": "Will",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Morwen strides forward through the rising water without hesitation, her jaw set, eyes blazing. She reaches out with both hands and speaks words of binding—the s",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 68,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "attack",
+   "skill": "Fight",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Mire shifts Tomas securely to one side, bracing him tight against her body. She never breaks her focus from the priest struggling upright against the altar—he's",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 69,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Vengeance Over Sense",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Mire is so fixed on finishing the priest that she pushes deeper into striking range than is safe with Tomas braced against her — if the blow doesn't land clean, the boy is exposed.",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 70,
+   "session": 1,
+   "scene": 5,
+   "actor": "Ysolde",
+   "action": "Create Advantage: Ysolde closes her eyes as the Hive-Touched Pack's humming ri",
+   "skill": "Empathy +4",
+   "tags_invoked": "Exiled Cook of the Night-Barge Who Hears Everything [YS-HC]",
+   "fp_spent": 1,
+   "dice": "0 - 0 +",
+   "total": "+6",
+   "opposition": "+4 (NPC 0 - + +)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.5.5 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [],
+   "target_card": "Gaps in the Hive-Song",
+   "target_npc": "Hive-Touched Pack",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 4,
+    "Morwen": 0,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 71,
+   "session": 1,
+   "scene": 5,
+   "actor": "Aldous",
+   "action": "Create Advantage: Aldous closes his eyes as rain streams down his face, finger",
+   "skill": "Notice +4",
+   "tags_invoked": "Only survivor of the barge, marked by drowned ghosts [AL-A1]",
+   "fp_spent": 1,
+   "dice": "+ + - -",
+   "total": "+6",
+   "opposition": "+2",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.5.6 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [
+    "swallows fords overnight [H-03]"
+   ],
+   "target_card": "Reading the Flood's Pattern",
+   "target_npc": "",
+   "shifts": 4,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 3,
+    "Morwen": 0,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 72,
+   "session": 1,
+   "scene": 5,
+   "actor": "Morwen",
+   "action": "Attack: Morwen strides forward through the rising water without hesi",
+   "skill": "Will +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ 0 - 0",
+   "total": "+4",
+   "opposition": "+0 (NPC - + - -)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "The Drowned Priest",
+   "shifts": 4,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 3,
+    "Morwen": 0,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 73,
+   "session": 1,
+   "scene": 5,
+   "actor": "Mire",
+   "action": "Attack: Mire shifts Tomas securely to one side, bracing him tight ag",
+   "skill": "Fight +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ 0 - -",
+   "total": "+3",
+   "opposition": "+0 (NPC 0 0 - -)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "The Drowned Priest",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 3,
+    "Morwen": 0,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 74,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Scene 5 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 3,
+    "Morwen": 0,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 75,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "FP: Ysolde=2, Aldous=3, Morwen=0, Mire=3",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 3,
+    "Morwen": 0,
+    "Mire": 3
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -1203,6 +2352,28 @@
    "triggers_fired": [
     "M-1"
    ]
+  },
+  {
+   "index": 4,
+   "tension_before": null,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 2,
+   "climax": false,
+   "tension_after": null,
+   "triggers_fired": []
+  },
+  {
+   "index": 5,
+   "tension_before": null,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 1,
+   "climax": false,
+   "tension_after": null,
+   "triggers_fired": []
   }
  ],
  "transcript": [
@@ -1549,6 +2720,374 @@
    "kind": "narration",
    "text": "Morwen's will breaks over Sister Agnet like the flood breaking a levee — not force of arms but force of conviction, an oath so plainly true it finds the crack beneath the woman's doctrine and drives straight through. Agnet's crossed staff wavers; for one long breath she looks less like a hunter and more like a girl who once believed the Order's mercy meant something, staggering back a step with the wind gone out of her. The two pilgrim-guards flanking her hesitate, staves half-lowered, waiting for an order that doesn't come. Behind Ysolde, Aldous, and Mire standing unmoved on the pilings, Agnet finally lowers her staff herself, jaw tight, eyes wet with something that isn't just rain. \"Go, then,\" she says, voice rough. \"Bring the boy back before the temple does what it does to the rest of them. But Ysolde — this isn't finished. The Order doesn't forget a face twice.\" She steps aside, and her guards part with her, leaving the old pilings clear and the path to Saint Orrin's Drowned Temple open through the rain.",
    "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The reeds give way at last to broken stone — pillars standing waist-deep in black water, a roofline collapsed into the flood, and above it all the belltower leaning drunk against the grey sky, its bell long silent but the air around it humming with that same wordless swarm-song, closer now, almost sweet. Candlelight flickers wet and orange in the temple's drowned nave, and shapes move between the pillars: pilgrims in temple grey, swaying gently in time with the song, eyes half-lidded, not quite hive-touched but not quite right either. At the base of the belltower stands a tall man in a priest's ruined vestments, waterlogged and stitched with barnacle and reed, one hand raised toward the tower as if in benediction. And far above, clinging to the bell-frame in the rain, small and pale, a boy who can only be Tomas — swaying too, humming back to the tower, one hand already dark at the knuckles with the first bloom of the hive.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Tomas! Your mother sent me—I have your hook. That song isn't yours, boy. Come down from there, and I'll take you back to Sera, I swear it.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde raises her voice through the rain and the humming, holding Sera's fishing hook high so the light catches it. She steps forward across the broken stone, moving carefully but not flinching—not attacking, just stepping into the space between the priest and the boy. Her weathered face turns up toward Tomas, and her whole posture shifts into something the night-barge crew would recognize: the listening stance, the one that says *I see you, I hear what's beneath the fear*. She keeps her hands visible, empty except for the hook, and she watches the Drowned Priest's face as she speaks, reading what moves in that waterlogged ruin of a man.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "The rain shows me the boy isn't gone yet—his mother's tears still reach him through the water. There's still a thread between them, still something that answers to his name.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous closes his eyes and lets the rain fall heavy across his face. His fingers twitch in the familiar pattern of reading water-signs—tracing the temperature shifts, the current's whisper, the echo of movements only a drowned man could know. The ghosts that mark him shudder and point toward the boy above, and when Aldous opens his eyes again they're sharp with certainty, reading not just the hive-song but the fragile thread of love still holding Tomas to his mother's name.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "That thing is calling my boy down into the rot. Not today—I'm binding you to the water and breaking your claim on every soul in this temple.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen strides forward across the broken pillars without hesitation, rain streaming down her face. She draws deep on the exorcist's will the Order drilled into her, speaking words of binding with absolute conviction as she locks her gaze on the ruined priest and reaches out to sever the connection holding Tomas to the bell-frame.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "The priest's holding the song with everything he has—see how he's fixed on that tower? We might have a moment while his attention's on Tomas, not on us.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire steps carefully onto the broken temple stones, her trained eyes tracking the priest's movements. She watches how his upraised hand guides the swarm-song like a conductor drawing notes from an instrument, sees the pilgrims' swaying rhythm matched perfectly to the melody. For just a moment, while his attention is completely fixed on Tomas in the belltower, the rest of them might move unnoticed.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "Yes, Drowned Father. I swear it by the water that marks me—I mean to bring the boy down from your mercy and return him to his mother's name. That's my oath, and I won't speak false to you.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — create advantage with Notice: dice - 0 + 0 → Great (+4) vs Average (+1): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen — attack with Will: dice - - - -, invoking Exorcist Who Doubts the Hive Has Souls [MO-HC], Vowed to stand against the Wardens' torches for one more house [MO-A3] → Great (+4) vs Great (+4): TIE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — create advantage with Notice: dice + - + 0 → Great (+4) vs Average (+1): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Swaying Pilgrim-Flock attacks Ysolde (mental): Mediocre (+0) vs Ysolde's Will Abysmal (-3) — hit for 3",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Morwen's binding words strike true and the priest staggers, his grip on the bell-song fraying for an instant — but the backlash of severing that much devotion floods back through her own outstretched hand, and his ruined face snaps down from the tower to fix on her instead. The Priest's Attention Fixed on the Tower breaks; now he knows exactly who's fighting him, and the swaying pilgrims begin to turn toward Morwen too.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Aldous's ghosts don't lie: he sees it now, plain as a lit lamp in the dark — a thread of love still runs from Tomas straight back to Sera's grief, thin as spider-silk but unbroken. That thread is a door, if someone can reach it. Mire, meanwhile, reads the priest like a tide table — his whole being poured into the tower, into the boy, into the song — and for one perfect heartbeat the rest of you are ghosts he can't see. Morwen seizes that heartbeat and drives her will into him like a spike, and it *works* — his grip on Tomas shudders, the humming stutters — but the cost is immediate: severing that much devotion floods backward through her own outstretched hand, and the priest's ruined face snaps away from the belltower to fix, hard and furious, on her. The opening Mire bought slams shut the instant it opens; he knows exactly who's fighting him now, and so do the swaying pilgrims, their half-lidded eyes all turning toward Morwen like a tide reversing. In the same breath, the flock's massed hum surges and crashes into Ysolde where she stands closest to the boy — not sound but *pressure*, words that aren't words pushing into the cracks of her thoughts. She staggers under it, teeth gritted, forcing the noise back behind gritted resolve, but it costs her — the weight of it settles into her mind like water finding a crack, and she can feel it there still, humming, unwilling to fully leave.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Tomas! Your mother's grief sings louder than any hive-song. That thread between you and Sera—I hear it, and it's unbreakable. Come down to her name, not to the dark.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde plants her feet on the broken temple stone, rain streaming down her weathered face. She raises Sera's fishing hook like a beacon, an anchor—and she doesn't attack the Priest with force, but with the deep listening that once made her dangerous to the Order. She opens herself completely, invokes the truth of who she is: the Cook of the Night-Barge Who Hears Everything. She reaches past the Priest's ceremony, past the humming still clawing at her own mind, and she *calls* to Tomas—not with commands, but with the patient understanding that cuts through every wall. She's offering him a thread back to his mother's love, stronger and truer than the hive's pull.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "Tomas! The thread your mother wove—it still holds through water and song both. Come back to Sera, boy. Come back to her name.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous raises his hands toward the belltower, fingers spread as if cradling something impossibly fragile. Invoking the connection that still holds—The Boy's Thread—the rain falls heavier around him, carrying Sera's tears mixed with the flood's cold. He traces that invisible bond through the water itself, and his voice rises clear and strong, speaking Tomas's name like a summons the boy cannot refuse. The ghosts that mark him press close, drowned things that know the pull of love better than the pull of song, and they lend their weight to his reaching.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "I felt that break, priest. I'm finishing this—you don't own these people.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen surges forward across the broken pillars without hesitation, reaching out toward the ruined priest. She pours everything into the connection she just shattered—her exorcist's will, her oath unbroken—driving deeper to sever it completely this time. The rain runs down her face as she leans into the assault, refusing to yield an inch.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Fall back—they're turning on Morwen. I'll hold them here.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire plants herself between the swaying pilgrims and Morwen, weapon drawn, moving into the stance that held Wick Lane a hundred nights—feet set, shoulders square, eyes reading every hypnotic sway and half-lidded turn. She's held worse than this. She's held the line when everything else was breaking. Her blade comes up steady, not to kill but to drive them back, to say with every inch of iron and will: you do not pass. Not while she's still standing.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde — attack with Empathy: dice - - 0 -, invoking Exiled Cook of the Night-Barge Who Hears Everything [YS-HC], The Boy's Thread [A-1.4.2] → Superb (+5) vs Good (+3): SUCCESS (The Drowned Priest stress 2)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — overcome with Empathy: dice + 0 0 + → Superb (+5) vs Average (+1): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen — attack with Will: dice - 0 + 0, invoking Boost: Morwen strides forward across  [A-1.4.3] → Fantastic (+6) vs Good (+3): SUCCESS WITH STYLE (The Drowned Priest mild consequence)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — attack with Fight: dice + 0 - + → Superb (+5) vs Average (+1): SUCCESS WITH STYLE (Swaying Pilgrim-Flock mild consequence)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 4,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The four of you move as one current against the drowned man's will. Ysolde's voice — patient, unbreakable, the same listening that once held a dying barge crew together — finds the thread Aldous traced and pours down it whole: *Sera's grief, Sera's love, stronger than any song.* The Priest reels back against the tower stone, his raised hand faltering, and above him Tomas's head snaps up — really up, eyes clearing for the first time in three nights — his small fingers scrabbling at the bell-frame as the humming in his own throat stutters into silence. Morwen doesn't let the opening close twice; she drives her will home a second time, and this time the binding doesn't just fray — it snaps, and the Priest goes down hard against a broken pillar, coughing water, his authority over the tower shattered along with his composure. Around Mire, the swaying pilgrims who turned to answer Morwen's assault stagger instead as her blade and her stance break their rhythm, blinking like sleepers waking mid-stride, the trance-glaze draining out of their faces one by one. High above, Tomas begins to climb down — slow, shaking, but climbing, toward the fishing hook Ysolde still holds high and the mother's name Aldous spoke into the rain. It isn't clean: the dark bloom at his knuckles hasn't gone, and won't — the hive has him marked even freed. But he's *himself*, crying and terrified and calling for his mother, dropping the last few feet into Mire's steadying arms as the Priest, robbed of his flock's attention and his hold on the boy both, drags himself upright and back into the drowned nave, snarling something about the tower not forgetting this. The swarm-song does not resume. Rain falls into sudden, ringing quiet.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The quiet doesn't last. From the drowned nave the Priest's voice rises again, cracked and furious, no longer a song but a summons — and out past the broken pillars, back toward the reed-choked causeway, something answers: a ragged chorus of wet, tuneless humming, closer than it should be, moving fast. Tomas flinches hard against Mire's shoulder at the sound, whispering that they took his friend Wik the same way, that the ones outside don't stop, don't feel the spears go in. The floodwater around the pillars is already climbing past your ankles again, swallowing the safe stones you crossed to get in, and the only dry line back toward Hollowmoot runs straight through the reeds where that humming is gathering. The Priest, dragging himself upright against the drowned altar, manages one last ruined smile: \"The tower calls its own home. Let's see if you can outrun the flood and the flock both.\"",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "I hear the pattern—when it pauses, we move. Listening taught me to hear anything.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde closes her eyes as the Hive-Touched Pack's humming rises from the reeds. She tilts her face toward the sound, settling into the listening stance that held her dying night-barge crew together in darkness. She reads the swarm-pulse like water, finding the rhythm, the moments when it breaks and gaps open. Invoking the Cook of the Night-Barge Who Hears Everything [YS-HC], her fingers twitch, marking the path through.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "The rain shows me a way through — there's a thread of current that knows the deep stones, and my ghosts remember every ford in Sallowmere. We follow that thread now, before the flock closes in.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous closes his eyes as rain streams down his face, fingers twitching through the familiar water-reading gesture. The drowned voices that mark him press close and whisper urgent directions — he can see the current's true shape now, the stone spine beneath the flood that will hold the group's weight if they move fast. When his eyes snap open, they're sharp with certainty. He points toward the path only someone marked by drowning could read, one hand reaching back toward the others.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "You're done here, Priest. No more songs, no more claims. This ends now.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen strides forward through the rising water without hesitation, her jaw set, eyes blazing. She reaches out with both hands and speaks words of binding—the same iron-hard exorcist's will that broke his hold on Tomas, poured into one final severing strike. She's finishing this before his pack arrives, before he can summon anything else. The Order trained her for this.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Your summoning ends here, priest. Not today.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire shifts Tomas securely to one side, bracing him tight against her body. She never breaks her focus from the priest struggling upright against the altar—he's spent, wounded by Morwen's binding, but still dangerous. Still summoning. She's held Wick Lane against odds like this a hundred nights. She closes the distance across the broken temple stones with the steady, relentless purpose of someone who knows how to hold the line: step by step, blade up, no hesitation.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "You don't summon another soul while I'm breathing, priest. Not one more.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde — create advantage with Empathy: dice 0 - 0 +, invoking Exiled Cook of the Night-Barge Who Hears Everything [YS-HC] → Fantastic (+6) vs Great (+4): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — create advantage with Notice: dice + + - -, invoking Only survivor of the barge, marked by drowned ghosts [AL-A1] → Fantastic (+6) vs Fair (+2): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen — attack with Will: dice + 0 - 0 → Great (+4) vs Mediocre (+0): SUCCESS WITH STYLE (The Drowned Priest taken out)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — attack with Fight: dice + 0 - - → Good (+3) vs Mediocre (+0): SUCCESS WITH STYLE (The Drowned Priest mild consequence)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Morwen's second strike doesn't just break the Priest's hold — it breaks him. The binding closes like a fist around everything that was ever holy in him, and he goes down in the flooded nave with a sound like a man drowning twice, hands scrabbling uselessly at the altar stone. Mire is on him before he can rise again, blade flat against his throat, and whatever fight was left in the Drowned Priest empties out of him into the black water. He doesn't move. Behind you, the humming chorus in the reeds is close now — close enough to hear the wet click of hooked spears — but Ysolde has already found the rhythm of it, the gaps where the swarm-song stutters and leaves a blind moment, and Aldous has already read the old stone spine beneath the flood that the pack won't know to follow. \"Now,\" Ysolde says, and you move — not toward the reeds where the humming gathers, but along the hidden line Aldous traced, Tomas clutched tight against Mire's shoulder, the drowned temple and its silenced priest falling away behind you into the rain. The pack's cry rises in fury when it finds the nave empty, but by then you're already ankle-deep on the old pilings, and Hollowmoot's lights are a promise on the grey horizon ahead.",
+   "visible_to": "all"
   }
  ],
  "costs": [
@@ -1595,6 +3134,38 @@
    "improvised": true,
    "accepted": true,
    "owner": "Ysolde"
+  },
+  {
+   "event": "free_compel",
+   "scene": 4,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Cannot Lie to a Priest",
+   "text": "The Drowned Priest's ruined face turns from the belltower toward Aldous — the only one of you he seems to truly see — and asks, in a voice like water through a drowned throat, whether he means to steal the boy from the hive's mercy. Bound by his oath, Aldous cannot lie, and the truth spills out of h",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Aldous"
+  },
+  {
+   "event": "tie",
+   "scene": 4,
+   "draw_id": "",
+   "valid": null,
+   "tag": "",
+   "text": "Morwen's binding words strike true and the priest staggers, his grip on the bell-song fraying for an instant — but the backlash of severing that much devotion floods back through her own outstretched hand, and his ruined face snaps down from the tower to fix on her instead. The Priest's Attention Fi",
+   "improvised": true,
+   "mode": "improvised"
+  },
+  {
+   "event": "free_compel",
+   "scene": 5,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Vengeance Over Sense",
+   "text": "Mire is so fixed on finishing the priest that she pushes deeper into striking range than is safe with Tomas braced against her — if the blow doesn't land clean, the boy is exposed.",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Mire"
   }
  ],
  "referee": {
@@ -1613,6 +3184,20 @@
     "event_id": 16,
     "scene": 1,
     "source": "referee"
+   },
+   {
+    "section": "§3 Rolls (passive opposition floor)",
+    "issue": "If event 51's opposition of '+0' is passive difficulty rather than an active named-NPC roll, it falls below the rule's stated minimum of Average (+1) for passive opposition.",
+    "event_id": 51,
+    "scene": 4,
+    "source": "referee"
+   },
+   {
+    "section": "Conflict (stress track boxes)",
+    "issue": "Ysolde absorbs into a stress box worth 3 ('box 3') on the mental track, but the base track only has boxes worth 1 and 2, with larger boxes added only per Physique/Will 'as in Fate Core' (normally requiring a high Will rating, e.g. Great/Superb). Her logged Will for this exchange is +1 (Average), which does not meet the threshold typically required to grant a 3-value bonus box.",
+    "event_id": 52,
+    "scene": 4,
+    "source": "referee"
    }
   ],
   "ambiguities": [
@@ -1623,6 +3208,15 @@
     "interim_ruling": "Fate Core: boxes 1 and 2; Physique/Will +1/+2 adds a 3 box, +3 or more adds 3 and 4.",
     "detail": "stress boxes built with Fate Core values",
     "scene": null,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-19",
+    "section": "§3",
+    "issue": "Tie on an attack: 'success at minor cost' but 0 shifts of harm.",
+    "interim_ruling": "Attacker gets a boost (Fate Core) and the deck draw still happens.",
+    "detail": "",
+    "scene": 4,
     "source": "engine"
    },
    {
@@ -1652,6 +3246,41 @@
     "interim_ruling": "Table treated the roll as a narrative overcome/advantage action (using shifts to determine the standoff's outcome and feed trigger M-1) rather than a formal conflict exchange, so no stress track was opened for Sister Agnet.",
     "scene": 3,
     "source": "referee"
+   },
+   {
+    "section": "§3 (Rolls — passive opposition)",
+    "issue": "Event 51 (Ysolde defends vs Swaying Pilgrim-Flock) shows opposition as a flat '+0' with no dice breakdown, unlike every other NPC-opposed roll in the scene (events 49, 58, 60, 61), which all show an explicit 'NPC ± ± ± ±' roll. It is unclear whether this '+0' represents (a) a passive difficulty — which the rules say must start at Average +1, making '+0' too low — or (b) an active named-NPC roll with a Mediocre (0) rating that the engine simply didn't render with dice symbols.",
+    "interim_ruling": "The table treated the value as a valid active NPC roll (Mediocre-rated Swaying Pilgrim-Flock), not as passive opposition, and did not apply the Average(+1) floor.",
+    "scene": 4,
+    "source": "referee"
+   },
+   {
+    "section": "§Scenes / §Fate points (GM refresh)",
+    "issue": "Rules state the GM gets 1 fate point per player at the start of each scene and unspent points don't carry over. gm_fp is already 4 (matching the 4 players) before the logged 'Scene 4 start' event (event 41) and stays 4 through it, with no visible zero-then-refill transaction distinguishing a genuine reset from simple carryover of the prior scene's leftover pool.",
+    "interim_ruling": "The table accepted the pre-existing value of 4 as the correct scene-start refresh for 4 players and did not require an explicit reset-to-zero log entry.",
+    "scene": 4,
+    "source": "referee"
+   },
+   {
+    "section": "Deck/module/rail subsystem (events 38–40)",
+    "issue": "The provided ruleset contains no text governing module deployment triggers, card draws that generate table aspects (rail_add), or how many free invokes those aspects carry. This mechanic cannot be checked against 'the rules' as given.",
+    "interim_ruling": "Module/rail/deck mechanics were treated as an approved house-rule layer running alongside baseline Fate, and were only checked here for whether cost/compel text actually referenced a drawn card's tags, not for their own internal legality.",
+    "scene": 4,
+    "source": "referee"
+   },
+   {
+    "section": "Conflict",
+    "issue": "Events 72 and 73 are successful attacks against 'The Drowned Priest' with shifts of 4 and 3 respectively, but no stress boxes, consequences, or a 'taken out' result are logged anywhere in the event log (clock_change is blank on both rows, and no consequence-tagged follow-up row exists before Scene 5 ends). The rules require shifts to become stress against physical/mental tracks and for unabsorbed hits to take a character out, but the log gives no way to verify this was applied correctly.",
+    "interim_ruling": "Treated as tracked off-log (e.g., in a separate stress-track sheet or module row not included in this excerpt); no ruling recorded in the log itself.",
+    "scene": 5,
+    "source": "referee"
+   },
+   {
+    "section": "Rolls (Passive opposition vs. Named NPC active opposition)",
+    "issue": "Event 70 has Ysolde rolling Create Advantage against 'Hive-Touched Pack' with an active 4dF NPC roll (dice '0 - + +') producing total opposition +4. The rules define active opposition only for 'Named NPCs' rolling 4dF+rating, while generic threats/packs would normally use capped Passive opposition (max Great +4). It's ambiguous whether a mob/pack counts as a 'Named NPC' entitled to an active roll rather than a static passive difficulty.",
+    "interim_ruling": "The table rolled the Hive-Touched Pack as an active NPC (dice shown), implicitly treating it as a Named NPC for this purpose.",
+    "scene": 5,
+    "source": "referee"
    }
   ],
   "cost_checks": [
@@ -1660,6 +3289,24 @@
     "used_drawn_card": false,
     "note": "No draw_id is present for this compel (draw_id is blank); it was an improvised compel on Ysolde's existing aspect 'Order Agents Know My Face,' not tied to a deck draw, so there is no drawn card whose tags could have been used.",
     "scene": 3
+   },
+   {
+    "event_id": 47,
+    "used_drawn_card": false,
+    "note": "Compel 'Cannot Lie to a Priest' — draw_id is empty and the entry is flagged improvised:true; the compel text was hand-authored by the GM, no drawn card's tags were referenced.",
+    "scene": 4
+   },
+   {
+    "event_id": 53,
+    "used_drawn_card": false,
+    "note": "Cost (tie) for Morwen's event 49 attack — draw_id is empty and cost_mode/improvised are both marked improvised/true; the backlash cost text was GM-invented per the 'tie = minor cost, GM invents costs' rule, not sourced from a drawn card.",
+    "scene": 4
+   },
+   {
+    "event_id": 69,
+    "used_drawn_card": false,
+    "note": "This is a freeform/improvised compel (improvised:true, draw_id empty) invented at the table rather than filled from a drawn card, so there is no card tag to check usage against; the compel text is self-consistent with the named aspect 'Vengeance Over Sense' and Mire's fiction (protecting Tomas while attacking).",
+    "scene": 5
    }
   ],
   "friction": [
@@ -1698,19 +3345,154 @@
    {
     "scene": 3,
     "text": "GM fate point pool (gm_fp=4) is carried into the scene-start row without a visible 'GM +1 free invoke'-style grant row showing the per-player refresh being applied, so the reset-per-scene accounting relies on inference rather than an explicit log entry."
+   },
+   {
+    "scene": 4,
+    "text": "NPC opposition is logged with a full dice breakdown '(NPC ± ± ± ±)' in some rows (49, 58, 60, 61) but as a bare flat number in event 51, making it hard to confirm every named-NPC roll actually followed the '4dF + rating' active-opposition rule."
+   },
+   {
+    "scene": 4,
+    "text": "Ysolde's mental consequence (event 52, 'Absorb 3 mental; box 3') implies a stress box larger than the base 1/2 track while her logged Will rating for the triggering roll is only +1 (Average) — too low under normal Fate Core box-granting thresholds to justify a 3-value box, and the log gives no separate confirmation of a higher character-sheet Will."
+   },
+   {
+    "scene": 4,
+    "text": "The module/rail/deck-draw layer (events 38–40) has no basis in the supplied rules text, so its outputs (which table aspects get created, how many free invokes) can't be audited against 'the rules' — only its downstream cost-card-tag usage could be checked here."
+   },
+   {
+    "scene": 5,
+    "text": "Two successful attacks (events 72, 73) landed significant shifts (4 and 3) on 'The Drowned Priest' but the scene ends immediately after with no visible stress/consequence application in the log, making it impossible to confirm the Conflict section's shift-to-stress conversion was actually resolved before Scene 5 closed."
+   },
+   {
+    "scene": 5,
+    "text": "Both Create Advantage successes in this scene (events 70, 71) spawned new situation aspects with free invokes ('Gaps in the Hive-Song', 'Reading the Flood's Pattern') that are never invoked again within the scene's remaining two rolls, so their mechanical payoff is unconfirmed by the log even though they were legally created."
+   },
+   {
+    "scene": 5,
+    "text": "Event 71 has Aldous invoking his own aspect 'Only survivor of the barge, marked by drowned ghosts [AL-A1]', which reads as a Trouble-type aspect, to boost his own roll; this is permitted under standard Fate rules (owners may invoke their own Trouble for benefit) but sits close enough to the Trouble/hostile-invoke language in the ruleset that it's worth a table note for consistency going forward."
    }
   ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "optimizer",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 6,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When I used my listening to read both Sera's raw, desperate grief AND the swarm-song's rhythm at the same time—my core character trait became the literal, mechanical solution to saving Tomas. It felt like everything the night-barge crew taught me had shaped me into exactly the person this moment needed. That's when Ysolde mattered most.",
+    "most_frustrating": "When the Priest's attention fixed on Morwen and I felt like I should have been able to do something more direct to defend her or break that hold—but the fictional moment had already moved past it. I wanted one more action to stand beside her in that surge forward.",
+    "background_used": "Good. The Night-barge Cook Who Hears Everything wasn't used as flavor—it was used as the functional, mechanical core of solving the crisis. Sera came to me because I listen. I found the path through the swarm-song because I listen. That felt like true character integration, not just backstory window-dressing.",
+    "wanted_but_couldnt": "I wanted to do something more active and specific with Sera's fishing hook beyond just holding it as a symbol. I also wanted at least one moment where I directly attacked or confronted the Drowned Priest myself, rather than always supporting others' strikes.",
+    "one_sentence": "Ysolde's defining trait—that she hears everything—was treated not as a passive flavor point but as the story's solution, and that felt like being truly seen."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "protector",
+   "scores": {
+    "fun": 7,
+    "involvement": 6,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Aldous reading the invisible thread between Tomas and his mother through rain-sight and drowned-ghost whispers, then speaking the boy's name as a summons—it wove together all of his core abilities and felt like the true turning point of the rescue.",
+    "most_frustrating": "The Drowned Priest moved quickly into combat before there was real space to negotiate or understand what drew him to claim these souls—but that's how the narrative momentum required things to go, and the victory was satisfying regardless.",
+    "background_used": "Nearly every thread: the vow to cross souls shaped the entire mission, the rain-reading gift enabled critical successes, the mark from drowned ghosts was essential to understanding Tomas, and the Cannot Lie to a Priest trouble created a genuine oath-moment. None of it felt forced—it was woven naturally into the GM's world. This landed very well.",
+    "wanted_but_couldnt": "A real conversation with the Drowned Priest to understand what need or hunger drove him to summon souls—I wanted to engage with him as something more than an obstacle. Though I recognize the rescue had its own urgency.",
+    "one_sentence": "Your vow to cross every soul felt genuinely vital to this story's resolution, and your connection to drowned things shaped not just how you won but why you were the one who could."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "instigator",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 5,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Breaking the Drowned Priest's hold on Tomas the second time with that Success with Style on Will. It felt like everything Morwen is built for clicking into place at exactly the right moment—the oath, the exorcist's conviction, the stakes all crystallizing at once. That was satisfying.",
+    "most_frustrating": "My character's core doubt—that I'm not sure the hive has souls—never really came into play. The Priest would have been perfect to explore that with, but we stayed in straightforward rescue/combat mode instead. Also my trouble \"Too Famous to Hide\" was set up beautifully at the causeway gate but then barely materialized as actual problem.",
+    "background_used": "My oath aspect got genuine weight—it became the keystone to standing down Sister Agnet, and that landed well. My high concept as Exorcist worked throughout. But the *doubt* buried in that concept, the meat of who Morwen actually is, didn't get much air. Unfair is too strong; I'd say it was used partially—the surface, not the depth.",
+    "wanted_but_couldnt": "I wanted a moment where Morwen had to actually wrestle with her doubt. The Priest summoning his flock and claiming the hive's love was genuine could have been that—a moment to question if she was doing the right thing, not just the strong thing. Instead it stayed in the combat register.",
+    "one_sentence": "Morwen got to be effective and central, but the actual complexity of her doubt was left on the table."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "tactician",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Stepping forward to Sister Agnet and claiming her own disgrace as unbreakable ground—the moment where being marked enemy became an asset instead of a liability, and Mire refused to be moved by threats that had already landed.",
+    "most_frustrating": "Never quite getting to understand the Drowned Priest—who he was before, what he wanted beyond the hive's pull, whether there was anything left to save. We defeated him but didn't know him.",
+    "background_used": "Extensively. Captain Verrick's vendetta, Wick Lane, being marked enemy of the Causeway Wardens—all of it came alive in how NPCs recognized and reacted to Mire. It landed well, integrated naturally rather than forced.",
+    "wanted_but_couldnt": "I wanted to dig deeper into Hollowmoot's politics through Contacts, or figure out more about what the Warden sergeant was actually hunting. The session was perfectly paced for action but left some investigative threads dangling.",
+    "one_sentence": "Mire's backstory was woven through the whole session and made her central to it—her history wasn't just flavor, it shaped what she could and couldn't do, and what she had to stand firm on."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Ysolde",
+    "turns": 14,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Aldous",
+    "turns": 11,
+    "references_to_others_background": 1
+   },
+   {
+    "name": "Morwen",
+    "turns": 13,
+    "references_to_others_background": 1
+   },
+   {
+    "name": "Mire",
+    "turns": 14,
+    "references_to_others_background": 1
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "The party faced down the Order's patrol on the pilings, let Morwen's iron conviction turn Sister Agnet aside, and pushed on into Saint Orrin's Drowned Temple to find Tomas trance-bound in the flooded belltower. Through combined will, empathy, and read-water instinct, they severed the Drowned Priest's hold on the swarm-song, pulled the boy back to his mother's name, and beat the Priest down and out when he tried to summon the Hive-Touched Pack against them. They escaped along a hidden stone spine only Aldous could read, slipping past the closing pack and back toward Hollowmoot's lights with Tomas alive, marked, but free.",
+  "closing_tension": null,
+  "reverberations": {
+   "growth": {},
+   "clocks": [],
+   "mutations": [],
+   "retired": []
+  },
+  "retired": []
+ },
  "state_end": {
   "tension": 3,
   "fp": {
-   "Ysolde": 5,
+   "Ysolde": 2,
    "Aldous": 3,
-   "Morwen": 2,
-   "Mire": 2
+   "Morwen": 0,
+   "Mire": 3
   },
   "surfaced": [],
   "deck_player_cards": {},
@@ -1719,26 +3501,123 @@
   "deck_left": [],
   "draws": 0,
   "turns": {
-   "Ysolde": 3,
-   "Aldous": 3,
-   "Morwen": 3,
-   "Mire": 3
+   "Ysolde": 6,
+   "Aldous": 6,
+   "Morwen": 6,
+   "Mire": 6
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 283843,
-  "completion": 68732,
-  "cost_usd": 1.2276,
-  "calls": 31
+ "metrics": {
+  "arm": "B",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Aldous",
+   "Mire",
+   "Morwen",
+   "Ysolde"
+  ],
+  "backstory_all_players": true,
+  "deck_surfaced_all_players": null,
+  "deck_draws": 0,
+  "draw_costs": 0,
+  "draw_cost_used_card_rate_engine": null,
+  "draw_cost_used_card_rate_referee": 0.0,
+  "fp_end": {
+   "Ysolde": 2,
+   "Aldous": 3,
+   "Morwen": 0,
+   "Mire": 3
+  },
+  "fp_end_mean": 2,
+  "fp_earned": {
+   "Morwen": 1,
+   "Ysolde": 2,
+   "Aldous": 1,
+   "Mire": 1
+  },
+  "fp_spent": {
+   "Mire": 1,
+   "Aldous": 1,
+   "Morwen": 4,
+   "Ysolde": 3
+  },
+  "compels_accepted": 5,
+  "compels_refused": 1,
+  "compels_deck": 0,
+  "compels_free": 6,
+  "turns": {
+   "Ysolde": 6,
+   "Aldous": 6,
+   "Morwen": 6,
+   "Mire": 6
+  },
+  "turn_gini": 0.0,
+  "invokes": {
+   "Aldous": 1,
+   "Morwen": 5,
+   "Mire": 0,
+   "Ysolde": 3
+  },
+  "invoke_gini": 0.4722,
+  "tension_trajectory": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "clock_marks": 0,
+  "violations": 4,
+  "violations_engine": 1,
+  "violations_referee": 3,
+  "ambiguities": 11,
+  "ambiguity_ids": [
+   "AMB-12",
+   "AMB-19",
+   "Compels",
+   "Conflict",
+   "Deck/module/rail subsystem (events 38–40)",
+   "Rolls (Passive opposition vs. Named NPC active opposition)",
+   "Rolls (passive/active opposition)",
+   "§3 (Rolls — passive opposition)",
+   "§Scenes / §Fate points (GM refresh)"
+  ],
+  "gm_improvised_complications": 7,
+  "card_supplied_complications": 0,
+  "improvisation_share": 1.0,
+  "guarantee_pulled": 0,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6.25,
+   "involvement": 6.5,
+   "connection": 6.25,
+   "control": 6,
+   "play_again": 7
+  },
+  "involvement_var_within": 0.25,
+  "personality": {
+   "Ysolde": "optimizer",
+   "Aldous": "protector",
+   "Morwen": "instigator",
+   "Mire": "tactician"
+  }
  },
- "llm_calls": 31,
+ "tokens": {
+  "prompt": 800444,
+  "completion": 188811,
+  "cost_usd": 3.3964,
+  "calls": 68
+ },
+ "llm_calls": 68,
  "models": {
   "gm": "claude-sonnet-5",
   "player": "claude-haiku-4-5-20251001",
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 553.0
+ "elapsed_s": 1479.5
 }

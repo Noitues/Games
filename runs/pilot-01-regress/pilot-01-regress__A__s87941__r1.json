@@ -80,7 +80,7 @@
     "id": "B-02",
     "name": "PLEA FOR HELP",
     "trigger": "compel_refused",
-    "used": null
+    "used": true
    }
   ]
  },
@@ -1102,6 +1102,1057 @@
     "Mire": 3
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 36,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Scene 2 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 37,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Draw (beat_frame)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "deck now 3",
+   "event_type": "draw",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 38,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Draw (beat_frame)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MO-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "deck now 2",
+   "event_type": "draw",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 39,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Backstory guarantee pull",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MI-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "owner Mire",
+   "event_type": "guarantee_pull",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 40,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Beat Frame PLEA FOR HELP",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-05,MO-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "fills {'WHO': 'H-05', 'WHERE': 'MO-04'}; defaults for rest",
+   "event_type": "beat_frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 41,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Rail + H-05",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "drawn from Session Deck; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 42,
+   "session": 1,
+   "scene": 2,
+   "actor": "Morwen",
+   "action": "Compel (deck)",
+   "skill": "",
+   "tags_invoked": "Cannot move unseen",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MO-04",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "The moment the fevered woman says Morwen's name aloud on the open bank, it carries — watchers loyal to the Drowned Priest mark her face and vanish back into the reeds ahead of the party, meaning whate",
+   "event_type": "compel",
+   "improvised": false,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 43,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Rail + MO-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MO-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "surfaced (Morwen)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 44,
+   "session": 1,
+   "scene": 2,
+   "actor": "Morwen",
+   "action": "Card surfaces",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MO-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "1 free invoke(s)",
+   "event_type": "surface",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 45,
+   "session": 1,
+   "scene": 2,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Will the Drowned Priest's people give up the truth about the missing boy, or does Morwen's old debt to the Priest close that door before it opens?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 46,
+   "session": 1,
+   "scene": 2,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Ysolde moves toward the fevered mother with the same steady grace she uses moving through a heaving night-barge—careful, grounded, attentive. She reaches out to",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 47,
+   "session": 1,
+   "scene": 2,
+   "actor": "Aldous",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Aldous steps closer to the fevered mother, one hand steady on her shoulder, reading the movement of the acolytes with the same intensity he'd use to read patter",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 48,
+   "session": 1,
+   "scene": 2,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Morwen steps closer to the fevered mother instead of back, one hand settling gently on her shoulder to anchor her. She doesn't look away from the robed figures ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 49,
+   "session": 1,
+   "scene": 2,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Mire positions herself between the fevered mother and the half-drowned shrine, settling into a protective stance with the weight-distribution and alertness of s",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 50,
+   "session": 1,
+   "scene": 2,
+   "actor": "Morwen",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Sought by the Drowned Priest",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MO-04",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "The moment Morwen steps forward and speaks, the acolytes' stillness breaks — they murmur her name among themselves and fix on her alone, ignoring the others entirely. One steps forward: 'The Priest ha",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 5,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 51,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Rail - L-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "L-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "discard: rail limit",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 5,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 52,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Rail + MO-05",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MO-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "story draw (free_compel_accepted)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 5,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 53,
+   "session": 1,
+   "scene": 2,
+   "actor": "Morwen",
+   "action": "Story draw (free_compel_accepted)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MO-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "",
+   "event_type": "story_draw",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 5,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 54,
+   "session": 1,
+   "scene": 2,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Ysolde moves to the fevered mother with the careful grace of someone who's spent years on shifting decks, her hands settling gently on the woman's shoulders. Sh",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 5,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 55,
+   "session": 1,
+   "scene": 2,
+   "actor": "Aldous",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Aldous keeps his hand steady on the fevered mother's shoulder, studying her with the same intensity he'd use to read patterns in rainfall. He traces the confusi",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 5,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 56,
+   "session": 1,
+   "scene": 2,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Morwen doesn't step back from the shrine or the acolytes. She keeps her hand steady on the fevered mother's shoulder, grounding her in something solid while the",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 5,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 57,
+   "session": 1,
+   "scene": 2,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Mire pulls the fevered mother gently but firmly behind her, positioning herself fully between the shrine and the sick woman. Her hand settles ready on her weapo",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 5,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 58,
+   "session": 1,
+   "scene": 2,
+   "actor": "Morwen",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Risks everything for one house",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MO-03",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Morwen plants herself in the shrine's shallows and refuses to budge until the acolytes answer for the boy, ignoring Mire's caution about the whole party's exposed position — she's staked everything on",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 6,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 59,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Rail - F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "F-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "discard: rail limit",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 6,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 60,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Rail + MO-06",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MO-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "story draw (free_compel_accepted)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 6,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 61,
+   "session": 1,
+   "scene": 2,
+   "actor": "Morwen",
+   "action": "Story draw (free_compel_accepted)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MO-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "",
+   "event_type": "story_draw",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 6,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 62,
+   "session": 1,
+   "scene": 2,
+   "actor": "Aldous",
+   "action": "Create Advantage: Aldous keeps his hand steady on the fevered mother's shoulde",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "0 - + +",
+   "total": "+5",
+   "opposition": "+2",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "aspect A-1.2.3 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "brings feverish visions [H-05]"
+   ],
+   "target_card": "H-05",
+   "target_npc": "",
+   "shifts": 3,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 6,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 63,
+   "session": 1,
+   "scene": 2,
+   "actor": "Aldous",
+   "action": "Peek",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "moved to bottom",
+   "event_type": "peek",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 6,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 64,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "2->1",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "resolved -1",
+   "event_type": "tension",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 6,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 65,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Rail - MO-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MO-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "binder: scene cleanup",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 6,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 66,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Weight MO-05",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MO-05",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "1->2 (drawn/featured this scene)",
+   "event_type": "story_weight",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 6,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 67,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Weight MO-06",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "MO-06",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "1->2 (drawn/featured this scene)",
+   "event_type": "story_weight",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 6,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 68,
+   "session": 1,
+   "scene": 2,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "The Drowned Priest",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 6,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 69,
+   "session": 1,
+   "scene": 2,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "The Boy in the Belltower",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 6,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 70,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Trigger fired: M-1",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "scene_start:3",
+   "event_type": "trigger",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 6,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 71,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Trigger fired: M-2",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "deck_at_most:3",
+   "event_type": "trigger",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 6,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 72,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Scene 2 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "triggers fired: ['M-1', 'M-2']",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 6,
+    "Mire": 3
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -1116,6 +2167,20 @@
    "tension_after": 2,
    "triggers_fired": [
     "B-02"
+   ]
+  },
+  {
+   "index": 2,
+   "tension_before": 2,
+   "scene_test": null,
+   "outcome": "beat_frame",
+   "beat": "trigger compel_refused",
+   "rounds": 2,
+   "climax": false,
+   "tension_after": 1,
+   "triggers_fired": [
+    "M-1",
+    "M-2"
    ]
   }
  ],
@@ -1343,6 +2408,230 @@
    "kind": "narration",
    "text": "The four of you make it across — but Gullet Ford takes its toll from each of you differently. As Ysolde points out the safe channel, one of the Wardens catches the old exile-brand on her wrist in his torchlight and barks an accusation of \"swamp-witch business\" to his fellows; she has to talk fast and loud to keep spears from turning her way, her Stiltfolk past dragged into the open right when she least wanted it. Aldous refuses to let the priestly compulsion loosen his tongue further, but his silence and old soldier's bearing only make the toll-patrol dig in — they levy a hard toll at the rope, coin and a share of the party's dry stores handed over before the Wardens grudgingly wave you through. Mire's careful path-finding gets everyone's boots on solid ground, but the driving rain has its own price: packs come across soaked through, salted meat and dry kindling ruined in the crossing. By the time the last of you stumbles onto the far bank, cold and lighter in the purse, the Wardens' sergeant has taken a long look at all your faces — and at Ysolde's most of all — before letting his patrol fall back into the reeds. Somewhere past the tree-line, the drowned bell of Saint Orrin's tolls on, indifferent to what the crossing cost.",
    "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Years ago, a hive-touched child was brought to his shrine for burning. I performed the old rites instead—the kind that calm without fire. He demanded I let the flames take her. I refused, and I got her to safety. He's sought me ever since.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "I couldn't let him burn her. I still can't.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen accepts the compel on 'The Exorcist of Hollowmoot'.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Beat: A Hollowmoot woman staggers up the bank ahead of you, soaked through and shaking, her eyes bright with a fever that isn't just from the rain — she's been drinking bad water for days and seeing things in it. She grabs at sleeves and coat-hems, babbling half in prayer and half in delirium, insisting she saw her boy walk into Saint Orrin's belltower with the swarm-song calling him, though the visions and the truth have started to blur together in her. begs the party to go to Not the temple itself first, she insists, dragging at Morwen's arm — the Drowned Priest holds a flooded shrine downriver from the belltower, and he's the one who calls the hive-touched home. She's heard the Priest's own people speak Morwen's name there before, like they were waiting for her, and she begs the party go there first if they want any answer at all about where the boy's been taken., because her son followed the swarm-song into the belltower.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The mother won't let go of Morwen's sleeve, dragging her off the causeway track and down a flooded footpath thick with reeds, insisting the belltower is a lie and the true answer lies with the Priest downriver. The rain slackens to a fine mist as the shrine comes into view: a half-drowned roof, candlelight bleeding gold through cracked shutters, and robed figures moving unhurried in the flood-shallows around it, as though they've been expecting company. One of them turns toward the party before a word is spoken — toward Morwen specifically — and murmurs something to the others that makes them go still. The mother's grip tightens, torn between hope and the fever-glassy terror in her own eyes, as she begs you all not to leave until someone tells her where her boy has gone.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Ma'am, look at me—not at the water, not at them. The fever's making the truth run together with the fear. Your boy went into the belltower chasing the song. That part's real. Now tell me his name, tell me what he looks like, and tell me what you *actually* saw before the visions started.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde moves toward the fevered mother with the same steady grace she uses moving through a heaving night-barge—careful, grounded, attentive. She reaches out to gently steady the woman's shaking shoulders, meeting her fever-bright eyes directly. Her voice drops low, the way it does when a crew-mate is hurt or terrified: warm, unhurried, the voice of someone who has held secrets and heard confessions in the dark of midnight galleys. She's reading the mother the way she reads currents in dark water—finding the safe channel through panic and delirium.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "The rain stops, and they stand ready—waiting like men wait for a tide they know is coming. Tell me, mother: when your boy heard the swarm-song, was it in his head first, or did it come from the bell?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous steps closer to the fevered mother, one hand steady on her shoulder, reading the movement of the acolytes with the same intensity he'd use to read patterns in rainfall. His eyes sweep from the half-drowned shrine to the candlelight bleeding through cracked shutters, then back to the robed figures moving unhurried in the water—too unhurried, too patient. The sudden lull in the rain troubles him more than the downpour; he knows what silence like this can mean. He positions himself between the mother and the shrine, not threatening, but grounded and present.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "I'm not leaving her without an answer. If the Priest has something to say to me, he can say it now.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen steps closer to the fevered mother instead of back, one hand settling gently on her shoulder to anchor her. She doesn't look away from the robed figures who have turned to watch—doesn't hide, can't hide. She looks at the one who noticed her and keeps her voice level and quiet.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Easy, mother. We're here now. But I need to know—are those the ones who took your boy, or are they something else?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire positions herself between the fevered mother and the half-drowned shrine, settling into a protective stance with the weight-distribution and alertness of someone trained in watch drills. Her hand rests ready, and her eyes track the robed figures' movements—counting them, estimating distance, reading their stillness like she would any threat about to break. She's looking for weapons, for malice, for the tell-tale signs of danger that years of militia training burned into her bones.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "I know what I promised him, and it's been years. If he has something to say, I need to hear it — especially if it's about the boy.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The acolyte who marked Morwen steps from the shallows, robe dripping black, and inclines his head rather than drawing a blade. \"The Exorcist,\" he says, tasting the name like a prayer. \"We heard it from a pilgrim in Hollowmoot who wouldn't stop talking — Brother Fennic, wasn't it? Saved twice, he says, and grateful enough to shout your name to every soul who'd listen.\" Morwen's old debt has outrun her: Fennic's loose-tongued gratitude reached the Priest's people before she did, and now they know exactly who stands in their shallows and what she once refused the flames. The acolyte doesn't answer Ysolde's question about the boy — he only watches Morwen, waiting to see whether the woman who once denied his master a burning will beg, bargain, or turn away. Deeper in the shrine, something shifts against the candlelight, unhurried and patient, as if the Priest himself is finally rising to greet an old acquaintance.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Your boy's name, ma'am. Say it clear—that one thing is real. Everything else, we sort after.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde moves to the fevered mother with the careful grace of someone who's spent years on shifting decks, her hands settling gently on the woman's shoulders. She meets the fever-bright eyes directly, voice dropping to the low, warm tone she uses for crew in crisis in the dark of the hold—the voice that says: I have time, your fear won't shake me, tell me what's true. She positions herself to keep the mother's full attention fixed on her face, not on the shrine behind her, not on the robed figures waiting in the water. Just her. Just this moment. Just one clear name.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "The rain stops, and they stand ready—but your fever's running wild with more than just water sickness, mother. I need you to tell me what was real before the visions started clouding it.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous keeps his hand steady on the fevered mother's shoulder, studying her with the same intensity he'd use to read patterns in rainfall. He traces the confusion in her eyes—fever-bright but grounded in real loss, real terror. His gaze sweeps from the shrine's waiting acolytes to the candlelight bleeding through cracked shutters, then back to her face. He's reading all of it at once: the fever, the fear, the truth beneath. Looking for the moment the visions started, where the real memory ends and the sickness takes over.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Where is the boy? And tell the Priest my answer about the burning is still no.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen doesn't step back from the shrine or the acolytes. She keeps her hand steady on the fevered mother's shoulder, grounding her in something solid while the woman shakes with fever. She meets the acolyte's gaze directly, waiting—watching for the Priest.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Morwen, we hold this line. Whatever debt you owe the Priest, we answer it standing—not on our knees. And the boy's mother doesn't walk out of here empty-handed.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire pulls the fevered mother gently but firmly behind her, positioning herself fully between the shrine and the sick woman. Her hand settles ready on her weapon, and her eyes don't leave the acolyte or the darkness deeper in the shrine where something shifts against the candlelight. She's still holding the line, the way she was trained to do.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "I'm not leaving. Not until he tells me where the boy is.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — create advantage with Notice: dice 0 - + + → Superb (+5) vs Fair (+2): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Aldous doesn't let go of the mother's shoulder, and for one long breath he simply listens past the fever — past the visions of drowned saints and swarm-song choirs bleeding through her words — until the one true thread pulls clear: her boy didn't come this way at all. He went straight up the flooded causeway toward the belltower, chasing the sound, while she in her sickness followed a different voice down to the shrine. \"The bell,\" she whispers, suddenly lucid, gripping Aldous's wrist like a drowning woman finding a rope. \"It was always the bell.\" The acolyte watching Morwen goes very still at that — whatever answer he meant to trade for her old debt, the mother has just given it away for free, and there's nothing left to bargain with. He straightens, robe dripping, and delivers his verdict flat and final: \"The Priest hears your answer, Exorcist. No is no. He remembers it.\" Then the robed figures withdraw into the shrine's black doorway without another word, candlelight guttering as if a door has shut somewhere deeper inside — no boy handed over, no blessing given, only the old debt marked paid in refusal and the party now plainly known enemies of the Drowned Priest's house. Morwen gets to keep her answer; the mother gets a true name for her grief and a direction to run in; and somewhere past the tree-line, the belltower's bell tolls on, closer now than it was an hour ago.",
+   "visible_to": "all"
   }
  ],
  "costs": [
@@ -1429,6 +2718,96 @@
     ],
     "weakness": "No clan will shelter me"
    }
+  },
+  {
+   "event": "beat_fill",
+   "scene": 2,
+   "draw_id": "H-05",
+   "valid": true,
+   "tag": "brings feverish visions",
+   "text": "A Hollowmoot woman staggers up the bank ahead of you, soaked through and shaking, her eyes bright with a fever that isn't just from the rain — she's been drinking bad water for days and seeing things in it. She grabs at sleeves and coat-hems, babbling half in prayer and half in delirium, insisting s",
+   "improvised": false,
+   "card": {
+    "id": "H-05",
+    "type": "HAZARD",
+    "owner": "GM",
+    "title": "Marsh Fever",
+    "power_tags": [
+     "spreads through bad water",
+     "weakens the strongest fighter",
+     "brings feverish visions"
+    ],
+    "weakness": "Broken by Willowbark Tea",
+    "clock": "0/5"
+   }
+  },
+  {
+   "event": "beat_fill",
+   "scene": 2,
+   "draw_id": "MO-04",
+   "valid": true,
+   "tag": "Sought by the Drowned Priest",
+   "text": "Not the temple itself first, she insists, dragging at Morwen's arm — the Drowned Priest holds a flooded shrine downriver from the belltower, and he's the one who calls the hive-touched home. She's heard the Priest's own people speak Morwen's name there before, like they were waiting for her, and she",
+   "improvised": false,
+   "card": {
+    "id": "MO-04",
+    "type": "REACH",
+    "owner": "PC-MORWEN",
+    "title": "The Exorcist of Hollowmoot",
+    "power_tags": [
+     "Known by name everywhere",
+     "Sought by the Drowned Priest",
+     "Every stranger knows her face"
+    ],
+    "weakness": "Cannot move unseen"
+   }
+  },
+  {
+   "event": "compel:beat frame",
+   "scene": 2,
+   "draw_id": "MO-04",
+   "valid": true,
+   "tag": "Cannot move unseen",
+   "text": "The moment the fevered woman says Morwen's name aloud on the open bank, it carries — watchers loyal to the Drowned Priest mark her face and vanish back into the reeds ahead of the party, meaning whatever the shrine holds will already know they're coming before they arrive.",
+   "improvised": false,
+   "accepted": true,
+   "refusal_valid": null,
+   "owner": "Morwen",
+   "placebo": false,
+   "card": {
+    "id": "MO-04",
+    "type": "REACH",
+    "owner": "PC-MORWEN",
+    "title": "The Exorcist of Hollowmoot",
+    "power_tags": [
+     "Known by name everywhere",
+     "Sought by the Drowned Priest",
+     "Every stranger knows her face"
+    ],
+    "weakness": "Cannot move unseen"
+   }
+  },
+  {
+   "event": "free_compel",
+   "scene": 2,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Sought by the Drowned Priest",
+   "text": "The moment Morwen steps forward and speaks, the acolytes' stillness breaks — they murmur her name among themselves and fix on her alone, ignoring the others entirely. One steps forward: 'The Priest has waited long for you, Exorcist. He will speak — but only to you, and only if you come apart from th",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Morwen"
+  },
+  {
+   "event": "free_compel",
+   "scene": 2,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Risks everything for one house",
+   "text": "Morwen plants herself in the shrine's shallows and refuses to budge until the acolytes answer for the boy, ignoring Mire's caution about the whole party's exposed position — she's staked everything on this one confrontation and won't leave the mother without an answer, even if it means the Priest ge",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Morwen"
   }
  ],
  "referee": {
@@ -1438,6 +2817,20 @@
     "issue": "Aldous refused the compel offered on AL-04 (drawn for the tie at event 19). Per step 4, refusal means he pays 1 fate point AND 'the GM builds the cost from a face-up GM tag instead.' The FP payment was logged (event 24), but no subsequent event applies a cost built from a face-up GM tag (unlike event 23, which explicitly did this for the major-cost draw at event 16). The tie's mandatory 'success at a minor cost' complication was therefore never actually delivered.",
     "event_id": 24,
     "scene": 1,
+    "source": "referee"
+   },
+   {
+    "section": "§6A (Draw triggers table, 'player accepts a compel that did not come from a deck draw')",
+    "issue": "The Story Pile draw for MO-05 (events 52-53) occurred only after the triggering compel (event 50) had already been fully narrated and accepted, so the rule's requirement that 'the complication must involve the drawn NPC or move the drawn thread' could not have been satisfied — the card wasn't drawn yet when the complication was fixed.",
+    "event_id": 53,
+    "scene": 2,
+    "source": "referee"
+   },
+   {
+    "section": "§6A (Draw triggers table, 'player accepts a compel that did not come from a deck draw')",
+    "issue": "Same sequencing violation as event 53: the Story Pile draw for MO-06 (events 60-61) happened after the triggering compel (event 58) was already narrated and accepted, so the drawn card could not have shaped the complication as required.",
+    "event_id": 61,
+    "scene": 2,
     "source": "referee"
    }
   ],
@@ -1479,6 +2872,15 @@
     "source": "engine"
    },
    {
+    "id": "AMB-27",
+    "section": "§3",
+    "issue": "Success with style on create advantage: the aspect's 2 free invokes AND the deck peek, or one of them?",
+    "interim_ruling": "Both: the aspect keeps 2 free invokes and the player may also peek.",
+    "detail": "event 62",
+    "scene": 2,
+    "source": "engine"
+   },
+   {
     "section": "§4 (Resolving a drawn player card, step 4) / §3 outcomes table",
     "issue": "The spec doesn't say whether the deck draws for the major-cost roll (event 16) and the two tie rolls (events 19, 21) must be resolved in order before the next roll proceeds. Here all three draws (F-03, AL-04, YS-01) happened back-to-back before any of the three costs were resolved.",
     "interim_ruling": "Allowed deferred/batched resolution; each cost/compel event was matched to its triggering roll via the for_event/caused_by fields rather than resolution order, and no rule was read to forbid this.",
@@ -1490,6 +2892,34 @@
     "issue": "The rule says that when a drawn player card's compel is refused, 'the GM builds the cost from a face-up GM tag instead,' but the spec doesn't specify whether this must appear as its own logged event (as the major-cost path does at event 23) or can be folded into scene narration with no discrete mechanical trace.",
     "interim_ruling": "None was applied at the table for event 24; no discrete cost event was produced, which is logged below as a violation rather than resolved by a table ruling. Going forward the table should require a discrete Cost event mirroring event 23's precedent.",
     "scene": 1,
+    "source": "referee"
+   },
+   {
+    "section": "§5 (Beat Frame procedure, step 4)",
+    "issue": "Step 4 only specifies how ROOTS/REACH (player) cards should be interpreted when filling a blank (person/place or motive). It gives no guidance for a GM-owned card type (here HAZARD, H-05) filling a mismatched blank (WHO) after a type-mismatch redirect from step 3. The GM had to improvise personifying the hazard as 'a Hollowmoot woman' with no rule basis.",
+    "interim_ruling": "GM was allowed to freely personify/narrate the GM card's tags to satisfy the mismatched blank, as long as one of its tags (here 'brings feverish visions') was used.",
+    "scene": 2,
+    "source": "referee"
+   },
+   {
+    "section": "§5 (Beat Frame procedure, step 4)",
+    "issue": "MO-04 is a REACH card, which step 4 says 'becomes the motive,' but the type-mismatch resolution (step 3) forced it to fill the WHERE blank instead of WHY. The rules don't say how a REACH card's content should be reshaped when it lands on a non-WHY blank.",
+    "interim_ruling": "GM blended the REACH tag into a location description (a shrine tied to the Priest who seeks Morwen) rather than a pure motive, treating the tag as flavoring the place.",
+    "scene": 2,
+    "source": "referee"
+   },
+   {
+    "section": "§5 (Beat Frame procedure, steps 5–6)",
+    "issue": "The written procedure has the card owner answer the GM's question (step 5) before the card's compel/surfacing (step 6). In the log, compel and surfacing for MO-04 (events 41-44) were resolved before the GM's frame question was even posed (event 45).",
+    "interim_ruling": "Table treated the step order as non-binding; surfacing/compel happened first, GM's question followed once the card was live.",
+    "scene": 2,
+    "source": "referee"
+   },
+   {
+    "section": "§6 (Tension adjustment table)",
+    "issue": "The table's -1 row applies only when 'the party resolved a THREAT or filled a player's goal.' Event 62-64 applied -1 tension for successfully countering H-05, which is a HAZARD, not a THREAT/FACTION, and the scene notes don't identify a filled player goal.",
+    "interim_ruling": "HAZARD cards were treated as equivalent to THREAT/FACTION for the -1 tension row.",
+    "scene": 2,
     "source": "referee"
    }
   ],
@@ -1517,6 +2947,30 @@
     "used_drawn_card": true,
     "note": "Compel (event 27) used YS-01's own weakness tag 'No clan will shelter me,' was accepted, and the complication happened as described — fully compliant with §4.",
     "scene": 1
+   },
+   {
+    "event_id": 40,
+    "used_drawn_card": true,
+    "note": "Beat Frame PLEA FOR HELP WHO/WHERE blanks correctly drew tags from H-05 ('brings feverish visions') and MO-04 ('Sought by the Drowned Priest').",
+    "scene": 2
+   },
+   {
+    "event_id": 42,
+    "used_drawn_card": true,
+    "note": "Deck-draw compel on MO-04 correctly used its default weakness tag 'Cannot move unseen' per §4 step 2.",
+    "scene": 2
+   },
+   {
+    "event_id": 53,
+    "used_drawn_card": false,
+    "note": "Story Pile draw of MO-05 was triggered by the compel accepted at event 50, but that compel's complication ('Sought by the Drowned Priest' — the Priest will only speak to Morwen alone) was already fully narrated and accepted before MO-05 was drawn, so the drawn card could not have shaped the complication as §6A requires.",
+    "scene": 2
+   },
+   {
+    "event_id": 61,
+    "used_drawn_card": false,
+    "note": "Story Pile draw of MO-06 was triggered by the compel accepted at event 58 ('Risks everything for one house'), but that compel's complication was already fully narrated and accepted before MO-06 was drawn, same sequencing problem as event 53.",
+    "scene": 2
    }
   ],
   "friction": [
@@ -1531,6 +2985,18 @@
    {
     "scene": 1,
     "text": "Heavily truncated notes text throughout the log makes it difficult to fully verify, from the fictional description alone, that each cost or compel text actually engaged with the drawn card's tag rather than generic scene flavor."
+   },
+   {
+    "scene": 2,
+    "text": "Story Pile draws triggered by 'accept a compel not from a deck draw' (events 50→52-53 and 58→60-61) are logged after the compel's complication is already written and accepted, making it structurally impossible for the drawn NPC/thread to inform the complication as §6A requires — this pattern happened twice in one scene."
+   },
+   {
+    "scene": 2,
+    "text": "The Beat Frame procedure's explicit step order (owner answers GM's question, §5 step 5, before the card surfaces and triggers its compel, §5 step 6) was inverted in play, and the spec provides no fallback for GM-owned card types (e.g., HAZARD) being forced into a WHO/WHERE blank it doesn't normally fill."
+   },
+   {
+    "scene": 2,
+    "text": "Tension was dropped for defeating a HAZARD card even though the §6 table's -1 row names only THREAT/FACTION resolution or filling a player's goal, leaving GM discretion undocumented as a rule."
    }
   ]
  },
@@ -1538,15 +3004,16 @@
  "interview": null,
  "chronicle": null,
  "state_end": {
-  "tension": 2,
+  "tension": 1,
   "fp": {
    "Ysolde": 3,
    "Aldous": 1,
-   "Morwen": 3,
+   "Morwen": 6,
    "Mire": 3
   },
   "surfaced": [
    "AL-04",
+   "MO-04",
    "YS-01"
   ],
   "deck_player_cards": {
@@ -1555,36 +3022,35 @@
    "MO-04": "Morwen",
    "MI-01": "Mire"
   },
-  "guarantee_pulled": [],
+  "guarantee_pulled": [
+   "MI-01"
+  ],
   "guarantee_failed": [],
   "deck_left": [
-   "H-05",
-   "MO-04",
-   "MI-01",
    "T-01"
   ],
-  "draws": 3,
+  "draws": 5,
   "turns": {
-   "Ysolde": 2,
-   "Aldous": 2,
-   "Morwen": 1,
-   "Mire": 2
+   "Ysolde": 4,
+   "Aldous": 4,
+   "Morwen": 3,
+   "Mire": 4
   }
  },
  "notes": [],
  "metrics": {},
  "tokens": {
-  "prompt": 306179,
-  "completion": 71186,
-  "cost_usd": 1.2105,
-  "calls": 21
+  "prompt": 824409,
+  "completion": 137952,
+  "cost_usd": 2.5573,
+  "calls": 41
  },
- "llm_calls": 21,
+ "llm_calls": 41,
  "models": {
   "gm": "claude-sonnet-5",
   "player": "claude-haiku-4-5-20251001",
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 641.5
+ "elapsed_s": 1214.2
 }
