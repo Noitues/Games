@@ -4,7 +4,7 @@
  "arm": "B",
  "seed": 87942,
  "spec_version": "0.1.0",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 2,
@@ -2090,6 +2090,27 @@
    "notes": "triggers fired: ['B-02']",
    "event_type": "scene_end",
    "improvised": false
+  },
+  {
+   "event_id": 90,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "FP: Ysolde=2, Aldous=0, Morwen=2, Mire=4",
+   "event_type": "session_end",
+   "improvised": false
   }
  ],
  "scenes": [
@@ -3366,9 +3387,120 @@
    }
   ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "protector",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Reaching the frozen girl at the pilings and pulling her back with \"Look at me, not the tower.\" That moment felt like the core of who Ysolde is—that bone-deep certainty that reaches people drowning in fear, used three times over the night and it worked every time. It was earned, not lucky.",
+    "most_frustrating": "Nothing really frustrated me, but I would have loved to lean harder into \"Order Agents Know My Face\"—the acolyte appeared and was dealt with quickly. Could've been messier. Also \"Sworn to ruin the traitor who sold the barge crew\" didn't surface this session, but that's fine for a one-shot about rescue.",
+    "background_used": "Perfectly. \"Exiled Cook of the Night-Barge Who Hears Everything\" was the spine of every scene—getting Senna to focus, reaching the children when nothing else worked, being the steady voice. The GM didn't force her past or make it a weakness; it was the thing that made her the right person for this job. How it landed: good.",
+    "wanted_but_couldnt": "I wanted to have a moment where Ysolde's exile or her connection to the Blackwater Cartel mattered tactically—like maybe knowing a smuggler's route out, or the Cartel having a safehouse—but the GM didn't block it, it just didn't come up organically and forcing it would've been weird. No regrets.",
+    "one_sentence": "Ysolde's backstory as someone who listens people back to themselves felt built into the scenario's DNA—not ignored, not weaponized, just *used well*."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "instigator",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When Aldous threw his own drowning back down the song's thread at the Hive Mother in S2—turning his survival into a weapon. That's exactly what his concept should do: make his worst trauma his greatest strength.",
+    "most_frustrating": "The tie in S2 when trying to break the song's grip. Got a compromise instead of clean success, which meant experiencing the drowning vision again rather than a clean break.",
+    "background_used": "Good. His drowning survival was the mechanical and narrative core of every roll—Empathy attacks all tied to being marked by drowned ghosts. Verrick training informed his walk of authority at the gate. His distinctive appearance got him flagged as 'Hive-Suspect' at the end. All organic, nothing forced. Only his vow to cross souls at Gullet Ford didn't advance, but that's appropriate for a rescue mission.",
+    "wanted_but_couldnt": "Wanted to use Notice and Lore more actively. Ended up using Empathy for almost every roll—mechanically necessary for a combat-heavy session, but it meant the fortune-telling side of his concept sat quiet while the drowning survivor dominated.",
+    "one_sentence": "His drowning survival was woven perfectly as the mechanical and narrative core throughout; the Hive-Suspect consequence is earned rather than unfair, though it now blocks progress on his larger vow to cross souls before the flood."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "tactician",
+   "scores": {
+    "fun": 7,
+    "involvement": 6,
+    "connection": 6,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "When Morwen identified the song as an ancient summoning cadence—that moment crystallized her exorcist expertise and gave her a concrete way to lead, moving from reactive to knowing exactly what they were fighting",
+    "most_frustrating": "Didn't get to deeply explore Morwen's core doubt about whether the Hive Mother actually has consciousness and agency or is just predatory biology. The narrative momentum pushed toward 'Hive is evil, save children' without space to question the Mother's own nature",
+    "background_used": "Good. The Order training and exorcist expertise were woven in organically—the unbinding work, the authority at the gate. 'Too Famous to Hide' landed naturally when the Sergeant recognized Morwen and invoked it. Only minor: 'Beloved guide of pilgrim band' didn't come up, and the deeper philosophical doubt aspect got sidelined by urgency",
+    "wanted_but_couldnt": "More investigation and scouting before committing to the belltower confrontation—that's core to how Morwen plays, planning and gathering information first. Also wanted to voice Morwen's uncertainty about the Hive Mother's consciousness during the story, not just execute exorcism tasks",
+    "one_sentence": "The Order training and exorcist expertise were well-used, but the philosophical doubt at Morwen's core—questioning whether the Hive has souls—got overshadowed by narrative urgency and rescue momentum."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "optimizer",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 5,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The Legendary roll in S4 when I invoked my High Concept holding the line against the drowned things — mechanically proved that a Disgraced Warden can actually still hold, narrative vindication through the dice.",
+    "most_frustrating": "The compel in S2 where shouting at the children to break the song's hold backfired into them bolting south instead, and then watching Morwen and Aldous handle the Priest's unbinding while I was doing combat clean-up instead of confronting him directly myself.",
+    "background_used": "Good — the Order training and warden drills got woven in through Notice and Provoke rolls, and the \"still holds the line\" concept showed up repeatedly in physical scenes. The Verrick conflict and Causeway Warden enmity got seeded at the gate but clearly for future sessions rather than immediate play.",
+    "wanted_but_couldnt": "Wanted more direct friction at the gate scene over my \"marked enemy of the Causeway Wardens\" status — felt like it resolved too cleanly. Also would have liked a chance to interrogate acolytes or gather intel instead of just cutting through obstacles.",
+    "one_sentence": "My warden background and Order training felt central and well-used throughout, though the personal conflicts with Verrick and the Wardens — and the mortgage hanging over Wick Lane — are clearly being saved for later rather than tested now."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Ysolde",
+    "turns": 14,
+    "references_to_others_background": 1
+   },
+   {
+    "name": "Aldous",
+    "turns": 16,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Morwen",
+    "turns": 13,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Mire",
+    "turns": 17,
+    "references_to_others_background": 0
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "Chasing the swarm-song into the flooded reeds, the party tore six children — including Senna's son Tomas — free from the Hive Mother's hold, drowning the Drowned Priest's dreamed martyrdom in the black water at the temple pilings and scattering his acolytes and hive-touched stragglers into the marsh. They carried the rescued home through a closing low tide to Hollowmoot's gates, talking the Wardens into clearing the children — at the cost of Aldous walking through flagged as Hive-Suspect, a marked man now shadowed by the quarantine bells. The Hive Mother's song faded back into the belltower's rain, patient and hungry, waiting for its next chance.",
+  "closing_tension": null,
+  "reverberations": {
+   "growth": {},
+   "clocks": [],
+   "mutations": [],
+   "retired": []
+  },
+  "retired": []
+ },
  "state_end": {
   "tension": 3,
   "fp": {
@@ -3391,19 +3523,119 @@
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 795403,
-  "completion": 234345,
-  "cost_usd": 3.7531,
-  "calls": 73
+ "metrics": {
+  "arm": "B",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Aldous",
+   "Mire",
+   "Morwen"
+  ],
+  "backstory_all_players": false,
+  "deck_surfaced_all_players": null,
+  "deck_draws": 0,
+  "draw_costs": 0,
+  "draw_cost_used_card_rate_engine": null,
+  "draw_cost_used_card_rate_referee": 0.0,
+  "fp_end": {
+   "Ysolde": 2,
+   "Aldous": 0,
+   "Morwen": 2,
+   "Mire": 4
+  },
+  "fp_end_mean": 2,
+  "fp_earned": {
+   "Aldous": 2,
+   "Mire": 3,
+   "Morwen": 1
+  },
+  "fp_spent": {
+   "Aldous": 5,
+   "Mire": 2,
+   "Morwen": 2,
+   "Ysolde": 1
+  },
+  "compels_accepted": 6,
+  "compels_refused": 0,
+  "compels_deck": 0,
+  "compels_free": 6,
+  "turns": {
+   "Ysolde": 7,
+   "Aldous": 7,
+   "Morwen": 7,
+   "Mire": 7
+  },
+  "turn_gini": 0.0,
+  "invokes": {
+   "Aldous": 5,
+   "Mire": 3,
+   "Morwen": 2,
+   "Ysolde": 1
+  },
+  "invoke_gini": 0.2955,
+  "tension_trajectory": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "clock_marks": 0,
+  "violations": 5,
+  "violations_engine": 4,
+  "violations_referee": 1,
+  "ambiguities": 16,
+  "ambiguity_ids": [
+   "AMB-12",
+   "AMB-19",
+   "Action framework (overcome/create_advantage/attack/defend)",
+   "Aspects and invokes",
+   "Compels",
+   "Compels / Fate points",
+   "Conflict",
+   "Conflict (physical/mental tracks)",
+   "Conflict / Rolls",
+   "Create an advantage / free invokes",
+   "Fate points (GM refresh)",
+   "Fate points / Compels",
+   "§Compels / §Conflict",
+   "§Conflict/Passive opposition (Rolls)"
+  ],
+  "gm_improvised_complications": 8,
+  "card_supplied_complications": 0,
+  "improvisation_share": 1.0,
+  "guarantee_pulled": 0,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6.75,
+   "involvement": 6.5,
+   "connection": 6.25,
+   "control": 5.75,
+   "play_again": 7
+  },
+  "involvement_var_within": 0.25,
+  "personality": {
+   "Ysolde": "protector",
+   "Aldous": "instigator",
+   "Morwen": "tactician",
+   "Mire": "optimizer"
+  }
  },
- "llm_calls": 73,
+ "tokens": {
+  "prompt": 869504,
+  "completion": 255202,
+  "cost_usd": 4.1056,
+  "calls": 79
+ },
+ "llm_calls": 79,
  "models": {
   "gm": "claude-sonnet-5",
   "player": "claude-haiku-4-5-20251001",
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 1728.6
+ "elapsed_s": 1891.5
 }
