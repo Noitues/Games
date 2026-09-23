@@ -3,8 +3,10 @@
     python analyze.py <batch_id> [--no-llm] [--review]
 
 Per-run metrics (``run_metrics``) are computed from the log alone and stored in each run JSON.
-Batch analysis blinds arm labels as "Arm 1/2/3" (seeded, stored in reports/<batch>_blinding.json)
-for the Analyst agent, and only unblinds after the Analyst's conclusions are written.
+Experiential judgment is blind per session: a Judge agent scores each session alone from a story-only,
+de-vocabularied transcript under a random session ID (reports/<batch>_session_blinding.json holds the
+key). Scores are joined to arms only afterwards, in ``compile_judgments``. The older arm-label Analyst
+is opt-in (--analyst): with unequal arm counts its labels would be guessable from sample size.
 """
 
 from __future__ import annotations
@@ -86,8 +88,11 @@ def run_metrics(rec: dict) -> dict:
         elif t == "concede":
             fp_earned[e["actor"]] += -int(e.get("fp_spent") or 0)
         elif t == "fp" and "Hostile" in e.get("action", ""):
-            for n in names:
-                fp_earned[n] += e.get("notes", "").split(", ").count(n)
+            if e.get("actor"):                      # spec 0.2.0+ logs: one row per player
+                fp_earned[e["actor"]] += int(e.get("fp_change", 1))
+            else:                                   # pilot-01 logs: names in notes
+                for n in names:
+                    fp_earned[n] += e.get("notes", "").split(", ").count(n)
     costs = rec.get("costs", [])
     drawn_costs = [c for c in costs if c.get("draw_id")]
     valid_drawn = [c for c in drawn_costs if c.get("valid")]
@@ -110,6 +115,9 @@ def run_metrics(rec: dict) -> dict:
         "deck_draws": se.get("draws", 0),
         "draw_costs": len(drawn_costs),
         "draw_cost_used_card_rate_engine": round(len(valid_drawn) / len(drawn_costs), 3) if drawn_costs else None,
+        "draw_cost_tag_in_text_rate": round(sum(1 for c in drawn_costs if c.get("tag_in_text")) / len(drawn_costs), 3)
+        if drawn_costs else None,
+        "draw_cost_repaired": sum(1 for c in drawn_costs if c.get("repaired")),
         "draw_cost_used_card_rate_referee": round(len(ref_yes) / len(ref_checks), 3) if ref_checks else None,
         "fp_end": se.get("fp", {}),
         "fp_end_mean": round(st.mean(se["fp"].values()), 2) if se.get("fp") else None,
@@ -133,6 +141,8 @@ def run_metrics(rec: dict) -> dict:
         "involvement_var_within": round(st.pvariance([s["scores"]["involvement"] for s in surveys]), 3)
         if len(surveys) > 1 and all(isinstance(s["scores"].get("involvement"), int) for s in surveys) else None,
         "personality": pers,
+        "elapsed_min": round(rec.get("elapsed_s", 0) / 60, 1),
+        "cost_usd": rec.get("tokens", {}).get("cost_usd"),
     }
     return m
 
@@ -216,7 +226,8 @@ def aggregate(runs: list[dict], seed: int = 0) -> dict:
         for k in ("deck_draws", "fp_end_mean", "turn_gini", "invoke_gini", "clock_marks", "violations",
                   "violations_engine", "violations_referee", "ambiguities", "scenes", "compels_accepted",
                   "compels_refused", "gm_improvised_complications", "card_supplied_complications",
-                  "improvisation_share", "draw_cost_used_card_rate_engine", "draw_cost_used_card_rate_referee",
+                  "improvisation_share", "draw_cost_used_card_rate_engine", "draw_cost_tag_in_text_rate",
+                  "draw_cost_repaired", "elapsed_min", "cost_usd", "draw_cost_used_card_rate_referee",
                   "guarantee_failed", "involvement_var_within"):
             a[k] = mean_ci([m.get(k) for m in ms], seed)
         acc = sum(m["compels_accepted"] for m in ms)
@@ -296,6 +307,101 @@ def preference_summary(prefs: dict | None) -> dict:
     return {pair: dict(c) for pair, c in tally.items()}
 
 
+# ====================================================================== blind per-session judge
+JUDGE_REDACT = re.compile(r"(?i)\b(session deck|beat frames?|decks?|cards?|tension|surfac\w*|rail|placebo|story piles?"
+                          r"|weakness(?: tags?)?|power tags?|theme|binder|growth)\b"
+                          r"|\b[A-Z]{1,3}-\d{2}(?:v\d+)?\b")
+JUDGE_SCORES = ["overall", "engagement", "coherence", "spotlight_fairness", "player_agency", "complication_quality"]
+
+
+def judge_view(rec: dict) -> str:
+    """Story only: no mechanics lines, and no words or IDs that would reveal the rule set."""
+    from agents import render_transcript
+    entries = [t for t in rec["transcript"] if t["kind"] != "mechanics"]
+    return JUDGE_REDACT.sub("[…]", render_transcript(entries, None, 40000))
+
+
+def session_blinding(batch_id: str, runs: list[dict]) -> dict:
+    """session id -> run_id. The judge only ever sees the session id."""
+    import hashlib
+    p = ROOT / "reports" / f"{batch_id}_session_blinding.json"
+    mp = json.loads(p.read_text()) if p.exists() else {}
+    known = set(mp.values())
+    for r in runs:
+        if r["run_id"] not in known:
+            sid = "S-" + hashlib.sha256(f"{batch_id}:{r['run_id']}".encode()).hexdigest()[:8]
+            mp[sid] = r["run_id"]
+    p.parent.mkdir(exist_ok=True)
+    p.write_text(json.dumps(mp, indent=1, sort_keys=True))
+    return mp
+
+
+def judge_batch(batch_id: str, runs: list[dict], parallel: int = 8) -> dict:
+    """Blind judge, one call per session, in isolation (no arm, no run id, no other sessions)."""
+    from concurrent.futures import ThreadPoolExecutor
+    from agents import JUDGE_SYSTEM, Agent
+    from llm import LLMClient, TokenMeter
+    from scripted import Scripted
+    done_runs = [r for r in runs if r["status"] == "complete"]
+    mp = session_blinding(batch_id, done_runs)
+    by_run = {v: k for k, v in mp.items()}
+    path = ROOT / "runs" / batch_id / "_judgments.json"
+    judged = json.loads(path.read_text()) if path.exists() else {}
+    todo = [r for r in done_runs if by_run[r["run_id"]] not in judged]
+    backend = "scripted" if all(r["backend"] == "scripted" for r in done_runs) else "claude_cli"
+
+    def one(r):
+        sid = by_run[r["run_id"]]
+        client = LLMClient(backend, cache_dir=ROOT / "cache" / batch_id / "_judge", run_id=f"judge-{sid}",
+                           run_meter=TokenMeter(None), scripted=Scripted(seed=0, run_id=sid))
+        names = [a["name"] for a in r["assignments"]]
+        out = Agent(client, "judge", f"judge-{sid}", JUDGE_SYSTEM).ask("judge", (
+            f"Session {sid}. Player characters: {', '.join(names)}.\n\n== Transcript ==\n{judge_view(r)}\n\n"
+            "Score 1-10: overall (would you want to have been at this table?), engagement, coherence (does the story "
+            "hang together), spotlight_fairness (did every player get meaningful moments?), player_agency (did player "
+            "choices change what happened?), complication_quality (were the problems that arose interesting and "
+            "fitting?). For EACH character: did their personal background (their past, people, places, oaths) visibly "
+            "drive events? used true/false, score 1-10, one-line note. Then best_moment, worst_moment, notes."),
+            {"names": names})
+        return sid, {**out, "synthetic": backend == "scripted", "tokens": client.meter.as_dict()}
+    with ThreadPoolExecutor(max_workers=parallel) as ex:
+        for sid, out in ex.map(one, todo):
+            judged[sid] = out
+            path.write_text(json.dumps(judged, indent=1))
+    return judged
+
+
+def compile_judgments(batch_id: str, runs: list[dict], judged: dict, seed: int = 0) -> dict:
+    """Unblind: join each session's judgment to its run, then aggregate per arm."""
+    mp = session_blinding(batch_id, [r for r in runs if r["status"] == "complete"])
+    recs = {r["run_id"]: r for r in runs}
+    rows = defaultdict(list)
+    for sid, jd in judged.items():
+        r = recs.get(mp.get(sid))
+        if r:
+            rows[r["arm"]].append((r, jd))
+    out = {}
+    for arm, items in sorted(rows.items()):
+        a = {"sessions": len(items), "synthetic": any(jd.get("synthetic") for _, jd in items)}
+        for k in JUDGE_SCORES:
+            a[k] = mean_ci([jd.get(k) for _, jd in items], seed)
+        used, score, lurk = [], [], []
+        for r, jd in items:
+            pers = {x["name"]: x["personality_id"] for x in r["assignments"]}
+            for b in jd.get("backstory", []):
+                used.append(1.0 if b.get("used") else 0.0)
+                score.append(b.get("score"))
+                if pers.get(b.get("name")) == "lurker":
+                    lurk.append(b.get("score"))
+        a["backstory_used_rate"] = mean_ci(used, seed)
+        a["backstory_score"] = mean_ci(score, seed)
+        a["lurker_backstory_score"] = mean_ci(lurk, seed)
+        a["all_players_backstory_used"] = mean_ci(
+            [1.0 if jd.get("backstory") and all(b.get("used") for b in jd["backstory"]) else 0.0 for _, jd in items], seed)
+        out[arm] = a
+    return out
+
+
 # ====================================================================== blinding + analyst
 def blinding(batch_id: str, arms: list[str], seed: int) -> dict:
     p = ROOT / "reports" / f"{batch_id}_blinding.json"
@@ -342,15 +448,30 @@ def write_report(batch_id: str, runs: list[dict], agg: dict, prefs: dict, concl:
     L += [f"Runs: {len(runs)} ({dict(agg['status_counts'])}). Spec version(s): "
           f"{sorted({r['spec_version'] for r in runs})}. Backend(s): {sorted({r['backend'] for r in runs})}. "
           f"Tokens: {total_tokens:,} (≈ ${cost:.2f}).", ""]
-    L += ["## Blinded analyst conclusions", "",
-          "_Written by the Analyst agent from blinded labels **before** unblinding._", "",
-          concl.get("conclusions", ""), ""]
+    jc = agg.get("judge") or {}
+    if jc:
+        jarms = sorted(jc)
+        L += ["## Blind per-session judge (compiled after unblinding)", "",
+              "_Each session was scored alone by a judge that saw only the story (no mechanics lines, and no deck, card or "
+              "tension vocabulary or card IDs) under a random session ID. Scores were joined to arms only afterwards._", "",
+              "| Score (1–10) | " + " | ".join(f"{a} ({jc[a]['sessions']} sessions)" for a in jarms) + " |",
+              "| --- |" + " --- |" * len(jarms)]
+        for k in JUDGE_SCORES + ["backstory_score", "backstory_used_rate", "all_players_backstory_used",
+                                 "lurker_backstory_score"]:
+            L.append(f"| {k} | " + " | ".join(fmt_ci(jc[a][k]) for a in jarms) + " |")
+        if any(jc[a]["synthetic"] for a in jarms):
+            L.append("")
+            L.append("_Synthetic (scripted backend): these judge scores are random placeholders._")
+        L.append("")
+    if concl.get("conclusions"):
+        L += ["## Blinded analyst conclusions (optional)", "", concl.get("conclusions", ""), ""]
     for k in concl.get("key_findings", []):
         L.append(f"- {k}")
     if concl.get("caveats"):
         L += ["", "Caveats:"] + [f"- {c}" for c in concl["caveats"]]
-    L += ["", "## Unblinding", "", "| Blinded label | Arm |", "| --- | --- |"]
-    L += [f"| {lab} | {real} |" for real, lab in sorted(mp.items(), key=lambda kv: kv[1])]
+    if mp:
+        L += ["", "## Unblinding (analyst labels)", "", "| Blinded label | Arm |", "| --- | --- |"]
+        L += [f"| {lab} | {real} |" for real, lab in sorted(mp.items(), key=lambda kv: kv[1])]
     arms = sorted(agg["arms"])
     L += ["", "## Structural metrics (per session, mean [95% bootstrap CI])", "",
           "| Metric | " + " | ".join(arms) + " |", "| --- |" + " --- |" * len(arms)]
@@ -358,7 +479,10 @@ def write_report(batch_id: str, runs: list[dict], agg: dict, prefs: dict, concl:
             ("Every player's own card surfaced from the deck", "deck_surfaced_all_players_rate"),
             ("Deck draws / session (target 5–8)", "deck_draws"),
             ("Draw costs using the drawn card: engine tag check", "draw_cost_used_card_rate_engine"),
+            ("Draw costs whose text uses the tag (after rewrite)", "draw_cost_tag_in_text_rate"),
+            ("Draw costs that needed a GM rewrite", "draw_cost_repaired"),
             ("Draw costs using the drawn card: referee judgment", "draw_cost_used_card_rate_referee"),
+            ("Minutes per session", "elapsed_min"), ("Cost per session (USD)", "cost_usd"),
             ("Mean player FP at session end (target 1–5)", "fp_end_mean"),
             ("Spotlight Gini: turns", "turn_gini"), ("Spotlight Gini: invokes", "invoke_gini"),
             ("Scenes / session", "scenes"), ("Clock marks", "clock_marks"),
@@ -498,7 +622,9 @@ def review_packet(batch_id: str, runs: list[dict], seed: int = 0) -> Path:
 def main() -> None:
     ap = argparse.ArgumentParser(description="Analyze a batch.")
     ap.add_argument("batch_id")
-    ap.add_argument("--no-llm", action="store_true", help="skip the Analyst agent")
+    ap.add_argument("--no-llm", action="store_true", help="skip every LLM step (judge and analyst)")
+    ap.add_argument("--analyst", action="store_true",
+                    help="also run the blinded arm-label Analyst (not meaningful with unequal arm counts)")
     ap.add_argument("--review", action="store_true", help="also emit the human review packet")
     ap.add_argument("--seed", type=int, default=0)
     a = ap.parse_args()
@@ -506,10 +632,13 @@ def main() -> None:
     agg = aggregate(runs, a.seed)
     prefs = preference_summary(load_preferences(a.batch_id))
     arms = sorted(agg["arms"])
-    mp = blinding(a.batch_id, arms, a.seed)
-    blinded = blind_obj({"aggregate": agg["arms"], "paired": agg["paired"], "preferences": prefs}, mp)
-    concl = analyst_conclusions(blinded, use_llm=not a.no_llm and any(r["backend"] != "scripted" for r in runs),
-                                batch_id=a.batch_id)
+    judged = judge_batch(a.batch_id, runs) if not a.no_llm or all(r["backend"] == "scripted" for r in runs) else {}
+    agg["judge"] = compile_judgments(a.batch_id, runs, judged, a.seed) if judged else {}
+    mp, concl = {}, {}
+    if a.analyst:
+        mp = blinding(a.batch_id, arms, a.seed)
+        blinded = blind_obj({"aggregate": agg["arms"], "paired": agg["paired"], "preferences": prefs}, mp)
+        concl = analyst_conclusions(blinded, use_llm=not a.no_llm, batch_id=a.batch_id)
     (ROOT / "reports").mkdir(exist_ok=True)
     (ROOT / "reports" / f"{a.batch_id}_analyst.json").write_text(json.dumps(concl, indent=1))
     (ROOT / "reports" / f"{a.batch_id}_aggregate.json").write_text(json.dumps(agg, indent=1, default=str))

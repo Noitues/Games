@@ -1,0 +1,14 @@
+transcript_01.md: arm A | seed 77818 | run scripted-v03__A__s77818__r12 | highest-rated
+transcript_02.md: arm A | seed 77810 | run scripted-v03__A__s77810__r4 | random for its arm
+transcript_03.md: arm A | seed 77814 | run scripted-v03__A__s77814__r8 | lowest-rated
+transcript_04.md: arm A | seed 77824 | run scripted-v03__A__s77824__r18 | referee-flagged
+transcript_05.md: arm A | seed 77825 | run scripted-v03__A__s77825__r19 | referee-flagged
+transcript_06.md: arm A | seed 77823 | run scripted-v03__A__s77823__r17 | referee-flagged
+transcript_07.md: arm A | seed 77819 | run scripted-v03__A__s77819__r13 | referee-flagged
+transcript_08.md: arm B | seed 77806 | run scripted-v03__B__s77806__r0 | random for its arm
+transcript_09.md: arm A | seed 77808 | run scripted-v03__A__s77808__r2 | referee-flagged
+transcript_10.md: arm C | seed 77806 | run scripted-v03__C__s77806__r0 | random for its arm
+transcript_11.md: arm A | seed 77812 | run scripted-v03__A__s77812__r6 | referee-flagged
+transcript_12.md: arm A | seed 77822 | run scripted-v03__A__s77822__r16 | referee-flagged
+transcript_13.md: arm A | seed 77811 | run scripted-v03__A__s77811__r5 | referee-flagged
+transcript_14.md: arm A | seed 77821 | run scripted-v03__A__s77821__r15 | referee-flagged

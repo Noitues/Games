@@ -136,6 +136,12 @@ SCHEMAS = {
                     "friction": ARR(STR)}, ["violations", "ambiguities", "cost_checks", "friction"]),
     "interviewer": OBJ({"players": ARR(OBJ({"name": STR, "turns": INT, "references_to_others_background": INT},
                                            ["name", "turns", "references_to_others_background"]))}, ["players"]),
+    "judge": OBJ({"overall": INT, "engagement": INT, "coherence": INT, "spotlight_fairness": INT, "player_agency": INT,
+                  "complication_quality": INT,
+                  "backstory": ARR(OBJ({"name": STR, "used": BOOL, "score": INT, "note": STR}, ["name", "used", "score"])),
+                  "best_moment": STR, "worst_moment": STR, "notes": STR},
+                 ["overall", "engagement", "coherence", "spotlight_fairness", "player_agency", "complication_quality",
+                  "backstory", "best_moment", "worst_moment", "notes"]),
     "analyst": OBJ({"conclusions": STR, "key_findings": ARR(STR), "caveats": ARR(STR)},
                    ["conclusions", "key_findings", "caveats"]),
     "chargen": OBJ({"characters": ARR(OBJ({
@@ -151,6 +157,18 @@ SCHEMAS = {
         "fae": OBJ({"high_concept": STR, "trouble": STR, "aspects": ARR(STR)}, ["high_concept", "trouble", "aspects"]),
     }, ["name", "pronouns", "concept", "binder", "story_cards", "skills", "approaches", "fae"]))}, ["characters"]),
 }
+
+
+def spec_for_agents() -> str:
+    """The spec minus what no in-game agent needs: the sources table, §12 (this protocol) and §13
+    (open questions). Cuts the GM/Referee system prompt by about a quarter."""
+    text = SPEC_PATH.read_text()
+    text = text.split("## 12. Agent playtest protocol")[0]
+    a = text.find("**What each source contributes**")
+    b = text.find("**Rules baseline:**")
+    if a != -1 and b != -1:
+        text = text[:a] + text[b:]
+    return text
 
 
 def load_prompt(name: str) -> str:
@@ -215,7 +233,7 @@ def player_system(char: dict, personality: str, arm: dict, world_name: str) -> s
 
 def gm_system(arm: dict, world: dict, prep_text: str) -> str:
     if arm["deck"]:
-        rules = SPEC_PATH.read_text()
+        rules = spec_for_agents()
         interface = load_prompt("gm_interface_AC.md")
     else:
         rules = load_prompt("gm_rules_B.md")
@@ -233,7 +251,7 @@ def gm_system(arm: dict, world: dict, prep_text: str) -> str:
 
 
 def referee_system(arm: dict) -> str:
-    rules = SPEC_PATH.read_text() if arm["deck"] else load_prompt("gm_rules_B.md")
+    rules = spec_for_agents() if arm["deck"] else load_prompt("gm_rules_B.md")
     return (
         "You are the Referee. You check a game's mechanical event log against the rules below. You judge "
         "rules only, not the quality of the story. A software engine already enforced dice, fate point "
@@ -250,6 +268,13 @@ INTERVIEWER_SYSTEM = (
     "and literal. Answer only with the JSON requested."
 )
 
+JUDGE_SYSTEM = (
+    "You are an experienced tabletop roleplaying game designer judging the story of ONE recorded session. You "
+    "see only what was said at the table. Judge the session on its own merits; do not guess how it was run or "
+    "what rules produced it. Be calibrated: a 5 is an ordinary, competent session, and 9-10 is rare. Answer only "
+    "with the JSON requested."
+)
+
 ANALYST_SYSTEM = (
     "You are a careful data analyst. You are given blinded aggregate results from sessions of a tabletop "
     "game played under three rule variants labelled Arm 1, Arm 2 and Arm 3. You do not know which label is "
@@ -260,12 +285,19 @@ ANALYST_SYSTEM = (
 
 def render_transcript(entries: list[dict], viewer: str | None, max_chars: int = 16000,
                       current_scene: int | None = None) -> str:
-    """Viewer None = omniscient (GM/interviewer). Earlier scenes keep only narration + speech."""
+    """Viewer None = omniscient (GM/interviewer). With current_scene set (compact mode), earlier scenes
+    keep only the GM's narration, trimmed, as a recap; the current scene is shown in full."""
     lines = []
     for e in entries:
         if viewer is not None and e["visible_to"] not in ("all", viewer):
             continue
         if e["kind"] == "private":
+            continue
+        if current_scene is not None and e["scene"] < current_scene:
+            if e["speaker"] != "GM":
+                continue
+            body = e["text"] if viewer is None else redact(e["text"])
+            lines.append(f"(S{e['scene']} recap) GM: {body[:350]}")
             continue
         tag = "" if e["kind"] != "mechanics" else "[table] "
         body = e["text"] if viewer is None else redact(e["text"])

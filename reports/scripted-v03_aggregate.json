@@ -1,0 +1,1001 @@
+{
+ "arms": {
+  "A": {
+   "runs": 20,
+   "backstory_all_players_rate": {
+    "n": 20,
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0
+   },
+   "deck_surfaced_all_players_rate": {
+    "n": 20,
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0
+   },
+   "deck_draws": {
+    "n": 20,
+    "mean": 5.8,
+    "lo": 5.55,
+    "hi": 6.05
+   },
+   "fp_end_mean": {
+    "n": 20,
+    "mean": 2.325,
+    "lo": 1.938,
+    "hi": 2.712
+   },
+   "turn_gini": {
+    "n": 20,
+    "mean": 0.086,
+    "lo": 0.062,
+    "hi": 0.109
+   },
+   "invoke_gini": {
+    "n": 20,
+    "mean": 0.344,
+    "lo": 0.268,
+    "hi": 0.422
+   },
+   "clock_marks": {
+    "n": 20,
+    "mean": 4.9,
+    "lo": 3.8,
+    "hi": 6
+   },
+   "violations": {
+    "n": 20,
+    "mean": 1.25,
+    "lo": 0.55,
+    "hi": 2.1
+   },
+   "violations_engine": {
+    "n": 20,
+    "mean": 1.25,
+    "lo": 0.55,
+    "hi": 2.1
+   },
+   "violations_referee": {
+    "n": 20,
+    "mean": 0,
+    "lo": 0,
+    "hi": 0
+   },
+   "ambiguities": {
+    "n": 20,
+    "mean": 8.85,
+    "lo": 7.4,
+    "hi": 10.4
+   },
+   "scenes": {
+    "n": 20,
+    "mean": 4.65,
+    "lo": 4.35,
+    "hi": 4.85
+   },
+   "compels_accepted": {
+    "n": 20,
+    "mean": 4.55,
+    "lo": 3.9,
+    "hi": 5.2
+   },
+   "compels_refused": {
+    "n": 20,
+    "mean": 1.85,
+    "lo": 1.45,
+    "hi": 2.25
+   },
+   "gm_improvised_complications": {
+    "n": 20,
+    "mean": 2.4,
+    "lo": 1.75,
+    "hi": 3.1
+   },
+   "card_supplied_complications": {
+    "n": 20,
+    "mean": 9.7,
+    "lo": 9.3,
+    "hi": 10.05
+   },
+   "improvisation_share": {
+    "n": 20,
+    "mean": 0.183,
+    "lo": 0.138,
+    "hi": 0.228
+   },
+   "draw_cost_used_card_rate_engine": {
+    "n": 20,
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0
+   },
+   "draw_cost_tag_in_text_rate": {
+    "n": 20,
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0
+   },
+   "draw_cost_repaired": {
+    "n": 20,
+    "mean": 0,
+    "lo": 0,
+    "hi": 0
+   },
+   "elapsed_min": {
+    "n": 20,
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0
+   },
+   "cost_usd": {
+    "n": 20,
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0
+   },
+   "draw_cost_used_card_rate_referee": {
+    "n": 20,
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0
+   },
+   "guarantee_failed": {
+    "n": 20,
+    "mean": 0,
+    "lo": 0,
+    "hi": 0
+   },
+   "involvement_var_within": {
+    "n": 0,
+    "mean": null,
+    "lo": null,
+    "hi": null
+   },
+   "compel_accept_ratio": 0.711,
+   "fp_flow_by_personality": {
+    "instigator": {
+     "earned": 1.4,
+     "spent": 2.6,
+     "end": 1.8
+    },
+    "lurker": {
+     "earned": 1.5,
+     "spent": 1.3,
+     "end": 3.2
+    },
+    "method_actor": {
+     "earned": 2.3,
+     "spent": 1.3,
+     "end": 4
+    },
+    "optimizer": {
+     "earned": 1.7,
+     "spent": 3.8,
+     "end": 0.9
+    },
+    "protector": {
+     "earned": 2.3,
+     "spent": 2,
+     "end": 3.3
+    },
+    "rules_lawyer": {
+     "earned": 1.3,
+     "spent": 3.7,
+     "end": 0.6
+    },
+    "storyteller": {
+     "earned": 1.6,
+     "spent": 1.7,
+     "end": 2.9
+    },
+    "tactician": {
+     "earned": 1.5,
+     "spent": 2.6,
+     "end": 1.9
+    }
+   },
+   "tension_distribution": {
+    "1": 43,
+    "2": 34,
+    "3": 32,
+    "4": 4
+   },
+   "survey": {
+    "fun": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "involvement": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "connection": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "control": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "play_again": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    }
+   },
+   "survey_by_personality": {},
+   "complaints": {},
+   "ambiguity_ids": {
+    "AMB-01": 20,
+    "AMB-12": 20,
+    "AMB-22": 20,
+    "AMB-27": 15,
+    "AMB-03": 14,
+    "AMB-26": 11,
+    "AMB-23": 9,
+    "AMB-10": 8,
+    "AMB-16": 8,
+    "AMB-14": 6,
+    "AMB-19": 6,
+    "AMB-20": 4,
+    "AMB-05": 2
+   }
+  },
+  "B": {
+   "runs": 1,
+   "backstory_all_players_rate": {
+    "n": 1,
+    "mean": 0.0,
+    "lo": null,
+    "hi": null
+   },
+   "deck_draws": {
+    "n": 1,
+    "mean": 0,
+    "lo": null,
+    "hi": null
+   },
+   "fp_end_mean": {
+    "n": 1,
+    "mean": 2.5,
+    "lo": null,
+    "hi": null
+   },
+   "turn_gini": {
+    "n": 1,
+    "mean": 0.026,
+    "lo": null,
+    "hi": null
+   },
+   "invoke_gini": {
+    "n": 1,
+    "mean": 0.5,
+    "lo": null,
+    "hi": null
+   },
+   "clock_marks": {
+    "n": 1,
+    "mean": 0,
+    "lo": null,
+    "hi": null
+   },
+   "violations": {
+    "n": 1,
+    "mean": 0,
+    "lo": null,
+    "hi": null
+   },
+   "violations_engine": {
+    "n": 1,
+    "mean": 0,
+    "lo": null,
+    "hi": null
+   },
+   "violations_referee": {
+    "n": 1,
+    "mean": 0,
+    "lo": null,
+    "hi": null
+   },
+   "ambiguities": {
+    "n": 1,
+    "mean": 1,
+    "lo": null,
+    "hi": null
+   },
+   "scenes": {
+    "n": 1,
+    "mean": 5,
+    "lo": null,
+    "hi": null
+   },
+   "compels_accepted": {
+    "n": 1,
+    "mean": 4,
+    "lo": null,
+    "hi": null
+   },
+   "compels_refused": {
+    "n": 1,
+    "mean": 1,
+    "lo": null,
+    "hi": null
+   },
+   "gm_improvised_complications": {
+    "n": 1,
+    "mean": 6,
+    "lo": null,
+    "hi": null
+   },
+   "card_supplied_complications": {
+    "n": 1,
+    "mean": 0,
+    "lo": null,
+    "hi": null
+   },
+   "improvisation_share": {
+    "n": 1,
+    "mean": 1.0,
+    "lo": null,
+    "hi": null
+   },
+   "draw_cost_used_card_rate_engine": {
+    "n": 0,
+    "mean": null,
+    "lo": null,
+    "hi": null
+   },
+   "draw_cost_tag_in_text_rate": {
+    "n": 0,
+    "mean": null,
+    "lo": null,
+    "hi": null
+   },
+   "draw_cost_repaired": {
+    "n": 1,
+    "mean": 0,
+    "lo": null,
+    "hi": null
+   },
+   "elapsed_min": {
+    "n": 1,
+    "mean": 0.0,
+    "lo": null,
+    "hi": null
+   },
+   "cost_usd": {
+    "n": 1,
+    "mean": 0.0,
+    "lo": null,
+    "hi": null
+   },
+   "draw_cost_used_card_rate_referee": {
+    "n": 0,
+    "mean": null,
+    "lo": null,
+    "hi": null
+   },
+   "guarantee_failed": {
+    "n": 1,
+    "mean": 0,
+    "lo": null,
+    "hi": null
+   },
+   "involvement_var_within": {
+    "n": 0,
+    "mean": null,
+    "lo": null,
+    "hi": null
+   },
+   "compel_accept_ratio": 0.8,
+   "fp_flow_by_personality": {
+    "instigator": {
+     "earned": 1,
+     "spent": 2,
+     "end": 2
+    },
+    "optimizer": {
+     "earned": 0,
+     "spent": 0,
+     "end": 3
+    },
+    "protector": {
+     "earned": 2,
+     "spent": 1,
+     "end": 4
+    },
+    "tactician": {
+     "earned": 2,
+     "spent": 4,
+     "end": 1
+    }
+   },
+   "tension_distribution": {},
+   "survey": {
+    "fun": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "involvement": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "connection": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "control": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "play_again": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    }
+   },
+   "survey_by_personality": {},
+   "complaints": {},
+   "ambiguity_ids": {
+    "AMB-12": 1
+   }
+  },
+  "C": {
+   "runs": 1,
+   "backstory_all_players_rate": {
+    "n": 1,
+    "mean": 0.0,
+    "lo": null,
+    "hi": null
+   },
+   "deck_surfaced_all_players_rate": {
+    "n": 0,
+    "mean": null,
+    "lo": null,
+    "hi": null
+   },
+   "deck_draws": {
+    "n": 1,
+    "mean": 5,
+    "lo": null,
+    "hi": null
+   },
+   "fp_end_mean": {
+    "n": 1,
+    "mean": 3.5,
+    "lo": null,
+    "hi": null
+   },
+   "turn_gini": {
+    "n": 1,
+    "mean": 0.057,
+    "lo": null,
+    "hi": null
+   },
+   "invoke_gini": {
+    "n": 1,
+    "mean": 0.25,
+    "lo": null,
+    "hi": null
+   },
+   "clock_marks": {
+    "n": 1,
+    "mean": 5,
+    "lo": null,
+    "hi": null
+   },
+   "violations": {
+    "n": 1,
+    "mean": 0,
+    "lo": null,
+    "hi": null
+   },
+   "violations_engine": {
+    "n": 1,
+    "mean": 0,
+    "lo": null,
+    "hi": null
+   },
+   "violations_referee": {
+    "n": 1,
+    "mean": 0,
+    "lo": null,
+    "hi": null
+   },
+   "ambiguities": {
+    "n": 1,
+    "mean": 8,
+    "lo": null,
+    "hi": null
+   },
+   "scenes": {
+    "n": 1,
+    "mean": 4,
+    "lo": null,
+    "hi": null
+   },
+   "compels_accepted": {
+    "n": 1,
+    "mean": 4,
+    "lo": null,
+    "hi": null
+   },
+   "compels_refused": {
+    "n": 1,
+    "mean": 2,
+    "lo": null,
+    "hi": null
+   },
+   "gm_improvised_complications": {
+    "n": 1,
+    "mean": 2,
+    "lo": null,
+    "hi": null
+   },
+   "card_supplied_complications": {
+    "n": 1,
+    "mean": 10,
+    "lo": null,
+    "hi": null
+   },
+   "improvisation_share": {
+    "n": 1,
+    "mean": 0.167,
+    "lo": null,
+    "hi": null
+   },
+   "draw_cost_used_card_rate_engine": {
+    "n": 1,
+    "mean": 1.0,
+    "lo": null,
+    "hi": null
+   },
+   "draw_cost_tag_in_text_rate": {
+    "n": 1,
+    "mean": 1.0,
+    "lo": null,
+    "hi": null
+   },
+   "draw_cost_repaired": {
+    "n": 1,
+    "mean": 0,
+    "lo": null,
+    "hi": null
+   },
+   "elapsed_min": {
+    "n": 1,
+    "mean": 0.0,
+    "lo": null,
+    "hi": null
+   },
+   "cost_usd": {
+    "n": 1,
+    "mean": 0.0,
+    "lo": null,
+    "hi": null
+   },
+   "draw_cost_used_card_rate_referee": {
+    "n": 1,
+    "mean": 1.0,
+    "lo": null,
+    "hi": null
+   },
+   "guarantee_failed": {
+    "n": 1,
+    "mean": 0,
+    "lo": null,
+    "hi": null
+   },
+   "involvement_var_within": {
+    "n": 0,
+    "mean": null,
+    "lo": null,
+    "hi": null
+   },
+   "compel_accept_ratio": 0.667,
+   "fp_flow_by_personality": {
+    "instigator": {
+     "earned": 1,
+     "spent": 2,
+     "end": 2
+    },
+    "optimizer": {
+     "earned": 2,
+     "spent": 3,
+     "end": 2
+    },
+    "protector": {
+     "earned": 3,
+     "spent": 0,
+     "end": 6
+    },
+    "tactician": {
+     "earned": 2,
+     "spent": 1,
+     "end": 4
+    }
+   },
+   "tension_distribution": {
+    "1": 3,
+    "2": 1,
+    "3": 1
+   },
+   "survey": {
+    "fun": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "involvement": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "connection": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "control": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "play_again": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    }
+   },
+   "survey_by_personality": {},
+   "complaints": {},
+   "ambiguity_ids": {
+    "AMB-01": 1,
+    "AMB-10": 1,
+    "AMB-12": 1,
+    "AMB-16": 1,
+    "AMB-22": 1,
+    "AMB-23": 1,
+    "AMB-27": 1
+   }
+  }
+ },
+ "status_counts": {
+  "complete": 22
+ },
+ "paired": {
+  "A-B": {
+   "involvement": {
+    "all": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "by_personality": {}
+   },
+   "connection": {
+    "all": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "by_personality": {}
+   },
+   "fun": {
+    "all": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "by_personality": {}
+   },
+   "control": {
+    "all": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "by_personality": {}
+   }
+  },
+  "A-C": {
+   "involvement": {
+    "all": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "by_personality": {}
+   },
+   "connection": {
+    "all": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "by_personality": {}
+   },
+   "fun": {
+    "all": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "by_personality": {}
+   },
+   "control": {
+    "all": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "by_personality": {}
+   }
+  },
+  "C-B": {
+   "involvement": {
+    "all": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "by_personality": {}
+   },
+   "connection": {
+    "all": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "by_personality": {}
+   },
+   "fun": {
+    "all": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "by_personality": {}
+   },
+   "control": {
+    "all": {
+     "n": 0,
+     "mean": null,
+     "lo": null,
+     "hi": null
+    },
+    "by_personality": {}
+   }
+  },
+  "lurker_involvement": {}
+ },
+ "judge": {
+  "A": {
+   "sessions": 20,
+   "synthetic": true,
+   "overall": {
+    "n": 20,
+    "mean": 5.55,
+    "lo": 4.75,
+    "hi": 6.35
+   },
+   "engagement": {
+    "n": 20,
+    "mean": 5.15,
+    "lo": 4.4,
+    "hi": 5.95
+   },
+   "coherence": {
+    "n": 20,
+    "mean": 5.55,
+    "lo": 4.75,
+    "hi": 6.35
+   },
+   "spotlight_fairness": {
+    "n": 20,
+    "mean": 5.75,
+    "lo": 4.9,
+    "hi": 6.55
+   },
+   "player_agency": {
+    "n": 20,
+    "mean": 5.9,
+    "lo": 5.2,
+    "hi": 6.55
+   },
+   "complication_quality": {
+    "n": 20,
+    "mean": 5.55,
+    "lo": 4.8,
+    "hi": 6.3
+   },
+   "backstory_used_rate": {
+    "n": 80,
+    "mean": 0.688,
+    "lo": 0.588,
+    "hi": 0.787
+   },
+   "backstory_score": {
+    "n": 80,
+    "mean": 5.438,
+    "lo": 5.088,
+    "hi": 5.8
+   },
+   "lurker_backstory_score": {
+    "n": 10,
+    "mean": 4.9,
+    "lo": 3.8,
+    "hi": 6.1
+   },
+   "all_players_backstory_used": {
+    "n": 20,
+    "mean": 0.25,
+    "lo": 0.1,
+    "hi": 0.45
+   }
+  },
+  "B": {
+   "sessions": 1,
+   "synthetic": true,
+   "overall": {
+    "n": 1,
+    "mean": 6,
+    "lo": null,
+    "hi": null
+   },
+   "engagement": {
+    "n": 1,
+    "mean": 4,
+    "lo": null,
+    "hi": null
+   },
+   "coherence": {
+    "n": 1,
+    "mean": 7,
+    "lo": null,
+    "hi": null
+   },
+   "spotlight_fairness": {
+    "n": 1,
+    "mean": 3,
+    "lo": null,
+    "hi": null
+   },
+   "player_agency": {
+    "n": 1,
+    "mean": 5,
+    "lo": null,
+    "hi": null
+   },
+   "complication_quality": {
+    "n": 1,
+    "mean": 5,
+    "lo": null,
+    "hi": null
+   },
+   "backstory_used_rate": {
+    "n": 4,
+    "mean": 0.5,
+    "lo": 0.0,
+    "hi": 1.0
+   },
+   "backstory_score": {
+    "n": 4,
+    "mean": 6.25,
+    "lo": 4.75,
+    "hi": 7.5
+   },
+   "lurker_backstory_score": {
+    "n": 0,
+    "mean": null,
+    "lo": null,
+    "hi": null
+   },
+   "all_players_backstory_used": {
+    "n": 1,
+    "mean": 0.0,
+    "lo": null,
+    "hi": null
+   }
+  },
+  "C": {
+   "sessions": 1,
+   "synthetic": true,
+   "overall": {
+    "n": 1,
+    "mean": 5,
+    "lo": null,
+    "hi": null
+   },
+   "engagement": {
+    "n": 1,
+    "mean": 6,
+    "lo": null,
+    "hi": null
+   },
+   "coherence": {
+    "n": 1,
+    "mean": 5,
+    "lo": null,
+    "hi": null
+   },
+   "spotlight_fairness": {
+    "n": 1,
+    "mean": 4,
+    "lo": null,
+    "hi": null
+   },
+   "player_agency": {
+    "n": 1,
+    "mean": 4,
+    "lo": null,
+    "hi": null
+   },
+   "complication_quality": {
+    "n": 1,
+    "mean": 6,
+    "lo": null,
+    "hi": null
+   },
+   "backstory_used_rate": {
+    "n": 4,
+    "mean": 0.0,
+    "lo": 0.0,
+    "hi": 0.0
+   },
+   "backstory_score": {
+    "n": 4,
+    "mean": 4.5,
+    "lo": 3,
+    "hi": 6.75
+   },
+   "lurker_backstory_score": {
+    "n": 0,
+    "mean": null,
+    "lo": null,
+    "hi": null
+   },
+   "all_players_backstory_used": {
+    "n": 1,
+    "mean": 0.0,
+    "lo": null,
+    "hi": null
+   }
+  }
+ }
+}

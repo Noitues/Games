@@ -156,6 +156,9 @@ class Scripted:
                               "refusal_cost": {"card_id": rc[0], "tag": rc[1], "text": f"{rc[1]} instead."}})
             elif mode == "face_up_gm_tag":
                 items.append({"event_id": p["event_id"], "card_id": rc[0], "tag_used": rc[1], "text": f"Cost: {rc[1]}."})
+            elif mode == "repair":
+                items.append({"event_id": p["event_id"], "card_id": p.get("card_id", ""), "tag_used": p["tag_used"],
+                              "text": f"{p['tag_used']} makes it worse."})
             else:
                 items.append({"event_id": p["event_id"], "card_id": "", "tag_used": "", "text": "Something goes wrong."})
         return {"items": items}
@@ -292,6 +295,13 @@ class Scripted:
 
     def k_interviewer(self, rng, ctx):
         return {"players": [{"name": n, "turns": 0, "references_to_others_background": 0} for n in ctx["names"]]}
+
+    def k_judge(self, rng, ctx):
+        s = lambda: rng.randint(3, 8)
+        return {"overall": s(), "engagement": s(), "coherence": s(), "spotlight_fairness": s(), "player_agency": s(),
+                "complication_quality": s(),
+                "backstory": [{"name": n, "used": rng.random() < 0.6, "score": s(), "note": "synthetic"} for n in ctx["names"]],
+                "best_moment": "synthetic", "worst_moment": "synthetic", "notes": "synthetic"}
 
     def k_analyst(self, rng, ctx):
         return {"conclusions": "Scripted backend: no experiential conclusions.", "key_findings": [], "caveats": []}

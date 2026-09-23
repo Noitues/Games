@@ -22,6 +22,7 @@ from agents import (ANALYST_SYSTEM, INTERVIEWER_SYSTEM, PERSONALITIES, Agent, Di
                     player_system, referee_system, render_transcript)
 from arms import get_arm
 from chargen import cohort_index_for_run, generate_cohort, personalities_for_run
+from engine import tag_used_in_text
 from engine import (GM_TYPES, LADDER, PLAYER_TYPES, ROLL_ACTIONS, SPEC_VERSION, Engine, InvalidRun, derive_seed,
                     fmt_dice, ladder)
 from llm import AgentFailure, BudgetExceeded, LLMClient, TokenMeter
@@ -164,7 +165,7 @@ class Session:
         e = self.engine
         parts = [f"== Your character sheet ==\n{j(e.player_sheet(pid))}",
                  f"== At the table now ==\n{j(e.public_state())}",
-                 f"== The story so far ==\n{render_transcript(e.transcript, pid)}"]
+                 f"== The story so far ==\n{render_transcript(e.transcript, pid, 9000, current_scene=e.scene)}"]
         if extra:
             parts.append(f"== Details ==\n{j(extra)}")
         if e.chars[pid].name in self.addressed:
@@ -175,7 +176,7 @@ class Session:
     def gm_prompt(self, task: str, extra: dict | None = None) -> str:
         e = self.engine
         parts = [f"== Table state ==\n{j(e.gm_state())}",
-                 f"== The story so far ==\n{render_transcript(e.transcript, None, 20000)}"]
+                 f"== The story so far ==\n{render_transcript(e.transcript, None, 12000, current_scene=e.scene)}"]
         if extra:
             parts.append(f"== Details ==\n{j(extra)}")
         parts.append(f"== Your decision ==\n{task}")
@@ -202,6 +203,7 @@ class Session:
                 self.play_scene()
                 self.write(status="partial")
             self.post_session()
+            self.referee_session()
             self.run_surveys()
         except DiceClaimError as ex:
             status, error = "invalid", f"dice claim: {ex}"
@@ -225,7 +227,7 @@ class Session:
         if self.arm["deck"]:
             e.final_scene_guarantee()   # spec 0.2.0 §4
         beat = e.next_beat_for_scene() if self.arm["beat_frames"] else None
-        plan = self.gm.ask("gm_frame", self.gm_prompt(
+        plan = {} if beat else self.gm.ask("gm_frame", self.gm_prompt(
             "Plan the next scene: state it and frame it assuming it plays as planned."
             + (" This is the session's CLIMAX: the deck is empty; ties and costs use face-up GM tags."
                if info["is_climax"] else "")
@@ -257,7 +259,6 @@ class Session:
         rec["tension_after"] = e.tension if self.arm["tension"] else None
         rec["triggers_fired"] = cleanup["triggers_fired"]
         self.scenes.append(rec)
-        self.referee_scene()
 
     def apply_framing(self, fr: dict) -> None:
         e = self.engine
@@ -287,11 +288,15 @@ class Session:
             "scene (who is there, the location, or the weather) and reframe it. Put the card and tag in used_card.",
             extra), self.base_ctx(call="altered", drawn=cid))
         uc = fr.get("used_card") or {}
+        if uc.get("tag"):
+            chk = self.enforce_tag_use([{"card_id": uc.get("card_id", ""), "tag": uc["tag"], "text": fr.get("narration", "")}])
+            fr["narration"] = chk[0]["text"]
         valid = bool(uc) and ((cid and uc.get("card_id") == cid and uc.get("tag") in e.cards[cid].tags())
                               or (cid is None and (uc.get("card_id"), uc.get("tag")) in e.rail_gm_tags()))
         self.cost_records.append({"event": "altered", "scene": e.scene, "draw_id": cid or "", "valid": valid,
                                   "tag": uc.get("tag", ""), "text": fr.get("narration", "")[:300],
-                                  "improvised": cid is None})
+                                  "improvised": cid is None,
+                                  "tag_in_text": tag_used_in_text(uc.get("tag", ""), fr.get("narration", ""))})
         if not valid:
             e.violation("GM", "§6", f"altered scene did not use a tag of the drawn card ({cid}): {uc}")
         return fr
@@ -313,6 +318,10 @@ class Session:
                      "refusal_cost": items[0].get("refusal_cost") or {}}
         tag = offer.get("tag_used") or card.weakness
         tag_ok = tag in card.tags()
+        rc0 = offer.get("refusal_cost") or {}
+        chk = self.enforce_tag_use([{"card_id": cid, "tag": tag, "text": offer.get("complication", "")},
+                                    {"card_id": rc0.get("card_id", ""), "tag": rc0.get("tag", ""), "text": rc0.get("text", "")}])
+        offer = {**offer, "complication": chk[0]["text"], "refusal_cost": {**rc0, "text": chk[1]["text"]}}
         if not tag_ok:
             e.violation("GM", "§4", f"compel on {cid} used tag not on the card: {tag!r}")
         task = (f"The GM reveals one of your cards and offers a compel: \"{offer.get('complication', '')}\" "
@@ -336,7 +345,8 @@ class Session:
         self.cost_records.append({"event": f"compel:{reason}", "scene": e.scene, "draw_id": cid, "valid": tag_ok,
                                   "tag": tag, "text": offer.get("complication", "")[:300], "improvised": False,
                                   "accepted": res["accepted"], "refusal_valid": refusal_valid,
-                                  "owner": e.name(pid), "placebo": card.origin == "placebo"})
+                                  "owner": e.name(pid), "placebo": card.origin == "placebo",
+                                  "tag_in_text": chk[0]["tag_in_text"], "repaired": chk[0]["repaired"]})
         self.mech(f"{e.name(pid)} {'accepts' if res['accepted'] else 'refuses'} the compel on '{card.title}'.")
         e.surface(cid)
         return {"accepted": res["accepted"], "answer": ans.get("answer", ""), "offer": offer}
@@ -358,6 +368,11 @@ class Session:
             {"frame": {k: frame[k] for k in ("id", "name", "sentence", "open", "defaults", "stakes")},
              "fills": fills_view}),
             self.base_ctx(call="beat_fill", filled=filled))
+        fchecks = [{"card_id": f.get("card_id"), "tag": f.get("tag_used", ""), "text": f.get("text", ""), "ref": f}
+                   for f in out.get("fills", []) if f.get("blank") in filled["fills"]
+                   and filled["fills"][f.get("blank")] == f.get("card_id")]
+        for c in self.enforce_tag_use(fchecks):
+            c["ref"]["text"], c["ref"]["_tag_in_text"], c["ref"]["_repaired"] = c["text"], c["tag_in_text"], c["repaired"]
         texts = {}
         for f in out.get("fills", []):
             b, cid, tag = f.get("blank"), f.get("card_id"), f.get("tag_used")
@@ -367,7 +382,8 @@ class Session:
                     e.violation("GM", "§5", f"blank {b} filled with a tag not on {cid}: {tag!r}")
                 texts[b] = f.get("text", "")
                 self.cost_records.append({"event": "beat_fill", "scene": e.scene, "draw_id": cid, "valid": ok,
-                                          "tag": tag, "text": f.get("text", "")[:300], "improvised": False})
+                                          "tag": tag, "text": f.get("text", "")[:300], "improvised": False,
+                                          "tag_in_text": f.get("_tag_in_text"), "repaired": f.get("_repaired", False)})
         for b, cid in filled["fills"].items():
             if cid and b not in texts:
                 e.violation("GM", "§5", f"blank {b} filled by {cid} was not written")
@@ -488,6 +504,7 @@ class Session:
             if p:
                 adj_by[p] = r
         pending_costs = []
+        jobs = []
         for pid in e.order:
             if pid not in rolling or e.chars[pid].out_of_scene:
                 continue
@@ -501,7 +518,11 @@ class Session:
                 results.append({"player": e.name(pid), "action": d.get("action"), "outcome": "success (no roll needed)",
                                 "description": d.get("description", "")})
                 continue
-            results.append(self.resolve_roll(pid, d, a, pending_costs, story_this_round))
+            jobs.append(self.prep_roll(pid, d, a))
+        # Post-roll decisions are independent per player: ask them in parallel, then resolve in seat order.
+        posts = self._pmap(self.ask_post_roll, jobs)
+        for job, post in zip(jobs, posts):
+            results.append(self.finish_roll(job, post, pending_costs, story_this_round))
         # NPC attacks.
         for na in adj.get("npc_actions", [])[:4]:
             results.extend(self.npc_attack(na, story_this_round))
@@ -519,9 +540,9 @@ class Session:
         over = bool(n.get("scene_over")) or final
         return over, (n.get("end") or {}) if over else None
 
-    def resolve_roll(self, pid, d, a, pending_costs, story_this_round) -> dict:
+    def prep_roll(self, pid, d, a) -> dict:
+        """Roll the dice (sequential, so the dice stream order is fixed) and build the post-roll question."""
         e = self.engine
-        name = e.name(pid)
         target_npc = d.get("target_npc") or a.get("npc") or None
         if target_npc and target_npc not in e.npcs:
             target_npc = next((n for n in e.npcs if n.lower() == str(target_npc).lower()), None)
@@ -533,20 +554,31 @@ class Session:
                            target_npc=target_npc if d["action"] == "attack" or a.get("npc") else None, opp=opp,
                            description=d.get("description", ""), advantage_name=d.get("advantage_name", ""))
         inv_opts = e.invokable_for(pid)
-        post = {"invokes": [], "take_major_cost": False}
+        job = {"pid": pid, "d": d, "ctx": ctx, "ask": None}
         if ctx.shifts < 3 and (inv_opts and (e.chars[pid].fp > 0 or any(o["free"] for o in inv_opts)) or ctx.shifts < 0):
             info = {"your_skill": f"{ctx.skill} {ctx.skill_rating:+d}", "dice": fmt_dice(ctx.dice),
                     "your_total": ladder(ctx.total), "opposition": ladder(ctx.opp_total),
                     "gm_invoked": [f"{t} [{c}]" for c, t in ctx.gm_invokes + ctx.hostile_invokes],
                     "currently": ("fail" if ctx.shifts < 0 else "tie" if ctx.shifts == 0 else "success"),
                     "invokable_tags": inv_opts[:40], "your_fate_points": e.chars[pid].fp}
-            post = self.players[pid].ask("player_post_roll", self.p_prompt(
+            job["ask"] = ("player_post_roll", self.p_prompt(
                 pid, "Your roll is in (see Details). Each invoke adds +2 and costs 1 fate point unless you have a free "
                 "invoke on that source. Choose invokes (source_id + exact tag), and if you still fail, whether to take "
                 "success at a major cost." + (" If this becomes success with style on create_advantage you may set "
                                               "use_story_ally to bring in an ally or lead instead of the aspect."
                                               if self.arm["story_piles"] and d["action"] == "create_advantage" else ""),
                 info), self.base_ctx(pid, call="post_roll", roll=ctx, options=inv_opts))
+        return job
+
+    def ask_post_roll(self, job) -> dict:
+        if job["ask"] is None:
+            return {"invokes": [], "take_major_cost": False}
+        return self.players[job["pid"]].ask(*job["ask"])
+
+    def finish_roll(self, job, post, pending_costs, story_this_round) -> dict:
+        e = self.engine
+        pid, d, ctx = job["pid"], job["d"], job["ctx"]
+        name = e.name(pid)
         applied = e.apply_player_invokes(ctx, post.get("invokes", [])[:4])
         res = e.finalize_roll(ctx, take_major_cost=bool(post.get("take_major_cost")),
                               use_story_ally=bool(post.get("use_story_ally")))
@@ -632,6 +664,33 @@ class Session:
         out["outcome"] += f" — absorbed ({'box ' + str(opt['box']) if opt['box'] else ''} {' '.join(opt['consequences'])})"
         return [out]
 
+    def enforce_tag_use(self, items: list[dict]) -> list[dict]:
+        """Spec 0.3.0 §3: a cost/compel/fill built from a tag must use that tag in its narration.
+        Items: {card_id, tag, text}. Failing texts get one GM rewrite; still failing -> violation."""
+        e = self.engine
+        for it in items:
+            it["tag_in_text"] = bool(it.get("tag")) and tag_used_in_text(it["tag"], it.get("text", ""))
+            it["repaired"] = False
+        bad = [it for it in items if it.get("tag") and not it["tag_in_text"]]
+        if not bad:
+            return items
+        rewrite = [{"event_id": i, "card_id": it.get("card_id", ""), "tag_used": it["tag"], "text": it.get("text", "")}
+                   for i, it in enumerate(bad)]
+        out = self.gm.ask("gm_costs", self.gm_prompt(
+            "Rules §3: each text below is built from a tag but does not use that tag in the fiction. Rewrite each "
+            "text so the tag is visibly used: quote it, or restate it plainly enough that the table hears which tag "
+            "caused it. Keep event_id, card_id and tag_used unchanged.", {"rewrite": rewrite}),
+            self.base_ctx(call="repair", items=[{**r, "mode": "repair"} for r in rewrite]))
+        fixed = {x.get("event_id"): x for x in out.get("items", [])}
+        for i, it in enumerate(bad):
+            new = (fixed.get(i) or {}).get("text")
+            if new:
+                it["text"], it["repaired"] = new, True
+                it["tag_in_text"] = tag_used_in_text(it["tag"], new)
+            if not it["tag_in_text"]:
+                e.violation("GM", "§3", f"narration does not use its tag {it['tag']!r} even after a rewrite")
+        return items
+
     def resolve_costs(self, pending: list[dict]) -> None:
         e = self.engine
         view = []
@@ -653,6 +712,14 @@ class Session:
                                                                             if any(p["mode"] == k for p in pending)),
             {"pending": view}), self.base_ctx(call="costs", items=pending))
         items = {it.get("event_id"): it for it in out.get("items", [])}
+        checks = []
+        for p in pending:
+            it = items.get(p["event_id"])
+            if it is not None and p["mode"] in ("gm_card", "face_up_gm_tag"):
+                checks.append({"card_id": it.get("card_id", ""), "tag": it.get("tag_used", ""),
+                               "text": it.get("text", ""), "ref": it})
+        for c in self.enforce_tag_use(checks):
+            c["ref"]["text"], c["ref"]["_tag_in_text"], c["ref"]["_repaired"] = c["text"], c["tag_in_text"], c["repaired"]
         for p in pending:
             it = items.get(p["event_id"])
             if it is None:
@@ -678,7 +745,8 @@ class Session:
                 e.violation("GM", "§3", f"cost for event {p['event_id']} did not use an allowed tag: {tag!r}")
             self.cost_records.append({"event": p["outcome"], "scene": e.scene, "draw_id": p["card_id"],
                                       "valid": valid, "tag": tag, "text": it.get("text", "")[:300],
-                                      "improvised": p["mode"] == "improvised", "mode": p["mode"]})
+                                      "improvised": p["mode"] == "improvised", "mode": p["mode"],
+                                      "tag_in_text": it.get("_tag_in_text"), "repaired": it.get("_repaired", False)})
             e.log(event_type="cost", actor="GM", action=f"Cost ({p['outcome']})", draw_id=p["card_id"],
                   tags_invoked=tag, notes=it.get("text", "")[:200], improvised=p["mode"] == "improvised",
                   cost_valid=valid, for_event=p["event_id"])
@@ -727,33 +795,38 @@ class Session:
         return n
 
     # ------------------------------------------------------------------ referee
-    def referee_scene(self) -> None:
+    def referee_session(self) -> None:
+        """One Referee pass over the whole session log (was one per scene; cut for cost and speed)."""
         e = self.engine
-        rows = [r for r in e.events if r["scene"] == e.scene and r["session"] == e.session]
-        cost_rows = [c for c in self.cost_records if c["scene"] == e.scene]
+        keep = ("event_id", "scene", "event_type", "actor", "action", "skill", "tags_invoked", "fp_spent", "fp_change",
+                "dice", "total", "opposition", "result", "draw_id", "compel", "clock_change", "tension", "notes",
+                "caused_by", "gm_fp_spent", "opposing_tags", "cost_mode")
+        rows = [{k: r[k] for k in keep if r.get(k) not in (None, "", [], 0, False) or k in ("event_id", "scene")}
+                for r in e.events if r["session"] == e.session and r.get("event_type") != "declare"]
+        cost_rows = list(self.cost_records)
         for c in cost_rows:
             if c.get("draw_id") and c["draw_id"] in e.cards:
                 c["card"] = e.cards[c["draw_id"]].brief()
-        eng_v = [v for v in e.violations if v["scene"] == e.scene]
-        fired = [a for a in e.rulings.fired if a["scene"] == e.scene]
+        eng_v = list(e.violations)
+        fired = list({a["id"]: a for a in e.rulings.fired}.values())
         prompt = ("Log fields: fp_change = the actor's fate point change from this event; fp_balances = every "
-                  "player's fate points after it; gm_fp = the GM's remaining fate points; gm_fp_spent = GM points paid on "
+                  "player's fate points after it (omitted in this compact log); gm_fp = the GM's remaining fate points; gm_fp_spent = GM points paid on "
                   "that roll (free invokes cost none); caused_by = the event_id of the roll that caused this row. Story "
                   "Weight changes, module deployments and GM free-invoke grants ('GM +1 free invoke' in rail notes) are "
                   "logged as their own rows.\n\n"
-                  f"Scene {e.scene} event log (one row per event):\n{j(rows)}\n\nCosts, compels and Beat Frame fills "
+                  f"Session event log (one row per event; empty fields omitted):\n{json.dumps(rows, ensure_ascii=False)}\n\nCosts, compels and Beat Frame fills "
                   f"with the drawn card:\n{j(cost_rows)}\n\nEngine refusals already recorded:\n{j(eng_v)}\n\n"
                   f"Interim rulings the engine applied:\n{j([{k: a[k] for k in ('id', 'section', 'interim_ruling')} for a in fired])}"
                   "\n\nReport violations, ambiguities (not already covered by the interim rulings above), a cost_check per "
                   "cost/compel/fill with a draw_id, and up to 3 friction points.")
         out = self.ref_agent.ask("referee", prompt, self.base_ctx(call="referee", rows=rows, costs=cost_rows))
         for v in out.get("violations", []):
-            self.referee["violations"].append({**v, "scene": e.scene, "source": "referee"})
+            self.referee["violations"].append({**v, "source": "referee"})
         for a in out.get("ambiguities", []):
-            self.referee["ambiguities"].append({**a, "scene": e.scene, "source": "referee"})
+            self.referee["ambiguities"].append({**a, "source": "referee"})
         for c in out.get("cost_checks", []):
-            self.referee["cost_checks"].append({**c, "scene": e.scene})
-        self.referee["friction"] += [{"scene": e.scene, "text": f} for f in out.get("friction", [])]
+            self.referee["cost_checks"].append(dict(c))
+        self.referee["friction"] += [{"text": f} for f in out.get("friction", [])]
 
     # ------------------------------------------------------------------ after the session
     def post_session(self) -> None:
@@ -831,6 +904,7 @@ class Session:
             "metrics": {},
             "tokens": self.meter.as_dict(),
             "llm_calls": len(self.client.calls),
+            "call_log": self.client.calls,
             "models": {r: self.client.model_for(r) for r in ("gm", "player", "referee", "interviewer")},
             "elapsed_s": round(time.time() - self.started, 1),
         }

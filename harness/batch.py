@@ -112,8 +112,10 @@ def main() -> None:
     ap.add_argument("--seed-base", type=int, default=None)
     ap.add_argument("--seed-list", default=None, help="comma-separated explicit seeds (regression re-runs)")
     ap.add_argument("--arms", default="A,B,C")
+    ap.add_argument("--arm-counts", default=None,
+                    help="e.g. A=10,B=1,C=1: arm X runs on the first N seeds only (seeds = the largest N)")
     ap.add_argument("--backend", default="claude_cli", choices=["claude_cli", "scripted"])
-    ap.add_argument("--parallel", type=int, default=3)
+    ap.add_argument("--parallel", type=int, default=6)
     ap.add_argument("--token-cap-run", type=int, default=4_000_000)
     ap.add_argument("--token-cap-batch", type=int, default=60_000_000)
     ap.add_argument("--max-scenes", type=int, default=5)
@@ -123,6 +125,11 @@ def main() -> None:
     ap.add_argument("--prefs", action="store_true", help="run the paired transcript preference phase")
     a = ap.parse_args()
     arms = a.arms.split(",")
+    counts = None
+    if a.arm_counts:
+        counts = {k: int(v) for k, v in (x.split("=") for x in a.arm_counts.split(","))}
+        arms = list(counts)
+        a.seeds = max(counts.values())
     seeds = [int(x) for x in a.seed_list.split(",")] if a.seed_list else seeds_for(a.batch_id, a.seeds, a.seed_base)
     models = {}
     if a.player_model:
@@ -135,7 +142,7 @@ def main() -> None:
            "token_cap_run": a.token_cap_run, "models": models, "max_scenes": a.max_scenes, "parallel": a.parallel}
     manifest = {"batch_id": a.batch_id, "arms": arms, "seeds": seeds, "backend": a.backend,
                 "models": {**MODELS, **models}, "max_scenes": a.max_scenes, "token_cap_run": a.token_cap_run,
-                "token_cap_batch": a.token_cap_batch, "cohort_id": a.cohort_id, "started": time.strftime("%Y-%m-%dT%H:%M:%S")}
+                "token_cap_batch": a.token_cap_batch, "cohort_id": a.cohort_id, "arm_counts": counts, "started": time.strftime("%Y-%m-%dT%H:%M:%S")}
     (out_dir / "_manifest.json").write_text(json.dumps(manifest, indent=1))
     batch_meter = TokenMeter(a.token_cap_batch)
     # Cohorts first (sequentially), so parallel runs never race to create the same one.
@@ -146,6 +153,8 @@ def main() -> None:
                            models=models)
         generate_cohort(cid, derive_seed(0, f"cohort:{cid}") % 10**6, backend=a.backend, client=client, world=WORLD)
         for arm in arms:
+            if counts and i >= counts[arm]:
+                continue
             run_id = f"{a.batch_id}__{arm}__s{seed}__r{i}"
             p = out_dir / f"{run_id}.json"
             if p.exists() and json.loads(p.read_text()).get("status") in FINAL:

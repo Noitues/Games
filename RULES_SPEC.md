@@ -1,6 +1,6 @@
 # Scene-Deck Engine for Fate — Playtest Rules Spec
 
-As of Sep 23, 2026 — version 0.2.0 (see CHANGELOG.md)
+As of Sep 23, 2026 — version 0.3.0 (see CHANGELOG.md)
 
 ## 1. Overview
 
@@ -101,6 +101,8 @@ Passive opposition starts at Average (+1). Add +1 for each face-up GM or GLOBAL 
 | 3+ | Success with style | The player may look at the top card of the Session Deck and leave it or move it to the bottom, instead of taking a boost |
 
 The GM must build the cost from the drawn card. That constraint is the point of the system; it stops costs from being invented freely.
+
+**The cost must use the tag.** Whenever a cost, compel, twist or Beat Frame blank is built from a card's tag, its narration must use that tag in the fiction: quote it, or restate it plainly enough that the table can hear which tag caused it. A cost that names a tag but does not use it in the fiction does not count, and the GM rewrites it.
 
 This rule covers only the deck-draw costs in the table above. The rest of Fate runs as normal: complications that come from the fiction, compels, and temporary situation and character aspects are still made up at the table. If a player throws their weapon and the enemy falls off the cliff with it, the GM can simply give them *Weapon Lost Over the Cliff* for the scene. Whether that aspect outlives the session is the player's choice (Keep, §6A).
 
@@ -211,12 +213,16 @@ If the Session Deck is empty, Altered scenes use a face-up GM card, and Interrup
 
 **Adjusting Tension at scene end**
 
-| What happened in the scene | Change |
+Compare the scene's invokes with its compels:
+
+- **Invokes:** every invoke made during the scene by anyone (players and GM, free or paid, including hostile invokes).
+- **Compels:** every compel offered during the scene, accepted or refused (including surfacing compels from the Session Deck).
+
+| Result | Change |
 | --- | --- |
-| The party fled, bypassed or ignored a face-up THREAT or FACTION | +1 |
-| Any clock advanced during the scene | +1 (max +1 per scene from clocks) |
-| The party resolved a THREAT or filled a player's goal | −1 |
-| None of the above | 0 |
+| More invokes than compels | −1 |
+| More compels than invokes | +1 |
+| Equal | 0 |
 
 Tension never goes below 1 or above 6. It carries over between sessions; record it in the Chronicle.
 

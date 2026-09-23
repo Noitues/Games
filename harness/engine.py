@@ -20,7 +20,7 @@ from typing import Any
 
 from rulings import Rulings
 
-SPEC_VERSION = "0.2.0"
+SPEC_VERSION = "0.3.0"
 
 LADDER = {-2: "Terrible", -1: "Poor", 0: "Mediocre", 1: "Average", 2: "Fair", 3: "Good",
           4: "Great", 5: "Superb", 6: "Fantastic", 7: "Epic", 8: "Legendary"}
@@ -40,6 +40,29 @@ class EngineError(Exception):
 
 class InvalidRun(Exception):
     """Raised when a run must be discarded, e.g. an agent claimed a dice result."""
+
+
+STOPWORDS = {"the", "and", "for", "with", "from", "that", "this", "into", "onto", "its", "their", "his", "her",
+             "your", "our", "every", "any", "all", "who", "what", "when", "than", "then", "them", "they",
+             "are", "was", "were", "has", "have", "had", "not", "but", "out", "off", "over", "under"}
+
+
+def tag_used_in_text(tag: str, text: str) -> bool:
+    """Spec 0.3.0 §3: the narration must use the tag. Heuristic: at least half of the tag's content
+    words (matched on a 5-letter stem) appear in the text, or the tag is quoted verbatim."""
+    import re as _re
+    t, x = (tag or "").lower(), (text or "").lower()
+    if not t or not x:
+        return False
+    if t in x:
+        return True
+    words = [w for w in _re.findall(r"[a-z']+", t) if len(w) >= 3 and w not in STOPWORDS]
+    if not words:
+        return False
+    text_words = _re.findall(r"[a-z']+", x)
+    hits = sum(1 for w in words if any(tw.startswith(w[:5]) or w.startswith(tw[:5]) and len(tw) >= 4
+                                       for tw in text_words))
+    return hits >= max(1, -(-len(words) // 2))
 
 
 def ladder(n: int) -> str:
@@ -429,7 +452,7 @@ class Engine:
         """Begin a scene. Returns what the orchestrator must handle before framing."""
         self.scene += 1
         self.scene_in_session += 1
-        self.scene_flags = {"clock_advanced": False, "failed_against": set(), "compel_refused": False,
+        self.scene_flags = {"invokes": 0, "compels": 0, "clock_advanced": False, "failed_against": set(), "compel_refused": False,
                             "rolls_against": set(), "story_drawn": [], "draws": [],
                             "is_climax": self.climax_scene == self.scene}
         self.scene_aspects = []
@@ -607,6 +630,7 @@ class Engine:
                        from_deck: bool, text: str) -> dict:
         ch = self.chars[pid]
         forced = False
+        self.scene_flags["compels"] = self.scene_flags.get("compels", 0) + 1
         if not accept and ch.fp < 1:
             accept, forced = True, True
             self.violation(ch.name, "§11", "tried to refuse a compel with 0 fate points (forced accept)")
@@ -695,6 +719,7 @@ class Engine:
             if not had_free:
                 ctx.gm_fp_spent += 1
             gm_inv.append(key)
+            self.scene_flags["invokes"] = self.scene_flags.get("invokes", 0) + 1
             ctx.gm_bonus += 2
             wcard = self.cards[key[0]]
             wowner = self.owner_pid(wcard) if wcard.origin in ("player", "placebo") else None
@@ -722,6 +747,7 @@ class Engine:
             self.gm_fp -= 1
             ctx.gm_fp_spent += 1
             hostile.append((cid, card.weakness))
+            self.scene_flags["invokes"] = self.scene_flags.get("invokes", 0) + 1
             self.hostile_payouts.append(tpid)
             ctx.gm_bonus += 2
         ctx.gm_invokes, ctx.hostile_invokes = gm_inv, hostile
@@ -800,6 +826,7 @@ class Engine:
             if not paid_free:
                 ctx.fp_spent += 1
             ctx.player_invokes.append(key)
+            self.scene_flags["invokes"] = self.scene_flags.get("invokes", 0) + 1
             ctx.bonus += 2
             applied.append(f"{key[1]} [{key[0]}]")
             card = self.cards[key[0]]
@@ -1228,7 +1255,18 @@ class Engine:
         """§7 cleanup, in the spec's order. ``report`` comes from the GM agent (validated here)."""
         delta = 0
         parts = []
-        if self.arm["tension"]:
+        if self.arm["tension"] and self.arm.get("tension_rule") == "invokes_vs_compels":
+            inv, comp = self.scene_flags.get("invokes", 0), self.scene_flags.get("compels", 0)
+            delta = -1 if inv > comp else (1 if comp > inv else 0)
+            before = self.tension
+            self.tension = max(1, min(6, self.tension + delta))
+            for c in [c for c in report.get("resolved_threats", []) if self.cards.get(c)
+                      and self.cards[c].type == "THREAT"]:
+                if c in self.rail:
+                    self.card_leaves_play(c, "resolved")
+            self.log(event_type="tension", action="Adjust tension", result=f"{before}->{self.tension}",
+                     notes=f"invokes {inv} vs compels {comp} (§6, spec 0.3.0)")
+        elif self.arm["tension"]:
             fled = [c for c in report.get("fled_or_bypassed", []) if c in self.appeared_this_session
                     and self.cards.get(c) and self.cards[c].type in ("THREAT", "FACTION")]
             resolved = [c for c in report.get("resolved_threats", []) if self.cards.get(c)

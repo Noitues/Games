@@ -120,6 +120,35 @@ class GuaranteeV020Tests(unittest.TestCase):
         self.fail("no tie in 80 rolls")
 
 
+class SpecV030Tests(unittest.TestCase):
+    def test_tag_used_in_text(self):
+        from engine import tag_used_in_text
+        self.assertTrue(tag_used_in_text("drags swimmers under", "The current drags two swimmers under the ford."))
+        self.assertTrue(tag_used_in_text("Echoes Betray Every Movement", "every echo betrays their movement"))
+        self.assertFalse(tag_used_in_text("drags swimmers under", "Something goes wrong at the ford."))
+
+    def _tension_after(self, invokes, compels):
+        e = make()
+        e.tension = 3
+        e.scene_flags["invokes"], e.scene_flags["compels"] = invokes, compels
+        e.end_scene({})
+        return e.tension
+
+    def test_tension_invokes_vs_compels(self):
+        self.assertEqual(self._tension_after(3, 1), 2)
+        self.assertEqual(self._tension_after(1, 3), 4)
+        self.assertEqual(self._tension_after(2, 2), 3)
+
+    def test_counters_increment(self):
+        e = make()
+        pid = first_pid(e)
+        e.resolve_compel(pid, True, card_id=None, tag="t", from_deck=False, text="x")
+        opt = e.invokable_for(pid)[0]
+        ctx = e.begin_roll(pid, action="overcome", skill="Notice", target_card=None, target_npc=None, opp={})
+        e.apply_player_invokes(ctx, [{"source_id": opt["source_id"], "tag": opt["tag"]}])
+        self.assertEqual((e.scene_flags["invokes"], e.scene_flags["compels"]), (1, 1))
+
+
 class CompelTests(unittest.TestCase):
     def test_compel_cannot_name_a_card_in_the_deck(self):
         e = make()

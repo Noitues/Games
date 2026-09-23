@@ -29,7 +29,7 @@ harness/
   scripted.py            zero-token heuristic agents for tests and structural Monte Carlo
   run.py                 one session end-to-end -> runs/<batch>/<run_id>.json
   batch.py               N seeds × arms in parallel, resumable, + blinded paired preferences
-  analyze.py             metrics, CIs, paired comparisons, blinded analyst, report, review packet
+  analyze.py             metrics, CIs, blind per-session judge compiled after unblinding, report, review packet
   schema.json            run record schema
   data/                  world deck (the Sallowmere), placebo complications, chargen tables
   prompts/               player rules summaries (A/C and B), GM interface and baseline rules
@@ -45,8 +45,8 @@ reports/<batch_id>.md    batch report; reports/<batch_id>_review/ is the human r
 cd harness
 python3 tests/test_engine.py                                   # engine rule tests
 python3 batch.py scripted-mc --seeds 40 --backend scripted    # free structural Monte Carlo
-python3 batch.py pilot-01 --seeds 3 --backend claude_cli --cohort-id cohort-pilot-01 --prefs
-python3 analyze.py pilot-01 --review                           # report + human review packet
+python3 batch.py batch-02 --arm-counts A=10,B=1,C=1 --backend claude_cli --cohort-id cohort-pilot-01
+python3 analyze.py batch-02 --review                           # blind judge, report, human review packet
 ```
 
 Agents run as separate `claude -p` subprocesses: each has a replaced system prompt, no tools and no

@@ -28,12 +28,13 @@ MODELS = {
     "referee": "claude-sonnet-5",
     "interviewer": "claude-haiku-4-5-20251001",
     "analyst": "claude-sonnet-5",
+    "judge": "claude-sonnet-5",
     "chargen": "claude-sonnet-5",
     "strong": "claude-opus-5-5",
 }
 # Thinking effort per role: nearly all completion tokens were hidden thinking in the first probe.
-EFFORT = {"player": "low", "interviewer": "low", "gm": "medium", "referee": "medium", "analyst": "medium",
-          "chargen": "medium"}
+EFFORT = {"player": "low", "interviewer": "low", "gm": "low", "referee": "medium", "analyst": "medium",
+          "judge": "medium", "chargen": "medium"}
 
 # Hard dice-claim patterns: an agent stating dice faces or a roll result it was never given.
 DICE_CLAIM = [
