@@ -3,12 +3,8 @@
 Written at the lead designer's request. Everything below is on
 `claude/hex-nexus-multiagent-prompts-aivg93`, pushed.
 
-> **Update, 2026-09-23 (later session).** `batch_0039` (the T2 read at reveal
-> radius 2) is done and written up as RQ-038 in `log/decisions.md`: the sight
-> ruling holds, but it moved median length to 18 and Nexus kills to 78%. The
-> personality field did not move. `batch_0040` (P-0009, `dragon_ap_each` 2)
-> is running against it; its record is `log/patches/P-0009.json`. This note
-> will be folded into the sections below when P-0009 is judged.
+Written at the lead designer's request; extended after batches 0039 and 0040.
+Nothing is running.
 
 ## 1. Where the lab stands
 
@@ -16,28 +12,36 @@ Written at the lead designer's request. Everything below is on
 |---|---|
 | 0 Bootstrap | complete |
 | 1 AI calibration | closed on RQ-031 (gate lowered to 60%) |
-| 2 Correctness and pacing | **deferred on purpose** — the lead designer moved pacing last |
-| 3 Economy | **partly done, stuck on a pillar question.** See §4. |
+| 2 Correctness and pacing | **deferred on purpose, and now broken by a ruling.** Rules 1.7.0 moved median length to 18 and Nexus kills to 78% on T2 (RQ-038). Waiting on the lead designer. |
+| 3 Economy | **partly done, stuck on a pillar question.** See §4. The objective lever (P-0009) was tried and is inert; see §3. |
 | 4 Champion balance | **not started, and should not start yet.** See §3. |
 | 5 Robustness | exploit gate met under rules 1.0.0; needs a re-run, the game has changed six times since |
 | 6 Release candidate | not started |
 
-Versions: rules **1.7.0**, roster **1.6.0**, ai **1.3.0**, **119 tests** (~2m20s).
+Versions: rules **1.7.0**, roster **1.6.0**, ai **1.3.0**, **119 tests** (~2m20s), all passing on 2026-09-23.
 
-`engine/config.py` holds the live knobs. Two are set to values no patch has yet
-measured together: `tower_hp` is **16** (a placeholder from the T2 pacing sweep,
-never confirmed) and `reveal_radius` is **2** (ruled, but only probed on T1).
+`engine/config.py` holds the live knobs. `tower_hp` **16** is a placeholder from
+the T2 pacing sweep, never confirmed, and `reveal_radius` **2** has now been read
+on T2 (`batch_0039`): the two together put the game outside its pacing band.
+Note that the P-0008 values (`kill_ap` 3, `death_band_bonus` 1) and `tower_hp`
+16 live as `config_overrides` in every request since `batch_0038`, not as
+defaults in `config.py`; carry them forward in any new request.
 
 ## 2. What is queued and why
 
 | run | what it settles |
 |---|---|
-| **P-0009** — raise `dragon_ap_each` from 1, personality batch | the objective lever the lead designer approved. The knob is wired and deliberately still at 1; nothing else is pending on it. |
-| a T2 read at reveal radius 2 | the ruling was made on T1 probes. The direction was clear, the magnitude was not. |
-| **the personality state machine** (§9) | a team AI that switches personality on the game state, bred over generations. Changes the field champion balance is measured in, so it comes first. |
-| champion balance | only after the three above, and read on a mixed field. See §3. |
+| ~~P-0009~~ | **done, failed** (`batch_0040`, RQ-039). Pricing the Dragon in AP changed nothing; `dragon_ap_each` is back at 1. |
+| ~~a T2 read at reveal radius 2~~ | **done** (`batch_0039`, RQ-038). Direction held; pacing broke. Waiting on the lead designer. |
+| **the personality state machine** (§9) | a team AI that switches personality on the game state, bred over generations. Now the next step: it changes the field champion balance is measured in, and it is the one remaining way to ask whether anything beats the sieger. |
+| champion balance | only after §9 has a winner, and read on a mixed field. See §3. |
 
-A 120-game T2 personality batch costs about 70–90 minutes on 4 cores.
+Two RULE-Qs are open for the lead designer before anything pacing-adjacent is
+touched: **RQ-038** (reveal radius 2 broke pacing; `tower_hp` 16 is the
+obvious lever) and **RQ-039** (objectives priced in AP are inert; what should
+they pay in?).
+
+A 120-game T2 personality batch costs 65–80 minutes on 4 cores.
 
 ## 3. The finding that should govern what happens next
 
@@ -57,6 +61,27 @@ P-0008 (a kill pays 3 AP instead of 1, death timers a round longer) passed both
 its metrics and closed the spread from 65 points to 36. It did not level the
 field: the sieger still wins 70.7% and its interval sits clear of everything
 below the laner.
+
+Two batches since, both paired with `batch_0038` by seed:
+
+| personality | batch_0038 (radius 1) | batch_0039 (radius 2) | batch_0040 (+ Dragon pays 2) |
+|---|---|---|---|
+| sieger | 70.7% | 69.0% | **74.1%** |
+| laner | 55.6% | 59.3% | 59.3% |
+| objective | 45.2% | 47.6% | **40.5%** |
+| brawler | 35.4% | 35.4% | 33.3% |
+| warder | 34.2% | 28.9% | 31.6% |
+
+Neither the sight ruling nor the objective lever moved the field. P-0009 is the
+instructive one: the extra AP landed exactly where it should (the objective
+personality's income rose 3.74 to 4.65 a round) and that personality lost more.
+The sieger takes 0.59 Dragons a game and wins; the team with more Dragons than
+its opponent wins 42% in both batches; Baron, already map-shaped, sits at 47.7%
+when secured. Shop spend runs 11 AP a team-round against 2.4 on abilities.
+**Teams are not short of AP, so any lever that pays AP is inert at the
+margin.** A tower is the only thing on the map that converts activations
+directly into the win condition. That is RQ-037 restated from the economy
+side, and it is why the levers left are pillar-adjacent (RQ-039 lists four).
 
 The consequence for Phase 4 is the important part. A champion win rate read in
 a field where sieging wins is mostly a measure of that champion's siege
@@ -138,21 +163,28 @@ python tools/run_batch.py reports/requests/batch_0038.json --workers 4   # the p
 
 In order:
 
-1. **P-0009, the objective lever.** Raise `dragon_ap_each` and measure on a
-   personality batch against `batch_0038`. Target: the sieger below 60% and the
-   spread below 25 points.
-2. **A T2 read at reveal radius 2**, since the ruling rests on T1 probes.
-3. **Make the team AI a state machine over the personalities** (§9). This comes
-   before champion balance because it changes the field the roster is measured
-   in, exactly as the objective lever does.
-4. **Champion balance**, on a mixed field, not a mirror — and once §9 has a
+1. **Make the team AI a state machine over the personalities** (§9). It is
+   now the first item: both number levers have been tried, and §9 is the one
+   remaining way to ask whether any way of playing beats the sieger. Read it
+   against `batch_0039` values (P-0008 overrides, `dragon_ap_each` 1).
+2. **Champion balance**, on a mixed field, not a mirror — and once §9 has a
    winner, against that rather than against fixed personalities. RQ-028 still
    applies: with 5 champions per role a champion plays 40% of games, so
    ±2.2-point verdicts need roughly 5,000 games. Consider a T1 sweep to find
    outliers and a T2 batch to confirm only those.
-5. **Pacing last**, as ruled. `tower_hp` 16 has never been confirmed, and both
-   P-0006 and P-0008 moved game length underneath it.
-6. **Re-run the exploit sweep.** The Phase 5 gate was met under rules 1.0.0.
+3. **Pacing**, when RQ-038 is ruled. `tower_hp` 16 has never been confirmed,
+   and rules 1.7.0 moved the game to median 18 with a fifth of games
+   unresolved. Do not tune it on T1.
+4. **The objective's payoff**, when RQ-039 is ruled. Do not re-run an AP-priced
+   objective lever; `log/patches/P-0009.json` records why.
+5. **Re-run the exploit sweep.** The Phase 5 gate was met under rules 1.0.0.
+
+Running sims in this environment: the cloud container is reclaimed after
+roughly an hour idle and a detached run dies with it (`batch_0040` was lost
+once this way and re-run). Launch a batch in the background, then keep the
+session active with a scheduled check-in every 30 minutes until it reports.
+Raw per-game dumps (`--dump-raw`) go to `reports/raw/`, which is gitignored;
+the per-personality Dragon and AP figures above were computed from them.
 
 ## 8. Map of the repository
 

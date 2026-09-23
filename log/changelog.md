@@ -198,6 +198,7 @@ a proper batch; 8 games says nothing about which personality is strongest.
 | artefact | version | change |
 |---|---|---|
 | rules | 1.7.0 | unchanged. Rules 1.7.0 (reveal radius 2) read on T2 for the first time: `batch_0039`. |
+| config | - | `dragon_ap_each` tried at 2 (P-0009) and left at 1. |
 | tests | - | 119, all passing. |
 
 ### Iteration 7 batches
@@ -205,3 +206,4 @@ a proper batch; 8 games says nothing about which personality is strongest.
 | batch | matchup | games | result |
 |---|---|---|---|
 | batch_0039 | T2 personality pool, P-0008 values, rules 1.7.0 | 120 | The T2 read at reveal radius 2 (RQ-038), paired with batch_0038 by seed. Snipes down as the T1 probes said (true snipes 54.4% -> 40.2% of uses), champion-kill AP up 70%, but median length 15 -> 18 and Nexus kills 96.7% -> 78.3%. Personality field unchanged: sieger 69.0%, spread 40. |
+| batch_0040 | as batch_0039 with `dragon_ap_each` 2 | 120 | **P-0009, FAIL.** Sieger 74.1%, objective 40.5%, spread 42.5. Dragon takes unchanged, 97 of 120 paired games had the same winner. The AP landed and did nothing: teams are not short of AP (RQ-039). Not adopted. |

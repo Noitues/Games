@@ -199,3 +199,33 @@ lead designer moved pacing last. Options, none applied:
 P-0009 (`batch_0040`) is read against `batch_0039`, so its verdict is not
 confounded by this; but its pre-registered revert condition on median length
 must be read as a delta from 18, since the baseline is already outside 13-16.
+
+| id | question | finding | status |
+|---|---|---|---|
+| RQ-039 | Does pricing the Dragon higher (RQ-037a's approved lever) pull teams into each other? | **No. P-0009 failed both metrics and the lever is inert.** `batch_0040` doubled what a Dragon card pays, paired by seed with `batch_0039`. Sieger 69.0% to **74.1%**, objective 47.6% to **40.5%**, spread 40 to 42.5; 97 of 120 paired games had the same winner. Dragon takes did not move (2.33 to 2.37 a game) and the same teams took them: the sieger 0.59 a game in both batches, the objective personality 1.8-1.9. The AP landed where it should - the objective personality's income rose 3.74 to 4.65 a round - and it lost more. In both batches the team with more Dragons than its opponent wins 42%; Baron, whose payoff is already map-shaped, sits at 47.7% when secured. Shop spend runs 11 AP a team-round against 2.4 on abilities, and AP-cost abilities are used in 19.5% of the rounds they are affordable: **teams are not short of AP, so paying them more of it changes nothing.** The only thing on the map that pays back the activations it costs is a tower. `dragon_ap_each` stays at 1. | **HUMAN** |
+
+### What this says about RQ-037
+
+RQ-037 found that the game rewards one way of playing. P-0008 priced the fight
+and closed half the gap; P-0009 priced the objective and closed none of it,
+and the reason is now visible in the economy rather than the personalities: AP
+is abundant and activations are scarce. Every source of AP is fungible (the
+chip-equals-AP pillar) and most of it goes to the shop, so a lever that adds AP
+anywhere adds nothing at the margin. A tower is different in kind: chipping it
+spends activations directly on the win condition. Dragon and Baron spend
+activations on AP, and AP does not win games.
+
+Levers a designer might reach for, none applied and all pillar-adjacent:
+
+1. Pay objectives in tempo rather than AP - a Dragon card that deals hits to a
+   structure at Upkeep, or extends reach, or shortens a cooldown.
+2. Make objectives cheaper in activations (Dragon HP 8, Baron 12) so the price
+   matches what they pay.
+3. Make AP scarce, so that it matters who has it: a lower base, or shop prices
+   that rise, so that objective income is the difference.
+4. Accept the sieger as the game's spine and use the §9 state machine to ask
+   whether any switching strategy can beat it. If none can, RQ-037 is a
+   design fact, not a tuning problem.
+
+The AI is not the confound here. The objective personality already goes to the
+pit and takes the Dragon; what it cannot do is turn the card into towers.

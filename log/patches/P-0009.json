@@ -5,9 +5,7 @@
     "roster": "1.6.0",
     "ai": "1.3.0"
   },
-  "to": {
-    "rules": "1.7.1"
-  },
+  "to": {},
   "lever_class": "economy",
   "changes": [
     {
@@ -22,5 +20,93 @@
   "revert_if": "The objective personality clears 65% (one dominant strategy swapped for another is not a fix), or median game length leaves 13-16 rounds, or win rate when Dragon is secured rises above 70% (the card deciding games outright), or games unresolved at round 20 exceed 5%.",
   "side_effects": "More AP in the game overall, so item timings move and the economy scorecard's 1.5x outliers may shift; the AREA engines are unaffected in kind. Dragon sits 1 hex nearer the South Nexus, so the South side may gain - watch the North/South split, which batch_0038 already had at north 60%. Baron is untouched, so the two objectives are no longer symmetric in value.",
   "pillar_change": false,
-  "note": "Read against batch_0039, not batch_0038: batch_0038 ran at reveal radius 1 and rules 1.7.0 moved it to 2, so batch_0039 re-runs batch_0038 under the current rules first and P-0009 changes one thing on top of it. Held constant: rules 1.7.0, roster 1.6.0, ai 1.3.0, tower HP 16, the P-0008 kill and death-band values, seed 3801."
+  "note": "Read against batch_0039, not batch_0038: batch_0038 ran at reveal radius 1 and rules 1.7.0 moved it to 2, so batch_0039 re-runs batch_0038 under the current rules first and P-0009 changes one thing on top of it. Held constant: rules 1.7.0, roster 1.6.0, ai 1.3.0, tower HP 16, the P-0008 kill and death-band values, seed 3801.",
+  "result": {
+    "verdict": "FAIL on both metrics - not adopted; dragon_ap_each stays at 1",
+    "batches": {
+      "before": "batch_0039",
+      "after": "batch_0040",
+      "held_constant": "rules 1.7.0, roster 1.6.0, ai 1.3.0, tower HP 16, reveal radius 2, kill AP 3, death band bonus 1, seed 3801 (draws paired)"
+    },
+    "personalities": {
+      "sieger": [
+        69.0,
+        74.1
+      ],
+      "laner": [
+        59.3,
+        59.3
+      ],
+      "objective": [
+        47.6,
+        40.5
+      ],
+      "brawler": [
+        35.4,
+        33.3
+      ],
+      "warder": [
+        28.9,
+        31.6
+      ]
+    },
+    "success_metric": {
+      "sieger_below_60": "74.1% - not met, moved the wrong way",
+      "spread_below_25": "40 -> 42.5 points - not met"
+    },
+    "revert_checks": {
+      "objective_above_65": "40.5% - no",
+      "median_length": "18 -> 17 rounds, a delta of -1 on a baseline already outside 13-16",
+      "dragon_secured_wr_above_70": "47.1% -> 45.4% - no",
+      "unresolved_above_5pct": "21.7% -> 20.8%, the baseline's problem (RQ-038), unchanged"
+    },
+    "where_the_ap_went": {
+      "base_ap_per_team_round": [
+        3.52,
+        4.02
+      ],
+      "dragon_takes_per_game": [
+        2.33,
+        2.37
+      ],
+      "dragons_per_game_by_personality": {
+        "sieger": [
+          0.59,
+          0.59
+        ],
+        "objective": [
+          1.76,
+          1.9
+        ],
+        "laner": [
+          1.28,
+          1.17
+        ],
+        "brawler": [
+          1.21,
+          1.31
+        ],
+        "warder": [
+          1.18,
+          1.16
+        ]
+      },
+      "base_ap_per_round_by_personality": {
+        "sieger": [
+          3.25,
+          3.49
+        ],
+        "objective": [
+          3.74,
+          4.65
+        ]
+      },
+      "win_rate_with_more_dragons_than_opponent": [
+        42.7,
+        41.4
+      ],
+      "paired_games_same_winner": "97 of 120"
+    },
+    "reading": "The lever did nothing to behaviour and nothing to outcomes. Dragon takes per game did not move (2.33 to 2.37) and the same teams took them: the sieger takes 0.59 a game in both batches, the objective personality 1.8-1.9. The extra AP landed exactly where it should - the objective personality's base income rose from 3.74 to 4.65 a round - and the objective personality lost more, 47.6% to 40.5%. The team with more Dragons than its opponent wins 42% of games in both batches. 97 of the 120 paired games had the same winner. AP is not what a team in this game is short of: shop spend runs 11 AP a team-round against 2.4 on abilities, and the scorecard already records AP-cost abilities used in only 19.5% of the rounds they are affordable. A team paid more of a currency it cannot convert does not change how it plays or whether it wins. The objective lever, priced in AP, is inert; and Baron, whose payoff is already map-shaped (Empowered waves), sits at 47.7% when secured, so it is not just the Dragon. Nothing on the map pays back the activations it costs except a tower, which is RQ-037 restated from the objective side."
+  }
 }
