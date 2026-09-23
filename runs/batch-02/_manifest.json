@@ -34,15 +34,8 @@
  "cohort_id": null,
  "arm_counts": {
   "A": 10,
-  "B": 1,
-  "C": 1
+  "B": 5,
+  "C": 5
  },
- "started": "2026-09-23T15:05:56",
- "finished": "2026-09-23T16:28:00",
- "batch_tokens": {
-  "prompt": 15694759,
-  "completion": 2823175,
-  "cost_usd": 46.1534,
-  "calls": 1016
- }
+ "started": "2026-09-23T18:13:29"
 }
