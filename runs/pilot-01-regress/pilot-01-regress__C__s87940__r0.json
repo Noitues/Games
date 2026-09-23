@@ -1,0 +1,1029 @@
+{
+ "run_id": "pilot-01-regress__C__s87940__r0",
+ "batch_id": "pilot-01-regress",
+ "arm": "C",
+ "seed": 87940,
+ "spec_version": "0.2.0",
+ "status": "partial",
+ "error": null,
+ "backend": "claude_cli",
+ "run_index": 0,
+ "cohort_id": "cohort-pilot-01",
+ "assignments": [
+  {
+   "character_id": "CH-1",
+   "name": "Ysolde",
+   "personality_id": "optimizer",
+   "seat": 0
+  },
+  {
+   "character_id": "CH-2",
+   "name": "Aldous",
+   "personality_id": "protector",
+   "seat": 1
+  },
+  {
+   "character_id": "CH-3",
+   "name": "Morwen",
+   "personality_id": "instigator",
+   "seat": 2
+  },
+  {
+   "character_id": "CH-4",
+   "name": "Mire",
+   "personality_id": "tactician",
+   "seat": 3
+  }
+ ],
+ "prep_packet": {
+  "anchors": [
+   "H-03",
+   "T-01"
+  ],
+  "environment": [
+   "H-04",
+   "F-02",
+   "L-01"
+  ],
+  "modules": [
+   {
+    "id": "M-1",
+    "cards": [
+     "C-02",
+     "T-03"
+    ],
+    "trigger": "fiction:the party leaves the road or causeway"
+   },
+   {
+    "id": "M-2",
+    "cards": [
+     "T-05",
+     "F-01"
+    ],
+    "trigger": "clock_fills:T-01"
+   }
+  ],
+  "beat_frames": [
+   {
+    "id": "B-02",
+    "name": "PLEA FOR HELP",
+    "trigger": "compel_refused",
+    "used": null
+   },
+   {
+    "id": "B-03",
+    "name": "BETRAYAL",
+    "trigger": "scene_start:3",
+    "used": null
+   },
+   {
+    "id": "B-05",
+    "name": "FALSE SANCTUARY",
+    "trigger": "tension_at_least:4",
+    "used": null
+   }
+  ]
+ },
+ "events": [
+  {
+   "event_id": 1,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Session start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "FP: Ysolde=3, Aldous=3, Morwen=3, Mire=3",
+   "event_type": "session_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 2,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + H-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "anchor; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 3,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + T-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "anchor; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 4,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Build Session Deck",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "7 cards: 3 GM + 4 player",
+   "event_type": "deck_built",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 5,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 6,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Will the party get Corrin's overloaded skiff safely across before the rising water — or the thing stalking the reeds — takes it first?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 7,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "overcome",
+   "skill": "Rapport",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "I hurry down the dock toward Corrin, keeping my footing on the slick planks. I take position at the skiff's side and call out steady instructions—weight low, we",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 8,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "overcome",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Aldous bolts across the rain-slicked dock, his eyes fixed on the struggling skiff and the dark water beneath it. He reads the patterns in the falling rain and t",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 9,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "overcome",
+   "skill": "Will",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Morwen strides down to the dock with absolute authority, boots splashing through the rain-slicked boards. She immediately takes command—pointing, calling out or",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 10,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "overcome",
+   "skill": "Physique",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Mire runs across the slick dock toward the skiff, her watch-trained eyes quickly assessing the load distribution and the encroaching water. She moves to positio",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 11,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Panics near deep water",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "AL-01",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "As Aldous plants his feet at the swamping pilings and stares into the churning black water to read its patterns, a jolt of memory from the Sunken Barge locks his knees — he freezes for one dangerous h",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 12,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Rail + PS-13",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PS-13",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "story draw (free_compel_accepted)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 13,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Story draw (free_compel_accepted)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PS-13",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "story_draw",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 14,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "Overcome: I hurry down the dock toward Corrin, keeping my footing on t",
+   "skill": "Rapport +3",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ - - +",
+   "total": "+3",
+   "opposition": "+1",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 4,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 15,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Overcome: Aldous bolts across the rain-slicked dock, his eyes fixed on",
+   "skill": "Notice +4",
+   "tags_invoked": "Reads omens in the rainfall [AL-01]",
+   "fp_spent": 1,
+   "dice": "0 - - -",
+   "total": "+3",
+   "opposition": "+2",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [
+    "swallows fords overnight [H-03]"
+   ],
+   "target_card": "H-03",
+   "target_npc": "",
+   "shifts": 1,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 16,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "Overcome: Morwen strides down to the dock with absolute authority, boo",
+   "skill": "Will +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "- + - +",
+   "total": "+4",
+   "opposition": "+2",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "swallows fords overnight [H-03]"
+   ],
+   "target_card": "H-03",
+   "target_npc": "",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 17,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "Overcome: Mire runs across the slick dock toward the skiff, her watch-",
+   "skill": "Physique +3",
+   "tags_invoked": "Trained young in watch drills [MI-01]",
+   "fp_spent": 1,
+   "dice": "0 + 0 0",
+   "total": "+6",
+   "opposition": "+4",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "GM invokes: cuts off escape routes [H-03]",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [
+    "swallows fords overnight [H-03]"
+   ],
+   "target_card": "H-03",
+   "target_npc": "",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 18,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "3->3",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "fled/bypassed +1, resolved -1",
+   "event_type": "tension",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 19,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Weight PS-13",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "PS-13",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "1->2 (drawn/featured this scene)",
+   "event_type": "story_weight",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 20,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Corrin the Ferry-hand",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 21,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  }
+ ],
+ "scenes": [
+  {
+   "index": 1,
+   "tension_before": 3,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 1,
+   "climax": false,
+   "tension_after": 3,
+   "triggers_fired": []
+  }
+ ],
+ "transcript": [
+  {
+   "session": 1,
+   "scene": 0,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Session begins. Each player has Ysolde 3 FP, Aldous 3 FP, Morwen 3 FP, Mire 3 FP. Face-up: Rising Floodwaters [H-03], Hive-Touched Pack [T-01].",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Rain needles the black water of Hollowmoot's dock-row, and lanterns gutter under sagging awnings as a Warden crier reads the morning tally: the Causeway holds, but Gullet Ford is 'watched.' A ferry-hand named Corrin fights to keep an overloaded skiff of refugees from swamping at the pilings, shouting for hands. Somewhere out past the reeds, faint and wrong, drifts a thin thread of song. The four of you are here — pulled by debt, duty, grief or hunger — when Corrin's eyes find you and she begs for help before the tide takes the last dry landing.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Easy now—let the current help us, not fight it. I've kept crews steadier than this through tighter spaces.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(I hurry down the dock toward Corrin, keeping my footing on the slick planks. I take position at the skiff's side and call out steady instructions—weight low, weight distributed—reading Corrin's panic and the refugees' fear. My voice is the one that's kept order on night-barges through worse weather. I steady the gunwale, guide a woman's foot to the safer position, nod to Corrin to hold the line.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "I'm coming, Corrin! The rain's warning me—shift weight toward the stern or she'll swamp! These refugees won't die on my watch!",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous bolts across the rain-slicked dock, his eyes fixed on the struggling skiff and the dark water beneath it. He reads the patterns in the falling rain and the surge of the flood, calling urgent warnings to Corrin about the dangerous currents and weight distribution. His hands are already reaching to help steady the boat as he reaches the pilings.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Everyone off those heavy goods—NOW! Corrin, push to the shallow side. I've guided pilgrims through worse water than this, and we're not losing anyone today.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen strides down to the dock with absolute authority, boots splashing through the rain-slicked boards. She immediately takes command—pointing, calling out orders to dock-workers to lighten the skiff's load, organizing refugees with the voice of someone used to being obeyed. Her presence alone seems to cut through the panic.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "I'm coming, Corrin! Hold the line!",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire runs across the slick dock toward the skiff, her watch-trained eyes quickly assessing the load distribution and the encroaching water. She moves to position herself at the boat's side, using her strength to help stabilize the hull and keep the refugees' weight centered against the rising tide.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "No—no, I've got it. I've *got* this. Corrin, hold steady—I won't let her slip!",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde — overcome with Rapport: dice + - - + → Good (+3) vs Average (+1): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — overcome with Notice: dice 0 - - -, invoking Reads omens in the rainfall [AL-01] → Good (+3) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen — overcome with Will: dice - + - + → Great (+4) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — overcome with Physique: dice 0 + 0 0, invoking Trained young in watch drills [MI-01] → Fantastic (+6) vs Great (+4): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "It comes together like a single held breath let go. Ysolde's voice cuts through the panic and the skiff steadies under her calm counting; Aldous reads the rain's slant and calls the exact moment to lean before a wave-surge would've rolled them; Morwen's bark has dock-hands hurling sacks of grain overboard without question, and Mire simply plants herself against the hull like a fifth piling, holding the line until the worst of the swell passes beneath them. Corrin hauls the last soaked child up onto the dock with a sob of relief, and the skiff — battered, half-swamped, but whole — scrapes safe onto the landing. For a moment there's only rain and gasping and the wet slap of rope on wood. Then, out past the reeds, the pale thread of that wrong song rises and fades again — closer than before — and everyone's eyes go to the drowned horizon, where a thin smear of smoke hangs over what should be Aldous's home village, silent as a held breath. Corrin follows his stare and goes quiet herself. \"That's not cook-smoke,\" she says. \"And Marrow's bells haven't rung in two days. I thought it was just the wet dampening the sound.\"\n\nThe refugees are ashore. The ford is drowned but the dock is dry, and for now, the stalking thing in the reeds keeps its distance.",
+   "visible_to": "all"
+  }
+ ],
+ "costs": [
+  {
+   "event": "free_compel",
+   "scene": 1,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Panics near deep water",
+   "text": "As Aldous plants his feet at the swamping pilings and stares into the churning black water to read its patterns, a jolt of memory from the Sunken Barge locks his knees — he freezes for one dangerous heartbeat, the skiff lurching unattended in his hands before he can force himself to move again.",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Aldous"
+  }
+ ],
+ "referee": {
+  "violations": [
+   {
+    "section": "§6A",
+    "issue": "The compel's complication (Aldous freezing over the 'Sunken Barge' memory, event 11) was fully narrated before the triggered Story Pile card (PS-13) was even drawn (events 12-13), so the drawn card's content could not have been used to build that complication as §6A requires ('The complication must involve the drawn NPC or move the drawn thread').",
+    "event_id": 11,
+    "scene": 1,
+    "source": "referee"
+   },
+   {
+    "section": "§6",
+    "issue": "Scene-end tension adjustment credited '+1 fled/bypassed' toward a card the party actively confronted and overcame via four successful rolls, not fled, bypassed, or ignored — the stated justification does not match the logged fiction for that row of the §6 table.",
+    "event_id": 18,
+    "scene": 1,
+    "source": "referee"
+   }
+  ],
+  "ambiguities": [
+   {
+    "id": "AMB-01",
+    "section": "brief",
+    "issue": "Arm A lists 'Attention', which the spec never defines.",
+    "interim_ruling": "Not modelled.",
+    "detail": "Arm definition lists Attention; not modelled.",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-12",
+    "section": "§8",
+    "issue": "Stress box values are unspecified.",
+    "interim_ruling": "Fate Core: boxes 1 and 2; Physique/Will +1/+2 adds a 3 box, +3 or more adds 3 and 4.",
+    "detail": "stress boxes built with Fate Core values",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-22",
+    "section": "§3/§7",
+    "issue": "Does a GLOBAL anchor give the GM a free invoke like a GM card?",
+    "interim_ruling": "Yes, GLOBAL cards placed on the rail give the GM 1 free invoke that scene.",
+    "detail": "H-03",
+    "scene": 0,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-04",
+    "section": "§6",
+    "issue": "Do tension adjustment rows stack?",
+    "interim_ruling": "All applicable rows are summed, then clamped to 1-6.",
+    "detail": "fled/bypassed +1, resolved -1",
+    "scene": 1,
+    "source": "engine"
+   },
+   {
+    "section": "§6A",
+    "issue": "When a player accepts a compel that did not come from a deck draw, §6A requires 'the complication must involve the drawn NPC or move the drawn thread.' In this log the compel's full complication was narrated at event 11 (Aldous freezing over the 'Sunken Barge' memory) *before* the triggered Story Pile draw (PS-13) happened at events 12-13. The spec does not say whether the pile card must be drawn first to seed the complication, or may be drawn afterward as a separate addition to the rail/fiction.",
+    "interim_ruling": "Table ruled that the compel's immediate complication can be freely narrated by the GM, and the subsequently-drawn Story Pile card (PS-13) is treated as a follow-on rail addition to be woven into later scenes rather than a card whose content had to inform this specific compel.",
+    "scene": 1,
+    "source": "referee"
+   },
+   {
+    "section": "§6",
+    "issue": "The Tension adjustment table only lists 'fled, bypassed or ignored a face-up THREAT or FACTION' (+1) and 'resolved a THREAT or filled a goal' (-1); it never mentions HAZARD cards. H-03 (used as opposition in this scene) appears to be a HAZARD, yet the scene-end tension note applied both rows to it.",
+    "interim_ruling": "Table treated HAZARD as equivalent to THREAT/FACTION for the purposes of the §6 tension-adjustment table, since the rules are silent on HAZARD's treatment there.",
+    "scene": 1,
+    "source": "referee"
+   },
+   {
+    "section": "§4 / §6A",
+    "issue": "§6A states the GM gains 1 free invoke on a story card drawn via an accepted non-deck compel, and the event-log format note says GM free-invoke grants are logged as their own rows ('GM +1 free invoke'). No such row appears for PS-13 after events 12-13.",
+    "interim_ruling": "Table treated the free invoke as automatically granted but only logged it if and when actually spent; since it went unused this scene, no separate grant row was written.",
+    "scene": 1,
+    "source": "referee"
+   }
+  ],
+  "cost_checks": [
+   {
+    "event_id": 11,
+    "used_drawn_card": false,
+    "note": "draw_id is empty in the costs/compels list for this compel; it is a normal Fate compel on Aldous's own live weakness tag 'Panics near deep water' (card AL-01, already in his binder), not a Session Deck draw. Per §3/§4, deck-draw costs only apply to ties/major costs from Session Deck rolls, so no drawn card was required here — the compel correctly used a live tag directly rather than a drawn card.",
+    "scene": 1
+   }
+  ],
+  "friction": [
+   {
+    "scene": 1,
+    "text": "The Story Pile draw (PS-13) for Aldous's non-deck compel was resolved only after the compel's complication was already fully narrated, making it impossible to confirm the drawn card's content actually shaped 'the complication' as §6A requires."
+   },
+   {
+    "scene": 1,
+    "text": "The scene-end Tension note ('fled/bypassed +1, resolved -1') doesn't match the fiction: the party actively engaged with and succeeded against the obstacle across four rolls rather than fleeing, bypassing, or ignoring it, and the target card (H-03) appears to be a HAZARD rather than the THREAT/FACTION types the §6 table names."
+   },
+   {
+    "scene": 1,
+    "text": "Event 17's notes ('GM invokes: cuts off escape routes [H-03]') read like an active GM invoke, but no fate point or logged free-invoke grant accompanies it and the math shows no bonus was actually added — the ambiguous phrasing makes it hard to audit whether §3's 'a tag used to raise the difficulty cannot also be invoked by the GM on that roll' was respected."
+   }
+  ]
+ },
+ "surveys": [],
+ "interview": null,
+ "chronicle": null,
+ "state_end": {
+  "tension": 3,
+  "fp": {
+   "Ysolde": 3,
+   "Aldous": 3,
+   "Morwen": 3,
+   "Mire": 2
+  },
+  "surfaced": [],
+  "deck_player_cards": {
+   "PX-04": "Ysolde",
+   "PX-22": "Aldous",
+   "PX-09": "Morwen",
+   "PX-11": "Mire"
+  },
+  "guarantee_pulled": [],
+  "guarantee_failed": [],
+  "deck_left": [
+   "H-04",
+   "PX-04",
+   "F-02",
+   "L-01",
+   "PX-09",
+   "PX-11",
+   "PX-22"
+  ],
+  "draws": 0,
+  "turns": {
+   "Ysolde": 1,
+   "Aldous": 1,
+   "Morwen": 1,
+   "Mire": 1
+  }
+ },
+ "notes": [],
+ "metrics": {},
+ "tokens": {
+  "prompt": 141672,
+  "completion": 40374,
+  "cost_usd": 0.6984,
+  "calls": 13
+ },
+ "llm_calls": 13,
+ "models": {
+  "gm": "claude-sonnet-5",
+  "player": "claude-haiku-4-5-20251001",
+  "referee": "claude-sonnet-5",
+  "interviewer": "claude-haiku-4-5-20251001"
+ },
+ "elapsed_s": 349.2
+}

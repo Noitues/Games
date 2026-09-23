@@ -1,0 +1,1293 @@
+{
+ "run_id": "pilot-01-regress__B__s87941__r1",
+ "batch_id": "pilot-01-regress",
+ "arm": "B",
+ "seed": 87941,
+ "spec_version": "0.2.0",
+ "status": "partial",
+ "error": null,
+ "backend": "claude_cli",
+ "run_index": 1,
+ "cohort_id": "cohort-pilot-01",
+ "assignments": [
+  {
+   "character_id": "CH-1",
+   "name": "Ysolde",
+   "personality_id": "storyteller",
+   "seat": 0
+  },
+  {
+   "character_id": "CH-2",
+   "name": "Aldous",
+   "personality_id": "rules_lawyer",
+   "seat": 1
+  },
+  {
+   "character_id": "CH-3",
+   "name": "Morwen",
+   "personality_id": "lurker",
+   "seat": 2
+  },
+  {
+   "character_id": "CH-4",
+   "name": "Mire",
+   "personality_id": "method_actor",
+   "seat": 3
+  }
+ ],
+ "prep_packet": {
+  "anchors": [
+   "H-01",
+   "L-02"
+  ],
+  "environment": [
+   "H-05",
+   "T-01",
+   "F-03"
+  ],
+  "modules": [
+   {
+    "id": "M-1",
+    "cards": [
+     "C-01",
+     "T-05"
+    ],
+    "trigger": "scene_start:3"
+   },
+   {
+    "id": "M-2",
+    "cards": [
+     "H-06",
+     "T-02"
+    ],
+    "trigger": "deck_at_most:3"
+   }
+  ],
+  "beat_frames": [
+   {
+    "id": "B-01",
+    "name": "AMBUSH",
+    "trigger": "fiction:the party enters a settlement",
+    "used": null
+   },
+   {
+    "id": "B-05",
+    "name": "FALSE SANCTUARY",
+    "trigger": "clock_fills:L-02",
+    "used": null
+   },
+   {
+    "id": "B-02",
+    "name": "PLEA FOR HELP",
+    "trigger": "compel_refused",
+    "used": null
+   }
+  ]
+ },
+ "events": [
+  {
+   "event_id": 1,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Session start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "FP: Ysolde=3, Aldous=3, Morwen=3, Mire=3",
+   "event_type": "session_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 2,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + H-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "anchor",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 3,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + L-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "L-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "anchor",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 4,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 5,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Will the party agree to go into Saint Orrin's Drowned Temple after the missing boy, and what will they risk to do it?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 6,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "When Senna's raw fingers close around her sleeve, Ysolde doesn't pull away. She draws the desperate mother into a quieter corner, away from the press of the tal",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 7,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Aldous gently takes Senna's raw, shaking hands. Cold radiates from his fingers—the permanent chill of the drowned—and he meets her eyes with the absolute certai",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 8,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Morwen steps forward from the crowd beneath the eave, meeting Senna's raw red eyes. She doesn't offer empty comfort, just presence—and a question that cuts thro",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 9,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Mire closes her hand over Senna's, feeling the raw skin, the desperation in the grip. Her face hardens—not against Senna, but at the thought of the Wardens' cru",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 10,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Too Famous to Hide",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": "",
+   "notes": "As word spreads that the famous exorcist is asking questions about the missing boy, a knot of onlookers gathers under the eaves — and among them, unmistakably, a Warden's runner slips away toward the ",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 11,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Trigger fired: B-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "fiction:the party enters a settlement",
+   "event_type": "trigger",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 12,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "triggers fired: ['B-01']",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 13,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Scene 2 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 14,
+   "session": 1,
+   "scene": 2,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Does the party break free of the Wardens and reach the Ashwater Causeway before it's sealed, or does the patrol take one of them in?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 15,
+   "session": 1,
+   "scene": 2,
+   "actor": "Ysolde",
+   "action": "create_advantage",
+   "skill": "Rapport",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Ysolde steps into the torchlight and rain, meeting the sergeant's eyes with the calm of someone who has read a hundred frightened men's hearts. She doesn't hide",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 16,
+   "session": 1,
+   "scene": 2,
+   "actor": "Aldous",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Aldous steps forward into the deluge, rain streaming from his soaked coat, and raises one hand as if conducting the storm itself. His fingers trace patterns in ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 17,
+   "session": 1,
+   "scene": 2,
+   "actor": "Morwen",
+   "action": "overcome",
+   "skill": "Will",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Morwen plants herself square in the sergeant's path, rain streaming down her face. She meets his pointing finger with a steady gaze, unmoving, her jaw set—not r",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 18,
+   "session": 1,
+   "scene": 2,
+   "actor": "Mire",
+   "action": "attack",
+   "skill": "Fight",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Mire steps directly into the sergeant's path, rain hammering down between them. Her hand drops to her blade, and she meets his pointing finger with a glare forg",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 19,
+   "session": 1,
+   "scene": 2,
+   "actor": "Mire",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Vengeance Over Sense",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": "",
+   "notes": "The old grudge flares hot — Mire isn't just stopping the sergeant, she's driving her blade home like she means to finish what Verrick started. It's a killing stroke, not a warning one, and every Warde",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 20,
+   "session": 1,
+   "scene": 2,
+   "actor": "Ysolde",
+   "action": "Create Advantage: Ysolde steps into the torchlight and rain, meeting the serge",
+   "skill": "Rapport +3",
+   "tags_invoked": "Exiled Cook of the Night-Barge Who Hears Everything [YS-HC]",
+   "fp_spent": 1,
+   "dice": "- - - +",
+   "total": "+3",
+   "opposition": "-1 (NPC - - - 0)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.2.1 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Warden Sergeant Doss",
+   "shifts": 4,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 21,
+   "session": 1,
+   "scene": 2,
+   "actor": "Aldous",
+   "action": "Create Advantage: Aldous steps forward into the deluge, rain streaming from hi",
+   "skill": "Notice +4",
+   "tags_invoked": "Fortune-Teller Who Reads the Rain, Sole Survivor of the Wreck [AL-HC]",
+   "fp_spent": 1,
+   "dice": "0 - - +",
+   "total": "+5",
+   "opposition": "+1",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.2.2 (2 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [],
+   "target_card": "H-01",
+   "target_npc": "",
+   "shifts": 4,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 22,
+   "session": 1,
+   "scene": 2,
+   "actor": "Morwen",
+   "action": "Overcome: Morwen plants herself square in the sergeant's path, rain st",
+   "skill": "Will +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "0 + 0 0",
+   "total": "+5",
+   "opposition": "+3 (NPC 0 - + +)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Warden Sergeant Doss",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 4,
+    "Mire": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 23,
+   "session": 1,
+   "scene": 2,
+   "actor": "Mire",
+   "action": "Attack: Mire steps directly into the sergeant's path, rain hammering",
+   "skill": "Fight +4",
+   "tags_invoked": "Disgraced Warden Who Still Holds the Line on Wick Lane [MI-HC]; Cast out by Captain Verrick, marked enemy of the Causeway Wardens [MI-A3]; Vengeance Over Sense [MI-TR]",
+   "fp_spent": 3,
+   "dice": "0 - + -",
+   "total": "+9",
+   "opposition": "+3 (NPC + 0 0 0)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -3,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Warden Sergeant Doss",
+   "shifts": 6,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 4,
+    "Mire": 1
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 24,
+   "session": 1,
+   "scene": 2,
+   "actor": "Ysolde",
+   "action": "Defend vs Warden Spearmen (pair)",
+   "skill": "Athletics +1",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "0 + + -",
+   "total": "+2",
+   "opposition": "+3",
+   "result": "hit",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "While the sergeant's attention is pinned on Morwen and Mire, the two spearmen break left, hooked poles swinging low to k",
+   "event_type": "defend",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 4,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 25,
+   "session": 1,
+   "scene": 2,
+   "actor": "Ysolde",
+   "action": "Absorb 1 physical",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "; box 1",
+   "event_type": "harm",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 4,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 26,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Trigger fired: M-1",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "scene_start:3",
+   "event_type": "trigger",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 4,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 27,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Scene 2 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "triggers fired: ['M-1']",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 4,
+    "Mire": 1
+   },
+   "gm_fp": 4
+  }
+ ],
+ "scenes": [
+  {
+   "index": 1,
+   "tension_before": null,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 1,
+   "climax": false,
+   "tension_after": null,
+   "triggers_fired": [
+    "B-01"
+   ]
+  },
+  {
+   "index": 2,
+   "tension_before": null,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 1,
+   "climax": false,
+   "tension_after": null,
+   "triggers_fired": [
+    "M-1"
+   ]
+  }
+ ],
+ "transcript": [
+  {
+   "session": 1,
+   "scene": 0,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Session begins. Each player has Ysolde 3 FP, Aldous 3 FP, Morwen 3 FP, Mire 3 FP. Face-up: Endless Rain [H-01], Saint Orrin's Drowned Temple [L-02].",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Rain hammers the plank roofs of Hollowmoot like it has every day for eleven years, turning the walkways between stilt-houses to black running mud. Under the dripping eave of the tallow-seller's stall, a soaked woman named Senna grips the sleeve of whoever stands nearest — her hands raw, her voice cracking as she begs. Her boy Corin followed the swarm-song three nights running, out past the Wardens' torches, out along the drowned causeway toward Saint Orrin's temple, and last night he didn't come home. She says the belltower still shows a light some nights, and that the Wardens have already written Corin's name on the burning-list, in case he comes back changed. She has nothing to pay with but a dry blanket and a promise to owe.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Your boy heard something the Wardens fear to name—I see it in how they've already written his fate. Sit with me. What does this swarm-song sound like?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(When Senna's raw fingers close around her sleeve, Ysolde doesn't pull away. She draws the desperate mother into a quieter corner, away from the press of the tallow-seller's stall and the worst of the rain. With the practical care of a galley cook, she takes Senna's torn hands and examines them—not roughly, but directly, the way she learned to see what others looked away from.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "The Wardens are wrong to write him off, Senna. The swamp doesn't take souls randomly—it calls to those who can hear it. I'll find Corin, or I'll find what took him. The rain remembers everything.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous gently takes Senna's raw, shaking hands. Cold radiates from his fingers—the permanent chill of the drowned—and he meets her eyes with the absolute certainty of someone who has walked in death's shadow and lived. He glances toward the distant belltower where lamplight flickers through the endless rain.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "The Wardens won't burn him while I'm here. Tell me—when did the song start, and did Corin speak of anything else? Any words that weren't his own?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen steps forward from the crowd beneath the eave, meeting Senna's raw red eyes. She doesn't offer empty comfort, just presence—and a question that cuts through to what matters.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Your boy isn't something to be burned yet. And he won't be, not if I find him first. I know that temple—I held the line before they decided I wasn't holding it right. Tell me everything he saw before he followed the song.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire closes her hand over Senna's, feeling the raw skin, the desperation in the grip. Her face hardens—not against Senna, but at the thought of the Wardens' cruelty, the same cruelty that cast her out and marked her as an enemy. She knows exactly what \"burning-list\" means. She's seen the Order's work before.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "The Wardens already know I'm here.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Senna's raw fingers tighten as she answers — the song started nine nights back, thin as wind through a broken flute, and it grew a chorus each night after. Corin spoke words that weren't his own, she says, drowned-slow syllables in a language she'd only ever heard chanted at Saint Orrin's before the flood took it. The belltower light isn't candlelight, she swears — it pulses, slow, like something breathing. Before anyone can press further, a horn sounds twice down the walkway and torchlight flares through the rain: a Warden patrol, and the man at the front is already pointing — he's placed Morwen's face from a dozen woodcuts nailed to Hollowmoot's posts. Senna shrinks back into the shadows, pulling her shawl over her head, and the choice sharpens fast — stay and be counted, or move now, toward the drowned temple and the boy, before the Wardens close the causeway behind them.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Torchlight smears gold through the downpour as the Warden patrol splashes up the walkway, boots slapping mud, the sergeant's pointing finger never wavering from Morwen's face. Behind him, two more Wardens fan out with hooked poles meant for pulling hive-touched from the water — tonight, meant for something else. Senna is already gone, swallowed by shadow and rain, and Corin's name is still chalked on the burning-list nailed to the post behind them. The sergeant shouts over the rain: known heretic, wanted for questioning, and the causeway gate will be barred within the hour on his order. Every second spent arguing is a second closer to that gate swinging shut.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "The boy's drowning either way, Sergeant. Don't let him drown because you followed orders you knew were wrong.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde steps into the torchlight and rain, meeting the sergeant's eyes with the calm of someone who has read a hundred frightened men's hearts. She doesn't hide behind Morwen or bolt toward the temple—she stands in the mud between the Wardens and the causeway, steady as a stone in the current.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "I hear it in the rain—there's a lull coming through the downpour. Now. Run.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous steps forward into the deluge, rain streaming from his soaked coat, and raises one hand as if conducting the storm itself. His fingers trace patterns in the air, and for a moment his eyes shine with something otherworldly—the mark of the drowned. The rain's rhythm shifts, hesitates. A passage is opening.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "You'll have to burn me first.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen plants herself square in the sergeant's path, rain streaming down her face. She meets his pointing finger with a steady gaze, unmoving, her jaw set—not running, not yielding.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Not on my watch. You try to close that gate and I stop you—permanently if I have to.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire steps directly into the sergeant's path, rain hammering down between them. Her hand drops to her blade, and she meets his pointing finger with a glare forged in years of holding a line—first for the Wardens, now against them. She's not moving.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "You want to burn him? You burned me out first. This ends now.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde — create advantage with Rapport: dice - - - +, invoking Exiled Cook of the Night-Barge Who Hears Everything [YS-HC] → Good (+3) vs Poor (-1): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — create advantage with Notice: dice 0 - - +, invoking Fortune-Teller Who Reads the Rain, Sole Survivor of the Wreck [AL-HC] → Superb (+5) vs Average (+1): SUCCESS WITH STYLE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen — overcome with Will: dice 0 + 0 0 → Superb (+5) vs Good (+3): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — attack with Fight: dice 0 - + -, invoking Disgraced Warden Who Still Holds the Line on Wick Lane [MI-HC], Cast out by Captain Verrick, marked enemy of the Causeway Wardens [MI-A3], Vengeance Over Sense [MI-TR] → Beyond Legendary (+9) vs Good (+3): SUCCESS WITH STYLE (Warden Sergeant Doss taken out)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Warden Spearmen (pair) attacks Ysolde (physical): Good (+3) vs Ysolde's Athletics Fair (+2) — hit for 1",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Sergeant Doss folds into the mud under Mire's blade before he can finish his order, and for one heartbeat the whole patrol simply stops — the man who was supposed to tell them what to do isn't standing anymore. The two spearmen flinch, hooked poles wavering between Morwen's unmoving glare and Ysolde's steady, reasonable voice still ringing in their ears — Doss's own mercy, thrown back at them, has them second-guessing the burning-list already. Aldous's read on the storm pays off exactly when it matters: the downpour stutters, thins to a curtain of mist, and the causeway mouth opens up clear and unguarded in the gap. One spearman's hook catches Ysolde's shoulder as she turns to run — a shallow, glancing wound, more bruise than blood — but nothing that slows her down. By the time the rain closes back in behind them, the four of you are already splashing north along the Ashwater Causeway, Hollowmoot's torches shrinking into the grey, the drowned temple's dark spire waiting somewhere ahead in the murk.",
+   "visible_to": "all"
+  }
+ ],
+ "costs": [
+  {
+   "event": "free_compel",
+   "scene": 1,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Too Famous to Hide",
+   "text": "As word spreads that the famous exorcist is asking questions about the missing boy, a knot of onlookers gathers under the eaves — and among them, unmistakably, a Warden's runner slips away toward the causeway post to report it.",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Morwen"
+  },
+  {
+   "event": "free_compel",
+   "scene": 2,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Vengeance Over Sense",
+   "text": "The old grudge flares hot — Mire isn't just stopping the sergeant, she's driving her blade home like she means to finish what Verrick started. It's a killing stroke, not a warning one, and every Warden on the walkway will remember it.",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Mire"
+  }
+ ],
+ "referee": {
+  "violations": [],
+  "ambiguities": [
+   {
+    "id": "AMB-12",
+    "section": "§8",
+    "issue": "Stress box values are unspecified.",
+    "interim_ruling": "Fate Core: boxes 1 and 2; Physique/Will +1/+2 adds a 3 box, +3 or more adds 3 and 4.",
+    "detail": "stress boxes built with Fate Core values",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "section": "Aspects and invokes / Compels",
+    "issue": "Morwen's compel (event 10) invokes the aspect 'Too Famous to Hide,' but no prior event in the log (character creation, aspect declaration, or advantage creation) establishes this aspect as live/on the table before it is used. The rules require a compel to target a live player aspect or trouble.",
+    "interim_ruling": "Treated as valid on the assumption it is one of Morwen's pre-existing character aspects (e.g., high concept or trouble) established off-log at character creation; table allowed the compel to stand.",
+    "scene": 1,
+    "source": "referee"
+   },
+   {
+    "section": "Compels",
+    "issue": "The rules state 'the GM may offer a compel on any player aspect or trouble whenever the story calls for it,' implying compels originate from the GM. Event 19 logs the compel with actor 'Mire' (self-compel on her own trouble 'Vengeance Over Sense'), and 'compel_forced': false, with no GM-side attribution in the log. The rules text does not address player-initiated (self) compels.",
+    "interim_ruling": "Treated as a valid compel: accepted, Mire gained 1 fate point (fp 3->4), and the complication (killing-stroke framing carried into event 23) was applied as if GM-offered.",
+    "scene": 2,
+    "source": "referee"
+   },
+   {
+    "section": "Rolls (passive vs. active opposition)",
+    "issue": "Opposition entries for named NPC 'Warden Sergeant Doss' are logged in a mixed passive/active format (e.g. '-1 (NPC - - - 0)', '+3 (NPC 0 - + +)') rather than clearly showing 4dF + a stated rating. The rules specify named NPCs roll 4dF + their own rating as active opposition, not the passive Average/+1-per-aspect ladder shown for unnamed threats.",
+    "interim_ruling": "The underlying NPC rating (+2) was reconstructed as internally consistent across events 20, 22, and 23 (dice sum + 2 = displayed opposition total in each case), so the rolls were accepted as correctly using active opposition despite the ambiguous notation.",
+    "scene": 2,
+    "source": "referee"
+   },
+   {
+    "section": "Deck-draw / target_card sourcing",
+    "issue": "Event 21 (Aldous's create-advantage) lists a 'target_card': 'H-01' but no corresponding draw_id, cost entry, or narrated card-tag usage appears in the costs/compels list, so it's unclear whether a deck draw actually occurred for this advantage or whether the field is vestigial.",
+    "interim_ruling": "Not treated as a chargeable deck-draw cost since it has no draw_id or entry in the costs list; no card-tag compliance was assessed for it.",
+    "scene": 2,
+    "source": "referee"
+   }
+  ],
+  "cost_checks": [
+   {
+    "event_id": 10,
+    "used_drawn_card": false,
+    "note": "This is a free/table compel with no draw_id and no card draw associated; the compel text 'Too Famous to Hide' was authored directly rather than pulled from a deck draw, so there is no drawn-card tag usage to verify.",
+    "scene": 1
+   },
+   {
+    "event_id": 19,
+    "used_drawn_card": false,
+    "note": "This is a trouble-aspect compel with draw_id empty (no deck draw involved); its text is narrative flavor derived from the pre-existing trouble aspect 'Vengeance Over Sense,' not from a drawn card's tags, so drawn-card-tag usage is not applicable here.",
+    "scene": 2
+   }
+  ],
+  "friction": [
+   {
+    "scene": 1,
+    "text": "No aspect-creation or reveal event precedes the use of 'Too Famous to Hide' in the compel at event 10, making it hard to audit whether the aspect was actually live at the time."
+   },
+   {
+    "scene": 1,
+    "text": "The entire scene (events 4-12) contains zero dice rolls or skill checks, so most fate-economy rules (invokes, opposition ladder, outcomes) go untested this scene — only the single compel exercises the fate point economy."
+   },
+   {
+    "scene": 1,
+    "text": "GM fp sits unspent at 4 for the whole scene; since 'unspent points don't carry over,' worth confirming the engine actually resets/does not carry this balance into Scene 2 rather than just holding it static in this log."
+   },
+   {
+    "scene": 2,
+    "text": "The same aspect ('Vengeance Over Sense') was used both to pay off a compel (fp gain to Mire at event 19) and, two events later, as one of three paid invokes boosting Mire's attack roll (event 23) — the rules don't clarify whether a just-compelled trouble aspect can also be immediately paid-invoked by its owner in the same scene, forcing a case-by-case table call."
+   },
+   {
+    "scene": 2,
+    "text": "Opposition notation mixes a passive-ladder style prefix with an embedded 'NPC' dice string and a final total, requiring manual reconstruction of the NPC's actual skill rating to verify each roll rather than reading it directly off the log."
+   },
+   {
+    "scene": 2,
+    "text": "Whether compels can be self-initiated by a player (as Mire's was) versus requiring explicit GM framing is left open by the rules text, creating uncertainty for future logging/adjudication of compels."
+   }
+  ]
+ },
+ "surveys": [],
+ "interview": null,
+ "chronicle": null,
+ "state_end": {
+  "tension": 3,
+  "fp": {
+   "Ysolde": 2,
+   "Aldous": 2,
+   "Morwen": 4,
+   "Mire": 1
+  },
+  "surfaced": [],
+  "deck_player_cards": {},
+  "guarantee_pulled": [],
+  "guarantee_failed": [],
+  "deck_left": [],
+  "draws": 0,
+  "turns": {
+   "Ysolde": 2,
+   "Aldous": 2,
+   "Morwen": 2,
+   "Mire": 2
+  }
+ },
+ "notes": [],
+ "metrics": {},
+ "tokens": {
+  "prompt": 169752,
+  "completion": 63678,
+  "cost_usd": 0.8982,
+  "calls": 23
+ },
+ "llm_calls": 23,
+ "models": {
+  "gm": "claude-sonnet-5",
+  "player": "claude-haiku-4-5-20251001",
+  "referee": "claude-sonnet-5",
+  "interviewer": "claude-haiku-4-5-20251001"
+ },
+ "elapsed_s": 532.5
+}

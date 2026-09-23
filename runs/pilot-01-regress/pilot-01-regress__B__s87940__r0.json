@@ -1,0 +1,1744 @@
+{
+ "run_id": "pilot-01-regress__B__s87940__r0",
+ "batch_id": "pilot-01-regress",
+ "arm": "B",
+ "seed": 87940,
+ "spec_version": "0.2.0",
+ "status": "partial",
+ "error": null,
+ "backend": "claude_cli",
+ "run_index": 0,
+ "cohort_id": "cohort-pilot-01",
+ "assignments": [
+  {
+   "character_id": "CH-1",
+   "name": "Ysolde",
+   "personality_id": "optimizer",
+   "seat": 0
+  },
+  {
+   "character_id": "CH-2",
+   "name": "Aldous",
+   "personality_id": "protector",
+   "seat": 1
+  },
+  {
+   "character_id": "CH-3",
+   "name": "Morwen",
+   "personality_id": "instigator",
+   "seat": 2
+  },
+  {
+   "character_id": "CH-4",
+   "name": "Mire",
+   "personality_id": "tactician",
+   "seat": 3
+  }
+ ],
+ "prep_packet": {
+  "anchors": [
+   "H-03",
+   "T-01"
+  ],
+  "environment": [
+   "H-04",
+   "F-02",
+   "L-01"
+  ],
+  "modules": [
+   {
+    "id": "M-1",
+    "cards": [
+     "C-02",
+     "T-03"
+    ],
+    "trigger": "fiction:the party leaves the road or causeway"
+   },
+   {
+    "id": "M-2",
+    "cards": [
+     "T-05",
+     "F-01"
+    ],
+    "trigger": "clock_fills:T-01"
+   }
+  ],
+  "beat_frames": [
+   {
+    "id": "B-02",
+    "name": "PLEA FOR HELP",
+    "trigger": "compel_refused",
+    "used": null
+   },
+   {
+    "id": "B-03",
+    "name": "BETRAYAL",
+    "trigger": "scene_start:3",
+    "used": null
+   },
+   {
+    "id": "B-05",
+    "name": "FALSE SANCTUARY",
+    "trigger": "tension_at_least:4",
+    "used": null
+   }
+  ]
+ },
+ "events": [
+  {
+   "event_id": 1,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Session start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "FP: Ysolde=3, Aldous=3, Morwen=3, Mire=3",
+   "event_type": "session_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 2,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + H-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "anchor",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 3,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + T-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "anchor",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 4,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 5,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Can the party cross the flooded causeway to Hollowmoot before the Hive-Touched Pack or the rising water cuts them off?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 6,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Ysolde steps back from the causeway's edge, her weathered hands gripping the rope of her pack. Her eyes track the pack's movements with the same intensity she o",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 7,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Aldous closes his eyes and lets the cold rain fall across his face, his fingers twitching slightly as he reads the water's patterns—the temperature shifts, the ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 8,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "attack",
+   "skill": "Will",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Morwen whirls to face the pack advancing along the flooded verge, planting herself firmly on the causeway. She calls upon her exorcist's will, speaking words of",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 9,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "overcome",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Mire moves to the edge of the causeway, eyes narrowed against the rain. She studies the flooded section ahead where the planking has vanished—tracing the waterl",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 10,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Vengeance Over Sense",
+   "fp_spent": 1,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "refused",
+   "clock_change": "",
+   "tension": "",
+   "notes": "The moment Mire spots Scarhook's scarred face among the pack — the same man who once wore a Warden's cloak beside her — the old fury rises. She wants to break off her survey of the ford and go for him",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": -1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 11,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Create Advantage: Aldous closes his eyes and lets the cold rain fall across hi",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "+ - - +",
+   "total": "+4",
+   "opposition": "+2",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "aspect A-1.1.1 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "hides the drowned dead [H-03]"
+   ],
+   "target_card": "H-03",
+   "target_npc": "",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 12,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "Attack: Morwen whirls to face the pack advancing along the flooded v",
+   "skill": "Will +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "- + - +",
+   "total": "+4",
+   "opposition": "-1 (NPC 0 - - -)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Scarhook",
+   "shifts": 5,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 13,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Rail - T-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "left_play: taken out in conflict (Scarhook)",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "caused_by": 12,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 14,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "T-01 leaves play",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "taken out in conflict (Scarhook)",
+   "event_type": "card_leaves_play",
+   "improvised": false,
+   "caused_by": 12,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 15,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "Overcome: Mire moves to the edge of the causeway, eyes narrowed agains",
+   "skill": "Notice +3",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "0 + 0 0",
+   "total": "+4",
+   "opposition": "+2",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "swallows fords overnight [H-03]"
+   ],
+   "target_card": "H-03",
+   "target_npc": "",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 16,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Trigger fired: B-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "compel_refused",
+   "event_type": "trigger",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 17,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "triggers fired: ['B-02']",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 18,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Scene 2 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 19,
+   "session": 1,
+   "scene": 2,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Will the party take up the drowned mother's plea and go after her son in Saint Orrin's belltower, or let Hollowmoot's fear-driven justice run its course?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 20,
+   "session": 1,
+   "scene": 2,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Ysolde stops walking and turns to face the woman fully, her weathered hands gentling on the hook-spear clutched there. She doesn't shrug the woman off or hurry ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 21,
+   "session": 1,
+   "scene": 2,
+   "actor": "Aldous",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Aldous stops dead and turns to face the woman squarely, not pulling away from her grip on his sleeves. He meets her raw, desperate eyes without flinching. His f",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 22,
+   "session": 1,
+   "scene": 2,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Morwen strides back through the crowd to face the woman directly, the same will that turned back the hive-touched now bearing down on this moment. She meets War",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 23,
+   "session": 1,
+   "scene": 2,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Mire stops when the woman grabs her sleeve, crouching to meet her eyes. She grips the woman's wrist gently—a warden's steadiness cutting through panic. The serg",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 24,
+   "session": 1,
+   "scene": 2,
+   "actor": "Morwen",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Too Famous to Hide",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Sergeant Coale's eyes narrow in recognition as you comfort the mother — 'You're the exorcist from the Orrin trials, aren't you?' he says loud enough for the whole crowd to hear, and suddenly every fri",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 25,
+   "session": 1,
+   "scene": 2,
+   "actor": "Ysolde",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Order Agents Know My Face",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": "",
+   "notes": "A hooded figure at the edge of the crowd — grey robes half-hidden under a fisherman's cloak — goes very still at the sound of Ysolde's voice, then turns and slips away toward the gate, moving with the",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 26,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Trigger fired: B-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "scene_start:3",
+   "event_type": "trigger",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 27,
+   "session": 1,
+   "scene": 2,
+   "actor": "",
+   "action": "Scene 2 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "triggers fired: ['B-03']",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 28,
+   "session": 1,
+   "scene": 3,
+   "actor": "",
+   "action": "Scene 3 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 29,
+   "session": 1,
+   "scene": 3,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Can the party win, buy, or fight their way past the Order's patrol and the mire beneath them to reach the Drowned Temple before Tomas is lost to the hive?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 30,
+   "session": 1,
+   "scene": 3,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Ysolde steps forward just enough to close the distance, rain dripping from her weathered face. She doesn't approach the crossed quarterstaves as threat—instead,",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 31,
+   "session": 1,
+   "scene": 3,
+   "actor": "Aldous",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Aldous steps forward to stand beside Ysolde, his eyes meeting Sister Agnet's without flinching. The rain falls cold and heavy around them, and his fingers twitc",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 32,
+   "session": 1,
+   "scene": 3,
+   "actor": "Morwen",
+   "action": "attack",
+   "skill": "Will",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Morwen steps forward directly into the guards' path, drawing herself up tall. She summons the same iron will that turned back the hive-touched pack on the cause",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 33,
+   "session": 1,
+   "scene": 3,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Mire steps forward to the front of the party, placing herself between Sister Agnet and Ysolde. Her hand rests on her weapon hilt, but she's not drawing — not ye",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 4,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 34,
+   "session": 1,
+   "scene": 3,
+   "actor": "Ysolde",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Order Agents Know My Face",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": "",
+   "notes": "Sister Agnet's eyes never leave Ysolde even as Morwen presses her — she signals one of the pilgrim-guards to peel off and start back toward the temple road, clearly meaning to send word ahead that the",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 3,
+    "Morwen": 4,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 35,
+   "session": 1,
+   "scene": 3,
+   "actor": "Morwen",
+   "action": "Attack: Morwen steps forward directly into the guards' path, drawing",
+   "skill": "Will +4",
+   "tags_invoked": "Vowed to stand against the Wardens' torches for one more house [MO-A3]; Exorcist Who Doubts the Hive Has Souls [MO-HC]",
+   "fp_spent": 2,
+   "dice": "- - 0 +",
+   "total": "+7",
+   "opposition": "+3 (NPC 0 - + +)",
+   "result": "success_with_style",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -2,
+   "opposing_tags": [],
+   "target_card": "",
+   "target_npc": "Sister Agnet, Order Patrol Leader",
+   "shifts": 4,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 3,
+    "Morwen": 2,
+    "Mire": 2
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 36,
+   "session": 1,
+   "scene": 3,
+   "actor": "",
+   "action": "Trigger fired: M-1",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "fiction:the party leaves the road or causeway",
+   "event_type": "trigger",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 3,
+    "Morwen": 2,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 37,
+   "session": 1,
+   "scene": 3,
+   "actor": "",
+   "action": "Scene 3 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "triggers fired: ['M-1']",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 5,
+    "Aldous": 3,
+    "Morwen": 2,
+    "Mire": 2
+   },
+   "gm_fp": 4
+  }
+ ],
+ "scenes": [
+  {
+   "index": 1,
+   "tension_before": null,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 1,
+   "climax": false,
+   "tension_after": null,
+   "triggers_fired": [
+    "B-02"
+   ]
+  },
+  {
+   "index": 2,
+   "tension_before": null,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 1,
+   "climax": false,
+   "tension_after": null,
+   "triggers_fired": [
+    "B-03"
+   ]
+  },
+  {
+   "index": 3,
+   "tension_before": null,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 1,
+   "climax": false,
+   "tension_after": null,
+   "triggers_fired": [
+    "M-1"
+   ]
+  }
+ ],
+ "transcript": [
+  {
+   "session": 1,
+   "scene": 0,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Session begins. Each player has Ysolde 3 FP, Aldous 3 FP, Morwen 3 FP, Mire 3 FP. Face-up: Rising Floodwaters [H-03], Hive-Touched Pack [T-01].",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Rain comes down in grey sheets over the Ashwater Causeway, the last dry road left in the Sallowmere. Ahead, the timber planking bows under black water that wasn't there yesterday, and behind you a plank cart lies overturned, its owner nowhere in sight — only a dropped hook-spear, and drag marks leading into the reeds. Something is moving out there, low and patient, pacing you along the flooded verge in a ragged line of shapes that used to be people. The causeway itself groans, planks vanishing into the flood a hundred yards ahead where the water has already claimed the road. You have to decide, now, whether to push forward across ground that may already be gone, or find another way before the pack closes the distance.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Not forward—we walk into the dark that way. The reedmere north, the shallow channels. Those things move like water itself, but they'll be slow and tangled in the growth. I know the way; I've taken it before when I needed disappearing.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde steps back from the causeway's edge, her weathered hands gripping the rope of her pack. Her eyes track the pack's movements with the same intensity she once used to read a crew's moods—low, predatory, moving in broken patterns through the reeds. She's survived this long by knowing when to push and when to slip sideways. She points north where the reeds grow thick and the channels wind tight.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "The rain shows me a way. The pack hasn't gone east yet—the water there still speaks of older drownings, and the living things fear it. We cross there, if we're quick, and we might put distance between ourselves and their teeth.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous closes his eyes and lets the cold rain fall across his face, his fingers twitching slightly as he reads the water's patterns—the temperature shifts, the current's whisper, the echo of movements only a drowned man could know. The ghosts that cling to him shudder and point. When he opens his eyes again, they're sharp and certain, and he's looking not at the causeway ahead, but at the marshland beyond it, where the water runs differently.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Stand back! The Order holds this ground, and I will not let you pass.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen whirls to face the pack advancing along the flooded verge, planting herself firmly on the causeway. She calls upon her exorcist's will, speaking words of binding and warding meant to drive back the hive-touched, her hands raised in a gesture of command.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Keep eyes on those things behind us. I'm checking if there's ground ahead or if we're already cut off.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire moves to the edge of the causeway, eyes narrowed against the rain. She studies the flooded section ahead where the planking has vanished—tracing the waterline, calculating depth and current. How far does it actually extend? Is there a shallower passage along the verge, or does the road come back up beyond? Behind her, those low shapes in the reeds are getting closer. She needs to know if forward is even possible.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Not now. Keep your head, Mire. That's not Scarhook anymore—it's what ate him. And if I don't scout this ford, we all drown.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire refuses a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — create advantage with Notice: dice + - - + → Great (+4) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen — attack with Will: dice - + - + → Great (+4) vs Poor (-1): SUCCESS WITH STYLE (Scarhook taken out)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — overcome with Notice: dice 0 + 0 0 → Great (+4) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Morwen's warding cry cracks like a lightning strike over the water — Scarhook, or the thing that wore his face, seizes mid-lunge, claws inches from her throat, and folds backward into the flood without a sound. The rest of the pack scatters at the sight, hissing low, unwilling to close on a will that strong. In the same breath Aldous straightens from his rain-trance, pointing east where the drowned-old current runs wrong-way and untouched — a path the pack hasn't claimed, and won't dare follow. Mire, boots at the water's edge, calls back over her shoulder that the ford ahead is bad, but not impassable: she's found the shallow line along the old pilings, just visible under the churn. Between Morwen's blow and Aldous's reading, the way opens. You go east, feet finding solid wood beneath black water, the pack's cries falling away behind you into the rain — and somewhere ahead, through the grey, the crooked rooftops of Hollowmoot rise on their stilts.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The stilts of Hollowmoot rise out of the grey like the ribs of some beached animal, walkways slick and crowded with refugees pressed shoulder to shoulder under sagging awnings. At the causeway gate a Warden sergeant stands over a door freshly marked with a crossed ash sigil, torch unlit but ready, while a small crowd watches in tight, frightened silence. Before you've gone twenty paces past the gate, a woman splashes through the standing water to grab at your sleeves — soaked to the bone, eyes raw from crying, a fisherman's hook still clutched uselessly in one hand. She says her boy followed the swarm-song three nights ago, out past the causeway, out to the Drowned Temple's belltower, and she's begged every Warden and every pilgrim in Hollowmoot and been turned away by all of them. Behind her, the sergeant is already eyeing your party the way he eyes anyone who stops to listen too long.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "Your boy—what's his name? Tell me everything you remember from that night. I've sailed waters where things call to people; I know what that song sounds like.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde stops walking and turns to face the woman fully, her weathered hands gentling on the hook-spear clutched there. She doesn't shrug the woman off or hurry past; instead, she settles into the patient attention that once made night-barge crew members trust her with their deepest fears—the weight that made her dangerous, the listening that made her necessary. She notices the Warden sergeant's gaze from across the flooded square but doesn't acknowledge it. Right now, this mother's raw-eyed desperation matters more than whatever the Order thinks it's watching for.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "Your boy heard the swarm-song and went to the temple—I can read it in the rain that soaked you when he left, mother. Tell me his name, and I swear by the water that marks me: before the flood takes him, I'll bring him back or know the reason why.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous stops dead and turns to face the woman squarely, not pulling away from her grip on his sleeves. He meets her raw, desperate eyes without flinching. His fingers move subtly against the wet fabric of her clothes, reading the pattern of water and salt and time—the traces of a mother's anguish and a son's absence. When he speaks, his voice carries the certainty of someone who has already kept faith with the drowned. He doesn't glance at the sergeant watching from the gate.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "I won't turn away. Tell me his name, what he looks like, how long the swarm-song has had him.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen strides back through the crowd to face the woman directly, the same will that turned back the hive-touched now bearing down on this moment. She meets Warden Sergeant Coale's gaze unflinching.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "How long was he under the song before he went? And has anything come back asking for him since?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire stops when the woman grabs her sleeve, crouching to meet her eyes. She grips the woman's wrist gently—a warden's steadiness cutting through panic. The sergeant watches from his post, but she doesn't turn away. This is what wardens do, marked enemy or not.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "That's right. Orrin trials. And I'm still an exorcist. This woman's boy is hive-touched, out at the Drowned Temple, and I'm not turning away—the Order doesn't own my mercy.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "There—that grey cloak moving toward the gate. One of the Order's teeth just recognized my voice. So be it; I've been hunted before, and I'm not leaving this mother without an answer.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 2,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The mother's name comes out in a rush between sobs: Sera, and the boy is Tomas, nine years old, gone three nights now. She says the song took him slow — humming in his sleep, then walking toward it wide-eyed in daylight, then gone before dawn, following a sound none of the rest of them could hear. Ysolde's patient listening, Aldous's water-reading, Mire's steady grip and Morwen's flat refusal to look away all land on Sera at once, and something in her unclenches — for the first time in three days, someone believes her. But the price comes due as promised: across the square, the grey-cloaked figure who marked Ysolde's face doesn't approach, just watches, then turns and moves off toward the temple road with purpose, already carrying word. And Sergeant Coale, hearing Morwen name herself exorcist and swear an oath the Order itself would recognize, plants his unlit torch in the mud and calls out that if you're going after a hive-touched boy, you'll do it with his eyes on you the whole way — Hollowmoot doesn't forgive parties who bring the blight back through its gates. Sera presses her son's fishing hook into Ysolde's hands like a promise, and the causeway road toward Saint Orrin's Drowned Temple lies open ahead of you, rain-slick and waiting.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The causeway falls away behind you and the world narrows to reed and rain — chest-high stalks, black channels, and reed mats that look solid until your boot finds nothing underneath. Somewhere ahead, faint as a held breath, you can just hear it: a thin, wordless humming carried on the wind from the direction of the temple. Then the reeds part and there they are — three pilgrim-guards in oiled grey, quarterstaves crossed, standing on the one line of old pilings that doesn't want to swallow you whole. At their front, a lean woman with a temple seal at her throat looks past all of you and settles her eyes on Ysolde. \"I know that face,\" she says. \"Turn back to Hollowmoot, or give us the one the Order wants, and the rest of you may pass.\"",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "You know my face, Sister. Yes. But you serve the Drowned Temple, not the Order's hunters. The boy—Tomas—he followed the swarm-song here. We came to bring him back. That's temple work, and you know it.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde steps forward just enough to close the distance, rain dripping from her weathered face. She doesn't approach the crossed quarterstaves as threat—instead, she plants her weight steady on the pilings, the fishing hook Sera pressed into her hands now visible at her belt. Her eyes lock on Sister Agnet's, the same patience she once used to listen to night-barge crew members settling into their darkest fears. She's been hunted before. She doesn't run from it. She meets it.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "Sister, the Order marked Ysolde for her sins, not for helping a drowning boy find his mother. I swore by these waters to cross every soul before the flood takes them—and Tomas is still singing out there. I won't turn back now, and I won't hand her over to buy passage.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous steps forward to stand beside Ysolde, his eyes meeting Sister Agnet's without flinching. The rain falls cold and heavy around them, and his fingers twitch—reading the pattern of water and time, the urgency that groans from the reeds. He plants his feet on the pilings, making clear with the set of his shoulders that he will not move, will not bend, and will not let her take Ysolde while breath still carries him forward.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "I'm not turning back, Sister, and I'm not handing over Ysolde. A boy needs saving, and I've sworn an oath. Move.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen steps forward directly into the guards' path, drawing herself up tall. She summons the same iron will that turned back the hive-touched pack on the causeway, letting it fill every line of her body and every word she speaks. Her hand rises in a warding gesture as she stares directly at Sister Agnet—unmoved and unmoving—her presence alone carrying the force of her refusal. The Order trained her better than this, and she will not be stopped from a vow freely given.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "You know who I am — Captain Verrick made sure of that. I'm already marked enemy, already cast out. Take me if you want, but Ysolde passes, and so do we all. There's a boy out there who needs saving from what the swarm-song's done to him, and I didn't learn to hold the line just to abandon him.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire steps forward to the front of the party, placing herself between Sister Agnet and Ysolde. Her hand rests on her weapon hilt, but she's not drawing — not yet. She's simply refusing to move aside, her posture that of someone who has already chosen her ground and won't yield it. Her eyes don't waver from the temple leader's face. She invokes the truth of her own disgrace: she's already everything the Order has decided to hate, so there's nothing more they can take from her except her life.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "There—do you see? The temple itself sends word ahead. Let them. Every hunter the Order sends, I've already faced worse in the dark. We're not stopping for ghosts.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde accepts a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Morwen — attack with Will: dice - - 0 +, invoking Vowed to stand against the Wardens' torches for one more house [MO-A3], Exorcist Who Doubts the Hive Has Souls [MO-HC] → Epic (+7) vs Good (+3): SUCCESS WITH STYLE (Sister Agnet, Order Patrol Leader mild consequence)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 3,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Morwen's will breaks over Sister Agnet like the flood breaking a levee — not force of arms but force of conviction, an oath so plainly true it finds the crack beneath the woman's doctrine and drives straight through. Agnet's crossed staff wavers; for one long breath she looks less like a hunter and more like a girl who once believed the Order's mercy meant something, staggering back a step with the wind gone out of her. The two pilgrim-guards flanking her hesitate, staves half-lowered, waiting for an order that doesn't come. Behind Ysolde, Aldous, and Mire standing unmoved on the pilings, Agnet finally lowers her staff herself, jaw tight, eyes wet with something that isn't just rain. \"Go, then,\" she says, voice rough. \"Bring the boy back before the temple does what it does to the rest of them. But Ysolde — this isn't finished. The Order doesn't forget a face twice.\" She steps aside, and her guards part with her, leaving the old pilings clear and the path to Saint Orrin's Drowned Temple open through the rain.",
+   "visible_to": "all"
+  }
+ ],
+ "costs": [
+  {
+   "event": "free_compel",
+   "scene": 1,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Vengeance Over Sense",
+   "text": "The moment Mire spots Scarhook's scarred face among the pack — the same man who once wore a Warden's cloak beside her — the old fury rises. She wants to break off her survey of the ford and go for him instead, leaving the party blind to what lies ahead.",
+   "improvised": true,
+   "accepted": false,
+   "owner": "Mire"
+  },
+  {
+   "event": "free_compel",
+   "scene": 2,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Too Famous to Hide",
+   "text": "Sergeant Coale's eyes narrow in recognition as you comfort the mother — 'You're the exorcist from the Orrin trials, aren't you?' he says loud enough for the whole crowd to hear, and suddenly every frightened face in the square is staring at Morwen instead of Sera, murmuring her name, some reaching t",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Morwen"
+  },
+  {
+   "event": "free_compel",
+   "scene": 2,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Order Agents Know My Face",
+   "text": "A hooded figure at the edge of the crowd — grey robes half-hidden under a fisherman's cloak — goes very still at the sound of Ysolde's voice, then turns and slips away toward the gate, moving with the unhurried purpose of someone who has somewhere urgent to report.",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Ysolde"
+  },
+  {
+   "event": "free_compel",
+   "scene": 3,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Order Agents Know My Face",
+   "text": "Sister Agnet's eyes never leave Ysolde even as Morwen presses her — she signals one of the pilgrim-guards to peel off and start back toward the temple road, clearly meaning to send word ahead that the marked woman is here, whatever happens in this standoff.",
+   "improvised": true,
+   "accepted": true,
+   "owner": "Ysolde"
+  }
+ ],
+ "referee": {
+  "violations": [
+   {
+    "session": 1,
+    "scene": 1,
+    "agent": "GM",
+    "section": "§3",
+    "issue": "NPC action with unknown NPC or target: {'npc': 'Hive-Touched Pack', 'target': 'Mire', 'harm': 'physical', 'description': \"While Mire's eyes are fixed on the drowned planking, a second pack-member breaks from the reeds on her flank, hook-spear low, lunging for her leg to drag her off the causeway edge.\"}",
+    "source": "engine"
+   },
+   {
+    "section": "Compels",
+    "issue": "Mire paid 1 fate point to refuse the compel on her trouble/aspect 'Vengeance Over Sense' (event 10), which under the rules should prevent the associated complication from occurring. Trigger B-02 (event 16), explicitly annotated 'compel_refused', nonetheless attempted to enact essentially the same complication via an NPC flank attack on Mire — undermining the purpose of paying to refuse a compel. It was only the engine's separate refusal (unknown NPC) that stopped it from resolving, not the game rules.",
+    "event_id": 16,
+    "scene": 1,
+    "source": "referee"
+   }
+  ],
+  "ambiguities": [
+   {
+    "id": "AMB-12",
+    "section": "§8",
+    "issue": "Stress box values are unspecified.",
+    "interim_ruling": "Fate Core: boxes 1 and 2; Physique/Will +1/+2 adds a 3 box, +3 or more adds 3 and 4.",
+    "detail": "stress boxes built with Fate Core values",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "section": "Compels",
+    "issue": "Mire's compel on 'Vengeance Over Sense' was refused and she paid 1 fate point (event 10), which per the rules should mean the complication does not happen. Yet Trigger B-02 (event 16) fired immediately afterward, notes tagged 'compel_refused', driving an NPC action ('Hive-Touched Pack' pack-member lunging to drag Mire off the causeway) that closely mirrors the same complication she paid to avoid. The rules do not say whether a scripted rail/module trigger can independently re-impose a complication a player just paid to refuse.",
+    "interim_ruling": "The table let the refusal (fp paid) stand as blocking Mire's own declared distraction, but treated the rail trigger's NPC attack as a separate story beat; it never resolved in play because the engine itself refused the action for lack of a registered 'Hive-Touched Pack' NPC record, so no in-fiction contradiction was actually enacted.",
+    "scene": 1,
+    "source": "referee"
+   },
+   {
+    "section": "Rolls (passive/active opposition)",
+    "issue": "Named-NPC active opposition for Morwen's attack on Scarhook (event 12) is logged as 'opposition: -1 (NPC 0 - - -)' — only three Fate die symbols are shown where the rule calls for 4dF + the NPC's rating (rating 0 here).",
+    "interim_ruling": "Table treated this as a display/logging shorthand rather than an actual 3-die roll, accepted the total of -1 as correctly computed by the engine, and did not require a re-roll.",
+    "scene": 1,
+    "source": "referee"
+   },
+   {
+    "section": "Compels",
+    "issue": "The rules define a GM fate-point pool (1 per player, refreshed each scene) but never state whether offering a compel draws from that pool, unlike named-NPC rolls where gm_fp_spent is tracked. Both compels here (events 24, 25) were logged as 'free_compel' with no gm_fp deduction, leaving gm_fp at 4 throughout the scene.",
+    "interim_ruling": "Treated compels as free narrative offers that do not cost the GM any fate points; only opposition rolls draw from the GM pool.",
+    "scene": 2,
+    "source": "referee"
+   },
+   {
+    "section": "Conflict",
+    "issue": "Event 35 is logged as an 'attack' action (Morwen vs. Sister Agnet) with a computed shift value (4) from a Will roll, but no stress track, consequence, or 'taken out' result is recorded for Sister Agnet, and the scene proceeds directly into a trigger/scene-end rather than any conflict resolution. The baseline rules specify attack vs. defence produces stress on a track, so it's unclear whether this was actually meant as a social Overcome/Create-an-Advantage dressed in 'attack' terminology, or a genuine attack whose stress application was simply not logged.",
+    "interim_ruling": "Table treated the roll as a narrative overcome/advantage action (using shifts to determine the standoff's outcome and feed trigger M-1) rather than a formal conflict exchange, so no stress track was opened for Sister Agnet.",
+    "scene": 3,
+    "source": "referee"
+   }
+  ],
+  "cost_checks": [
+   {
+    "event_id": 34,
+    "used_drawn_card": false,
+    "note": "No draw_id is present for this compel (draw_id is blank); it was an improvised compel on Ysolde's existing aspect 'Order Agents Know My Face,' not tied to a deck draw, so there is no drawn card whose tags could have been used.",
+    "scene": 3
+   }
+  ],
+  "friction": [
+   {
+    "scene": 1,
+    "text": "The only logged cost/compel item (Mire's 'Vengeance Over Sense' compel) has no draw_id, so it can't be checked against a drawn card's tags — the compel text reads as freely improvised rather than card-derived, which is fine but leaves the deck-draw cost-check step with nothing to verify this scene."
+   },
+   {
+    "scene": 1,
+    "text": "Scarhook's opposition roll notation ('NPC 0 - - -') shows only three Fate die symbols instead of the expected 4dF, creating uncertainty about whether the roll was correctly generated."
+   },
+   {
+    "scene": 1,
+    "text": "A rail trigger (B-02) fired an NPC action referencing an NPC ('Hive-Touched Pack') that the engine did not recognize as an established target, immediately after a compel involving that same threat was refused — the module's NPC roster and the compel/trigger logic appear out of sync, producing a confusing near-double-complication that only the engine's refusal prevented from playing out twice."
+   },
+   {
+    "scene": 2,
+    "text": "Two compels were stacked back-to-back on different PCs (Morwen at event 24, Ysolde at event 25) in the same beat with no intervening roll or scene development, which reads as efficient but leaves no room for a refusal decision to matter dramatically since both were pre-narrated as 'accepted'."
+   },
+   {
+    "scene": 2,
+    "text": "The entire scene (events 18-27) contains no dice rolls, invokes, or opposition checks — purely roleplay and compels — so several rules sections (aspect invokes, conflict, ladder opposition) are simply unexercised and untestable against this log."
+   },
+   {
+    "scene": 2,
+    "text": "The 'Trigger fired: B-03' event (26) and its scene_start:3 note reference an external module/beat-clock system not defined in the supplied ruleset, making it impossible to verify against the Fate rules provided."
+   },
+   {
+    "scene": 3,
+    "text": "The 'attack' event_type label on event 35 doesn't match its resolution (no stress/consequence applied to the NPC), which could confuse future log audits about whether conflict tracks should have opened."
+   },
+   {
+    "scene": 3,
+    "text": "The opposition line for event 35 packs the NPC's rating and dice into a single string ('+3 (NPC 0 - + +)') without separately logging Sister Agnet's base rating, making it harder to verify the +3 total was computed correctly from rules-legal inputs."
+   },
+   {
+    "scene": 3,
+    "text": "GM fate point pool (gm_fp=4) is carried into the scene-start row without a visible 'GM +1 free invoke'-style grant row showing the per-player refresh being applied, so the reset-per-scene accounting relies on inference rather than an explicit log entry."
+   }
+  ]
+ },
+ "surveys": [],
+ "interview": null,
+ "chronicle": null,
+ "state_end": {
+  "tension": 3,
+  "fp": {
+   "Ysolde": 5,
+   "Aldous": 3,
+   "Morwen": 2,
+   "Mire": 2
+  },
+  "surfaced": [],
+  "deck_player_cards": {},
+  "guarantee_pulled": [],
+  "guarantee_failed": [],
+  "deck_left": [],
+  "draws": 0,
+  "turns": {
+   "Ysolde": 3,
+   "Aldous": 3,
+   "Morwen": 3,
+   "Mire": 3
+  }
+ },
+ "notes": [],
+ "metrics": {},
+ "tokens": {
+  "prompt": 283843,
+  "completion": 68732,
+  "cost_usd": 1.2276,
+  "calls": 31
+ },
+ "llm_calls": 31,
+ "models": {
+  "gm": "claude-sonnet-5",
+  "player": "claude-haiku-4-5-20251001",
+  "referee": "claude-sonnet-5",
+  "interviewer": "claude-haiku-4-5-20251001"
+ },
+ "elapsed_s": 553.0
+}

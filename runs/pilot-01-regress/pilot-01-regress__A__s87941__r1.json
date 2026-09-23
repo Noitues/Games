@@ -1,0 +1,1590 @@
+{
+ "run_id": "pilot-01-regress__A__s87941__r1",
+ "batch_id": "pilot-01-regress",
+ "arm": "A",
+ "seed": 87941,
+ "spec_version": "0.2.0",
+ "status": "partial",
+ "error": null,
+ "backend": "claude_cli",
+ "run_index": 1,
+ "cohort_id": "cohort-pilot-01",
+ "assignments": [
+  {
+   "character_id": "CH-1",
+   "name": "Ysolde",
+   "personality_id": "storyteller",
+   "seat": 0
+  },
+  {
+   "character_id": "CH-2",
+   "name": "Aldous",
+   "personality_id": "rules_lawyer",
+   "seat": 1
+  },
+  {
+   "character_id": "CH-3",
+   "name": "Morwen",
+   "personality_id": "lurker",
+   "seat": 2
+  },
+  {
+   "character_id": "CH-4",
+   "name": "Mire",
+   "personality_id": "method_actor",
+   "seat": 3
+  }
+ ],
+ "prep_packet": {
+  "anchors": [
+   "H-01",
+   "L-02"
+  ],
+  "environment": [
+   "H-05",
+   "T-01",
+   "F-03"
+  ],
+  "modules": [
+   {
+    "id": "M-1",
+    "cards": [
+     "C-01",
+     "T-05"
+    ],
+    "trigger": "scene_start:3"
+   },
+   {
+    "id": "M-2",
+    "cards": [
+     "H-06",
+     "T-02"
+    ],
+    "trigger": "deck_at_most:3"
+   }
+  ],
+  "beat_frames": [
+   {
+    "id": "B-01",
+    "name": "AMBUSH",
+    "trigger": "fiction:the party enters a settlement",
+    "used": null
+   },
+   {
+    "id": "B-05",
+    "name": "FALSE SANCTUARY",
+    "trigger": "clock_fills:L-02",
+    "used": null
+   },
+   {
+    "id": "B-02",
+    "name": "PLEA FOR HELP",
+    "trigger": "compel_refused",
+    "used": null
+   }
+  ]
+ },
+ "events": [
+  {
+   "event_id": 1,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Session start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "FP: Ysolde=3, Aldous=3, Morwen=3, Mire=3",
+   "event_type": "session_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 2,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + H-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "anchor; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 3,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Rail + L-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "L-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "anchor; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 4,
+   "session": 1,
+   "scene": 0,
+   "actor": "",
+   "action": "Build Session Deck",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "7 cards: 3 GM + 4 player",
+   "event_type": "deck_built",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 0
+  },
+  {
+   "event_id": 5,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 6,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Do the four of you get across Gullet Ford before the dark and the rising water cut off the crossing — and what does each of you have to leave behind, in coin, cargo, or company, to manage it?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 7,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Ysolde approaches the lean-to with the easy stride of someone who's spent years on wet decks. Her eyes trace the guide-rope's tension first—reading the pull and",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 8,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Aldous approaches the lean-to, studying the water's movement and the guide-rope's tension, then the ferryman's expression. His fingers drift through the rain, r",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 9,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Morwen steps under the ferryman's shelter from the rain and studies him directly, then glances briefly toward the distant sound of the bell tolling from Saint O",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 10,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Mire steps forward through the downpour toward the ferryman's lean-to, moving with the confidence of someone trained in watch drills. She sizes up the ford and ",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 3,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 11,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Compel",
+   "skill": "",
+   "tags_invoked": "Panics near deep water",
+   "fp_spent": 1,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "AL-01",
+   "compel": "refused",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "As Aldous reads the raging current, the churn and the distant swarm-bell drag him back to the night the barge went under — he freezes mid-sentence, hands shaking, and the old ferryman's eyes narrow wi",
+   "event_type": "compel",
+   "improvised": true,
+   "fp_change": -1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 12,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Ysolde moves to the water's edge with confident steps, reaching down to steady whoever nearly went into the ford. As she pulls them up, her eyes never leave the",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 13,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Aldous watches how the rain strikes the water, traces the current's pull on the rope and the ground beneath, and places his hand on the guide-rope itself to fee",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 14,
+   "session": 1,
+   "scene": 1,
+   "actor": "Morwen",
+   "action": "pass",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Morwen steadies herself as the ground shifts treacherously beneath the group. She watches the pack nearly slide into the churn with narrowed eyes, one hand read",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 15,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "overcome",
+   "skill": "Physique",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Mire strides forward into the black mud without hesitation, boots sinking as she tests the ground with deliberate, practiced care. She moves the way she was tra",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 16,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "Create Advantage: Ysolde moves to the water's edge with confident steps, reach",
+   "skill": "Notice +2",
+   "tags_invoked": "Trained by a dead scholar [YS-02]",
+   "fp_spent": 1,
+   "dice": "- - - 0",
+   "total": "+1",
+   "opposition": "+2",
+   "result": "success_major_cost",
+   "draw_id": "F-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "aspect A-1.1.1 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": -1,
+   "opposing_tags": [
+    "turns roads to mire [H-01]"
+   ],
+   "target_card": "",
+   "target_npc": "",
+   "shifts": -1,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": "gm_card"
+  },
+  {
+   "event_id": 17,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Draw (major_cost)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "F-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "deck now 6",
+   "event_type": "draw",
+   "improvised": false,
+   "caused_by": 16,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 18,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Rail + F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "F-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "drawn from Session Deck; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 19,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Create Advantage: Aldous watches how the rain strikes the water, traces the cu",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "- - - +",
+   "total": "+2",
+   "opposition": "+2",
+   "result": "tie",
+   "draw_id": "AL-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "aspect A-1.1.2 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "turns roads to mire [H-01]"
+   ],
+   "target_card": "H-01",
+   "target_npc": "",
+   "shifts": 0,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": "player_card_compel"
+  },
+  {
+   "event_id": 20,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Draw (tie)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "AL-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "deck now 5",
+   "event_type": "draw",
+   "improvised": false,
+   "caused_by": 19,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 21,
+   "session": 1,
+   "scene": 1,
+   "actor": "Mire",
+   "action": "Overcome: Mire strides forward into the black mud without hesitation, ",
+   "skill": "Physique +3",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "0 - - +",
+   "total": "+2",
+   "opposition": "+2",
+   "result": "tie",
+   "draw_id": "YS-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "turns roads to mire [H-01]"
+   ],
+   "target_card": "H-01",
+   "target_npc": "",
+   "shifts": 0,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4,
+   "cost_mode": "player_card_compel"
+  },
+  {
+   "event_id": 22,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Draw (tie)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "YS-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "deck now 4",
+   "event_type": "draw",
+   "improvised": false,
+   "caused_by": 21,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 23,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Cost (success_major_cost)",
+   "skill": "",
+   "tags_invoked": "Undermanned and Frightened",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "F-03",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Ysolde reads the safe channel true — the party has their line across. But the shout and commotion of the near-fall carries across the water, and a Wardens toll-patrol working the ford's far bank comes",
+   "event_type": "cost",
+   "improvised": false,
+   "cost_valid": true,
+   "for_event": 16,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 2,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 24,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Compel (deck)",
+   "skill": "",
+   "tags_invoked": "Priests pry loose any secret",
+   "fp_spent": 1,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "AL-04",
+   "compel": "refused",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Your voice does the thing it always does, Aldous — it comes out like a confession, true and unstoppable, the same cadence that's made every priest who's ever heard you pry loose your secrets. Here, re",
+   "event_type": "compel",
+   "improvised": false,
+   "fp_change": -1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 25,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Rail + AL-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "AL-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "surfaced (Aldous)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 26,
+   "session": 1,
+   "scene": 1,
+   "actor": "Aldous",
+   "action": "Card surfaces",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "AL-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "1 free invoke(s)",
+   "event_type": "surface",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 2,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 27,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "Compel (deck)",
+   "skill": "",
+   "tags_invoked": "No clan will shelter me",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "YS-01",
+   "compel": "accepted",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "Ysolde, as Mire feels out the footing, a low reed-canoe slides past on the swollen current — Stiltfolk, running the flood the way only they can. One of them looks right at you, recognizes you, and loo",
+   "event_type": "compel",
+   "improvised": false,
+   "fp_change": 1,
+   "compel_forced": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 28,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Rail + YS-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "YS-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "surfaced (Ysolde)",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 29,
+   "session": 1,
+   "scene": 1,
+   "actor": "Ysolde",
+   "action": "Card surfaces",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "YS-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 3,
+   "notes": "1 free invoke(s)",
+   "event_type": "surface",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 30,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "3->2",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "resolved -1",
+   "event_type": "tension",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 31,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Rail - AL-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "AL-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "binder: scene cleanup",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 32,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Rail - YS-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "YS-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "binder: scene cleanup",
+   "event_type": "rail_remove",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 33,
+   "session": 1,
+   "scene": 1,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "Toll-Sergeant of Gullet Ford",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 34,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Trigger fired: B-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "compel_refused",
+   "event_type": "trigger",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 35,
+   "session": 1,
+   "scene": 1,
+   "actor": "",
+   "action": "Scene 1 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 2,
+   "notes": "triggers fired: ['B-02']",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Ysolde": 3,
+    "Aldous": 1,
+    "Morwen": 3,
+    "Mire": 3
+   },
+   "gm_fp": 4
+  }
+ ],
+ "scenes": [
+  {
+   "index": 1,
+   "tension_before": 3,
+   "scene_test": null,
+   "outcome": "skipped",
+   "beat": null,
+   "rounds": 2,
+   "climax": false,
+   "tension_after": 2,
+   "triggers_fired": [
+    "B-02"
+   ]
+  }
+ ],
+ "transcript": [
+  {
+   "session": 1,
+   "scene": 0,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Session begins. Each player has Ysolde 3 FP, Aldous 3 FP, Morwen 3 FP, Mire 3 FP. Face-up: Endless Rain [H-01], Saint Orrin's Drowned Temple [L-02].",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The rain has not stopped in eleven years and it does not stop now — it comes down in grey ropes, hammering the reeds flat and turning the ford's approach to black mud that sucks at every boot. Gullet Ford itself is a churn of brown water, faster and higher than any of you have seen it, with a single sagging guide-rope strung pole to pole as the only mark of where the crossing used to be safe. A hunched old ferryman crouches under a reed lean-to at the near bank, watching the four of you arrive from different directions along the same drowned road, sizing you up before he'll say whether he's still taking coin to guide anyone across tonight. Somewhere far off, past the tree-line, a bell that shouldn't still be ringing carries faintly on the wind from the direction of Saint Orrin's Drowned Temple.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "I know these waters, old man. The rope's holding, the ford's running high but not impossible. What's it going to take to get us across tonight?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde approaches the lean-to with the easy stride of someone who's spent years on wet decks. Her eyes trace the guide-rope's tension first—reading the pull and strain the way the Stiltfolk taught her, before they cast her out—then she crouches to meet the ferryman's eye directly. There's no fear in her, only patient attention to the water's rage and the old man's silent reckoning.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "I know water, old man. Tell me what troubles you about this crossing, and I'll read the omens for both of us.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous approaches the lean-to, studying the water's movement and the guide-rope's tension, then the ferryman's expression. His fingers drift through the rain, reading its rhythm and weight.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "speech",
+   "text": "Can you take us across?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Morwen",
+   "kind": "action",
+   "text": "(Morwen steps under the ferryman's shelter from the rain and studies him directly, then glances briefly toward the distant sound of the bell tolling from Saint Orrin's before looking back.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Old man, we're crossing tonight, whether the ford likes it or not. What's your price, and what do you need from us to make it safe?",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire steps forward through the downpour toward the ferryman's lean-to, moving with the confidence of someone trained in watch drills. She sizes up the ford and the old man, then addresses him directly and authoritatively—still speaking like she's badged, even though she's not anymore.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "\"The water's afraid, old man, not angry. It rushes because it has nowhere else to go—but that means it knows where it's going. Look at how the rope holds despite the pull. Your ford is dangerous, but it's honest.\"",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous refuses a compel.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The old ferryman just grunts at Aldous's talk of an \"honest\" ford, unconvinced by fine words when the rope groans against the current. Aldous holds his ground, refusing to let the man's doubt become his own doomsaying — he pays for that stubbornness out of his own pocket rather than let the water's fear become his. As he steps back to plant his feet more firmly, the bank does the arguing for the ferryman: eleven years of endless rain have turned the near approach to black soup, and the ground gives way under someone's boot. A pack skids toward the churn before hands close on the strap — nothing lost yet, but everyone's suddenly aware how little solid ground is left between them and the ford.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "There's a channel here, old man. I can read water the way my people taught me before they cast me out—let me show you where it runs safe.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "action",
+   "text": "(Ysolde moves to the water's edge with confident steps, reaching down to steady whoever nearly went into the ford. As she pulls them up, her eyes never leave the water—she traces the guide-rope's tension, watches how the current breaks around the ford bottom, reads the pattern the way the Stiltfolk taught her before they cast her out. There's a safe channel here. She can feel it in the rope's angle, see it in how the water eddies and flows around the hidden shallows.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "\"There. That's where the crossing holds strongest. The water's running true there—it tells you exactly where to place your feet.\"",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "action",
+   "text": "(Aldous watches how the rain strikes the water, traces the current's pull on the rope and the ground beneath, and places his hand on the guide-rope itself to feel its stress. His fingers read the ford like text written in moving water. He turns and points to a line between the poles where the rope holds truest and the ground holds longest—where the flood has not yet eaten the bank away.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "speech",
+   "text": "Hold the rope and follow where I step. One at a time, no rushing.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Mire",
+   "kind": "action",
+   "text": "(Mire strides forward into the black mud without hesitation, boots sinking as she tests the ground with deliberate, practiced care. She moves the way she was trained in watch drills—methodical and precise, feeling out solid ground beneath the rain-churned surface with each step. She plants her weight deliberately and turns back to the others, marking a path with her body.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde — create advantage with Notice: dice - - - 0, invoking Trained by a dead scholar [YS-02] → Average (+1) vs Fair (+2): SUCCESS MAJOR COST",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous — create advantage with Notice: dice - - - + → Fair (+2) vs Fair (+2): TIE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Mire — overcome with Physique: dice 0 - - + → Fair (+2) vs Fair (+2): TIE",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "Ysolde reads the safe channel true — the party has their line across. But the shout and commotion of the near-fall carries across the water, and a Wardens toll-patrol working the ford's far bank comes splashing into view, torches guttering in the rain. Undermanned and frightened, they level spears and demand toll and papers before anyone sets foot on the crossing, F-03's clock ticking up as they plant themselves squarely in the party's path.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Aldous",
+   "kind": "speech",
+   "text": "The water spoke plain, and I spoke plain with it — but I've named no more danger than what any soul needs to hear to cross safely. There's no priest here to pry anything loose from me.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Aldous refuses the compel on 'Truth Before the Dry Saint'.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Ysolde",
+   "kind": "speech",
+   "text": "There. You see them? The reed-canoe—that's the way to read this ford. That's what I should have shown you all along.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Ysolde accepts the compel on 'Exiled from the Reed-Kin'.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 1,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The four of you make it across — but Gullet Ford takes its toll from each of you differently. As Ysolde points out the safe channel, one of the Wardens catches the old exile-brand on her wrist in his torchlight and barks an accusation of \"swamp-witch business\" to his fellows; she has to talk fast and loud to keep spears from turning her way, her Stiltfolk past dragged into the open right when she least wanted it. Aldous refuses to let the priestly compulsion loosen his tongue further, but his silence and old soldier's bearing only make the toll-patrol dig in — they levy a hard toll at the rope, coin and a share of the party's dry stores handed over before the Wardens grudgingly wave you through. Mire's careful path-finding gets everyone's boots on solid ground, but the driving rain has its own price: packs come across soaked through, salted meat and dry kindling ruined in the crossing. By the time the last of you stumbles onto the far bank, cold and lighter in the purse, the Wardens' sergeant has taken a long look at all your faces — and at Ysolde's most of all — before letting his patrol fall back into the reeds. Somewhere past the tree-line, the drowned bell of Saint Orrin's tolls on, indifferent to what the crossing cost.",
+   "visible_to": "all"
+  }
+ ],
+ "costs": [
+  {
+   "event": "free_compel",
+   "scene": 1,
+   "draw_id": "",
+   "valid": null,
+   "tag": "Panics near deep water",
+   "text": "As Aldous reads the raging current, the churn and the distant swarm-bell drag him back to the night the barge went under — he freezes mid-sentence, hands shaking, and the old ferryman's eyes narrow with fresh doubt about trusting this crossing to him.",
+   "improvised": true,
+   "accepted": false,
+   "owner": "Aldous"
+  },
+  {
+   "event": "success_major_cost",
+   "scene": 1,
+   "draw_id": "F-03",
+   "valid": true,
+   "tag": "Undermanned and Frightened",
+   "text": "Ysolde reads the safe channel true — the party has their line across. But the shout and commotion of the near-fall carries across the water, and a Wardens toll-patrol working the ford's far bank comes splashing into view, torches guttering in the rain. Undermanned and frightened, they level spears a",
+   "improvised": false,
+   "mode": "gm_card",
+   "card": {
+    "id": "F-03",
+    "type": "FACTION",
+    "owner": "GM",
+    "title": "The Causeway Wardens",
+    "power_tags": [
+     "hold the Ashwater Causeway",
+     "burn infected houses",
+     "levy tolls at fords"
+    ],
+    "weakness": "Undermanned and Frightened",
+    "clock": "0/4"
+   }
+  },
+  {
+   "event": "compel:tie",
+   "scene": 1,
+   "draw_id": "AL-04",
+   "valid": true,
+   "tag": "Priests pry loose any secret",
+   "text": "Your voice does the thing it always does, Aldous — it comes out like a confession, true and unstoppable, the same cadence that's made every priest who's ever heard you pry loose your secrets. Here, reading the ford aloud, that same honesty forces you to admit the crossing is worse than you first let",
+   "improvised": false,
+   "accepted": false,
+   "refusal_valid": true,
+   "owner": "Aldous",
+   "placebo": false,
+   "card": {
+    "id": "AL-04",
+    "type": "REACH",
+    "owner": "PC-ALDOUS",
+    "title": "Truth Before the Dry Saint",
+    "power_tags": [
+     "Cannot lie to a priest",
+     "Trusted by the Order",
+     "Voice like a confession"
+    ],
+    "weakness": "Priests pry loose any secret"
+   }
+  },
+  {
+   "event": "compel:tie",
+   "scene": 1,
+   "draw_id": "YS-01",
+   "valid": true,
+   "tag": "No clan will shelter me",
+   "text": "Ysolde, as Mire feels out the footing, a low reed-canoe slides past on the swollen current — Stiltfolk, running the flood the way only they can. One of them looks right at you, recognizes you, and looks away without a word. No clan will shelter you, and none will lend a hand tonight either; the cano",
+   "improvised": false,
+   "accepted": true,
+   "refusal_valid": null,
+   "owner": "Ysolde",
+   "placebo": false,
+   "card": {
+    "id": "YS-01",
+    "type": "ROOTS",
+    "owner": "PC-YSOLDE",
+    "title": "Exiled from the Reed-Kin",
+    "power_tags": [
+     "Exiled by the Stiltfolk Clans",
+     "Reads river currents like kin",
+     "Knows every hidden channel"
+    ],
+    "weakness": "No clan will shelter me"
+   }
+  }
+ ],
+ "referee": {
+  "violations": [
+   {
+    "section": "§4, 'Resolving a drawn player card,' step 4",
+    "issue": "Aldous refused the compel offered on AL-04 (drawn for the tie at event 19). Per step 4, refusal means he pays 1 fate point AND 'the GM builds the cost from a face-up GM tag instead.' The FP payment was logged (event 24), but no subsequent event applies a cost built from a face-up GM tag (unlike event 23, which explicitly did this for the major-cost draw at event 16). The tie's mandatory 'success at a minor cost' complication was therefore never actually delivered.",
+    "event_id": 24,
+    "scene": 1,
+    "source": "referee"
+   }
+  ],
+  "ambiguities": [
+   {
+    "id": "AMB-01",
+    "section": "brief",
+    "issue": "Arm A lists 'Attention', which the spec never defines.",
+    "interim_ruling": "Not modelled.",
+    "detail": "Arm definition lists Attention; not modelled.",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-12",
+    "section": "§8",
+    "issue": "Stress box values are unspecified.",
+    "interim_ruling": "Fate Core: boxes 1 and 2; Physique/Will +1/+2 adds a 3 box, +3 or more adds 3 and 4.",
+    "detail": "stress boxes built with Fate Core values",
+    "scene": null,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-22",
+    "section": "§3/§7",
+    "issue": "Does a GLOBAL anchor give the GM a free invoke like a GM card?",
+    "interim_ruling": "Yes, GLOBAL cards placed on the rail give the GM 1 free invoke that scene.",
+    "detail": "H-01",
+    "scene": 0,
+    "source": "engine"
+   },
+   {
+    "id": "AMB-10",
+    "section": "§9",
+    "issue": "Growth from 'roll fails after one of its tags was invoked' — invoked by whom?",
+    "interim_ruling": "Owner's own invokes only.",
+    "detail": "YS-02",
+    "scene": 1,
+    "source": "engine"
+   },
+   {
+    "section": "§4 (Resolving a drawn player card, step 4) / §3 outcomes table",
+    "issue": "The spec doesn't say whether the deck draws for the major-cost roll (event 16) and the two tie rolls (events 19, 21) must be resolved in order before the next roll proceeds. Here all three draws (F-03, AL-04, YS-01) happened back-to-back before any of the three costs were resolved.",
+    "interim_ruling": "Allowed deferred/batched resolution; each cost/compel event was matched to its triggering roll via the for_event/caused_by fields rather than resolution order, and no rule was read to forbid this.",
+    "scene": 1,
+    "source": "referee"
+   },
+   {
+    "section": "§4 step 4",
+    "issue": "The rule says that when a drawn player card's compel is refused, 'the GM builds the cost from a face-up GM tag instead,' but the spec doesn't specify whether this must appear as its own logged event (as the major-cost path does at event 23) or can be folded into scene narration with no discrete mechanical trace.",
+    "interim_ruling": "None was applied at the table for event 24; no discrete cost event was produced, which is logged below as a violation rather than resolved by a table ruling. Going forward the table should require a discrete Cost event mirroring event 23's precedent.",
+    "scene": 1,
+    "source": "referee"
+   }
+  ],
+  "cost_checks": [
+   {
+    "event_id": 11,
+    "used_drawn_card": false,
+    "note": "draw_id field is blank in the cost list for this compel; no matching Draw event exists in the log for 'AL-01'. This is an ordinary hostile invoke/compel on an already-live binder tag, not a Session Deck draw, so the deck-draw tag constraint does not apply here and was correctly not treated as one.",
+    "scene": 1
+   },
+   {
+    "event_id": 16,
+    "used_drawn_card": true,
+    "note": "Major cost (event 23) was built directly from F-03's own weakness tag 'Undermanned and Frightened,' satisfying §3's 'major cost must use its weakness tag' requirement.",
+    "scene": 1
+   },
+   {
+    "event_id": 19,
+    "used_drawn_card": true,
+    "note": "The compel offer (event 24) correctly used AL-04's own weakness tag 'Priests pry loose any secret' per §4 step 2's default. However, Aldous refused, and the required follow-up (§4 step 4: GM builds the cost from a face-up GM tag) was never logged, so the tie's mandatory minor-cost complication was left undelivered (see violation).",
+    "scene": 1
+   },
+   {
+    "event_id": 21,
+    "used_drawn_card": true,
+    "note": "Compel (event 27) used YS-01's own weakness tag 'No clan will shelter me,' was accepted, and the complication happened as described — fully compliant with §4.",
+    "scene": 1
+   }
+  ],
+  "friction": [
+   {
+    "scene": 1,
+    "text": "§4 step 4's fallback cost ('GM builds the cost from a face-up GM tag instead' when a player refuses the drawn-card compel) was not visibly executed for event 19/24 — the tie's guaranteed cost appears to have been quietly dropped after the FP payment, undermining the system's core promise that costs are never invented/omitted freely."
+   },
+   {
+    "scene": 1,
+    "text": "Three Session Deck draws (F-03, AL-04, YS-01) piled up from three separate rolls before any of their costs were resolved, making it harder to audit which cost belongs to which draw without relying on the for_event/caused_by metadata."
+   },
+   {
+    "scene": 1,
+    "text": "Heavily truncated notes text throughout the log makes it difficult to fully verify, from the fictional description alone, that each cost or compel text actually engaged with the drawn card's tag rather than generic scene flavor."
+   }
+  ]
+ },
+ "surveys": [],
+ "interview": null,
+ "chronicle": null,
+ "state_end": {
+  "tension": 2,
+  "fp": {
+   "Ysolde": 3,
+   "Aldous": 1,
+   "Morwen": 3,
+   "Mire": 3
+  },
+  "surfaced": [
+   "AL-04",
+   "YS-01"
+  ],
+  "deck_player_cards": {
+   "YS-01": "Ysolde",
+   "AL-04": "Aldous",
+   "MO-04": "Morwen",
+   "MI-01": "Mire"
+  },
+  "guarantee_pulled": [],
+  "guarantee_failed": [],
+  "deck_left": [
+   "H-05",
+   "MO-04",
+   "MI-01",
+   "T-01"
+  ],
+  "draws": 3,
+  "turns": {
+   "Ysolde": 2,
+   "Aldous": 2,
+   "Morwen": 1,
+   "Mire": 2
+  }
+ },
+ "notes": [],
+ "metrics": {},
+ "tokens": {
+  "prompt": 306179,
+  "completion": 71186,
+  "cost_usd": 1.2105,
+  "calls": 21
+ },
+ "llm_calls": 21,
+ "models": {
+  "gm": "claude-sonnet-5",
+  "player": "claude-haiku-4-5-20251001",
+  "referee": "claude-sonnet-5",
+  "interviewer": "claude-haiku-4-5-20251001"
+ },
+ "elapsed_s": 641.5
+}
