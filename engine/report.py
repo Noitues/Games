@@ -27,6 +27,10 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
     champ_items: Dict[str, Counter] = defaultdict(Counter)
     champ_conceal: Dict[str, List[int]] = defaultdict(list)
     tier_w: Dict[str, List[int]] = defaultdict(list)
+    tier_vs: Dict[str, Dict[str, List[int]]] = defaultdict(lambda: defaultdict(list))
+    tier_occ: Dict[str, Counter] = defaultdict(Counter)     # ai 1.4.0 state machines
+    tier_occ_rounds: Counter = Counter()
+    tier_switches: Dict[str, List[int]] = defaultdict(list)
     total_uses = total_conceal = total_edge = total_acts = total_snipe = 0
     total_champ_snipe = 0
     role_w: Dict[str, List[int]] = defaultdict(list)
@@ -114,9 +118,18 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
             first_tower_rounds.append(rnd)
             if w is not None:
                 first_tower_win.append(int(team == w))
-        for team, tier in (r.get("tiers") or {}).items():
+        tiers_r = r.get("tiers") or {}
+        for team, tier in tiers_r.items():
+            opp_tier = tiers_r.get("south" if team == "north" else "north")
             if w is not None:
                 tier_w[tier].append(int(team == w))
+                if opp_tier is not None:
+                    tier_vs[tier][opp_tier].append(int(team == w))
+            occ = (r.get("states") or {}).get(team)
+            if occ:
+                tier_occ_rounds[tier] += len(occ)
+                tier_occ[tier].update(st for _, st in occ)
+                tier_switches[tier].append(sum(1 for a, b in zip(occ, occ[1:]) if a[1] != b[1]))
         for a in r["anomalies"]:
             anomalies[a.split("(")[0].strip()] += 1
 
@@ -265,6 +278,17 @@ def summarise(results: List[dict], spec: dict, tests: Optional[dict] = None,
             t: dict(zip(("wr", "wr_lo", "wr_hi"), wilson(sum(v), len(v))), games=len(v))
             for t, v in sorted(tier_w.items())
         } if len(tier_w) > 1 else {},
+        "head_to_head": {
+            t: {o: dict(zip(("wr", "wr_lo", "wr_hi"), wilson(sum(v), len(v))), games=len(v))
+                for o, v in sorted(d.items())}
+            for t, d in sorted(tier_vs.items())
+        } if len(tier_w) > 1 else {},
+        "machines": {
+            t: {"occupancy": {st: 100.0 * c / tier_occ_rounds[t] for st, c in occ.most_common()},
+                "switches_per_game": sum(tier_switches[t]) / max(1, len(tier_switches[t]))}
+            for t, occ in sorted(tier_occ.items())
+        },
+        "anchors": list(spec.get("anchors") or ["T2_search"]),
         "concealment": {
             "attacks_from_concealment_per_game": total_conceal / max(1, n),
             "share_of_all_ability_uses": (100 * total_conceal / total_uses) if total_uses else 0.0,
@@ -412,6 +436,29 @@ def to_markdown(s: dict) -> str:
               "| policy | games | win rate [95% CI] |", "|---|---|---|"]
         for t, v in sorted(pers.items(), key=lambda kv: -kv[1]["wr"]):
             L += [f"| {t} | {v['games']} | {v['wr']:.1f} [{v['wr_lo']:.1f}, {v['wr_hi']:.1f}] |"]
+        L += [""]
+    machines = s.get("machines") or {}
+    if machines:
+        # Handoff §9.2: rank on the lower confidence bound, not the point
+        # estimate, and report every candidate against the fixed anchors,
+        # since the head-to-head number is the only one comparable across
+        # generations of an evolving field.
+        anchors = [a for a in (s.get("anchors") or []) if a in pers]
+        h2h = s.get("head_to_head") or {}
+        L += ["", "## 9d. State machines (ai 1.4.0) - field ranked by lower confidence bound", "",
+              "| policy | games | win rate [95% CI] | " + " | ".join(f"vs {a}" for a in anchors)
+              + " | state occupancy | switches/game |",
+              "|---|---|---|" + "---|" * len(anchors) + "---|---|"]
+        for t, v in sorted(pers.items(), key=lambda kv: -kv[1]["wr_lo"]):
+            cols = []
+            for a in anchors:
+                rec = h2h.get(t, {}).get(a)
+                cols.append(f"{rec['wr']:.0f}% ({rec['games']})" if rec else "-")
+            m = machines.get(t)
+            occ = ", ".join(f"{st} {pct:.0f}%" for st, pct in m["occupancy"].items()) if m else "-"
+            sw = f"{m['switches_per_game']:.1f}" if m else "-"
+            L += [f"| {t} | {v['games']} | {v['wr']:.1f} [{v['wr_lo']:.1f}, {v['wr_hi']:.1f}] | "
+                  + " | ".join(cols) + f" | {occ} | {sw} |"]
         L += [""]
     c = s.get("concealment", {})
     L += ["", "## 9b. Concealment (RQ-032)", "",

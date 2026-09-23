@@ -1,0 +1,39 @@
+{
+  "batch_id": "batch_0041",
+  "rules": "1.7.0",
+  "roster": "1.6.0",
+  "ai": "1.4.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3,
+    "personality_pool": [
+      "SM_g1_clock3",
+      "SM_g1_clock2",
+      "SM_g1_map",
+      "SM_g1_map_commit",
+      "SM_g1_objective_window",
+      "SM_g1_fight",
+      "SM_g1_ap_lead",
+      "SM_g1_full",
+      "T2_search",
+      "T2_sieger"
+    ]
+  },
+  "anchors": ["T2_search", "T2_sieger"],
+  "games": 400,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 4101,
+  "replays": 2,
+  "config_overrides": {
+    "tower_hp": 16,
+    "kill_ap": 3,
+    "death_band_bonus": 1
+  },
+  "extra": [
+    "State-machine tournament, generation 1 (Handoff 9.2). Eight hand-written machines spanning the families worth trying - two pure clocks (one a two-state control), a map-reactive pair with and without a commit timer, an objective window, a fight-reactive machine, an economy-reactive one, and a five-state machine - drawn per game alongside two fixed anchors: plain T2_search, the constant across generations, and T2_sieger, the strategy to beat.",
+    "Ten tiers over 800 seats is about 80 games each. Rank on the lower confidence bound (report 9d), keep the top 2, breed 8 for generation 2. Read every candidate's record against the anchors, not its overall win rate. Same rules, roster and P-0008 values as batch_0039; dragon_ap_each 1.",
+    "What would settle something: a machine whose lower bound clears T2_sieger's says switching beats sieging; every survivor sitting in sieger most of the game says the state machine is unnecessary and RQ-037 is confirmed from a second direction."
+  ]
+}

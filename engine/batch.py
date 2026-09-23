@@ -83,6 +83,9 @@ def play_one(args: tuple) -> dict:
     res = g.run()
     out = asdict(res)
     out["tiers"] = tiers
+    # ai 1.4.0 state machines record which personality they occupied each
+    # round; a fixed personality has no such record.
+    out["states"] = {t: getattr(pols[t], "occupancy", None) for t in TEAMS}
     out["runtime"] = time.time() - t0
     out["game_index"] = i
     return out

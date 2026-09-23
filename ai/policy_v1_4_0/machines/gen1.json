@@ -1,0 +1,52 @@
+[
+  {"name": "SM_g1_clock3", "family": "time-scripted",
+   "note": "Three bands, no signals: lane, then objectives, then siege. A pure clock.",
+   "default": "laner", "commit": 0,
+   "rules": [{"if": [["round", ">=", 9]], "then": "sieger"},
+             {"if": [["round", ">=", 5]], "then": "objective"}]},
+
+  {"name": "SM_g1_clock2", "family": "time-scripted",
+   "note": "Two-state control: lane the opening, then siege. If this matches the rest, the extra states are decoration.",
+   "default": "laner", "commit": 0,
+   "rules": [{"if": [["round", ">=", 4]], "then": "sieger"}]},
+
+  {"name": "SM_g1_map", "family": "reactive",
+   "note": "Reads the tower count only: ahead -> siege, behind -> ward, level -> lane. No hysteresis, so it may flap.",
+   "default": "laner", "commit": 0,
+   "rules": [{"if": [["tower_diff", ">=", 1]], "then": "sieger"},
+             {"if": [["tower_diff", "<=", -1]], "then": "warder"}]},
+
+  {"name": "SM_g1_map_commit", "family": "reactive+commit",
+   "note": "SM_g1_map with a three-round commit once a state is entered.",
+   "default": "laner", "commit": 3,
+   "rules": [{"if": [["tower_diff", ">=", 1]], "then": "sieger"},
+             {"if": [["tower_diff", "<=", -1]], "then": "warder"}]},
+
+  {"name": "SM_g1_objective_window", "family": "reactive",
+   "note": "Sieges by default and goes to the pit only while something is up. Two states.",
+   "default": "sieger", "commit": 0,
+   "rules": [{"if": [["objective_up", "==", 1]], "then": "objective"}]},
+
+  {"name": "SM_g1_fight", "family": "reactive+commit",
+   "note": "Groups after a won fight, sieges when ahead, wards when two champions down; otherwise lanes.",
+   "default": "laner", "commit": 2,
+   "rules": [{"if": [["fight_won", ">=", 1]], "then": "brawler"},
+             {"if": [["tower_diff", ">=", 1]], "then": "sieger"},
+             {"if": [["alive_diff", "<=", -2]], "then": "warder"}]},
+
+  {"name": "SM_g1_ap_lead", "family": "reactive+commit",
+   "note": "Reads the economy: ahead on income -> siege, behind -> take objectives, level -> lane.",
+   "default": "laner", "commit": 1,
+   "rules": [{"if": [["ap_diff", ">=", 0.5]], "then": "sieger"},
+             {"if": [["ap_diff", "<=", -0.5]], "then": "objective"}]},
+
+  {"name": "SM_g1_full", "family": "five-state",
+   "note": "Every state in play, in priority order: close a low Nexus, contest an objective, press a won fight, siege when ahead or late, ward when well behind.",
+   "default": "laner", "commit": 2,
+   "rules": [{"if": [["nexus_enemy_hp", "<=", 6]], "then": "sieger"},
+             {"if": [["objective_up", "==", 1], ["round", ">=", 3]], "then": "objective"},
+             {"if": [["fight_won", ">=", 2]], "then": "brawler"},
+             {"if": [["tower_diff", ">=", 1]], "then": "sieger"},
+             {"if": [["tower_diff", "<=", -2]], "then": "warder"},
+             {"if": [["round", ">=", 10]], "then": "sieger"}]}
+]
