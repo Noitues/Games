@@ -4,7 +4,7 @@
  "arm": "B",
  "seed": 44985,
  "spec_version": "0.3.1",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 3,
@@ -3103,6 +3103,34 @@
     "Yarrow": 0
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 101,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "FP: Petra=0, Anselm=0, Caddock=1, Yarrow=0",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 0,
+    "Anselm": 0,
+    "Caddock": 1,
+    "Yarrow": 0
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -4359,14 +4387,209 @@
     "detail": "",
     "scene": 5,
     "source": "engine"
+   },
+   {
+    "section": "Aspects and invokes",
+    "issue": "The rules describe hostile invokes (GM invoking a player's trouble against them, §3) and compels (§Compels) as the two ways a trouble aspect interacts with fate points, but don't say whether a player may invoke their OWN trouble aspect on their own roll purely for the +2/reroll bonus (as opposed to being compelled or hostilely invoked). Event 74 has Yarrow spend a fate point to invoke his own trouble aspect [YA-TR] on his own Attack roll.",
+    "interim_ruling": "Treated as a normal aspect invoke (1 fp for +2), same as invoking any other aspect; no extra restriction applied.",
+    "source": "referee"
+   },
+   {
+    "section": "Rolls (passive opposition) / Aspects and invokes",
+    "issue": "The rules give a formula for passive opposition (Average +1 per opposing table aspect, cap Great) but don't say how that stacks with a mid-roll hostile invoke of an aspect against the roller. Event 52 opposition of +4 is only explainable as +2 passive (one opposing aspect: 'spreads through open wounds [H-02]') plus +2 from the GM's separately-noted hostile invoke of Yarrow's trouble (gm_fp_spent 1), rather than from the passive formula alone.",
+    "interim_ruling": "Hostile aspect invokes were allowed to stack additively on top of the printed passive-opposition value rather than counting toward the 'one aspect = +1' passive cap.",
+    "source": "referee"
+   },
+   {
+    "section": "(no matching section — deck/rail subsystem is undocumented)",
+    "issue": "The log's draw_id / rail_add / rail_remove / card_leaves_play / trigger / opposing_tags mechanics (e.g., H-02, F-02 cards, trigger B-01) drive most of the opposition values and scene framing in this session, but none of this is described anywhere in the supplied ruleset, so correctness of e.g. F-02 leaving play on a success-with-style overcome (event 26-28) cannot be checked against written rules.",
+    "interim_ruling": "The engine's built-in card/rail logic was treated as authoritative since the supplied Fate ruleset is silent on it.",
+    "source": "referee"
    }
   ],
-  "cost_checks": [],
-  "friction": []
+  "cost_checks": [
+   {
+    "event_id": 10,
+    "used_drawn_card": false,
+    "note": "Free compel, draw_id empty/improvised; no drawn card to check tags against."
+   },
+   {
+    "event_id": 20,
+    "used_drawn_card": false,
+    "note": "Free compel, draw_id empty/improvised."
+   },
+   {
+    "event_id": 29,
+    "used_drawn_card": false,
+    "note": "Tie cost (from event 25), cost_mode improvised, draw_id empty; no drawn-card tags involved."
+   },
+   {
+    "event_id": 37,
+    "used_drawn_card": false,
+    "note": "Free compel, draw_id empty/improvised."
+   },
+   {
+    "event_id": 43,
+    "used_drawn_card": false,
+    "note": "Tie cost (from event 41), cost_mode improvised, draw_id empty."
+   },
+   {
+    "event_id": 48,
+    "used_drawn_card": false,
+    "note": "Free compel, draw_id empty/improvised."
+   },
+   {
+    "event_id": 67,
+    "used_drawn_card": false,
+    "note": "Tie cost (from event 61), cost_mode improvised, draw_id empty."
+   },
+   {
+    "event_id": 83,
+    "used_drawn_card": false,
+    "note": "Success-at-major-cost (from event 80, a fail), cost_mode improvised, draw_id empty."
+   },
+   {
+    "event_id": 97,
+    "used_drawn_card": false,
+    "note": "Tie cost (from event 91), cost_mode improvised, draw_id empty."
+   },
+   {
+    "event_id": 98,
+    "used_drawn_card": false,
+    "note": "Success-at-major-cost (from event 92, a fail), cost_mode improvised, draw_id empty."
+   },
+   {
+    "event_id": 99,
+    "used_drawn_card": false,
+    "note": "Success-at-major-cost (from event 94, a fail), cost_mode improvised, draw_id empty."
+   }
+  ],
+  "friction": [
+   {
+    "text": "The deck/rail/trigger subsystem (draw_id, rail_add/remove, card_leaves_play, opposing_tags citing H-02/F-02) is central to opposition values and cost narration all session but has no corresponding text in the supplied ruleset, making large parts of the log unverifiable against written rules."
+   },
+   {
+    "text": "Every cost, compel, and fill entry in this session shows draw_id:\"\" and mode:\"improvised\" — a genuine deck-draw cost never actually occurred, so the requested 'did the cost use the drawn card's tags' check is moot for all 11 entries."
+   },
+   {
+    "text": "GM fate-point refresh amounts at scene start are never logged (only the single spend at event 52 is visible), so full-session GM fp budget compliance can't be independently audited from this log alone."
+   }
+  ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "rules_lawyer",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 7,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Finding the rhythmic gap in the swarm-song's pattern and using it to move through the paralyzed pilgrims—my training as a bell-ringer finally gave me a concrete way to push back against something that should have stopped me cold, and my best skill (Notice) actually solved the problem.",
+    "most_frustrating": "Being frozen when the song called my name meant I had to watch the others save Tomas while I stood paralyzed—thematically perfect for my trouble, but it meant my character (whose vow drove this entire rescue) was sidelined during the climactic moments multiple times.",
+    "background_used": "Good—the bell-ringer apprenticeship and my vow to ring everyone home were central and felt deeply personal; the specific location details (Ashwater Tollgate, rivalry with Marrow Ferry) and my enmity with the Dry Saint were less developed.",
+    "wanted_but_couldnt": "Resist the swarm-song's paralysis without accepting compels—I ran out of fate points early and couldn't refuse the compels triggered by my trouble, even when I wanted to fight through it.",
+    "one_sentence": "My core identity as a bell-ringer with a desperate vow felt brilliantly woven into the story and made it deeply personal, even though the repeated compels constrained my agency more than I would have liked."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "lurker",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The final roll breaking the Swarm-Song's hold. Anselm invoked both his high concept and his deepest wound—Survivor of the Drowned Mill—to drive back something enormous. The cost was brutal: his sister's cry resurfacing, deaf to everything else. It was thematically perfect and mechanically earned. The GM wove past and present together in a single roll.",
+    "most_frustrating": "His Will is terrible, so the mental attack at the end hit like a building collapsing. Fair mechanically, but it highlighted how vulnerable he is to that kind of damage. Also: Anselm is quiet, so the big emotional/rhetorical moments belonged to the others—he could only respond briefly when the narrative called for grand speeches.",
+    "background_used": "Good. \"Survivor of the Drowned Mill, Haunted by His Sister's Cry\" threaded through the whole session—Anselm hearing Tomas's voice trapped in the swarm-song echoed his sister's drowning. The final cost, making him relive that cry to break the song's hold, was organic. Not forced or unfair. It made his power matter.",
+    "wanted_but_couldnt": "Anselm's whole concept hinges on doubt—does the Hive have souls, or is it just hunger wearing familiar shapes? There were moments to explore this philosophically (Is Tomas still in there? Is the song conscious?) but the rescue's momentum didn't leave room. That's not a real complaint; it fits what the session needed to be.",
+    "one_sentence": "My trauma was weaponized brilliantly—not used against me unfairly, but as both thematic mirror to the boy's plight and mechanical cost, making my quiet exorcist's final stand actually matter."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "method_actor",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 5,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Cutting Tomas free from the bell with methodical competence—treating the swollen ropes like a birth cord, the core of who Caddock is: a woman who does the hard work in any conditions.",
+    "most_frustrating": "Caddock's trouble aspect never complicated things, and her personal connection to the hive-touched (Sella, what that means to her) wasn't explored. The rescue stayed tactical rather than personal.",
+    "background_used": "The midwife background was used excellently—every action referenced weathering storms and difficult births. But her relationships (Sella, Marrowreed, Wick Lane Cellars) didn't come up. Partial use; landed well where it appeared.",
+    "wanted_but_couldnt": "Wanted to face a real choice about the hive-touched—something forcing Caddock to confront what happened to Sella or what Tomas's potential hive-touch means to her. Instead it was a straightforward rescue.",
+    "one_sentence": "Caddock's competence as a midwife was used genuinely and felt true to character, but her personal relationships and deeper wounds didn't get pushed into or explored."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "storyteller",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Hauling Petra back up from the black water despite my shoulder wrenching - the disgraced guard finally being the one who holds the line and saves the day",
+    "most_frustrating": "The swarm-song infection kept spreading and I mostly just had to grit through it rather than having a real way to actively fight it back",
+    "background_used": "My trouble and militia guard past were used really well - the compel at the start put me in the exact position where I had to prove myself, and Coyl's reaction and my whole role as the one who understands holding lines felt earned. Some other aspects like Brack and my quest didn't come into play, but what was used wasn't forced.",
+    "wanted_but_couldnt": "I wanted more agency in resisting the swarm-song - maybe a technique or ritual to actively push it back rather than just enduring it. Also would have liked if Brack could have been part of the rescue somehow, or if the quest for the source came up more than just in dialogue.",
+    "one_sentence": "My trouble and militia background were used to create meaningful complications that put me exactly where Yarrow needs to be - proving he can still hold lines even when his name went bad."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Petra",
+    "turns": 20,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Anselm",
+    "turns": 14,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Caddock",
+    "turns": 12,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Yarrow",
+    "turns": 20,
+    "references_to_others_background": 0
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "Answering a mother's plea, the party fought their way up through Saint Orrin's Drowned Temple to the belltower, where the Drowned Priest's cult had bound young Tomas to the great bell's clapper as bait for the swarm-song. In the climax Caddock and Yarrow drove the Drowned Priest off the rotten ledge into the black water below while Petra freed Tomas and Anselm scourged the churning presence beneath the temple with silver wards. They leave with the boy alive and shaking, the ancient bell finally silent, but scars to show for it: Petra's split knuckles, Yarrow's wrenched shoulder, and Anselm haunted anew by his sister's dying cry.",
+  "closing_tension": null,
+  "reverberations": {
+   "growth": {},
+   "clocks": [],
+   "mutations": [],
+   "retired": []
+  },
+  "retired": []
+ },
  "state_end": {
   "tension": 3,
   "fp": {
@@ -4389,14 +4612,108 @@
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 852633,
-  "completion": 224763,
-  "cost_usd": 3.3013,
-  "calls": 90
+ "metrics": {
+  "arm": "B",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Petra",
+   "Yarrow"
+  ],
+  "backstory_all_players": false,
+  "deck_surfaced_all_players": null,
+  "deck_draws": 0,
+  "draw_costs": 0,
+  "draw_cost_used_card_rate_engine": null,
+  "draw_cost_tag_in_text_rate": null,
+  "draw_cost_repaired": 0,
+  "draw_cost_used_card_rate_referee": 0.0,
+  "fp_end": {
+   "Petra": 0,
+   "Anselm": 0,
+   "Caddock": 1,
+   "Yarrow": 0
+  },
+  "fp_end_mean": 0.25,
+  "fp_earned": {
+   "Yarrow": 3,
+   "Petra": 2
+  },
+  "fp_spent": {
+   "Petra": 5,
+   "Caddock": 2,
+   "Anselm": 3,
+   "Yarrow": 6
+  },
+  "compels_accepted": 4,
+  "compels_refused": 0,
+  "compels_deck": 0,
+  "compels_free": 4,
+  "turns": {
+   "Petra": 9,
+   "Anselm": 8,
+   "Caddock": 9,
+   "Yarrow": 9
+  },
+  "turn_gini": 0.0214,
+  "invokes": {
+   "Petra": 6,
+   "Caddock": 2,
+   "Anselm": 3,
+   "Yarrow": 7
+  },
+  "invoke_gini": 0.25,
+  "tension_trajectory": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "clock_marks": 0,
+  "violations": 0,
+  "violations_engine": 0,
+  "violations_referee": 0,
+  "ambiguities": 8,
+  "ambiguity_ids": [
+   "(no matching section — deck/rail subsystem is undocumented)",
+   "AMB-12",
+   "AMB-19",
+   "AMB-23",
+   "Aspects and invokes",
+   "Rolls (passive opposition) / Aspects and invokes"
+  ],
+  "gm_improvised_complications": 11,
+  "card_supplied_complications": 0,
+  "improvisation_share": 1.0,
+  "guarantee_pulled": 0,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6,
+   "involvement": 6.25,
+   "connection": 6.5,
+   "control": 5.75,
+   "play_again": 7
+  },
+  "involvement_var_within": 0.188,
+  "personality": {
+   "Petra": "rules_lawyer",
+   "Anselm": "lurker",
+   "Caddock": "method_actor",
+   "Yarrow": "storyteller"
+  },
+  "elapsed_min": 27.2,
+  "cost_usd": 3.8625
  },
- "llm_calls": 89,
+ "tokens": {
+  "prompt": 939431,
+  "completion": 261355,
+  "cost_usd": 3.8625,
+  "calls": 97
+ },
+ "llm_calls": 96,
  "call_log": [
   {
    "seq": 1,
@@ -5109,6 +5426,62 @@
    "cached": false,
    "prompt_tokens": 12154,
    "completion_tokens": 1361
+  },
+  {
+   "seq": 29,
+   "agent": "GM",
+   "kind": "gm_post",
+   "cached": false,
+   "prompt_tokens": 11519,
+   "completion_tokens": 324
+  },
+  {
+   "seq": 1,
+   "agent": "Referee",
+   "kind": "referee",
+   "cached": false,
+   "prompt_tokens": 13009,
+   "completion_tokens": 17470
+  },
+  {
+   "seq": 1,
+   "agent": "Anselm#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 12820,
+   "completion_tokens": 1971
+  },
+  {
+   "seq": 1,
+   "agent": "Caddock#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 12808,
+   "completion_tokens": 2553
+  },
+  {
+   "seq": 1,
+   "agent": "Petra#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 12791,
+   "completion_tokens": 2694
+  },
+  {
+   "seq": 1,
+   "agent": "Yarrow#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 12799,
+   "completion_tokens": 2850
+  },
+  {
+   "seq": 1,
+   "agent": "Interviewer",
+   "kind": "interviewer",
+   "cached": false,
+   "prompt_tokens": 11052,
+   "completion_tokens": 8730
   }
  ],
  "models": {
@@ -5117,5 +5490,5 @@
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 1335.5
+ "elapsed_s": 1631.2
 }
