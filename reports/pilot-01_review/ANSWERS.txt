@@ -1,0 +1,9 @@
+transcript_01.md: arm B | seed 87941 | run pilot-01__B__s87941__r1 | referee-flagged
+transcript_02.md: arm A | seed 87940 | run pilot-01__A__s87940__r0 | lowest-rated
+transcript_03.md: arm C | seed 87942 | run pilot-01__C__s87942__r2 | highest-rated
+transcript_04.md: arm C | seed 87941 | run pilot-01__C__s87941__r1 | random for its arm
+transcript_05.md: arm A | seed 87941 | run pilot-01__A__s87941__r1 | random for its arm
+transcript_06.md: arm C | seed 87940 | run pilot-01__C__s87940__r0 | referee-flagged
+transcript_07.md: arm A | seed 87942 | run pilot-01__A__s87942__r2 | referee-flagged
+transcript_08.md: arm B | seed 87940 | run pilot-01__B__s87940__r0 | referee-flagged
+transcript_09.md: arm B | seed 87942 | run pilot-01__B__s87942__r2 | random for its arm
