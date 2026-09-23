@@ -1,0 +1,530 @@
+{
+ "S-f168b473": {
+  "backstory": [
+   {
+    "name": "Petra",
+    "used": true,
+    "score": 8,
+    "note": "Toll-gate upbringing, swarm-song reading, and Ashwater ties directly unlocked social and information beats (Ossa, Sella, Toskin)."
+   },
+   {
+    "name": "Anselm",
+    "used": true,
+    "score": 8,
+    "note": "Mill-family vouching and sister Lise's drowning trauma gave real emotional stakes to the flooded-cellar push."
+   },
+   {
+    "name": "Caddock",
+    "used": true,
+    "score": 8,
+    "note": "Healer's immovable calm and the bond with Sella drove the ford stand and the aching, unresolved rescue thread."
+   },
+   {
+    "name": "Yarrow",
+    "used": true,
+    "score": 8,
+    "note": "Weir-Keeper training let him recognize Moss and literally save the ford's structure; water-reading paid off again in the finale."
+   }
+  ],
+  "best_moment": "Sella's brief break through the hive-song at the treeline (S4) \u2014 genuine pathos, a real cost (the Causeway's loss) delivered through a character bond, and the only moment the group's success felt bittersweet rather than clean.",
+  "worst_moment": "The quarantine bell alarm in S2 is rung as a major looming threat (\"Wardens... shoving through the press\") and then simply evaporates \u2014 no chase, no consequence, no follow-up anywhere in the rest of the session.",
+  "notes": "Every scene follows an almost identical template: GM frames a problem, all four PCs speak once in the same fixed order (Petra, Anselm, Caddock, Yarrow), and the GM then writes a single synthesis paragraph in which every contribution is validated and the scene resolves in the party's favor. This gives excellent, very even spotlight distribution and strong, consistent backstory integration \u2014 every character's past (toll-gate life, sister's drowning, midwife/healer steadiness, Weir-Keeper training) is woven into the mechanics of success rather than just flavor text. But it comes at a cost: there is no failure, no divergence, no real risk or cost paid for a wrong choice, and no complication that isn't fully resolved within the same beat it's introduced (the quarantine bell being the clearest dangling thread). The prose is strong and the overarching plot (flood swallowing the region, the Order's acolytes, Sella's hive-touched tragedy, the ledger chest) hangs together coherently and builds nice through-line stakes, but the session reads more like a well-orchestrated narration exercise than a game with uncertain outcomes \u2014 agency shows up in *how* characters solve problems, not *whether* they succeed.",
+  "overall": 6,
+  "engagement": 6,
+  "coherence": 7,
+  "spotlight_fairness": 9,
+  "player_agency": 5,
+  "complication_quality": 5,
+  "synthetic": false,
+  "tokens": {
+   "prompt": 9011,
+   "completion": 2928,
+   "cost_usd": 0.072,
+   "calls": 1
+  }
+ },
+ "S-52f6f701": {
+  "overall": 7,
+  "engagement": 7,
+  "coherence": 8,
+  "spotlight_fairness": 6,
+  "player_agency": 6,
+  "complication_quality": 7,
+  "backstory": [
+   {
+    "name": "Petra",
+    "used": true,
+    "score": 8,
+    "note": "Order bell-lore and a hidden past with Saint Orrin's rites directly power her ability to read/break the swarm-song, and the song calling her own name personalizes the threat."
+   },
+   {
+    "name": "Anselm",
+    "used": true,
+    "score": 8,
+    "note": "His liturgical/exorcist training and knowledge of Saint Orrin's rite are the mechanical and narrative key to reading the bell and freeing the pilgrim."
+   },
+   {
+    "name": "Yarrow",
+    "used": true,
+    "score": 7,
+    "note": "His oath to Coss and weir-keeper's knowledge of the marsh drive his choices and give him a clear promise-thread to follow, though it's thinner than the others'."
+   },
+   {
+    "name": "Caddock",
+    "used": true,
+    "score": 8,
+    "note": "Quiet through most of the session until her midwife history with Mory and Kel erupts in S5, becoming the emotional and practical center of the finale."
+   }
+  ],
+  "best_moment": "The belfry reveal that the looped, chisel-altered bell-rite is calling pilgrims 'down' instead of 'home,' immediately followed by discovering a still-living, humming pilgrim caught in the song \u2014 turning an environmental mystery into an urgent, personal rescue.",
+  "worst_moment": "The toll-gate opening in S1 resolves almost frictionlessly despite three characters pressing Coss at once \u2014 the only real cost (Petra's back-taxes threat) is narrated but never complicates the rest of the session, making the scene's tension feel a bit disposable.",
+  "notes": "The session has a strong unifying image (the drowned bell-song) that ties every scene together and rewards each character's competencies in turn, and the ending \u2014 Kel saved but marked with the grey hive-bloom \u2014 is a satisfying complicated victory rather than a clean win. The main weaknesses are pacing of the spotlight (Petra narrates the bell-reading in nearly every scene, sometimes crowding out Caddock and Yarrow until late) and a lack of hard failure states: almost every roll/action succeeds outright (the mire dunking is the only real physical setback), which flattens tension and reduces the sense that player choices could have gone badly wrong. Dialogue is heavy on internal narration blocks that sometimes repeat the same beat (bell-listening) rather than advancing it, which slightly slows momentum in S2.",
+  "synthetic": false,
+  "tokens": {
+   "prompt": 11406,
+   "completion": 1768,
+   "cost_usd": 0.0718,
+   "calls": 1
+  }
+ },
+ "S-b40cc183": {
+  "overall": 7,
+  "engagement": 7,
+  "coherence": 8,
+  "spotlight_fairness": 7,
+  "player_agency": 6,
+  "complication_quality": 7,
+  "backstory": [
+   {
+    "name": "Petra",
+    "used": true,
+    "score": 8,
+    "note": "Bell-ringer senses and Sister-Warden Clave threat make the swarm-song personally dangerous to her specifically."
+   },
+   {
+    "name": "Anselm",
+    "used": true,
+    "score": 9,
+    "note": "Childhood tie to the Colter mill-kin and his liturgical training both directly drive the climactic ford rescue."
+   },
+   {
+    "name": "Caddock",
+    "used": true,
+    "score": 9,
+    "note": "Tam and Marrowreed backstory fuel the Tallow confrontation and the pointed 'cleared' accusation to Mirel, with real narrative consequences."
+   },
+   {
+    "name": "Yarrow",
+    "used": true,
+    "score": 5,
+    "note": "Weir-Keeper competence is used constantly and well, but no personal people/oaths from his past actually surface in play."
+   }
+  ],
+  "best_moment": "Anselm's counter-liturgy fracturing the swarm-song mid-ambush and recognizing Nell Colter as she breaks free for a moment \u2014 backstory, skill, and stakes all converge at once.",
+  "worst_moment": "The opening ford-reading scene, where all four PCs perform near-identical 'study the water/reeds' actions and everything resolves cleanly with no cost or divergence \u2014 redundant spotlighting with little tension.",
+  "notes": "The session has strong worldbuilding and good use of callbacks (the ford ambush pays off the earlier crossing; Tallow's ledger and Marrowreed thread through multiple scenes). Its main weakness is a near-total absence of failure or real cost: almost every declared action succeeds cleanly, even group ambushes and social confrontations, which flattens tension despite the evocative prose. Caddock and Anselm's personal stakes are the emotional engine of the session; Petra gets one strong vulnerable beat; Yarrow is competent but the least personally implicated. Splitting the party at the belltower was a nice moment of real consequence (Mirel's souring attitude) and worth more of that kind of friction elsewhere.",
+  "synthetic": false,
+  "tokens": {
+   "prompt": 11839,
+   "completion": 2395,
+   "cost_usd": 0.0801,
+   "calls": 1
+  }
+ },
+ "S-db7aba36": {
+  "overall": 6,
+  "engagement": 7,
+  "coherence": 4,
+  "spotlight_fairness": 7,
+  "player_agency": 6,
+  "complication_quality": 7,
+  "backstory": [
+   {
+    "name": "Petra",
+    "used": true,
+    "score": 8,
+    "note": "Toll-keeper's daughter who 'hears' the swarm-song and reads water; this literally drove three separate scene resolutions and a fate-point moment."
+   },
+   {
+    "name": "Anselm",
+    "used": true,
+    "score": 6,
+    "note": "Life-debt to Vex and a sister lost to the swarm-song motivate the rescue, but his backstory fades into the background after the setup."
+   },
+   {
+    "name": "Caddock",
+    "used": true,
+    "score": 8,
+    "note": "Her secret (a hidden hive-touched child in her care) is the session's biggest reveal and reframes her midwife identity, though the child's connection to Kest is muddled."
+   },
+   {
+    "name": "Yarrow",
+    "used": true,
+    "score": 8,
+    "note": "Weir-Keeper lineage and militia bearing directly unlock passage from the Stiltfolk and a binding personal oath from Ossa."
+   }
+  ],
+  "best_moment": "Caddock's composure cracking on \"He's fine\u2014he's fine\" in the loft, revealing she's been secretly sheltering a hive-touched child \u2014 the session's one genuine emotional gut-punch.",
+  "worst_moment": "The muddled identity of the rescued boy: the party sets out to find an 11-year-old named Kest who ran toward the belltower chasing the swarm-song, but the scene abruptly shifts to Petra's family tollhouse where Caddock is revealed hiding a toddler no older than three \u2014 who is then treated as Kest for the rest of the session. This unresolved contradiction undercuts the plot's internal logic.",
+  "notes": "The table has strong voice work and each PC's competencies (Petra's ear, Anselm's diagnostic eye, Caddock's medical steadiness, Yarrow's water-lore and militia standing) are consistently and fairly spotlighted across all five scenes. The prose is atmospheric and the emotional stakes (a hidden child, a binding oath, a mother's grief over Vex's son) land well. The structural weakness is repetition \u2014 nearly every scene follows the same beat of all four characters individually vouching/asserting competence in sequence before a group success \u2014 which flattens tension over time, and the Kest/toddler discontinuity is a real coherence flaw that seems like a dropped or merged plot thread rather than an intentional twist, since no one in the fiction ever remarks on the switch from an 11-year-old to a 3-year-old.",
+  "synthetic": false,
+  "tokens": {
+   "prompt": 12297,
+   "completion": 2824,
+   "cost_usd": 0.0866,
+   "calls": 1
+  }
+ },
+ "S-6f356dc7": {
+  "overall": 7,
+  "engagement": 7,
+  "coherence": 8,
+  "spotlight_fairness": 8,
+  "player_agency": 6,
+  "complication_quality": 6,
+  "backstory": [
+   {
+    "name": "Petra",
+    "used": true,
+    "score": 8,
+    "note": "Mother's Causeway honor and personal history with toll-keeper Merk directly drove the climactic confrontation."
+   },
+   {
+    "name": "Anselm",
+    "used": true,
+    "score": 8,
+    "note": "Liturgical scholarship let him diagnose and dismantle the flawed exorcism rite at multiple points."
+   },
+   {
+    "name": "Caddock",
+    "used": true,
+    "score": 9,
+    "note": "Her bond with Sella became the session's emotional core and the key to any real breakthrough with the hive-touched."
+   },
+   {
+    "name": "Yarrow",
+    "used": true,
+    "score": 7,
+    "note": "Weir-Keeper's-son terrain knowledge and Brack repeatedly enabled navigation and safety, though less emotionally weighted than others."
+   }
+  ],
+  "best_moment": "At the Silt Weir's flooded understructure, Caddock reaches Sella and gets one suspended moment of real recognition before the hive-song reclaims her \u2014 proof she's still in there, landing as genuine emotional payoff for planted backstory.",
+  "worst_moment": "The Gullet Ford ambush is framed as \"never going to be a fight the party could win clean,\" but resolves in a single exchange with the entire toll-crew stopping, kneeling, and humming \u2014 deflating the stakes the GM had just built up.",
+  "notes": "This is a tightly themed one-shot/session built around the Hive Blight and each PC's personal entanglement with it (Petra/Merk, Caddock/Sella, Anselm/liturgy, Yarrow/homeland). The GM does an excellent job weaving all four backstories into the plot so they matter mechanically and emotionally, and the worldbuilding (swarm-song, Drowned Priest, false exorcism) is coherent and evocative throughout. The weak spot is resistance: nearly every player action in every scene succeeds cleanly on the first attempt, with complications (Petra's freeze, the toll-crew ambush) narrated as dangerous but resolved almost immediately without real cost or setback. This makes the session engaging and satisfying to read but blunts tension \u2014 it never feels like the party is truly at risk of failing, which caps agency and complication scores even though the roleplay and worldbuilding are strong. A future session would benefit from at least one real failure or costly tradeoff to sharpen the stakes.",
+  "synthetic": false,
+  "tokens": {
+   "prompt": 26040,
+   "completion": 3224,
+   "cost_usd": 0.1,
+   "calls": 1
+  }
+ },
+ "S-e64d2e7a": {
+  "overall": 7,
+  "engagement": 7,
+  "coherence": 8,
+  "spotlight_fairness": 7,
+  "player_agency": 6,
+  "complication_quality": 7,
+  "backstory": [
+   {
+    "name": "Maud",
+    "used": true,
+    "score": 6,
+    "note": "Rennick/debt/Thom Waites subplot introduced and reinforced, but Maud's response ('line holds') stays static rather than escalating or costing her anything yet."
+   },
+   {
+    "name": "Hask",
+    "used": true,
+    "score": 8,
+    "note": "Family-marked channel and stilt-folk heritage directly drove the checkpoint escape and the lodge confrontation twice over."
+   },
+   {
+    "name": "Eira",
+    "used": true,
+    "score": 9,
+    "note": "Sella/Three Elms backstory produced the session's central turning point\u2014a public confession that cracked the checkpoint open."
+   },
+   {
+    "name": "Fenwick",
+    "used": true,
+    "score": 8,
+    "note": "Bren's cache and their shared oath paid off hard, climaxing in Fenwick killing his hive-turned mentor-figure."
+   }
+  ],
+  "best_moment": "Eira publicly forcing Sella to confess to the Three Elms massacre at the checkpoint, which simultaneously resolved a personal wound and created the chaos that let the party slip past the gate.",
+  "worst_moment": "The acolyte-lodge fight and subsequent rescue resolve almost frictionlessly in the GM's single summary turn \u2014 every PC's action succeeds cleanly with no real cost or failed roll-feel, flattening tension right after the high point of Sella's confession.",
+  "notes": "Strong thematic throughline (flood, hive-song, buried secrets) and unusually well-integrated backstories for all four PCs \u2014 Eira and Fenwick's personal stakes landed with real weight, Hask's expertise was mechanically load-bearing twice, and Maud's Rennick thread is set up for future payoff. The main weakness is pacing/difficulty: the GM's narration tends to auto-resolve group actions in bundled, uniformly successful outcomes (checkpoint inspection, acolyte fight, lodge rescue), which keeps things moving but reduces the sense that failure was ever on the table, softening the agency and complication scores. Turn structure is also very repetitive \u2014 each character delivers a monologue-plus-parenthetical-action in near-identical format every beat, which reads more like scripted narration than reactive play.",
+  "synthetic": false,
+  "tokens": {
+   "prompt": 11241,
+   "completion": 1972,
+   "cost_usd": 0.073,
+   "calls": 1
+  }
+ },
+ "S-8896acfb": {
+  "overall": 7,
+  "engagement": 7,
+  "coherence": 7,
+  "spotlight_fairness": 8,
+  "player_agency": 7,
+  "complication_quality": 7,
+  "backstory": [
+   {
+    "name": "Maud",
+    "used": true,
+    "score": 8,
+    "note": "Cartel debt made concrete via bribe offer she refuses, and her rallying of the cellar-folk pays off in the shield-wall."
+   },
+   {
+    "name": "Hask",
+    "used": true,
+    "score": 8,
+    "note": "His tracking/reading-people instincts drive the Ness reveal, and his oath to Tyne triggers the climactic river rescue."
+   },
+   {
+    "name": "Eira",
+    "used": true,
+    "score": 8,
+    "note": "Healer background and prior tunnel ties surface Ness's secret; her misplaced trust in Tess creates real emotional cost and a betrayal beat."
+   },
+   {
+    "name": "Fenwick",
+    "used": true,
+    "score": 9,
+    "note": "His map/Order debt is the central engine of the session's biggest conflict and turning point."
+   }
+  ],
+  "best_moment": "Fenwick refusing to surrender his hard-won map to the Order pilgrims and turning it into a public brawl that flips the cellar-folk's loyalty \u2014 a direct, high-stakes payoff of his personal stake.",
+  "worst_moment": "The S5 climax resolves nearly every simultaneous thread (shield-wall holds, rescue succeeds, debt-runner driven off) in one sweeping GM paragraph with no real friction or cost beyond narrative flavor text, deflating the tension the scene had built.",
+  "notes": "A tightly plotted, backstory-forward session where each PC's personal hooks (debts, oaths, past ties) are woven directly into the escalating plot rather than sitting as flavor. The pacing is very compressed \u2014 five scenes cover an infiltration, a negotiation, two escalating confrontations, and a multi-threaded climax \u2014 which creates momentum but leaves little room for consequences to land or for setbacks to complicate outcomes; nearly every risky action succeeds cleanly. More visible cost/failure in the climax, and more space to sit with Eira's betrayal by Tess, would sharpen the emotional and mechanical stakes.",
+  "synthetic": false,
+  "tokens": {
+   "prompt": 10798,
+   "completion": 2075,
+   "cost_usd": 0.0718,
+   "calls": 1
+  }
+ },
+ "S-9df60f1e": {
+  "backstory": [
+   {
+    "name": "Maud",
+    "used": true,
+    "score": 8,
+    "note": "Blood-oath with Sera drove the rescue of Tomas and the plea against sacrificing Sella; Silver Debt with the Cartel grounded the final negotiation."
+   },
+   {
+    "name": "Hask",
+    "used": true,
+    "score": 8,
+    "note": "Ferry-family water-reading skill and cousin Kess both paid off directly, guiding the crossing and the Ford crisis."
+   },
+   {
+    "name": "Eira",
+    "used": true,
+    "score": 8,
+    "note": "Plague-year/quarantine-house background decoded the bell ritual and anchored Tomas; Sella backstory landed as a genuine moral stake."
+   },
+   {
+    "name": "Fenwick",
+    "used": true,
+    "score": 4,
+    "note": "Apostate-vs-Order backstory set up strong tension (pursuers naming him) in S3, but he then disappears from play entirely in S4-S5 with no payoff."
+   }
+  ],
+  "best_moment": "Tomas breaking the bell's ritual hold by simply refusing to 'answer' the toll, combining Hask's pattern-read, Eira's grounding presence, and Maud's oath into one earned climax.",
+  "worst_moment": "Fenwick's apostate pursuers (\"they do not, yet, have a clean way out\") are set up as an immediate threat at the end of S3 but are never mentioned again, and Fenwick himself vanishes from the scene for the rest of the session.",
+  "notes": "Strong atmospheric writing and a genuinely well-constructed mystery (the counting bell) that pays off mechanically and thematically. The group's turn structure is fairly formulaic \u2014 each PC restates the same beat in flavor rather than pursuing distinct tactics or disagreeing, so there's little intra-party friction or failure state visible; everything the party attempts succeeds cleanly, which flattens tension somewhat. The ending complication (trade Sella to the Cartel for safe passage) is the session's best dramatic hook and lands well on Eira in particular. Fenwick's thread being dropped right after its most dramatic beat is the biggest structural flaw.",
+  "overall": 7,
+  "engagement": 7,
+  "coherence": 7,
+  "spotlight_fairness": 5,
+  "player_agency": 7,
+  "complication_quality": 7,
+  "synthetic": false,
+  "tokens": {
+   "prompt": 15624,
+   "completion": 2075,
+   "cost_usd": 0.0948,
+   "calls": 1
+  }
+ },
+ "S-a0b9d0e4": {
+  "overall": 7,
+  "engagement": 7,
+  "coherence": 7,
+  "spotlight_fairness": 8,
+  "player_agency": 7,
+  "complication_quality": 8,
+  "backstory": [
+   {
+    "name": "Maud",
+    "used": true,
+    "score": 8,
+    "note": "Her bond with grieving Yara grounded the tense rescue scene and gave the climax emotional weight."
+   },
+   {
+    "name": "Hask",
+    "used": true,
+    "score": 8,
+    "note": "Rell, his prot\u00e9g\u00e9/cousin, turned out to be the enforcers' guide, landing a gut-punch betrayal beat."
+   },
+   {
+    "name": "Eira",
+    "used": true,
+    "score": 6,
+    "note": "Swamp-born senses and plague-ward memory were used mechanically, but her personal ties (e.g. Sella) stayed background color rather than driving a scene."
+   },
+   {
+    "name": "Fenwick",
+    "used": true,
+    "score": 8,
+    "note": "His blood oath to Bren directly motivated his refusal to hand over the Holdfast maps at the climax."
+   }
+  ],
+  "best_moment": "Rell's line \"I'm saving myself, Hask, the way you taught me\" \u2014 a betrayal that weaponized Hask's own kindness against him mid-fight, the session's emotional high point.",
+  "worst_moment": "Sister Orla's insistence that Maud carry a relic candle into the cellars (S1) was set up as a meaningful complication but then simply vanished \u2014 never mentioned again after the party descended.",
+  "notes": "A well-threaded investigation-to-confrontation arc: the counting-song clue chain (temple bells \u2192 quarantine cadence \u2192 Sella's tally \u2192 Bren's notation \u2192 Rell) holds together nicely and rewards the party's attentiveness. The GM leans on large multi-character success narrations that sometimes flatten individual agency into a group blob, and the two biggest personal-stakes reveals (Rell, Bren's oath) land hard emotionally but arrive with little prior setup, making them feel more like on-the-fly declarations than earned payoffs. The session ends on the escape beat without any denouement, which works fine as a session-break cliffhanger but leaves threads (Orla, Tallow's reaction, Yara's fate) open.",
+  "synthetic": false,
+  "tokens": {
+   "prompt": 11006,
+   "completion": 2401,
+   "cost_usd": 0.0763,
+   "calls": 1
+  }
+ },
+ "S-ff80d4f4": {
+  "backstory": [
+   {
+    "name": "Maud",
+    "used": true,
+    "score": 8,
+    "note": "Grandmother rescue, shield-wall oath, and Cartel silver-debt directly shaped her refusals and tactical stands."
+   },
+   {
+    "name": "Hask",
+    "used": true,
+    "score": 8,
+    "note": "Cousin Jal's ambush and fever-driven violence guilt gave real emotional stakes tied to his ferry-line past."
+   },
+   {
+    "name": "Eira",
+    "used": true,
+    "score": 6,
+    "note": "Hunt for informer Sella and quarantine-ward knowledge featured, but her big gambit (Three Elms accusation) backfired with little follow-through this session."
+   },
+   {
+    "name": "Fenwick",
+    "used": true,
+    "score": 8,
+    "note": "Bren's loss and the false relic map drove the back half of the session and forced a real compel/decision."
+   }
+  ],
+  "best_moment": "Maud shield-blocking Jal, stunning but sparing her fever-mad cousin's attacker-cousin, tying her shield-wall oath directly to a moment of mercy under pressure.",
+  "worst_moment": "Eira's accusation gambit against the enforcer boss curdles the truce, but the session immediately glosses over the consequence as the party simply escapes into the willows regardless \u2014 the failure barely registers mechanically or narratively.",
+  "notes": "The session has a clear, well-integrated backstory tapestry (grandmother, cousin, dead friend, informer, cartel debt) that gives every scene emotional texture, and spotlight is evenly distributed with each PC getting a described action beat in every scene. However, the structure is extremely repetitive: nearly every encounter follows the same round-robin pattern of four declared actions followed by a GM paragraph confirming near-total success, with almost no actual failure, injury, or resource cost landing on the party (Hask's leg wound is shrugged off as 'shallow'). Complications are introduced (Sella recognition, Warden's grudge, Cartel debt, burned-bridge with enforcers) but mostly deferred rather than paid off in-session, making this feel like a smooth travelogue of narrow escapes rather than a session with real tension or reversals. Fenwick's forced choice (stay vs. chase Bren, accepting the map's weight) is the one moment of genuine mechanical friction/agency; more of that would have elevated the session considerably.",
+  "overall": 6,
+  "engagement": 6,
+  "coherence": 7,
+  "spotlight_fairness": 8,
+  "player_agency": 5,
+  "complication_quality": 5,
+  "synthetic": false,
+  "tokens": {
+   "prompt": 10175,
+   "completion": 2076,
+   "cost_usd": 0.0689,
+   "calls": 1
+  }
+ },
+ "S-f05e00ff": {
+  "overall": 6,
+  "engagement": 6,
+  "coherence": 7,
+  "spotlight_fairness": 6,
+  "player_agency": 5,
+  "complication_quality": 7,
+  "backstory": [
+   {
+    "name": "Petra",
+    "used": true,
+    "score": 9,
+    "note": "Home turf at the gate, bell-ringer's ear for song, and being personally called by name by the swarm-song drove the entire mystery thread."
+   },
+   {
+    "name": "Anselm",
+    "used": true,
+    "score": 8,
+    "note": "Exorcist training and Drowned Mill history let him correctly ID the threat as non-hive, paid off with a real cost (lost relic satchel)."
+   },
+   {
+    "name": "Caddock",
+    "used": true,
+    "score": 7,
+    "note": "Midwife's bluntness and physicality shaped every confrontation, culminating in her literally breaking the gate mechanism open."
+   },
+   {
+    "name": "Yarrow",
+    "used": true,
+    "score": 8,
+    "note": "Militia line-holding and explicit Weir-Keeper/Stiltfolk lore let him read the water and hold the crowd at the climax."
+   }
+  ],
+  "best_moment": "Caddock wrenching the chain-lever sideways and jamming the gate open with her bare hands, daring Kell to try to close it over her body \u2014 a decisive, irreversible physical commitment that forced the outcome.",
+  "worst_moment": "The stray 'GM: Test narration.' line in S2 breaks immersion outright, and the surrounding beat (Petra's throat-catching cliffhanger) is left dangling and never followed up on.",
+  "notes": "Atmosphere and prose are strong (rain, lamplight, the swarm-song as an ambiguous, patient rather than hostile threat is a nice subversion of hive-horror expectations). The chief structural weakness is that all five scenes repeat an almost identical four-beat chorus \u2014 Petra interprets/listens, Anselm authoritatively diagnoses, Caddock intimidates/blocks, Yarrow reads terrain/holds the line \u2014 with little variation in approach or outcome, and virtually every player action succeeds cleanly (the one exception, Anselm losing his satchel, stands out precisely because failure/cost is otherwise absent). This makes spotlight distribution mechanically fair but narratively samey, and blunts tension since nothing the party attempts seems to risk real failure until the very last scene. Tightening scene count or varying which PC leads each complication would sharpen pacing and stakes.",
+  "synthetic": false,
+  "tokens": {
+   "prompt": 10462,
+   "completion": 2240,
+   "cost_usd": 0.0719,
+   "calls": 1
+  }
+ },
+ "S-357e4588": {
+  "overall": 5,
+  "engagement": 5,
+  "coherence": 7,
+  "spotlight_fairness": 8,
+  "player_agency": 4,
+  "complication_quality": 5,
+  "backstory": [
+   {
+    "name": "Petra",
+    "used": true,
+    "score": 7,
+    "note": "Ferry-town roots, water-reading, and a debt to Vess drove her key contributions in S1/S2/S4."
+   },
+   {
+    "name": "Anselm",
+    "used": true,
+    "score": 7,
+    "note": "Exorcism training, drowned childhood swims, guilt over his sister and Mireth's betrayal all paid off directly in S1/S3/S4."
+   },
+   {
+    "name": "Caddock",
+    "used": true,
+    "score": 7,
+    "note": "Midwife toughness and the Blackwater Cartel debt to Fennick anchored S1/S4 and her stand at the graves."
+   },
+   {
+    "name": "Yarrow",
+    "used": true,
+    "score": 8,
+    "note": "Brack's tracking and his sister Elara's drowning built steadily to the emotionally strongest scene, S5."
+   }
+  ],
+  "best_moment": "Yarrow kneeling at Elara's marker to finally speak her name aloud after the mob is repelled \u2014 a genuine emotional payoff to a thread seeded since S1.",
+  "worst_moment": "The toll-gate opening (S1): all four PCs deliver a confident one-line pitch in turn and the GM simply confirms every single one worked perfectly, with no friction, cost, or uncertainty \u2014 setting a pattern of frictionless success the session never quite breaks from.",
+  "notes": "Thematically tight session (debts, the hive, drowned dead) with genuinely good use of each character's personal hooks and a fair spotlight rotation. The structural weakness is that every scene follows the same beat: obstacle appears, all four PCs narrate confident backstory-flavored actions in sequence, and the GM narrates a clean collective success in a single big paragraph \u2014 there is no visible failure, meaningful cost (aside from one scratch to Caddock), or moment where a player's choice diverges the outcome. This makes for pleasant, well-written collaborative fiction but blunts tension and agency; it reads more like everyone narrating a foregone happy ending than a game where risk was actually in play.",
+  "synthetic": false,
+  "tokens": {
+   "prompt": 9319,
+   "completion": 1944,
+   "cost_usd": 0.0635,
+   "calls": 1
+  }
+ }
+}

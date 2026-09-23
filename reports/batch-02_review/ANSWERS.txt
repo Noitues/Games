@@ -1,0 +1,12 @@
+transcript_01.md: arm C | seed 44982 | run batch-02__C__s44982__r0 | highest-rated
+transcript_02.md: arm A | seed 44990 | run batch-02__A__s44990__r8 | referee-flagged
+transcript_03.md: arm A | seed 44984 | run batch-02__A__s44984__r2 | referee-flagged
+transcript_04.md: arm A | seed 44991 | run batch-02__A__s44991__r9 | referee-flagged
+transcript_05.md: arm A | seed 44983 | run batch-02__A__s44983__r1 | lowest-rated
+transcript_06.md: arm A | seed 44985 | run batch-02__A__s44985__r3 | random for its arm
+transcript_07.md: arm A | seed 44988 | run batch-02__A__s44988__r6 | referee-flagged
+transcript_08.md: arm A | seed 44982 | run batch-02__A__s44982__r0 | referee-flagged
+transcript_09.md: arm A | seed 44987 | run batch-02__A__s44987__r5 | referee-flagged
+transcript_10.md: arm A | seed 44986 | run batch-02__A__s44986__r4 | referee-flagged
+transcript_11.md: arm A | seed 44989 | run batch-02__A__s44989__r7 | referee-flagged
+transcript_12.md: arm B | seed 44982 | run batch-02__B__s44982__r0 | random for its arm

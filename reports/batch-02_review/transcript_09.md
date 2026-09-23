@@ -1,0 +1,251 @@
+# Transcript 9
+
+Selected as: referee-flagged. Status: complete.
+
+Characters: Maud (lurker); Hask (method_actor); Eira (storyteller); Fenwick (rules_lawyer)
+
+
+## Scene 0
+
+> _Session begins. Each player has Maud 3 FP, Hask 3 FP, Eira 3 FP, Fenwick 3 FP. Face-up: Rising Floodwaters [H-03], The Causeway Wardens [F-03]._
+
+
+## Scene 1
+
+**GM:** Rain needles down onto slick stone as you crest the last rise and see it: the Ashwater Causeway, a raised spine of old road running north through black water, chained shut at both ends by the Causeway Wardens' toll gates. Torchlight gutters at the near gate, where a knot of soaked, underfed militia check papers and packs by lantern-light, and somewhere behind you the flood is already licking at the low ground you just crossed. The gate captain's bell is ready to ring the quarantine alarm at the first sign of hive-sickness or trouble. You have until the tide turns and the gate chains go up for the night — after that, this is the only dry way north, and it will be closed to you.
+
+**Maud:** Captain Orsa. Is the Causeway still clear to the north?
+
+**Maud:** (Maud steps up to the checkpoint with the others, taking in the militia and the rising water beyond with a practiced eye. She's walked this road before. She nods slightly to the Gate Captain.)
+
+**Hask:** Captain Orsa? Hask, of the Gullet Ford line. We're stilt-folk moving north before the flood swallows the low roads—the water's already at our heels.
+
+**Hask:** (Hask walks up to the gate with the easy confidence of someone who's grown up around water-folk and fords. He names himself by his family line, the way a marsh person does. Rill pads close beside him, the hound's hive-scent marking them both as clan-trusted. Hask's eyes are on the Captain—not hostile, not pleading, just direct as the rising tide behind them.)
+
+**Eira:** Gate Captain Orsa? I'm Eira, a midwife out of Sallow's Teeth. There's a woman in labor waiting on the north side, and the floodwaters won't care about our paperwork—I need passage before that gate chain goes up.
+
+**Eira:** (Eira walks through the knot of soaked militia with the assured step of someone who moves confidently through crisis. She's as wet and weathered as anyone here, but her posture is steady. She reads Orsa's face carefully—the exhaustion, the fear—and keeps her own expression open and direct. A midwife learns to read the fear in a room quickly. She reaches the gate captain's lamplight, meeting her eyes with the calm certainty of someone who has delivered in worse weather than this.)
+
+**Fenwick:** Captain Orsa, I'm Fenwick. I need passage north before the gate closes for the night. What's your procedure—are you just checking papers, or is there something else you're looking for tonight?
+
+**Fenwick:** (Fenwick steps into the torchlight, picking his way carefully between the militia. He takes in the state of the Wardens—soaked, nervous, watching the dark water with one eye always on the bell. He presents himself to Gate Captain Orsa with his hands visible and his travel papers ready.)
+
+**GM:** Orsa turns from the ledger table, rain sheeting off her hood, and takes the four of you in with the flat, tired eyes of someone who's done this a hundred times tonight already. "Captain Orsa, still breathing, still counting heads," she says. To Maud: "Clear as far as I know — for now. Chains go up when the bell says so, not before, not after." To Hask, her gaze flicks to Rill and softens half a degree — stilt-folk and their hounds she trusts more than most. "Ford's drowning, is it. Figures." To Eira, the mention of a labouring woman gets a harder look, weighing truth against the dozen sob stories she's heard today. "Sallow's Teeth's a fair walk from here for a midwife's errand." And to Fenwick, she taps the ledger. "Papers, yes. And I look at hands, throats, eyes — anyone favoring a wound, anyone who won't meet my lamp straight on. Blight doesn't knock first." Behind her, a warden begins uncoiling the chain, testing its weight. The bell-rope sways in the wind, close enough to reach. "You want through tonight, you'll queue like everyone else — and you'll let me look."
+
+**Maud:** I'm ready for your inspection, Captain.
+
+**Maud:** (Maud nods slightly to Orsa and steps forward to queue for inspection. Her movements are steady and practiced—she's walked this causeway before, understands the routine. She meets the lamplight without hesitation, hands visible, letting the Gate Captain look.)
+
+**Hask:** Sound practice, Captain. Rill would warn me before I'd warn myself—her nose doesn't lie. Take your look, we're clean as reed-water.
+
+**Hask:** (Hask steps up to the torchlight without hesitation, meeting Orsa's lamp-gaze steady. He keeps his hands visible and open, turning his throat and palms toward her for inspection. Rill sits at his heel, calm and trusting, a hound that knows the way of checkpoints.)
+
+**Eira:** Of course, Captain. I've nothing to hide, and the woman waiting has less time than we do.
+
+**Eira:** (Eira steps forward to meet Orsa's inspection without hesitation, meeting the captain's eyes straight on. She rolls up her sleeves to show her hands and throat clearly, tilts her face toward the lamplight so Orsa can see her eyes unshaded. There's no tension in her body, no evasion—just the quiet, assured presence of someone accustomed to stepping into crisis. She's delivered in worse than this, and it shows in the steadiness of her breath, the clarity of her gaze. When Orsa looks at her, she'll see the weathering of someone who works at the edge of life and death, not someone spinning tales.)
+
+**Fenwick:** I've crossed this causeway before, Captain—I know better than to waste your time or risk bringing trouble through your gate. Look as thoroughly as you need to.
+
+**Fenwick:** (Fenwick steps forward into the lamplight without hesitation, hands still visible and open. He extends his travel papers to Orsa with a steady hand and stands motionless for her inspection, meeting her eyes directly. He's clearly spent hard days on the road—his cloak is soaked through, his face weathered by rain and wind—but there's nothing fevered in his bearing, no tremor or wound-favoring that would catch a practiced eye.)
+
+**Eira:** Sella. I didn't expect to see you here.
+
+> _Eira accepts a compel._
+
+**GM:** Sella straightens from where she's been murmuring numbers to a warden clerk, and for a heartbeat her face is unreadable — then it closes like a shutter. "Eira," she says, flat, careful not to let Orsa hear the weight in it. Eira's composure cracks just enough to show: her hands still, her breath catches, and the easy midwife's calm she wore a second ago slips. Orsa notices the hitch — not dramatic, but a captain who reads faces for a living catches it anyway. She glances between the two women, and something behind her eyes sharpens, filing the moment away rather than acting on it yet. "You two know each other," Orsa says. Not a question. Sella says nothing, which says everything. The queue holds; the inspection isn't over.
+
+**Maud:** Maud says nothing, just watches.
+
+**Maud:** (Maud stays in her place at the checkpoint, watching the exchange between Eira and Sella unfold. Her hands remain visible and still, her posture steady. She reads Orsa's face and the weight of the silence—the captain's sharp attention, the way she's filing away the moment rather than acting yet. Maud's seen this kind of inspection before; she knows how to wait.)
+
+**Hask:** Captain, the marsh is small. Eira walks from Sallow's Teeth to the reeds the same as we do—knowing someone before doesn't mean trouble. We're clean, you've looked, and that woman waiting won't care about old roads crossing.
+
+**Hask:** (Hask meets Orsa's eyes steady, Rill settled calm at his heel. He speaks plainly, the way a stilt-man does—no evasion, no performance, just fact. He's giving the Captain an easy way through this, naming what he sees without flinching from it.)
+
+**Eira:** An old acquaintance, Captain. Water under the bridge now — and there's a woman in labor waiting on the north side of that causeway.
+
+**Eira:** (Eira's breath steadies. The hitch in her composure was real, but she's been trained by a lifetime of midwifery to master her fear in a crisis — and this is just another crisis. She meets Orsa's gaze again, her hands still visible, her throat clear, her face open to the lamplight. Her voice is calm, professional, carrying the weight of someone who has delivered babies through worse weather than suspicion. She doesn't elaborate or defend. She just stands steady, waiting for the inspection to complete, her focus already on what comes next: the causeway, the rising flood, the woman waiting.)
+
+**Fenwick:** Clean and ready, Captain.
+
+**Fenwick:** (Fenwick stands steady in the torchlight for Orsa's inspection, palms open and throat clear. He keeps his attention on the captain, his bearing calm and cooperative—his gaze doesn't drift to Eira or Sella, signaling clearly he's not involved in whatever just passed between them.)
+
+**GM:** Orsa finishes the inspection with a warden's economical thoroughness — hands, throats, eyes, the whole cold litany — and finds nothing that rings her bell. But she doesn't let the queue move yet. She looks once more between Eira and Sella, weighing that hitch of recognition, and then makes her choice: she lets it go, filed away rather than acted on. "Move through," she says, waving the chain-warden back. "Tide's turning and I've got no patience left for old grudges tonight." The gate groans open just wide enough, and one by one you slip past the lantern-light onto the long stone spine of the Causeway, black water hissing at the stones on either side. Behind you, Sella watches you go with an expression she doesn't let Orsa see. Ahead, the north end waits — and somewhere past it, a woman in labor, a war captain's trail, a debt to the Cartel, and all the other roads you've carried onto this one.
+
+
+## Scene 2
+
+**Eira:** The truth Sella owes me: She was there when Captain Merk gave the order to burn Three Elms as a 'containment measure.' She signed the ledger, approved the condemned supplies—she knows it was deliberate murder, that they burned people alive and called it plague policy. Years ago I sheltered her from Warden retaliation when she was caught stealing medicine for the sick. In that shelter, bound by shared mercy, she promised she'd someday tell me the truth. She refuses because it would destroy her usefulness to the Wardens entirely. When she opens her mouth to name me, I freeze—that old quarantine-house terror rising, hands going still, breath catching. But before her words land, I lunge forward and reach for her, begging.
+
+**Eira:** Tell them about Three Elms, Sella. Tell them what you signed, what you saw. Tell them the truth instead of destroying me.
+
+> _Eira accepts the compel on 'The Informers Debt'._
+
+> _Beat: Sella — the informer Eira has history with, who still feeds names to the Wardens — is WHO turns on the party. She was never neutral; she's been walking the toll line all along, cataloguing faces for Orsa's ledger, and Eira's is one of them. turns on the party, because The WHY is the causeway itself: the toll gate and chains funnel everyone through one choke point Sella controls. She can't slip past the party unseen, and she can't let a debt she owes the Wardens go unpaid — so she chooses now, at the chains, to name them.._
+
+**GM:** Eira's hand is still stretched toward her, empty air where Sella's sleeve was a heartbeat ago, when Sella straightens, wipes rain from her face, and turns to Captain Orsa instead. "Captain," she says, voice pitched to carry over the chains, "this one's Three Elms. Eira, the midwife who's been telling folk we burned it on purpose." The queue at the gate goes very quiet. Warden hands drift to torches and toll-poles, and the chains — still down, still between the party and the north road — suddenly feel like a cage instead of a fence. Sella won't meet Eira's eyes; she just keeps talking, fast, like a debt finally being paid off in the worst possible coin.
+
+**Maud:** (Maud steps to stand shoulder-to-shoulder with Eira, hand dropping to rest on her weapon. She turns to face Orsa, and her gaze is steady—neither aggressive nor afraid. The posture of someone who has held lines before.)
+
+**Hask:** East side, where the stones have fallen—water's shallower there, we can wade it if we move now.
+
+**Hask:** (Hask drops to one knee at the causeway's edge, his hunting eyes cutting across the dark water. Rill whines and presses against his leg, sensing the urgency. The marsh taught him to read current and depth like text, and there—at the eastern foot where the ancient stones have crumbled into the flood—the water runs shallower than the rest, almost waist-deep, with a current fierce but manageable for someone who knows how to read it.)
+
+**Eira:** You swore me an oath in that shelter, Sella. Tell them what you approved that night—tell them Three Elms was deliberate.
+
+**Eira:** (Eira's hand falls. The quarantine-house panic rises—suffocating, trapped—then hardens into something sharp. She steps forward through the rain and fixes her eyes on Sella with a midwife's intensity: searching for truth buried beneath fear. She knows Sella's face, her habits, her breaking points. She's reading her the way she reads every frightened woman in labor. She knows exactly what she's looking at: not just a scared informer, but a woman who signed the ledger while children burned.)
+
+**Fenwick:** The water doesn't follow the chains—I know every ford and hidden channel through these floodlands. We have another way north.
+
+**Fenwick:** (Fenwick's gaze is sharp, reading the terrain and light like a page in one of his maps. He steps forward, positioning himself between the advancing tension and his companions, voice steady and low.)
+
+**Eira:** Tell them, Sella—*tell them*—what you signed that night. Tell them the truth instead of—
+
+*[Voice cracks, breath catching tight as quarantine-house walls]*
+
+—instead of destroying me.
+
+> _Eira accepts a compel._
+
+> _Hask — create advantage with Notice: dice + 0 - + → Superb (+5) vs Fair (+2): SUCCESS WITH STYLE_
+
+> _Eira — attack with Empathy: dice + + - +, invoking Knows Sella the informers face and habits [EI-02] → Legendary (+8) vs Superb (+5): SUCCESS WITH STYLE (Sella mild consequence)_
+
+> _Fenwick — create advantage with Lore: dice + - - 0, invoking Knows which cellars and routes the Cartel values most [FE-03] → Superb (+5) vs Fair (+2): SUCCESS WITH STYLE_
+
+> _Captain Orsa attacks Eira (mental): Good (+3) vs Eira's Will Good (+3) — defended_
+
+**GM:** Sella's mouth is still open on Eira's name when the truth catches up with her — Eira's words land like a blade, and something in the informer's face cracks wide open. "The ledger," Sella chokes out, loud enough for the whole queue to hear, "Merk signed it as containment. I signed the supply order. I knew." The confession detonates through the waiting crowd faster than Orsa can silence it, and for one crucial breath every warden eye is on Sella instead of the party. Orsa's hand snaps out toward Eira's mind, a cold command to freeze and stand down — but Eira holds her ground, that quarantine-house panic burned away by the satisfaction of finally being believed. In the chaos, Hask's read of the shallow eastern ford and Fenwick's knowledge of the hidden water channel converge: the party slips past the stalled chain-line entirely, wading the crumbled stones while Orsa is still trying to get her Wardens' attention back off the informer who just confessed to war crimes in front of half of Hollowmoot. By the time the captain remembers the four strangers at all, they're shadows in the rain on the wrong side of the causeway to stop.
+
+
+## Scene 3
+
+**Hask:** An old apothecary's lodge, built on stilts where the river branches off. My family marked the channel to reach it—when the blight came, we helped the healer hide her cure-books in the rafters before everything drowned. The acolytes have found the marked channel, and they know exactly what they're searching for now.
+
+**Hask:** That grip's all wrong—you've never worked a ferry, have you? Move aside. I'll take the pole.
+
+> _Hask accepts the compel on 'Born on the Ferry Lines'._
+
+> _Beat: the Drowned Priest's acolytes seizes the party's goal at the sunken shrine-road beneath Gullet Ford — a drowned crossing only the old ferry families like Hask's ever knew how to find using word passed hand to hand through Hollowmoot's gossip-heavy taverns, tipping the acolytes off hours before the party could move._
+
+**GM:** The channel Hask's family marked in secret is churned white with wake — a dozen shallow-draft boats already crowd the drowned shrine-road, acolytes wading chest-deep in the black water with lanterns lashed to poles. Someone up on the tilted apothecary lodge is already prying rafter-boards loose, and a soaked bundle wrapped in oilcloth — the healer's cure-books, the ones Hask's family bled to hide — is passed hand to hand down a human chain toward a waiting barge. A gaunt acolyte in temple-white stands thigh-deep at the lodge's broken door, chanting low, drawing the swarm-song out of the belltower distance like he's calling it home. Hask, this is your family's channel, your family's secret — and it's crawling with them because someone in Hollowmoot's taverns couldn't keep their mouth shut.
+
+**Maud:** Not on my watch.
+
+**Maud:** (Maud moves through the water toward the Chanting Acolyte at the lodge door, her weapon raised to stop them and disrupt their work.)
+
+**Hask:** I'll not have this! These waters belong to my family!
+
+**Hask:** (Hask wades hard into the black water, moving with the certainty of someone who's spent his whole life here. The drowned roads are his family's sacred charge—every channel marked, every current known—and these grave-robbers won't take what his family bled to hide. He drives toward the gaunt acolyte at the lodge door with fury burning in his eyes.)
+
+**Eira:** "Those books didn't get written for temple vaults. They were written in desperation by people trying to save the dying. Every page is a life someone fought for. Are you going to steal that fight and bury it?"
+
+**Eira:** (Eira wades into the black water, her voice steady against the gaunt acolyte's chanting. She speaks of the Three Elms dead—names she still carries—and the fevered children who live because someone *tried* to save them. She's not arguing theology. She's invoking the healer's oath that came before the Order, before the lockdown of knowledge: the duty to heal. Every moment they pass those books toward the barge is a moment she names aloud—a child's pain, a mother's loss, a life that could have been saved.)
+
+**Fenwick:** Stop that chanting—you're calling the Hive down on all of us!
+
+**Fenwick:** (Fenwick crouches low and wades through the black water toward the broken lodge, using the darkness and ripples to mask his approach. He recognizes the chant pattern immediately—a Hive-calling, the same kind of thing Bren used to warn him about in hushed tones years ago. He moves to close the distance and strike before the ritual fully takes hold.)
+
+> _Maud — attack with Fight: dice + 0 + -, invoking Never breaks a shield-wall [MA-03] → Fantastic (+6) vs Good (+3): SUCCESS WITH STYLE (Chanting Acolyte mild consequence)_
+
+> _Hask — attack with Fight: dice - - - 0, invoking Child of the Gullet Ford ferry family [HA-01], Knows the drowned roads beneath the water [HA-01], Can pole a boat through any current [HA-01] → Great (+4) vs Good (+3): SUCCESS (Chanting Acolyte stress 2)_
+
+> _Eira — create advantage with Empathy: dice - - + 0 → Good (+3) vs Fair (+2): SUCCESS_
+
+> _Fenwick — attack with Stealth: dice 0 0 + +, invoking Bonded to Bren, once his surveying partner, now hive-touched [FE-02] → Fantastic (+6) vs Superb (+5): SUCCESS (Chanting Acolyte taken out)_
+
+**GM:** The chant breaks mid-syllable into a wet, strangled gasp as Fenwick's blade finds him — the gaunt acolyte folds sideways into the black water and does not rise, the swarm-song he was drawing down guttering out like a snuffed candle. For one heartbeat the whole flooded lodge goes silent: no chanting, no lantern-bearers calling orders, just rain and the slosh of four furious strangers who just proved this water is not theirs to take. Maud's opening strike had already staggered the line at the door, Hask drove them back with the fury of a man defending his own blood, and Eira's words — Three Elms, the dead children, the healer's oath — cut through the acolytes' certainty enough that the human chain passing the oilcloth bundle falters, hands hesitating on the healer's cure-books. In the confusion, Hask wades past the broken lodge door and wrenches the bundle free from a boat-hand too stunned to fight for it, hauling his family's stolen legacy back up out of the drowned road. The remaining acolytes, leaderless and rattled by Eira's naming of the dead, scatter their lanterns and shove off into the dark rather than press the fight — Caught Between Doctrine and Conscience, the fight seems to have gone out of at least a few of them. The channel is yours again, for now, and the books are wet but whole in Hask's arms.
+
+
+## Scene 4
+
+**GM:** The dead acolyte sinks and the silence breaks into chaos — lanterns bob wildly as the remaining pilgrims scatter or scream for their fallen brother, and somewhere above the drowned belltower the swarm-song rises again, hungrier now. Orsa's warden skiff is still lashed at the channel mouth, and the apothecary lodge groans on its rotten pilings, half its rafters already stripped. You have maybe minutes before either the tide turns or the acolytes remember you're only four. Fenwick knows this lodge — knows Bren worked a healer's cache here once — and the oilcloth bundle the acolytes were prying loose might be exactly what Hollowmoot needs, or exactly what the Order of the Dry Saint will burn a house down to get back.
+
+**Maud:** Look to me. We hold steady here.
+
+**Maud:** (Maud steps forward into the chaos, shoulders squared, meeting the frightened eyes of the acolytes. She plants herself between them and the scattering pilgrims, her voice cutting sharp and clear through the panic — the voice of someone who has held shield-walls together.)
+
+**Hask:** Rill, come!
+
+**Hask:** (Hask's eyes snap across the flooded lodge - reading the scattering acolytes, the dark water where Rill will surface, the pale oilcloth bundle still snagged in the rafters above. He moves hard toward his hound, already calculating the fastest way through this chaos and out.)
+
+**Eira:** Don't run—you're safer together. I'm here to help.
+
+**Eira:** (Eira moves through the chaos toward the frightened survivors, her voice steady and grounding, calling them together rather than letting fear scatter them. She stands between them and the rising waters like she's stood between so many mothers and death—unwilling to let the marsh have them without a fight.)
+
+**Fenwick:** I know this place—the cache is upstairs, away from the water. Move!
+
+**Fenwick:** (Fenwick moves through the chaos with purpose, his knowledge of Bren's caching habits pulling him toward the upper levels where supplies would be kept dry and safe from the rising tide. He grabs for the oilcloth bundle as he moves, keeping low and calling urgently to the others.)
+
+**Fenwick:** Bren? No, no no—step aside, friend. We can still get you out of this place. Just step aside.
+
+> _Fenwick accepts a compel._
+
+**Maud:** Show me where.
+
+> _Maud accepts a compel._
+
+> _Maud — create advantage with Rapport: dice 0 0 - -, invoking Can rally a crowd with a word [MA-02] → Great (+4) vs Average (+1): SUCCESS WITH STYLE_
+
+> _Hask — overcome with Notice: dice 0 + 0 0 → Superb (+5) vs Fair (+2): SUCCESS WITH STYLE_
+
+> _Eira — create advantage with Empathy: dice - + - 0, invoking Delivered babies in the ruins, remembers every name lost [EI-03] → Superb (+5) vs Fair (+2): SUCCESS WITH STYLE_
+
+> _Fenwick — overcome with Lore: dice - - - +, invoking Bonded to Bren, once his surveying partner, now hive-touched [FE-02] → Great (+4) vs Fair (+2): SUCCESS_
+
+> _Frightened Acolyte Survivors attacks Maud (mental): Mediocre (+0) vs Maud's Will Fair (+2) — defended_
+
+**GM:** Maud plants her line and it holds — "Standing Firm Against the Flood" isn't just words now, it's her arms locked wide, her voice cutting through the panic until the scattering pilgrims stop scattering and start listening, even as a knot of them claw at her to get past; she doesn't move, and one by one they stop trying. Hask reads the whole drowning lodge in a glance and Rill surfaces exactly where he needed her, already paddling toward the fastest line out through the wreckage. Eira gathers the frightened survivors to her like she's done a hundred times before at Three Elms — and one of them, an older woman with a Warden's tattoo scarred half-off her wrist, grabs Eira's sleeve and whispers that she saw what really happened there, that she's been hiding in Hollowmoot ever since afraid to speak. Fenwick shoulders up into the rafters and gets a hand on the oilcloth bundle — heavy, dry, unmistakably Bren's old cache — but below him a gaunt shape rises dripping from the black water, survey tools still slung across its ruined chest, and stops. Bren doesn't lunge. He just stands there in the flooded doorway, head cocked, staring up at Fenwick with something that might be recognition flickering behind the hive-blank eyes. The swarm-song swells overhead. You have the bundle, you have the survivors rallied, and you have maybe one clear window before that hesitation breaks.
+
+
+## Scene 5
+
+**Maud:** I needed coin to get Thom Waites clear—my sister's nephew, shrine-keeper—before Orsa's inquiry closed in. The Blackwater Cartel ran him downriver to Three Elms. Rennick says we settle through favors: he wants information on the shrine, the hive-touched, how far the Mother's reach extends. He's betting the silver will loosen my tongue.
+
+**Maud:** No. The line holds.
+
+> _Maud refuses the compel on 'The Silver Debt'._
+
+**Fenwick:** It's the submerged archive beneath Saint Orrin's outer shrine—where Bren and I cached our maps of the temple's true structure before my exile. No one knows because those maps showed things the Order would burn me for and the Stiltfolk would kill for. Bren made me swear to keep it secret even after the hive took him, and that's a promise I've kept.
+
+**Fenwick:** If we're spotted near that watch-post, there's no going back for me—no clan will take me in after that. But it's worth the risk. That archive holds Bren's final maps, made before the hive took him completely.
+
+> _Fenwick accepts the compel on 'Cast Out from the Stilt Villages'._
+
+> _Beat: Rennick, the Blackwater Cartel collector who holds Maud's silver debt, wading up out of the dark with a lantern and a ledger, come to call it in before the flood takes the road begs the party to go to The shrine sits at the end of a drowned channel that shows on no warden chart — but Fenwick, who knows every hidden channel between Hollowmoot and the reeds, traces the way through the reeds without hesitation., because her son followed the swarm-song into the belltower._
+
+**GM:** The rain hasn't slowed, and neither has Rennick. He comes up out of the black water like something that belongs there, lantern held high, ledger clutched against his chest in an oilskin sleeve, and finds Maud with the ease of a man who always knows where his debtors stand. "Line holds, does it," he says, not quite a question, already writing something in the margin. He doesn't press further — not yet — but his eyes cut to the others, cataloguing. Behind you, Fenwick has already found the channel no warden chart shows, the one he swore to Bren he'd never draw again, and it opens dark and narrow through the reeds toward the outer shrine of Saint Orrin's, where his and Bren's cached maps wait beneath the water — and where, somewhere above, a mother's son climbed toward a song that doesn't let go.
+
+**Maud:** Silver doesn't change what needs doing here.
+
+**Maud:** (Maud holds her ground, shoulders squared against the rain, her eyes steady on Rennick—not defiant, just fixed. The line holds.)
+
+**Hask:** My family marked this channel. I can get us through where the Mother's song can't follow—but we move now, quiet, before the water rises any higher and seals us in.
+
+**Hask:** (Hask steps to the channel's edge and crouches, reading the black water with the certainty of someone born to the marshes. His fingers trace the invisible current-path his family marked in secret, and he nods—sharp, final. When he rises, his gaze has already catalogued the scattered lanterns and wading pilgrims, the gaps between them where a small group might slip through unseen.)
+
+**Eira:** I've been to Three Elms — I know what the hive takes. But if any part of him is still himself, still fighting, there's hope. I'm going in.
+
+**Eira:** (Eira's face settles into that focused calm that people recognize—the midwife's mask she wears when she's delivering through a storm. Her hands move through her kit with practiced efficiency, checking vials of medicine, bundles of herbs, things that have helped her walk through impossible births a hundred times. She looks at Fenwick's dark channel opening through the reeds, at the belltower rising above the flooded shrine where a song that doesn't let go is drawing someone's child deeper into itself. Then she steps toward the water. She's delivered too many babies into a burning world not to try one more time.)
+
+**Fenwick:** The shrine's that way, Rennick. Bren's archive is beneath it, and I mean to reach it.
+
+**Fenwick:** (Fenwick turns from Rennick's calculating gaze toward the dark channel cutting through the reeds, rain pattering on his shoulders. The swarm-song rises from the drowned belltower ahead—hungry, urgent. He doesn't hesitate.)
+
+**GM:** Rennick watches Maud not move, and something in his face settles into cold arithmetic rather than anger — he clicks his ledger shut. "Line holds," he echoes again, softer this time, and there's no threat in it, just a debt being carried forward instead of collected. "Silver waits. It always does." He doesn't follow as the party turns for the channel — he only marks the page, and wades back into the dark the way he came. Behind you, Fenwick has already committed past the point of no return: the hidden channel he swore to Bren he'd never draw again now lies open to whoever finds this place next, and he knows it. Hask cuts the lead, poling them through gaps in the scattered, panicking pilgrims with a current-sense bred into his bones, while Eira checks her kit one last time, the midwife's calm settling over her like armor. The reeds close behind the boats, the swarm-song rising louder ahead from the drowned belltower, and the outer shrine of Saint Orrin's — and Bren's buried archive beneath it — waits at the channel's end.
+
+
+## Player feedback
+
+- **lurker** scores {'fun': 6, 'involvement': 6, 'connection': 5, 'control': 6, 'play_again': 7}: best — S4 - "Look to me. We hold steady here." - Maud's quiet strength actually stops the panic. Not flashy, just the core of who she is working perfectly. That's her superpower. | frustrating — The stretch where Rennick confronts her feels like it could have been heavier. Also: the "disgraced militia guard" concept didn't get explored—no reckoning with what the disgrace *is*, no militia colleagues, no deeper history with the Causeway and Orsa beyond a checkpoint interaction. Held the line, but the *why* it matters felt distant. | background — Good. The core concept—"disgraced militia guard who still holds the line"—got a perfect, earned moment in S4. The "holds the line" part was validated completely. The disgrace, the militia identity, the Causeway history... those existed but weren't deeply explored. No unfairness, but room for depth.
+- **method_actor** scores {'fun': 7, 'involvement': 7, 'connection': 7, 'control': 6, 'play_again': 7}: best — The drowned lodge fight—Hask charging in with fury to defend his family's legacy. Visceral, identity-driven, mechanically supported, and it mattered. | frustrating — Nothing significant. If anything, I wanted more exploration of the Ford's current state and maybe one moment where Hask taught someone water-reading—but that's "wanted more," not a real complaint. | background — Born on the Ferry Lines was woven throughout every major scene—the marked channels, the ferry family reputation, the compel about the ferry grip, chances to demonstrate actual expertise. Rill was present and relevant. Not forced, perfectly integrated.
+- **storyteller** scores {'fun': 7, 'involvement': 6, 'connection': 7, 'control': 5, 'play_again': 7}: best — The gate confrontation with Sella. Eira's card "The Informers Debt" became real, personal, and wounding—but then that Empathy roll at the end broke through Sella's defenses and forced the confession about Three Elms public, at exactly the moment when the chaos created our escape route. It was vulnerable, it mattered mechanically, and it proved Eira was right all along. | frustrating — After the gate escape, I felt like I was following Hask's family knowledge and Fenwick's archive-secrets. Eira gathered survivors and made good choices, but I wished I'd had more agency in what direction we took or what we solved, rather than supporting other characters' plot threads. | background — Good. The Sella confrontation was excellent—my card triggered exactly as written, with real emotional weight. Three Elms was woven in thematically throughout. The quarantine-house panic compel landed with genuine weight. Though: the pregnant woman waiting on the north side kind of disappeared from the story once we got through the gate—was she ever real, or just a pretext to push through?
+- **rules_lawyer** scores {'fun': 6, 'involvement': 6, 'connection': 7, 'control': 6, 'play_again': 7}: best — Bren emerging from the water at the lodge with that flicker of possible recognition—it crystallized Fenwick's central emotional conflict and made the later choice to break his oath feel genuinely costly rather than forced. | frustrating — The causeway gate scene moved quickly from negotiation to escape once Sella turned on the party. I was working a social angle with Orsa and wanted more time to explore that angle before the action accelerated. | background — Yes—FE-02 (Bren) appeared at the lodge, FE-03 (Cartel debt) brought Rennick into play, and FE-01 (Cast Out) was compelled when revealing the archive. How it landed: good. All three were organic to the story, thematically appropriate, and didn't feel forced or unfairly stacked against me.
+
+## Referee / engine violations
+
+- S1 §3/§11: compel names card EI-02, which is not in play for Eira (not theirs, or in the Session Deck / set aside)
+- S2 §7: reported fictional trigger fiction:the party leaves the road or causeway that is not an unused fictional trigger
+- S5 §7: reported fictional trigger fiction:the party leaves the road or causeway that is not an unused fictional trigger
+- SNone §7 (The rail): Rail exceeded the 5-card cap and stayed over-limit across multiple events instead of being corrected on the triggering add. In scene 4, adding MA-06 (event 104) brought the rail to 6 face-up cards (H-03, EI-06, H-05, T-02, FE-05, MA-06); three rolls (events 106, 108, 110) were resolved with the rail still over-limit, and the corrective removal (-H-05) did not happen until event 111. A similar 1-add delay occurred in scene 2 when EI-02 (event 38) pushed the rail to 6 and the correction (-F-01) was not logged until event 46, after an intervening compel and scene frame.
+- SNone §6A (Story Piles — resolving a story draw): Story card EI-06 was drawn and placed face-up on the rail in scene 1 (events 16-17) but is never logged as returned to its pile at any scene end (no 'Rail - EI-06' event appears anywhere in the log, including scene 1, scene 2 or scene 4 cleanup), contrary to '(a story card) at scene end ... return it and its echo slips to its pile and reshuffle, unless it was retired.' It was instead redrawn/re-added twice more (events 47-48, 112-113) while apparently still resident on the rail, directly contributing to the rail-limit overflow noted above.

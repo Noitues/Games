@@ -4,7 +4,7 @@
  "arm": "A",
  "seed": 44991,
  "spec_version": "0.3.1",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 9,
@@ -68,7 +68,7 @@
     "id": "B-05",
     "name": "FALSE SANCTUARY",
     "trigger": "clock_fills:F-01",
-    "used": null
+    "used": true
    },
    {
     "id": "B-03",
@@ -3111,6 +3111,675 @@
     "Fenwick": 4
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 106,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Scene 5 start",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "",
+   "event_type": "scene_start",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 107,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Scene test",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "2",
+   "total": "",
+   "opposition": "",
+   "result": "interrupt",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "d6=2 vs Tension 5",
+   "event_type": "scene_test",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 108,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Draw (beat_frame)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "deck now 1",
+   "event_type": "draw",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 109,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Draw (beat_frame)",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "deck now 0",
+   "event_type": "draw",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 110,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Deck exhausted",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "climax is scene 6",
+   "event_type": "deck_exhausted",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 111,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Beat Frame FALSE SANCTUARY",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-04,T-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "fills {'WHERE': 'H-04', 'HOW': 'T-01'}; defaults for rest",
+   "event_type": "beat_frame",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 112,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail + H-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "H-04",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "drawn from Session Deck; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 113,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Rail + T-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "T-01",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "drawn from Session Deck; GM +1 free invoke",
+   "event_type": "rail_add",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 114,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Frame scene",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "Can the party get dry, wounded, and fevered as they are, before the mire underfoot or the pack in the loft realizes they're not alone?",
+   "event_type": "frame",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 115,
+   "session": 1,
+   "scene": 5,
+   "actor": "Maud",
+   "action": "create_advantage",
+   "skill": "Rapport",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "Maud's boot finds the weakness first — that treacherous give beneath the reed mat. She stops mid-stride, raises one hand sharply, and wheels back toward the thr",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 116,
+   "session": 1,
+   "scene": 5,
+   "actor": "Hask",
+   "action": "create_advantage",
+   "skill": "Notice",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "Hask feels Rill stiffen against his leg, every muscle in the hound going rigid—that particular alertness that means swarm-touched presence above. His fever-clou",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 117,
+   "session": 1,
+   "scene": 5,
+   "actor": "Eira",
+   "action": "roleplay",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "Eira steps carefully backward toward the door, hand raised to steady Hask, watching the barely-perceptible sag in the reed mats and the darkness of the loft abo",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 118,
+   "session": 1,
+   "scene": 5,
+   "actor": "Fenwick",
+   "action": "create_advantage",
+   "skill": "investigate",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "Fenwick moves with the steady precision of a man reading a map written in wood and water. His feet test each board before committing weight, while his eyes trac",
+   "event_type": "declare",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 119,
+   "session": 1,
+   "scene": 5,
+   "actor": "Maud",
+   "action": "Create Advantage: Maud's boot finds the weakness first — that treacherous give",
+   "skill": "Rapport +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "- + 0 -",
+   "total": "+3",
+   "opposition": "+2",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "aspect A-1.5.6 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "hides beneath reed mats [H-04]"
+   ],
+   "target_card": "H-04",
+   "target_npc": "",
+   "shifts": 1,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 120,
+   "session": 1,
+   "scene": 5,
+   "actor": "Hask",
+   "action": "Create Advantage: Hask feels Rill stiffen against his leg, every muscle in the",
+   "skill": "Notice +4",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "- 0 0 -",
+   "total": "+2",
+   "opposition": "+1 (NPC + 0 - -)",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "aspect A-1.5.7 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [],
+   "target_card": "T-01",
+   "target_npc": "Hive-Touched Loft Pack",
+   "shifts": 1,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 121,
+   "session": 1,
+   "scene": 5,
+   "actor": "Fenwick",
+   "action": "Create Advantage: Fenwick moves with the steady precision of a man reading a m",
+   "skill": "Investigate +3",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "0 + 0 0",
+   "total": "+4",
+   "opposition": "+2",
+   "result": "success",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "aspect A-1.5.8 (1 free)",
+   "event_type": "roll",
+   "improvised": false,
+   "fp_change": 0,
+   "opposing_tags": [
+    "hides beneath reed mats [H-04]"
+   ],
+   "target_card": "H-04",
+   "target_npc": "",
+   "shifts": 2,
+   "gm_fp_spent": 0,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4,
+   "cost_mode": ""
+  },
+  {
+   "event_id": 122,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Adjust tension",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "5->5",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "against the players 0 (hostile invokes 0 + compels 0) vs friendly invokes 0 (§6, spec 0.3.1)",
+   "event_type": "tension",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 123,
+   "session": 1,
+   "scene": 5,
+   "actor": "GM",
+   "action": "Story card added",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "SN-02",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "The Loft Pack of the False Sanctuary",
+   "event_type": "story_add",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 124,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Scene 5 end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "",
+   "event_type": "scene_end",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 125,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "1",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 126,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "1",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 127,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "1",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
+  },
+  {
+   "event_id": 128,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 5,
+   "notes": "FP: Maud=3, Hask=0, Eira=1, Fenwick=4",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Maud": 3,
+    "Hask": 0,
+    "Eira": 1,
+    "Fenwick": 4
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -3158,6 +3827,17 @@
    "scene_test": 5,
    "outcome": "as_planned",
    "beat": null,
+   "rounds": 1,
+   "climax": false,
+   "tension_after": 5,
+   "triggers_fired": []
+  },
+  {
+   "index": 5,
+   "tension_before": 5,
+   "scene_test": 2,
+   "outcome": "interrupt",
+   "beat": "interrupt",
    "rounds": 1,
    "climax": false,
    "tension_after": 5,
@@ -3796,6 +4476,118 @@
    "kind": "narration",
    "text": "Fenwick's hand is already on his pack strap when Maud crosses the hummock in three strides and grips his wrist — not to stop him, but to make him look at her. \"You go alone, you die alone, and Bren stays lost.\" It isn't kindness; it's the shield-wall soldier's math. Fenwick's jaw works, and the compel lands where it has to: the one surviving copy of the Order's false relic map is still tucked against his ribs, and just *having* it has made him a marked man since the day he took it. He can't leave it behind, and he can't stop reading it by feel in the dark, tracing the line that points away from Saint Orrin's Drowned Temple toward whatever Bren actually found. He accepts it — the weight of it, the fate point that comes with — and forces himself to crouch back down, map pressed flat under his palm, waiting. Eira gets her water boiled thin and bitter over a cupped, smothered flame, easing it past Hask's cracked lips while Rill presses close enough to shiver in time with him; the fever doesn't break, but it stops climbing, held level for now by Eira's steady hands and the plague-ward chants she learned before she had words for anything else. Two hours come and go with nothing louder than rain and Hask's ragged breathing — until, right at the edge of them, Fenwick swears he hears it: not the swarm-song, but boots. Careful ones. Someone out there knows how to move without splashing, and they're circling toward the hummock from the north — exactly the direction the map points.",
    "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Beat: Shelter at The stilt-house floor is laid over reed mats that hide beneath them the sucking black mire of the flooded lot — solid-looking ground that isn't ground at all. hides What the dry loft actually shelters is a feral hunting pack of the hive-touched, gone quiet and still in the dark above, waiting on the swarm-song..",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The stilt-house rises out of the flood on tarred pilings, its door hanging loose on one hinge — an invitation the rain makes hard to refuse. Inside, the floor is laid with reed mats over what looks like solid boards, dry enough that for one aching moment it feels like salvation: a place to lay Hask down, to check Eira's wards against the fever, to let Fenwick's hands stop shaking around Bren's map. But the mats give a fraction under Maud's first step, a wet suck of black mud answering from beneath, and above your heads the loft has gone very, very quiet — the kind of quiet that isn't empty, just listening, waiting on a song only the hive-touched can hear.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Maud",
+   "kind": "speech",
+   "text": "The floor's a trap and something's waiting above. We hold the door. Stay close, stay sharp.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Maud",
+   "kind": "action",
+   "text": "(Maud's boot finds the weakness first — that treacherous give beneath the reed mat. She stops mid-stride, raises one hand sharply, and wheels back toward the threshold, her shield-wall training overriding everything else. \"Back. The floor's rotten through.\" Her voice carries drill-yard authority, cutting through exhaustion and fever-blur. Her body moves into the blocking stance she's held a thousand times: weight forward, shoulders squared to fill the doorway, absolutely immovable. She's reading her companions' faces and bodies, gauging Hask's stability against his fever, Eira's strength, Fenwick's readiness — taking their measure and positioning herself to hold the line while her eyes track the loft's shadows.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Hask",
+   "kind": "speech",
+   "text": "Pack in the loft. Listening on the swarm-song—we move wrong, they drop.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Hask",
+   "kind": "action",
+   "text": "(Hask feels Rill stiffen against his leg, every muscle in the hound going rigid—that particular alertness that means swarm-touched presence above. His fever-clouded eyes snap upward, and years of marsh hunting flood back through the delirium. The loft's silence isn't empty. It's full of waiting bodies, the swarm-song thrumming like a held breath, and Hask reads the danger as clearly as current on water.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Eira",
+   "kind": "speech",
+   "text": "The ground won't hold us. Back away slowly.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Eira",
+   "kind": "action",
+   "text": "(Eira steps carefully backward toward the door, hand raised to steady Hask, watching the barely-perceptible sag in the reed mats and the darkness of the loft above where something waits.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Fenwick",
+   "kind": "speech",
+   "text": "The weight's all north in that loft—they're watching that way. The mire thins toward the west pilings. I can read us a path.",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Fenwick",
+   "kind": "action",
+   "text": "(Fenwick moves with the steady precision of a man reading a map written in wood and water. His feet test each board before committing weight, while his eyes track the subtle sag of the structure above, the pressure-points that betray where the hive-touched are bunched. Despite the grief that has been drowning him since Bren went down, his hands are steady—the mapmaker's focus overriding everything else.)",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Maud — create advantage with Rapport: dice - + 0 - → Good (+3) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Hask — create advantage with Notice: dice - 0 0 - → Fair (+2) vs Average (+1): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "Table",
+   "kind": "mechanics",
+   "text": "Fenwick — create advantage with Investigate: dice 0 + 0 0 → Great (+4) vs Fair (+2): SUCCESS",
+   "visible_to": "all"
+  },
+  {
+   "session": 1,
+   "scene": 5,
+   "speaker": "GM",
+   "kind": "narration",
+   "text": "The four of you move as one now — Maud's raised hand freezing everyone mid-step, Hask's read of Rill's rigid spine confirming what waits above, Fenwick's eyes tracing the sag of old boards back to a dry seam along the western wall. No one breathes wrong. The loft stays silent, still listening for a mistake nobody makes. Fenwick's fingers find the line: a narrow run of pilings, firm underfoot, threading past the worst of the mire toward a gap in the back wall where the rain-noise alone will cover your retreat. You back out the way you came, Maud filling the doorway until the last of you clears it, and the stilt-house's false promise of shelter is left behind — trap and pack both undisturbed, and undisturbing.",
+   "visible_to": "all"
   }
  ],
  "costs": [
@@ -3830,7 +4622,19 @@
    "text": "The pack that bursts from the flooded reeds isn't just feral strangers — Hask sees faces he knows in the ruin of them, hive-touched kin from the ferry-line he was born into at Gullet Ford, and they hook their spears through the current with the same waterman's grace his own family taught him.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "HA-01",
+    "type": "ROOTS",
+    "owner": "PC-HASK",
+    "title": "Born on the Ferry Lines",
+    "power_tags": [
+     "Child of the Gullet Ford ferry family",
+     "Can pole a boat through any current",
+     "Knows the drowned roads beneath the water"
+    ],
+    "weakness": "Distrusts anyone whos never worked a ferry"
+   }
   },
   {
    "event": "beat_fill",
@@ -3841,7 +4645,19 @@
    "text": "They come because Maud still owes coin to the Blackwater Cartel: the debt has gone unpaid too long, and someone in a night barge decided a hungry, hive-touched pack loosed at the ford is a cheaper collector than a knife in the dark.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "MA-04",
+    "type": "REACH",
+    "owner": "PC-MAUD",
+    "title": "The Silver Debt",
+    "power_tags": [
+     "Owes coin to the Blackwater Cartel",
+     "Always knows the price of everything",
+     "Skilled at skimming tolls unnoticed"
+    ],
+    "weakness": "Will sell information for enough silver"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -3856,7 +4672,19 @@
    "owner": "Hask",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "HA-01",
+    "type": "ROOTS",
+    "owner": "PC-HASK",
+    "title": "Born on the Ferry Lines",
+    "power_tags": [
+     "Child of the Gullet Ford ferry family",
+     "Can pole a boat through any current",
+     "Knows the drowned roads beneath the water"
+    ],
+    "weakness": "Distrusts anyone whos never worked a ferry"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -3871,7 +4699,19 @@
    "owner": "Maud",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "MA-04",
+    "type": "REACH",
+    "owner": "PC-MAUD",
+    "title": "The Silver Debt",
+    "power_tags": [
+     "Owes coin to the Blackwater Cartel",
+     "Always knows the price of everything",
+     "Skilled at skimming tolls unnoticed"
+    ],
+    "weakness": "Will sell information for enough silver"
+   }
   },
   {
    "event": "beat_fill",
@@ -3882,7 +4722,20 @@
    "text": "Hask is still shaking with the marsh fever caught days ago, and it brings feverish visions crawling up out of the water — for a heartbeat the reeds are full of shapes that aren't there, and he's already lashing out at one before anyone can stop him.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "H-05",
+    "type": "HAZARD",
+    "owner": "GM",
+    "title": "Marsh Fever",
+    "power_tags": [
+     "spreads through bad water",
+     "weakens the strongest fighter",
+     "brings feverish visions"
+    ],
+    "weakness": "Broken by Willowbark Tea",
+    "clock": "0/5"
+   }
   },
   {
    "event": "beat_fill",
@@ -3893,7 +4746,19 @@
    "text": "because the shape wading out of the flooded willows moves with a gait Fenwick would know anywhere — Bren, once his surveying partner, now hive-touched, calling his name in a voice half-drowned by the swarm-song. The bond holds Fenwick's hand still even as the moment costs the party everything.",
    "improvised": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "FE-02",
+    "type": "ROOTS",
+    "owner": "PC-FENWICK",
+    "title": "Bren, Lost to the Hive",
+    "power_tags": [
+     "Bonded to Bren, once his surveying partner, now hive-touched",
+     "Can still read Brens old notes and codes",
+     "Knows where Bren was last seen near Saint Orrins Drowned Temple"
+    ],
+    "weakness": "Cant bring himself to kill Bren if it comes to that"
+   }
   },
   {
    "event": "compel:beat frame",
@@ -3908,7 +4773,19 @@
    "owner": "Fenwick",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "FE-02",
+    "type": "ROOTS",
+    "owner": "PC-FENWICK",
+    "title": "Bren, Lost to the Hive",
+    "power_tags": [
+     "Bonded to Bren, once his surveying partner, now hive-touched",
+     "Can still read Brens old notes and codes",
+     "Knows where Bren was last seen near Saint Orrins Drowned Temple"
+    ],
+    "weakness": "Cant bring himself to kill Bren if it comes to that"
+   }
   },
   {
    "event": "compel:tie",
@@ -3923,7 +4800,19 @@
    "owner": "Eira",
    "placebo": false,
    "tag_in_text": true,
-   "repaired": true
+   "repaired": true,
+   "card": {
+    "id": "EI-03",
+    "type": "REACH",
+    "owner": "PC-EIRA",
+    "title": "The Massacre at Three Elms",
+    "power_tags": [
+     "Sworn to prove the Causeway Wardens burned Three Elms deliberately",
+     "Delivered babies in the ruins, remembers every name lost",
+     "Trusted by survivors to tell the truth"
+    ],
+    "weakness": "Will accuse before she has proof"
+   }
   },
   {
    "event": "free_compel",
@@ -3935,10 +4824,83 @@
    "improvised": true,
    "accepted": true,
    "owner": "Fenwick"
+  },
+  {
+   "event": "beat_fill",
+   "scene": 5,
+   "draw_id": "H-04",
+   "valid": true,
+   "tag": "hides beneath reed mats",
+   "text": "The stilt-house floor is laid over reed mats that hide beneath them the sucking black mire of the flooded lot — solid-looking ground that isn't ground at all.",
+   "improvised": false,
+   "tag_in_text": true,
+   "repaired": false,
+   "card": {
+    "id": "H-04",
+    "type": "HAZARD",
+    "owner": "GM",
+    "title": "Sucking Mire",
+    "power_tags": [
+     "drags down the heavy",
+     "hides beneath reed mats",
+     "exhausts anyone crossing"
+    ],
+    "weakness": "Firm Along Old Pilings",
+    "clock": "0/4"
+   }
+  },
+  {
+   "event": "beat_fill",
+   "scene": 5,
+   "draw_id": "T-01",
+   "valid": true,
+   "tag": "feral hunting pack",
+   "text": "What the dry loft actually shelters is a feral hunting pack of the hive-touched, gone quiet and still in the dark above, waiting on the swarm-song.",
+   "improvised": false,
+   "tag_in_text": true,
+   "repaired": false,
+   "card": {
+    "id": "T-01",
+    "type": "THREAT",
+    "owner": "GM",
+    "title": "Hive-Touched Pack",
+    "power_tags": [
+     "feral hunting pack",
+     "hooked spears and nets",
+     "ignores pain entirely"
+    ],
+    "weakness": "Maddened by Bright Fire",
+    "clock": "0/6"
+   }
   }
  ],
  "referee": {
-  "violations": [],
+  "violations": [
+   {
+    "section": "§6A (Story Pile cleanup) / §7 (scene cleanup order)",
+    "issue": "Story cards MA-06 (event 13) and EI-06 (event 16) surfaced to the rail in scene 1 but were never returned to their owners' Story Piles at scene end ('At scene end, return it and its echo slips to its pile and reshuffle, unless it was retired'). No rail_remove event for either card appears anywhere in the log, including at scene 1's own cleanup (event 29) or any later scene end.",
+    "event_id": 29,
+    "source": "referee"
+   },
+   {
+    "section": "§7 (the rail limit)",
+    "issue": "'The rail holds at most 5 face-up cards... If a card would exceed the limit, the GM removes the oldest non-GLOBAL GM card.' Because MA-06/EI-06 were never cleared (see above), the rail reached 6 cards at event 38 (H-01, F-01, MA-06, EI-06, HA-01, MA-04) with no discard logged, and reached at least 7 cards in scene 3 (after events 58, 59, 64) before only a single card (F-01) was discarded at event 66 — leaving the rail still over the 5-card cap.",
+    "event_id": 64,
+    "source": "referee"
+   },
+   {
+    "section": "§4 'Resolving a drawn player card', step 4",
+    "issue": "'If the owner refuses, they pay 1 fate point. The GM builds the cost from a face-up GM tag instead.' Hask refused the HA-01 compel (event 34, pays 1 FP) and Maud refused the MA-04 compel (event 37, pays 1 FP), but no subsequent event shows a cost built from a face-up GM tag for either refusal — the scene's following rolls cite no GM tag tied to these refusals.",
+    "event_id": 34,
+    "source": "referee"
+   },
+   {
+    "section": "§4 'Resolving a drawn player card', step 4",
+    "issue": "Same issue as above for the Maud/MA-04 refusal: no face-up GM tag cost is logged following the refusal.",
+    "event_id": 37,
+    "source": "referee"
+   }
+  ],
   "ambiguities": [
    {
     "id": "AMB-01",
@@ -3975,14 +4937,213 @@
     "detail": "event 74",
     "scene": 3,
     "source": "engine"
+   },
+   {
+    "id": "AMB-03",
+    "section": "§4",
+    "issue": "Does the session end after the climax scene?",
+    "interim_ruling": "Yes: the climax scene is the last scene of the session.",
+    "detail": "deck exhausted in scene 5; climax = scene 6",
+    "scene": 5,
+    "source": "engine"
+   },
+   {
+    "section": "§5 step 3 (Beat Frame blank-fill)",
+    "issue": "The rule only defines a fallback ('fills the first open blank still empty') for when a card's type matches NO open blank. It doesn't say what happens when a card's type DOES match an open blank, but that blank was already filled by another card drawn for the same frame (e.g. scene 3 BETRAYAL: HAZARD H-05, whose natural slot is HOW, fell through to WHO because BETRAYAL has no HOW blank open, which is fine — but then ROOTS FE-02, whose natural slot IS the open WHO blank, had to fall through to WHY because WHO was already taken by H-05; similarly scene 5 FALSE SANCTUARY: THREAT T-01 correctly filled HOW, then HAZARD H-04 — whose natural slot is also HOW — had to fall through to WHERE because HOW was already taken).",
+    "interim_ruling": "The table treated 'natural slot already occupied' the same as 'type matches no open blank': the card fell through to the first still-empty blank in reading order. Result accepted as valid in both cases.",
+    "source": "referee"
+   },
+   {
+    "section": "§6 / §7 scene loop",
+    "issue": "Scenes 2 and 3 have no scene_test event logged at all, even though §7 step 1 says to run the scene test 'except in the session's first scene.' In both cases the scene instead opened directly with a Beat Frame/module deployed from the previous scene's cleanup trigger (B-01→scene 2's AMBUSH; M-2 and B-03→scene 3's BETRAYAL). The rules never state that a pre-deployed trigger replaces or skips the mandatory scene test.",
+    "interim_ruling": "The table treated a cleanup-triggered Beat Frame/module deployment at the top of a scene as superseding that scene's scene test, running the frame instead and skipping the roll.",
+    "source": "referee"
    }
   ],
-  "cost_checks": [],
-  "friction": []
+  "cost_checks": [
+   {
+    "event_id": 33,
+    "used_drawn_card": true,
+    "note": "Beat Frame AMBUSH: HA-01 fills WHO via power tag 'Child of the Gullet Ford ferry family' (quoted in fiction); MA-04 fills WHY via power tag 'Owes coin to the Blackwater Cartel' (quoted in fiction). Both texts show repaired:true in the source list, i.e. needed a rewrite pass to satisfy §3's 'cost must use the tag' rule."
+   },
+   {
+    "event_id": 34,
+    "used_drawn_card": true,
+    "note": "Compel offer quotes HA-01's weakness 'Distrusts anyone who's never worked a ferry' correctly, but it was refused; per §4 step 4 the GM must then build a cost from a face-up GM tag instead, and none is logged (see violations)."
+   },
+   {
+    "event_id": 37,
+    "used_drawn_card": true,
+    "note": "Compel offer quotes MA-04's weakness 'Will sell information for enough silver' correctly, but it was refused; no follow-up face-up-GM-tag cost is logged (see violations)."
+   },
+   {
+    "event_id": 63,
+    "used_drawn_card": true,
+    "note": "Beat Frame BETRAYAL: H-05 fills WHO via 'brings feverish visions'; FE-02 fills WHY via 'Bonded to Bren, once his surveying partner, now hive-touched'. Both used in fiction (repaired:true entries)."
+   },
+   {
+    "event_id": 65,
+    "used_drawn_card": true,
+    "note": "Accepted compel quotes FE-02's weakness 'Cant bring himself to kill Bren if it comes to that' directly."
+   },
+   {
+    "event_id": 78,
+    "used_drawn_card": true,
+    "note": "Tie draw EI-03; minor cost resolved at event 82 quoting EI-03's weakness 'Will accuse before she has proof' directly."
+   },
+   {
+    "event_id": 111,
+    "used_drawn_card": true,
+    "note": "Beat Frame FALSE SANCTUARY: T-01 fills HOW via 'feral hunting pack'; H-04 fills WHERE via 'hides beneath reed mats'. Both used in fiction without needing repair (repaired:false)."
+   }
+  ],
+  "friction": [
+   {
+    "text": "Most deck-draw costs in this session (HA-01, MA-04, H-05, FE-02, EI-03) are flagged 'repaired:true' in the source data, meaning the first-pass narration didn't actually use the drawn tag and had to be rewritten to comply with §3's 'the cost must use the tag' rule — a recurring GM-side compliance gap."
+   },
+   {
+    "text": "The story cards MA-06 and EI-06 (drawn at events 13/16) were never returned to their Story Piles at any scene-end cleanup, leaving them permanently stuck on the rail; this silently ate 2 of the rail's 5 slots for the rest of the session and is the likely root cause of the repeated rail-overflow situations in scenes 2–3."
+   },
+   {
+    "text": "Scene 3 opened with two separate triggers firing simultaneously at cleanup (module M-2 and Beat Frame B-03), adding 4 cards to the rail in quick succession (C-01, T-03, H-05, then FE-02) with only a single reactive 'discard: rail limit' removal (F-01) in between — the cap of 5 was exceeded for several consecutive events rather than being maintained continuously as §7 implies."
+   }
+  ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "storyteller",
+   "scores": {
+    "fun": 7,
+    "involvement": 6,
+    "connection": 7,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The enforcer standoff in S3 where Maud's shield-wall refusal to move broke the Cartel's nerve. It crystallized everything about her—the disgraced soldier who still holds the line, whose sheer integrity and unbreakability becomes her greatest strength. That moment *felt* earned.",
+    "most_frustrating": "The stilt-house in S5 was too clean—we identified the trap, we solved it perfectly, and then just... left. No real consequence, no genuine confrontation with what waited above. It felt more like showing us a puzzle we could solve than like encountering actual danger.",
+    "background_used": "Excellent integration. The Hollowmoot congregation (grandmother at the ford), the Ashwater training (reading water, shield-wall stances came up repeatedly), the Cartel debt creating the hive-touched pack with real moral weight—all of it woven in organically. Even Eira's Three Elms burn being weaponized against her felt like the world respecting established truth. The silver debt especially: I could refuse the compels and stay true to Maud's refusal to sell her people, but the debt kept creating consequences anyway. That's exactly how good compels work.",
+    "wanted_but_couldnt": "I wanted a real negotiation with the Cartel enforcers—a chance to use Maud's Rapport (her highest skill at +4) more actively to talk our way through or around a crisis rather than just escape. The enforcer moment was close but Eira's Three Elms revelation killed any chance to parley before I could try.",
+    "one_sentence": "My backstory created meaningful moral weight and genuinely difficult choices—the compels were challenging without being unfair, and the silver debt made events feel personally stakes-heavy in exactly the right way."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "rules_lawyer",
+   "scores": {
+    "fun": 5,
+    "involvement": 6,
+    "connection": 6,
+    "control": 4,
+    "play_again": 6
+   },
+   "free_text": {
+    "best_moment": "S2 — physically blocking Jal's spear with my body. That was a choice *I* made with real weight to it, recognizing my own kin and putting flesh between them and the party. Clear stakes, personal cost, no ambiguity.",
+    "most_frustrating": "S3 — the fever delirium beat that made Hask lash out at allies. It was introduced as a GM complication, not something I steered into, and suddenly I'm managing guilt and consequences for an action I didn't consciously choose. Felt passive rather than active.",
+    "background_used": "YES, heavily and well — the ferry lines (recognizing Jal's hand on the spear), reading currents like language, Rill's presence saving the party multiple times, the cost of knowing his own drowned kin. All of it landed naturally and created genuine stakes. The GM wove it in, not forced.",
+    "wanted_but_couldnt": "More active agency with the enforcer negotiation — I wanted Hask to use his personal knowledge (Blackwater debts, marsh connections) to maybe defuse or complicate the standoff, not just read danger and run. Also wanted more control over how the fever progressed rather than it being a bolt from GM complication.",
+    "one_sentence": "My background was woven in skillfully and created real personal weight, but too many story complications felt imposed on me rather than driven by my choices — I was reactive more than proactive."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "lurker",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 6,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Casting the quarantine ward signs in combat at Gullet Ford. Eira's hard-won knowledge from behind the quarantine fence became the crucial factor protecting the party—a moment where her quiet competence actually mattered most.",
+    "most_frustrating": "Wanting to negotiate safely past the Cartel enforcer using my established connection to them, but the compel on 'The Massacre at Three Elms' forced me to accuse them of burning the settlement instead. Dramatically satisfying, tactically devastating.",
+    "background_used": "Yes—Sella's appearance, the quarantine wards in combat, the Cartel connection, and the Three Elms massacre all appeared meaningfully. The GM wove personal elements effectively. Good.",
+    "wanted_but_couldnt": "Successfully negotiate past the Cartel enforcer using my existing connection before my character's need to accuse them of burning Three Elms forced the confrontation.",
+    "one_sentence": "Eira's backstory was used well—personal elements created meaningful moments—though mostly through mechanical compels rather than through opportunities for her to seize initiative."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "method_actor",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 7,
+    "control": 5,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "S3 — Bren's clear eyes, the old channel code, and him throwing his weight at the enforcers instead of Fenwick. Perfect intersection of backstory, motivation, and heartbreak.",
+    "most_frustrating": "S4 — being compelled to wait with the group after learning which direction Bren went. Mechanically earned but emotionally sting; Fenwick needed to move.",
+    "background_used": "Bren card used excellently in S3 — felt earned and hit perfectly. Hidden channels knowledge is being used consistently but becoming predictable as a \"solve navigation\" tool. Enemy of Dry Saint and Cartel debt not yet engaged. Overall: good, but some cards underused.",
+    "wanted_but_couldnt": "Chase Bren immediately north after the \"North and dark\" signal; take genuine risks for what he wants rather than always finding the safe exit route.",
+    "one_sentence": "My backstory with Bren was integrated beautifully and earned, but I'm narrowing into the role of \"mapmaker who navigates around problems\" instead of one who drives forward into stakes for personal reasons."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Maud",
+    "turns": 15,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Hask",
+    "turns": 14,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Eira",
+    "turns": 12,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Fenwick",
+    "turns": 12,
+    "references_to_others_background": 0
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "test",
+  "closing_tension": 5,
+  "reverberations": {
+   "growth": {
+    "MA-02": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "EI-02": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    },
+    "FE-02": {
+     "added": 2,
+     "total": 2,
+     "evolve": false
+    },
+    "EI-03": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    }
+   },
+   "clocks": [],
+   "mutations": [],
+   "retired": []
+  },
+  "retired": []
+ },
  "state_end": {
   "tension": 5,
   "fp": {
@@ -4005,27 +5166,122 @@
   },
   "guarantee_pulled": [],
   "guarantee_failed": [],
-  "deck_left": [
-   "T-01",
-   "H-04"
-  ],
-  "draws": 5,
+  "deck_left": [],
+  "draws": 7,
   "turns": {
-   "Maud": 5,
-   "Hask": 5,
-   "Eira": 5,
-   "Fenwick": 5
+   "Maud": 6,
+   "Hask": 6,
+   "Eira": 6,
+   "Fenwick": 6
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 918349,
-  "completion": 147004,
-  "cost_usd": 2.501,
-  "calls": 61
+ "metrics": {
+  "arm": "A",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Eira",
+   "Fenwick",
+   "Hask",
+   "Maud"
+  ],
+  "backstory_all_players": true,
+  "deck_surfaced_all_players": true,
+  "deck_draws": 7,
+  "draw_costs": 10,
+  "draw_cost_used_card_rate_engine": 1.0,
+  "draw_cost_tag_in_text_rate": 1.0,
+  "draw_cost_repaired": 8,
+  "draw_cost_used_card_rate_referee": 1.0,
+  "fp_end": {
+   "Maud": 3,
+   "Hask": 0,
+   "Eira": 1,
+   "Fenwick": 4
+  },
+  "fp_end_mean": 2,
+  "fp_earned": {
+   "Maud": 1,
+   "Eira": 2,
+   "Fenwick": 2
+  },
+  "fp_spent": {
+   "Fenwick": 1,
+   "Hask": 3,
+   "Maud": 1,
+   "Eira": 4
+  },
+  "compels_accepted": 5,
+  "compels_refused": 2,
+  "compels_deck": 4,
+  "compels_free": 3,
+  "turns": {
+   "Maud": 6,
+   "Hask": 6,
+   "Eira": 6,
+   "Fenwick": 6
+  },
+  "turn_gini": 0.0,
+  "invokes": {
+   "Fenwick": 1,
+   "Hask": 3,
+   "Maud": 0,
+   "Eira": 4
+  },
+  "invoke_gini": 0.4375,
+  "tension_trajectory": [
+   3,
+   4,
+   3,
+   4,
+   5,
+   5
+  ],
+  "clock_marks": 0,
+  "violations": 4,
+  "violations_engine": 0,
+  "violations_referee": 4,
+  "ambiguities": 7,
+  "ambiguity_ids": [
+   "AMB-01",
+   "AMB-03",
+   "AMB-12",
+   "AMB-22",
+   "AMB-27",
+   "§5 step 3 (Beat Frame blank-fill)",
+   "§6 / §7 scene loop"
+  ],
+  "gm_improvised_complications": 3,
+  "card_supplied_complications": 10,
+  "improvisation_share": 0.231,
+  "guarantee_pulled": 0,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6,
+   "involvement": 6,
+   "connection": 6.5,
+   "control": 4.75,
+   "play_again": 6.75
+  },
+  "involvement_var_within": 0,
+  "personality": {
+   "Maud": "storyteller",
+   "Hask": "rules_lawyer",
+   "Eira": "lurker",
+   "Fenwick": "method_actor"
+  },
+  "elapsed_min": 27.2,
+  "cost_usd": 3.7575
  },
- "llm_calls": 61,
+ "tokens": {
+  "prompt": 1363696,
+  "completion": 226575,
+  "cost_usd": 3.7575,
+  "calls": 80
+ },
+ "llm_calls": 79,
  "call_log": [
   {
    "seq": 1,
@@ -4514,6 +5770,150 @@
    "cached": false,
    "prompt_tokens": 40771,
    "completion_tokens": 1374
+  },
+  {
+   "seq": 24,
+   "agent": "GM",
+   "kind": "gm_frame",
+   "cached": false,
+   "prompt_tokens": 38039,
+   "completion_tokens": 1355
+  },
+  {
+   "seq": 25,
+   "agent": "GM",
+   "kind": "gm_beat_fill",
+   "cached": false,
+   "prompt_tokens": 19553,
+   "completion_tokens": 482
+  },
+  {
+   "seq": 26,
+   "agent": "GM",
+   "kind": "gm_frame",
+   "cached": false,
+   "prompt_tokens": 19161,
+   "completion_tokens": 577
+  },
+  {
+   "seq": 10,
+   "agent": "Eira",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 5124,
+   "completion_tokens": 2168
+  },
+  {
+   "seq": 10,
+   "agent": "Maud",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 5079,
+   "completion_tokens": 2717
+  },
+  {
+   "seq": 11,
+   "agent": "Fenwick",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 5139,
+   "completion_tokens": 4152
+  },
+  {
+   "seq": 11,
+   "agent": "Hask",
+   "kind": "player_declare",
+   "cached": false,
+   "prompt_tokens": 5118,
+   "completion_tokens": 4756
+  },
+  {
+   "seq": 27,
+   "agent": "GM",
+   "kind": "gm_adjudicate",
+   "cached": false,
+   "prompt_tokens": 21528,
+   "completion_tokens": 1017
+  },
+  {
+   "seq": 11,
+   "agent": "Maud",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 6953,
+   "completion_tokens": 1238
+  },
+  {
+   "seq": 12,
+   "agent": "Fenwick",
+   "kind": "player_post_roll",
+   "cached": false,
+   "prompt_tokens": 7071,
+   "completion_tokens": 3264
+  },
+  {
+   "seq": 28,
+   "agent": "GM",
+   "kind": "gm_narrate",
+   "cached": false,
+   "prompt_tokens": 43848,
+   "completion_tokens": 1754
+  },
+  {
+   "seq": 29,
+   "agent": "GM",
+   "kind": "gm_post",
+   "cached": false,
+   "prompt_tokens": 106033,
+   "completion_tokens": 1780
+  },
+  {
+   "seq": 1,
+   "agent": "Referee",
+   "kind": "referee",
+   "cached": false,
+   "prompt_tokens": 25992,
+   "completion_tokens": 26200
+  },
+  {
+   "seq": 1,
+   "agent": "Hask#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 10978,
+   "completion_tokens": 1595
+  },
+  {
+   "seq": 1,
+   "agent": "Maud#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 10938,
+   "completion_tokens": 3087
+  },
+  {
+   "seq": 1,
+   "agent": "Fenwick#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 10997,
+   "completion_tokens": 3335
+  },
+  {
+   "seq": 1,
+   "agent": "Eira#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 10982,
+   "completion_tokens": 7602
+  },
+  {
+   "seq": 1,
+   "agent": "Interviewer",
+   "kind": "interviewer",
+   "cached": false,
+   "prompt_tokens": 9173,
+   "completion_tokens": 11227
   }
  ],
  "models": {
@@ -4522,5 +5922,5 @@
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 983.3
+ "elapsed_s": 1634.6
 }
