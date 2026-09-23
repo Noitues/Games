@@ -4,7 +4,7 @@
  "arm": "B",
  "seed": 44984,
  "spec_version": "0.3.1",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 2,
@@ -2685,6 +2685,34 @@
     "Yarrow": 2
    },
    "gm_fp": 4
+  },
+  {
+   "event_id": 88,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": "",
+   "notes": "FP: Petra=5, Anselm=1, Caddock=0, Yarrow=2",
+   "event_type": "session_end",
+   "improvised": false,
+   "fp_balances": {
+    "Petra": 5,
+    "Anselm": 1,
+    "Caddock": 0,
+    "Yarrow": 2
+   },
+   "gm_fp": 4
   }
  ],
  "scenes": [
@@ -3853,6 +3881,12 @@
     "section": "§3",
     "issue": "NPC action with unknown NPC or target: {'npc': 'Hive-Touched Sentinel', 'target': 'Anselm', 'harm': 'physical', 'description': \"A gaunt shape drops from the shadow-gap Yarrow marked, a hooked temple-spear lashing out at Anselm's advancing blade-arm before he can close the distance — pain-blind, silent, driven only by the swarm-song's pull.\"}",
     "source": "engine"
+   },
+   {
+    "event_id": 70,
+    "section": "Compels",
+    "issue": "Petra's compel was refused (fp_spent 1, compel: 'refused'), which per the rules means the complication does not happen — yet the event's own narration text describes the complication occurring anyway ('Her feet root to the spot, bell hand trembling, the words dying in her throat'), the same freeze effect that occurs on accepted compels.",
+    "source": "referee"
    }
   ],
   "ambiguities": [
@@ -3873,14 +3907,184 @@
     "detail": "",
     "scene": 2,
     "source": "engine"
+   },
+   {
+    "section": "Compels",
+    "issue": "The same trouble aspect ('Freezes When the Song Calls Her Name') was compelled on Petra three separate times across three different scenes (events 10, 61, 77) with no rule limiting compel frequency on a single aspect within a session.",
+    "interim_ruling": "Table allowed repeated compels of the same aspect each scene, paying/awarding fate points normally each time with no cooldown.",
+    "source": "referee"
+   },
+   {
+    "section": "§7 (triggers)",
+    "issue": "Trigger B-02 was reported as fired at the scene 2→3 boundary and logged in the scene_end notes ('triggers fired: [\"B-02\"]'), but the engine's own refusal log states B-02 was 'not an unused fictional trigger' and rejected the report.",
+    "interim_ruling": "The table let the narrative 'firing' stand in the scene_end record even though the engine declined to apply any mechanical effect for it, creating a log entry with no corresponding mechanical consequence.",
+    "source": "referee"
+   },
+   {
+    "section": "Outcomes / GM-invented costs",
+    "issue": "The baseline rules only say 'the GM invents costs' for ties/fails; they do not say whether a cost must be drawn from a deck resource or may always be freely improvised.",
+    "interim_ruling": "Every cost and compel this session (events 10, 16, 37, 61, 70, 77) was resolved as a fully improvised cost with no draw_id/card, i.e. the table never used the deck-draw cost path even though the engine log format supports one.",
+    "source": "referee"
    }
   ],
-  "cost_checks": [],
-  "friction": []
+  "cost_checks": [
+   {
+    "event_id": 10,
+    "used_drawn_card": false,
+    "note": "Free compel accepted; text is improvised, no draw_id/card tags referenced."
+   },
+   {
+    "event_id": 16,
+    "used_drawn_card": false,
+    "note": "Tie cost on Caddock/Yarrow's advantage roll; cost_mode 'improvised', no draw_id or card tag used."
+   },
+   {
+    "event_id": 37,
+    "used_drawn_card": false,
+    "note": "Tie cost on Yarrow's attack vs The Pikemaw; cost_mode 'improvised', no draw_id or card tag used."
+   },
+   {
+    "event_id": 61,
+    "used_drawn_card": false,
+    "note": "Free compel accepted; improvised text, no drawn card."
+   },
+   {
+    "event_id": 70,
+    "used_drawn_card": false,
+    "note": "Free compel refused; improvised text, no drawn card."
+   },
+   {
+    "event_id": 77,
+    "used_drawn_card": false,
+    "note": "Free compel accepted; improvised text, no drawn card."
+   }
+  ],
+  "friction": [
+   {
+    "text": "Scene 2→3 boundary logs trigger B-02 as 'fired' in scene_end notes even though the engine's refusal log rejected it as not an unused trigger, leaving a mismatch between narrative bookkeeping and mechanical state."
+   },
+   {
+    "text": "The log never carries gm_fp/gm_fp_spent values in any row, making it impossible to audit whether the GM's per-scene fate point grant (1 per player) and spends on active NPC rolls were tracked correctly."
+   },
+   {
+    "text": "Scene 5 alone produced six separate engine refusals (bad opposing tags, unknown NPCs, an unresolved NPC attack on Anselm), suggesting the rail/deck state and the GM's scene framing were out of sync for most of that scene."
+   }
+  ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "protector",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The bell-chamber scene. Petra's bell-calling broke through the swarm-song's grip and let the boy choose himself again—it brought together the bell-ringer apprentice skills, the vow to ring everyone home, and her specific ability to listen through the song in a way that felt earned and emotionally meaningful. She was irreplaceable there.",
+    "most_frustrating": "The compels that froze Petra when the song called her name were mechanically right but created moments where I couldn't act on what I wanted—and the song answering back in her own voice was deeply unsettling in a way that limited agency just when she needed it most.",
+    "background_used": "Yes, very well. The bell-ringer apprentice role, the vow to ring everyone home, the locations tied to her past—all of it was organic to the plot and made Petra the specific character who could solve this problem. Didn't feel forced at all.",
+    "wanted_but_couldnt": "I wanted to explore whether Petra could teach others to hear the song, or use her bell for more direct communication with the hive-thing itself. The game moved fast and there wasn't space for that kind of experimentation or discovery.",
+    "one_sentence": "Petra's backstory as a bell-ringer with a vow was used really well—it made her irreplaceable, tied directly to every major problem, and felt like this story couldn't have happened the same way without her."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "instigator",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 7,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The belltower rescue—when I realized nothing was waiting in the shadow-gap but a scared kid being pulled into the song. That moment where Anselm's blade stayed raised but his voice gentled, recognizing this was a save, not a battle, felt like exactly who this character is: ready to escalate to violence, but driven fundamentally to pull people out of the hive's grip, even uncertain whether souls are real.",
+    "most_frustrating": "Nothing major. I might have wanted a few more minutes to wring the runner dry for details about what chewed the causeway—the larger mystery beyond the rescue. But the narrative urgency was perfect, and Anselm would have pushed forward anyway, so no real complaint.",
+    "background_used": "Excellently. The entire session was built around \"Hunting the Silenced Bell-Tongue of Saint Orrin\"—that belltower with the ringing bell was the capstone. \"Exorcist Uncertain the Hive Has Souls\" was woven through every conflict. The boy in the temple echoed my sister-and-drowning aspect. The GM clearly designed this mission around Anselm's quest and paid it off.",
+    "wanted_but_couldnt": "A deeper interrogation of the runner about the causeway's destruction and whatever took it down. I wanted the larger mystery unpacked before racing to rescue. But the urgency was narratively sound, and my character would have escalated anyway.",
+    "one_sentence": "My quest to find the Bell-Tongue of Saint Orrin was used as the central spine of the session—exactly right for a character who escalates and drives toward what matters to him."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "tactician",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 5,
+    "control": 6,
+    "play_again": 6
+   },
+   "free_text": {
+    "best_moment": "The final moment at the belltower — when Caddock knelt and her steady voice broke through where exorcism couldn't, calling the boy back to himself. It felt like the whole session validated why she's good at what she does: recognizing people in crisis, and holding space for them to come back. That moment was hers.",
+    "most_frustrating": "Nothing major. Maybe just that Caddock stayed somewhat in the support role — reading the danger, steadying people — rather than driving the big decisions. Though honestly that fit her character, so not really frustrating.",
+    "background_used": "Yes, good. Sella came up directly as the connection to the hive-touched threat, which made the session feel personal and tied to Caddock's specific history. Marrowreed and the Wick Lane Cellars didn't come up, but Sella's incorporation felt organic, not forced — it made the reader recognise this boy's danger as something Caddock understood from lived experience.",
+    "wanted_but_couldnt": "Nothing concrete. Maybe more direct pursuit of the Sella thread, but the session was focused on the rescue and that was the right call.",
+    "one_sentence": "Caddock's swamp expertise and connection to Sella were woven into the core of the session, making her feel genuinely necessary rather than supplementary."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "optimizer",
+   "scores": {
+    "fun": 6,
+    "involvement": 6,
+    "connection": 5,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Positioning Yarrow and Brack behind the column to lock down the belltower approach—the moment where Brack snarls at the shadow-gap before anything can react. It hit all at once: the mechanical payoff (invoking an advantage twice), the thematic payoff (militia training + bond working together), and the narrative satisfaction of a tactical choice that actually mattered.",
+    "most_frustrating": "Never got real pressure on Yarrow's personal quests. The trouble aspect—the binding promise—never got invoked or challenged. My quest to find the true source of the flood got folded into the immediate rescue narrative. I was an effective soldier holding the line, but my character's deeper stakes never created meaningful internal conflict.",
+    "background_used": "Brack and militia training were used well and organically. Yarrow's defining moments came through those. But the Weir-Keeper trust, the binding oath, and the flood-source quest sat in the background while the session ran straight into rescue momentum. Good selective use, but incomplete.",
+    "wanted_but_couldnt": "Push deeper into investigation of the flood itself rather than just chasing the song. Have my trouble aspect create real internal conflict instead of just background flavor. Found myself doing tactical problem-solving (hold the line, position defensively, protect the approach) when I wanted more character-driven choices with real costs.",
+    "one_sentence": "Yarrow's militia training and bond with Brack were integrated perfectly into moments that mattered, but his personal quest and binding oath never got pressure—I was a solid soldier, not a character in crisis."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Petra",
+    "turns": 22,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Anselm",
+    "turns": 18,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Caddock",
+    "turns": 16,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Yarrow",
+    "turns": 16,
+    "references_to_others_background": 0
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "The party chased a half-drowned Warden's warning through the cut causeway and into the reeds, tracking a hive-taken boy's voice north to Saint Orrin's Drowned Temple. Unraveling the swarm-song thread by thread — Anselm mapping its path through the stone, Yarrow and Brack sealing the stair, Petra's bell cutting through its mimicry of her own voice — they reached the belltower before the song could finish its work. Caddock's steady hands pulled the boy back from the edge of the hive's grip, and the party carried him home through rain that, for once, felt like only rain.",
+  "closing_tension": null,
+  "reverberations": {
+   "growth": {},
+   "clocks": [],
+   "mutations": [],
+   "retired": []
+  },
+  "retired": []
+ },
  "state_end": {
   "tension": 3,
   "fp": {
@@ -3903,14 +4107,105 @@
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 702502,
-  "completion": 176998,
-  "cost_usd": 2.7069,
-  "calls": 77
+ "metrics": {
+  "arm": "B",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Petra"
+  ],
+  "backstory_all_players": false,
+  "deck_surfaced_all_players": null,
+  "deck_draws": 0,
+  "draw_costs": 0,
+  "draw_cost_used_card_rate_engine": null,
+  "draw_cost_tag_in_text_rate": null,
+  "draw_cost_repaired": 0,
+  "draw_cost_used_card_rate_referee": 0.0,
+  "fp_end": {
+   "Petra": 5,
+   "Anselm": 1,
+   "Caddock": 0,
+   "Yarrow": 2
+  },
+  "fp_end_mean": 2,
+  "fp_earned": {
+   "Petra": 3
+  },
+  "fp_spent": {
+   "Anselm": 2,
+   "Caddock": 3,
+   "Yarrow": 1,
+   "Petra": 1
+  },
+  "compels_accepted": 3,
+  "compels_refused": 1,
+  "compels_deck": 0,
+  "compels_free": 4,
+  "turns": {
+   "Petra": 9,
+   "Anselm": 9,
+   "Caddock": 9,
+   "Yarrow": 9
+  },
+  "turn_gini": 0.0,
+  "invokes": {
+   "Anselm": 3,
+   "Caddock": 4,
+   "Yarrow": 4,
+   "Petra": 0
+  },
+  "invoke_gini": 0.2955,
+  "tension_trajectory": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "clock_marks": 0,
+  "violations": 11,
+  "violations_engine": 10,
+  "violations_referee": 1,
+  "ambiguities": 5,
+  "ambiguity_ids": [
+   "AMB-12",
+   "AMB-19",
+   "Compels",
+   "Outcomes / GM-invented costs",
+   "§7 (triggers)"
+  ],
+  "gm_improvised_complications": 6,
+  "card_supplied_complications": 0,
+  "improvisation_share": 1.0,
+  "guarantee_pulled": 0,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6.25,
+   "involvement": 6.5,
+   "connection": 6,
+   "control": 6.25,
+   "play_again": 6.75
+  },
+  "involvement_var_within": 0.25,
+  "personality": {
+   "Petra": "protector",
+   "Anselm": "instigator",
+   "Caddock": "tactician",
+   "Yarrow": "optimizer"
+  },
+  "elapsed_min": 22.7,
+  "cost_usd": 3.1967
  },
- "llm_calls": 77,
+ "tokens": {
+  "prompt": 788008,
+  "completion": 208609,
+  "cost_usd": 3.1967,
+  "calls": 84
+ },
+ "llm_calls": 84,
  "call_log": [
   {
    "seq": 1,
@@ -4527,6 +4822,62 @@
    "cached": false,
    "prompt_tokens": 13023,
    "completion_tokens": 1107
+  },
+  {
+   "seq": 26,
+   "agent": "GM",
+   "kind": "gm_post",
+   "cached": false,
+   "prompt_tokens": 11951,
+   "completion_tokens": 322
+  },
+  {
+   "seq": 1,
+   "agent": "Referee",
+   "kind": "referee",
+   "cached": false,
+   "prompt_tokens": 10911,
+   "completion_tokens": 9525
+  },
+  {
+   "seq": 1,
+   "agent": "Petra#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 12868,
+   "completion_tokens": 1841
+  },
+  {
+   "seq": 1,
+   "agent": "Caddock#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 12881,
+   "completion_tokens": 1793
+  },
+  {
+   "seq": 1,
+   "agent": "Yarrow#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 12886,
+   "completion_tokens": 2664
+  },
+  {
+   "seq": 1,
+   "agent": "Anselm#survey",
+   "kind": "survey",
+   "cached": false,
+   "prompt_tokens": 12872,
+   "completion_tokens": 3490
+  },
+  {
+   "seq": 1,
+   "agent": "Interviewer",
+   "kind": "interviewer",
+   "cached": false,
+   "prompt_tokens": 11137,
+   "completion_tokens": 11976
   }
  ],
  "models": {
@@ -4535,5 +4886,5 @@
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 1098.6
+ "elapsed_s": 1359.7
 }
