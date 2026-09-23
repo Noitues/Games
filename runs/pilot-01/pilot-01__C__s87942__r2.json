@@ -4,7 +4,7 @@
  "arm": "C",
  "seed": 87942,
  "spec_version": "0.1.0",
- "status": "partial",
+ "status": "complete",
  "error": null,
  "backend": "claude_cli",
  "run_index": 2,
@@ -2741,6 +2741,153 @@
    "notes": "triggers fired: ['B-05']",
    "event_type": "scene_end",
    "improvised": false
+  },
+  {
+   "event_id": 124,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-01",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-01 1/6",
+   "tension": 1,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false
+  },
+  {
+   "event_id": 125,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock F-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "F-04 1/5",
+   "tension": 1,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false
+  },
+  {
+   "event_id": 126,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock T-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "T-03 1/4",
+   "tension": 1,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false
+  },
+  {
+   "event_id": 127,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Clock T-04",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "T-04 1/5",
+   "tension": 1,
+   "notes": "bypassed (post-session)",
+   "event_type": "clock",
+   "improvised": false
+  },
+  {
+   "event_id": 128,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-02",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "3",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false
+  },
+  {
+   "event_id": 129,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Off-screen F-03",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "1",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "no change",
+   "event_type": "clock",
+   "improvised": false
+  },
+  {
+   "event_id": 130,
+   "session": 1,
+   "scene": 5,
+   "actor": "",
+   "action": "Session end",
+   "skill": "",
+   "tags_invoked": "",
+   "fp_spent": 0,
+   "dice": "",
+   "total": "",
+   "opposition": "",
+   "result": "",
+   "draw_id": "",
+   "compel": "",
+   "clock_change": "",
+   "tension": 1,
+   "notes": "FP: Ysolde=2, Aldous=5, Morwen=3, Mire=2",
+   "event_type": "session_end",
+   "improvised": false
   }
  ],
  "scenes": [
@@ -4178,9 +4325,157 @@
    }
   ]
  },
- "surveys": [],
- "interview": null,
- "chronicle": null,
+ "surveys": [
+  {
+   "character_id": "CH-1",
+   "personality_id": "protector",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The cellar when we read Corin's spiral scratches at knee-height and understood he was still fighting, still himself. Ysolde positioning herself as a physical barrier between the threshold and Senna felt perfectly true—she protects first, thinks second, and this was that in pure action.",
+    "most_frustrating": "The treasure-map subplot that exploded in S5 felt like it belonged to Aldous's compel, not Ysolde's story. She managed it because she always does (crew problem = her problem), but it pulled her attention away from her own threads about the hive-touched and what's calling people into the deep.",
+    "background_used": "Yes, strongly. The night-barge cook who reads crew secrets was woven through every social moment—Pell at the checkpoint, Senna in the alley, Ferro in the smuggler's hold. High Empathy and Contacts with the Cartel felt essential, not forced. The exiled Reed-Kin angle didn't get direct spotlight, but her river-reading instinct was there. This landed good.",
+    "wanted_but_couldnt": "Wanted to investigate what the hive-touched phenomenon actually is and where the song comes from. Ysolde is marked by the Order and understands forbidden things—she should have curiosity about this. The narrative stayed focused on rescue (which was right, the boy mattered most), but it left her wanting to dig deeper into a mystery that touches her directly.",
+    "one_sentence": "Ysolde's exile, her Order-marking, her crew-loyalty and protective drive were all threaded through the story without being weaponized against her; that felt right."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-2",
+   "personality_id": "instigator",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Placing my hand over Mire's on the iron key and turning it to open the cellar door. It crystallized everything about Aldous—I escalate, I read the omen, I commit fully while others still hesitate—and the GM honored it as a collaborative moment instead of forcing a roll. Pure character in action.",
+    "most_frustrating": "A couple of the panic compels around the Sunken Barge felt repetitive across the session (multiple moments of Aldous flinching from deep water), and the treasure-hunter subplot that got planted with the burned map compel felt like pure complication rather than an actual thread I could engage with—it existed to complicate the market escape but never became something to play into.",
+    "background_used": "Excellent. The Sunken Barge and Aldous's ability to read omens in floodwater were central to the session's entire mystery. His military discipline landed hard in the market confrontation. Nothing felt forced—all earned and necessary. The GM clearly knew what cards were live and why.",
+    "wanted_but_couldnt": "I wanted to actually engage with the treasure subplot—it got planted but didn't bloom into playable material. Also would have liked more opportunities to use Aldous's deeper mystical abilities beyond general omen-reading; the \"Reads the omen\" moments were strong, but I wanted to push further into actual prophecy or vision work.",
+    "one_sentence": "My backstory felt deeply woven into the session's core mystery in a way that made Aldous feel competent and necessary rather than defined solely by his trauma—he mattered because of what he knew, not just because he'd survived."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-3",
+   "personality_id": "tactician",
+   "scores": {
+    "fun": 7,
+    "involvement": 7,
+    "connection": 7,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "The ritual in the cellars (S3). Morwen's Lore roll creating \"A Rite of Calling Back\" with success with style — using old syllables that predate the Order, calling Corin back from the swarm-song's edge. It's exactly what an exorcist should do, mechanically clean, and the GM's description of the rite \"catching like a hook in still water\" and something on the other side *answering* made it feel earned and powerful. That's the character concept in its purest form.",
+    "most_frustrating": "The checkpoint read getting interrupted by the bells before I could fully savor the advantage roll — though honestly that created good drama, so it's minor. More genuinely: I wanted more space for Morwen to *voice* her core doubt about whether the hive has souls. The GM embedded it beautifully through action (the wrongness of the water, the thing that resists being survived, the fever-hum that persists), but I didn't get an explicit scene where Morwen could wrestle with the question aloud rather than just embody it.",
+    "background_used": "Strong use. MO-03 (Vow Against the Burning) was central — understanding hive-touch, calming Corin, the whole rescue structure. MO-04 (The Exorcist of Hollowmoot) created real complications (recognized at checkpoint, in the market). MO-02 (The Pilgrim Band) got a moment at the checkpoint but was lighter. MO-01 was set aside, so fair. Verdict: Good — no forced applications, clearly the GM read the character sheet and built the plot around her core concept. I felt understood.",
+    "wanted_but_couldnt": "More explicit philosophical breathing room. Morwen wanted to examine what Corin's partial hive-touch *means* — is there consciousness on the other side of that wrongness? Does it have intention or just hunger? The plot moved fast enough that these questions stayed implicit in the action. Also: the full scope of Morwen's scouting/planning didn't quite get play — the party moved forward fast, which is fine, just slightly different from how she prefers to operate.",
+    "one_sentence": "Morwen's practical expertise as an exorcist was perfectly centered in this story, but her defining philosophical uncertainty about whether the hive has souls remained embedded in action rather than explored through choice."
+   },
+   "synthetic": false
+  },
+  {
+   "character_id": "CH-4",
+   "personality_id": "optimizer",
+   "scores": {
+    "fun": 6,
+    "involvement": 7,
+    "connection": 6,
+    "control": 6,
+    "play_again": 7
+   },
+   "free_text": {
+    "best_moment": "Positioning at the locked cellar door. It combined everything Mire is: tactical training from the orphanage, reading threats under pressure, and willing to be the one holding a dangerous threshold while others got the rescue. Pure guard work.",
+    "most_frustrating": "My Fight skill is 4—my highest—and I never got to actually use it. All the conflicts resolved through social maneuvering, magical working, and tactical positioning. Even the Warden confrontation at the market backed down without testing anything. I was steering navigation, not fighting.",
+    "background_used": "Yes, heavily and well. The orphanage training came up organically across multiple scenes (watch drills, checkpoint reading, cellar tactics, market navigation). My Cartel debt was immediately compelled deeper and felt like real consequences, not arbitrary. Knowledge of the cellars was directly applicable. None of it felt forced.",
+    "wanted_but_couldnt": "I wanted an actual physical confrontation where my Fight skill could meaningfully determine the outcome. Every threat got avoided, talked down, or navigated around. That's tactically sound but mechanically unsatisfying when you've built your highest skill and nobody gets to test it.",
+    "one_sentence": "My background was consistently woven in and made tactically relevant without feeling forced, but the session's structure—social challenges, magical workings, tactical avoidance—never let me do what I trained my whole life to do: actually fight."
+   },
+   "synthetic": false
+  }
+ ],
+ "interview": {
+  "players": [
+   {
+    "name": "Ysolde",
+    "turns": 18,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Aldous",
+    "turns": 20,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Morwen",
+    "turns": 17,
+    "references_to_others_background": 0
+   },
+   {
+    "name": "Mire",
+    "turns": 17,
+    "references_to_others_background": 0
+   }
+  ]
+ },
+ "chronicle": {
+  "session": 1,
+  "summary": "The party dove into the Wick Lane Cellars to pull Senna's son Corin back from the hive's swarm-song, breaking the flooded door together and dragging him out marked but still himself while something vast and patient lashed at them from the black water below. In the smuggler's hold beyond, they bought safe passage north from the Cartel's ledger-keeper Ferro with hard truths about what waits in his tunnels, though his rival lieutenant marked Mire's debt for future leverage. Back in Hollowmoot's market, treasure-hunters drawn by rumor of Aldous's buried silver nearly blew the escape, but the party threaded Corin and Senna through the crowd clean, stilled the boy's swarm-song humming for good, and vanished north before the quarantine bells ever caught up.",
+  "closing_tension": 1,
+  "reverberations": {
+   "growth": {
+    "MI-03": {
+     "added": 1,
+     "total": 1,
+     "evolve": false
+    }
+   },
+   "clocks": [
+    "F-01 1/6",
+    "F-04 1/5",
+    "T-03 1/4",
+    "T-04 1/5"
+   ],
+   "mutations": [],
+   "retired": []
+  },
+  "retired": [
+   {
+    "card": "N-02",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-04",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-05",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "N-06",
+    "how": "story pile over limit",
+    "session": 1
+   },
+   {
+    "card": "Q-02",
+    "how": "story pile over limit",
+    "session": 1
+   }
+  ]
+ },
  "state_end": {
   "tension": 1,
   "fp": {
@@ -4214,19 +4509,118 @@
   }
  },
  "notes": [],
- "metrics": {},
- "tokens": {
-  "prompt": 1474128,
-  "completion": 249451,
-  "cost_usd": 4.4621,
-  "calls": 83
+ "metrics": {
+  "arm": "C",
+  "status": "complete",
+  "scenes": 5,
+  "backstory_players": [
+   "Mire"
+  ],
+  "backstory_all_players": false,
+  "deck_surfaced_all_players": null,
+  "deck_draws": 4,
+  "draw_costs": 5,
+  "draw_cost_used_card_rate_engine": 0.8,
+  "draw_cost_used_card_rate_referee": 0.417,
+  "fp_end": {
+   "Ysolde": 2,
+   "Aldous": 5,
+   "Morwen": 3,
+   "Mire": 2
+  },
+  "fp_end_mean": 3,
+  "fp_earned": {
+   "Aldous": 4,
+   "Morwen": 1,
+   "Mire": 1
+  },
+  "fp_spent": {
+   "Aldous": 2,
+   "Morwen": 1,
+   "Mire": 2,
+   "Ysolde": 1
+  },
+  "compels_accepted": 6,
+  "compels_refused": 0,
+  "compels_deck": 1,
+  "compels_free": 5,
+  "turns": {
+   "Ysolde": 8,
+   "Aldous": 8,
+   "Morwen": 8,
+   "Mire": 8
+  },
+  "turn_gini": 0.0,
+  "invokes": {
+   "Aldous": 2,
+   "Morwen": 1,
+   "Mire": 2,
+   "Ysolde": 1
+  },
+  "invoke_gini": 0.1667,
+  "tension_trajectory": [
+   3,
+   2,
+   2,
+   1,
+   1,
+   1
+  ],
+  "clock_marks": 4,
+  "violations": 15,
+  "violations_engine": 10,
+  "violations_referee": 5,
+  "ambiguities": 15,
+  "ambiguity_ids": [
+   "AMB-01",
+   "AMB-12",
+   "AMB-20",
+   "AMB-22",
+   "§3 (Outcomes and deck draws, 3+ row)",
+   "§3 / §4",
+   "§5 (Anatomy of a BEAT card / Procedure step 3)",
+   "§6",
+   "§6 (Tension adjustment table)",
+   "§6 Adjusting Tension",
+   "§6 vs §4",
+   "§6A (Draw triggers table, row 1)",
+   "§6A Pile maintenance – Add",
+   "§7 (The rail / rail limit enforcement)",
+   "§7 (Writing triggers / scene loop cleanup step 5) and Backup modules (§7 prep item 3)"
+  ],
+  "gm_improvised_complications": 5,
+  "card_supplied_complications": 5,
+  "improvisation_share": 0.5,
+  "guarantee_pulled": 0,
+  "guarantee_failed": 0,
+  "dice_claim_retries": 0,
+  "survey_means": {
+   "fun": 6.5,
+   "involvement": 7,
+   "connection": 6.75,
+   "control": 6,
+   "play_again": 7
+  },
+  "involvement_var_within": 0,
+  "personality": {
+   "Ysolde": "protector",
+   "Aldous": "instigator",
+   "Morwen": "tactician",
+   "Mire": "optimizer"
+  }
  },
- "llm_calls": 83,
+ "tokens": {
+  "prompt": 1562416,
+  "completion": 265562,
+  "cost_usd": 4.7838,
+  "calls": 89
+ },
+ "llm_calls": 89,
  "models": {
   "gm": "claude-sonnet-5",
   "player": "claude-haiku-4-5-20251001",
   "referee": "claude-sonnet-5",
   "interviewer": "claude-haiku-4-5-20251001"
  },
- "elapsed_s": 2023.1
+ "elapsed_s": 2145.4
 }
