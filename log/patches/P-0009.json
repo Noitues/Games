@@ -1,0 +1,26 @@
+{
+  "patch_id": "P-0009",
+  "from": {
+    "rules": "1.7.0",
+    "roster": "1.6.0",
+    "ai": "1.3.0"
+  },
+  "to": {
+    "rules": "1.7.1"
+  },
+  "lever_class": "economy",
+  "changes": [
+    {
+      "target": "rules:11.dragon_card_ap",
+      "from": 1,
+      "to": 2
+    }
+  ],
+  "evidence": "batch_0038, after P-0008: the sieger still wins 70.7% [58.0, 80.8] and the spread is 36 points. In the same batch the team that secures Dragon wins only 42.5% of the time, and Baron 52.3%: at +1 AP a round, a Dragon card is worth less than the activations spent taking it, so the objective is not contested ground, and nothing on the map pulls the teams into each other.",
+  "hypothesis": "The objective lever RQ-037a approved. Doubling what a Dragon card pays makes the first Dragon roughly a tower's worth of AP over a mid-length game and makes the second worth defending, so teams go to the pit, meet there, and the fight the game now pays for (P-0008) actually happens. That should cost the sieger, since time at the pit is time off the towers, and pay the objective and brawler personalities.",
+  "success_metric": "In a personality batch read against batch_0039: the sieger below 60% and the spread between the best and worst personality below 25 points, from 36.",
+  "revert_if": "The objective personality clears 65% (one dominant strategy swapped for another is not a fix), or median game length leaves 13-16 rounds, or win rate when Dragon is secured rises above 70% (the card deciding games outright), or games unresolved at round 20 exceed 5%.",
+  "side_effects": "More AP in the game overall, so item timings move and the economy scorecard's 1.5x outliers may shift; the AREA engines are unaffected in kind. Dragon sits 1 hex nearer the South Nexus, so the South side may gain - watch the North/South split, which batch_0038 already had at north 60%. Baron is untouched, so the two objectives are no longer symmetric in value.",
+  "pillar_change": false,
+  "note": "Read against batch_0039, not batch_0038: batch_0038 ran at reveal radius 1 and rules 1.7.0 moved it to 2, so batch_0039 re-runs batch_0038 under the current rules first and P-0009 changes one thing on top of it. Held constant: rules 1.7.0, roster 1.6.0, ai 1.3.0, tower HP 16, the P-0008 kill and death-band values, seed 3801."
+}
