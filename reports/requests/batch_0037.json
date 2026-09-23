@@ -1,0 +1,30 @@
+{
+  "batch_id": "batch_0037",
+  "rules": "1.6.0",
+  "roster": "1.6.0",
+  "ai": "1.3.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3,
+    "personality_pool": [
+      "T2_warder",
+      "T2_brawler",
+      "T2_sieger",
+      "T2_objective",
+      "T2_laner"
+    ]
+  },
+  "games": 120,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 3701,
+  "replays": 3,
+  "config_overrides": {
+    "tower_hp": 16
+  },
+  "extra": [
+    "The first real personality read: five appetites drawn per game, roughly 48 games each.",
+    "Two questions. Does any one approach dominate - a personality far outside 50% means the game rewards one way of playing too much. And does a mixed field move the champion numbers against the batch_0035 mirror, which is the whole reason for playing this way."
+  ]
+}
