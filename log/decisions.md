@@ -304,3 +304,35 @@ brawler and objective personalities failing to close, not from the sieger.
 The game paces correctly when both sides play its dominant strategy.
 
 Survivors: `SM_g2_lane6`, `SM_g2_clock3_short`.
+
+### RQ-040 closed: the confirmation (`batch_0043`)
+
+Every game one generation-2 survivor against the pure `T2_sieger`; nothing
+else on the table.
+
+| policy | games vs sieger | win rate [95% CI] |
+|---|---|---|
+| SM_g2_lane6 (lane → siege from round 6) | 92 | 51.1 [41.0, 61.1] |
+| SM_g2_clock3_short (lane → objectives r5-6 → siege) | 68 | 45.6 [34.3, 57.3] |
+
+**Neither beats sieging from round 1.** The +0.3 to +0.5 log-odds the
+Bradley-Terry fit gave the lane openers in `batch_0042` was opposition mix:
+they beat the machines that fight, ward, or chase objectives, and are level
+with the machine that just sieges. Two generations and a confirmation say the
+same thing the personalities said (RQ-037) and the economy said (RQ-039): in
+Hex-Nexus as ruled, the winning strategy is to hit towers, and every round
+spent on anything else costs in proportion. **The state machine is
+unnecessary**, which the handoff (§9.2) listed as a finding worth having.
+
+Consequences:
+
+- **RQ-037 is a design fact, not a tuning problem.** Three independent
+  reads - hand-written personalities, an AP lever that landed and did
+  nothing, and a bred switching AI that converged on sieging - all agree. The
+  levers left are the pillar-adjacent ones in RQ-039, and they are the lead
+  designer's.
+- **Champion balance can proceed**, on the field this settles: the sieger and
+  `SM_g2_lane6`, drawn per game. They are 50/50 against each other and differ
+  in shape (one lanes for five rounds first), so a champion is read against
+  the strongest play in two forms rather than against a script that loses.
+- **Stop breeding.** A generation 3 would be measuring noise around 50%.

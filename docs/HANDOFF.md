@@ -14,7 +14,7 @@ Nothing is running.
 | 1 AI calibration | closed on RQ-031 (gate lowered to 60%) |
 | 2 Correctness and pacing | **deferred on purpose, and now broken by a ruling.** Rules 1.7.0 moved median length to 18 and Nexus kills to 78% on T2 (RQ-038). Waiting on the lead designer. |
 | 3 Economy | **partly done, stuck on a pillar question.** See §4. The objective lever (P-0009) was tried and is inert; see §3. |
-| 4 Champion balance | **not started, and should not start yet.** See §3. The §9 state machine now exists (ai 1.4.0) and generation 1 has run; it has so far rediscovered the sieger. |
+| 4 Champion balance | **started.** RQ-040 is closed: no switching strategy beats sieging, so the field is settled (T2_sieger + SM_g2_lane6, drawn per game). `batch_0044` is the 4,000-game T2 read, run as four shards on four cloud sessions. |
 | 5 Robustness | exploit gate met under rules 1.0.0; needs a re-run, the game has changed six times since |
 | 6 Release candidate | not started |
 
@@ -35,8 +35,9 @@ defaults in `config.py`; carry them forward in any new request.
 | ~~a T2 read at reveal radius 2~~ | **done** (`batch_0039`, RQ-038). Direction held; pacing broke. Waiting on the lead designer. |
 | ~~the personality state machine, generation 1~~ | **built and run** (ai 1.4.0, `batch_0041`, RQ-040). Nothing beats sieging; the two clocks that open on the lane sit above the pure sieger on the point estimate, inside overlapping intervals. Survivors: `SM_g1_clock3`, `SM_g1_clock2`. |
 | ~~generation 2~~ | **run** (`batch_0042`, RQ-040 in the decisions log). A laning opening before sieging is real relative to sieging from round 1, worth about +0.3 to +0.5 log-odds on a Bradley-Terry fit; not yet confirmed head-to-head. Survivors `SM_g2_lane6`, `SM_g2_clock3_short`. |
-| **the confirmation, `batch_0043`** | every game one survivor against the pure sieger, 80 games each. If either clears 50% with its lower bound, the field for champion balance is that machine plus the sieger; if neither does, it is the sieger alone. |
-| champion balance | next, on the field `batch_0043` settles. See §3 and §7. |
+| ~~the confirmation, `batch_0043`~~ | **run.** lane6 51.1% [41.0, 61.1], clock3_short 45.6% [34.3, 57.3] against the pure sieger. Neither beats it. RQ-040 closed; breeding stopped. |
+| **`batch_0044`, the champion read** | 4,000 games on the settled field, four shards of 1,000 on four cloud sessions (`--shard K/4`, then `--merge`). About 1,600 games per champion, ±2.4 points. |
+| champion balance patches | after `batch_0044`: outliers first, one lever per patch, before/after pairs read on the same field. |
 
 Two RULE-Qs are open for the lead designer before anything pacing-adjacent is
 touched: **RQ-038** (reveal radius 2 broke pacing; `tower_hp` 16 is the
@@ -109,7 +110,9 @@ every pairing the pure sieger is mid-field, every machine above it lanes for
 3-6 rounds and then sieges, both machines that siege from round 1 sit below
 it, and a machine that opens on a fight is a full log-odds below. A short
 laning opening is worth roughly +0.3 to +0.5 log-odds against the pure
-sieger. `batch_0043` tests that head-to-head.
+sieger. `batch_0043` tested that head-to-head and it is not there: lane6 is
+51.1% [41.0, 61.1] against the pure sieger over 92 games. RQ-040 is closed.
+**The game has one strategy, and three independent methods agree.**
 
 The consequence for Phase 4 is the important part. A champion win rate read in
 a field where sieging wins is mostly a measure of that champion's siege
@@ -191,10 +194,12 @@ python tools/run_batch.py reports/requests/batch_0038.json --workers 4   # the p
 
 In order:
 
-1. **Read `batch_0043`** (it may already be in `reports/`): `SM_g2_lane6`
-   and `SM_g2_clock3_short` against `T2_sieger`, 80 games each. Do not
-   breed a generation 3 unless one of them clears 50% with its lower bound
-   and by enough to matter; two generations have said the gain is modest.
+1. **Merge and read `batch_0044`**, the champion read. Four cloud sessions
+   each push `reports/shards/batch_0044.partial.shardKof4.jsonl.gz`; gunzip
+   them into `reports/raw/` and run
+   `python tools/run_batch.py reports/requests/batch_0044.json --merge`.
+   Then Phase 4 proper: outliers first, one lever per patch, and read each
+   patch as a before/after pair on the same field and seed.
 2. **Champion balance**, on a mixed field, not a mirror — and once §9 has a
    winner, against that rather than against fixed personalities. RQ-028 still
    applies: with 5 champions per role a champion plays 40% of games, so
@@ -356,4 +361,22 @@ ends (5, 6, 7, 8 - `lane6` won and `lane5` did not, so the curve is not yet
 mapped) and whether a short objective band on the way to sieging helps
 (`clock3_short` beat `clock3`, inside noise). Do not spend candidates on
 brawler or warder states; two generations have priced them.
+
+### 9.6 The confirmation, and what the state machine was for
+
+`batch_0043` put each survivor against the pure sieger with nothing else on
+the table: lane6 51.1% [41.0, 61.1] over 92 games, clock3_short 45.6% [34.3,
+57.3] over 68. The lane opening is neutral. The machine rediscovered the
+sieger, which is the finding §9.2 said would be worth having, and it is the
+third independent confirmation of RQ-037. Keep ai 1.4.0: `SM_g2_lane6` is
+half the champion-balance field, and the machinery is there if a rules change
+ever gives a second strategy something to win with.
+
+Running a batch across containers: `tools/run_batch.py ... --shard K/N`
+plays every Nth seat-swapped pair and writes only its checkpoint; `--merge`
+assembles the shards and refuses on a gap. The child-session brief that
+worked is in the session log for `batch_0044`: launch detached, arm a
+30-minute `Monitor` on the checkpoint file and re-arm at every expiry,
+relaunch on "workers gone", gzip the shard into `reports/shards/` and push
+with pull-rebase retries.
 

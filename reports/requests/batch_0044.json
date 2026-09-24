@@ -1,0 +1,27 @@
+{
+  "batch_id": "batch_0044",
+  "rules": "1.7.0",
+  "roster": "1.6.0",
+  "ai": "1.4.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3,
+    "personality_pool": ["T2_sieger", "SM_g2_lane6"]
+  },
+  "games": 4000,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 4401,
+  "replays": 4,
+  "config_overrides": {
+    "tower_hp": 16,
+    "kill_ap": 3,
+    "death_band_bonus": 1
+  },
+  "extra": [
+    "Phase 4, the champion read (Handoff 3, 7). Field settled by RQ-040: the pure sieger and SM_g2_lane6 (lane five rounds, then siege), drawn per game; they are 50/50 against each other and are the strongest play in two shapes. 4,000 games puts each champion in about 1,600, an interval of about +/-2.4 points.",
+    "Run as four shards on four cloud sessions (--shard K/4), merged with --merge. Same rules, roster and P-0008 values as batches 0039-0043; dragon_ap_each 1; tower HP 16, still the unconfirmed placeholder (RQ-038).",
+    "Read: champions outside 45-55 with the interval clear of 50 are the Phase 4 outliers; the roles table and the 1.5x AP outliers (the five AREA engines, RQ-039's pillar question) are read alongside. Patch one lever per champion and confirm each as a before/after pair on this field and seed."
+  ]
+}
