@@ -1,0 +1,37 @@
+{
+  "batch_id": "batch_0045",
+  "rules": "1.7.0",
+  "roster": "1.6.0",
+  "ai": "1.4.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3,
+    "personality_pool": [
+      "X_exploit_cdlock",
+      "X_exploit_dive",
+      "X_exploit_farm",
+      "X_exploit_fogsnipe",
+      "X_exploit_objectives",
+      "X_exploit_splitpush",
+      "X_exploit_turtle"
+    ]
+  },
+  "anchors": ["T2_sieger", "SM_g2_lane6"],
+  "anchor_share": 1.0,
+  "games": 560,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 4501,
+  "replays": 2,
+  "config_overrides": {
+    "tower_hp": 16,
+    "kill_ap": 3,
+    "death_band_bonus": 1
+  },
+  "extra": [
+    "Phase 5, the exploit sweep re-run. The gate was met under rules 1.0.0 (each exploit vs T2, 40 games, best exploit 32.5%); the game has changed seven times since, and the field is now the sieger and SM_g2_lane6. Every game puts one of the seven exploit policies against a field member, about 80 games per exploit.",
+    "Gate: no exploit's win rate against the field clears 50% with its lower bound. Read section 9d: the vs-anchor columns are the verdict, the overall column is the same thing here since anchors are the only opposition. An exploit near 50% is a strategy the field cannot punish and belongs in front of the lead designer; fogsnipe in particular is the RQ-032/036 question re-asked under reveal radius 2.",
+    "Run as four shards on four cloud sessions and merged."
+  ]
+}
