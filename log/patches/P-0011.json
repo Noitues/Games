@@ -1,11 +1,25 @@
 {
   "patch_id": "P-0011",
-  "from": {"rules": "1.8.0 (P-0010)", "roster": "1.6.0", "ai": "1.4.0"},
-  "to": {"rules": "1.8.0"},
+  "from": {
+    "rules": "1.8.0 (P-0010)",
+    "roster": "1.6.0",
+    "ai": "1.4.0"
+  },
+  "to": {
+    "rules": "1.8.0"
+  },
   "lever_class": "objectives",
   "changes": [
-    {"target": "rules:11.dragon", "from": "a permanent card paying +1 AP at every Upkeep, at most +2", "to": "a reusable card: 2 hits to an adjacent non-structure unit, cooldown track position 3, returns to hand; at most 2 held; no AP"},
-    {"target": "rules:11.baron", "from": "Empowered waves for 3 Upkeeps", "to": "Empowered waves for the rest of the game"}
+    {
+      "target": "rules:11.dragon",
+      "from": "a permanent card paying +1 AP at every Upkeep, at most +2",
+      "to": "a reusable card: 2 hits to an adjacent non-structure unit, cooldown track position 3, returns to hand; at most 2 held; no AP"
+    },
+    {
+      "target": "rules:11.baron",
+      "from": "Empowered waves for 3 Upkeeps",
+      "to": "Empowered waves for the rest of the game"
+    }
   ],
   "evidence": "RQ-039 and batch_0044: teams that take Dragon win 45-48% and Baron 38-40% on the settled field; the AP a Dragon card pays is inert (P-0009). The lead designer ruled to keep both pits where they are and make the rewards lucrative: Dragon reusable on a short cooldown, Baron permanent because the game is short.",
   "hypothesis": "A Dragon card that is a reusable Red Buff pays in tempo, which is the currency the game is short of; a permanent Baron turns one kill into a structural advantage for the rest of the game. Both should raise win rate when secured toward or above 50% and pull teams to the pits.",
@@ -13,5 +27,66 @@
   "revert_if": "Baron secured win rate clears 75% (one kill decides the game), or median length leaves 13-18, or the sieger regains 60%.",
   "side_effects": "The Dragon card's hits can kill champions, so kills per game may rise. The AI values the card by simulating its play (T1/T2 choose_card_play), so no weight change is needed; its hold value is zero because it comes back.",
   "pillar_change": false,
-  "note": "The Dragon card's effect (2 hits, cooldown 3) is the lab's [DEFAULT] for 'reusable on a short 2-3 round cooldown'; the lead designer named the timing, not the effect. Config: dragon_card {hits 2, cooldown 3}, dragon_ap_each 0, baron_permanent True."
+  "note": "The Dragon card's effect (2 hits, cooldown 3) is the lab's [DEFAULT] for 'reusable on a short 2-3 round cooldown'; the lead designer named the timing, not the effect. Config: dragon_card {hits 2, cooldown 3}, dragon_ap_each 0, baron_permanent True.",
+  "result": {
+    "verdict": "PROVISIONAL - direction right, verdict deferred until games end (tower-HP sweep)",
+    "batches": {
+      "before": "batch_0046",
+      "after": "batch_0047",
+      "held_constant": "rules 1.8.0 P-0010, tower HP 16, seed 3801 (paired)"
+    },
+    "objectives": {
+      "dragon_secured_wr": [
+        51.4,
+        55.0
+      ],
+      "baron_secured_wr": [
+        50.0,
+        52.2
+      ],
+      "dragon_takes": [
+        3.38,
+        3.47
+      ],
+      "baron_takes": [
+        1.83,
+        1.88
+      ],
+      "dragon_card_ap_per_team_round": 0.34
+    },
+    "personalities": {
+      "sieger": [
+        93.1,
+        87.9
+      ],
+      "laner": [
+        50.0,
+        55.6
+      ],
+      "objective": [
+        38.1,
+        42.9
+      ],
+      "warder": [
+        34.2,
+        26.3
+      ],
+      "brawler": [
+        20.8,
+        22.9
+      ]
+    },
+    "success_metric": {
+      "dragon_secured_above_50": "55.0% - met",
+      "baron_secured_above_55": "52.2% - not yet",
+      "dragon_takes_up": "3.38 -> 3.47 - flat",
+      "objective_above_45": "42.9% - not yet"
+    },
+    "revert_checks": {
+      "baron_above_75": "no",
+      "median_length": "20, but the baseline is 20 too (batch_0046): the field does not end games at tower HP 16",
+      "sieger_regains_60": "87.9% on the round-20 tiebreak - unreadable until games end"
+    },
+    "reading": "Read on a field where every game reaches round 20, so the personality numbers are tiebreak numbers and say nothing yet. What can be read: the reusable Dragon card and permanent Baron move both objectives the right way, and the card's hits show up as 0.34 AP a team-round of wave chips. Re-read on the tower HP the sweep chooses (batch_0048/0049) and with the AREA ruling (P-0012)."
+  }
 }

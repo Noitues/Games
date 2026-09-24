@@ -52,6 +52,11 @@ DEFAULT_CONFIG = {
     # round of income (= ap_base) instead of its chips; the Nexus pays nothing,
     # it ends the game. 0 restores the 1.7.0 shape.
     "tower_kill_ap": 3,
+    # Rules 1.8.0 (RQ-045): an AREA is a radius-1 disc around a centre the
+    # player places within the step's range of the champion; Longbow extends
+    # where the centre may go, never the disc. False restores the 1.7.0 blast
+    # at the champion's feet, radius = range (2 with Longbow).
+    "area_center": True,
     "tower_hits_champion": 2,
     "tower_hits_wave": 1,
     "monster_hits": 1,

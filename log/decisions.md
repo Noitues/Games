@@ -402,3 +402,8 @@ siege bases in ways the search never chooses.
 
 All four games replay clean under strict assertions; 5 new tests, 157 total.
 Neither bug can have touched a reported number: no T2 game tripped either.
+
+| id | ruling | status |
+|---|---|---|
+| RQ-045 | **An AREA is a radius-1 disc around a centre the player places within the step's range; Longbow extends where the centre may be placed, not the blast.** The engine had implemented AREA as a disc of radius `range` centred on the champion, and Longbow's +1 made every range-1 AREA a 19-hex blast, which is where the five income engines came from once structures stopped paying (batch_0046). Implemented as P-0012, config `area_center`. | ruled, implemented |
+| RQ-038 (follow-up) | **Tower HP comes down under the ruled economy.** batch_0046: with abilities unable to touch structures, a 16-HP tower does not fall (1 Nexus kill in 120 games, every game to round 20). The lead designer expects lower tower HP to bring Nexus kills back; batches 0048 (HP 8) and 0049 (HP 6) read it. | in progress |

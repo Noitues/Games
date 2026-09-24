@@ -180,6 +180,28 @@ def concealed_from(state: GameState, u, src_tile: int) -> bool:
     return tile != src_tile and bool(state.hidden_mask >> tile & 1)
 
 
+def area_centers(state: GameState, node: Node, cast_range: int) -> List[Node]:
+    """Rules 1.8.0: the hexes an AREA may be centred on - within ``cast_range``
+    of the champion, the champion's own node included."""
+    return list(state.board.nodes_within(node, cast_range, state.hidden_mask).keys())
+
+
+def area_targets(state: GameState, champ_node: Node, center: Node, attacker_team: str,
+                 spec: str, outside_ok: bool = True) -> List:
+    """Rules 1.8.0 §6.3: every legal target within 1 of the centre. Concealment
+    is judged from the champion's hexgroup, not the centre's."""
+    if not outside_ok:                      # RQ-034: confined to the hexgroup
+        return [u for u in state.units_at(champ_node)
+                if can_be_hit(state, u, attacker_team, spec)]
+    src_tile = state.board.node_tile(champ_node)
+    out = []
+    for nd in state.board.nodes_within(center, 1, state.hidden_mask):
+        for u in state.units_at(nd):
+            if can_be_hit(state, u, attacker_team, spec) and not concealed_from(state, u, src_tile):
+                out.append(u)
+    return out
+
+
 def units_within(state: GameState, node: Node, radius: int, attacker_team: str,
                  spec: str, src_hex: Optional[Hex] = None,
                  outside_ok: bool = True) -> List[Tuple[object, int]]:
@@ -439,8 +461,14 @@ def step_choices(state: GameState, champ: Champion, node: Node, step: dict,
             return _cap([u.uid for u in cands], cap)
         if ic == "AREA":
             r = ability_range(champ, ability, step.get("range", 1))
-            hits = units_within(state, node, r, team, step_spec(state, step, ability),
-                                champ.hexpos, can_act_outside(state, champ, node, ability))
+            spec = step_spec(state, step, ability)
+            outside = can_act_outside(state, champ, node, ability)
+            if state.config.get("area_center", True):
+                # Rules 1.8.0: choose the centre; the blast is radius 1 around it.
+                centers = [c for c in area_centers(state, node, r)
+                           if area_targets(state, node, c, team, spec, outside)]
+                return _cap(centers, cap)
+            hits = units_within(state, node, r, team, spec, champ.hexpos, outside)
             return [None] if hits else []
         r = ability_range(champ, ability, step.get("n", 1))
         src_hex, src_tile = effect_context(state, node, champ.hexpos)

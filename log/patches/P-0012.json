@@ -1,0 +1,16 @@
+{
+  "patch_id": "P-0012",
+  "from": {"rules": "1.8.0 (P-0010, P-0011)", "roster": "1.6.0", "ai": "1.4.0"},
+  "to": {"rules": "1.8.0"},
+  "lever_class": "ability grammar",
+  "changes": [
+    {"target": "rules:6.3.AREA", "from": "k hits on every enemy unit within `range` of the champion; Longbow adds 1 to that radius", "to": "k hits on every enemy unit within 1 of a centre hex the player places within the step's range of the champion; Longbow extends where the centre may go, never the disc"}
+  ],
+  "evidence": "batch_0046: with structures paying nothing, sable, wisp, ashwyn, quillan and pallas still earn 1.5-2.6x the roster mean from waves and monsters. Every AREA on the roster is range 1, so with Longbow it was a radius-2 disc of 19 hexes centred on the champion, reaching two or three waves and camps at once. The lead designer's ruling (RQ-045): an AREA is a radius-1 disc around a centre placed within range; Longbow moves the centre, not the blast.",
+  "hypothesis": "A 7-hex blast rarely covers more than one wave or camp, so the AREA engines fall back toward the roster mean; the extra reach of placing the centre one hex out (three with Longbow) is worth less than the twelve hexes the disc loses.",
+  "success_metric": "Read alongside the tower-HP choice from batches 0048/0049: no champion above 1.5x roster-mean AP per round, or at most two; the sieger below 60% and the spread below 25 once games end again.",
+  "revert_if": "AREA champions collapse below 40% as a group (the blast is now too small to farm with), or ability usage for AREA steps falls below 5% of affordable rounds.",
+  "side_effects": "Each AREA step now enumerates up to 7 centres (19 with Longbow) instead of one option, so the T2 search sees more candidates per activation and games run a little slower. Reach along a line grows by one hex; area shrinks by two thirds.",
+  "pillar_change": false,
+  "note": "Config area_center, False restores the 1.7.0 blast at the feet. Read as batch_0050 on the tower HP the sweep chooses."
+}

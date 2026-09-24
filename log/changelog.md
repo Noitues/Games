@@ -222,7 +222,8 @@ a proper batch; 8 games says nothing about which personality is strongest.
 |---|---|---|
 | rules | 1.7.0 -> 1.8.0 | **P-0010 (pillar):** structures are never ability targets - only L0 and minion waves damage towers and the Nexus - and structure chips go to the supply, not the pool. **P-0011:** the Dragon card is a reusable Red Buff (2 hits adjacent, cooldown track position 3, at most 2 held, no AP); the Baron is Empowered waves for the rest of the game. Dragon and Baron stay where they are. |
 | engine | 0.4.0 | Config knobs for each ruling (`abilities_hit_structures`, `structure_chips_pay`, `dragon_card`, `dragon_ap_each`, `baron_permanent`), defaults on the 1.8.0 side; the 1.7.0 economy stays reachable for old requests. `dragon_track` on the team state. |
-| tests | - | 160. |
+| rules | 1.8.0 | **P-0012 (RQ-045):** AREA is a radius-1 disc around a centre placed within range; Longbow moves the centre, not the blast. Config `area_center`. |
+| tests | - | 164. |
 
 The designer's reading of RQ-041: income was meant to come from minions and
 monsters and towers were meant to fall to basic attacks; an untagged AREA
@@ -235,7 +236,8 @@ the wider objective question stay open for later.
 | batch | matchup | games | result |
 |---|---|---|---|
 | batch_0046 | personality pool, P-0010 alone (1.7.0 rewards kept) | 120 | **Pacing collapses:** 1 Nexus kill in 120, every game to round 20, sieger 93.1% on the tiebreak. Tower HP 16 cannot fall to L0 and waves. The five AREA engines remain (sable 2.64x): AREA is a disc, radius 2 with Longbow. Dragon/Baron secured WR up to 51/50%. |
-| batch_0047 | personality pool, P-0010 + P-0011 | 120 | pending |
+| batch_0047 | personality pool, P-0010 + P-0011 | 120 | Same pacing collapse as 0046 (tower HP 16). Objectives move the right way: Dragon secured 51 -> 55%, Baron 50 -> 52%, objective personality 38 -> 43%. Verdict deferred to a field where games end. |
 | batch_0048 | as batch_0047, tower HP 8 | 120 | pending - the pacing knob under the ruled economy |
 | batch_0049 | as batch_0047, tower HP 6 | 120 | pending |
+| batch_0050 | as batch_0048 with P-0012 (centred AREA) | 120 | pending - the AREA ruling's first read |
 

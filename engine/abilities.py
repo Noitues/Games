@@ -4,7 +4,7 @@ from __future__ import annotations
 from typing import List, Optional, Tuple
 
 from .hexmap import DIRS, hex_distance, Node
-from .resolve import (step_spec, ability_range, can_act_outside, can_be_hit, deal_hits,
+from .resolve import (area_targets, step_spec, ability_range, can_act_outside, can_be_hit, deal_hits,
                       effect_context, line_targets, move_unit, push_pull,
                       step_choices, units_within)
 from .state import Champion, GameState
@@ -91,9 +91,14 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
             prev_uid = ch
         elif ic == "AREA":
             r = ability_range(champ, ability, step.get("range", 1))
-            for u, _ in units_within(state, node, r, champ.team,
-                                     step_spec(state, step, ability), champ.hexpos,
-                                     outside_ok):
+            if state.config.get("area_center", True) and ch is not None:
+                hits = area_targets(state, node, ch, champ.team,
+                                    step_spec(state, step, ability), outside_ok)
+            else:
+                hits = [u for u, _ in units_within(state, node, r, champ.team,
+                                                   step_spec(state, step, ability),
+                                                   champ.hexpos, outside_ok)]
+            for u in hits:
                 mark(u)
                 deal_hits(state, champ.team, u, step.get("k", 1), "chips_" + u.kind, champ)
             prev_uid = None

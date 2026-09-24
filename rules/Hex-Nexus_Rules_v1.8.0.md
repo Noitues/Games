@@ -351,7 +351,7 @@ An ability is written as **cost · cooldown · a sequence of steps**. Steps reso
 |---|---|
 | HIT r | 1 hit on one target within range r |
 | HIT×k r | k hits on the same target |
-| AREA k | k hits on every enemy unit within 1 of the champion. AREA has no range step: a blast is at your feet, not across the lane |
+| AREA k | k hits on every enemy unit within 1 of a **centre hex** the player chooses within the step's range of the champion (range 1 on every current kit: the champion's own hex or one beside it). The blast is always a radius-1 disc of 7 hexes. **Longbow extends where the centre may be placed, never the blast** (v1.8; before this the blast was centred on the champion and Longbow widened it to radius 2). |
 | LINE k n | k hits on every enemy unit in a straight line of n hexes from the champion |
 
 **Movement icons (self)**
