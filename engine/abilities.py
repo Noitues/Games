@@ -169,19 +169,40 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
     state.touch()
 
 
-def respawn(state: GameState, champ: Champion) -> None:
-    """Rules 5.1 step 2 / 6.4: return to the fountain at full HP."""
+def respawn(state: GameState, champ: Champion) -> bool:
+    """Rules 5.1 step 2 / 6.4: return to the fountain at full HP. If the
+    fountain is taken, any empty hex of the base; if the base is full (a
+    siege, batch_0045 game 332), the Rules 3.4 overflow: an empty hex
+    adjacent to the base. If even that is full the champion stays dead and
+    Upkeep tries again next round. Returns whether it came back."""
     board = state.board
     home = board.fountain[champ.team]
-    node = board.node_of(home, state.hidden_mask)
-    spot = home
-    if not state.can_stop(node, champ.team):
-        base_tile = board.tile_of[home]
-        for h in board.tile_hexes[base_tile]:
-            nd = board.node_of(h, state.hidden_mask)
-            if state.can_stop(nd, champ.team):
-                spot = h
-                break
+    base_tile = board.tile_of[home]
+    base_hexes = [home] + [h for h in board.tile_hexes[base_tile] if h != home]
+    ring = []
+    for h in board.tile_hexes[base_tile]:
+        for nb in board.neighbors.get(h, ()):
+            if board.tile_of.get(nb) != base_tile and nb not in ring:
+                ring.append(nb)
+
+    def empty(h):
+        return not any(u.alive and u.hexpos == h for u in state.all_units())
+
+    def legal(h):
+        return state.can_stop(board.node_of(h, state.hidden_mask), champ.team)
+
+    spot = home if legal(home) else None            # the fountain first (Rules 6.4)
+    if spot is None:
+        spot = next((h for h in base_hexes if empty(h) and legal(h)), None)
+    if spot is None:
+        # A hidden base may share space (Rules 4.2); the flip placement
+        # re-seats champions when it turns face up.
+        spot = next((h for h in base_hexes if legal(h)
+                     and state.hidden_mask >> base_tile & 1), None)
+    if spot is None:
+        spot = next((h for h in ring if empty(h) and legal(h)), None)
+    if spot is None:
+        return False
     champ.hexpos = spot
     champ.alive = True
     champ.hp = champ.max_hp
@@ -189,3 +210,4 @@ def respawn(state: GameState, champ: Champion) -> None:
     champ.slow = 0
     champ.rooted = False
     state.touch()
+    return True

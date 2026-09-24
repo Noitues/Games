@@ -374,3 +374,31 @@ Recommended order, as the lab sees it:
 
 A 4,000-game read costs about 8 hours on four cloud sessions with the shard
 flag; a targeted before/after on ten champions can use 2,000.
+
+| id | question | finding | status |
+|---|---|---|---|
+| RQ-043 | Does any exploit policy beat the settled field? (Phase 5 gate, re-run) | **No, by a wide margin - and the sweep found two engine bugs.** `batch_0045`, 560 games, each of the seven exploit policies against `T2_sieger` or `SM_g2_lane6` in every game, about 80 games each: split-push 21.9% [14.8, 31.1], farm 2.4% [0.7, 8.3], and cooldown-lock, dive, fog-snipe, objectives and turtle 0% (upper bounds 4-6%). Fog-snipe at 0% closes the RQ-032 question under reveal radius 2. Two caveats. The exploit policies are weight profiles on the T1 greedy search (ai 1.1.0), so the zeroes measure T1 against T2 as much as the exploit against the field; a fair re-run needs the profiles rebuilt on T2. And the sweep produced the lab's first illegal states since Phase 0: four of 560 games with two units on one visible hex. Both causes are fixed (below). | lab; gate met |
+
+### Two engine bugs found by the exploit sweep
+
+The Phase 5 assertions (Rules 4.2: a visible hex holds one unit) fired in four
+exploit games, never in a T2 game - the T1-based exploits camp, block and
+siege bases in ways the search never chooses.
+
+- **A non-champion entering a hidden tile could land on an occupied hex.**
+  A PUSH moved a North mid wave one hex back into the hidden base; the only
+  hex adjacent to where it came from is the inner tower's, and the placement
+  fell back to it. Two waves entering one hidden tile did the same to each
+  other. On reveal, waves and structures keep their hex (Rules 3.3), so the
+  stack surfaced. `move_unit` now gives a wave, monster or structure a hex of
+  its own - adjacent first, then anywhere in the tile - and refuses the move
+  if the tile has none, which is what "stops early if blocked" means.
+- **A respawn into a full base stacked on the fountain.** A Stopwatch revived
+  a champion while an ally stood on the fountain and every other base hex
+  held a unit (the base was under siege). The fallback found nothing and
+  left the champion on the fountain. `respawn` now tries the fountain, then
+  the base, then the Rules 3.4 overflow ring outside it, and otherwise leaves
+  the champion dead for Upkeep to retry next round.
+
+All four games replay clean under strict assertions; 5 new tests, 157 total.
+Neither bug can have touched a reported number: no T2 game tripped either.

@@ -15,10 +15,10 @@ Nothing is running.
 | 2 Correctness and pacing | **deferred on purpose, and now broken by a ruling.** Rules 1.7.0 moved median length to 18 and Nexus kills to 78% on T2 (RQ-038). Waiting on the lead designer. |
 | 3 Economy | **stuck on the pillar question, which Phase 4 has now shown to be the champion-balance question.** See §4 and RQ-041. |
 | 4 Champion balance | **read taken, no patch yet.** `batch_0044`, 4,000 games on the settled field: 10 of 25 champions clear of 45-55, Support and Top broken, Jungle and ADC balanced, and the HIGH champions are the Phase 3 AREA engines. The first patch is the pillar ruling (RQ-039), not a kit. See RQ-041. |
-| 5 Robustness | exploit gate met under rules 1.0.0; needs a re-run, the game has changed six times since. ~400 games, one shard session, independent of everything else. |
+| 5 Robustness | **gate met on the settled field** (`batch_0045`, RQ-043): best exploit 21.9%, five at 0%. Caveat: the exploit profiles sit on the T1 search and should be rebuilt on T2 before this is called final. Two engine placement bugs found and fixed. |
 | 6 Release candidate | not started |
 
-Versions: rules **1.7.0**, roster **1.6.0**, ai **1.4.0**, **139 tests** (~3m), all passing on 2026-09-23.
+Versions: rules **1.7.0**, roster **1.6.0**, ai **1.4.0**, **157 tests** (~4m), all passing on 2026-09-24.
 
 `engine/config.py` holds the live knobs. `tower_hp` **16** is a placeholder from
 the T2 pacing sweep, never confirmed, and `reveal_radius` **2** has now been read
@@ -40,7 +40,7 @@ defaults in `config.py`; carry them forward in any new request.
 | **the AREA-conversion pillar patch** | needs the lead designer's ruling on RQ-039 (cap per use, or no conversion on waves). Then one before/after pair against `batch_0044`, same field and seed, 2,000-4,000 games sharded. |
 | **bastion** | the one outlier the pillar will not touch: 74.9% on 0.26 deaths a game. Read the kit, patch one lever, before/after pair. |
 | the bottom five | corvane, lumen, kaelis, vellum, ossuar - after the pillar re-read, one income lever each. |
-| the exploit sweep | independent; one shard session any time. |
+| ~~the exploit sweep~~ | **run**, RQ-043. Rebuild the exploit profiles on T2 before a final Phase 5 read. |
 
 Open for the lead designer: **RQ-039** (the AREA conversion - now the
 gating question for champion balance too), **RQ-042** (South wins 53-47 on

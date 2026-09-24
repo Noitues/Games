@@ -323,9 +323,25 @@ def move_unit(state: GameState, u, node: Node, from_node: Optional[Node] = None)
                 adj = [h for h in hexes if h in state.board.neighbors[(prev[0], prev[1])]]
                 if adj:
                     cand = adj
-        free = [h for h in cand
-                if not any(x.hexpos == h and x.kind != "champion" for x in state.all_units() if x.alive)]
-        u.hexpos = (free or cand)[0]
+        # Rules 4.2/4.3: inside a hidden tile units of one team may share
+        # space, but a wave, monster or structure still holds its own hex
+        # (place_units_on_flip only re-seats champions when the tile turns
+        # face up). So a non-champion never lands on a hex another
+        # non-champion holds: adjacent hexes first, then the rest of the
+        # tile, and if the tile has no such hex the move simply fails, as
+        # movement is optional and a PUSH "stops early if blocked".
+        def taken(h):
+            return any(x.alive and x.uid != u.uid and x.hexpos == h and x.kind != "champion"
+                       for x in state.all_units())
+        free = [h for h in cand if not taken(h)]
+        if not free and cand is not hexes:
+            free = [h for h in hexes if not taken(h)]
+        if not free:
+            if u.kind == "champion":
+                free = cand
+            else:
+                return
+        u.hexpos = free[0]
     state.touch()
 
 

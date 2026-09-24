@@ -201,7 +201,8 @@ a proper batch; 8 games says nothing about which personality is strongest.
 | config | - | `dragon_ap_each` tried at 2 (P-0009) and left at 1. |
 | ai | 1.3.0 -> 1.4.0 | A state machine over the personalities (Handoff §9): a machine is data (default state, commit timer, ordered rules over flat game-state signals), re-evaluated once per round at the first decision after Upkeep, swapping the whole personality profile. Eight generation-1 candidates in `ai/policy_v1_4_0/machines/gen1.json`. 1.3.0 frozen. |
 | engine | 0.3.x | `--shard K/N` and `--merge` run one batch across containers; `anchor_share` draws a fixed anchor into one seat of a share of games. Batch results carry each machine's per-round state; the report gains 9d (field ranked by lower confidence bound, record against the anchors, occupancy). `run_batch` checkpoints each finished game to `reports/raw/<batch>.partial.jsonl` and resumes from it. |
-| tests | - | 139, all passing. |
+| engine | 0.3.x | Two placement fixes from RQ-043: a non-champion entering a hidden tile takes a free hex or stays put; a respawn into a full base overflows to the ring or waits a round. |
+| tests | - | 157, all passing. |
 
 ### Iteration 7 batches
 
@@ -213,3 +214,4 @@ a proper batch; 8 games says nothing about which personality is strongest.
 | batch_0042 | ai 1.4.0 generation 2: ten machines, anchors drawn into half the games | 480 | **RQ-040, generation 2.** Bradley-Terry over all pairings puts the pure sieger mid-field: lane-then-siege machines +0.3 to +0.5 log-odds above it, siege-from-round-1 machines below, a brawl opening far below. Direct records vs the sieger too thin and confounded to confirm. Pacing passes in a sieging field (median 15, 99.4% Nexus). Survivors lane6, clock3_short. |
 | batch_0043 | each generation-2 survivor vs T2_sieger, nothing else | 160 | **RQ-040 closed.** lane6 51.1% [41.0, 61.1] over 92, clock3_short 45.6% [34.3, 57.3] over 68. Neither beats sieging from round 1; the generation-2 edge was opposition mix. The state machine is unnecessary; RQ-037 is confirmed from three directions. Field for champion balance: T2_sieger + SM_g2_lane6. |
 | batch_0044 | Phase 4 champion read: T2_sieger + SM_g2_lane6 drawn per game, four shards on four cloud sessions | 4000 | **RQ-041.** 10 of 25 champions clear of 45-55: Support and Top broken (wisp 77%, bastion 75%; corvane 27%), Mid split, Jungle and ADC balanced. Income and win rate correlate at 0.6; the Phase 3 AREA engines are the HIGH champions. **RQ-042**: South wins 53.2% [51.7, 54.8]. Pacing in band (median 14, 99.4% Nexus). |
+| batch_0045 | Phase 5 exploit sweep: seven exploits vs the settled field, four shards | 560 | **RQ-043, gate met.** Best exploit split-push 21.9% [14.8, 31.1]; five exploits win nothing. Fog-snipe 0% under reveal radius 2. Found two placement bugs (hidden-tile entry, respawn into a full base), both fixed; caveat: exploits are T1 profiles. |

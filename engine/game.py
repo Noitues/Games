@@ -67,8 +67,8 @@ def upkeep(state: GameState, game: "Game") -> None:
         c.activated = False
         if c.track > 0:
             c.track -= 1
-            if c.track == 0 and not c.alive:
-                respawn(state, c)
+        if c.track == 0 and not c.alive:
+            respawn(state, c)        # retried each round while the base is full
         if c.shield_until < state.round:
             c.shield = 0
     for t in state.teams.values():
