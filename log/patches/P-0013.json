@@ -1,0 +1,19 @@
+{
+  "patch_id": "P-0013",
+  "from": {"rules": "1.8.0", "roster": "1.6.0", "ai": "1.4.0"},
+  "to": {"roster": "1.7.0"},
+  "lever_class": "kit",
+  "changes": [
+    {"target": "roster:sable.W.cooldown", "from": 1, "to": 2},
+    {"target": "roster:wisp.W.cooldown", "from": 1, "to": 2},
+    {"target": "roster:ashwyn.W.cooldown", "from": 1, "to": 2},
+    {"target": "roster:quillan.R.cooldown", "from": 1, "to": 2}
+  ],
+  "evidence": "batch_0050 (centred AREA, tower HP 8): sable 1.87x, wisp 1.85x, quillan 1.73x and ashwyn 1.59x the roster-mean AP per round, each from a 1-AP AREA on a 1-round cooldown used in 52-81% of affordable rounds. pallas, whose AREA R already has cooldown 2, sits at 1.01x. The lead designer's instruction: increase the cooldown and use the design levers to bring these in line.",
+  "hypothesis": "A whole-card cooldown of 2 makes the champion miss the round after farming, halving the engine ability's rate; the four should land near or below 1.5x and their win rates move toward 50%. Nothing is bought back.",
+  "success_metric": "On the same field and HP as the read it is paired with: no champion above 1.5x roster-mean AP per round, and none of the four below 40% win rate in the personality field.",
+  "revert_if": "Any of the four falls below 35%, or the AREA ability's usage drops below 10% of affordable rounds (the ability has become dead weight rather than priced).",
+  "side_effects": "Three of the four now carry an ability below the point floor and two kits sit under the band; both are declared as exceptions in the roster and the validator honours a named ability exception (new). Mid loses some wave-clear tempo overall, which may slow sieges a little.",
+  "pillar_change": false,
+  "note": "Read as batch_0054 on the tower/Nexus HP the pacing pass chooses; the request carries tower 6 / Nexus 8 as a placeholder until batches 0051/0053 are read."
+}

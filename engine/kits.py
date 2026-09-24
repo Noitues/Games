@@ -130,7 +130,10 @@ def validate_kit(kit: dict, points: Optional[str] = None) -> List[str]:
             if s["icon"] not in ALL_ICONS:
                 errs.append(f"{kit['id']}.{key}: unknown icon {s['icon']}")
         net = ability_net(ab, points)
-        if net < min_net:
+        if net < min_net and key not in (kit.get("ability_exception") or {}):
+            # P-0013: a kit may excuse one ability from the floor by name and
+            # reason - a farming AREA priced by its cooldown is worth less on
+            # paper than the activation it spends and is still worth using.
             errs.append(f"{kit['id']}.{key}: net value {net} < {min_net}"
                         " (an ability must be worth the activation it spends)")
         grosses[key] = ability_gross(ab, points)

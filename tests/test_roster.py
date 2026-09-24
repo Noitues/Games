@@ -32,7 +32,22 @@ def test_kits_validate(kits):
 
 def test_budget_band(kits):
     for k in kits.values():
+        if k.get("budget_exception"):
+            continue                       # sits outside on purpose, and says why
         assert 20 <= budget(k)["total"] <= 24
+
+
+def test_exceptions_are_named_and_reasoned(kits):
+    """A kit outside the band or an ability under the floor must say why."""
+    from engine.kits import POINTS
+    for k in kits.values():
+        if k.get("budget_exception"):
+            assert len(k["budget_exception"]) >= 20, k["id"]     # a reason, not a flag
+        for s, why in (k.get("ability_exception") or {}).items():
+            assert s in ("Q", "W", "E", "R") and why, k["id"]
+            pts = k.get("points", "v1")
+            assert ability_net(k["abilities"][s], pts) < POINTS[pts]["min_net"], \
+                f"{k['id']}.{s}: exception on an ability that meets the floor"
 
 
 def test_rulebook_worked_examples():
@@ -65,6 +80,8 @@ def test_recalibrated_table_flattens_the_kits(kits):
         if not k.get("budget_exception"):
             assert grosses["R"] <= cap * basics + 1e-9, k["id"]
         for s in ("Q", "W", "E", "R"):
+            if s in (k.get("ability_exception") or {}):
+                continue
             assert ability_net(k["abilities"][s], pts) >= floor, f"{k['id']}.{s}"
 
 

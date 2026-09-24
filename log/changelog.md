@@ -223,7 +223,8 @@ a proper batch; 8 games says nothing about which personality is strongest.
 | rules | 1.7.0 -> 1.8.0 | **P-0010 (pillar):** structures are never ability targets - only L0 and minion waves damage towers and the Nexus - and structure chips go to the supply, not the pool. **P-0011:** the Dragon card is a reusable Red Buff (2 hits adjacent, cooldown track position 3, at most 2 held, no AP); the Baron is Empowered waves for the rest of the game. Dragon and Baron stay where they are. |
 | engine | 0.4.0 | Config knobs for each ruling (`abilities_hit_structures`, `structure_chips_pay`, `dragon_card`, `dragon_ap_each`, `baron_permanent`), defaults on the 1.8.0 side; the 1.7.0 economy stays reachable for old requests. `dragon_track` on the team state. |
 | rules | 1.8.0 | **P-0012 (RQ-045):** AREA is a radius-1 disc around a centre placed within range; Longbow moves the centre, not the blast. Config `area_center`. |
-| tests | - | 164. |
+| roster | 1.6.0 -> 1.7.0 | **P-0013:** cooldown 2 on the four AREA engines (sable W, wisp W, ashwyn W, quillan R); nothing bought back; exceptions declared. `validate_kit` honours a named `ability_exception`. |
+| tests | - | 165. |
 
 The designer's reading of RQ-041: income was meant to come from minions and
 monsters and towers were meant to fall to basic attacks; an untagged AREA
@@ -242,5 +243,6 @@ the wider objective question stay open for later.
 | batch_0051 | 1.8.0 full, tower HP 4, Nexus HP 8 | 120 | pending |
 | batch_0052 | 1.8.0 full, tower HP 4, Nexus HP 12 | 120 | pending |
 | batch_0053 | 1.8.0 full, tower HP 6, Nexus HP 8 | 120 | pending |
+| batch_0054 | roster 1.7.0 (P-0013) on the chosen HP pair | 120 | pending |
 | batch_0050 | as batch_0048 with P-0012 (centred AREA) | 120 | **P-0012 partial.** Engines down a third (sable 2.54x -> 1.87x, pallas to 1.01x) but four remain above 1.5x. Nexus kills 15% at tower HP 8 - pacing still the wall. |
 
