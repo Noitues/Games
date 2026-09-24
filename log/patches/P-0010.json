@@ -1,0 +1,17 @@
+{
+  "patch_id": "P-0010",
+  "from": {"rules": "1.7.0", "roster": "1.6.0", "ai": "1.4.0"},
+  "to": {"rules": "1.8.0"},
+  "lever_class": "pillar",
+  "changes": [
+    {"target": "rules:6.3.targets", "from": "an untagged step may hit any enemy unit, structures included", "to": "structures are never ability targets; only L0 and minion waves damage them"},
+    {"target": "rules:7.chips_are_ap", "from": "tower and Nexus chips pay AP to the team that removes them", "to": "structure chips go to the supply; only wave and monster chips are AP"}
+  ],
+  "evidence": "The lead designer's ruling on RQ-039/RQ-041: income was meant to come from minions and monsters and towers were meant to fall to basic attacks only. Under rules 1.7.0 the largest AP source in every batch was chips_structure (4.6 of 12.5 AP a team-round in batch_0038), and the five AREA engines - abilities with an untagged AREA step - banked structure chips alongside wave chips. batch_0044: the five engines are 53-77% and income correlates with win rate at 0.6.",
+  "hypothesis": "With abilities unable to touch structures and structure chips no longer AP, the AREA engines lose the income that made them, the sieger loses the double payoff of a tower (win condition plus AP), and fighting and farming become comparatively worth doing. The lead designer expects this to fix the sieger; if it does not, the next lever is tower damage.",
+  "success_metric": "Personality batch against batch_0039 (paired seed): the sieger below 60% and the spread below 25 points. Economy scorecard: the five 1.5x AP outliers gone or reduced to at most two.",
+  "revert_if": "Median game length leaves 13-18 rounds or Nexus kills fall below 90% (towers now only fall to L0 and waves, so games may not close), or any personality clears 80%.",
+  "side_effects": "Total AP per round falls by about a third, so item timings move for everyone. Champions whose kits were mostly AREA/LINE lose their farming reach on structures but not on waves. The AI evaluator still values towers as the win condition (towers_lost, struct_focus), so behaviour should shift toward L0 sieging and wave escort rather than away from towers.",
+  "pillar_change": true,
+  "note": "Implemented as rules 1.8.0 and engine defaults: config abilities_hit_structures False, structure_chips_pay False. Read on its own as batch_0046; P-0011 (Dragon and Baron) is read on top of it as batch_0047 so each is attributable."
+}

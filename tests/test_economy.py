@@ -11,7 +11,11 @@ def test_ap_refreshes_to_three_and_does_not_carry_over(state, game):
 
 
 def test_dragon_cards_add_ap_up_to_the_cap(state, game):
+    """1.7.0 passive Dragon AP, reachable through config; 1.8.0 pays none."""
     state.teams["north"].dragons = 3
+    upkeep(state, game)
+    assert state.teams["north"].ap == 3
+    state.config["dragon_ap_each"] = 1
     upkeep(state, game)
     assert state.teams["north"].ap == 5
 
@@ -33,7 +37,8 @@ def test_killing_dragon_and_baron(state):
     b = state.monsters["baron_0"]
     b.alive, b.chips = True, 12
     deal_hits(state, "south", b, 12, "chips_monster", state.champs["s_mossgrove"])
-    assert state.teams["south"].baron_track == 3
+    assert state.teams["south"].baron_track > 0          # permanent under 1.8.0
+    assert "dragon" in state.teams["south"].cards         # the reusable card
 
 
 def test_shop_purchases_and_item_effects(state):

@@ -215,3 +215,25 @@ a proper batch; 8 games says nothing about which personality is strongest.
 | batch_0043 | each generation-2 survivor vs T2_sieger, nothing else | 160 | **RQ-040 closed.** lane6 51.1% [41.0, 61.1] over 92, clock3_short 45.6% [34.3, 57.3] over 68. Neither beats sieging from round 1; the generation-2 edge was opposition mix. The state machine is unnecessary; RQ-037 is confirmed from three directions. Field for champion balance: T2_sieger + SM_g2_lane6. |
 | batch_0044 | Phase 4 champion read: T2_sieger + SM_g2_lane6 drawn per game, four shards on four cloud sessions | 4000 | **RQ-041.** 10 of 25 champions clear of 45-55: Support and Top broken (wisp 77%, bastion 75%; corvane 27%), Mid split, Jungle and ADC balanced. Income and win rate correlate at 0.6; the Phase 3 AREA engines are the HIGH champions. **RQ-042**: South wins 53.2% [51.7, 54.8]. Pacing in band (median 14, 99.4% Nexus). |
 | batch_0045 | Phase 5 exploit sweep: seven exploits vs the settled field, four shards | 560 | **RQ-043, gate met.** Best exploit split-push 21.9% [14.8, 31.1]; five exploits win nothing. Fog-snipe 0% under reveal radius 2. Found two placement bugs (hidden-tile entry, respawn into a full base), both fixed; caveat: exploits are T1 profiles. |
+
+## Iteration 9 - rules 1.8.0: the lead designer's rulings on RQ-039, RQ-041 and RQ-042
+
+| artefact | version | change |
+|---|---|---|
+| rules | 1.7.0 -> 1.8.0 | **P-0010 (pillar):** structures are never ability targets - only L0 and minion waves damage towers and the Nexus - and structure chips go to the supply, not the pool. **P-0011:** the Dragon card is a reusable Red Buff (2 hits adjacent, cooldown track position 3, at most 2 held, no AP); the Baron is Empowered waves for the rest of the game. Dragon and Baron stay where they are. |
+| engine | 0.4.0 | Config knobs for each ruling (`abilities_hit_structures`, `structure_chips_pay`, `dragon_card`, `dragon_ap_each`, `baron_permanent`), defaults on the 1.8.0 side; the 1.7.0 economy stays reachable for old requests. `dragon_track` on the team state. |
+| tests | - | 160. |
+
+The designer's reading of RQ-041: income was meant to come from minions and
+monsters and towers were meant to fall to basic attacks; an untagged AREA
+that could hit a tower for AP was never the intent, and that is where the
+engines' income and the sieger's double payoff came from. RQ-038 (pacing) and
+the wider objective question stay open for later.
+
+### Iteration 9 batches
+
+| batch | matchup | games | result |
+|---|---|---|---|
+| batch_0046 | personality pool, P-0010 alone (1.7.0 rewards kept) | 120 | pending |
+| batch_0047 | personality pool, P-0010 + P-0011 | 120 | pending |
+

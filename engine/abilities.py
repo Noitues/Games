@@ -4,7 +4,7 @@ from __future__ import annotations
 from typing import List, Optional, Tuple
 
 from .hexmap import DIRS, hex_distance, Node
-from .resolve import (ability_range, can_act_outside, can_be_hit, deal_hits,
+from .resolve import (step_spec, ability_range, can_act_outside, can_be_hit, deal_hits,
                       effect_context, line_targets, move_unit, push_pull,
                       step_choices, units_within)
 from .state import Champion, GameState
@@ -92,7 +92,7 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
         elif ic == "AREA":
             r = ability_range(champ, ability, step.get("range", 1))
             for u, _ in units_within(state, node, r, champ.team,
-                                     step.get("target", "enemy_any"), champ.hexpos,
+                                     step_spec(state, step, ability), champ.hexpos,
                                      outside_ok):
                 mark(u)
                 deal_hits(state, champ.team, u, step.get("k", 1), "chips_" + u.kind, champ)
@@ -102,7 +102,7 @@ def apply_plan(state: GameState, champ: Champion, ability: str, plan: Plan) -> N
             origin, src_tile = effect_context(state, node, champ.hexpos)
             d = DIRS[ch if ch is not None else 0]
             for u in line_targets(state, (origin[0], origin[1]), d, n, champ.team,
-                                  step.get("target", "enemy_any"), src_tile, outside_ok):
+                                  step_spec(state, step, ability), src_tile, outside_ok):
                 mark(u)
                 deal_hits(state, champ.team, u, step.get("k", 1), "chips_" + u.kind, champ)
             prev_uid = None

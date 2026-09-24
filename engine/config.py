@@ -37,7 +37,17 @@ DEFAULT_CONFIG = {
     # What holding a Dragon card is worth per round. Raising it is the
     # objective lever from RQ-037: an objective worth fighting over pulls teams
     # into each other, which is the fight the game was not paying for.
-    "dragon_ap_each": 1,
+    "dragon_ap_each": 0,
+    # Rules 1.8.0 (P-0011): the Dragon card is a reusable Red Buff - 2 hits
+    # to an adjacent non-structure unit, then cooldown track position 3.
+    # None restores the 1.7.0 passive card.
+    "dragon_card": {"hits": 2, "cooldown": 3},
+    # Rules 1.8.0 (P-0011): Empowered waves for the rest of the game.
+    "baron_permanent": True,
+    # Rules 1.8.0 (P-0010): structures are never ability targets - only L0 and
+    # waves damage them - and structure chips go to the supply, not the pool.
+    "abilities_hit_structures": False,
+    "structure_chips_pay": False,
     "tower_hits_champion": 2,
     "tower_hits_wave": 1,
     "monster_hits": 1,

@@ -133,6 +133,7 @@ class TeamState:
     ap: int = 0
     cards: List[str] = field(default_factory=list)   # buff + item cards in hand
     dragons: int = 0
+    dragon_track: List[int] = field(default_factory=list)   # Dragon cards cooling down (Rules 1.8.0)
     baron_track: int = 0                              # 0 == no Baron card
     towers_lost: int = 0
     kills: int = 0
@@ -144,6 +145,7 @@ class TeamState:
         t = TeamState.__new__(TeamState)
         t.__dict__.update(self.__dict__)
         t.cards = list(self.cards)
+        t.dragon_track = list(self.dragon_track)
         t.ap_by_source = dict(self.ap_by_source)
         t.ap_spent = dict(self.ap_spent)
         t.items_bought = dict(self.items_bought)

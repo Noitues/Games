@@ -1,0 +1,17 @@
+{
+  "patch_id": "P-0011",
+  "from": {"rules": "1.8.0 (P-0010)", "roster": "1.6.0", "ai": "1.4.0"},
+  "to": {"rules": "1.8.0"},
+  "lever_class": "objectives",
+  "changes": [
+    {"target": "rules:11.dragon", "from": "a permanent card paying +1 AP at every Upkeep, at most +2", "to": "a reusable card: 2 hits to an adjacent non-structure unit, cooldown track position 3, returns to hand; at most 2 held; no AP"},
+    {"target": "rules:11.baron", "from": "Empowered waves for 3 Upkeeps", "to": "Empowered waves for the rest of the game"}
+  ],
+  "evidence": "RQ-039 and batch_0044: teams that take Dragon win 45-48% and Baron 38-40% on the settled field; the AP a Dragon card pays is inert (P-0009). The lead designer ruled to keep both pits where they are and make the rewards lucrative: Dragon reusable on a short cooldown, Baron permanent because the game is short.",
+  "hypothesis": "A Dragon card that is a reusable Red Buff pays in tempo, which is the currency the game is short of; a permanent Baron turns one kill into a structural advantage for the rest of the game. Both should raise win rate when secured toward or above 50% and pull teams to the pits.",
+  "success_metric": "Against batch_0046 (same seed): win rate when Dragon is secured above 50% and when Baron is secured above 55%, and Dragon takes per game up from about 1.4. The objective personality above 45%.",
+  "revert_if": "Baron secured win rate clears 75% (one kill decides the game), or median length leaves 13-18, or the sieger regains 60%.",
+  "side_effects": "The Dragon card's hits can kill champions, so kills per game may rise. The AI values the card by simulating its play (T1/T2 choose_card_play), so no weight change is needed; its hold value is zero because it comes back.",
+  "pillar_change": false,
+  "note": "The Dragon card's effect (2 hits, cooldown 3) is the lab's [DEFAULT] for 'reusable on a short 2-3 round cooldown'; the lead designer named the timing, not the effect. Config: dragon_card {hits 2, cooldown 3}, dragon_ap_each 0, baron_permanent True."
+}

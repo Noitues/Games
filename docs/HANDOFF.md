@@ -18,7 +18,7 @@ Nothing is running.
 | 5 Robustness | **gate met on the settled field** (`batch_0045`, RQ-043): best exploit 21.9%, five at 0%. Caveat: the exploit profiles sit on the T1 search and should be rebuilt on T2 before this is called final. Two engine placement bugs found and fixed. |
 | 6 Release candidate | not started |
 
-Versions: rules **1.7.0**, roster **1.6.0**, ai **1.4.0**, **157 tests** (~4m), all passing on 2026-09-24.
+Versions: rules **1.8.0**, roster **1.6.0**, ai **1.4.0**, **160 tests** (~4m), all passing on 2026-09-24.
 
 `engine/config.py` holds the live knobs. `tower_hp` **16** is a placeholder from
 the T2 pacing sweep, never confirmed, and `reveal_radius` **2** has now been read
@@ -243,7 +243,7 @@ checkpoint if it dies anyway. Raw per-game dumps (`--dump-raw`) go to
 
 | path | holds |
 |---|---|
-| `rules/` | the rulebook; **1.7.0 is current** |
+| `rules/` | the rulebook; **1.8.0 is current** (P-0010, P-0011) |
 | `roster/` | champion kits; **1.6.0 is current** |
 | `engine/` | map graph, state, abilities, phases, batch runner, report builder |
 | `ai/policy_v1_1_0 … v1_3_0` | policy packages; **1.3.0 current**, earlier ones frozen so old batches stay reproducible |

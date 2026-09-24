@@ -72,8 +72,13 @@ def upkeep(state: GameState, game: "Game") -> None:
         if c.shield_until < state.round:
             c.shield = 0
     for t in state.teams.values():
-        if t.baron_track > 0:
+        if t.baron_track > 0 and not cfg.get("baron_permanent"):
             t.baron_track -= 1
+        if t.dragon_track:                               # Rules 1.8.0 Dragon cards
+            t.dragon_track = [p - 1 for p in t.dragon_track]
+            back = t.dragon_track.count(0)
+            t.dragon_track = [p for p in t.dragon_track if p > 0]
+            t.cards.extend(["dragon"] * back)
 
     base_tiles = {t: state.board.tile_of[state.board.fountain[t]] for t in TEAMS}
     for c in state.champs.values():                      # step 3
@@ -347,6 +352,10 @@ def legal_card_plays(state: GameState, act: Activation) -> List[CardPlay]:
             continue                       # offered through the activation itself
         if card == "blue_buff":
             out.append(CardPlay(card))
+        elif card == "dragon":
+            for u in adjacent_units(state, node, exclude=c.uid):
+                if can_be_hit(state, u, c.team, "enemy_no_structure"):
+                    out.append(CardPlay(card, u.uid))
         elif card == "red_buff":
             for u in adjacent_units(state, node, exclude=c.uid):
                 if can_be_hit(state, u, c.team, "enemy_any"):
@@ -378,6 +387,12 @@ def apply_card(state: GameState, act: Activation, play: CardPlay) -> None:
     team.cards.remove(play.card)
     if play.card == "blue_buff":
         team.gain(2, "blue_buff")
+    elif play.card == "dragon":
+        spec = state.config.get("dragon_card") or {"hits": 2, "cooldown": 3}
+        tgt = state.unit(play.target)
+        if tgt is not None and tgt.alive and tgt.kind != "structure":
+            deal_hits(state, c.team, tgt, spec["hits"], "dragon", c)
+        team.dragon_track.append(spec["cooldown"])
     elif play.card == "red_buff":
         tgt = state.unit(play.target)
         if tgt is not None and tgt.alive:

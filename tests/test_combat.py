@@ -7,15 +7,27 @@ from engine.resolve import deal_hits, death_track_pos, structure_targetable
 
 
 def test_chip_removed_by_a_champion_becomes_ap(state):
+    """Rules 1.8.0 (P-0010): wave and monster chips are AP; structure chips
+    are not. The 1.7.0 economy stays reachable through config."""
     c = state.champs["n_kestrel"]
     tower = state.structures["s_mid_T1"]
     full = tower.chips
     state.teams["north"].ap = 0
     got = deal_hits(state, "north", tower, 3, "chips_structure", c)
-    assert got == 3
+    assert got == 3 and tower.chips == full - 3
+    assert state.teams["north"].ap == 0 and c.ap_earned == 0
+    assert c.dmg_to_structures == 3
+    wave = next(iter(state.waves.values()), None)
+    if wave is None:
+        from engine.game import spawn_waves
+        state.round = 1
+        spawn_waves(state)
+        wave = next(w for w in state.waves.values() if w.team == "south")
+    got = deal_hits(state, "north", wave, 2, "chips_wave", c)
+    assert got == 2 and state.teams["north"].ap == 2 and c.ap_earned == 2
+    state.config["structure_chips_pay"] = True
+    deal_hits(state, "north", tower, 1, "chips_structure", c)
     assert state.teams["north"].ap == 3
-    assert c.ap_earned == 3
-    assert tower.chips == full - 3
 
 
 def test_world_phase_chips_go_to_the_supply(state):

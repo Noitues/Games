@@ -118,9 +118,21 @@ def can_be_hit(state: GameState, u, attacker_team: str, spec: str) -> bool:
         return False
     if spec == "enemy_champion":
         return u.kind == "champion"
+    if spec == "enemy_no_structure":
+        return u.kind != "structure"
     if u.kind == "structure":
         return structure_targetable(state, u)
     return True
+
+
+def step_spec(state: GameState, step: dict, ability: Optional[str]) -> str:
+    """Rules 1.8.0 §6.3: an untagged step on any ability but L0 cannot reach a
+    structure. Switchable through config for older rulebooks."""
+    spec = step.get("target", "enemy_any")
+    if spec == "enemy_any" and ability != "L0" \
+            and not state.config.get("abilities_hit_structures", True):
+        return "enemy_no_structure"
+    return spec
 
 
 def structure_targetable(state: GameState, s: Structure) -> bool:
@@ -222,8 +234,10 @@ def deal_hits(state: GameState, team: Optional[str], target, k: int, source: str
     chips = min(k, target.chips)
     target.chips -= chips
     if chips and champ_source and team is not None:
-        state.teams[team].gain(chips, source)
-        attacker.ap_earned += chips
+        paid = target.kind != "structure" or state.config.get("structure_chips_pay", True)
+        if paid:
+            state.teams[team].gain(chips, source)
+            attacker.ap_earned += chips
         if "vampiric_blade" in attacker.items:
             attacker.hp = min(attacker.max_hp, attacker.hp + chips)
         if target.kind == "structure":
@@ -283,8 +297,11 @@ def monster_reward(state: GameState, m: Monster, team: str) -> None:
         ts.cards.append(MONSTER_REWARD_CARDS[m.mtype])
     elif m.mtype == "dragon":
         ts.dragons += 1
+        if state.config.get("dragon_card") and ts.dragons <= state.config.get("dragon_cap", 2):
+            ts.cards.append("dragon")            # Rules 1.8.0: a reusable card
     elif m.mtype == "baron":
-        ts.baron_track = 3           # Rules 11 [DEFAULT timing]
+        # Rules 1.8.0: Empowered for the rest of the game; 1.7.0: 3 Upkeeps.
+        ts.baron_track = 10 ** 6 if state.config.get("baron_permanent") else 3
 
 
 # ------------------------------------------------------------------ movement
@@ -412,12 +429,12 @@ def step_choices(state: GameState, champ: Champion, node: Node, step: dict,
         if ic == "HIT":
             r = ability_range(champ, ability, step.get("range", 1))
             cands = [u for u, _ in units_within(state, node, r, team,
-                                                step.get("target", "enemy_any"), champ.hexpos,
+                                                step_spec(state, step, ability), champ.hexpos,
                                                 can_act_outside(state, champ, node, ability))]
             return _cap([u.uid for u in cands], cap)
         if ic == "AREA":
             r = ability_range(champ, ability, step.get("range", 1))
-            hits = units_within(state, node, r, team, step.get("target", "enemy_any"),
+            hits = units_within(state, node, r, team, step_spec(state, step, ability),
                                 champ.hexpos, can_act_outside(state, champ, node, ability))
             return [None] if hits else []
         r = ability_range(champ, ability, step.get("n", 1))
@@ -426,7 +443,7 @@ def step_choices(state: GameState, champ: Champion, node: Node, step: dict,
         out = []
         for i, d in enumerate(DIRS):
             if line_targets(state, (origin[0], origin[1]), d, r, team,
-                            step.get("target", "enemy_any"), src_tile,
+                            step_spec(state, step, ability), src_tile,
                             can_act_outside(state, champ, node, ability)):
                 out.append(i)
         return _cap(out, cap)

@@ -1,0 +1,35 @@
+{
+  "batch_id": "batch_0046",
+  "rules": "1.8.0",
+  "roster": "1.6.0",
+  "ai": "1.3.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3,
+    "personality_pool": [
+      "T2_warder",
+      "T2_brawler",
+      "T2_sieger",
+      "T2_objective",
+      "T2_laner"
+    ]
+  },
+  "games": 120,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 3801,
+  "replays": 2,
+  "config_overrides": {
+    "tower_hp": 16,
+    "kill_ap": 3,
+    "death_band_bonus": 1,
+    "dragon_card": null,
+    "baron_permanent": false,
+    "dragon_ap_each": 1
+  },
+  "extra": [
+    "P-0010 alone: rules 1.8.0 targeting and economy (abilities cannot touch structures; structure chips are not AP), with the Dragon and Baron rewards left as in 1.7.0 so the pillar change is read on its own. batch_0039's request otherwise unchanged, same seed, so the draws pair.",
+    "Judge against batch_0039: the sieger below 60%, spread below 25; economy outliers gone. Revert if median length leaves 13-18 or Nexus kills fall below 90%."
+  ]
+}
