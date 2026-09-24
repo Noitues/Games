@@ -240,7 +240,7 @@ the wider objective question stay open for later.
 | batch_0047 | personality pool, P-0010 + P-0011 | 120 | Same pacing collapse as 0046 (tower HP 16). Objectives move the right way: Dragon secured 51 -> 55%, Baron 50 -> 52%, objective personality 38 -> 43%. Verdict deferred to a field where games end. |
 | batch_0048 | as batch_0047, tower HP 8 | 120 | Nexus kills 30%, median 20, first tower round 11, 97% of games see a tower fall. Sieger 91% on the tiebreak - unreadable. |
 | batch_0049 | as batch_0047, tower HP 6 | 120 | Nexus kills 49%, median 20 (p10 15), first tower round 8. Halfway; the Nexus at 12 is the next wall. |
-| batch_0051 | 1.8.0 full, tower HP 4, Nexus HP 8 | 120 | pending |
+| batch_0051 | 1.8.0 full, tower HP 4, Nexus HP 8 | 120 | Median 16, Nexus kills 75%, first tower round 4. The first 1.8.0 read where most games end; the sieger is 89.7% on roster 1.6.0. |
 | batch_0052 | 1.8.0 full, tower HP 4, Nexus HP 12 | 120 | pending |
 | batch_0053 | 1.8.0 full, tower HP 6, Nexus HP 8 | 120 | pending |
 | batch_0054 | roster 1.7.0 (P-0013) on the chosen HP pair | 120 | pending |

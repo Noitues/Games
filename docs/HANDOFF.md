@@ -2,9 +2,9 @@
 
 Second handoff, written 2026-09-24 at the lead designer's request. Everything
 is on `claude/hex-nexus-multiagent-prompts-aivg93`, pushed. **Nothing is
-scheduled.** Two worker sessions (`batch_0051`, `batch_0053`) were within
-minutes of finishing when the pause was called; each pushes its own three
-report files to the branch when it completes, so pull before reading §3.
+scheduled.** `batch_0051` landed as this was written and is in §3; the
+`batch_0053` worker (tower 6 / Nexus 8) was minutes from finishing and pushes
+its own three report files when it completes, so pull before reading §3.
 
 ## 1. Where the lab stands
 
@@ -56,14 +56,18 @@ the old economy) cannot fall. Read so far, all on the personality field, seed
 | 0048 | 8 | 12 | old | 30% | 20 | round 11 |
 | 0049 | 6 | 12 | old | 49% | 20 (p10 15) | round 8 |
 | 0050 | 8 | 12 | centred | 15% | 20 | round 12 |
-| 0051 | 4 | 8 | centred | *pull and read* | | |
+| 0051 | 4 | 8 | centred | **75%** | **16** (p10 11, p90 20) | round 4 |
 | 0053 | 6 | 8 | centred | *pull and read* | | |
 
-Targets: median 13–18 and Nexus kills above 90%. Until games end, every
-personality and champion number is a round-20 tiebreak number (towers
-destroyed, then structure HP) and says nothing; the sieger's 87–97% in these
-batches is that artefact. Both objectives already win more under 1.8.0 than
-they did under 1.7.0 even in this broken field.
+Targets: median 13–18 and Nexus kills above 90%. `batch_0051` is the first
+1.8.0 read where most games end: median in band, Nexus kills 75%, and the
+first tower falls in round 4, which may be too early — read `batch_0053`
+(tower 6) against it before choosing. With games ending, the personality
+table starts to mean something again, and it says **the sieger is still
+89.7%** on roster 1.6.0. That is the read the designer's fallback ("if that
+doesn't fix the sieger, try upping tower damage", `tower_hits_champion`) was
+waiting for; P-0013 (`batch_0054`) is read first, since the engines feed the
+siege. Both objectives already win more under 1.8.0 than under 1.7.0.
 
 If 0051/0053 do not reach the band, the levers left, in the order the lab
 would try them: L0 dealing 2 hits to structures (a "siege hit"), waves dealing
