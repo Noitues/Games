@@ -29,7 +29,7 @@
     "dragon_ap_each": 1
   },
   "extra": [
-    "P-0010 alone: rules 1.8.0 targeting and economy (abilities cannot touch structures; structure chips are not AP), with the Dragon and Baron rewards left as in 1.7.0 so the pillar change is read on its own. batch_0039's request otherwise unchanged, same seed, so the draws pair.",
+    "P-0010 alone: rules 1.8.0 targeting and economy (abilities cannot touch structures; structure chips are not AP; a tower that falls pays one round of income), with the Dragon and Baron rewards left as in 1.7.0 so the pillar change is read on its own. batch_0039's request otherwise unchanged, same seed, so the draws pair.",
     "Judge against batch_0039: the sieger below 60%, spread below 25; economy outliers gone. Revert if median length leaves 13-18 or Nexus kills fall below 90%."
   ]
 }

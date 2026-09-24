@@ -281,6 +281,11 @@ def destroy(state: GameState, target, team: Optional[str], attacker: Optional[Ch
             state.end_reason = "nexus"
         else:
             state.teams[target.team].towers_lost += 1
+            reward = state.config.get("tower_kill_ap", 0)
+            if team is not None and reward:
+                # Rules 1.8.0 §7: the round income again, whoever took it -
+                # a champion's hit or a wave's.
+                state.teams[team].gain(reward, "tower_kill")
         state.event("structure_down", uid=target.uid, round=state.round)
     elif target.kind == "monster":
         if team is not None:

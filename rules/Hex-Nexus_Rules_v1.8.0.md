@@ -414,7 +414,8 @@ Champions heal in three ways:
 - **Chips are AP - from minions and monsters.** When a champion's hit removes a chip from a minion wave or a monster, that chip goes straight into the champion's team pool. It can be spent immediately.
   - An ability that removes 3 chips from a wave gains 3 AP.
   - There is no separate kill bonus for monsters. Their HP *is* the reward.
-  - **Structure chips are not AP.** A chip knocked off a tower or the Nexus goes to the supply. Structures are the win condition, not an income (v1.8; before this, a tower's chips paid the team that took them, and simulation found that this - not fighting or farming - was where the game's income and its champion imbalance came from).
+  - **Structure chips are not AP.** A chip knocked off a tower or the Nexus goes to the supply (v1.8; before this, a tower's chips paid the team that took them, and simulation found that this - not fighting or farming - was where the game's income and its champion imbalance came from).
+  - **Tower reward.** When a tower falls, the team whose hit removed its last chip - a champion's L0 or a minion wave's - immediately gains **one round of income (3 AP)**. It is a reward for the kill, not for the chips. The Nexus pays nothing: taking it ends the game.
   - The old "minion refund" rule is replaced by this rule.
 - **World Phase chips go to the supply.** Chips removed by towers, minions or monsters benefit no one.
 - **Champion kills:** Champion HP is tracked with cubes, not chips, so hitting a champion gains no AP. A champion kill gives **+1 AP**.
@@ -591,6 +592,7 @@ If simulated games run long, tune these (roughly from gentlest to strongest) rat
 | Baron timing | Spawns Round 7 |
 | Dragon | reusable card: 2 hits adjacent, cooldown 3; at most 2 held (v1.8) |
 | Tower HP | 11 (raised from 8 by patch P-0002 to bring median game length into 13–15 rounds) |
+| Tower reward | one round of income (3 AP) to the team that takes it; chips are not AP (v1.8) |
 | Nexus HP | 12 |
 | Tower damage | 2 hits to champions |
 | Protection order | T1 before T2; one lane of towers before the Nexus |

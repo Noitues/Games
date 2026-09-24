@@ -48,6 +48,10 @@ DEFAULT_CONFIG = {
     # waves damage them - and structure chips go to the supply, not the pool.
     "abilities_hit_structures": False,
     "structure_chips_pay": False,
+    # Rules 1.8.0 (P-0010): a tower that falls pays the team that took it one
+    # round of income (= ap_base) instead of its chips; the Nexus pays nothing,
+    # it ends the game. 0 restores the 1.7.0 shape.
+    "tower_kill_ap": 3,
     "tower_hits_champion": 2,
     "tower_hits_wave": 1,
     "monster_hits": 1,

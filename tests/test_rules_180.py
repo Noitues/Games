@@ -114,3 +114,29 @@ def test_baron_is_permanent(board, kits):
     for _ in range(4):
         upkeep(old, _G())
     assert old.teams["south"].baron_track == 0
+
+
+def test_a_tower_pays_one_round_of_income_when_it_falls(board, kits):
+    st = _state(board, kits)
+    tower = _tower(st)
+    c = st.champs["n_ashwyn"]
+    ap = st.teams["north"].ap
+    deal_hits(st, "north", tower, tower.chips, "chips_structure", c)
+    assert not tower.alive
+    assert st.teams["north"].ap == ap + st.config["ap_base"]
+    assert st.teams["north"].ap_by_source.get("tower_kill") == 3
+    # a wave finishing a tower pays its team too (no attacker)
+    t2 = st.structures["s_bot_T2"]
+    deal_hits(st, "north", t2, t2.chips, "chips_structure", None)
+    assert not t2.alive and st.teams["north"].ap == ap + 2 * st.config["ap_base"]
+    # the Nexus pays nothing: it ends the game
+    for s in st.structures.values():
+        if s.team == "south" and s.stype == "tower":
+            s.alive = False
+    nexus = st.structures["s_nexus"]
+    before = st.teams["north"].ap
+    deal_hits(st, "north", nexus, nexus.chips, "chips_structure", c)
+    assert st.winner == "north" and st.teams["north"].ap == before
+    old = _state(board, kits, tower_kill_ap=0)
+    deal_hits(old, "north", _tower(old), _tower(old).chips, "chips_structure", old.champs["n_ashwyn"])
+    assert old.teams["north"].ap == 0
