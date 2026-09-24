@@ -237,7 +237,10 @@ the wider objective question stay open for later.
 |---|---|---|---|
 | batch_0046 | personality pool, P-0010 alone (1.7.0 rewards kept) | 120 | **Pacing collapses:** 1 Nexus kill in 120, every game to round 20, sieger 93.1% on the tiebreak. Tower HP 16 cannot fall to L0 and waves. The five AREA engines remain (sable 2.64x): AREA is a disc, radius 2 with Longbow. Dragon/Baron secured WR up to 51/50%. |
 | batch_0047 | personality pool, P-0010 + P-0011 | 120 | Same pacing collapse as 0046 (tower HP 16). Objectives move the right way: Dragon secured 51 -> 55%, Baron 50 -> 52%, objective personality 38 -> 43%. Verdict deferred to a field where games end. |
-| batch_0048 | as batch_0047, tower HP 8 | 120 | pending - the pacing knob under the ruled economy |
-| batch_0049 | as batch_0047, tower HP 6 | 120 | pending |
+| batch_0048 | as batch_0047, tower HP 8 | 120 | Nexus kills 30%, median 20, first tower round 11, 97% of games see a tower fall. Sieger 91% on the tiebreak - unreadable. |
+| batch_0049 | as batch_0047, tower HP 6 | 120 | Nexus kills 49%, median 20 (p10 15), first tower round 8. Halfway; the Nexus at 12 is the next wall. |
+| batch_0051 | 1.8.0 full, tower HP 4, Nexus HP 8 | 120 | pending |
+| batch_0052 | 1.8.0 full, tower HP 4, Nexus HP 12 | 120 | pending |
+| batch_0053 | 1.8.0 full, tower HP 6, Nexus HP 8 | 120 | pending |
 | batch_0050 | as batch_0048 with P-0012 (centred AREA) | 120 | pending - the AREA ruling's first read |
 
