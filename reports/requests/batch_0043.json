@@ -1,0 +1,28 @@
+{
+  "batch_id": "batch_0043",
+  "rules": "1.7.0",
+  "roster": "1.6.0",
+  "ai": "1.4.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3,
+    "personality_pool": ["SM_g2_lane6", "SM_g2_clock3_short"]
+  },
+  "anchors": ["T2_sieger"],
+  "anchor_share": 1.0,
+  "games": 160,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 4301,
+  "replays": 2,
+  "config_overrides": {
+    "tower_hp": 16,
+    "kill_ap": 3,
+    "death_band_bonus": 1
+  },
+  "extra": [
+    "The state-machine confirmation (Handoff 9.5): every game puts one of the two generation-2 survivors against the pure T2_sieger, 80 games each, no other opposition. This is the head-to-head the tournament batches could not give.",
+    "Judge on each machine's win rate against the sieger with its Wilson interval: a lower bound above 50 confirms that a laning opening beats sieging from round 1; a point estimate near 50 says the two generations' Bradley-Terry edge was opposition mix. Either way, this settles the field champion balance is measured in."
+  ]
+}

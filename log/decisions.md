@@ -254,3 +254,53 @@ opening with the income signal, and two unrelated designs as required. The
 anchors need more games: generation 2 should draw an anchor in one seat of
 half the games rather than treating anchors as two more tiers, so the
 against-anchor record is worth reading.
+
+### RQ-040, generation 2 (`batch_0042`)
+
+480 games; the two generation-1 survivors and eight bred around them, with
+the anchors drawn into one seat of half the games rather than pooled as tiers.
+Two readings, because the overall win-rate column is not comparable between
+anchors and machines (anchors only ever meet machines; machines also meet the
+weak `T2_search`): a Bradley-Terry strength fitted over every pairing, and
+the machine-versus-machine record with anchor games excluded.
+
+| policy | Bradley-Terry vs sieger (log-odds) | overall WR [95% CI] | machine-vs-machine WR [95% CI] | occupancy |
+|---|---|---|---|---|
+| SM_g2_lane6 (lane → siege r6) | **+0.51** | 64.5 [52.1, 75.3] | **75.0 [59.8, 85.8]** (40) | sieger 66%, laner 34% |
+| SM_g2_clock3_short (lane → objective r5-6 → siege r7) | +0.35 | 64.1 [53.0, 73.9] | 56.5 [42.2, 69.8] (46) | sieger 60%, laner 26%, objective 13% |
+| SM_g1_clock2 (lane → siege r4) | +0.29 | 61.3 [50.3, 71.2] | 56.5 [42.2, 69.8] (46) | sieger 79%, laner 21% |
+| SM_g1_clock3 (lane → objective r5-8 → siege r9) | +0.29 | 60.8 [49.4, 71.1] | 59.5 [44.5, 73.0] (42) | sieger 48%, laner 26%, objective 26% |
+| SM_g2_lane_map (lane → siege, ward when behind) | +0.20 | 57.1 [44.1, 69.2] | 57.9 [42.2, 72.1] (38) | sieger 60%, laner 20%, warder 20% |
+| SM_g2_lane5 (lane → siege r5) | +0.01 | 53.6 [40.7, 66.0] | 47.8 [34.1, 61.9] (46) | sieger 74%, laner 26% |
+| **T2_sieger** (anchor, 128 games) | 0.00 | 50.0 [41.5, 58.5] | - | - |
+| SM_g2_lane3 (lane → siege r3) | -0.06 | 47.1 [35.9, 58.7] | 36.0 [24.1, 49.9] (50) | sieger 87%, laner 13% |
+| SM_g2_siege_guard (siege r1, ward when 2 down) | -0.19 | 43.9 [33.7, 54.7] | 40.7 [28.7, 54.0] (54) | sieger 87%, warder 13% |
+| SM_g2_lane_ap (lane → siege, objectives when poor) | -0.20 | 48.8 [38.1, 59.5] | 50.0 [37.3, 62.7] (56) | sieger 50%, objective 31%, laner 20% |
+| T2_search (anchor, 118 games) | -0.54 | 35.6 [27.5, 44.6] | - | - |
+| SM_g2_brawl_open (brawl r1-3 → siege) | -1.03 | 26.3 [17.7, 37.2] | 30.0 [19.1, 43.8] (50) | sieger 60%, brawler 40% |
+
+**What it says.** The pure sieger is mid-field. Every machine above it lanes
+first and sieges from round 4-7; both machines that siege from round 1
+(`siege_guard`, and `lane3` which is in sieger by round 3) sit below it, in
+this generation as in the last. Opening on a fight is the worst thing a team
+can do (brawl_open, -1.03). Time in the objective state still costs
+(`lane_ap`, 31% objective, -0.20), except when it is a short band on the way
+to sieging (`clock3_short`). The laning opening is therefore real relative to
+sieging from round 1, and worth roughly +0.3 to +0.5 log-odds, a 57-62%
+expected win rate against the pure sieger.
+
+**What it does not say.** The direct records against `T2_sieger` are 2-22
+games a machine and do not agree with the fit (`lane6` is 25% over 12,
+`clock3_short` 67% over 18); pooled, the machines are exactly 50% over 128.
+The anchor design fixed the sample size and introduced a confound in its
+place, so the ranking above rests on the fit, not on a head-to-head. That is
+what `batch_0043` is for: every game one of the two survivors against the
+pure sieger, 80 games each, no other opposition.
+
+**Pacing, noted for RQ-038.** With almost every team sieging, this batch
+plays median 15 rounds and 99.4% of games end by Nexus kill - both pacing
+checks pass. `batch_0039`'s break (median 18, 78%) came from the warder,
+brawler and objective personalities failing to close, not from the sieger.
+The game paces correctly when both sides play its dominant strategy.
+
+Survivors: `SM_g2_lane6`, `SM_g2_clock3_short`.

@@ -3,7 +3,7 @@
 Written at the lead designer's request. Everything below is on
 `claude/hex-nexus-multiagent-prompts-aivg93`, pushed.
 
-Written at the lead designer's request; extended after batches 0039-0041.
+Written at the lead designer's request; extended after batches 0039-0043.
 Nothing is running.
 
 ## 1. Where the lab stands
@@ -34,8 +34,9 @@ defaults in `config.py`; carry them forward in any new request.
 | ~~P-0009~~ | **done, failed** (`batch_0040`, RQ-039). Pricing the Dragon in AP changed nothing; `dragon_ap_each` is back at 1. |
 | ~~a T2 read at reveal radius 2~~ | **done** (`batch_0039`, RQ-038). Direction held; pacing broke. Waiting on the lead designer. |
 | ~~the personality state machine, generation 1~~ | **built and run** (ai 1.4.0, `batch_0041`, RQ-040). Nothing beats sieging; the two clocks that open on the lane sit above the pure sieger on the point estimate, inside overlapping intervals. Survivors: `SM_g1_clock3`, `SM_g1_clock2`. |
-| **generation 2** | eight machines bred around the two clocks (see §9.4), with the anchors given a real share of games. `ai/policy_v1_4_0/machines/gen2.json` is the file to write; the request pattern is `batch_0041`. |
-| champion balance | only after §9 has a winner - or after generation 2 confirms there is none, in which case the field is the sieger with a laning opening. See §3. |
+| ~~generation 2~~ | **run** (`batch_0042`, RQ-040 in the decisions log). A laning opening before sieging is real relative to sieging from round 1, worth about +0.3 to +0.5 log-odds on a Bradley-Terry fit; not yet confirmed head-to-head. Survivors `SM_g2_lane6`, `SM_g2_clock3_short`. |
+| **the confirmation, `batch_0043`** | every game one survivor against the pure sieger, 80 games each. If either clears 50% with its lower bound, the field for champion balance is that machine plus the sieger; if neither does, it is the sieger alone. |
+| champion balance | next, on the field `batch_0043` settles. See §3 and §7. |
 
 Two RULE-Qs are open for the lead designer before anything pacing-adjacent is
 touched: **RQ-038** (reveal radius 2 broke pacing; `tower_hp` 16 is the
@@ -102,7 +103,13 @@ The state machine (§9) then said the same thing from a third direction.
 | SM_g1_full | 78 | 37.2 [27.3, 48.3] | objective 74%, laner 16%, sieger 7% |
 
 Win rate tracks time spent in the sieger state and nothing else. The one
-thread worth pulling is the laning opening both clocks share.
+thread worth pulling is the laning opening both clocks share - and generation
+2 (`batch_0042`, table under RQ-040) pulled it: on a Bradley-Terry fit over
+every pairing the pure sieger is mid-field, every machine above it lanes for
+3-6 rounds and then sieges, both machines that siege from round 1 sit below
+it, and a machine that opens on a fight is a full log-odds below. A short
+laning opening is worth roughly +0.3 to +0.5 log-odds against the pure
+sieger. `batch_0043` tests that head-to-head.
 
 The consequence for Phase 4 is the important part. A champion win rate read in
 a field where sieging wins is mostly a measure of that champion's siege
@@ -184,11 +191,10 @@ python tools/run_batch.py reports/requests/batch_0038.json --workers 4   # the p
 
 In order:
 
-1. **State machine, generation 2** (§9.4). Write `gen2.json`, give the
-   anchors a real share of games, run 400 games, rank on the lower bound.
-   If no machine's lower bound clears the sieger's point estimate a second
-   time, stop breeding: the answer is "siege, perhaps after a short laning
-   opening", and that is the field champion balance is measured in.
+1. **Read `batch_0043`** (it may already be in `reports/`): `SM_g2_lane6`
+   and `SM_g2_clock3_short` against `T2_sieger`, 80 games each. Do not
+   breed a generation 3 unless one of them clears 50% with its lower bound
+   and by enough to matter; two generations have said the gain is modest.
 2. **Champion balance**, on a mixed field, not a mirror — and once §9 has a
    winner, against that rather than against fixed personalities. RQ-028 still
    applies: with 5 champions per role a champion plays 40% of games, so
@@ -332,4 +338,22 @@ Change the draw before running it: with ten tiers over 400 games each pair
 met 2-14 times, so the against-anchor record was unreadable. Draw an anchor
 into one seat of half the games (a spec field, in `engine/batch.py` beside
 `personality_pool`) so each machine meets each anchor 20+ times.
+
+### 9.5 Generation 2 result
+
+`batch_0042`, RQ-040 in the decisions log. The anchor draw gave every machine
+12-22 games against each anchor - enough that the pooled number is readable
+(machines 50.0% against the sieger over 128) and not enough for any single
+machine's record to be. It also introduced a confound: anchors meet only
+machines, machines also meet `T2_search`, so overall win rates are comparable
+among machines but not between a machine and an anchor. Use the Bradley-Terry
+fit in the decisions log, or the machine-versus-machine column, for ranking;
+a small script that fits it from `reports/raw/<batch>.jsonl.gz` is worth
+adding to `tools/` before a generation 3.
+
+If breeding continues, the next things to vary are the round the opening
+ends (5, 6, 7, 8 - `lane6` won and `lane5` did not, so the curve is not yet
+mapped) and whether a short objective band on the way to sieging helps
+(`clock3_short` beat `clock3`, inside noise). Do not spend candidates on
+brawler or warder states; two generations have priced them.
 
