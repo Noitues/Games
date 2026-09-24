@@ -242,5 +242,5 @@ the wider objective question stay open for later.
 | batch_0051 | 1.8.0 full, tower HP 4, Nexus HP 8 | 120 | pending |
 | batch_0052 | 1.8.0 full, tower HP 4, Nexus HP 12 | 120 | pending |
 | batch_0053 | 1.8.0 full, tower HP 6, Nexus HP 8 | 120 | pending |
-| batch_0050 | as batch_0048 with P-0012 (centred AREA) | 120 | pending - the AREA ruling's first read |
+| batch_0050 | as batch_0048 with P-0012 (centred AREA) | 120 | **P-0012 partial.** Engines down a third (sable 2.54x -> 1.87x, pallas to 1.01x) but four remain above 1.5x. Nexus kills 15% at tower HP 8 - pacing still the wall. |
 

@@ -1,10 +1,20 @@
 {
   "patch_id": "P-0012",
-  "from": {"rules": "1.8.0 (P-0010, P-0011)", "roster": "1.6.0", "ai": "1.4.0"},
-  "to": {"rules": "1.8.0"},
+  "from": {
+    "rules": "1.8.0 (P-0010, P-0011)",
+    "roster": "1.6.0",
+    "ai": "1.4.0"
+  },
+  "to": {
+    "rules": "1.8.0"
+  },
   "lever_class": "ability grammar",
   "changes": [
-    {"target": "rules:6.3.AREA", "from": "k hits on every enemy unit within `range` of the champion; Longbow adds 1 to that radius", "to": "k hits on every enemy unit within 1 of a centre hex the player places within the step's range of the champion; Longbow extends where the centre may go, never the disc"}
+    {
+      "target": "rules:6.3.AREA",
+      "from": "k hits on every enemy unit within `range` of the champion; Longbow adds 1 to that radius",
+      "to": "k hits on every enemy unit within 1 of a centre hex the player places within the step's range of the champion; Longbow extends where the centre may go, never the disc"
+    }
   ],
   "evidence": "batch_0046: with structures paying nothing, sable, wisp, ashwyn, quillan and pallas still earn 1.5-2.6x the roster mean from waves and monsters. Every AREA on the roster is range 1, so with Longbow it was a radius-2 disc of 19 hexes centred on the champion, reaching two or three waves and camps at once. The lead designer's ruling (RQ-045): an AREA is a radius-1 disc around a centre placed within range; Longbow moves the centre, not the blast.",
   "hypothesis": "A 7-hex blast rarely covers more than one wave or camp, so the AREA engines fall back toward the roster mean; the extra reach of placing the centre one hex out (three with Longbow) is worth less than the twelve hexes the disc loses.",
@@ -12,5 +22,118 @@
   "revert_if": "AREA champions collapse below 40% as a group (the blast is now too small to farm with), or ability usage for AREA steps falls below 5% of affordable rounds.",
   "side_effects": "Each AREA step now enumerates up to 7 centres (19 with Longbow) instead of one option, so the T2 search sees more candidates per activation and games run a little slower. Reach along a line grows by one hex; area shrinks by two thirds.",
   "pillar_change": false,
-  "note": "Config area_center, False restores the 1.7.0 blast at the feet. Read as batch_0050 on the tower HP the sweep chooses."
+  "note": "Config area_center, False restores the 1.7.0 blast at the feet. Read as batch_0050 on the tower HP the sweep chooses.",
+  "result": {
+    "verdict": "PARTIAL - the engines shrink by a third and one of five returns to the mean; four remain above 1.5x",
+    "batches": {
+      "before": "batch_0048",
+      "after": "batch_0050",
+      "held_constant": "rules 1.8.0 P-0010/P-0011, tower HP 8, Nexus 12, seed 3801 (paired)"
+    },
+    "engines_ap_per_round_and_x_mean": {
+      "sable": [
+        [
+          4.36,
+          2.54
+        ],
+        [
+          3.0,
+          1.87
+        ]
+      ],
+      "wisp": [
+        [
+          3.8,
+          2.21
+        ],
+        [
+          2.97,
+          1.85
+        ]
+      ],
+      "ashwyn": [
+        [
+          3.46,
+          2.02
+        ],
+        [
+          2.55,
+          1.59
+        ]
+      ],
+      "quillan": [
+        [
+          3.29,
+          1.91
+        ],
+        [
+          2.77,
+          1.73
+        ]
+      ],
+      "pallas": [
+        [
+          2.86,
+          1.66
+        ],
+        [
+          1.61,
+          1.01
+        ]
+      ]
+    },
+    "roster_mean_ap_per_round": [
+      1.72,
+      1.6
+    ],
+    "area_usage_pct_of_affordable_rounds": {
+      "sable_W": [
+        50.2,
+        52.5
+      ],
+      "wisp_W": [
+        77.5,
+        81.2
+      ],
+      "ashwyn_W": [
+        68.3,
+        65.0
+      ],
+      "quillan_R": [
+        66.7,
+        74.1
+      ],
+      "pallas_R": [
+        83.5,
+        78.1
+      ]
+    },
+    "success_metric": {
+      "outliers_at_most_two": "four remain (ashwyn, quillan, sable, wisp) - not met",
+      "sieger_and_spread": "unreadable: 15% Nexus kills, median 20"
+    },
+    "revert_checks": {
+      "area_champions_below_40_as_group": "no - they still lead the roster",
+      "area_usage_below_5pct": "no - 52-81%, unchanged"
+    },
+    "pacing": {
+      "nexus_kills": [
+        30.0,
+        15.0
+      ],
+      "median": [
+        20,
+        20
+      ],
+      "first_tower_round": [
+        11,
+        12
+      ],
+      "priority_wr": [
+        43.3,
+        58.0
+      ]
+    },
+    "reading": "The seven-hex blast took a third off every engine's income and the roster mean fell with it, so the ratio moved less than the absolute number. What is left is structural: a 1-AP AREA on a 1-round cooldown hits one wave or camp for a chip nearly every round, and with structures paying nothing that is still the best income on the roster. The next levers are the kits themselves (AREA cost or cooldown, which \u00a714.2 prices at 6 a hit) rather than the grammar. Pacing did not improve with the smaller blast - Nexus kills fell from 30% to 15% at the same tower HP - so the tower/Nexus pass (batches 0051, 0053) is read with this AREA in place."
+  }
 }
