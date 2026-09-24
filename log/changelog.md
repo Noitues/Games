@@ -234,6 +234,8 @@ the wider objective question stay open for later.
 
 | batch | matchup | games | result |
 |---|---|---|---|
-| batch_0046 | personality pool, P-0010 alone (1.7.0 rewards kept) | 120 | pending |
+| batch_0046 | personality pool, P-0010 alone (1.7.0 rewards kept) | 120 | **Pacing collapses:** 1 Nexus kill in 120, every game to round 20, sieger 93.1% on the tiebreak. Tower HP 16 cannot fall to L0 and waves. The five AREA engines remain (sable 2.64x): AREA is a disc, radius 2 with Longbow. Dragon/Baron secured WR up to 51/50%. |
 | batch_0047 | personality pool, P-0010 + P-0011 | 120 | pending |
+| batch_0048 | as batch_0047, tower HP 8 | 120 | pending - the pacing knob under the ruled economy |
+| batch_0049 | as batch_0047, tower HP 6 | 120 | pending |
 

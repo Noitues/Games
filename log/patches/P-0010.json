@@ -32,5 +32,75 @@
   "revert_if": "Median game length leaves 13-18 rounds or Nexus kills fall below 90% (towers now only fall to L0 and waves, so games may not close), or any personality clears 80%.",
   "side_effects": "Total AP per round falls by about a third, so item timings move for everyone. Champions whose kits were mostly AREA/LINE lose their farming reach on structures but not on waves. The AI evaluator still values towers as the win condition (towers_lost, struct_focus), so behaviour should shift toward L0 sieging and wave escort rather than away from towers.",
   "pillar_change": true,
-  "note": "Implemented as rules 1.8.0 and engine defaults: config abilities_hit_structures False, structure_chips_pay False. Read on its own as batch_0046; P-0011 (Dragon and Baron) is read on top of it as batch_0047 so each is attributable. Amended before the read: the lead designer added the tower reward (round income on the kill, not the chips), config tower_kill_ap 3."
+  "note": "Implemented as rules 1.8.0 and engine defaults: config abilities_hit_structures False, structure_chips_pay False. Read on its own as batch_0046; P-0011 (Dragon and Baron) is read on top of it as batch_0047 so each is attributable. Amended before the read: the lead designer added the tower reward (round income on the kill, not the chips), config tower_kill_ap 3.",
+  "result": {
+    "verdict": "REVERT CONDITION MET on pacing; economy metric NOT met - the rule stands (the lead designer's), the pacing knob under it does not",
+    "batches": {
+      "before": "batch_0039",
+      "after": "batch_0046",
+      "held_constant": "roster 1.6.0, ai 1.4.0, tower HP 16, kill AP 3, death band 1, 1.7.0 Dragon/Baron rewards, seed 3801 (paired)"
+    },
+    "personalities": {
+      "sieger": [
+        69.0,
+        93.1
+      ],
+      "laner": [
+        59.3,
+        50.0
+      ],
+      "objective": [
+        47.6,
+        38.1
+      ],
+      "warder": [
+        28.9,
+        34.2
+      ],
+      "brawler": [
+        35.4,
+        20.8
+      ]
+    },
+    "success_metric": {
+      "sieger_below_60": "93.1% - not met; the sieger wins the round-20 tiebreak (towers destroyed, then structure HP) in nearly every game",
+      "spread_below_25": "40 -> 72 points - not met",
+      "economy_outliers_gone": "not met: ashwyn, pallas, quillan, sable, wisp still above 1.5x; sable 4.51 AP/round = 2.64x the roster mean of 1.71"
+    },
+    "revert_checks": {
+      "median_length": "18 -> 20 (every game), out of band",
+      "nexus_kill_rate": "78.3% -> 0.8% (1 game in 120) - triggered",
+      "personality_above_80": "sieger 93.1% - triggered"
+    },
+    "economy": {
+      "ap_per_team_round": {
+        "chips_monster": 4.6,
+        "chips_wave": 3.95,
+        "base": 3.69,
+        "champion_kill": 0.41,
+        "tower_kill": 0.06
+      },
+      "tower_kill_reads_as": "about 0.8 towers destroyed per game across both teams; first tower falls at median round 12"
+    },
+    "objectives": {
+      "dragon_secured_wr": [
+        47.1,
+        51.4
+      ],
+      "baron_secured_wr": [
+        48.5,
+        50.0
+      ],
+      "dragon_takes": [
+        2.33,
+        3.38
+      ],
+      "baron_takes": [
+        1.08,
+        1.83
+      ],
+      "note": "with structures paying nothing, monster chips are the income and both objectives are taken more and win more, before P-0011 touches them"
+    },
+    "reading": "Two findings. (1) With abilities unable to touch structures, a 16-HP tower does not fall: only L0 (1 hit, adjacent, once per activation) and waves (1 hit a round each) damage it, and both are contested. Tower HP 16 was a P-0002/T2 placeholder chosen when AREAs shredded towers; under the ruled economy it is far too high. The game needs its pacing knob turned before anything else can be read: tower HP down (the rulebook's original 8, or lower), or L0/wave hits on structures up. (2) The income engines are not a structure story after all - or not only. sable, wisp, ashwyn, quillan and pallas still out-earn the roster by 1.5-2.6x from waves and monsters, because an AREA step in this engine hits every enemy unit within its range as a disc, and Longbow (+1 range to all abilities but L0) makes a range-1 AREA a radius-2 disc of 18 hexes that reaches two or three waves and camps at once. The lead designer's 'an area hit is a specific shape' and 'very rare to hit more than one wave' describe a different AREA than the one implemented; that is the next ruling to ask for."
+  }
 }
