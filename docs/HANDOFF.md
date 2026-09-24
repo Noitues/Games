@@ -3,7 +3,7 @@
 Written at the lead designer's request. Everything below is on
 `claude/hex-nexus-multiagent-prompts-aivg93`, pushed.
 
-Written at the lead designer's request; extended after batches 0039-0043.
+Written at the lead designer's request; extended after batches 0039-0044.
 Nothing is running.
 
 ## 1. Where the lab stands
@@ -13,9 +13,9 @@ Nothing is running.
 | 0 Bootstrap | complete |
 | 1 AI calibration | closed on RQ-031 (gate lowered to 60%) |
 | 2 Correctness and pacing | **deferred on purpose, and now broken by a ruling.** Rules 1.7.0 moved median length to 18 and Nexus kills to 78% on T2 (RQ-038). Waiting on the lead designer. |
-| 3 Economy | **partly done, stuck on a pillar question.** See §4. The objective lever (P-0009) was tried and is inert; see §3. |
-| 4 Champion balance | **started.** RQ-040 is closed: no switching strategy beats sieging, so the field is settled (T2_sieger + SM_g2_lane6, drawn per game). `batch_0044` is the 4,000-game T2 read, run as four shards on four cloud sessions. |
-| 5 Robustness | exploit gate met under rules 1.0.0; needs a re-run, the game has changed six times since |
+| 3 Economy | **stuck on the pillar question, which Phase 4 has now shown to be the champion-balance question.** See §4 and RQ-041. |
+| 4 Champion balance | **read taken, no patch yet.** `batch_0044`, 4,000 games on the settled field: 10 of 25 champions clear of 45-55, Support and Top broken, Jungle and ADC balanced, and the HIGH champions are the Phase 3 AREA engines. The first patch is the pillar ruling (RQ-039), not a kit. See RQ-041. |
+| 5 Robustness | exploit gate met under rules 1.0.0; needs a re-run, the game has changed six times since. ~400 games, one shard session, independent of everything else. |
 | 6 Release candidate | not started |
 
 Versions: rules **1.7.0**, roster **1.6.0**, ai **1.4.0**, **139 tests** (~3m), all passing on 2026-09-23.
@@ -36,13 +36,17 @@ defaults in `config.py`; carry them forward in any new request.
 | ~~the personality state machine, generation 1~~ | **built and run** (ai 1.4.0, `batch_0041`, RQ-040). Nothing beats sieging; the two clocks that open on the lane sit above the pure sieger on the point estimate, inside overlapping intervals. Survivors: `SM_g1_clock3`, `SM_g1_clock2`. |
 | ~~generation 2~~ | **run** (`batch_0042`, RQ-040 in the decisions log). A laning opening before sieging is real relative to sieging from round 1, worth about +0.3 to +0.5 log-odds on a Bradley-Terry fit; not yet confirmed head-to-head. Survivors `SM_g2_lane6`, `SM_g2_clock3_short`. |
 | ~~the confirmation, `batch_0043`~~ | **run.** lane6 51.1% [41.0, 61.1], clock3_short 45.6% [34.3, 57.3] against the pure sieger. Neither beats it. RQ-040 closed; breeding stopped. |
-| **`batch_0044`, the champion read** | 4,000 games on the settled field, four shards of 1,000 on four cloud sessions (`--shard K/4`, then `--merge`). About 1,600 games per champion, ±2.4 points. |
-| champion balance patches | after `batch_0044`: outliers first, one lever per patch, before/after pairs read on the same field. |
+| ~~`batch_0044`, the champion read~~ | **done**, RQ-041 and RQ-042 in the decisions log. |
+| **the AREA-conversion pillar patch** | needs the lead designer's ruling on RQ-039 (cap per use, or no conversion on waves). Then one before/after pair against `batch_0044`, same field and seed, 2,000-4,000 games sharded. |
+| **bastion** | the one outlier the pillar will not touch: 74.9% on 0.26 deaths a game. Read the kit, patch one lever, before/after pair. |
+| the bottom five | corvane, lumen, kaelis, vellum, ossuar - after the pillar re-read, one income lever each. |
+| the exploit sweep | independent; one shard session any time. |
 
-Two RULE-Qs are open for the lead designer before anything pacing-adjacent is
-touched: **RQ-038** (reveal radius 2 broke pacing; `tower_hp` 16 is the
-obvious lever) and **RQ-039** (objectives priced in AP are inert; what should
-they pay in?).
+Open for the lead designer: **RQ-039** (the AREA conversion - now the
+gating question for champion balance too), **RQ-042** (South wins 53-47 on
+the settled field), and **RQ-038** (pacing broke at reveal radius 2 in a
+mixed field; it is in band, median 14, when both sides siege - so it may
+be moot once the field is what players actually do).
 
 A 120-game T2 personality batch costs 65–80 minutes on 4 cores; a 400-game
 generation costs about 3h15m.
@@ -113,6 +117,22 @@ laning opening is worth roughly +0.3 to +0.5 log-odds against the pure
 sieger. `batch_0043` tested that head-to-head and it is not there: lane6 is
 51.1% [41.0, 61.1] against the pure sieger over 92 games. RQ-040 is closed.
 **The game has one strategy, and three independent methods agree.**
+
+On that field, `batch_0044` (4,000 games, ±2.4 points a champion) reads the
+roster. Win rates are against role peers:
+
+| role | champions, best to worst (win rate %) |
+|---|---|
+| Top | bastion **74.9**, marrow 50.5, vurmak 45.7, kaelis **40.3**, ossuar **38.3** |
+| Jungle | thornjaw 52.6, sylphine 52.3, bramblehide 50.6, rictus 49.3, mossgrove 45.2 |
+| Mid | sable **58.6**, ashwyn **58.4**, quillan 53.5, noctis 44.4, vellum **35.0** |
+| ADC | veyra 54.8, kestrel 52.5, dax 48.9, brixa 48.7, orrin 45.3 |
+| Support | wisp **77.4**, pallas **57.5**, grivven 48.3, lumen **38.6**, corvane **27.4** |
+
+Bold is clear of 45-55 with the whole interval. Income per round and win
+rate correlate at 0.6, and the five HIGH champions other than bastion are
+the five AREA engines Phase 3 flagged. RQ-041 has the reading and the order
+of patches.
 
 The consequence for Phase 4 is the important part. A champion win rate read in
 a field where sieging wins is mostly a measure of that champion's siege
@@ -194,23 +214,18 @@ python tools/run_batch.py reports/requests/batch_0038.json --workers 4   # the p
 
 In order:
 
-1. **Merge and read `batch_0044`**, the champion read. Four cloud sessions
-   each push `reports/shards/batch_0044.partial.shardKof4.jsonl.gz`; gunzip
-   them into `reports/raw/` and run
-   `python tools/run_batch.py reports/requests/batch_0044.json --merge`.
-   Then Phase 4 proper: outliers first, one lever per patch, and read each
-   patch as a before/after pair on the same field and seed.
-2. **Champion balance**, on a mixed field, not a mirror — and once §9 has a
-   winner, against that rather than against fixed personalities. RQ-028 still
-   applies: with 5 champions per role a champion plays 40% of games, so
-   ±2.2-point verdicts need roughly 5,000 games. Consider a T1 sweep to find
-   outliers and a T2 batch to confirm only those.
-3. **Pacing**, when RQ-038 is ruled. `tower_hp` 16 has never been confirmed,
+1. **Get the RQ-039 ruling, then patch the AREA conversion** and read it as
+   a before/after pair against `batch_0044` (same field, same seed, sharded
+   across four sessions as `batch_0044` was). Five HIGH champions should move
+   at once. Do not tune the five engines kit by kit first; RQ-041 says why.
+2. **bastion**, one lever, one pair.
+3. **The bottom five** on the re-read field.
+4. **Pacing**, when RQ-038 is ruled. `tower_hp` 16 has never been confirmed,
    and rules 1.7.0 moved the game to median 18 with a fifth of games
    unresolved. Do not tune it on T1.
-4. **The objective's payoff**, when RQ-039 is ruled. Do not re-run an AP-priced
-   objective lever; `log/patches/P-0009.json` records why.
-5. **Re-run the exploit sweep.** The Phase 5 gate was met under rules 1.0.0.
+5. **The objective's payoff** beyond the AREA question: do not re-run an
+   AP-priced objective lever; `log/patches/P-0009.json` records why.
+6. **Re-run the exploit sweep.** The Phase 5 gate was met under rules 1.0.0.
 
 Running sims in this environment: the cloud container is torn down whenever
 the session goes idle with nothing harness-tracked running - sometimes within

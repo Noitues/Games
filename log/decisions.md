@@ -336,3 +336,41 @@ Consequences:
   in shape (one lanes for five rounds first), so a champion is read against
   the strongest play in two forms rather than against a script that loses.
 - **Stop breeding.** A generation 3 would be measuring noise around 50%.
+
+## Iteration 8 - the champion read on the settled field
+
+| id | question | finding | status |
+|---|---|---|---|
+| RQ-041 | Which champions are off 50% on the strongest field, and why? | **Ten of twenty-five are clear of the 45-55 band, and the spread is an income spread.** `batch_0044`, 4,000 games (four shards on four cloud sessions), the sieger and `SM_g2_lane6` drawn per game, about 1,600 games and ±2.4 points per champion. Under `random_by_role_no_duplicates` a win rate is against a champion's four role peers. **Jungle and ADC are balanced** - every champion inside 45-55. **Support** is the broken role: wisp 77.4% [75.3, 79.3], pallas 57.5%, grivven 48.3%, lumen 38.6%, corvane 27.4% [25.2, 29.7] - a fifty-point spread. **Top**: bastion 74.9% [72.7, 77.0] over marrow 50.5%, vurmak 45.7%, kaelis 40.3%, ossuar 38.3%. **Mid**: sable 58.6%, ashwyn 58.4%, quillan 53.5%, noctis 44.4%, vellum 35.0%. Income per round correlates with win rate at 0.60 across the roster (Spearman 0.56). The five champions above 1.5x roster-mean AP - wisp, sable, ashwyn, pallas, quillan, the AREA engines Phase 3 found and could not fix without a pillar ruling - are five of the six HIGH champions; the three weakest earners in the roster - corvane 0.48 AP a round, lumen 0.80, kaelis 1.16 - are three of the five LOW ones. The one outlier that is not an income story is bastion: 2.36 AP a round, ordinary for Top, but 0.26 deaths a game, the lowest on the roster, and 74.9%. | lab; patches below |
+| RQ-042 | Is the map symmetric enough? | **South wins 53.2% [51.7, 54.8]** over 4,000 games with seats swapped, so this is the board, not the players. The rulebook's one deliberate asymmetry is that Dragon sits a hex nearer South and Baron a hex nearer North; on the settled field teams take Dragon 1.36 times a game and Baron 0.40, so the objective South is nearer is the one that gets taken. Priority is 51.0% [49.5, 52.5], in band. | **HUMAN** |
+
+### What the champion read says about the order of work
+
+Phase 3 stalled on a pillar question: an AREA ability banks every chip it
+deals as AP, one ability supplies 94-98% of each engine's income, and the two
+shapes put to the lead designer (cap what an AREA banks per use, or stop area
+damage on waves converting) were never ruled on. Phase 4 has now measured the
+same five champions at 53-77% on a 4,000-game field. **The economy outlier
+list and the champion outlier list are the same list.** Tuning those five
+kits one at a time would be re-pricing the AREA conversion champion by
+champion, which is the pillar decision made sideways; and the champions at
+the bottom (corvane, lumen, kaelis, vellum, ossuar) are short of income in a
+game where income is the win condition, so buffing them one lever at a time
+chases the same thing from below.
+
+Recommended order, as the lab sees it:
+
+1. **Rule on RQ-039's AREA conversion first** (cap per use, or no conversion
+   on waves). One pillar patch, read as a before/after pair against
+   `batch_0044` on the same field and seed, will move five HIGH champions at
+   once and say how much of the spread is the pillar.
+2. **Then bastion**, the one outlier the pillar will not touch: a Top that
+   dies a quarter as often as its peers and wins three games in four. Read
+   its kit (`roster/roster_v1.6.0.json`) for what makes it unkillable, and
+   patch that one lever.
+3. **Then the bottom five**, on the re-read field, one lever each, cheapest
+   income lever first.
+4. **RQ-042** is the lead designer's: a map fix, or accept 53-47 and document it.
+
+A 4,000-game read costs about 8 hours on four cloud sessions with the shard
+flag; a targeted before/after on ten champions can use 2,000.
