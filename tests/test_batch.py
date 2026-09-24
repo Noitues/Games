@@ -39,3 +39,22 @@ def test_anchor_share_puts_an_anchor_in_one_seat():
     # the two seats of a swapped pair see the same draw
     a, b = play_one((0, spec)), play_one((1, spec))
     assert a["tiers"]["north"] == b["tiers"]["south"] and a["tiers"]["south"] == b["tiers"]["north"]
+
+
+def test_shards_partition_the_batch_and_merge_back(tmp_path):
+    from engine.batch import merge_checkpoints, shard_indices
+    n = 6
+    parts = [shard_indices(n, (k, 3)) for k in range(3)]
+    assert sorted(sum(parts, [])) == list(range(n))
+    assert all(len(p) == 2 and p[0] % 2 == 0 and p[1] == p[0] + 1 for p in parts)  # pairs intact
+    paths = []
+    for k in range(3):
+        ck = str(tmp_path / f"shard{k}.jsonl")
+        res = run_batch(_spec(n), workers=1, checkpoint=ck, shard=(k, 3))
+        assert [r["game_index"] for r in res] == parts[k]
+        paths.append(ck)
+    merged = merge_checkpoints(paths, n)
+    assert [r["game_index"] for r in merged] == list(range(n))
+    import pytest
+    with pytest.raises(ValueError):
+        merge_checkpoints(paths[:2], n)

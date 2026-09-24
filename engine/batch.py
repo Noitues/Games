@@ -99,22 +99,55 @@ def play_one(args: tuple) -> dict:
     return out
 
 
-def run_batch(spec: dict, workers: int = 0, checkpoint: Optional[str] = None) -> List[dict]:
-    """Play every game in the spec. With `checkpoint`, each finished game is
-    appended to that JSONL file as it completes and games already in it are
-    not replayed, so a run killed part-way (the cloud container is reclaimed
-    when idle) resumes where it stopped instead of starting over."""
-    n = spec["games"]
+def shard_indices(n: int, shard: Optional[Tuple[int, int]]) -> List[int]:
+    """The game indices one shard plays. Seat-swapped pairs (2k, 2k+1) stay
+    together so a shard's own result is still seat-balanced."""
+    if not shard:
+        return list(range(n))
+    k, m = shard
+    if not (0 <= k < m):
+        raise ValueError(f"shard {k}/{m} out of range")
+    return [i for i in range(n) if (i // 2) % m == k]
+
+
+def load_checkpoint(path: str, n: int) -> Dict[int, dict]:
     done: Dict[int, dict] = {}
-    if checkpoint and os.path.exists(checkpoint):
-        with open(checkpoint) as fh:
+    if path and os.path.exists(path):
+        with open(path) as fh:
             for line in fh:
                 if line.strip():
                     r = json.loads(line)
-                    if r.get("game_index", -1) < n:
+                    if 0 <= r.get("game_index", -1) < n:
                         done[r["game_index"]] = r
-    jobs = [(i, spec) for i in range(n) if i not in done]
-    spec["resumed_games"] = len(done)
+    return done
+
+
+def merge_checkpoints(paths: List[str], n: int) -> List[dict]:
+    """Assemble a full batch from shard checkpoint files. Raises if any game
+    index is missing, naming the gaps, so a partial merge cannot be reported
+    as a complete batch."""
+    done: Dict[int, dict] = {}
+    for p in paths:
+        done.update(load_checkpoint(p, n))
+    missing = [i for i in range(n) if i not in done]
+    if missing:
+        raise ValueError(f"{len(missing)} of {n} games missing, e.g. {missing[:10]}")
+    return [done[i] for i in range(n)]
+
+
+def run_batch(spec: dict, workers: int = 0, checkpoint: Optional[str] = None,
+              shard: Optional[Tuple[int, int]] = None) -> List[dict]:
+    """Play every game in the spec, or one shard of them. With `checkpoint`,
+    each finished game is appended to that JSONL file as it completes and
+    games already in it are not replayed, so a run killed part-way (the cloud
+    container is reclaimed when idle) resumes where it stopped instead of
+    starting over. With `shard=(k, m)`, only that shard's games are played and
+    returned; `merge_checkpoints` assembles the shards into the batch."""
+    n = spec["games"]
+    indices = shard_indices(n, shard)
+    done = load_checkpoint(checkpoint, n) if checkpoint else {}
+    jobs = [(i, spec) for i in indices if i not in done]
+    spec["resumed_games"] = len([i for i in indices if i in done])
     workers = workers or min(os.cpu_count() or 1, 8)
 
     def keep(r: dict) -> None:
@@ -130,4 +163,4 @@ def run_batch(spec: dict, workers: int = 0, checkpoint: Optional[str] = None) ->
         with Pool(workers) as pool:
             for r in pool.imap_unordered(play_one, jobs, chunksize=1):
                 keep(r)
-    return [done[i] for i in range(n)]
+    return [done[i] for i in indices]
