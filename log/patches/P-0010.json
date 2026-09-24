@@ -80,7 +80,7 @@
         "champion_kill": 0.41,
         "tower_kill": 0.06
       },
-      "tower_kill_reads_as": "about 0.8 towers destroyed per game across both teams; first tower falls at median round 12"
+      "tower_kill_reads_as": "about 0.8 towers destroyed per game across both teams; only 50% of games see any tower fall, and the first falls at median round 16"
     },
     "objectives": {
       "dragon_secured_wr": [
