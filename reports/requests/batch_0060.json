@@ -40,6 +40,7 @@
     }
   },
   "extra": [
+    "WITHDRAWN 2026-09-27: the designer rejected round/Baron gates; workers stopped before any shard landed. Superseded by batches 0061-0064 (structure decay).",
     "RQ-049 B1: phase rules (proposal, config only): tier-1 towers open round 5, tier-2 round 9; the Nexus takes damage only from the Baron holder, or anyone from round 16; +1 AP for a champion last hit on a wave; Baron spawns round 10. Same seed and field as batch_0059, so games pair by seed and draw.",
     "Read with tools/phase_read.py on the raw dump. Four shards of 400."
   ]
