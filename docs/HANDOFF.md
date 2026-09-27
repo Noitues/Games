@@ -177,16 +177,19 @@ In order:
   `send_later` check-in as the backup. `run_batch` checkpoints every
   finished game to `reports/raw/<batch>.partial*.jsonl` and resumes from it
   on relaunch.
-- **Sessions in flight for `batch_0057`** (created 2026-09-27 ~04:25 UTC;
-  each pushes `reports/shards/batch_0057.partial.shardKof4.jsonl.gz` and
-  replies one line; archive when done):
-  - shard 0/4: `session_01FhfTUaiSBEAQc7GVw55rXr`
-  - shard 1/4: `session_017CpNqr55Ed1gEwQUCi2APq`
-  - shard 2/4: the parent session (this one), checkpoint in its own
-    `reports/raw/`; if the parent died, that shard restarts from zero on a
-    new worker.
-  - shard 3/4: `session_01Td9MBokERznBTK6mFG4SMz` (launched alongside at the
-    lead designer's instruction; three workers plus the parent).
+- **Sessions in flight for `batch_0057`** (Sonnet 5 workers, created
+  2026-09-27 ~04:37 UTC; each pushes
+  `reports/shards/batch_0057.partial.shardKof4.jsonl.gz` and replies one
+  line; archive when done). The parent runs no shard itself and idles on a
+  `send_later` check-in, which fires into it and merges once all four land.
+  - shard 0/4: `session_01SvJXpfkvff4LRB8w5weYpG`
+  - shard 1/4: `session_01TMY5jf9k4AhXEKGqrE8M1m`
+  - shard 2/4: `session_01XUMtJM5AiGsL5Y2Q52L4e3`
+  - shard 3/4: `session_016Bjs2YCPHQwnEMcA2wkjS7`
+- **Worker model.** The lead designer cleared lower models for sim runs.
+  A worker only launches, re-arms a Monitor and pushes one file, and the sim
+  itself is Python, so the model never touches a number. Sonnet 5 is the
+  default; Haiku is cheaper but a single missed re-arm loses a shard.
 - **A worker's brief** (the text used for 0055 and the 0057 shards): confirm
   branch and request; launch detached with `nohup … & disown`; arm a 30-min
   Monitor that prints the checkpoint line count, exits 0 on the done line,
@@ -200,8 +203,8 @@ In order:
   A 120-game personality batch is 55–95 minutes; a 1,000-game shard of a
   sieging field 7–10 hours. `get_session` shows a worker's latest count.
 - **Usage.** Workers reported the account approaching its seven-day limit on
-  2026-09-24; two workers at a time plus the parent was the compromise
-  until the designer asked for all four `batch_0057` shards at once. A 1-hour worker costs about $2 in tokens,
+  2026-09-24; two workers at a time was the compromise until the designer
+  asked for all four `batch_0057` shards at once and cleared lower models. A 1-hour worker costs about $2 in tokens,
   nearly all of it Monitor re-arms.
 - Raw dumps (`--dump-raw`) go to `reports/raw/`, gitignored. The stall
   analysis in RQ-038 came from `batch_0054`'s dump with a 40-line script
