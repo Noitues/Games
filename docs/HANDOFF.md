@@ -57,7 +57,8 @@ the old economy) cannot fall. Read so far, all on the personality field, seed
 | 0049 | 6 | 12 | old | 49% | 20 (p10 15) | round 8 |
 | 0050 | 8 | 12 | centred | 15% | 20 | round 12 |
 | 0051 | 4 | 8 | centred | **75%** | **16** (p10 11, p90 20) | round 4 |
-| 0053 | 6 | 8 | centred | *pull and read* | | |
+| 0053 | 6 | 8 | centred | 39% | 20 (p10 16) | round 8 |
+| 0055 | 4 | 6 | centred | *running* | | |
 
 Targets: median 13–18 and Nexus kills above 90%. `batch_0051` is the first
 1.8.0 read where most games end: median in band, Nexus kills 75%, and the

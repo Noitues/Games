@@ -21,14 +21,14 @@
   "seed": 3801,
   "replays": 2,
   "config_overrides": {
-    "tower_hp": 6,
+    "tower_hp": 4,
     "kill_ap": 3,
     "death_band_bonus": 1,
     "area_center": true,
     "nexus_hp": 8
   },
   "extra": [
-    "P-0013: roster 1.7.0, cooldown 2 on the four AREA engines (sable W, wisp W, ashwyn W, quillan R), read on the tower/Nexus HP the pacing pass chooses (placeholder tower 6 / Nexus 8 - edit if batches 0051/0053 pick otherwise). Same field and seed as batches 0039 and 0046-0053.",
-    "Judge against the batch with the same HP and roster 1.6.0: no champion above 1.5x roster-mean AP, none of the four below 40%; then the personality read and pacing."
+    "P-0013: roster 1.7.0, cooldown 2 on the four AREA engines (sable W, wisp W, ashwyn W, quillan R), read on tower 4 / Nexus 8 - the pair the pacing pass chose (batch_0051: median 16, Nexus kills 75%; batch_0053 at tower 6 / Nexus 8: median 20, 39%). Same field and seed as batches 0039 and 0046-0053.",
+    "Judge against batch_0051 (same HP, roster 1.6.0): no champion above 1.5x roster-mean AP, none of the four below 40%; then the personality read and pacing (P-0013 slows Mid wave-clear, so the siege may slow with it)."
   ]
 }

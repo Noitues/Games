@@ -241,8 +241,9 @@ the wider objective question stay open for later.
 | batch_0048 | as batch_0047, tower HP 8 | 120 | Nexus kills 30%, median 20, first tower round 11, 97% of games see a tower fall. Sieger 91% on the tiebreak - unreadable. |
 | batch_0049 | as batch_0047, tower HP 6 | 120 | Nexus kills 49%, median 20 (p10 15), first tower round 8. Halfway; the Nexus at 12 is the next wall. |
 | batch_0051 | 1.8.0 full, tower HP 4, Nexus HP 8 | 120 | Median 16, Nexus kills 75%, first tower round 4. The first 1.8.0 read where most games end; the sieger is 89.7% on roster 1.6.0. |
-| batch_0052 | 1.8.0 full, tower HP 4, Nexus HP 12 | 120 | pending |
-| batch_0053 | 1.8.0 full, tower HP 6, Nexus HP 8 | 120 | pending |
-| batch_0054 | roster 1.7.0 (P-0013) on the chosen HP pair | 120 | pending |
+| batch_0052 | 1.8.0 full, tower HP 4, Nexus HP 12 | 120 | not run: batch_0051 (Nexus 8) reached 75% Nexus kills, so Nexus 12 could only be slower; request kept for the record. |
+| batch_0053 | 1.8.0 full, tower HP 6, Nexus HP 8 | 120 | Median 20 (p10 16), Nexus kills 39%, first tower round 8, 81 of 120 games to the round limit. Two more tower HP cost 36 points of Nexus kills against batch_0051. Sieger 100% on the tiebreak - unreadable. |
+| batch_0054 | roster 1.7.0 (P-0013) on tower 4 / Nexus 8, paired with batch_0051 | 120 | running |
+| batch_0055 | 1.8.0 full, tower HP 4, Nexus HP 6 (third HP pass), paired with batch_0051 | 120 | running |
 | batch_0050 | as batch_0048 with P-0012 (centred AREA) | 120 | **P-0012 partial.** Engines down a third (sable 2.54x -> 1.87x, pallas to 1.01x) but four remain above 1.5x. Nexus kills 15% at tower HP 8 - pacing still the wall. |
 
