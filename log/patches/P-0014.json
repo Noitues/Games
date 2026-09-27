@@ -1,14 +1,40 @@
 {
   "patch_id": "P-0014",
-  "from": {"rules": "1.8.0", "roster": "1.7.0", "ai": "1.5.0"},
-  "to": {"roster": "1.8.0"},
+  "from": {
+    "rules": "1.8.0",
+    "roster": "1.7.0",
+    "ai": "1.5.0"
+  },
+  "to": {
+    "roster": "1.8.0"
+  },
   "lever_class": "kit",
   "changes": [
-    {"target": "roster:marrow.R.cooldown", "from": 1, "to": 2},
-    {"target": "roster:bastion.Q.HIT.k", "from": 3, "to": 2},
-    {"target": "roster:wisp.R.cooldown", "from": 1, "to": 2},
-    {"target": "roster:corvane.Q.cooldown", "from": 2, "to": 1},
-    {"target": "roster:ossuar.Q.HIT.k", "from": 1, "to": 2}
+    {
+      "target": "roster:marrow.R.cooldown",
+      "from": 1,
+      "to": 2
+    },
+    {
+      "target": "roster:bastion.Q.HIT.k",
+      "from": 3,
+      "to": 2
+    },
+    {
+      "target": "roster:wisp.R.cooldown",
+      "from": 1,
+      "to": 2
+    },
+    {
+      "target": "roster:corvane.Q.cooldown",
+      "from": 2,
+      "to": 1
+    },
+    {
+      "target": "roster:ossuar.Q.HIT.k",
+      "from": 1,
+      "to": 2
+    }
   ],
   "evidence": "batch_0057 (4,000 games, sieger + lane6, tower 4 / Nexus 8, roster 1.7.0; RQ-048): bastion 62.2% [59.7, 64.6], marrow 59.4% [57.0, 61.8], wisp 59.2% [56.8, 61.6], ossuar 41.1% [38.8, 43.6], corvane 41.1% [38.7, 43.5]. marrow's R is the AREA engine P-0013 missed (1.87x income, cooldown 1); bastion wins on a 3-hit Q and dies 0.14 times a game; wisp stayed high after its W went to cooldown 2; corvane earns 0.25x the mean with two of its basics on cooldown 2; ossuar's only cheap damage is a 1-hit Q.",
   "hypothesis": "One lever on each moves each champion toward 50 without touching the other twenty. Changing five different champions at once still attributes by champion, since each champion's own win-rate delta is dominated by its own change.",
@@ -16,5 +42,26 @@
   "revert_if": "Any of the five overshoots past the other side of the band (below 43 or above 57), or any untouched champion moves by more than 5 points.",
   "side_effects": "Two kits carry declared exceptions: bastion's R now exceeds the 1.75x spread cap because its Q shrank, and wisp's R nets 2.5 at cooldown 2. ossuar sits at 28 points on paper.",
   "pillar_change": false,
-  "note": "Read as batch_0058: 2,000 games, seed 5701 (paired with batch_0057 games 0-1999), four shards of 500."
+  "note": "Read as batch_0058: 2,000 games, seed 5701 (paired with batch_0057 games 0-1999), four shards of 500.",
+  "result": {
+    "batch": "batch_0058",
+    "paired_with": "batch_0057 games 0-1999",
+    "verdict": "partial - adopted",
+    "five": {
+      "ossuar": "42.4 -> 50.5 (in band)",
+      "bastion": "62.2 -> 57.8 (still high)",
+      "wisp": "60.2 -> 56.4 (still high)",
+      "marrow": "58.8 -> 44.9 (overshoot, inside revert line 43)",
+      "corvane": "40.4 -> 42.9 (still low)"
+    },
+    "untouched_moves_over_5": {
+      "vurmak": "41.9 -> 49.3, toward 50 (Top, marrow's lane rival)"
+    },
+    "new_outside_band": {
+      "grivven": "48.5 -> 43.9"
+    },
+    "spread_sd": "5.3 -> 3.5 points",
+    "median_rounds": "12 -> 12",
+    "note": "One of five in band; revert_if not triggered in spirit (marrow 44.9 > 43; the one >5-point untouched move is toward 50). Follow-up levers read on the pacing the designer picks from RQ-049, since the decay rules will move champion win rates anyway."
+  }
 }
