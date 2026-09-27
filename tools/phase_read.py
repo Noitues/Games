@@ -25,10 +25,13 @@ from collections import Counter, defaultdict
 
 TEAMS = ("north", "south")
 WINDOWS = (("laning", 1, 4), ("siege_objectives", 5, 8), ("fights_siege", 9, 12), ("baron_end", 13, 99))
-# How each AP source is filed. Anything not named here is farm: wave and
-# monster chips under whatever step name the engine gives them.
-SOURCE_CLASS = {"base": "base", "kill": "kills", "tower_kill": "towers", "last_hit": "farm",
-                "blue_buff": "farm"}
+# How each AP source is filed (the names engine/resolve.py gives gain()).
+# Anything not named here is farm.
+SOURCE_CLASS = {"base": "base", "champion_kill": "kills", "tower_kill": "towers",
+                "chips_wave": "lane", "last_hit": "lane",
+                "chips_monster": "jungle", "blue_buff": "jungle", "red_buff": "jungle",
+                "dragon": "objectives", "baron": "objectives"}
+CLASSES = ("lane", "jungle", "objectives", "towers", "kills")
 
 
 def other(t):
@@ -66,7 +69,8 @@ def at(trace, r):
 def classed(ap):
     out = Counter()
     for src, n in ap.items():
-        out[SOURCE_CLASS.get(src, "farm")] += n
+        out[SOURCE_CLASS.get(src, "lane")] += n
+    out["farm"] = out["lane"] + out["jungle"]
     return out
 
 
@@ -155,9 +159,9 @@ def read(games):
            "tier_wr": {k: tier_wins[k] / tier_games[k] for k in sorted(tier_games)}}
     for name, _, _ in WINDOWS:
         c = window_ap[name]
-        earned = sum(v for k, v in c.items() if k != "base")
+        earned = sum(c[k] for k in CLASSES)
         out["window_ap_share"][name] = {k: round(c[k] / earned, 3) if earned else 0
-                                        for k in ("farm", "towers", "kills")}
+                                        for k in CLASSES}
         out["window_ap_share"][name]["earned_per_game"] = round(earned / n, 2) if n else 0
     for k, (won, decided, tied) in leaders.items():
         p, lo, hi = wilson(won, decided)
@@ -173,10 +177,10 @@ def to_text(name, o):
         f"{k} r{o['firsts_median'][k]} ({o['firsts_share'][k]:.0%})" for k in sorted(o["firsts_median"])))
     lines.append(f"  Baron taken in {o['baron_taken']:.0%}; Nexus endings won by the Baron holder "
                  f"{o['nexus_kills_by_baron_holder'][0]}/{o['nexus_kills_by_baron_holder'][1]}")
-    lines.append("  earned AP by window (share farm / towers / kills, AP per game):")
+    lines.append("  earned AP by window (share " + " / ".join(CLASSES) + ", AP per game):")
     for w, s in o["window_ap_share"].items():
-        lines.append(f"    {w:<18} {s['farm']:.0%} / {s['towers']:.0%} / {s['kills']:.0%}   "
-                     f"{s['earned_per_game']}")
+        lines.append(f"    {w:<18} " + " / ".join(f"{s[k]:.0%}" for k in CLASSES)
+                     + f"   {s['earned_per_game']}")
     lines.append("  leader win rate (Wilson 95%):")
     for k, s in o["leader_wr"].items():
         lines.append(f"    {k:<22} {s['wr']:.1%} [{s['lo']:.1%}, {s['hi']:.1%}]  n={s['n']} tied={s['tied']}")
