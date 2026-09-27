@@ -1,0 +1,38 @@
+{
+  "batch_id": "batch_0072",
+  "rules": "1.8.0",
+  "roster": "1.8.0",
+  "ai": "1.5.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3,
+    "personality_pool": [
+      "T2_sieger",
+      "SM_g2_lane6",
+      "SM_g3_phase"
+    ]
+  },
+  "games": 600,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 5901,
+  "replays": 2,
+  "config_overrides": {
+    "kill_ap": 3,
+    "death_band_bonus": 2,
+    "area_center": true,
+    "structure_decay": 1,
+    "structure_decay_every": 2,
+    "tower_hp": 10,
+    "nexus_hp": 18,
+    "tower_decay_floor": 4,
+    "nexus_decay_floor": 6,
+    "kill_ap_waves": 2,
+    "baron_wave_bonus": 4
+  },
+  "extra": [
+    "RQ-051 (designer: favour the leader of each phase to 55-60%). C3 - both levers.",
+    "Working rules approved 2026-09-27: towers 10 (floor 4), Nexus 18 (floor 6), 1 HP every other round, kill = 2 waves. Same seed and field as batch_0059/0065-0068 (games pair by seed). Read with tools/phase_read.py. One shard (--shard 0/1)."
+  ]
+}
