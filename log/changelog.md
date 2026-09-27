@@ -263,7 +263,7 @@ the wider objective question stay open for later.
 | batch | matchup | games | result |
 |---|---|---|---|
 | batch_0058 | roster 1.8.0 (P-0014), field and seed of batch_0057, four shards | 2000 | running |
-| batch_0059 | RQ-049 B0: today's rules, pool T2_sieger / SM_g2_lane6 / SM_g3_phase, four shards | 1600 | running |
+| batch_0059 | RQ-049 B0: today's rules, pool T2_sieger / SM_g2_lane6 / SM_g3_phase, four shards | 1600 | **Only sieging pays.** Median 13, all Nexus, first tower round 4. Phase-leader win rates: farm lead at round 4 45.6%, towers+Dragons lead at round 8 72.7%, kill lead in rounds 9-12 34.1%, Baron holder 34.2%. Kills are 4-8% of earned AP. Sieger 69.6%, lane6 57.9%, SM_g3_phase 22.4%. |
 | batch_0060 | RQ-049 B1: round/Baron gates | 1600 | withdrawn: the designer rejected gates |
 | batch_0061 | RQ-049 decay: tower 10 / Nexus 20, 1 HP a round, kill = 1 wave, paired with batch_0059 | 600 | withdrawn: decay slowed by the designer |
 | batch_0062 | as 0061, kill = 2 waves | 600 | withdrawn: decay slowed by the designer |

@@ -1,0 +1,96 @@
+{
+  "batch_0059": {
+    "games": 1600,
+    "end_reason": {
+      "nexus": 1600
+    },
+    "rounds_median": 13,
+    "rounds_p90": 16,
+    "firsts_median": {
+      "first_kill": 4,
+      "first_tower": 4,
+      "first_dragon": 5,
+      "first_baron": 12
+    },
+    "firsts_share": {
+      "first_kill": 0.960625,
+      "first_tower": 1.0,
+      "first_dragon": 0.9575,
+      "first_baron": 0.408125
+    },
+    "baron_taken": 0.408125,
+    "nexus_kills_by_baron_holder": [
+      223,
+      653
+    ],
+    "window_ap_share": {
+      "laning": {
+        "lane": 0.258,
+        "jungle": 0.669,
+        "objectives": 0.002,
+        "towers": 0.034,
+        "kills": 0.037,
+        "earned_per_game": 56.64
+      },
+      "siege_objectives": {
+        "lane": 0.34,
+        "jungle": 0.425,
+        "objectives": 0.024,
+        "towers": 0.126,
+        "kills": 0.085,
+        "earned_per_game": 57.54
+      },
+      "fights_siege": {
+        "lane": 0.305,
+        "jungle": 0.457,
+        "objectives": 0.038,
+        "towers": 0.128,
+        "kills": 0.072,
+        "earned_per_game": 48.13
+      },
+      "baron_end": {
+        "lane": 0.365,
+        "jungle": 0.388,
+        "objectives": 0.064,
+        "towers": 0.15,
+        "kills": 0.033,
+        "earned_per_game": 17.23
+      }
+    },
+    "leader_wr": {
+      "farm_r4": {
+        "wr": 0.456,
+        "lo": 0.431,
+        "hi": 0.481,
+        "n": 1544,
+        "tied": 56
+      },
+      "structures_dragons_r8": {
+        "wr": 0.727,
+        "lo": 0.701,
+        "hi": 0.751,
+        "n": 1248,
+        "tied": 352
+      },
+      "kills_r9_12": {
+        "wr": 0.341,
+        "lo": 0.311,
+        "hi": 0.373,
+        "n": 911,
+        "tied": 592
+      },
+      "baron": {
+        "wr": 0.342,
+        "lo": 0.306,
+        "hi": 0.379,
+        "n": 653,
+        "tied": 0
+      }
+    },
+    "tier_wr": {
+      "SM_g2_lane6": 0.578544061302682,
+      "SM_g3_phase": 0.22378277153558052,
+      "T2_sieger": 0.6957720588235294
+    }
+  }
+}
