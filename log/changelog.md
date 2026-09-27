@@ -256,7 +256,7 @@ the wider objective question stay open for later.
 | artefact | version | change |
 |---|---|---|
 | roster | 1.8.0 | P-0014: marrow R cooldown 1 -> 2, bastion Q HIT 3 -> 2, wisp R cooldown 1 -> 2, corvane Q cooldown 2 -> 1, ossuar Q HIT 1 -> 2. |
-| engine | - | Phase knobs, all off by default (RQ-049): `tower_unlock_round`, `nexus_needs_baron`, `nexus_unlock_round`, `last_hit_ap`. Every game records a per-round `trace` (AP by source, kills, towers lost, Dragons, Baron). |
+| engine | - | RQ-049 knobs, all off by default: `structure_decay` / `structure_decay_floor` (structures lose a step a round, floor 1), `kill_ap_waves` (a kill pays N current waves), `last_hit_ap`. The round/Baron gates tried first were rejected by the designer and removed. Every game records a per-round `trace` (AP by source, kills, towers lost, Dragons, Baron). |
 | ai | 1.5.0 | `SM_g3_phase` state machine: laner -> sieger/objective from round 5 -> brawler after a won fight from round 9 -> objective on Baron from round 10 -> sieger with Baron. |
 | tools | - | `phase_read.py`: AP share by window (lane / jungle / objectives / towers / kills), phase-leader win rates, firsts in order. |
 
@@ -264,4 +264,8 @@ the wider objective question stay open for later.
 |---|---|---|---|
 | batch_0058 | roster 1.8.0 (P-0014), field and seed of batch_0057, four shards | 2000 | running |
 | batch_0059 | RQ-049 B0: today's rules, pool T2_sieger / SM_g2_lane6 / SM_g3_phase, four shards | 1600 | running |
-| batch_0060 | RQ-049 B1: phase rules (towers open r5/r9, Nexus needs Baron or r16, +1 AP last hit, Baron spawns r10), paired with batch_0059 | 1600 | running |
+| batch_0060 | RQ-049 B1: round/Baron gates | 1600 | withdrawn: the designer rejected gates |
+| batch_0061 | RQ-049 decay: tower 10 / Nexus 20, 1 HP a round, kill = 1 wave, paired with batch_0059 | 600 | running |
+| batch_0062 | as 0061, kill = 2 waves | 600 | running |
+| batch_0063 | decay: tower 12 / Nexus 24, kill = 1 wave | 600 | running |
+| batch_0064 | as 0063, kill = 2 waves | 600 | running |
