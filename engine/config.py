@@ -59,11 +59,15 @@ DEFAULT_CONFIG = {
     "area_center": True,
     # RQ-049 (designer's shape, replacing the rejected round gates): towers
     # and Nexus start high and every standing structure loses
-    # `structure_decay` HP at each round's Upkeep from round 2, never below
-    # `structure_decay_floor` - decay alone never destroys one, a team still
-    # has to hit it. 0 = off. Early structures are walls; late ones are glass.
+    # `structure_decay` HP every `structure_decay_every` rounds (at Upkeep,
+    # from round 2), never below its floor - decay alone never destroys one, a
+    # team still has to hit it. 0 = off. Early structures are walls; late
+    # ones are glass, down to the floor.
     "structure_decay": 0,
-    "structure_decay_floor": 1,
+    "structure_decay_every": 1,
+    "structure_decay_floor": 1,             # both, unless set per type below
+    "tower_decay_floor": None,
+    "nexus_decay_floor": None,
     # RQ-049: a champion kill worth this many of the current minion waves
     # (3 / 4 / 5 chips as waves grow). 0 = off, `kill_ap` applies.
     "kill_ap_waves": 0,

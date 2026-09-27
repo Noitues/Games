@@ -40,6 +40,26 @@ def test_structures_lose_a_step_a_round_down_to_the_floor(board, kits):
     assert t.chips == 2
 
 
+def test_decay_every_other_round_with_type_floors(board, kits):
+    st = _st(board, kits, **dict(DECAY, structure_decay_every=2,
+                                 tower_decay_floor=4, nexus_decay_floor=8))
+    t, nx = st.structures["s_mid_T1"], st.structures["s_nexus"]
+    seen = []
+    for r in range(1, 16):
+        st.round = r
+        decay_structures(st)
+        seen.append(t.chips)
+    # rounds 3, 5, 7, ... take a step; the tower stops at its floor of 4
+    assert seen[:8] == [10, 10, 9, 9, 8, 8, 7, 7]
+    assert t.chips == 4 and nx.chips == 9          # nexus: 16 - 7 steps
+    st.round = 17
+    decay_structures(st)
+    assert nx.chips == 8
+    st.round = 19
+    decay_structures(st)
+    assert nx.chips == 8                           # held at its floor
+
+
 def test_kill_is_worth_waves(board, kits):
     st = _st(board, kits, **DECAY)
     st.round = 1

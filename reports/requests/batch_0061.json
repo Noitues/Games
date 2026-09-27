@@ -28,6 +28,7 @@
     "kill_ap_waves": 1
   },
   "extra": [
+    "WITHDRAWN 2026-09-27: the designer asked for slower decay (every other round and/or floors); workers stopped at ~5 games. Superseded by batches 0065+.",
     "RQ-049 decay grid: towers start 10, Nexus 20, every structure loses 1 HP a round from round 2 (floor 1); a champion kill pays 1 x the current minion wave (3/4/5 AP). Same seed and field as batch_0059, so games 0-599 pair by seed and draw.",
     "Read with tools/phase_read.py on the raw dump. One shard (--shard 0/1)."
   ]

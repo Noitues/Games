@@ -123,14 +123,19 @@ def wave_size(state: GameState) -> int:
 
 
 def decay_structures(state: GameState) -> None:
-    """RQ-049: every standing tower and Nexus loses `structure_decay` HP a
-    round, never below the floor. The chips go to the supply."""
+    """RQ-049: every standing tower and Nexus loses `structure_decay` HP every
+    `structure_decay_every` rounds from round 2, never below its floor. The
+    chips go to the supply."""
     cfg = state.config
     step = cfg.get("structure_decay", 0)
-    if not step or state.round < 2:
+    every = max(1, cfg.get("structure_decay_every", 1))
+    if not step or state.round < 2 or (state.round - 1) % every:
         return
-    floor = cfg.get("structure_decay_floor", 1)
+    base = cfg.get("structure_decay_floor", 1)
+    floors = {"tower": cfg.get("tower_decay_floor"), "nexus": cfg.get("nexus_decay_floor")}
     for s in state.structures.values():
+        floor = floors.get(s.stype)
+        floor = base if floor is None else floor
         if s.alive and s.chips > floor:
             s.chips = max(floor, s.chips - step)
             state.touch()

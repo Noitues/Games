@@ -265,7 +265,7 @@ the wider objective question stay open for later.
 | batch_0058 | roster 1.8.0 (P-0014), field and seed of batch_0057, four shards | 2000 | running |
 | batch_0059 | RQ-049 B0: today's rules, pool T2_sieger / SM_g2_lane6 / SM_g3_phase, four shards | 1600 | running |
 | batch_0060 | RQ-049 B1: round/Baron gates | 1600 | withdrawn: the designer rejected gates |
-| batch_0061 | RQ-049 decay: tower 10 / Nexus 20, 1 HP a round, kill = 1 wave, paired with batch_0059 | 600 | running |
-| batch_0062 | as 0061, kill = 2 waves | 600 | running |
-| batch_0063 | decay: tower 12 / Nexus 24, kill = 1 wave | 600 | running |
-| batch_0064 | as 0063, kill = 2 waves | 600 | running |
+| batch_0061 | RQ-049 decay: tower 10 / Nexus 20, 1 HP a round, kill = 1 wave, paired with batch_0059 | 600 | withdrawn: decay slowed by the designer |
+| batch_0062 | as 0061, kill = 2 waves | 600 | withdrawn: decay slowed by the designer |
+| batch_0063 | decay: tower 12 / Nexus 24, kill = 1 wave | 600 | withdrawn: decay slowed by the designer |
+| batch_0064 | as 0063, kill = 2 waves | 600 | withdrawn: decay slowed by the designer |
