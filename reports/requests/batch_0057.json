@@ -1,0 +1,32 @@
+{
+  "batch_id": "batch_0057",
+  "rules": "1.8.0",
+  "roster": "1.7.0",
+  "ai": "1.5.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3,
+    "personality_pool": [
+      "T2_sieger",
+      "SM_g2_lane6"
+    ]
+  },
+  "games": 4000,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 5701,
+  "replays": 4,
+  "config_overrides": {
+    "tower_hp": 4,
+    "kill_ap": 3,
+    "death_band_bonus": 1,
+    "area_center": true,
+    "nexus_hp": 8
+  },
+  "extra": [
+    "Phase 4, the champion re-read on rules 1.8.0 and roster 1.7.0 (Handoff s7 step 4). Field unchanged from batch_0044: the sieger is still clear of every personality under 1.8.0 (93.1% in batch_0054, 89.7% in batch_0051, 87.9% in batch_0055), so the pure sieger and SM_g2_lane6 are drawn per game. 4,000 games puts each champion in about 1,600, an interval of about +/-2.4 points.",
+    "Run as four shards (--shard K/4) and merged with --merge. Tower 4 / Nexus 8 is the pacing pair adopted by RQ-038; on a sieging field 7% of games stalled in batch_0054, so pacing is expected in band here and section 5 is the confirmation.",
+    "Read: champions outside 45-55 with the interval clear of 50 are the Phase 4 outliers on 1.8.0; batch_0044 (1.7.0) is the shape to compare against, not a baseline by seed. Income is no longer win rate (RQ-047), so the 1.5x AP list is read as the economy's shape, and the four P-0013 engines (sable, wisp, ashwyn, quillan) are read here before any further kit lever. Then Phase 4 proper: one lever per outlier, before/after pairs on this field and seed."
+  ]
+}

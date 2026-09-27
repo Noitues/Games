@@ -1,13 +1,35 @@
 {
   "patch_id": "P-0013",
-  "from": {"rules": "1.8.0", "roster": "1.6.0", "ai": "1.4.0"},
-  "to": {"roster": "1.7.0"},
+  "from": {
+    "rules": "1.8.0",
+    "roster": "1.6.0",
+    "ai": "1.4.0"
+  },
+  "to": {
+    "roster": "1.7.0"
+  },
   "lever_class": "kit",
   "changes": [
-    {"target": "roster:sable.W.cooldown", "from": 1, "to": 2},
-    {"target": "roster:wisp.W.cooldown", "from": 1, "to": 2},
-    {"target": "roster:ashwyn.W.cooldown", "from": 1, "to": 2},
-    {"target": "roster:quillan.R.cooldown", "from": 1, "to": 2}
+    {
+      "target": "roster:sable.W.cooldown",
+      "from": 1,
+      "to": 2
+    },
+    {
+      "target": "roster:wisp.W.cooldown",
+      "from": 1,
+      "to": 2
+    },
+    {
+      "target": "roster:ashwyn.W.cooldown",
+      "from": 1,
+      "to": 2
+    },
+    {
+      "target": "roster:quillan.R.cooldown",
+      "from": 1,
+      "to": 2
+    }
   ],
   "evidence": "batch_0050 (centred AREA, tower HP 8): sable 1.87x, wisp 1.85x, quillan 1.73x and ashwyn 1.59x the roster-mean AP per round, each from a 1-AP AREA on a 1-round cooldown used in 52-81% of affordable rounds. pallas, whose AREA R already has cooldown 2, sits at 1.01x. The lead designer's instruction: increase the cooldown and use the design levers to bring these in line.",
   "hypothesis": "A whole-card cooldown of 2 makes the champion miss the round after farming, halving the engine ability's rate; the four should land near or below 1.5x and their win rates move toward 50%. Nothing is bought back.",
@@ -15,5 +37,128 @@
   "revert_if": "Any of the four falls below 35%, or the AREA ability's usage drops below 10% of affordable rounds (the ability has become dead weight rather than priced).",
   "side_effects": "Three of the four now carry an ability below the point floor and two kits sit under the band; both are declared as exceptions in the roster and the validator honours a named ability exception (new). Mid loses some wave-clear tempo overall, which may slow sieges a little.",
   "pillar_change": false,
-  "note": "Read as batch_0054 on the tower/Nexus HP the pacing pass chooses; the request carries tower 6 / Nexus 8 as a placeholder until batches 0051/0053 are read."
+  "note": "Read as batch_0054 on the tower/Nexus HP the pacing pass chooses; the request carries tower 6 / Nexus 8 as a placeholder until batches 0051/0053 are read.",
+  "result": {
+    "verdict": "PARTIAL - two of four engines back under 1.5x (wisp, ashwyn); quillan and sable remain above; sable's win rate was under 40% before the patch and stays there",
+    "batches": {
+      "before": "batch_0051",
+      "after": "batch_0054",
+      "held_constant": "rules 1.8.0 in full, tower HP 4, Nexus HP 8, personality field, seed 3801 (paired)"
+    },
+    "engines_ap_per_round_and_x_mean": {
+      "sable": [
+        [
+          2.78,
+          1.92
+        ],
+        [
+          2.38,
+          1.7
+        ]
+      ],
+      "wisp": [
+        [
+          2.59,
+          1.79
+        ],
+        [
+          1.76,
+          1.26
+        ]
+      ],
+      "ashwyn": [
+        [
+          2.41,
+          1.66
+        ],
+        [
+          2.09,
+          1.49
+        ]
+      ],
+      "quillan": [
+        [
+          2.67,
+          1.84
+        ],
+        [
+          2.18,
+          1.56
+        ]
+      ],
+      "pallas": [
+        [
+          1.48,
+          1.02
+        ],
+        [
+          1.51,
+          1.08
+        ]
+      ]
+    },
+    "roster_mean_ap_per_round": [
+      1.45,
+      1.4
+    ],
+    "area_usage_pct_of_affordable_rounds": {
+      "sable_W": [
+        54.8,
+        46.8
+      ],
+      "wisp_W": [
+        76.9,
+        68.3
+      ],
+      "ashwyn_W": [
+        60.4,
+        56.8
+      ],
+      "quillan_R": [
+        74.6,
+        66.6
+      ]
+    },
+    "win_rates": {
+      "sable": [
+        38.0,
+        36.0
+      ],
+      "wisp": [
+        50.9,
+        42.9
+      ],
+      "ashwyn": [
+        64.6,
+        59.1
+      ],
+      "quillan": [
+        60.5,
+        65.9
+      ]
+    },
+    "success_metric": {
+      "none_above_1_5x": "not met - quillan 1.56x, sable 1.70x (marrow 1.68x and vellum 1.51x, R-farmers, also above once the mean fell)",
+      "none_of_four_below_40": "not met - sable 36.0 [24.1, 49.9], already 38.0 before the patch"
+    },
+    "revert_checks": {
+      "any_below_35": "no - sable 36.0",
+      "area_usage_below_10pct": "no - 47-68%"
+    },
+    "pacing": {
+      "nexus_kills": [
+        75.0,
+        69.2
+      ],
+      "median": [
+        16,
+        17
+      ],
+      "first_tower_round": [
+        4,
+        5
+      ]
+    },
+    "reading": "The cooldown took a fifth to a third off each engine rather than half: the champion spends the off round on Q/E or moving to the next wave, and the roster mean fell with the engines. wisp and ashwyn are in line; quillan and sable are not. sable earns the most AP on the roster and loses, before and after the patch, which is RQ-047 (under 1.8.0 income and win rate are uncorrelated) - so taxing sable's AREA further is not obviously the next move. Recommendation: read the four on the 4,000-game champion re-read (batch_0057, +/-2.4 points) before another kit lever on the engines; AREA cost 2 stays the candidate for quillan. Predicted side effect landed: Nexus kills 75 -> 69%, median 16 -> 17."
+  }
 }

@@ -244,8 +244,9 @@ the wider objective question stay open for later.
 | batch_0051 | 1.8.0 full, tower HP 4, Nexus HP 8 | 120 | Median 16, Nexus kills 75%, first tower round 4. The first 1.8.0 read where most games end; the sieger is 89.7% on roster 1.6.0. |
 | batch_0052 | 1.8.0 full, tower HP 4, Nexus HP 12 | 120 | not run: batch_0051 (Nexus 8) reached 75% Nexus kills, so Nexus 12 could only be slower; request kept for the record. |
 | batch_0053 | 1.8.0 full, tower HP 6, Nexus HP 8 | 120 | Median 20 (p10 16), Nexus kills 39%, first tower round 8, 81 of 120 games to the round limit. Two more tower HP cost 36 points of Nexus kills against batch_0051. Sieger 100% on the tiebreak - unreadable. |
-| batch_0054 | roster 1.7.0 (P-0013) on tower 4 / Nexus 8, paired with batch_0051 | 120 | running |
-| batch_0055 | 1.8.0 full, tower HP 4, Nexus HP 6 (third HP pass), paired with batch_0051 | 120 | running |
+| batch_0054 | roster 1.7.0 (P-0013) on tower 4 / Nexus 8, paired with batch_0051 | 120 | **P-0013 partial (RQ-046).** wisp 1.79x -> 1.26x and ashwyn 1.66x -> 1.49x in line; quillan 1.56x and sable 1.70x remain; sable 36% (38% before). Median 17, Nexus kills 69%. Sieger 93.1% - still clear of the field under 1.8.0. Income and win rate uncorrelated (RQ-047). |
+| batch_0055 | 1.8.0 full, tower HP 4, Nexus HP 6 (third HP pass), paired with batch_0051 | 120 | **HP lever exhausted (RQ-038 closed).** Median 16 and Nexus kills 75.8%, identical to Nexus 8; the 29 stalled games are non-sieging pairs that take towers and stop. Tower 4 / Nexus 8 adopted; the lever beyond HP is the designer's. |
+| batch_0057 | Phase 4 champion re-read on 1.8.0 / roster 1.7.0: T2_sieger + SM_g2_lane6 drawn per game, tower 4 / Nexus 8, four shards | 4000 | running |
 | batch_0056 | Phase 5 on T2: seven X2_exploit_* vs the field, four shards | 560 | queued behind the field re-read; anchors and HP are placeholders |
 | batch_0050 | as batch_0048 with P-0012 (centred AREA) | 120 | **P-0012 partial.** Engines down a third (sable 2.54x -> 1.87x, pallas to 1.01x) but four remain above 1.5x. Nexus kills 15% at tower HP 8 - pacing still the wall. |
 
