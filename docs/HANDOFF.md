@@ -185,8 +185,8 @@ In order:
   - shard 2/4: the parent session (this one), checkpoint in its own
     `reports/raw/`; if the parent died, that shard restarts from zero on a
     new worker.
-  - shard 3/4: not yet launched; launch when the first of the above finishes
-    (two workers at a time was the usage compromise).
+  - shard 3/4: `session_01Td9MBokERznBTK6mFG4SMz` (launched alongside at the
+    lead designer's instruction; three workers plus the parent).
 - **A worker's brief** (the text used for 0055 and the 0057 shards): confirm
   branch and request; launch detached with `nohup … & disown`; arm a 30-min
   Monitor that prints the checkpoint line count, exits 0 on the done line,
@@ -200,8 +200,8 @@ In order:
   A 120-game personality batch is 55–95 minutes; a 1,000-game shard of a
   sieging field 7–10 hours. `get_session` shows a worker's latest count.
 - **Usage.** Workers reported the account approaching its seven-day limit on
-  2026-09-24; two workers at a time plus the parent was the compromise and
-  is what this session used. A 1-hour worker costs about $2 in tokens,
+  2026-09-24; two workers at a time plus the parent was the compromise
+  until the designer asked for all four `batch_0057` shards at once. A 1-hour worker costs about $2 in tokens,
   nearly all of it Monitor re-arms.
 - Raw dumps (`--dump-raw`) go to `reports/raw/`, gitignored. The stall
   analysis in RQ-038 came from `batch_0054`'s dump with a 40-line script
