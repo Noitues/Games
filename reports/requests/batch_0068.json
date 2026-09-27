@@ -1,0 +1,37 @@
+{
+  "batch_id": "batch_0068",
+  "rules": "1.8.0",
+  "roster": "1.8.0",
+  "ai": "1.5.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3,
+    "personality_pool": [
+      "T2_sieger",
+      "SM_g2_lane6",
+      "SM_g3_phase"
+    ]
+  },
+  "games": 600,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 5901,
+  "replays": 2,
+  "config_overrides": {
+    "kill_ap": 3,
+    "death_band_bonus": 1,
+    "area_center": true,
+    "structure_decay": 1,
+    "structure_decay_every": 2,
+    "tower_hp": 10,
+    "nexus_hp": 18,
+    "tower_decay_floor": 4,
+    "nexus_decay_floor": 8,
+    "kill_ap_waves": 2
+  },
+  "extra": [
+    "RQ-049 slow decay: towers start 10 (floor 4), Nexus 18 (floor 8); every structure loses 1 HP every other round (rounds 3, 5, 7, ...). A champion kill pays 2 x the current minion wave (6/8/10 AP). Same seed and field as batch_0059, so games 0-599 pair by seed and draw.",
+    "Read with tools/phase_read.py on the raw dump. One shard (--shard 0/1)."
+  ]
+}
