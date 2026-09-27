@@ -24,12 +24,21 @@ all passing.
 `engine/config.py` defaults sit on the 1.8.0 side (`abilities_hit_structures`
 False, `structure_chips_pay` False, `tower_kill_ap` 3, `area_center` True,
 `dragon_card` {hits 2, cooldown 3}, `dragon_ap_each` 0, `baron_permanent`
-True). Each is a switch; older requests reproduce by overriding. Five values
-live only as `config_overrides` in every request since `batch_0051` and are
-**not** defaults: `tower_hp` 4 (config still says 11), `nexus_hp` 8 (config
-12), `kill_ap` 3, `death_band_bonus` 1, `area_center` True. Copy them
-forward. Once the designer confirms the pair, move tower/Nexus HP into the
-config and the rulebook's tuning table (§14, "Tower HP 11").
+True). Each is a switch; older requests reproduce by overriding.
+
+**Working rules since 2026-09-27 (designer approved, RQ-049/RQ-051)** live only
+as `config_overrides` in every request and are **not** defaults - copy them
+forward from `reports/requests/batch_0069.json`: `tower_hp` 10, `nexus_hp` 18,
+`structure_decay` 1, `structure_decay_every` 2, `tower_decay_floor` 4,
+`nexus_decay_floor` 6, `kill_ap_waves` 2 (a kill pays two current waves),
+`death_band_bonus` 1, `area_center` True (`kill_ap` 3 is inert while
+`kill_ap_waves` is set). The earlier pair (tower 4 / Nexus 8, no decay) is
+superseded. The designer's target: **the leader of each phase wins 55-60%**
+(farm at round 4, towers + Dragons at round 8, kills in rounds 9-12, Baron
+holder), read with `tools/phase_read.py`; catch-up mechanics come after.
+Batches 0069-0072 test the death timer and Baron levers toward it. Once
+RQ-051 settles, move these into `engine/config.py` and write rules 1.9.0 -
+the 1.8.0 rulebook text still says tower HP 11 and a 1-AP kill.
 
 ## 2. The rulings and what each did
 

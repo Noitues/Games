@@ -273,3 +273,14 @@ the wider objective question stay open for later.
 | batch_0066 | as 0065, kill = 2 waves | 600 | Median 15, 100% Nexus, first tower r7. Leaders: farm 50.3, siege 63.0, kills 43.8, Baron 43.0. Kills 17-22% of mid-game AP. |
 | batch_0067 | slow decay: tower 10 floor 4 / Nexus 18 floor 8, kill = 1 wave | 600 | Median 17, 96.2% Nexus, first tower r9, Baron taken 82%. Leaders: farm 52.7, siege 59.5, kills 50.2, Baron 48.7. |
 | batch_0068 | as 0067, kill = 2 waves | 600 | **Recommended.** Median 17, 96.5% Nexus (21 games to the limit), first tower r9, Baron taken 80%. Leaders: farm 56.4, siege 54.2, kills 48.5, Baron 49.7 - every phase leader near or above 50, none decisive. Kills 18-23% of mid-game AP. Sieger 49.8% (from 68.5), laner 67.7%, phase AI 32.8%. |
+
+## Iteration 12 - RQ-051: favour each phase's leader
+
+Working rules (designer approved): towers 10 / Nexus 18, decay 1 HP every other round, floors 4 / 6, kill = 2 waves.
+
+| batch | matchup | games | result |
+|---|---|---|---|
+| batch_0069 | C0: working rules | 600 | running |
+| batch_0070 | C1: C0 + death timer +1 round | 600 | running |
+| batch_0071 | C2: C0 + Baron wave bonus +4 | 600 | running |
+| batch_0072 | C3: C0 + both | 600 | running |
