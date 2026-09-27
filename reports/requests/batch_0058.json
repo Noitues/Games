@@ -1,0 +1,31 @@
+{
+  "batch_id": "batch_0058",
+  "rules": "1.8.0",
+  "roster": "1.8.0",
+  "ai": "1.5.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3,
+    "personality_pool": [
+      "T2_sieger",
+      "SM_g2_lane6"
+    ]
+  },
+  "games": 2000,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 5701,
+  "replays": 2,
+  "config_overrides": {
+    "tower_hp": 4,
+    "kill_ap": 3,
+    "death_band_bonus": 1,
+    "area_center": true,
+    "nexus_hp": 8
+  },
+  "extra": [
+    "P-0014: roster 1.8.0, one lever on each of the five RQ-048 outliers (marrow R cd 2, bastion Q 3->2 hits, wisp R cd 2, corvane Q cd 1, ossuar Q 2 hits). Field, HP and seed as batch_0057, 2,000 games, so games 0-1999 pair with batch_0057's by seed and draw.",
+    "Judge against batch_0057 games 0-1999 (recompute from its raw dump): the five inside 45-55, no untouched champion moved more than 5 points. Four shards of 500."
+  ]
+}
