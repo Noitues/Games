@@ -130,6 +130,8 @@ same split (pacing passed when both sides sieged).
   trace income to the step, not the champion.
 - **Two batches launched ten minutes before a ruling amended the patch**
   were killed and relaunched. Ask "is the ruling complete?" first.
+- **A worker brief sent as a chat turn stalled four Sonnet workers**; they
+  flagged it as a possible injection. Use `append_system_prompt` (§8).
 - **`pkill -f` with a pattern that matches the calling shell kills the
   shell.** Match on the process (`pgrep -f 'run_batch.py .*batch_005[7]'`).
 - **The exploit profiles were T1** and their 0% was partly T1 vs T2. Fixed
@@ -178,18 +180,25 @@ In order:
   finished game to `reports/raw/<batch>.partial*.jsonl` and resumes from it
   on relaunch.
 - **Sessions in flight for `batch_0057`** (Sonnet 5 workers, created
-  2026-09-27 ~04:37 UTC; each pushes
+  2026-09-27 ~04:42 UTC; each pushes
   `reports/shards/batch_0057.partial.shardKof4.jsonl.gz` and replies one
   line; archive when done). The parent runs no shard itself and idles on a
   `send_later` check-in, which fires into it and merges once all four land.
-  - shard 0/4: `session_01SvJXpfkvff4LRB8w5weYpG`
-  - shard 1/4: `session_01TMY5jf9k4AhXEKGqrE8M1m`
-  - shard 2/4: `session_01XUMtJM5AiGsL5Y2Q52L4e3`
-  - shard 3/4: `session_016Bjs2YCPHQwnEMcA2wkjS7`
+  - shard 0/4: `session_013cCnoXEddMePK6V99LaYMT`
+  - shard 1/4: `session_01Pp7Z8TkuANRHRiBNVvWZPw`
+  - shard 2/4: `session_0163CByynww3XwdG9ADd5SUP`
+  - shard 3/4: `session_013Rv67Xjy2fJ8Fr4hcnRaBf`
 - **Worker model.** The lead designer cleared lower models for sim runs.
   A worker only launches, re-arms a Monitor and pushes one file, and the sim
   itself is Python, so the model never touches a number. Sonnet 5 is the
   default; Haiku is cheaper but a single missed re-arm loses a shard.
+- **Put a Sonnet worker's brief in `append_system_prompt`, not `prompt`.**
+  Sonnet 5 read a brief sent as the first chat turn from another session as a
+  possible prompt injection, and all four workers stopped to ask for
+  confirmation without launching. The same brief in the system prompt, with a
+  one-line `prompt` ("start your configured job"), launched all four. Fable
+  accepted the brief as a chat turn. Always confirm a new worker's first turn
+  shows the job launched before leaving it.
 - **A worker's brief** (the text used for 0055 and the 0057 shards): confirm
   branch and request; launch detached with `nohup … & disown`; arm a 30-min
   Monitor that prints the checkpoint line count, exits 0 on the done line,
