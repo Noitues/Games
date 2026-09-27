@@ -57,6 +57,17 @@ DEFAULT_CONFIG = {
     # where the centre may go, never the disc. False restores the 1.7.0 blast
     # at the champion's feet, radius = range (2 with Longbow).
     "area_center": True,
+    # Phase rules (RQ-049, proposal; all off by default). They order the game
+    # into laning -> sieging and objectives -> team fights -> Baron and ending.
+    # tower_unlock_round: a tower of that tier takes no damage before that
+    # round (0 = always open). nexus_needs_baron: the Nexus takes damage only
+    # from a team holding the Baron card, or from anyone once
+    # nexus_unlock_round is reached (0 = never by the clock alone).
+    # last_hit_ap: bonus AP when a champion removes a wave's last chip.
+    "tower_unlock_round": {"1": 0, "2": 0},
+    "nexus_needs_baron": False,
+    "nexus_unlock_round": 0,
+    "last_hit_ap": 0,
     "tower_hits_champion": 2,
     "tower_hits_wave": 1,
     "monster_hits": 1,

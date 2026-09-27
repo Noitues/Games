@@ -36,6 +36,9 @@ class GameResult:
     replay: Optional[List[dict]] = None
     decisions: int = 0
     options_seen: int = 0
+    # One entry per round, taken after the Shop Phase: the team state the
+    # phase metrics are read from (tools/phase_read.py).
+    trace: List[dict] = field(default_factory=list)
 
 
 class Game:
@@ -103,6 +106,14 @@ class Game:
                 st.refresh_visibility(allow_flip_back=True, placer=self.placer)
                 self._check(f"world r{st.round}")
                 self.shop_phase()
+            self.res.trace.append({
+                "r": st.round,
+                "ap": {t: dict(st.teams[t].ap_by_source) for t in TEAMS},
+                "kills": {t: st.teams[t].kills for t in TEAMS},
+                "towers_lost": {t: st.teams[t].towers_lost for t in TEAMS},
+                "dragons": {t: st.teams[t].dragons for t in TEAMS},
+                "baron": {t: int(st.teams[t].baron_track > 0) for t in TEAMS},
+            })
             sig = self._signature()
             sig_history.append(sig)
             if len(sig_history) >= 4 and len(set(sig_history[-4:])) == 1:

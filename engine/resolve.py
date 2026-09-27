@@ -121,7 +121,21 @@ def can_be_hit(state: GameState, u, attacker_team: str, spec: str) -> bool:
     if spec == "enemy_no_structure":
         return u.kind != "structure"
     if u.kind == "structure":
-        return structure_targetable(state, u)
+        return structure_targetable(state, u) and phase_open(state, u, attacker_team)
+    return True
+
+
+def phase_open(state: GameState, s, attacker_team: str) -> bool:
+    """RQ-049 phase rules: is this structure open to damage from this team now?"""
+    cfg = state.config
+    if s.stype == "tower":
+        unlock = (cfg.get("tower_unlock_round") or {}).get(str(s.tier), 0)
+        return state.round >= unlock
+    if cfg.get("nexus_needs_baron"):
+        if state.teams[attacker_team].baron_track > 0:
+            return True
+        clock = cfg.get("nexus_unlock_round", 0)
+        return bool(clock) and state.round >= clock
     return True
 
 
@@ -265,6 +279,11 @@ def deal_hits(state: GameState, team: Optional[str], target, k: int, source: str
         if target.kind == "structure":
             attacker.dmg_to_structures += chips
     if target.chips <= 0:
+        if target.kind == "wave" and champ_source and team is not None \
+                and state.config.get("last_hit_ap", 0):
+            # RQ-049: the last hit on a wave is worth more than the others.
+            state.teams[team].gain(state.config["last_hit_ap"], "last_hit")
+            attacker.ap_earned += state.config["last_hit_ap"]
         destroy(state, target, team, attacker)
     return chips
 

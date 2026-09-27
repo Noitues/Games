@@ -1,0 +1,11 @@
+[
+  {"name": "SM_g3_phase", "family": "phase-aligned (RQ-049)",
+   "note": "Follows the proposed phase clock: lane rounds 1-4; from round 5 take Dragon when it is up and siege otherwise; from round 9 fight after a won fight and siege otherwise; from round 10 go for Baron when it is up, and siege to the end once holding it.",
+   "default": "laner", "commit": 0,
+   "rules": [{"if": [["baron_own", "==", 1]], "then": "sieger"},
+             {"if": [["round", ">=", 10], ["baron_up", "==", 1]], "then": "objective"},
+             {"if": [["round", ">=", 9], ["fight_won", ">=", 1]], "then": "brawler"},
+             {"if": [["round", ">=", 9]], "then": "sieger"},
+             {"if": [["round", ">=", 5], ["dragon_up", "==", 1]], "then": "objective"},
+             {"if": [["round", ">=", 5]], "then": "sieger"}]}
+]
