@@ -92,6 +92,11 @@ weight profile each - dive, farm-and-scale, split-push, objective hoarding,
 turtle and cooldown-lock. Because they share the evaluator, an exploit that
 beats T2 is a statement about the rules rather than about bespoke AI code.
 
+ai 1.5.0 adds the same seven distortions on the T2 search (`X2_exploit_*`): the
+1.3.0 T2 base with exactly the weights the T1 exploit moves, at the same values.
+RQ-043 read the T1 set against a T2 field and its zeroes were partly tier
+against tier; the T2 set is what the Phase 5 re-run uses.
+
 `tools/ai_calibrate.py` runs head-to-head variants (the variant always takes
 the first-priority seat, and seats swap every other game), and
 `tools/ai_acceptance.py` grades the Prompts 4.C checks into one report.

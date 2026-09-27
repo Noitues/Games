@@ -224,7 +224,8 @@ a proper batch; 8 games says nothing about which personality is strongest.
 | engine | 0.4.0 | Config knobs for each ruling (`abilities_hit_structures`, `structure_chips_pay`, `dragon_card`, `dragon_ap_each`, `baron_permanent`), defaults on the 1.8.0 side; the 1.7.0 economy stays reachable for old requests. `dragon_track` on the team state. |
 | rules | 1.8.0 | **P-0012 (RQ-045):** AREA is a radius-1 disc around a centre placed within range; Longbow moves the centre, not the blast. Config `area_center`. |
 | roster | 1.6.0 -> 1.7.0 | **P-0013:** cooldown 2 on the four AREA engines (sable W, wisp W, ashwyn W, quillan R); nothing bought back; exceptions declared. `validate_kit` honours a named `ability_exception`. |
-| tests | - | 165. |
+| ai | 1.4.0 -> 1.5.0 | The exploit set rebuilt on T2 (the RQ-043 caveat): `X2_exploit_*` is the 1.3.0 T2 base with exactly the weights each T1 exploit moves, at the same values, on the two-ply search. Nothing retuned; the T1 set stays registered. 1.4.0 stays frozen for batches 0041-0055. Read as `batch_0056` (queued behind the 1.8.0 field re-read). |
+| tests | - | 174. |
 
 The designer's reading of RQ-041: income was meant to come from minions and
 monsters and towers were meant to fall to basic attacks; an untagged AREA
@@ -245,5 +246,6 @@ the wider objective question stay open for later.
 | batch_0053 | 1.8.0 full, tower HP 6, Nexus HP 8 | 120 | Median 20 (p10 16), Nexus kills 39%, first tower round 8, 81 of 120 games to the round limit. Two more tower HP cost 36 points of Nexus kills against batch_0051. Sieger 100% on the tiebreak - unreadable. |
 | batch_0054 | roster 1.7.0 (P-0013) on tower 4 / Nexus 8, paired with batch_0051 | 120 | running |
 | batch_0055 | 1.8.0 full, tower HP 4, Nexus HP 6 (third HP pass), paired with batch_0051 | 120 | running |
+| batch_0056 | Phase 5 on T2: seven X2_exploit_* vs the field, four shards | 560 | queued behind the field re-read; anchors and HP are placeholders |
 | batch_0050 | as batch_0048 with P-0012 (centred AREA) | 120 | **P-0012 partial.** Engines down a third (sable 2.54x -> 1.87x, pallas to 1.01x) but four remain above 1.5x. Nexus kills 15% at tower HP 8 - pacing still the wall. |
 

@@ -1,0 +1,42 @@
+{
+  "batch_id": "batch_0056",
+  "rules": "1.8.0",
+  "roster": "1.7.0",
+  "ai": "1.5.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3,
+    "personality_pool": [
+      "X2_exploit_cdlock",
+      "X2_exploit_dive",
+      "X2_exploit_farm",
+      "X2_exploit_fogsnipe",
+      "X2_exploit_objectives",
+      "X2_exploit_splitpush",
+      "X2_exploit_turtle"
+    ]
+  },
+  "anchors": [
+    "T2_sieger",
+    "SM_g2_lane6"
+  ],
+  "anchor_share": 1.0,
+  "games": 560,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 4501,
+  "replays": 2,
+  "config_overrides": {
+    "tower_hp": 4,
+    "kill_ap": 3,
+    "death_band_bonus": 1,
+    "area_center": true,
+    "nexus_hp": 8
+  },
+  "extra": [
+    "Phase 5, the exploit sweep on T2 (the RQ-043 caveat). batch_0045 read seven T1 weight profiles against a T2 field, so its zeroes measure T1 against T2 as much as the exploit against the rules. ai 1.5.0 carries the same seven distortions on the T2 search as X2_exploit_*; every game puts one against a field member, about 80 games per exploit.",
+    "PLACEHOLDERS - do not launch until both are settled: (1) the anchors are the 1.7.0 field (T2_sieger + SM_g2_lane6); the 1.8.0 field is re-read from the batch_0054/0055 personality tables first (Handoff s7 step 3) and the anchors replaced if the sieger is no longer clear; (2) tower 4 / Nexus 8 is the pacing pair batch_0051 chose, to be replaced if batch_0055 (Nexus 6) or a designer's lever supersedes it.",
+    "Gate: no exploit's win rate against the field clears 50% with its lower bound. Read section 9d, the vs-anchor columns. An exploit near 50% is a strategy the field cannot punish and belongs in front of the lead designer. Run as four shards on four cloud sessions and merged."
+  ]
+}
