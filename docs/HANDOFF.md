@@ -1,7 +1,7 @@
 # Handoff — Hex-Nexus Balance Lab
 
-Third handoff, written 2026-09-27 while the Phase 4 champion re-read
-(`batch_0057`) runs. Everything is on
+Third handoff, written 2026-09-27; updated when the Phase 4 champion re-read
+(`batch_0057`) landed and was read as RQ-048 (see the decisions log). Everything is on
 `claude/hex-nexus-multiagent-prompts-aivg93`, pushed. **Four shards of
 `batch_0057` are in flight** (§8 lists the sessions); each pushes its gzipped
 checkpoint into `reports/shards/` when it finishes, so pull before reading.
@@ -14,7 +14,7 @@ checkpoint into `reports/shards/` when it finishes, so pull before reading.
 | 1 AI calibration | closed on RQ-031 |
 | 2 Correctness and pacing | correctness: two placement bugs found by the exploit sweep and fixed (RQ-043). **Pacing: the HP lever is exhausted** (RQ-038 closed): tower 4 / Nexus 8 is the working pair, games end on a sieging field and stall 25-30% on a mixed one; the lever beyond HP is a rules change and the designer's (§3). |
 | 3 Economy | the pillar is ruled (P-0010). AREA is a centred disc (P-0012). P-0013 (cooldown 2 on the four engines) read **partial**: wisp and ashwyn in line, quillan 1.56x and sable 1.70x remain (RQ-046). **Income is no longer win rate** under 1.8.0 (RQ-047), which changes what the 1.5x list means (§4). |
-| 4 Champion balance | the 1.8.0 re-read is running: `batch_0057`, 4,000 games, sieger + lane6, tower 4 / Nexus 8, roster 1.7.0. The old-rules read (`batch_0044`) is the shape to compare against. |
+| 4 Champion balance | **re-read taken** (`batch_0057`, RQ-048): spread halved; HIGH bastion 62, marrow 59, wisp 59; LOW ossuar 41, corvane 41; Mid, Jungle, ADC balanced. Recommended pair first: marrow R cooldown 2 + bastion Q 3→2. |
 | 5 Robustness | gate met on the 1.7.0 field (`batch_0045`, RQ-043). The exploit set now exists on T2 (ai 1.5.0, `X2_exploit_*`); its sweep is queued as `batch_0056` behind the re-read. |
 | 6 Release candidate | not started |
 

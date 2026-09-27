@@ -411,3 +411,35 @@ Neither bug can have touched a reported number: no T2 game tripped either.
 | RQ-038 (third pass, closed) | **Nexus HP is not the lever; the field is.** batch_0055 (tower 4 / Nexus 6) against batch_0051 (tower 4 / Nexus 8), paired by seed: median 16 in both, Nexus kills 75.8% vs 75.0%, 29 vs 30 games at the round limit, first tower round 4 in both. Lowering the Nexus shortens the fast games (p10 11 -> 9; three games end in round 5) and does nothing for the slow ones. The raw dump of batch_0054 says who the slow ones are: of 37 games that reach round 20, 33 are decided on towers and only 4 have a sieger in them; the sieger stalls 7% of its games, the warder 47%, the brawler 38%, the laner 37%, the objective player 33%. In every stalled game the leader has taken 2-5 towers and stopped short of the Nexus. Under 1.8.0 a team that does not siege cannot end a game, and no HP value fixes that: at tower 4 the first tower already falls in round 4. **Tower 4 / Nexus 8 is adopted as the working pair** and the HP lever is exhausted; the levers beyond it (L0 siege hits, 2-hit waves, fewer towers) are rules changes and the lead designer's. On a sieging field pacing is expected to pass (7% stalls), which the champion re-read reads directly. | lab; HP pair adopted; lever beyond HP **HUMAN** |
 | RQ-046 | Does P-0013 (cooldown 2 on the AREA engines) bring the four in line? | **Partial: two of four.** batch_0054 vs batch_0051 (tower 4 / Nexus 8, seed 3801, roster 1.6.0 -> 1.7.0): wisp 1.79x -> 1.26x, ashwyn 1.66x -> 1.49x, quillan 1.84x -> 1.56x, sable 1.92x -> 1.70x; roster mean 1.45 -> 1.40 AP a round. AREA usage held (sable W 55 -> 47%, wisp W 77 -> 68%, ashwyn W 60 -> 57%, quillan R 75 -> 67% of affordable rounds), so the ability is priced, not dead. Win rates: quillan 60.5 -> 65.9, ashwyn 64.6 -> 59.1, wisp 50.9 -> 42.9, sable 38.0 -> 36.0 [24.1, 49.9] - sable was under 40% before the patch. Success metric not met on quillan/sable and on sable's win rate; revert_if (below 35%, usage below 10%) not triggered. **Adopted as partial.** marrow (1.68x) and vellum (1.51x), both R-farmers, join the list above 1.5x once the mean drops. Pacing: median 16 -> 17, Nexus kills 75 -> 69%, the predicted side effect (Mid clears waves slower). | lab; partial; see RQ-047 before the next kit lever |
 | RQ-047 | Is income still win rate under 1.8.0? | **No.** Under 1.7.0 income a round and win rate correlated at 0.60 across the roster (RQ-041). On the three 1.8.0 personality batches the correlation is gone: Pearson -0.09 (batch_0051), 0.00 (batch_0054), -0.09 (batch_0055); Spearman -0.22, -0.01, -0.25. sable earns the most AP on the roster and wins 36-38%; marrow at 1.6x wins 38-50%. The designer's reading behind P-0010 - that the engines' win rates came from AREA hitting towers for AP - is confirmed from the other side: with structures paying nothing, extra income buys nothing. Two consequences. For Phase 4, the 1.5x check is now a check on the economy's shape (the design budget prices AREA at 6 a hit), not a proxy for champion balance; the champion re-read decides which outliers are worth a lever, and a champion that is only an income outlier is not a balance outlier. For the P-0013 follow-up, AREA cost 2 on sable and quillan would tax sable, which already loses; the lab recommends the 4,000-game read (batch_0057, +/-2.4 points) before any further kit lever on the engines. 120-game per-champion numbers are +/-13. | lab; recommendation |
+
+## Iteration 10 - the champion re-read on rules 1.8.0
+
+| id | question | finding | status |
+|---|---|---|---|
+| RQ-048 | Which champions are off 50% on the strongest field under rules 1.8.0 and roster 1.7.0? | **The roster's spread halved and five champions remain clear of 45-55.** `batch_0057`, 4,000 games (four Sonnet shard workers), T2_sieger + SM_g2_lane6 drawn per game, tower 4 / Nexus 8, about ±2.4 points a champion. Standard deviation of champion win rate 5.2 points, from 10.6 on the old-rules read (`batch_0044`). **HIGH:** bastion 62.2% [59.7, 64.6] (from 74.9), marrow 59.4% [57.0, 61.8] (from 50.5), wisp 59.2% [56.8, 61.6] (from 77.4). **LOW:** ossuar 41.1% [38.8, 43.6], corvane 41.1% [38.7, 43.5] (from 27.4). Jungle and ADC stay balanced; Mid is now balanced too (every Mid 45.6-54.0, where sable and ashwyn were 58 and vellum 35); Top and Support hold all five outliers. Income and win rate correlate at 0.43 on this sieging field, against -0.09 to 0.00 on the personality field (RQ-047): on a field where everyone sieges, income buys some of the siege again, though far less than the 0.60 of 1.7.0. | lab; patches below |
+| RQ-048b | Pacing on the sieging field at tower 4 / Nexus 8 | **Now too fast.** Median 12 rounds [11, 12], p10 9, p90 14; every game ends by Nexus kill. The HP pair that brings the mixed field closest to band (median 16, 75% Nexus kills) is two rounds short on the sieging field. The two fields want different tower HP, which is the RQ-038 split again: the pacing lever the designer rules on (§5 of the handoff) has to close the mixed field's stall without speeding the sieging field further. Tower HP 5 is the obvious midpoint to read if HP stays the lever. | **HUMAN** |
+| RQ-048c | Does a laning opening still hold its own? | **No: the sieger now beats `SM_g2_lane6` 59.8% [58.3, 61.3]** over 4,000 games, where the two were 50/50 under 1.7.0 (RQ-040). With towers at 4 HP and the first falling in round 4, five rounds of laning concede the early towers. The field is effectively the sieger. | lab |
+| RQ-042 (again) | North vs South | **South 53.1%** [51.6, 54.7] over 4,000 seat-swapped games, the same as `batch_0044`'s 53.2% under 1.7.0. Two independent 4,000-game reads now agree; the map asymmetry is real and survived every rules change. | **HUMAN**, open |
+
+### Reading the outliers
+
+- **bastion** (Top, 62%): still the roster's hardest champion to kill (0.14
+  deaths a game, the lowest) and it wins on Q - HIT 3 at range 1 with a push,
+  used in 67% of affordable rounds. Not an income story (1.41x). Lever: Q hits
+  3 to 2, or its W SHIELD 4 to 3.
+- **marrow** (Top, 59%, new): R is HEAL 1 + AREA 1 at cost 2, **cooldown 1**,
+  used 57% of the time for 1.87x the roster-mean income - the one AREA engine
+  P-0013 missed, because at 1.6.0 it sat at 1.03x. Lever: R cooldown 2, the
+  P-0013 shape.
+- **wisp** (Support, 59%, from 77%): P-0013 took the W engine to cooldown 2
+  and wisp is still high at 1.39x income. Speed 4 plus a range-2 SHIELD E and
+  a LINE R at cost 1, cooldown 1. Lever: R cooldown 2 before touching W again.
+- **ossuar** (Top, 41%) and **corvane** (Support, 41%, from 27%): the two
+  lows. corvane earns 0.25x the mean and its Q and E sit on cooldown 2; lever:
+  Q cooldown 1. ossuar: W LINE to cost 0, or HP 9 is already the ceiling - Q
+  range 2 HIT 1 is its only cheap damage; lever: Q hits 1 to 2.
+
+Recommended order: marrow R cooldown 2 and bastion Q 3 to 2 as one pair
+(both Top, both HIGH, different mechanisms, so a single before/after read
+attributes them by champion), then wisp R and corvane Q, then ossuar. Read
+each pair at 2,000 games on this field and seed.
