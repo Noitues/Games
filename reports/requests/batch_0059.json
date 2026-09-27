@@ -1,0 +1,32 @@
+{
+  "batch_id": "batch_0059",
+  "rules": "1.8.0",
+  "roster": "1.8.0",
+  "ai": "1.5.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3,
+    "personality_pool": [
+      "T2_sieger",
+      "SM_g2_lane6",
+      "SM_g3_phase"
+    ]
+  },
+  "games": 1600,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 5901,
+  "replays": 2,
+  "config_overrides": {
+    "tower_hp": 4,
+    "kill_ap": 3,
+    "death_band_bonus": 1,
+    "area_center": true,
+    "nexus_hp": 8
+  },
+  "extra": [
+    "RQ-049 B0: today's rules (1.8.0, tower 4 / Nexus 8), roster 1.8.0. The phase read of the game as it stands: where AP comes from in rounds 1-4 / 5-8 / 9-12 / 13+, and whether the phase leader wins. Pool adds SM_g3_phase (laner -> sieger/objective -> brawler -> Baron).",
+    "Read with tools/phase_read.py on the raw dump. Four shards of 400."
+  ]
+}
