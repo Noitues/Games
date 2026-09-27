@@ -269,7 +269,7 @@ the wider objective question stay open for later.
 | batch_0062 | as 0061, kill = 2 waves | 600 | withdrawn: decay slowed by the designer |
 | batch_0063 | decay: tower 12 / Nexus 24, kill = 1 wave | 600 | withdrawn: decay slowed by the designer |
 | batch_0064 | as 0063, kill = 2 waves | 600 | withdrawn: decay slowed by the designer |
-| batch_0065 | slow decay (1 HP every other round): tower 8 floor 4 / Nexus 14 floor 6, kill = 1 wave | 600 | running |
+| batch_0065 | slow decay (1 HP every other round): tower 8 floor 4 / Nexus 14 floor 6, kill = 1 wave | 600 | **Pacing in band.** Median 15 (from 13), 98.8% Nexus, first tower round 7 (from 4), Baron taken 66% (from 42%). Siege leader 65.6% (from 72.2%), Baron holder 41.7% (from 32.0%), kill leader 36.8% (from 32.3%), farm leader 47.8%. lane6 66.1%, sieger 58.2%, phase 25.1%. |
 | batch_0066 | as 0065, kill = 2 waves | 600 | running |
 | batch_0067 | slow decay: tower 10 floor 4 / Nexus 18 floor 8, kill = 1 wave | 600 | running |
 | batch_0068 | as 0067, kill = 2 waves | 600 | running |
