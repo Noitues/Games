@@ -1,10 +1,10 @@
 # Handoff — Hex-Nexus Balance Lab
 
-Second handoff, written 2026-09-24 at the lead designer's request. Everything
-is on `claude/hex-nexus-multiagent-prompts-aivg93`, pushed. **Nothing is
-scheduled.** `batch_0051` landed as this was written and is in §3; the
-`batch_0053` worker (tower 6 / Nexus 8) was minutes from finishing and pushes
-its own three report files when it completes, so pull before reading §3.
+Third handoff, written 2026-09-27 while the Phase 4 champion re-read
+(`batch_0057`) runs. Everything is on
+`claude/hex-nexus-multiagent-prompts-aivg93`, pushed. **Four shards of
+`batch_0057` are in flight** (§8 lists the sessions); each pushes its gzipped
+checkpoint into `reports/shards/` when it finishes, so pull before reading.
 
 ## 1. Where the lab stands
 
@@ -12,199 +12,214 @@ its own three report files when it completes, so pull before reading §3.
 |---|---|
 | 0 Bootstrap | complete |
 | 1 AI calibration | closed on RQ-031 |
-| 2 Correctness and pacing | correctness: two placement bugs found by the exploit sweep and fixed (RQ-043). **Pacing: the open blocker.** Under the ruled economy (rules 1.8.0) towers only fall to basic attacks and waves, and games stopped ending. Tower HP and Nexus HP are being swept back into band; see §3. |
-| 3 Economy | **the pillar is ruled** (P-0010: structures are never ability targets, structure chips are not AP, a tower pays one round of income). The five AREA income engines are two-thirds fixed by the AREA ruling (P-0012) and the rest is in flight as a kit lever (P-0013, roster 1.7.0, unread). |
-| 4 Champion balance | one 4,000-game read taken under the **old** rules (`batch_0044`, RQ-041). It is the shape of the problem, not a number to tune against: everything must be re-read on 1.8.0 once games end again. |
-| 5 Robustness | gate met on the settled field (`batch_0045`, RQ-043), with a caveat: the exploit profiles are T1-greedy weight sets and should be rebuilt on T2 before a final read. |
+| 2 Correctness and pacing | correctness: two placement bugs found by the exploit sweep and fixed (RQ-043). **Pacing: the HP lever is exhausted** (RQ-038 closed): tower 4 / Nexus 8 is the working pair, games end on a sieging field and stall 25-30% on a mixed one; the lever beyond HP is a rules change and the designer's (§3). |
+| 3 Economy | the pillar is ruled (P-0010). AREA is a centred disc (P-0012). P-0013 (cooldown 2 on the four engines) read **partial**: wisp and ashwyn in line, quillan 1.56x and sable 1.70x remain (RQ-046). **Income is no longer win rate** under 1.8.0 (RQ-047), which changes what the 1.5x list means (§4). |
+| 4 Champion balance | the 1.8.0 re-read is running: `batch_0057`, 4,000 games, sieger + lane6, tower 4 / Nexus 8, roster 1.7.0. The old-rules read (`batch_0044`) is the shape to compare against. |
+| 5 Robustness | gate met on the 1.7.0 field (`batch_0045`, RQ-043). The exploit set now exists on T2 (ai 1.5.0, `X2_exploit_*`); its sweep is queued as `batch_0056` behind the re-read. |
 | 6 Release candidate | not started |
 
-Versions: rules **1.8.0**, roster **1.7.0**, ai **1.4.0**, **165 tests** (~4m),
+Versions: rules **1.8.0**, roster **1.7.0**, ai **1.5.0**, **174 tests** (~4m),
 all passing.
 
 `engine/config.py` defaults sit on the 1.8.0 side (`abilities_hit_structures`
 False, `structure_chips_pay` False, `tower_kill_ap` 3, `area_center` True,
 `dragon_card` {hits 2, cooldown 3}, `dragon_ap_each` 0, `baron_permanent`
-True). Each is a switch; older requests reproduce by overriding. Three values
-live only as `config_overrides` in every request since `batch_0038` and are
-**not** defaults: `tower_hp` (config still says 11), `kill_ap` 3,
-`death_band_bonus` 1. Copy them forward.
+True). Each is a switch; older requests reproduce by overriding. Five values
+live only as `config_overrides` in every request since `batch_0051` and are
+**not** defaults: `tower_hp` 4 (config still says 11), `nexus_hp` 8 (config
+12), `kill_ap` 3, `death_band_bonus` 1, `area_center` True. Copy them
+forward. Once the designer confirms the pair, move tower/Nexus HP into the
+config and the rulebook's tuning table (§14, "Tower HP 11").
 
-## 2. The rulings this session and what each did
-
-The lead designer ruled on RQ-039/041/042/045 in the morning. Each ruling is
-a patch with a pre-registered record in `log/patches/`.
+## 2. The rulings and what each did
 
 | patch | ruling | read | result |
 |---|---|---|---|
-| **P-0010** (pillar) | structures are never ability targets; only L0 and waves damage them. Structure chips go to the supply. A tower that falls pays the taking team one round of income (3 AP); the Nexus pays nothing. | `batch_0046` vs `batch_0039` | the rule is the designer's and stands; **at tower HP 16 games stopped ending** (1 Nexus kill in 120). The AREA engines survived on wave and monster chips. |
-| **P-0011** | Dragon card is a reusable Red Buff (2 hits adjacent, cooldown track 3, at most 2 held, no AP). Baron empowers waves for the rest of the game. | `batch_0047` vs `batch_0046` | direction right (Dragon secured 51→55%, Baron 50→52%, objective personality 38→43%); verdict deferred until games end. |
-| **P-0012** | an AREA is a radius-1 disc around a centre the player places within the step's range; Longbow moves the centre, never the blast. | `batch_0050` vs `batch_0048` | every engine's income down a third; pallas back to the mean; sable, wisp, ashwyn, quillan still 1.6–1.9× the roster mean. |
-| **P-0013** (roster 1.7.0) | cooldown 2 on the four remaining engines' AREA ability (sable W, wisp W, ashwyn W, quillan R), nothing bought back, exceptions declared. | **unread** — `reports/requests/batch_0054.json` is written | expected to halve the engine rate; pallas, whose AREA already had cooldown 2, sits at 1.01× and is the evidence. |
+| **P-0010** (pillar) | structures are never ability targets; only L0 and waves damage them. Structure chips go to the supply. A tower that falls pays one round of income (3 AP); the Nexus pays nothing. | `batch_0046` vs `batch_0039` | stands. At tower HP 16 games stopped ending; the HP pass followed. |
+| **P-0011** | Dragon card is a reusable Red Buff (2 hits adjacent, cooldown track 3, at most 2 held, no AP). Baron empowers waves for the rest of the game. | `batch_0047` vs `batch_0046` | direction right (Dragon secured 51→55%, objective personality 38→43%); under 1.8.0 with games ending, both objectives sit at 43-47% when secured. Verdict still open: the objective personality is 38-43% in every 1.8.0 batch. |
+| **P-0012** | an AREA is a radius-1 disc around a centre the player places within the step's range; Longbow moves the centre, never the blast. | `batch_0050` vs `batch_0048` | every engine's income down a third; pallas to the mean; four remained. |
+| **P-0013** (roster 1.7.0) | cooldown 2 on the four remaining engines' AREA ability (sable W, wisp W, ashwyn W, quillan R), nothing bought back. | `batch_0054` vs `batch_0051` | **partial.** wisp 1.79→1.26x, ashwyn 1.66→1.49x, quillan 1.84→1.56x, sable 1.92→1.70x; usage held at 47-68%. sable 36% [24, 50], and it was 38% before the patch. Adopted; the next kit lever waits for `batch_0057` (§4, RQ-047). |
 
-The Dragon card's *effect* is the lab's default for "reusable on a 2–3 round
-cooldown"; the designer named the timing, not the effect.
+## 3. Pacing — closed on HP, open on rules
 
-## 3. Pacing under the ruled economy — the current blocker
+All on the personality field, seed 3801, full 1.8.0 rules from `batch_0048`:
 
-With abilities unable to touch structures, tower HP 16 (a placeholder from
-the old economy) cannot fall. Read so far, all on the personality field, seed
-3801, full 1.8.0 rules from `batch_0048` on:
-
-| batch | tower HP | Nexus HP | AREA | Nexus kills | median length | first tower falls |
+| batch | tower HP | Nexus HP | roster | Nexus kills | median length | first tower falls |
 |---|---|---|---|---|---|---|
-| 0046 | 16 | 12 | old | 1% | 20 | round 16 |
-| 0048 | 8 | 12 | old | 30% | 20 | round 11 |
-| 0049 | 6 | 12 | old | 49% | 20 (p10 15) | round 8 |
-| 0050 | 8 | 12 | centred | 15% | 20 | round 12 |
-| 0051 | 4 | 8 | centred | **75%** | **16** (p10 11, p90 20) | round 4 |
-| 0053 | 6 | 8 | centred | 39% | 20 (p10 16) | round 8 |
-| 0055 | 4 | 6 | centred | *running* | | |
+| 0046 | 16 | 12 | 1.6.0 | 1% | 20 | round 16 |
+| 0048 | 8 | 12 | 1.6.0 | 30% | 20 | round 11 |
+| 0049 | 6 | 12 | 1.6.0 | 49% | 20 (p10 15) | round 8 |
+| 0050 | 8 | 12 | 1.6.0, centred AREA | 15% | 20 | round 12 |
+| 0053 | 6 | 8 | 1.6.0 | 39% | 20 (p10 16) | round 8 |
+| **0051** | **4** | **8** | 1.6.0 | **75%** | **16** (p10 11, p90 20) | round 4 |
+| 0055 | 4 | 6 | 1.6.0 | 75.8% | 16 (p10 9) | round 4 |
+| 0054 | 4 | 8 | 1.7.0 | 69% | 17 | round 5 |
 
-Targets: median 13–18 and Nexus kills above 90%. `batch_0051` is the first
-1.8.0 read where most games end: median in band, Nexus kills 75%, and the
-first tower falls in round 4, which may be too early — read `batch_0053`
-(tower 6) against it before choosing. With games ending, the personality
-table starts to mean something again, and it says **the sieger is still
-89.7%** on roster 1.6.0. That is the read the designer's fallback ("if that
-doesn't fix the sieger, try upping tower damage", `tower_hits_champion`) was
-waiting for; P-0013 (`batch_0054`) is read first, since the engines feed the
-siege. Both objectives already win more under 1.8.0 than under 1.7.0.
+Targets: median 13–18 and Nexus kills above 90%. **Nexus 6 is identical to
+Nexus 8**, so the Nexus is not what stalls games. The `batch_0054` raw dump
+says what does: of 37 games at round 20, 33 were decided on towers, only 4
+had a sieger in them, and in every one the leader had taken 2–5 towers and
+stopped. The sieger stalls 7% of its games; warder 47%, brawler 38%, laner
+37%, objective 33%. **Under 1.8.0 a team that does not siege cannot end a
+game**, and tower HP cannot go below 4 (the first tower already falls in
+round 4). Tower 4 / Nexus 8 is adopted as the working pair; on the sieging
+field `batch_0057` reads pacing directly and should pass.
 
-If 0051/0053 do not reach the band, the levers left, in the order the lab
-would try them: L0 dealing 2 hits to structures (a "siege hit"), waves dealing
-2 hits to structures by default (the Baron effect made standard), fewer
-towers per lane. All three are rules changes and belong to the lead designer;
-`tower_hits_champion` (towers hitting harder) is the designer's own fallback
-if the sieger is still too strong once games end.
+The levers beyond HP, in the order the lab would try them, all rules changes
+and the lead designer's: L0 dealing 2 hits to structures (a "siege hit"),
+waves dealing 2 hits to structures by default (the Baron effect made
+standard), fewer towers per lane. Whether a mixed field *should* end 95% of
+its games is itself the designer's call: RQ-038 in its 1.7.0 form showed the
+same split (pacing passed when both sides sieged).
 
 ## 4. The findings that govern the design
 
-- **The game has one strategy** (RQ-037, confirmed three ways: hand-written
-  personalities, an AP lever that landed and changed nothing, and a bred
-  state-machine AI that converged on sieging — RQ-040). This was measured
-  under 1.7.0; whether 1.8.0 changes it is exactly what `batch_0054` and the
-  reads after it will say. Do not assume the sieger still dominates.
-- **Income was win rate** (RQ-041): under 1.7.0, income per round and win
-  rate correlated at 0.6 across the roster and the five economy outliers
-  were five of the six champion outliers. The designer traced the income to
-  two things that were never intended — abilities hitting towers for AP, and
-  AREA as a wide disc — and ruled both out.
+- **Income is no longer win rate** (RQ-047, new). Under 1.7.0 the two
+  correlated at 0.60 across the roster; on the three 1.8.0 personality
+  batches the correlation is −0.09, 0.00, −0.09 (Spearman −0.22, −0.01,
+  −0.25). sable earns the most AP on the roster and wins 36–38%. The
+  designer's reading behind P-0010 is confirmed from the other side. So the
+  1.5x AP check is now a check on the *economy's shape* (the design budget
+  prices AREA at 6 a hit), not a proxy for balance; a champion that is only
+  an income outlier is not a balance outlier. Read `batch_0057` with that in
+  mind, and do not tax sable's AREA further on the strength of the 1.5x list.
+- **The game still has one strategy under 1.8.0.** The sieger is 89.7%,
+  93.1% and 87.9% in batches 0051, 0054, 0055; laner 54–57%, objective
+  38–41%, warder 24–34%, brawler 19–26%. RQ-037's finding survives the
+  ruled economy. The champion re-read's field is therefore still the
+  sieger + `SM_g2_lane6`; breeding again (§10) has nothing new to work with.
 - **The old-rules champion read** (`batch_0044`, 4,000 games): Jungle and
-  ADC balanced; Support (wisp 77%, corvane 27%) and Top (bastion 75%) broken;
-  Mid split. bastion is the one outlier that was never an income story (0.26
-  deaths a game). Treat this table as the shape to re-check, not as targets.
-- **South wins 53.2%** over 4,000 seat-swapped games (RQ-042): Dragon sits a
-  hex nearer South and is the objective teams take. Open, designer's.
-- **No exploit beats the field** (RQ-043): best 21.9%, five at 0%, fog-snipe
-  0% under reveal radius 2. Caveat above.
-- **Pacing in a mixed field vs a sieging field** (RQ-038): under 1.7.0 the
-  reveal-radius-2 ruling broke pacing only for non-sieging personalities;
-  when both sides sieged, pacing passed. Under 1.8.0 it is broken for
-  everyone until the HP pass lands.
+  ADC balanced; Support (wisp 77%, corvane 27%) and Top (bastion 75%)
+  broken; Mid split. bastion was the one outlier that was never an income
+  story. `batch_0057` replaces this table; compare shapes, not numbers.
+- **South wins 53.2%** over 4,000 seat-swapped games (RQ-042). Open,
+  designer's. `batch_0057` gives a second 4,000-game read of it for free.
+- **No exploit beats the field** (RQ-043), with the T1 caveat now addressed
+  in code (ai 1.5.0) and waiting on `batch_0056`.
+- **P-0013's shape.** A whole-card cooldown of 2 took a fifth to a third
+  off each engine, not half: the champion spends the off round on Q/E or on
+  walking to the next wave, and the roster mean fell with the engines.
 
 ## 5. Open questions for the lead designer
 
-1. **Pacing lever beyond HP** if tower 4 / Nexus 8 is not enough (§3).
-2. **AREA engines beyond cooldown** if P-0013 leaves any above 1.5×: AREA
-   cost 2 is the next kit lever; the design budget prices AREA at 6 a hit.
-3. **RQ-042**, the map: move a pit, compensate North, or accept 53–47.
-4. **Exploit profiles on T2** before Phase 5 is called final.
-5. Nothing else is waiting on a ruling. RQ-038 in its 1.7.0 form is moot
-   once the 1.8.0 pacing lands.
+1. **Pacing lever beyond HP** (§3): siege hit for L0, 2-hit waves, fewer
+   towers — or accept that a non-sieging field stalls a quarter of its games.
+2. **Tower 4 / Nexus 8** as the rulebook values (§14 tuning table), pending 1.
+3. **The engines after P-0013**: quillan 1.56x and sable 1.70x remain above
+   1.5x, but income no longer buys wins (RQ-047). Is the 1.5x check still a
+   target, or is the budget (AREA at 6 a hit) the thing to enforce? The lab
+   recommends deciding after `batch_0057`.
+4. **RQ-042**, the map: move a pit, compensate North, or accept 53–47.
+5. **P-0011's verdict**: the objective personality is still 38–43% and
+   Dragon/Baron secured win rates sit at 43–47%. Objectives are not yet worth
+   fighting over; is that acceptable, or is the objective the next lever?
 
 ## 6. Things I got wrong, so they are not rediscovered
 
-- **Anchors as pool members, then anchors only against machines.** In the
-  state-machine generation 1 each pair met 2–14 times; in generation 2 the
-  fix (anchors drawn into half the games) made overall win rates
-  non-comparable between anchors and machines, since anchors never met the
-  weak `T2_search`. A Bradley-Terry fit over all pairings (script in the
-  RQ-040 entry) is the honest ranking for a mixed field; use it or a
-  head-to-head confirmation, never the overall column.
+- **Anchors as pool members, then anchors only against machines.** Use a
+  Bradley-Terry fit (script in the RQ-040 entry) or a head-to-head, never
+  the overall column, for a mixed field.
 - **Tower HP 16 was never confirmed** and became the wall the moment
   structures stopped taking ability damage. Any pacing number under a rules
   change is suspect until games end.
-- **AREA was a disc, and the rulebook's own text said "at your feet"**; the
-  Longbow interaction made it 19 hexes and nobody had read the two together.
-  When the designer asks "where is the income coming from", trace it to the
-  step, not the champion.
+- **Nexus HP looked like the next wall and was not.** Read the end reasons
+  and the raw dump (who is in the stalled games) before sweeping a number:
+  `batch_0055` was an hour of compute that the `batch_0051` end reasons
+  (18 of 30 stalls decided on towers) had already answered.
+- **AREA was a disc, and the rulebook's own text said "at your feet"**;
+  trace income to the step, not the champion.
 - **Two batches launched ten minutes before a ruling amended the patch**
-  (the tower reward); they were killed and relaunched. Ask "is the ruling
-  complete?" before spending an hour of compute.
+  were killed and relaunched. Ask "is the ruling complete?" first.
 - **`pkill -f` with a pattern that matches the calling shell kills the
-  shell.** Match on the process, not the command text.
-- **The exploit profiles are T1** and their 0% is partly T1 vs T2.
+  shell.** Match on the process (`pgrep -f 'run_batch.py .*batch_005[7]'`).
+- **The exploit profiles were T1** and their 0% was partly T1 vs T2. Fixed
+  in ai 1.5.0; unread.
+- **Running the test suite beside a batch** halves the batch's pace for
+  four minutes. Run tests before launching, not during.
 
 ## 7. Picking the work back up
 
 ```bash
 pip install pytest
-python -m pytest tests/ -q                                            # 165, ~4m
-python tools/run_batch.py reports/requests/batch_0054.json --workers 4 --dump-raw --baseline reports/batch_0053.json
+python -m pytest tests/ -q                                            # 174, ~4m
+git pull                                                              # shards land here
+ls reports/shards/batch_0057*                                         # want four
+for f in reports/shards/batch_0057.partial.shard*of4.jsonl.gz; do gunzip -kc "$f" > "reports/raw/$(basename "${f%.gz}")"; done
+python tools/run_batch.py reports/requests/batch_0057.json --merge --dump-raw
 ```
 
 In order:
 
-1. **Pull and read `batch_0051` and `batch_0053`** (tower 4/Nexus 8, tower
-   6/Nexus 8; both should have pushed). Pick the pair that puts median length
-   in 13–18 and Nexus kills above 90%. If neither does, §3 lists the next
-   levers, and they are the designer's.
-2. **Run `batch_0054`** (roster 1.7.0, P-0013) on that pair — edit its
-   `tower_hp`/`nexus_hp` first; it carries 6/8 as a placeholder. Judge P-0013
-   against the batch with the same HP and roster 1.6.0, per the record. If
-   any engine is still above 1.5×, AREA cost 2 is the next kit lever.
-3. **Re-check the field.** The state machines and the sieger's dominance
-   were measured under 1.7.0. Read the 9c personality table of the batch
-   that ends games; if the sieger is no longer clear of the others, the
-   champion re-read's field is the personality pool, not the sieger + lane6.
-4. **Champion re-read on 1.8.0**: 4,000 games, four shards on four cloud
-   sessions (`--shard K/4`, `--merge`), the way `batch_0044` ran. About
-   ±2.4 points a champion. Then Phase 4 proper: outliers first, one lever
-   each, before/after pairs on the same field and seed.
-5. **RQ-042** when ruled; **exploit profiles on T2**, then the Phase 5
-   re-run; then the release-candidate read.
+1. **Merge and read `batch_0057`** once all four shards are in
+   (`--merge` refuses on a gap and names it; a missing shard is relaunched
+   with `--shard K/4` and resumes from its checkpoint if the worker still
+   has it, or restarts if not). Read: pacing on the sieging field (§5 of the
+   report; expected in band), champions outside 45–55 with the interval
+   clear of 50, the four engines, the roles table, North/South. Write the
+   RQ entry as `batch_0044`'s was written (RQ-041), then the recommended
+   order of levers — remembering RQ-047.
+2. **Phase 4 proper**: outliers first, one lever each, before/after pairs on
+   the same field and seed (2,000 games is enough for ten champions). The
+   designer said "use the design levers"; the engines' AREA cost 2 stays
+   the candidate for quillan if `batch_0057` confirms it.
+3. **`batch_0056`** (exploits on T2, ai 1.5.0): the request carries
+   placeholders for anchors and HP — replace them with what 1 confirms, then
+   four shards, then the RQ-043 re-read.
+4. **RQ-042** and the pacing lever when ruled; then the release-candidate
+   read.
 
 ## 8. Running sims in this environment
 
 - **The cloud container is torn down when the session goes idle with
   nothing harness-tracked running**, sometimes within 15 minutes, and a
   detached run dies with it. What works: a harness `Monitor` (30-minute
-  timeout, re-armed at every expiry) tailing the checkpoint file; scheduled
-  check-ins as the backup. `run_batch` checkpoints every finished game to
-  `reports/raw/<batch>.partial.jsonl` and resumes from it on relaunch.
-- **Workers.** A batch runs on its own four-core cloud session: create a
-  session from the branch, give it the brief (launch detached; arm and
-  re-arm a Monitor; relaunch on "workers gone"; verify the game count; commit
-  the three report files or the gzipped shard into `reports/shards/`; push
-  with pull-rebase retries; reply one line). The brief text is in this
-  session's log for `batch_0044`–`batch_0054`; the parent reads results by
-  pulling the branch, and `get_session` shows each worker's latest game
-  count. Archive workers when done.
-- **Sharding.** `--shard K/N` plays every Nth seat-swapped pair and writes
-  only its checkpoint; `--merge` assembles `reports/raw/<batch>.partial*.jsonl`
-  into the report and refuses on a gap. 4,000 games on four workers is
-  about 8 hours; a 120-game personality batch on one worker is 55–95
-  minutes depending on how many games run to round 20.
-- **Pace.** 1.3–2.3 games a minute on four cores; sieging fields and
-  short games are fast, mixed fields and round-20 games slow.
-- **Usage.** Workers reported the account approaching its seven-day usage
-  limit on 2026-09-24. Two workers at a time was the compromise.
-- Raw dumps (`--dump-raw`) go to `reports/raw/`, gitignored. The per-champion
-  and per-personality figures in the decisions log that are not in a report
-  were computed from them.
+  timeout, re-armed at every expiry) tailing the checkpoint file; a
+  `send_later` check-in as the backup. `run_batch` checkpoints every
+  finished game to `reports/raw/<batch>.partial*.jsonl` and resumes from it
+  on relaunch.
+- **Sessions in flight for `batch_0057`** (created 2026-09-27 ~04:25 UTC;
+  each pushes `reports/shards/batch_0057.partial.shardKof4.jsonl.gz` and
+  replies one line; archive when done):
+  - shard 0/4: `session_01FhfTUaiSBEAQc7GVw55rXr`
+  - shard 1/4: `session_017CpNqr55Ed1gEwQUCi2APq`
+  - shard 2/4: the parent session (this one), checkpoint in its own
+    `reports/raw/`; if the parent died, that shard restarts from zero on a
+    new worker.
+  - shard 3/4: not yet launched; launch when the first of the above finishes
+    (two workers at a time was the usage compromise).
+- **A worker's brief** (the text used for 0055 and the 0057 shards): confirm
+  branch and request; launch detached with `nohup … & disown`; arm a 30-min
+  Monitor that prints the checkpoint line count, exits 0 on the done line,
+  exits 1 with the log tail if `pgrep -f '…batch_005[7]'` finds nothing;
+  re-arm on expiry; relaunch on process gone; verify the count; commit only
+  the three report files (or the one gzipped shard); `git pull --rebase`
+  then push with 2/4/8/16 s retries; reply one line. Say explicitly: no
+  tests, no other edits, no PR, no `--merge`, never `pkill -f` on the
+  command text.
+- **Pace.** 1.3–2.3 games a minute on four cores; sieging fields are fast.
+  A 120-game personality batch is 55–95 minutes; a 1,000-game shard of a
+  sieging field 7–10 hours. `get_session` shows a worker's latest count.
+- **Usage.** Workers reported the account approaching its seven-day limit on
+  2026-09-24; two workers at a time plus the parent was the compromise and
+  is what this session used. A 1-hour worker costs about $2 in tokens,
+  nearly all of it Monitor re-arms.
+- Raw dumps (`--dump-raw`) go to `reports/raw/`, gitignored. The stall
+  analysis in RQ-038 came from `batch_0054`'s dump with a 40-line script
+  (who is in the round-20 games, towers taken, HP left); write it again
+  rather than looking for it.
 
 ## 9. Map of the repository
 
 | path | holds |
 |---|---|
-| `rules/` | the rulebook; **1.8.0 is current** (P-0010, P-0011, P-0012 marked "v1.8" in the text) |
-| `roster/` | champion kits; **1.7.0 is current** (P-0013); `validate_kit` honours `budget_exception` (whole-kit checks) and a named `ability_exception` (the per-ability floor) |
+| `rules/` | the rulebook; **1.8.0 is current** (P-0010, P-0011, P-0012 marked "v1.8" in the text); §14 tuning table still says tower 11 / Nexus 12 |
+| `roster/` | champion kits; **1.7.0 is current** (P-0013); `validate_kit` honours `budget_exception` and a named `ability_exception` |
 | `engine/` | map, state, abilities, phases, batch runner (checkpoint, shard, merge, anchor draw), report (9c personalities, 9d machines and anchors) |
-| `ai/policy_v1_4_0` | the state machine over the personalities; `machines/gen1.json`, `gen2.json`; earlier packages frozen |
-| `tests/` | 165 tests |
+| `ai/policy_v1_5_0` | current: 1.4.0 plus the seven `X2_exploit_*` tiers (the T1 exploits' distortions on the T2 search); `policy_v1_4_0` the state machine, `machines/gen1.json`, `gen2.json`; earlier packages frozen |
+| `tests/` | 174 tests |
 | `tools/` | `run_batch` (`--workers`, `--shard`, `--merge`, `--dump-raw`, `--baseline`), `ai_acceptance`, `ai_calibrate`, `search_agreement`, `ability_usage`, `refit_roster`, `tag_ambush`, `replay_view`, `roster_sheet` |
-| `reports/` | requests, reports (`batch_0001`–`batch_0053`, `0054` queued), `shards/` (gzipped shard checkpoints for 0044 and 0045), `calibration` |
-| `log/` | `decisions.md` (RQ-001–RQ-045), `changelog.md` (iterations 0–9), `patches/` (P-0001–P-0013) |
+| `reports/` | requests (`0001`–`0057`; `0052` not run, `0056` queued with placeholders), reports (`batch_0001`–`batch_0055`), `shards/` (0044, 0045; 0057 arriving), `calibration` |
+| `log/` | `decisions.md` (RQ-001–RQ-047), `changelog.md` (iterations 0–9), `patches/` (P-0001–P-0013, each with its `result`) |
 | `docs/` | prompt architecture, lab notes, agent role cards, this handoff |
 
 ## 10. The state machine, in brief
@@ -213,7 +228,8 @@ ai 1.4.0 makes the team AI a machine whose states are the 1.3.0 personalities
 and whose transitions read flat game-state signals, re-evaluated once per
 round; machines are JSON and register as tiers. Two bred generations and a
 head-to-head confirmation (`batch_0041`–`batch_0043`) found nothing that
-beats sieging from round 1 under 1.7.0; a laning opening was neutral. The
-machinery stays: `SM_g2_lane6` was half the old champion-balance field, and if
-1.8.0 gives a second strategy something to win with, breed again — with the
-anchor design fixed (§6) and the field re-read first (§7 step 3).
+beats sieging from round 1 under 1.7.0, and the 1.8.0 personality tables
+(§4) say the sieger is still clear, so there is nothing to breed toward yet.
+The machinery stays: `SM_g2_lane6` is half the champion-balance field. If a
+pacing ruling gives a second strategy something to win with, breed again —
+with the anchor design fixed (§6) and the field re-read first.
