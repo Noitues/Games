@@ -1,0 +1,96 @@
+{
+  "batch_0066": {
+    "games": 600,
+    "end_reason": {
+      "nexus": 600
+    },
+    "rounds_median": 15,
+    "rounds_p90": 17,
+    "firsts_median": {
+      "first_kill": 4,
+      "first_dragon": 5,
+      "first_tower": 7,
+      "first_baron": 12
+    },
+    "firsts_share": {
+      "first_kill": 0.9933333333333333,
+      "first_dragon": 0.99,
+      "first_tower": 1.0,
+      "first_baron": 0.62
+    },
+    "baron_taken": 0.62,
+    "nexus_kills_by_baron_holder": [
+      160,
+      372
+    ],
+    "window_ap_share": {
+      "laning": {
+        "lane": 0.248,
+        "jungle": 0.664,
+        "objectives": 0.003,
+        "towers": 0.004,
+        "kills": 0.081,
+        "earned_per_game": 57.49
+      },
+      "siege_objectives": {
+        "lane": 0.318,
+        "jungle": 0.392,
+        "objectives": 0.022,
+        "towers": 0.052,
+        "kills": 0.215,
+        "earned_per_game": 63.25
+      },
+      "fights_siege": {
+        "lane": 0.279,
+        "jungle": 0.409,
+        "objectives": 0.033,
+        "towers": 0.111,
+        "kills": 0.169,
+        "earned_per_game": 71.3
+      },
+      "baron_end": {
+        "lane": 0.332,
+        "jungle": 0.362,
+        "objectives": 0.062,
+        "towers": 0.155,
+        "kills": 0.09,
+        "earned_per_game": 38.84
+      }
+    },
+    "leader_wr": {
+      "farm_r4": {
+        "wr": 0.503,
+        "lo": 0.463,
+        "hi": 0.544,
+        "n": 576,
+        "tied": 24
+      },
+      "structures_dragons_r8": {
+        "wr": 0.63,
+        "lo": 0.585,
+        "hi": 0.673,
+        "n": 457,
+        "tied": 143
+      },
+      "kills_r9_12": {
+        "wr": 0.438,
+        "lo": 0.391,
+        "hi": 0.486,
+        "n": 413,
+        "tied": 187
+      },
+      "baron": {
+        "wr": 0.43,
+        "lo": 0.381,
+        "hi": 0.481,
+        "n": 372,
+        "tied": 0
+      }
+    },
+    "tier_wr": {
+      "SM_g2_lane6": 0.6328125,
+      "SM_g3_phase": 0.2692307692307692,
+      "T2_sieger": 0.5915492957746479
+    }
+  }
+}

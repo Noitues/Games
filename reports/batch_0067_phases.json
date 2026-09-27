@@ -1,0 +1,98 @@
+{
+  "batch_0067": {
+    "games": 600,
+    "end_reason": {
+      "nexus": 577,
+      "round_limit_hp": 3,
+      "round_limit_towers": 20
+    },
+    "rounds_median": 17,
+    "rounds_p90": 20,
+    "firsts_median": {
+      "first_kill": 4,
+      "first_dragon": 5,
+      "first_tower": 9,
+      "first_baron": 12
+    },
+    "firsts_share": {
+      "first_kill": 1.0,
+      "first_dragon": 0.9966666666666667,
+      "first_tower": 1.0,
+      "first_baron": 0.8183333333333334
+    },
+    "baron_taken": 0.8183333333333334,
+    "nexus_kills_by_baron_holder": [
+      223,
+      469
+    ],
+    "window_ap_share": {
+      "laning": {
+        "lane": 0.26,
+        "jungle": 0.696,
+        "objectives": 0.002,
+        "towers": 0.001,
+        "kills": 0.04,
+        "earned_per_game": 54.95
+      },
+      "siege_objectives": {
+        "lane": 0.364,
+        "jungle": 0.454,
+        "objectives": 0.026,
+        "towers": 0.027,
+        "kills": 0.129,
+        "earned_per_game": 54.72
+      },
+      "fights_siege": {
+        "lane": 0.324,
+        "jungle": 0.462,
+        "objectives": 0.035,
+        "towers": 0.078,
+        "kills": 0.1,
+        "earned_per_game": 66.6
+      },
+      "baron_end": {
+        "lane": 0.344,
+        "jungle": 0.373,
+        "objectives": 0.063,
+        "towers": 0.164,
+        "kills": 0.056,
+        "earned_per_game": 74.41
+      }
+    },
+    "leader_wr": {
+      "farm_r4": {
+        "wr": 0.527,
+        "lo": 0.486,
+        "hi": 0.567,
+        "n": 575,
+        "tied": 25
+      },
+      "structures_dragons_r8": {
+        "wr": 0.595,
+        "lo": 0.55,
+        "hi": 0.638,
+        "n": 469,
+        "tied": 131
+      },
+      "kills_r9_12": {
+        "wr": 0.502,
+        "lo": 0.456,
+        "hi": 0.549,
+        "n": 444,
+        "tied": 156
+      },
+      "baron": {
+        "wr": 0.487,
+        "lo": 0.443,
+        "hi": 0.531,
+        "n": 491,
+        "tied": 0
+      }
+    },
+    "tier_wr": {
+      "SM_g2_lane6": 0.5989583333333334,
+      "SM_g3_phase": 0.33589743589743587,
+      "T2_sieger": 0.5610328638497653
+    }
+  }
+}

@@ -270,6 +270,6 @@ the wider objective question stay open for later.
 | batch_0063 | decay: tower 12 / Nexus 24, kill = 1 wave | 600 | withdrawn: decay slowed by the designer |
 | batch_0064 | as 0063, kill = 2 waves | 600 | withdrawn: decay slowed by the designer |
 | batch_0065 | slow decay (1 HP every other round): tower 8 floor 4 / Nexus 14 floor 6, kill = 1 wave | 600 | **Pacing in band.** Median 15 (from 13), 98.8% Nexus, first tower round 7 (from 4), Baron taken 66% (from 42%). Siege leader 65.6% (from 72.2%), Baron holder 41.7% (from 32.0%), kill leader 36.8% (from 32.3%), farm leader 47.8%. lane6 66.1%, sieger 58.2%, phase 25.1%. |
-| batch_0066 | as 0065, kill = 2 waves | 600 | running |
-| batch_0067 | slow decay: tower 10 floor 4 / Nexus 18 floor 8, kill = 1 wave | 600 | running |
-| batch_0068 | as 0067, kill = 2 waves | 600 | running |
+| batch_0066 | as 0065, kill = 2 waves | 600 | Median 15, 100% Nexus, first tower r7. Leaders: farm 50.3, siege 63.0, kills 43.8, Baron 43.0. Kills 17-22% of mid-game AP. |
+| batch_0067 | slow decay: tower 10 floor 4 / Nexus 18 floor 8, kill = 1 wave | 600 | Median 17, 96.2% Nexus, first tower r9, Baron taken 82%. Leaders: farm 52.7, siege 59.5, kills 50.2, Baron 48.7. |
+| batch_0068 | as 0067, kill = 2 waves | 600 | **Recommended.** Median 17, 96.5% Nexus (21 games to the limit), first tower r9, Baron taken 80%. Leaders: farm 56.4, siege 54.2, kills 48.5, Baron 49.7 - every phase leader near or above 50, none decisive. Kills 18-23% of mid-game AP. Sieger 49.8% (from 68.5), laner 67.7%, phase AI 32.8%. |

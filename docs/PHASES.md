@@ -64,3 +64,20 @@ the read shows whether playing the phases in order beats ignoring them.
 
 Baseline: `batch_0059` (today's rules, same field and seed). Nothing here goes
 into the rulebook until the designer rules on it.
+
+## Result (batches 0065-0068, 600 games each, paired with batch_0059)
+
+Win rate of the team ahead in each phase:
+
+| rules | farm r4 | towers+Dragons r8 | kills r9-12 | Baron holder | median | Nexus kills |
+|---|---|---|---|---|---|---|
+| today (tower 4 / Nexus 8) | 48.0 | 72.2 | 32.3 | 32.0 | 13 | 100% |
+| decay T8/N14, kill 1 wave | 47.8 | 65.6 | 36.8 | 41.7 | 15 | 98.8% |
+| decay T8/N14, kill 2 waves | 50.3 | 63.0 | 43.8 | 43.0 | 15 | 100% |
+| decay T10/N18, kill 1 wave | 52.7 | 59.5 | 50.2 | 48.7 | 17 | 96.2% |
+| **decay T10/N18, kill 2 waves** | **56.4** | **54.2** | **48.5** | **49.7** | 17 | 96.5% |
+
+Recommended: towers start 10 (floor 4), Nexus 18 (floor 8), every structure
+loses 1 HP every other round, a champion kill pays two current waves. Every
+phase pays and none decides the game alone. Open item: 3.5% of games still
+reach round 20; the proposed confirmation lowers the Nexus floor to 6.
