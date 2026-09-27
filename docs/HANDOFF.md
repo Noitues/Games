@@ -199,6 +199,14 @@ In order:
   one-line `prompt` ("start your configured job"), launched all four. Fable
   accepted the brief as a chat turn. Always confirm a new worker's first turn
   shows the job launched before leaving it.
+- **Tell a worker it runs unattended and must never use AskUserQuestion.**
+  Two of four `batch_0065`-`0068` workers (in auto mode) stopped at the
+  branch-sync step and asked the user a question, and sat blocked for 80
+  minutes. The replacements' brief says "running unattended, never use
+  AskUserQuestion", gives the sync command outright (`git fetch` then
+  `git checkout -B <branch> origin/<branch>`: there is no local work to
+  keep) and says concurrent pushes from other workers are expected. Check
+  `status_bucket` for `blocked` at every check-in.
 - **A worker's brief** (the text used for 0055 and the 0057 shards): confirm
   branch and request; launch detached with `nohup … & disown`; arm a 30-min
   Monitor that prints the checkpoint line count, exits 0 on the done line,
