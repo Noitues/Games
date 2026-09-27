@@ -443,3 +443,9 @@ Recommended order: marrow R cooldown 2 and bastion Q 3 to 2 as one pair
 (both Top, both HIGH, different mechanisms, so a single before/after read
 attributes them by champion), then wisp R and corvane Q, then ossuar. Read
 each pair at 2,000 games on this field and seed.
+
+## Iteration 11 - rewarding the phases in order
+
+| id | question | finding | status |
+|---|---|---|---|
+| RQ-049 | The lead designer asks for the game to reward its phases in order: laning (last hits, jungle) -> sieging and objectives -> team fights and sieging -> Baron and ending. What rules do that? | **Proposal in `docs/PHASES.md`: gate the structures by round and put the ending behind the Baron.** Tier-1 towers open round 5, tier-2 round 9; the Nexus takes damage only from the Baron holder, or from anyone from round 16; a champion last hit on a wave pays +1 AP; Baron spawns round 10. All config, off by default. A 16+16-game smoke (SM_g3_phase vs T2_sieger, paired seeds): under today's rules median 12, first tower round 4, Baron taken in 62% of games and its holder wins 4 of 10; under the gates median 17 (in the 13-18 band), all 16 end on the Nexus, first tower round 6, Baron taken in 94% and its holder wins 10 of 15. In both, **kills pay 2-9% of earned AP in every window** and farm 70-90%: the gates order the structures, but nothing yet makes phase 3 a fight - that is a reward lever (kill AP, a bounty, or a death timer that concedes a tower) and is read after B0/B1. Full read: `batch_0059` (today) vs `batch_0060` (gates), 1,600 games each, with `tools/phase_read.py`. | lab; proposal, **HUMAN** to adopt |

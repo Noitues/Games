@@ -246,7 +246,22 @@ the wider objective question stay open for later.
 | batch_0053 | 1.8.0 full, tower HP 6, Nexus HP 8 | 120 | Median 20 (p10 16), Nexus kills 39%, first tower round 8, 81 of 120 games to the round limit. Two more tower HP cost 36 points of Nexus kills against batch_0051. Sieger 100% on the tiebreak - unreadable. |
 | batch_0054 | roster 1.7.0 (P-0013) on tower 4 / Nexus 8, paired with batch_0051 | 120 | **P-0013 partial (RQ-046).** wisp 1.79x -> 1.26x and ashwyn 1.66x -> 1.49x in line; quillan 1.56x and sable 1.70x remain; sable 36% (38% before). Median 17, Nexus kills 69%. Sieger 93.1% - still clear of the field under 1.8.0. Income and win rate uncorrelated (RQ-047). |
 | batch_0055 | 1.8.0 full, tower HP 4, Nexus HP 6 (third HP pass), paired with batch_0051 | 120 | **HP lever exhausted (RQ-038 closed).** Median 16 and Nexus kills 75.8%, identical to Nexus 8; the 29 stalled games are non-sieging pairs that take towers and stop. Tower 4 / Nexus 8 adopted; the lever beyond HP is the designer's. |
-| batch_0057 | Phase 4 champion re-read on 1.8.0 / roster 1.7.0: T2_sieger + SM_g2_lane6 drawn per game, tower 4 / Nexus 8, four shards | 4000 | running |
+| batch_0057 | Phase 4 champion re-read on 1.8.0 / roster 1.7.0: T2_sieger + SM_g2_lane6 drawn per game, tower 4 / Nexus 8, four shards | 4000 | **RQ-048.** Champion SD 5.2 points (from 10.6); five outliers: bastion 62, marrow 59, wisp 59 high, ossuar 41, corvane 41 low. Median 12 on this sieging field; sieger beats SM_g2_lane6 59.8%. |
 | batch_0056 | Phase 5 on T2: seven X2_exploit_* vs the field, four shards | 560 | queued behind the field re-read; anchors and HP are placeholders |
 | batch_0050 | as batch_0048 with P-0012 (centred AREA) | 120 | **P-0012 partial.** Engines down a third (sable 2.54x -> 1.87x, pallas to 1.01x) but four remain above 1.5x. Nexus kills 15% at tower HP 8 - pacing still the wall. |
 
+
+## Iteration 11 - P-0014 and the phase-reward proposal
+
+| artefact | version | change |
+|---|---|---|
+| roster | 1.8.0 | P-0014: marrow R cooldown 1 -> 2, bastion Q HIT 3 -> 2, wisp R cooldown 1 -> 2, corvane Q cooldown 2 -> 1, ossuar Q HIT 1 -> 2. |
+| engine | - | Phase knobs, all off by default (RQ-049): `tower_unlock_round`, `nexus_needs_baron`, `nexus_unlock_round`, `last_hit_ap`. Every game records a per-round `trace` (AP by source, kills, towers lost, Dragons, Baron). |
+| ai | 1.5.0 | `SM_g3_phase` state machine: laner -> sieger/objective from round 5 -> brawler after a won fight from round 9 -> objective on Baron from round 10 -> sieger with Baron. |
+| tools | - | `phase_read.py`: AP share by window (lane / jungle / objectives / towers / kills), phase-leader win rates, firsts in order. |
+
+| batch | matchup | games | result |
+|---|---|---|---|
+| batch_0058 | roster 1.8.0 (P-0014), field and seed of batch_0057, four shards | 2000 | running |
+| batch_0059 | RQ-049 B0: today's rules, pool T2_sieger / SM_g2_lane6 / SM_g3_phase, four shards | 1600 | running |
+| batch_0060 | RQ-049 B1: phase rules (towers open r5/r9, Nexus needs Baron or r16, +1 AP last hit, Baron spawns r10), paired with batch_0059 | 1600 | running |
