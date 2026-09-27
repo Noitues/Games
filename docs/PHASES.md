@@ -1,4 +1,4 @@
-# Rewarding the phases in order (RQ-049, proposal)
+# Rewarding the phases in order (RQ-049)
 
 The lead designer's target: a game moves through four phases, and each one
 pays for its own play.
@@ -14,52 +14,53 @@ pays for its own play.
 
 Under rules 1.8.0 with tower 4 / Nexus 8 (RQ-048), the first tower falls in
 round 4 and the sieger beats a laning opening 60-40 (RQ-048c). Every structure
-is open from round 1, so a team that walks waves into towers skips phases 1-3
-and the Baron is optional: the Nexus falls without it. Nothing in the rules
-says what order things happen in; only HP does, and HP is exhausted as a
-lever (RQ-038).
+is at its weakest from round 1, so a team that walks waves into towers skips
+the early phases. A champion kill pays 3 AP, one early wave, and in a 16-game
+smoke kills were 2-9% of earned AP in every window: fighting does not pay.
 
-## The proposal: gates, not HP
+## First proposal: round gates (rejected)
 
-Four config knobs, all off by default, so today's game is unchanged until the
-designer adopts them (`engine/config.py`):
+Towers unlocked by round (tier 1 at 5, tier 2 at 9) and the Nexus locked behind
+the Baron card or round 16. The smoke ordered the phases (median 17, first tower
+round 6, Baron taken in 94%), but the designer rejected gating structure death
+behind arbitrary round or monster conditions. The code was removed.
 
-| knob | value read | effect |
-|---|---|---|
-| `tower_unlock_round` | tier 1: round 5, tier 2: round 9 | a tower takes no damage before its round - laning cannot be skipped |
-| `last_hit_ap` | 1 | a champion that removes a wave's last chip gains +1 AP - laning pays for skill, not only presence |
-| `nexus_needs_baron` + `nexus_unlock_round` | true, 16 | the Nexus takes damage only from the team holding the Baron card, or from anyone from round 16 - the Baron is the ending, and the clock stops a stalled game |
-| Baron spawn | round 10 (was 7) | the Baron appears as phase 3 starts, so fights happen over it |
+## Current proposal: structures decay, kills pay in waves
 
-Dragon (spawn 3, reusable card) already sits in phases 1-2; the tier-2 gate at
-round 9 puts the second siege into the fight phase.
+The designer's shape (config, off by default, `engine/config.py`):
 
-A matching AI personality, `SM_g3_phase` (`ai/policy_v1_4_0/machines/gen3.json`),
-plays the target order - laner, then sieger/objective from round 5, brawler
-after a won fight from round 9, objective when the Baron is up from round 10,
-sieger once it holds Baron - so the read shows whether playing the phases in
-order beats ignoring them.
+| knob | meaning |
+|---|---|
+| `tower_hp`, `nexus_hp` | start high |
+| `structure_decay` = 1 | at every Upkeep from round 2, each standing tower and Nexus loses 1 HP, never below `structure_decay_floor` (1) - decay alone never destroys a structure; a team still has to hit it |
+| `kill_ap_waves` | a champion kill pays this many of the current minion waves (waves are 3 / 4 / 5 chips as they grow in rounds 7 and 13); 1 = one wave, 2 = two |
+
+A tower that starts at T HP and takes about one hit a round falls near round
+(T+1)/2, so a tower 10-12 start puts the first tower in rounds 5-6. Tier-2
+towers, reached around round 9, have decayed to a few HP; the Nexus has
+decayed most of the way by round 13-15. Early structures are walls, late ones
+are glass: laning pays first because sieging is slow, and the game closes by
+itself because every structure is getting weaker. Kills paying 1-2 waves makes
+a fight worth what a round of farming is.
+
+`SM_g3_phase` (`ai/policy_v1_4_0/machines/gen3.json`) plays the target order -
+laner, then sieger/objective from round 5, brawler after a won fight from round
+9, objective when the Baron is up from round 10, sieger once it holds Baron - so
+the read shows whether playing the phases in order beats ignoring them.
 
 ## How it is judged
 
-`tools/phase_read.py` reads the per-round trace every game now carries and
-reports, per batch:
+`tools/phase_read.py` reads the per-round trace every game carries:
 
-1. **Where AP comes from in each window** (farm / towers / kills, as a share of
-   earned, non-base AP). Pass: farm leads rounds 1-4, towers are a material
-   share in 5-8, kills lead or match in 9-12.
+1. **Where AP comes from in each window** (lane / jungle / objectives / towers
+   / kills, as a share of earned AP). Pass: lane + jungle lead rounds 1-4,
+   towers a material share in 5-8, kills a material share in 9-12.
 2. **Does the phase leader win?** Win rate of the team ahead on farm at round
    4, on towers taken + Dragons at round 8, on kills in rounds 9-12, and of the
-   Baron holder. Pass: every leader wins above 50% (the phase matters) and none
-   above ~80% (it does not decide the game on its own).
-3. **Firsts in order**: median first kill / first tower / first Dragon / Baron
-   round rising through the phases.
-4. **Pacing**: median 13-18, Nexus kills above 90% (the band RQ-038 missed).
-5. **Personality**: `SM_g3_phase` at or above the sieger under phase rules, and
-   no single personality above 60%.
+   Baron holder. Pass: every leader above 50% and none above ~80%.
+3. **Firsts in order**: first kill, first tower, first Dragon, Baron.
+4. **Pacing**: median 13-18, Nexus kills above 90%.
+5. **Personality**: no single personality above 60%.
 
-Runs: `batch_0059` (today's rules) and `batch_0060` (phase rules), same seed
-and field (T2_sieger, SM_g2_lane6, SM_g3_phase), 1,600 games each, paired by
-seed and draw.
-
-Nothing here goes into the rulebook until the designer rules on it.
+Baseline: `batch_0059` (today's rules, same field and seed). Nothing here goes
+into the rulebook until the designer rules on it.

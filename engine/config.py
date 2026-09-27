@@ -57,16 +57,17 @@ DEFAULT_CONFIG = {
     # where the centre may go, never the disc. False restores the 1.7.0 blast
     # at the champion's feet, radius = range (2 with Longbow).
     "area_center": True,
-    # Phase rules (RQ-049, proposal; all off by default). They order the game
-    # into laning -> sieging and objectives -> team fights -> Baron and ending.
-    # tower_unlock_round: a tower of that tier takes no damage before that
-    # round (0 = always open). nexus_needs_baron: the Nexus takes damage only
-    # from a team holding the Baron card, or from anyone once
-    # nexus_unlock_round is reached (0 = never by the clock alone).
-    # last_hit_ap: bonus AP when a champion removes a wave's last chip.
-    "tower_unlock_round": {"1": 0, "2": 0},
-    "nexus_needs_baron": False,
-    "nexus_unlock_round": 0,
+    # RQ-049 (designer's shape, replacing the rejected round gates): towers
+    # and Nexus start high and every standing structure loses
+    # `structure_decay` HP at each round's Upkeep from round 2, never below
+    # `structure_decay_floor` - decay alone never destroys one, a team still
+    # has to hit it. 0 = off. Early structures are walls; late ones are glass.
+    "structure_decay": 0,
+    "structure_decay_floor": 1,
+    # RQ-049: a champion kill worth this many of the current minion waves
+    # (3 / 4 / 5 chips as waves grow). 0 = off, `kill_ap` applies.
+    "kill_ap_waves": 0,
+    # RQ-049: bonus AP when a champion removes a wave's last chip. 0 = off.
     "last_hit_ap": 0,
     "tower_hits_champion": 2,
     "tower_hits_wave": 1,

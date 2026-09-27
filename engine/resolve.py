@@ -121,21 +121,7 @@ def can_be_hit(state: GameState, u, attacker_team: str, spec: str) -> bool:
     if spec == "enemy_no_structure":
         return u.kind != "structure"
     if u.kind == "structure":
-        return structure_targetable(state, u) and phase_open(state, u, attacker_team)
-    return True
-
-
-def phase_open(state: GameState, s, attacker_team: str) -> bool:
-    """RQ-049 phase rules: is this structure open to damage from this team now?"""
-    cfg = state.config
-    if s.stype == "tower":
-        unlock = (cfg.get("tower_unlock_round") or {}).get(str(s.tier), 0)
-        return state.round >= unlock
-    if cfg.get("nexus_needs_baron"):
-        if state.teams[attacker_team].baron_track > 0:
-            return True
-        clock = cfg.get("nexus_unlock_round", 0)
-        return bool(clock) and state.round >= clock
+        return structure_targetable(state, u)
     return True
 
 
@@ -288,6 +274,17 @@ def deal_hits(state: GameState, team: Optional[str], target, k: int, source: str
     return chips
 
 
+def kill_reward(state: GameState) -> int:
+    """AP for a champion kill: `kill_ap_waves` of the current minion wave when
+    set (RQ-049), else the flat `kill_ap`."""
+    cfg = state.config
+    mult = cfg.get("kill_ap_waves", 0)
+    if mult:
+        from engine.game import wave_size
+        return int(mult * wave_size(state) + 0.5)      # half rounds up
+    return cfg.get("kill_ap", 1)
+
+
 def kill_champion(state: GameState, victim: Champion, killer_team: Optional[str],
                   attacker: Optional[Champion]) -> None:
     victim.alive = False
@@ -297,7 +294,7 @@ def kill_champion(state: GameState, victim: Champion, killer_team: Optional[str]
     victim.track = death_track_pos(state.round,
                                    state.config.get("death_band_bonus", 0))
     if killer_team is not None:
-        state.teams[killer_team].gain(state.config.get("kill_ap", 1), "champion_kill")
+        state.teams[killer_team].gain(kill_reward(state), "champion_kill")
         state.teams[killer_team].kills += 1
         killer_uid = attacker.uid if attacker is not None else None
         for uid, rnd in victim.damaged_by.items():

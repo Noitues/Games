@@ -85,6 +85,8 @@ def upkeep(state: GameState, game: "Game") -> None:
         if c.alive and state.board.tile_of[c.hexpos] == base_tiles[c.team]:
             c.hp = c.max_hp
 
+    decay_structures(state)                              # RQ-049
+
     for t in TEAMS:                                      # step 4
         ts = state.teams[t]
         ts.ap = 0
@@ -110,14 +112,33 @@ def upkeep(state: GameState, game: "Game") -> None:
     state.refresh_visibility(allow_flip_back=True, placer=game.placer)    # step 8
 
 
-def spawn_waves(state: GameState) -> None:
+def wave_size(state: GameState) -> int:
+    """Chips in a wave spawned this round (before any Baron bonus)."""
     cfg = state.config
     if state.round >= cfg.get("wave_growth_round2", 10 ** 6):
-        size = cfg["wave_chips_late2"]
-    elif state.round >= cfg["wave_growth_round"]:
-        size = cfg["wave_chips_late"]
-    else:
-        size = cfg["wave_chips"]
+        return cfg["wave_chips_late2"]
+    if state.round >= cfg["wave_growth_round"]:
+        return cfg["wave_chips_late"]
+    return cfg["wave_chips"]
+
+
+def decay_structures(state: GameState) -> None:
+    """RQ-049: every standing tower and Nexus loses `structure_decay` HP a
+    round, never below the floor. The chips go to the supply."""
+    cfg = state.config
+    step = cfg.get("structure_decay", 0)
+    if not step or state.round < 2:
+        return
+    floor = cfg.get("structure_decay_floor", 1)
+    for s in state.structures.values():
+        if s.alive and s.chips > floor:
+            s.chips = max(floor, s.chips - step)
+            state.touch()
+
+
+def spawn_waves(state: GameState) -> None:
+    cfg = state.config
+    size = wave_size(state)
     for team in TEAMS:
         bonus = cfg["baron_wave_bonus"] if state.teams[team].baron_track > 0 else 0
         for lane, hexpos in state.board.spawn[team].items():
