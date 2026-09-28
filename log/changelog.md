@@ -293,6 +293,6 @@ Working rules (designer approved): towers 10 / Nexus 18, decay 1 HP every other 
 
 | batch | matchup | games | result |
 |---|---|---|---|
-| batch_0073 | settled rules, roster 1.8.0, T2_sieger + SM_g2_lane6, four shards | 2000 | running |
-| batch_0074 | settled rules, roster 1.9.0 (P-0015), paired with 0073 | 2000 | running |
-| batch_0075 | as 0074 with death timers 2 / 4 / 6 rounds missed (RQ-053) | 2000 | running |
+| batch_0073 | settled rules, roster 1.8.0, T2_sieger + SM_g2_lane6, four shards | 2000 | Median 16, 100% Nexus. Leaders farm 60.9 / siege 56.9 / kills 63.9 / Baron 45.8. Laner 62.2%. Champion SD 4.0. |
+| batch_0074 | settled rules, roster 1.9.0 (P-0015), paired with 0073 | 2000 | **P-0015 weak, adopted.** Four targets moved under 1.1 points; SD 4.0 -> 3.2. Leaders farm 59.4 / siege 57.2 / kills 63.0 / Baron 45.4. |
+| batch_0075 | as 0074 with death timers 2 / 4 / 6 rounds missed (RQ-053) | 2000 | Equivalent to 0074 within noise (farm 61.4 / siege 57.1 / kills 63.3 / Baron 47.7; median 16). |

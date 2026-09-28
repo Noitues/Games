@@ -1,13 +1,35 @@
 {
   "patch_id": "P-0015",
-  "from": {"rules": "1.8.0 + RQ-049/051 working rules", "roster": "1.8.0", "ai": "1.5.0"},
-  "to": {"roster": "1.9.0"},
+  "from": {
+    "rules": "1.8.0 + RQ-049/051 working rules",
+    "roster": "1.8.0",
+    "ai": "1.5.0"
+  },
+  "to": {
+    "roster": "1.9.0"
+  },
   "lever_class": "kit",
   "changes": [
-    {"target": "roster:marrow.R.cost", "from": 2, "to": 1},
-    {"target": "roster:bastion.W.SHIELD.n", "from": 4, "to": 3},
-    {"target": "roster:wisp.E.SHIELD.range", "from": 2, "to": 1},
-    {"target": "roster:corvane.E.cooldown", "from": 2, "to": 1}
+    {
+      "target": "roster:marrow.R.cost",
+      "from": 2,
+      "to": 1
+    },
+    {
+      "target": "roster:bastion.W.SHIELD.n",
+      "from": 4,
+      "to": 3
+    },
+    {
+      "target": "roster:wisp.E.SHIELD.range",
+      "from": 2,
+      "to": 1
+    },
+    {
+      "target": "roster:corvane.E.cooldown",
+      "from": 2,
+      "to": 1
+    }
   ],
   "evidence": "batch_0058 (P-0014, RQ-050): marrow 44.9 (overshot from 58.8 when R went to cooldown 2), bastion 57.8, wisp 56.4, corvane 42.9. One lever each, a different mechanism from P-0014's.",
   "hypothesis": "Each moves its champion 3-6 points toward 50 without touching the other 21.",
@@ -15,5 +37,17 @@
   "revert_if": "Any of the four crosses to the other side of the band (below 43 or above 57), or an untouched champion moves more than 5 points away from 50.",
   "side_effects": "wisp (19) and corvane (25.5) carry declared budget exceptions.",
   "pillar_change": false,
-  "note": "Read on the settled rules (designer-approved 2026-09-28): towers 10 / Nexus 15, 1 HP every other round, floors 4 / 6, kill = 2 waves, death timer +1. batch_0073 (roster 1.8.0) and batch_0074 (roster 1.9.0), seed 7301, four shards of 500 each."
+  "note": "Read on the settled rules (designer-approved 2026-09-28): towers 10 / Nexus 15, 1 HP every other round, floors 4 / 6, kill = 2 waves, death timer +1. batch_0073 (roster 1.8.0) and batch_0074 (roster 1.9.0), seed 7301, four shards of 500 each.",
+  "result": {
+    "batch": "batch_0074 vs batch_0073 (2,000 paired games)",
+    "verdict": "weak - adopted (no harm), levers too small",
+    "four": {
+      "wisp": "56.7 -> 56.1",
+      "bastion": "57.1 -> 56.0",
+      "marrow": "49.0 -> 49.3 (the settled rules had already fixed it)",
+      "corvane": "43.0 -> 43.7"
+    },
+    "spread_sd": "4.0 -> 3.2 (from quillan +4.0, rictus +3.0, sable -3.4 - indirect)",
+    "outside_band_after": "wisp 56.1, bastion 56.0, thornjaw 55.2 high; corvane 43.7 low"
+  }
 }
