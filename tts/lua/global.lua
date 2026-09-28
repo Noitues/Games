@@ -49,6 +49,18 @@ end
 -- ------------------------------------------------------------ calibration
 -- Scale an object so its measured footprint matches the exporter's w x d,
 -- then move it so its bounds (not its pivot) are centred on the target.
+-- Height: objects that sit on another generated object (tiles on the mat,
+-- pieces on the tiles) are stacked on its measured top surface, because TTS
+-- decides how thick a custom tile or token really is.
+function targetY(o, spec)
+  if not spec.on then return spec.y end
+  local base = findTag(spec.on)
+  if not base then return spec.y end
+  local bb = base.getBounds()
+  local top = bb.center.y + bb.size.y / 2
+  return top + o.getBounds().size.y / 2 + (spec.lift or 0.01)
+end
+
 local function fitObject(o, spec, place)
   if not o or not spec then return end
   if spec.w and spec.w > 0 then
@@ -64,8 +76,9 @@ local function fitObject(o, spec, place)
     end
   end
   if place then
+    local y = targetY(o, spec)
     o.setRotation({0, (spec.rot or 0) + (S.flip or 0), 0})
-    o.setPosition({spec.x, spec.y, spec.z})
+    o.setPosition({spec.x, y, spec.z})
     if spec.art then
       -- re-centre on the bounds once TTS has applied the new scale
       Wait.frames(function()
@@ -74,7 +87,7 @@ local function fitObject(o, spec, place)
         local p = o.getPosition()
         local dx, dz = c.x - spec.x, c.z - spec.z
         if math.abs(dx) > 0.02 or math.abs(dz) > 0.02 then
-          o.setPosition({p.x - dx, spec.y, p.z - dz})
+          o.setPosition({p.x - dx, y, p.z - dz})
         end
       end, 3)
     end
@@ -93,18 +106,28 @@ local function loadingDone()
   return true
 end
 
-local function doCalibrate(placeAll)
-  local n = 0
+-- Pass `level` places the objects stacked `level` deep: 0 = on the table
+-- (mat, dashboards, tracker), 1 = on the mat (tiles), 2 = on a tile (pieces).
+-- Each level waits a few frames so the one below has its final size.
+local function calibrateLevel(placeAll, level, n)
   for _, o in ipairs(allObjects()) do
     local spec = LAYOUT[tagOf(o)]
-    if spec then
+    if spec and (spec.level or 0) == level then
       fitObject(o, spec, placeAll and spec.start)
       n = n + 1
     end
   end
+  if level < 2 then
+    Wait.frames(function() calibrateLevel(placeAll, level + 1, n) end, 5)
+    return
+  end
   S.calibrated = true
   refreshUI()
   broadcastToAll("Hex-Nexus: laid out " .. n .. " objects.", {0.85, 0.77, 0.6})
+end
+
+local function doCalibrate(placeAll)
+  calibrateLevel(placeAll, 0, 0)
 end
 
 function calibrate(placeAll)

@@ -19,6 +19,7 @@ from PIL import Image, ImageDraw
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BUILD = os.path.join(ROOT, "tts", "build")
 SCALE = 22                      # preview pixels per world unit
+TABLE = (58.0, 40.0)            # Table_RPG surface, world units (approximate)
 
 
 def asset_path(url: str) -> str:
@@ -45,7 +46,8 @@ def main() -> int:
         layout[tag] = {k: (float(v) if re.match(r"^-?[\d.]+$", v) else v) for k, v in vals.items()}
     xs = [v["x"] for v in layout.values()]
     zs = [v["z"] for v in layout.values()]
-    minx, maxx, minz, maxz = min(xs) - 12, max(xs) + 12, min(zs) - 8, max(zs) + 8
+    minx, maxx = min(min(xs) - 4, -TABLE[0] / 2 - 2), max(max(xs) + 4, TABLE[0] / 2 + 2)
+    minz, maxz = min(min(zs) - 4, -TABLE[1] / 2 - 2), max(max(zs) + 4, TABLE[1] / 2 + 2)
     W, H = int((maxx - minx) * SCALE), int((maxz - minz) * SCALE)
     img = Image.new("RGB", (W, H), (24, 36, 30))
     d = ImageDraw.Draw(img)
@@ -77,6 +79,11 @@ def main() -> int:
             cx, cy = to_px(spec["x"], spec["z"])
             d.rectangle((cx - 30, cy - 40, cx + 30, cy + 40), outline=(255, 255, 255), width=2)
             d.text((cx - 28, cy - 36), o.get("Nickname", "")[:24], fill=(255, 255, 255))
+    # Table_RPG's playing surface, as measured from a screenshot of the M0
+    # build (about 58 x 40 units): everything should sit inside this line
+    tx0, ty0 = to_px(-TABLE[0] / 2, TABLE[1] / 2)
+    tx1, ty1 = to_px(TABLE[0] / 2, -TABLE[1] / 2)
+    d.rectangle((tx0, ty0, tx1, ty1), outline=(255, 80, 80), width=3)
     for sp in save.get("SnapPoints", []):
         cx, cy = to_px(sp["Position"]["x"], sp["Position"]["z"])
         d.ellipse((cx - 4, cy - 4, cx + 4, cy + 4), fill=(255, 255, 0))

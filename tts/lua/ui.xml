@@ -2,17 +2,17 @@
   <Text color="#FFFFFF" alignment="MiddleLeft" />
   <Button fontSize="13" colors="#3a342e|#5a5048|#2a2622|#3a342e" textColor="#FFFFFF" />
 </Defaults>
-<Panel id="hnPanel" width="620" height="228" rectAlignment="UpperRight" offsetXY="-8 -64"
+<Panel id="hnPanel" width="620" height="244" rectAlignment="UpperRight" offsetXY="-8 -64"
        allowDragging="true" returnToOriginalPositionWhenReleased="false" color="rgba(0,0,0,0)">
   <Button id="hnToggle" onClick="uiTogglePanel" width="40" height="24" rectAlignment="UpperRight"
           offsetXY="0 0" fontSize="12" text="HN" />
-  <Panel id="hnBody" width="620" height="200" rectAlignment="LowerCenter" color="rgba(0,0,0,0.8)">
+  <Panel id="hnBody" width="620" height="216" rectAlignment="LowerCenter" color="rgba(0,0,0,0.8)">
     <VerticalLayout padding="10 10 6 6" spacing="2" childForceExpandHeight="false">
       <Text id="hnVer" fontSize="12" color="#d8c49a" preferredHeight="18">{{STAMP}}</Text>
       <Text id="hnRound" fontSize="22" fontStyle="Bold" preferredHeight="28">Round 1</Text>
       <Text id="hnPrio" fontSize="15" preferredHeight="20">Priority</Text>
       <Text id="hnInfo" fontSize="13" color="#e8e0d0" preferredHeight="20">-</Text>
-      <Text id="hnHint" fontSize="12" color="#b8b0a0" preferredHeight="18">-</Text>
+      <Text id="hnHint" fontSize="12" color="#b8b0a0" preferredHeight="34" horizontalOverflow="Wrap">-</Text>
       <Text id="hnAP" fontSize="15" fontStyle="Bold" color="#ebc43c" preferredHeight="20">AP pool</Text>
       <HorizontalLayout spacing="4" preferredHeight="28" childForceExpandWidth="true">
         <Button onClick="uiPrevRound" text="◀ Round" />

@@ -154,6 +154,25 @@ for _, o in ipairs(Stub.objects) do
 end
 check(fitted >= 59, "fitted " .. fitted .. " objects")
 
+-- stacking: tiles rest on the mat's measured top, pieces on their tile's
+local function byTag(t)
+  for _, o in ipairs(Stub.objects) do if o.getGMNotes() == t then return o end end
+end
+local function top(o) local b = o.getBounds(); return b.center.y + b.size.y / 2 end
+local function bottom(o) local b = o.getBounds(); return b.center.y - b.size.y / 2 end
+local mat = byTag("hn:art:mat")
+for _, o in ipairs(Stub.objects) do
+  local sp = G.LAYOUT[o.getGMNotes()]
+  if sp and sp.on and sp.start then
+    local base = byTag(sp.on)
+    check(base ~= nil, o.getGMNotes() .. " base " .. sp.on .. " exists")
+    if base then
+      check(bottom(o) >= top(base) - 1e-6, o.getGMNotes() .. " rests above " .. sp.on)
+    end
+  end
+end
+check(bottom(byTag("hn:tile:Mid River:hidden")) >= top(mat) - 1e-6, "tiles sit on top of the mat")
+
 -- per-round numbers against the engine
 for r = 1, #expect do
   local e = expect[r]
@@ -230,7 +249,7 @@ for _, o in ipairs(Stub.objects) do
     check(st.hp == G.CONFIG.nexus_hp and st.floor == G.FLOORS.nexus, "Nexus starts at config HP and floor")
     o._env.hnClick(o, "Blue", false)
     check(o._env.hnGet().hp == G.CONFIG.nexus_hp - 1, "left-click removes 1 HP")
-    check(o._buttons[1].label:find("floor " .. G.FLOORS.nexus) ~= nil, "structure label shows its floor")
+    check(o._buttons[1].label:find("min " .. G.FLOORS.nexus) ~= nil, "structure label shows its floor")
     o._env.hnClick(o, "Blue", true)
     check(o._env.hnGet().hp == G.CONFIG.nexus_hp, "right-click adds 1 HP")
     check(Stub.JSON.decode(o._env.onSave()).hp == G.CONFIG.nexus_hp, "counter saves its HP")

@@ -388,31 +388,28 @@ def render_dashboard(team: str, team_label: str, track_positions: int, slot_px: 
     col = TEAM_COLOURS[team]
     img = Image.new("RGB", (W, H), darker(col, 0.35))
     d = ImageDraw.Draw(img)
-    d.rectangle((6, 6, W - 7, H - 7), outline=lighter(col, 0.3), width=6)
-    d.text((24, 16), f"{team_label} · {team.upper()}", font=font(40, True), fill=(255, 255, 255))
-    d.text((24, 64), "COOLDOWN TRACK — shift every card down 1 in Upkeep; 0 = in hand",
-           font=font(22, True), fill=lighter(col, 0.6))
+    d.rectangle((4, 4, W - 5, H - 5), outline=lighter(col, 0.3), width=5)
+    d.text((18, 10), f"{team_label} · {team.upper()}", font=font(32, True), fill=(255, 255, 255))
+    d.text((20, 50), "COOLDOWN TRACK: every card down 1 in Upkeep · 0 = in hand",
+           font=font(18, True), fill=lighter(col, 0.6))
     for pos, box in layout["slots"].items():
         x0, y0, x1, y1 = box
-        d.rounded_rectangle(box, radius=16, fill=darker(col, 0.55), outline=lighter(col, 0.4), width=4)
-        text_center(d, ((x0 + x1) / 2, y0 + 36), str(pos) if pos else "0 · HAND",
-                    font(44 if pos else 30, True), fill=(255, 255, 255))
+        d.rounded_rectangle(box, radius=12, fill=darker(col, 0.55), outline=lighter(col, 0.4), width=3)
+        text_center(d, ((x0 + x1) / 2, y0 + 26), str(pos) if pos else "0 · HAND",
+                    font(34 if pos else 20, True), fill=(255, 255, 255))
         sub = layout["slot_notes"].get(pos, "")
-        for i, ln in enumerate(textwrap.wrap(sub, 14)):
-            text_center(d, ((x0 + x1) / 2, y1 - 70 + i * 26), ln, font(20), fill=lighter(col, 0.7))
+        for i, ln in enumerate(textwrap.wrap(sub, 11)):
+            text_center(d, ((x0 + x1) / 2, y1 - 44 + i * 20), ln, font(16), fill=lighter(col, 0.7))
     x0, y0, x1, y1 = layout["pool"]
-    d.rounded_rectangle(layout["pool"], radius=24, fill=(40, 40, 40), outline=(235, 196, 60), width=6)
-    text_center(d, ((x0 + x1) / 2, y0 + 34), "AP POOL", font(34, True), fill=(235, 196, 60))
-    text_center(d, ((x0 + x1) / 2, y1 - 30), "reset to base in Upkeep", font(20), fill=(220, 220, 220))
+    d.rounded_rectangle(layout["pool"], radius=18, fill=(40, 40, 40), outline=(235, 196, 60), width=5)
+    text_center(d, ((x0 + x1) / 2, y0 + 26), "AP POOL", font(28, True), fill=(235, 196, 60))
+    text_center(d, ((x0 + x1) / 2, y1 - 22), "reset in Upkeep", font(16), fill=(220, 220, 220))
     x0, y0, x1, y1 = layout["buffs"]
-    d.rounded_rectangle(layout["buffs"], radius=16, fill=darker(col, 0.55), outline=lighter(col, 0.4),
-                        width=4)
-    text_center(d, ((x0 + x1) / 2, y0 + 28), "BUFF / ITEM CARDS IN HAND", font(24, True),
+    d.rounded_rectangle(layout["buffs"], radius=12, fill=darker(col, 0.55), outline=lighter(col, 0.4),
+                        width=3)
+    text_center(d, ((x0 + x1) / 2, y0 + 22), "BUFF / ITEM CARDS", font(20, True),
                 fill=(255, 255, 255))
-    y = layout["notes_y"]
-    for n in notes:
-        d.text((28, y), "• " + n, font=font(22), fill=(235, 235, 235))
-        y += 30
+    d.text((20, layout["notes_y"]), "  ·  ".join(notes), font=font(19), fill=(235, 235, 235))
     return img
 
 

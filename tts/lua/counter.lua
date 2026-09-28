@@ -28,7 +28,7 @@ local function label()
   if st.kind == "champion" then
     return st.hp .. "/" .. st.max
   elseif st.kind == "structure" then
-    return st.hp .. "  (floor " .. (st.floor or 0) .. ")"
+    return st.hp .. " (min " .. (st.floor or 0) .. ")"
   elseif st.kind == "monster" and st.hp <= 0 then
     return "down"
   end
@@ -39,13 +39,20 @@ function draw()
   self.clearButtons()
   local s = self.getScale()
   local k = 1 / math.max(s.x, 0.01)
-  local colour = {0, 0, 0, 0.7}
+  -- local half-depth of the token, so the label sits on its lower edge
+  -- (local +z is the bottom of the image) and leaves the art readable
+  local b = self.getBoundsNormalized()
+  local half = 0.5
+  if b and b.size and s.z > 0 then half = b.size.z / s.z / 2 end
+  local colour = {0, 0, 0, 0.75}
   if st.kind == "champion" and st.hp > st.max then colour = {0.55, 0.42, 0.05, 0.85} end
   if st.hp <= 0 then colour = {0.45, 0.05, 0.05, 0.85} end
+  local text = label()
   self.createButton({
-    click_function = "hnClick", function_owner = self, label = label(),
-    position = {0, 0.3, 0}, rotation = {0, 0, 0}, scale = {k, 1, k},
-    width = 900, height = 330, font_size = 260, color = colour, font_color = {1, 1, 1},
+    click_function = "hnClick", function_owner = self, label = text,
+    position = {0, 0.2, half * 0.72}, rotation = {0, 0, 0}, scale = {k * 0.5, 1, k * 0.5},
+    width = 110 * #text + 160, height = 260, font_size = 200,
+    color = colour, font_color = {1, 1, 1},
     tooltip = (st.label or "") .. ": left-click -1, right-click +1",
   })
 end

@@ -151,7 +151,7 @@ TTS API (`tts/tests/tts_stub.lua`). It checks:
 - AP pool counting, hexgroup flips, HP counters, and save/load of the table
   state.
 
-Currently **455 checks, 0 failed**. The Baron kill reward is checked against
+Currently **564 checks, 0 failed**, including that tiles rest on the mat and pieces on their tiles. The Baron kill reward is checked against
 the designer's rule, and a NOTE is printed while the engine still disagrees
 (`RULES_DISCREPANCIES.md` #12). A mutation check confirms the test can
 fail: building with 3 / 4 / 5 timers against the 2 / 4 / 6 engine expectation
@@ -159,15 +159,24 @@ produces 31 failures.
 
 The Lua referee parity harness (`tts/tests/run.lua`) is part of M2.
 
-### Not verified yet: needs a real TTS session
+### Checked in real TTS (first load, 2026-09-28)
 
-- The image orientation. **Art 180°** is the fallback.
-- The size TTS gives custom tokens and tiles. Calibration measures and
-  corrects it, but it has only run against the fake API.
-- The table choice (`Table_RPG`) and whether the layout (about 58 × 50 units)
-  fits it.
-- Whether stacked chips are counted correctly in the pool zones. The count
-  uses `getQuantity()` on stacks.
+- **Image orientation is right:** North is at the top from the South seat.
+  **Art 180°** is not needed.
+- The panel, round tracker, round marker, structures and monsters load and
+  sit where they should.
+- **Fixed after that load:**
+  - the hexgroup tiles were locked under the mat's surface; they now stack on
+    its measured top;
+  - the layout ran off `Table_RPG` (about 58 × 40 units); it is now compacted
+    (hex 1.0, one-row dashboards, cards at 0.75 scale);
+  - the HP labels covered the token art.
+
+### Still to confirm in TTS
+
+- The tiles now show on the mat, and a hexgroup flip keeps the tile's size.
+- Cards at 0.75 scale fit the cooldown-track slots.
+- Stacked chips count correctly in the pool zones.
 
 ## Files
 

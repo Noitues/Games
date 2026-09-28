@@ -47,11 +47,12 @@ ROLES = ("Top", "Jungle", "Mid", "ADC", "Support")
 DEFAULT_REPO_RAW = "https://raw.githubusercontent.com/Noitues/Games"
 
 # ---------------------------------------------------------------- table scale
-HEX = 1.15                  # world units, hex centre to corner
+HEX = 1.0                   # world units, hex centre to corner
 R_PX = 64                   # pixels, hex centre to corner, in every board image
 PPU = R_PX / HEX            # pixels per world unit, shared by all flat art
 ART_ROT_Y = 180.0           # rotY at which an image reads upright from the -Z (South) side
 Y_MAT, Y_TILE, Y_PIECE = 1.05, 1.20, 1.60
+CARD_SCALE = 0.75           # cards fit the 1.9 x 2.7 cooldown-track slots
 SOURCE_PATHS = ["rules", "roster", "engine", "reports/requests", "tools/tts_export.py",
                 "tools/tts_art.py", "tts/lua"]
 
@@ -306,7 +307,8 @@ def custom_deck(deck_key: int, face_url: str, back_url: str, cols: int, rows: in
 
 
 def card(tag, nick, deck_key, index, cdeck, desc="", x=0.0, y=Y_PIECE, z=0.0, rot_y=0.0,
-         scale=1.0) -> dict:
+         scale=None) -> dict:
+    scale = CARD_SCALE if scale is None else scale
     o = base_obj("Card", tag, nick, x, y, z, rot_y, scale, desc=desc)
     o["CardID"] = deck_key * 100 + index
     o["CustomDeck"] = cdeck
@@ -314,8 +316,9 @@ def card(tag, nick, deck_key, index, cdeck, desc="", x=0.0, y=Y_PIECE, z=0.0, ro
     return o
 
 
-def deck(tag, nick, cards: List[dict], cdeck: dict, x, y, z, rot_y=0.0, scale=1.0,
+def deck(tag, nick, cards: List[dict], cdeck: dict, x, y, z, rot_y=0.0, scale=None,
          face_up=True) -> dict:
+    scale = CARD_SCALE if scale is None else scale
     o = base_obj("Deck", tag, nick, x, y, z, rot_y, scale)
     o["Transform"]["rotZ"] = 0.0 if face_up else 180.0
     o["DeckIDs"] = [c["CardID"] for c in cards]
@@ -369,11 +372,20 @@ class Builder:
         return self.url(name)
 
     def place(self, tag: str, x: float, z: float, y: float, rot: float, *, w: float = 0.0,
-              d: float = 0.0, lock: bool = False, art_obj: bool = False, start: bool = True):
+              d: float = 0.0, lock: bool = False, art_obj: bool = False, start: bool = True,
+              on: Optional[str] = None, lift: float = 0.0, level: int = 0):
         """Record where an object belongs and how wide it should be, for the
         Global script's calibration (it fits scale from measured bounds)."""
         self.layout[tag] = {"x": x, "z": z, "y": y, "rot": rot, "w": round(w, 4),
-                            "d": round(d, 4), "lock": lock, "art": art_obj, "start": start}
+                            "d": round(d, 4), "lock": lock, "art": art_obj, "start": start,
+                            "on": on, "lift": lift, "level": level}
+
+    def tile_tag(self, h) -> str:
+        """Tag of the hexgroup tile (hidden state) holding hex ``h``."""
+        for name, hexes in self.src["map"]["hexgroups"].items():
+            if list(h) in [list(x) for x in hexes]:
+                return f"hn:tile:{name}:hidden"
+        raise KeyError(h)
 
     def load_lua(self, name: str) -> str:
         with open(os.path.join(LUA_DIR, name)) as fh:
@@ -406,7 +418,7 @@ class Builder:
                "lane_dot": lane_dot}
 
         bw, bh = art.board_extent(R_PX)
-        margin = int(R_PX * 1.6)
+        margin = int(R_PX * 1.0)
         mat_px = (int(bw) + 2 * margin, int(bh) + 2 * margin)
         url = self.img(art.render_mat(R_PX, m, self.v, mat_px), "mat.png")
         mw, md = mat_px[0] / PPU, mat_px[1] / PPU
@@ -435,7 +447,8 @@ class Builder:
                 o["GUID"] = guid(f"{tag}:{side}")
                 states[sid] = o
                 self.place(f"{tag}:{side}", round(cx, 4), round(cz, 4), Y_TILE, ART_ROT_Y,
-                           w=w, d=d, lock=True, art_obj=True)
+                           w=w, d=d, lock=True, art_obj=True, on="hn:art:mat", lift=0.005,
+                           level=1)
             root = states[1]
             root["States"] = {"2": states[2]}
             self.objects.append(root)
@@ -468,7 +481,8 @@ class Builder:
                     tag, f"{team.title()} {label}", url, x, Y_PIECE, z, rot, 1.0, thickness=0.3,
                     desc=f"Starts {hp} HP; decays to floor {floor}. Left-click -1, right-click +1.",
                     script=counter, state=st))
-                self.place(tag, x, z, Y_PIECE, rot, w=size, d=size)
+                self.place(tag, x, z, Y_PIECE, rot, w=size, d=size, on=self.tile_tag(h),
+                           lift=0.15, level=2)
 
     def build_monsters(self):
         m, cfg = self.src["map"], self.cfg
@@ -490,7 +504,8 @@ class Builder:
                     desc=f"{mc['hp']} HP (chips = AP). Spawns round {mc['spawn']}, respawns "
                          f"{mc['respawn']} rounds after it dies.",
                     script=counter, state=st))
-                self.place(tag, x, z, Y_PIECE, ART_ROT_Y, w=size, d=size)
+                self.place(tag, x, z, Y_PIECE, ART_ROT_Y, w=size, d=size, on=self.tile_tag(h),
+                           lift=0.15, level=2)
 
     # --------------------------------------------------------------- cards
     def build_cards(self):
@@ -569,18 +584,22 @@ class Builder:
         top = max([death_position(cfg, r) for r in range(1, cfg["round_limit"] + 1)]
                   + cds + [dc.get("cooldown", 0)])
         self.track_top = top
-        slot_w, slot_d, gap = 2.7, 3.8, 0.2
-        W, D = (top + 1) * (slot_w + gap) + 7.6, 9.4
+        # one row: the track (top .. 0), the AP pool, the card row; a notes
+        # line underneath. Sized to fit Table_RPG (about 58 x 40) with the board.
+        slot_w, slot_d, gap = 1.9, 2.7, 0.15
+        header, notes_h, pool_w, buffs_w = 1.25, 0.6, 3.6, 5.0
+        W = 0.3 + (top + 1) * (slot_w + gap) + 0.1 + pool_w + 0.2 + buffs_w + 0.3
+        D = header + slot_d + notes_h + 0.15
         Wp, Dp = int(W * PPU), int(D * PPU)
-        sx0, sy0 = 0.5 * PPU, 1.9 * PPU
+        sx0, sy0 = 0.3 * PPU, header * PPU
         slots = {}
         for i, pos in enumerate(range(top, -1, -1)):
             x0 = sx0 + i * (slot_w + gap) * PPU
             slots[pos] = (int(x0), int(sy0), int(x0 + slot_w * PPU), int(sy0 + slot_d * PPU))
-        pool_x0 = sx0 + (top + 1) * (slot_w + gap) * PPU + 0.3 * PPU
-        pool = (int(pool_x0), int(sy0), int(Wp - 0.4 * PPU), int(sy0 + slot_d * PPU))
-        buffs = (int(Wp * 0.52), int(sy0 + slot_d * PPU + 0.25 * PPU), int(Wp - 0.4 * PPU),
-                 int(Dp - 0.3 * PPU))
+        pool_x0 = sx0 + ((top + 1) * (slot_w + gap) + 0.1) * PPU
+        pool = (int(pool_x0), int(sy0), int(pool_x0 + pool_w * PPU), int(sy0 + slot_d * PPU))
+        bx0 = pool[2] + 0.2 * PPU
+        buffs = (int(bx0), int(sy0), int(bx0 + buffs_w * PPU), int(sy0 + slot_d * PPU))
         death = {}
         for rnd in range(1, cfg["round_limit"] + 1):
             death.setdefault(death_position(cfg, rnd), []).append(rnd)
@@ -592,22 +611,21 @@ class Builder:
             slot_notes[dc["cooldown"]] = (slot_notes.get(dc["cooldown"], "") + " dragon").strip()
         rows = round_rows(cfg)
         notes = [
-            f"Death (playtest variant): {self.v['death']} rounds missed (track {', '.join(str(p) for p in cfg.get('death_track_positions') or [])}).",
-            f"Kill = {cfg.get('kill_ap_waves')} waves of AP: "
-            + " / ".join(str(v) for v in sorted({r['kill_ap'] for r in rows}))
-            + " (with Baron: " + " / ".join(str(v) for v in sorted({r['kill_ap_baron'] for r in rows}))
-            + ").",
-            f"AP refresh {cfg['ap_base']} each Upkeep; tower kill +{cfg.get('tower_kill_ap', 0)} AP.",
-            f"Whole card goes on the track at the ability's cooldown.",
+            f"Death {self.v['death']} rnd (variant)",
+            f"Kill {' / '.join(str(v) for v in sorted({r['kill_ap'] for r in rows}))} AP"
+            f" (Baron {' / '.join(str(v) for v in sorted({r['kill_ap_baron'] for r in rows}))})",
+            f"AP {cfg['ap_base']} each Upkeep",
+            f"Tower kill +{cfg.get('tower_kill_ap', 0)} AP",
+            "Ability = whole card on the track at its cooldown",
         ]
         layout = {"size": (Wp, Dp), "slots": slots, "slot_notes": slot_notes, "pool": pool,
-                  "buffs": buffs, "notes_y": int(sy0 + slot_d * PPU + 0.3 * PPU)}
+                  "buffs": buffs, "notes_y": int(sy0 + slot_d * PPU + 0.1 * PPU)}
         mat_d = self.mat_size[1]
         self.dash = {}
         for team in TEAMS:
             facing = team
             rot = rot_for(facing)
-            cz = (mat_d / 2 + 0.6 + D / 2) * (1 if team == "north" else -1)
+            cz = (mat_d / 2 + 0.4 + D / 2) * (1 if team == "north" else -1)
             cx = 0.0
             url = self.img(art.render_dashboard(team, TEAM_SEAT[team], top, (slot_w, slot_d), notes,
                                                 self.v, PPU, layout), f"dash_{team}.png")
@@ -645,10 +663,10 @@ class Builder:
     def build_tracker(self):
         cfg = self.cfg
         rows = round_rows(cfg)
-        W, row_h, head = 15.0, 0.95, 1.9
+        W, row_h, head = 15.0, 0.9, 1.9
         D = head + row_h * len(rows) + 1.0
         Wp, Dp = int(W * PPU), int(D * PPU)
-        cols = [int(x * PPU) for x in (0.4, 1.6, 3.0, 4.6, 6.1, 8.3, 10.0)]
+        cols = [int(x * PPU) for x in (0.4, 1.6, 3.0, 4.6, 6.1, 8.8, 10.5)]
         row_px = {r["round"]: (int((head + (r["round"] - 1) * row_h) * PPU),
                                int((head + r["round"] * row_h) * PPU) - 2) for r in rows}
         layout = {"size": (Wp, Dp), "cols": cols, "rows": row_px}
@@ -747,7 +765,9 @@ class Builder:
                 x, z = self.prio_slots[FIRST_PLAYER]["x"], self.prio_slots[FIRST_PLAYER]["z"]
             self.objects.append(custom_token(tag, f"{label.title()} marker", url, x, Y_PIECE, z,
                                              ART_ROT_Y, 1.0, thickness=0.15))
-            self.place(tag, x, z, Y_PIECE, ART_ROT_Y, w=HEX * 0.9, d=HEX * 0.9)
+            self.place(tag, x, z, Y_PIECE, ART_ROT_Y, w=HEX * 0.9, d=HEX * 0.9,
+                       on="hn:art:tracker" if key == "round" else None, lift=0.1,
+                       level=1 if key == "round" else 0)
 
     # ------------------------------------------------------------- global
     def data_lua(self, data: dict) -> str:
@@ -781,7 +801,7 @@ class Builder:
             "EpochTime": 0, "Date": self.v["built"], "VersionNumber": "v13.2.2",
             "GameMode": "Hex-Nexus", "GameType": "", "GameComplexity": "", "Tags": [],
             "Gravity": 0.5, "PlayArea": 0.5, "Table": "Table_RPG", "Sky": "Sky_Museum",
-            "Note": rules, "TabStates": {}, "Grid": {"Type": 0, "Lines": False, "Snapping": False},
+            "Note": "", "TabStates": {}, "Grid": {"Type": 0, "Lines": False, "Snapping": False},
             "Hands": {"Enable": True, "DisableUnused": False, "Hiding": 0},
             "LuaScript": glob, "LuaScriptState": "", "XmlUI": xml,
             "SnapPoints": self.snaps, "ObjectStates": self.objects,
