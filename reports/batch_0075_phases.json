@@ -1,0 +1,96 @@
+{
+  "batch_0075": {
+    "games": 2000,
+    "end_reason": {
+      "nexus": 1993,
+      "round_limit_towers": 7
+    },
+    "rounds_median": 16,
+    "rounds_p90": 18,
+    "firsts_median": {
+      "first_kill": 4,
+      "first_tower": 8,
+      "first_dragon": 6,
+      "first_baron": 13
+    },
+    "firsts_share": {
+      "first_kill": 0.999,
+      "first_tower": 1.0,
+      "first_dragon": 0.991,
+      "first_baron": 0.457
+    },
+    "baron_taken": 0.457,
+    "nexus_kills_by_baron_holder": [
+      433,
+      908
+    ],
+    "window_ap_share": {
+      "laning": {
+        "lane": 0.245,
+        "jungle": 0.643,
+        "objectives": 0.002,
+        "towers": 0.001,
+        "kills": 0.109,
+        "earned_per_game": 55.28
+      },
+      "siege_objectives": {
+        "lane": 0.327,
+        "jungle": 0.379,
+        "objectives": 0.02,
+        "towers": 0.029,
+        "kills": 0.245,
+        "earned_per_game": 61.22
+      },
+      "fights_siege": {
+        "lane": 0.297,
+        "jungle": 0.39,
+        "objectives": 0.031,
+        "towers": 0.099,
+        "kills": 0.183,
+        "earned_per_game": 69.76
+      },
+      "baron_end": {
+        "lane": 0.317,
+        "jungle": 0.353,
+        "objectives": 0.059,
+        "towers": 0.172,
+        "kills": 0.099,
+        "earned_per_game": 50.24
+      }
+    },
+    "leader_wr": {
+      "farm_r4": {
+        "wr": 0.614,
+        "lo": 0.592,
+        "hi": 0.635,
+        "n": 1914,
+        "tied": 86
+      },
+      "structures_dragons_r8": {
+        "wr": 0.571,
+        "lo": 0.545,
+        "hi": 0.596,
+        "n": 1463,
+        "tied": 537
+      },
+      "kills_r9_12": {
+        "wr": 0.633,
+        "lo": 0.607,
+        "hi": 0.659,
+        "n": 1347,
+        "tied": 653
+      },
+      "baron": {
+        "wr": 0.477,
+        "lo": 0.445,
+        "hi": 0.509,
+        "n": 914,
+        "tied": 0
+      }
+    },
+    "tier_wr": {
+      "SM_g2_lane6": 0.6205,
+      "T2_sieger": 0.3795
+    }
+  }
+}
