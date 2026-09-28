@@ -280,7 +280,7 @@ Working rules (designer approved): towers 10 / Nexus 18, decay 1 HP every other 
 
 | batch | matchup | games | result |
 |---|---|---|---|
-| batch_0069 | C0: working rules | 600 | running |
-| batch_0070 | C1: C0 + death timer +1 round | 600 | running |
-| batch_0071 | C2: C0 + Baron wave bonus +4 | 600 | running |
-| batch_0072 | C3: C0 + both | 600 | running |
+| batch_0069 | C0: working rules | 600 | Leaders farm 56.2 / siege 54.9 / kills 48.0 / Baron 50.1. 96.5% Nexus: the Nexus floor 6 is never reached (18 decays to 9 by round 19), so the tail is unchanged. |
+| batch_0070 | C1: C0 + death timer +1 round | 600 | **Recommended.** Leaders farm 55.0 / siege 55.3 / **kills 55.2** / Baron 50.7. Sieger 46.5, laner 65.4, phase AI 38.7. |
+| batch_0071 | C2: C0 + Baron wave bonus +4 | 600 | No effect: Baron holder 49.7 (C0 50.1); every other number within noise of C0. |
+| batch_0072 | C3: C0 + both | 600 | = C1 within noise (farm 55.2 / siege 55.8 / kills 56.0 / Baron 50.9). |
