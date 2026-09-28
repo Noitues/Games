@@ -28,10 +28,10 @@ True). Each is a switch; older requests reproduce by overriding.
 
 **Working rules since 2026-09-27 (designer approved, RQ-049/RQ-051)** live only
 as `config_overrides` in every request and are **not** defaults - copy them
-forward from `reports/requests/batch_0069.json`: `tower_hp` 10, `nexus_hp` 18,
+forward from `reports/requests/batch_0073.json` (settled 2026-09-28): `tower_hp` 10, `nexus_hp` 15,
 `structure_decay` 1, `structure_decay_every` 2, `tower_decay_floor` 4,
 `nexus_decay_floor` 6, `kill_ap_waves` 2 (a kill pays two current waves),
-`death_band_bonus` 1, `area_center` True (`kill_ap` 3 is inert while
+`death_band_bonus` 2 (RQ-051: the death timer is the fight lever), `area_center` True (`kill_ap` 3 is inert while
 `kill_ap_waves` is set). The earlier pair (tower 4 / Nexus 8, no decay) is
 superseded. The designer's target: **the leader of each phase wins 55-60%**
 (farm at round 4, towers + Dragons at round 8, kills in rounds 9-12, Baron

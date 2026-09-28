@@ -284,3 +284,14 @@ Working rules (designer approved): towers 10 / Nexus 18, decay 1 HP every other 
 | batch_0070 | C1: C0 + death timer +1 round | 600 | **Recommended.** Leaders farm 55.0 / siege 55.3 / **kills 55.2** / Baron 50.7. Sieger 46.5, laner 65.4, phase AI 38.7. |
 | batch_0071 | C2: C0 + Baron wave bonus +4 | 600 | No effect: Baron holder 49.7 (C0 50.1); every other number within noise of C0. |
 | batch_0072 | C3: C0 + both | 600 | = C1 within noise (farm 55.2 / siege 55.8 / kills 56.0 / Baron 50.9). |
+
+## Iteration 13 - settled rules and P-0015
+
+| artefact | version | change |
+|---|---|---|
+| roster | 1.9.0 | P-0015: marrow R cost 2 -> 1, bastion W SHIELD 4 -> 3, wisp E SHIELD range 2 -> 1, corvane E cooldown 2 -> 1. wisp and corvane carry budget exceptions. |
+
+| batch | matchup | games | result |
+|---|---|---|---|
+| batch_0073 | settled rules, roster 1.8.0, T2_sieger + SM_g2_lane6, four shards | 2000 | running |
+| batch_0074 | settled rules, roster 1.9.0 (P-0015), paired with 0073 | 2000 | running |

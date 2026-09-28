@@ -1,0 +1,19 @@
+{
+  "patch_id": "P-0015",
+  "from": {"rules": "1.8.0 + RQ-049/051 working rules", "roster": "1.8.0", "ai": "1.5.0"},
+  "to": {"roster": "1.9.0"},
+  "lever_class": "kit",
+  "changes": [
+    {"target": "roster:marrow.R.cost", "from": 2, "to": 1},
+    {"target": "roster:bastion.W.SHIELD.n", "from": 4, "to": 3},
+    {"target": "roster:wisp.E.SHIELD.range", "from": 2, "to": 1},
+    {"target": "roster:corvane.E.cooldown", "from": 2, "to": 1}
+  ],
+  "evidence": "batch_0058 (P-0014, RQ-050): marrow 44.9 (overshot from 58.8 when R went to cooldown 2), bastion 57.8, wisp 56.4, corvane 42.9. One lever each, a different mechanism from P-0014's.",
+  "hypothesis": "Each moves its champion 3-6 points toward 50 without touching the other 21.",
+  "success_metric": "Against batch_0073 (same settled rules and seed, roster 1.8.0), 2,000 games each: the four inside 45-55 and the roster SD no higher than batch_0073's.",
+  "revert_if": "Any of the four crosses to the other side of the band (below 43 or above 57), or an untouched champion moves more than 5 points away from 50.",
+  "side_effects": "wisp (19) and corvane (25.5) carry declared budget exceptions.",
+  "pillar_change": false,
+  "note": "Read on the settled rules (designer-approved 2026-09-28): towers 10 / Nexus 15, 1 HP every other round, floors 4 / 6, kill = 2 waves, death timer +1. batch_0073 (roster 1.8.0) and batch_0074 (roster 1.9.0), seed 7301, four shards of 500 each."
+}

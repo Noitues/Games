@@ -1,0 +1,36 @@
+{
+  "batch_id": "batch_0073",
+  "rules": "1.8.0",
+  "roster": "1.8.0",
+  "ai": "1.5.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3,
+    "personality_pool": [
+      "T2_sieger",
+      "SM_g2_lane6"
+    ]
+  },
+  "games": 2000,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 7301,
+  "replays": 2,
+  "config_overrides": {
+    "area_center": true,
+    "kill_ap": 3,
+    "kill_ap_waves": 2,
+    "death_band_bonus": 2,
+    "tower_hp": 10,
+    "nexus_hp": 15,
+    "structure_decay": 1,
+    "structure_decay_every": 2,
+    "tower_decay_floor": 4,
+    "nexus_decay_floor": 6
+  },
+  "extra": [
+    "RQ-052. Baseline for P-0015 and the first read of the settled rules: roster 1.8.0.",
+    "Settled rules (designer approved 2026-09-28): towers 10 / Nexus 15, 1 HP every other round from round 3, floors 4 / 6, kill = 2 current waves, death timer +1 round (death_band_bonus 2). Field T2_sieger + SM_g2_lane6 (the champion-read field). Four shards of 500. Read champions with the paired compare and phases with tools/phase_read.py."
+  ]
+}
