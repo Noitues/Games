@@ -295,3 +295,4 @@ Working rules (designer approved): towers 10 / Nexus 18, decay 1 HP every other 
 |---|---|---|---|
 | batch_0073 | settled rules, roster 1.8.0, T2_sieger + SM_g2_lane6, four shards | 2000 | running |
 | batch_0074 | settled rules, roster 1.9.0 (P-0015), paired with 0073 | 2000 | running |
+| batch_0075 | as 0074 with death timers 2 / 4 / 6 rounds missed (RQ-053) | 2000 | running |

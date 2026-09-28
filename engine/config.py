@@ -33,6 +33,9 @@ DEFAULT_CONFIG = {
     # the lead designer's.
     "kill_ap": 1,
     "death_band_bonus": 0,      # added to the death-track position (Rules 6.4)
+    # RQ-053: explicit death-track positions for the bands rounds 1-4, 5-8,
+    # 9+ (overrides death_band_bonus). A champion misses position - 1 rounds.
+    "death_track_positions": None,
     "dragon_cap": 2,
     # What holding a Dragon card is worth per round. Raising it is the
     # objective lever from RQ-037: an objective worth fighting over pulls teams

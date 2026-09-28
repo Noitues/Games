@@ -291,8 +291,15 @@ def kill_champion(state: GameState, victim: Champion, killer_team: Optional[str]
     victim.hp = 0
     victim.deaths += 1
     victim.shield = 0
-    victim.track = death_track_pos(state.round,
-                                   state.config.get("death_band_bonus", 0))
+    positions = state.config.get("death_track_positions")
+    if positions:
+        # RQ-053: an explicit track position per band (rounds 1-4, 5-8, 9+);
+        # a champion misses position - 1 full rounds.
+        band = 0 if state.round <= DEATH_BANDS[0][0] else 1 if state.round <= DEATH_BANDS[1][0] else 2
+        victim.track = positions[band]
+    else:
+        victim.track = death_track_pos(state.round,
+                                       state.config.get("death_band_bonus", 0))
     if killer_team is not None:
         state.teams[killer_team].gain(kill_reward(state), "champion_kill")
         state.teams[killer_team].kills += 1

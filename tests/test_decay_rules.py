@@ -105,3 +105,18 @@ def test_every_game_carries_a_round_trace(board, kits):
     res = Game(st, pols, seed=3, strict=True).run()
     assert [e["r"] for e in res.trace] == [1, 2, 3]
     assert set(res.trace[-1]) >= {"ap", "kills", "towers_lost", "dragons", "baron"}
+
+
+def test_death_track_positions_per_band(board, kits):
+    st = _st(board, kits, death_track_positions=[3, 5, 7], death_band_bonus=2)
+    victim = next(c for c in st.champs.values() if c.team == "south")
+    for rnd, pos in ((2, 3), (4, 3), (5, 5), (8, 5), (9, 7), (15, 7)):
+        st.round = rnd
+        victim.alive, victim.hp = True, victim.max_hp
+        kill_champion(st, victim, "north", None)
+        assert victim.track == pos
+    st2 = _st(board, kits, death_band_bonus=2)          # unset: the band bonus applies
+    v2 = next(c for c in st2.champs.values() if c.team == "south")
+    st2.round = 2
+    kill_champion(st2, v2, "north", None)
+    assert v2.track == 4

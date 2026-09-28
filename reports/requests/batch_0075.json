@@ -1,0 +1,41 @@
+{
+  "batch_id": "batch_0075",
+  "rules": "1.8.0",
+  "roster": "1.9.0",
+  "ai": "1.5.0",
+  "matchup": {
+    "p1": "T2_search",
+    "p2": "T2_search",
+    "temperature": 0.3,
+    "personality_pool": [
+      "T2_sieger",
+      "SM_g2_lane6"
+    ]
+  },
+  "games": 2000,
+  "team_sampling": "random_by_role_no_duplicates",
+  "seat_swap": true,
+  "seed": 7301,
+  "replays": 2,
+  "config_overrides": {
+    "area_center": true,
+    "kill_ap": 3,
+    "kill_ap_waves": 2,
+    "death_band_bonus": 2,
+    "tower_hp": 10,
+    "nexus_hp": 15,
+    "structure_decay": 1,
+    "structure_decay_every": 2,
+    "tower_decay_floor": 4,
+    "nexus_decay_floor": 6,
+    "death_track_positions": [
+      3,
+      5,
+      7
+    ]
+  },
+  "extra": [
+    "RQ-053 (designer): death timers of 2 / 4 / 6 rounds missed (track positions 3 / 5 / 7) instead of the settled 3 / 4 / 5 (positions 4 / 5 / 6) - a softer early death, a harsher late one. Otherwise identical to batch_0074 (settled rules, roster 1.9.0, seed 7301), so games pair by seed and draw.",
+    "Read with tools/phase_read.py against batch_0074 (phase leaders vs the 55-60% target) plus champion spread. Four shards of 500."
+  ]
+}
