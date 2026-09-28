@@ -1,14 +1,14 @@
 # Hex-Nexus playtest: quick start
 
 **Build on the table:** Rules 1.9.0 · Roster 1.9.0 · Config `batch_0075`
-(death timers 2 / 4 / 6). The panel (top right) always shows the build. Put it
+(death timers 2 / 4 / 6, a playtest variant). The panel (top right) always shows the build. Put it
 in any feedback you send.
 
 ## Seats and setup (5 minutes)
 
-1. **Seats:** North plays **Blue**, South plays **Red**. Use **First: Blue/Red**
-   on the panel to set who has priority in round 1. Priority alternates every
-   round after that.
+1. **Seats:** North plays **Blue**, South plays **Red**. **Red (South) has
+   priority in round 1.** Priority alternates every round after that; the
+   panel and the priority marker track it.
 2. **Draft:** from your champion deck, take one card per role: Top, Jungle,
    Mid, ADC, Support. Put the cards in the **0 · HAND** slot of your cooldown
    track.
@@ -54,7 +54,7 @@ in any feedback you send.
 | Change HP | Left-click the counter on a standee, tower, Nexus or monster: −1. Right-click: +1. |
 | Flip a hexgroup | Right-click the tile → **Flip hexgroup**. |
 | Add chips | Drag them out of the Blue, Red or neutral chip bags (infinite). |
-| Kill a champion | Standee off the board; card on the track at the death position the panel shows (3 / 5 / 7 = 2 / 4 / 6 rounds missed). Take the **kill AP** the panel shows (6 / 8 / 10). |
+| Kill a champion | Standee off the board; card on the track at the death position the panel shows (3 / 5 / 7 = 2 / 4 / 6 rounds missed). Take the **kill AP** the panel shows: 6 / 8 / 10, or 10 / 12 / 14 if your team holds the Baron. |
 | Take a tower | Its killer's team gains 3 AP. Protection: T1 before T2, and one full lane before the Nexus. |
 | Hide the panel | Click **HN**. |
 
@@ -65,8 +65,8 @@ in any feedback you send.
 - Your champion inside a hidden tile can't be targeted from outside. An enemy
   champion **within 2 hexes** reveals the tile.
 - A tile with both teams in it must be face up.
-
-The mod does not conceal standees yet: be honest about where you are.
+- Standees on a hidden tile stay visible to everyone. Where on the tile you
+  put them doesn't matter: a hidden tile is a single space.
 
 ## After the game
 

@@ -14,8 +14,10 @@ rebuild the mod.
 | M4 bridge (stretch) | later |
 
 Current build: **Rules 1.9.0 · Roster 1.9.0 · Config `batch_0075`**. That is
-the settled v1.9 rules with **2 / 4 / 6 death timers**, the designer's choice
-for playtests. Rulebook-vs-engine differences are listed in
+the settled v1.9 rules with **2 / 4 / 6 death timers**, a playtest variant
+(the rulebook stays at 3 / 4 / 5). South has priority in round 1. A kill by a
+team holding the Baron pays two Empowered waves (the designer's rule; the
+engine is being fixed to match). Rulebook-vs-engine differences are listed in
 [`RULES_DISCREPANCIES.md`](RULES_DISCREPANCIES.md). The one-page quick start
 for testers is [`PLAYTEST_GUIDE.md`](PLAYTEST_GUIDE.md).
 
@@ -110,6 +112,7 @@ hand with the rulebook. The table does the following for you:
   - round, phase and who has priority
   - this round's numbers: wave spawn and size, decay, kill reward, death-track position, monster spawns
   - a reminder for the current phase
+  - the kill reward with and without the Baron
   - a live count of the chips in each team's AP pool
   - **Next phase / Next round** move the round and priority markers.
 - **Hexgroup tiles:** right-click → *Flip hexgroup* swaps the hidden side
@@ -148,7 +151,9 @@ TTS API (`tts/tests/tts_stub.lua`). It checks:
 - AP pool counting, hexgroup flips, HP counters, and save/load of the table
   state.
 
-Currently **435 checks, 0 failed**. A mutation check confirms the test can
+Currently **455 checks, 0 failed**. The Baron kill reward is checked against
+the designer's rule, and a NOTE is printed while the engine still disagrees
+(`RULES_DISCREPANCIES.md` #12). A mutation check confirms the test can
 fail: building with 3 / 4 / 5 timers against the 2 / 4 / 6 engine expectation
 produces 31 failures.
 

@@ -59,10 +59,16 @@ def engine_rounds(config_path: str) -> list:
         before = {u: s.chips for u, s in st.structures.items()}
         decay_structures(st)
         decays = any(st.structures[u].chips != before[u] for u in before)
+        # a kill by a team holding the Baron card: the designer's rule is two
+        # Empowered waves; the engine currently leaves the bonus out (bug)
+        st.teams["south"].baron_track = 10 ** 6
+        baron_engine = kill_reward(st)
+        baron_rule = int(cfg["kill_ap_waves"] * (wave_size(st) + cfg["baron_wave_bonus"]) + 0.5)
         out.append({"round": rnd, "kill_ap": kill_reward(st), "death_pos": victim.track,
                     "wave_size": wave_size(st),
                     "spawn": rnd % 2 == 1 or not cfg["wave_spawn_odd_rounds_only"],
-                    "decays": decays})
+                    "decays": decays, "kill_ap_baron_rule": baron_rule,
+                    "kill_ap_baron_engine": baron_engine})
     return out
 
 
@@ -156,12 +162,19 @@ for r = 1, #expect do
   check(row.death_pos == e.death_pos, "round " .. r .. " death pos " .. row.death_pos .. " vs engine " .. e.death_pos)
   check(row.wave_size == e.wave_size, "round " .. r .. " wave size")
   check(row.spawn == e.spawn, "round " .. r .. " spawn")
+  check(row.kill_ap_baron == e.kill_ap_baron_rule,
+    "round " .. r .. " Baron kill AP " .. row.kill_ap_baron .. " vs rule " .. e.kill_ap_baron_rule)
+  if e.kill_ap_baron_engine ~= e.kill_ap_baron_rule and not baron_noted then
+    baron_noted = true
+    print("NOTE: engine kill_reward ignores the Baron bonus (" .. e.kill_ap_baron_engine .. " vs "
+      .. e.kill_ap_baron_rule .. "); the mod follows the designer. RULES_DISCREPANCIES #12")
+  end
   check(row.decays == e.decays, "round " .. r .. " decay " .. tostring(row.decays) .. " vs engine " .. tostring(e.decays))
 end
 
 -- panel walk-through
 check(Stub.ui.hnRound:find("Round 1 / 20") ~= nil, "panel round 1: " .. tostring(Stub.ui.hnRound))
-check(Stub.ui.hnPrio:find("Blue") ~= nil, "round 1 priority is the first player")
+check(Stub.ui.hnPrio:find("Red") ~= nil, "round 1 priority is South (Red)")
 for r = 2, #expect do
   G.uiNextRound()
   local info = Stub.ui.hnInfo
@@ -170,7 +183,7 @@ for r = 2, #expect do
   check(info:find("kill = " .. e.kill_ap .. " AP", 1, true) ~= nil, "round " .. r .. " panel kill: " .. info)
   check(info:find("track " .. e.death_pos, 1, true) ~= nil, "round " .. r .. " panel death: " .. info)
   check((info:find("decay", 1, true) ~= nil) == e.decays, "round " .. r .. " panel decay: " .. info)
-  local want = (r % 2 == 1) and "Blue" or "Red"
+  local want = (r % 2 == 1) and "Red" or "Blue"
   check(Stub.ui.hnPrio:find(want) ~= nil, "round " .. r .. " priority " .. Stub.ui.hnPrio)
 end
 G.uiNextRound()

@@ -42,6 +42,7 @@ TTS_DIR = os.path.join(ROOT, "tts")
 LUA_DIR = os.path.join(TTS_DIR, "lua")
 TEAMS = ("north", "south")
 TEAM_SEAT = {"north": "Blue", "south": "Red"}              # Rules 2.4: blue North, red South
+FIRST_PLAYER = "south"      # designer, 2026-09-28: South has priority in round 1
 ROLES = ("Top", "Jungle", "Mid", "ADC", "Support")
 DEFAULT_REPO_RAW = "https://raw.githubusercontent.com/Noitues/Games"
 
@@ -171,10 +172,15 @@ def death_position(cfg: dict, rnd: int) -> int:
     return DEATH_BANDS[band][1] + cfg.get("death_band_bonus", 0)
 
 
-def kill_reward(cfg: dict, rnd: int) -> int:
+def kill_reward(cfg: dict, rnd: int, baron: bool = False) -> int:
+    """Rules 6.4: two waves spawned that round. Designer, 2026-09-28: for a
+    team holding the Baron card that is its Empowered wave (+baron_wave_bonus
+    chips). engine.resolve.kill_reward leaves the bonus out; that is an engine
+    bug being fixed separately (RULES_DISCREPANCIES #12)."""
     mult = cfg.get("kill_ap_waves", 0)
     if mult:
-        return int(mult * wave_size(cfg, rnd) + 0.5)
+        size = wave_size(cfg, rnd) + (cfg["baron_wave_bonus"] if baron else 0)
+        return int(mult * size + 0.5)
     return cfg.get("kill_ap", 1)
 
 
@@ -202,12 +208,14 @@ def round_rows(cfg: dict) -> List[dict]:
                                 ("Wolves", "Raptors", "Krugs", "Blue Buff", "Red Buff")]
         rows.append({
             "round": rnd,
-            "prio": "1st" if rnd % 2 == 1 else "2nd",
+            "prio": TEAM_SEAT[FIRST_PLAYER if rnd % 2 == 1 else
+                              ("north" if FIRST_PLAYER == "south" else "south")],
             "waves": f"+{wave_size(cfg, rnd)}" if spawn_wave else "\u2014",
             "wave_size": wave_size(cfg, rnd), "spawn": spawn_wave,
             "decay": f"-{cfg['structure_decay']}" if decays(cfg, rnd) else "",
             "decays": decays(cfg, rnd),
-            "kill": str(kill_reward(cfg, rnd)), "kill_ap": kill_reward(cfg, rnd),
+            "kill": f"{kill_reward(cfg, rnd)} ({kill_reward(cfg, rnd, True)})",
+            "kill_ap": kill_reward(cfg, rnd), "kill_ap_baron": kill_reward(cfg, rnd, True),
             "death_pos": death_position(cfg, rnd),
             "death": f"{death_position(cfg, rnd) - 1} rnd",
             "monsters": ", ".join(mons),
@@ -246,6 +254,7 @@ def build_data(src: dict) -> dict:
         "SNAKE": [1, 2, 2, 1, 1, 2, 2, 1, 1, 2],
         "PHASES": ["Upkeep", "Action", "World", "Shop", "Win Check"],
         "SEATS": TEAM_SEAT,
+        "FIRST_PLAYER": FIRST_PLAYER,
         "HEX": HEX,
     }
 
@@ -583,9 +592,11 @@ class Builder:
             slot_notes[dc["cooldown"]] = (slot_notes.get(dc["cooldown"], "") + " dragon").strip()
         rows = round_rows(cfg)
         notes = [
-            f"Death: {self.v['death']} rounds missed (track {', '.join(str(p) for p in cfg.get('death_track_positions') or [])}).",
+            f"Death (playtest variant): {self.v['death']} rounds missed (track {', '.join(str(p) for p in cfg.get('death_track_positions') or [])}).",
             f"Kill = {cfg.get('kill_ap_waves')} waves of AP: "
-            + " / ".join(sorted({r['kill'] for r in rows}, key=int)) + ".",
+            + " / ".join(str(v) for v in sorted({r['kill_ap'] for r in rows}))
+            + " (with Baron: " + " / ".join(str(v) for v in sorted({r['kill_ap_baron'] for r in rows}))
+            + ").",
             f"AP refresh {cfg['ap_base']} each Upkeep; tower kill +{cfg.get('tower_kill_ap', 0)} AP.",
             f"Whole card goes on the track at the ability's cooldown.",
         ]
@@ -637,7 +648,7 @@ class Builder:
         W, row_h, head = 15.0, 0.95, 1.9
         D = head + row_h * len(rows) + 1.0
         Wp, Dp = int(W * PPU), int(D * PPU)
-        cols = [int(x * PPU) for x in (0.4, 1.6, 3.0, 4.6, 6.1, 7.8, 9.6)]
+        cols = [int(x * PPU) for x in (0.4, 1.6, 3.0, 4.6, 6.1, 8.3, 10.0)]
         row_px = {r["round"]: (int((head + (r["round"] - 1) * row_h) * PPU),
                                int((head + r["round"] * row_h) * PPU) - 2) for r in rows}
         layout = {"size": (Wp, Dp), "cols": cols, "rows": row_px}
@@ -733,7 +744,7 @@ class Builder:
             if key == "round":
                 x, z = self.round_slots[1]["x"], self.round_slots[1]["z"]
             else:
-                x, z = self.prio_slots["north"]["x"], self.prio_slots["north"]["z"]
+                x, z = self.prio_slots[FIRST_PLAYER]["x"], self.prio_slots[FIRST_PLAYER]["z"]
             self.objects.append(custom_token(tag, f"{label.title()} marker", url, x, Y_PIECE, z,
                                              ART_ROT_Y, 1.0, thickness=0.15))
             self.place(tag, x, z, Y_PIECE, ART_ROT_Y, w=HEX * 0.9, d=HEX * 0.9)

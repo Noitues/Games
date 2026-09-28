@@ -18,7 +18,6 @@
         <Button onClick="uiPrevRound" text="◀ Round" />
         <Button onClick="uiNextPhase" text="Next phase ▶" />
         <Button onClick="uiNextRound" text="Next round ▶▶" />
-        <Button id="hnFirst" onClick="uiFirst" text="First: Blue" />
         <Button onClick="uiRelayout" text="Re-layout" />
         <Button onClick="uiFlipArt" text="Art 180°" />
       </HorizontalLayout>

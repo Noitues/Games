@@ -423,7 +423,7 @@ def render_round_track(rows: List[dict], versions: dict, layout: dict) -> Image.
     img = Image.new("RGB", (W, H), (44, 40, 36))
     d = ImageDraw.Draw(img)
     d.text((20, 12), "ROUND TRACKER", font=font(38, True), fill=(255, 255, 255))
-    heads = ["Rnd", "Prio", "Waves", "Decay", "Kill AP", "Death", "Monsters"]
+    heads = ["Rnd", "Prio", "Waves", "Decay", "Kill (Baron)", "Death", "Monsters"]
     xs = layout["cols"]
     for x, h in zip(xs, heads):
         d.text((x, 64), h, font=font(22, True), fill=(235, 196, 60))

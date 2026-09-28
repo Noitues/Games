@@ -15,7 +15,7 @@ The rules themselves are played by hand in M0; the referee arrives in M1.
 ]]
 
 local TEAMS = {"north", "south"}
-local S = {round = 1, phase = 1, first = "north", calibrated = false, flip = 0, panel = true}
+local S = {round = 1, phase = 1, calibrated = false, flip = 0, panel = true}
 
 -- ------------------------------------------------------------------ utils
 local function allObjects()
@@ -40,9 +40,10 @@ local function other(team) if team == "north" then return "south" end return "no
 
 local function seat(team) return SEATS[team] or team end
 
+-- The designer fixed round 1 priority (FIRST_PLAYER); it alternates after.
 local function priorityTeam()
-  if S.round % 2 == 1 then return S.first end
-  return other(S.first)
+  if S.round % 2 == 1 then return FIRST_PLAYER end
+  return other(FIRST_PLAYER)
 end
 
 -- ------------------------------------------------------------ calibration
@@ -175,7 +176,7 @@ function refreshUI()
     bits[#bits + 1] = "decay -" .. CONFIG.structure_decay .. " (floors T" .. FLOORS.tower
       .. " / N" .. FLOORS.nexus .. ")"
   end
-  bits[#bits + 1] = "kill = " .. row.kill_ap .. " AP"
+  bits[#bits + 1] = "kill = " .. row.kill_ap .. " AP (" .. row.kill_ap_baron .. " with Baron)"
   bits[#bits + 1] = "death → track " .. row.death_pos .. " (" .. (row.death_pos - 1) .. " rnd)"
   if row.monsters and row.monsters ~= "" then bits[#bits + 1] = "spawns: " .. row.monsters end
   UI.setValue("hnInfo", table.concat(bits, "   ·   "))
@@ -194,7 +195,6 @@ function refreshUI()
     hint = "Nexus at 0? Otherwise next round. Round " .. CONFIG.round_limit .. " tiebreak: towers, structure HP, kills"
   end
   UI.setValue("hnHint", hint)
-  UI.setAttribute("hnFirst", "text", "First: " .. seat(S.first))
   UI.setAttribute("hnBody", "active", S.panel and "true" or "false")
 end
 
@@ -227,12 +227,6 @@ end
 function uiPrevRound()
   if S.round > 1 then S.round = S.round - 1 end
   S.phase = 1
-  moveMarkers()
-  refreshUI()
-end
-
-function uiFirst()
-  S.first = other(S.first)
   moveMarkers()
   refreshUI()
 end
