@@ -246,7 +246,8 @@ def build_data(src: dict) -> dict:
         "VERSION": src["versions"],
         "CONFIG": cfg_out,
         "MAP": {"hexgroups": m["hexgroups"], "north": m["north"], "south": m["south"],
-                "monsters": m["monsters"], "terrain": m["terrain"]},
+                "monsters": m["monsters"], "terrain": m["terrain"],
+                "lane_order": list(m["north"]["lane_paths"])},
         "ROSTER": kits,
         "ROLES": list(ROLES),
         "ITEMS": items,
@@ -368,8 +369,14 @@ class Builder:
         return f"{self.asset_base}/{name}"
 
     def img(self, image, name: str) -> str:
-        art.save(image, os.path.join(self.assets, name))
-        return self.url(name)
+        """Save an image and return its URL with a content fingerprint, so a
+        rebuild that changes an image also changes its URL and TTS's cache
+        can never serve the old one."""
+        path = os.path.join(self.assets, name)
+        art.save(image, path)
+        with open(path, "rb") as fh:
+            digest = hashlib.sha1(fh.read()).hexdigest()[:10]
+        return f"{self.url(name)}?v={digest}"
 
     def place(self, tag: str, x: float, z: float, y: float, rot: float, *, w: float = 0.0,
               d: float = 0.0, lock: bool = False, art_obj: bool = False, start: bool = True,
@@ -475,8 +482,11 @@ class Builder:
                                f"struct_{team}_{key}.png")
                 x, z = hex_world(*h)
                 tag = f"hn:struct:{team}:{key}"
+                stype = "nexus" if key == "nexus" else "tower"
+                lane, tier = ("", 0) if key == "nexus" else (key.split("_")[0], int(key[-1]))
                 st = self.counter_state(kind="structure", label=label, hp=hp, max=hp, floor=floor,
-                                        team=team)
+                                        team=team, uid=f"{team[0]}_{key}", stype=stype, lane=lane,
+                                        tier=tier)
                 self.objects.append(custom_token(
                     tag, f"{team.title()} {label}", url, x, Y_PIECE, z, rot, 1.0, thickness=0.3,
                     desc=f"Starts {hp} HP; decays to floor {floor}. Left-click -1, right-click +1.",
@@ -496,9 +506,11 @@ class Builder:
             for i, h in enumerate(hexes):
                 x, z = hex_world(*h)
                 tag = f"hn:monster:{mtype}:{i}"
-                start = mc["hp"] if mc["spawn"] <= 1 else 0
-                st = self.counter_state(kind="monster", label=label, hp=start, max=mc["hp"],
-                                        floor=0, spawn=mc["spawn"], respawn=mc["respawn"])
+                # Every monster starts down; Start game's round-1 Upkeep spawns
+                # the camps (engine.game.new_game: respawn_round = spawn).
+                st = self.counter_state(kind="monster", label=label, hp=0, max=mc["hp"],
+                                        floor=0, uid=f"{mtype}_{i}", mtype=mtype,
+                                        respawn_round=mc["spawn"], respawn=mc["respawn"])
                 self.objects.append(custom_token(
                     tag, label, url, x, Y_PIECE, z, ART_ROT_Y, 1.0, thickness=0.25,
                     desc=f"{mc['hp']} HP (chips = AP). Spawns round {mc['spawn']}, respawns "
@@ -553,7 +565,14 @@ class Builder:
             k = self.src["kits"][cid]
             desc = "\n".join(art.ability_text(a, k["abilities"][a]) for a in ("L0", "Q", "W", "E", "R"))
             desc = f"{k['role']} \u00b7 HP {k['stats']['hp']} \u00b7 Speed {k['stats']['speed']}\n" + desc
-            out.append(card(f"hn:card:champ:{team}:{cid}", k["name"], key, i, cdeck, desc=desc))
+            o = card(f"hn:card:champ:{team}:{cid}", k["name"], key, i, cdeck, desc=desc)
+            o["LuaScript"] = self.load_lua("card.lua")
+            o["LuaScriptState"] = json.dumps({
+                "kind": "champ", "team": team, "cid": cid, "name": k["name"], "role": k["role"],
+                "track": 0, "dead": False, "order": ["L0", "Q", "W", "E", "R"],
+                "ab": {a: {"cost": k["abilities"][a]["cost"], "cd": k["abilities"][a]["cooldown"]}
+                       for a in ("L0", "Q", "W", "E", "R")}})
+            out.append(o)
         return out
 
     def item_cards(self, team: str) -> List[dict]:
@@ -567,48 +586,53 @@ class Builder:
             else:
                 continue
             for j in range(n):
-                out.append(card(f"hn:card:item:{team}:{k}:{j}", k.replace("_", " ").title(), key,
-                                self.item_index[k], cdeck, desc=f"{cost} AP \u00b7 {eff}"))
+                o = card(f"hn:card:item:{team}:{k}:{j}", k.replace("_", " ").title(), key,
+                         self.item_index[k], cdeck, desc=f"{cost} AP \u00b7 {eff}")
+                o["LuaScript"] = self.load_lua("card.lua")
+                o["LuaScriptState"] = json.dumps({"kind": "item", "team": team, "item": k,
+                                                  "name": k.replace("_", " ").title(),
+                                                  "cost": cost, "bought": False})
+                out.append(o)
         return out
 
     def buff_cards(self, k: str, n: int) -> List[dict]:
         key, cdeck = self.item_deck
-        return [card(f"hn:card:buff:{k}:{j}", k.replace("_", " ").title(), key,
-                     self.item_index[k], cdeck) for j in range(n)]
+        dc = self.cfg.get("dragon_card") or {}
+        out = []
+        for j in range(n):
+            o = card(f"hn:card:buff:{k}:{j}", k.replace("_", " ").title(), key,
+                     self.item_index[k], cdeck)
+            o["LuaScript"] = self.load_lua("card.lua")
+            o["LuaScriptState"] = json.dumps({"kind": "buff", "buff": k,
+                                              "name": k.replace("_", " ").title(), "team": None,
+                                              "track": 0, "cd": dc.get("cooldown", 0)})
+            out.append(o)
+        return out
 
     # ----------------------------------------------------------- dashboards
     def build_dashboards(self):
+        """Per team: five role slots (champion card with its own cooldown
+        counter), a bench above each for a dead standee, the AP counter and
+        the hand area for buff and item cards. Sized to fit Table_RPG (about
+        58 x 40) together with the board."""
         cfg = self.cfg
-        dc = cfg.get("dragon_card") or {}
-        cds = [a["cooldown"] for k in self.src["kits"].values() for a in k["abilities"].values()]
-        top = max([death_position(cfg, r) for r in range(1, cfg["round_limit"] + 1)]
-                  + cds + [dc.get("cooldown", 0)])
-        self.track_top = top
-        # one row: the track (top .. 0), the AP pool, the card row; a notes
-        # line underneath. Sized to fit Table_RPG (about 58 x 40) with the board.
-        slot_w, slot_d, gap = 1.9, 2.7, 0.15
-        header, notes_h, pool_w, buffs_w = 1.25, 0.6, 3.6, 5.0
-        W = 0.3 + (top + 1) * (slot_w + gap) + 0.1 + pool_w + 0.2 + buffs_w + 0.3
-        D = header + slot_d + notes_h + 0.15
+        slot_w, slot_d, gap, bench_d, head = 2.2, 3.0, 0.15, 1.4, 0.75
+        ap_w, hand_w, notes_h = 3.6, 6.0, 0.55
+        W = 0.3 + len(ROLES) * (slot_w + gap) + 0.05 + ap_w + 0.2 + hand_w + 0.3
+        D = head + bench_d + slot_d + notes_h + 0.1
         Wp, Dp = int(W * PPU), int(D * PPU)
-        sx0, sy0 = 0.3 * PPU, header * PPU
-        slots = {}
-        for i, pos in enumerate(range(top, -1, -1)):
-            x0 = sx0 + i * (slot_w + gap) * PPU
-            slots[pos] = (int(x0), int(sy0), int(x0 + slot_w * PPU), int(sy0 + slot_d * PPU))
-        pool_x0 = sx0 + ((top + 1) * (slot_w + gap) + 0.1) * PPU
-        pool = (int(pool_x0), int(sy0), int(pool_x0 + pool_w * PPU), int(sy0 + slot_d * PPU))
-        bx0 = pool[2] + 0.2 * PPU
-        buffs = (int(bx0), int(sy0), int(bx0 + buffs_w * PPU), int(sy0 + slot_d * PPU))
-        death = {}
-        for rnd in range(1, cfg["round_limit"] + 1):
-            death.setdefault(death_position(cfg, rnd), []).append(rnd)
-        slot_notes = {}
-        for pos, rnds in death.items():
-            slot_notes[pos] = f"death R{rnds[0]}-{rnds[-1]}" if rnds[-1] < cfg["round_limit"] \
-                else f"death R{rnds[0]}+"
-        if dc:
-            slot_notes[dc["cooldown"]] = (slot_notes.get(dc["cooldown"], "") + " dragon").strip()
+        roles, bench = {}, {}
+        for i, role in enumerate(ROLES):
+            x0 = (0.3 + i * (slot_w + gap)) * PPU
+            bench[role] = (int(x0), int(head * PPU), int(x0 + slot_w * PPU),
+                           int((head + bench_d - 0.1) * PPU))
+            roles[role] = (int(x0), int((head + bench_d) * PPU), int(x0 + slot_w * PPU),
+                           int((head + bench_d + slot_d) * PPU))
+        ax0 = (0.3 + len(ROLES) * (slot_w + gap) + 0.05) * PPU
+        ap_box = (int(ax0), int(head * PPU), int(ax0 + ap_w * PPU),
+                  int((head + bench_d + slot_d) * PPU))
+        hx0 = ap_box[2] + 0.2 * PPU
+        hand = (int(hx0), int(head * PPU), int(hx0 + hand_w * PPU), ap_box[3])
         rows = round_rows(cfg)
         notes = [
             f"Death {self.v['death']} rnd (variant)",
@@ -616,44 +640,51 @@ class Builder:
             f" (Baron {' / '.join(str(v) for v in sorted({r['kill_ap_baron'] for r in rows}))})",
             f"AP {cfg['ap_base']} each Upkeep",
             f"Tower kill +{cfg.get('tower_kill_ap', 0)} AP",
-            "Ability = whole card on the track at its cooldown",
+            "Right-click a card to use an ability",
         ]
-        layout = {"size": (Wp, Dp), "slots": slots, "slot_notes": slot_notes, "pool": pool,
-                  "buffs": buffs, "notes_y": int(sy0 + slot_d * PPU + 0.1 * PPU)}
+        layout = {"size": (Wp, Dp), "roles": roles, "bench": bench, "ap": ap_box, "hand": hand,
+                  "notes_y": int((head + bench_d + slot_d + 0.05) * PPU)}
         mat_d = self.mat_size[1]
+        ap_script = self.load_lua("ap.lua")
         self.dash = {}
         for team in TEAMS:
             facing = team
             rot = rot_for(facing)
             cz = (mat_d / 2 + 0.4 + D / 2) * (1 if team == "north" else -1)
             cx = 0.0
-            url = self.img(art.render_dashboard(team, TEAM_SEAT[team], top, (slot_w, slot_d), notes,
-                                                self.v, PPU, layout), f"dash_{team}.png")
+            url = self.img(art.render_dashboard(team, TEAM_SEAT[team], notes, layout),
+                           f"dash_{team}.png")
             tag = f"hn:art:dash:{team}"
             self.objects.append(custom_tile(tag, f"{TEAM_SEAT[team]} dashboard", url, cx, Y_MAT, cz,
                                             rot, 1.0, thickness=0.2))
             self.place(tag, cx, cz, Y_MAT, rot, w=W, d=D, lock=True, art_obj=True)
 
-            def world(px, py, _cx=cx, _cz=cz, _f=facing):
-                return px_to_world(_cx, _cz, px - Wp / 2, py - Dp / 2, _f)
+            def world(box, _cx=cx, _cz=cz, _f=facing):
+                x0, y0, x1, y1 = box
+                wx, wz = px_to_world(_cx, _cz, (x0 + x1) / 2 - Wp / 2, (y0 + y1) / 2 - Dp / 2, _f)
+                return {"x": wx, "z": wz}
 
-            slot_world = {}
-            for pos, (x0, y0, x1, y1) in slots.items():
-                wx, wz = world((x0 + x1) / 2, (y0 + y1) / 2)
-                slot_world[pos] = (wx, wz)
-                self.snaps.append({"Position": {"x": wx, "y": Y_MAT + 0.2, "z": wz},
+            info = {"rot": rot, "cz": cz, "roles": {}, "bench": {}}
+            for role in ROLES:
+                info["roles"][role] = world(roles[role])
+                info["bench"][role] = world(bench[role])
+                p = info["roles"][role]
+                self.snaps.append({"Position": {"x": p["x"], "y": Y_MAT + 0.2, "z": p["z"]},
                                    "Rotation": {"x": 0, "y": rot, "z": 0}})
-            px0, py0, px1, py1 = pool
-            pwx, pwz = world((px0 + px1) / 2, (py0 + py1) / 2)
-            pw, pd = (px1 - px0) / PPU, (py1 - py0) / PPU
-            ztag = f"hn:zone:pool:{team}"
-            self.objects.append(zone(ztag, f"{TEAM_SEAT[team]} AP pool", pwx, Y_MAT + 1.5, pwz,
-                                     pw, 3.0, pd))
-            self.place(ztag, pwx, pwz, Y_MAT + 1.5, 0.0, w=0, d=0)
-            bx0, by0, bx1, by1 = buffs
-            bwx, bwz = world((bx0 + bx1) / 2, (by0 + by1) / 2 + 0.3 * PPU)
-            self.dash[team] = {"slots": slot_world, "pool": (pwx, pwz), "buffs": (bwx, bwz),
-                               "rot": rot, "cz": cz, "depth": D, "width": W}
+            info["ap"] = world(ap_box)
+            info["hand"] = world(hand)
+            info["hand"]["w"] = hand_w
+            self.dash[team] = info
+            # the AP counter: one big number, left-click -1, right-click +1
+            ap_url = self.img(art.render_ap(team), f"ap_{team}.png")
+            atag = f"hn:ap:{team}"
+            self.objects.append(custom_token(
+                atag, f"{TEAM_SEAT[team]} AP", ap_url, info["ap"]["x"], Y_PIECE, info["ap"]["z"],
+                rot, 1.0, thickness=0.2, locked=True,
+                desc="AP pool. Left-click -1, right-click +1. Upkeep resets it.",
+                script=ap_script, state=json.dumps({"team": team, "ap": 0})))
+            self.place(atag, info["ap"]["x"], info["ap"]["z"], Y_PIECE, rot, w=3.2, d=3.2,
+                       lock=True, on=tag, lift=0.01, level=1)
         self.dash_w = W
         # the priority marker sits just outside the left end of the priority
         # team's dashboard
@@ -711,37 +742,35 @@ class Builder:
             col = [c / 255 for c in art.TEAM_COLOURS[team]]
             col_a, col_b = left - 2.2, left - 5.8
             self.objects.append(bag(f"hn:bag:standees:{team}", f"{TEAM_SEAT[team]} champions",
-                                    standees, col_a, Y_PIECE, 10.0 * sgn, colour=col))
-            self.place(f"hn:bag:standees:{team}", col_a, 10.0 * sgn, Y_PIECE, rot)
+                                    standees, col_a, Y_PIECE, 9.0 * sgn, colour=col))
+            self.place(f"hn:bag:standees:{team}", col_a, 9.0 * sgn, Y_PIECE, rot)
             cards = self.champ_cards(team)
             _, cdeck = self.champ_deck
             dtag = f"hn:deck:champ:{team}"
             self.objects.append(deck(dtag, f"{TEAM_SEAT[team]} champion cards", cards, cdeck,
-                                     col_b, Y_PIECE, 10.0 * sgn, rot))
-            self.place(dtag, col_b, 10.0 * sgn, Y_PIECE, rot)
+                                     col_b, Y_PIECE, 9.0 * sgn, rot))
+            self.place(dtag, col_b, 9.0 * sgn, Y_PIECE, rot)
             icards = self.item_cards(team)
             _, idk = self.item_deck
             itag = f"hn:deck:items:{team}"
             self.objects.append(deck(itag, f"{TEAM_SEAT[team]} items (shop)", icards, idk,
-                                     col_b, Y_PIECE, 5.6 * sgn, rot))
-            self.place(itag, col_b, 5.6 * sgn, Y_PIECE, rot)
+                                     col_a, Y_PIECE, 4.0 * sgn, rot))
+            self.place(itag, col_a, 4.0 * sgn, Y_PIECE, rot)
 
-        # chip supply: team minion chips and neutral chips (HP of monsters and
-        # structures, and AP). Every chip is 1 HP and 1 AP (Rules 1).
-        chip_size = HEX * 0.85
-        for key, colour, nick in (("north", art.TEAM_COLOURS["north"], "Blue minion chips"),
-                                  ("south", art.TEAM_COLOURS["south"], "Red minion chips"),
-                                  ("neutral", art.NEUTRAL_CHIP, "AP / HP chips")):
-            url = self.img(art.render_chip(colour), f"chip_{key}.png")
-            ctag = f"hn:chip:{key}"
-            chip = custom_token(ctag, nick[:-1], url, 0, Y_PIECE, 0, 0.0, 1.0, thickness=0.12,
-                                stackable=True, desc="1 chip = 1 HP = 1 AP")
-            self.place(ctag, 0, 0, Y_PIECE, 0.0, w=chip_size, d=chip_size, start=False)
-            z = {"north": 4.5, "south": -4.5, "neutral": 0.0}[key]
-            btag = f"hn:bag:chips:{key}"
-            self.objects.append(bag(btag, nick, [chip], left - 2.2, Y_PIECE, z,
-                                    colour=[c / 255 for c in colour], infinite=True))
-            self.place(btag, left - 2.2, z, Y_PIECE, 0.0)
+        # minion waves are counter tokens the Global script spawns; these are
+        # their templates (TTS object data), one per team and lane
+        self.wave_templates = {}
+        for team in TEAMS:
+            self.wave_templates[team] = {}
+            for lane in self.src["map"][team]["lane_paths"]:
+                url = self.img(art.render_wave(team, lane), f"wave_{team}_{lane}.png")
+                o = custom_token("hn:wave:template", f"{TEAM_SEAT[team]} {lane} wave", url,
+                                 0, Y_PIECE, 0, ART_ROT_Y, 1.0, thickness=0.3,
+                                 desc="Minion wave: chips = HP. Left-click -1 (the clicker's "
+                                      "team banks 1 AP), right-click +1.",
+                                 script=counter)
+                del o["GUID"]
+                self.wave_templates[team][lane] = o
 
         # buff and objective cards (supply)
         dragon_n = 2 * self.cfg.get("dragon_cap", 2)
@@ -749,7 +778,7 @@ class Builder:
                                     ("baron", 2))):
             _, idk = self.item_deck
             tag = f"hn:deck:buff:{k}"
-            x, z = left - 9.4, 6.3 - 4.2 * i
+            x, z = left - 5.8, 4.2 - 2.8 * i
             self.objects.append(deck(tag, k.replace("_", " ").title() + " cards",
                                      self.buff_cards(k, n), idk, x, Y_PIECE, z, ART_ROT_Y))
             self.place(tag, x, z, Y_PIECE, ART_ROT_Y)
@@ -774,13 +803,10 @@ class Builder:
         data = dict(data)
         data["LAYOUT"] = self.layout
         data["ROUND_SLOTS"] = self.round_slots
-        data["DASH"] = {t: {"pool": {"x": v["pool"][0], "z": v["pool"][1]},
-                            "cz": v["cz"], "rot": v["rot"],
-                            "slots": {str(p): {"x": xz[0], "z": xz[1]}
-                                      for p, xz in v["slots"].items()}}
-                        for t, v in self.dash.items()}
+        data["DASH"] = self.dash
         data["PRIO_SLOTS"] = self.prio_slots
-        data["TRACK_TOP"] = self.track_top
+        data["WAVE_TEMPLATE"] = self.wave_templates
+        data["SIZES"] = {"standee": HEX * 1.5, "wave": HEX * 1.3, "card": CARD_SCALE}
         data["ART_ROT_Y"] = ART_ROT_Y
         lines = ["-- Generated by tools/tts_export.py. Do not edit: rebuild instead.",
                  f"-- {self.v['stamp']}", ""]
@@ -790,12 +816,12 @@ class Builder:
         return "\n".join(lines)
 
     def save_file(self, data_lua: str) -> dict:
-        glob = data_lua + "\n" + self.load_lua("global.lua")
+        core = self.load_lua("core.lua")
+        glob = (data_lua + "\n-- tts/lua/core.lua, inlined\nCore = (function()\n" + core
+                + "\nend)()\n\n" + self.load_lua("global.lua"))
         with open(os.path.join(LUA_DIR, "ui.xml")) as fh:
             xml = fh.read()
         xml = xml.replace("{{STAMP}}", self.v["stamp"])
-        rules = (f"Hex-Nexus playtest mod. {self.v['stamp']}. Built {self.v['built']}. "
-                 f"Rules: rules/Hex-Nexus_Rules_v{self.v['rules']}.md")
         return {
             "SaveName": f"Hex-Nexus {self.v['rules']} / {self.v['roster']} ({self.v['config']})",
             "EpochTime": 0, "Date": self.v["built"], "VersionNumber": "v13.2.2",
@@ -826,6 +852,12 @@ def main(argv=None) -> int:
     branch = git("rev-parse", "--abbrev-ref", "HEAD") or "master"
     asset_base = args.asset_base or f"{DEFAULT_REPO_RAW}/{branch}/tts/build/assets"
 
+    # start from an empty assets folder so retired images do not linger
+    assets_dir = os.path.join(args.out, "assets")
+    if os.path.isdir(assets_dir):
+        for f in os.listdir(assets_dir):
+            if f.endswith(".png"):
+                os.remove(os.path.join(assets_dir, f))
     b = Builder(src, args.out, asset_base)
     b.build_board()
     b.build_structures()

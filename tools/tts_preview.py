@@ -23,7 +23,7 @@ TABLE = (58.0, 40.0)            # Table_RPG surface, world units (approximate)
 
 
 def asset_path(url: str) -> str:
-    return os.path.join(BUILD, "assets", url.rsplit("/", 1)[-1])
+    return os.path.join(BUILD, "assets", url.split("?")[0].rsplit("/", 1)[-1])
 
 
 def main() -> int:

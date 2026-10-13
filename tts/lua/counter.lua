@@ -1,6 +1,7 @@
--- Hex-Nexus HP counter: champions, towers, the Nexus and monsters.
--- Left-click removes 1 HP, right-click adds 1. The starting numbers come from
--- the exporter (script state), never from this file.
+-- Hex-Nexus HP counter: champions, towers, the Nexus, monsters and waves.
+-- Left-click removes 1, right-click adds 1. The Global script hears every
+-- change (hnCounterChanged): it banks AP for chips, handles kills, falls and
+-- rewards. Starting numbers come from the exporter, never from this file.
 local st = {}
 
 function onLoad(saved)
@@ -11,13 +12,9 @@ function onLoad(saved)
   draw()
 end
 
-function onSave()
-  return JSON.encode(st)
-end
+function onSave() return JSON.encode(st) end
 
-function hnGet()
-  return st
-end
+function hnGet() return st end
 
 function hnSet(t)
   for k, v in pairs(t or {}) do st[k] = v end
@@ -26,11 +23,13 @@ end
 
 local function label()
   if st.kind == "champion" then
+    if st.hp <= 0 then return "DEAD" end
     return st.hp .. "/" .. st.max
   elseif st.kind == "structure" then
+    if st.hp <= 0 then return "destroyed" end
     return st.hp .. " (min " .. (st.floor or 0) .. ")"
   elseif st.kind == "monster" and st.hp <= 0 then
-    return "down"
+    return "down · R" .. (st.respawn_round or "?")
   end
   return tostring(st.hp)
 end
@@ -58,6 +57,11 @@ function draw()
 end
 
 function hnClick(_, player_colour, alt)
+  local before = st.hp
   st.hp = math.max(0, st.hp + (alt and 1 or -1))
   draw()
+  if st.hp ~= before then
+    Global.call("hnCounterChanged", {guid = self.getGUID(), before = before, after = st.hp,
+                                     colour = player_colour})
+  end
 end

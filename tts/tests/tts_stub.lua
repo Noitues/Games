@@ -139,10 +139,35 @@ function Stub.newObject(spec)
     no.setPosition(o.getPosition()); no.setRotation(o.getRotation())
     return no
   end
-  o.getObjects = function() return spec.contents and spec.contents() or {} end
+  o.getObjects = function()
+    if type(spec.contents) == "function" then return spec.contents() end
+    local out = {}
+    for _, c in ipairs(spec.contents or {}) do
+      out[#out + 1] = {guid = c.guid, gm_notes = c.tag, name = c.nick}
+    end
+    return out
+  end
+  o.takeObject = function(p)
+    local list = spec.contents or {}
+    local idx = 1
+    if p.guid then
+      idx = nil
+      for i, c in ipairs(list) do if c.guid == p.guid then idx = i end end
+    end
+    if not idx or not list[idx] then return nil end
+    local child = table.remove(list, idx)
+    local pos = p.position or {0, 2, 0}
+    child.x, child.y, child.z = pos[1] or pos.x, pos[2] or pos.y, pos[3] or pos.z
+    local no = Stub.add(child)
+    if Stub.onCreate then Stub.onCreate(no) end
+    if p.callback_function then p.callback_function(no) end
+    return no
+  end
+  o.destruct = function() spec.destroyed = true; Stub.remove(o) end
   o.clearButtons = function() o._buttons = {} end
   o.createButton = function(b) o._buttons[#o._buttons + 1] = b end
   o.addContextMenuItem = function(label, fn) o._menu[label] = fn end
+  o.clearContextMenu = function() o._menu = {} end
   o.call = function(fname, arg)
     if o._env and o._env[fname] then return o._env[fname](arg) end
   end
@@ -192,6 +217,23 @@ function Stub.env(self_obj)
     end,
   }
   env.Global = {call = function(fname, arg) return Stub.global[fname](arg) end}
+  env.spawnObjectData = function(p)
+    Stub.uid = (Stub.uid or 0) + 1
+    local d = p.data
+    local pos = p.position or {0, 2, 0}
+    local spec = {guid = "s" .. Stub.uid, tag = d.GMNotes, nick = d.Nickname, custom = true,
+                  script = d.LuaScript or "", state = d.LuaScriptState or "",
+                  x = pos[1], y = pos[2], z = pos[3]}
+    local o = Stub.add(spec)
+    if Stub.onCreate then Stub.onCreate(o) end
+    if p.callback_function then p.callback_function(o) end
+    return o
+  end
+  Stub.hotkeys = Stub.hotkeys or {}
+  env.addHotkey = function(label, fn) Stub.hotkeys[label] = fn end
+  env.Player = setmetatable({}, {__index = function(_, c)
+    return {color = c, admin = true, lookAt = function(p) Stub.look = {colour = c, p = p} end}
+  end})
   return env
 end
 

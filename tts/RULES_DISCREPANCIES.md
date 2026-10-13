@@ -30,6 +30,8 @@ otherwise. **Ruled** = settled by the designer.
 | 11 | `from_hidden` on abilities | Not in the rulebook. | Every roster ability carries `from_hidden`, but it only matters with `ambush_gate` on (retired by RQ-036, off in config). The mod does not print it. | D (inert data) |
 | 12 | Kill reward with the Baron | §6.4: two waves "spawned that round". | Designer, 2026-09-28: for a team holding the Baron card these are its Empowered waves, so 10 / 12 / 14 AP instead of 6 / 8 / 10. `engine.resolve.kill_reward` leaves the Baron bonus out, which is an **engine bug** the designer is handling with the sim agent. **The mod follows the designer**, not the engine. The panel and tracker show both values. `tts/tests/smoke_m0.py` prints a NOTE while the engine still disagrees. | D: engine bug, open |
 | 13 | Round 1 priority | §5.1 does not say who has it. | Designer, 2026-09-28: **South (Red)** has priority in round 1; it alternates after. `engine.game.new_game` defaults to North, but batches swap seats, so the sims are unaffected. | Ruled |
+| 14 | Monster healing | Not in the rulebook. | Designer, 2026-10-13: a monster that was hit but not killed is back to full HP at the end of the round. The table applies it at the start of the next Upkeep. **The engine does not heal monsters.** The parity harness runs with this off; the smoke test checks it on. | Ruled, engine to follow |
+| 15 | Cooldown track on the table | §1 and §5.2: champion cards move along a cooldown track, positions 4-3-2-1-0. | The table keeps the rule with a different presentation. Each champion card counts its own cooldown (CD n / DEAD n / READY) in a fixed role slot, and Upkeep counts it down. "Whole card out for N rounds" is unchanged. | Presentation only |
 
 ## Designer rulings (2026-09-28)
 
@@ -40,9 +42,17 @@ otherwise. **Ruled** = settled by the designer.
 | R3 | First player | South has priority in round 1 (#13). | Fixed in the build (`FIRST_PLAYER`); the panel's toggle is gone. |
 | R4 | Death timers 2 / 4 / 6 | A **playtest variant**. The rulebook stays at 3 / 4 / 5. | Built from `batch_0075` and labelled "death 2/4/6" and "playtest variant" on the table. Rebuild with `--config reports/requests/batch_0074.json` for the rulebook timers. |
 
+## Designer rulings (2026-10-13)
+
+| # | Question | Ruling | In the mod |
+|---|---|---|---|
+| R5 | Monster health between rounds | A monster hit but not killed returns to max HP at the end of the round. "Not sure what else": nothing else heals this way for now. | Automated in Upkeep (#14). |
+| R6 | Hidden hands | Nothing is hidden. | Cards in hand lie face up on the dashboard. |
+
 ## How this list grows
 
-M0 found these by reading the engine against the rulebook. The M2 parity
-harness replays engine scenarios against the Lua referee, one per icon and per
-rule the tests cover. Every mismatch that is a rules question, not a Lua bug,
-is added here.
+M0 found these by reading the engine against the rulebook. The parity
+harness (`tts/tests/run.lua`) replays engine Upkeeps and World Phases through
+the Lua rules core and currently matches all 316 scenarios. When ability
+resolution is added (M2), it will cover every icon too. Every mismatch that is
+a rules question, not a Lua bug, is added here.

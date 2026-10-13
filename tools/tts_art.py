@@ -378,38 +378,54 @@ def render_marker(label: str, colour, size: int = 160) -> Image.Image:
 
 
 # -------------------------------------------------------------- dashboards
-def render_dashboard(team: str, team_label: str, track_positions: int, slot_px: Tuple[int, int],
-                     notes: List[str], versions: dict, px_per_unit: float,
-                     layout: dict) -> Image.Image:
-    """Team dashboard: the cooldown track (``track_positions`` .. 0), the AP
-    pool, the buff-card row and the reminders. ``layout`` holds the pixel
-    boxes the exporter also turns into snap points and zones."""
+def render_dashboard(team: str, team_label: str, notes: List[str], layout: dict) -> Image.Image:
+    """Team dashboard: a bench and a card slot per role, the AP counter's
+    place and the hand area. ``layout`` holds the pixel boxes the exporter
+    also turns into world positions."""
     W, H = layout["size"]
     col = TEAM_COLOURS[team]
     img = Image.new("RGB", (W, H), darker(col, 0.35))
     d = ImageDraw.Draw(img)
     d.rectangle((4, 4, W - 5, H - 5), outline=lighter(col, 0.3), width=5)
-    d.text((18, 10), f"{team_label} · {team.upper()}", font=font(32, True), fill=(255, 255, 255))
-    d.text((20, 50), "COOLDOWN TRACK: every card down 1 in Upkeep · 0 = in hand",
-           font=font(18, True), fill=lighter(col, 0.6))
-    for pos, box in layout["slots"].items():
+    d.text((18, 6), f"{team_label} \u00b7 {team.upper()}", font=font(30, True), fill=(255, 255, 255))
+    d.text((330, 14), "champion cards count their own cooldown \u00b7 right-click a card to use an "
+           "ability", font=font(17, True), fill=lighter(col, 0.6))
+    for role, box in layout["roles"].items():
         x0, y0, x1, y1 = box
         d.rounded_rectangle(box, radius=12, fill=darker(col, 0.55), outline=lighter(col, 0.4), width=3)
-        text_center(d, ((x0 + x1) / 2, y0 + 26), str(pos) if pos else "0 · HAND",
-                    font(34 if pos else 20, True), fill=(255, 255, 255))
-        sub = layout["slot_notes"].get(pos, "")
-        for i, ln in enumerate(textwrap.wrap(sub, 11)):
-            text_center(d, ((x0 + x1) / 2, y1 - 44 + i * 20), ln, font(16), fill=lighter(col, 0.7))
-    x0, y0, x1, y1 = layout["pool"]
-    d.rounded_rectangle(layout["pool"], radius=18, fill=(40, 40, 40), outline=(235, 196, 60), width=5)
-    text_center(d, ((x0 + x1) / 2, y0 + 26), "AP POOL", font(28, True), fill=(235, 196, 60))
-    text_center(d, ((x0 + x1) / 2, y1 - 22), "reset in Upkeep", font(16), fill=(220, 220, 220))
-    x0, y0, x1, y1 = layout["buffs"]
-    d.rounded_rectangle(layout["buffs"], radius=12, fill=darker(col, 0.55), outline=lighter(col, 0.4),
+        text_center(d, ((x0 + x1) / 2, y1 - 18), role.upper(), font(18, True), fill=lighter(col, 0.7))
+        bx0, by0, bx1, by1 = layout["bench"][role]
+        cx, cy, r = (bx0 + bx1) / 2, (by0 + by1) / 2, min(bx1 - bx0, by1 - by0) / 2 - 4
+        d.ellipse((cx - r, cy - r, cx + r, cy + r), outline=lighter(col, 0.35), width=3)
+        text_center(d, (cx, cy), "bench", font(15), fill=lighter(col, 0.5))
+    x0, y0, x1, y1 = layout["ap"]
+    d.rounded_rectangle(layout["ap"], radius=18, fill=(40, 40, 40), outline=(235, 196, 60), width=5)
+    text_center(d, ((x0 + x1) / 2, y0 + 20), "AP POOL", font(22, True), fill=(235, 196, 60))
+    x0, y0, x1, y1 = layout["hand"]
+    d.rounded_rectangle(layout["hand"], radius=12, fill=darker(col, 0.55), outline=lighter(col, 0.4),
                         width=3)
-    text_center(d, ((x0 + x1) / 2, y0 + 22), "BUFF / ITEM CARDS", font(20, True),
+    text_center(d, ((x0 + x1) / 2, y0 + 20), "BUFF / ITEM CARDS", font(20, True),
                 fill=(255, 255, 255))
-    d.text((20, layout["notes_y"]), "  ·  ".join(notes), font=font(19), fill=(235, 235, 235))
+    d.text((20, layout["notes_y"]), "  \u00b7  ".join(notes), font=font(18), fill=(235, 235, 235))
+    return img
+
+
+def render_ap(team: str, size: int = 256) -> Image.Image:
+    img, d = disc(size, (40, 36, 30), (235, 196, 60), 14)
+    text_center(d, (size / 2, size * 0.16), "AP", font(int(size * 0.1), True), fill=(235, 196, 60))
+    return img
+
+
+def render_wave(team: str, lane: str, size: int = 200) -> Image.Image:
+    img = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    col = TEAM_COLOURS[team]
+    for i in range(3):                                   # a little chip stack
+        y = size * 0.62 - i * size * 0.13
+        d.ellipse((size * 0.14, y - size * 0.16, size * 0.86, y + size * 0.16),
+                  fill=darker(col, 0.8 - i * 0.1), outline=(255, 255, 255), width=4)
+    text_center(d, (size / 2, size * 0.2), f"{lane.upper()} WAVE", font(int(size * 0.12), True),
+                fill=(255, 255, 255), stroke=3, stroke_fill=(0, 0, 0))
     return img
 
 
