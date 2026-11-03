@@ -1,0 +1,564 @@
+# Generation Ship — Game Design Document v0
+
+*Working title: none chosen yet. "Generation Ship" is a placeholder.*
+
+**Status:** v0. This document records the decisions made during the design conversation, the reasons for them, and what is still open. Values marked **(default)** were not decided in conversation. They are starting points for the prototype, live in the config file, and are listed again under *Open questions*.
+
+---
+
+## Tech stack
+
+Browser prototype: **vanilla JavaScript (ES modules) + HTML/CSS + inline SVG for the ship map + Web Audio API.** No build step; it runs from a static file server. *(default: the tech stack was not discussed.)*
+
+Suggested file structure:
+- `index.html`: entry point and layout.
+- `src/main.js`: boot, game loop, phase sequencing.
+- `src/config.js`: **every tunable value and rule toggle** (pool sizes, health, damage, costs, hand size, card plays, deck sizes, Offset/Direct toggle, Landfall card toggle).
+- `src/state.js`: the game state model, plus undo snapshots for rapid testing.
+- `src/phases/`: one file per phase (`growth.js`, `fast.js`, `dusk.js`, `day.js`, `dawn.js`, `slow.js`, `timePasses.js`).
+- `src/systems/`: `threat.js`, `crew.js`, `decay.js`, `influence.js`, `purpose.js`, `leaders.js`, `wall.js`, `tokens.js`, `targeting.js`.
+- `src/data/`: `boards.js`, `people.js` (Common and Remarkable cards), `events.js`, `discoveries.js`, `destinations.js`, `houses.js`.
+- `src/ui/`: map renderer, conveyor/Wall panel, house panels, log.
+
+Card and board content goes in data files, so new cards and boards can be added without touching logic.
+
+---
+
+## Game concept
+
+A cooperative strategy board game for 1–4 players, structurally modeled on **Spirit Island**. The players are the **Great Houses** of a centuries-old **generation ship** whose technology is so old the crew no longer understands it. They treat it as ritual and near-magic: Engineers are a priesthood, and the reactor is "the Heart." This is the **Forgotten Machine** tone.
+
+Spirit Island's Explore → Build → Ravage conveyor becomes **Dawn → Day → Dusk**. Every round is a **generation**:
+- the rising heir enters at **Dawn**,
+- rules the ship as **Steward** at **Day**,
+- ages out as **Elder** at **Dusk**, leaving a **Legacy**,
+- then retires to the **Wall of Leaders**.
+
+Each leader carries the crisis of their reign with them down the conveyor. The houses choose who leads from among the people they played, knowing that the leader's legacy will land a generation later.
+
+Inspirations: *Spirit Island* (structure, threat conveyor, elements, fear, adversaries), and the Dawn/Day/Dusk generational triad from the *Foundation* TV series. The triad is used as a structural inspiration only; none of that IP is used.
+
+---
+
+## Visual style
+
+*(Directional default: visual style was not discussed. It follows from the Forgotten Machine tone.)*
+- **The look:** ancient technology treated as sacred. Think a ship's schematic redrawn as an illuminated manuscript: worn, ritualized, hand-annotated.
+- **Sections** read as machine-diagrams with a ceremonial overlay.
+- **Pieces are simple, distinct glyphs.** The threat ladder (Glitch / Fault / Failure) must be readable at a glance by size and shape.
+- **Avoid:** sleek modern sci-fi chrome, grimdark, and clutter that hides piece counts.
+- **For the prototype,** clarity beats art: flat shapes, clear labels, colored section-type fills.
+
+---
+
+## Camera
+
+A static 2D top-down view of the full ship map, which is 1–4 connected player boards. It must:
+- show every section, its pieces and its adjacency (conduits) at once,
+- support pan and zoom when 3–4 boards are in play,
+- keep the leader conveyor and the Wall permanently visible outside the map area.
+
+---
+
+## Controls
+
+Mouse-driven, **hot-seat**: one person can control every house, for rapid solo prototyping.
+- **Growth:** click a growth option on the house panel.
+- **Commit:** click cards in a hand to play them. Credits are deducted automatically. Mark one played card as the **nominee**. Click a card in hand to place it in the clone slot.
+- **Resolving a power:** select the card. Legal target sections (by range and type) highlight; click one. Then follow prompts for piece choices, such as which Glitch to damage or where to vent.
+- **Vote:** click one nominee, or enter tie-break by Steward's house.
+- **Damage and cascade choices** (which Crew take damage, where Decay cascades) are prompted with clickable sections or pieces.
+- A **"Next step"** button advances automatic phases. An **undo** button reverts to the last phase snapshot.
+- A **settings panel** sets rule toggles, player count, destination and level before a game.
+
+---
+
+## Core gameplay loop
+
+**Setup**
+1. Choose the player count (1–4), a house per player, a destination and difficulty level, and the rule toggles (Offset/Direct, Landfall card on/off).
+2. Lay out one ship board per player. Place the starting pieces shown by each board's setup symbols, and each house's starting influence.
+3. Build the event deck: Stage I, Stage II, Stage III, plus any destination changes. Set the **Wall** to one slot per card in the event deck.
+4. Set the Decay pool and Purpose pool for the player count. Set the Understanding tier to I.
+5. Draw the **starting event** and a **random starting leader** from the Common people deck. Pair them in **Dawn** and resolve the event's **Dawn seed**. Then advance them to **Day**. *(Mirrors Spirit Island's setup explore; see Open questions.)* Dusk starts empty and the Wall starts empty.
+
+**Each round (one generation)**
+1. **Growth.** Each house draws a fresh hand from the Common deck (it may take Remarkable cards by draw substitution). It keeps any cloned card from last generation, picks one growth option, and gains credits.
+2. **Commit.** Each house chooses its plays, up to its card-play limit, and pays their credit costs. It marks **one** played card as its **nominee**. The nominee costs 0 credits and is that house's only fast card. All other played cards are slow.
+3. **Fast phase.** Nominees resolve.
+4. **Dusk.**
+   1. Earned Discovery cards resolve: for each, choose a one-time effect or a Breakthrough.
+   2. The **Elder's Legacy** resolves in the sections matching the Elder's paired event.
+   3. The Elder's event **strikes**.
+5. **Day.** The Steward's **Reign** applies. The Steward's event **grows**.
+6. **Dawn.**
+   1. All houses **vote** for one nominee as successor. Ties go to the Steward's house's choice.
+   2. The chosen card goes to the Dawn slot. Unchosen nominees go to the discard pile.
+   3. **Offset (default toggle):** now draw the next event, pair it with the new heir, and resolve its **seed**.
+   4. **Direct (toggle):** the event was drawn and shown before the vote; pair it and seed now.
+7. **Slow phase.** All other played cards resolve. Targets are chosen now, with knowledge of the new event.
+8. **Time passes.**
+   1. The Dusk leader and its event (and any Breakthrough) move to the next Wall slot. Day moves to Dusk, and Dawn moves to Day.
+   2. Damage on Crew and threat pieces clears.
+   3. Hands are discarded, except cloned cards. Credits carry over.
+
+**Ending**
+- **Win (base):** you win the moment the board meets your current Understanding tier's condition **and** the destination's Landfall requirement.
+- **Win (Landfall card toggle):** when the condition above is met, the players may place the set-aside Landfall event as the next Dawn event. You win when the Landfall event retires to the Wall with its leader.
+- **Loss:** you lose if an event must be drawn at Dawn and the event deck is empty. *(The Wall is full and the deck is empty at the same moment.)*
+- **Loss:** you lose if the Decay pool is empty after the Ship in Crisis card has flipped.
+- **Loss:** you lose if any house has no influence on the ship.
+
+---
+
+## The leader conveyor (Dawn / Day / Dusk)
+
+**Slots:** Dawn, Day and Dusk each hold one leader card paired with one event card.
+- **Dawn** = the rising heir. Its event **seeds**.
+- **Day** = the **Steward**. Its Reign applies, and its event **grows**.
+- **Dusk** = the **Elder**. Its Legacy resolves, then its event **strikes**.
+
+**Leader cards are people cards.** Any people card can become a leader. Its **Reign** and **Legacy** text is used only while it is in the conveyor.
+- **Reign:** an ongoing effect while the card is in Day.
+- **Legacy:** a one-time effect at Dusk, resolved **in the sections matching the leader's paired event**. Legacies are mostly costly.
+
+**Nomination:**
+- Each house nominates exactly **one** of the cards it played this generation.
+- The nominee costs **0** credits and resolves in the fast phase.
+- Houses may gain more fast candidates as a house growth unlock.
+
+**Succession vote:**
+- All houses choose one nominee. The Steward's house breaks ties.
+- If no Steward exists (round 1 has a Steward from setup), the first player breaks ties. *(default)*
+
+**What happens to leader cards:**
+- The chosen card is **permanently removed** from the people deck. It goes Dawn → Day → Dusk → Wall.
+- Unchosen nominees go to the people discard pile.
+
+**Event pairing toggle:**
+- **Offset (default):** the event is drawn *after* the vote, so you choose a leader without knowing what they will face. *Reason:* this recreates Spirit Island's tension, where you plan for coming problems and the next card disrupts the plan.
+- **Direct:** the event is drawn and shown before the vote, so the choice is informed.
+
+---
+
+## The Wall of Leaders
+
+- One slot per event card in the event deck. **Default: 12 slots.**
+- At Time passes, the Dusk leader moves into the next empty slot, together with **its paired event and any Breakthrough credited to its reign.**
+- The Wall is the game clock. When the Wall is full, the event deck is empty, and the next Dawn draw loses the game.
+- Breakthroughs on the Wall stay active for the rest of the game.
+- The Wall as an additional power-curve source is parked.
+
+---
+
+## Event deck (threat cards)
+
+**Principles** (all five adopted from Spirit Island):
+1. Event cards say only **where** (a section type). The slot decides **what** happens.
+2. Damage is simple counting.
+3. One loss clock that cascades (Decay).
+4. The Crew fight back.
+5. Escalation comes from deck stages, not new rules.
+
+**Composition (default: Spirit Island's 3/4/5):**
+
+| Stage | Count | Content |
+|---|---|---|
+| I | 3 | Names one section type |
+| II | 4 | Names one section type, plus a twist line (e.g. "also seeds adjacent sections"). One Stage II card carries an **Escalation** symbol. |
+| III | 5 | Names two section types |
+
+- Section types are **Infrastructure, Residential, Government, Agricultural**.
+- Build a pool with **one card per section type at each stage** (Stage III uses pairs of types). Shuffle each stage separately, deal the needed counts, and stack them I on top, III at the bottom.
+- **Escalation symbol:** when the escalation card resolves its seed, apply the destination's Escalation effect, if the destination defines one. Otherwise ignore it.
+- **Landfall event** *(toggle only)*: set aside at setup. It matches **every** section.
+
+**Slot actions** (Spirit Island resolution order: Dusk, then Day, then Dawn):
+- **Seed (Dawn):** add 1 Glitch to each matching section that is on the **Outer Hull** or **adjacent to a section with a Fault or Failure**.
+- **Grow (Day):** in each matching section that has at least one threat piece, add 1 Fault. If that section already has 2 or more Faults, add 1 Failure instead.
+- **Strike (Dusk):**
+  1. Each matching section with threat pieces takes damage equal to the **total damage of its threat pieces**.
+  2. If a section takes **2 or more damage**, add 1 Decay.
+  3. The same total damage is dealt to the Crew there. Players assign it, at 2 health per Crew. *(default: Spirit Island's rule; see Open questions.)*
+  4. **Each surviving Crew in a struck section then deals 2 damage** (repair) to threat pieces there. Players assign it.
+
+---
+
+## Threat pieces
+
+| Piece | Spirit Island equivalent | Health | Damage | Purpose when destroyed |
+|---|---|---|---|---|
+| Glitch | Explorer | 1 | 1 | 0 |
+| Fault | Town | 2 | 2 | 1 |
+| Failure | City | 3 | 3 | 2 |
+
+- Damage on threat pieces clears at Time passes.
+- Powers can **repair** (deal damage), **downgrade** (Failure → Fault → Glitch), **vent** (push a piece to an adjacent section), and **prevent** (stop a section's Day grow).
+
+---
+
+## Crew
+
+- Spirit Island's Dahan equivalent.
+- **Health 2. Each Crew deals 2 damage** (repair) when fighting back after a strike.
+- **No natural births.** Crew are added only by powers.
+- Powers can **move, gather, add, shelter** (protect) and **rally** Crew.
+- Damage on Crew clears at Time passes.
+- Losing Crew does not lose the game. A destination may require a Crew count for Landfall.
+- Loyal/Restless crew states: **rejected.**
+
+---
+
+## Decay and Ship in Crisis
+
+- Spirit Island's Blight equivalent.
+- **Decay pool:** **2 per player + 1** *(default: Spirit Island's healthy-island values)*.
+- **When Decay is placed:**
+  - each house loses **1 influence** in that section, and
+  - if the section **already had Decay**, **cascade**: place 1 more Decay in an adjacent section of the players' choice.
+- Cascades can chain.
+- A section with a **Quarantine** token cannot receive a cascade.
+- **Ship in Crisis card:** Spirit Island's Blighted Island equivalent.
+  - The first time the Decay pool is empty, flip the card.
+  - Add **1 Decay per player** to the pool *(default)*, and apply the card's ongoing crisis effect.
+  - If the pool empties again, the players lose.
+  - The crisis effect content is not designed yet.
+
+---
+
+## Purpose, Discoveries and Understanding
+
+Spirit Island's Fear equivalent. *Narrative:* the crew's Purpose drives them to relearn how their own ship works.
+
+**Purpose pool:** **4 per player** *(default: Spirit Island's fear pool)*. Gain Purpose from:
+- **destroying a Fault: 1**,
+- **destroying a Failure: 2**,
+- cards that grant it.
+
+When the pool fills, earn 1 **Discovery** card face-down and reset the pool.
+
+**Discovery cards** resolve at the **start of Dusk**. Each card offers a choice:
+- **Apply:** use its one-time effect at the current Understanding tier (I / II / III), then discard it.
+- **Breakthrough:** tuck it under the **current Steward** as a weaker **permanent** ongoing effect. It travels with that leader to the Wall and stays active.
+  - **Maximum one Breakthrough per leader.** If the Steward already holds one, the Discovery must be applied.
+- *Example: "Fault Mapping."*
+  - I: remove 1 Glitch from each Outer Hull section.
+  - II: skip the Day grow in one section type.
+  - III: downgrade every Fault in one section type to a Glitch.
+
+**Understanding tiers** *(default: 3 Discoveries per tier, as in Spirit Island)*:
+
+| Tier | Example name | Reached at | Base win condition |
+|---|---|---|---|
+| I | Superstition | Start | No threat pieces on the ship |
+| II | Understanding | 3 Discoveries earned | No Faults or Failures |
+| III | Mastery | 6 Discoveries earned | No Failures |
+
+The destination's Landfall requirement is added on top of the tier condition.
+
+---
+
+## Ship map
+
+**Boards:**
+- One board per player, connected edge to edge.
+- Each board's setup symbols define its starting pieces. Each board sets the starting sections for its player's house.
+- **Default board:** 8 sections, 2 of each section type, 3 on the Outer Hull. Adjacency is hand-authored.
+
+**Section types:** Infrastructure, Residential, Government, Agricultural.
+
+**Meta-regions:** **Outer Hull** (Spirit Island's coastal equivalent; seeding enters from the void) and **Core** (inland).
+
+**Conduits:** the adjacency connections between sections.
+
+**Default setup symbols per board:**
+- 1 Failure, 1 Fault and 1 Decay, each in a different section,
+- 6 Crew spread across 4 sections,
+- 2 influence for the board's house in the marked start sections.
+
+Starting Decay does not come from the pool, as in Spirit Island.
+
+---
+
+## Influence and Havens
+
+- **Influence:** Spirit Island's presence equivalent. Houses add and move it through growth and powers.
+- **Range:** cards target **0–3** sections from a section where the house has influence. Each card defines its range and its target type (a section type, Hull/Core, or **ANY**).
+- **Haven:** a section where a house has **2 or more influence** (Spirit Island's sacred site equivalent). *"Haven" is a proposed name; "Stronghold" was rejected as too militaristic.* Effects are defined on cards (e.g. "range from a Haven").
+- **A house with zero influence on the ship loses the game for everyone.**
+
+---
+
+## People cards (one shared deck)
+
+All houses draw from **one shared people deck** with two tiers. There is no deck scaling by player count. When a pile is empty, it is reshuffled from its own discard pile.
+
+| Tier | Credit cost | Notes |
+|---|---|---|
+| **Common** | 0–3 | Standard draws |
+| **Remarkable** | 0–8 | Take 1 Remarkable **instead of 2 Common draws**. Stronger effects, **harsher Legacy**. |
+
+**Card anatomy:**
+- name,
+- tier,
+- **credit cost**,
+- **guild elements** (1–3 icons),
+- **range** (0–3) and **target** (section type / Hull / Core / ANY / another house),
+- **effect**,
+- **Reign** text,
+- **Legacy** text.
+
+There is **no printed speed**: the nominee is fast and every other play is slow.
+
+**Cooperative powers:** some cards target another house. They can give credits, move or add that house's influence, or extend its range.
+
+**Effect verbs available to cards:**
+- **Threat:** repair (deal damage), downgrade, vent (push), prevent grow.
+- **Crew:** add, move, gather, shelter, rally.
+- **Decay:** restore (remove Decay).
+- **Tokens:** place any token.
+- **Influence:** add, move.
+- **Purpose:** gain.
+- **Time:** foresee (look at the top of the event deck), temper a Legacy, boost a Reign.
+
+**Hand rules:**
+- **Hand size: 4** *(default; discussed as 3–4)*.
+- **Card plays: 2** *(default; discussed as starting at 1, maybe 2)*. The nominee counts as one of the plays *(default)*.
+- **Clone slot:** keep **1** card into the next generation (base). Houses may raise or lower this.
+- At Time passes, all other cards in hand go to the discard pile.
+
+**Credits** (Spirit Island's energy):
+- **Start: 1. Base gain: 1 per generation** *(defaults)*. House tracks raise the gain.
+- Credits carry over between generations.
+
+**No card gain and no deck thinning:** Spirit Island's "gain a power" is replaced by house power-growth unlocks.
+
+---
+
+## Elements (guilds)
+
+Eight guild elements:
+- Engineers
+- Farmers
+- Medics
+- Bureaucrats
+- Navigators
+- Scholars
+- Laborers
+- Keepers
+
+**How guilds relate to the rest of the game:**
+- Guilds have obvious targeting tendencies (e.g. Farmer cards usually target Agricultural sections), but are not bound to section types.
+- **Elements come only from cards a house plays this generation and from raw elements on its growth track.**
+- **Innate powers** on the house board unlock at guild thresholds.
+- If the power curve proves too weak, the next step is to let the **current Steward's elements count for every house**.
+
+---
+
+## Houses (player factions)
+
+Asymmetry lives **entirely on the house boards**. There are no unique house cards until that becomes a needed gap.
+
+**Each house board has:**
+- **Growth options.** Pick one per generation.
+- **Influence tracks.** Placing influence uncovers unlocks, as on Spirit Island's presence tracks. Possible unlocks:
+  - **+1 card play** (unlocks are asymmetric per house),
+  - **+1 hand size**,
+  - **+1 fast candidate** (an extra nominee),
+  - **+1 clone slot**,
+  - **−1 credit cost** on plays,
+  - **+credit gain**,
+  - **raw guild elements**,
+  - **move influence**.
+- **Innate powers** with guild-element thresholds.
+- **Special rules.**
+
+No houses have been designed yet. See *Vertical slice* for the prototype placeholder.
+
+---
+
+## Tokens
+
+| Token | Spirit Island equivalent | Effect |
+|---|---|---|
+| **Brace** | Defend | Prevent X damage in this section this generation. X is set by the card. |
+| **Quarantine** | Isolate (section) | The section is cut off: no seed, vent or cascade into or out of it this generation. |
+| **Patch** | Disease | The next **grow** in this section is skipped. Then remove one Patch. |
+| **Lockout** | Wilds | The next **seed** in this section is skipped. Then remove one Lockout. |
+| **Unrest** | Badlands | Each strike in this section deals +1 damage. |
+| **Isolate** | Strife (on a threat piece) | This threat piece deals no damage at its next strike. Then remove Isolate. |
+
+Brace and Quarantine clear at Time passes. Patch, Lockout and Isolate are removed when used. Unrest persists *(defaults follow Spirit Island)*.
+
+---
+
+## Destinations (adversary equivalent)
+
+Chosen before the game, with a difficulty **level 0–6**. Each destination defines:
+- **Landfall requirement:** an extra win condition added to every Understanding tier, or a change to the standard one. Examples: "Crew ≥ 10", "no Decay in Infrastructure".
+- **Journey hazard:** an always-on rule from level 1.
+- **Escalation:** the effect triggered by the Stage II escalation card. If undefined, the escalation symbol is ignored.
+- **Levels 1–6:** a mix of setup changes (extra Faults, Decay or Failures), harsher or added rules, event deck changes (more Stage III cards, **fewer total events, which shortens the clock and the Wall**), and a stricter Landfall requirement.
+
+**Sample concepts** (flavor only; levels not designed):
+- **The Verdant Reach:** a garden world. Requires living colonists. Hazards hit Agricultural sections and Crew.
+- **Cinder:** a world scorched by solar flares. Hazards hit the Outer Hull. Landfall requires no Decay in Infrastructure.
+- **The Long Dark:** a rogue planet. Longer deck, Purpose drains each generation, and Landfall requires a high Understanding tier.
+
+Level 0 means no destination rules (the base game).
+
+---
+
+## Player-count scaling
+
+| Players | Ship boards | Decay pool | Purpose pool | Event deck / Wall |
+|---|---|---|---|---|
+| 1 | 1 | 3 | 4 | 12 |
+| 2 | 2 | 5 | 8 | 12 |
+| 3 | 3 | 7 | 12 | 12 |
+| 4 | 4 | 9 | 16 | 12 |
+
+The people deck does not scale. Solo-specific tuning is deferred until multiplayer is settled; solo players can play two-handed.
+
+---
+
+## Design decisions and rationale
+
+| Decision | Reason |
+|---|---|
+| Dawn / Day / Dusk instead of Past / Present / Future | Generations aging through a conveyor fit Spirit Island's structure. "Past = next generation" was confusing. |
+| Defend the ship as the Great Houses | Gives freedom to design houses the way Spirit Island designs spirits. |
+| Generation ship setting | A confined board, plenty of disasters, and a shared goal of human survival. |
+| Forgotten Machine tone | More design space than strict realism, while staying understandable. |
+| Fully cooperative | Matches Spirit Island. |
+| One clock: every round is a generation | A second, slower leadership timer was rejected. |
+| Heirs are a second use of people cards | Avoids adding a separate system. |
+| Nominee is the only fast card | Removes printed speed. The card you need most urgently is the one at risk of being taken as leader. |
+| Offset event pairing by default, Direct as a toggle | Keeps Spirit Island's "the next card disrupts your plans" tension. |
+| One event drawn after the vote (not one per candidate) | Simpler, and you see the problems the leader faces after choosing. |
+| Dusk = Legacy + strike, Day = grow | Puts damage and the leader's downside together in the same sections. |
+| Threat ladder (Glitch/Fault/Failure) over a single Strain dial | Chosen for tactical richness, close to Spirit Island. |
+| A single threat track (no separate people/unrest track) | Avoids doubling the system. |
+| One shared people deck, a fresh hand each generation | Fits "a new set of people every generation" better than a deckbuilder. Removes reclaim and thinning. |
+| Clone slot | Gives limited planning and control over random draws. |
+| Remarkable: draw substitution + higher cost + harsher Legacy | Replaces Spirit Island's "forget a card" trade-off. |
+| Guilds as elements, not tied to section types | Raw elements come from the growth track instead. |
+| Purpose → Discoveries → Understanding tiers | Keeps Spirit Island's fear structure. "Mission Forgotten" loss was dropped. |
+| Discovery choice: one-time effect or a Breakthrough | Breakthroughs give the power curve, a history on the Wall, and a cap of one per leader. |
+| Event deck size = Wall slots; empty deck = loss | Like Spirit Island's invader deck clock, but visible. |
+| Destinations as adversaries | Flavor comes from the journey. Levels change setup, rules, deck and the Landfall target. |
+| Fixed-length game and a mid-game "choose to land" decision | Rejected. The Landfall card toggle is the alternative climax. |
+| Loss: Decay pool, or a house with no influence | Matches Spirit Island. Crew loss is not a loss condition. |
+| No house perk for the chosen heir | It's a joint decision with built-in gains. Kept as a later option. |
+| No score, no scenarios, no Loyal/Restless crew | Out of scope for now (Loyal/Restless is rejected outright). |
+
+---
+
+## UI
+
+- **Top bar:**
+  - generation number,
+  - current phase and step,
+  - event deck count (= remaining Wall slots),
+  - Decay pool (healthy or crisis side),
+  - Purpose pool fill,
+  - Understanding tier and the current win condition (tier + Landfall requirement),
+  - destination and level.
+- **Left panel: the conveyor.** Three stacked slots (Dusk, Day, Dawn). Each shows the leader card (Reign/Legacy highlighted for its slot) and its paired event (section types plus the slot's action). It also holds the earned Discovery cards awaiting resolution.
+- **Center: the ship map.**
+  - Sections are colored by type and Hull sections are edge-marked; conduits are drawn as lines.
+  - Each section shows its threat pieces, Crew, Decay, influence per house, tokens and current damage.
+  - Legal targets highlight while a card resolves.
+- **Right panel: house panels**, one per house:
+  - hand, clone slot, credits,
+  - card-play limit and plays used,
+  - current elements,
+  - influence tracks with uncovered unlocks,
+  - innate powers with threshold status.
+- **Bottom: the Wall of Leaders.** A row of slots, each holding its leader, event and Breakthrough once filled. Empty slots show the remaining clock.
+- **Vote panel** (during Dawn): nominee cards side by side showing Reign/Legacy. In Direct mode it also shows the upcoming event.
+- **Discovery choice modal** (at the start of Dusk): the tiered effect versus the Breakthrough text, with "Apply" and "Breakthrough" buttons. "Breakthrough" is disabled if the Steward already has one.
+- **Log panel** (collapsible): a step-by-step record of every placement, damage and choice.
+- **Settings panel** (pre-game): player count, houses, destination and level, rule toggles, and numeric overrides from the config file.
+- **End screen:** win or loss, the cause, and the Wall shown as the voyage's history.
+
+---
+
+## Audio
+
+Procedural Web Audio tones for key events:
+- phase changes,
+- seed / grow / strike (low, heavy for strikes),
+- Decay placed or cascading,
+- Discovery earned,
+- succession chosen,
+- win and loss stingers.
+
+A mute toggle is included.
+
+---
+
+## Vertical slice / first implementation target
+
+- **2 players, 2 ship boards** (8 sections each, hand-authored adjacency, default setup symbols).
+- **Placeholder house** used by both seats *(prototype only; no house has been designed)*:
+  - 2 influence to start,
+  - one track uncovering +1 credit gain, then +1 card play,
+  - growth options: "add 1 influence within range 1", "gain 2 credits", "draw +1 card this generation".
+- The **full round loop**: Growth, Commit, Fast, Dusk, Day, Dawn vote, Slow, Time passes.
+- **Leader conveyor** with Offset/Direct toggle, nomination, vote with tie-break, and the Wall with 12 slots.
+- **Event deck** with 3/4/5 stages, seed/grow/strike, Spirit Island resolution order, and the escalation symbol (ignored at level 0).
+- **Threat ladder, Crew fight-back, Decay with cascade and influence loss, and the Ship in Crisis flip** (placeholder crisis effect: none).
+- **Purpose pool, Discovery choice and Breakthroughs, Understanding tiers and their win conditions.**
+- **People deck:** about 30 Common and 10 Remarkable placeholder cards. They use only the effect verbs listed above, and each has a Reign and a Legacy.
+- **Discovery deck:** about 9 placeholder cards with I/II/III effects and a Breakthrough line.
+- **Tokens:** Brace, Quarantine, Patch, Lockout, Unrest, Isolate.
+- **All three loss checks and the base win check.** The Landfall card toggle comes second.
+- **Config file** exposing every default listed in this document.
+- **Undo** to the previous phase.
+- **Out of scope for the slice:** destinations beyond level 0, 3–4 player boards, real house designs, art and audio polish.
+
+---
+
+## Open questions and missing items
+
+**Defaults chosen for the prototype (not decided in conversation):**
+- tech stack,
+- visual style,
+- the Wall / event deck size (12) and stage split (3/4/5),
+- Decay pool (2 per player + 1) and the crisis flip refill (1 per player),
+- Purpose pool (4 per player), and Discoveries per tier (3),
+- hand size (4) and starting card plays (2),
+- whether the nominee counts as a play,
+- starting credits (1) and base credit gain (1),
+- board size (8 sections) and the setup symbol contents,
+- token durations,
+- the tie-break when there is no Steward.
+
+**Strike damage to Crew:** the conversation described strike damage as "split among the section and its Crew." The prototype default uses Spirit Island's rule (the full total to the section *and* to the Crew). Needs a decision.
+
+**Setup ramp:** the starting event and leader resolve a Dawn seed during setup and advance to Day before round 1. This mirrors Spirit Island's setup explore and avoids two leaders in Dawn on round 1. Needs confirmation.
+
+**Remarkable access:** whether drawing a Remarkable by substitution is always available or gated by a house unlock was not decided.
+
+**Not yet designed:**
+- the houses (growth options, tracks, innates, special rules, number of houses),
+- all card content: people, events (including the Stage II twists), Discoveries,
+- the Ship in Crisis effect,
+- destination levels,
+- the Landfall event's exact text,
+- Haven effects beyond targeting.
+
+**Small gaps:**
+- an Outer Hull–specific event card (Spirit Island's coastal card),
+- whether elements from the Steward should count for everyone (deferred until the power curve is tested).
+
+**Parked ideas:**
+- the Wall as a further power source,
+- a perk for the house whose heir is chosen,
+- unique house cards,
+- a dummy candidate deck for low player counts,
+- solo tuning,
+- scenarios,
+- "learning from failure" (Purpose from Decay) as a possible house trait,
+- a game name.
