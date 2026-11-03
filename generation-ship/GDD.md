@@ -80,7 +80,7 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 2. Lay out one ship board per player. Place the starting pieces shown by each board's setup symbols, and each house's starting influence.
 3. Build the event deck: Stage I, Stage II, Stage III, plus any destination changes. Set the **Wall** to one slot per card in the event deck.
 4. Set the Decay pool and Purpose pool for the player count. Set the Understanding tier to I.
-5. Draw the **starting event** and a **random starting leader** from the Common people deck. Pair them in **Dawn** and resolve the event's **Dawn seed**. Then advance them to **Day**. *(Mirrors Spirit Island's setup explore; see Open questions.)* Dusk starts empty and the Wall starts empty.
+5. Draw the **starting event** and a **random starting leader** from the Common people deck. Pair them in **Dawn** and resolve the event's **Dawn seed**. Then advance them to **Day**. *(Mirrors Spirit Island's setup explore, and avoids two leaders in Dawn on round 1.)* Dusk starts empty and the Wall starts empty.
 
 **Each round (one generation)**
 1. **Growth.** Each house draws a fresh hand from the Common deck (it may take Remarkable cards by draw substitution). It keeps any cloned card from last generation, picks one growth option, and gains credits.
@@ -179,7 +179,7 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 - **Strike (Dusk):**
   1. Each matching section with threat pieces takes damage equal to the **total damage of its threat pieces**.
   2. If a section takes **2 or more damage**, add 1 Decay.
-  3. The same total damage is dealt to the Crew there. Players assign it, at 2 health per Crew. *(default: Spirit Island's rule; see Open questions.)*
+  3. The same total damage is **also** dealt to the Crew there (not split between section and Crew). Players assign it, at 2 health per Crew.
   4. **Each surviving Crew in a struck section then deals 2 damage** (repair) to threat pieces there. Players assign it.
 
 ---
@@ -535,9 +535,7 @@ A mute toggle is included.
 - token durations,
 - the tie-break when there is no Steward.
 
-**Strike damage to Crew:** the conversation described strike damage as "split among the section and its Crew." The prototype default uses Spirit Island's rule (the full total to the section *and* to the Crew). Needs a decision.
-
-**Setup ramp:** the starting event and leader resolve a Dawn seed during setup and advance to Day before round 1. This mirrors Spirit Island's setup explore and avoids two leaders in Dawn on round 1. Needs confirmation.
+**Naming:** "strike" for the Dusk action is a placeholder; a better term is wanted.
 
 **Remarkable access:** whether drawing a Remarkable by substitution is always available or gated by a house unlock was not decided.
 
