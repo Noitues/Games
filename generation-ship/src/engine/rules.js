@@ -200,7 +200,7 @@ export function applySectionEffects(G, st, h, s, effects) {
     switch (v) {
       case "damage":
         // Tellers' Spin: their damage becomes Purpose instead of destroying threat.
-        if (st.houses[h]?.id === "tellers" && threatCount(s) > 0) { gainPurpose(G, st, n, "spin"); s.isolate += n; }
+        if (st.houses[h]?.id === "tellers" && threatCount(s) > 0) { gainPurpose(G, st, 2 * n, "spin"); s.isolate += n; }
         else damageThreat(G, st, s, n, "card");
         break;
       case "crew_strike": damageThreat(G, st, s, s.crew * G.cfg.crewDamage * n, "crew"); break;

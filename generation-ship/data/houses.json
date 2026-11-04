@@ -59,7 +59,7 @@
      {
       "tier": 2,
       "threshold": {
-       "Engineers": 2,
+       "Engineers": 3,
        "Navigators": 1
       },
       "threshold_cost": 4.5,
@@ -166,7 +166,7 @@
      4
     ]
    },
-   "hand_bonus": 3,
+   "hand_bonus": 2,
    "clone": 2,
    "special": {
     "id": "supply_lines",
@@ -295,7 +295,7 @@
     "plays": [
      2,
      2,
-     2,
+     3,
      3,
      4
     ]
@@ -468,7 +468,7 @@
      {
       "tier": 2,
       "threshold": {
-       "Keepers": 2,
+       "Keepers": 3,
        "Scholars": 1
       },
       "threshold_cost": 4.5,
@@ -966,7 +966,7 @@
    "clone": 1,
    "special": {
     "id": "spin",
-    "text": "Damage from Tellers' cards does not destroy threat; each point generates 1 Purpose and Isolates 1 damage of threat in that section (it deals that much less at the next Collapse).",
+    "text": "Damage from Tellers' cards does not destroy threat; each point generates 2 Purpose and Isolates 1 damage of threat in that section (it deals that much less at the next Collapse).",
     "pp_per_generation": 1.5
    },
    "innate": {
