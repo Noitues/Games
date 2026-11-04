@@ -140,6 +140,8 @@ function renderConveyor() {
   const slot = (name, L) => `<div class="slot"><b>${name}</b><br>${L ? `${eventText(L.event)}${L.tempered ? " · tempered" : ""}${L.bt ? ` · Breakthrough ${L.bt}` : ""}${cardHTML(L.leader)}` : "<i>empty</i>"}</div>`;
   $("conveyor").innerHTML = slot("Dusk: Elder (Legacy, then Collapse)", st.slots.dusk) + slot("Day: Steward (Reign, then Grow)", st.slots.day) +
     slot("Dawn: Heir (Seed)", st.slots.dawn) + (st.upcomingEvent ? `<div class="slot">Next event: ${eventText(st.upcomingEvent)}</div>` : "");
+  const dest = st.dest?.id ? `<div class="slot"><b>${esc(st.dest.name)}</b><br>${st.dest.texts.map(esc).join("<br>")}${st.escalationEvent ? `<br><i>Escalation card: ${st.escalationEvent}</i>` : ""}</div>` : "";
+  $("conveyor").innerHTML += dest;
   $("discoveries").innerHTML = `Earned ${st.discoveriesEarned}; pending ${st.pendingDiscoveries.length}<br>` +
     (st.breakthroughs.length ? "Breakthroughs: " + st.breakthroughs.map((d) => `<div class="slot">${esc(DATA.discoveryById[d].breakthrough.text)}</div>`).join("") : "");
 }
