@@ -474,6 +474,12 @@ Houses, cards and innates are built from priced parts so every house lands in th
 | Standard | 1.5–2.0 |
 | Steep | > 2.0 |
 
+**Card thresholds:** a card's element-threshold bonus is worth **1 PP per required element**. Commons require 2–3 elements, Remarkables 3–6. The threshold is drawn from the card's own guilds.
+
+**Reign and Legacy pricing:** effects that act per section are priced at **2 reference sections**, and per-house effects at **2 houses**. Legacy effects use the effect prices with the sign reversed; Add Decay costs 4 (because of cascade risk).
+
+**The people deck** (400 cards: 300 Common, 100 Remarkable) is generated from these rules by `tools/generate_people.py` into `data/`. See `data/README.md`.
+
 **Power summary:** a house's PP summed by category (**Repair, Control, Protection, Purpose, Utility**) generates its identity bars, as on Spirit Island's spirit panels.
 
 ---
@@ -615,7 +621,7 @@ A mute toggle is included.
 - **Event deck** with 3/4/5 stages, seed/grow/collapse, Spirit Island resolution order, and the escalation symbol (ignored at level 0).
 - **Threat ladder, Crew fight-back, Decay with cascade and influence loss, and the Ship in Crisis flip** (placeholder crisis effect: none).
 - **Purpose pool, Discovery choice and Breakthroughs, Understanding tiers and their win conditions.**
-- **People deck:** about 30 Common and 10 Remarkable placeholder cards. They use only the effect verbs listed above, and each has a Reign and a Legacy.
+- **People deck:** the generated 400-card deck in `data/people.json`.
 - **Discovery deck:** about 9 placeholder cards with I/II/III effects and a Breakthrough line.
 - **Tokens:** Brace, Quarantine, Patch, Lockout, Unrest, Isolate.
 - **All three loss checks and the base win check.** The Landfall card toggle comes second.
@@ -644,7 +650,7 @@ A mute toggle is included.
 
 **Not yet designed:**
 - house special-rule and innate values beyond first estimates (see `houses/README.md`),
-- all card content: people, events (including the Stage II twists), Discoveries,
+- card content for events (including the Stage II twists) and Discoveries; the people deck is generated (`data/`),
 - the Ship in Crisis effect,
 - destination levels,
 - the Landfall event's exact text,
