@@ -15,6 +15,9 @@ python3 -m http.server 8000
 
 No build step and no dependencies. The browser loads `data/*.json` and the engine in `src/` directly.
 
+## Print and play
+Open `print.html` in the browser (served the same way as the prototype). Pick the parts you want, then print or save as a PDF. Cards are poker size (63 × 88 mm), 9 per A4 page, with dashed cut lines. A ready-made copy of everything (59 pages) is in `print/generation-ship-print-and-play.pdf`.
+
 ## Repository map
 | Path | What |
 |---|---|

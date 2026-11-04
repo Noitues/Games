@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generation Ship Print-and-Play</title>
+<style>
+  :root { --ink: #1f1b16; --muted: #6b6257; --line: #8a7f70; --rem: #8a5a12;
+    --infra: #c9d4e0; --resi: #e8d6c0; --gov: #d9cfe6; --agri: #cfe3c4; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 9pt/1.25 system-ui, sans-serif; color: var(--ink); background: #fff; }
+  .controls { padding: 12px 16px; border-bottom: 1px solid #ccc; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .controls label { display: flex; gap: 4px; align-items: center; }
+  h1 { font-size: 16pt; margin: 8mm 8mm 2mm; }
+  h2 { font-size: 12pt; margin: 6mm 8mm 2mm; break-before: page; }
+  .note { margin: 0 8mm 4mm; color: var(--muted); }
+  .sheet { display: flex; flex-wrap: wrap; gap: 0; padding: 0 8mm; }
+  .card { width: 63mm; height: 88mm; border: 0.3mm dashed var(--line); padding: 3mm; overflow: hidden;
+    display: flex; flex-direction: column; gap: 1.2mm; break-inside: avoid; font-size: 7.4pt; }
+  .card .hd { display: flex; justify-content: space-between; font-weight: 700; font-size: 9pt; }
+  .card.rem { border: 0.6mm solid var(--rem); }
+  .g { display: inline-block; padding: 0 1mm; border: 0.2mm solid var(--line); border-radius: 1mm; margin: 0 0.6mm 0.6mm 0; font-size: 6.6pt; }
+  .tgt { font-style: italic; }
+  .th { border-top: 0.2mm solid var(--line); padding-top: 0.8mm; }
+  .reign { margin-top: auto; border-top: 0.2mm solid var(--line); padding-top: 0.8mm; }
+  .reign b, .legacy b { font-variant: small-caps; }
+  .event .types { font-size: 12pt; font-weight: 700; margin: 2mm 0; }
+  .stage { font-size: 8pt; color: var(--muted); }
+  .board { width: 194mm; margin: 0 8mm 6mm; break-inside: avoid; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2mm; }
+  .sec { border: 0.4mm solid var(--line); border-radius: 2mm; height: 32mm; padding: 2mm; position: relative; }
+  .sec.hull { border-top: 2mm solid var(--ink); }
+  .sec .setup { position: absolute; bottom: 2mm; left: 2mm; right: 2mm; font-size: 8pt; }
+  .Infrastructure { background: var(--infra); } .Residential { background: var(--resi); }
+  .Government { background: var(--gov); } .Agricultural { background: var(--agri); }
+  .house { width: 194mm; min-height: 120mm; margin: 0 8mm 6mm; border: 0.4mm solid var(--line); border-radius: 2mm; padding: 4mm; break-inside: avoid; }
+  .house table { border-collapse: collapse; width: 100%; margin: 2mm 0; }
+  .house td, .house th { border: 0.2mm solid var(--line); padding: 1mm; text-align: left; vertical-align: top; }
+  .track { display: flex; gap: 2mm; margin: 1mm 0; }
+  .track span { border: 0.3mm solid var(--line); border-radius: 50%; width: 11mm; height: 11mm; display: flex; align-items: center; justify-content: center; font-size: 7pt; text-align: center; }
+  .ref { margin: 0 8mm; columns: 2; column-gap: 8mm; }
+  .ref h3 { font-size: 10pt; margin: 2mm 0 1mm; }
+  @media print { .controls { display: none; } h1, h2, .note, .ref { margin-left: 0; margin-right: 0; } h1 { margin-top: 0; } .sheet { padding: 0; } .board, .house { margin-left: 0; margin-right: 0; } }
+  @page { size: A4; margin: 8mm; }
+</style>
+</head>
+<body>
+<div class="controls">
+  <strong>Print-and-play</strong>
+  <label><input type="checkbox" data-part="ref" checked> Rules reference</label>
+  <label><input type="checkbox" data-part="houses" checked> House boards</label>
+  <label><input type="checkbox" data-part="boards" checked> Ship boards</label>
+  <label><input type="checkbox" data-part="events" checked> Events</label>
+  <label><input type="checkbox" data-part="disc" checked> Discoveries + crisis</label>
+  <label><input type="checkbox" data-part="rem" checked> Remarkable people (100)</label>
+  <label><input type="checkbox" data-part="common" checked> Common people (300)</label>
+  <button onclick="print()">Print / save as PDF</button>
+</div>
+<div id="out"></div>
+<script type="module" src="src/print/print.js"></script>
+</body>
+</html>
