@@ -289,7 +289,7 @@ export function collapse(G, st, eid) {
     if (dmg >= G.cfg.decayThreshold) placeDecay(G, st, s);
     let killed = Math.min(s.crew, Math.floor(dmg / G.cfg.crewHealth));
     if (ev.twist?.rule === "extra_crew_loss") killed = Math.min(s.crew, killed + 1);
-    if (st.dest?.rules.agri_collapse_crew && s.type === "Agricultural") killed = Math.min(s.crew, killed + 1);
+    if (st.dest?.rules.agri_collapse_crew && s.type === "Agricultural") killed = Math.min(s.crew, killed + st.dest.rules.agri_collapse_crew);
     s.crew -= killed; st.stats.crewLost += killed;
     if (s.crew > 0) {
       // Foremen's Crew Captains: Crew in sections with Foremen influence deal +1 damage each.
