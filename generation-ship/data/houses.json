@@ -283,7 +283,7 @@
    },
    "tracks": {
     "credits": [
-     1,
+     2,
      2,
      3,
      {
@@ -597,7 +597,7 @@
       "threshold_cost": 2.0,
       "effects": {
        "gather_crew": 2,
-       "brace": 2
+       "brace": 1
       },
       "range": 1,
       "target": "ANY",
@@ -694,7 +694,7 @@
       "element": "Farmers"
      },
      3,
-     5
+     4
     ],
     "plays": [
      2,
@@ -962,7 +962,7 @@
      4
     ]
    },
-   "hand_bonus": 2,
+   "hand_bonus": 3,
    "clone": 1,
    "special": {
     "id": "spin",
