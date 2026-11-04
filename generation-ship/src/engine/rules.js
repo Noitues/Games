@@ -116,7 +116,8 @@ export function placeDecay(G, st, s, depth = 0) {
   if (st.result) return;
   // Gardeners' Rooted: Decay that would land where the Gardeners have influence removes 1 of it instead.
   const gi = st.houses.findIndex((H) => H.id === "gardeners");
-  if (gi >= 0 && (s.influence[gi] || 0) > 0) {
+  if (gi >= 0 && (s.influence[gi] || 0) > 0 && st.rootedGen !== st.gen) {
+    st.rootedGen = st.gen; // once per generation
     s.influence[gi] -= 1;
     st.stats.rooted = (st.stats.rooted || 0) + 1;
     checkInfluenceLoss(st);

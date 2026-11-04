@@ -18,7 +18,7 @@ The first value is the starting value. ★ marks a special slot.
 Hand = plays + 2. Clone 1.
 
 ## Special rule
-When Decay would be placed in a section with Gardener influence, remove 1 Gardener influence there instead.
+Once per generation, when Decay would be placed in a section with Gardener influence, remove 1 Gardener influence there instead.
 
 ## Innate: Cultivate (slow)
 Tiers are cumulative; the effect column is the full effect at that tier. *Reached* is how often a generation reaches at least that tier (house bots, calibration run).
