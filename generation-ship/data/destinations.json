@@ -36,7 +36,7 @@
     },
     {
      "level": 4,
-     "text": "Setup: +1 Fault in every Agricultural section that has none.",
+     "text": "Setup: +1 Fault in every Agricultural section.",
      "setup": [
       {
        "piece": "fault",
