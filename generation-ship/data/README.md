@@ -145,7 +145,7 @@ One card is picked at random during setup. When it flips, add 1 Decay per player
 - **Four boards (A–D)**, each a 2×4 grid of 8 sections: 2 of each type, 3 on the Outer Hull (row 0, columns 0–2).
 - **Adjacency:** orthogonal neighbors, plus one diagonal per board.
 - **Joining:** boards chain A–B–C–D (bow to stern). Column 3 of each row is adjacent to column 0 of the same row on the next board.
-- **Setup per board:** 1 Failure, 1 Fault, 1 Decay (not taken from the pool), and 6 Crew across 4 sections.
+- **Setup per board:** 1 Failure, 2 Faults and 1 Glitch, each in a different section type (the Failure's type rotates between boards); 1 Decay next to the Failure (not taken from the pool); 6 Crew (2, 2, 1, 1) across 4 sections away from the Failure and Decay.
 - **Starting influence** comes from each house's own rule in `houses.json`, applied on that player's board.
 
 ## Houses (`houses.json`)

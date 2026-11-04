@@ -112,3 +112,36 @@ House bots, 4 pairings × 25–40 games per setting (`sim/tune.js`):
 - **Galvan + Meridian still wins often at tier II (38%).** Both houses repair aggressively, so they clear every Glitch.
 - **Innate tier III is still about 0–2%** for every house.
 - **Remarkables rose to 6–8 per game.** The longer games give more chances to draw them.
+
+---
+
+# Run 3: starting threat in every section type
+
+## Changes
+- **Boards start like Spirit Island**, with threat already on them. Each board gets 1 Failure, 2 Faults and 1 Glitch, each in a different section type, rotated so boards differ. Threat by type per board is 3 / 2 / 2 / 1. Decay starts next to the Failure.
+- **Pools retuned for the heavier start:** Purpose **4** per player, Decay **4** per player + 1.
+
+## Tuning grid (house bots, 4 pairings × 30 games)
+
+| Purpose / Decay per player | Win rate | Win generation | Wins at tier III |
+|---|---|---|---|
+| **4 / 4** | **63%** | **8.2** | **88%** |
+| 4 / 3 | 55% | 8.0 | 86% |
+| 5 / 4 | 58% | 8.9 | 79% |
+| 5 / 3 | 53% | 8.7 | 76% |
+
+## Pairing sweep (house bots, 100 games each, seed 9)
+
+| Pairing | Win | Win gen | Tier III wins | Decay loss | Time loss |
+|---|---|---|---|---|---|
+| Galvan + Meridian | 80% | 7.8 | 73% | 20% | 0% |
+| Meridian + Vigil | 74% | 7.7 | 72% | 24% | 2% |
+| Galvan + Vigil | 67% | 8.1 | 63% | 29% | 4% |
+| Meridian + Keel | 57% | 8.6 | 56% | 42% | 1% |
+| Galvan + Keel | 56% | 8.9 | 53% | 38% | 6% |
+| Keel + Vigil | 49% | 8.5 | 47% | 48% | 3% |
+
+## Findings
+- **Average win rate is about 64%**, and **about 94% of wins come at Understanding III**. Tier II wins dropped from 12–38% to 1–7%, because Glitches are now everywhere from the start.
+- **Keel is still about 20 points behind** the other pairings. Its innate reaches tier II only 3–4% of the time.
+- **Innate tier III is still at 0–1.5%.**

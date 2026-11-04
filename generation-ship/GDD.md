@@ -212,7 +212,7 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 ## Decay and Ship in Crisis
 
 - Spirit Island's Blight equivalent.
-- **Decay pool:** **3 per player + 1** *(tuned by simulation; was 2 per player + 1)*.
+- **Decay pool:** **4 per player + 1** *(tuned by simulation; was 2 per player + 1)*.
 - **When Decay is placed:**
   - each house loses **1 influence** in that section, and
   - if the section **already had Decay**, **cascade**: place 1 more Decay in an adjacent section of the players' choice.
@@ -230,7 +230,7 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 
 Spirit Island's Fear equivalent. *Narrative:* the crew's Purpose drives them to relearn how their own ship works.
 
-**Purpose pool:** **5 per player** *(tuned by simulation; was 4)*. Gain Purpose from:
+**Purpose pool:** **4 per player** *(tuned by simulation for the heavier starting setup)*. Gain Purpose from:
 - **destroying a Fault: 1**,
 - **destroying a Failure: 2**,
 - cards that grant it.
@@ -273,9 +273,10 @@ The destination's Landfall requirement is added on top of the tier condition.
 
 **Conduits:** the adjacency connections between sections.
 
-**Default setup symbols per board:**
-- 1 Failure, 1 Fault and 1 Decay, each in a different section,
-- 6 Crew spread across 4 sections,
+**Setup symbols per board** (as in Spirit Island, threat starts on the board):
+- **1 Failure, 2 Faults and 1 Glitch, each in a different section type**, so every type starts with some threat at a different strength. Which type gets the Failure rotates between boards (A: Infrastructure, B: Residential, C: Government, D: Agricultural).
+- 1 Decay next to the Failure,
+- 6 Crew (2, 2, 1, 1) across 4 sections away from the Failure and the Decay,
 - 2 influence for the board's house in the marked start sections.
 
 Starting Decay does not come from the pool, as in Spirit Island.
@@ -524,10 +525,10 @@ Level 0 means no destination rules (the base game).
 
 | Players | Ship boards | Decay pool | Purpose pool | Event deck / Wall |
 |---|---|---|---|---|
-| 1 | 1 | 4 | 5 | 12 |
-| 2 | 2 | 7 | 10 | 12 |
-| 3 | 3 | 10 | 15 | 12 |
-| 4 | 4 | 13 | 20 | 12 |
+| 1 | 1 | 5 | 4 | 12 |
+| 2 | 2 | 9 | 8 | 12 |
+| 3 | 3 | 13 | 12 | 12 |
+| 4 | 4 | 17 | 16 | 12 |
 
 The people deck does not scale. Solo-specific tuning is deferred until multiplayer is settled; solo players can play two-handed.
 
@@ -560,8 +561,9 @@ The people deck does not scale. Solo-specific tuning is deferred until multiplay
 | Destinations as adversaries | Flavor comes from the journey. Levels change setup, rules, deck and the Landfall target. |
 | Fixed-length game and a mid-game "choose to land" decision | Rejected. The Landfall card toggle is the alternative climax. |
 | Loss: Decay pool, or a house with no influence | Matches Spirit Island. Crew loss is not a loss condition. |
-| Win conditions shifted one step stricter; Purpose 5 per player; Decay 3 per player + 1 | Simulation tuning so an average table wins at about Understanding III, around generation 8–9. |
+| Win conditions shifted one step stricter; Purpose 4 per player; Decay 4 per player + 1 | Simulation tuning so an average table wins at about Understanding III, around generation 8–9. |
 | Keel starts at 2 card plays | With 1 play and a free nominee, Keel never spent credits. |
+| Boards start with threat in every section type (1 Failure, 2 Faults, 1 Glitch) | Like Spirit Island's starting towns and cities; every type is under some pressure from the first generation, at different strengths. |
 | No house perk for the chosen heir | It's a joint decision with built-in gains. Kept as a later option. |
 | No score, no scenarios, no Loyal/Restless crew | Out of scope for now (Loyal/Restless is rejected outright). |
 | Hand size = card plays + 2 | A fixed hand made extra plays useless; deriving it keeps both values meaningful. |
@@ -647,7 +649,7 @@ A mute toggle is included.
 - starting credits (0),
 - whether the nominee counts as a play,
 - starting credits (1) and base credit gain (1),
-- board size (8 sections) and the setup symbol contents,
+- board size (8 sections),
 - token durations,
 - the tie-break when there is no Steward.
 
@@ -662,7 +664,7 @@ A mute toggle is included.
 - the Outer Hull event card in the Stage II pool, and the four Stage II twists, are first versions,
 - whether elements from the Steward should count for everyone (deferred until the power curve is tested).
 
-**Simulation:** a rules engine, layered bots and a Monte Carlo runner live in `src/` and `sim/` (see `sim/README.md`). First findings are in `sim/RESULTS.md`: run 1 found Keel too weak (fixed: 2 starting plays) and games won too early (fixed: shifted tier conditions, Purpose 5 per player, Decay 3 per player + 1). Run 2 wins about 65% at generation ~8.4, mostly at Understanding III. Innate tiers II–III are still rarely reached. The engine's interpretations of unclear rules are listed in `sim/README.md`.
+**Simulation:** a rules engine, layered bots and a Monte Carlo runner live in `src/` and `sim/` (see `sim/README.md`). First findings are in `sim/RESULTS.md`: run 1 found Keel too weak (fixed: 2 starting plays) and games won too early (fixed: shifted tier conditions). Run 3 adds Spirit Island–style starting threat in every section type, with Purpose 4 and Decay 4 per player + 1: about 64% wins at generation ~8.3, about 94% of them at Understanding III. Innate tiers II–III are still rarely reached. The engine's interpretations of unclear rules are listed in `sim/README.md`.
 
 **Calibration:** every PP price, element cost and the reference pacing are first guesses, to be replaced by Monte Carlo results. Purpose at 1 PP is a specific suspect (Vigil reaches 5 Purpose per generation).
 
