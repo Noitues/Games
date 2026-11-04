@@ -653,7 +653,6 @@ A mute toggle is included.
 **Not yet designed:**
 - house special-rule and innate values beyond first estimates (see `houses/README.md`),
 - destination levels,
-- the Landfall event's exact text,
 - Haven effects beyond targeting.
 
 **Small gaps:**
