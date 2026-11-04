@@ -3,7 +3,7 @@ export const DEFAULT_CONFIG = {
   players: 2,
   houses: ["galvan", "keel"],
   eventPairing: "offset",        // "offset" | "direct"
-  decayPerPlayer: 3, decayBase: 0,
+  decayPerPlayer: 2, decayBase: 1,
   crisisRefillPerPlayer: 1,
   purposePerPlayer: 5,
   discoveriesPerTier: 3,
