@@ -3,9 +3,9 @@ export const DEFAULT_CONFIG = {
   players: 2,
   houses: ["galvan", "keel"],
   eventPairing: "offset",        // "offset" | "direct"
-  decayPerPlayer: 4, decayBase: 1,
+  decayPerPlayer: 3, decayBase: 1,
   crisisRefillPerPlayer: 1,
-  purposePerPlayer: 4,
+  purposePerPlayer: 5,
   discoveriesPerTier: 3,
   stageCounts: { 1: 3, 2: 4, 3: 5 },
   startCredits: 0,

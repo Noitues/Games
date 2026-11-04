@@ -212,7 +212,7 @@
      {
       "tier": 3,
       "threshold": {
-       "Bureaucrats": 2,
+       "Bureaucrats": 3,
        "Farmers": 2
       },
       "threshold_cost": 7.5,
@@ -315,7 +315,7 @@
      {
       "tier": 1,
       "threshold": {
-       "Medics": 2
+       "Medics": 1
       },
       "threshold_cost": 2.0,
       "effects": {
