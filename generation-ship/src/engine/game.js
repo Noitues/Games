@@ -185,7 +185,7 @@ export function resolveInnate(G, st, h) {
 function seedSection(G, st, s) {
   if (s.quarantine) return;
   if (s.lockout > 0) { s.lockout -= 1; return; }
-  s.glitch += 1;
+  s.glitch += G.cfg.seedGlitches;
 }
 export function seed(G, st, eid) {
   const ev = G.data.eventById[eid];
@@ -500,7 +500,7 @@ export function runPhase(G, st, phase) {
     case "slow": speedPhase(G, st, false); break;
     case "time": timePasses(G, st); break;
   }
-  checkWin(st);
+  checkWin(st, G.cfg.tierConditions);
 }
 
 export function playGame(data, agents, cfgIn = {}, seed = 1, verbose = false) {

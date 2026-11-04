@@ -62,3 +62,53 @@ Each layer adds measurably. Next bot improvements:
 - coordinate commits across houses (plan the second house after simulating the first),
 - roll out growth choices,
 - cooperative house targeting.
+
+---
+
+# Run 2: Keel at 2 plays, pacing retuned
+
+## Changes
+- **Keel** starts at **2 card plays** (track 2 → 2 → 2 → 3 → 4).
+- **Win conditions shifted one step stricter:**
+  - I: no threat and no Decay
+  - II: no threat
+  - III: no Faults or Failures
+- **Purpose pool:** 5 per player (was 4).
+- **Decay pool:** 3 per player + 1 (was 2 + 1).
+
+## Why these settings
+House bots, 4 pairings × 25–40 games per setting (`sim/tune.js`):
+
+| Setting | Win rate | Win generation | Wins at tier III |
+|---|---|---|---|
+| Original pacing (Keel at 2 plays) | 78% | 5.6 | 40% (58% at II) |
+| Slower Purpose only (8 per player, 4 per tier) | 49% | 9.0 | 0% (wins slide to tiers I/II) |
+| More threat (2 Glitches per seed) | 7–54% | 6–10 | up to 97%, but games were short or brutal |
+| **Shifted conditions, Purpose 5, Decay 3 + 1** | **66%** | **8.4** | **77%** |
+
+**Takeaway:** pacing knobs alone couldn't move wins to tier III. Tier II's original condition was nearly as easy as tier III's, so the conditions themselves had to change.
+
+## Pairing sweep (house bots, 100 games each, seed 9)
+
+| Pairing | Win | Gens | Tier III wins | Decay loss | Time loss |
+|---|---|---|---|---|---|
+| Galvan + Meridian | 82% | 8.2 | 43% | 17% | 1% |
+| Meridian + Vigil | 75% | 7.8 | 61% | 25% | 0% |
+| Galvan + Vigil | 71% | 8.0 | 54% | 29% | 0% |
+| Galvan + Keel | 58% | 8.9 | 35% | 35% | 7% |
+| Meridian + Keel | 54% | 8.7 | 38% | 36% | 10% |
+| Keel + Vigil | 49% | 8.0 | 37% | 47% | 4% |
+
+## Findings
+- **Pacing hit the target:**
+  - average win rate about 65%,
+  - games last about 8–9 generations and wins come at 7.9–8.7,
+  - most wins at Understanding III,
+  - **running out of events now matters** (up to 10% of games).
+- **Keel improved but is still the weakest house.** It now plays about 2 cards and spends about 1.2 credits per generation (was 1.1 and 0.2). The gap to the other pairings shrank from about 30 points to about 20.
+  - Its innate still rarely reaches tier II (3%).
+  - Load-Bearing's Brace only helps when a collapse hits a Keel Haven.
+  - Next levers: cheaper Keel innate thresholds, or a stronger special rule.
+- **Galvan + Meridian still wins often at tier II (38%).** Both houses repair aggressively, so they clear every Glitch.
+- **Innate tier III is still about 0–2%** for every house.
+- **Remarkables rose to 6–8 per game.** The longer games give more chances to draw them.

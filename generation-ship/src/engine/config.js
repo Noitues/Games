@@ -3,13 +3,15 @@ export const DEFAULT_CONFIG = {
   players: 2,
   houses: ["galvan", "keel"],
   eventPairing: "offset",        // "offset" | "direct"
-  decayPerPlayer: 2, decayBase: 1,
+  decayPerPlayer: 3, decayBase: 1,
   crisisRefillPerPlayer: 1,
-  purposePerPlayer: 4,
+  purposePerPlayer: 5,
   discoveriesPerTier: 3,
   stageCounts: { 1: 3, 2: 4, 3: 5 },
   startCredits: 0,
   crewHealth: 2, crewDamage: 2,
+  tierConditions: "shifted",    // "shifted": I no threat+no Decay, II no threat, III no Faults/Failures | "classic": I no threat, II no Faults/Failures, III no Failures
+  seedGlitches: 1,              // Glitches added per seeded section
   decayThreshold: 2,             // section damage that places Decay
   purposeFault: 1, purposeFailure: 2,
   nomineeFree: true,             // nominee costs 0 credits

@@ -8,6 +8,7 @@ node sim/run.js --games 200 --houses galvan,keel --bot house
 node sim/run.js --ladder --games 100                      # compare bot levels
 node sim/run.js --sweep --games 150 --bot house           # every 2-house pairing
 node sim/run.js ... --pairing direct --seed 7 --json out.json
+node sim/tune.js --games 40 --grid purposePerPlayer=4,5 decayPerPlayer=3,4   # parameter grid
 ```
 
 Runs are deterministic for a given `--seed`.
@@ -47,7 +48,9 @@ Points where the GDD left room, or where the engine simplifies:
 - **A tempered Legacy loses its single most costly effect.**
 - **The Discovery and cascade choices are made by house 0's bot** (the table).
 
-## First results (house bots, 2 players, offset pairing, 150 games per pairing)
+## Run 1 results (house bots, 2 players, offset pairing, 150 games per pairing)
+
+*Superseded by run 2 in `RESULTS.md` (Keel at 2 plays, retuned pacing).*
 
 | Pairing | Win rate | Avg length (gens) | Main loss |
 |---|---|---|---|

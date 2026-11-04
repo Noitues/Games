@@ -1,6 +1,6 @@
 # House Keel, the Hullwrights
 
-**Template:** Vital Strength of the Earth · **Curve:** steep (2.40)
+**Template:** Vital Strength of the Earth · **Curve:** standard (1.85), was steep before the 2-play start
 
 Slow, sturdy guardians of the ship's structure and its people. They hold the line rather than going on offense. Weak early; late in the game their credit wealth buys efficient Remarkables.
 
@@ -12,9 +12,11 @@ Slow, sturdy guardians of the ship's structure and its people. They hold the lin
 | Track | Values |
 |---|---|
 | Credits per generation | 1 → 2 → 3 → ★ +Medic → 5 → 7 |
-| Card plays | 1 → 1 → 2 → 3 → 4 |
+| Card plays | **2** → 2 → 2 → 3 → 4 |
 
-Hand = plays + 2 (starts at 3). Clone 1.
+Hand = plays + 2 (starts at 4). Clone 1.
+
+*Changed after Monte Carlo run 1:* Keel started at 1 play. With a free nominee, that meant it never spent credits, and Keel pairings won 30 points less often. It now starts at 2 plays.
 
 ## Special rule: Load-Bearing
 At Dusk, every Keel **Haven** has **Brace 3**.

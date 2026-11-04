@@ -58,15 +58,20 @@ export function lose(st, cause) {
 export function checkInfluenceLoss(st) {
   st.houses.forEach((h, i) => { if (totalInfluence(st, i) <= 0) lose(st, "influence"); });
 }
-export function winConditionMet(st) {
-  let glitch = 0, fault = 0, failure = 0;
-  for (const s of allSections(st)) { glitch += s.glitch; fault += s.fault; failure += s.failure; }
-  if (st.tier >= 3) return failure === 0;
-  if (st.tier === 2) return fault + failure === 0;
-  return glitch + fault + failure === 0;
+export function winConditionMet(st, mode = "shifted") {
+  let glitch = 0, fault = 0, failure = 0, decay = 0;
+  for (const s of allSections(st)) { glitch += s.glitch; fault += s.fault; failure += s.failure; decay += s.decay; }
+  if (mode === "classic") {
+    if (st.tier >= 3) return failure === 0;
+    if (st.tier === 2) return fault + failure === 0;
+    return glitch + fault + failure === 0;
+  }
+  if (st.tier >= 3) return fault + failure === 0;
+  if (st.tier === 2) return glitch + fault + failure === 0;
+  return glitch + fault + failure + decay === 0;
 }
-export function checkWin(st) {
-  if (!st.result && winConditionMet(st)) st.result = { outcome: "win", cause: `tier ${st.tier}`, gen: st.gen };
+export function checkWin(st, mode) {
+  if (!st.result && winConditionMet(st, mode)) st.result = { outcome: "win", cause: `tier ${st.tier}`, gen: st.gen };
 }
 
 // ---------------------------------------------------------------- Purpose
