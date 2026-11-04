@@ -22,6 +22,8 @@ if (!isMainThread) {
   const rec = (i, cur) => { if (cur.length === P) { combos.push([...cur]); return; }
     for (let j = i; j < H.length; j++) { cur.push(H[j]); rec(j + 1, cur); cur.pop(); } };
   rec(0, []);
+  // --swap: also play every combination in reversed seat order (houses swap boards)
+  if (args.swap) combos.push(...combos.map((c) => [...c].reverse()));
   if (args.sample) {
     // deterministic sample of combos (for 3-4 player runs with many combinations)
     let x = 12345;
@@ -40,7 +42,19 @@ if (!isMainThread) {
       if (next >= jobs.length) { if (!running) resolve(); return; }
       const job = jobs[next++]; running++;
       const w = new Worker(fileURLToPath(import.meta.url), { workerData: { job } });
-      w.on("message", (m) => { results[m.key] = m.agg; });
+      w.on("message", (m) => {
+        const key = m.key.split("+").sort().join("+");
+        if (!results[key]) { results[key] = m.agg; return; }
+        const a = results[key], b = m.agg;
+        a.games += b.games; a.wins += b.wins; a.winGens += b.winGens; a.gens += b.gens;
+        for (const [k, v] of Object.entries(b.causes)) a.causes[k] = (a.causes[k] || 0) + v;
+        for (const [h, x] of Object.entries(b.houses)) {
+          const y = (a.houses[h] ??= { ...x, innate: [...x.innate] });
+          if (y === x) continue;
+          y.gensPlayed += x.gensPlayed; y.played += x.played; y.creditsSpent += x.creditsSpent;
+          x.innate.forEach((n, i) => (y.innate[i] += n));
+        }
+      });
       w.on("error", (e) => { console.error(job.houses.join("+"), e); });
       w.on("exit", () => { running--; launch(); });
     };

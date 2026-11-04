@@ -871,7 +871,7 @@
       },
       "threshold_cost": 3.5,
       "effects": {
-       "vent_glitch_or_fault": 3
+       "vent_glitch_or_fault": 2
       },
       "range": 1,
       "target": "Hull",
@@ -885,7 +885,7 @@
       },
       "threshold_cost": 6.0,
       "effects": {
-       "vent_glitch_or_fault": 3,
+       "vent_glitch_or_fault": 2,
        "vent_failure": 1
       },
       "range": 2,

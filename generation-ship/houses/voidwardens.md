@@ -26,8 +26,8 @@ Tiers are cumulative; the effect column is the full effect at that tier. *Reache
 | Tier | Threshold | Effect | PP | Reached |
 |---|---|---|---|---|
 | 1 | Navigators 2 | vent 1 Glitch/Fault (range 1, Hull) | 2.0 | 54% |
-| 2 | Navigators 2 + Engineers 1 | vent 3 Glitch/Fault (range 1, Hull) | 4.0 | 40% |
-| 3 | Navigators 3 + Engineers 2 | vent 3 Glitch/Fault; vent 1 Failure (range 2, Hull) | 6.5 | 4% |
+| 2 | Navigators 2 + Engineers 1 | vent 2 Glitch/Fault (range 1, Hull) | 4.0 | 40% |
+| 3 | Navigators 3 + Engineers 2 | vent 2 Glitch/Fault; vent 1 Failure (range 2, Hull) | 6.5 | 4% |
 
 ## Growth
 Shared menu: A place influence and uncover a track slot · B gain 2 credits · C draw +2 cards and gain 1 credit.
