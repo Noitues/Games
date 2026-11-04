@@ -19,8 +19,8 @@ const summarize = (aggs) => {
 };
 // a fixed rotation of houses so every house appears in every layout
 const combo = (n, k) => Array.from({ length: n }, (_, i) => H[(k * 3 + i * 5) % H.length]).filter((h, i, a) => a.indexOf(h) === i);
-console.log("Solo, one board, all 8 houses:");
-for (const b of B.boards.map((x) => x.id)) {
+if (!argv.includes("--layouts-only")) console.log("Solo, one board, all 8 houses:");
+for (const b of argv.includes("--layouts-only") ? [] : B.boards.map((x) => x.id)) {
   const aggs = await batch(H.map((h) => ({ games, players: 1, houses: [h], bot: "house", seed: 77, cfg: { boards: [b] } })));
   console.log(`  board ${b}: ${summarize(aggs)}`);
 }

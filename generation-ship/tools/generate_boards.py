@@ -221,28 +221,8 @@ def outline():
     return [[round(x, 1), round(y, 1)] for x, y in pts]
 
 
-def build_layout(name, cells, boards):
-    ids = list(cells)
-    cen = (sum(cells[b][0] for b in ids) / len(ids), sum(cells[b][1] for b in ids) / len(ids))
-    occupied = lambda x, y: any(math.dist((x, y), cells[o]) < 1 for o in ids)
-    place = {}
-    for b in ids:
-        bx, by = cells[b]
-        best = None
-        for rot in range(0, 360, 60):
-            hull_dir = 30 + 60 * HULL + rot
-            nx, ny = bx + STEP * math.cos(math.radians(hull_dir)), by + STEP * math.sin(math.radians(hull_dir))
-            if occupied(nx, ny):
-                continue
-            out = (bx - cen[0], by - cen[1])
-            score = math.cos(math.radians(hull_dir)) * out[0] + math.sin(math.radians(hull_dir)) * out[1] - 1e-3 * rot
-            if len(ids) == 1 or (out[0] == 0 and out[1] == 0 and False):
-                score = -rot
-            if best is None or score > best[0]:
-                best = (score, rot)
-        place[b] = [round(bx, 1), round(by, 1), best[1]]
+def joins_and_links(ids, cells, rots, by_id):
     joins, links = [], []
-    by_id = {bd["id"]: bd for bd in boards}
     for x in range(len(ids)):
         for y in range(x + 1, len(ids)):
             X, Y = ids[x], ids[y]
@@ -250,9 +230,10 @@ def build_layout(name, cells, boards):
             if abs(math.hypot(dx, dy) - STEP) > 1:
                 continue
             ang = math.degrees(math.atan2(dy, dx)) % 360
-            i = round((ang - 30 - place[X][2]) / 60) % 6
-            j = round((ang + 180 - 30 - place[Y][2]) / 60) % 6
-            assert i != HULL and j != HULL, (name, X, Y)
+            i = round((ang - 30 - rots[X]) / 60) % 6
+            j = round((ang + 180 - 30 - rots[Y]) / 60) % 6
+            if i == HULL or j == HULL:
+                return None, None
             joins.append([X, i, Y, j])
             for sx in by_id[X]["sections"]:
                 for sy in by_id[Y]["sections"]:
@@ -260,6 +241,35 @@ def build_layout(name, cells, boards):
                         for u0, u1 in sy["sides"].get(str(j), []):
                             if min(t1, 1 - u0) - max(t0, 1 - u1) > 0.05:
                                 links.append([sx["id"], sy["id"]])
+    return joins, links
+
+
+def build_layout(name, cells, boards):
+    """Try every rotation combination with each Hull facing the void; keep the one with the most
+    docking links (ties: Hulls pointing outward from the cluster)."""
+    import itertools
+    ids = list(cells)
+    by_id = {bd["id"]: bd for bd in boards}
+    cen = (sum(cells[b][0] for b in ids) / len(ids), sum(cells[b][1] for b in ids) / len(ids))
+    occupied = lambda x, y: any(math.dist((x, y), cells[o]) < 1 for o in ids)
+    def hull_ok(b, rot):
+        d = math.radians(30 + 60 * HULL + rot)
+        return not occupied(cells[b][0] + STEP * math.cos(d), cells[b][1] + STEP * math.sin(d))
+    def outward(b, rot):
+        d = math.radians(30 + 60 * HULL + rot)
+        return math.cos(d) * (cells[b][0] - cen[0]) + math.sin(d) * (cells[b][1] - cen[1])
+    options = [[r for r in range(0, 360, 60) if hull_ok(b, r)] for b in ids]
+    best = None
+    for combo in itertools.product(*options):
+        rots = dict(zip(ids, combo))
+        joins, links = joins_and_links(ids, cells, rots, by_id)
+        if joins is None:
+            continue
+        score = (len(links), sum(outward(b, rots[b]) for b in ids), -sum(combo))
+        if best is None or score > best[0]:
+            best = (score, rots, joins, links)
+    _, rots, joins, links = best
+    place = {b: [round(cells[b][0], 1), round(cells[b][1], 1), rots[b]] for b in ids}
     return {"boards": ids, "place": place, "joins": joins, "links": links}
 
 
