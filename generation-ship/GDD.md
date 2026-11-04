@@ -692,39 +692,35 @@ A mute toggle is included.
 
 ## Open questions and missing items
 
-**Defaults chosen for the prototype (not decided in conversation):**
-- tech stack,
-- visual style,
+**Defaults still standing (never decided, not yet tested):**
+- visual style (a functional prototype exists, no art direction yet),
 - the Wall / event deck size (12) and stage split (3/4/5),
-- the crisis flip refill (1 per player), and Discoveries per tier (3),
-- starting credits (0),
-- whether the nominee counts as a play,
-- starting credits (1) and base credit gain (1),
-- board size (8 sections),
-- token durations,
-- the tie-break when there is no Steward.
+- the crisis flip refill (1 per player) and Discoveries per tier (3),
+- starting credits (0, plus each house's first credit-track value),
+- the nominee counts as one of the card plays,
+- board size (8 sections) and token durations,
+- the tie-break when there is no Steward (house 0).
 
-**Remarkable access:** whether drawing a Remarkable by substitution is always available or gated by a house unlock was not decided.
+**Decisions for the designer** (the engine picked one; see `sim/README.md`):
+- Remarkable substitution is always available (max 1 per generation). Should it be gated?
+- Meridian's Supply Lines does nothing yet, because no card targets "from a Haven". Should Havens get a general rule (e.g. +1 range from a Haven)?
+- Is a "move Crew" effect different from "gather Crew"?
+- Bots play Direct pairing no better than Offset. Is the Direct toggle worth keeping, or should the vote be redesigned so the extra information matters?
+- Crew-loss hazards barely affect strong play. Should Crew matter more (Crew count in scoring, or Crew as a source of card plays)?
 
 **Not yet designed:**
-- house special-rule and innate values beyond first estimates (see `houses/README.md`),
-- destination levels,
-- Haven effects beyond targeting.
+- Haven effects beyond targeting,
+- the Wall as a power source (Breakthroughs are the only current use),
+- names and flavor text for the 400 people cards (IDs only by request).
 
-**Small gaps:**
-- the Outer Hull event card in the Stage II pool, and the four Stage II twists, are first versions,
-- whether elements from the Steward should count for everyone (deferred until the power curve is tested).
+**Measured state (level 0, house bots):** 74–75% wins with 1–2 players and 66–68% with 3–4, mostly at Understanding III around generation 8–9. All eight houses are within ±4 points. Destination levels step down to 23–39% at level 6. The Landfall card variant costs about 15–20 points. Details are in `sim/RESULTS.md`.
 
-**Simulation:** a rules engine, layered bots and a Monte Carlo runner live in `src/` and `sim/` (see `sim/README.md`). First findings are in `sim/RESULTS.md`: run 1 found Keel too weak (fixed: 2 starting plays) and games won too early (fixed: shifted tier conditions). Run 3 adds Spirit Island–style starting threat in every section type, with Purpose 4 and Decay 4 per player + 1: about 64% wins at generation ~8.3, about 94% of them at Understanding III. Innate tiers II–III are still rarely reached. The engine's interpretations of unclear rules are listed in `sim/README.md`.
-
-**Calibration:** every PP price, element cost and the reference pacing are first guesses, to be replaced by Monte Carlo results. Purpose at 1 PP is a specific suspect (Vigil reaches 5 Purpose per generation).
+**Calibration:** PP prices remain first guesses except where measured (card thresholds, innate reach in `data/calibration.json`). Purpose at 1 PP is still a suspect.
 
 **Parked ideas:**
-- the Wall as a further power source,
 - a perk for the house whose heir is chosen,
 - unique house cards,
 - a dummy candidate deck for low player counts,
-- solo tuning,
 - scenarios,
 - "learning from failure" (Purpose from Decay) as a possible house trait,
 - a game name.
