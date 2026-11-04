@@ -145,3 +145,53 @@ House bots, 4 pairings × 25–40 games per setting (`sim/tune.js`):
 - **Average win rate is about 64%**, and **about 94% of wins come at Understanding III**. Tier II wins dropped from 12–38% to 1–7%, because Glitches are now everywhere from the start.
 - **Keel is still about 20 points behind** the other pairings. Its innate reaches tier II only 3–4% of the time.
 - **Innate tier III is still at 0–1.5%.**
+
+---
+
+# Runs 4–6: eight houses, stronger bots, calibration
+
+## Stronger bots (step 5)
+| Bot | What it adds | Win rate (4 original houses, 6 pairings) |
+|---|---|---|
+| house | Whole-round rollouts | 71–75% |
+| team | Rollouts include teammates' likely plays | 71% (no gain) |
+| house + **self-play tuned weights** | `sim/tune-weights.js` coordinate search: Fault 2.5 → 4, Decay 6 → 9.6 | **78%** (fresh seeds; +3 points over the old weights) |
+
+The tuned weights are now the default for every bot level.
+
+## Calibration (step 1)
+House bots, all 28 two-house pairings (`sim/calibrate.js`, saved in `data/calibration.json`):
+
+| Card threshold size | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|
+| Met | 84% | 64% | 57% | 16% | 10% |
+
+- Threshold bonuses are now priced so their expected value is about 0.5 PP per required element (1–3 PP per element).
+- The people deck was regenerated with this rule.
+
+## House balance (eight houses, all 28 pairings)
+
+| Iteration | Changes | Overall | Spread (vs average) |
+|---|---|---|---|
+| 1 (new deck, tuned bots) | – | 80% | Tellers −25, Foremen +10 |
+| 4 | Tellers' Spin also Isolates; Foremen's Crew Strike only at tier III; Meridian tier II harder; Keel tier I gathers Crew; Purpose 5 | 72% | Tellers −11.5, Keel −9, Meridian +8 |
+| 5 | Spin gives 2 Purpose per damage; Keel plays track 2→2→3→3→4; Meridian hand +2; Galvan/Vigil tier II harder; Decay base 0 | 68% | −6.5 to +5.3 |
+| 6 | Keel credits start at 2; Tellers hand +3; Gardeners and Foremen trims | 75–78% | −6.4 to +4 |
+| **Final** | Decay pool 2 per player + 1 | **74%** | **−3.7 to +3.4** |
+
+- **Final:** every house is within ±4 points (noise is about ±3). About 82% of wins come at Understanding III, around generation 8.6.
+- **Pool tuning lesson:** a bigger Purpose pool (6 per player) made the game *easier* (75%). It shifted wins back to tier II.
+
+## Player counts and pairing (step 2)
+Final level-0 rules.
+
+| Players | Combinations | Win rate | Win gen | Tier III share of wins | Decay loss |
+|---|---|---|---|---|---|
+| 1 | 8 (all houses) | 82% | 7.3 | 69% | 14% |
+| 2 | 28 | 74% | 8.6 | 82% | 20% |
+| 3 | 12 sampled | 59% | 9.0 | 93% | 33% |
+| 4 | 10 sampled | 63% | 9.5 | 94% | 29% |
+| 2, Direct pairing | 28 | 74% | 8.5 | 87% | 21% |
+
+- **Larger tables lose more often, mostly to Decay.** More boards mean more Collapses per event, and the Decay pool only grows by 2 per player. A steeper pool scaling is being tested (next section).
+- **Direct pairing made no measurable difference to the bots.** They vote mostly on the cards' Reign/Legacy values. Human players may use the extra information more; this needs a smarter vote before it can be measured.
