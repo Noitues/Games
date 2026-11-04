@@ -16,5 +16,8 @@ export const DEFAULT_CONFIG = {
   purposeFault: 1, purposeFailure: 2,
   nomineeFree: true,             // nominee costs 0 credits
   remarkablePerGeneration: 1,    // max Remarkable draw substitutions
+  destination: null,            // id from data/destinations.json
+  destinationLevel: 0,
+  landfallCard: false,          // Landfall card win variant
   maxGenerations: 40,            // safety stop
 };

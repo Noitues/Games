@@ -8,6 +8,7 @@ import { fileURLToPath } from "node:url";
 if (!isMainThread) {
   const { runBatch } = await import("./run.js");
   const { job } = workerData;
+  if (job.weights) Object.assign((await import("../src/ai/eval.js")).W, job.weights);
   parentPort.postMessage({ key: job.houses.join("+"), agg: runBatch(job) });
 } else {
   const args = Object.fromEntries(process.argv.slice(2).reduce((acc, a, i, arr) => {

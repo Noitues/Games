@@ -10,6 +10,7 @@ export function loadData() {
   const data = {
     people: read("people.json"), events: read("events.json"), discoveries: read("discoveries.json"),
     crisis: read("crisis.json"), boards: read("boards.json"), houses: read("houses.json"),
+    destinations: read("destinations.json"),
   };
   data.cardById = Object.fromEntries(data.people.map((c) => [c.id, c]));
   data.eventById = Object.fromEntries([...data.events.cards, data.events.landfall].map((e) => [e.id, e]));

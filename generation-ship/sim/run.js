@@ -29,6 +29,10 @@ export function runBatch({ games = 100, players = 2, houses = ["galvan", "keel"]
     for (const k in agg.destroyed) agg.destroyed[k] += st.stats.destroyed[k];
     agg.discApplied += st.stats.discoveryApplied; agg.discBT += st.stats.discoveryBreakthrough;
     agg.tierAtEnd[st.tier] += 1;
+    for (const [n, [t, m]] of Object.entries(st.stats.thresholdByN || {})) {
+      agg.thresholdByN ??= {}; agg.thresholdByN[n] ??= [0, 0];
+      agg.thresholdByN[n][0] += t; agg.thresholdByN[n][1] += m;
+    }
     for (const hs of st.stats.houses) {
       const a = (agg.houses[hs.id] ??= { games: 0, gensPlayed: 0, played: 0, creditsSpent: 0, innate: [0, 0, 0, 0],
         thresholdMet: 0, thresholdTried: 0, remarkables: 0, chosenLeader: 0, overclockFast: 0,

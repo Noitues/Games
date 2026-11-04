@@ -50,6 +50,13 @@ export function evaluate(G, st, up = upcoming(G, st)) {
     v += H.credits * W.credits;
   });
   v -= 10 / (st.decayPool + 1 + (st.crisisFlipped ? 0 : st.houses.length));
+  // destination Landfall requirements
+  const req = st.dest?.requirement || {};
+  if (req.minCrewPerPlayer) {
+    const crew = allSections(st).reduce((n, s) => n + s.crew, 0);
+    v -= Math.max(0, req.minCrewPerPlayer * st.houses.length + 2 - crew) * 3;
+  }
+  if (req.noDecayIn) v -= allSections(st).filter((s) => s.type === req.noDecayIn).reduce((n, s) => n + s.decay, 0) * 8;
   v += (st.purpose / st.purposeCap) * W.purposeFill;
   v += (st.discoveriesEarned + st.pendingDiscoveries.length * 0.2) * W.discovery;
   v += st.tier * W.tier;

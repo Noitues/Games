@@ -86,6 +86,21 @@ PER_SECTION = {"add_glitch", "add_fault", "add_failure", "destroy_crew", "add_de
                "lose_influence", "add_unrest"}
 
 THRESHOLD_PP_PER_ELEMENT = 1.0
+# Step 1 recalibration: if sim/calibrate.js has measured how often card thresholds of each size are
+# met, price the bonus so its expected value is about EXPECTED_PP_PER_ELEMENT per required element
+# (harder thresholds pay more), clamped to 1-3 PP per element.
+EXPECTED_PP_PER_ELEMENT = 0.5
+CALIBRATION = {}
+_cal = Path(__file__).resolve().parent.parent / "data" / "calibration.json"
+if _cal.exists():
+    CALIBRATION = json.loads(_cal.read_text()).get("thresholdRate", {})
+
+
+def threshold_pp_per_element(n):
+    rate = CALIBRATION.get(str(n))
+    if not rate:
+        return THRESHOLD_PP_PER_ELEMENT
+    return max(1.0, min(3.0, EXPECTED_PP_PER_ELEMENT / rate))
 
 
 def wchoice(rng, weights):
@@ -224,7 +239,7 @@ def make_card(rng, cid, tier, icons):
         req = Counter()
         for k in range(total):
             req[gs[k % len(gs)]] += 1
-        bonus = fill(rng, pool, total * THRESHOLD_PP_PER_ELEMENT, tier, mult, 2)
+        bonus = fill(rng, pool, total * threshold_pp_per_element(total), tier, mult, 2)
         if bonus:
             card["threshold"] = {"elements": dict(req), "effects": bonus,
                                  "text": text_of(bonus),

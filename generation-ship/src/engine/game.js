@@ -5,6 +5,7 @@ import {
   allSections, matches, threatCount, inRange, influenceSections, targetFilter, distances,
   damageThreat, placeDecay, gainPurpose, losePurpose, gatherCrew, applySectionEffects,
   applyHouseEffects, drawFrom, checkWin, lose, log, downgrade, restoreDecay, totalInfluence,
+  winConditionMet,
 } from "./rules.js";
 
 const BOARD_IDS = ["A", "B", "C", "D"];
@@ -60,16 +61,67 @@ export function createGame(data, cfgIn = {}, seed = 1) {
   st.decks.remarkable = shuffle(st, people.filter((c) => c.tier === "Remarkable").map((c) => c.id));
   st.decks.commonDiscard = []; st.decks.remarkableDiscard = [];
   const ev = data.events.cards;
+  const dest = activeDestination(data, cfg);
+  st.dest = dest;
+  const counts = { ...cfg.stageCounts };
+  for (const [k, v] of Object.entries(dest.deck)) counts[k] = Math.max(0, (counts[k] || 0) + v);
   let deck = [];
   for (const stage of [3, 2, 1]) {
     const pool = shuffle(st, ev.filter((e) => e.stage === stage).map((e) => e.id));
-    deck.push(...pool.slice(0, cfg.stageCounts[stage]));
+    const dealt = pool.slice(0, counts[stage]);
+    if (stage === 2 && dealt.length) st.escalationEvent = dealt[0]; // one dealt Stage II card carries Escalation
+    deck.push(...dealt);
   }
   st.decks.events = deck; // pop() draws from the end: Stage I first
+  applyDestinationSetup(st, dest, boards);
   st.decks.discoveries = shuffle(st, data.discoveries.map((d) => d.id));
   st.crisisId = pick(st, data.crisis.cards).id;
   st.wallSize = deck.length + 1;
   return { st, cfg };
+}
+
+// ============================================================== destinations
+// Collects the cumulative effects of levels 1..L of the chosen destination.
+export function activeDestination(data, cfg) {
+  const out = { id: null, rules: {}, requirement: {}, escalation: [], deck: {}, setup: [], texts: [] };
+  const d = (data.destinations?.destinations || []).find((x) => x.id === cfg.destination);
+  if (!d || !cfg.destinationLevel) return out;
+  out.id = d.id; out.name = d.name;
+  for (const lv of d.levels.filter((l) => l.level <= cfg.destinationLevel)) {
+    out.texts.push(`L${lv.level}: ${lv.text}`);
+    for (const r of lv.rules || []) out.rules[r] = (out.rules[r] || 0) + 1;
+    Object.assign(out.requirement, lv.requirement || {});
+    if (lv.escalation) out.escalation.push(lv.escalation);
+    for (const [k, v] of Object.entries(lv.deck || {})) out.deck[k] = (out.deck[k] || 0) + v;
+    out.setup.push(...(lv.setup || []));
+  }
+  return out;
+}
+function applyDestinationSetup(st, dest, boards) {
+  for (const sp of dest.setup) {
+    for (const b of boards) {
+      if (sp.boards && !sp.boards.includes(b.id)) continue;
+      const secs = b.sections.map((x) => st.sections[x.id])
+        .filter((x) => (sp.type === "Hull" ? x.hull : x.type === sp.type));
+      const list = sp.all ? secs : secs.slice(0, sp.perBoard ?? 1);
+      for (const x of list) x[sp.piece] += 1;
+    }
+  }
+}
+export function destinationRequirementMet(st) {
+  const r = st.dest?.requirement || {};
+  if (r.minCrewPerPlayer && allSections(st).reduce((n, s) => n + s.crew, 0) < r.minCrewPerPlayer * st.houses.length) return false;
+  if (r.noDecayIn && allSections(st).some((s) => s.type === r.noDecayIn && s.decay > 0)) return false;
+  if (r.minTier && st.tier < r.minTier) return false;
+  return true;
+}
+function escalate(G, st) {
+  for (const e of st.dest.escalation) {
+    if (e.addGlitchType) for (const s of allSections(st)) if (s.type === e.addGlitchType) s.glitch += 1;
+    if (e.unrestHullThreat) for (const s of allSections(st)) if (s.hull && threatCount(s) > 0) s.unrest += 1;
+    if (e.losePurpose) losePurpose(st, e.losePurpose);
+  }
+  log(G, st, "Escalation");
 }
 
 function placeStartingInfluence(st, h, hd, board) {
@@ -147,7 +199,11 @@ export function resolveCard(G, st, h, cid) {
   let effects = { ...c.effects };
   if (c.threshold) {
     HS.thresholdTried += 1;
+    const need = Object.values(c.threshold.elements).reduce((x, y) => x + y, 0);
+    const byN = (st.stats.thresholdByN ??= {});
+    byN[need] ??= [0, 0]; byN[need][0] += 1;
     if (elementsMet(H, c.threshold.elements)) {
+      byN[need][1] += 1;
       HS.thresholdMet += 1;
       for (const [v, n] of Object.entries(c.threshold.effects)) effects[v] = (effects[v] || 0) + n;
     }
@@ -187,7 +243,7 @@ export function resolveInnate(G, st, h) {
 function seedSection(G, st, s) {
   if (s.quarantine) return;
   if (s.lockout > 0) { s.lockout -= 1; return; }
-  s.glitch += G.cfg.seedGlitches;
+  s.glitch += G.cfg.seedGlitches + (s.hull && st.dest?.rules.hull_seed_extra ? 1 : 0);
 }
 export function seed(G, st, eid) {
   const ev = G.data.eventById[eid];
@@ -206,7 +262,15 @@ export function grow(G, st, eid) {
     if (!matches(s, ev.types) || threatCount(s) === 0) continue;
     if (s.patch > 0) { s.patch -= 1; continue; }
     if (s.fault >= 2) s.failure += 1;
-    else { s.fault += 1; if (ev.twist?.rule === "grow_adds_glitch") s.glitch += 1; }
+    else {
+      s.fault += 1;
+      if (ev.twist?.rule === "grow_adds_glitch") s.glitch += 1;
+      if (st.dest?.rules.agri_grow_spread && s.type === "Agricultural") {
+        const tgt = s.adj.map((a) => st.sections[a]).filter((x) => !x.quarantine)
+          .sort((a, b) => threatCount(a) - threatCount(b))[0];
+        if (tgt) tgt.glitch += 1;
+      }
+    }
   }
   if (st.crisisFlipped && st.crisisId === "X4")
     for (const s of allSections(st)) if (s.decay > 0 && threatCount(s) === 0) s.glitch += 1;
@@ -217,13 +281,15 @@ export function collapse(G, st, eid) {
   for (const s of allSections(st)) {
     if (st.result) return;
     if (!matches(s, ev.types) || threatCount(s) === 0) continue;
-    let dmg = s.glitch + s.fault * (2 + surge) + s.failure * 3 + (s.unrest > 0 ? 1 : 0);
+    let dmg = s.glitch + s.fault * (2 + surge) + s.failure * 3 + (s.unrest > 0 ? 1 : 0)
+      + (s.hull && st.dest?.rules.hull_collapse_plus ? 1 : 0);
     const neg = Math.min(dmg, s.isolate); dmg -= neg; s.isolate = 0;
     const br = Math.min(dmg, s.brace); dmg -= br; s.brace -= br;
     log(G, st, `Collapse in ${s.id}: ${dmg} damage${dmg >= G.cfg.decayThreshold ? ", Decay" : ""}`);
     if (dmg >= G.cfg.decayThreshold) placeDecay(G, st, s);
     let killed = Math.min(s.crew, Math.floor(dmg / G.cfg.crewHealth));
     if (ev.twist?.rule === "extra_crew_loss") killed = Math.min(s.crew, killed + 1);
+    if (st.dest?.rules.agri_collapse_crew && s.type === "Agricultural") killed = Math.min(s.crew, killed + 1);
     s.crew -= killed; st.stats.crewLost += killed;
     if (s.crew > 0) {
       // Foremen's Crew Captains: Crew in sections with Foremen influence deal +1 damage each.
@@ -438,12 +504,14 @@ function duskPhase(G, st) {
   if (st.slots.dusk && !st.result) collapse(G, st, st.slots.dusk.event);
 }
 function dayPhase(G, st) {
+  if (st.dest?.rules.purpose_drain) losePurpose(st, st.dest.rules.purpose_drain);
   if (st.crisisFlipped && st.crisisId === "X1") st.houses.forEach((H) => (H.credits = Math.max(0, H.credits - 1)));
   applyReign(G, st);
   runBreakthroughs(G, st, "day");
   if (st.slots.day) grow(G, st, st.slots.day.event);
 }
 function drawEvent(st) {
+  if (st.landfallPending) { st.landfallPending = false; st.landfallPlaced = true; return "LANDFALL"; }
   if (!st.decks.events.length) { lose(st, "time"); return null; }
   return st.decks.events.pop();
 }
@@ -466,12 +534,16 @@ function dawnPhase(G, st) {
   } else {
     chosen = drawFrom(st, "common", "commonDiscard");
   }
-  if (G.cfg.eventPairing !== "direct") { eid = drawEvent(st); if (!eid) return; }
+  if (G.cfg.eventPairing !== "direct") {
+    if (st.landfallPending) { eid = "LANDFALL"; st.landfallPending = false; st.landfallPlaced = true; }
+    else { eid = drawEvent(st); if (!eid) return; }
+  }
   st.upcomingEvent = null;
   const house = noms.find((n) => n.cid === chosen)?.h ?? 0;
   st.slots.dawn = { leader: chosen, event: eid, house, bt: null, tempered: false };
   log(G, st, `New heir ${chosen} (${st.houses[house]?.id}); event ${eid} (${G.data.eventById[eid].types.join("+")}) seeds`);
   seed(G, st, eid);
+  if (eid === st.escalationEvent && st.dest?.escalation.length) escalate(G, st);
   runBreakthroughs(G, st, "dawn");
 }
 function discard(G, st, cid) {
@@ -479,7 +551,10 @@ function discard(G, st, cid) {
   st.decks[c.tier === "Common" ? "commonDiscard" : "remarkableDiscard"].push(cid);
 }
 function timePasses(G, st) {
-  if (st.slots.dusk) st.wall.push(st.slots.dusk);
+  if (st.slots.dusk) {
+    st.wall.push(st.slots.dusk);
+    if (st.slots.dusk.event === "LANDFALL" && !st.result) st.result = { outcome: "win", cause: "Landfall", gen: st.gen };
+  }
   st.slots.dusk = st.slots.day; st.slots.day = st.slots.dawn; st.slots.dawn = null;
   for (const s of allSections(st)) { s.brace = 0; s.quarantine = 0; s.dmg = 0; }
   st.houses.forEach((H, h) => {
@@ -516,7 +591,18 @@ export function runPhase(G, st, phase) {
     case "slow": speedPhase(G, st, false); break;
     case "time": timePasses(G, st); break;
   }
-  checkWin(st, G.cfg.tierConditions);
+  checkVictory(G, st);
+}
+
+// Base win, or with the Landfall card toggle: meeting the condition schedules the Landfall event.
+export function checkVictory(G, st) {
+  if (st.result) return;
+  if (!winConditionMet(st, G.cfg.tierConditions) || !destinationRequirementMet(st)) return;
+  if (!G.cfg.landfallCard) { st.result = { outcome: "win", cause: `tier ${st.tier}`, gen: st.gen }; return; }
+  if (!st.landfallPending && !st.landfallPlaced && st.decks.events.length >= 2) {
+    st.landfallPending = true;
+    log(G, st, "Landfall will begin at the next Dawn");
+  }
 }
 
 export function playGame(data, agents, cfgIn = {}, seed = 1, verbose = false) {
