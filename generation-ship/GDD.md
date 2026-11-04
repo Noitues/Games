@@ -735,7 +735,7 @@ A mute toggle is included.
 - starting credits (0, plus each house's first credit-track value),
 - the nominee counts as one of the card plays,
 - board size (8 sections) and token durations,
-- the tie-break when there is no Steward (house 0).
+- the starting Steward belongs to house 0 (it decides shared choices in generation 1).
 
 **Decisions for the designer**, with simulation data (`sim/experiments.js`: house bots, all 28 pairings × 25 games, same seeds; baseline 76% wins, house spread 5 points):
 
@@ -751,10 +751,10 @@ Still open without data: is "move Crew" different from "gather Crew"? (The engin
 
 **Not yet designed:**
 - Haven effects beyond targeting,
-- the Wall as a power source (Breakthroughs are the only current use),
+- Wall bonuses beyond Breakthroughs (e.g. Legacies that leave a passive mark on the Wall),
 - names and flavor text for the 400 people cards (IDs only by request).
 
-**Measured state (level 0, house bots, hull-module boards):** 77% wins on the 2-player pair layout; other layouts range from 52% (fan) to 78% (triad). All eight houses are within ±4.4 points (seat-swapped). Most wins come at Understanding III around generation 8–9. Destination levels step down to 23–39% at level 6. The Landfall card variant costs about 15–20 points. Details are in `sim/RESULTS.md`.
+**Measured state (after playtest 1; level 0, house bots, hull-module boards):** 74% / 73% / 69% / 75% wins at 1 / 2 / 3 / 4 players. All eight houses are within +7 / −5 points (seat-swapped, 2 players). Destination difficulty, layout difficulty and the Landfall variants were measured before playtest 1 and need re-measuring. Details are in `sim/RESULTS.md`.
 
 **Calibration:** PP prices remain first guesses except where measured (card thresholds, innate reach in `data/calibration.json`). Purpose at 1 PP is still a suspect.
 
