@@ -193,7 +193,7 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 | Failure | City | 3 | 3 | 2 |
 
 - Damage on threat pieces clears at Time passes.
-- Powers can **repair** (deal damage), **downgrade** (Failure → Fault → Glitch), **vent** (push a piece to an adjacent section), and **prevent** (stop a section's Day grow).
+- Powers can **repair** (deal damage), **downgrade** (Failure → Fault → Glitch), **vent** (push a piece to an adjacent section; this moves the problem rather than removing it, so it earns no Purpose), and **prevent** (stop a section's Day grow).
 
 ---
 
@@ -302,7 +302,7 @@ All houses draw from **one shared people deck** with two tiers. There is no deck
 - name,
 - tier,
 - **credit cost**,
-- **guild elements** (1–3 icons),
+- **guild elements** (2–4 icons, **average 3**),
 - **range** (0–3) and **target** (section type / Hull / Core / ANY / another house),
 - **effect**,
 - **Reign** text,
@@ -322,13 +322,13 @@ There is **no printed speed**: the nominee is fast and every other play is slow.
 - **Time:** foresee (look at the top of the event deck), temper a Legacy, boost a Reign.
 
 **Hand rules:**
-- **Hand size: 4** *(default; discussed as 3–4)*.
-- **Card plays: 2** *(default; discussed as starting at 1, maybe 2)*. The nominee counts as one of the plays *(default)*.
+- **Hand size = card plays + 2.** Houses may modify the +2 (e.g. Meridian: +3). Cloned cards are kept on top of this.
+- **Card plays:** set by the house's card-play track (base 2). The nominee counts as one of the plays *(default)*.
 - **Clone slot:** keep **1** card into the next generation (base). Houses may raise or lower this.
 - At Time passes, all other cards in hand go to the discard pile.
 
 **Credits** (Spirit Island's energy):
-- **Start: 1. Base gain: 1 per generation** *(defaults)*. House tracks raise the gain.
+- Credit gain per generation is set by the house's credit track. Houses start with 0 credits *(default)*.
 - Credits carry over between generations.
 
 **No card gain and no deck thinning:** Spirit Island's "gain a power" is replaced by house power-growth unlocks.
@@ -353,11 +353,21 @@ Eight guild elements:
 - **Innate powers** on the house board unlock at guild thresholds.
 - If the power curve proves too weak, the next step is to let the **current Steward's elements count for every house**.
 
+**Making thresholds reachable.** In Spirit Island, each spirit's own starting cards carry its elements. Our shared deck doesn't, so houses use any mix of these levers:
+- **Cards carry 2–4 guild icons, averaging 3**, so element density is high across the deck.
+- **Raw elements on house tracks** (a bigger share of identity than in Spirit Island).
+- **Guild substitution** as a house rule (e.g. "count Laborers as Engineers").
+- **Cloning** an element-rich card into the next generation.
+
 ---
 
 ## Houses (player factions)
 
 Asymmetry lives **entirely on the house boards**. There are no unique house cards until that becomes a needed gap.
+
+**Design principle:** houses bend and break core rules to express their identity (e.g. Galvan resolves extra cards fast).
+
+**Houses are built from the *Balance framework* below**, and each house lives in its own file next to this document, in `houses/`. Every part of a house lists its Power Point value.
 
 **Each house board has:**
 - **Growth options.** Pick one per generation.
@@ -372,8 +382,99 @@ Asymmetry lives **entirely on the house boards**. There are no unique house card
   - **move influence**.
 - **Innate powers** with guild-element thresholds.
 - **Special rules.**
+- **Two tracks only:** a credit track and a card-play track. Special slots on either track grant an element, a fast play or a clone slot.
 
-No houses have been designed yet. See *Vertical slice* for the prototype placeholder.
+**Houses v0** (Spirit Island template in brackets): see `houses/README.md`.
+- **Galvan, the Spark-Wardens** [Lightning's Swift Strike]: fast and aggressive.
+- **Meridian, the Flowkeepers** [River Surges in Sunlight]: movement and logistics.
+- **Keel, the Hullwrights** [Vital Strength of the Earth]: slow and defensive.
+- **Vigil, the Lamplighters** [Shadows Flicker Like Flame]: Purpose and reach.
+
+---
+
+## Balance framework (Power Points)
+
+Houses, cards and innates are built from priced parts so every house lands in the same power range, with a curve shape that matches its identity. **All prices are starting values to be calibrated by Monte Carlo playtesting in the prototype.**
+
+**Unit:** **1 PP = 1 damage to threat at range 1, slow.** **1 credit = 1 PP.**
+
+**Effect prices:**
+
+| Effect | PP |
+|---|---|
+| Damage X | X |
+| Downgrade 1 piece | 1.5 |
+| Vent a Glitch / Fault / Failure | 0.5 / 1 / 1.5 |
+| Patch (prevent the next grow) | 1.5 |
+| Lockout (prevent the next seed) | 1 |
+| Isolate (a piece deals no damage) | 1 per 2 damage negated |
+| Brace X | 0.5 × X |
+| Quarantine | 1 |
+| Gather or move 1 Crew | 0.5 |
+| Add 1 Crew | 3 |
+| Restore 1 Decay | 3 |
+| Add 1 influence | 2 |
+| Move 1 influence | 1 |
+| +1 Purpose | 1 |
+| +1 credit | 1 |
+| Foresee | 0.5 |
+| Temper the Elder's Legacy | 3 |
+
+**Modifiers** (multiplied together):
+
+| Modifier | Values |
+|---|---|
+| Range | 0: ×0.8 · 1: ×1.0 · 2: ×1.15 · 3: ×1.3 |
+| Target | ANY ×1.0 · one section type ×0.85 · narrow condition (e.g. Hull only) ×0.75 |
+| Speed | Slow ×1.0 · Fast ×1.25 |
+| Ongoing | Per-generation value × expected generations active |
+| Chance-based | Value × probability it triggers |
+
+**Card pricing:**
+- **Common:** Card Value = **2 + cost** (cost 0–3).
+- **Remarkable:** Card Value = **2 + 1.5 × cost** (cost 0–8).
+- The **2** is the value of a card play itself.
+- **Leader panel:** Common Reign − Legacy ≈ **+1 PP**; Remarkable ≈ **+2 PP**, with larger values on both sides.
+
+**Element costs** (for pricing innate thresholds):
+
+| Element | PP each |
+|---|---|
+| House's primary guild | 1 |
+| House's secondary guild | 1.5 |
+| Any other guild | 2 |
+| Covered by raw track elements | 0 |
+
+**Innate rule:** innate tiers are cumulative. The **cumulative effect PP of a tier should equal its threshold cost**, within −10% / **+20% for the top tier** (rewarding specialization).
+
+**House parts:**
+
+| Part | PP |
+|---|---|
+| +1 credit per generation | 1 per generation |
+| +1 card play per generation | 2 per generation (also +1 hand size) |
+| Raw element per generation | That element's cost per generation |
+| +1 fast play | 1 per generation |
+| +1 clone slot | 1 per generation |
+| Starting influence | 2 each, +1 if it forms a Haven |
+| Growth option | Its PP per use; a house's options within ±1 PP of each other |
+| Special rule | Expected PP per generation |
+
+**Generation value** = 2 × cards played + credits spent + innate tiers met + special rule + growth choice. Credits beyond 3 × card plays can only be spent on Remarkables, at 1.5 PP per credit.
+
+**Reference pacing** (until simulation replaces it): a house uncovers one track slot in each of generations 1–4, then in generations 6, 8, 10 and 12, alternating tracks and starting with credits.
+
+**Targets:**
+- **Total value** over 12 generations: every house within **±5%** of the average.
+- **Curve shape** = late power (gens 9–12) ÷ early power (gens 1–4):
+
+| Shape | Late ÷ early |
+|---|---|
+| Front-loaded | < 1.5 |
+| Standard | 1.5–2.0 |
+| Steep | > 2.0 |
+
+**Power summary:** a house's PP summed by category (**Repair, Control, Protection, Purpose, Utility**) generates its identity bars, as on Spirit Island's spirit panels.
 
 ---
 
@@ -385,7 +486,7 @@ No houses have been designed yet. See *Vertical slice* for the prototype placeho
 | **Quarantine** | Isolate (section) | The section is cut off: no seed, vent or cascade into or out of it this generation. |
 | **Patch** | Disease | The next **grow** in this section is skipped. Then remove one Patch. |
 | **Lockout** | Wilds | The next **seed** in this section is skipped. Then remove one Lockout. |
-| **Unrest** | Badlands | Each collapse in this section deals +1 damage. |
+| **Unrest** | Badlands | Every source of damage in this section deals +1 damage, from both threat (collapse) and players. |
 | **Isolate** | Strife (on a threat piece) | This threat piece deals no damage at its next collapse. Then remove Isolate. |
 
 Brace and Quarantine clear at Time passes. Patch, Lockout and Isolate are removed when used. Unrest persists *(defaults follow Spirit Island)*.
@@ -451,6 +552,12 @@ The people deck does not scale. Solo-specific tuning is deferred until multiplay
 | Loss: Decay pool, or a house with no influence | Matches Spirit Island. Crew loss is not a loss condition. |
 | No house perk for the chosen heir | It's a joint decision with built-in gains. Kept as a later option. |
 | No score, no scenarios, no Loyal/Restless crew | Out of scope for now (Loyal/Restless is rejected outright). |
+| Hand size = card plays + 2 | A fixed hand made extra plays useless; deriving it keeps both values meaningful. |
+| Vent = push, earns no Purpose | Moving a problem is not solving it. |
+| Power Point framework for houses and cards | Houses are assembled from priced parts so power levels can be compared and tuned; curve shape expresses identity. |
+| Cards average 3 guild icons | The shared deck doesn't supply each house's elements the way Spirit Island's unique powers do. |
+| Unrest affects both sides | Otherwise no player power would want to place it. |
+| Easy Spirit Island spirits as house templates | Each house keeps its template's identity and curve shape. |
 
 ---
 
@@ -501,10 +608,8 @@ A mute toggle is included.
 ## Vertical slice / first implementation target
 
 - **2 players, 2 ship boards** (8 sections each, hand-authored adjacency, default setup symbols).
-- **Placeholder house** used by both seats *(prototype only; no house has been designed)*:
-  - 2 influence to start,
-  - one track uncovering +1 credit gain, then +1 card play,
-  - growth options: "add 1 influence within range 1", "gain 2 credits", "draw +1 card this generation".
+- **Houses:** Galvan and Keel from `houses/` (the front-loaded and steep extremes).
+- **House calculator:** reads house data and reports total PP, curve shape and power summary.
 - The **full round loop**: Growth, Commit, Fast, Dusk, Day, Dawn vote, Slow, Time passes.
 - **Leader conveyor** with Offset/Direct toggle, nomination, vote with tie-break, and the Wall with 12 slots.
 - **Event deck** with 3/4/5 stages, seed/grow/collapse, Spirit Island resolution order, and the escalation symbol (ignored at level 0).
@@ -516,7 +621,7 @@ A mute toggle is included.
 - **All three loss checks and the base win check.** The Landfall card toggle comes second.
 - **Config file** exposing every default listed in this document.
 - **Undo** to the previous phase.
-- **Out of scope for the slice:** destinations beyond level 0, 3–4 player boards, real house designs, art and audio polish.
+- **Out of scope for the slice:** destinations beyond level 0, 3–4 player boards, Meridian and Vigil, art and audio polish. **Monte Carlo auto-play** to calibrate prices is the next target after the slice.
 
 ---
 
@@ -528,7 +633,7 @@ A mute toggle is included.
 - the Wall / event deck size (12) and stage split (3/4/5),
 - Decay pool (2 per player + 1) and the crisis flip refill (1 per player),
 - Purpose pool (4 per player), and Discoveries per tier (3),
-- hand size (4) and starting card plays (2),
+- starting credits (0),
 - whether the nominee counts as a play,
 - starting credits (1) and base credit gain (1),
 - board size (8 sections) and the setup symbol contents,
@@ -538,7 +643,7 @@ A mute toggle is included.
 **Remarkable access:** whether drawing a Remarkable by substitution is always available or gated by a house unlock was not decided.
 
 **Not yet designed:**
-- the houses (growth options, tracks, innates, special rules, number of houses),
+- house special-rule and innate values beyond first estimates (see `houses/README.md`),
 - all card content: people, events (including the Stage II twists), Discoveries,
 - the Ship in Crisis effect,
 - destination levels,
@@ -548,6 +653,8 @@ A mute toggle is included.
 **Small gaps:**
 - an Outer Hull–specific event card (Spirit Island's coastal card),
 - whether elements from the Steward should count for everyone (deferred until the power curve is tested).
+
+**Calibration:** every PP price, element cost and the reference pacing are first guesses, to be replaced by Monte Carlo results. Purpose at 1 PP is a specific suspect (Vigil reaches 5 Purpose per generation).
 
 **Parked ideas:**
 - the Wall as a further power source,
