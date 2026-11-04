@@ -47,6 +47,7 @@ export function targetFilter(st, s, type) {
 }
 
 // The Steward's house makes the table's shared decisions (Discoveries, cascades, Landfall, ties).
+// The starting Steward belongs to no house; while it reigns, the first seat decides.
 export const stewardHouse = (st) => st.slots?.day?.house ?? 0;
 
 // Passive Wall bonuses: Breakthroughs switch on when their leader retires to the Wall.
@@ -61,6 +62,19 @@ export function wallBonuses(G, st) {
     }
   }
   return out;
+}
+
+// Ongoing Legacies: each retired Elder's Legacy stays in force, centred on the sections matching
+// its paired event (global drawbacks like credits_tax apply everywhere: pass s = null).
+export const LEGACY_GLOBAL = new Set(["credits_tax", "purpose_tax"]);
+export function legacyMod(st, s, key) {
+  let n = 0;
+  for (const L of st.legacies || []) {
+    const v = L.effects[key];
+    if (!v) continue;
+    if (s === null ? LEGACY_GLOBAL.has(key) : !LEGACY_GLOBAL.has(key) && matches(s, L.types)) n += v;
+  }
+  return n;
 }
 
 // ---------------------------------------------------------------- logging
@@ -101,7 +115,7 @@ export function gainPurpose(G, st, n, source = "other") {
     if (!st.decks.discoveries.length) break;
     st.pendingDiscoveries.push(st.decks.discoveries.pop());
     st.discoveriesEarned += 1;
-    st.tier = Math.min(3, 1 + Math.floor(st.discoveriesEarned / G.cfg.discoveriesPerTier));
+    st.tier = Math.min(3, 1 + Math.floor(st.discoveriesEarned / (st.discoveriesPerTier ?? G.cfg.discoveriesPerTier)));
   }
 }
 export const losePurpose = (st, n) => { st.purpose = Math.max(0, st.purpose - n); };
@@ -112,6 +126,7 @@ export const losePurpose = (st, n) => { st.purpose = Math.max(0, st.purpose - n)
 export function damageThreat(G, st, s, n, source = "card") {
   if (n <= 0 || threatCount(s) === 0) return;
   if (s.unrest > 0) n += 1;
+  if (source !== "crew") n += legacyMod(st, s, "repair_plus");
   let total = n + s.dmg;
   let best = [0, 0, 0], bestScore = -1;
   for (let a = 0; a <= s.failure; a++) for (let b = 0; b <= s.fault; b++) {
@@ -125,8 +140,10 @@ export function damageThreat(G, st, s, n, source = "card") {
   s.failure -= a; s.fault -= b; s.glitch -= c;
   s.dmg = threatCount(s) ? total - (3 * a + 2 * b + c) : 0;
   st.stats.destroyed.glitch += c; st.stats.destroyed.fault += b; st.stats.destroyed.failure += a;
-  gainPurpose(G, st, b * G.cfg.purposeFault + a * G.cfg.purposeFailure, source);
+  gainPurpose(G, st, b * G.cfg.purposeFault + a * G.cfg.purposeFailure + (a + b) * legacyMod(st, s, "purpose_plus"), source);
 }
+// Crew in a section strike: each surviving Crew deals its damage (Legacies can make them fiercer).
+export const crewDamage = (G, st, s) => G.cfg.crewDamage + legacyMod(st, s, "crew_fierce");
 
 // ---------------------------------------------------------------- Decay
 export function placeDecay(G, st, s, depth = 0) {
@@ -230,7 +247,8 @@ export function applySectionEffects(G, st, h, s, effects) {
         if (st.houses[h]?.id === "tellers" && threatCount(s) > 0) { gainPurpose(G, st, 2 * n, "spin"); s.isolate += n; }
         else damageThreat(G, st, s, n, "card");
         break;
-      case "crew_strike": damageThreat(G, st, s, s.crew * G.cfg.crewDamage * n, "crew"); break;
+      case "crew_strike": damageThreat(G, st, s, s.crew * crewDamage(G, st, s) * n, "crew"); break;
+      case "damage_per_crew": damageThreat(G, st, s, s.crew * n, "card"); break;
       case "downgrade": downgrade(s, "any", n); break;
       case "downgrade_failure": downgrade(s, "failure", n); break;
       case "vent_glitch": vent(G, st, h, s, "glitch", n); break;

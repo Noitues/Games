@@ -65,7 +65,8 @@
       "3": 1
      }
     }
-   ]
+   ],
+   "discoveries_per_tier": 2
   },
   {
    "id": "cinder",
@@ -123,7 +124,8 @@
       "hull_collapse_plus"
      ]
     }
-   ]
+   ],
+   "discoveries_per_tier": 3
   },
   {
    "id": "longdark",
@@ -186,7 +188,8 @@
       "1": -1
      }
     }
-   ]
+   ],
+   "discoveries_per_tier": 4
   }
  ]
 }

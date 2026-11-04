@@ -84,12 +84,12 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 
 **Each round (one generation)**
 1. **Growth.** Each house draws a fresh hand from the Common deck (it may take Remarkable cards by draw substitution). It keeps any cloned card from last generation, picks one growth option, and gains credits.
-2. **Commit.** Each house chooses its plays, up to its card-play limit, and pays their credit costs. It marks **one** played card as its **nominee**. The nominee costs 0 credits and is that house's only fast card. All other played cards are slow.
+2. **Commit.** Each house chooses its plays, up to its card-play limit, and pays their credit costs. It marks **one** played card as its **nominee**. The nominee costs **3 credits less** (Commons, 0–3, are free; Remarkables pay the rest) and is that house's only fast card. All other played cards are slow.
 3. **Fast phase.** Nominees resolve.
 4. **Dusk.**
    1. Discovery cards earned before this Dusk resolve: for each, the Steward's house chooses a one-time effect or a Breakthrough. Discoveries earned *during* this resolution wait for the next Dusk.
    2. Wall bonuses that act at Dusk apply (Hull Brace, Purpose).
-   3. The **Elder's Legacy** resolves in the sections matching the Elder's paired event.
+   3. The **Elder's Legacy** takes hold: from now on it is an ongoing effect in the sections matching the Elder's paired event.
    4. The Elder's event **collapses**.
 5. **Day.** The Steward's **Reign** applies. The Steward's event **grows**.
 6. **Dawn.**
@@ -122,11 +122,17 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 
 **Leader cards are people cards.** Any people card can become a leader. Its **Reign** and **Legacy** text is used only while it is in the conveyor.
 - **Reign:** an ongoing effect while the card is in Day.
-- **Legacy:** a one-time effect at Dusk, resolved **in the sections matching the leader's paired event**. Legacies are mostly costly.
+- **Legacy:** an **ongoing, double-edged effect** that takes hold at Dusk and stays in force for the rest of the voyage (the leader is on the Wall), centred on **the sections matching the leader's paired event**. Each Legacy has one benefit and one or more drawbacks:
+  - benefits: Crew there deal +1 damage; Brace 1 there each Dusk; +1 damage from each power used there; +1 Purpose per Fault or Failure destroyed there;
+  - drawbacks: Collapse deals +1 damage there; Seed adds +1 Glitch there; Grow also adds a Glitch there; Crew there have 1 less health; every house gains 1 fewer credit each Growth; −1 Purpose each Dusk.
+  - **Commons** are about even (drawbacks worth 0–0.6 PP per generation more than the benefit). **Remarkables** are clearly negative (1–2 PP per generation net), with 2–3 drawbacks.
+  - Tempering a Legacy removes its costliest drawback.
+  - *(Playtest 1 follow-up: one-time Legacies left no mark; ongoing ones make the Wall a record of how past generations shaped the ship, and make electing a Remarkable a real trade-off.)*
+- **Which house put a leader forward** is recorded on its slot and on the Wall (shown as a house-coloured tag). **The starting Steward belongs to no house**; while it reigns, the first seat makes the shared decisions.
 
 **Nomination:**
 - Each house nominates exactly **one** of the cards it played this generation.
-- The nominee costs **0** credits and resolves in the fast phase.
+- The nominee costs **3 credits less** (Commons are free; a Remarkable pays its cost − 3) and resolves in the fast phase. *(Playtest 1 follow-up: with a free nominee, taking a Remarkable every generation and nominating it had no downside.)*
 - Houses may gain more fast candidates as a house growth unlock.
 
 **Succession vote:**
@@ -257,7 +263,7 @@ When the pool fills, earn 1 **Discovery** card face-down and reset the pool.
   - II: skip the Day grow in one section type.
   - III: downgrade every Fault in one section type to a Glitch.
 
-**Understanding tiers** *(default: 3 Discoveries per tier, as in Spirit Island)*:
+**Understanding tiers.** **The destination sets how many Discoveries raise Understanding a tier:** The Verdant Reach 2, Cinder 3, The Long Dark 4; 3 with no destination (as in Spirit Island).
 
 | Tier | Example name | Reached at | Base win condition |
 |---|---|---|---|
@@ -328,7 +334,7 @@ All houses draw from **one shared people deck** with two tiers. There is no deck
 | Tier | Credit cost | Notes |
 |---|---|---|
 | **Common** | 0–3 | Standard draws |
-| **Remarkable** | 0–8 | Take 1 Remarkable **instead of 2 Common draws**. Stronger effects, **harsher Legacy**. |
+| **Remarkable** | 2–8 | Take 1 Remarkable **instead of 2 Common draws** (max 1 per house per generation). Stronger effects, a **net-negative ongoing Legacy**, and only 3 credits off as a nominee. |
 
 **Card anatomy:**
 - name,
@@ -346,6 +352,7 @@ There is **no printed speed**: the nominee is fast and every other play is slow.
 
 **Effect verbs available to cards:**
 - **Threat:** repair (deal damage), downgrade, vent (push), prevent grow.
+- **Crew power:** "every Crew there deals its damage now" and "1 damage per Crew there". Crew fight back on their own at Collapse (Spirit Island order: the Collapse damages the section and the Crew, then surviving Crew strike), and these powers let players call on them at other times.
 - **Crew:** add, move, gather, shelter, rally.
 - **Decay:** restore (remove Decay).
 - **Tokens:** place any token.
@@ -523,7 +530,7 @@ Houses, cards and innates are built from priced parts so every house lands in th
 
 **Card thresholds (original rule, before calibration):** a card's element-threshold bonus is worth **1 PP per required element**. Commons require 2–3 elements, Remarkables 3–6. The threshold is drawn from the card's own guilds.
 
-**Reign and Legacy pricing:** effects that act per section are priced at **2 reference sections**, and per-house effects at **2 houses**. Legacy effects use the effect prices with the sign reversed; Add Decay costs 4 (because of cascade risk).
+**Reign and Legacy pricing:** effects that act per section are priced at **2 reference sections**, and per-house effects at **2 houses**. Legacies are priced per generation in force (benefits: Crew +1 damage 0.8, Brace each Dusk 0.6, +1 power damage 1.0, Purpose per kill 0.6; drawbacks: Collapse +1 1.0, Seed +1 0.8, Grow Glitch 0.8, Crew −1 health 0.6, credit tax 1.0, Purpose tax 1.0), and a Legacy's PP is its net drawback × 3 expected generations.
 
 **Discovery pricing:** one-time effects are worth **4 / 6 / 8 PP** at Understanding I / II / III. A Breakthrough is worth about **1 PP per generation**.
 
@@ -728,21 +735,21 @@ A mute toggle is included.
 
 ## Open questions and missing items
 
+**Settled after playtest 1:** Wall / event deck size 12 (3/4/5 stages); no starting credits; 8 sections per board (as in Spirit Island).
+
 **Defaults still standing (never decided, not yet tested):**
 - visual style (a functional prototype exists, no art direction yet),
-- the Wall / event deck size (12) and stage split (3/4/5),
-- the crisis flip refill (1 per player) and Discoveries per tier (3),
-- starting credits (0, plus each house's first credit-track value),
+- the crisis flip refill (1 per player). *Planned:* a variety of Ship in Crisis cards with different Decay-per-player refills and one-time or ongoing effects,
 - the nominee counts as one of the card plays,
-- board size (8 sections) and token durations,
-- the starting Steward belongs to house 0 (it decides shared choices in generation 1).
+- token durations,
+- the starting Steward belongs to no house (the first seat decides shared choices in generation 1).
 
 **Decisions for the designer**, with simulation data (`sim/experiments.js`: house bots, all 28 pairings × 25 games, same seeds; baseline 76% wins, house spread 5 points):
 
 | Option | Win rate | Effect |
 |---|---|---|
-| **Havens give +1 range** (also makes Meridian's Supply Lines work) | 89% (+13) | A big buff. Meridian +13. Fewer Decay losses (9% vs 21%). If adopted, the game needs to be made harder again (e.g. a smaller Decay pool). |
-| **Remarkables only with growth C** (instead of always) | 47% (−29) | Remarkables are a major power source. Gating them makes the game much harder and unbalances houses (spread 18 points). Keep them open, or rebalance everything if gated. |
+| ~~Havens give +1 range~~ | 89% (+13) | **Decided: no.** Havens stay as they are: only a source or target for power abilities. |
+| ~~Remarkables only with growth C~~ | 47% (−29) | **Decided: no.** Remarkables stay available every generation (max 1 per house); their downside is now the nominee discount cap and net-negative ongoing Legacies. |
 | **Crew requirement 4 per player** (no destination) | 76% (±0) | No effect: strong play keeps Crew alive anyway. Crew needs a different hook to matter (e.g. Crew as a resource). |
 | **Direct pairing** | 78% (+2) | Within noise. |
 | **Direct pairing + smart vote** (bots simulate each heir's Reign/Legacy on the known event) | 79% (+3) | Still small. Leaders' Reign and Legacy effects are too small for the event information to matter. Options: make leader effects bigger, or drop the Direct toggle. |
@@ -752,16 +759,16 @@ Still open without data: is "move Crew" different from "gather Crew"? (The engin
 **Not yet designed:**
 - Haven effects beyond targeting,
 - Wall bonuses beyond Breakthroughs (e.g. Legacies that leave a passive mark on the Wall),
-- names and flavor text for the 400 people cards (IDs only by request).
+- names and flavor text for the 400 people cards: **deferred** until the effect list is richer and the cards settle.
 
 **Measured state (after playtest 1; level 0, house bots, hull-module boards):** 74% / 73% / 69% / 75% wins at 1 / 2 / 3 / 4 players. All eight houses are within +7 / −5 points (seat-swapped, 2 players). Destination difficulty, layout difficulty and the Landfall variants were measured before playtest 1 and need re-measuring. Details are in `sim/RESULTS.md`.
 
 **Calibration:** PP prices remain first guesses except where measured (card thresholds, innate reach in `data/calibration.json`). Purpose at 1 PP is still a suspect.
 
 **Parked ideas:**
-- a perk for the house whose heir is chosen,
-- unique house cards,
+- ~~a perk for the house whose heir is chosen~~ (decided: no),
+- ~~unique house cards~~ (decided: no),
 - a dummy candidate deck for low player counts,
-- scenarios,
+- scenarios (not until the full game is polished),
 - "learning from failure" (Purpose from Decay) as a possible house trait,
 - a game name.

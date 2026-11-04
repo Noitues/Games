@@ -1,8 +1,8 @@
 // Browser prototype: renders the engine state and lets humans and bots share the table.
 // Human input uses phase replay: each phase runs from a snapshot; when a human decision is
 // needed the run stops, the player answers, and the phase re-runs with the recorded answers.
-import { createGame, makeContext, runPhase, PHASES, setupRamp, houseStats, houseData, card, eventTypes, needsTarget, discoveryTier } from "../engine/game.js";
-import { allSections, totalInfluence, wallBonuses, stewardHouse } from "../engine/rules.js";
+import { createGame, makeContext, runPhase, PHASES, setupRamp, houseStats, houseData, card, eventTypes, needsTarget, discoveryTier, nomineeCost } from "../engine/game.js";
+import { allSections, totalInfluence, wallBonuses, stewardHouse, legacyMod } from "../engine/rules.js";
 import { Bot, BOT_LEVELS } from "../ai/bots.js";
 import { predictedCollapse } from "../ai/eval.js";
 
@@ -145,7 +145,7 @@ function eventText(eid) {
 // What each phase does, shown in the status line and the idle prompt.
 const PHASE_GUIDE = {
   growth: "Growth: each house picks A/B/C, gains credits, and draws a fresh hand.",
-  commit: "Commit: choose your plays and pay for them. One card is your free, fast nominee (a candidate heir).",
+  commit: "Commit: choose your plays and pay for them. One card is your fast nominee (a candidate heir); it costs 3 credits less, so Commons are free.",
   fast: "Fast: nominees (and other fast plays) resolve before Dusk.",
   dusk: "Dusk: Discoveries earned before this Dusk resolve, Wall bonuses apply, then the Elder's Legacy, then the Elder's event Collapses.",
   day: "Day: the Steward's Reign applies, then the Steward's event Grows.",
@@ -167,7 +167,7 @@ function forecast() {
   for (const id of st.order) {
     const s = st.sections[id], threat = s.glitch + s.fault + s.failure, f = {};
     if (threat && matchesEv(s, collapse)) {
-      let d = predictedCollapse(s);
+      let d = predictedCollapse(s, st);
       if (collapse.twist?.rule === "faults_plus_one") d += s.fault;
       if (s.hull && st.dest?.rules?.hull_collapse_plus) d += 1;
       f.collapse = d; f.decay = d >= D.G.cfg.decayThreshold; f.crew = Math.min(s.crew, Math.floor(d / D.G.cfg.crewHealth));
@@ -192,13 +192,21 @@ function render() {
 
 // Purpose meter: progress to the next Discovery, Discoveries toward the next Understanding.
 function renderPurpose() {
-  const st = D.st, per = D.G.cfg.discoveriesPerTier;
+  const st = D.st, per = st.discoveriesPerTier ?? D.G.cfg.discoveriesPerTier;
   const pct = Math.round((100 * st.purpose) / st.purposeCap);
   const toTier = st.tier >= 3 ? "Understanding III (max)" : `${per * st.tier - st.discoveriesEarned} more for Understanding ${["II", "III"][st.tier - 1]}`;
   $("purpose").innerHTML = `<div class="meter"><div style="width:${pct}%"></div><span>Purpose ${st.purpose} / ${st.purposeCap}</span></div>
     <div class="muted">${st.purposeCap - st.purpose} more Purpose earns a Discovery · Discoveries earned ${st.discoveriesEarned} (${toTier})${st.pendingDiscoveries.length ? ` · <b>${st.pendingDiscoveries.length} waiting for Dusk</b>` : ""}<br>
     Purpose comes from destroying Faults (+${D.G.cfg.purposeFault}) and Failures (+${D.G.cfg.purposeFailure}), cards, Reigns and innates. It is shared by the whole ship.</div>`;
 }
+
+// Which house put a leader forward (the starting leader has none).
+function houseTag(h) {
+  return h == null ? `<span class="htag" style="--hc:var(--muted)">no house</span>` : `<span class="htag" style="--hc:${HOUSE_COLORS[h]}">${esc(D.st.houses[h]?.id ?? "")}</span>`;
+}
+const LEGACY_WORDS = { crew_fierce: "Crew +{n} damage", brace_dusk: "Brace {n} each Dusk", repair_plus: "+{n} damage from powers", purpose_plus: "+{n} Purpose per Fault/Failure destroyed",
+  collapse_plus: "Collapse +{n} damage", seed_plus: "Seed +{n} Glitch", grow_glitch: "Grow adds {n} Glitch", crew_frail: "Crew {n} less health", credits_tax: "every house -{n} credit each Growth", purpose_tax: "-{n} Purpose each Dusk" };
+const legacyText = (eff) => Object.entries(eff).map(([k, n]) => (LEGACY_WORDS[k] || k).replace("{n}", n)).join("; ");
 
 // Everything in effect right now that isn't on a card in someone's hand.
 function renderEffects() {
@@ -216,8 +224,12 @@ function renderEffects() {
     if (L?.bt) rows.push(`<span class="muted"><b>Waiting (${name} ${L.leader}):</b> ${esc(DATA.discoveryById[L.bt].breakthrough.text)} — switches on when this leader reaches the Wall</span>`);
   }
   const day = st.slots.day, dusk = st.slots.dusk;
-  if (day) rows.push(`<b>Steward ${day.leader}</b> (${esc(st.houses[day.house]?.id ?? "")}) decides shared choices · Reign this Day: ${esc(card(G, day.leader).reign.text)}`);
-  if (dusk) rows.push(`<b>Elder ${dusk.leader}</b> Legacy this Dusk${dusk.tempered ? " (tempered)" : ""}: <span class="loss">${esc(card(G, dusk.leader).legacy.text)}</span>`);
+  if (day) rows.push(`<b>Steward ${day.leader}</b> ${houseTag(day.house)} ${day.house == null ? "(no house: the first seat decides shared choices)" : "decides shared choices"} · Reign this Day: ${esc(card(G, day.leader).reign.text)}`);
+  if (dusk) rows.push(`<b>Elder ${dusk.leader}</b> ${houseTag(dusk.house)}: its Legacy takes hold this Dusk${dusk.tempered ? " (tempered)" : ""}: <span class="loss">${esc(card(G, dusk.leader).legacy.text)}</span>`);
+  for (const L of st.legacies || []) {
+    const where = L.types ? L.types.join(" + ") : "no event";
+    rows.push(`<b>Legacy of ${L.leader}</b> ${houseTag(L.house)} in ${esc(where)}: ${esc(legacyText(L.effects))}`);
+  }
   if (st.crisisFlipped) { const x = DATA.crisis.cards.find((c) => c.id === st.crisisId); rows.push(`<b class="loss">Ship in Crisis — ${esc(x.name)}:</b> ${esc(x.text)}`); }
   if (st.dest?.id) rows.push(`<b>${esc(st.dest.name)}:</b> ${st.dest.texts.map(esc).join(" · ")}`);
   if (G.cfg.landfallCard) rows.push(`<b>Landfall:</b> ${st.landfallMode === "shuffled" ? "shuffled into the Stage III events; you win if it retires to the Wall while the win condition holds" : "when the win condition is met, the Steward may begin Landfall; you win when it retires to the Wall"}${st.landfallPlaced ? " (under way)" : ""}`);
@@ -231,7 +243,7 @@ function renderEffects() {
 
 function renderConveyor() {
   const st = D.st;
-  const slot = (name, L) => `<div class="slot"><b>${name}</b>${L?.start ? ` <span class="muted">(starting leader)</span>` : ""}<br>${L ? `${eventText(L.event)}${L.tempered ? " · tempered" : ""}${L.bt ? ` · Breakthrough ${L.bt} (on the Wall later)` : ""}${cardHTML(L.leader)}` : "<i>empty</i>"}</div>`;
+  const slot = (name, L) => `<div class="slot"><b>${name}</b>${L ? " " + houseTag(L.house) : ""}${L?.start ? ` <span class="muted">(starting leader)</span>` : ""}<br>${L ? `${eventText(L.event)}${L.tempered ? " · tempered" : ""}${L.bt ? ` · Breakthrough ${L.bt} (on the Wall later)` : ""}${cardHTML(L.leader)}` : "<i>empty</i>"}</div>`;
   $("conveyor").innerHTML = slot("Dusk: Elder (Legacy, then Collapse)", st.slots.dusk) + slot("Day: Steward (Reign, then Grow)", st.slots.day) +
     slot("Dawn: Heir (Seed)", st.slots.dawn) + (st.upcomingEvent ? `<div class="slot">Next event: ${eventText(st.upcomingEvent)}</div>` : "");
   const dest = st.dest?.id ? `<div class="slot"><b>${esc(st.dest.name)}</b><br>${st.dest.texts.map(esc).join("<br>")}${st.escalationEvent ? `<br><i>Escalation card: ${st.escalationEvent}</i>` : ""}</div>` : "";
@@ -344,7 +356,9 @@ function sectionTip(id) {
   const fc = forecast().out[id];
   const fcText = fc ? `<br><b>Forecast:</b> ${fc.collapse !== undefined ? `Collapse ${fc.collapse} damage${fc.decay ? " → Decay" : ""}${fc.crew ? `, ${fc.crew} Crew lost` : ""}` : ""}${fc.grow ? `${fc.collapse !== undefined ? "; " : ""}${fc.grow === "patched" ? "Grow blocked by Patch" : "Grow +1 " + fc.grow}` : ""}` : "";
   const ev = ["dusk", "day", "dawn"].filter((k) => st.slots[k]?.event && G.data.eventById[st.slots[k].event].types.some((t) => t === "ALL" || t === s.type || (t === "Hull" && s.hull)));
-  return `<b>${id}</b> ${s.type}${s.hull ? " · Outer Hull (faces the void: Seeds always reach it)" : ""}<br>Glitch ${s.glitch} · Fault ${s.fault} · Failure ${s.failure} → collapse damage ${s.glitch + 2 * s.fault + 3 * s.failure}<br>Crew ${s.crew} · Decay ${s.decay}<br>Influence: ${inf}<br>Tokens: ${toks}<br>Adjacent: ${s.adj.join(", ")}${fcText}${ev.length ? `<br><b>Targeted by:</b> ${ev.map((k) => ({ dusk: "Dusk (Collapse)", day: "Day (Grow)", dawn: "Dawn" })[k]).join(", ")}` : ""}`;
+  const lm = Object.keys(LEGACY_WORDS).map((k) => [k, legacyMod(st, s, k)]).filter(([, n]) => n);
+  const lmText = lm.length ? `<br><b>Legacies here:</b> ${esc(legacyText(Object.fromEntries(lm)))}` : "";
+  return `<b>${id}</b> ${s.type}${s.hull ? " · Outer Hull (faces the void: Seeds always reach it)" : ""}<br>Glitch ${s.glitch} · Fault ${s.fault} · Failure ${s.failure} → collapse damage ${s.glitch + 2 * s.fault + 3 * s.failure}<br>Crew ${s.crew} · Decay ${s.decay}<br>Influence: ${inf}<br>Tokens: ${toks}<br>Adjacent: ${s.adj.join(", ")}${lmText}${fcText}${ev.length ? `<br><b>Targeted by:</b> ${ev.map((k) => ({ dusk: "Dusk (Collapse)", day: "Day (Grow)", dawn: "Dawn" })[k]).join(", ")}` : ""}`;
 }
 function showTip(e, html) {
   let t = $("tip"); if (!t) { t = document.createElement("div"); t.id = "tip"; document.body.appendChild(t); }
@@ -429,7 +443,7 @@ function renderWall() {
   let html = "";
   for (let i = 0; i < n; i++) {
     const w = st.wall[i];
-    html += w ? `<div class="ws full ${w.bt ? "bonus" : ""}" title="${w.bt ? esc(DATA.discoveryById[w.bt].breakthrough.text) : ""}">${i + 1}. ${w.leader}<br>${w.event ? DATA.eventById[w.event].types.join("+") : "—"}${w.bt ? `<br>★ ${esc(DATA.discoveryById[w.bt].breakthrough.text.replace("On the Wall: ", ""))}` : ""}</div>` : `<div class="ws">${i + 1}.</div>`;
+    html += w ? `<div class="ws full ${w.bt ? "bonus" : ""}" style="border-left:4px solid ${w.house == null ? "var(--line)" : HOUSE_COLORS[w.house]}" title="${w.bt ? esc(DATA.discoveryById[w.bt].breakthrough.text) : ""}">${i + 1}. ${w.leader}<br>${w.event ? DATA.eventById[w.event].types.join("+") : "—"}${w.bt ? `<br>★ ${esc(DATA.discoveryById[w.bt].breakthrough.text.replace("On the Wall: ", ""))}` : ""}</div>` : `<div class="ws">${i + 1}.</div>`;
   }
   $("wall").innerHTML = html;
 }
@@ -462,14 +476,14 @@ function commitPlanHTML(h, ctx) {
   const el = { ...hs.raw };
   for (const c of sel) for (const g of card(G, c).guilds) el[g] = (el[g] || 0) + 1;
   const met = (req) => Object.entries(req).every(([g, n]) => (el[g] || 0) >= n);
-  const fastCap = 1 + hs.fastPlays + (H.perkFast || 0) + (H.id === "galvan" ? el.Engineers || 0 : 0);
-  const cost = sel.reduce((n, c) => n + (c === commitSel.nominee ? 0 : card(G, c).cost), 0);
+  const fastCap = 1 + hs.fastPlays + (H.perkFast || 0) + (H.id === "galvan" ? Math.floor((el.Engineers || 0) / 2) : 0);
+  const cost = sel.reduce((n, c) => n + (c === commitSel.nominee ? nomineeCost(G, c) : card(G, c).cost), 0);
   const fastUsed = 1 + [...commitSel.fast].filter((c) => sel.includes(c) && c !== commitSel.nominee).length;
   const rows = sel.map((c) => {
     const k = card(G, c), nom = c === commitSel.nominee;
     const th = k.threshold ? (met(k.threshold.elements) ? `<span class="ok">✓ bonus: ${esc(k.threshold.text)}</span>` : `<span class="muted">✗ needs ${Object.entries(k.threshold.elements).map(([g, n]) => `${g} ${n}`).join(" + ")} (this card's own guilds count)</span>`) : "<span class=\"muted\">—</span>";
     const canFast = !nom && (commitSel.fast.has(c) || fastUsed < fastCap);
-    return `<tr><td><b>${c}</b></td><td>${nom ? "<s>" + k.cost + "</s> 0" : k.cost}¢</td>
+    return `<tr><td><b>${c}</b></td><td>${nom ? "<s>" + k.cost + "</s> " + nomineeCost(G, c) : k.cost}¢</td>
       <td><label><input type="radio" name="nomr" class="nomr" value="${c}" ${nom ? "checked" : ""}> nominee</label></td>
       <td><label><input type="checkbox" class="fx" value="${c}" ${nom ? "checked disabled" : commitSel.fast.has(c) ? "checked" : ""} ${canFast || nom ? "" : "disabled"}> fast</label></td><td>${th}</td></tr>`;
   }).join("");
@@ -522,7 +536,7 @@ const CAUSE = { decay: "the Decay pool ran out", influence: "a house lost all it
 function playtestRecord() {
   const st = D.st;
   return { when: new Date().toISOString(), cfg: D.cfgIn, seats, seed: D.cfgIn?.seed ?? null, layout: st.layout,
-    result: st.result, tier: st.tier, discoveries: st.discoveriesEarned, wall: st.wall.map((w) => ({ leader: w.leader, event: w.event, bt: w.bt })),
+    result: st.result, tier: st.tier, discoveries: st.discoveriesEarned, wall: st.wall.map((w) => ({ leader: w.leader, house: w.house == null ? null : st.houses[w.house]?.id, event: w.event, bt: w.bt })),
     stats: { decayPlaced: st.stats.decayPlaced, crewLost: st.stats.crewLost, destroyed: st.stats.destroyed, discoveryApplied: st.stats.discoveryApplied,
       discoveryBreakthrough: st.stats.discoveryBreakthrough, warded: st.stats.warded || 0, houses: st.stats.houses.map((x) => ({ id: x.id, played: x.played, creditsSpent: x.creditsSpent,
         innateTiers: x.innateTiers, leaders: x.chosenLeader, remarkables: x.remarkables })) },

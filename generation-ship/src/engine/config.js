@@ -5,7 +5,7 @@ export const DEFAULT_CONFIG = {
   eventPairing: "offset",        // "offset" | "direct"
   decayPerPlayer: 3, decayBase: -1,
   crisisRefillPerPlayer: 1,
-  purposePerPlayer: 8,
+  purposePerPlayer: 7,
   discoveriesPerTier: 3,
   stageCounts: { 1: 3, 2: 4, 3: 5 },
   startCredits: 0,
@@ -14,7 +14,8 @@ export const DEFAULT_CONFIG = {
   seedGlitches: 1,              // Glitches added per seeded section
   decayThreshold: 2,             // section damage that places Decay
   purposeFault: 1, purposeFailure: 2,
-  nomineeFree: true,             // nominee costs 0 credits
+  nomineeFree: true,             // the nominee is discounted (see nomineeDiscount)
+  nomineeDiscount: 3,           // credits off the nominee: Commons (0-3) are free, Remarkables pay the rest; null = always free
   remarkablePerGeneration: 1,    // max Remarkable draw substitutions
   destination: null,            // id from data/destinations.json
   destinationLevel: 0,

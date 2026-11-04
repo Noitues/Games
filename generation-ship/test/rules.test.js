@@ -4,7 +4,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { loadData } from "../sim/load.js";
 import { createGame, makeContext, seed, grow, collapse, resolveCard, runPhase, checkVictory,
-  activeDestination, legalTargets, houseStats } from "../src/engine/game.js";
+  activeDestination, legalTargets, houseStats, applyPlan } from "../src/engine/game.js";
 import { damageThreat, placeDecay, gainPurpose, vent, winConditionMet, applySectionEffects } from "../src/engine/rules.js";
 
 const DATA = loadData();
@@ -251,7 +251,8 @@ test("Keel's Load-Bearing: Brace 1 where Keel has influence, 2 in its Havens, at
 // ------------------------------------------------------------------ destinations
 test("destinations: levels are cumulative", () => {
   const d = activeDestination(DATA, { destination: "cinder", destinationLevel: 3 });
-  assert.equal(d.texts.length, 3);
+  assert.equal(d.texts.filter((t) => t.startsWith("L")).length, 3);
+  assert.equal(d.discoveriesPerTier, 3);
   assert.equal(d.requirement.noDecayIn, "Infrastructure");
   assert.equal(d.escalation.length, 1);
 });
@@ -264,7 +265,6 @@ test("destinations: an unmet Landfall requirement blocks the win", () => {
 });
 
 // ------------------------------------------------------------------ leaders and the clock
-import { applyPlan } from "../src/engine/game.js";
 test("commit: the nominee is free; other plays cost credits", () => {
   const { G, st } = fresh();
   const H = st.houses[0];
@@ -332,20 +332,39 @@ test("Breakthroughs switch on only when their leader reaches the Wall", () => {
   runPhase(G, st, "time");
   assert.equal(houseStats(G, st, 0).income, before + 1);
 });
-test("Legacy resolves in the Elder's event sections; tempering drops its costliest effect", () => {
+test("Legacy becomes ongoing in the Elder's event sections; tempering drops its costliest drawback", () => {
   const { G, st, S } = fresh();
-  const c = DATA.people.find((x) => x.legacy.effects.add_glitch && Object.keys(x.legacy.effects).length === 1);
+  const c = DATA.people.find((x) => x.legacy.effects.collapse_plus && x.tier === "Common");
   const ev = event(["Residential"]);
   st.slots.dusk = { leader: c.id, event: ev, house: 0 };
   st.pendingDiscoveries = [];
   runPhase(G, st, "dusk");
-  const res = Object.values(S).filter((s) => s.type === "Residential");
-  assert.ok(res.every((s) => s.glitch === c.legacy.effects.add_glitch));
+  st.result = null; // the empty test board counts as a win
+  const res = Object.values(S).find((s) => s.type === "Residential" && !s.hull);
+  const other = Object.values(S).find((s) => s.type !== "Residential" && !s.hull);
+  res.glitch = 1; other.glitch = 1;
+  collapse(G, st, event(["ALL"]));
+  // the Legacy's +1 Collapse damage applies only in Residential sections: 2 damage there places Decay
+  assert.equal(res.decay, 1);
+  assert.equal(other.decay, 0);
   const f = fresh();
   f.st.slots.dusk = { leader: c.id, event: ev, house: 0, tempered: true };
   f.st.pendingDiscoveries = [];
   runPhase(f.G, f.st, "dusk");
-  assert.ok(Object.values(f.S).every((s) => s.glitch === 0));
+  assert.equal(f.st.legacies[0].effects.collapse_plus, undefined);
+});
+test("the nominee is discounted by 3: Commons are free, Remarkables pay the rest", () => {
+  const { G, st } = fresh();
+  const r = DATA.people.find((x) => x.tier === "Remarkable" && x.cost === 6);
+  st.houses[0].hand = [r.id]; st.houses[0].credits = 3;
+  applyPlan(G, st, 0, { play: [r.id], nominee: r.id, fast: [] });
+  assert.equal(st.houses[0].credits, 0);
+});
+test("cards: damage per Crew deals 1 damage for each Crew in the section", () => {
+  const { G, st, S } = fresh();
+  S.A1.crew = 3; S.A1.glitch = 3;
+  applySectionEffects(G, st, 0, S.A1, { damage_per_crew: 1 });
+  assert.equal(S.A1.glitch, 0);
 });
 test("clock: drawing from an empty event deck loses the game", () => {
   const { G, st } = fresh();

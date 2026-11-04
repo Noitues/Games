@@ -108,6 +108,7 @@ h3 { margin: 10px 0 6px; font-size: 13px; text-transform: uppercase; letter-spac
 #purpose .muted { font-size: 11px; margin-top: 3px; }
 #effects .eff { font-size: 12px; border-left: 3px solid var(--line); padding: 2px 6px; margin-bottom: 4px; }
 #wall .ws.bonus { border-color: var(--accent); }
+.htag { display: inline-block; font-size: 10px; padding: 0 5px; border-radius: 8px; border: 1px solid var(--hc); color: var(--hc); font-weight: 600; vertical-align: middle; }
 
 /* Compact view: fits a 1080p (or smaller) screen */
 body.compact { font-size: 12.5px; }

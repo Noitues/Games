@@ -20,7 +20,7 @@ function personCard(c) {
     <div>${c.guilds.map((g) => `<span class="g">${g}</span>`).join("")}</div>
     <div class="tgt">${esc(t)}</div><div>${esc(c.text)}</div>${th}
     <div class="reign"><b>Reign</b> (Day): ${esc(c.reign.text)}</div>
-    <div class="legacy"><b>Legacy</b> (Dusk, in its event's sections): ${esc(c.legacy.text)}</div></div>`;
+    <div class="legacy"><b>Legacy</b> (ongoing from Dusk, in its event's sections): ${esc(c.legacy.text)}</div></div>`;
 }
 function eventCard(e) {
   return `<div class="card event"><div class="hd"><span>${e.id}</span><span class="stage">Stage ${e.stage === 4 ? "Landfall" : e.stage}</span></div>
@@ -91,7 +91,7 @@ function houseBoard(h) {
 const REF = `<div class="ref">
   <h3>Each generation</h3><ol>
   <li><b>Growth:</b> draw a fresh hand (plays + bonus; keep cloned cards), pick growth A/B/C, gain credits.</li>
-  <li><b>Commit:</b> choose plays (pay credits). Mark one as your <b>nominee</b>: free, fast, may become heir.</li>
+  <li><b>Commit:</b> choose plays (pay credits). Mark one as your <b>nominee</b>: 3 credits off (Commons free), fast, may become heir.</li>
   <li><b>Fast:</b> nominees resolve (plus house fast plays / fast innates), in the order each house chooses.</li>
   <li><b>Dusk:</b> resolve Discoveries earned before this Dusk (the Steward's house applies each in one section per board, or makes it a Breakthrough). Wall bonuses. The Elder's <b>Legacy</b>, then the Elder's event <b>Collapses</b>.</li>
   <li><b>Day:</b> the Steward's <b>Reign</b>, then its event <b>Grows</b>.</li>

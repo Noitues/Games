@@ -11,7 +11,7 @@ import {
 } from "../engine/rules.js";
 import {
   resolveCard, resolveInnate, houseStats, houseData, card, canUncover, applyDiscoveryEffects,
-  legalTargets, eventTypes, applyPlan, runPhase, applyReign, applyLegacy, discoveryTier,
+  legalTargets, eventTypes, applyPlan, runPhase, applyReign, applyLegacy, discoveryTier, nomineeCost,
 } from "../engine/game.js";
 import { evaluate, upcoming, predictedCollapse } from "./eval.js";
 
@@ -115,7 +115,7 @@ export class Bot {
     for (const cid of hand) {
       if (play.length >= ctx.plays) break;
       const c = card(G, cid).cost;
-      if (!nominee && G.cfg.nomineeFree) { nominee = cid; play.push(cid); continue; }
+      if (!nominee && nomineeCost(G, cid) <= credits) { credits -= nomineeCost(G, cid); nominee = cid; play.push(cid); continue; }
       if (c <= credits) { credits -= c; play.push(cid); }
     }
     return { play, nominee: nominee ?? play[0] ?? null, fast: play.slice(1) };
@@ -238,7 +238,7 @@ export class Bot {
     for (const set of subsets) {
       const cards = set.map((c) => card(G, c));
       const nomIdx = cards.reduce((bi, c, i) => (c.cost > cards[bi].cost || (c.cost === cards[bi].cost && vals[set[i]] > vals[set[bi]]) ? i : bi), 0);
-      const cost = cards.reduce((a, c) => a + c.cost, 0) - (G.cfg.nomineeFree ? cards[nomIdx].cost : 0);
+      const cost = cards.reduce((a, c) => a + c.cost, 0) - cards[nomIdx].cost + nomineeCost(G, set[nomIdx]);
       if (cost > H.credits) continue;
       const el = { ...hs.raw };
       for (const c of cards) for (const g of c.guilds) el[g] = (el[g] || 0) + 1;
@@ -310,7 +310,7 @@ export class Bot {
       if (direct) {
         // Legacy will land in these sections two generations from now; punish Decay/threat legacies where threat already is
         const hot = Object.values(st.sections).filter((x) => matches(x, direct) && threatCount(x) > 0).length;
-        const harsh = ["add_decay", "add_failure", "add_fault", "destroy_crew"].some((k) => c.legacy.effects[k]);
+        const harsh = ["collapse_plus", "seed_plus", "grow_glitch", "crew_frail"].some((k) => c.legacy.effects[k]);
         if (harsh) s -= hot * 0.5;
       }
       return s;

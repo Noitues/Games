@@ -43,7 +43,7 @@
    "clone": 1,
    "special": {
     "id": "overclock",
-    "text": "For each Engineer element you have, one additional played card (not your nominee) may resolve fast.",
+    "text": "For every 2 Engineer elements you have, one additional played card (not your nominee) may resolve fast.",
     "pp_per_generation": 1.75
    },
    "innate": {
@@ -747,7 +747,7 @@
      4
     ]
    },
-   "hand_bonus": 2,
+   "hand_bonus": 3,
    "clone": 1,
    "special": {
     "id": "rooted",

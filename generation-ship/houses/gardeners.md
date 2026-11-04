@@ -15,7 +15,7 @@ The first value is the starting value. ★ marks a special slot.
 | Credits per generation | 1 → ★ +Scholars → 2 → ★ +Farmers → 3 → 5 |
 | Card plays | 2 → ★ +1 card drawn → ★ +1 card drawn → 3 → ★ +1 clone slot → 4 |
 
-Hand = plays + 2. Clone 1.
+Hand = plays + 3. Clone 1.
 
 ## Special rule
 Once per generation, when Decay would be placed in a section with Gardener influence, remove 1 Gardener influence there instead.

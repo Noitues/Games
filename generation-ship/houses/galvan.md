@@ -18,7 +18,7 @@ The first value is the starting value. ★ marks a special slot.
 Hand = plays + 1. Clone 1.
 
 ## Special rule
-For each Engineer element you have, one additional played card (not your nominee) may resolve fast.
+For every 2 Engineer elements you have, one additional played card (not your nominee) may resolve fast.
 
 ## Innate: Arc Repair (fast)
 Tiers are cumulative; the effect column is the full effect at that tier. *Reached* is how often a generation reaches at least that tier (house bots, calibration run).

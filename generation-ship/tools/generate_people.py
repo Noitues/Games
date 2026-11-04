@@ -33,6 +33,8 @@ VERBS = {
     "move_crew":       (0.5, 3, "move {n} Crew", "C"),
     "add_crew":        (3.0, 2, "add {n} Crew", "C"),
     "restore_decay":   (3.0, 2, "restore {n} Decay", "C"),
+    "crew_strike":     (2.0, 1, "every Crew there deals its damage", "C"),
+    "damage_per_crew": (1.5, 1, "1 damage per Crew there", "C"),
     "add_influence":   (3.5, 1, "add {n} influence", "C"),   # the costliest effect: influence snowballs reach and Havens (playtest 1)
     "move_influence":  (1.0, 2, "move {n} influence", "C"),
     "purpose":         (1.0, 4, "+{n} Purpose", "C"),
@@ -60,11 +62,12 @@ GLOBAL_VERBS = {"purpose", "credits", "foresee", "temper_legacy"}  # no section 
 HOUSE_VERBS = ["credits", "add_influence", "move_influence", "purpose"]
 
 POOLS = {  # guild -> verb weights (identity tendencies)
-    "Engineers":   {"damage": 5, "downgrade": 3, "patch": 1, "isolate_fault": 1},
+    "Engineers":   {"damage": 5, "downgrade": 3, "patch": 1, "isolate_fault": 1, "damage_per_crew": 1},
     "Laborers":    {"damage": 3, "vent_glitch": 2, "vent_fault": 2, "brace": 2,
-                    "restore_decay": 1, "gather_crew": 1},
-    "Medics":      {"brace": 4, "gather_crew": 3, "move_crew": 1, "add_crew": 1, "isolate_fault": 1},
-    "Farmers":     {"patch": 3, "gather_crew": 2, "add_crew": 2, "restore_decay": 1},
+                    "restore_decay": 1, "gather_crew": 1, "crew_strike": 2},
+    "Medics":      {"brace": 4, "gather_crew": 3, "move_crew": 1, "add_crew": 1, "isolate_fault": 1,
+                    "damage_per_crew": 1},
+    "Farmers":     {"patch": 3, "gather_crew": 2, "add_crew": 2, "restore_decay": 1, "crew_strike": 1},
     "Bureaucrats": {"quarantine": 2, "move_influence": 2, "credits": 2, "vent_fault": 2,
                     "isolate_fault": 1},
     "Navigators":  {"vent_glitch": 2, "vent_fault": 1, "vent_failure": 1, "lockout": 3,
@@ -166,6 +169,48 @@ def pp_of(effects, mult):
     return sum(eff_price(v, mult) * n for v, n in effects.items())
 
 
+# Legacies are ONGOING (playtest 1): from the Dusk the Elder's Legacy resolves, it stays in force for
+# the rest of the voyage (the leader is on the Wall), centred on the sections matching the leader's
+# paired event. Each Legacy is double-edged: one benefit and one or more drawbacks. Commons are about
+# even (slightly negative); Remarkables are clearly more negative than positive.
+# Prices are PP per generation at LEGACY_SECTIONS reference sections.
+LEGACY_POS = {"crew_fierce": (0.8, "Crew there deal +{n} damage"),
+              "brace_dusk": (0.6, "Brace {n} there each Dusk"),
+              "repair_plus": (1.0, "+{n} damage from each power used there"),
+              "purpose_plus": (0.6, "+{n} Purpose for each Fault or Failure destroyed there")}
+LEGACY_NEG = {"collapse_plus": (1.0, "Collapse deals +{n} damage there"),
+              "seed_plus": (0.8, "Seed adds +{n} Glitch there"),
+              "grow_glitch": (0.8, "Grow also adds {n} Glitch there"),
+              "crew_frail": (0.6, "Crew there have {n} less health (min 1)"),
+              "credits_tax": (1.0, "each house gains {n} fewer credit(s) each Growth"),
+              "purpose_tax": (1.0, "-{n} Purpose each Dusk")}
+LEGACY_GLOBAL = {"credits_tax", "purpose_tax"}
+LEGACY_NET = {"C": (0.0, 0.6), "R": (1.0, 2.0)}   # drawback minus benefit, PP per generation
+LEGACY_GENS = 3                                     # generations a Legacy is expected to stay in force
+
+
+def make_legacy(rng, tier):
+    lo, hi = LEGACY_NET[tier]
+    for _ in range(500):
+        pos = rng.choice(list(LEGACY_POS))
+        negs = Counter()
+        for _ in range(1 if tier == "C" else rng.choice([2, 2, 3])):
+            negs[rng.choice(list(LEGACY_NEG))] += 1
+        if tier == "C" and max(negs.values()) > 1:
+            continue
+        gain = LEGACY_POS[pos][0]
+        cost = sum(LEGACY_NEG[v][0] * n for v, n in negs.items())
+        net = cost - gain
+        if lo <= net <= hi:
+            eff = {pos: 1, **dict(negs)}
+            local = [LEGACY_POS[pos][1].format(n=1)] + [LEGACY_NEG[v][1].format(n=n) for v, n in negs.items() if v not in LEGACY_GLOBAL]
+            glob = [LEGACY_NEG[v][1].format(n=n) for v, n in negs.items() if v in LEGACY_GLOBAL]
+            text = "Ongoing in sections matching its event: " + "; ".join(local) + (("; and " + "; ".join(glob)) if glob else "")
+            return {"effects": eff, "ongoing": True, "net_per_gen": round(net, 2),
+                    "pp": round(net * LEGACY_GENS, 2), "text": text}
+    raise RuntimeError("legacy fit failed")
+
+
 def make_reign_legacy(rng, tier, primary):
     lo, hi, margin = (2, 4, 1.0) if tier == "C" else (4, 7, 2.0)
     for _ in range(500):
@@ -179,20 +224,9 @@ def make_reign_legacy(rng, tier, primary):
                 reign[v] += 1; left -= unit
             if left < 0.5: break
         if abs(left) > 0.01: continue
-        l_target = r_target - margin
-        legacy, left = Counter(), l_target
-        for _ in range(20):
-            v = rng.choice(list(LEGACY_VERBS))
-            unit = LEGACY_VERBS[v] * (LEGACY_SECTIONS if v in PER_SECTION else
-                                     PLAYERS_REF if v == "lose_credits_each_house" else 1)
-            if unit <= left + 0.01:
-                legacy[v] += 1; left -= unit
-            if left < 0.5: break
-        if abs(left) > 0.01: continue
+        legacy = make_legacy(rng, tier)
         return ({"effects": dict(reign), "pp": r_target,
-                 "text": "; ".join(REIGN_TEXT[v].format(n=n) for v, n in reign.items())},
-                {"effects": dict(legacy), "pp": l_target, "per_section": LEGACY_SECTIONS,
-                 "text": "; ".join(LEGACY_TEXT[v].format(n=n) for v, n in legacy.items())})
+                 "text": "; ".join(REIGN_TEXT[v].format(n=n) for v, n in reign.items())}, legacy)
     raise RuntimeError("reign/legacy fit failed")
 
 

@@ -1,5 +1,5 @@
 // Win rate at each destination level (adversary-style difficulty curve).
-//   node sim/destinations.js --games 30 [--bot house] [--levels 0,1,2,3,4,5,6] [--dest verdant,cinder,longdark]
+//   node sim/destinations.js --games 30 [--bot house] [--levels 0,1,2,3,4,5,6] [--dest verdant,cinder,longdark] [--landfall [shuffled]]
 import { Worker } from "node:worker_threads";
 import { fileURLToPath } from "node:url";
 
@@ -8,14 +8,15 @@ const arg = (k, d) => { const i = argv.indexOf(`--${k}`); return i >= 0 ? argv[i
 const games = Number(arg("games", 30)), bot = arg("bot", "house");
 const levels = arg("levels", "0,1,2,3,4,5,6").split(",").map(Number);
 const dests = arg("dest", "verdant,cinder,longdark").split(",");
-const landfall = argv.includes("--landfall");
+// --landfall (Begin Landfall when ready) or --landfall shuffled (shuffled into Stage III)
+const landfall = argv.includes("--landfall") ? (arg("landfall", "") === "shuffled" ? "shuffled" : true) : false;
 const pairings = [["galvan", "keel"], ["meridian", "vigil"], ["foremen", "tellers"], ["gardeners", "voidwardens"]];
 const worker = fileURLToPath(new URL("./parallel.js", import.meta.url));
 const runJob = (job) => new Promise((res, rej) => {
   const w = new Worker(worker, { workerData: { job } }); w.on("message", (m) => res(m.agg)); w.on("error", rej);
 });
 
-console.log(`destination | level | win | win gen | main loss${landfall ? " | Landfall card on" : ""}`);
+console.log(`destination | level | win | win gen | main loss${landfall ? ` | Landfall: ${landfall === true ? "begin when ready" : landfall}` : ""}`);
 const results = {};
 for (const d of dests) for (const L of levels) {
   if (L === 0 && d !== dests[0]) { results[`${d}:0`] = results[`${dests[0]}:0`]; continue; }

@@ -5,7 +5,7 @@ import {
   allSections, matches, threatCount, inRange, influenceSections, targetFilter, distances,
   damageThreat, placeDecay, gainPurpose, losePurpose, gatherCrew, applySectionEffects,
   applyHouseEffects, drawFrom, checkWin, lose, log, downgrade, restoreDecay, totalInfluence,
-  winConditionMet, stewardHouse, wallBonuses,
+  winConditionMet, stewardHouse, wallBonuses, legacyMod, crewDamage,
 } from "./rules.js";
 
 const BOARD_IDS = ["A", "B", "C", "D"];
@@ -20,7 +20,7 @@ export function createGame(data, cfgIn = {}, seed = 1) {
     decks: {}, slots: { dawn: null, day: null, dusk: null }, wall: [],
     decayPool: cfg.decayPerPlayer * P + cfg.decayBase, crisisFlipped: false, crisisId: null,
     purpose: 0, purposeCap: cfg.purposePerPlayer * P, discoveriesEarned: 0, tier: 1,
-    pendingDiscoveries: [], breakthroughs: [],
+    pendingDiscoveries: [], breakthroughs: [], legacies: [],
     stats: { destroyed: { glitch: 0, fault: 0, failure: 0 }, decayPlaced: 0, crewLost: 0,
              purposeBy: {}, foresee: 0, discoveryApplied: 0, discoveryBreakthrough: 0,
              legacyTempered: 0, houses: [] },
@@ -75,6 +75,8 @@ export function createGame(data, cfgIn = {}, seed = 1) {
   const dest = activeDestination(data, cfg);
   st.dest = dest;
   st.landfallMode = cfg.landfallCard === "shuffled" ? "shuffled" : cfg.landfallCard ? "choice" : null;
+  // The destination sets how many Discoveries raise Understanding a tier.
+  st.discoveriesPerTier = dest.discoveriesPerTier ?? cfg.discoveriesPerTier;
   const counts = { ...cfg.stageCounts };
   for (const [k, v] of Object.entries(dest.deck)) counts[k] = Math.max(0, (counts[k] || 0) + v);
   let deck = [];
@@ -105,6 +107,7 @@ export function activeDestination(data, cfg) {
   const d = (data.destinations?.destinations || []).find((x) => x.id === cfg.destination);
   if (!d || !cfg.destinationLevel) return out;
   out.id = d.id; out.name = d.name;
+  if (d.discoveries_per_tier) { out.discoveriesPerTier = d.discoveries_per_tier; out.texts.push(`Understanding rises every ${d.discoveries_per_tier} Discoveries.`); }
   for (const lv of d.levels.filter((l) => l.level <= cfg.destinationLevel)) {
     out.texts.push(`L${lv.level}: ${lv.text}`);
     for (const r of lv.rules || []) out.rules[r] = (out.rules[r] || 0) + 1;
@@ -307,7 +310,7 @@ export function resolveInnate(G, st, h) {
 function seedSection(G, st, s) {
   if (s.quarantine) return;
   if (s.lockout > 0) { s.lockout -= 1; return; }
-  s.glitch += G.cfg.seedGlitches + (s.hull && st.dest?.rules.hull_seed_extra ? 1 : 0);
+  s.glitch += G.cfg.seedGlitches + (s.hull && st.dest?.rules.hull_seed_extra ? 1 : 0) + legacyMod(st, s, "seed_plus");
 }
 export function seed(G, st, eid) {
   const ev = G.data.eventById[eid];
@@ -325,6 +328,7 @@ export function grow(G, st, eid) {
   for (const s of allSections(st)) {
     if (!matches(s, ev.types) || threatCount(s) === 0) continue;
     if (s.patch > 0) { s.patch -= 1; continue; }
+    s.glitch += legacyMod(st, s, "grow_glitch");
     if (s.fault >= 2) s.failure += 1;
     else {
       s.fault += 1;
@@ -346,12 +350,13 @@ export function collapse(G, st, eid) {
     if (st.result) return;
     if (!matches(s, ev.types) || threatCount(s) === 0) continue;
     let dmg = s.glitch + s.fault * (2 + surge) + s.failure * 3 + (s.unrest > 0 ? 1 : 0)
-      + (s.hull && st.dest?.rules.hull_collapse_plus ? 1 : 0);
+      + (s.hull && st.dest?.rules.hull_collapse_plus ? 1 : 0) + legacyMod(st, s, "collapse_plus");
     const neg = Math.min(dmg, s.isolate); dmg -= neg; s.isolate = 0;
     const br = Math.min(dmg, s.brace); dmg -= br; s.brace -= br;
     log(G, st, `Collapse in ${s.id}: ${dmg} damage${dmg >= G.cfg.decayThreshold ? ", Decay" : ""}`);
     if (dmg >= G.cfg.decayThreshold) placeDecay(G, st, s);
-    let killed = Math.min(s.crew, Math.floor(dmg / G.cfg.crewHealth));
+    const health = Math.max(1, G.cfg.crewHealth - legacyMod(st, s, "crew_frail"));
+    let killed = Math.min(s.crew, Math.floor(dmg / health));
     if (ev.twist?.rule === "extra_crew_loss") killed = Math.min(s.crew, killed + 1);
     if (st.dest?.rules.agri_collapse_crew && s.type === "Agricultural") killed = Math.min(s.crew, killed + st.dest.rules.agri_collapse_crew);
     s.crew -= killed; st.stats.crewLost += killed;
@@ -359,7 +364,7 @@ export function collapse(G, st, eid) {
       // Foremen's Crew Captains: Crew in sections with Foremen influence deal +1 damage each.
       const fi = st.houses.findIndex((H) => H.id === "foremen");
       const bonus = fi >= 0 && (s.influence[fi] || 0) > 0 ? 1 : 0;
-      damageThreat(G, st, s, s.crew * (G.cfg.crewDamage + bonus), "crew");
+      damageThreat(G, st, s, s.crew * (crewDamage(G, st, s) + bonus), "crew");
     }
   }
 }
@@ -381,35 +386,20 @@ export function applyReign(G, st) {
     }
   }
 }
+// The Elder's Legacy becomes an ongoing effect at Dusk and stays in force for the rest of the voyage,
+// centred on the sections matching its paired event. Tempering drops its costliest drawback.
+const LEGACY_COST = { collapse_plus: 1.0, seed_plus: 0.8, grow_glitch: 0.8, crew_frail: 0.6, credits_tax: 1.0, purpose_tax: 1.0 };
 export function applyLegacy(G, st) {
   const L = st.slots.dusk; if (!L) return;
-  const c = card(G, L.leader), types = eventTypes(G, L.event);
+  const c = card(G, L.leader);
   const eff = { ...c.legacy.effects };
   if (L.tempered) {
-    // ignore the costliest effect
-    const PRICE = { add_glitch: 1, add_fault: 2, add_failure: 3, destroy_crew: 3, add_decay: 4,
-      lose_influence: 2, add_unrest: 1.5, lose_purpose: 1, lose_credits_each_house: 1 };
-    const worst = Object.keys(eff).sort((a, b) => PRICE[b] * eff[b] - PRICE[a] * eff[a])[0];
+    const worst = Object.keys(eff).filter((k) => LEGACY_COST[k]).sort((a, b) => LEGACY_COST[b] * eff[b] - LEGACY_COST[a] * eff[a])[0];
     if (worst) delete eff[worst];
     st.stats.legacyTempered += 1;
   }
-  for (const [v, n] of Object.entries(eff)) {
-    if (st.result) return;
-    if (v === "lose_purpose") losePurpose(st, n);
-    else if (v === "lose_credits_each_house") st.houses.forEach((H) => (H.credits = Math.max(0, H.credits - n)));
-    else for (const s of allSections(st)) {
-      if (!matches(s, types) || st.result) continue;
-      if (v === "add_glitch") s.glitch += n;
-      else if (v === "add_fault") s.fault += n;
-      else if (v === "add_failure") s.failure += n;
-      else if (v === "destroy_crew") { const k = Math.min(n, s.crew); s.crew -= k; st.stats.crewLost += k; }
-      else if (v === "add_decay") for (let i = 0; i < n; i++) placeDecay(G, st, s);
-      else if (v === "lose_influence") {
-        for (const hh of Object.keys(s.influence)) s.influence[hh] = Math.max(0, s.influence[hh] - n);
-        st.houses.forEach((_, i) => { if (totalInfluence(st, i) <= 0) lose(st, "influence"); });
-      } else if (v === "add_unrest") s.unrest += n;
-    }
-  }
+  st.legacies.push({ leader: L.leader, event: L.event, types: eventTypes(G, L.event), effects: eff, house: L.house });
+  log(G, st, `Legacy of ${L.leader} takes hold${L.event ? ` in ${G.data.eventById[L.event].types.join("+")} sections` : ""}: ${c.legacy.text}`);
 }
 
 // ============================================================== discoveries
@@ -511,6 +501,8 @@ function growthPhase(G, st) {
     }
     const hs = houseStats(G, st, h);
     H.credits += hs.income;
+    const tax = legacyMod(st, null, "credits_tax");
+    if (tax) H.credits = Math.max(0, H.credits - tax);
     // draw
     let n = hs.hand + H.extraDraw;
     const canRem = G.cfg.remarkableAccess !== "growthC" || choice === "C";
@@ -527,12 +519,18 @@ function growthPhase(G, st) {
 export const nearHull = (st, s) => s.hull || s.adj.some((a) => st.sections[a].hull);
 
 function costOf(G, cid) { return card(G, cid).cost; }
+// The nominee is discounted by up to cfg.nomineeDiscount credits (Commons are free; Remarkables pay the rest).
+export function nomineeCost(G, cid) {
+  const c = card(G, cid).cost;
+  if (!G.cfg.nomineeFree) return c;
+  return G.cfg.nomineeDiscount == null ? 0 : Math.max(0, c - G.cfg.nomineeDiscount);
+}
 
 // Apply a commit plan {play, nominee, fast} for house h (also used by bot rollouts).
 export function applyPlan(G, st, h, plan) {
   const H = st.houses[h], hs = houseStats(G, st, h), HS = st.stats.houses[h];
   let spend = 0;
-  for (const cid of plan.play) if (!(G.cfg.nomineeFree && cid === plan.nominee)) spend += costOf(G, cid);
+  for (const cid of plan.play) spend += cid === plan.nominee ? nomineeCost(G, cid) : costOf(G, cid);
   if (plan.play.length > hs.plays || spend > H.credits) throw new Error(`illegal commit by ${H.id}`);
   H.credits -= spend; HS.creditsSpent += spend; HS.played += plan.play.length;
   if (G.cfg.trackCards) for (const cid of plan.play) { cardStat(st, cid).played += 1; if (cid === plan.nominee) cardStat(st, cid).nominated += 1; }
@@ -541,7 +539,7 @@ export function applyPlan(G, st, h, plan) {
   H.elements = { ...hs.raw };
   for (const cid of plan.play) for (const g of card(G, cid).guilds) H.elements[g] = (H.elements[g] || 0) + 1;
   let fastCount = 1 + hs.fastPlays + H.perkFast;
-  if (H.id === "galvan") fastCount += H.elements.Engineers || 0;
+  if (H.id === "galvan") fastCount += Math.floor((H.elements.Engineers || 0) / 2);
   const others = plan.play.filter((c) => c !== plan.nominee);
   const extra = (plan.fast || []).filter((c) => others.includes(c)).slice(0, fastCount - 1);
   HS.overclockFast += extra.length;
@@ -575,6 +573,9 @@ function duskPhase(G, st) {
   const wb = wallBonuses(G, st);
   if (wb.hull_brace) for (const s of allSections(st)) if (s.hull) s.brace += wb.hull_brace;
   if (wb.purpose_per_gen) gainPurpose(G, st, wb.purpose_per_gen, "wall");
+  const ptax = legacyMod(st, null, "purpose_tax");
+  if (ptax) losePurpose(st, ptax);
+  for (const s of allSections(st)) { const b = legacyMod(st, s, "brace_dusk"); if (b) s.brace += b; }
   // Keel: Load-Bearing
   st.houses.forEach((H, h) => {
     if (H.id === "keel") for (const s of allSections(st)) {
@@ -670,7 +671,7 @@ export function setupRamp(G, st) {
   st.phase = "setup";
   const eid = drawEvent(st);
   const leader = drawFrom(st, "common", "commonDiscard");
-  st.slots.dawn = { leader, event: eid, house: 0, bt: null, tempered: false, start: true };
+  st.slots.dawn = { leader, event: eid, house: null, bt: null, tempered: false, start: true };
   seed(G, st, eid);
   log(G, st, `Voyage begins: starting Steward ${leader} carries event ${eid} (${G.data.eventById[eid].types.join("+")}), which has Seeded; it Grows this Day and Collapses next Dusk`);
   st.slots.day = st.slots.dawn; st.slots.dawn = null;
