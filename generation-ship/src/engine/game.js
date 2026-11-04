@@ -74,6 +74,8 @@ export function createGame(data, cfgIn = {}, seed = 1) {
   }
   st.decks.events = deck; // pop() draws from the end: Stage I first
   applyDestinationSetup(st, dest, boards);
+  if (cfg.crewRequirementPerPlayer)
+    dest.requirement.minCrewPerPlayer = Math.max(dest.requirement.minCrewPerPlayer || 0, cfg.crewRequirementPerPlayer);
   st.decks.discoveries = shuffle(st, data.discoveries.map((d) => d.id));
   st.crisisId = pick(st, data.crisis.cards).id;
   st.wallSize = deck.length + 1;
@@ -176,6 +178,15 @@ export function legalTargets(G, st, h, tgt) {
   if (tgt.kind === "house") return st.houses.map((_, i) => i).filter((i) => i !== h || st.houses.length === 1);
   if (tgt.range === null || tgt.range === undefined) return ["global"];
   let ids = inRange(st, h, tgt.range);
+  if (G.cfg.havenRangeBonus) {
+    const meridian = st.houses[h].id === "meridian";
+    const havens = st.order.filter((id) => (st.sections[id].influence[h] || 0) >= 2 ||
+      (meridian && st.sections[id].type === "Agricultural" && (st.sections[id].influence[h] || 0) > 0));
+    if (havens.length) {
+      const d = distances(st, havens);
+      for (const id of st.order) if (d[id] !== undefined && d[id] <= tgt.range + G.cfg.havenRangeBonus && !ids.includes(id)) ids.push(id);
+    }
+  }
   if (st.houses[h].id === "vigil" && st.houses[h].credits >= 1) {
     const crewSecs = st.order.filter((id) => st.sections[id].crew > 0);
     const d = distances(st, crewSecs);
@@ -301,7 +312,7 @@ export function collapse(G, st, eid) {
 }
 
 // ============================================================== leaders
-function applyReign(G, st) {
+export function applyReign(G, st) {
   const L = st.slots.day; if (!L) return;
   const c = card(G, L.leader), types = eventTypes(G, L.event);
   for (const [v, n] of Object.entries(c.reign.effects)) {
@@ -317,7 +328,7 @@ function applyReign(G, st) {
     }
   }
 }
-function applyLegacy(G, st) {
+export function applyLegacy(G, st) {
   const L = st.slots.dusk; if (!L) return;
   const c = card(G, L.leader), types = eventTypes(G, L.event);
   const eff = { ...c.legacy.effects };
@@ -443,8 +454,9 @@ function growthPhase(G, st) {
     H.credits += hs.income;
     // draw
     let n = hs.hand + H.extraDraw;
-    const rem = Math.min(G.cfg.remarkablePerGeneration,
-      G.choose(st, h, "remarkables", [0, 1], { handSize: n }));
+    const canRem = G.cfg.remarkableAccess !== "growthC" || choice === "C";
+    const rem = canRem ? Math.min(G.cfg.remarkablePerGeneration,
+      G.choose(st, h, "remarkables", [0, 1], { handSize: n })) : 0;
     H.hand = [...H.cloned]; H.cloned = [];
     for (let i = 0; i < rem && n >= 2; i++) { H.hand.push(drawFrom(st, "remarkable", "remarkableDiscard")); n -= 2; HS.remarkables += 1; }
     for (let i = 0; i < n; i++) H.hand.push(drawFrom(st, "common", "commonDiscard"));

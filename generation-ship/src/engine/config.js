@@ -19,5 +19,10 @@ export const DEFAULT_CONFIG = {
   destination: null,            // id from data/destinations.json
   destinationLevel: 0,
   landfallCard: false,          // Landfall card win variant
+  // experiment options (defaults keep the current rules)
+  havenRangeBonus: 0,           // +N range when targeting from a Haven (2+ influence; Meridian: any Agricultural influence)
+  remarkableAccess: "always",   // "always" | "growthC" (only when taking growth option C)
+  crewRequirementPerPlayer: 0,  // base Landfall requirement: Crew per player
+  smartVote: false,             // bots simulate heirs' Reign/Legacy on a known (Direct) event
   maxGenerations: 40,            // safety stop
 };

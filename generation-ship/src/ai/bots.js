@@ -11,7 +11,7 @@ import {
 } from "../engine/rules.js";
 import {
   resolveCard, resolveInnate, houseStats, houseData, card, canUncover, applyDiscoveryEffects,
-  legalTargets, eventTypes, applyPlan, runPhase,
+  legalTargets, eventTypes, applyPlan, runPhase, applyReign, applyLegacy,
 } from "../engine/game.js";
 import { evaluate, upcoming, predictedCollapse } from "./eval.js";
 
@@ -292,6 +292,7 @@ export class Bot {
   }
 
   vote(G, st, h, options) {
+    if (G.cfg.smartVote && st.upcomingEvent) return this.smartVote(G, st, options);
     const direct = st.upcomingEvent ? eventTypes(G, st.upcomingEvent) : null;
     const score = (cid) => {
       const c = card(G, cid);
@@ -303,6 +304,18 @@ export class Bot {
         if (harsh) s -= hot * 0.5;
       }
       return s;
+    };
+    return maxBy(options, score);
+  }
+
+  // Direct pairing: simulate each heir's Reign and Legacy on the event they will carry.
+  smartVote(G, st, options) {
+    const HG = heuristicContext(G);
+    const base = evaluate(G, st);
+    const score = (cid) => {
+      const r = clone(st); r.slots.day = { leader: cid, event: st.upcomingEvent, house: 0 }; applyReign(HG, r);
+      const l = clone(st); l.slots.dusk = { leader: cid, event: st.upcomingEvent, house: 0 }; applyLegacy(HG, l);
+      return (evaluate(G, r) - base) + (evaluate(G, l) - base);
     };
     return maxBy(options, score);
   }
