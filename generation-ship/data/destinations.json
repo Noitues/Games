@@ -36,22 +36,31 @@
     },
     {
      "level": 4,
-     "text": "Landfall requirement rises to 6 Crew per player.",
+     "text": "Hazard, Blight Season: each Collapse in an Agricultural section destroys 1 additional Crew.",
+     "rules": [
+      "agri_collapse_crew"
+     ]
+    },
+    {
+     "level": 5,
+     "text": "Blight Season destroys 2 additional Crew; Landfall requirement rises to 6 Crew per player.",
+     "rules": [
+      "agri_collapse_crew"
+     ],
      "requirement": {
       "minCrewPerPlayer": 6
      }
     },
     {
-     "level": 5,
-     "text": "Hazard, Blight Season: each Collapse in an Agricultural section destroys 2 additional Crew.",
-     "rules": [
-      "agri_collapse_crew",
-      "agri_collapse_crew"
-     ]
-    },
-    {
      "level": 6,
-     "text": "Deck: one Stage I card is replaced by an extra Stage III card.",
+     "text": "Setup: +1 Fault in every Agricultural section. Deck: one Stage I card is replaced by an extra Stage III card.",
+     "setup": [
+      {
+       "piece": "fault",
+       "type": "Agricultural",
+       "all": true
+      }
+     ],
      "deck": {
       "1": -1,
       "3": 1
