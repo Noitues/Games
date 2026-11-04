@@ -701,12 +701,17 @@ A mute toggle is included.
 - board size (8 sections) and token durations,
 - the tie-break when there is no Steward (house 0).
 
-**Decisions for the designer** (the engine picked one; see `sim/README.md`):
-- Remarkable substitution is always available (max 1 per generation). Should it be gated?
-- Meridian's Supply Lines does nothing yet, because no card targets "from a Haven". Should Havens get a general rule (e.g. +1 range from a Haven)?
-- Is a "move Crew" effect different from "gather Crew"?
-- Bots play Direct pairing no better than Offset. Is the Direct toggle worth keeping, or should the vote be redesigned so the extra information matters?
-- Crew-loss hazards barely affect strong play. Should Crew matter more (Crew count in scoring, or Crew as a source of card plays)?
+**Decisions for the designer**, with simulation data (`sim/experiments.js`: house bots, all 28 pairings × 25 games, same seeds; baseline 76% wins, house spread 5 points):
+
+| Option | Win rate | Effect |
+|---|---|---|
+| **Havens give +1 range** (also makes Meridian's Supply Lines work) | 89% (+13) | A big buff. Meridian +13. Fewer Decay losses (9% vs 21%). If adopted, the game needs to be made harder again (e.g. a smaller Decay pool). |
+| **Remarkables only with growth C** (instead of always) | 47% (−29) | Remarkables are a major power source. Gating them makes the game much harder and unbalances houses (spread 18 points). Keep them open, or rebalance everything if gated. |
+| **Crew requirement 4 per player** (no destination) | 76% (±0) | No effect: strong play keeps Crew alive anyway. Crew needs a different hook to matter (e.g. Crew as a resource). |
+| **Direct pairing** | 78% (+2) | Within noise. |
+| **Direct pairing + smart vote** (bots simulate each heir's Reign/Legacy on the known event) | 79% (+3) | Still small. Leaders' Reign and Legacy effects are too small for the event information to matter. Options: make leader effects bigger, or drop the Direct toggle. |
+
+Still open without data: is "move Crew" different from "gather Crew"? (The engine treats them the same.)
 
 **Not yet designed:**
 - Haven effects beyond targeting,

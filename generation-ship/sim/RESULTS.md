@@ -238,3 +238,22 @@ House bots, 2 players, 4 house pairings (Galvan+Keel, Meridian+Vigil, Foremen+Te
 | Long Dark 3 / 6 | 48% / 23% | 31% / 8% |
 
 The Landfall card adds a hard three-generation finale and costs about 15–20 points of win rate.
+
+---
+
+# Design-decision experiments
+
+`sim/experiments.js`: house bots, all 28 two-house pairings × 25 games, same seeds for every variant.
+
+| Variant | Win | Win gen | Tier III share | Decay loss | Meridian | House spread |
+|---|---|---|---|---|---|---|
+| Baseline | 76% | 8.5 | 85% | 21% | 73% | 5 pts |
+| Haven +1 range | 89% | 8.1 | 78% | 9% | 86% | 8 pts |
+| Remarkables only on growth C | 47% | 9.5 | 64% | 39% | 46% | 18 pts |
+| Crew requirement 4 per player | 76% | 8.5 | 85% | 20% | 74% | 7 pts |
+| Direct pairing | 78% | 8.5 | 84% | 18% | 76% | 7 pts |
+| Direct + smart vote | 79% | 8.5 | 78% | 16% | 80% | 8 pts |
+
+Interpretation is in the GDD's "Decisions for the designer".
+
+*Rule fix during this session:* Quarantine now also blocks cascades, vents and seeding *out of* the section, as the GDD says (found by the new rule tests).
