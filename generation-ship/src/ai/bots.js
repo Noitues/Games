@@ -11,7 +11,7 @@ import {
 } from "../engine/rules.js";
 import {
   resolveCard, resolveInnate, houseStats, houseData, card, canUncover, applyDiscoveryEffects,
-  legalTargets, eventTypes, applyPlan, runPhase, applyReign, applyLegacy,
+  legalTargets, eventTypes, applyPlan, runPhase, applyReign, applyLegacy, discoveryTier,
 } from "../engine/game.js";
 import { evaluate, upcoming, predictedCollapse } from "./eval.js";
 
@@ -28,8 +28,17 @@ export function heuristicChoose(G, st, h, kind, options, ctx) {
   const up = upcoming(G, st);
   const danger = (id) => (matches(S[id], up.collapse) ? 2 : 0) + (matches(S[id], up.grow) ? 1 : 0);
   switch (kind) {
-    case "ventTo": return minBy(options, (id) => threatCount(S[id]) * 2 + danger(id) * 3 + S[id].decay);
-    case "gatherFrom": return maxBy(options, (id) => S[id].crew - (threatCount(S[id]) && matches(S[id], up.collapse) ? 0 : 0.5));
+    case "ventTo": {
+      // venting is optional: only push threat somewhere less dangerous than where it is
+      const score = (id) => threatCount(S[id]) * 2 + danger(id) * 3 + S[id].decay;
+      const real = options.filter((o) => S[o]);
+      const best = minBy(real, score);
+      return best && score(best) < score(ctx.from) + 1 ? best : "stay";
+    }
+    case "gatherFrom": { const real = options.filter((o) => S[o]); return real.length ? maxBy(real, (id) => S[id].crew - (threatCount(S[id]) && matches(S[id], up.collapse) ? 0 : 0.5)) : "none"; }
+    case "buyInfluence": return options[0];
+    case "landfall": return "begin";
+    case "discoveryAt": return maxBy(options, (id) => threatCount(S[id]) * 2 + danger(id) + S[id].crew * 0.2);
     case "cascade": return minBy(options, (id) => Object.values(S[id].influence).reduce((a, b) => a + b, 0) * 2 + S[id].decay * 5 + S[id].crew);
     case "moveInfluenceFrom": return maxBy(options, (id) => S[id].influence[h]);
     case "discovery": return "apply";
@@ -68,8 +77,11 @@ export class Bot {
       case "cardTarget": return this.bestByRerun(G, st, h, kind, options, (G2, s2) => resolveCard(G2, s2, h, ctx.card));
       case "innateTarget": return this.bestByRerun(G, st, h, kind, options, (G2, s2) => resolveInnate(G2, s2, h));
       case "ventTo": case "gatherFrom": case "cascade": case "moveInfluenceFrom":
-      case "growthInfluence": case "influenceFor": case "addCrewAt": case "restoreAt": case "breakthroughAt":
+      case "growthInfluence": case "influenceFor": case "addCrewAt": case "restoreAt": case "discoveryAt":
         return this.bestMutation(G, st, h, kind, options, ctx);
+      case "playOrder": return options[0];
+      case "buyInfluence": return options[0];
+      case "landfall": return "begin";
     }
     if (L === 1) return this.random(G, st, h, kind, options, ctx);
     switch (kind) {
@@ -83,7 +95,7 @@ export class Bot {
     if (L === 2) return this.random(G, st, h, kind, options, ctx);
     switch (kind) {
       // ---- level 3: table judgement
-      case "vote": return this.vote(G, st, h, options);
+      case "vote": case "tiebreak": return this.vote(G, st, h, options);
       case "discovery": return this.discovery(G, st, h, ctx);
     }
     return this.random(G, st, h, kind, options, ctx);
@@ -128,18 +140,18 @@ export class Bot {
     const up = upcoming(G, st);
     const HG = heuristicContext(G);
     const mutate = {
-      ventTo: (s2, o) => { s2.sections[ctx.from][ctx.piece] -= 1; s2.sections[o][ctx.piece] += 1; },
-      gatherFrom: (s2, o) => { s2.sections[o].crew -= 1; s2.sections[ctx.to].crew += 1; },
+      ventTo: (s2, o) => { if (o === "stay") return; s2.sections[ctx.from][ctx.piece] -= 1; s2.sections[o][ctx.piece] += 1; },
+      gatherFrom: (s2, o) => { if (o === "none") return; s2.sections[o].crew -= 1; s2.sections[ctx.to].crew += 1; },
       cascade: (s2, o) => placeDecay(HG, s2, s2.sections[o], 1),
       moveInfluenceFrom: (s2, o) => { s2.sections[o].influence[h] -= 1; },
       growthInfluence: (s2, o) => { const S = s2.sections[o]; S.influence[h] = (S.influence[h] || 0) + 1; },
       influenceFor: (s2, o) => { const S = s2.sections[o]; S.influence[ctx.house] = (S.influence[ctx.house] || 0) + 1; },
       addCrewAt: (s2, o) => { s2.sections[o].crew += 1; },
       restoreAt: (s2, o) => { s2.sections[o].decay -= 1; s2.decayPool += 1; },
-      breakthroughAt: (s2, o) => applyDiscoveryEffects(HG, s2, G.data.discoveryById[ctx.id].breakthrough.effects, [s2.sections[o]]),
+      discoveryAt: (s2, o) => applyDiscoveryEffects(HG, s2, ctx.effects, [s2.sections[o]]),
     }[kind];
     // influence placement also values future reach toward threat
-    const reach = (s2, o) => (kind === "growthInfluence" || kind === "influenceFor")
+    const reach = (s2, o) => (kind === "growthInfluence" || kind === "influenceFor") && s2.sections[o]
       ? s2.sections[o].adj.reduce((n, a) => n + threatCount(s2.sections[a]), threatCount(s2.sections[o])) * 0.3 : 0;
     let best = options[0], bestV = -Infinity;
     for (const o of options) {
@@ -234,7 +246,11 @@ export class Bot {
       for (const c of cards) for (const g of c.guilds) el[g] = (el[g] || 0) + 1;
       const met = (req) => Object.entries(req).every(([g, k]) => (el[g] || 0) >= k);
       let score = set.reduce((a, c) => a + vals[c], 0) - cost * creditValue;
-      for (const c of cards) if (c.threshold && met(c.threshold.elements)) score += c.threshold.pp;
+      for (const c of cards) if (c.threshold) {
+        // a card's own guilds don't count toward its own threshold
+        const ok = Object.entries(c.threshold.elements).every(([g, k]) => (el[g] || 0) - (c.guilds.includes(g) ? 1 : 0) >= k);
+        if (ok) score += c.threshold.pp;
+      }
       let tierPP = 0;
       for (const t of hd.innate.tiers) if (met(t.threshold)) tierPP = t.pp;
       score += tierPP;
@@ -323,15 +339,10 @@ export class Bot {
   discovery(G, st, h, ctx) {
     const d = G.data.discoveryById[ctx.id];
     const R = this.remainingGens(st);
-    const btValue = d.breakthrough.pp_per_generation * (R + 1) * 0.8;
-    const tier = ["I", "II", "III"][st.tier - 1];
-    const t = d.tiers[tier];
-    const up = upcoming(G, st);
-    const s2 = clone(st);
-    const secs = Object.values(s2.sections).filter((x) => (t.scope === "Outer Hull" ? x.hull : x.type === t.scope));
-    applyDiscoveryEffects(heuristicContext(G), s2, t.effects, secs);
-    const applyValue = Math.max(t.pp, evaluate(G, s2, up) - evaluate(G, st, up));
-    return applyValue >= btValue ? "apply" : "breakthrough";
+    // the Breakthrough switches on when the Steward retires to the Wall (two generations from now)
+    const btValue = d.breakthrough.pp_per_generation * Math.max(0, R - 2) * 0.8;
+    const t = discoveryTier(G, st, ctx.id);
+    return t.pp >= btValue ? "apply" : "breakthrough";
   }
 }
 

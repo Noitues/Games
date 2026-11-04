@@ -18,7 +18,8 @@ export const DEFAULT_CONFIG = {
   remarkablePerGeneration: 1,    // max Remarkable draw substitutions
   destination: null,            // id from data/destinations.json
   destinationLevel: 0,
-  landfallCard: false,          // Landfall card win variant
+  landfallCard: false,          // Landfall variant: false | true ("choice": begin Landfall when the win condition is met) | "shuffled" (in the Stage III events)
+  influenceCost: 2,             // credits per influence added by a card (optional purchase); Growth A placement is free
   // experiment options (defaults keep the current rules)
   havenRangeBonus: 0,           // +N range when targeting from a Haven (2+ influence; Meridian: any Agricultural influence)
   remarkableAccess: "always",   // "always" | "growthC" (only when taking growth option C)

@@ -13,18 +13,28 @@
    "tracks": {
     "credits": [
      1,
-     1,
-     1,
+     {
+      "element": "Navigators"
+     },
+     {
+      "element": "Navigators"
+     },
      {
       "element": "Engineers"
      },
      2,
-     2
+     {
+      "element": "Navigators"
+     }
     ],
     "plays": [
      3,
-     3,
-     3,
+     {
+      "draw": 1
+     },
+     {
+      "draw": 1
+     },
      {
       "fast_play": 1
      },
@@ -148,7 +158,9 @@
     "credits": [
      1,
      2,
-     2,
+     {
+      "element": "Farmers"
+     },
      3,
      {
       "element": "Bureaucrats"
@@ -157,12 +169,16 @@
     ],
     "plays": [
      2,
-     2,
+     {
+      "draw": 1
+     },
      3,
      {
       "clone": 1
      },
-     3,
+     {
+      "draw": 1
+     },
      4
     ]
    },
@@ -284,7 +300,9 @@
    "tracks": {
     "credits": [
      2,
-     2,
+     {
+      "element": "Laborers"
+     },
      3,
      {
       "element": "Medics"
@@ -294,9 +312,13 @@
     ],
     "plays": [
      2,
-     2,
+     {
+      "draw": 1
+     },
      3,
-     3,
+     {
+      "draw": 1
+     },
      4
     ]
    },
@@ -422,21 +444,29 @@
     "credits": [
      1,
      2,
-     2,
+     {
+      "element": "Scholars"
+     },
      {
       "element": "Keepers"
      },
      3,
-     3
+     {
+      "element": "Scholars"
+     }
     ],
     "plays": [
      2,
-     2,
+     {
+      "draw": 1
+     },
      3,
      {
       "element": "Scholars"
      },
-     3,
+     {
+      "draw": 1
+     },
      4
     ]
    },
@@ -559,21 +589,29 @@
     "credits": [
      1,
      2,
-     2,
+     {
+      "element": "Keepers"
+     },
      {
       "element": "Laborers"
      },
      3,
-     3
+     {
+      "element": "Keepers"
+     }
     ],
     "plays": [
      2,
-     2,
+     {
+      "draw": 1
+     },
      3,
      {
       "fast_play": 1
      },
-     3,
+     {
+      "draw": 1
+     },
      4
     ]
    },
@@ -688,7 +726,9 @@
    "tracks": {
     "credits": [
      1,
-     1,
+     {
+      "element": "Scholars"
+     },
      2,
      {
       "element": "Farmers"
@@ -698,8 +738,12 @@
     ],
     "plays": [
      2,
-     2,
-     2,
+     {
+      "draw": 1
+     },
+     {
+      "draw": 1
+     },
      3,
      {
       "clone": 1
@@ -821,8 +865,12 @@
    "tracks": {
     "credits": [
      2,
-     2,
-     2,
+     {
+      "element": "Engineers"
+     },
+     {
+      "element": "Engineers"
+     },
      {
       "element": "Navigators"
      },
@@ -831,11 +879,15 @@
     "plays": [
      2,
      3,
-     3,
+     {
+      "draw": 1
+     },
      {
       "fast_play": 1
      },
-     3
+     {
+      "draw": 1
+     }
     ]
    },
    "hand_bonus": 2,
@@ -944,7 +996,9 @@
     "credits": [
      1,
      2,
-     2,
+     {
+      "element": "Medics"
+     },
      3,
      {
       "element": "Bureaucrats"
@@ -953,12 +1007,16 @@
     ],
     "plays": [
      2,
-     2,
+     {
+      "draw": 1
+     },
      3,
      {
       "element": "Medics"
      },
-     3,
+     {
+      "draw": 1
+     },
      4
     ]
    },

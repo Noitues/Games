@@ -1,11 +1,11 @@
 // Setup, round phases and the game loop.
 import { DEFAULT_CONFIG } from "./config.js";
-import { shuffle, pick } from "./rng.js";
+import { shuffle, pick, nextRandom as nextRand } from "./rng.js";
 import {
   allSections, matches, threatCount, inRange, influenceSections, targetFilter, distances,
   damageThreat, placeDecay, gainPurpose, losePurpose, gatherCrew, applySectionEffects,
   applyHouseEffects, drawFrom, checkWin, lose, log, downgrade, restoreDecay, totalInfluence,
-  winConditionMet,
+  winConditionMet, stewardHouse, wallBonuses,
 } from "./rules.js";
 
 const BOARD_IDS = ["A", "B", "C", "D"];
@@ -74,6 +74,7 @@ export function createGame(data, cfgIn = {}, seed = 1) {
   const ev = data.events.cards;
   const dest = activeDestination(data, cfg);
   st.dest = dest;
+  st.landfallMode = cfg.landfallCard === "shuffled" ? "shuffled" : cfg.landfallCard ? "choice" : null;
   const counts = { ...cfg.stageCounts };
   for (const [k, v] of Object.entries(dest.deck)) counts[k] = Math.max(0, (counts[k] || 0) + v);
   let deck = [];
@@ -81,6 +82,10 @@ export function createGame(data, cfgIn = {}, seed = 1) {
     const pool = shuffle(st, ev.filter((e) => e.stage === stage).map((e) => e.id));
     const dealt = pool.slice(0, counts[stage]);
     if (stage === 2 && dealt.length) st.escalationEvent = dealt[0]; // one dealt Stage II card carries Escalation
+    if (stage === 3 && cfg.landfallCard === "shuffled") {
+      // Landfall variant: the Landfall card is shuffled into the Stage III events.
+      dealt.splice(Math.floor(nextRand(st) * (dealt.length + 1)), 0, "LANDFALL");
+    }
     deck.push(...dealt);
   }
   st.decks.events = deck; // pop() draws from the end: Stage I first
@@ -175,15 +180,21 @@ export function houseStats(G, st, h) {
   const specials = [...trackSpecials(hd.tracks.credits, H.track.credits),
                     ...trackSpecials(hd.tracks.plays, H.track.plays)];
   const raw = {};
-  let fastPlays = 0, clone = hd.clone;
+  let fastPlays = 0, clone = hd.clone, draw = 0;
   for (const sp of specials) {
     if (sp.element) raw[sp.element] = (raw[sp.element] || 0) + 1;
     if (sp.fast_play) fastPlays += sp.fast_play;
     if (sp.clone) clone += sp.clone;
+    if (sp.draw) draw += sp.draw;
   }
+  // Wall bonuses (Breakthroughs on retired leaders) apply to every house.
+  const wb = wallBonuses(G, st);
+  for (const [g, n] of Object.entries(wb.elements)) raw[g] = (raw[g] || 0) + n;
+  fastPlays += wb.fast_play;
+  draw += wb.extra_draw;
   const plays = trackValue(hd.tracks.plays, H.track.plays);
-  return { income: trackValue(hd.tracks.credits, H.track.credits), plays,
-           hand: plays + hd.hand_bonus, raw, fastPlays, clone };
+  return { income: trackValue(hd.tracks.credits, H.track.credits) + wb.credits_per_growth, plays,
+           hand: plays + hd.hand_bonus + draw, raw, fastPlays, clone, draw };
 }
 export function canUncover(G, st, h, track) {
   const hd = houseData(G, st, h);
@@ -221,24 +232,49 @@ export function elementsMet(H, req) {
   return Object.entries(req).every(([g, n]) => (H.elements[g] || 0) >= n);
 }
 
+// A card's own guilds never count toward its own threshold: the bonus needs help from
+// other cards, track slots or the Wall.
+export function thresholdMet(G, H, c) {
+  if (!c.threshold) return false;
+  const el = { ...H.elements };
+  for (const g of c.guilds) el[g] = (el[g] || 0) - 1;
+  return Object.entries(c.threshold.elements).every(([g, n]) => (el[g] || 0) >= n);
+}
+// Verbs that act on the playing house or the whole ship, so need no target.
+const GLOBAL_VERBS = new Set(["purpose", "credits", "foresee", "temper_legacy"]);
+const HOUSE_GLOBAL_VERBS = new Set(["purpose"]);
+export function needsTarget(c, effects) {
+  const g = c.target.kind === "house" ? HOUSE_GLOBAL_VERBS : GLOBAL_VERBS;
+  return Object.keys(effects).some((v) => !g.has(v));
+}
+export function cardEffects(G, st, h, cid) {
+  const c = card(G, cid);
+  const effects = { ...c.effects };
+  const met = thresholdMet(G, st.houses[h], c);
+  if (met) for (const [v, n] of Object.entries(c.threshold.effects)) effects[v] = (effects[v] || 0) + n;
+  return { effects, met };
+}
+
 export function resolveCard(G, st, h, cid) {
   const c = card(G, cid);
   const H = st.houses[h], HS = st.stats.houses[h];
-  const opts = legalTargets(G, st, h, c.target);
-  if (!opts.length) return;
-  const t = G.choose(st, h, "cardTarget", opts, { card: cid });
-  let effects = { ...c.effects };
+  const { effects, met } = cardEffects(G, st, h, cid);
   if (c.threshold) {
     HS.thresholdTried += 1;
     const need = Object.values(c.threshold.elements).reduce((x, y) => x + y, 0);
     const byN = (st.stats.thresholdByN ??= {});
     byN[need] ??= [0, 0]; byN[need][0] += 1;
-    if (elementsMet(H, c.threshold.elements)) {
-      byN[need][1] += 1;
-      HS.thresholdMet += 1;
-      for (const [v, n] of Object.entries(c.threshold.effects)) effects[v] = (effects[v] || 0) + n;
-    }
+    if (met) { byN[need][1] += 1; HS.thresholdMet += 1; }
   }
+  if (!needsTarget(c, effects)) {
+    log(G, st, `${H.id} plays ${cid}`);
+    if (c.target.kind === "house") applyHouseEffects(G, st, h, h, effects);
+    else applySectionEffects(G, st, h, null, effects);
+    return;
+  }
+  const opts = legalTargets(G, st, h, c.target);
+  if (!opts.length) return;
+  const t = G.choose(st, h, "cardTarget", opts, { card: cid });
   log(G, st, `${H.id} plays ${cid} → ${c.target.kind === "house" ? st.houses[t].id : t}`);
   if (c.target.kind === "house") applyHouseEffects(G, st, h, t, effects);
   else {
@@ -343,7 +379,7 @@ export function applyReign(G, st) {
       if (v === "brace") s.brace += n;
       else if (v === "patch") s.patch += n;
       else if (v === "lockout") s.lockout += n;
-      else if (v === "gather_crew") gatherCrew(G, st, 0, s, n);
+      else if (v === "gather_crew") gatherCrew(G, st, stewardHouse(st), s, n);
       else if (v === "damage") damageThreat(G, st, s, n, "reign");
     }
   }
@@ -384,15 +420,12 @@ const D_REMOVE = (G, st, s, piece, n) => {
   const k = Math.min(n, s[piece]); s[piece] -= k;
   if (piece === "fault") gainPurpose(G, st, k * G.cfg.purposeFault, "discovery");
 };
-function scopeSections(st, scope) {
-  return allSections(st).filter((s) => (scope === "Outer Hull" ? s.hull : s.type === scope));
-}
 export function applyDiscoveryEffects(G, st, effects, sections, h = 0) {
   for (const [v, n] of Object.entries(effects)) {
     if (["add_crew", "restore_decay"].includes(v)) {
       const opts = v === "restore_decay" ? st.order.filter((id) => st.sections[id].decay > 0) : st.order;
       if (!opts.length) continue;
-      const id = G.choose(st, h, v === "add_crew" ? "addCrewAt" : "restoreAt", opts, {});
+      const id = G.choose(st, h, v === "add_crew" ? "addCrewAt" : "restoreAt", opts, { n });
       if (v === "add_crew") st.sections[id].crew += n; else restoreDecay(st, st.sections[id], n);
       continue;
     }
@@ -412,31 +445,40 @@ export function applyDiscoveryEffects(G, st, effects, sections, h = 0) {
     }
   }
 }
+// Discoveries earned while resolving Discoveries wait for the next Dusk.
+// The Steward's house decides: apply now, or put it under the Steward as a Breakthrough
+// (a passive Wall bonus once that leader retires to the Wall).
 function resolveDiscoveries(G, st) {
-  while (st.pendingDiscoveries.length && !st.result) {
-    const did = st.pendingDiscoveries.shift();
-    const d = G.data.discoveryById[did];
+  const batch = st.pendingDiscoveries.splice(0);
+  const who = stewardHouse(st);
+  for (const did of batch) {
+    if (st.result) { st.pendingDiscoveries.push(did); continue; }
     const canBT = st.slots.day && !st.slots.day.bt;
-    const choice = canBT ? G.choose(st, 0, "discovery", ["apply", "breakthrough"], { id: did }) : "apply";
+    const choice = canBT ? G.choose(st, who, "discovery", ["apply", "breakthrough"], { id: did }) : "apply";
     log(G, st, `Discovery ${did}: ${choice}`);
     if (choice === "breakthrough") {
       st.slots.day.bt = did; st.breakthroughs.push(did); st.stats.discoveryBreakthrough += 1;
     } else {
-      const tier = ["I", "II", "III"][st.tier - 1];
-      const t = d.tiers[tier];
-      applyDiscoveryEffects(G, st, t.effects, scopeSections(st, t.scope));
+      applyDiscovery(G, st, did, who);
       st.stats.discoveryApplied += 1;
     }
   }
 }
-function runBreakthroughs(G, st, timing) {
-  for (const did of st.breakthroughs) {
-    const bt = G.data.discoveryById[did].breakthrough;
-    if (bt.timing !== timing) continue;
-    const opts = scopeSections(st, bt.scope).map((s) => s.id);
-    if (!opts.length) continue;
-    const id = G.choose(st, 0, "breakthroughAt", opts, { id: did });
-    applyDiscoveryEffects(G, st, bt.effects, [st.sections[id]]);
+export const discoveryTier = (G, st, did) => G.data.discoveryById[did].tiers[["I", "II", "III"][st.tier - 1]];
+const LOCAL_D = new Set(["remove_glitch", "remove_fault", "downgrade_fault", "downgrade_failure", "damage", "skip_grow", "skip_seed", "brace", "gather_crew"]);
+// Section effects land in one section of the Steward's choice on each board.
+function applyDiscovery(G, st, did, who) {
+  const t = discoveryTier(G, st, did);
+  const local = Object.fromEntries(Object.entries(t.effects).filter(([v]) => LOCAL_D.has(v)));
+  const other = Object.fromEntries(Object.entries(t.effects).filter(([v]) => !LOCAL_D.has(v)));
+  applyDiscoveryEffects(G, st, other, [], who);
+  if (!Object.keys(local).length) return;
+  const boards = [...new Set(st.order.map((id) => st.sections[id].board))];
+  for (const b of boards) {
+    if (st.result) return;
+    const opts = st.order.filter((id) => st.sections[id].board === b);
+    const id = G.choose(st, who, "discoveryAt", opts, { id: did, board: b, effects: local });
+    applyDiscoveryEffects(G, st, local, [st.sections[id]], who);
   }
 }
 
@@ -518,18 +560,24 @@ function commitPhase(G, st) {
   });
 }
 
+// Each house resolves its cards (and its innate, in its speed) in the order it chooses.
 function speedPhase(G, st, fast) {
   st.houses.forEach((H, h) => {
-    const list = fast ? H.fast : H.played.filter((c) => !H.fast.includes(c));
-    for (const cid of list) { if (st.result) return; resolveCard(G, st, h, cid); }
-    const innateFast = houseData(G, st, h).innate.speed === "fast";
-    if (innateFast === fast && !st.result) resolveInnate(G, st, h);
+    const left = fast ? [...H.fast] : H.played.filter((c) => !H.fast.includes(c));
+    if ((houseData(G, st, h).innate.speed === "fast") === fast) left.push("innate");
+    while (left.length && !st.result) {
+      const next = left.length > 1 ? G.choose(st, h, "playOrder", [...left], { fast }) : left[0];
+      left.splice(left.indexOf(next), 1);
+      if (next === "innate") resolveInnate(G, st, h); else resolveCard(G, st, h, next);
+    }
   });
 }
 
 function duskPhase(G, st) {
   resolveDiscoveries(G, st);
-  runBreakthroughs(G, st, "dusk");
+  const wb = wallBonuses(G, st);
+  if (wb.hull_brace) for (const s of allSections(st)) if (s.hull) s.brace += wb.hull_brace;
+  if (wb.purpose_per_gen) gainPurpose(G, st, wb.purpose_per_gen, "wall");
   // Keel: Load-Bearing
   st.houses.forEach((H, h) => {
     if (H.id === "keel") for (const s of allSections(st)) {
@@ -538,23 +586,27 @@ function duskPhase(G, st) {
     }
   });
   applyLegacy(G, st);
-  if (st.slots.dusk && !st.result) collapse(G, st, st.slots.dusk.event);
+  if (st.slots.dusk?.event && !st.result) collapse(G, st, st.slots.dusk.event);
 }
 function dayPhase(G, st) {
   if (st.dest?.rules.purpose_drain) losePurpose(st, st.dest.rules.purpose_drain);
   if (st.crisisFlipped && st.crisisId === "X1") st.houses.forEach((H) => (H.credits = Math.max(0, H.credits - 1)));
   applyReign(G, st);
-  runBreakthroughs(G, st, "day");
-  if (st.slots.day) grow(G, st, st.slots.day.event);
+  if (st.slots.day?.event) grow(G, st, st.slots.day.event);
 }
 function drawEvent(st) {
   if (st.landfallPending) { st.landfallPending = false; st.landfallPlaced = true; return "LANDFALL"; }
-  if (!st.decks.events.length) { lose(st, "time"); return null; }
-  return st.decks.events.pop();
+  if (!st.decks.events.length) {
+    if (st.landfallPlaced && st.landfallMode !== "shuffled") return "NONE"; // the voyage is ending: no new events
+    lose(st, "time"); return null;
+  }
+  const e = st.decks.events.pop();
+  if (e === "LANDFALL") st.landfallPlaced = true;
+  return e;
 }
 function dawnPhase(G, st) {
   let eid = null;
-  if (G.cfg.eventPairing === "direct") { eid = drawEvent(st); if (!eid) return; st.upcomingEvent = eid; }
+  if (G.cfg.eventPairing === "direct") { eid = drawEvent(st); if (!eid) return; st.upcomingEvent = eid === "NONE" ? null : eid; }
   const noms = st.houses.map((H, h) => ({ h, cid: H.nominee })).filter((x) => x.cid);
   let chosen = null;
   if (noms.length) {
@@ -562,9 +614,16 @@ function dawnPhase(G, st) {
     const tally = {};
     votes.forEach((v) => (tally[v] = (tally[v] || 0) + 1));
     const max = Math.max(...Object.values(tally));
-    const top = Object.keys(tally).filter((k) => tally[k] === max);
-    const stewardHouse = st.slots.day?.house ?? 0;
-    chosen = top.length === 1 ? top[0] : (top.includes(votes[stewardHouse]) ? votes[stewardHouse] : top[0]);
+    let top = Object.keys(tally).filter((k) => tally[k] === max);
+    if (top.length > 1) {
+      // Ties: the nominee whose house holds the fewest leaders on the conveyor (Day + Dusk);
+      // if still tied, the Steward's house decides.
+      const held = (cid) => { const hh = noms.find((n) => n.cid === cid).h;
+        return ["day", "dusk"].filter((k) => st.slots[k]?.house === hh).length; };
+      const least = Math.min(...top.map(held));
+      top = top.filter((c) => held(c) === least);
+    }
+    chosen = top.length === 1 ? top[0] : G.choose(st, stewardHouse(st), "tiebreak", top, { votes });
     const winner = noms.find((n) => n.cid === chosen);
     st.stats.houses[winner.h].chosenLeader += 1;
     if (G.cfg.trackCards) cardStat(st, chosen).leader += 1;
@@ -572,17 +631,14 @@ function dawnPhase(G, st) {
   } else {
     chosen = drawFrom(st, "common", "commonDiscard");
   }
-  if (G.cfg.eventPairing !== "direct") {
-    if (st.landfallPending) { eid = "LANDFALL"; st.landfallPending = false; st.landfallPlaced = true; }
-    else { eid = drawEvent(st); if (!eid) return; }
-  }
+  if (G.cfg.eventPairing !== "direct") { eid = drawEvent(st); if (!eid) return; }
+  if (eid === "NONE") eid = null;
   st.upcomingEvent = null;
   const house = noms.find((n) => n.cid === chosen)?.h ?? 0;
   st.slots.dawn = { leader: chosen, event: eid, house, bt: null, tempered: false };
-  log(G, st, `New heir ${chosen} (${st.houses[house]?.id}); event ${eid} (${G.data.eventById[eid].types.join("+")}) seeds`);
-  seed(G, st, eid);
-  if (eid === st.escalationEvent && st.dest?.escalation.length) escalate(G, st);
-  runBreakthroughs(G, st, "dawn");
+  log(G, st, `New heir ${chosen} (${st.houses[house]?.id}); ${eid ? `event ${eid} (${G.data.eventById[eid].types.join("+")}) seeds` : "no event"}`);
+  if (eid) seed(G, st, eid);
+  if (eid && eid === st.escalationEvent && st.dest?.escalation.length) escalate(G, st);
 }
 function discard(G, st, cid) {
   const c = card(G, cid);
@@ -591,7 +647,13 @@ function discard(G, st, cid) {
 function timePasses(G, st) {
   if (st.slots.dusk) {
     st.wall.push(st.slots.dusk);
-    if (st.slots.dusk.event === "LANDFALL" && !st.result) st.result = { outcome: "win", cause: "Landfall", gen: st.gen };
+    if (st.slots.dusk.bt) log(G, st, `Wall bonus on: ${G.data.discoveryById[st.slots.dusk.bt].breakthrough.text}`);
+    if (st.slots.dusk.event === "LANDFALL" && !st.result) {
+      // Landfall retires: chosen Landfall wins outright; shuffled Landfall wins if the ship is ready.
+      if (st.landfallMode !== "shuffled" || (winConditionMet(st, G.cfg.tierConditions) && destinationRequirementMet(st)))
+        st.result = { outcome: "win", cause: "Landfall", gen: st.gen };
+      else log(G, st, "Landfall passes: the ship is not ready to land");
+    }
   }
   st.slots.dusk = st.slots.day; st.slots.day = st.slots.dawn; st.slots.dawn = null;
   for (const s of allSections(st)) { s.brace = 0; s.quarantine = 0; s.dmg = 0; }
@@ -638,9 +700,11 @@ export function checkVictory(G, st) {
   if (st.result) return;
   if (!winConditionMet(st, G.cfg.tierConditions) || !destinationRequirementMet(st)) return;
   if (!G.cfg.landfallCard) { st.result = { outcome: "win", cause: `tier ${st.tier}`, gen: st.gen }; return; }
-  if (!st.landfallPending && !st.landfallPlaced && st.decks.events.length >= 2) {
-    st.landfallPending = true;
-    log(G, st, "Landfall will begin at the next Dawn");
+  if (G.cfg.landfallCard === "shuffled") return; // the Landfall card arrives with the events
+  if (!st.landfallPending && !st.landfallPlaced && !st.landfallDeclinedGen?.includes?.(st.gen)) {
+    const go = G.choose(st, stewardHouse(st), "landfall", ["begin", "wait"], {});
+    if (go === "begin") { st.landfallPending = true; log(G, st, "Landfall will begin at the next Dawn"); }
+    else (st.landfallDeclinedGen ??= []).push(st.gen);
   }
 }
 

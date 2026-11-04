@@ -10,7 +10,7 @@
     },
     "scope": "Residential",
     "pp": 4.0,
-    "text": "remove 1 Glitch in each Residential section; 1 damage in each Residential section"
+    "text": "in one section of your choice on each board: remove 1 Glitch, 1 damage"
    },
    "II": {
     "effects": {
@@ -19,7 +19,7 @@
     },
     "scope": "Residential",
     "pp": 6.0,
-    "text": "remove 1 Fault in each Residential section; 1 damage in each Residential section"
+    "text": "in one section of your choice on each board: remove 1 Fault, 1 damage"
    },
    "III": {
     "effects": {
@@ -28,17 +28,16 @@
     },
     "scope": "Residential",
     "pp": 8.0,
-    "text": "downgrade 2 Failure in each Residential section; remove 1 Glitch in each Residential section"
+    "text": "in one section of your choice on each board: downgrade 2 Failure, remove 1 Glitch"
    }
   },
   "breakthrough": {
-   "timing": "day",
+   "timing": "wall",
    "effects": {
-    "remove_glitch": 1
+    "element": "Engineers"
    },
-   "scope": "Government",
-   "pp_per_generation": 1.0,
-   "text": "Each Day: remove 1 Glitch in one Government section."
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Every house counts +1 Engineers element."
   }
  },
  {
@@ -51,7 +50,7 @@
     },
     "scope": "Agricultural",
     "pp": 4.0,
-    "text": "remove 2 Glitch in each Agricultural section"
+    "text": "in one section of your choice on each board: remove 2 Glitch"
    },
    "II": {
     "effects": {
@@ -59,7 +58,7 @@
     },
     "scope": "Agricultural",
     "pp": 6.0,
-    "text": "remove 3 Glitch in each Agricultural section"
+    "text": "in one section of your choice on each board: remove 3 Glitch"
    },
    "III": {
     "effects": {
@@ -68,18 +67,16 @@
     },
     "scope": "Agricultural",
     "pp": 8.0,
-    "text": "skip the Seed in each Agricultural section; remove 3 Glitch in each Agricultural section"
+    "text": "in one section of your choice on each board: skip the Seed, remove 3 Glitch"
    }
   },
   "breakthrough": {
-   "timing": "dawn",
+   "timing": "wall",
    "effects": {
-    "foresee": 1,
-    "remove_glitch": 1
+    "credits_per_growth": 1
    },
-   "scope": "Agricultural",
-   "pp_per_generation": 1.5,
-   "text": "Each Dawn: foresee; remove 1 Glitch in one Agricultural section."
+   "pp_per_generation": 2.0,
+   "text": "On the Wall: Each Growth: every house gains +1 credit."
   }
  },
  {
@@ -93,7 +90,7 @@
     },
     "scope": "Agricultural",
     "pp": 4.0,
-    "text": "Brace 3 in each Agricultural section; gather 1 Crew in each Agricultural section"
+    "text": "in one section of your choice on each board: Brace 3, gather 1 Crew"
    },
    "II": {
     "effects": {
@@ -110,17 +107,16 @@
     },
     "scope": "Agricultural",
     "pp": 8.0,
-    "text": "Brace 5 in each Agricultural section; gather 3 Crew in each Agricultural section"
+    "text": "in one section of your choice on each board: Brace 5, gather 3 Crew"
    }
   },
   "breakthrough": {
-   "timing": "dusk",
+   "timing": "wall",
    "effects": {
-    "brace": 2
+    "hull_brace": 1
    },
-   "scope": "Residential",
-   "pp_per_generation": 1.0,
-   "text": "Each Dusk: Brace 2 in one Residential section."
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Each Dusk: Brace 1 in every Outer Hull section."
   }
  },
  {
@@ -134,7 +130,7 @@
     },
     "scope": "Residential",
     "pp": 4.0,
-    "text": "gather 2 Crew in each Residential section; +2 Purpose"
+    "text": "in one section of your choice on each board: gather 2 Crew; +2 Purpose"
    },
    "II": {
     "effects": {
@@ -156,13 +152,12 @@
    }
   },
   "breakthrough": {
-   "timing": "day",
+   "timing": "wall",
    "effects": {
-    "purpose": 1
+    "fast_play": 1
    },
-   "scope": "Residential",
    "pp_per_generation": 1.0,
-   "text": "Each Day: +1 Purpose in one Residential section."
+   "text": "On the Wall: Every house may play +1 card fast."
   }
  },
  {
@@ -176,7 +171,7 @@
     },
     "scope": "Government",
     "pp": 4.0,
-    "text": "1 damage in each Government section; remove 1 Glitch in each Government section"
+    "text": "in one section of your choice on each board: 1 damage, remove 1 Glitch"
    },
    "II": {
     "effects": {
@@ -185,7 +180,7 @@
     },
     "scope": "Government",
     "pp": 6.0,
-    "text": "remove 1 Fault in each Government section; remove 1 Glitch in each Government section"
+    "text": "in one section of your choice on each board: remove 1 Fault, remove 1 Glitch"
    },
    "III": {
     "effects": {
@@ -194,17 +189,16 @@
     },
     "scope": "Government",
     "pp": 8.0,
-    "text": "downgrade 2 Failure in each Government section; remove 1 Glitch in each Government section"
+    "text": "in one section of your choice on each board: downgrade 2 Failure, remove 1 Glitch"
    }
   },
   "breakthrough": {
-   "timing": "day",
+   "timing": "wall",
    "effects": {
-    "remove_glitch": 1
+    "element": "Medics"
    },
-   "scope": "Residential",
-   "pp_per_generation": 1.0,
-   "text": "Each Day: remove 1 Glitch in one Residential section."
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Every house counts +1 Medics element."
   }
  },
  {
@@ -218,7 +212,7 @@
     },
     "scope": "Infrastructure",
     "pp": 4.0,
-    "text": "skip the Seed in each Infrastructure section; remove 1 Glitch in each Infrastructure section"
+    "text": "in one section of your choice on each board: skip the Seed, remove 1 Glitch"
    },
    "II": {
     "effects": {
@@ -227,7 +221,7 @@
     },
     "scope": "Infrastructure",
     "pp": 6.0,
-    "text": "remove 2 Glitch in each Infrastructure section; skip the Seed in each Infrastructure section"
+    "text": "in one section of your choice on each board: remove 2 Glitch, skip the Seed"
    },
    "III": {
     "effects": {
@@ -236,17 +230,16 @@
     },
     "scope": "Infrastructure",
     "pp": 8.0,
-    "text": "skip the Seed in each Infrastructure section; remove 3 Glitch in each Infrastructure section"
+    "text": "in one section of your choice on each board: skip the Seed, remove 3 Glitch"
    }
   },
   "breakthrough": {
-   "timing": "day",
+   "timing": "wall",
    "effects": {
-    "skip_seed": 1
+    "extra_draw": 1
    },
-   "scope": "Outer Hull",
-   "pp_per_generation": 1.0,
-   "text": "Each Day: skip the Seed in one Outer Hull section."
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Each Growth: every house draws +1 card."
   }
  },
  {
@@ -260,7 +253,7 @@
     },
     "scope": "Infrastructure",
     "pp": 4.0,
-    "text": "restore 1 Decay anywhere; Brace 1 in each Infrastructure section"
+    "text": "in one section of your choice on each board: Brace 1; restore 1 Decay anywhere"
    },
    "II": {
     "effects": {
@@ -269,7 +262,7 @@
     },
     "scope": "Infrastructure",
     "pp": 6.0,
-    "text": "gather 4 Crew in each Infrastructure section; Brace 2 in each Infrastructure section"
+    "text": "in one section of your choice on each board: gather 4 Crew, Brace 2"
    },
    "III": {
     "effects": {
@@ -278,17 +271,16 @@
     },
     "scope": "Infrastructure",
     "pp": 8.0,
-    "text": "Brace 5 in each Infrastructure section; gather 3 Crew in each Infrastructure section"
+    "text": "in one section of your choice on each board: Brace 5, gather 3 Crew"
    }
   },
   "breakthrough": {
-   "timing": "dusk",
+   "timing": "wall",
    "effects": {
-    "gather_crew": 2
+    "decay_ward": 1
    },
-   "scope": "Agricultural",
-   "pp_per_generation": 1.0,
-   "text": "Each Dusk: gather 2 Crew in one Agricultural section."
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Each generation, the first Decay that would be placed is returned to the pool instead."
   }
  },
  {
@@ -302,7 +294,7 @@
     },
     "scope": "Infrastructure",
     "pp": 4.0,
-    "text": "gather 1 Crew in each Infrastructure section; add 1 Crew to any one section"
+    "text": "in one section of your choice on each board: gather 1 Crew; add 1 Crew to any one section"
    },
    "II": {
     "effects": {
@@ -311,7 +303,7 @@
     },
     "scope": "Infrastructure",
     "pp": 6.0,
-    "text": "gather 3 Crew in each Infrastructure section; add 1 Crew to any one section"
+    "text": "in one section of your choice on each board: gather 3 Crew; add 1 Crew to any one section"
    },
    "III": {
     "effects": {
@@ -324,13 +316,12 @@
    }
   },
   "breakthrough": {
-   "timing": "day",
+   "timing": "wall",
    "effects": {
-    "gather_crew": 2
+    "purpose_per_gen": 1
    },
-   "scope": "Infrastructure",
    "pp_per_generation": 1.0,
-   "text": "Each Day: gather 2 Crew in one Infrastructure section."
+   "text": "On the Wall: Each Dusk: +1 Purpose."
   }
  },
  {
@@ -343,7 +334,7 @@
     },
     "scope": "Outer Hull",
     "pp": 4.0,
-    "text": "remove 2 Glitch in each Outer Hull section"
+    "text": "in one section of your choice on each board: remove 2 Glitch"
    },
    "II": {
     "effects": {
@@ -352,7 +343,7 @@
     },
     "scope": "Outer Hull",
     "pp": 6.0,
-    "text": "remove 1 Glitch in each Outer Hull section; remove 1 Fault in each Outer Hull section"
+    "text": "in one section of your choice on each board: remove 1 Glitch, remove 1 Fault"
    },
    "III": {
     "effects": {
@@ -361,17 +352,16 @@
     },
     "scope": "Outer Hull",
     "pp": 8.0,
-    "text": "remove 3 Glitch in each Outer Hull section; 1 damage in each Outer Hull section"
+    "text": "in one section of your choice on each board: remove 3 Glitch, 1 damage"
    }
   },
   "breakthrough": {
-   "timing": "day",
+   "timing": "wall",
    "effects": {
-    "remove_glitch": 1
+    "element": "Keepers"
    },
-   "scope": "Outer Hull",
-   "pp_per_generation": 1.0,
-   "text": "Each Day: remove 1 Glitch in one Outer Hull section."
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Every house counts +1 Keepers element."
   }
  },
  {
@@ -385,7 +375,7 @@
     },
     "scope": "Agricultural",
     "pp": 4.0,
-    "text": "skip the Seed in each Agricultural section; remove 1 Glitch in each Agricultural section"
+    "text": "in one section of your choice on each board: skip the Seed, remove 1 Glitch"
    },
    "II": {
     "effects": {
@@ -394,7 +384,7 @@
     },
     "scope": "Agricultural",
     "pp": 6.0,
-    "text": "skip the Seed in each Agricultural section; remove 2 Glitch in each Agricultural section"
+    "text": "in one section of your choice on each board: skip the Seed, remove 2 Glitch"
    },
    "III": {
     "effects": {
@@ -403,18 +393,16 @@
     },
     "scope": "Agricultural",
     "pp": 8.0,
-    "text": "remove 3 Glitch in each Agricultural section; skip the Seed in each Agricultural section"
+    "text": "in one section of your choice on each board: remove 3 Glitch, skip the Seed"
    }
   },
   "breakthrough": {
-   "timing": "dawn",
+   "timing": "wall",
    "effects": {
-    "foresee": 1,
-    "remove_glitch": 1
+    "credits_per_growth": 1
    },
-   "scope": "Residential",
-   "pp_per_generation": 1.5,
-   "text": "Each Dawn: foresee; remove 1 Glitch in one Residential section."
+   "pp_per_generation": 2.0,
+   "text": "On the Wall: Each Growth: every house gains +1 credit."
   }
  },
  {
@@ -428,7 +416,7 @@
     },
     "scope": "Government",
     "pp": 4.0,
-    "text": "gather 3 Crew in each Government section; Brace 1 in each Government section"
+    "text": "in one section of your choice on each board: gather 3 Crew, Brace 1"
    },
    "II": {
     "effects": {
@@ -437,7 +425,7 @@
     },
     "scope": "Government",
     "pp": 6.0,
-    "text": "Brace 3 in each Government section; restore 1 Decay anywhere"
+    "text": "in one section of your choice on each board: Brace 3; restore 1 Decay anywhere"
    },
    "III": {
     "effects": {
@@ -446,17 +434,16 @@
     },
     "scope": "Government",
     "pp": 8.0,
-    "text": "restore 2 Decay anywhere; gather 2 Crew in each Government section"
+    "text": "in one section of your choice on each board: gather 2 Crew; restore 2 Decay anywhere"
    }
   },
   "breakthrough": {
-   "timing": "dusk",
+   "timing": "wall",
    "effects": {
-    "brace": 2
+    "hull_brace": 1
    },
-   "scope": "Infrastructure",
-   "pp_per_generation": 1.0,
-   "text": "Each Dusk: Brace 2 in one Infrastructure section."
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Each Dusk: Brace 1 in every Outer Hull section."
   }
  },
  {
@@ -478,7 +465,7 @@
     },
     "scope": "Residential",
     "pp": 6.0,
-    "text": "+3 Purpose; gather 3 Crew in each Residential section"
+    "text": "in one section of your choice on each board: gather 3 Crew; +3 Purpose"
    },
    "III": {
     "effects": {
@@ -491,13 +478,12 @@
    }
   },
   "breakthrough": {
-   "timing": "day",
+   "timing": "wall",
    "effects": {
-    "gather_crew": 2
+    "fast_play": 1
    },
-   "scope": "Agricultural",
    "pp_per_generation": 1.0,
-   "text": "Each Day: gather 2 Crew in one Agricultural section."
+   "text": "On the Wall: Every house may play +1 card fast."
   }
  },
  {
@@ -510,7 +496,7 @@
     },
     "scope": "Outer Hull",
     "pp": 4.0,
-    "text": "remove 1 Fault in each Outer Hull section"
+    "text": "in one section of your choice on each board: remove 1 Fault"
    },
    "II": {
     "effects": {
@@ -519,7 +505,7 @@
     },
     "scope": "Outer Hull",
     "pp": 6.0,
-    "text": "remove 1 Glitch in each Outer Hull section; remove 1 Fault in each Outer Hull section"
+    "text": "in one section of your choice on each board: remove 1 Glitch, remove 1 Fault"
    },
    "III": {
     "effects": {
@@ -528,17 +514,16 @@
     },
     "scope": "Outer Hull",
     "pp": 8.0,
-    "text": "2 damage in each Outer Hull section; remove 1 Fault in each Outer Hull section"
+    "text": "in one section of your choice on each board: 2 damage, remove 1 Fault"
    }
   },
   "breakthrough": {
-   "timing": "day",
+   "timing": "wall",
    "effects": {
-    "remove_glitch": 1
+    "element": "Scholars"
    },
-   "scope": "Government",
-   "pp_per_generation": 1.0,
-   "text": "Each Day: remove 1 Glitch in one Government section."
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Every house counts +1 Scholars element."
   }
  },
  {
@@ -552,7 +537,7 @@
     },
     "scope": "Government",
     "pp": 4.0,
-    "text": "remove 1 Glitch in each Government section; skip the Seed in each Government section"
+    "text": "in one section of your choice on each board: remove 1 Glitch, skip the Seed"
    },
    "II": {
     "effects": {
@@ -561,7 +546,7 @@
     },
     "scope": "Government",
     "pp": 6.0,
-    "text": "remove 2 Glitch in each Government section; skip the Seed in each Government section"
+    "text": "in one section of your choice on each board: remove 2 Glitch, skip the Seed"
    },
    "III": {
     "effects": {
@@ -570,18 +555,16 @@
     },
     "scope": "Government",
     "pp": 8.0,
-    "text": "remove 3 Glitch in each Government section; skip the Seed in each Government section"
+    "text": "in one section of your choice on each board: remove 3 Glitch, skip the Seed"
    }
   },
   "breakthrough": {
-   "timing": "dawn",
+   "timing": "wall",
    "effects": {
-    "foresee": 1,
-    "remove_glitch": 1
+    "extra_draw": 1
    },
-   "scope": "Agricultural",
    "pp_per_generation": 1.5,
-   "text": "Each Dawn: foresee; remove 1 Glitch in one Agricultural section."
+   "text": "On the Wall: Each Growth: every house draws +1 card."
   }
  },
  {
@@ -594,7 +577,7 @@
     },
     "scope": "Agricultural",
     "pp": 4.0,
-    "text": "Brace 4 in each Agricultural section"
+    "text": "in one section of your choice on each board: Brace 4"
    },
    "II": {
     "effects": {
@@ -603,7 +586,7 @@
     },
     "scope": "Agricultural",
     "pp": 6.0,
-    "text": "restore 1 Decay anywhere; gather 3 Crew in each Agricultural section"
+    "text": "in one section of your choice on each board: gather 3 Crew; restore 1 Decay anywhere"
    },
    "III": {
     "effects": {
@@ -612,17 +595,16 @@
     },
     "scope": "Agricultural",
     "pp": 8.0,
-    "text": "gather 5 Crew in each Agricultural section; restore 1 Decay anywhere"
+    "text": "in one section of your choice on each board: gather 5 Crew; restore 1 Decay anywhere"
    }
   },
   "breakthrough": {
-   "timing": "dusk",
+   "timing": "wall",
    "effects": {
-    "brace": 2
+    "decay_ward": 1
    },
-   "scope": "Outer Hull",
-   "pp_per_generation": 1.0,
-   "text": "Each Dusk: Brace 2 in one Outer Hull section."
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Each generation, the first Decay that would be placed is returned to the pool instead."
   }
  },
  {
@@ -636,7 +618,7 @@
     },
     "scope": "Agricultural",
     "pp": 4.0,
-    "text": "gather 2 Crew in each Agricultural section; each house gains 1 credit(s)"
+    "text": "in one section of your choice on each board: gather 2 Crew; each house gains 1 credit(s)"
    },
    "II": {
     "effects": {
@@ -658,13 +640,12 @@
    }
   },
   "breakthrough": {
-   "timing": "day",
+   "timing": "wall",
    "effects": {
-    "purpose": 1
+    "purpose_per_gen": 1
    },
-   "scope": "Agricultural",
    "pp_per_generation": 1.0,
-   "text": "Each Day: +1 Purpose in one Agricultural section."
+   "text": "On the Wall: Each Dusk: +1 Purpose."
   }
  },
  {
@@ -678,7 +659,7 @@
     },
     "scope": "Outer Hull",
     "pp": 4.0,
-    "text": "remove 1 Glitch in each Outer Hull section; 1 damage in each Outer Hull section"
+    "text": "in one section of your choice on each board: remove 1 Glitch, 1 damage"
    },
    "II": {
     "effects": {
@@ -686,7 +667,7 @@
     },
     "scope": "Outer Hull",
     "pp": 6.0,
-    "text": "downgrade 2 Failure in each Outer Hull section"
+    "text": "in one section of your choice on each board: downgrade 2 Failure"
    },
    "III": {
     "effects": {
@@ -695,17 +676,16 @@
     },
     "scope": "Outer Hull",
     "pp": 8.0,
-    "text": "downgrade 2 Fault in each Outer Hull section; remove 1 Glitch in each Outer Hull section"
+    "text": "in one section of your choice on each board: downgrade 2 Fault, remove 1 Glitch"
    }
   },
   "breakthrough": {
-   "timing": "day",
+   "timing": "wall",
    "effects": {
-    "remove_glitch": 1
+    "element": "Laborers"
    },
-   "scope": "Residential",
-   "pp_per_generation": 1.0,
-   "text": "Each Day: remove 1 Glitch in one Residential section."
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Every house counts +1 Laborers element."
   }
  },
  {
@@ -719,7 +699,7 @@
     },
     "scope": "Agricultural",
     "pp": 4.0,
-    "text": "skip the Seed in each Agricultural section; remove 1 Glitch in each Agricultural section"
+    "text": "in one section of your choice on each board: skip the Seed, remove 1 Glitch"
    },
    "II": {
     "effects": {
@@ -727,7 +707,7 @@
     },
     "scope": "Agricultural",
     "pp": 6.0,
-    "text": "remove 3 Glitch in each Agricultural section"
+    "text": "in one section of your choice on each board: remove 3 Glitch"
    },
    "III": {
     "effects": {
@@ -736,18 +716,16 @@
     },
     "scope": "Agricultural",
     "pp": 8.0,
-    "text": "skip the Seed in each Agricultural section; remove 3 Glitch in each Agricultural section"
+    "text": "in one section of your choice on each board: skip the Seed, remove 3 Glitch"
    }
   },
   "breakthrough": {
-   "timing": "dawn",
+   "timing": "wall",
    "effects": {
-    "foresee": 1,
-    "remove_glitch": 1
+    "credits_per_growth": 1
    },
-   "scope": "Residential",
-   "pp_per_generation": 1.5,
-   "text": "Each Dawn: foresee; remove 1 Glitch in one Residential section."
+   "pp_per_generation": 2.0,
+   "text": "On the Wall: Each Growth: every house gains +1 credit."
   }
  },
  {
@@ -761,7 +739,7 @@
     },
     "scope": "Government",
     "pp": 4.0,
-    "text": "restore 1 Decay anywhere; gather 1 Crew in each Government section"
+    "text": "in one section of your choice on each board: gather 1 Crew; restore 1 Decay anywhere"
    },
    "II": {
     "effects": {
@@ -770,7 +748,7 @@
     },
     "scope": "Government",
     "pp": 6.0,
-    "text": "gather 2 Crew in each Government section; Brace 4 in each Government section"
+    "text": "in one section of your choice on each board: gather 2 Crew, Brace 4"
    },
    "III": {
     "effects": {
@@ -779,17 +757,16 @@
     },
     "scope": "Government",
     "pp": 8.0,
-    "text": "Brace 6 in each Government section; gather 2 Crew in each Government section"
+    "text": "in one section of your choice on each board: Brace 6, gather 2 Crew"
    }
   },
   "breakthrough": {
-   "timing": "dusk",
+   "timing": "wall",
    "effects": {
-    "gather_crew": 2
+    "hull_brace": 1
    },
-   "scope": "Infrastructure",
-   "pp_per_generation": 1.0,
-   "text": "Each Dusk: gather 2 Crew in one Infrastructure section."
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Each Dusk: Brace 1 in every Outer Hull section."
   }
  },
  {
@@ -803,7 +780,7 @@
     },
     "scope": "Infrastructure",
     "pp": 4.0,
-    "text": "+2 Purpose; gather 2 Crew in each Infrastructure section"
+    "text": "in one section of your choice on each board: gather 2 Crew; +2 Purpose"
    },
    "II": {
     "effects": {
@@ -821,17 +798,16 @@
     },
     "scope": "Infrastructure",
     "pp": 8.0,
-    "text": "+5 Purpose; gather 3 Crew in each Infrastructure section"
+    "text": "in one section of your choice on each board: gather 3 Crew; +5 Purpose"
    }
   },
   "breakthrough": {
-   "timing": "day",
+   "timing": "wall",
    "effects": {
-    "gather_crew": 2
+    "fast_play": 1
    },
-   "scope": "Outer Hull",
    "pp_per_generation": 1.0,
-   "text": "Each Day: gather 2 Crew in one Outer Hull section."
+   "text": "On the Wall: Every house may play +1 card fast."
   }
  },
  {
@@ -844,7 +820,7 @@
     },
     "scope": "Residential",
     "pp": 4.0,
-    "text": "remove 1 Fault in each Residential section"
+    "text": "in one section of your choice on each board: remove 1 Fault"
    },
    "II": {
     "effects": {
@@ -853,7 +829,7 @@
     },
     "scope": "Residential",
     "pp": 6.0,
-    "text": "downgrade 1 Fault in each Residential section; downgrade 1 Failure in each Residential section"
+    "text": "in one section of your choice on each board: downgrade 1 Fault, downgrade 1 Failure"
    },
    "III": {
     "effects": {
@@ -862,17 +838,16 @@
     },
     "scope": "Residential",
     "pp": 8.0,
-    "text": "remove 3 Glitch in each Residential section; 1 damage in each Residential section"
+    "text": "in one section of your choice on each board: remove 3 Glitch, 1 damage"
    }
   },
   "breakthrough": {
-   "timing": "day",
+   "timing": "wall",
    "effects": {
-    "remove_glitch": 1
+    "element": "Farmers"
    },
-   "scope": "Government",
-   "pp_per_generation": 1.0,
-   "text": "Each Day: remove 1 Glitch in one Government section."
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Every house counts +1 Farmers element."
   }
  },
  {
@@ -885,7 +860,7 @@
     },
     "scope": "Infrastructure",
     "pp": 4.0,
-    "text": "remove 2 Glitch in each Infrastructure section"
+    "text": "in one section of your choice on each board: remove 2 Glitch"
    },
    "II": {
     "effects": {
@@ -894,7 +869,7 @@
     },
     "scope": "Infrastructure",
     "pp": 6.0,
-    "text": "remove 2 Glitch in each Infrastructure section; skip the Seed in each Infrastructure section"
+    "text": "in one section of your choice on each board: remove 2 Glitch, skip the Seed"
    },
    "III": {
     "effects": {
@@ -903,17 +878,16 @@
     },
     "scope": "Infrastructure",
     "pp": 8.0,
-    "text": "remove 3 Glitch in each Infrastructure section; skip the Seed in each Infrastructure section"
+    "text": "in one section of your choice on each board: remove 3 Glitch, skip the Seed"
    }
   },
   "breakthrough": {
-   "timing": "day",
+   "timing": "wall",
    "effects": {
-    "skip_seed": 1
+    "extra_draw": 1
    },
-   "scope": "Government",
-   "pp_per_generation": 1.0,
-   "text": "Each Day: skip the Seed in one Government section."
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Each Growth: every house draws +1 card."
   }
  },
  {
@@ -927,7 +901,7 @@
     },
     "scope": "Outer Hull",
     "pp": 4.0,
-    "text": "restore 1 Decay anywhere; gather 1 Crew in each Outer Hull section"
+    "text": "in one section of your choice on each board: gather 1 Crew; restore 1 Decay anywhere"
    },
    "II": {
     "effects": {
@@ -936,7 +910,7 @@
     },
     "scope": "Outer Hull",
     "pp": 6.0,
-    "text": "gather 5 Crew in each Outer Hull section; Brace 1 in each Outer Hull section"
+    "text": "in one section of your choice on each board: gather 5 Crew, Brace 1"
    },
    "III": {
     "effects": {
@@ -945,17 +919,16 @@
     },
     "scope": "Outer Hull",
     "pp": 8.0,
-    "text": "gather 6 Crew in each Outer Hull section; Brace 2 in each Outer Hull section"
+    "text": "in one section of your choice on each board: gather 6 Crew, Brace 2"
    }
   },
   "breakthrough": {
-   "timing": "dusk",
+   "timing": "wall",
    "effects": {
-    "brace": 2
+    "decay_ward": 1
    },
-   "scope": "Infrastructure",
-   "pp_per_generation": 1.0,
-   "text": "Each Dusk: Brace 2 in one Infrastructure section."
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Each generation, the first Decay that would be placed is returned to the pool instead."
   }
  },
  {
@@ -978,7 +951,7 @@
     },
     "scope": "Outer Hull",
     "pp": 6.0,
-    "text": "gather 4 Crew in each Outer Hull section; +2 Purpose"
+    "text": "in one section of your choice on each board: gather 4 Crew; +2 Purpose"
    },
    "III": {
     "effects": {
@@ -991,13 +964,12 @@
    }
   },
   "breakthrough": {
-   "timing": "day",
+   "timing": "wall",
    "effects": {
-    "purpose": 1
+    "purpose_per_gen": 1
    },
-   "scope": "Infrastructure",
    "pp_per_generation": 1.0,
-   "text": "Each Day: +1 Purpose in one Infrastructure section."
+   "text": "On the Wall: Each Dusk: +1 Purpose."
   }
  }
 ]

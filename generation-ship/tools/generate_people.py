@@ -256,6 +256,16 @@ def make_card(rng, cid, tier, icons):
         for k in range(total):
             req[gs[k % len(gs)]] += 1
         bonus = fill(rng, pool, total * threshold_pp_per_element(total), tier, mult, 2)
+        # A card's own guilds never count toward its own threshold, so the printed requirement is
+        # what must come from elsewhere: the old requirement less the card's own icon of each guild,
+        # but always at least 1 (no card unlocks its own bonus).
+        for g in list(req):
+            if g in icons:
+                req[g] -= 1
+                if req[g] <= 0:
+                    del req[g]
+        if not req:
+            req[gs[0]] = 1
         if bonus:
             card["threshold"] = {"elements": dict(req), "effects": bonus,
                                  "text": text_of(bonus),

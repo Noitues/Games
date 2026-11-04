@@ -4,7 +4,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { loadData } from "../sim/load.js";
 import { createGame, makeContext, seed, grow, collapse, resolveCard, runPhase, checkVictory,
-  activeDestination, legalTargets } from "../src/engine/game.js";
+  activeDestination, legalTargets, houseStats } from "../src/engine/game.js";
 import { damageThreat, placeDecay, gainPurpose, vent, winConditionMet, applySectionEffects } from "../src/engine/rules.js";
 
 const DATA = loadData();
@@ -275,16 +275,70 @@ test("commit: the nominee is free; other plays cost credits", () => {
   const f = fresh(); f.st.houses[0].hand = [...cards]; f.st.houses[0].credits = 1;
   assert.throws(() => applyPlan(f.G, f.st, 0, { play: cards, nominee: cards[0], fast: [] }));
 });
-test("vote: a tie goes to the Steward's house's vote", () => {
-  const { st, S } = fresh();
+test("vote: a tie goes to the house with fewer leaders on the conveyor, then the Steward decides", () => {
+  const { st } = fresh();
   const [a, b] = DATA.people.filter((c) => c.tier === "Common").slice(0, 2).map((c) => c.id);
-  st.houses[0].nominee = a; st.houses[1].nominee = b;
   const votes = { 0: a, 1: b };
-  const G = makeContext(DATA, { ...createGame(DATA, { players: 2, houses: ["galvan", "keel"] }, 1).cfg },
-    [0, 1].map((h) => ({ choose: (G, st, hh, kind, o) => (kind === "vote" ? votes[hh] : Array.isArray(o) ? o[0] : o) })));
+  const agents = [0, 1].map((h) => ({ choose: (G, st, hh, kind, o) => (kind === "vote" ? votes[hh] : kind === "tiebreak" ? o[o.length - 1] : Array.isArray(o) ? o[0] : o) }));
+  const G = makeContext(DATA, { ...createGame(DATA, { players: 2, houses: ["galvan", "keel"] }, 1).cfg }, agents);
+  // house 1 holds the Steward: the tie goes to house 0's nominee
+  st.houses[0].nominee = a; st.houses[1].nominee = b;
   st.slots.day = { leader: a, event: "E1-1", house: 1 };
   runPhase(G, st, "dawn");
-  assert.equal(st.slots.dawn.leader, b);
+  assert.equal(st.slots.dawn.leader, a);
+  // one leader each on the conveyor: the Steward's house (1) breaks the tie (this agent picks the last option)
+  const f = fresh();
+  f.st.houses[0].nominee = a; f.st.houses[1].nominee = b;
+  f.st.slots.day = { leader: a, event: "E1-1", house: 1 }; f.st.slots.dusk = { leader: b, event: "E1-2", house: 0 };
+  runPhase(G, f.st, "dawn");
+  assert.equal(f.st.slots.dawn.leader, b);
+});
+test("threshold: a card's own guilds do not count toward its own threshold", () => {
+  const { G, st, S } = fresh();
+  const c = DATA.people.find((x) => x.threshold && x.target.kind === "section" && x.effects.brace === undefined
+    && Object.keys(x.threshold.elements).every((g) => x.guilds.includes(g)) && x.threshold.effects.brace);
+  st.houses[0].elements = {};
+  for (const g of c.guilds) st.houses[0].elements[g] = 1; // only the card itself
+  resolveCard(G, st, 0, c.id);
+  assert.ok(Object.values(S).every((s) => s.brace === 0));
+  for (const [g, n] of Object.entries(c.threshold.elements)) st.houses[0].elements[g] = n + 1; // help from other cards
+  resolveCard(G, st, 0, c.id);
+  assert.ok(Object.values(S).some((s) => s.brace >= c.threshold.effects.brace));
+});
+test("vent and gather are optional", () => {
+  const { st, S } = fresh();
+  const stay = makeContext(DATA, createGame(DATA, { players: 2, houses: ["galvan", "keel"] }, 1).cfg,
+    [0, 1].map(() => ({ choose: (G, st, h, kind, o) => (kind === "ventTo" ? "stay" : kind === "gatherFrom" ? "none" : o[0]) })));
+  S.A1.fault = 1;
+  vent(stay, st, 0, S.A1, "fault", 1);
+  assert.equal(S.A1.fault, 1);
+});
+test("adding influence from a card costs credits and is optional", () => {
+  const { G, st, S } = fresh();
+  st.houses[0].credits = 3;
+  applySectionEffects(G, st, 0, S.A1, { add_influence: 2 });
+  assert.equal(S.A1.influence[0], 2); // first agent buys as many as it can afford (1)
+  assert.equal(st.houses[0].credits, 1);
+});
+test("Discoveries earned while resolving Discoveries wait for the next Dusk", () => {
+  const { G, st } = fresh();
+  st.purposeCap = 1;
+  const d = DATA.discoveries.find((x) => x.tiers.I.effects.purpose);
+  st.pendingDiscoveries = [d.id];
+  st.slots.day = null;
+  runPhase(G, st, "dusk");
+  assert.ok(st.pendingDiscoveries.length >= 1);
+  assert.equal(st.stats.discoveryApplied, 1);
+});
+test("Breakthroughs switch on only when their leader reaches the Wall", () => {
+  const { G, st } = fresh();
+  const d = DATA.discoveries.find((x) => x.breakthrough.effects.credits_per_growth);
+  const leader = DATA.people[0].id;
+  st.slots.dusk = { leader, event: null, house: 0, bt: d.id };
+  st.houses[0].credits = 0;
+  const before = houseStats(G, st, 0).income;
+  runPhase(G, st, "time");
+  assert.equal(houseStats(G, st, 0).income, before + 1);
 });
 test("Legacy resolves in the Elder's event sections; tempering drops its costliest effect", () => {
   const { G, st, S } = fresh();

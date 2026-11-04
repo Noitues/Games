@@ -33,7 +33,7 @@ HULL_PROFILE = [(0, 0), (0.05, 12), (0.13, 18), (0.155, 58), (0.175, 58), (0.2, 
 # Seeds per board (x, y, type) in local coordinates (hexagon centred on 0,0; hull at the top).
 BOARDS = {
     "A": [(-95, -120, I), (0, -135, Rs), (95, -120, A),
-          (-120, 10, G), (-35, -35, A), (60, -20, I), (130, 40, G), (0, 105, Rs)],
+          (-120, 10, G), (-35, -35, A), (60, -20, I), (130, 30, G), (0, 105, Rs)],
     "B": [(-60, -125, Rs), (60, -125, G),
           (-140, -20, A), (-50, 20, I), (40, -40, I), (140, -5, A), (-40, 120, Rs), (80, 95, G)],
     "C": [(-110, -115, A), (-15, -130, I), (70, -110, Rs), (130, -90, G),
@@ -136,6 +136,7 @@ def kink(a, b):
     p, q = key
     dx, dy = q[0] - p[0], q[1] - p[1]
     L = math.hypot(dx, dy) or 1
+    amt = min(amt, 0.12 * L)   # short borders get a small kink, so it can't cross a neighbor
     return (p[0] + dx * pos - dy / L * amt * sgn, p[1] + dy * pos + dx / L * amt * sgn)
 
 
@@ -163,8 +164,68 @@ def shape_cell(poly):
     return out
 
 
+FLAT_EDGES = [0.13, 0.37, 0.63, 0.87]   # where the docking profile leaves / rejoins the straight side
+
+
+def side_t(p):
+    for k in range(6):
+        if k == HULL:
+            continue
+        t = on_side(p, k)
+        if t is not None and 0.0 < t < 1.0:
+            return k, t
+    return None
+
+
+def crosses(p1, p2, p3, p4):
+    o = lambda a, b, c: (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0])
+    return o(p1, p2, p3) * o(p1, p2, p4) < -1e-9 and o(p3, p4, p1) * o(p3, p4, p2) < -1e-9
+
+
+def snap_cell(poly):
+    """Move each section border that meets a docking side inside a dovetail tab or socket to the end
+    of that feature nearest the border's inner end, so no tab or socket is split between sections and
+    the border cannot cut across it (that made sliver and overlapping shapes)."""
+    out, n = [], len(poly)
+    for i, p in enumerate(poly):
+        st = side_t(p)
+        if st is None or profile_at(DOCK, st[1]) == 0:
+            out.append(p)
+            continue
+        k, t = st
+        inner = [q for q in (poly[i - 1], poly[(i + 1) % n]) if on_side(q, k) is None]
+        a, b = VERTS[k], VERTS[(k + 1) % 6]
+        if inner:
+            q = inner[0]
+            L2 = (b[0] - a[0]) ** 2 + (b[1] - a[1]) ** 2
+            tq = ((q[0] - a[0]) * (b[0] - a[0]) + (q[1] - a[1]) * (b[1] - a[1])) / L2
+        else:
+            tq = t
+        lo = max(f for f in FLAT_EDGES if f <= t)
+        hi = min(f for f in FLAT_EDGES if f >= t)
+        t2 = lo if abs(tq - lo) < abs(tq - hi) else hi
+        if inner:
+            # never let the border cut across the tab or socket: take the other end if it would
+            feat = [side_point(k, x) for x, _ in DOCK if lo <= x <= hi]
+            pt = (a[0] + (b[0] - a[0]) * t2, a[1] + (b[1] - a[1]) * t2)
+            if any(crosses(pt, inner[0], feat[j], feat[j + 1]) for j in range(len(feat) - 1)):
+                t2 = hi if t2 == lo else lo
+        out.append((a[0] + (b[0] - a[0]) * t2, a[1] + (b[1] - a[1]) * t2))
+    return out
+
+
+def dedupe(poly):
+    out = []
+    for p in poly:
+        if not out or math.dist(p, out[-1]) > 1e-6:
+            out.append(p)
+    while len(out) > 1 and math.dist(out[0], out[-1]) <= 1e-6:
+        out.pop()
+    return out
+
+
 def build_board(bid, seeds):
-    cells = [cell(seeds, i) for i in range(len(seeds))]
+    cells = [dedupe(snap_cell(cell(seeds, i))) for i in range(len(seeds))]
     secs = []
     for i, (x, y, t) in enumerate(seeds):
         c = cells[i]

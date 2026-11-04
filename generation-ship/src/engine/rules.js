@@ -46,6 +46,23 @@ export function targetFilter(st, s, type) {
   }
 }
 
+// The Steward's house makes the table's shared decisions (Discoveries, cascades, Landfall, ties).
+export const stewardHouse = (st) => st.slots?.day?.house ?? 0;
+
+// Passive Wall bonuses: Breakthroughs switch on when their leader retires to the Wall.
+export function wallBonuses(G, st) {
+  const out = { elements: {}, credits_per_growth: 0, extra_draw: 0, hull_brace: 0, decay_ward: 0, fast_play: 0, purpose_per_gen: 0 };
+  for (const L of st.wall || []) {
+    if (!L.bt) continue;
+    const eff = G.data.discoveryById[L.bt]?.breakthrough?.effects || {};
+    for (const [k, v] of Object.entries(eff)) {
+      if (k === "element") out.elements[v] = (out.elements[v] || 0) + 1;
+      else if (k in out) out[k] += v;
+    }
+  }
+  return out;
+}
+
 // ---------------------------------------------------------------- logging
 export function log(G, st, msg) {
   if (G.verbose) st.log.push(`G${st.gen} ${st.phase}: ${msg}`);
@@ -123,6 +140,12 @@ export function placeDecay(G, st, s, depth = 0) {
     checkInfluenceLoss(st);
     return;
   }
+  // Wall bonus: the first Decay(s) each generation go back to the pool.
+  const ward = G.data.discoveryById ? wallBonuses(G, st).decay_ward : 0;
+  if (ward > 0) {
+    if (st.wardGen !== st.gen) { st.wardGen = st.gen; st.wardUsed = 0; }
+    if (st.wardUsed < ward) { st.wardUsed += 1; st.stats.warded = (st.stats.warded || 0) + 1; log(G, st, `Decay in ${s.id} warded`); return; }
+  }
   if (st.decayPool <= 0) {
     if (!st.crisisFlipped) {
       st.crisisFlipped = true;
@@ -143,7 +166,7 @@ export function placeDecay(G, st, s, depth = 0) {
     for (let k = 0; k < n; k++) {
       const opts = s.adj.filter((a) => !st.sections[a].quarantine);
       if (!opts.length) break;
-      const tgt = G.choose(st, 0, "cascade", opts, { from: s.id });
+      const tgt = G.choose(st, stewardHouse(st), "cascade", opts, { from: s.id });
       placeDecay(G, st, st.sections[tgt], depth + 1);
       if (st.result) return;
     }
@@ -160,7 +183,8 @@ export function gatherCrew(G, st, h, s, n) {
   for (let i = 0; i < n; i++) {
     const opts = s.adj.filter((a) => st.sections[a].crew > 0);
     if (!opts.length) return;
-    const from = G.choose(st, h, "gatherFrom", opts, { to: s.id });
+    const from = G.choose(st, h, "gatherFrom", [...opts, "none"], { to: s.id });
+    if (from === "none" || !st.sections[from]) return; // gathering is optional
     st.sections[from].crew -= 1; s.crew += 1;
   }
 }
@@ -181,7 +205,8 @@ export function vent(G, st, h, s, kind, n) {
     }
     const opts = s.adj.filter((a) => !st.sections[a].quarantine);
     if (!opts.length) return;
-    const to = G.choose(st, h, "ventTo", opts, { from: s.id, piece });
+    const to = G.choose(st, h, "ventTo", [...opts, "stay"], { from: s.id, piece });
+    if (to === "stay" || !st.sections[to]) return; // venting is optional
     s[piece] -= 1; st.sections[to][piece] += 1;
   }
 }
@@ -221,9 +246,12 @@ export function applySectionEffects(G, st, h, s, effects) {
       case "gather_crew": case "move_crew": gatherCrew(G, st, h, s, n); break;
       case "add_crew": s.crew += n; break;
       case "restore_decay": restoreDecay(st, s, n); break;
-      case "add_influence":
+      case "add_influence": {
         if (st.houses[h]?.id === "voidwardens" && !(s.hull || s.adj.some((a) => st.sections[a].hull))) break;
-        s.influence[h] = (s.influence[h] || 0) + n; break;
+        const k = buyInfluence(G, st, h, n, s.id);
+        if (k) s.influence[h] = (s.influence[h] || 0) + k;
+        break;
+      }
       case "move_influence": moveInfluence(G, st, h, s, n); break;
       case "purpose": gainPurpose(G, st, n, "card"); break;
       case "credits": st.houses[h].credits += n; break;
@@ -244,6 +272,19 @@ export function moveInfluence(G, st, h, s, n) {
   }
 }
 
+// Adding influence from a card is optional and costs credits (cfg.influenceCost each).
+export function buyInfluence(G, st, h, n, where) {
+  const cost = G.cfg.influenceCost ?? 0;
+  const H = st.houses[h];
+  const max = cost ? Math.min(n, Math.floor(H.credits / cost)) : n;
+  const opts = [];
+  for (let k = max; k >= 0; k--) opts.push(k);
+  const k = opts.length > 1 ? G.choose(st, h, "buyInfluence", opts, { cost, where, n }) : opts[0];
+  H.credits -= k * cost;
+  if (k) st.stats.influenceBought = (st.stats.influenceBought || 0) + k;
+  return k;
+}
+
 // Effects on another house (cooperative cards).
 export function applyHouseEffects(G, st, h, target, effects) {
   for (const [v, n] of Object.entries(effects)) {
@@ -253,7 +294,10 @@ export function applyHouseEffects(G, st, h, target, effects) {
       const opts = inRange(st, target, 1);
       if (!opts.length) continue;
       const id = G.choose(st, h, "influenceFor", opts, { house: target });
-      if (v === "add_influence") st.sections[id].influence[target] = (st.sections[id].influence[target] || 0) + n;
+      if (v === "add_influence") {
+        const k = buyInfluence(G, st, h, n, id);
+        if (k) st.sections[id].influence[target] = (st.sections[id].influence[target] || 0) + k;
+      }
       else moveInfluence(G, st, target, st.sections[id], n);
     } else throw new Error(`unknown house verb ${v}`);
   }

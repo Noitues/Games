@@ -140,8 +140,7 @@
   "pp_actual": 4.04,
   "threshold": {
    "elements": {
-    "Medics": 2,
-    "Bureaucrats": 1
+    "Medics": 1
    },
    "effects": {
     "move_influence": 2,
@@ -190,7 +189,7 @@
   "pp_actual": 2.98,
   "threshold": {
    "elements": {
-    "Laborers": 2
+    "Laborers": 1
    },
    "effects": {
     "purpose": 2
@@ -934,8 +933,7 @@
   "pp_actual": 2.96,
   "threshold": {
    "elements": {
-    "Bureaucrats": 2,
-    "Medics": 1
+    "Bureaucrats": 1
    },
    "effects": {
     "credits": 2,
@@ -983,7 +981,7 @@
   "pp_actual": 3.05,
   "threshold": {
    "elements": {
-    "Engineers": 3
+    "Engineers": 2
    },
    "effects": {
     "damage": 3,
@@ -1337,8 +1335,7 @@
   "pp_actual": 2.93,
   "threshold": {
    "elements": {
-    "Farmers": 2,
-    "Navigators": 1
+    "Farmers": 1
    },
    "effects": {
     "patch": 1,
@@ -1423,8 +1420,7 @@
   "pp_actual": 3.0,
   "threshold": {
    "elements": {
-    "Keepers": 2,
-    "Laborers": 1
+    "Keepers": 1
    },
    "effects": {
     "move_influence": 2,
@@ -1589,7 +1585,7 @@
   "pp_actual": 4.08,
   "threshold": {
    "elements": {
-    "Scholars": 2
+    "Scholars": 1
    },
    "effects": {
     "vent_fault": 1,
@@ -1680,8 +1676,7 @@
   "pp_actual": 3.06,
   "threshold": {
    "elements": {
-    "Laborers": 1,
-    "Keepers": 1
+    "Laborers": 1
    },
    "effects": {
     "vent_fault": 1,
@@ -1729,8 +1724,7 @@
   "pp_actual": 4.08,
   "threshold": {
    "elements": {
-    "Farmers": 2,
-    "Medics": 1
+    "Farmers": 1
    },
    "effects": {
     "brace": 6,
@@ -2170,7 +2164,7 @@
   "pp_actual": 4.89,
   "threshold": {
    "elements": {
-    "Engineers": 3
+    "Engineers": 2
    },
    "effects": {
     "purpose": 2,
@@ -2261,8 +2255,7 @@
   "pp_actual": 2.12,
   "threshold": {
    "elements": {
-    "Engineers": 1,
-    "Medics": 1
+    "Engineers": 1
    },
    "effects": {
     "patch": 1,
@@ -2349,8 +2342,7 @@
   "pp_actual": 2.25,
   "threshold": {
    "elements": {
-    "Navigators": 1,
-    "Laborers": 1
+    "Navigators": 1
    },
    "effects": {
     "lockout": 1,
@@ -2399,8 +2391,7 @@
   "pp_actual": 1.95,
   "threshold": {
    "elements": {
-    "Farmers": 1,
-    "Bureaucrats": 1
+    "Farmers": 1
    },
    "effects": {
     "credits": 2
@@ -3109,7 +3100,7 @@
   "pp_actual": 3.12,
   "threshold": {
    "elements": {
-    "Keepers": 2
+    "Keepers": 1
    },
    "effects": {
     "purpose": 1,
@@ -3198,8 +3189,7 @@
   "pp_actual": 3.91,
   "threshold": {
    "elements": {
-    "Medics": 1,
-    "Engineers": 1
+    "Medics": 1
    },
    "effects": {
     "brace": 2,
@@ -3328,7 +3318,7 @@
   "pp_actual": 5.0,
   "threshold": {
    "elements": {
-    "Laborers": 3
+    "Laborers": 2
    },
    "effects": {
     "vent_glitch": 2,
@@ -3416,8 +3406,7 @@
   "pp_actual": 4.0,
   "threshold": {
    "elements": {
-    "Keepers": 1,
-    "Scholars": 1
+    "Keepers": 1
    },
    "effects": {
     "purpose": 2
@@ -3623,7 +3612,7 @@
   "pp_actual": 4.0,
   "threshold": {
    "elements": {
-    "Engineers": 2
+    "Engineers": 1
    },
    "effects": {
     "purpose": 2
@@ -3869,8 +3858,7 @@
   "pp_actual": 2.93,
   "threshold": {
    "elements": {
-    "Medics": 2,
-    "Navigators": 1
+    "Medics": 1
    },
    "effects": {
     "lockout": 1,
@@ -3958,7 +3946,7 @@
   "pp_actual": 4.0,
   "threshold": {
    "elements": {
-    "Medics": 3
+    "Medics": 2
    },
    "effects": {
     "isolate_fault": 2,
@@ -4240,8 +4228,7 @@
   "pp_actual": 2.2,
   "threshold": {
    "elements": {
-    "Keepers": 1,
-    "Bureaucrats": 1
+    "Keepers": 1
    },
    "effects": {
     "purpose": 2
@@ -5183,7 +5170,7 @@
   "pp_actual": 3.06,
   "threshold": {
    "elements": {
-    "Engineers": 2
+    "Engineers": 1
    },
    "effects": {
     "downgrade": 2
@@ -5348,8 +5335,7 @@
   "pp_actual": 3.05,
   "threshold": {
    "elements": {
-    "Laborers": 1,
-    "Navigators": 1
+    "Laborers": 1
    },
    "effects": {
     "brace": 4,
@@ -5398,8 +5384,7 @@
   "pp_actual": 4.85,
   "threshold": {
    "elements": {
-    "Bureaucrats": 2,
-    "Scholars": 1
+    "Bureaucrats": 1
    },
    "effects": {
     "quarantine": 1,
@@ -5527,7 +5512,7 @@
   "pp_actual": 3.1,
   "threshold": {
    "elements": {
-    "Navigators": 2
+    "Navigators": 1
    },
    "effects": {
     "move_crew": 3
@@ -5576,7 +5561,7 @@
   "pp_actual": 5.0,
   "threshold": {
    "elements": {
-    "Navigators": 2
+    "Navigators": 1
    },
    "effects": {
     "vent_glitch": 3,
@@ -5662,7 +5647,7 @@
   "pp_actual": 5.11,
   "threshold": {
    "elements": {
-    "Keepers": 3
+    "Keepers": 2
    },
    "effects": {
     "brace": 2,
@@ -5940,7 +5925,7 @@
   "pp_actual": 3.0,
   "threshold": {
    "elements": {
-    "Keepers": 2
+    "Keepers": 1
    },
    "effects": {
     "add_influence": 1,
@@ -6026,7 +6011,7 @@
   "pp_actual": 2.97,
   "threshold": {
    "elements": {
-    "Keepers": 2
+    "Keepers": 1
    },
    "effects": {
     "patch": 1,
@@ -6229,7 +6214,7 @@
   "pp_actual": 3.91,
   "threshold": {
    "elements": {
-    "Laborers": 3
+    "Laborers": 2
    },
    "effects": {
     "gather_crew": 2,
@@ -6316,7 +6301,7 @@
   "pp_actual": 4.88,
   "threshold": {
    "elements": {
-    "Medics": 2
+    "Medics": 1
    },
    "effects": {
     "gather_crew": 2,
@@ -6442,8 +6427,7 @@
   "pp_actual": 4.02,
   "threshold": {
    "elements": {
-    "Keepers": 1,
-    "Navigators": 1
+    "Keepers": 1
    },
    "effects": {
     "add_influence": 1,
@@ -6532,8 +6516,7 @@
   "pp_actual": 3.0,
   "threshold": {
    "elements": {
-    "Keepers": 1,
-    "Scholars": 1
+    "Keepers": 1
    },
    "effects": {
     "purpose": 1,
@@ -6660,8 +6643,7 @@
   "pp_actual": 3.15,
   "threshold": {
    "elements": {
-    "Scholars": 2,
-    "Medics": 1
+    "Scholars": 1
    },
    "effects": {
     "gather_crew": 2,
@@ -6823,8 +6805,7 @@
   "pp_actual": 4.0,
   "threshold": {
    "elements": {
-    "Medics": 2,
-    "Engineers": 1
+    "Medics": 1
    },
    "effects": {
     "credits": 1,
@@ -6989,8 +6970,7 @@
   "pp_actual": 3.82,
   "threshold": {
    "elements": {
-    "Farmers": 2,
-    "Navigators": 1
+    "Farmers": 1
    },
    "effects": {
     "restore_decay": 1,
@@ -7316,7 +7296,7 @@
   "pp_actual": 2.8,
   "threshold": {
    "elements": {
-    "Navigators": 3
+    "Navigators": 2
    },
    "effects": {
     "credits": 3
@@ -7364,7 +7344,7 @@
   "pp_actual": 2.97,
   "threshold": {
    "elements": {
-    "Engineers": 2
+    "Engineers": 1
    },
    "effects": {
     "damage": 2,
@@ -7651,8 +7631,7 @@
   "pp_actual": 3.87,
   "threshold": {
    "elements": {
-    "Keepers": 1,
-    "Farmers": 1
+    "Keepers": 1
    },
    "effects": {
     "purpose": 1,
@@ -7784,8 +7763,7 @@
   "pp_actual": 5.17,
   "threshold": {
    "elements": {
-    "Engineers": 2,
-    "Laborers": 1
+    "Engineers": 1
    },
    "effects": {
     "downgrade": 1,
@@ -7835,8 +7813,7 @@
   "pp_actual": 2.93,
   "threshold": {
    "elements": {
-    "Farmers": 2,
-    "Bureaucrats": 1
+    "Farmers": 1
    },
    "effects": {
     "add_crew": 1
@@ -7959,8 +7936,7 @@
   "pp_actual": 2.0,
   "threshold": {
    "elements": {
-    "Keepers": 2,
-    "Bureaucrats": 1
+    "Keepers": 1
    },
    "effects": {
     "purpose": 2,
@@ -8084,8 +8060,7 @@
   "pp_actual": 3.8,
   "threshold": {
    "elements": {
-    "Bureaucrats": 1,
-    "Scholars": 1
+    "Bureaucrats": 1
    },
    "effects": {
     "isolate_fault": 2,
@@ -8171,8 +8146,7 @@
   "pp_actual": 2.0,
   "threshold": {
    "elements": {
-    "Navigators": 2,
-    "Bureaucrats": 1
+    "Navigators": 1
    },
    "effects": {
     "credits": 1,
@@ -8223,7 +8197,7 @@
   "pp_actual": 5.0,
   "threshold": {
    "elements": {
-    "Farmers": 3
+    "Farmers": 2
    },
    "effects": {
     "move_influence": 1,
@@ -8270,8 +8244,7 @@
   "pp_actual": 4.0,
   "threshold": {
    "elements": {
-    "Scholars": 1,
-    "Bureaucrats": 1
+    "Scholars": 1
    },
    "effects": {
     "purpose": 1,
@@ -8952,8 +8925,7 @@
   "pp_actual": 5.12,
   "threshold": {
    "elements": {
-    "Medics": 1,
-    "Keepers": 1
+    "Medics": 1
    },
    "effects": {
     "gather_crew": 3,
@@ -9234,8 +9206,7 @@
   "pp_actual": 4.15,
   "threshold": {
    "elements": {
-    "Bureaucrats": 2,
-    "Keepers": 1
+    "Bureaucrats": 1
    },
    "effects": {
     "add_influence": 1,
@@ -9326,7 +9297,7 @@
   "pp_actual": 2.75,
   "threshold": {
    "elements": {
-    "Farmers": 3
+    "Farmers": 2
    },
    "effects": {
     "vent_fault": 1,
@@ -9770,8 +9741,7 @@
   "pp_actual": 1.95,
   "threshold": {
    "elements": {
-    "Medics": 1,
-    "Farmers": 1
+    "Medics": 1
    },
    "effects": {
     "patch": 1,
@@ -9900,7 +9870,7 @@
   "pp_actual": 4.2,
   "threshold": {
    "elements": {
-    "Navigators": 2
+    "Navigators": 1
    },
    "effects": {
     "move_crew": 2,
@@ -9950,8 +9920,7 @@
   "pp_actual": 5.04,
   "threshold": {
    "elements": {
-    "Bureaucrats": 2,
-    "Engineers": 1
+    "Bureaucrats": 1
    },
    "effects": {
     "credits": 3
@@ -10196,8 +10165,7 @@
   "pp_actual": 5.2,
   "threshold": {
    "elements": {
-    "Navigators": 1,
-    "Keepers": 1
+    "Navigators": 1
    },
    "effects": {
     "damage": 3
@@ -10322,7 +10290,7 @@
   "pp_actual": 2.12,
   "threshold": {
    "elements": {
-    "Engineers": 3
+    "Engineers": 2
    },
    "effects": {
     "damage": 3,
@@ -10569,7 +10537,7 @@
   "pp_actual": 2.93,
   "threshold": {
    "elements": {
-    "Farmers": 2
+    "Farmers": 1
    },
    "effects": {
     "move_influence": 2
@@ -10694,8 +10662,7 @@
   "pp_actual": 2.16,
   "threshold": {
    "elements": {
-    "Keepers": 1,
-    "Medics": 1
+    "Keepers": 1
    },
    "effects": {
     "add_influence": 1,
@@ -10898,7 +10865,7 @@
   "pp_actual": 3.75,
   "threshold": {
    "elements": {
-    "Navigators": 2
+    "Navigators": 1
    },
    "effects": {
     "vent_glitch": 3,
@@ -11180,8 +11147,7 @@
   "pp_actual": 5.0,
   "threshold": {
    "elements": {
-    "Scholars": 1,
-    "Bureaucrats": 1
+    "Scholars": 1
    },
    "effects": {
     "purpose": 1,
@@ -11233,7 +11199,7 @@
   "pp_actual": 2.97,
   "threshold": {
    "elements": {
-    "Laborers": 2
+    "Laborers": 1
    },
    "effects": {
     "lockout": 1,
@@ -11326,8 +11292,7 @@
   "pp_actual": 2.97,
   "threshold": {
    "elements": {
-    "Engineers": 2,
-    "Keepers": 1
+    "Engineers": 1
    },
    "effects": {
     "damage": 3,
@@ -11842,7 +11807,7 @@
   "pp_actual": 3.02,
   "threshold": {
    "elements": {
-    "Engineers": 2
+    "Engineers": 1
    },
    "effects": {
     "damage": 3
@@ -11930,8 +11895,7 @@
   "pp_actual": 2.0,
   "threshold": {
    "elements": {
-    "Scholars": 1,
-    "Laborers": 1
+    "Scholars": 1
    },
    "effects": {
     "vent_glitch": 2,
@@ -11984,7 +11948,7 @@
   "pp_actual": 5.25,
   "threshold": {
    "elements": {
-    "Laborers": 2
+    "Laborers": 1
    },
    "effects": {
     "patch": 1,
@@ -12150,8 +12114,7 @@
   "pp_actual": 5.04,
   "threshold": {
    "elements": {
-    "Keepers": 2,
-    "Scholars": 1
+    "Keepers": 1
    },
    "effects": {
     "purpose": 3
@@ -12393,8 +12356,8 @@
   "pp_actual": 13.86,
   "threshold": {
    "elements": {
-    "Scholars": 2,
-    "Navigators": 2
+    "Scholars": 1,
+    "Navigators": 1
    },
    "effects": {
     "damage": 3,
@@ -12446,8 +12409,8 @@
   "pp_actual": 8.0,
   "threshold": {
    "elements": {
-    "Engineers": 2,
-    "Farmers": 2
+    "Engineers": 1,
+    "Farmers": 1
    },
    "effects": {
     "damage": 4
@@ -12496,8 +12459,7 @@
   "pp_actual": 5.0,
   "threshold": {
    "elements": {
-    "Scholars": 2,
-    "Farmers": 1
+    "Scholars": 1
    },
    "effects": {
     "gather_crew": 6,
@@ -12548,8 +12510,8 @@
   "pp_actual": 9.5,
   "threshold": {
    "elements": {
-    "Laborers": 2,
-    "Engineers": 2
+    "Laborers": 1,
+    "Engineers": 1
    },
    "effects": {
     "gather_crew": 2,
@@ -12602,8 +12564,7 @@
   "pp_actual": 5.0,
   "threshold": {
    "elements": {
-    "Medics": 2,
-    "Keepers": 1
+    "Medics": 1
    },
    "effects": {
     "add_crew": 1
@@ -12654,8 +12615,8 @@
   "pp_actual": 14.02,
   "threshold": {
    "elements": {
-    "Laborers": 3,
-    "Engineers": 2
+    "Laborers": 2,
+    "Engineers": 1
    },
    "effects": {
     "damage": 12,
@@ -12707,8 +12668,8 @@
   "pp_actual": 14.17,
   "threshold": {
    "elements": {
-    "Engineers": 3,
-    "Farmers": 2
+    "Engineers": 2,
+    "Farmers": 1
    },
    "effects": {
     "damage": 11,
@@ -12758,8 +12719,8 @@
   "pp_actual": 6.5,
   "threshold": {
    "elements": {
-    "Laborers": 3,
-    "Bureaucrats": 3
+    "Laborers": 2,
+    "Bureaucrats": 2
    },
    "effects": {
     "credits": 6,
@@ -12812,8 +12773,8 @@
   "pp_actual": 8.0,
   "threshold": {
    "elements": {
-    "Bureaucrats": 2,
-    "Scholars": 2
+    "Bureaucrats": 1,
+    "Scholars": 1
    },
    "effects": {
     "vent_fault": 3,
@@ -12866,8 +12827,8 @@
   "pp_actual": 13.9,
   "threshold": {
    "elements": {
-    "Keepers": 3,
-    "Scholars": 2
+    "Keepers": 2,
+    "Scholars": 1
    },
    "effects": {
     "purpose": 8,
@@ -12919,8 +12880,8 @@
   "pp_actual": 6.63,
   "threshold": {
    "elements": {
-    "Laborers": 3,
-    "Navigators": 3
+    "Laborers": 2,
+    "Navigators": 2
    },
    "effects": {
     "brace": 11,
@@ -13010,8 +12971,8 @@
   "pp_actual": 6.32,
   "threshold": {
    "elements": {
-    "Farmers": 3,
-    "Engineers": 3
+    "Farmers": 2,
+    "Engineers": 2
    },
    "effects": {
     "damage": 11,
@@ -13107,8 +13068,7 @@
   "pp_actual": 5.02,
   "threshold": {
    "elements": {
-    "Bureaucrats": 2,
-    "Farmers": 1
+    "Bureaucrats": 1
    },
    "effects": {
     "credits": 2,
@@ -13161,8 +13121,8 @@
   "pp_actual": 6.5,
   "threshold": {
    "elements": {
-    "Farmers": 2,
-    "Engineers": 2
+    "Farmers": 1,
+    "Engineers": 1
    },
    "effects": {
     "patch": 2,
@@ -13214,8 +13174,7 @@
   "pp_actual": 9.35,
   "threshold": {
    "elements": {
-    "Laborers": 2,
-    "Medics": 1
+    "Laborers": 1
    },
    "effects": {
     "damage": 2,
@@ -13269,8 +13228,8 @@
   "pp_actual": 9.5,
   "threshold": {
    "elements": {
-    "Medics": 2,
-    "Engineers": 2
+    "Medics": 1,
+    "Engineers": 1
    },
    "effects": {
     "damage": 4
@@ -13324,8 +13283,8 @@
   "pp_actual": 4.89,
   "threshold": {
    "elements": {
-    "Farmers": 3,
-    "Bureaucrats": 2
+    "Farmers": 2,
+    "Bureaucrats": 1
    },
    "effects": {
     "credits": 6,
@@ -13455,8 +13414,7 @@
   "pp_actual": 5.25,
   "threshold": {
    "elements": {
-    "Bureaucrats": 2,
-    "Medics": 1
+    "Bureaucrats": 1
    },
    "effects": {
     "vent_fault": 4
@@ -13507,8 +13465,8 @@
   "pp_actual": 14.25,
   "threshold": {
    "elements": {
-    "Engineers": 2,
-    "Laborers": 2
+    "Engineers": 1,
+    "Laborers": 1
    },
    "effects": {
     "patch": 1,
@@ -13560,8 +13518,7 @@
   "pp_actual": 9.35,
   "threshold": {
    "elements": {
-    "Medics": 2,
-    "Bureaucrats": 1
+    "Medics": 1
    },
    "effects": {
     "brace": 3,
@@ -13614,8 +13571,8 @@
   "pp_actual": 8.12,
   "threshold": {
    "elements": {
-    "Scholars": 3,
-    "Engineers": 2
+    "Scholars": 2,
+    "Engineers": 1
    },
    "effects": {
     "damage": 9,
@@ -13670,8 +13627,8 @@
   "pp_actual": 9.5,
   "threshold": {
    "elements": {
-    "Engineers": 3,
-    "Scholars": 3
+    "Engineers": 2,
+    "Scholars": 2
    },
    "effects": {
     "damage": 12,
@@ -13725,8 +13682,8 @@
   "pp_actual": 6.4,
   "threshold": {
    "elements": {
-    "Navigators": 2,
-    "Medics": 2
+    "Navigators": 1,
+    "Medics": 1
    },
    "effects": {
     "lockout": 1,
@@ -13780,8 +13737,7 @@
   "pp_actual": 11.22,
   "threshold": {
    "elements": {
-    "Engineers": 2,
-    "Medics": 1
+    "Engineers": 1
    },
    "effects": {
     "gather_crew": 6,
@@ -13875,8 +13831,8 @@
   "pp_actual": 5.17,
   "threshold": {
    "elements": {
-    "Navigators": 2,
-    "Keepers": 2
+    "Navigators": 1,
+    "Keepers": 1
    },
    "effects": {
     "lockout": 2,
@@ -13930,8 +13886,8 @@
   "pp_actual": 6.47,
   "threshold": {
    "elements": {
-    "Laborers": 3,
-    "Keepers": 3
+    "Laborers": 2,
+    "Keepers": 2
    },
    "effects": {
     "restore_decay": 3,
@@ -13982,8 +13938,7 @@
   "pp_actual": 9.5,
   "threshold": {
    "elements": {
-    "Laborers": 2,
-    "Scholars": 1
+    "Laborers": 1
    },
    "effects": {
     "vent_glitch": 6,
@@ -14037,8 +13992,8 @@
   "pp_actual": 9.26,
   "threshold": {
    "elements": {
-    "Engineers": 2,
-    "Bureaucrats": 2
+    "Engineers": 1,
+    "Bureaucrats": 1
    },
    "effects": {
     "damage": 4
@@ -14092,8 +14047,8 @@
   "pp_actual": 9.45,
   "threshold": {
    "elements": {
-    "Farmers": 3,
-    "Keepers": 2
+    "Farmers": 2,
+    "Keepers": 1
    },
    "effects": {
     "purpose": 7,
@@ -14147,8 +14102,8 @@
   "pp_actual": 13.8,
   "threshold": {
    "elements": {
-    "Keepers": 3,
-    "Laborers": 2
+    "Keepers": 2,
+    "Laborers": 1
    },
    "effects": {
     "purpose": 8,
@@ -14196,8 +14151,8 @@
   "pp_actual": 8.0,
   "threshold": {
    "elements": {
-    "Keepers": 3,
-    "Farmers": 3
+    "Keepers": 2,
+    "Farmers": 2
    },
    "effects": {
     "add_crew": 4,
@@ -14248,8 +14203,7 @@
   "pp_actual": 6.32,
   "threshold": {
    "elements": {
-    "Laborers": 2,
-    "Bureaucrats": 1
+    "Laborers": 1
    },
    "effects": {
     "vent_fault": 2,
@@ -14302,8 +14256,8 @@
   "pp_actual": 9.5,
   "threshold": {
    "elements": {
-    "Bureaucrats": 2,
-    "Keepers": 2
+    "Bureaucrats": 1,
+    "Keepers": 1
    },
    "effects": {
     "move_influence": 3
@@ -14394,8 +14348,8 @@
   "pp_actual": 7.75,
   "threshold": {
    "elements": {
-    "Bureaucrats": 3,
-    "Farmers": 3
+    "Bureaucrats": 2,
+    "Farmers": 2
    },
    "effects": {
     "restore_decay": 4,
@@ -14449,8 +14403,8 @@
   "pp_actual": 13.81,
   "threshold": {
    "elements": {
-    "Farmers": 2,
-    "Engineers": 2
+    "Farmers": 1,
+    "Engineers": 1
    },
    "effects": {
     "add_crew": 1,
@@ -14504,8 +14458,8 @@
   "pp_actual": 5.17,
   "threshold": {
    "elements": {
-    "Engineers": 2,
-    "Navigators": 2
+    "Engineers": 1,
+    "Navigators": 1
    },
    "effects": {
     "downgrade": 2,
@@ -14557,8 +14511,8 @@
   "pp_actual": 7.8,
   "threshold": {
    "elements": {
-    "Engineers": 2,
-    "Bureaucrats": 2
+    "Engineers": 1,
+    "Bureaucrats": 1
    },
    "effects": {
     "patch": 2
@@ -14609,8 +14563,8 @@
   "pp_actual": 12.71,
   "threshold": {
    "elements": {
-    "Engineers": 3,
-    "Medics": 2
+    "Engineers": 2,
+    "Medics": 1
    },
    "effects": {
     "damage": 11,
@@ -14664,8 +14618,8 @@
   "pp_actual": 11.12,
   "threshold": {
    "elements": {
-    "Scholars": 2,
-    "Keepers": 2
+    "Scholars": 1,
+    "Keepers": 1
    },
    "effects": {
     "isolate_failure": 2,
@@ -14718,8 +14672,7 @@
   "pp_actual": 10.77,
   "threshold": {
    "elements": {
-    "Laborers": 2,
-    "Navigators": 1
+    "Laborers": 1
    },
    "effects": {
     "damage": 2,
@@ -14770,8 +14723,8 @@
   "pp_actual": 9.25,
   "threshold": {
    "elements": {
-    "Navigators": 2,
-    "Keepers": 2
+    "Navigators": 1,
+    "Keepers": 1
    },
    "effects": {
     "damage": 4,
@@ -14823,8 +14776,8 @@
   "pp_actual": 13.94,
   "threshold": {
    "elements": {
-    "Farmers": 3,
-    "Engineers": 2
+    "Farmers": 2,
+    "Engineers": 1
    },
    "effects": {
     "damage": 10,
@@ -14875,8 +14828,7 @@
   "pp_actual": 5.22,
   "threshold": {
    "elements": {
-    "Farmers": 2,
-    "Scholars": 1
+    "Farmers": 1
    },
    "effects": {
     "gather_crew": 5
@@ -14970,8 +14922,8 @@
   "pp_actual": 9.5,
   "threshold": {
    "elements": {
-    "Scholars": 2,
-    "Navigators": 2
+    "Scholars": 1,
+    "Navigators": 1
    },
    "effects": {
     "foresee": 2,
@@ -15022,8 +14974,7 @@
   "pp_actual": 13.81,
   "threshold": {
    "elements": {
-    "Laborers": 2,
-    "Navigators": 1
+    "Laborers": 1
    },
    "effects": {
     "vent_glitch": 5
@@ -15074,8 +15025,8 @@
   "pp_actual": 5.1,
   "threshold": {
    "elements": {
-    "Navigators": 2,
-    "Engineers": 2
+    "Navigators": 1,
+    "Engineers": 1
    },
    "effects": {
     "vent_glitch": 2,
@@ -15172,8 +15123,7 @@
   "pp_actual": 12.38,
   "threshold": {
    "elements": {
-    "Scholars": 2,
-    "Laborers": 1
+    "Scholars": 1
    },
    "effects": {
     "damage": 2,
@@ -15223,8 +15173,8 @@
   "pp_actual": 10.78,
   "threshold": {
    "elements": {
-    "Medics": 3,
-    "Bureaucrats": 2
+    "Medics": 2,
+    "Bureaucrats": 1
    },
    "effects": {
     "add_crew": 4,
@@ -15275,8 +15225,7 @@
   "pp_actual": 5.1,
   "threshold": {
    "elements": {
-    "Medics": 2,
-    "Bureaucrats": 1
+    "Medics": 1
    },
    "effects": {
     "quarantine": 2,
@@ -15371,8 +15320,8 @@
   "pp_actual": 12.6,
   "threshold": {
    "elements": {
-    "Navigators": 2,
-    "Keepers": 2
+    "Navigators": 1,
+    "Keepers": 1
    },
    "effects": {
     "purpose": 4
@@ -15425,8 +15374,7 @@
   "pp_actual": 14.2,
   "threshold": {
    "elements": {
-    "Farmers": 2,
-    "Scholars": 1
+    "Farmers": 1
    },
    "effects": {
     "purpose": 3
@@ -15474,8 +15422,7 @@
   "pp_actual": 9.5,
   "threshold": {
    "elements": {
-    "Laborers": 2,
-    "Engineers": 1
+    "Laborers": 1
    },
    "effects": {
     "vent_glitch": 4,
@@ -15528,8 +15475,8 @@
   "pp_actual": 8.25,
   "threshold": {
    "elements": {
-    "Navigators": 2,
-    "Engineers": 2
+    "Navigators": 1,
+    "Engineers": 1
    },
    "effects": {
     "patch": 2,
@@ -15579,8 +15526,8 @@
   "pp_actual": 9.65,
   "threshold": {
    "elements": {
-    "Medics": 3,
-    "Bureaucrats": 2
+    "Medics": 2,
+    "Bureaucrats": 1
    },
    "effects": {
     "brace": 11,
@@ -15630,8 +15577,8 @@
   "pp_actual": 8.16,
   "threshold": {
    "elements": {
-    "Farmers": 2,
-    "Navigators": 2
+    "Farmers": 1,
+    "Navigators": 1
    },
    "effects": {
     "add_crew": 2
@@ -15681,8 +15628,8 @@
   "pp_actual": 8.12,
   "threshold": {
    "elements": {
-    "Keepers": 2,
-    "Scholars": 2
+    "Keepers": 1,
+    "Scholars": 1
    },
    "effects": {
     "add_influence": 2,
@@ -15733,8 +15680,7 @@
   "pp_actual": 8.07,
   "threshold": {
    "elements": {
-    "Engineers": 2,
-    "Medics": 1
+    "Engineers": 1
    },
    "effects": {
     "isolate_fault": 2,
@@ -15826,8 +15772,7 @@
   "pp_actual": 12.34,
   "threshold": {
    "elements": {
-    "Laborers": 2,
-    "Bureaucrats": 1
+    "Laborers": 1
    },
    "effects": {
     "move_influence": 1,
@@ -15965,8 +15910,7 @@
   "pp_actual": 13.8,
   "threshold": {
    "elements": {
-    "Bureaucrats": 2,
-    "Keepers": 1
+    "Bureaucrats": 1
    },
    "effects": {
     "purpose": 3
@@ -16098,8 +16042,8 @@
   "pp_actual": 6.5,
   "threshold": {
    "elements": {
-    "Engineers": 2,
-    "Farmers": 2
+    "Engineers": 1,
+    "Farmers": 1
    },
    "effects": {
     "downgrade": 2,
@@ -16190,8 +16134,8 @@
   "pp_actual": 9.75,
   "threshold": {
    "elements": {
-    "Engineers": 2,
-    "Medics": 2
+    "Engineers": 1,
+    "Medics": 1
    },
    "effects": {
     "gather_crew": 6
@@ -16242,8 +16186,7 @@
   "pp_actual": 9.55,
   "threshold": {
    "elements": {
-    "Scholars": 2,
-    "Medics": 1
+    "Scholars": 1
    },
    "effects": {
     "brace": 7
@@ -16295,8 +16238,7 @@
   "pp_actual": 8.06,
   "threshold": {
    "elements": {
-    "Laborers": 2,
-    "Keepers": 1
+    "Laborers": 1
    },
    "effects": {
     "add_influence": 2,
@@ -16349,8 +16291,7 @@
   "pp_actual": 9.6,
   "threshold": {
    "elements": {
-    "Bureaucrats": 2,
-    "Medics": 1
+    "Bureaucrats": 1
    },
    "effects": {
     "brace": 4,
@@ -16486,8 +16427,8 @@
   "pp_actual": 11.2,
   "threshold": {
    "elements": {
-    "Keepers": 3,
-    "Laborers": 2
+    "Keepers": 2,
+    "Laborers": 1
    },
    "effects": {
     "damage": 10,
@@ -16539,8 +16480,8 @@
   "pp_actual": 6.38,
   "threshold": {
    "elements": {
-    "Laborers": 3,
-    "Medics": 2
+    "Laborers": 2,
+    "Medics": 1
    },
    "effects": {
     "damage": 12,
@@ -16593,8 +16534,7 @@
   "pp_actual": 11.0,
   "threshold": {
    "elements": {
-    "Keepers": 2,
-    "Navigators": 1
+    "Keepers": 1
    },
    "effects": {
     "vent_failure": 1,
@@ -16646,8 +16586,8 @@
   "pp_actual": 8.19,
   "threshold": {
    "elements": {
-    "Laborers": 3,
-    "Keepers": 2
+    "Laborers": 2,
+    "Keepers": 1
    },
    "effects": {
     "brace": 11,
@@ -16699,8 +16639,8 @@
   "pp_actual": 6.53,
   "threshold": {
    "elements": {
-    "Keepers": 2,
-    "Scholars": 2
+    "Keepers": 1,
+    "Scholars": 1
    },
    "effects": {
     "brace": 9
@@ -16791,8 +16731,8 @@
   "pp_actual": 10.95,
   "threshold": {
    "elements": {
-    "Laborers": 3,
-    "Keepers": 3
+    "Laborers": 2,
+    "Keepers": 2
    },
    "effects": {
     "purpose": 8,
@@ -16844,8 +16784,8 @@
   "pp_actual": 13.94,
   "threshold": {
    "elements": {
-    "Farmers": 3,
-    "Keepers": 2
+    "Farmers": 2,
+    "Keepers": 1
    },
    "effects": {
     "purpose": 7,
@@ -16897,8 +16837,8 @@
   "pp_actual": 12.32,
   "threshold": {
    "elements": {
-    "Farmers": 3,
-    "Medics": 3
+    "Farmers": 2,
+    "Medics": 2
    },
    "effects": {
     "add_crew": 4,
@@ -17036,8 +16976,8 @@
   "pp_actual": 12.38,
   "threshold": {
    "elements": {
-    "Laborers": 3,
-    "Engineers": 2
+    "Laborers": 2,
+    "Engineers": 1
    },
    "effects": {
     "damage": 11,
@@ -17089,8 +17029,8 @@
   "pp_actual": 8.12,
   "threshold": {
    "elements": {
-    "Medics": 2,
-    "Keepers": 2
+    "Medics": 1,
+    "Keepers": 1
    },
    "effects": {
     "brace": 7,
@@ -17143,8 +17083,7 @@
   "pp_actual": 9.5,
   "threshold": {
    "elements": {
-    "Keepers": 2,
-    "Medics": 1
+    "Keepers": 1
    },
    "effects": {
     "purpose": 3
@@ -17238,8 +17177,8 @@
   "pp_actual": 4.88,
   "threshold": {
    "elements": {
-    "Engineers": 3,
-    "Keepers": 3
+    "Engineers": 2,
+    "Keepers": 2
    },
    "effects": {
     "purpose": 4,
@@ -17292,8 +17231,7 @@
   "pp_actual": 8.2,
   "threshold": {
    "elements": {
-    "Navigators": 2,
-    "Keepers": 1
+    "Navigators": 1
    },
    "effects": {
     "foresee": 2,
@@ -17346,8 +17284,7 @@
   "pp_actual": 9.44,
   "threshold": {
    "elements": {
-    "Keepers": 2,
-    "Farmers": 1
+    "Keepers": 1
    },
    "effects": {
     "add_influence": 1,

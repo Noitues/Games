@@ -95,12 +95,32 @@ def fill(rng, verbs, budget, tol=0.25):
 
 
 def describe(eff, scope):
-    parts = []
+    local, other = [], []
     for v, n in eff.items():
         price, per_sec, txt = D_EFFECTS[v]
-        t = txt.format(n=n)
-        parts.append(f"{t} in each {scope} section" if per_sec else t)
+        (local if per_sec else other).append(txt.format(n=n))
+    parts = ([f"in one section of your choice on each board: {', '.join(local)}"] if local else []) + other
     return "; ".join(parts)
+
+
+# Breakthroughs are passive Wall bonuses: they switch on when the leader carrying them
+# retires to the Wall of Leaders, and stay on for the rest of the voyage.
+GUILDS = ["Engineers", "Medics", "Keepers", "Scholars", "Laborers", "Farmers", "Navigators", "Bureaucrats"]
+
+
+def wall_bonus(fam, i):
+    k = i // 4  # 6 discoveries per family
+    if fam == "Repair":
+        g = GUILDS[k % len(GUILDS)] if k < 4 else GUILDS[4 + k % 4]
+        return {"element": g}, 1.5, f"Every house counts +1 {g} element."
+    if fam == "Control":
+        return ({"credits_per_growth": 1}, 2.0, "Each Growth: every house gains +1 credit.") if k % 2 == 0 else \
+               ({"extra_draw": 1}, 1.5, "Each Growth: every house draws +1 card.")
+    if fam == "Protection":
+        return ({"hull_brace": 1}, 1.5, "Each Dusk: Brace 1 in every Outer Hull section.") if k % 2 == 0 else \
+               ({"decay_ward": 1}, 1.5, "Each generation, the first Decay that would be placed is returned to the pool instead.")
+    return ({"fast_play": 1}, 1.0, "Every house may play +1 card fast.") if k % 2 == 0 else \
+           ({"purpose_per_gen": 1}, 1.0, "Each Dusk: +1 Purpose.")
 
 
 def discoveries(rng, n=24):
@@ -113,14 +133,12 @@ def discoveries(rng, n=24):
             eff, pp = fill(rng, FAMILIES[fam], budget)
             tiers[tier] = {"effects": eff, "scope": scope, "pp": pp,
                            "text": describe(eff, scope)}
-        timing, bt = rng.choice(BT_OPTIONS[fam])
-        bt_scope = rng.choice(TYPES + ["Outer Hull"])
-        bt_pp = sum(D_EFFECTS[v][0] * k for v, k in bt.items())
-        bt_text = "; ".join(D_EFFECTS[v][2].format(n=k) for v, k in bt.items())
+        rng.choice(BT_OPTIONS[fam]); rng.choice(TYPES + ["Outer Hull"])  # keep the RNG stream stable
+        bonus, bt_pp, bt_text = wall_bonus(fam, i)
         cards.append({"id": f"D{i + 1:02d}", "family": fam, "tiers": tiers,
-                      "breakthrough": {"timing": timing, "effects": bt, "scope": bt_scope,
+                      "breakthrough": {"timing": "wall", "effects": bonus,
                                        "pp_per_generation": bt_pp,
-                                       "text": f"Each {timing.capitalize()}: {bt_text} in one {bt_scope} section."}})
+                                       "text": f"On the Wall: {bt_text}"}})
     return cards
 
 # --------------------------------------------------------------- crisis
