@@ -481,7 +481,16 @@ Houses, cards and innates are built from priced parts so every house lands in th
 | Standard | 1.5–2.0 |
 | Steep | > 2.0 |
 
-**Card thresholds:** a card's element-threshold bonus is worth **1 PP per required element**. Commons require 2–3 elements, Remarkables 3–6. The threshold is drawn from the card's own guilds.
+**Calibration v1 (measured, `data/calibration.json`):** the first-guess element prices assumed every element is equally easy to collect. Simulation (house bots, all 28 two-house pairings) shows that isn't true:
+
+| Card threshold size | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|
+| How often it's met | 84% | 64% | 57% | 16% | 10% |
+
+- **Card thresholds are now priced by difficulty:** the bonus is set so its *expected* value is about 0.5 PP per required element, clamped to 1–3 PP per element. Thresholds of 2–4 elements stay at 1 PP per element. Rare 5–6-element thresholds (all on Remarkables) now pay 3 PP per element. The people deck was regenerated with this rule.
+- **Innates:** innate tiers were lowered after run 3 (tier III had been reached 0–2% of the time). Measured expected innate value per generation is now 1.9–3.3 PP, depending on the house (Keel highest because its tier I is cheap; Foremen and Voidwardens lowest). Future houses should be priced against these measured numbers rather than the first-guess element costs.
+
+**Card thresholds (original rule, before calibration):** a card's element-threshold bonus is worth **1 PP per required element**. Commons require 2–3 elements, Remarkables 3–6. The threshold is drawn from the card's own guilds.
 
 **Reign and Legacy pricing:** effects that act per section are priced at **2 reference sections**, and per-house effects at **2 houses**. Legacy effects use the effect prices with the sign reversed; Add Decay costs 4 (because of cascade risk).
 

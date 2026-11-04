@@ -12658,19 +12658,20 @@
     "Engineers": 2
    },
    "effects": {
-    "damage": 3,
-    "restore_decay": 1
+    "damage": 12,
+    "brace": 11
    },
-   "text": "3 damage; restore 1 Decay",
-   "pp": 5.1
+   "text": "12 damage; Brace 11",
+   "pp": 14.88
   },
   "reign": {
    "effects": {
-    "patch": 1,
-    "purpose": 1
+    "credits_each_house": 1,
+    "purpose": 1,
+    "brace": 1
    },
    "pp": 4,
-   "text": "Patch each section matching its event; +1 Purpose"
+   "text": "each house gains 1 credit(s); +1 Purpose; Brace 1 in each section matching its event"
   },
   "legacy": {
    "effects": {
@@ -12684,7 +12685,7 @@
  {
   "id": "R007",
   "tier": "Remarkable",
-  "cost": 2,
+  "cost": 8,
   "guilds": [
    "Engineers",
    "Farmers",
@@ -12692,96 +12693,98 @@
   ],
   "target": {
    "kind": "section",
-   "range": 1,
+   "range": 2,
    "type": "Infrastructure",
    "class": "type"
   },
   "effects": {
-   "downgrade": 4
+   "damage": 11,
+   "add_crew": 1,
+   "gather_crew": 1
   },
-  "text": "downgrade 4 threat piece(s)",
-  "pp_target": 5.0,
-  "pp_actual": 5.1,
+  "text": "11 damage; add 1 Crew; gather 1 Crew",
+  "pp_target": 14.0,
+  "pp_actual": 14.17,
   "threshold": {
    "elements": {
     "Engineers": 3,
-    "Farmers": 3
+    "Farmers": 2
    },
    "effects": {
-    "gather_crew": 4,
-    "damage": 5
+    "damage": 11,
+    "downgrade": 3
    },
-   "text": "gather 4 Crew; 5 damage",
-   "pp": 5.95
+   "text": "11 damage; downgrade 3 threat piece(s)",
+   "pp": 15.15
   },
   "reign": {
    "effects": {
-    "patch": 1,
-    "brace": 1,
-    "gather_crew": 1
+    "damage": 1,
+    "credits_each_house": 1
    },
-   "pp": 5,
-   "text": "Patch each section matching its event; Brace 1 in each section matching its event; gather 1 Crew into each section matching its event"
+   "pp": 4,
+   "text": "1 damage in each section matching its event; each house gains 1 credit(s)"
   },
   "legacy": {
    "effects": {
-    "add_unrest": 1
+    "add_glitch": 1
    },
-   "pp": 3.0,
+   "pp": 2.0,
    "per_section": 2,
-   "text": "add 1 Unrest"
+   "text": "add 1 Glitch"
   }
  },
  {
   "id": "R008",
   "tier": "Remarkable",
-  "cost": 4,
+  "cost": 3,
   "guilds": [
    "Laborers",
    "Bureaucrats"
   ],
   "target": {
    "kind": "section",
-   "range": 3,
-   "type": "Infrastructure",
-   "class": "type"
+   "range": 1,
+   "type": "ANY",
+   "class": "ANY"
   },
   "effects": {
-   "credits": 6,
-   "vent_glitch": 4
+   "vent_fault": 4,
+   "brace": 3,
+   "move_influence": 1
   },
-  "text": "+6 credits; vent 4 Glitch(es)",
-  "pp_target": 8.0,
-  "pp_actual": 8.21,
+  "text": "vent 4 Fault(s); Brace 3; move 1 influence",
+  "pp_target": 6.5,
+  "pp_actual": 6.5,
   "threshold": {
    "elements": {
     "Laborers": 3,
-    "Bureaucrats": 2
+    "Bureaucrats": 3
    },
    "effects": {
-    "isolate_fault": 3,
-    "vent_glitch": 3
+    "credits": 6,
+    "damage": 12
    },
-   "text": "Isolate 3 Fault(s); vent 3 Glitch(es)",
-   "pp": 4.97
+   "text": "+6 credits; 12 damage",
+   "pp": 18.0
   },
   "reign": {
    "effects": {
-    "gather_crew": 4,
-    "damage": 1,
-    "brace": 1
+    "brace": 1,
+    "credits_each_house": 1,
+    "damage": 2
    },
    "pp": 7,
-   "text": "gather 4 Crew into each section matching its event; 1 damage in each section matching its event; Brace 1 in each section matching its event"
+   "text": "Brace 1 in each section matching its event; each house gains 1 credit(s); 2 damage in each section matching its event"
   },
   "legacy": {
    "effects": {
     "lose_credits_each_house": 1,
-    "add_unrest": 1
+    "lose_purpose": 3
    },
    "pp": 5.0,
    "per_section": 2,
-   "text": "each house loses 1 credit(s); add 1 Unrest"
+   "text": "each house loses 1 credit(s); -3 Purpose"
   }
  },
  {
@@ -12795,50 +12798,53 @@
   ],
   "target": {
    "kind": "section",
-   "range": 3,
+   "range": 1,
    "type": "ANY",
    "class": "ANY"
   },
   "effects": {
-   "quarantine": 1,
-   "purpose": 5,
-   "isolate_failure": 1
+   "downgrade": 2,
+   "move_influence": 2,
+   "isolate_failure": 2
   },
-  "text": "Quarantine; +5 Purpose; Isolate 1 Failure",
+  "text": "downgrade 2 threat piece(s); move 2 influence; Isolate 2 Failure",
   "pp_target": 8.0,
-  "pp_actual": 8.25,
+  "pp_actual": 8.0,
   "threshold": {
    "elements": {
     "Bureaucrats": 2,
-    "Scholars": 1
+    "Scholars": 2
    },
    "effects": {
-    "downgrade": 1,
-    "credits": 1
+    "vent_fault": 3,
+    "purpose": 1
    },
-   "text": "downgrade 1 threat piece(s); +1 credits",
-   "pp": 2.95
+   "text": "vent 3 Fault(s); +1 Purpose",
+   "pp": 4.0
   },
   "reign": {
    "effects": {
-    "damage": 2
+    "damage": 1,
+    "purpose": 1,
+    "lockout": 1,
+    "brace": 1
    },
-   "pp": 4,
-   "text": "2 damage in each section matching its event"
+   "pp": 6,
+   "text": "1 damage in each section matching its event; +1 Purpose; Lockout each section matching its event; Brace 1 in each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_credits_each_house": 1
+    "lose_influence": 1
    },
-   "pp": 2.0,
+   "pp": 4.0,
    "per_section": 2,
-   "text": "each house loses 1 credit(s)"
+   "text": "each house loses 1 influence"
   }
  },
  {
   "id": "R010",
   "tier": "Remarkable",
-  "cost": 7,
+  "cost": 8,
   "guilds": [
    "Keepers",
    "Scholars",
@@ -12846,53 +12852,53 @@
   ],
   "target": {
    "kind": "section",
-   "range": 2,
+   "range": 3,
    "type": "ANY",
    "class": "ANY"
   },
   "effects": {
-   "temper_legacy": 2,
-   "purpose": 6,
-   "brace": 1
+   "purpose": 7,
+   "temper_legacy": 1,
+   "isolate_fault": 3
   },
-  "text": "temper the Elder's Legacy; +6 Purpose; Brace 1",
-  "pp_target": 12.5,
-  "pp_actual": 12.57,
+  "text": "+7 Purpose; temper the Elder's Legacy; Isolate 3 Fault(s)",
+  "pp_target": 14.0,
+  "pp_actual": 13.9,
   "threshold": {
    "elements": {
-    "Keepers": 2,
+    "Keepers": 3,
     "Scholars": 2
    },
    "effects": {
-    "temper_legacy": 1,
-    "purpose": 1
+    "purpose": 8,
+    "brace": 11
    },
-   "text": "temper the Elder's Legacy; +1 Purpose",
-   "pp": 4.0
+   "text": "+8 Purpose; Brace 11",
+   "pp": 15.15
   },
   "reign": {
    "effects": {
-    "patch": 1,
     "lockout": 1,
-    "damage": 1
+    "credits_each_house": 2,
+    "brace": 1
    },
    "pp": 7,
-   "text": "Patch each section matching its event; Lockout each section matching its event; 1 damage in each section matching its event"
+   "text": "Lockout each section matching its event; each house gains 2 credit(s); Brace 1 in each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_credits_each_house": 1,
-    "add_unrest": 1
+    "add_unrest": 1,
+    "add_glitch": 1
    },
    "pp": 5.0,
    "per_section": 2,
-   "text": "each house loses 1 credit(s); add 1 Unrest"
+   "text": "add 1 Unrest; add 1 Glitch"
   }
  },
  {
   "id": "R011",
   "tier": "Remarkable",
-  "cost": 7,
+  "cost": 3,
   "guilds": [
    "Laborers",
    "Navigators",
@@ -12900,102 +12906,91 @@
   ],
   "target": {
    "kind": "section",
-   "range": 2,
+   "range": 3,
    "type": "Infrastructure",
    "class": "type"
   },
   "effects": {
-   "damage": 9,
-   "vent_fault": 3,
-   "vent_glitch": 2
+   "damage": 5,
+   "vent_fault": 1
   },
-  "text": "9 damage; vent 3 Fault(s); vent 2 Glitch(es)",
-  "pp_target": 12.5,
-  "pp_actual": 12.71,
+  "text": "5 damage; vent 1 Fault(s)",
+  "pp_target": 6.5,
+  "pp_actual": 6.63,
   "threshold": {
    "elements": {
     "Laborers": 3,
     "Navigators": 3
    },
    "effects": {
-    "damage": 6
+    "brace": 11,
+    "damage": 11
    },
-   "text": "6 damage",
-   "pp": 5.86
+   "text": "Brace 11; 11 damage",
+   "pp": 18.23
   },
   "reign": {
    "effects": {
-    "patch": 1,
-    "purpose": 1
+    "brace": 1,
+    "gather_crew": 1,
+    "patch": 1
    },
-   "pp": 4,
-   "text": "Patch each section matching its event; +1 Purpose"
+   "pp": 5,
+   "text": "Brace 1 in each section matching its event; gather 1 Crew into each section matching its event; Patch each section matching its event"
   },
   "legacy": {
    "effects": {
-    "add_glitch": 1
+    "lose_purpose": 1,
+    "lose_credits_each_house": 1
    },
-   "pp": 2.0,
+   "pp": 3.0,
    "per_section": 2,
-   "text": "add 1 Glitch"
+   "text": "-1 Purpose; each house loses 1 credit(s)"
   }
  },
  {
   "id": "R012",
   "tier": "Remarkable",
-  "cost": 4,
+  "cost": 2,
   "guilds": [
    "Medics",
    "Scholars",
    "Farmers"
   ],
   "target": {
-   "kind": "section",
-   "range": 1,
-   "type": "Residential",
-   "class": "type"
+   "kind": "house",
+   "range": null,
+   "type": "another house"
   },
   "effects": {
-   "brace": 12,
-   "purpose": 2,
-   "gather_crew": 2
+   "move_influence": 1,
+   "purpose": 4
   },
-  "text": "Brace 12; +2 Purpose; gather 2 Crew",
-  "pp_target": 8.0,
-  "pp_actual": 7.95,
-  "threshold": {
-   "elements": {
-    "Medics": 3,
-    "Scholars": 3
-   },
-   "effects": {
-    "brace": 6,
-    "isolate_fault": 4
-   },
-   "text": "Brace 6; Isolate 4 Fault(s)",
-   "pp": 5.95
-  },
+  "text": "move 1 influence; +4 Purpose",
+  "pp_target": 5.0,
+  "pp_actual": 5.0,
   "reign": {
    "effects": {
-    "lockout": 1,
-    "gather_crew": 2
+    "patch": 1,
+    "credits_each_house": 1,
+    "gather_crew": 1
    },
-   "pp": 4,
-   "text": "Lockout each section matching its event; gather 2 Crew into each section matching its event"
+   "pp": 6,
+   "text": "Patch each section matching its event; each house gains 1 credit(s); gather 1 Crew into each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_purpose": 2
+    "lose_influence": 1
    },
-   "pp": 2.0,
+   "pp": 4.0,
    "per_section": 2,
-   "text": "-2 Purpose"
+   "text": "each house loses 1 influence"
   }
  },
  {
   "id": "R013",
   "tier": "Remarkable",
-  "cost": 7,
+  "cost": 3,
   "guilds": [
    "Farmers",
    "Engineers"
@@ -13007,47 +13002,46 @@
    "class": "ANY"
   },
   "effects": {
-   "restore_decay": 3,
-   "gather_crew": 4
+   "patch": 2,
+   "gather_crew": 5
   },
-  "text": "restore 3 Decay; gather 4 Crew",
-  "pp_target": 12.5,
-  "pp_actual": 12.65,
+  "text": "Patch; gather 5 Crew",
+  "pp_target": 6.5,
+  "pp_actual": 6.32,
   "threshold": {
    "elements": {
     "Farmers": 3,
     "Engineers": 3
    },
    "effects": {
-    "gather_crew": 4,
-    "add_crew": 1
+    "damage": 11,
+    "downgrade": 3
    },
-   "text": "gather 4 Crew; add 1 Crew",
-   "pp": 5.75
+   "text": "11 damage; downgrade 3 threat piece(s)",
+   "pp": 17.82
   },
   "reign": {
    "effects": {
-    "patch": 1,
-    "gather_crew": 2,
-    "lockout": 1
+    "damage": 1,
+    "gather_crew": 3,
+    "purpose": 1
    },
-   "pp": 7,
-   "text": "Patch each section matching its event; gather 2 Crew into each section matching its event; Lockout each section matching its event"
+   "pp": 6,
+   "text": "1 damage in each section matching its event; gather 3 Crew into each section matching its event; +1 Purpose"
   },
   "legacy": {
    "effects": {
-    "add_unrest": 1,
-    "lose_purpose": 2
+    "add_fault": 1
    },
-   "pp": 5.0,
+   "pp": 4.0,
    "per_section": 2,
-   "text": "add 1 Unrest; -2 Purpose"
+   "text": "add 1 Fault"
   }
  },
  {
   "id": "R014",
   "tier": "Remarkable",
-  "cost": 2,
+  "cost": 8,
   "guilds": [
    "Keepers",
    "Scholars",
@@ -13061,48 +13055,37 @@
    "class": "ANY"
   },
   "effects": {
-   "downgrade": 1,
-   "isolate_failure": 2,
-   "foresee": 1
+   "purpose": 8,
+   "downgrade": 2,
+   "temper_legacy": 1
   },
-  "text": "downgrade 1 threat piece(s); Isolate 2 Failure; foresee",
-  "pp_target": 5.0,
-  "pp_actual": 5.0,
-  "threshold": {
-   "elements": {
-    "Keepers": 2,
-    "Scholars": 1
-   },
-   "effects": {
-    "purpose": 3
-   },
-   "text": "+3 Purpose",
-   "pp": 3.0
-  },
+  "text": "+8 Purpose; downgrade 2 threat piece(s); temper the Elder's Legacy",
+  "pp_target": 14.0,
+  "pp_actual": 14.0,
   "reign": {
    "effects": {
-    "credits_each_house": 1,
+    "lockout": 1,
     "gather_crew": 1,
-    "damage": 1,
-    "lockout": 1
+    "credits_each_house": 1,
+    "damage": 1
    },
    "pp": 7,
-   "text": "each house gains 1 credit(s); gather 1 Crew into each section matching its event; 1 damage in each section matching its event; Lockout each section matching its event"
+   "text": "Lockout each section matching its event; gather 1 Crew into each section matching its event; each house gains 1 credit(s); 1 damage in each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_credits_each_house": 2,
-    "lose_purpose": 1
+    "lose_purpose": 2,
+    "add_unrest": 1
    },
    "pp": 5.0,
    "per_section": 2,
-   "text": "each house loses 2 credit(s); -1 Purpose"
+   "text": "-2 Purpose; add 1 Unrest"
   }
  },
  {
   "id": "R015",
   "tier": "Remarkable",
-  "cost": 6,
+  "cost": 2,
   "guilds": [
    "Bureaucrats",
    "Farmers",
@@ -13110,193 +13093,38 @@
   ],
   "target": {
    "kind": "section",
-   "range": 3,
-   "type": "Government",
-   "class": "type"
-  },
-  "effects": {
-   "add_crew": 3,
-   "vent_fault": 1
-  },
-  "text": "add 3 Crew; vent 1 Fault(s)",
-  "pp_target": 11.0,
-  "pp_actual": 11.05,
-  "threshold": {
-   "elements": {
-    "Bureaucrats": 3,
-    "Farmers": 2
-   },
-   "effects": {
-    "move_influence": 4,
-    "gather_crew": 1
-   },
-   "text": "move 4 influence; gather 1 Crew",
-   "pp": 4.97
-  },
-  "reign": {
-   "effects": {
-    "purpose": 2,
-    "credits_each_house": 1,
-    "brace": 1,
-    "damage": 1
-   },
-   "pp": 7,
-   "text": "+2 Purpose; each house gains 1 credit(s); Brace 1 in each section matching its event; 1 damage in each section matching its event"
-  },
-  "legacy": {
-   "effects": {
-    "add_glitch": 2,
-    "lose_purpose": 1
-   },
-   "pp": 5.0,
-   "per_section": 2,
-   "text": "add 2 Glitch; -1 Purpose"
-  }
- },
- {
-  "id": "R016",
-  "tier": "Remarkable",
-  "cost": 7,
-  "guilds": [
-   "Farmers",
-   "Engineers",
-   "Navigators"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 3,
-   "type": "ANY",
-   "class": "ANY"
-  },
-  "effects": {
-   "patch": 1,
-   "damage": 7,
-   "gather_crew": 2
-  },
-  "text": "Patch; 7 damage; gather 2 Crew",
-  "pp_target": 12.5,
-  "pp_actual": 12.35,
-  "threshold": {
-   "elements": {
-    "Farmers": 2,
-    "Engineers": 2
-   },
-   "effects": {
-    "patch": 2
-   },
-   "text": "Patch",
-   "pp": 3.9
-  },
-  "reign": {
-   "effects": {
-    "gather_crew": 1,
-    "patch": 1
-   },
-   "pp": 4,
-   "text": "gather 1 Crew into each section matching its event; Patch each section matching its event"
-  },
-  "legacy": {
-   "effects": {
-    "add_glitch": 1
-   },
-   "pp": 2.0,
-   "per_section": 2,
-   "text": "add 1 Glitch"
-  }
- },
- {
-  "id": "R017",
-  "tier": "Remarkable",
-  "cost": 8,
-  "guilds": [
-   "Laborers",
-   "Medics"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 0,
-   "type": "ANY",
-   "class": "ANY"
-  },
-  "effects": {
-   "damage": 12,
-   "vent_glitch": 5,
-   "brace": 6
-  },
-  "text": "12 damage; vent 5 Glitch(es); Brace 6",
-  "pp_target": 14.0,
-  "pp_actual": 14.0,
-  "threshold": {
-   "elements": {
-    "Laborers": 2,
-    "Medics": 2
-   },
-   "effects": {
-    "vent_fault": 4,
-    "vent_glitch": 2
-   },
-   "text": "vent 4 Fault(s); vent 2 Glitch(es)",
-   "pp": 4.0
-  },
-  "reign": {
-   "effects": {
-    "brace": 1,
-    "damage": 2
-   },
-   "pp": 5,
-   "text": "Brace 1 in each section matching its event; 2 damage in each section matching its event"
-  },
-  "legacy": {
-   "effects": {
-    "lose_purpose": 3
-   },
-   "pp": 3.0,
-   "per_section": 2,
-   "text": "-3 Purpose"
-  }
- },
- {
-  "id": "R018",
-  "tier": "Remarkable",
-  "cost": 4,
-  "guilds": [
-   "Medics",
-   "Engineers",
-   "Bureaucrats"
-  ],
-  "target": {
-   "kind": "section",
    "range": 2,
-   "type": "section with a Failure",
+   "type": "Hull",
    "class": "narrow"
   },
   "effects": {
-   "brace": 9,
-   "gather_crew": 4,
-   "patch": 2
+   "isolate_fault": 3,
+   "credits": 2,
+   "gather_crew": 1
   },
-  "text": "Brace 9; gather 4 Crew; Patch",
-  "pp_target": 8.0,
-  "pp_actual": 8.19,
+  "text": "Isolate 3 Fault(s); +2 credits; gather 1 Crew",
+  "pp_target": 5.0,
+  "pp_actual": 5.02,
   "threshold": {
    "elements": {
-    "Medics": 3,
-    "Engineers": 2
+    "Bureaucrats": 2,
+    "Farmers": 1
    },
    "effects": {
-    "gather_crew": 6,
-    "brace": 6
+    "credits": 2,
+    "isolate_fault": 1
    },
-   "text": "gather 6 Crew; Brace 6",
-   "pp": 5.17
+   "text": "+2 credits; Isolate 1 Fault(s)",
+   "pp": 2.86
   },
   "reign": {
    "effects": {
-    "gather_crew": 4,
-    "purpose": 1
+    "brace": 2,
+    "gather_crew": 1,
+    "credits_each_house": 1
    },
    "pp": 5,
-   "text": "gather 4 Crew into each section matching its event; +1 Purpose"
+   "text": "Brace 2 in each section matching its event; gather 1 Crew into each section matching its event; each house gains 1 credit(s)"
   },
   "legacy": {
    "effects": {
@@ -13309,9 +13137,171 @@
   }
  },
  {
+  "id": "R016",
+  "tier": "Remarkable",
+  "cost": 3,
+  "guilds": [
+   "Farmers",
+   "Engineers",
+   "Navigators"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 1,
+   "type": "ANY",
+   "class": "ANY"
+  },
+  "effects": {
+   "damage": 5,
+   "isolate_fault": 1,
+   "gather_crew": 1
+  },
+  "text": "5 damage; Isolate 1 Fault(s); gather 1 Crew",
+  "pp_target": 6.5,
+  "pp_actual": 6.5,
+  "threshold": {
+   "elements": {
+    "Farmers": 2,
+    "Engineers": 2
+   },
+   "effects": {
+    "patch": 2,
+    "gather_crew": 2
+   },
+   "text": "Patch; gather 2 Crew",
+   "pp": 4.0
+  },
+  "reign": {
+   "effects": {
+    "patch": 1,
+    "lockout": 1,
+    "gather_crew": 1,
+    "brace": 1
+   },
+   "pp": 7,
+   "text": "Patch each section matching its event; Lockout each section matching its event; gather 1 Crew into each section matching its event; Brace 1 in each section matching its event"
+  },
+  "legacy": {
+   "effects": {
+    "add_unrest": 1,
+    "lose_purpose": 2
+   },
+   "pp": 5.0,
+   "per_section": 2,
+   "text": "add 1 Unrest; -2 Purpose"
+  }
+ },
+ {
+  "id": "R017",
+  "tier": "Remarkable",
+  "cost": 5,
+  "guilds": [
+   "Laborers",
+   "Medics"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 1,
+   "type": "Infrastructure",
+   "class": "type"
+  },
+  "effects": {
+   "restore_decay": 3,
+   "vent_fault": 2
+  },
+  "text": "restore 3 Decay; vent 2 Fault(s)",
+  "pp_target": 9.5,
+  "pp_actual": 9.35,
+  "threshold": {
+   "elements": {
+    "Laborers": 2,
+    "Medics": 1
+   },
+   "effects": {
+    "damage": 2,
+    "vent_glitch": 3
+   },
+   "text": "2 damage; vent 3 Glitch(es)",
+   "pp": 2.97
+  },
+  "reign": {
+   "effects": {
+    "damage": 1,
+    "purpose": 1,
+    "patch": 1,
+    "brace": 1
+   },
+   "pp": 7,
+   "text": "1 damage in each section matching its event; +1 Purpose; Patch each section matching its event; Brace 1 in each section matching its event"
+  },
+  "legacy": {
+   "effects": {
+    "lose_credits_each_house": 1,
+    "add_unrest": 1
+   },
+   "pp": 5.0,
+   "per_section": 2,
+   "text": "each house loses 1 credit(s); add 1 Unrest"
+  }
+ },
+ {
+  "id": "R018",
+  "tier": "Remarkable",
+  "cost": 5,
+  "guilds": [
+   "Medics",
+   "Engineers",
+   "Bureaucrats"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 1,
+   "type": "ANY",
+   "class": "ANY"
+  },
+  "effects": {
+   "isolate_fault": 2,
+   "damage": 5,
+   "brace": 5
+  },
+  "text": "Isolate 2 Fault(s); 5 damage; Brace 5",
+  "pp_target": 9.5,
+  "pp_actual": 9.5,
+  "threshold": {
+   "elements": {
+    "Medics": 2,
+    "Engineers": 2
+   },
+   "effects": {
+    "damage": 4
+   },
+   "text": "4 damage",
+   "pp": 4.0
+  },
+  "reign": {
+   "effects": {
+    "brace": 1,
+    "patch": 1,
+    "credits_each_house": 1,
+    "purpose": 1
+   },
+   "pp": 7,
+   "text": "Brace 1 in each section matching its event; Patch each section matching its event; each house gains 1 credit(s); +1 Purpose"
+  },
+  "legacy": {
+   "effects": {
+    "lose_credits_each_house": 1,
+    "add_unrest": 1
+   },
+   "pp": 5.0,
+   "per_section": 2,
+   "text": "each house loses 1 credit(s); add 1 Unrest"
+  }
+ },
+ {
   "id": "R019",
   "tier": "Remarkable",
-  "cost": 7,
+  "cost": 2,
   "guilds": [
    "Farmers",
    "Bureaucrats",
@@ -13321,53 +13311,50 @@
   "target": {
    "kind": "section",
    "range": 2,
-   "type": "section with Decay",
-   "class": "narrow"
+   "type": "Agricultural",
+   "class": "type"
   },
   "effects": {
-   "add_crew": 4,
+   "add_crew": 1,
    "patch": 1,
-   "vent_fault": 1
+   "gather_crew": 1
   },
-  "text": "add 4 Crew; Patch; vent 1 Fault(s)",
-  "pp_target": 12.5,
-  "pp_actual": 12.51,
+  "text": "add 1 Crew; Patch; gather 1 Crew",
+  "pp_target": 5.0,
+  "pp_actual": 4.89,
   "threshold": {
    "elements": {
-    "Farmers": 2,
+    "Farmers": 3,
     "Bureaucrats": 2
    },
    "effects": {
-    "gather_crew": 3,
-    "move_influence": 3
+    "credits": 6,
+    "add_crew": 3
    },
-   "text": "gather 3 Crew; move 3 influence",
-   "pp": 3.88
+   "text": "+6 credits; add 3 Crew",
+   "pp": 14.8
   },
   "reign": {
    "effects": {
-    "credits_each_house": 1,
-    "brace": 2,
-    "gather_crew": 1,
-    "purpose": 1
+    "lockout": 1,
+    "damage": 1
    },
-   "pp": 6,
-   "text": "each house gains 1 credit(s); Brace 2 in each section matching its event; gather 1 Crew into each section matching its event; +1 Purpose"
+   "pp": 4,
+   "text": "Lockout each section matching its event; 1 damage in each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_purpose": 2,
     "lose_credits_each_house": 1
    },
-   "pp": 4.0,
+   "pp": 2.0,
    "per_section": 2,
-   "text": "-2 Purpose; each house loses 1 credit(s)"
+   "text": "each house loses 1 credit(s)"
   }
  },
  {
   "id": "R020",
   "tier": "Remarkable",
-  "cost": 7,
+  "cost": 8,
   "guilds": [
    "Bureaucrats",
    "Navigators",
@@ -13375,47 +13362,35 @@
   ],
   "target": {
    "kind": "section",
-   "range": 0,
-   "type": "Government",
-   "class": "type"
+   "range": 2,
+   "type": "ANY",
+   "class": "ANY"
   },
   "effects": {
-   "damage": 12,
-   "vent_glitch": 5,
+   "credits": 6,
+   "vent_glitch": 6,
    "vent_fault": 4
   },
-  "text": "12 damage; vent 5 Glitch(es); vent 4 Fault(s)",
-  "pp_target": 12.5,
-  "pp_actual": 12.58,
-  "threshold": {
-   "elements": {
-    "Bureaucrats": 2,
-    "Navigators": 2
-   },
-   "effects": {
-    "vent_fault": 4,
-    "damage": 2
-   },
-   "text": "vent 4 Fault(s); 2 damage",
-   "pp": 4.08
-  },
+  "text": "+6 credits; vent 6 Glitch(es); vent 4 Fault(s)",
+  "pp_target": 14.0,
+  "pp_actual": 14.05,
   "reign": {
    "effects": {
-    "purpose": 1,
-    "patch": 1,
-    "brace": 1,
-    "gather_crew": 1
+    "lockout": 1,
+    "purpose": 2,
+    "brace": 1
    },
-   "pp": 6,
-   "text": "+1 Purpose; Patch each section matching its event; Brace 1 in each section matching its event; gather 1 Crew into each section matching its event"
+   "pp": 5,
+   "text": "Lockout each section matching its event; +2 Purpose; Brace 1 in each section matching its event"
   },
   "legacy": {
    "effects": {
-    "add_fault": 1
+    "lose_credits_each_house": 1,
+    "lose_purpose": 1
    },
-   "pp": 4.0,
+   "pp": 3.0,
    "per_section": 2,
-   "text": "add 1 Fault"
+   "text": "each house loses 1 credit(s); -1 Purpose"
   }
  },
  {
@@ -13428,105 +13403,89 @@
   ],
   "target": {
    "kind": "section",
-   "range": 2,
+   "range": 1,
    "type": "Government",
    "class": "type"
   },
   "effects": {
-   "isolate_fault": 3,
-   "purpose": 7,
-   "vent_fault": 4
+   "purpose": 8,
+   "downgrade": 2,
+   "isolate_fault": 4
   },
-  "text": "Isolate 3 Fault(s); +7 Purpose; vent 4 Fault(s)",
+  "text": "+8 Purpose; downgrade 2 threat piece(s); Isolate 4 Fault(s)",
   "pp_target": 14.0,
-  "pp_actual": 13.84,
-  "threshold": {
-   "elements": {
-    "Scholars": 2,
-    "Bureaucrats": 2
-   },
-   "effects": {
-    "downgrade": 2,
-    "vent_fault": 1
-   },
-   "text": "downgrade 2 threat piece(s); vent 1 Fault(s)",
-   "pp": 3.91
-  },
+  "pp_actual": 13.95,
   "reign": {
    "effects": {
-    "gather_crew": 2,
-    "purpose": 2,
-    "lockout": 1
+    "brace": 1,
+    "patch": 1
    },
-   "pp": 6,
-   "text": "gather 2 Crew into each section matching its event; +2 Purpose; Lockout each section matching its event"
+   "pp": 4,
+   "text": "Brace 1 in each section matching its event; Patch each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_influence": 1
+    "lose_credits_each_house": 1
    },
-   "pp": 4.0,
+   "pp": 2.0,
    "per_section": 2,
-   "text": "each house loses 1 influence"
+   "text": "each house loses 1 credit(s)"
   }
  },
  {
   "id": "R022",
   "tier": "Remarkable",
-  "cost": 3,
+  "cost": 2,
   "guilds": [
    "Bureaucrats",
    "Medics"
   ],
   "target": {
    "kind": "section",
-   "range": 2,
-   "type": "ANY",
-   "class": "ANY"
+   "range": 1,
+   "type": "section with Decay",
+   "class": "narrow"
   },
   "effects": {
-   "move_crew": 6,
-   "credits": 3
+   "credits": 3,
+   "move_influence": 3
   },
-  "text": "move 6 Crew; +3 credits",
-  "pp_target": 6.5,
-  "pp_actual": 6.45,
+  "text": "+3 credits; move 3 influence",
+  "pp_target": 5.0,
+  "pp_actual": 5.25,
   "threshold": {
    "elements": {
-    "Bureaucrats": 3,
-    "Medics": 3
+    "Bureaucrats": 2,
+    "Medics": 1
    },
    "effects": {
-    "isolate_fault": 3,
-    "quarantine": 2
+    "vent_fault": 4
    },
-   "text": "Isolate 3 Fault(s); Quarantine",
-   "pp": 5.75
+   "text": "vent 4 Fault(s)",
+   "pp": 3.0
   },
   "reign": {
    "effects": {
-    "gather_crew": 1,
-    "damage": 1,
-    "lockout": 1,
-    "brace": 1
+    "credits_each_house": 1,
+    "patch": 1
    },
-   "pp": 6,
-   "text": "gather 1 Crew into each section matching its event; 1 damage in each section matching its event; Lockout each section matching its event; Brace 1 in each section matching its event"
+   "pp": 5,
+   "text": "each house gains 1 credit(s); Patch each section matching its event"
   },
   "legacy": {
    "effects": {
-    "add_glitch": 1,
-    "lose_credits_each_house": 1
+    "lose_credits_each_house": 1,
+    "lose_purpose": 1
    },
-   "pp": 4.0,
+   "pp": 3.0,
    "per_section": 2,
-   "text": "add 1 Glitch; each house loses 1 credit(s)"
+   "text": "each house loses 1 credit(s); -1 Purpose"
   }
  },
  {
   "id": "R023",
   "tier": "Remarkable",
-  "cost": 7,
+  "cost": 8,
   "guilds": [
    "Engineers",
    "Laborers",
@@ -13534,54 +13493,52 @@
   ],
   "target": {
    "kind": "section",
-   "range": 2,
-   "type": "Infrastructure",
-   "class": "type"
+   "range": 1,
+   "type": "section with Decay",
+   "class": "narrow"
   },
   "effects": {
-   "downgrade": 4,
-   "vent_fault": 4,
-   "damage": 3
+   "damage": 12,
+   "downgrade": 2,
+   "vent_fault": 4
   },
-  "text": "downgrade 4 threat piece(s); vent 4 Fault(s); 3 damage",
-  "pp_target": 12.5,
-  "pp_actual": 12.71,
+  "text": "12 damage; downgrade 2 threat piece(s); vent 4 Fault(s)",
+  "pp_target": 14.0,
+  "pp_actual": 14.25,
   "threshold": {
    "elements": {
-    "Engineers": 3,
+    "Engineers": 2,
     "Laborers": 2
    },
    "effects": {
-    "brace": 6,
-    "vent_fault": 2
+    "patch": 1,
+    "brace": 7
    },
-   "text": "Brace 6; vent 2 Fault(s)",
-   "pp": 4.89
+   "text": "Patch; Brace 7",
+   "pp": 3.75
   },
   "reign": {
    "effects": {
+    "lockout": 1,
     "purpose": 1,
-    "credits_each_house": 2,
-    "brace": 1,
-    "gather_crew": 1
+    "patch": 1
    },
-   "pp": 7,
-   "text": "+1 Purpose; each house gains 2 credit(s); Brace 1 in each section matching its event; gather 1 Crew into each section matching its event"
+   "pp": 6,
+   "text": "Lockout each section matching its event; +1 Purpose; Patch each section matching its event"
   },
   "legacy": {
    "effects": {
-    "add_unrest": 1,
-    "lose_credits_each_house": 1
+    "lose_credits_each_house": 2
    },
-   "pp": 5.0,
+   "pp": 4.0,
    "per_section": 2,
-   "text": "add 1 Unrest; each house loses 1 credit(s)"
+   "text": "each house loses 2 credit(s)"
   }
  },
  {
   "id": "R024",
   "tier": "Remarkable",
-  "cost": 3,
+  "cost": 5,
   "guilds": [
    "Medics",
    "Bureaucrats",
@@ -13590,48 +13547,46 @@
   ],
   "target": {
    "kind": "section",
-   "range": 2,
+   "range": 1,
    "type": "Residential",
    "class": "type"
   },
   "effects": {
-   "gather_crew": 5,
-   "move_crew": 2,
-   "brace": 6
+   "add_crew": 3,
+   "brace": 4
   },
-  "text": "gather 5 Crew; move 2 Crew; Brace 6",
-  "pp_target": 6.5,
-  "pp_actual": 6.35,
+  "text": "add 3 Crew; Brace 4",
+  "pp_target": 9.5,
+  "pp_actual": 9.35,
   "threshold": {
    "elements": {
     "Medics": 2,
-    "Bureaucrats": 2
+    "Bureaucrats": 1
    },
    "effects": {
-    "brace": 7,
-    "gather_crew": 1
+    "brace": 3,
+    "isolate_fault": 2
    },
-   "text": "Brace 7; gather 1 Crew",
-   "pp": 3.91
+   "text": "Brace 3; Isolate 2 Fault(s)",
+   "pp": 2.97
   },
   "reign": {
    "effects": {
-    "brace": 2,
-    "purpose": 1,
     "lockout": 1,
-    "credits_each_house": 1
+    "credits_each_house": 2,
+    "purpose": 1
    },
    "pp": 7,
-   "text": "Brace 2 in each section matching its event; +1 Purpose; Lockout each section matching its event; each house gains 1 credit(s)"
+   "text": "Lockout each section matching its event; each house gains 2 credit(s); +1 Purpose"
   },
   "legacy": {
    "effects": {
-    "lose_influence": 1,
-    "lose_purpose": 1
+    "lose_credits_each_house": 1,
+    "add_unrest": 1
    },
    "pp": 5.0,
    "per_section": 2,
-   "text": "each house loses 1 influence; -1 Purpose"
+   "text": "each house loses 1 credit(s); add 1 Unrest"
   }
  },
  {
@@ -13646,50 +13601,53 @@
   "target": {
    "kind": "section",
    "range": 1,
-   "type": "Government",
-   "class": "type"
+   "type": "Hull",
+   "class": "narrow"
   },
   "effects": {
+   "damage": 8,
    "foresee": 2,
-   "damage": 6,
-   "purpose": 2
+   "isolate_failure": 1
   },
-  "text": "foresee; 6 damage; +2 Purpose",
+  "text": "8 damage; foresee; Isolate 1 Failure",
   "pp_target": 8.0,
-  "pp_actual": 8.1,
+  "pp_actual": 8.12,
   "threshold": {
    "elements": {
     "Scholars": 3,
-    "Engineers": 3
+    "Engineers": 2
    },
    "effects": {
-    "foresee": 2,
-    "downgrade": 4
+    "damage": 9,
+    "purpose": 8
    },
-   "text": "foresee; downgrade 4 threat piece(s)",
-   "pp": 6.1
+   "text": "9 damage; +8 Purpose",
+   "pp": 14.75
   },
   "reign": {
    "effects": {
+    "gather_crew": 1,
     "lockout": 1,
-    "brace": 2
+    "damage": 2
    },
-   "pp": 4,
-   "text": "Lockout each section matching its event; Brace 2 in each section matching its event"
+   "pp": 7,
+   "text": "gather 1 Crew into each section matching its event; Lockout each section matching its event; 2 damage in each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_purpose": 2
+    "add_glitch": 1,
+    "lose_purpose": 1,
+    "lose_credits_each_house": 1
    },
-   "pp": 2.0,
+   "pp": 5.0,
    "per_section": 2,
-   "text": "-2 Purpose"
+   "text": "add 1 Glitch; -1 Purpose; each house loses 1 credit(s)"
   }
  },
  {
   "id": "R026",
   "tier": "Remarkable",
-  "cost": 2,
+  "cost": 5,
   "guilds": [
    "Engineers",
    "Scholars",
@@ -13698,53 +13656,53 @@
   ],
   "target": {
    "kind": "section",
-   "range": 2,
+   "range": 1,
    "type": "ANY",
    "class": "ANY"
   },
   "effects": {
-   "damage": 2,
-   "isolate_fault": 1,
-   "downgrade": 1
+   "damage": 7,
+   "purpose": 2,
+   "foresee": 1
   },
-  "text": "2 damage; Isolate 1 Fault(s); downgrade 1 threat piece(s)",
-  "pp_target": 5.0,
-  "pp_actual": 5.17,
+  "text": "7 damage; +2 Purpose; foresee",
+  "pp_target": 9.5,
+  "pp_actual": 9.5,
   "threshold": {
    "elements": {
-    "Engineers": 2,
-    "Scholars": 1
+    "Engineers": 3,
+    "Scholars": 3
    },
    "effects": {
-    "damage": 2,
-    "foresee": 1
+    "damage": 12,
+    "downgrade": 4
    },
-   "text": "2 damage; foresee",
-   "pp": 2.8
+   "text": "12 damage; downgrade 4 threat piece(s)",
+   "pp": 18.0
   },
   "reign": {
    "effects": {
-    "lockout": 1,
-    "patch": 1,
-    "credits_each_house": 1
+    "purpose": 2,
+    "damage": 1,
+    "gather_crew": 1
    },
-   "pp": 7,
-   "text": "Lockout each section matching its event; Patch each section matching its event; each house gains 1 credit(s)"
+   "pp": 5,
+   "text": "+2 Purpose; 1 damage in each section matching its event; gather 1 Crew into each section matching its event"
   },
   "legacy": {
    "effects": {
-    "add_fault": 1,
+    "add_glitch": 1,
     "lose_purpose": 1
    },
-   "pp": 5.0,
+   "pp": 3.0,
    "per_section": 2,
-   "text": "add 1 Fault; -1 Purpose"
+   "text": "add 1 Glitch; -1 Purpose"
   }
  },
  {
   "id": "R027",
   "tier": "Remarkable",
-  "cost": 6,
+  "cost": 3,
   "guilds": [
    "Navigators",
    "Medics",
@@ -13753,141 +13711,92 @@
   ],
   "target": {
    "kind": "section",
-   "range": 3,
-   "type": "Hull",
-   "class": "narrow"
+   "range": 0,
+   "type": "ANY",
+   "class": "ANY"
   },
   "effects": {
-   "damage": 10,
-   "foresee": 2
+   "vent_glitch": 6,
+   "vent_failure": 2,
+   "damage": 2
   },
-  "text": "10 damage; foresee",
-  "pp_target": 11.0,
-  "pp_actual": 10.75,
+  "text": "vent 6 Glitch(es); vent 2 Failure; 2 damage",
+  "pp_target": 6.5,
+  "pp_actual": 6.4,
   "threshold": {
    "elements": {
-    "Navigators": 3,
+    "Navigators": 2,
     "Medics": 2
    },
    "effects": {
-    "damage": 2,
-    "brace": 6
+    "lockout": 1,
+    "brace": 8
    },
-   "text": "2 damage; Brace 6",
-   "pp": 4.88
+   "text": "Lockout; Brace 8",
+   "pp": 4.0
   },
   "reign": {
    "effects": {
-    "brace": 1,
+    "damage": 1,
+    "lockout": 1,
     "purpose": 1,
     "credits_each_house": 1
    },
-   "pp": 4,
-   "text": "Brace 1 in each section matching its event; +1 Purpose; each house gains 1 credit(s)"
+   "pp": 7,
+   "text": "1 damage in each section matching its event; Lockout each section matching its event; +1 Purpose; each house gains 1 credit(s)"
   },
   "legacy": {
    "effects": {
-    "add_glitch": 1
+    "add_glitch": 1,
+    "lose_credits_each_house": 1,
+    "lose_purpose": 1
    },
-   "pp": 2.0,
+   "pp": 5.0,
    "per_section": 2,
-   "text": "add 1 Glitch"
+   "text": "add 1 Glitch; each house loses 1 credit(s); -1 Purpose"
   }
  },
  {
   "id": "R028",
   "tier": "Remarkable",
-  "cost": 7,
+  "cost": 6,
   "guilds": [
    "Engineers",
    "Medics"
   ],
   "target": {
    "kind": "section",
-   "range": 2,
-   "type": "ANY",
-   "class": "ANY"
+   "range": 0,
+   "type": "Infrastructure",
+   "class": "type"
   },
   "effects": {
-   "damage": 8,
-   "downgrade": 2
+   "gather_crew": 6,
+   "damage": 12,
+   "downgrade": 1
   },
-  "text": "8 damage; downgrade 2 threat piece(s)",
-  "pp_target": 12.5,
-  "pp_actual": 12.65,
+  "text": "gather 6 Crew; 12 damage; downgrade 1 threat piece(s)",
+  "pp_target": 11.0,
+  "pp_actual": 11.22,
   "threshold": {
    "elements": {
     "Engineers": 2,
     "Medics": 1
    },
    "effects": {
-    "gather_crew": 4,
-    "brace": 1
+    "gather_crew": 6,
+    "patch": 1
    },
-   "text": "gather 4 Crew; Brace 1",
-   "pp": 2.88
+   "text": "gather 6 Crew; Patch",
+   "pp": 3.06
   },
   "reign": {
    "effects": {
     "credits_each_house": 1,
-    "brace": 1,
-    "gather_crew": 1
+    "damage": 1
    },
    "pp": 4,
-   "text": "each house gains 1 credit(s); Brace 1 in each section matching its event; gather 1 Crew into each section matching its event"
-  },
-  "legacy": {
-   "effects": {
-    "add_glitch": 1
-   },
-   "pp": 2.0,
-   "per_section": 2,
-   "text": "add 1 Glitch"
-  }
- },
- {
-  "id": "R029",
-  "tier": "Remarkable",
-  "cost": 4,
-  "guilds": [
-   "Scholars",
-   "Engineers",
-   "Farmers",
-   "Medics"
-  ],
-  "target": {
-   "kind": "house",
-   "range": null,
-   "type": "another house"
-  },
-  "effects": {
-   "purpose": 2,
-   "add_influence": 2,
-   "credits": 2
-  },
-  "text": "+2 Purpose; add 2 influence; +2 credits",
-  "pp_target": 8.0,
-  "pp_actual": 8.0,
-  "threshold": {
-   "elements": {
-    "Scholars": 2,
-    "Engineers": 1
-   },
-   "effects": {
-    "add_influence": 1,
-    "credits": 1
-   },
-   "text": "add 1 influence; +1 credits",
-   "pp": 3.0
-  },
-  "reign": {
-   "effects": {
-    "lockout": 1,
-    "purpose": 1,
-    "brace": 1
-   },
-   "pp": 4,
-   "text": "Lockout each section matching its event; +1 Purpose; Brace 1 in each section matching its event"
+   "text": "each house gains 1 credit(s); 1 damage in each section matching its event"
   },
   "legacy": {
    "effects": {
@@ -13899,9 +13808,53 @@
   }
  },
  {
+  "id": "R029",
+  "tier": "Remarkable",
+  "cost": 6,
+  "guilds": [
+   "Scholars",
+   "Engineers",
+   "Farmers",
+   "Medics"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 1,
+   "type": "section with Decay",
+   "class": "narrow"
+  },
+  "effects": {
+   "isolate_fault": 4,
+   "isolate_failure": 1,
+   "purpose": 7
+  },
+  "text": "Isolate 4 Fault(s); Isolate 1 Failure; +7 Purpose",
+  "pp_target": 11.0,
+  "pp_actual": 11.12,
+  "reign": {
+   "effects": {
+    "brace": 1,
+    "purpose": 2,
+    "gather_crew": 1,
+    "patch": 1
+   },
+   "pp": 7,
+   "text": "Brace 1 in each section matching its event; +2 Purpose; gather 1 Crew into each section matching its event; Patch each section matching its event"
+  },
+  "legacy": {
+   "effects": {
+    "lose_influence": 1,
+    "lose_purpose": 1
+   },
+   "pp": 5.0,
+   "per_section": 2,
+   "text": "each house loses 1 influence; -1 Purpose"
+  }
+ },
+ {
   "id": "R030",
   "tier": "Remarkable",
-  "cost": 3,
+  "cost": 2,
   "guilds": [
    "Navigators",
    "Keepers"
@@ -13909,36 +13862,91 @@
   "target": {
    "kind": "section",
    "range": 2,
-   "type": "Hull",
-   "class": "narrow"
+   "type": "ANY",
+   "class": "ANY"
   },
   "effects": {
-   "brace": 10,
-   "foresee": 2,
-   "vent_glitch": 3
+   "vent_fault": 3,
+   "damage": 1,
+   "vent_glitch": 1
   },
-  "text": "Brace 10; foresee; vent 3 Glitch(es)",
-  "pp_target": 6.5,
-  "pp_actual": 6.61,
+  "text": "vent 3 Fault(s); 1 damage; vent 1 Glitch(es)",
+  "pp_target": 5.0,
+  "pp_actual": 5.17,
   "threshold": {
    "elements": {
     "Navigators": 2,
-    "Keepers": 1
+    "Keepers": 2
    },
    "effects": {
     "lockout": 2,
-    "vent_failure": 1
+    "vent_glitch": 3
    },
-   "text": "Lockout; vent 1 Failure",
-   "pp": 3.02
+   "text": "Lockout; vent 3 Glitch(es)",
+   "pp": 4.02
+  },
+  "reign": {
+   "effects": {
+    "credits_each_house": 1,
+    "gather_crew": 1,
+    "brace": 2,
+    "purpose": 1
+   },
+   "pp": 6,
+   "text": "each house gains 1 credit(s); gather 1 Crew into each section matching its event; Brace 2 in each section matching its event; +1 Purpose"
+  },
+  "legacy": {
+   "effects": {
+    "lose_purpose": 2,
+    "add_glitch": 1
+   },
+   "pp": 4.0,
+   "per_section": 2,
+   "text": "-2 Purpose; add 1 Glitch"
+  }
+ },
+ {
+  "id": "R031",
+  "tier": "Remarkable",
+  "cost": 3,
+  "guilds": [
+   "Laborers",
+   "Keepers",
+   "Farmers"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 2,
+   "type": "section with Crew",
+   "class": "narrow"
+  },
+  "effects": {
+   "vent_glitch": 5,
+   "restore_decay": 1,
+   "vent_fault": 2
+  },
+  "text": "vent 5 Glitch(es); restore 1 Decay; vent 2 Fault(s)",
+  "pp_target": 6.5,
+  "pp_actual": 6.47,
+  "threshold": {
+   "elements": {
+    "Laborers": 3,
+    "Keepers": 3
+   },
+   "effects": {
+    "restore_decay": 3,
+    "damage": 12
+   },
+   "text": "restore 3 Decay; 12 damage",
+   "pp": 18.11
   },
   "reign": {
    "effects": {
     "patch": 1,
-    "credits_each_house": 1
+    "brace": 2
    },
    "pp": 5,
-   "text": "Patch each section matching its event; each house gains 1 credit(s)"
+   "text": "Patch each section matching its event; Brace 2 in each section matching its event"
   },
   "legacy": {
    "effects": {
@@ -13951,109 +13959,56 @@
   }
  },
  {
-  "id": "R031",
-  "tier": "Remarkable",
-  "cost": 7,
-  "guilds": [
-   "Laborers",
-   "Keepers",
-   "Farmers"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 2,
-   "type": "section with a Failure",
-   "class": "narrow"
-  },
-  "effects": {
-   "temper_legacy": 1,
-   "vent_glitch": 6,
-   "purpose": 7
-  },
-  "text": "temper the Elder's Legacy; vent 6 Glitch(es); +7 Purpose",
-  "pp_target": 12.5,
-  "pp_actual": 12.59,
-  "threshold": {
-   "elements": {
-    "Laborers": 2,
-    "Keepers": 1
-   },
-   "effects": {
-    "add_influence": 1,
-    "vent_glitch": 3
-   },
-   "text": "add 1 influence; vent 3 Glitch(es)",
-   "pp": 3.02
-  },
-  "reign": {
-   "effects": {
-    "lockout": 1,
-    "damage": 2,
-    "brace": 1
-   },
-   "pp": 7,
-   "text": "Lockout each section matching its event; 2 damage in each section matching its event; Brace 1 in each section matching its event"
-  },
-  "legacy": {
-   "effects": {
-    "add_fault": 1,
-    "lose_purpose": 1
-   },
-   "pp": 5.0,
-   "per_section": 2,
-   "text": "add 1 Fault; -1 Purpose"
-  }
- },
- {
   "id": "R032",
   "tier": "Remarkable",
-  "cost": 3,
+  "cost": 5,
   "guilds": [
    "Laborers",
    "Scholars"
   ],
   "target": {
    "kind": "section",
-   "range": 0,
-   "type": "ANY",
-   "class": "ANY"
+   "range": 1,
+   "type": "section with Crew",
+   "class": "narrow"
   },
   "effects": {
-   "downgrade": 4,
-   "vent_fault": 2
+   "purpose": 5,
+   "gather_crew": 2,
+   "damage": 5
   },
-  "text": "downgrade 4 threat piece(s); vent 2 Fault(s)",
-  "pp_target": 6.5,
-  "pp_actual": 6.4,
+  "text": "+5 Purpose; gather 2 Crew; 5 damage",
+  "pp_target": 9.5,
+  "pp_actual": 9.5,
   "threshold": {
    "elements": {
-    "Laborers": 3,
-    "Scholars": 3
+    "Laborers": 2,
+    "Scholars": 1
    },
    "effects": {
-    "restore_decay": 2,
-    "vent_glitch": 3
+    "vent_glitch": 6,
+    "vent_fault": 1
    },
-   "text": "restore 2 Decay; vent 3 Glitch(es)",
-   "pp": 6.0
+   "text": "vent 6 Glitch(es); vent 1 Fault(s)",
+   "pp": 3.0
   },
   "reign": {
    "effects": {
-    "damage": 2,
-    "gather_crew": 1,
-    "lockout": 1
+    "brace": 2,
+    "gather_crew": 2,
+    "purpose": 1
    },
-   "pp": 7,
-   "text": "2 damage in each section matching its event; gather 1 Crew into each section matching its event; Lockout each section matching its event"
+   "pp": 5,
+   "text": "Brace 2 in each section matching its event; gather 2 Crew into each section matching its event; +1 Purpose"
   },
   "legacy": {
    "effects": {
-    "add_fault": 1,
+    "lose_credits_each_house": 1,
     "lose_purpose": 1
    },
-   "pp": 5.0,
+   "pp": 3.0,
    "per_section": 2,
-   "text": "add 1 Fault; -1 Purpose"
+   "text": "each house loses 1 credit(s); -1 Purpose"
   }
  },
  {
@@ -14068,44 +14023,47 @@
   ],
   "target": {
    "kind": "section",
-   "range": 1,
-   "type": "Infrastructure",
-   "class": "type"
+   "range": 3,
+   "type": "section with Decay",
+   "class": "narrow"
   },
   "effects": {
-   "quarantine": 2,
-   "damage": 9
+   "downgrade": 3,
+   "damage": 3,
+   "isolate_fault": 2
   },
-  "text": "Quarantine; 9 damage",
+  "text": "downgrade 3 threat piece(s); 3 damage; Isolate 2 Fault(s)",
   "pp_target": 9.5,
-  "pp_actual": 9.35,
+  "pp_actual": 9.26,
   "threshold": {
    "elements": {
-    "Engineers": 3,
+    "Engineers": 2,
     "Bureaucrats": 2
    },
    "effects": {
-    "downgrade": 2,
-    "patch": 2
+    "damage": 4
    },
-   "text": "downgrade 2 threat piece(s); Patch",
-   "pp": 5.1
+   "text": "4 damage",
+   "pp": 3.9
   },
   "reign": {
    "effects": {
-    "brace": 1,
-    "patch": 1
+    "gather_crew": 2,
+    "damage": 2,
+    "purpose": 1
    },
-   "pp": 4,
-   "text": "Brace 1 in each section matching its event; Patch each section matching its event"
+   "pp": 7,
+   "text": "gather 2 Crew into each section matching its event; 2 damage in each section matching its event; +1 Purpose"
   },
   "legacy": {
    "effects": {
-    "add_glitch": 1
+    "lose_credits_each_house": 1,
+    "add_glitch": 1,
+    "lose_purpose": 1
    },
-   "pp": 2.0,
+   "pp": 5.0,
    "per_section": 2,
-   "text": "add 1 Glitch"
+   "text": "each house loses 1 credit(s); add 1 Glitch; -1 Purpose"
   }
  },
  {
@@ -14121,49 +14079,53 @@
   "target": {
    "kind": "section",
    "range": 2,
-   "type": "Agricultural",
-   "class": "type"
+   "type": "section with Crew",
+   "class": "narrow"
   },
   "effects": {
-   "gather_crew": 3,
-   "purpose": 5,
-   "add_crew": 1
+   "add_influence": 2,
+   "temper_legacy": 1,
+   "purpose": 3
   },
-  "text": "gather 3 Crew; +5 Purpose; add 1 Crew",
+  "text": "add 2 influence; temper the Elder's Legacy; +3 Purpose",
   "pp_target": 9.5,
-  "pp_actual": 9.4,
+  "pp_actual": 9.45,
   "threshold": {
    "elements": {
     "Farmers": 3,
-    "Keepers": 3
+    "Keepers": 2
    },
    "effects": {
-    "restore_decay": 2
+    "purpose": 7,
+    "add_crew": 3
    },
-   "text": "restore 2 Decay",
-   "pp": 5.86
+   "text": "+7 Purpose; add 3 Crew",
+   "pp": 14.76
   },
   "reign": {
    "effects": {
+    "purpose": 1,
+    "brace": 3,
     "gather_crew": 1,
-    "patch": 1
+    "lockout": 1
    },
-   "pp": 4,
-   "text": "gather 1 Crew into each section matching its event; Patch each section matching its event"
+   "pp": 7,
+   "text": "+1 Purpose; Brace 3 in each section matching its event; gather 1 Crew into each section matching its event; Lockout each section matching its event"
   },
   "legacy": {
    "effects": {
+    "add_unrest": 1,
     "lose_credits_each_house": 1
    },
-   "pp": 2.0,
+   "pp": 5.0,
    "per_section": 2,
-   "text": "each house loses 1 credit(s)"
+   "text": "add 1 Unrest; each house loses 1 credit(s)"
   }
  },
  {
   "id": "R035",
   "tier": "Remarkable",
-  "cost": 2,
+  "cost": 8,
   "guilds": [
    "Keepers",
    "Laborers",
@@ -14171,44 +14133,45 @@
   ],
   "target": {
    "kind": "section",
-   "range": 1,
-   "type": "Residential",
-   "class": "type"
+   "range": 0,
+   "type": "Hull",
+   "class": "narrow"
   },
   "effects": {
-   "damage": 3,
-   "purpose": 2,
-   "brace": 1
+   "temper_legacy": 2,
+   "vent_fault": 3,
+   "purpose": 6
   },
-  "text": "3 damage; +2 Purpose; Brace 1",
-  "pp_target": 5.0,
-  "pp_actual": 4.97,
+  "text": "temper the Elder's Legacy; vent 3 Fault(s); +6 Purpose",
+  "pp_target": 14.0,
+  "pp_actual": 13.8,
   "threshold": {
    "elements": {
     "Keepers": 3,
-    "Laborers": 3
+    "Laborers": 2
    },
    "effects": {
-    "purpose": 6
+    "purpose": 8,
+    "damage": 12
    },
-   "text": "+6 Purpose",
-   "pp": 6.0
+   "text": "+8 Purpose; 12 damage",
+   "pp": 15.2
   },
   "reign": {
    "effects": {
-    "credits_each_house": 1,
-    "lockout": 1
+    "gather_crew": 2,
+    "patch": 1
    },
-   "pp": 4,
-   "text": "each house gains 1 credit(s); Lockout each section matching its event"
+   "pp": 5,
+   "text": "gather 2 Crew into each section matching its event; Patch each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_credits_each_house": 1
+    "lose_purpose": 3
    },
-   "pp": 2.0,
+   "pp": 3.0,
    "per_section": 2,
-   "text": "each house loses 1 credit(s)"
+   "text": "-3 Purpose"
   }
  },
  {
@@ -14221,54 +14184,49 @@
   ],
   "target": {
    "kind": "section",
-   "range": 2,
+   "range": 1,
    "type": "Residential",
    "class": "type"
   },
   "effects": {
-   "restore_decay": 1,
-   "add_influence": 2,
-   "gather_crew": 2
+   "purpose": 8
   },
-  "text": "restore 1 Decay; add 2 influence; gather 2 Crew",
+  "text": "+8 Purpose",
   "pp_target": 8.0,
-  "pp_actual": 7.82,
+  "pp_actual": 8.0,
   "threshold": {
    "elements": {
     "Keepers": 3,
-    "Farmers": 2
+    "Farmers": 3
    },
    "effects": {
-    "add_influence": 1,
-    "gather_crew": 6
+    "add_crew": 4,
+    "purpose": 8
    },
-   "text": "add 1 influence; gather 6 Crew",
-   "pp": 4.89
+   "text": "add 4 Crew; +8 Purpose",
+   "pp": 18.2
   },
   "reign": {
    "effects": {
-    "damage": 1,
-    "purpose": 1,
     "gather_crew": 1,
     "patch": 1
    },
-   "pp": 7,
-   "text": "1 damage in each section matching its event; +1 Purpose; gather 1 Crew into each section matching its event; Patch each section matching its event"
+   "pp": 4,
+   "text": "gather 1 Crew into each section matching its event; Patch each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_influence": 1,
-    "lose_purpose": 1
+    "add_glitch": 1
    },
-   "pp": 5.0,
+   "pp": 2.0,
    "per_section": 2,
-   "text": "each house loses 1 influence; -1 Purpose"
+   "text": "add 1 Glitch"
   }
  },
  {
   "id": "R037",
   "tier": "Remarkable",
-  "cost": 6,
+  "cost": 3,
   "guilds": [
    "Laborers",
    "Bureaucrats",
@@ -14278,51 +14236,51 @@
   "target": {
    "kind": "section",
    "range": 2,
-   "type": "Infrastructure",
-   "class": "type"
+   "type": "ANY",
+   "class": "ANY"
   },
   "effects": {
-   "gather_crew": 3,
-   "vent_fault": 4,
-   "damage": 6
+   "brace": 9,
+   "damage": 1
   },
-  "text": "gather 3 Crew; vent 4 Fault(s); 6 damage",
-  "pp_target": 11.0,
-  "pp_actual": 11.24,
+  "text": "Brace 9; 1 damage",
+  "pp_target": 6.5,
+  "pp_actual": 6.32,
   "threshold": {
    "elements": {
     "Laborers": 2,
-    "Bureaucrats": 2
+    "Bureaucrats": 1
    },
    "effects": {
     "vent_fault": 2,
-    "brace": 4
+    "brace": 1
    },
-   "text": "vent 2 Fault(s); Brace 4",
-   "pp": 3.91
+   "text": "vent 2 Fault(s); Brace 1",
+   "pp": 2.88
   },
   "reign": {
    "effects": {
-    "brace": 4,
-    "patch": 1
+    "brace": 1,
+    "credits_each_house": 1,
+    "purpose": 2
    },
-   "pp": 7,
-   "text": "Brace 4 in each section matching its event; Patch each section matching its event"
+   "pp": 5,
+   "text": "Brace 1 in each section matching its event; each house gains 1 credit(s); +2 Purpose"
   },
   "legacy": {
    "effects": {
-    "add_glitch": 1,
-    "add_unrest": 1
+    "lose_purpose": 1,
+    "lose_credits_each_house": 1
    },
-   "pp": 5.0,
+   "pp": 3.0,
    "per_section": 2,
-   "text": "add 1 Glitch; add 1 Unrest"
+   "text": "-1 Purpose; each house loses 1 credit(s)"
   }
  },
  {
   "id": "R038",
   "tier": "Remarkable",
-  "cost": 3,
+  "cost": 5,
   "guilds": [
    "Bureaucrats",
    "Keepers",
@@ -14330,52 +14288,50 @@
   ],
   "target": {
    "kind": "section",
-   "range": 1,
+   "range": 3,
    "type": "ANY",
    "class": "ANY"
   },
   "effects": {
-   "move_influence": 2,
-   "brace": 9
+   "move_influence": 3,
+   "credits": 3,
+   "vent_fault": 2
   },
-  "text": "move 2 influence; Brace 9",
-  "pp_target": 6.5,
-  "pp_actual": 6.5,
+  "text": "move 3 influence; +3 credits; vent 2 Fault(s)",
+  "pp_target": 9.5,
+  "pp_actual": 9.5,
   "threshold": {
    "elements": {
-    "Bureaucrats": 3,
+    "Bureaucrats": 2,
     "Keepers": 2
    },
    "effects": {
-    "vent_fault": 3,
-    "quarantine": 2
+    "move_influence": 3
    },
-   "text": "vent 3 Fault(s); Quarantine",
-   "pp": 5.0
+   "text": "move 3 influence",
+   "pp": 3.9
   },
   "reign": {
    "effects": {
     "patch": 1,
-    "lockout": 1,
-    "credits_each_house": 1
+    "damage": 1
    },
-   "pp": 7,
-   "text": "Patch each section matching its event; Lockout each section matching its event; each house gains 1 credit(s)"
+   "pp": 5,
+   "text": "Patch each section matching its event; 1 damage in each section matching its event"
   },
   "legacy": {
    "effects": {
-    "add_fault": 1,
-    "lose_purpose": 1
+    "add_unrest": 1
    },
-   "pp": 5.0,
+   "pp": 3.0,
    "per_section": 2,
-   "text": "add 1 Fault; -1 Purpose"
+   "text": "add 1 Unrest"
   }
  },
  {
   "id": "R039",
   "tier": "Remarkable",
-  "cost": 6,
+  "cost": 5,
   "guilds": [
    "Bureaucrats",
    "Navigators",
@@ -14389,240 +14345,13 @@
    "class": "type"
   },
   "effects": {
-   "quarantine": 1,
-   "damage": 11,
-   "vent_fault": 1
+   "move_influence": 4,
+   "credits": 5,
+   "foresee": 2
   },
-  "text": "Quarantine; 11 damage; vent 1 Fault(s)",
-  "pp_target": 11.0,
-  "pp_actual": 11.05,
-  "threshold": {
-   "elements": {
-    "Bureaucrats": 3,
-    "Navigators": 2
-   },
-   "effects": {
-    "move_influence": 4,
-    "quarantine": 2
-   },
-   "text": "move 4 influence; Quarantine",
-   "pp": 5.1
-  },
-  "reign": {
-   "effects": {
-    "gather_crew": 1,
-    "patch": 1,
-    "purpose": 1,
-    "brace": 1
-   },
-   "pp": 6,
-   "text": "gather 1 Crew into each section matching its event; Patch each section matching its event; +1 Purpose; Brace 1 in each section matching its event"
-  },
-  "legacy": {
-   "effects": {
-    "lose_influence": 1
-   },
-   "pp": 4.0,
-   "per_section": 2,
-   "text": "each house loses 1 influence"
-  }
- },
- {
-  "id": "R040",
-  "tier": "Remarkable",
-  "cost": 2,
-  "guilds": [
-   "Bureaucrats",
-   "Farmers",
-   "Medics"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 1,
-   "type": "section with a Failure",
-   "class": "narrow"
-  },
-  "effects": {
-   "restore_decay": 1,
-   "quarantine": 2,
-   "patch": 1
-  },
-  "text": "restore 1 Decay; Quarantine; Patch",
-  "pp_target": 5.0,
-  "pp_actual": 4.88,
-  "threshold": {
-   "elements": {
-    "Bureaucrats": 2,
-    "Farmers": 1
-   },
-   "effects": {
-    "vent_fault": 3,
-    "credits": 1
-   },
-   "text": "vent 3 Fault(s); +1 credits",
-   "pp": 3.25
-  },
-  "reign": {
-   "effects": {
-    "credits_each_house": 1,
-    "patch": 1,
-    "gather_crew": 1
-   },
-   "pp": 6,
-   "text": "each house gains 1 credit(s); Patch each section matching its event; gather 1 Crew into each section matching its event"
-  },
-  "legacy": {
-   "effects": {
-    "add_unrest": 1,
-    "lose_purpose": 1
-   },
-   "pp": 4.0,
-   "per_section": 2,
-   "text": "add 1 Unrest; -1 Purpose"
-  }
- },
- {
-  "id": "R041",
-  "tier": "Remarkable",
-  "cost": 2,
-  "guilds": [
-   "Farmers",
-   "Engineers"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 0,
-   "type": "Agricultural",
-   "class": "type"
-  },
-  "effects": {
-   "damage": 4,
-   "downgrade": 2
-  },
-  "text": "4 damage; downgrade 2 threat piece(s)",
-  "pp_target": 5.0,
-  "pp_actual": 4.76,
-  "threshold": {
-   "elements": {
-    "Farmers": 2,
-    "Engineers": 2
-   },
-   "effects": {
-    "patch": 2,
-    "gather_crew": 6
-   },
-   "text": "Patch; gather 6 Crew",
-   "pp": 4.08
-  },
-  "reign": {
-   "effects": {
-    "damage": 2,
-    "brace": 1,
-    "gather_crew": 1
-   },
-   "pp": 6,
-   "text": "2 damage in each section matching its event; Brace 1 in each section matching its event; gather 1 Crew into each section matching its event"
-  },
-  "legacy": {
-   "effects": {
-    "add_glitch": 1,
-    "lose_credits_each_house": 1
-   },
-   "pp": 4.0,
-   "per_section": 2,
-   "text": "add 1 Glitch; each house loses 1 credit(s)"
-  }
- },
- {
-  "id": "R042",
-  "tier": "Remarkable",
-  "cost": 4,
-  "guilds": [
-   "Engineers",
-   "Navigators",
-   "Laborers",
-   "Bureaucrats"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 2,
-   "type": "Infrastructure",
-   "class": "type"
-  },
-  "effects": {
-   "vent_glitch": 5,
-   "downgrade": 3,
-   "lockout": 1
-  },
-  "text": "vent 5 Glitch(es); downgrade 3 threat piece(s); Lockout",
-  "pp_target": 8.0,
-  "pp_actual": 7.82,
-  "threshold": {
-   "elements": {
-    "Engineers": 3,
-    "Navigators": 3
-   },
-   "effects": {
-    "damage": 4,
-    "lockout": 2
-   },
-   "text": "4 damage; Lockout",
-   "pp": 5.86
-  },
-  "reign": {
-   "effects": {
-    "brace": 1,
-    "patch": 1,
-    "purpose": 1
-   },
-   "pp": 5,
-   "text": "Brace 1 in each section matching its event; Patch each section matching its event; +1 Purpose"
-  },
-  "legacy": {
-   "effects": {
-    "add_unrest": 1
-   },
-   "pp": 3.0,
-   "per_section": 2,
-   "text": "add 1 Unrest"
-  }
- },
- {
-  "id": "R043",
-  "tier": "Remarkable",
-  "cost": 2,
-  "guilds": [
-   "Engineers",
-   "Bureaucrats",
-   "Farmers",
-   "Keepers"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 0,
-   "type": "ANY",
-   "class": "ANY"
-  },
-  "effects": {
-   "move_influence": 1,
-   "quarantine": 2,
-   "damage": 3
-  },
-  "text": "move 1 influence; Quarantine; 3 damage",
-  "pp_target": 5.0,
-  "pp_actual": 4.8,
-  "threshold": {
-   "elements": {
-    "Engineers": 3,
-    "Bureaucrats": 2
-   },
-   "effects": {
-    "downgrade": 3,
-    "vent_fault": 2
-   },
-   "text": "downgrade 3 threat piece(s); vent 2 Fault(s)",
-   "pp": 5.2
-  },
+  "text": "move 4 influence; +5 credits; foresee",
+  "pp_target": 9.5,
+  "pp_actual": 9.4,
   "reign": {
    "effects": {
     "credits_each_house": 1,
@@ -14633,11 +14362,226 @@
   },
   "legacy": {
    "effects": {
-    "lose_credits_each_house": 1
+    "lose_purpose": 2
    },
    "pp": 2.0,
    "per_section": 2,
-   "text": "each house loses 1 credit(s)"
+   "text": "-2 Purpose"
+  }
+ },
+ {
+  "id": "R040",
+  "tier": "Remarkable",
+  "cost": 4,
+  "guilds": [
+   "Bureaucrats",
+   "Farmers",
+   "Medics"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 1,
+   "type": "section with Crew",
+   "class": "narrow"
+  },
+  "effects": {
+   "credits": 4,
+   "patch": 2,
+   "move_influence": 2
+  },
+  "text": "+4 credits; Patch; move 2 influence",
+  "pp_target": 8.0,
+  "pp_actual": 7.75,
+  "threshold": {
+   "elements": {
+    "Bureaucrats": 3,
+    "Farmers": 3
+   },
+   "effects": {
+    "restore_decay": 4,
+    "add_crew": 4
+   },
+   "text": "restore 4 Decay; add 4 Crew",
+   "pp": 18.0
+  },
+  "reign": {
+   "effects": {
+    "purpose": 2,
+    "credits_each_house": 1,
+    "lockout": 1,
+    "brace": 1
+   },
+   "pp": 7,
+   "text": "+2 Purpose; each house gains 1 credit(s); Lockout each section matching its event; Brace 1 in each section matching its event"
+  },
+  "legacy": {
+   "effects": {
+    "lose_credits_each_house": 1,
+    "add_glitch": 1,
+    "lose_purpose": 1
+   },
+   "pp": 5.0,
+   "per_section": 2,
+   "text": "each house loses 1 credit(s); add 1 Glitch; -1 Purpose"
+  }
+ },
+ {
+  "id": "R041",
+  "tier": "Remarkable",
+  "cost": 8,
+  "guilds": [
+   "Farmers",
+   "Engineers"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 3,
+   "type": "Agricultural",
+   "class": "type"
+  },
+  "effects": {
+   "add_crew": 2,
+   "isolate_fault": 2,
+   "downgrade": 3
+  },
+  "text": "add 2 Crew; Isolate 2 Fault(s); downgrade 3 threat piece(s)",
+  "pp_target": 14.0,
+  "pp_actual": 13.81,
+  "threshold": {
+   "elements": {
+    "Farmers": 2,
+    "Engineers": 2
+   },
+   "effects": {
+    "add_crew": 1,
+    "gather_crew": 1
+   },
+   "text": "add 1 Crew; gather 1 Crew",
+   "pp": 3.87
+  },
+  "reign": {
+   "effects": {
+    "lockout": 1,
+    "damage": 1,
+    "credits_each_house": 1
+   },
+   "pp": 6,
+   "text": "Lockout each section matching its event; 1 damage in each section matching its event; each house gains 1 credit(s)"
+  },
+  "legacy": {
+   "effects": {
+    "lose_credits_each_house": 1,
+    "lose_purpose": 2
+   },
+   "pp": 4.0,
+   "per_section": 2,
+   "text": "each house loses 1 credit(s); -2 Purpose"
+  }
+ },
+ {
+  "id": "R042",
+  "tier": "Remarkable",
+  "cost": 2,
+  "guilds": [
+   "Engineers",
+   "Navigators",
+   "Laborers",
+   "Bureaucrats"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 1,
+   "type": "Infrastructure",
+   "class": "type"
+  },
+  "effects": {
+   "damage": 1,
+   "downgrade": 3,
+   "foresee": 1
+  },
+  "text": "1 damage; downgrade 3 threat piece(s); foresee",
+  "pp_target": 5.0,
+  "pp_actual": 5.17,
+  "threshold": {
+   "elements": {
+    "Engineers": 2,
+    "Navigators": 2
+   },
+   "effects": {
+    "downgrade": 2,
+    "damage": 2
+   },
+   "text": "downgrade 2 threat piece(s); 2 damage",
+   "pp": 4.25
+  },
+  "reign": {
+   "effects": {
+    "lockout": 1,
+    "damage": 1
+   },
+   "pp": 4,
+   "text": "Lockout each section matching its event; 1 damage in each section matching its event"
+  },
+  "legacy": {
+   "effects": {
+    "add_glitch": 1
+   },
+   "pp": 2.0,
+   "per_section": 2,
+   "text": "add 1 Glitch"
+  }
+ },
+ {
+  "id": "R043",
+  "tier": "Remarkable",
+  "cost": 4,
+  "guilds": [
+   "Engineers",
+   "Bureaucrats",
+   "Farmers",
+   "Keepers"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 3,
+   "type": "ANY",
+   "class": "ANY"
+  },
+  "effects": {
+   "quarantine": 2,
+   "downgrade": 2,
+   "vent_fault": 1
+  },
+  "text": "Quarantine; downgrade 2 threat piece(s); vent 1 Fault(s)",
+  "pp_target": 8.0,
+  "pp_actual": 7.8,
+  "threshold": {
+   "elements": {
+    "Engineers": 2,
+    "Bureaucrats": 2
+   },
+   "effects": {
+    "patch": 2
+   },
+   "text": "Patch",
+   "pp": 3.9
+  },
+  "reign": {
+   "effects": {
+    "patch": 1,
+    "brace": 2
+   },
+   "pp": 5,
+   "text": "Patch each section matching its event; Brace 2 in each section matching its event"
+  },
+  "legacy": {
+   "effects": {
+    "lose_purpose": 1,
+    "add_glitch": 1
+   },
+   "pp": 3.0,
+   "per_section": 2,
+   "text": "-1 Purpose; add 1 Glitch"
   }
  },
  {
@@ -14651,38 +14595,94 @@
   ],
   "target": {
    "kind": "section",
-   "range": 3,
-   "type": "Hull",
-   "class": "narrow"
+   "range": 2,
+   "type": "Infrastructure",
+   "class": "type"
   },
   "effects": {
-   "brace": 6,
-   "damage": 8,
-   "isolate_fault": 2
+   "gather_crew": 5,
+   "damage": 6,
+   "downgrade": 3
   },
-  "text": "Brace 6; 8 damage; Isolate 2 Fault(s)",
+  "text": "gather 5 Crew; 6 damage; downgrade 3 threat piece(s)",
   "pp_target": 12.5,
-  "pp_actual": 12.68,
+  "pp_actual": 12.71,
   "threshold": {
    "elements": {
     "Engineers": 3,
     "Medics": 2
    },
    "effects": {
-    "isolate_fault": 2,
-    "downgrade": 2
+    "damage": 11,
+    "brace": 9
    },
-   "text": "Isolate 2 Fault(s); downgrade 2 threat piece(s)",
-   "pp": 4.88
+   "text": "11 damage; Brace 9",
+   "pp": 15.15
   },
   "reign": {
    "effects": {
-    "damage": 2,
+    "damage": 1,
+    "purpose": 2,
     "lockout": 1,
     "gather_crew": 1
    },
    "pp": 7,
-   "text": "2 damage in each section matching its event; Lockout each section matching its event; gather 1 Crew into each section matching its event"
+   "text": "1 damage in each section matching its event; +2 Purpose; Lockout each section matching its event; gather 1 Crew into each section matching its event"
+  },
+  "legacy": {
+   "effects": {
+    "add_unrest": 1,
+    "lose_purpose": 2
+   },
+   "pp": 5.0,
+   "per_section": 2,
+   "text": "add 1 Unrest; -2 Purpose"
+  }
+ },
+ {
+  "id": "R045",
+  "tier": "Remarkable",
+  "cost": 6,
+  "guilds": [
+   "Scholars",
+   "Keepers",
+   "Laborers"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 0,
+   "type": "Government",
+   "class": "type"
+  },
+  "effects": {
+   "purpose": 5,
+   "isolate_failure": 2,
+   "brace": 12
+  },
+  "text": "+5 Purpose; Isolate 2 Failure; Brace 12",
+  "pp_target": 11.0,
+  "pp_actual": 11.12,
+  "threshold": {
+   "elements": {
+    "Scholars": 2,
+    "Keepers": 2
+   },
+   "effects": {
+    "isolate_failure": 2,
+    "downgrade": 2
+   },
+   "text": "Isolate 2 Failure; downgrade 2 threat piece(s)",
+   "pp": 4.08
+  },
+  "reign": {
+   "effects": {
+    "gather_crew": 1,
+    "patch": 1,
+    "damage": 1,
+    "brace": 1
+   },
+   "pp": 7,
+   "text": "gather 1 Crew into each section matching its event; Patch each section matching its event; 1 damage in each section matching its event; Brace 1 in each section matching its event"
   },
   "legacy": {
    "effects": {
@@ -14695,151 +14695,46 @@
   }
  },
  {
-  "id": "R045",
-  "tier": "Remarkable",
-  "cost": 4,
-  "guilds": [
-   "Scholars",
-   "Keepers",
-   "Laborers"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 1,
-   "type": "section with Decay",
-   "class": "narrow"
-  },
-  "effects": {
-   "purpose": 6,
-   "isolate_fault": 3
-  },
-  "text": "+6 Purpose; Isolate 3 Fault(s)",
-  "pp_target": 8.0,
-  "pp_actual": 8.25,
-  "threshold": {
-   "elements": {
-    "Scholars": 3,
-    "Keepers": 2
-   },
-   "effects": {
-    "temper_legacy": 1,
-    "downgrade": 2
-   },
-   "text": "temper the Elder's Legacy; downgrade 2 threat piece(s)",
-   "pp": 5.25
-  },
-  "reign": {
-   "effects": {
-    "purpose": 1,
-    "gather_crew": 2,
-    "damage": 1,
-    "brace": 1
-   },
-   "pp": 6,
-   "text": "+1 Purpose; gather 2 Crew into each section matching its event; 1 damage in each section matching its event; Brace 1 in each section matching its event"
-  },
-  "legacy": {
-   "effects": {
-    "lose_purpose": 2,
-    "add_glitch": 1
-   },
-   "pp": 4.0,
-   "per_section": 2,
-   "text": "-2 Purpose; add 1 Glitch"
-  }
- },
- {
   "id": "R046",
   "tier": "Remarkable",
-  "cost": 2,
+  "cost": 6,
   "guilds": [
    "Laborers",
    "Navigators"
   ],
   "target": {
    "kind": "section",
-   "range": 3,
-   "type": "ANY",
-   "class": "ANY"
+   "range": 2,
+   "type": "Infrastructure",
+   "class": "type"
   },
   "effects": {
-   "vent_glitch": 4,
-   "damage": 2
-  },
-  "text": "vent 4 Glitch(es); 2 damage",
-  "pp_target": 5.0,
-  "pp_actual": 5.2,
-  "threshold": {
-   "elements": {
-    "Laborers": 3,
-    "Navigators": 2
-   },
-   "effects": {
-    "vent_fault": 3,
-    "gather_crew": 2
-   },
-   "text": "vent 3 Fault(s); gather 2 Crew",
-   "pp": 5.2
-  },
-  "reign": {
-   "effects": {
-    "lockout": 1,
-    "credits_each_house": 1
-   },
-   "pp": 4,
-   "text": "Lockout each section matching its event; each house gains 1 credit(s)"
-  },
-  "legacy": {
-   "effects": {
-    "add_glitch": 1
-   },
-   "pp": 2.0,
-   "per_section": 2,
-   "text": "add 1 Glitch"
-  }
- },
- {
-  "id": "R047",
-  "tier": "Remarkable",
-  "cost": 8,
-  "guilds": [
-   "Navigators",
-   "Keepers",
-   "Medics"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 3,
-   "type": "Hull",
-   "class": "narrow"
-  },
-  "effects": {
-   "add_influence": 2,
    "vent_fault": 4,
-   "temper_legacy": 2
+   "brace": 12,
+   "foresee": 2
   },
-  "text": "add 2 influence; vent 4 Fault(s); temper the Elder's Legacy",
-  "pp_target": 14.0,
-  "pp_actual": 13.8,
+  "text": "vent 4 Fault(s); Brace 12; foresee",
+  "pp_target": 11.0,
+  "pp_actual": 10.77,
   "threshold": {
    "elements": {
-    "Navigators": 2,
-    "Keepers": 1
+    "Laborers": 2,
+    "Navigators": 1
    },
    "effects": {
-    "brace": 2,
-    "vent_glitch": 4
+    "damage": 2,
+    "lockout": 1
    },
-   "text": "Brace 2; vent 4 Glitch(es)",
+   "text": "2 damage; Lockout",
    "pp": 2.93
   },
   "reign": {
    "effects": {
-    "gather_crew": 2,
-    "damage": 1
+    "damage": 1,
+    "brace": 2
    },
    "pp": 4,
-   "text": "gather 2 Crew into each section matching its event; 1 damage in each section matching its event"
+   "text": "1 damage in each section matching its event; Brace 2 in each section matching its event"
   },
   "legacy": {
    "effects": {
@@ -14851,152 +14746,48 @@
   }
  },
  {
-  "id": "R048",
+  "id": "R047",
   "tier": "Remarkable",
-  "cost": 6,
+  "cost": 5,
   "guilds": [
-   "Farmers",
-   "Engineers",
-   "Scholars"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 1,
-   "type": "Hull",
-   "class": "narrow"
-  },
-  "effects": {
-   "add_crew": 3,
-   "damage": 1,
-   "downgrade": 3
-  },
-  "text": "add 3 Crew; 1 damage; downgrade 3 threat piece(s)",
-  "pp_target": 11.0,
-  "pp_actual": 10.88,
-  "threshold": {
-   "elements": {
-    "Farmers": 3,
-    "Engineers": 2
-   },
-   "effects": {
-    "add_crew": 2,
-    "damage": 1
-   },
-   "text": "add 2 Crew; 1 damage",
-   "pp": 5.25
-  },
-  "reign": {
-   "effects": {
-    "patch": 1,
-    "lockout": 1
-   },
-   "pp": 5,
-   "text": "Patch each section matching its event; Lockout each section matching its event"
-  },
-  "legacy": {
-   "effects": {
-    "lose_purpose": 3
-   },
-   "pp": 3.0,
-   "per_section": 2,
-   "text": "-3 Purpose"
-  }
- },
- {
-  "id": "R049",
-  "tier": "Remarkable",
-  "cost": 7,
-  "guilds": [
-   "Farmers",
-   "Scholars",
+   "Navigators",
+   "Keepers",
    "Medics"
   ],
   "target": {
    "kind": "section",
-   "range": 0,
-   "type": "section with a Failure",
-   "class": "narrow"
-  },
-  "effects": {
-   "purpose": 8,
-   "add_crew": 2,
-   "downgrade": 1
-  },
-  "text": "+8 Purpose; add 2 Crew; downgrade 1 threat piece(s)",
-  "pp_target": 12.5,
-  "pp_actual": 12.5,
-  "threshold": {
-   "elements": {
-    "Farmers": 2,
-    "Scholars": 1
-   },
-   "effects": {
-    "add_crew": 1,
-    "gather_crew": 4
-   },
-   "text": "add 1 Crew; gather 4 Crew",
-   "pp": 3.0
-  },
-  "reign": {
-   "effects": {
-    "credits_each_house": 1,
-    "damage": 1
-   },
-   "pp": 4,
-   "text": "each house gains 1 credit(s); 1 damage in each section matching its event"
-  },
-  "legacy": {
-   "effects": {
-    "add_glitch": 1
-   },
-   "pp": 2.0,
-   "per_section": 2,
-   "text": "add 1 Glitch"
-  }
- },
- {
-  "id": "R050",
-  "tier": "Remarkable",
-  "cost": 7,
-  "guilds": [
-   "Medics",
-   "Farmers",
-   "Keepers"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 0,
+   "range": 1,
    "type": "section with Decay",
    "class": "narrow"
   },
   "effects": {
-   "add_crew": 4,
-   "isolate_fault": 4,
-   "brace": 9
+   "damage": 3,
+   "temper_legacy": 2,
+   "foresee": 2
   },
-  "text": "add 4 Crew; Isolate 4 Fault(s); Brace 9",
-  "pp_target": 12.5,
-  "pp_actual": 12.3,
+  "text": "3 damage; temper the Elder's Legacy; foresee",
+  "pp_target": 9.5,
+  "pp_actual": 9.25,
   "threshold": {
    "elements": {
-    "Medics": 3,
-    "Farmers": 2
+    "Navigators": 2,
+    "Keepers": 2
    },
    "effects": {
-    "brace": 12,
-    "gather_crew": 4
+    "damage": 4,
+    "foresee": 2
    },
-   "text": "Brace 12; gather 4 Crew",
-   "pp": 4.8
+   "text": "4 damage; foresee",
+   "pp": 4.0
   },
   "reign": {
    "effects": {
-    "gather_crew": 2,
-    "lockout": 1,
-    "damage": 1
+    "brace": 1,
+    "patch": 1,
+    "credits_each_house": 1
    },
    "pp": 6,
-   "text": "gather 2 Crew into each section matching its event; Lockout each section matching its event; 1 damage in each section matching its event"
+   "text": "Brace 1 in each section matching its event; Patch each section matching its event; each house gains 1 credit(s)"
   },
   "legacy": {
    "effects": {
@@ -15005,6 +14796,152 @@
    "pp": 4.0,
    "per_section": 2,
    "text": "add 1 Fault"
+  }
+ },
+ {
+  "id": "R048",
+  "tier": "Remarkable",
+  "cost": 8,
+  "guilds": [
+   "Farmers",
+   "Engineers",
+   "Scholars"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 0,
+   "type": "Agricultural",
+   "class": "type"
+  },
+  "effects": {
+   "restore_decay": 2,
+   "add_crew": 4,
+   "gather_crew": 5
+  },
+  "text": "restore 2 Decay; add 4 Crew; gather 5 Crew",
+  "pp_target": 14.0,
+  "pp_actual": 13.94,
+  "threshold": {
+   "elements": {
+    "Farmers": 3,
+    "Engineers": 2
+   },
+   "effects": {
+    "damage": 10,
+    "add_crew": 4
+   },
+   "text": "10 damage; add 4 Crew",
+   "pp": 14.96
+  },
+  "reign": {
+   "effects": {
+    "gather_crew": 2,
+    "credits_each_house": 1
+   },
+   "pp": 4,
+   "text": "gather 2 Crew into each section matching its event; each house gains 1 credit(s)"
+  },
+  "legacy": {
+   "effects": {
+    "lose_credits_each_house": 1
+   },
+   "pp": 2.0,
+   "per_section": 2,
+   "text": "each house loses 1 credit(s)"
+  }
+ },
+ {
+  "id": "R049",
+  "tier": "Remarkable",
+  "cost": 2,
+  "guilds": [
+   "Farmers",
+   "Scholars",
+   "Medics"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 2,
+   "type": "ANY",
+   "class": "ANY"
+  },
+  "effects": {
+   "purpose": 3,
+   "foresee": 1,
+   "downgrade": 1
+  },
+  "text": "+3 Purpose; foresee; downgrade 1 threat piece(s)",
+  "pp_target": 5.0,
+  "pp_actual": 5.22,
+  "threshold": {
+   "elements": {
+    "Farmers": 2,
+    "Scholars": 1
+   },
+   "effects": {
+    "gather_crew": 5
+   },
+   "text": "gather 5 Crew",
+   "pp": 2.88
+  },
+  "reign": {
+   "effects": {
+    "gather_crew": 2,
+    "purpose": 1,
+    "credits_each_house": 1
+   },
+   "pp": 5,
+   "text": "gather 2 Crew into each section matching its event; +1 Purpose; each house gains 1 credit(s)"
+  },
+  "legacy": {
+   "effects": {
+    "add_glitch": 1,
+    "lose_purpose": 1
+   },
+   "pp": 3.0,
+   "per_section": 2,
+   "text": "add 1 Glitch; -1 Purpose"
+  }
+ },
+ {
+  "id": "R050",
+  "tier": "Remarkable",
+  "cost": 8,
+  "guilds": [
+   "Medics",
+   "Farmers",
+   "Keepers"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 2,
+   "type": "Residential",
+   "class": "type"
+  },
+  "effects": {
+   "brace": 12,
+   "gather_crew": 5,
+   "add_crew": 2
+  },
+  "text": "Brace 12; gather 5 Crew; add 2 Crew",
+  "pp_target": 14.0,
+  "pp_actual": 14.17,
+  "reign": {
+   "effects": {
+    "lockout": 1,
+    "damage": 1,
+    "purpose": 2
+   },
+   "pp": 6,
+   "text": "Lockout each section matching its event; 1 damage in each section matching its event; +2 Purpose"
+  },
+  "legacy": {
+   "effects": {
+    "lose_credits_each_house": 2
+   },
+   "pp": 4.0,
+   "per_section": 2,
+   "text": "each house loses 2 credit(s)"
   }
  },
  {
@@ -15019,52 +14956,51 @@
   ],
   "target": {
    "kind": "section",
-   "range": 0,
-   "type": "section with Crew",
-   "class": "narrow"
+   "range": 1,
+   "type": "ANY",
+   "class": "ANY"
   },
   "effects": {
-   "isolate_fault": 4,
-   "purpose": 7
+   "lockout": 2,
+   "purpose": 3,
+   "downgrade": 3
   },
-  "text": "Isolate 4 Fault(s); +7 Purpose",
+  "text": "Lockout; +3 Purpose; downgrade 3 threat piece(s)",
   "pp_target": 9.5,
-  "pp_actual": 9.4,
+  "pp_actual": 9.5,
   "threshold": {
    "elements": {
-    "Scholars": 3,
-    "Navigators": 3
+    "Scholars": 2,
+    "Navigators": 2
    },
    "effects": {
-    "purpose": 5,
-    "isolate_fault": 2
+    "foresee": 2,
+    "downgrade": 2
    },
-   "text": "+5 Purpose; Isolate 2 Fault(s)",
-   "pp": 6.2
+   "text": "foresee; downgrade 2 threat piece(s)",
+   "pp": 4.0
   },
   "reign": {
    "effects": {
-    "credits_each_house": 1,
-    "brace": 2,
-    "gather_crew": 1
+    "gather_crew": 2,
+    "damage": 1
    },
-   "pp": 5,
-   "text": "each house gains 1 credit(s); Brace 2 in each section matching its event; gather 1 Crew into each section matching its event"
+   "pp": 4,
+   "text": "gather 2 Crew into each section matching its event; 1 damage in each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_credits_each_house": 1,
-    "lose_purpose": 1
+    "add_glitch": 1
    },
-   "pp": 3.0,
+   "pp": 2.0,
    "per_section": 2,
-   "text": "each house loses 1 credit(s); -1 Purpose"
+   "text": "add 1 Glitch"
   }
  },
  {
   "id": "R052",
   "tier": "Remarkable",
-  "cost": 5,
+  "cost": 8,
   "guilds": [
    "Laborers",
    "Navigators",
@@ -15072,51 +15008,50 @@
   ],
   "target": {
    "kind": "section",
-   "range": 2,
+   "range": 3,
    "type": "Infrastructure",
    "class": "type"
   },
   "effects": {
-   "vent_fault": 4,
-   "brace": 5,
-   "vent_glitch": 6
+   "vent_fault": 2,
+   "damage": 10,
+   "vent_glitch": 1
   },
-  "text": "vent 4 Fault(s); Brace 5; vent 6 Glitch(es)",
-  "pp_target": 9.5,
-  "pp_actual": 9.29,
+  "text": "vent 2 Fault(s); 10 damage; vent 1 Glitch(es)",
+  "pp_target": 14.0,
+  "pp_actual": 13.81,
   "threshold": {
    "elements": {
     "Laborers": 2,
-    "Navigators": 2
+    "Navigators": 1
    },
    "effects": {
-    "brace": 7,
-    "vent_glitch": 1
+    "vent_glitch": 5
    },
-   "text": "Brace 7; vent 1 Glitch(es)",
-   "pp": 3.91
+   "text": "vent 5 Glitch(es)",
+   "pp": 2.76
   },
   "reign": {
    "effects": {
-    "lockout": 1,
+    "damage": 2,
     "credits_each_house": 1
    },
-   "pp": 4,
-   "text": "Lockout each section matching its event; each house gains 1 credit(s)"
+   "pp": 6,
+   "text": "2 damage in each section matching its event; each house gains 1 credit(s)"
   },
   "legacy": {
    "effects": {
-    "lose_purpose": 2
+    "add_fault": 1
    },
-   "pp": 2.0,
+   "pp": 4.0,
    "per_section": 2,
-   "text": "-2 Purpose"
+   "text": "add 1 Fault"
   }
  },
  {
   "id": "R053",
   "tier": "Remarkable",
-  "cost": 5,
+  "cost": 2,
   "guilds": [
    "Navigators",
    "Engineers",
@@ -15125,52 +15060,54 @@
   ],
   "target": {
    "kind": "section",
-   "range": 1,
-   "type": "section with a Failure",
+   "range": 0,
+   "type": "Hull",
    "class": "narrow"
   },
   "effects": {
-   "damage": 11,
-   "isolate_fault": 2
+   "vent_fault": 4,
+   "patch": 1,
+   "downgrade": 2
   },
-  "text": "11 damage; Isolate 2 Fault(s)",
-  "pp_target": 9.5,
-  "pp_actual": 9.75,
+  "text": "vent 4 Fault(s); Patch; downgrade 2 threat piece(s)",
+  "pp_target": 5.0,
+  "pp_actual": 5.1,
   "threshold": {
    "elements": {
-    "Navigators": 3,
+    "Navigators": 2,
     "Engineers": 2
    },
    "effects": {
-    "lockout": 2,
-    "damage": 5
+    "vent_glitch": 2,
+    "damage": 6
    },
-   "text": "Lockout; 5 damage",
-   "pp": 5.25
+   "text": "vent 2 Glitch(es); 6 damage",
+   "pp": 4.2
   },
   "reign": {
    "effects": {
-    "damage": 2,
-    "gather_crew": 1,
-    "purpose": 2
+    "damage": 1,
+    "patch": 1,
+    "purpose": 1,
+    "brace": 1
    },
    "pp": 7,
-   "text": "2 damage in each section matching its event; gather 1 Crew into each section matching its event; +2 Purpose"
+   "text": "1 damage in each section matching its event; Patch each section matching its event; +1 Purpose; Brace 1 in each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_influence": 1,
+    "lose_credits_each_house": 2,
     "lose_purpose": 1
    },
    "pp": 5.0,
    "per_section": 2,
-   "text": "each house loses 1 influence; -1 Purpose"
+   "text": "each house loses 2 credit(s); -1 Purpose"
   }
  },
  {
   "id": "R054",
   "tier": "Remarkable",
-  "cost": 3,
+  "cost": 2,
   "guilds": [
    "Navigators",
    "Medics",
@@ -15178,54 +15115,42 @@
   ],
   "target": {
    "kind": "section",
-   "range": 3,
+   "range": 0,
    "type": "Hull",
    "class": "narrow"
   },
   "effects": {
    "vent_glitch": 5,
-   "lockout": 2,
-   "damage": 2
+   "brace": 7,
+   "lockout": 2
   },
-  "text": "vent 5 Glitch(es); Lockout; 2 damage",
-  "pp_target": 6.5,
-  "pp_actual": 6.34,
-  "threshold": {
-   "elements": {
-    "Navigators": 3,
-    "Medics": 2
-   },
-   "effects": {
-    "brace": 9,
-    "foresee": 1
-   },
-   "text": "Brace 9; foresee",
-   "pp": 4.89
-  },
+  "text": "vent 5 Glitch(es); Brace 7; Lockout",
+  "pp_target": 5.0,
+  "pp_actual": 4.8,
   "reign": {
    "effects": {
+    "patch": 1,
     "gather_crew": 1,
-    "credits_each_house": 1,
-    "purpose": 1,
-    "brace": 1
+    "lockout": 1,
+    "purpose": 1
    },
-   "pp": 5,
-   "text": "gather 1 Crew into each section matching its event; each house gains 1 credit(s); +1 Purpose; Brace 1 in each section matching its event"
+   "pp": 7,
+   "text": "Patch each section matching its event; gather 1 Crew into each section matching its event; Lockout each section matching its event; +1 Purpose"
   },
   "legacy": {
    "effects": {
-    "lose_purpose": 1,
-    "add_glitch": 1
+    "lose_credits_each_house": 2,
+    "lose_purpose": 1
    },
-   "pp": 3.0,
+   "pp": 5.0,
    "per_section": 2,
-   "text": "-1 Purpose; add 1 Glitch"
+   "text": "each house loses 2 credit(s); -1 Purpose"
   }
  },
  {
   "id": "R055",
   "tier": "Remarkable",
-  "cost": 8,
+  "cost": 7,
   "guilds": [
    "Scholars",
    "Laborers",
@@ -15233,53 +15158,50 @@
   ],
   "target": {
    "kind": "section",
-   "range": 0,
-   "type": "ANY",
-   "class": "ANY"
+   "range": 1,
+   "type": "Government",
+   "class": "type"
   },
   "effects": {
-   "purpose": 8,
-   "damage": 6,
-   "downgrade": 1
+   "purpose": 6,
+   "vent_glitch": 3,
+   "restore_decay": 2
   },
-  "text": "+8 Purpose; 6 damage; downgrade 1 threat piece(s)",
-  "pp_target": 14.0,
-  "pp_actual": 14.0,
+  "text": "+6 Purpose; vent 3 Glitch(es); restore 2 Decay",
+  "pp_target": 12.5,
+  "pp_actual": 12.38,
   "threshold": {
    "elements": {
-    "Scholars": 3,
-    "Laborers": 2
+    "Scholars": 2,
+    "Laborers": 1
    },
    "effects": {
-    "purpose": 4,
-    "vent_glitch": 2
+    "damage": 2,
+    "isolate_failure": 1
    },
-   "text": "+4 Purpose; vent 2 Glitch(es)",
-   "pp": 4.8
+   "text": "2 damage; Isolate 1 Failure",
+   "pp": 2.97
   },
   "reign": {
    "effects": {
-    "gather_crew": 1,
-    "credits_each_house": 1,
-    "damage": 1
+    "credits_each_house": 2
    },
-   "pp": 5,
-   "text": "gather 1 Crew into each section matching its event; each house gains 1 credit(s); 1 damage in each section matching its event"
+   "pp": 4,
+   "text": "each house gains 2 credit(s)"
   },
   "legacy": {
    "effects": {
-    "add_glitch": 1,
-    "lose_purpose": 1
+    "lose_credits_each_house": 1
    },
-   "pp": 3.0,
+   "pp": 2.0,
    "per_section": 2,
-   "text": "add 1 Glitch; -1 Purpose"
+   "text": "each house loses 1 credit(s)"
   }
  },
  {
   "id": "R056",
   "tier": "Remarkable",
-  "cost": 3,
+  "cost": 6,
   "guilds": [
    "Medics",
    "Bureaucrats",
@@ -15287,53 +15209,52 @@
   ],
   "target": {
    "kind": "section",
-   "range": 2,
-   "type": "Hull",
+   "range": 3,
+   "type": "section with a Failure",
    "class": "narrow"
   },
   "effects": {
-   "move_influence": 2,
-   "credits": 4,
-   "brace": 2
+   "brace": 12,
+   "gather_crew": 6,
+   "credits": 2
   },
-  "text": "move 2 influence; +4 credits; Brace 2",
-  "pp_target": 6.5,
-  "pp_actual": 6.59,
+  "text": "Brace 12; gather 6 Crew; +2 credits",
+  "pp_target": 11.0,
+  "pp_actual": 10.78,
   "threshold": {
    "elements": {
-    "Medics": 2,
-    "Bureaucrats": 1
+    "Medics": 3,
+    "Bureaucrats": 2
    },
    "effects": {
-    "move_influence": 3,
-    "gather_crew": 1
+    "add_crew": 4,
+    "brace": 7
    },
-   "text": "move 3 influence; gather 1 Crew",
-   "pp": 3.02
+   "text": "add 4 Crew; Brace 7",
+   "pp": 15.11
   },
   "reign": {
    "effects": {
-    "damage": 2,
-    "purpose": 2,
-    "gather_crew": 1
+    "patch": 1,
+    "brace": 1,
+    "damage": 1
    },
-   "pp": 7,
-   "text": "2 damage in each section matching its event; +2 Purpose; gather 1 Crew into each section matching its event"
+   "pp": 6,
+   "text": "Patch each section matching its event; Brace 1 in each section matching its event; 1 damage in each section matching its event"
   },
   "legacy": {
    "effects": {
-    "add_glitch": 1,
-    "add_unrest": 1
+    "lose_influence": 1
    },
-   "pp": 5.0,
+   "pp": 4.0,
    "per_section": 2,
-   "text": "add 1 Glitch; add 1 Unrest"
+   "text": "each house loses 1 influence"
   }
  },
  {
   "id": "R057",
   "tier": "Remarkable",
-  "cost": 7,
+  "cost": 2,
   "guilds": [
    "Medics",
    "Bureaucrats",
@@ -15341,48 +15262,46 @@
   ],
   "target": {
    "kind": "section",
-   "range": 3,
-   "type": "section with Decay",
-   "class": "narrow"
+   "range": 0,
+   "type": "Residential",
+   "class": "type"
   },
   "effects": {
-   "brace": 5,
-   "credits": 6,
-   "vent_fault": 4
+   "add_crew": 2,
+   "move_crew": 3
   },
-  "text": "Brace 5; +6 credits; vent 4 Fault(s)",
-  "pp_target": 12.5,
-  "pp_actual": 12.34,
+  "text": "add 2 Crew; move 3 Crew",
+  "pp_target": 5.0,
+  "pp_actual": 5.1,
   "threshold": {
    "elements": {
     "Medics": 2,
     "Bureaucrats": 1
    },
    "effects": {
-    "move_influence": 2,
-    "brace": 2
+    "quarantine": 2,
+    "gather_crew": 5
    },
-   "text": "move 2 influence; Brace 2",
-   "pp": 2.93
+   "text": "Quarantine; gather 5 Crew",
+   "pp": 3.06
   },
   "reign": {
    "effects": {
     "patch": 1,
-    "lockout": 1,
-    "brace": 1,
-    "gather_crew": 1
+    "damage": 1,
+    "lockout": 1
    },
    "pp": 7,
-   "text": "Patch each section matching its event; Lockout each section matching its event; Brace 1 in each section matching its event; gather 1 Crew into each section matching its event"
+   "text": "Patch each section matching its event; 1 damage in each section matching its event; Lockout each section matching its event"
   },
   "legacy": {
    "effects": {
-    "add_glitch": 1,
-    "add_unrest": 1
+    "lose_credits_each_house": 2,
+    "lose_purpose": 1
    },
    "pp": 5.0,
    "per_section": 2,
-   "text": "add 1 Glitch; add 1 Unrest"
+   "text": "each house loses 2 credit(s); -1 Purpose"
   }
  },
  {
@@ -15398,37 +15317,24 @@
   "target": {
    "kind": "section",
    "range": 2,
-   "type": "ANY",
-   "class": "ANY"
+   "type": "Hull",
+   "class": "narrow"
   },
   "effects": {
-   "vent_fault": 4,
    "move_influence": 1,
-   "credits": 1
+   "downgrade": 3,
+   "damage": 2
   },
-  "text": "vent 4 Fault(s); move 1 influence; +1 credits",
+  "text": "move 1 influence; downgrade 3 threat piece(s); 2 damage",
   "pp_target": 6.5,
-  "pp_actual": 6.75,
-  "threshold": {
-   "elements": {
-    "Bureaucrats": 2,
-    "Engineers": 2
-   },
-   "effects": {
-    "patch": 1,
-    "vent_fault": 2
-   },
-   "text": "Patch; vent 2 Fault(s)",
-   "pp": 4.02
-  },
+  "pp_actual": 6.47,
   "reign": {
    "effects": {
-    "purpose": 1,
-    "gather_crew": 2,
-    "brace": 2
+    "lockout": 1,
+    "patch": 1
    },
    "pp": 5,
-   "text": "+1 Purpose; gather 2 Crew into each section matching its event; Brace 2 in each section matching its event"
+   "text": "Lockout each section matching its event; Patch each section matching its event"
   },
   "legacy": {
    "effects": {
@@ -15456,43 +15362,42 @@
    "class": "ANY"
   },
   "effects": {
-   "vent_failure": 2,
    "purpose": 7,
-   "temper_legacy": 1
+   "vent_fault": 4,
+   "vent_glitch": 6
   },
-  "text": "vent 2 Failure; +7 Purpose; temper the Elder's Legacy",
+  "text": "+7 Purpose; vent 4 Fault(s); vent 6 Glitch(es)",
   "pp_target": 12.5,
-  "pp_actual": 12.4,
+  "pp_actual": 12.6,
   "threshold": {
    "elements": {
     "Navigators": 2,
-    "Keepers": 1
+    "Keepers": 2
    },
    "effects": {
-    "vent_glitch": 1,
-    "vent_failure": 2
+    "purpose": 4
    },
-   "text": "vent 1 Glitch(es); vent 2 Failure",
-   "pp": 2.8
+   "text": "+4 Purpose",
+   "pp": 4.0
   },
   "reign": {
    "effects": {
-    "purpose": 1,
-    "brace": 2,
     "patch": 1,
+    "purpose": 1,
+    "brace": 1,
     "gather_crew": 1
    },
-   "pp": 7,
-   "text": "+1 Purpose; Brace 2 in each section matching its event; Patch each section matching its event; gather 1 Crew into each section matching its event"
+   "pp": 6,
+   "text": "Patch each section matching its event; +1 Purpose; Brace 1 in each section matching its event; gather 1 Crew into each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_influence": 1,
-    "lose_purpose": 1
+    "lose_credits_each_house": 1,
+    "lose_purpose": 2
    },
-   "pp": 5.0,
+   "pp": 4.0,
    "per_section": 2,
-   "text": "each house loses 1 influence; -1 Purpose"
+   "text": "each house loses 1 credit(s); -2 Purpose"
   }
  },
  {
@@ -15506,51 +15411,49 @@
   ],
   "target": {
    "kind": "section",
-   "range": 2,
-   "type": "Agricultural",
-   "class": "type"
+   "range": 0,
+   "type": "ANY",
+   "class": "ANY"
   },
   "effects": {
-   "purpose": 8,
+   "purpose": 7,
    "patch": 2,
-   "gather_crew": 6
+   "downgrade": 4
   },
-  "text": "+8 Purpose; Patch; gather 6 Crew",
+  "text": "+7 Purpose; Patch; downgrade 4 threat piece(s)",
   "pp_target": 14.0,
-  "pp_actual": 13.86,
+  "pp_actual": 14.2,
   "threshold": {
    "elements": {
-    "Farmers": 3,
-    "Scholars": 2
+    "Farmers": 2,
+    "Scholars": 1
    },
    "effects": {
-    "gather_crew": 4,
-    "patch": 2
+    "purpose": 3
    },
-   "text": "gather 4 Crew; Patch",
-   "pp": 4.89
+   "text": "+3 Purpose",
+   "pp": 3.0
   },
   "reign": {
    "effects": {
-    "credits_each_house": 1,
-    "damage": 1
+    "credits_each_house": 2
    },
    "pp": 4,
-   "text": "each house gains 1 credit(s); 1 damage in each section matching its event"
+   "text": "each house gains 2 credit(s)"
   },
   "legacy": {
    "effects": {
-    "lose_purpose": 2
+    "lose_credits_each_house": 1
    },
    "pp": 2.0,
    "per_section": 2,
-   "text": "-2 Purpose"
+   "text": "each house loses 1 credit(s)"
   }
  },
  {
   "id": "R061",
   "tier": "Remarkable",
-  "cost": 7,
+  "cost": 5,
   "guilds": [
    "Laborers",
    "Engineers",
@@ -15558,53 +15461,52 @@
   ],
   "target": {
    "kind": "section",
-   "range": 2,
+   "range": 1,
    "type": "ANY",
    "class": "ANY"
   },
   "effects": {
-   "brace": 6,
-   "damage": 4,
+   "brace": 11,
    "vent_fault": 4
   },
-  "text": "Brace 6; 4 damage; vent 4 Fault(s)",
-  "pp_target": 12.5,
-  "pp_actual": 12.65,
+  "text": "Brace 11; vent 4 Fault(s)",
+  "pp_target": 9.5,
+  "pp_actual": 9.5,
   "threshold": {
    "elements": {
-    "Laborers": 3,
-    "Engineers": 3
+    "Laborers": 2,
+    "Engineers": 1
    },
    "effects": {
-    "downgrade": 2,
-    "damage": 2
+    "vent_glitch": 4,
+    "damage": 1
    },
-   "text": "downgrade 2 threat piece(s); 2 damage",
-   "pp": 5.75
+   "text": "vent 4 Glitch(es); 1 damage",
+   "pp": 3.0
   },
   "reign": {
    "effects": {
-    "lockout": 1,
-    "brace": 1,
-    "damage": 1
+    "brace": 2,
+    "credits_each_house": 1,
+    "purpose": 1
    },
    "pp": 5,
-   "text": "Lockout each section matching its event; Brace 1 in each section matching its event; 1 damage in each section matching its event"
+   "text": "Brace 2 in each section matching its event; each house gains 1 credit(s); +1 Purpose"
   },
   "legacy": {
    "effects": {
-    "lose_purpose": 1,
-    "lose_credits_each_house": 1
+    "lose_credits_each_house": 1,
+    "lose_purpose": 1
    },
    "pp": 3.0,
    "per_section": 2,
-   "text": "-1 Purpose; each house loses 1 credit(s)"
+   "text": "each house loses 1 credit(s); -1 Purpose"
   }
  },
  {
   "id": "R062",
   "tier": "Remarkable",
-  "cost": 3,
+  "cost": 4,
   "guilds": [
    "Navigators",
    "Engineers",
@@ -15612,38 +15514,37 @@
   ],
   "target": {
    "kind": "section",
-   "range": 0,
-   "type": "ANY",
-   "class": "ANY"
+   "range": 1,
+   "type": "Hull",
+   "class": "narrow"
   },
   "effects": {
-   "vent_glitch": 3,
-   "downgrade": 4,
-   "move_crew": 1
+   "lockout": 2,
+   "vent_glitch": 6,
+   "downgrade": 4
   },
-  "text": "vent 3 Glitch(es); downgrade 4 threat piece(s); move 1 Crew",
-  "pp_target": 6.5,
-  "pp_actual": 6.4,
+  "text": "Lockout; vent 6 Glitch(es); downgrade 4 threat piece(s)",
+  "pp_target": 8.0,
+  "pp_actual": 8.25,
   "threshold": {
    "elements": {
-    "Navigators": 3,
-    "Engineers": 3
+    "Navigators": 2,
+    "Engineers": 2
    },
    "effects": {
-    "damage": 5,
-    "move_crew": 5
+    "patch": 2,
+    "move_crew": 4
    },
-   "text": "5 damage; move 5 Crew",
-   "pp": 6.0
+   "text": "Patch; move 4 Crew",
+   "pp": 3.75
   },
   "reign": {
    "effects": {
-    "lockout": 1,
-    "purpose": 1,
-    "gather_crew": 1
+    "credits_each_house": 1,
+    "lockout": 1
    },
    "pp": 4,
-   "text": "Lockout each section matching its event; +1 Purpose; gather 1 Crew into each section matching its event"
+   "text": "each house gains 1 credit(s); Lockout each section matching its event"
   },
   "legacy": {
    "effects": {
@@ -15657,44 +15558,147 @@
  {
   "id": "R063",
   "tier": "Remarkable",
-  "cost": 6,
+  "cost": 5,
   "guilds": [
    "Medics",
    "Bureaucrats"
   ],
   "target": {
    "kind": "section",
-   "range": 0,
+   "range": 1,
    "type": "Residential",
    "class": "type"
   },
   "effects": {
-   "brace": 12,
-   "add_crew": 3,
-   "credits": 1
+   "gather_crew": 6,
+   "credits": 2,
+   "brace": 12
   },
-  "text": "Brace 12; add 3 Crew; +1 credits",
-  "pp_target": 11.0,
-  "pp_actual": 11.2,
+  "text": "gather 6 Crew; +2 credits; Brace 12",
+  "pp_target": 9.5,
+  "pp_actual": 9.65,
   "threshold": {
    "elements": {
     "Medics": 3,
     "Bureaucrats": 2
    },
    "effects": {
-    "brace": 12,
-    "move_influence": 1
+    "brace": 11,
+    "add_crew": 4
    },
-   "text": "Brace 12; move 1 influence",
-   "pp": 4.76
+   "text": "Brace 11; add 4 Crew",
+   "pp": 14.88
   },
   "reign": {
    "effects": {
+    "patch": 1,
+    "purpose": 1,
+    "gather_crew": 1
+   },
+   "pp": 5,
+   "text": "Patch each section matching its event; +1 Purpose; gather 1 Crew into each section matching its event"
+  },
+  "legacy": {
+   "effects": {
+    "lose_purpose": 3
+   },
+   "pp": 3.0,
+   "per_section": 2,
+   "text": "-3 Purpose"
+  }
+ },
+ {
+  "id": "R064",
+  "tier": "Remarkable",
+  "cost": 4,
+  "guilds": [
+   "Farmers",
+   "Navigators",
+   "Scholars"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 0,
+   "type": "Agricultural",
+   "class": "type"
+  },
+  "effects": {
+   "add_crew": 4
+  },
+  "text": "add 4 Crew",
+  "pp_target": 8.0,
+  "pp_actual": 8.16,
+  "threshold": {
+   "elements": {
+    "Farmers": 2,
+    "Navigators": 2
+   },
+   "effects": {
+    "add_crew": 2
+   },
+   "text": "add 2 Crew",
+   "pp": 4.08
+  },
+  "reign": {
+   "effects": {
+    "purpose": 1,
     "credits_each_house": 1,
-    "brace": 2
+    "gather_crew": 1
    },
    "pp": 4,
-   "text": "each house gains 1 credit(s); Brace 2 in each section matching its event"
+   "text": "+1 Purpose; each house gains 1 credit(s); gather 1 Crew into each section matching its event"
+  },
+  "legacy": {
+   "effects": {
+    "lose_purpose": 2
+   },
+   "pp": 2.0,
+   "per_section": 2,
+   "text": "-2 Purpose"
+  }
+ },
+ {
+  "id": "R065",
+  "tier": "Remarkable",
+  "cost": 4,
+  "guilds": [
+   "Keepers",
+   "Scholars",
+   "Engineers"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 1,
+   "type": "Hull",
+   "class": "narrow"
+  },
+  "effects": {
+   "purpose": 7,
+   "downgrade": 1
+  },
+  "text": "+7 Purpose; downgrade 1 threat piece(s)",
+  "pp_target": 8.0,
+  "pp_actual": 8.12,
+  "threshold": {
+   "elements": {
+    "Keepers": 2,
+    "Scholars": 2
+   },
+   "effects": {
+    "add_influence": 2,
+    "foresee": 2
+   },
+   "text": "add 2 influence; foresee",
+   "pp": 4.0
+  },
+  "reign": {
+   "effects": {
+    "purpose": 1,
+    "brace": 1,
+    "damage": 1
+   },
+   "pp": 4,
+   "text": "+1 Purpose; Brace 1 in each section matching its event; 1 damage in each section matching its event"
   },
   "legacy": {
    "effects": {
@@ -15706,165 +15710,55 @@
   }
  },
  {
-  "id": "R064",
-  "tier": "Remarkable",
-  "cost": 3,
-  "guilds": [
-   "Farmers",
-   "Navigators",
-   "Scholars"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 1,
-   "type": "section with Crew",
-   "class": "narrow"
-  },
-  "effects": {
-   "patch": 2,
-   "vent_fault": 3,
-   "gather_crew": 6
-  },
-  "text": "Patch; vent 3 Fault(s); gather 6 Crew",
-  "pp_target": 6.5,
-  "pp_actual": 6.75,
-  "threshold": {
-   "elements": {
-    "Farmers": 2,
-    "Navigators": 2
-   },
-   "effects": {
-    "add_crew": 1,
-    "vent_fault": 2
-   },
-   "text": "add 1 Crew; vent 2 Fault(s)",
-   "pp": 3.75
-  },
-  "reign": {
-   "effects": {
-    "damage": 1,
-    "lockout": 1,
-    "brace": 1,
-    "credits_each_house": 1
-   },
-   "pp": 7,
-   "text": "1 damage in each section matching its event; Lockout each section matching its event; Brace 1 in each section matching its event; each house gains 1 credit(s)"
-  },
-  "legacy": {
-   "effects": {
-    "lose_purpose": 1,
-    "add_glitch": 1,
-    "lose_credits_each_house": 1
-   },
-   "pp": 5.0,
-   "per_section": 2,
-   "text": "-1 Purpose; add 1 Glitch; each house loses 1 credit(s)"
-  }
- },
- {
-  "id": "R065",
-  "tier": "Remarkable",
-  "cost": 8,
-  "guilds": [
-   "Keepers",
-   "Scholars",
-   "Engineers"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 2,
-   "type": "Residential",
-   "class": "type"
-  },
-  "effects": {
-   "purpose": 5,
-   "isolate_fault": 3,
-   "brace": 12
-  },
-  "text": "+5 Purpose; Isolate 3 Fault(s); Brace 12",
-  "pp_target": 14.0,
-  "pp_actual": 13.8,
-  "threshold": {
-   "elements": {
-    "Keepers": 2,
-    "Scholars": 1
-   },
-   "effects": {
-    "purpose": 2,
-    "brace": 2
-   },
-   "text": "+2 Purpose; Brace 2",
-   "pp": 2.98
-  },
-  "reign": {
-   "effects": {
-    "purpose": 1,
-    "brace": 2,
-    "credits_each_house": 1,
-    "gather_crew": 2
-   },
-   "pp": 7,
-   "text": "+1 Purpose; Brace 2 in each section matching its event; each house gains 1 credit(s); gather 2 Crew into each section matching its event"
-  },
-  "legacy": {
-   "effects": {
-    "lose_purpose": 3,
-    "add_glitch": 1
-   },
-   "pp": 5.0,
-   "per_section": 2,
-   "text": "-3 Purpose; add 1 Glitch"
-  }
- },
- {
   "id": "R066",
   "tier": "Remarkable",
-  "cost": 3,
+  "cost": 4,
   "guilds": [
    "Engineers",
    "Medics"
   ],
   "target": {
    "kind": "section",
-   "range": 2,
+   "range": 1,
    "type": "Infrastructure",
    "class": "type"
   },
   "effects": {
-   "gather_crew": 4,
-   "damage": 3,
-   "patch": 1
+   "move_crew": 1,
+   "damage": 6,
+   "downgrade": 2
   },
-  "text": "gather 4 Crew; 3 damage; Patch",
-  "pp_target": 6.5,
-  "pp_actual": 6.35,
+  "text": "move 1 Crew; 6 damage; downgrade 2 threat piece(s)",
+  "pp_target": 8.0,
+  "pp_actual": 8.07,
   "threshold": {
    "elements": {
-    "Engineers": 3,
-    "Medics": 3
+    "Engineers": 2,
+    "Medics": 1
    },
    "effects": {
-    "damage": 5,
-    "isolate_fault": 1
+    "isolate_fault": 2,
+    "downgrade": 1
    },
-   "text": "5 damage; Isolate 1 Fault(s)",
-   "pp": 5.86
+   "text": "Isolate 2 Fault(s); downgrade 1 threat piece(s)",
+   "pp": 2.97
   },
   "reign": {
    "effects": {
-    "brace": 1,
-    "patch": 1
+    "purpose": 1,
+    "lockout": 1,
+    "gather_crew": 1
    },
    "pp": 4,
-   "text": "Brace 1 in each section matching its event; Patch each section matching its event"
+   "text": "+1 Purpose; Lockout each section matching its event; gather 1 Crew into each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_purpose": 2
+    "add_glitch": 1
    },
    "pp": 2.0,
    "per_section": 2,
-   "text": "-2 Purpose"
+   "text": "add 1 Glitch"
   }
  },
  {
@@ -15877,38 +15771,217 @@
   ],
   "target": {
    "kind": "section",
+   "range": 2,
+   "type": "ANY",
+   "class": "ANY"
+  },
+  "effects": {
+   "credits": 4,
+   "vent_fault": 1
+  },
+  "text": "+4 credits; vent 1 Fault(s)",
+  "pp_target": 5.0,
+  "pp_actual": 5.15,
+  "reign": {
+   "effects": {
+    "credits_each_house": 1,
+    "brace": 1,
+    "purpose": 3,
+    "gather_crew": 1
+   },
+   "pp": 7,
+   "text": "each house gains 1 credit(s); Brace 1 in each section matching its event; +3 Purpose; gather 1 Crew into each section matching its event"
+  },
+  "legacy": {
+   "effects": {
+    "lose_purpose": 3,
+    "lose_credits_each_house": 1
+   },
+   "pp": 5.0,
+   "per_section": 2,
+   "text": "-3 Purpose; each house loses 1 credit(s)"
+  }
+ },
+ {
+  "id": "R068",
+  "tier": "Remarkable",
+  "cost": 7,
+  "guilds": [
+   "Laborers",
+   "Bureaucrats"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 3,
+   "type": "Hull",
+   "class": "narrow"
+  },
+  "effects": {
+   "restore_decay": 2,
+   "credits": 6,
+   "brace": 1
+  },
+  "text": "restore 2 Decay; +6 credits; Brace 1",
+  "pp_target": 12.5,
+  "pp_actual": 12.34,
+  "threshold": {
+   "elements": {
+    "Laborers": 2,
+    "Bureaucrats": 1
+   },
+   "effects": {
+    "move_influence": 1,
+    "vent_fault": 2
+   },
+   "text": "move 1 influence; vent 2 Fault(s)",
+   "pp": 2.93
+  },
+  "reign": {
+   "effects": {
+    "purpose": 1,
+    "brace": 5,
+    "gather_crew": 1
+   },
+   "pp": 7,
+   "text": "+1 Purpose; Brace 5 in each section matching its event; gather 1 Crew into each section matching its event"
+  },
+  "legacy": {
+   "effects": {
+    "lose_credits_each_house": 1,
+    "lose_purpose": 1,
+    "add_glitch": 1
+   },
+   "pp": 5.0,
+   "per_section": 2,
+   "text": "each house loses 1 credit(s); -1 Purpose; add 1 Glitch"
+  }
+ },
+ {
+  "id": "R069",
+  "tier": "Remarkable",
+  "cost": 6,
+  "guilds": [
+   "Medics",
+   "Bureaucrats",
+   "Keepers",
+   "Engineers"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 0,
+   "type": "section with Crew",
+   "class": "narrow"
+  },
+  "effects": {
+   "credits": 6,
+   "brace": 12,
+   "gather_crew": 5
+  },
+  "text": "+6 credits; Brace 12; gather 5 Crew",
+  "pp_target": 11.0,
+  "pp_actual": 11.1,
+  "reign": {
+   "effects": {
+    "patch": 1,
+    "lockout": 1,
+    "gather_crew": 1,
+    "purpose": 1
+   },
+   "pp": 7,
+   "text": "Patch each section matching its event; Lockout each section matching its event; gather 1 Crew into each section matching its event; +1 Purpose"
+  },
+  "legacy": {
+   "effects": {
+    "add_glitch": 2,
+    "lose_purpose": 1
+   },
+   "pp": 5.0,
+   "per_section": 2,
+   "text": "add 2 Glitch; -1 Purpose"
+  }
+ },
+ {
+  "id": "R070",
+  "tier": "Remarkable",
+  "cost": 6,
+  "guilds": [
+   "Navigators",
+   "Farmers",
+   "Medics"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 3,
+   "type": "Hull",
+   "class": "narrow"
+  },
+  "effects": {
+   "vent_glitch": 5,
+   "patch": 2,
+   "add_crew": 2
+  },
+  "text": "vent 5 Glitch(es); Patch; add 2 Crew",
+  "pp_target": 11.0,
+  "pp_actual": 11.21,
+  "reign": {
+   "effects": {
+    "lockout": 1,
+    "brace": 1,
+    "purpose": 1
+   },
+   "pp": 4,
+   "text": "Lockout each section matching its event; Brace 1 in each section matching its event; +1 Purpose"
+  },
+  "legacy": {
+   "effects": {
+    "lose_credits_each_house": 1
+   },
+   "pp": 2.0,
+   "per_section": 2,
+   "text": "each house loses 1 credit(s)"
+  }
+ },
+ {
+  "id": "R071",
+  "tier": "Remarkable",
+  "cost": 8,
+  "guilds": [
+   "Bureaucrats",
+   "Keepers"
+  ],
+  "target": {
+   "kind": "section",
    "range": 1,
    "type": "Government",
    "class": "type"
   },
   "effects": {
-   "vent_fault": 2,
-   "credits": 1,
-   "brace": 5
+   "purpose": 7,
+   "brace": 12,
+   "isolate_fault": 2
   },
-  "text": "vent 2 Fault(s); +1 credits; Brace 5",
-  "pp_target": 5.0,
-  "pp_actual": 4.83,
+  "text": "+7 Purpose; Brace 12; Isolate 2 Fault(s)",
+  "pp_target": 14.0,
+  "pp_actual": 13.8,
   "threshold": {
    "elements": {
     "Bureaucrats": 2,
-    "Keepers": 2
+    "Keepers": 1
    },
    "effects": {
-    "move_influence": 3,
-    "add_influence": 1
+    "purpose": 3
    },
-   "text": "move 3 influence; add 1 influence",
-   "pp": 4.25
+   "text": "+3 Purpose",
+   "pp": 3.0
   },
   "reign": {
    "effects": {
-    "credits_each_house": 1,
-    "lockout": 1,
-    "gather_crew": 1
+    "brace": 2,
+    "gather_crew": 1,
+    "purpose": 2
    },
    "pp": 5,
-   "text": "each house gains 1 credit(s); Lockout each section matching its event; gather 1 Crew into each section matching its event"
+   "text": "Brace 2 in each section matching its event; gather 1 Crew into each section matching its event; +2 Purpose"
   },
   "legacy": {
    "effects": {
@@ -15921,220 +15994,9 @@
   }
  },
  {
-  "id": "R068",
-  "tier": "Remarkable",
-  "cost": 2,
-  "guilds": [
-   "Laborers",
-   "Bureaucrats"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 2,
-   "type": "section with Decay",
-   "class": "narrow"
-  },
-  "effects": {
-   "vent_glitch": 4,
-   "restore_decay": 1,
-   "quarantine": 1
-  },
-  "text": "vent 4 Glitch(es); restore 1 Decay; Quarantine",
-  "pp_target": 5.0,
-  "pp_actual": 5.17,
-  "threshold": {
-   "elements": {
-    "Laborers": 3,
-    "Bureaucrats": 3
-   },
-   "effects": {
-    "vent_fault": 4,
-    "vent_glitch": 6
-   },
-   "text": "vent 4 Fault(s); vent 6 Glitch(es)",
-   "pp": 6.04
-  },
-  "reign": {
-   "effects": {
-    "credits_each_house": 2,
-    "brace": 1,
-    "purpose": 2
-   },
-   "pp": 7,
-   "text": "each house gains 2 credit(s); Brace 1 in each section matching its event; +2 Purpose"
-  },
-  "legacy": {
-   "effects": {
-    "lose_influence": 1,
-    "lose_purpose": 1
-   },
-   "pp": 5.0,
-   "per_section": 2,
-   "text": "each house loses 1 influence; -1 Purpose"
-  }
- },
- {
-  "id": "R069",
-  "tier": "Remarkable",
-  "cost": 3,
-  "guilds": [
-   "Medics",
-   "Bureaucrats",
-   "Keepers",
-   "Engineers"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 3,
-   "type": "Residential",
-   "class": "type"
-  },
-  "effects": {
-   "quarantine": 2,
-   "brace": 7,
-   "gather_crew": 1
-  },
-  "text": "Quarantine; Brace 7; gather 1 Crew",
-  "pp_target": 6.5,
-  "pp_actual": 6.63,
-  "threshold": {
-   "elements": {
-    "Medics": 2,
-    "Bureaucrats": 2
-   },
-   "effects": {
-    "credits": 1,
-    "move_crew": 5
-   },
-   "text": "+1 credits; move 5 Crew",
-   "pp": 3.76
-  },
-  "reign": {
-   "effects": {
-    "brace": 1,
-    "patch": 1
-   },
-   "pp": 4,
-   "text": "Brace 1 in each section matching its event; Patch each section matching its event"
-  },
-  "legacy": {
-   "effects": {
-    "add_glitch": 1
-   },
-   "pp": 2.0,
-   "per_section": 2,
-   "text": "add 1 Glitch"
-  }
- },
- {
-  "id": "R070",
-  "tier": "Remarkable",
-  "cost": 4,
-  "guilds": [
-   "Navigators",
-   "Farmers",
-   "Medics"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 2,
-   "type": "Hull",
-   "class": "narrow"
-  },
-  "effects": {
-   "move_crew": 4,
-   "vent_glitch": 6,
-   "vent_fault": 4
-  },
-  "text": "move 4 Crew; vent 6 Glitch(es); vent 4 Fault(s)",
-  "pp_target": 8.0,
-  "pp_actual": 7.76,
-  "threshold": {
-   "elements": {
-    "Navigators": 2,
-    "Farmers": 2
-   },
-   "effects": {
-    "add_crew": 1,
-    "vent_glitch": 3
-   },
-   "text": "add 1 Crew; vent 3 Glitch(es)",
-   "pp": 3.88
-  },
-  "reign": {
-   "effects": {
-    "credits_each_house": 1,
-    "damage": 1,
-    "gather_crew": 1
-   },
-   "pp": 5,
-   "text": "each house gains 1 credit(s); 1 damage in each section matching its event; gather 1 Crew into each section matching its event"
-  },
-  "legacy": {
-   "effects": {
-    "lose_purpose": 3
-   },
-   "pp": 3.0,
-   "per_section": 2,
-   "text": "-3 Purpose"
-  }
- },
- {
-  "id": "R071",
-  "tier": "Remarkable",
-  "cost": 3,
-  "guilds": [
-   "Bureaucrats",
-   "Keepers"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 1,
-   "type": "section with Decay",
-   "class": "narrow"
-  },
-  "effects": {
-   "isolate_fault": 3,
-   "move_influence": 4,
-   "purpose": 1
-  },
-  "text": "Isolate 3 Fault(s); move 4 influence; +1 Purpose",
-  "pp_target": 6.5,
-  "pp_actual": 6.25,
-  "threshold": {
-   "elements": {
-    "Bureaucrats": 2,
-    "Keepers": 1
-   },
-   "effects": {
-    "credits": 2,
-    "purpose": 1
-   },
-   "text": "+2 credits; +1 Purpose",
-   "pp": 3.0
-  },
-  "reign": {
-   "effects": {
-    "patch": 1,
-    "purpose": 2
-   },
-   "pp": 5,
-   "text": "Patch each section matching its event; +2 Purpose"
-  },
-  "legacy": {
-   "effects": {
-    "add_glitch": 1,
-    "lose_purpose": 1
-   },
-   "pp": 3.0,
-   "per_section": 2,
-   "text": "add 1 Glitch; -1 Purpose"
-  }
- },
- {
   "id": "R072",
   "tier": "Remarkable",
-  "cost": 7,
+  "cost": 4,
   "guilds": [
    "Bureaucrats",
    "Scholars",
@@ -16143,49 +16005,39 @@
   "target": {
    "kind": "section",
    "range": 0,
-   "type": "section with Decay",
-   "class": "narrow"
+   "type": "Government",
+   "class": "type"
   },
   "effects": {
-   "purpose": 6,
-   "credits": 4,
-   "vent_fault": 4
+   "purpose": 8
   },
-  "text": "+6 Purpose; +4 credits; vent 4 Fault(s)",
-  "pp_target": 12.5,
-  "pp_actual": 12.4,
-  "threshold": {
-   "elements": {
-    "Bureaucrats": 3,
-    "Scholars": 3
-   },
-   "effects": {
-    "credits": 6
-   },
-   "text": "+6 credits",
-   "pp": 6.0
-  },
+  "text": "+8 Purpose",
+  "pp_target": 8.0,
+  "pp_actual": 8.0,
   "reign": {
    "effects": {
+    "brace": 1,
+    "damage": 1,
     "lockout": 1,
-    "credits_each_house": 1
+    "purpose": 1
    },
-   "pp": 4,
-   "text": "Lockout each section matching its event; each house gains 1 credit(s)"
+   "pp": 6,
+   "text": "Brace 1 in each section matching its event; 1 damage in each section matching its event; Lockout each section matching its event; +1 Purpose"
   },
   "legacy": {
    "effects": {
-    "lose_purpose": 2
+    "lose_purpose": 2,
+    "add_glitch": 1
    },
-   "pp": 2.0,
+   "pp": 4.0,
    "per_section": 2,
-   "text": "-2 Purpose"
+   "text": "-2 Purpose; add 1 Glitch"
   }
  },
  {
   "id": "R073",
   "tier": "Remarkable",
-  "cost": 7,
+  "cost": 5,
   "guilds": [
    "Scholars",
    "Farmers",
@@ -16198,42 +16050,27 @@
    "class": "ANY"
   },
   "effects": {
-   "foresee": 2,
-   "add_crew": 4,
-   "purpose": 2
+   "isolate_fault": 2,
+   "purpose": 8
   },
-  "text": "foresee; add 4 Crew; +2 Purpose",
-  "pp_target": 12.5,
-  "pp_actual": 12.6,
-  "threshold": {
-   "elements": {
-    "Scholars": 2,
-    "Farmers": 2
-   },
-   "effects": {
-    "foresee": 2,
-    "purpose": 3
-   },
-   "text": "foresee; +3 Purpose",
-   "pp": 4.0
-  },
+  "text": "Isolate 2 Fault(s); +8 Purpose",
+  "pp_target": 9.5,
+  "pp_actual": 9.6,
   "reign": {
    "effects": {
     "patch": 1,
-    "gather_crew": 1,
-    "purpose": 1
+    "lockout": 1
    },
    "pp": 5,
-   "text": "Patch each section matching its event; gather 1 Crew into each section matching its event; +1 Purpose"
+   "text": "Patch each section matching its event; Lockout each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_credits_each_house": 1,
-    "lose_purpose": 1
+    "add_unrest": 1
    },
    "pp": 3.0,
    "per_section": 2,
-   "text": "each house loses 1 credit(s); -1 Purpose"
+   "text": "add 1 Unrest"
   }
  },
  {
@@ -16247,52 +16084,52 @@
   ],
   "target": {
    "kind": "section",
-   "range": 0,
-   "type": "Infrastructure",
-   "class": "type"
+   "range": 1,
+   "type": "ANY",
+   "class": "ANY"
   },
   "effects": {
-   "damage": 6,
-   "add_crew": 1,
-   "gather_crew": 1
+   "patch": 2,
+   "damage": 2,
+   "downgrade": 1
   },
-  "text": "6 damage; add 1 Crew; gather 1 Crew",
+  "text": "Patch; 2 damage; downgrade 1 threat piece(s)",
   "pp_target": 6.5,
-  "pp_actual": 6.46,
+  "pp_actual": 6.5,
   "threshold": {
    "elements": {
-    "Engineers": 3,
+    "Engineers": 2,
     "Farmers": 2
    },
    "effects": {
-    "damage": 6,
-    "downgrade": 1
+    "downgrade": 2,
+    "gather_crew": 2
    },
-   "text": "6 damage; downgrade 1 threat piece(s)",
-   "pp": 5.1
+   "text": "downgrade 2 threat piece(s); gather 2 Crew",
+   "pp": 4.0
   },
   "reign": {
    "effects": {
-    "credits_each_house": 2,
-    "purpose": 1
+    "gather_crew": 1,
+    "credits_each_house": 1,
+    "brace": 1
    },
-   "pp": 5,
-   "text": "each house gains 2 credit(s); +1 Purpose"
+   "pp": 4,
+   "text": "gather 1 Crew into each section matching its event; each house gains 1 credit(s); Brace 1 in each section matching its event"
   },
   "legacy": {
    "effects": {
-    "add_glitch": 1,
-    "lose_purpose": 1
+    "lose_credits_each_house": 1
    },
-   "pp": 3.0,
+   "pp": 2.0,
    "per_section": 2,
-   "text": "add 1 Glitch; -1 Purpose"
+   "text": "each house loses 1 credit(s)"
   }
  },
  {
   "id": "R075",
   "tier": "Remarkable",
-  "cost": 8,
+  "cost": 5,
   "guilds": [
    "Engineers",
    "Bureaucrats",
@@ -16300,48 +16137,33 @@
   ],
   "target": {
    "kind": "section",
-   "range": 1,
+   "range": 0,
    "type": "Infrastructure",
    "class": "type"
   },
   "effects": {
-   "move_influence": 3,
-   "damage": 12,
-   "patch": 1
+   "credits": 4,
+   "quarantine": 2,
+   "downgrade": 4
   },
-  "text": "move 3 influence; 12 damage; Patch",
-  "pp_target": 14.0,
-  "pp_actual": 14.02,
-  "threshold": {
-   "elements": {
-    "Engineers": 3,
-    "Bureaucrats": 2
-   },
-   "effects": {
-    "damage": 3,
-    "downgrade": 2
-   },
-   "text": "3 damage; downgrade 2 threat piece(s)",
-   "pp": 5.1
-  },
+  "text": "+4 credits; Quarantine; downgrade 4 threat piece(s)",
+  "pp_target": 9.5,
+  "pp_actual": 9.44,
   "reign": {
    "effects": {
     "patch": 1,
-    "gather_crew": 1,
-    "damage": 1,
-    "brace": 1
+    "gather_crew": 1
    },
-   "pp": 7,
-   "text": "Patch each section matching its event; gather 1 Crew into each section matching its event; 1 damage in each section matching its event; Brace 1 in each section matching its event"
+   "pp": 4,
+   "text": "Patch each section matching its event; gather 1 Crew into each section matching its event"
   },
   "legacy": {
    "effects": {
-    "add_unrest": 1,
-    "lose_purpose": 2
+    "lose_credits_each_house": 1
    },
-   "pp": 5.0,
+   "pp": 2.0,
    "per_section": 2,
-   "text": "add 1 Unrest; -2 Purpose"
+   "text": "each house loses 1 credit(s)"
   }
  },
  {
@@ -16355,53 +16177,51 @@
   ],
   "target": {
    "kind": "section",
-   "range": 0,
-   "type": "Infrastructure",
-   "class": "type"
+   "range": 3,
+   "type": "ANY",
+   "class": "ANY"
   },
   "effects": {
-   "brace": 12,
-   "gather_crew": 2,
-   "damage": 7
+   "damage": 7,
+   "brace": 1
   },
-  "text": "Brace 12; gather 2 Crew; 7 damage",
+  "text": "7 damage; Brace 1",
   "pp_target": 9.5,
-  "pp_actual": 9.52,
+  "pp_actual": 9.75,
   "threshold": {
    "elements": {
-    "Engineers": 3,
-    "Medics": 3
+    "Engineers": 2,
+    "Medics": 2
    },
    "effects": {
-    "brace": 12,
-    "downgrade": 2
+    "gather_crew": 6
    },
-   "text": "Brace 12; downgrade 2 threat piece(s)",
-   "pp": 6.12
+   "text": "gather 6 Crew",
+   "pp": 3.9
   },
   "reign": {
    "effects": {
-    "brace": 1,
     "damage": 1,
-    "purpose": 1,
-    "gather_crew": 1
+    "brace": 1,
+    "patch": 1
    },
-   "pp": 5,
-   "text": "Brace 1 in each section matching its event; 1 damage in each section matching its event; +1 Purpose; gather 1 Crew into each section matching its event"
+   "pp": 6,
+   "text": "1 damage in each section matching its event; Brace 1 in each section matching its event; Patch each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_purpose": 3
+    "lose_purpose": 2,
+    "add_glitch": 1
    },
-   "pp": 3.0,
+   "pp": 4.0,
    "per_section": 2,
-   "text": "-3 Purpose"
+   "text": "-2 Purpose; add 1 Glitch"
   }
  },
  {
   "id": "R077",
   "tier": "Remarkable",
-  "cost": 3,
+  "cost": 5,
   "guilds": [
    "Scholars",
    "Medics",
@@ -16410,357 +16230,35 @@
   "target": {
    "kind": "section",
    "range": 1,
-   "type": "ANY",
-   "class": "ANY"
-  },
-  "effects": {
-   "brace": 7,
-   "downgrade": 1,
-   "gather_crew": 3
-  },
-  "text": "Brace 7; downgrade 1 threat piece(s); gather 3 Crew",
-  "pp_target": 6.5,
-  "pp_actual": 6.5,
-  "threshold": {
-   "elements": {
-    "Scholars": 3,
-    "Medics": 3
-   },
-   "effects": {
-    "downgrade": 4
-   },
-   "text": "downgrade 4 threat piece(s)",
-   "pp": 6.0
-  },
-  "reign": {
-   "effects": {
-    "patch": 1,
-    "brace": 2,
-    "gather_crew": 1
-   },
-   "pp": 6,
-   "text": "Patch each section matching its event; Brace 2 in each section matching its event; gather 1 Crew into each section matching its event"
-  },
-  "legacy": {
-   "effects": {
-    "lose_purpose": 2,
-    "lose_credits_each_house": 1
-   },
-   "pp": 4.0,
-   "per_section": 2,
-   "text": "-2 Purpose; each house loses 1 credit(s)"
-  }
- },
- {
-  "id": "R078",
-  "tier": "Remarkable",
-  "cost": 8,
-  "guilds": [
-   "Laborers",
-   "Keepers",
-   "Scholars"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 1,
-   "type": "Infrastructure",
-   "class": "type"
-  },
-  "effects": {
-   "brace": 11,
-   "add_influence": 2,
-   "damage": 7
-  },
-  "text": "Brace 11; add 2 influence; 7 damage",
-  "pp_target": 14.0,
-  "pp_actual": 14.03,
-  "threshold": {
-   "elements": {
-    "Laborers": 3,
-    "Keepers": 3
-   },
-   "effects": {
-    "damage": 4,
-    "vent_glitch": 6
-   },
-   "text": "4 damage; vent 6 Glitch(es)",
-   "pp": 5.95
-  },
-  "reign": {
-   "effects": {
-    "credits_each_house": 1,
-    "lockout": 1
-   },
-   "pp": 4,
-   "text": "each house gains 1 credit(s); Lockout each section matching its event"
-  },
-  "legacy": {
-   "effects": {
-    "add_glitch": 1
-   },
-   "pp": 2.0,
-   "per_section": 2,
-   "text": "add 1 Glitch"
-  }
- },
- {
-  "id": "R079",
-  "tier": "Remarkable",
-  "cost": 4,
-  "guilds": [
-   "Bureaucrats",
-   "Medics",
-   "Farmers"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 2,
    "type": "Government",
    "class": "type"
   },
   "effects": {
-   "vent_fault": 4,
-   "brace": 4,
-   "gather_crew": 4
+   "purpose": 7,
+   "downgrade": 2
   },
-  "text": "vent 4 Fault(s); Brace 4; gather 4 Crew",
-  "pp_target": 8.0,
-  "pp_actual": 7.82,
-  "threshold": {
-   "elements": {
-    "Bureaucrats": 2,
-    "Medics": 1
-   },
-   "effects": {
-    "isolate_fault": 3
-   },
-   "text": "Isolate 3 Fault(s)",
-   "pp": 2.93
-  },
-  "reign": {
-   "effects": {
-    "credits_each_house": 1,
-    "purpose": 2,
-    "lockout": 1
-   },
-   "pp": 6,
-   "text": "each house gains 1 credit(s); +2 Purpose; Lockout each section matching its event"
-  },
-  "legacy": {
-   "effects": {
-    "lose_purpose": 1,
-    "add_unrest": 1
-   },
-   "pp": 4.0,
-   "per_section": 2,
-   "text": "-1 Purpose; add 1 Unrest"
-  }
- },
- {
-  "id": "R080",
-  "tier": "Remarkable",
-  "cost": 6,
-  "guilds": [
-   "Scholars",
-   "Keepers",
-   "Farmers"
-  ],
-  "target": {
-   "kind": "house",
-   "range": null,
-   "type": "another house"
-  },
-  "effects": {
-   "credits": 3,
-   "add_influence": 2,
-   "move_influence": 4
-  },
-  "text": "+3 credits; add 2 influence; move 4 influence",
-  "pp_target": 11.0,
-  "pp_actual": 11.0,
+  "text": "+7 Purpose; downgrade 2 threat piece(s)",
+  "pp_target": 9.5,
+  "pp_actual": 9.55,
   "threshold": {
    "elements": {
     "Scholars": 2,
-    "Keepers": 2
-   },
-   "effects": {
-    "purpose": 3,
-    "move_influence": 1
-   },
-   "text": "+3 Purpose; move 1 influence",
-   "pp": 4.0
-  },
-  "reign": {
-   "effects": {
-    "gather_crew": 1,
-    "brace": 2,
-    "credits_each_house": 1,
-    "purpose": 2
-   },
-   "pp": 7,
-   "text": "gather 1 Crew into each section matching its event; Brace 2 in each section matching its event; each house gains 1 credit(s); +2 Purpose"
-  },
-  "legacy": {
-   "effects": {
-    "add_fault": 1,
-    "lose_purpose": 1
-   },
-   "pp": 5.0,
-   "per_section": 2,
-   "text": "add 1 Fault; -1 Purpose"
-  }
- },
- {
-  "id": "R081",
-  "tier": "Remarkable",
-  "cost": 4,
-  "guilds": [
-   "Bureaucrats",
-   "Scholars"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 2,
-   "type": "ANY",
-   "class": "ANY"
-  },
-  "effects": {
-   "quarantine": 2,
-   "downgrade": 2,
-   "purpose": 2
-  },
-  "text": "Quarantine; downgrade 2 threat piece(s); +2 Purpose",
-  "pp_target": 8.0,
-  "pp_actual": 7.75,
-  "threshold": {
-   "elements": {
-    "Bureaucrats": 3,
-    "Scholars": 3
-   },
-   "effects": {
-    "vent_fault": 4,
-    "move_influence": 1
-   },
-   "text": "vent 4 Fault(s); move 1 influence",
-   "pp": 5.75
-  },
-  "reign": {
-   "effects": {
-    "patch": 1,
-    "lockout": 1,
-    "purpose": 1
-   },
-   "pp": 6,
-   "text": "Patch each section matching its event; Lockout each section matching its event; +1 Purpose"
-  },
-  "legacy": {
-   "effects": {
-    "lose_purpose": 2,
-    "lose_credits_each_house": 1
-   },
-   "pp": 4.0,
-   "per_section": 2,
-   "text": "-2 Purpose; each house loses 1 credit(s)"
-  }
- },
- {
-  "id": "R082",
-  "tier": "Remarkable",
-  "cost": 5,
-  "guilds": [
-   "Keepers",
-   "Laborers",
-   "Farmers"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 1,
-   "type": "section with Crew",
-   "class": "narrow"
-  },
-  "effects": {
-   "purpose": 6,
-   "add_influence": 1,
-   "vent_fault": 3
-  },
-  "text": "+6 Purpose; add 1 influence; vent 3 Fault(s)",
-  "pp_target": 9.5,
-  "pp_actual": 9.75,
-  "threshold": {
-   "elements": {
-    "Keepers": 2,
-    "Laborers": 1
-   },
-   "effects": {
-    "vent_fault": 3,
-    "purpose": 1
-   },
-   "text": "vent 3 Fault(s); +1 Purpose",
-   "pp": 3.25
-  },
-  "reign": {
-   "effects": {
-    "lockout": 1,
-    "damage": 1,
-    "patch": 1
-   },
-   "pp": 7,
-   "text": "Lockout each section matching its event; 1 damage in each section matching its event; Patch each section matching its event"
-  },
-  "legacy": {
-   "effects": {
-    "add_fault": 1,
-    "lose_purpose": 1
-   },
-   "pp": 5.0,
-   "per_section": 2,
-   "text": "add 1 Fault; -1 Purpose"
-  }
- },
- {
-  "id": "R083",
-  "tier": "Remarkable",
-  "cost": 8,
-  "guilds": [
-   "Laborers",
-   "Medics",
-   "Scholars",
-   "Keepers"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 1,
-   "type": "Infrastructure",
-   "class": "type"
-  },
-  "effects": {
-   "damage": 10,
-   "brace": 12,
-   "vent_glitch": 1
-  },
-  "text": "10 damage; Brace 12; vent 1 Glitch(es)",
-  "pp_target": 14.0,
-  "pp_actual": 14.03,
-  "threshold": {
-   "elements": {
-    "Laborers": 2,
     "Medics": 1
    },
    "effects": {
-    "damage": 3,
-    "gather_crew": 1
+    "brace": 7
    },
-   "text": "3 damage; gather 1 Crew",
-   "pp": 2.97
+   "text": "Brace 7",
+   "pp": 2.98
   },
   "reign": {
    "effects": {
-    "brace": 2,
-    "damage": 1,
-    "gather_crew": 1
+    "credits_each_house": 1,
+    "gather_crew": 1,
+    "lockout": 1
    },
    "pp": 5,
-   "text": "Brace 2 in each section matching its event; 1 damage in each section matching its event; gather 1 Crew into each section matching its event"
+   "text": "each house gains 1 credit(s); gather 1 Crew into each section matching its event; Lockout each section matching its event"
   },
   "legacy": {
    "effects": {
@@ -16773,68 +16271,257 @@
   }
  },
  {
-  "id": "R084",
+  "id": "R078",
   "tier": "Remarkable",
-  "cost": 2,
+  "cost": 4,
   "guilds": [
+   "Laborers",
    "Keepers",
-   "Navigators",
+   "Scholars"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 0,
+   "type": "Infrastructure",
+   "class": "type"
+  },
+  "effects": {
+   "brace": 3,
+   "restore_decay": 1,
+   "purpose": 5
+  },
+  "text": "Brace 3; restore 1 Decay; +5 Purpose",
+  "pp_target": 8.0,
+  "pp_actual": 8.06,
+  "threshold": {
+   "elements": {
+    "Laborers": 2,
+    "Keepers": 1
+   },
+   "effects": {
+    "add_influence": 2,
+    "vent_glitch": 1
+   },
+   "text": "add 2 influence; vent 1 Glitch(es)",
+   "pp": 3.06
+  },
+  "reign": {
+   "effects": {
+    "credits_each_house": 2,
+    "lockout": 1,
+    "brace": 1
+   },
+   "pp": 7,
+   "text": "each house gains 2 credit(s); Lockout each section matching its event; Brace 1 in each section matching its event"
+  },
+  "legacy": {
+   "effects": {
+    "lose_purpose": 2,
+    "add_unrest": 1
+   },
+   "pp": 5.0,
+   "per_section": 2,
+   "text": "-2 Purpose; add 1 Unrest"
+  }
+ },
+ {
+  "id": "R079",
+  "tier": "Remarkable",
+  "cost": 5,
+  "guilds": [
+   "Bureaucrats",
    "Medics",
+   "Farmers"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 0,
+   "type": "ANY",
+   "class": "ANY"
+  },
+  "effects": {
+   "credits": 4,
+   "move_influence": 3,
+   "isolate_fault": 4
+  },
+  "text": "+4 credits; move 3 influence; Isolate 4 Fault(s)",
+  "pp_target": 9.5,
+  "pp_actual": 9.6,
+  "threshold": {
+   "elements": {
+    "Bureaucrats": 2,
+    "Medics": 1
+   },
+   "effects": {
+    "brace": 4,
+    "move_crew": 4
+   },
+   "text": "Brace 4; move 4 Crew",
+   "pp": 3.2
+  },
+  "reign": {
+   "effects": {
+    "credits_each_house": 1,
+    "damage": 1,
+    "patch": 1
+   },
+   "pp": 7,
+   "text": "each house gains 1 credit(s); 1 damage in each section matching its event; Patch each section matching its event"
+  },
+  "legacy": {
+   "effects": {
+    "lose_purpose": 1,
+    "lose_credits_each_house": 2
+   },
+   "pp": 5.0,
+   "per_section": 2,
+   "text": "-1 Purpose; each house loses 2 credit(s)"
+  }
+ },
+ {
+  "id": "R080",
+  "tier": "Remarkable",
+  "cost": 4,
+  "guilds": [
+   "Scholars",
+   "Keepers",
+   "Farmers"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 0,
+   "type": "ANY",
+   "class": "ANY"
+  },
+  "effects": {
+   "isolate_fault": 2,
+   "purpose": 6,
+   "brace": 1
+  },
+  "text": "Isolate 2 Fault(s); +6 Purpose; Brace 1",
+  "pp_target": 8.0,
+  "pp_actual": 8.0,
+  "reign": {
+   "effects": {
+    "gather_crew": 1,
+    "brace": 1,
+    "damage": 1
+   },
+   "pp": 4,
+   "text": "gather 1 Crew into each section matching its event; Brace 1 in each section matching its event; 1 damage in each section matching its event"
+  },
+  "legacy": {
+   "effects": {
+    "lose_purpose": 2
+   },
+   "pp": 2.0,
+   "per_section": 2,
+   "text": "-2 Purpose"
+  }
+ },
+ {
+  "id": "R081",
+  "tier": "Remarkable",
+  "cost": 8,
+  "guilds": [
+   "Bureaucrats",
    "Scholars"
   ],
   "target": {
    "kind": "section",
    "range": 1,
-   "type": "Residential",
+   "type": "Government",
    "class": "type"
   },
   "effects": {
-   "move_crew": 2,
-   "add_influence": 2,
-   "purpose": 1
+   "isolate_fault": 4,
+   "vent_fault": 4,
+   "purpose": 7
   },
-  "text": "move 2 Crew; add 2 influence; +1 Purpose",
-  "pp_target": 5.0,
-  "pp_actual": 5.25,
-  "threshold": {
-   "elements": {
-    "Keepers": 2,
-    "Navigators": 2
-   },
-   "effects": {
-    "brace": 1,
-    "add_influence": 2
-   },
-   "text": "Brace 1; add 2 influence",
-   "pp": 3.82
-  },
+  "text": "Isolate 4 Fault(s); vent 4 Fault(s); +7 Purpose",
+  "pp_target": 14.0,
+  "pp_actual": 13.8,
   "reign": {
    "effects": {
-    "brace": 2,
-    "purpose": 1,
-    "damage": 1
+    "patch": 1,
+    "brace": 1,
+    "gather_crew": 1,
+    "purpose": 1
    },
-   "pp": 5,
-   "text": "Brace 2 in each section matching its event; +1 Purpose; 1 damage in each section matching its event"
+   "pp": 6,
+   "text": "Patch each section matching its event; Brace 1 in each section matching its event; gather 1 Crew into each section matching its event; +1 Purpose"
   },
   "legacy": {
    "effects": {
-    "add_glitch": 1,
-    "lose_purpose": 1
+    "lose_credits_each_house": 1,
+    "lose_purpose": 2
    },
-   "pp": 3.0,
+   "pp": 4.0,
    "per_section": 2,
-   "text": "add 1 Glitch; -1 Purpose"
+   "text": "each house loses 1 credit(s); -2 Purpose"
   }
  },
  {
-  "id": "R085",
+  "id": "R082",
+  "tier": "Remarkable",
+  "cost": 6,
+  "guilds": [
+   "Keepers",
+   "Laborers",
+   "Farmers"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 2,
+   "type": "ANY",
+   "class": "ANY"
+  },
+  "effects": {
+   "vent_glitch": 4,
+   "damage": 6,
+   "purpose": 2
+  },
+  "text": "vent 4 Glitch(es); 6 damage; +2 Purpose",
+  "pp_target": 11.0,
+  "pp_actual": 11.2,
+  "threshold": {
+   "elements": {
+    "Keepers": 3,
+    "Laborers": 2
+   },
+   "effects": {
+    "damage": 10,
+    "vent_fault": 3
+   },
+   "text": "10 damage; vent 3 Fault(s)",
+   "pp": 14.95
+  },
+  "reign": {
+   "effects": {
+    "patch": 1,
+    "credits_each_house": 1
+   },
+   "pp": 5,
+   "text": "Patch each section matching its event; each house gains 1 credit(s)"
+  },
+  "legacy": {
+   "effects": {
+    "add_unrest": 1
+   },
+   "pp": 3.0,
+   "per_section": 2,
+   "text": "add 1 Unrest"
+  }
+ },
+ {
+  "id": "R083",
   "tier": "Remarkable",
   "cost": 3,
   "guilds": [
    "Laborers",
-   "Keepers",
-   "Navigators"
+   "Medics",
+   "Scholars",
+   "Keepers"
   ],
   "target": {
    "kind": "section",
@@ -16843,31 +16530,140 @@
    "class": "type"
   },
   "effects": {
-   "brace": 11,
-   "damage": 1,
-   "vent_glitch": 2
+   "vent_fault": 2,
+   "damage": 4,
+   "brace": 3
   },
-  "text": "Brace 11; 1 damage; vent 2 Glitch(es)",
+  "text": "vent 2 Fault(s); 4 damage; Brace 3",
   "pp_target": 6.5,
   "pp_actual": 6.38,
   "threshold": {
    "elements": {
-    "Laborers": 2,
-    "Keepers": 1
+    "Laborers": 3,
+    "Medics": 2
    },
    "effects": {
-    "brace": 7
+    "damage": 12,
+    "brace": 11
    },
-   "text": "Brace 7",
-   "pp": 2.98
+   "text": "12 damage; Brace 11",
+   "pp": 14.88
   },
   "reign": {
    "effects": {
-    "damage": 1,
-    "lockout": 1
+    "purpose": 1,
+    "lockout": 1,
+    "patch": 1
+   },
+   "pp": 6,
+   "text": "+1 Purpose; Lockout each section matching its event; Patch each section matching its event"
+  },
+  "legacy": {
+   "effects": {
+    "add_fault": 1
+   },
+   "pp": 4.0,
+   "per_section": 2,
+   "text": "add 1 Fault"
+  }
+ },
+ {
+  "id": "R084",
+  "tier": "Remarkable",
+  "cost": 6,
+  "guilds": [
+   "Keepers",
+   "Navigators",
+   "Medics",
+   "Scholars"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 0,
+   "type": "section with a Failure",
+   "class": "narrow"
+  },
+  "effects": {
+   "brace": 6,
+   "lockout": 2,
+   "purpose": 8
+  },
+  "text": "Brace 6; Lockout; +8 Purpose",
+  "pp_target": 11.0,
+  "pp_actual": 11.0,
+  "threshold": {
+   "elements": {
+    "Keepers": 2,
+    "Navigators": 1
+   },
+   "effects": {
+    "vent_failure": 1,
+    "purpose": 2
+   },
+   "text": "vent 1 Failure; +2 Purpose",
+   "pp": 2.9
+  },
+  "reign": {
+   "effects": {
+    "lockout": 1,
+    "purpose": 1,
+    "damage": 1
+   },
+   "pp": 5,
+   "text": "Lockout each section matching its event; +1 Purpose; 1 damage in each section matching its event"
+  },
+  "legacy": {
+   "effects": {
+    "lose_purpose": 3
+   },
+   "pp": 3.0,
+   "per_section": 2,
+   "text": "-3 Purpose"
+  }
+ },
+ {
+  "id": "R085",
+  "tier": "Remarkable",
+  "cost": 4,
+  "guilds": [
+   "Laborers",
+   "Keepers",
+   "Navigators"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 2,
+   "type": "section with Crew",
+   "class": "narrow"
+  },
+  "effects": {
+   "damage": 6,
+   "brace": 5,
+   "vent_glitch": 2
+  },
+  "text": "6 damage; Brace 5; vent 2 Glitch(es)",
+  "pp_target": 8.0,
+  "pp_actual": 8.19,
+  "threshold": {
+   "elements": {
+    "Laborers": 3,
+    "Keepers": 2
+   },
+   "effects": {
+    "brace": 11,
+    "restore_decay": 4
+   },
+   "text": "Brace 11; restore 4 Decay",
+   "pp": 15.09
+  },
+  "reign": {
+   "effects": {
+    "brace": 1,
+    "gather_crew": 2,
+    "purpose": 1
    },
    "pp": 4,
-   "text": "1 damage in each section matching its event; Lockout each section matching its event"
+   "text": "Brace 1 in each section matching its event; gather 2 Crew into each section matching its event; +1 Purpose"
   },
   "legacy": {
    "effects": {
@@ -16889,80 +16685,68 @@
   ],
   "target": {
    "kind": "section",
-   "range": 0,
+   "range": 1,
    "type": "Residential",
    "class": "type"
   },
   "effects": {
-   "brace": 6,
-   "purpose": 4,
-   "foresee": 1
+   "brace": 7,
+   "purpose": 1,
+   "downgrade": 2
   },
-  "text": "Brace 6; +4 Purpose; foresee",
+  "text": "Brace 7; +1 Purpose; downgrade 2 threat piece(s)",
   "pp_target": 6.5,
-  "pp_actual": 6.54,
+  "pp_actual": 6.53,
   "threshold": {
    "elements": {
     "Keepers": 2,
     "Scholars": 2
    },
    "effects": {
-    "purpose": 4
+    "brace": 9
    },
-   "text": "+4 Purpose",
-   "pp": 4.0
+   "text": "Brace 9",
+   "pp": 3.82
   },
   "reign": {
    "effects": {
-    "lockout": 1,
-    "brace": 1,
-    "purpose": 3
+    "patch": 1,
+    "brace": 1
    },
-   "pp": 6,
-   "text": "Lockout each section matching its event; Brace 1 in each section matching its event; +3 Purpose"
+   "pp": 4,
+   "text": "Patch each section matching its event; Brace 1 in each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_purpose": 1,
-    "add_unrest": 1
+    "lose_purpose": 2
    },
-   "pp": 4.0,
+   "pp": 2.0,
    "per_section": 2,
-   "text": "-1 Purpose; add 1 Unrest"
+   "text": "-2 Purpose"
   }
  },
  {
   "id": "R087",
   "tier": "Remarkable",
-  "cost": 2,
+  "cost": 5,
   "guilds": [
    "Laborers",
    "Farmers"
   ],
   "target": {
    "kind": "section",
-   "range": 1,
+   "range": 0,
    "type": "section with Decay",
    "class": "narrow"
   },
   "effects": {
-   "damage": 7
+   "restore_decay": 3,
+   "gather_crew": 6,
+   "brace": 7
   },
-  "text": "7 damage",
-  "pp_target": 5.0,
-  "pp_actual": 5.25,
-  "threshold": {
-   "elements": {
-    "Laborers": 3,
-    "Farmers": 3
-   },
-   "effects": {
-    "vent_glitch": 6,
-    "brace": 10
-   },
-   "text": "vent 6 Glitch(es); Brace 10",
-   "pp": 6.0
-  },
+  "text": "restore 3 Decay; gather 6 Crew; Brace 7",
+  "pp_target": 9.5,
+  "pp_actual": 9.3,
   "reign": {
    "effects": {
     "lockout": 1,
@@ -16973,18 +16757,18 @@
   },
   "legacy": {
    "effects": {
-    "lose_purpose": 1,
-    "lose_credits_each_house": 1
+    "add_glitch": 1,
+    "lose_purpose": 1
    },
    "pp": 3.0,
    "per_section": 2,
-   "text": "-1 Purpose; each house loses 1 credit(s)"
+   "text": "add 1 Glitch; -1 Purpose"
   }
  },
  {
   "id": "R088",
   "tier": "Remarkable",
-  "cost": 5,
+  "cost": 6,
   "guilds": [
    "Laborers",
    "Keepers",
@@ -16993,51 +16777,52 @@
   ],
   "target": {
    "kind": "section",
-   "range": 0,
+   "range": 1,
    "type": "Infrastructure",
    "class": "type"
   },
   "effects": {
-   "vent_fault": 1,
-   "brace": 4,
-   "damage": 11
+   "purpose": 5,
+   "damage": 4,
+   "vent_glitch": 6
   },
-  "text": "vent 1 Fault(s); Brace 4; 11 damage",
-  "pp_target": 9.5,
-  "pp_actual": 9.52,
+  "text": "+5 Purpose; 4 damage; vent 6 Glitch(es)",
+  "pp_target": 11.0,
+  "pp_actual": 10.95,
   "threshold": {
    "elements": {
-    "Laborers": 2,
-    "Keepers": 1
+    "Laborers": 3,
+    "Keepers": 3
    },
    "effects": {
-    "damage": 4,
-    "brace": 1
+    "purpose": 8,
+    "damage": 12
    },
-   "text": "4 damage; Brace 1",
-   "pp": 3.06
+   "text": "+8 Purpose; 12 damage",
+   "pp": 18.2
   },
   "reign": {
    "effects": {
-    "brace": 1,
-    "patch": 1
+    "patch": 1,
+    "purpose": 1,
+    "damage": 1
    },
-   "pp": 4,
-   "text": "Brace 1 in each section matching its event; Patch each section matching its event"
+   "pp": 6,
+   "text": "Patch each section matching its event; +1 Purpose; 1 damage in each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_credits_each_house": 1
+    "lose_credits_each_house": 2
    },
-   "pp": 2.0,
+   "pp": 4.0,
    "per_section": 2,
-   "text": "each house loses 1 credit(s)"
+   "text": "each house loses 2 credit(s)"
   }
  },
  {
   "id": "R089",
   "tier": "Remarkable",
-  "cost": 4,
+  "cost": 8,
   "guilds": [
    "Farmers",
    "Keepers",
@@ -17045,38 +16830,38 @@
   ],
   "target": {
    "kind": "section",
-   "range": 2,
+   "range": 0,
    "type": "Agricultural",
    "class": "type"
   },
   "effects": {
-   "patch": 2,
-   "restore_decay": 1,
-   "purpose": 2
+   "restore_decay": 4,
+   "brace": 12,
+   "gather_crew": 5
   },
-  "text": "Patch; restore 1 Decay; +2 Purpose",
-  "pp_target": 8.0,
-  "pp_actual": 7.86,
+  "text": "restore 4 Decay; Brace 12; gather 5 Crew",
+  "pp_target": 14.0,
+  "pp_actual": 13.94,
   "threshold": {
    "elements": {
     "Farmers": 3,
-    "Keepers": 3
+    "Keepers": 2
    },
    "effects": {
-    "purpose": 4,
-    "add_influence": 1
+    "purpose": 7,
+    "add_crew": 4
    },
-   "text": "+4 Purpose; add 1 influence",
-   "pp": 5.96
+   "text": "+7 Purpose; add 4 Crew",
+   "pp": 15.16
   },
   "reign": {
    "effects": {
-    "brace": 1,
-    "damage": 1,
-    "purpose": 1
+    "lockout": 1,
+    "purpose": 1,
+    "gather_crew": 1
    },
    "pp": 4,
-   "text": "Brace 1 in each section matching its event; 1 damage in each section matching its event; +1 Purpose"
+   "text": "Lockout each section matching its event; +1 Purpose; gather 1 Crew into each section matching its event"
   },
   "legacy": {
    "effects": {
@@ -17090,7 +16875,7 @@
  {
   "id": "R090",
   "tier": "Remarkable",
-  "cost": 4,
+  "cost": 7,
   "guilds": [
    "Farmers",
    "Medics",
@@ -17100,51 +16885,50 @@
   "target": {
    "kind": "section",
    "range": 1,
-   "type": "ANY",
-   "class": "ANY"
+   "type": "Agricultural",
+   "class": "type"
   },
   "effects": {
-   "isolate_fault": 1,
-   "add_crew": 2,
-   "brace": 2
+   "gather_crew": 5,
+   "add_crew": 4
   },
-  "text": "Isolate 1 Fault(s); add 2 Crew; Brace 2",
-  "pp_target": 8.0,
-  "pp_actual": 8.0,
+  "text": "gather 5 Crew; add 4 Crew",
+  "pp_target": 12.5,
+  "pp_actual": 12.32,
   "threshold": {
    "elements": {
-    "Farmers": 2,
-    "Medics": 2
+    "Farmers": 3,
+    "Medics": 3
    },
    "effects": {
-    "restore_decay": 1,
-    "brace": 2
+    "add_crew": 4,
+    "restore_decay": 3
    },
-   "text": "restore 1 Decay; Brace 2",
-   "pp": 4.0
+   "text": "add 4 Crew; restore 3 Decay",
+   "pp": 17.85
   },
   "reign": {
    "effects": {
-    "damage": 1,
-    "gather_crew": 4
+    "lockout": 1,
+    "purpose": 1,
+    "damage": 1
    },
-   "pp": 6,
-   "text": "1 damage in each section matching its event; gather 4 Crew into each section matching its event"
+   "pp": 5,
+   "text": "Lockout each section matching its event; +1 Purpose; 1 damage in each section matching its event"
   },
   "legacy": {
    "effects": {
-    "add_glitch": 1,
-    "lose_credits_each_house": 1
+    "add_unrest": 1
    },
-   "pp": 4.0,
+   "pp": 3.0,
    "per_section": 2,
-   "text": "add 1 Glitch; each house loses 1 credit(s)"
+   "text": "add 1 Unrest"
   }
  },
  {
   "id": "R091",
   "tier": "Remarkable",
-  "cost": 8,
+  "cost": 7,
   "guilds": [
    "Engineers",
    "Bureaucrats",
@@ -17153,51 +16937,41 @@
   ],
   "target": {
    "kind": "section",
-   "range": 0,
-   "type": "Infrastructure",
-   "class": "type"
+   "range": 1,
+   "type": "section with Decay",
+   "class": "narrow"
   },
   "effects": {
-   "damage": 12,
-   "downgrade": 3,
-   "vent_fault": 4
+   "damage": 11,
+   "isolate_fault": 3,
+   "patch": 2
   },
-  "text": "12 damage; downgrade 3 threat piece(s); vent 4 Fault(s)",
-  "pp_target": 14.0,
-  "pp_actual": 13.94,
-  "threshold": {
-   "elements": {
-    "Engineers": 3,
-    "Bureaucrats": 3
-   },
-   "effects": {
-    "isolate_fault": 1,
-    "damage": 8
-   },
-   "text": "Isolate 1 Fault(s); 8 damage",
-   "pp": 6.12
-  },
+  "text": "11 damage; Isolate 3 Fault(s); Patch",
+  "pp_target": 12.5,
+  "pp_actual": 12.75,
   "reign": {
    "effects": {
-    "lockout": 1,
-    "purpose": 2
+    "credits_each_house": 1,
+    "damage": 1,
+    "purpose": 1
    },
-   "pp": 4,
-   "text": "Lockout each section matching its event; +2 Purpose"
+   "pp": 5,
+   "text": "each house gains 1 credit(s); 1 damage in each section matching its event; +1 Purpose"
   },
   "legacy": {
    "effects": {
-    "add_glitch": 1
+    "lose_credits_each_house": 1,
+    "lose_purpose": 1
    },
-   "pp": 2.0,
+   "pp": 3.0,
    "per_section": 2,
-   "text": "add 1 Glitch"
+   "text": "each house loses 1 credit(s); -1 Purpose"
   }
  },
  {
   "id": "R092",
   "tier": "Remarkable",
-  "cost": 3,
+  "cost": 4,
   "guilds": [
    "Navigators",
    "Keepers",
@@ -17206,52 +16980,41 @@
   "target": {
    "kind": "section",
    "range": 1,
-   "type": "ANY",
-   "class": "ANY"
+   "type": "Hull",
+   "class": "narrow"
   },
   "effects": {
-   "vent_fault": 3,
-   "purpose": 3,
-   "move_crew": 1
+   "damage": 6,
+   "lockout": 2,
+   "vent_glitch": 6
   },
-  "text": "vent 3 Fault(s); +3 Purpose; move 1 Crew",
-  "pp_target": 6.5,
-  "pp_actual": 6.5,
-  "threshold": {
-   "elements": {
-    "Navigators": 3,
-    "Keepers": 2
-   },
-   "effects": {
-    "vent_fault": 4,
-    "move_crew": 2
-   },
-   "text": "vent 4 Fault(s); move 2 Crew",
-   "pp": 5.0
-  },
+  "text": "6 damage; Lockout; vent 6 Glitch(es)",
+  "pp_target": 8.0,
+  "pp_actual": 8.25,
   "reign": {
    "effects": {
-    "brace": 2,
     "damage": 1,
-    "credits_each_house": 1
+    "brace": 2,
+    "gather_crew": 1,
+    "lockout": 1
    },
-   "pp": 6,
-   "text": "Brace 2 in each section matching its event; 1 damage in each section matching its event; each house gains 1 credit(s)"
+   "pp": 7,
+   "text": "1 damage in each section matching its event; Brace 2 in each section matching its event; gather 1 Crew into each section matching its event; Lockout each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_credits_each_house": 1,
-    "add_glitch": 1
+    "add_fault": 1,
+    "lose_purpose": 1
    },
-   "pp": 4.0,
+   "pp": 5.0,
    "per_section": 2,
-   "text": "each house loses 1 credit(s); add 1 Glitch"
+   "text": "add 1 Fault; -1 Purpose"
   }
  },
  {
   "id": "R093",
   "tier": "Remarkable",
-  "cost": 6,
+  "cost": 7,
   "guilds": [
    "Laborers",
    "Engineers",
@@ -17260,43 +17023,45 @@
   "target": {
    "kind": "section",
    "range": 1,
-   "type": "ANY",
-   "class": "ANY"
+   "type": "section with Decay",
+   "class": "narrow"
   },
   "effects": {
-   "damage": 10,
-   "vent_glitch": 2
+   "damage": 12,
+   "gather_crew": 1,
+   "brace": 8
   },
-  "text": "10 damage; vent 2 Glitch(es)",
-  "pp_target": 11.0,
-  "pp_actual": 11.0,
+  "text": "12 damage; gather 1 Crew; Brace 8",
+  "pp_target": 12.5,
+  "pp_actual": 12.38,
   "threshold": {
    "elements": {
     "Laborers": 3,
     "Engineers": 2
    },
    "effects": {
-    "downgrade": 2,
-    "damage": 2
+    "damage": 11,
+    "restore_decay": 3
    },
-   "text": "downgrade 2 threat piece(s); 2 damage",
-   "pp": 5.0
+   "text": "11 damage; restore 3 Decay",
+   "pp": 15.0
   },
   "reign": {
    "effects": {
-    "gather_crew": 2,
-    "credits_each_house": 1
+    "patch": 1,
+    "credits_each_house": 2
    },
-   "pp": 4,
-   "text": "gather 2 Crew into each section matching its event; each house gains 1 credit(s)"
+   "pp": 7,
+   "text": "Patch each section matching its event; each house gains 2 credit(s)"
   },
   "legacy": {
    "effects": {
-    "add_glitch": 1
+    "lose_purpose": 3,
+    "lose_credits_each_house": 1
    },
-   "pp": 2.0,
+   "pp": 5.0,
    "per_section": 2,
-   "text": "add 1 Glitch"
+   "text": "-3 Purpose; each house loses 1 credit(s)"
   }
  },
  {
@@ -17311,47 +17076,45 @@
   "target": {
    "kind": "section",
    "range": 1,
-   "type": "ANY",
-   "class": "ANY"
+   "type": "Residential",
+   "class": "type"
   },
   "effects": {
-   "purpose": 3,
-   "isolate_fault": 2,
-   "add_crew": 1
+   "temper_legacy": 2,
+   "gather_crew": 1,
+   "brace": 4
   },
-  "text": "+3 Purpose; Isolate 2 Fault(s); add 1 Crew",
+  "text": "temper the Elder's Legacy; gather 1 Crew; Brace 4",
   "pp_target": 8.0,
-  "pp_actual": 8.0,
+  "pp_actual": 8.12,
   "threshold": {
    "elements": {
     "Medics": 2,
     "Keepers": 2
    },
    "effects": {
-    "isolate_fault": 3,
+    "brace": 7,
     "gather_crew": 2
    },
-   "text": "Isolate 3 Fault(s); gather 2 Crew",
-   "pp": 4.0
+   "text": "Brace 7; gather 2 Crew",
+   "pp": 3.83
   },
   "reign": {
    "effects": {
-    "credits_each_house": 2,
-    "brace": 1,
-    "purpose": 1,
-    "gather_crew": 1
+    "gather_crew": 1,
+    "lockout": 1,
+    "purpose": 1
    },
-   "pp": 7,
-   "text": "each house gains 2 credit(s); Brace 1 in each section matching its event; +1 Purpose; gather 1 Crew into each section matching its event"
+   "pp": 4,
+   "text": "gather 1 Crew into each section matching its event; Lockout each section matching its event; +1 Purpose"
   },
   "legacy": {
    "effects": {
-    "add_glitch": 1,
-    "add_unrest": 1
+    "lose_credits_each_house": 1
    },
-   "pp": 5.0,
+   "pp": 2.0,
    "per_section": 2,
-   "text": "add 1 Glitch; add 1 Unrest"
+   "text": "each house loses 1 credit(s)"
   }
  },
  {
@@ -17367,52 +17130,51 @@
   "target": {
    "kind": "section",
    "range": 1,
-   "type": "Residential",
-   "class": "type"
+   "type": "ANY",
+   "class": "ANY"
   },
   "effects": {
-   "brace": 11,
-   "purpose": 5
+   "brace": 9,
+   "gather_crew": 6,
+   "add_influence": 1
   },
-  "text": "Brace 11; +5 Purpose",
+  "text": "Brace 9; gather 6 Crew; add 1 influence",
   "pp_target": 9.5,
-  "pp_actual": 9.68,
+  "pp_actual": 9.5,
   "threshold": {
    "elements": {
     "Keepers": 2,
     "Medics": 1
    },
    "effects": {
-    "gather_crew": 2,
-    "purpose": 2
+    "purpose": 3
    },
-   "text": "gather 2 Crew; +2 Purpose",
-   "pp": 2.85
+   "text": "+3 Purpose",
+   "pp": 3.0
   },
   "reign": {
    "effects": {
-    "patch": 1,
-    "purpose": 1,
+    "brace": 3,
     "credits_each_house": 1,
     "gather_crew": 1
    },
-   "pp": 7,
-   "text": "Patch each section matching its event; +1 Purpose; each house gains 1 credit(s); gather 1 Crew into each section matching its event"
+   "pp": 6,
+   "text": "Brace 3 in each section matching its event; each house gains 1 credit(s); gather 1 Crew into each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_credits_each_house": 2,
-    "lose_purpose": 1
+    "lose_credits_each_house": 1,
+    "add_glitch": 1
    },
-   "pp": 5.0,
+   "pp": 4.0,
    "per_section": 2,
-   "text": "each house loses 2 credit(s); -1 Purpose"
+   "text": "each house loses 1 credit(s); add 1 Glitch"
   }
  },
  {
   "id": "R096",
   "tier": "Remarkable",
-  "cost": 8,
+  "cost": 2,
   "guilds": [
    "Farmers",
    "Engineers",
@@ -17420,88 +17182,26 @@
   ],
   "target": {
    "kind": "section",
-   "range": 2,
+   "range": 0,
    "type": "ANY",
    "class": "ANY"
   },
   "effects": {
-   "damage": 11,
-   "gather_crew": 2
+   "add_crew": 1,
+   "damage": 3
   },
-  "text": "11 damage; gather 2 Crew",
-  "pp_target": 14.0,
-  "pp_actual": 13.8,
-  "threshold": {
-   "elements": {
-    "Farmers": 2,
-    "Engineers": 1
-   },
-   "effects": {
-    "patch": 1,
-    "isolate_fault": 1
-   },
-   "text": "Patch; Isolate 1 Fault(s)",
-   "pp": 2.88
-  },
+  "text": "add 1 Crew; 3 damage",
+  "pp_target": 5.0,
+  "pp_actual": 4.8,
   "reign": {
    "effects": {
-    "brace": 1,
-    "patch": 1
-   },
-   "pp": 4,
-   "text": "Brace 1 in each section matching its event; Patch each section matching its event"
-  },
-  "legacy": {
-   "effects": {
-    "lose_purpose": 2
-   },
-   "pp": 2.0,
-   "per_section": 2,
-   "text": "-2 Purpose"
-  }
- },
- {
-  "id": "R097",
-  "tier": "Remarkable",
-  "cost": 4,
-  "guilds": [
-   "Engineers",
-   "Keepers",
-   "Laborers"
-  ],
-  "target": {
-   "kind": "section",
-   "range": 2,
-   "type": "Infrastructure",
-   "class": "type"
-  },
-  "effects": {
-   "damage": 6,
-   "purpose": 2
-  },
-  "text": "6 damage; +2 Purpose",
-  "pp_target": 8.0,
-  "pp_actual": 7.86,
-  "threshold": {
-   "elements": {
-    "Engineers": 3,
-    "Keepers": 3
-   },
-   "effects": {
-    "damage": 4,
-    "add_influence": 1
-   },
-   "text": "4 damage; add 1 influence",
-   "pp": 5.86
-  },
-  "reign": {
-   "effects": {
-    "brace": 3,
-    "patch": 1,
-    "gather_crew": 1
+    "gather_crew": 2,
+    "lockout": 1,
+    "credits_each_house": 1,
+    "brace": 1
    },
    "pp": 7,
-   "text": "Brace 3 in each section matching its event; Patch each section matching its event; gather 1 Crew into each section matching its event"
+   "text": "gather 2 Crew into each section matching its event; Lockout each section matching its event; each house gains 1 credit(s); Brace 1 in each section matching its event"
   },
   "legacy": {
    "effects": {
@@ -17514,9 +17214,64 @@
   }
  },
  {
+  "id": "R097",
+  "tier": "Remarkable",
+  "cost": 2,
+  "guilds": [
+   "Engineers",
+   "Keepers",
+   "Laborers"
+  ],
+  "target": {
+   "kind": "section",
+   "range": 2,
+   "type": "ANY",
+   "class": "ANY"
+  },
+  "effects": {
+   "purpose": 2,
+   "patch": 1,
+   "damage": 1
+  },
+  "text": "+2 Purpose; Patch; 1 damage",
+  "pp_target": 5.0,
+  "pp_actual": 4.88,
+  "threshold": {
+   "elements": {
+    "Engineers": 3,
+    "Keepers": 3
+   },
+   "effects": {
+    "purpose": 4,
+    "damage": 12
+   },
+   "text": "+4 Purpose; 12 damage",
+   "pp": 17.8
+  },
+  "reign": {
+   "effects": {
+    "gather_crew": 2,
+    "brace": 1,
+    "damage": 1,
+    "purpose": 1
+   },
+   "pp": 6,
+   "text": "gather 2 Crew into each section matching its event; Brace 1 in each section matching its event; 1 damage in each section matching its event; +1 Purpose"
+  },
+  "legacy": {
+   "effects": {
+    "lose_purpose": 2,
+    "add_glitch": 1
+   },
+   "pp": 4.0,
+   "per_section": 2,
+   "text": "-2 Purpose; add 1 Glitch"
+  }
+ },
+ {
   "id": "R098",
   "tier": "Remarkable",
-  "cost": 7,
+  "cost": 4,
   "guilds": [
    "Navigators",
    "Keepers",
@@ -17529,48 +17284,47 @@
    "class": "narrow"
   },
   "effects": {
-   "purpose": 8,
-   "damage": 6,
-   "foresee": 2
+   "damage": 12,
+   "purpose": 1
   },
-  "text": "+8 Purpose; 6 damage; foresee",
-  "pp_target": 12.5,
-  "pp_actual": 12.6,
+  "text": "12 damage; +1 Purpose",
+  "pp_target": 8.0,
+  "pp_actual": 8.2,
   "threshold": {
    "elements": {
-    "Navigators": 3,
-    "Keepers": 3
+    "Navigators": 2,
+    "Keepers": 1
    },
    "effects": {
-    "purpose": 6
+    "foresee": 2,
+    "vent_glitch": 6
    },
-   "text": "+6 Purpose",
-   "pp": 6.0
+   "text": "foresee; vent 6 Glitch(es)",
+   "pp": 2.8
   },
   "reign": {
    "effects": {
-    "purpose": 1,
-    "gather_crew": 1,
-    "brace": 1,
-    "damage": 1
+    "lockout": 1,
+    "patch": 1,
+    "gather_crew": 2
    },
-   "pp": 5,
-   "text": "+1 Purpose; gather 1 Crew into each section matching its event; Brace 1 in each section matching its event; 1 damage in each section matching its event"
+   "pp": 7,
+   "text": "Lockout each section matching its event; Patch each section matching its event; gather 2 Crew into each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_credits_each_house": 1,
-    "lose_purpose": 1
+    "lose_purpose": 1,
+    "lose_influence": 1
    },
-   "pp": 3.0,
+   "pp": 5.0,
    "per_section": 2,
-   "text": "each house loses 1 credit(s); -1 Purpose"
+   "text": "-1 Purpose; each house loses 1 influence"
   }
  },
  {
   "id": "R099",
   "tier": "Remarkable",
-  "cost": 6,
+  "cost": 5,
   "guilds": [
    "Keepers",
    "Farmers",
@@ -17578,53 +17332,53 @@
   ],
   "target": {
    "kind": "section",
-   "range": 1,
-   "type": "ANY",
-   "class": "ANY"
+   "range": 2,
+   "type": "Residential",
+   "class": "type"
   },
   "effects": {
-   "patch": 2,
-   "add_influence": 2,
-   "purpose": 4
+   "brace": 3,
+   "gather_crew": 2,
+   "purpose": 7
   },
-  "text": "Patch; add 2 influence; +4 Purpose",
-  "pp_target": 11.0,
-  "pp_actual": 11.0,
+  "text": "Brace 3; gather 2 Crew; +7 Purpose",
+  "pp_target": 9.5,
+  "pp_actual": 9.44,
   "threshold": {
    "elements": {
     "Keepers": 2,
-    "Farmers": 2
+    "Farmers": 1
    },
    "effects": {
-    "temper_legacy": 1,
-    "purpose": 1
+    "add_influence": 1,
+    "brace": 2
    },
-   "text": "temper the Elder's Legacy; +1 Purpose",
-   "pp": 4.0
+   "text": "add 1 influence; Brace 2",
+   "pp": 2.93
   },
   "reign": {
    "effects": {
-    "purpose": 3,
-    "brace": 1,
-    "gather_crew": 1
+    "gather_crew": 1,
+    "lockout": 1,
+    "purpose": 1,
+    "damage": 1
    },
-   "pp": 5,
-   "text": "+3 Purpose; Brace 1 in each section matching its event; gather 1 Crew into each section matching its event"
+   "pp": 6,
+   "text": "gather 1 Crew into each section matching its event; Lockout each section matching its event; +1 Purpose; 1 damage in each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_credits_each_house": 1,
-    "lose_purpose": 1
+    "lose_credits_each_house": 2
    },
-   "pp": 3.0,
+   "pp": 4.0,
    "per_section": 2,
-   "text": "each house loses 1 credit(s); -1 Purpose"
+   "text": "each house loses 2 credit(s)"
   }
  },
  {
   "id": "R100",
   "tier": "Remarkable",
-  "cost": 3,
+  "cost": 5,
   "guilds": [
    "Scholars",
    "Navigators"
@@ -17632,46 +17386,32 @@
   "target": {
    "kind": "section",
    "range": 3,
-   "type": "ANY",
-   "class": "ANY"
+   "type": "Government",
+   "class": "type"
   },
   "effects": {
-   "foresee": 2,
-   "purpose": 4,
-   "move_crew": 2
+   "purpose": 2,
+   "downgrade": 4,
+   "lockout": 1
   },
-  "text": "foresee; +4 Purpose; move 2 Crew",
-  "pp_target": 6.5,
-  "pp_actual": 6.3,
-  "threshold": {
-   "elements": {
-    "Scholars": 3,
-    "Navigators": 3
-   },
-   "effects": {
-    "vent_failure": 2,
-    "isolate_failure": 1
-   },
-   "text": "vent 2 Failure; Isolate 1 Failure",
-   "pp": 5.85
-  },
+  "text": "+2 Purpose; downgrade 4 threat piece(s); Lockout",
+  "pp_target": 9.5,
+  "pp_actual": 9.73,
   "reign": {
    "effects": {
-    "purpose": 1,
-    "lockout": 1,
-    "brace": 1,
-    "damage": 1
+    "patch": 1,
+    "gather_crew": 1
    },
-   "pp": 6,
-   "text": "+1 Purpose; Lockout each section matching its event; Brace 1 in each section matching its event; 1 damage in each section matching its event"
+   "pp": 4,
+   "text": "Patch each section matching its event; gather 1 Crew into each section matching its event"
   },
   "legacy": {
    "effects": {
-    "lose_influence": 1
+    "add_glitch": 1
    },
-   "pp": 4.0,
+   "pp": 2.0,
    "per_section": 2,
-   "text": "each house loses 1 influence"
+   "text": "add 1 Glitch"
   }
  }
 ]
