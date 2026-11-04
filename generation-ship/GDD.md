@@ -212,7 +212,7 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 ## Decay and Ship in Crisis
 
 - Spirit Island's Blight equivalent.
-- **Decay pool:** **4 per player + 1** *(tuned by simulation; was 2 per player + 1)*.
+- **Decay pool:** **3 per player − 1** *(tuned by simulation so 1–4 player games are similarly hard; was 2 per player + 1)*.
 - **When Decay is placed:**
   - each house loses **1 influence** in that section, and
   - if the section **already had Decay**, **cascade**: place 1 more Decay in an adjacent section of the players' choice.
@@ -230,7 +230,7 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 
 Spirit Island's Fear equivalent. *Narrative:* the crew's Purpose drives them to relearn how their own ship works.
 
-**Purpose pool:** **4 per player** *(tuned by simulation for the heavier starting setup)*. Gain Purpose from:
+**Purpose pool:** **5 per player** *(tuned by simulation)*. Gain Purpose from:
 - **destroying a Fault: 1**,
 - **destroying a Failure: 2**,
 - cards that grant it.
@@ -568,10 +568,12 @@ Chosen before the game, with a difficulty **level 0–6**. Each destination defi
 
 | Players | Ship boards | Decay pool | Purpose pool | Event deck / Wall |
 |---|---|---|---|---|
-| 1 | 1 | 5 | 4 | 12 |
-| 2 | 2 | 9 | 8 | 12 |
-| 3 | 3 | 13 | 12 | 12 |
-| 4 | 4 | 17 | 16 | 12 |
+| 1 | 1 | 2 | 5 | 12 |
+| 2 | 2 | 5 | 10 | 12 |
+| 3 | 3 | 8 | 15 | 12 |
+| 4 | 4 | 11 | 20 | 12 |
+
+*Tuned by simulation:* Decay pool = **3 per player − 1**, Purpose pool = **5 per player**. With these, house bots win 75% / 74% / 66% / 68% at 1 / 2 / 3 / 4 players (level 0).
 
 The people deck does not scale. Solo-specific tuning is deferred until multiplayer is settled; solo players can play two-handed.
 
@@ -604,7 +606,7 @@ The people deck does not scale. Solo-specific tuning is deferred until multiplay
 | Destinations as adversaries | Flavor comes from the journey. Levels change setup, rules, deck and the Landfall target. |
 | Fixed-length game and a mid-game "choose to land" decision | Rejected. The Landfall card toggle is the alternative climax. |
 | Loss: Decay pool, or a house with no influence | Matches Spirit Island. Crew loss is not a loss condition. |
-| Win conditions shifted one step stricter; Purpose 4 per player; Decay 4 per player + 1 | Simulation tuning so an average table wins at about Understanding III, around generation 8–9. |
+| Win conditions shifted one step stricter; Purpose 5 per player; Decay 3 per player − 1 | Simulation tuning so an average table wins at about Understanding III, around generation 8–9. |
 | Keel starts at 2 card plays | With 1 play and a free nominee, Keel never spent credits. |
 | Boards start with threat in every section type (1 Failure, 2 Faults, 1 Glitch) | Like Spirit Island's starting towns and cities; every type is under some pressure from the first generation, at different strengths. |
 | No house perk for the chosen heir | It's a joint decision with built-in gains. Kept as a later option. |

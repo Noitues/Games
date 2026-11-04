@@ -195,3 +195,15 @@ Final level-0 rules.
 
 - **Larger tables lose more often, mostly to Decay.** More boards mean more Collapses per event, and the Decay pool only grows by 2 per player. A steeper pool scaling is being tested (next section).
 - **Direct pairing made no measurable difference to the bots.** They vote mostly on the cards' Reign/Legacy values. Human players may use the extra information more; this needs a smarter vote before it can be measured.
+
+### Steeper Decay scaling (adopted)
+Decay pool = 3 per player − 1 (2 / 5 / 8 / 11) instead of 2 per player + 1 (3 / 5 / 7 / 9):
+
+| Players | Before | After |
+|---|---|---|
+| 1 | 82% | 75% |
+| 2 | 74% | 74% (pool unchanged) |
+| 3 | 59% | 66% |
+| 4 | 63% | 68% |
+
+The spread across player counts shrinks from 23 points to 9.
