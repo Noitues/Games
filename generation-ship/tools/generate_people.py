@@ -33,7 +33,7 @@ VERBS = {
     "move_crew":       (0.5, 3, "move {n} Crew", "C"),
     "add_crew":        (3.0, 2, "add {n} Crew", "C"),
     "restore_decay":   (3.0, 2, "restore {n} Decay", "C"),
-    "add_influence":   (2.0, 1, "add {n} influence", "C"),
+    "add_influence":   (3.5, 1, "add {n} influence", "C"),   # the costliest effect: influence snowballs reach and Havens (playtest 1)
     "move_influence":  (1.0, 2, "move {n} influence", "C"),
     "purpose":         (1.0, 4, "+{n} Purpose", "C"),
     "credits":         (1.0, 3, "+{n} credits", "C"),
@@ -256,9 +256,9 @@ def make_card(rng, cid, tier, icons):
         for k in range(total):
             req[gs[k % len(gs)]] += 1
         bonus = fill(rng, pool, total * threshold_pp_per_element(total), tier, mult, 2)
-        # A card's own guilds never count toward its own threshold, so the printed requirement is
-        # what must come from elsewhere: the old requirement less the card's own icon of each guild,
-        # but always at least 1 (no card unlocks its own bonus).
+        # No card unlocks its own bonus: the card's own icons count, but the requirement is raised
+        # so at least one more element must come from another card, a track slot or the Wall.
+        # (Equivalently: the elements needed from elsewhere, at least 1, plus the card's own icons.)
         for g in list(req):
             if g in icons:
                 req[g] -= 1
@@ -266,6 +266,9 @@ def make_card(rng, cid, tier, icons):
                     del req[g]
         if not req:
             req[gs[0]] = 1
+        for g in list(req):
+            if g in icons:
+                req[g] += 1
         if bonus:
             card["threshold"] = {"elements": dict(req), "effects": bonus,
                                  "text": text_of(bonus),

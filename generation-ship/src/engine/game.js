@@ -232,13 +232,10 @@ export function elementsMet(H, req) {
   return Object.entries(req).every(([g, n]) => (H.elements[g] || 0) >= n);
 }
 
-// A card's own guilds never count toward its own threshold: the bonus needs help from
-// other cards, track slots or the Wall.
+// A card's own guilds count toward its threshold; printed thresholds already include them,
+// so every bonus still needs at least one element from another card, a track slot or the Wall.
 export function thresholdMet(G, H, c) {
-  if (!c.threshold) return false;
-  const el = { ...H.elements };
-  for (const g of c.guilds) el[g] = (el[g] || 0) - 1;
-  return Object.entries(c.threshold.elements).every(([g, n]) => (el[g] || 0) >= n);
+  return !!c.threshold && elementsMet(H, c.threshold.elements);
 }
 // Verbs that act on the playing house or the whole ship, so need no target.
 const GLOBAL_VERBS = new Set(["purpose", "credits", "foresee", "temper_legacy"]);

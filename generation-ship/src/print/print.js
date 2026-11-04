@@ -14,7 +14,7 @@ const fx = (e) => Object.entries(e).map(([k, v]) => (VERB[k] ?? k).replace("{n}"
 
 function personCard(c) {
   const t = c.target.kind === "house" ? "Another house" : `Range ${c.target.range} · ${c.target.type}`;
-  const th = c.threshold ? `<div class="th"><b>With ${Object.entries(c.threshold.elements).map(([g, n]) => `${n} ${g}`).join(" + ")} from other cards:</b> also ${esc(c.threshold.text)}</div>` : "";
+  const th = c.threshold ? `<div class="th"><b>If ${Object.entries(c.threshold.elements).map(([g, n]) => `${g} ${n}`).join(" + ")}:</b> also ${esc(c.threshold.text)}</div>` : "";
   return `<div class="card ${c.tier === "Remarkable" ? "rem" : ""}">
     <div class="hd"><span>${c.id}${c.tier === "Remarkable" ? " ★" : ""}</span><span>${c.cost} ¢</span></div>
     <div>${c.guilds.map((g) => `<span class="g">${g}</span>`).join("")}</div>
@@ -100,13 +100,13 @@ const REF = `<div class="ref">
   <li><b>Time passes:</b> Dusk → Wall (its Breakthrough switches on for the rest of the game), Day → Dusk, Dawn → Day. Clear damage, Brace, Quarantine. Discard hands except clones.</li></ol>
   <h3>Event actions (cards name section types)</h3>
   <p><b>Seed:</b> +1 Glitch in each matching section on the Outer Hull or next to a Fault/Failure. <b>Grow:</b> +1 Fault in each matching section with threat (Failure instead if it has 2+ Faults). <b>Collapse:</b> each matching section takes Glitch 1 + Fault 2 + Failure 3 damage (+1 Unrest, − Brace/Isolate). 2+ damage places Decay. The same damage hits Crew (2 health each). Surviving Crew deal 2 damage each.</p>
-  <h3>Your choices</h3><p>A card's bonus needs its elements from <i>other</i> cards, track slots or the Wall, never its own guilds. Adding influence with a card costs 2 credits each (optional). Venting and gathering are optional.</p>
+  <h3>Your choices</h3><p>A card's own guilds count toward its bonus, but every bonus needs at least one more element from another card, a track slot or the Wall. Venting and gathering are optional.</p>
   <h3>Decay</h3><p>Taken from the pool. Each house loses 1 influence there. Decay where Decay already is cascades to a neighbor. Pool empty: flip Ship in Crisis. Empty again: lose.</p>
-  <h3>Purpose and Understanding</h3><p>Destroy a Fault +1, a Failure +2 Purpose. A full pool (6 per player) earns a Discovery. Every 3 Discoveries raise Understanding.</p>
+  <h3>Purpose and Understanding</h3><p>Destroy a Fault +1, a Failure +2 Purpose. A full pool (8 per player) earns a Discovery. Every 3 Discoveries raise Understanding.</p>
   <h3>Winning (at any moment)</h3><p><b>I:</b> no threat and no Decay · <b>II:</b> no threat · <b>III:</b> no Faults or Failures, plus the destination's Landfall requirement.</p>
   <h3>Losing</h3><p>The event deck is empty at Dawn; the Decay pool runs out after the crisis flip; or any house has no influence.</p>
   <h3>Tokens</h3><p><b>Brace X:</b> prevent X damage · <b>Quarantine:</b> nothing seeds, vents or cascades in or out · <b>Patch:</b> skip next Grow · <b>Lockout:</b> skip next Seed · <b>Unrest:</b> +1 damage from every source · <b>Isolate:</b> negate damage at next Collapse.</p>
-  <h3>Setup (2 players)</h3><p>Boards A–B. Decay pool 3 per player − 1; Purpose pool 6 per player; event deck 3 Stage I / 4 Stage II / 5 Stage III (Stage I on top). Draw the first event and a random Common leader into Dawn, Seed, then move them to Day.</p></div>`;
+  <h3>Setup (2 players)</h3><p>Boards A–B. Decay pool 3 per player − 1; Purpose pool 8 per player; event deck 3 Stage I / 4 Stage II / 5 Stage III (Stage I on top). Draw the first event and a random Common leader into Dawn, Seed, then move them to Day.</p></div>`;
 
 const parts = {
   ref: `<h1>Generation Ship: rules reference</h1>${REF}`,

@@ -12,10 +12,10 @@ The first value is the starting value. ★ marks a special slot.
 
 | Track | Values |
 |---|---|
-| Credits per generation | 1 → 2 → ★ +Keepers → ★ +Keepers → 3 → ★ +Scholars |
+| Credits per generation | 1 → 2 → ★ +Keepers → 3 → ★ +Keepers → 4 |
 | Card plays | 2 → ★ +1 card drawn → 3 → ★ +Scholars → ★ +1 card drawn → 4 |
 
-Hand = plays + 2. Clone 1.
+Hand = plays + 3. Clone 1.
 
 ## Special rule
 Vigil may target from any section with Crew by paying 1 extra credit.

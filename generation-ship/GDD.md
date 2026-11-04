@@ -241,7 +241,7 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 
 Spirit Island's Fear equivalent. *Narrative:* the crew's Purpose drives them to relearn how their own ship works.
 
-**Purpose pool:** **6 per player** *(tuned by simulation; 5 before playtest 1)*. Gain Purpose from:
+**Purpose pool:** **8 per player** *(tuned by simulation; 5 before playtest 1)*. Gain Purpose from:
 - **destroying a Fault: 1**,
 - **destroying a Failure: 2**,
 - cards that grant it.
@@ -314,7 +314,7 @@ Starting Decay does not come from the pool, as in Spirit Island.
 ## Influence and Havens
 
 - **Influence:** Spirit Island's presence equivalent. Houses add and move it through growth and powers.
-- **Adding influence with a card costs 2 credits per influence**, paid when it resolves; the player may buy fewer or none. Growth A placement stays free (it is that growth's whole point). *(Playtest 1: free influence from cards was an automatic play and accelerated a house too fast.)*
+- **Adding influence is the costliest card effect: 3.5 PP per influence** (was 2), so cards that add influence cost more credits or do less else. *(Playtest 1: cheap influence cards were an automatic play and accelerated a house too fast.)*
 - **Range:** cards target **0–3** sections from a section where the house has influence. Each card defines its range and its target type (a section type, Hull/Core, or **ANY**).
 - **Haven:** a section where a house has **2 or more influence** (Spirit Island's sacred site equivalent). *"Haven" is a proposed name; "Stronghold" was rejected as too militaristic.* Effects are defined on cards (e.g. "range from a Haven").
 - **A house with zero influence on the ship loses the game for everyone.**
@@ -382,7 +382,7 @@ Eight guild elements:
 **How guilds relate to the rest of the game:**
 - Guilds have obvious targeting tendencies (e.g. Farmer cards usually target Agricultural sections), but are not bound to section types.
 - **Elements come from cards a house plays this generation, raw elements on its growth tracks, and Wall bonuses.**
-- **A card's own guilds never count toward its own threshold.** Printed thresholds list only the elements needed from *other* sources (always at least 1). *(Playtest 1: 19 cards unlocked their own bonus, which made the bonus a baseline ability. The printed numbers were reduced by the card's own icons, so difficulty is otherwise unchanged.)*
+- **No card meets its own threshold.** A card's own guilds count toward its threshold, but every threshold is raised so that at least one more element must come from another card, a track slot or the Wall. *(Playtest 1: 19 cards unlocked their own bonus, which made the bonus a baseline ability. Each threshold is now "elements needed from elsewhere, at least 1" plus the card's own icons.)*
 - **No dead track slots.** A track slot that would repeat the previous value instead grants an element (credits track) or +1 card drawn each Growth (plays track). *(Playtest 1: e.g. Galvan's last credits slot gave nothing.)*
 - **Innate powers** on the house board unlock at guild thresholds.
 - If the power curve proves too weak, the next step is to let the **current Steward's elements count for every house**.
@@ -451,7 +451,7 @@ Houses, cards and innates are built from priced parts so every house lands in th
 | Gather or move 1 Crew | 0.5 |
 | Add 1 Crew | 3 |
 | Restore 1 Decay | 3 |
-| Add 1 influence | 2 |
+| Add 1 influence | 3.5 (the costliest effect; 2 before playtest 1) |
 | Move 1 influence | 1 |
 | +1 Purpose | 1 |
 | +1 credit | 1 |
@@ -603,12 +603,12 @@ Chosen before the game, with a difficulty **level 0–6**. Each destination defi
 
 | Players | Ship boards | Decay pool | Purpose pool | Event deck / Wall |
 |---|---|---|---|---|
-| 1 | 1 | 2 | 6 | 12 |
-| 2 | 2 | 5 | 12 | 12 |
-| 3 | 3 | 8 | 18 | 12 |
-| 4 | 4 | 11 | 24 | 12 |
+| 1 | 1 | 2 | 8 | 12 |
+| 2 | 2 | 5 | 16 | 12 |
+| 3 | 3 | 8 | 24 | 12 |
+| 4 | 4 | 11 | 32 | 12 |
 
-*Tuned by simulation:* Decay pool = **3 per player − 1**, Purpose pool = **6 per player** (raised from 5 after playtest 1, when Wall bonuses and the new track slots made the ship stronger). With these, house bots win 75% / 74% / 66% / 68% at 1 / 2 / 3 / 4 players (level 0).
+*Tuned by simulation:* Decay pool = **3 per player − 1**, Purpose pool = **8 per player** (raised from 5 after playtest 1, when Wall bonuses and the new track slots made the ship stronger). After playtest 1, house bots win 74% / 73% / 69% / 75% at 1 / 2 / 3 / 4 players. With these, house bots win 75% / 74% / 66% / 68% at 1 / 2 / 3 / 4 players (level 0).
 
 The people deck does not scale. Solo-specific tuning is deferred until multiplayer is settled; solo players can play two-handed.
 
@@ -640,7 +640,7 @@ The people deck does not scale. Solo-specific tuning is deferred until multiplay
 | **Playtest 1 (hotseat, 2 houses):** Breakthroughs become passive Wall bonuses that switch on at the Wall | Breakthroughs that acted every phase made the Wall a flurry of venting; passive elements, credits, draws and fast plays read better and reward retiring leaders. |
 | Playtest 1: succession ties go to the house with fewer leaders on the conveyor, then the Steward | With the Steward breaking ties, a 2-player bot house held the succession 9 generations out of 9. |
 | Playtest 1: the Steward's house makes every shared decision | Discovery choices fell to the first seat while succession fell to the Steward; one rule is consistent. |
-| Playtest 1: card thresholds ignore the card's own guilds; adding influence by card costs credits; vent and gather optional; no dead track slots; play order chosen; Discoveries chain to the next Dusk | See the rules sections above; each was a direct playtest note. |
+| Playtest 1: no card meets its own threshold; add influence priced as the costliest effect; vent and gather optional; no dead track slots; play order chosen; Discoveries chain to the next Dusk | See the rules sections above; each was a direct playtest note. |
 | Event deck size = Wall slots; empty deck = loss | Like Spirit Island's invader deck clock, but visible. |
 | Destinations as adversaries | Flavor comes from the journey. Levels change setup, rules, deck and the Landfall target. |
 | Fixed-length game and a mid-game "choose to land" decision | Rejected. The Landfall card toggle is the alternative climax. |

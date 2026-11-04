@@ -28,7 +28,7 @@
     "plays": [
      3,
      {
-      "draw": 1
+      "clone": 1
      },
      {
       "draw": 1
@@ -39,7 +39,7 @@
      4
     ]
    },
-   "hand_bonus": 2,
+   "hand_bonus": 1,
    "clone": 1,
    "special": {
     "id": "overclock",
@@ -163,7 +163,7 @@
      {
       "element": "Bureaucrats"
      },
-     4
+     5
     ],
     "plays": [
      2,
@@ -172,7 +172,7 @@
      },
      3,
      {
-      "clone": 1
+      "element": "Bureaucrats"
      },
      {
       "draw": 1
@@ -320,7 +320,7 @@
      4
     ]
    },
-   "hand_bonus": 2,
+   "hand_bonus": 1,
    "clone": 1,
    "special": {
     "id": "load_bearing",
@@ -445,13 +445,11 @@
      {
       "element": "Keepers"
      },
+     3,
      {
       "element": "Keepers"
      },
-     3,
-     {
-      "element": "Scholars"
-     }
+     4
     ],
     "plays": [
      2,
@@ -468,7 +466,7 @@
      4
     ]
    },
-   "hand_bonus": 2,
+   "hand_bonus": 3,
    "clone": 1,
    "special": {
     "id": "voices",
@@ -613,7 +611,7 @@
      4
     ]
    },
-   "hand_bonus": 2,
+   "hand_bonus": 3,
    "clone": 1,
    "special": {
     "id": "crew_captains",

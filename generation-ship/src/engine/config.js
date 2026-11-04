@@ -5,7 +5,7 @@ export const DEFAULT_CONFIG = {
   eventPairing: "offset",        // "offset" | "direct"
   decayPerPlayer: 3, decayBase: -1,
   crisisRefillPerPlayer: 1,
-  purposePerPlayer: 6,
+  purposePerPlayer: 8,
   discoveriesPerTier: 3,
   stageCounts: { 1: 3, 2: 4, 3: 5 },
   startCredits: 0,
@@ -19,7 +19,6 @@ export const DEFAULT_CONFIG = {
   destination: null,            // id from data/destinations.json
   destinationLevel: 0,
   landfallCard: false,          // Landfall variant: false | true ("choice": begin Landfall when the win condition is met) | "shuffled" (in the Stage III events)
-  influenceCost: 2,             // credits per influence added by a card (optional purchase); Growth A placement is free
   // experiment options (defaults keep the current rules)
   havenRangeBonus: 0,           // +N range when targeting from a Haven (2+ influence; Meridian: any Agricultural influence)
   remarkableAccess: "always",   // "always" | "growthC" (only when taking growth option C)

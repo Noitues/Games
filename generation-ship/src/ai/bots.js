@@ -36,7 +36,6 @@ export function heuristicChoose(G, st, h, kind, options, ctx) {
       return best && score(best) < score(ctx.from) + 1 ? best : "stay";
     }
     case "gatherFrom": { const real = options.filter((o) => S[o]); return real.length ? maxBy(real, (id) => S[id].crew - (threatCount(S[id]) && matches(S[id], up.collapse) ? 0 : 0.5)) : "none"; }
-    case "buyInfluence": return buyInfluenceChoice(G, st, h, options, ctx);
     case "landfall": return "begin";
     case "discoveryAt": return maxBy(options, (id) => threatCount(S[id]) * 2 + danger(id) + S[id].crew * 0.2);
     case "cascade": return minBy(options, (id) => Object.values(S[id].influence).reduce((a, b) => a + b, 0) * 2 + S[id].decay * 5 + S[id].crew);
@@ -49,13 +48,6 @@ export function heuristicChoose(G, st, h, kind, options, ctx) {
       if (Array.isArray(options)) return options[0];
       return null;
   }
-}
-// Buy influence only with credits left over after next generation's likely card costs.
-function buyInfluenceChoice(G, st, h, options, ctx) {
-  const H = st.houses[h], hs = houseStats(G, st, h);
-  const reserve = Math.max(0, 1.5 * (hs.plays - 1) - hs.income);
-  const spare = Math.max(0, H.credits - reserve);
-  return options.find((k) => k * ctx.cost <= spare) ?? 0;
 }
 const wallCredit = (G, st) => { let n = 0; for (const L of st.wall || []) if (L.bt) n += G.data.discoveryById[L.bt]?.breakthrough?.effects?.credits_per_growth || 0; return n; };
 const maxBy = (arr, f) => arr.reduce((b, x) => (f(x) > f(b) ? x : b), arr[0]);
@@ -88,7 +80,6 @@ export class Bot {
       case "growthInfluence": case "influenceFor": case "addCrewAt": case "restoreAt": case "discoveryAt":
         return this.bestMutation(G, st, h, kind, options, ctx);
       case "playOrder": return options[0];
-      case "buyInfluence": return buyInfluenceChoice(G, st, h, options, ctx);
       case "landfall": return "begin";
     }
     if (L === 1) return this.random(G, st, h, kind, options, ctx);
@@ -253,11 +244,7 @@ export class Bot {
       for (const c of cards) for (const g of c.guilds) el[g] = (el[g] || 0) + 1;
       const met = (req) => Object.entries(req).every(([g, k]) => (el[g] || 0) >= k);
       let score = set.reduce((a, c) => a + vals[c], 0) - cost * creditValue;
-      for (const c of cards) if (c.threshold) {
-        // a card's own guilds don't count toward its own threshold
-        const ok = Object.entries(c.threshold.elements).every(([g, k]) => (el[g] || 0) - (c.guilds.includes(g) ? 1 : 0) >= k);
-        if (ok) score += c.threshold.pp;
-      }
+      for (const c of cards) if (c.threshold && met(c.threshold.elements)) score += c.threshold.pp;
       let tierPP = 0;
       for (const t of hd.innate.tiers) if (met(t.threshold)) tierPP = t.pp;
       score += tierPP;

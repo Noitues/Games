@@ -128,7 +128,7 @@ function targetText(c) {
 }
 function cardHTML(cid, extra = "") {
   const c = DATA.cardById[cid]; if (!c) return "";
-  const th = c.threshold ? `<div class="th">With ${Object.entries(c.threshold.elements).map(([g, n]) => `${n} ${g}`).join(" + ")} from other cards/slots: also ${esc(c.threshold.text)}</div>` : "";
+  const th = c.threshold ? `<div class="th">If ${Object.entries(c.threshold.elements).map(([g, n]) => `${g} ${n}`).join(" + ")}: also ${esc(c.threshold.text)}</div>` : "";
   return `<div class="card ${c.tier === "Remarkable" ? "rem" : ""} ${extra}" data-card="${cid}">
     <div class="hd"><span>${cid} ${c.tier === "Remarkable" ? "★" : ""}</span><span>${c.cost}¢</span></div>
     <div>${c.guilds.map((g) => `<span class="g">${g}</span>`).join("")}</div>
@@ -441,7 +441,7 @@ const KIND_TEXT = {
   moveInfluenceFrom: "Move influence from which section?", growthInfluence: "Place influence where?", influenceFor: "Place that house's influence where?",
   addCrewAt: "Add Crew where?", restoreAt: "Restore Decay where?", discoveryAt: "Discovery: choose a section",
   vote: "Vote for the next heir", discovery: "Discovery", clone: "Clone cards into the next generation", landfall: "Begin Landfall?",
-  playOrder: "Which of your plays resolves next?", buyInfluence: "Buy influence?", tiebreak: "Break the tie",
+  playOrder: "Which of your plays resolves next?", tiebreak: "Break the tie",
 };
 
 // Human-readable description of a house's next track slot.
@@ -467,8 +467,7 @@ function commitPlanHTML(h, ctx) {
   const fastUsed = 1 + [...commitSel.fast].filter((c) => sel.includes(c) && c !== commitSel.nominee).length;
   const rows = sel.map((c) => {
     const k = card(G, c), nom = c === commitSel.nominee;
-    const own = (req) => Object.entries(req).every(([g, n]) => (el[g] || 0) - (k.guilds.includes(g) ? 1 : 0) >= n);
-    const th = k.threshold ? (own(k.threshold.elements) ? `<span class="ok">✓ bonus: ${esc(k.threshold.text)}</span>` : `<span class="muted">✗ needs ${Object.entries(k.threshold.elements).map(([g, n]) => `${n} ${g}`).join(" + ")} from other cards/slots</span>`) : "<span class=\"muted\">—</span>";
+    const th = k.threshold ? (met(k.threshold.elements) ? `<span class="ok">✓ bonus: ${esc(k.threshold.text)}</span>` : `<span class="muted">✗ needs ${Object.entries(k.threshold.elements).map(([g, n]) => `${g} ${n}`).join(" + ")} (this card's own guilds count)</span>`) : "<span class=\"muted\">—</span>";
     const canFast = !nom && (commitSel.fast.has(c) || fastUsed < fastCap);
     return `<tr><td><b>${c}</b></td><td>${nom ? "<s>" + k.cost + "</s> 0" : k.cost}¢</td>
       <td><label><input type="radio" name="nomr" class="nomr" value="${c}" ${nom ? "checked" : ""}> nominee</label></td>
@@ -505,7 +504,6 @@ function describeHint(v) {
   if (SKIP_TEXT[v]) return SKIP_TEXT[v];
   if (SECTION_KINDS.has(kind)) return typeof v === "number" ? `give it to ${D.st.houses[v].id}` : `section ${String(v).replace("*", "")}`;
   if (kind === "playOrder") return v === "innate" ? "resolve your innate next" : `resolve ${v} next`;
-  if (kind === "buyInfluence") return v ? `buy ${v} influence` : "buy none";
   return String(v);
 }
 function applyHint() {
@@ -526,7 +524,7 @@ function playtestRecord() {
   return { when: new Date().toISOString(), cfg: D.cfgIn, seats, seed: D.cfgIn?.seed ?? null, layout: st.layout,
     result: st.result, tier: st.tier, discoveries: st.discoveriesEarned, wall: st.wall.map((w) => ({ leader: w.leader, event: w.event, bt: w.bt })),
     stats: { decayPlaced: st.stats.decayPlaced, crewLost: st.stats.crewLost, destroyed: st.stats.destroyed, discoveryApplied: st.stats.discoveryApplied,
-      discoveryBreakthrough: st.stats.discoveryBreakthrough, influenceBought: st.stats.influenceBought || 0, warded: st.stats.warded || 0, houses: st.stats.houses.map((x) => ({ id: x.id, played: x.played, creditsSpent: x.creditsSpent,
+      discoveryBreakthrough: st.stats.discoveryBreakthrough, warded: st.stats.warded || 0, houses: st.stats.houses.map((x) => ({ id: x.id, played: x.played, creditsSpent: x.creditsSpent,
         innateTiers: x.innateTiers, leaders: x.chosenLeader, remarkables: x.remarkables })) },
     notes: $("pt-notes")?.value ?? "", log: st.log };
 }
@@ -600,9 +598,6 @@ function renderPrompt() {
     body = options.map((o) => o === "innate"
       ? `<button data-o="innate">Innate: ${esc(hd.innate.name)}<br><small>uses the elements you committed</small></button>`
       : `<div class="votec">${cardHTML(o)}<button data-o="${o}">Resolve ${o} now</button></div>`).join("");
-  } else if (kind === "buyInfluence") {
-    title = `Add influence in ${ctx.where}? Each costs ${ctx.cost} credit${ctx.cost === 1 ? "" : "s"} (you have ${H.credits}¢)`;
-    body = options.map((k) => `<button data-o="${k}">${k ? `Buy ${k} influence (${k * ctx.cost}¢)` : "No thanks (keep my credits)"}</button>`).join("");
   } else if (kind === "tiebreak") {
     title = "The vote is tied — as Steward's house, choose the heir";
     body = options.map((o) => { const nh = st.houses.findIndex((x) => x.nominee === o); return `<div class="votec">${cardHTML(o)}<button data-o="${o}">Choose ${o}${nh >= 0 ? ` (${esc(st.houses[nh].id)})` : ""}</button></div>`; }).join("");

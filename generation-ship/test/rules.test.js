@@ -293,15 +293,14 @@ test("vote: a tie goes to the house with fewer leaders on the conveyor, then the
   runPhase(G, f.st, "dawn");
   assert.equal(f.st.slots.dawn.leader, b);
 });
-test("threshold: a card's own guilds do not count toward its own threshold", () => {
+test("threshold: a card's own guilds count, but no card meets its threshold alone", () => {
   const { G, st, S } = fresh();
-  const c = DATA.people.find((x) => x.threshold && x.target.kind === "section" && x.effects.brace === undefined
-    && Object.keys(x.threshold.elements).every((g) => x.guilds.includes(g)) && x.threshold.effects.brace);
-  st.houses[0].elements = {};
-  for (const g of c.guilds) st.houses[0].elements[g] = 1; // only the card itself
-  resolveCard(G, st, 0, c.id);
-  assert.ok(Object.values(S).every((s) => s.brace === 0));
-  for (const [g, n] of Object.entries(c.threshold.elements)) st.houses[0].elements[g] = n + 1; // help from other cards
+  for (const c of DATA.people.filter((x) => x.threshold)) {
+    const own = Object.fromEntries(c.guilds.map((g) => [g, 1]));
+    assert.ok(!Object.entries(c.threshold.elements).every(([g, n]) => (own[g] || 0) >= n), `${c.id} unlocks itself`);
+  }
+  const c = DATA.people.find((x) => x.threshold && x.target.kind === "section" && x.effects.brace === undefined && x.threshold.effects.brace);
+  st.houses[0].elements = { ...c.threshold.elements };
   resolveCard(G, st, 0, c.id);
   assert.ok(Object.values(S).some((s) => s.brace >= c.threshold.effects.brace));
 });
@@ -312,13 +311,6 @@ test("vent and gather are optional", () => {
   S.A1.fault = 1;
   vent(stay, st, 0, S.A1, "fault", 1);
   assert.equal(S.A1.fault, 1);
-});
-test("adding influence from a card costs credits and is optional", () => {
-  const { G, st, S } = fresh();
-  st.houses[0].credits = 3;
-  applySectionEffects(G, st, 0, S.A1, { add_influence: 2 });
-  assert.equal(S.A1.influence[0], 2); // first agent buys as many as it can afford (1)
-  assert.equal(st.houses[0].credits, 1);
 });
 test("Discoveries earned while resolving Discoveries wait for the next Dusk", () => {
   const { G, st } = fresh();

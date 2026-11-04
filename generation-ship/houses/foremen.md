@@ -15,7 +15,7 @@ The first value is the starting value. ★ marks a special slot.
 | Credits per generation | 1 → 2 → ★ +Laborers → ★ +Laborers → 3 → ★ +Keepers |
 | Card plays | 2 → ★ +1 card drawn → 3 → ★ +1 fast play → ★ +1 card drawn → 4 |
 
-Hand = plays + 2. Clone 1.
+Hand = plays + 3. Clone 1.
 
 ## Special rule
 Crew in sections with Foremen influence deal +1 damage each when they fight back after a Collapse.

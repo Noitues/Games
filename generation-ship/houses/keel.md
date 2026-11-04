@@ -15,7 +15,7 @@ The first value is the starting value. ★ marks a special slot.
 | Credits per generation | 2 → ★ +1 clone slot → 3 → ★ +Medics → 4 → 5 |
 | Card plays | 2 → ★ +1 card drawn → 3 → ★ +1 card drawn → 4 |
 
-Hand = plays + 2. Clone 1.
+Hand = plays + 1. Clone 1.
 
 ## Special rule
 At Dusk, every section with Keel influence has Brace 1; Keel Havens have Brace 2 instead.

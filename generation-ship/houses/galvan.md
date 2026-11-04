@@ -13,9 +13,9 @@ The first value is the starting value. ★ marks a special slot.
 | Track | Values |
 |---|---|
 | Credits per generation | 1 → ★ +Navigators → ★ +1 card drawn → ★ +Engineers → 2 → 3 |
-| Card plays | 3 → ★ +1 card drawn → ★ +1 card drawn → ★ +1 fast play → 4 |
+| Card plays | 3 → ★ +1 clone slot → ★ +1 card drawn → ★ +1 fast play → 4 |
 
-Hand = plays + 2. Clone 1.
+Hand = plays + 1. Clone 1.
 
 ## Special rule
 For each Engineer element you have, one additional played card (not your nominee) may resolve fast.

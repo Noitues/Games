@@ -246,12 +246,9 @@ export function applySectionEffects(G, st, h, s, effects) {
       case "gather_crew": case "move_crew": gatherCrew(G, st, h, s, n); break;
       case "add_crew": s.crew += n; break;
       case "restore_decay": restoreDecay(st, s, n); break;
-      case "add_influence": {
+      case "add_influence":
         if (st.houses[h]?.id === "voidwardens" && !(s.hull || s.adj.some((a) => st.sections[a].hull))) break;
-        const k = buyInfluence(G, st, h, n, s.id);
-        if (k) s.influence[h] = (s.influence[h] || 0) + k;
-        break;
-      }
+        s.influence[h] = (s.influence[h] || 0) + n; break;
       case "move_influence": moveInfluence(G, st, h, s, n); break;
       case "purpose": gainPurpose(G, st, n, "card"); break;
       case "credits": st.houses[h].credits += n; break;
@@ -272,19 +269,6 @@ export function moveInfluence(G, st, h, s, n) {
   }
 }
 
-// Adding influence from a card is optional and costs credits (cfg.influenceCost each).
-export function buyInfluence(G, st, h, n, where) {
-  const cost = G.cfg.influenceCost ?? 0;
-  const H = st.houses[h];
-  const max = cost ? Math.min(n, Math.floor(H.credits / cost)) : n;
-  const opts = [];
-  for (let k = max; k >= 0; k--) opts.push(k);
-  const k = opts.length > 1 ? G.choose(st, h, "buyInfluence", opts, { cost, where, n }) : opts[0];
-  H.credits -= k * cost;
-  if (k) st.stats.influenceBought = (st.stats.influenceBought || 0) + k;
-  return k;
-}
-
 // Effects on another house (cooperative cards).
 export function applyHouseEffects(G, st, h, target, effects) {
   for (const [v, n] of Object.entries(effects)) {
@@ -294,10 +278,7 @@ export function applyHouseEffects(G, st, h, target, effects) {
       const opts = inRange(st, target, 1);
       if (!opts.length) continue;
       const id = G.choose(st, h, "influenceFor", opts, { house: target });
-      if (v === "add_influence") {
-        const k = buyInfluence(G, st, h, n, id);
-        if (k) st.sections[id].influence[target] = (st.sections[id].influence[target] || 0) + k;
-      }
+      if (v === "add_influence") st.sections[id].influence[target] = (st.sections[id].influence[target] || 0) + n;
       else moveInfluence(G, st, target, st.sections[id], n);
     } else throw new Error(`unknown house verb ${v}`);
   }

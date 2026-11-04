@@ -377,3 +377,25 @@ Player counts after these changes (house bots, 8 sampled combinations × 10 game
 | 4 | **85%** | 68% |
 
 **Open:** 4 players is now too easy. Wall bonuses go to every house, so they scale with player count. Needs a larger run; candidate fixes are per-house Wall bonuses or a larger Purpose pool at 4 players.
+
+## Playtest 1 follow-up: revised threshold and influence rules
+
+Changes:
+- **Thresholds:** a card's own guilds count again. Each printed threshold is "elements needed from elsewhere (at least 1)" plus the card's own icons, so no card meets its own threshold.
+- **Influence:** the credit cost for adding influence is removed. Instead, add influence is priced at 3.5 PP (the costliest effect, up from 2) in the card generator. Cards that add influence now average 4.2 credits, up from 1.8.
+
+The deck was regenerated (387 cards changed by the new pricing), then retuned:
+- Galvan hand +1, Keel hand +1, Vigil hand +3, Foremen hand +3 (all were +2);
+- track slots adjusted for Galvan, Meridian and Vigil;
+- Purpose pool raised to 8 per player.
+
+2-player seat-swapped sweep: **73%**, houses within +7 / −5.
+
+| Players | Win rate (house bots) |
+|---|---|
+| 1 | 74% |
+| 2 | 73% |
+| 3 | 69% |
+| 4 | 75% |
+
+The 4-player overshoot from the previous entry is gone.
