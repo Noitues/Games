@@ -304,7 +304,7 @@
    "clone": 1,
    "special": {
     "id": "load_bearing",
-    "text": "At Dusk, every section with Keel influence has Brace 1; Keel Havens have Brace 3 instead.",
+    "text": "At Dusk, every section with Keel influence has Brace 1; Keel Havens have Brace 2 instead.",
     "pp_per_generation": 1.5
    },
    "innate": {
@@ -842,7 +842,7 @@
    "clone": 1,
    "special": {
     "id": "airlock",
-    "text": "Threat the Voidwardens vent out of an Outer Hull section goes into the void (destroyed, no Purpose); gain 1 credit per Failure voided. Voidwardens can only add influence to Outer Hull sections.",
+    "text": "Threat the Voidwardens vent out of an Outer Hull section goes into the void (destroyed, no Purpose); gain 1 credit per Failure voided. Voidwardens can only add influence to Outer Hull sections and sections next to them.",
     "pp_per_generation": 1.5
    },
    "innate": {

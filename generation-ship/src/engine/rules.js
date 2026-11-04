@@ -222,7 +222,7 @@ export function applySectionEffects(G, st, h, s, effects) {
       case "add_crew": s.crew += n; break;
       case "restore_decay": restoreDecay(st, s, n); break;
       case "add_influence":
-        if (st.houses[h]?.id === "voidwardens" && !s.hull) break;
+        if (st.houses[h]?.id === "voidwardens" && !(s.hull || s.adj.some((a) => st.sections[a].hull))) break;
         s.influence[h] = (s.influence[h] || 0) + n; break;
       case "move_influence": moveInfluence(G, st, h, s, n); break;
       case "purpose": gainPurpose(G, st, n, "card"); break;

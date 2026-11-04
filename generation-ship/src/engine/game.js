@@ -453,7 +453,7 @@ function growthPhase(G, st) {
       const range = hd.growth_overrides?.A?.range ?? 1;
       const count = hd.growth_overrides?.A?.influence ?? 1;
       let opts = inRange(st, h, range);
-      if (H.id === "voidwardens") opts = opts.filter((id) => st.sections[id].hull);
+      if (H.id === "voidwardens") opts = opts.filter((id) => nearHull(st, st.sections[id]));
       for (let k = 0; k < count && opts.length; k++) {
         const id = G.choose(st, h, "growthInfluence", opts, {});
         st.sections[id].influence[h] = (st.sections[id].influence[h] || 0) + 1;
@@ -483,6 +483,9 @@ function growthPhase(G, st) {
     if (G.cfg.trackCards) for (const cid of H.hand) cardStat(st, cid).drawn += 1;
   });
 }
+
+// Voidwardens may only add influence on or next to the Outer Hull.
+export const nearHull = (st, s) => s.hull || s.adj.some((a) => st.sections[a].hull);
 
 function costOf(G, cid) { return card(G, cid).cost; }
 
@@ -531,7 +534,7 @@ function duskPhase(G, st) {
   st.houses.forEach((H, h) => {
     if (H.id === "keel") for (const s of allSections(st)) {
       const n = s.influence[h] || 0;
-      if (n >= 2) s.brace += 3; else if (n === 1) s.brace += 1;
+      if (n >= 2) s.brace += 2; else if (n === 1) s.brace += 1;
     }
   });
   applyLegacy(G, st);

@@ -18,7 +18,7 @@ The first value is the starting value. ★ marks a special slot.
 Hand = plays + 2. Clone 1.
 
 ## Special rule
-Threat the Voidwardens vent out of an Outer Hull section goes into the void (destroyed, no Purpose); gain 1 credit per Failure voided. Voidwardens can only add influence to Outer Hull sections.
+Threat the Voidwardens vent out of an Outer Hull section goes into the void (destroyed, no Purpose); gain 1 credit per Failure voided. Voidwardens can only add influence to Outer Hull sections and sections next to them.
 
 ## Innate: Void Tide (slow)
 Tiers are cumulative; the effect column is the full effect at that tier. *Reached* is how often a generation reaches at least that tier (house bots, calibration run).
