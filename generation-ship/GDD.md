@@ -106,7 +106,7 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 **Ending**
 - **Win (base):** you win the moment the board meets your current Understanding tier's condition **and** the destination's Landfall requirement.
 - **Win (Landfall card, "choice"):** when the condition above is met, the Steward's house may **begin Landfall**: the set-aside Landfall event becomes the next Dawn event (even if the deck is nearly empty; once Landfall is placed no further events are needed). You win when the Landfall event retires to the Wall with its leader. Declining asks again next generation.
-- **Win (Landfall card, "shuffled"):** the Landfall card is shuffled into the Stage III events. When it retires to the Wall you win if the condition holds at that moment; otherwise it passes and the voyage continues.
+- **Win (Landfall card, "shuffled"):** the Landfall card is shuffled into the Stage III events. When it retires to the Wall you win if the condition holds at that moment; otherwise it passes, and from then on the base win applies (meeting the condition wins at once).
 - **Loss:** you lose if an event must be drawn at Dawn and the event deck is empty. *(The Wall is full and the deck is empty at the same moment.)*
 - **Loss:** you lose if the Decay pool is empty after the Ship in Crisis card has flipped.
 - **Loss:** you lose if any house has no influence on the ship.
@@ -263,7 +263,7 @@ When the pool fills, earn 1 **Discovery** card face-down and reset the pool.
   - II: skip the Day grow in one section type.
   - III: downgrade every Fault in one section type to a Glitch.
 
-**Understanding tiers.** **The destination sets how many Discoveries raise Understanding a tier:** The Verdant Reach 2, Cinder 3, The Long Dark 4; 3 with no destination (as in Spirit Island).
+**Understanding tiers.** **The destination sets how many Discoveries raise Understanding a tier:** The Verdant Reach 2, Cinder 3, The Long Dark 3 (4 made the Long Dark unwinnable: 24% at level 1); 3 with no destination (as in Spirit Island).
 
 | Tier | Example name | Reached at | Base win condition |
 |---|---|---|---|

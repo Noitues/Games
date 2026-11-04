@@ -650,7 +650,7 @@ function timePasses(G, st) {
       // Landfall retires: chosen Landfall wins outright; shuffled Landfall wins if the ship is ready.
       if (st.landfallMode !== "shuffled" || (winConditionMet(st, G.cfg.tierConditions) && destinationRequirementMet(st)))
         st.result = { outcome: "win", cause: "Landfall", gen: st.gen };
-      else log(G, st, "Landfall passes: the ship is not ready to land");
+      else { st.landfallPassed = true; log(G, st, "Landfall passes: the ship is not ready; from now on, meeting the win condition wins at once"); }
     }
   }
   st.slots.dusk = st.slots.day; st.slots.day = st.slots.dawn; st.slots.dawn = null;
@@ -699,7 +699,11 @@ export function checkVictory(G, st) {
   if (st.result) return;
   if (!winConditionMet(st, G.cfg.tierConditions) || !destinationRequirementMet(st)) return;
   if (!G.cfg.landfallCard) { st.result = { outcome: "win", cause: `tier ${st.tier}`, gen: st.gen }; return; }
-  if (G.cfg.landfallCard === "shuffled") return; // the Landfall card arrives with the events
+  if (G.cfg.landfallCard === "shuffled") {
+    // The Landfall card arrives with the events; once it has passed unready, the base win applies.
+    if (st.landfallPassed) st.result = { outcome: "win", cause: `tier ${st.tier}`, gen: st.gen };
+    return;
+  }
   if (!st.landfallPending && !st.landfallPlaced && !st.landfallDeclinedGen?.includes?.(st.gen)) {
     const go = G.choose(st, stewardHouse(st), "landfall", ["begin", "wait"], {});
     if (go === "begin") { st.landfallPending = true; log(G, st, "Landfall will begin at the next Dawn"); }
