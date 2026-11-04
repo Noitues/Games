@@ -8,8 +8,12 @@ Each house is built from the **Balance framework** in [`../GDD.md`](../GDD.md). 
 | [Meridian](meridian.md) | River Surges in Sunlight | Movement and logistics | Bureaucrats / Farmers | Standard |
 | [Keel](keel.md) | Vital Strength of the Earth | Slow, defensive | Medics / Laborers | Standard (was steep) |
 | [Vigil](vigil.md) | Shadows Flicker Like Flame | Purpose and reach | Keepers / Scholars | Standard |
+| [Foremen](foremen.md) | Thunderspeaker | Crew-led offense | Laborers / Keepers | Standard |
+| [Gardeners](gardeners.md) | A Spread of Rampant Green | Influence as armor | Farmers / Scholars | Standard |
+| [Voidwardens](voidwardens.md) | Ocean's Hungry Grasp | Outer Hull specialists | Navigators / Engineers | Front-loaded |
+| [Tellers](tellers.md) | Bringer of Dreams and Nightmares | Damage becomes Purpose | Bureaucrats / Medics | Standard |
 
-All eight guilds have a home.
+Every guild is the primary or secondary guild of exactly two houses. The last four houses are modeled on Spirit Island's moderate- and high-complexity base spirits.
 
 ## Economy curves (reference pacing, tracks only)
 

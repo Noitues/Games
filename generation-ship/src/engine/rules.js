@@ -114,6 +114,14 @@ export function damageThreat(G, st, s, n, source = "card") {
 // ---------------------------------------------------------------- Decay
 export function placeDecay(G, st, s, depth = 0) {
   if (st.result) return;
+  // Gardeners' Rooted: Decay that would land where the Gardeners have influence removes 1 of it instead.
+  const gi = st.houses.findIndex((H) => H.id === "gardeners");
+  if (gi >= 0 && (s.influence[gi] || 0) > 0) {
+    s.influence[gi] -= 1;
+    st.stats.rooted = (st.stats.rooted || 0) + 1;
+    checkInfluenceLoss(st);
+    return;
+  }
   if (st.decayPool <= 0) {
     if (!st.crisisFlipped) {
       st.crisisFlipped = true;
@@ -161,6 +169,13 @@ export function vent(G, st, h, s, kind, n) {
     let piece = kind;
     if (kind === "glitch_or_fault") piece = s.fault > 0 ? "fault" : "glitch";
     if (s[piece] <= 0) return;
+    // Voidwardens' Airlock: threat vented from an Outer Hull section goes into the void.
+    if (st.houses[h]?.id === "voidwardens" && s.hull) {
+      s[piece] -= 1;
+      st.stats.destroyed[piece] += 1;
+      if (piece !== "glitch") st.houses[h].credits += 1;
+      continue;
+    }
     const opts = s.adj.filter((a) => !st.sections[a].quarantine);
     if (!opts.length) return;
     const to = G.choose(st, h, "ventTo", opts, { from: s.id, piece });
@@ -182,7 +197,12 @@ export function applySectionEffects(G, st, h, s, effects) {
   for (const [v, n] of Object.entries(effects)) {
     if (st.result) return;
     switch (v) {
-      case "damage": damageThreat(G, st, s, n, "card"); break;
+      case "damage":
+        // Tellers' Spin: their damage becomes Purpose instead of destroying threat.
+        if (st.houses[h]?.id === "tellers" && threatCount(s) > 0) gainPurpose(G, st, n, "spin");
+        else damageThreat(G, st, s, n, "card");
+        break;
+      case "crew_strike": damageThreat(G, st, s, s.crew * G.cfg.crewDamage * n, "crew"); break;
       case "downgrade": downgrade(s, "any", n); break;
       case "downgrade_failure": downgrade(s, "failure", n); break;
       case "vent_glitch": vent(G, st, h, s, "glitch", n); break;
@@ -198,7 +218,9 @@ export function applySectionEffects(G, st, h, s, effects) {
       case "gather_crew": case "move_crew": gatherCrew(G, st, h, s, n); break;
       case "add_crew": s.crew += n; break;
       case "restore_decay": restoreDecay(st, s, n); break;
-      case "add_influence": s.influence[h] = (s.influence[h] || 0) + n; break;
+      case "add_influence":
+        if (st.houses[h]?.id === "voidwardens" && !s.hull) break;
+        s.influence[h] = (s.influence[h] || 0) + n; break;
       case "move_influence": moveInfluence(G, st, h, s, n); break;
       case "purpose": gainPurpose(G, st, n, "card"); break;
       case "credits": st.houses[h].credits += n; break;

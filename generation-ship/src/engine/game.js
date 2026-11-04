@@ -222,7 +222,12 @@ export function collapse(G, st, eid) {
     let killed = Math.min(s.crew, Math.floor(dmg / G.cfg.crewHealth));
     if (ev.twist?.rule === "extra_crew_loss") killed = Math.min(s.crew, killed + 1);
     s.crew -= killed; st.stats.crewLost += killed;
-    if (s.crew > 0) damageThreat(G, st, s, s.crew * G.cfg.crewDamage, "crew");
+    if (s.crew > 0) {
+      // Foremen's Crew Captains: Crew in sections with Foremen influence deal +1 damage each.
+      const fi = st.houses.findIndex((H) => H.id === "foremen");
+      const bonus = fi >= 0 && (s.influence[fi] || 0) > 0 ? 1 : 0;
+      damageThreat(G, st, s, s.crew * (G.cfg.crewDamage + bonus), "crew");
+    }
   }
 }
 
@@ -344,8 +349,10 @@ function growthPhase(G, st) {
     if (choice === "A") {
       const tracks = ["credits", "plays"].filter((t) => canUncover(G, st, h, t));
       const range = hd.growth_overrides?.A?.range ?? 1;
-      const opts = inRange(st, h, range);
-      if (opts.length) {
+      const count = hd.growth_overrides?.A?.influence ?? 1;
+      let opts = inRange(st, h, range);
+      if (H.id === "voidwardens") opts = opts.filter((id) => st.sections[id].hull);
+      for (let k = 0; k < count && opts.length; k++) {
         const id = G.choose(st, h, "growthInfluence", opts, {});
         st.sections[id].influence[h] = (st.sections[id].influence[h] || 0) + 1;
       }
