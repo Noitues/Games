@@ -25,7 +25,7 @@ Tiers are cumulative; the effect column is the full effect at that tier. *Reache
 
 | Tier | Threshold | Effect | PP | Reached |
 |---|---|---|---|---|
-| 1 | Laborers 2 | gather 2 Crew; Brace 1 (range 1, ANY) | 2.0 | 48% |
+| 1 | Laborers 2 | gather 2 Crew; Brace 2 (range 1, ANY) | 2.0 | 48% |
 | 2 | Laborers 2 + Keepers 1 | gather 2 Crew; Brace 2; Isolate 1 Fault (range 1, ANY) | 4.0 | 40% |
 | 3 | Laborers 3 + Keepers 2 | gather 3 Crew; every Crew there deals its damage now; Brace 3 (range 1, ANY) | 6.5 | 5% |
 

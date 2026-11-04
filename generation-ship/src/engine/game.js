@@ -529,7 +529,7 @@ function duskPhase(G, st) {
   st.houses.forEach((H, h) => {
     if (H.id === "keel") for (const s of allSections(st)) {
       const n = s.influence[h] || 0;
-      if (n >= 2) s.brace += 3; else if (n === 1) s.brace += 2;
+      if (n >= 2) s.brace += 3; else if (n === 1) s.brace += 1;
     }
   });
   applyLegacy(G, st);

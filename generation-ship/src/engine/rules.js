@@ -175,7 +175,7 @@ export function vent(G, st, h, s, kind, n) {
     if (st.houses[h]?.id === "voidwardens" && s.hull) {
       s[piece] -= 1;
       st.stats.destroyed[piece] += 1;
-      if (piece !== "glitch") st.houses[h].credits += 1;
+      if (piece === "failure") st.houses[h].credits += 1;
       continue;
     }
     const opts = s.adj.filter((a) => !st.sections[a].quarantine);

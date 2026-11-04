@@ -12,7 +12,7 @@ The first value is the starting value. ★ marks a special slot.
 
 | Track | Values |
 |---|---|
-| Credits per generation | 1 → 1 → 2 → ★ +Farmers → 3 → 4 |
+| Credits per generation | 1 → 1 → 2 → ★ +Farmers → 3 → 5 |
 | Card plays | 2 → 2 → 2 → 3 → ★ +1 clone slot → 4 |
 
 Hand = plays + 2. Clone 1.

@@ -304,7 +304,7 @@
    "clone": 1,
    "special": {
     "id": "load_bearing",
-    "text": "At Dusk, every section with Keel influence has Brace 2; Keel Havens have Brace 3 instead.",
+    "text": "At Dusk, every section with Keel influence has Brace 1; Keel Havens have Brace 3 instead.",
     "pp_per_generation": 1.5
    },
    "innate": {
@@ -597,7 +597,7 @@
       "threshold_cost": 2.0,
       "effects": {
        "gather_crew": 2,
-       "brace": 1
+       "brace": 2
       },
       "range": 1,
       "target": "ANY",
@@ -694,7 +694,7 @@
       "element": "Farmers"
      },
      3,
-     4
+     5
     ],
     "plays": [
      2,
@@ -842,7 +842,7 @@
    "clone": 1,
    "special": {
     "id": "airlock",
-    "text": "Threat the Voidwardens vent out of an Outer Hull section goes into the void (destroyed, no Purpose); gain 1 credit per Fault or Failure voided. Voidwardens can only add influence to Outer Hull sections.",
+    "text": "Threat the Voidwardens vent out of an Outer Hull section goes into the void (destroyed, no Purpose); gain 1 credit per Failure voided. Voidwardens can only add influence to Outer Hull sections.",
     "pp_per_generation": 1.5
    },
    "innate": {
@@ -962,7 +962,7 @@
      4
     ]
    },
-   "hand_bonus": 3,
+   "hand_bonus": 2,
    "clone": 1,
    "special": {
     "id": "spin",

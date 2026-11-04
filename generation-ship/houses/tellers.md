@@ -15,7 +15,7 @@ The first value is the starting value. ★ marks a special slot.
 | Credits per generation | 1 → 2 → 2 → 3 → ★ +Bureaucrats → 4 |
 | Card plays | 2 → 2 → 3 → ★ +Medics → 3 → 4 |
 
-Hand = plays + 3. Clone 1.
+Hand = plays + 2. Clone 1.
 
 ## Special rule
 Damage from Tellers' cards does not destroy threat; each point generates 2 Purpose and Isolates 1 damage of threat in that section (it deals that much less at the next Collapse).

@@ -220,7 +220,7 @@ test("Voidwardens' Airlock destroys threat vented from an Outer Hull section", (
   vent(G, st, 0, S.A1, "fault", 1);
   assert.equal(S.A1.fault, 0);
   assert.equal(S.A1.adj.reduce((n, a) => n + S[a].fault, 0), 0);
-  assert.equal(st.houses[0].credits, c0 + 1);
+  assert.equal(st.houses[0].credits, c0); // credits only for Failures
 });
 test("Tellers' Spin: damage becomes 2 Purpose per point and Isolates", () => {
   const { G, st, S } = fresh({ houses: ["tellers", "keel"] });
@@ -240,12 +240,12 @@ test("Foremen's Crew Captains: Crew deal +1 damage fighting back in Foremen sect
   collapse(G, st, event([S.A3.type]));
   assert.equal(S.A3.failure, 0); // 1 Crew x (2 + 1) = 3 damage
 });
-test("Keel's Load-Bearing: Brace 2 where Keel has influence, 3 in its Havens, at Dusk", () => {
+test("Keel's Load-Bearing: Brace 1 where Keel has influence, 3 in its Havens, at Dusk", () => {
   const { G, st, S } = fresh();
   S.A5.influence = { 1: 1 }; S.A6.influence = { 1: 2 };
   st.slots.dusk = null; st.pendingDiscoveries = [];
   runPhase(G, st, "dusk");
-  assert.equal(S.A5.brace, 2); assert.equal(S.A6.brace, 3);
+  assert.equal(S.A5.brace, 1); assert.equal(S.A6.brace, 3);
 });
 
 // ------------------------------------------------------------------ destinations

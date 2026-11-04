@@ -18,7 +18,7 @@ The first value is the starting value. ★ marks a special slot.
 Hand = plays + 2. Clone 1.
 
 ## Special rule
-At Dusk, every section with Keel influence has Brace 2; Keel Havens have Brace 3 instead.
+At Dusk, every section with Keel influence has Brace 1; Keel Havens have Brace 3 instead.
 
 ## Innate: Shelter the Many (slow)
 Tiers are cumulative; the effect column is the full effect at that tier. *Reached* is how often a generation reaches at least that tier (house bots, calibration run).
