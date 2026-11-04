@@ -4,6 +4,6 @@
   "type": "module",
   "scripts": {
     "sim": "node sim/run.js",
-    "test": "node sim/smoke.js"
+    "test": "node --test test/rules.test.js && node sim/smoke.js"
   }
 }

@@ -250,7 +250,7 @@ export function seed(G, st, eid) {
   const targets = new Set();
   for (const s of allSections(st)) {
     if (!matches(s, ev.types)) continue;
-    const src = s.hull || s.adj.some((a) => st.sections[a].fault + st.sections[a].failure > 0);
+    const src = s.hull || s.adj.some((a) => !st.sections[a].quarantine && st.sections[a].fault + st.sections[a].failure > 0);
     if (src) targets.add(s.id);
     if (ev.twist?.rule === "seed_adjacent" && threatCount(s) > 0) s.adj.forEach((a) => targets.add(a));
   }

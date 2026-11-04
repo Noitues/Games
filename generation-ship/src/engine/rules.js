@@ -137,7 +137,7 @@ export function placeDecay(G, st, s, depth = 0) {
   for (const h of Object.keys(s.influence)) s.influence[h] = Math.max(0, s.influence[h] - 1);
   if (st.crisisFlipped && st.crisisId === "X3") losePurpose(st, 1);
   checkInfluenceLoss(st);
-  if (had && depth < 20) {
+  if (had && !s.quarantine && depth < 20) { // Quarantine: no cascade out of the section
     const n = st.crisisFlipped && st.crisisId === "X2" ? 2 : 1;
     for (let k = 0; k < n; k++) {
       const opts = s.adj.filter((a) => !st.sections[a].quarantine);
@@ -166,6 +166,7 @@ export function gatherCrew(G, st, h, s, n) {
 
 // ---------------------------------------------------------------- vent
 export function vent(G, st, h, s, kind, n) {
+  if (s.quarantine) return; // Quarantine: nothing vents out of the section
   for (let i = 0; i < n; i++) {
     let piece = kind;
     if (kind === "glitch_or_fault") piece = s.fault > 0 ? "fault" : "glitch";
