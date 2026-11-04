@@ -34,6 +34,8 @@ h3 { margin: 10px 0 6px; font-size: 13px; text-transform: uppercase; letter-spac
 #map text { fill: var(--ink); font-size: 12px; pointer-events: none; }
 #map .hull { stroke: var(--ink); stroke-width: 5; }
 #map .edge { stroke: var(--line); stroke-width: 2; }
+#tip { position: fixed; z-index: 20; pointer-events: none; background: var(--panel); border: 1px solid var(--accent); border-radius: 6px; padding: 6px 8px; font-size: 12px; max-width: 280px; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
+.loadbtn span { display: inline-block; padding: 4px 10px; border: 1px solid var(--line); border-radius: 4px; cursor: pointer; background: var(--panel); }
 #legend { color: var(--muted); font-size: 12px; margin: 4px 0; }
 #prompt { min-height: 40px; margin-bottom: 8px; padding: 8px 12px; border-radius: 6px; background: var(--panel); border: 2px solid var(--hl); }
 #prompt.idle { border-color: var(--line); color: var(--muted); }

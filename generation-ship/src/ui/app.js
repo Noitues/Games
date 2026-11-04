@@ -182,12 +182,52 @@ function renderMap() {
   const map = $("map");
   map.setAttribute("width", 20 + P * (4 * W + gap)); map.setAttribute("height", 20 + 2 * H);
   map.innerHTML = svg;
+  map.querySelectorAll(".sec").forEach((g) => {
+    g.addEventListener("mousemove", (e) => showTip(e, sectionTip(g.dataset.id)));
+    g.addEventListener("mouseleave", hideTip);
+  });
   map.querySelectorAll(".sec.opt").forEach((g) => g.addEventListener("click", () => {
     const id = g.dataset.id;
     const o = D.pending.options.find((x) => String(x).replace("*", "") === id);
     act(o);
   }));
 }
+
+function sectionTip(id) {
+  const st = D.st, s = st.sections[id], G = D.G;
+  const inf = Object.entries(s.influence).filter(([, n]) => n > 0).map(([h, n]) => `${esc(houseData(G, st, +h).name.split(",")[0])} ${n}${n >= 2 ? " (Haven)" : ""}`).join(", ") || "none";
+  const toks = [["Brace", s.brace], ["Quarantine", s.quarantine], ["Patch", s.patch], ["Lockout", s.lockout], ["Unrest", s.unrest], ["Isolate", s.isolate], ["damage taken", s.dmg]]
+    .filter(([, n]) => n).map(([k, n]) => `${k} ${n}`).join(", ") || "none";
+  const ev = ["dusk", "day", "dawn"].filter((k) => st.slots[k] && G.data.eventById[st.slots[k].event].types.some((t) => t === "ALL" || t === s.type || (t === "Hull" && s.hull)));
+  return `<b>${id}</b> ${s.type}${s.hull ? " · Outer Hull" : ""}<br>Glitch ${s.glitch} · Fault ${s.fault} · Failure ${s.failure} → collapse damage ${s.glitch + 2 * s.fault + 3 * s.failure}<br>Crew ${s.crew} · Decay ${s.decay}<br>Influence: ${inf}<br>Tokens: ${toks}<br>Adjacent: ${s.adj.join(", ")}${ev.length ? `<br><b>Targeted by:</b> ${ev.map((k) => ({ dusk: "Dusk (Collapse)", day: "Day (Grow)", dawn: "Dawn" })[k]).join(", ")}` : ""}`;
+}
+function showTip(e, html) {
+  let t = $("tip"); if (!t) { t = document.createElement("div"); t.id = "tip"; document.body.appendChild(t); }
+  t.innerHTML = html; t.style.display = "block";
+  t.style.left = Math.min(e.clientX + 14, innerWidth - 300) + "px"; t.style.top = (e.clientY + 14) + "px";
+}
+function hideTip() { const t = $("tip"); if (t) t.style.display = "none"; }
+
+// ------------------------------------------------------------------ save / load
+function snapshot() {
+  return { v: 1, cfg: D.cfgIn, seats, st: D.st, phaseIdx: D.phaseIdx, answers: D.answers,
+    snapshot: D.snapshot, seeds: D.botSeeds(), pending: D.pending };
+}
+function save() {
+  const blob = new Blob([JSON.stringify(snapshot())], { type: "application/json" });
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+  a.download = `generation-ship-g${D.st.gen}.json`; a.click(); URL.revokeObjectURL(a.href);
+}
+function restore(obj) {
+  seats = obj.seats;
+  D = new Driver(DATA, obj.cfg, seats, 1);
+  D.cfgIn = obj.cfg; D.st = obj.st; D.phaseIdx = obj.phaseIdx; D.answers = obj.answers || [];
+  D.snapshot = obj.snapshot; D.pending = obj.pending; D.history = obj.snapshot ? [obj.snapshot] : [];
+  D.agents.forEach((a, i) => { if (a instanceof Bot) a.seed = obj.seeds[i]; });
+  $("setup").hidden = true; $("game").hidden = false;
+  afterStep(D.pending ? "input" : null);
+}
+function autosave() { try { localStorage.setItem("gs-autosave", JSON.stringify(snapshot())); } catch { /* storage unavailable */ } }
 
 function trackHTML(track, pos) {
   return track.map((v, i) => {
@@ -305,6 +345,7 @@ function act(value) {
 }
 function afterStep(r) {
   commitSel = null; cloneSel = null;
+  if (D) autosave();
   if (r === "input") {
     if (D.pending.kind === "commit") commitSel = { play: new Set(), nominee: null, fast: new Set() };
     if (D.pending.kind === "clone") cloneSel = new Set();
@@ -338,6 +379,7 @@ function start() {
   const cfg = { players: P, houses, eventPairing: $("pairing").value, tierConditions: $("tiers").value,
     destination: $("destination").value || null, destinationLevel: +$("level").value, landfallCard: $("landfall").checked };
   D = new Driver(DATA, cfg, seats, +$("seed").value || 1);
+  D.cfgIn = cfg;
   $("setup").hidden = true; $("game").hidden = false;
   render();
 }
@@ -357,5 +399,15 @@ async function main() {
   });
   $("btn-undo").addEventListener("click", () => { if (D) { stopAuto(); D.undo(); afterStep(null); } });
   $("btn-mute").addEventListener("click", () => { muted = !muted; $("btn-mute").textContent = muted ? "🔇" : "🔊"; });
+  $("btn-save").addEventListener("click", () => { if (D) save(); });
+  $("file-load").addEventListener("change", async (e) => { const f = e.target.files[0]; if (f) { stopAuto(); restore(JSON.parse(await f.text())); } });
+  try {
+    const saved = localStorage.getItem("gs-autosave");
+    if (saved) {
+      const b = document.createElement("button"); b.textContent = "Resume last game"; b.style.marginLeft = "8px";
+      b.addEventListener("click", () => restore(JSON.parse(saved)));
+      $("btn-start").after(b);
+    }
+  } catch { /* storage unavailable */ }
 }
 main();

@@ -600,6 +600,7 @@ export function setupRamp(G, st) {
 export const PHASES = ["growth", "commit", "fast", "dusk", "day", "dawn", "slow", "time"];
 export function runPhase(G, st, phase) {
   st.phase = phase;
+  if (phase === "growth") log(G, st, `── Generation ${st.gen} ──`);
   switch (phase) {
     case "growth": growthPhase(G, st); break;
     case "commit": commitPhase(G, st); break;
