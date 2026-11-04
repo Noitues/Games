@@ -527,40 +527,44 @@ Chosen before the game, with a difficulty **level 0–6**. Each destination defi
 
 **Levels are cumulative**: a level-N game applies every level from 1 to N. Level 0 means no destination rules (the base game). Full text is in `data/destinations.json`.
 
-**The Verdant Reach** (a garden world; needs living colonists):
+*Measured difficulty:* house bots, 2 players, 4 house pairings × 25 games per level (`sim/destinations.js`). Level 0 (no destination) is about 71%. Verdant Reach is the gentlest destination, while Cinder and The Long Dark fall about 7–9 points per level.
 
-| Level | Adds |
-|---|---|
-| 1 | Landfall requirement: ≥ 3 Crew per player. *Spore Drift:* when Grow adds a Fault in an Agricultural section, also add 1 Glitch to its least-threatened neighbor. |
-| 2 | Setup: +1 Fault in one Agricultural section per board. |
-| 3 | Escalation: +1 Glitch in every Agricultural section. |
-| 4 | Requirement rises to ≥ 4 Crew per player. |
-| 5 | *Blight Season:* Collapse in Agricultural sections destroys 1 extra Crew. |
-| 6 | Deck: one Stage I card becomes an extra Stage III card. |
+**The Verdant Reach** (A garden world around a quiet star. It needs living colonists.)
 
-**Cinder** (scorched by solar flares; the hull takes the brunt):
+| Level | Adds | Bot win rate |
+|---|---|---|
+| 1 | Landfall requirement: at least 5 Crew per player. Hazard, Spore Drift: when Grow adds a Fault in an Agricultural section, also add 1 Glitch to its least-threatened adjacent section. | 70% |
+| 2 | Setup: +1 Fault in one Agricultural section on each board. | 66% |
+| 3 | Escalation: add 1 Glitch to every Agricultural section. | 60% |
+| 4 | Setup: +1 Fault in every Agricultural section on the Outer Hull. | 55% |
+| 5 | Hazard, Blight Season: each Collapse in an Agricultural section destroys 2 additional Crew. Landfall requirement rises to 6 Crew per player. | 50% |
+| 6 | Deck: one Stage I card is replaced by an extra Stage III card. | 39% |
 
-| Level | Adds |
-|---|---|
-| 1 | Landfall requirement: no Decay in Infrastructure. *Flare:* seeded Outer Hull sections gain 1 extra Glitch. |
-| 2 | Setup: +1 Glitch in every Outer Hull section. |
-| 3 | Escalation: +1 Unrest in every Outer Hull section with threat. |
-| 4 | Setup: +1 Decay in one Outer Hull section per board (not from the pool). |
-| 5 | *Radiation:* Collapse in Outer Hull sections deals +1 damage. |
-| 6 | Deck: one fewer Stage I card. |
+**Cinder** (A world scorched by solar flares. The hull takes the brunt of the approach.)
 
-**The Long Dark** (a rogue planet; belief wears thin):
+| Level | Adds | Bot win rate |
+|---|---|---|
+| 1 | Landfall requirement: no Decay in Infrastructure sections. | 61% |
+| 2 | Setup: +1 Glitch in every Outer Hull section. | 56% |
+| 3 | Escalation: add 1 Glitch and 1 Unrest to every Outer Hull section that has threat, and 1 Glitch to every other Outer Hull section. | 47% |
+| 4 | Hazard, Flare: each Outer Hull section that is seeded gains 1 extra Glitch. | 41% |
+| 5 | Setup: +1 Decay in one Outer Hull section on each board (not from the pool). | 33% |
+| 6 | Hazard, Radiation: each Collapse in an Outer Hull section deals +1 damage. | 24% |
 
-| Level | Adds |
-|---|---|
-| 1 | Landfall requirement: Understanding III. *The Cold:* lose 1 Purpose at the start of each Day. Deck: +1 Stage II card. |
-| 2 | Setup: +1 Fault in one Government section per board. |
-| 3 | Escalation: lose 3 Purpose. |
-| 4 | The Cold drains 2 Purpose per Day. |
-| 5 | Setup: +1 Failure in one Residential section on board A. |
-| 6 | Deck: one fewer Stage I card. |
+**The Long Dark** (A rogue planet far from any star. The journey is long and belief wears thin.)
+
+| Level | Adds | Bot win rate |
+|---|---|---|
+| 1 | Landfall requirement: Understanding III. Hazard, The Cold: lose 1 Purpose at the start of each Day. Deck: +1 Stage II card (a longer journey). | 67% |
+| 2 | Setup: +1 Fault in every Government section. | 54% |
+| 3 | Escalation: lose 5 Purpose. | 48% |
+| 4 | Hazard: The Cold now drains 2 Purpose each Day. | 40% |
+| 5 | Setup: +1 Failure in one Residential section on each board. | 32% |
+| 6 | Deck: one fewer Stage I card. | 23% |
 
 **Landfall card variant (toggle):** when the win condition and the Landfall requirement are met (and at least 2 events remain), the Landfall event becomes the next Dawn event. It seeds, grows and collapses in every section. The players win when it retires to the Wall.
+
+*Measured:* the Landfall card is a much harder ending. Bot win rate drops from about 71% to 56% at level 0, to 30–39% at level 3, and to 8–29% at level 6. Pair it with lower destination levels.
 
 ---
 

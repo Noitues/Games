@@ -207,3 +207,34 @@ Decay pool = 3 per player − 1 (2 / 5 / 8 / 11) instead of 2 per player + 1 (3 
 | 4 | 63% | 68% |
 
 The spread across player counts shrinks from 23 points to 9.
+
+---
+
+# Destinations (step 3)
+
+House bots, 2 players, 4 house pairings (Galvan+Keel, Meridian+Vigil, Foremen+Tellers, Gardeners+Voidwardens), 25 games each per level. Level 0 is about 71%.
+
+| Level | Verdant Reach | Cinder | The Long Dark |
+|---|---|---|---|
+| 1 | 70% | 61% | 67% |
+| 2 | 66% | 56% | 54% |
+| 3 | 60% | 47% | 48% |
+| 4 | 55% | 41% | 40% |
+| 5 | 50% | 33% | 32% |
+| 6 | 39% | 24% | 23% |
+
+**How the levels were tuned (five passes):**
+- The first draft had Cinder too harsh at level 1 (41%), because its Flare hazard was strong. Flare moved to level 4.
+- Verdant Reach had cliffs whenever "+1 Fault in every Agricultural section" appeared. It now uses Outer Hull Agricultural sections only.
+- **Crew-loss hazards barely matter to the bots**, which protect their Crew well. Human players may feel them more.
+
+**Landfall card variant:**
+
+| Setting | Base win | With the Landfall card |
+|---|---|---|
+| Level 0 | 71% | 56% |
+| Verdant 3 / 6 | 60% / 39% | 39% / 29% |
+| Cinder 3 / 6 | 47% / 24% | 30% / 13% |
+| Long Dark 3 / 6 | 48% / 23% | 31% / 8% |
+
+The Landfall card adds a hard three-generation finale and costs about 15–20 points of win rate.
