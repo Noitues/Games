@@ -12,6 +12,9 @@ const GAMES = [
   { name: "1p human solo", players: 1, houses: ["vigil"], seats: ["human"], seed: 9 },
 ];
 let rs = 12345;
+const HINT_RATE = 0.75;
+const exactKinds = {};
+let hints = 0, undos = 0;
 const rnd = () => ((rs = (rs * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);
 const pick = (a) => a[Math.floor(rnd() * a.length)];
 
@@ -45,6 +48,21 @@ const pick = (a) => a[Math.floor(rnd() * a.length)];
       const html = await page.evaluate(() => document.querySelector("#prompt").innerText);
       if (html === lastHTML) { if (++stuck > 25) { errors.push("stuck on prompt: " + html.slice(0, 200)); break; } } else stuck = 0;
       lastHTML = html;
+      const exact = await page.evaluate(() => window.__gsPendingKind?.());
+      if (exact) exactKinds[exact] = (exactKinds[exact] || 0) + 1;
+      // sometimes take back the last decision (exercises Undo decision)
+      if (rnd() < 0.04 && await page.$("#btn-undo-dec")) { await page.click("#btn-undo-dec"); undos++; actions++; continue; }
+      // usually follow the hint, so games last long enough to reach late-game decisions
+      if (rnd() < HINT_RATE && await page.$("#hint-btn")) {
+        await page.click("#hint-btn");
+        await page.waitForSelector("#hint-use", { timeout: 60000 });
+        await page.click("#hint-use");
+        hints++;
+        if (await page.$("#commit-ok")) { if (!(await page.$eval("#commit-ok", (b) => b.disabled))) { await page.click("#commit-ok"); } }
+        else if (await page.$("#clone-ok")) await page.click("#clone-ok");
+        actions++;
+        continue;
+      }
       const kind = await page.evaluate(() => {
         if (document.querySelector("#commit-ok")) return "commit";
         if (document.querySelector("#clone-ok")) return "clone";
@@ -87,7 +105,12 @@ const pick = (a) => a[Math.floor(rnd() * a.length)];
       }
       actions++;
     }
-    // undo and continue once, to exercise the undo path on a finished game
+    if (result) {
+      if (!(await page.$("#pt-save"))) errors.push("no end-of-game summary");
+      else { await page.fill("#pt-notes", "automated playthrough"); await page.click("#pt-save"); }
+      const saved = await page.evaluate(() => { try { return JSON.parse(localStorage.getItem("gs-playtests") || "[]").length; } catch { return -1; } });
+      if (saved < 1) errors.push("playtest record not saved");
+    }
     const status = await page.evaluate(() => document.querySelector("#status").innerText);
     const ok = result && !errors.length;
     if (!ok) failures++;
@@ -96,6 +119,8 @@ const pick = (a) => a[Math.floor(rnd() * a.length)];
     await page.close();
   }
   console.log("decision screens seen:", JSON.stringify(kinds));
+  console.log("decision kinds seen:", JSON.stringify(exactKinds));
+  console.log(`hints followed: ${hints}, decisions undone: ${undos}`);
   await browser.close();
   process.exit(failures ? 1 : 0);
 })();

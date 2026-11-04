@@ -87,3 +87,11 @@ h3 { margin: 10px 0 6px; font-size: 13px; text-transform: uppercase; letter-spac
 .house.active { box-shadow: 0 0 0 3px var(--hl); }
 .house.active .card { cursor: pointer; }
 #toast { position: fixed; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); left: 50%; transform: translateX(-50%); background: var(--panel); border: 1px solid var(--accent); border-radius: 6px; padding: 8px 14px; z-index: 30; max-width: 90vw; }
+.hint { margin-top: 8px; padding: 6px 10px; border: 1px dashed var(--accent); border-radius: 6px; }
+.hintb { margin-top: 8px; }
+#map .sec.hinted polygon { stroke: var(--accent); stroke-width: 6; stroke-opacity: 1; }
+.summary { display: flex; flex-direction: column; gap: 10px; }
+.sumgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; font-size: 13px; }
+.sumt { border-collapse: collapse; font-size: 13px; }
+.sumt th, .sumt td { text-align: left; padding: 3px 10px 3px 0; border-bottom: 1px solid var(--line); }
+#pt-notes { width: 100%; font: inherit; }

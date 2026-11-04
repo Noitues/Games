@@ -14,7 +14,16 @@ python3 -m http.server 8000
 - **Seats:** pick 1–4 players and a house for each seat. Each seat is controlled by a human or a bot (`team`, `house`, `planner` or `tactician`).
 - **Rules:** choose Offset or Direct event pairing, the win conditions, a destination and level, and whether to use the Landfall card.
 - **Playing:** **Step** runs one phase. **Auto** keeps running until a human decision is needed. **Undo phase** rewinds.
-- **Your decisions** appear in the highlighted prompt. Click sections on the map, cards in your hand, or the prompt buttons.
+- **Your decisions** appear in the highlighted prompt. Click sections on the map, cards in your hand, or the prompt buttons. The active house's panel is outlined.
+- **Playtest aids:**
+  - a threat forecast on the map: red rings mark sections that Collapse, with predicted damage and Decay warnings; arrows mark Grow;
+  - a commit planner: cost, nominee, fast plays, card thresholds, elements and innate tier;
+  - a phase guide and a rules quick reference;
+  - **Hint** shows what the house bot would do;
+  - **Undo decision** takes back your last choice; **Undo phase** rewinds a whole phase.
+- **End of game:** a summary (result, Wall, per-house stats), a notes box, and a playtest record. Save it in the browser, or copy one or all records to the clipboard.
+- **Saving a game:** Save downloads the game file and copies it to the clipboard (the hosted page blocks downloads). Load accepts a saved file. The game autosaves, and "Resume last game" appears on the setup screen.
+- **Test:** `test/ui-playthrough.cjs` plays full hotseat games in a headless browser (random choices, hints and undos).
 
 No build step and no dependencies. The browser loads `data/*.json` and the engine in `src/` directly.
 

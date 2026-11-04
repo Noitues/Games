@@ -75,6 +75,13 @@ class Driver {
     return this.st.result ? "done" : "ok";
   }
   give(value) { this.answers.push(value); this.pending = null; return this.step(); }
+  // Undo the most recent decision in this phase by replaying the phase without it.
+  undoDecision() {
+    if (!this.snapshot || !this.answers.length) return false;
+    this.answers.pop();
+    this.pending = null;
+    return this.step();
+  }
   undo() {
     // drop the current (possibly partial) phase, then go back one more phase
     if (this.snapshot) this.history.pop();
@@ -245,7 +252,8 @@ function renderMap() {
       s.unrest && `U${s.unrest}`, s.isolate && `I${s.isolate}`].filter(Boolean).join(" ");
     const threat = [s.glitch && `▲${s.glitch}`, s.fault && `■${s.fault}`, s.failure && `⬢${s.failure}`].filter(Boolean).join(" ");
     const pts = g.poly.map((p) => p.join(",")).join(" ");
-    svg += `<g class="sec ${opts.has(id) ? "opt" : ""}" data-id="${id}">
+    const hinted = hint && SECTION_KINDS.has(D.pending?.kind) && String(hint.value).replace("*", "") === id;
+    svg += `<g class="sec ${opts.has(id) ? "opt" : ""} ${hinted ? "hinted" : ""}" data-id="${id}">
       <polygon points="${pts}" fill="${TYPE_FILL[s.type]}" class="${s.hull ? "hullsec" : ""}"/>
       <text x="${cx}" y="${cy - 20}" text-anchor="middle" font-size="11"><tspan font-weight="700">${id}</tspan> ${s.type.slice(0, 3)}${s.hull ? " ⌒" : ""}</text>
       <text x="${cx}" y="${cy - 4}" text-anchor="middle" font-size="14">${threat || "·"}</text>
@@ -425,12 +433,74 @@ function commitPlanHTML(h, ctx) {
     <button id="commit-ok" class="primary" ${over ? "disabled" : ""}>Commit ${sel.length ? "these plays" : "no plays"}</button></div>`;
 }
 
+// Hint: what the strongest bot would choose here (computed on a copy of the game).
+let hint = null;
+function computeHint() {
+  const { h, kind, options, ctx } = D.pending;
+  const bot = new Bot(BOT_LEVELS.house, 4242);
+  try { return bot.choose(D.G, clone(D.st), h, kind, options, clone(ctx)); } catch (e) { console.warn(e); return null; }
+}
+function describeHint(v) {
+  const { kind } = D.pending;
+  if (v === null || v === undefined) return "no suggestion";
+  if (kind === "commit") return v.play.length ? `play ${v.play.join(", ")}; nominee ${v.nominee}${v.fast?.length ? `; also fast: ${v.fast.join(", ")}` : ""}` : "play nothing";
+  if (kind === "clone") return v.length ? `keep ${v.join(", ")}` : "keep nothing";
+  if (kind === "remarkables") return v ? "take a Remarkable" : "draw Commons only";
+  if (SECTION_KINDS.has(kind)) return typeof v === "number" ? `give it to ${D.st.houses[v].id}` : `section ${String(v).replace("*", "")}`;
+  return String(v);
+}
+function applyHint() {
+  const v = hint.value, { kind } = D.pending;
+  if (kind === "commit") {
+    commitSel.play = new Set(v.play); commitSel.nominee = v.nominee;
+    commitSel.fast = new Set((v.fast || []).filter((c) => c !== v.nominee));
+    hint = null; render(); return;
+  }
+  if (kind === "clone") { cloneSel = new Set(v); hint = null; render(); return; }
+  hint = null; act(v);
+}
+
+// End of game: summary, notes, and a playtest record (copy + kept in this browser).
+const CAUSE = { decay: "the Decay pool ran out", influence: "a house lost all its influence", time: "the event deck ran out", stalled: "the game stalled" };
+function playtestRecord() {
+  const st = D.st;
+  return { when: new Date().toISOString(), cfg: D.cfgIn, seats, seed: D.cfgIn?.seed ?? null, layout: st.layout,
+    result: st.result, tier: st.tier, discoveries: st.discoveriesEarned, wall: st.wall.map((w) => ({ leader: w.leader, event: w.event, bt: w.bt })),
+    stats: { decayPlaced: st.stats.decayPlaced, crewLost: st.stats.crewLost, destroyed: st.stats.destroyed, discoveryApplied: st.stats.discoveryApplied,
+      discoveryBreakthrough: st.stats.discoveryBreakthrough, houses: st.stats.houses.map((x) => ({ id: x.id, played: x.played, creditsSpent: x.creditsSpent,
+        innateTiers: x.innateTiers, leaders: x.chosenLeader, remarkables: x.remarkables })) },
+    notes: $("pt-notes")?.value ?? "", log: st.log };
+}
+function storedRecords() { try { return JSON.parse(localStorage.getItem("gs-playtests") || "[]"); } catch { return []; } }
+function summaryHTML() {
+  const st = D.st, r = st.result, win = r.outcome === "win";
+  const houses = st.stats.houses.map((x, h) => `<tr><td style="color:${HOUSE_COLORS[h]}"><b>${esc(houseData(D.G, st, h).name.split(",")[0])}</b> (${esc(seats[h])})</td><td>${x.played}</td><td>${x.creditsSpent}</td><td>${x.innateTiers.slice(1).join(" / ")}</td><td>${x.chosenLeader}</td></tr>`).join("");
+  const wall = st.wall.map((w, i) => `${i + 1}. ${w.leader} · ${DATA.eventById[w.event].types.join("+")}${w.bt ? " ★" + w.bt : ""}`).join("<br>") || "—";
+  return `<div class="summary"><div class="banner ${r.outcome}">${win ? "Victory" : "Defeat"} in generation ${r.gen}: ${esc(win ? (r.cause === "Landfall" ? "Landfall reached" : `the ${r.cause} win condition was met`) : CAUSE[r.cause] || r.cause)}</div>
+    <div class="sumgrid"><div><b>The voyage</b><br>Understanding ${["I", "II", "III"][st.tier - 1]} · ${st.discoveriesEarned} Discoveries (${st.stats.discoveryApplied} applied, ${st.stats.discoveryBreakthrough} Breakthroughs)<br>
+      Threat destroyed: ${st.stats.destroyed.glitch} Glitches, ${st.stats.destroyed.fault} Faults, ${st.stats.destroyed.failure} Failures<br>
+      Decay placed ${st.stats.decayPlaced} · Crew lost ${st.stats.crewLost} · events left ${st.decks.events.length}</div>
+      <div><b>Wall of Leaders</b><br>${wall}</div></div>
+    <table class="sumt"><tr><th>House</th><th>Cards played</th><th>Credits spent</th><th>Innate tier I / II / III (generations)</th><th>Heirs chosen</th></tr>${houses}</table>
+    <label for="pt-notes"><b>Playtest notes</b> (what felt good, confusing or broken)</label>
+    <textarea id="pt-notes" rows="3"></textarea>
+    <div class="opts"><button id="pt-save" class="primary">Save playtest record</button><button id="pt-copy">Copy record</button><button id="pt-copy-all">Copy all saved records (${storedRecords().length})</button><button id="pt-again">New game, same setup</button></div></div>`;
+}
+function wireSummary() {
+  const copy = (text, what) => navigator.clipboard?.writeText(text).then(() => flash(`${what} copied to the clipboard.`), () => flash("The clipboard is not available here."));
+  $("pt-save").addEventListener("click", () => {
+    try { const all = storedRecords(); all.push(playtestRecord()); localStorage.setItem("gs-playtests", JSON.stringify(all)); flash(`Saved in this browser (${all.length} records).`); }
+    catch { flash("This browser blocked local storage; use Copy record instead."); }
+    render();
+  });
+  $("pt-copy").addEventListener("click", () => copy(JSON.stringify(playtestRecord(), null, 1), "Playtest record"));
+  $("pt-copy-all").addEventListener("click", () => copy(JSON.stringify(storedRecords(), null, 1), "All saved records"));
+  $("pt-again").addEventListener("click", () => { const cfg = D.cfgIn; D = new Driver(DATA, cfg, seats, (cfg.seed || 1) + 1); D.cfgIn = { ...cfg, seed: (cfg.seed || 1) + 1 }; render(); });
+}
+
 function renderPrompt() {
   const p = $("prompt"), st = D.st, G = D.G;
-  if (st.result) {
-    p.className = ""; p.innerHTML = `<span class="banner ${st.result.outcome}">${st.result.outcome === "win" ? "Victory" : "Defeat"}: ${esc(st.result.cause)} in generation ${st.result.gen}</span>`;
-    return;
-  }
+  if (st.result) { p.className = ""; p.innerHTML = summaryHTML(); wireSummary(); return; }
   if (!D.pending) { p.className = "idle"; p.textContent = autoTimer ? "Running…" : "Press Step (or Auto) to continue."; return; }
   p.className = "";
   const { h, kind, options, ctx } = D.pending;
@@ -487,7 +557,11 @@ function renderPrompt() {
   } else {
     body = options.map((o) => `<button data-o="${o}">${esc(String(o))}</button>`).join("");
   }
-  p.innerHTML = `${who}${title}<div class="opts">${body}</div>`;
+  const hintBox = hint ? `<div class="hint">Hint: ${esc(describeHint(hint.value))} <button id="hint-use">${kind === "commit" || kind === "clone" ? "Select it" : "Do it"}</button></div>` :
+    `<button id="hint-btn" class="hintb" title="Ask the house bot what it would do">Hint</button>`;
+  p.innerHTML = `${who}${title}<div class="opts">${body}</div>${hintBox}`;
+  $("hint-btn")?.addEventListener("click", () => { $("hint-btn").textContent = "Thinking…"; setTimeout(() => { hint = { value: computeHint() }; render(); }, 20); });
+  $("hint-use")?.addEventListener("click", applyHint);
   p.querySelectorAll("button[data-o]").forEach((b) => b.addEventListener("click", () => {
     const raw = b.dataset.o; const o = options.find((x) => String(x) === raw);
     act(o);
@@ -506,7 +580,7 @@ function act(value) {
   afterStep(r);
 }
 function afterStep(r) {
-  commitSel = null; cloneSel = null;
+  commitSel = null; cloneSel = null; hint = null;
   if (D) autosave();
   if (r === "input") {
     if (D.pending.kind === "commit") commitSel = { play: new Set(), nominee: null, fast: new Set() };
@@ -547,7 +621,8 @@ function start() {
   seats = seatEls.map((s) => s.querySelector(".c").value);
   const cfg = { players: P, houses, layout: $("layout").value || null, eventPairing: $("pairing").value, tierConditions: $("tiers").value,
     destination: $("destination").value || null, destinationLevel: +$("level").value, landfallCard: $("landfall").checked };
-  D = new Driver(DATA, cfg, seats, +$("seed").value || 1);
+  cfg.seed = +$("seed").value || 1;
+  D = new Driver(DATA, cfg, seats, cfg.seed);
   D.cfgIn = cfg;
   $("setup").hidden = true; $("game").hidden = false;
   render();
@@ -567,6 +642,13 @@ async function main() {
     autoTimer = setInterval(() => { if (D.pending || D.st.result) return stopAuto(); afterStep(D.step()); }, 350);
   });
   $("btn-undo").addEventListener("click", () => { if (D) { stopAuto(); D.undo(); afterStep(null); } });
+  $("btn-undo-dec").addEventListener("click", () => {
+    if (!D) return;
+    stopAuto();
+    const r = D.undoDecision();
+    if (r === false) { D.undo(); afterStep(null); flash("No earlier decision in this phase; went back to the start of the previous phase."); }
+    else afterStep(r);
+  });
   $("btn-mute").addEventListener("click", () => { muted = !muted; $("btn-mute").textContent = muted ? "🔇" : "🔊"; });
   $("btn-save").addEventListener("click", () => { if (D) save(); });
   $("show-forecast").addEventListener("change", () => { if (D) render(); });
@@ -580,4 +662,6 @@ async function main() {
     }
   } catch { /* storage unavailable */ }
 }
+// Test hook: the decision currently waiting for a human (used by test/ui-playthrough.cjs).
+window.__gsPendingKind = () => D?.pending?.kind ?? null;
 main();
