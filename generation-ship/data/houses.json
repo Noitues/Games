@@ -197,7 +197,7 @@
       "tier": 2,
       "threshold": {
        "Bureaucrats": 2,
-       "Farmers": 1
+       "Farmers": 2
       },
       "threshold_cost": 5.0,
       "effects": {
@@ -319,7 +319,8 @@
       },
       "threshold_cost": 2.0,
       "effects": {
-       "brace": 4
+       "brace": 4,
+       "gather_crew": 1
       },
       "range": 1,
       "target": "ANY",
@@ -611,7 +612,8 @@
       "threshold_cost": 3.5,
       "effects": {
        "gather_crew": 2,
-       "crew_strike": 1
+       "brace": 2,
+       "isolate_fault": 1
       },
       "range": 1,
       "target": "ANY",
@@ -964,8 +966,8 @@
    "clone": 1,
    "special": {
     "id": "spin",
-    "text": "Damage from Tellers' cards does not destroy threat; it generates 1 Purpose per point instead.",
-    "pp_per_generation": 0.0
+    "text": "Damage from Tellers' cards does not destroy threat; each point generates 1 Purpose and Isolates 1 damage of threat in that section (it deals that much less at the next Collapse).",
+    "pp_per_generation": 1.5
    },
    "innate": {
     "name": "Steady Voices",
