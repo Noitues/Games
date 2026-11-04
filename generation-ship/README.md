@@ -3,6 +3,9 @@
 A cooperative board game prototype built on Spirit Island's turn structure. Explore/Build/Ravage becomes **Dawn / Day / Dusk**: generations of leaders move down a conveyor, carry each era's crisis with them, and retire to a Wall of Leaders.
 
 ## Play the prototype
+**Hosted:** https://claude.ai/artifact/EPujDZ3TFuRQtGjxB49YKe (private to the owner until shared from its Share menu). To update it after code changes, run `python3 tools/build_artifact.py` and republish `dist/artifact.html` with the same supporting files.
+
+**Locally:**
 ```
 cd generation-ship
 python3 -m http.server 8000

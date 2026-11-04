@@ -7,12 +7,12 @@
   :root:not([data-theme="light"]) {
     --bg: #1d1a16; --panel: #27231e; --ink: #ece4d6; --muted: #a59a8a; --line: #4a4237;
     --accent: #e0a64a; --hl: #f0c040; --danger: #e06a55; --ok: #6cc08a;
-    --infra: #34404d; --resi: #4a3d30; --gov: #3e3550; --agri: #33452d;
+    --infra: #34404d; --resi: #4a3d30; --gov: #3e3550; --agri: #33452d; color-scheme: dark;
   }
 }:root[data-theme="dark"] {
     --bg: #1d1a16; --panel: #27231e; --ink: #ece4d6; --muted: #a59a8a; --line: #4a4237;
     --accent: #e0a64a; --hl: #f0c040; --danger: #e06a55; --ok: #6cc08a;
-    --infra: #34404d; --resi: #4a3d30; --gov: #3e3550; --agri: #33452d;
+    --infra: #34404d; --resi: #4a3d30; --gov: #3e3550; --agri: #33452d; color-scheme: dark;
   }
 
 * { box-sizing: border-box; }
@@ -86,3 +86,4 @@ h3 { margin: 10px 0 6px; font-size: 13px; text-transform: uppercase; letter-spac
 #rules summary { cursor: pointer; }
 .house.active { box-shadow: 0 0 0 3px var(--hl); }
 .house.active .card { cursor: pointer; }
+#toast { position: fixed; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); left: 50%; transform: translateX(-50%); background: var(--panel); border: 1px solid var(--accent); border-radius: 6px; padding: 8px 14px; z-index: 30; max-width: 90vw; }

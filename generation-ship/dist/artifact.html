@@ -1,0 +1,69 @@
+<title>Generation Ship</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="src/ui/style.css">
+<style>
+  body { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+</style>
+<header id="topbar">
+  <strong>Generation Ship</strong>
+  <span id="status"></span>
+  <span class="spacer"></span>
+  <button id="btn-step" title="Run the next phase">Step</button>
+  <button id="btn-auto" title="Keep running until a human decision">Auto</button>
+  <button id="btn-undo" title="Go back to the start of the previous phase">Undo phase</button>
+  <button id="btn-new">New game</button>
+  <button id="btn-save" title="Download this game as a file">Save</button>
+  <label class="loadbtn" title="Load a saved game file"><input type="file" id="file-load" accept=".json" hidden><span>Load</span></label>
+  <button id="btn-mute" title="Toggle sound">🔊</button>
+</header>
+
+<section id="setup" class="panel">
+  <h2>New game</h2>
+  <div id="seats"></div>
+  <div class="row">
+    <label>Players <select id="players"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label>
+    <label>Event pairing <select id="pairing"><option value="offset">Offset (event after the vote)</option><option value="direct">Direct (event before the vote)</option></select></label>
+    <label>Win conditions <select id="tiers"><option value="shifted">Shifted (default)</option><option value="classic">Classic</option></select></label>
+    <label>Ship layout <select id="layout"></select></label>
+    <label>Destination <select id="destination"></select></label>
+    <label>Level <select id="level"></select></label>
+    <label><input type="checkbox" id="landfall"> Landfall card</label>
+    <label>Seed <input id="seed" type="number" value="1" style="width:6em"></label>
+  </div>
+  <button id="btn-start" class="primary">Start</button>
+</section>
+
+<main id="game" hidden>
+  <div id="phase-guide"></div>
+  <aside id="left">
+    <h3>Generations</h3>
+    <div id="conveyor"></div>
+    <h3>Forecast <label class="tog"><input type="checkbox" id="show-forecast" checked> on map</label></h3>
+    <div id="forecast"></div>
+    <h3>Discoveries</h3>
+    <div id="discoveries"></div>
+    <details id="rules"><summary><h3 style="display:inline">Rules quick reference</h3></summary>
+      <p><b>Each generation:</b> Growth → Commit → Fast → Dusk → Day → Dawn → Slow → Time passes.</p>
+      <p><b>Leaders:</b> your nominee is free and fast and may be voted heir. Heir (Dawn) → Steward (Day: Reign, then its event Grows) → Elder (Dusk: Legacy in its event's sections, then its event Collapses) → the Wall.</p>
+      <p><b>Events</b> name section types. <b>Seed:</b> +1 Glitch in each matching section on the Outer Hull or next to a Fault/Failure. <b>Grow:</b> +1 Fault in each matching section with threat (Failure if it has 2+ Faults). <b>Collapse:</b> Glitch 1 + Fault 2 + Failure 3 damage (+Unrest, −Brace, −Isolate); 2+ places Decay; the same damage hits Crew (2 health each); surviving Crew deal 2 damage each.</p>
+      <p><b>Decay</b> comes from the pool; each house loses 1 influence there; Decay on Decay cascades to a neighbor. Pool empty: Ship in Crisis flips; empty again: you lose.</p>
+      <p><b>Purpose:</b> destroying a Fault +1, a Failure +2. A full pool earns a Discovery (apply now, or Breakthrough on the Steward). Every 3 Discoveries raise Understanding.</p>
+      <p><b>Win</b> at any moment: I no threat and no Decay · II no threat · III no Faults or Failures (plus any destination requirement). <b>Lose:</b> events run out, Decay runs out after the crisis, or a house has no influence.</p>
+      <p><b>Tokens:</b> Brace X prevents X damage · Quarantine: nothing seeds, vents or cascades in or out · Patch skips the next Grow · Lockout skips the next Seed · Unrest +1 damage from every source · Isolate negates damage at the next Collapse.</p>
+      <p><b>Range</b> counts from sections with your influence. Elements come from the cards you play (and track slots); they power card bonuses and your innate.</p>
+    </details>
+  </aside>
+  <section id="center">
+    <div id="prompt"></div>
+    <div id="mapwrap"><svg id="map"></svg></div>
+    <div id="legend">⚠ forecast: red ring = Collapses (number = damage, "Decay!" = Decay will land) · ↑ = Grows · ▲ Glitch · ■ Fault · ⬢ Failure · ☺ Crew · ✸ Decay · ● influence (house color) · Br Brace · Q Quarantine · P Patch · L Lockout · U Unrest · I Isolate · ⌒ / heavy outline = Outer Hull · dashed lines join boards</div>
+    <h3>Wall of Leaders</h3>
+    <div id="wall"></div>
+  </section>
+  <aside id="right">
+    <div id="houses"></div>
+    <h3>Log</h3>
+    <ol id="log"></ol>
+  </aside>
+</main>
+<script type="module" src="src/ui/app.js"></script>

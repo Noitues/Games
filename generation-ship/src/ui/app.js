@@ -297,9 +297,19 @@ function snapshot() {
     snapshot: D.snapshot, seeds: D.botSeeds(), pending: D.pending };
 }
 function save() {
-  const blob = new Blob([JSON.stringify(snapshot())], { type: "application/json" });
-  const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-  a.download = `generation-ship-g${D.st.gen}.json`; a.click(); URL.revokeObjectURL(a.href);
+  const text = JSON.stringify(snapshot());
+  // A file download where the browser allows it; the hosted page blocks downloads, so also copy it.
+  try {
+    const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([text], { type: "application/json" }));
+    a.download = `generation-ship-g${D.st.gen}.json`; a.click(); URL.revokeObjectURL(a.href);
+  } catch { /* downloads blocked */ }
+  navigator.clipboard?.writeText(text).then(
+    () => flash("Saved: game file downloaded (if allowed) and copied to the clipboard. Paste it into a .json file to keep it."),
+    () => flash("Saved as a file download (clipboard copy was not allowed here)."));
+}
+function flash(msg) {
+  let t = $("toast"); if (!t) { t = document.createElement("div"); t.id = "toast"; document.body.appendChild(t); }
+  t.textContent = msg; t.hidden = false; clearTimeout(flash.tm); flash.tm = setTimeout(() => { t.hidden = true; }, 4000);
 }
 function restore(obj) {
   seats = obj.seats;
