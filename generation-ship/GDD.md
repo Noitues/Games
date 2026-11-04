@@ -659,6 +659,8 @@ A mute toggle is included.
 - the Outer Hull event card in the Stage II pool, and the four Stage II twists, are first versions,
 - whether elements from the Steward should count for everyone (deferred until the power curve is tested).
 
+**Simulation:** a rules engine, layered bots and a Monte Carlo runner live in `src/` and `sim/` (see `sim/README.md`). First findings are in `sim/RESULTS.md`: Keel is too weak because a 1-play house only ever plays its free nominee; games are won by generation 5–7 because Understanding rises quickly; innate tiers II–III are rarely reached. The engine's interpretations of unclear rules are listed in `sim/README.md`.
+
 **Calibration:** every PP price, element cost and the reference pacing are first guesses, to be replaced by Monte Carlo results. Purpose at 1 PP is a specific suspect (Vigil reaches 5 Purpose per generation).
 
 **Parked ideas:**
