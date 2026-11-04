@@ -22,6 +22,13 @@ if (!isMainThread) {
   const rec = (i, cur) => { if (cur.length === P) { combos.push([...cur]); return; }
     for (let j = i; j < H.length; j++) { cur.push(H[j]); rec(j + 1, cur); cur.pop(); } };
   rec(0, []);
+  if (args.sample) {
+    // deterministic sample of combos (for 3-4 player runs with many combinations)
+    let x = 12345;
+    const rnd = () => ((x = (x * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);
+    for (let i = combos.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [combos[i], combos[j]] = [combos[j], combos[i]]; }
+    combos.splice(Number(args.sample));
+  }
   const weights = args.weights ? JSON.parse(args.weights.startsWith("{") ? args.weights : (await import("node:fs")).readFileSync(args.weights, "utf8")) : undefined;
   const jobs = combos.map((houses) => ({ games, players: P, houses, bot: args.bot ?? "house",
     pairing: args.pairing ?? "offset", seed: Number(args.seed ?? 1), cfg, weights }));
