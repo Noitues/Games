@@ -1,0 +1,58 @@
+:root {
+  --bg: #f4efe4; --panel: #fffaf0; --ink: #2b2620; --muted: #7a7064; --line: #d8cdb9;
+  --accent: #8a5a12; --hl: #e2a72e; --danger: #b23a2a; --ok: #2f7a4a;
+  --infra: #c9d4e0; --resi: #e8d6c0; --gov: #d9cfe6; --agri: #cfe3c4;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1d1a16; --panel: #27231e; --ink: #ece4d6; --muted: #a59a8a; --line: #4a4237;
+    --accent: #e0a64a; --hl: #f0c040; --danger: #e06a55; --ok: #6cc08a;
+    --infra: #34404d; --resi: #4a3d30; --gov: #3e3550; --agri: #33452d;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.4 system-ui, sans-serif; }
+button { font: inherit; padding: 4px 10px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 4px; cursor: pointer; }
+button:hover { border-color: var(--accent); }
+button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+button:disabled { opacity: .5; cursor: default; }
+select, input { font: inherit; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 4px; padding: 2px 4px; }
+#topbar { display: flex; gap: 8px; align-items: center; padding: 8px 16px; border-bottom: 1px solid var(--line); background: var(--panel); flex-wrap: wrap; position: sticky; top: 0; z-index: 5; }
+#topbar .spacer { flex: 1; }
+#status { color: var(--muted); }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 12px 16px; margin: 16px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; margin: 10px 0; }
+.seat { display: flex; gap: 8px; align-items: center; margin: 4px 0; }
+#game { display: grid; grid-template-columns: 260px 1fr 320px; gap: 12px; padding: 12px; }
+@media (max-width: 1100px) { #game { grid-template-columns: 1fr; } }
+h3 { margin: 10px 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+#mapwrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
+#map { display: block; }
+#map .sec rect { stroke: var(--line); stroke-width: 1; }
+#map .sec.opt rect { stroke: var(--hl); stroke-width: 4; cursor: pointer; }
+#map .sec.opt:hover rect { filter: brightness(1.08); }
+#map text { fill: var(--ink); font-size: 12px; pointer-events: none; }
+#map .hull { stroke: var(--ink); stroke-width: 5; }
+#map .edge { stroke: var(--line); stroke-width: 2; }
+#legend { color: var(--muted); font-size: 12px; margin: 4px 0; }
+#prompt { min-height: 40px; margin-bottom: 8px; padding: 8px 12px; border-radius: 6px; background: var(--panel); border: 2px solid var(--hl); }
+#prompt.idle { border-color: var(--line); color: var(--muted); }
+#prompt .opts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.card { border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; margin: 4px 0; background: var(--bg); font-size: 12px; }
+.card.sel { outline: 3px solid var(--hl); }
+.card.rem { border-color: var(--accent); }
+.card .hd { display: flex; justify-content: space-between; font-weight: 600; }
+.card .g { display: inline-block; padding: 0 4px; border-radius: 3px; margin-right: 2px; background: var(--line); font-size: 11px; }
+.card .r { color: var(--ok); } .card .l { color: var(--danger); }
+.card .th { color: var(--accent); }
+.slot { border: 1px solid var(--line); border-radius: 6px; padding: 6px; margin-bottom: 6px; background: var(--panel); }
+.slot b { color: var(--accent); }
+.house { border: 1px solid var(--line); border-left: 6px solid var(--hc); border-radius: 6px; padding: 6px 8px; margin-bottom: 8px; background: var(--panel); }
+.house .stats { color: var(--muted); font-size: 12px; }
+.hand { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+#wall { display: flex; gap: 4px; overflow-x: auto; }
+#wall .ws { min-width: 110px; border: 1px dashed var(--line); border-radius: 6px; padding: 4px; font-size: 11px; color: var(--muted); }
+#wall .ws.full { border-style: solid; color: var(--ink); background: var(--panel); }
+#log { max-height: 280px; overflow-y: auto; font-size: 12px; color: var(--muted); padding-left: 20px; }
+.banner { font-size: 18px; font-weight: 700; }
+.win { color: var(--ok); } .loss { color: var(--danger); }

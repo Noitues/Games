@@ -152,6 +152,7 @@ export function resolveCard(G, st, h, cid) {
       for (const [v, n] of Object.entries(c.threshold.effects)) effects[v] = (effects[v] || 0) + n;
     }
   }
+  log(G, st, `${H.id} plays ${cid} → ${c.target.kind === "house" ? st.houses[t].id : t}`);
   if (c.target.kind === "house") applyHouseEffects(G, st, h, t, effects);
   else {
     let id = t;
@@ -166,6 +167,7 @@ export function resolveInnate(G, st, h) {
   for (const t of hd.innate.tiers) if (elementsMet(H, t.threshold)) best = t;
   st.stats.houses[h].innateTiers[best ? best.tier : 0] += 1;
   if (!best) return;
+  log(G, st, `${H.id} innate ${hd.innate.name} tier ${best.tier}`);
   if (best.range === null) {
     for (const [v, n] of Object.entries(best.effects)) {
       if (v === "purpose") gainPurpose(G, st, n, "innate");
@@ -218,6 +220,7 @@ export function collapse(G, st, eid) {
     let dmg = s.glitch + s.fault * (2 + surge) + s.failure * 3 + (s.unrest > 0 ? 1 : 0);
     const neg = Math.min(dmg, s.isolate); dmg -= neg; s.isolate = 0;
     const br = Math.min(dmg, s.brace); dmg -= br; s.brace -= br;
+    log(G, st, `Collapse in ${s.id}: ${dmg} damage${dmg >= G.cfg.decayThreshold ? ", Decay" : ""}`);
     if (dmg >= G.cfg.decayThreshold) placeDecay(G, st, s);
     let killed = Math.min(s.crew, Math.floor(dmg / G.cfg.crewHealth));
     if (ev.twist?.rule === "extra_crew_loss") killed = Math.min(s.crew, killed + 1);
@@ -318,6 +321,7 @@ function resolveDiscoveries(G, st) {
     const d = G.data.discoveryById[did];
     const canBT = st.slots.day && !st.slots.day.bt;
     const choice = canBT ? G.choose(st, 0, "discovery", ["apply", "breakthrough"], { id: did }) : "apply";
+    log(G, st, `Discovery ${did}: ${choice}`);
     if (choice === "breakthrough") {
       st.slots.day.bt = did; st.breakthroughs.push(did); st.stats.discoveryBreakthrough += 1;
     } else {
@@ -346,6 +350,7 @@ function growthPhase(G, st) {
     H.extraDraw = 0; H.perkFast = 0;
     const choice = G.choose(st, h, "growth", ["A", "B", "C"], {});
     HS.growth[choice] += 1;
+    log(G, st, `${H.id} growth ${choice}`);
     if (choice === "A") {
       const tracks = ["credits", "plays"].filter((t) => canUncover(G, st, h, t));
       const range = hd.growth_overrides?.A?.range ?? 1;
@@ -465,6 +470,7 @@ function dawnPhase(G, st) {
   st.upcomingEvent = null;
   const house = noms.find((n) => n.cid === chosen)?.h ?? 0;
   st.slots.dawn = { leader: chosen, event: eid, house, bt: null, tempered: false };
+  log(G, st, `New heir ${chosen} (${st.houses[house]?.id}); event ${eid} (${G.data.eventById[eid].types.join("+")}) seeds`);
   seed(G, st, eid);
   runBreakthroughs(G, st, "dawn");
 }

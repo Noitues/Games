@@ -131,6 +131,7 @@ export function placeDecay(G, st, s, depth = 0) {
   }
   st.decayPool -= 1;
   st.stats.decayPlaced += 1;
+  log(G, st, `Decay placed in ${s.id}${s.decay > 0 ? " (cascade)" : ""}`);
   const had = s.decay > 0;
   s.decay += 1;
   for (const h of Object.keys(s.influence)) s.influence[h] = Math.max(0, s.influence[h] - 1);

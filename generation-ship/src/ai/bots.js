@@ -3,7 +3,8 @@
 //   level 1  Tactician     - best single-state choice for every target / placement (1-step lookahead).
 //   level 2  Planner       - + whole-round choices: growth, track, commit (plays, nominee, fast), Remarkables, clone.
 //   level 3  HouseBot      - + table-level judgement: succession vote, Discovery apply-vs-Breakthrough,
-//                            house-aware track pacing and credit reserve.
+//                            house-aware track pacing and credit reserve, whole-round rollouts.
+//   level 4  TeamBot       - + team lookahead: rollouts include teammates' likely plays.
 import { nextRandom, randInt } from "../engine/rng.js";
 import {
   placeDecay, applySectionEffects, threatCount, matches, inRange, totalInfluence,
@@ -261,6 +262,15 @@ export class Bot {
     const inner = this.inner ??= new RolloutBot();
     const G2 = { ...G, choose: (ss, hh, k, o, c) => inner.choose(G, ss, hh, k, o, c) };
     applyPlan(G2, s2, h, plan);
+    if (this.level >= 4) {
+      // Team lookahead: teammates who haven't committed yet play their planner-level plan.
+      const mate = this.mate ??= new Bot(2, 3);
+      for (let j = h + 1; j < s2.houses.length; j++) {
+        const hs = houseStats(G, s2, j);
+        const p2 = mate.commit(G, s2, j, { plays: hs.plays });
+        if (p2.play.length) applyPlan(G2, s2, j, p2);
+      }
+    }
     for (const p of ["fast", "dusk", "day", "slow"]) { if (s2.result) break; runPhase(G2, s2, p); }
     s2.phase = "slow";
     return evaluate(G, s2);
@@ -312,7 +322,7 @@ export class Bot {
   }
 }
 
-export const BOT_LEVELS = { random: 0, tactician: 1, planner: 2, house: 3 };
+export const BOT_LEVELS = { random: 0, tactician: 1, planner: 2, house: 3, team: 4 };
 
 // Inner bot for rollouts: tactician targeting, cheap heuristics for everything else.
 class RolloutBot extends Bot {
