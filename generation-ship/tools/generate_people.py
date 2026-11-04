@@ -40,6 +40,18 @@ VERBS = {
     "foresee":         (0.5, 1, "foresee", "C"),
     "temper_legacy":   (3.0, 1, "temper the Elder's Legacy", "R"),
 }
+# Card-balance repricing (sim/cards.js pick rates, Common cards): price x (1 + 1.5 x pick-rate difference
+# vs same-cost cards), clamped to 0.7-1.3, for verbs on 10+ cards. Damage and influence were underpriced;
+# move influence, Quarantine and foresee overpriced.
+REPRICE = {"add_influence": 1.21, "damage": 1.135, "add_crew": 1.075, "restore_decay": 1.045,
+           "vent_glitch": 1.03, "downgrade": 1.015, "lockout": 0.985, "brace": 0.94, "vent_fault": 0.94,
+           "credits": 0.94, "purpose": 0.94, "gather_crew": 0.94, "patch": 0.91, "isolate_fault": 0.91,
+           "foresee": 0.88, "quarantine": 0.835, "move_influence": 0.805}
+for _v, _f in REPRICE.items():
+    _p, _mx, _t, _tier = VERBS[_v]
+    VERBS[_v] = (round(_p * _f, 3), _mx, _t, _tier)
+COMMON_PP_PER_CREDIT = 1.15  # was 1.0: expensive Commons were picked much less than cheap ones
+
 GLOBAL_VERBS = {"purpose", "credits", "foresee", "temper_legacy"}  # no section needed
 HOUSE_VERBS = ["credits", "add_influence", "move_influence", "purpose"]
 
@@ -201,7 +213,7 @@ def make_card(rng, cid, tier, icons):
     secondary = next((g for g in icons[1:] if g != primary), primary)
     if tier == "C":
         cost = rng.choices([0, 1, 2, 3], [15, 35, 35, 15])[0]
-        value = 2 + cost
+        value = 2 + COMMON_PP_PER_CREDIT * cost
     else:
         cost = rng.choices(range(2, 9), [8, 14, 18, 18, 16, 14, 12])[0]
         value = 2 + 1.5 * cost
