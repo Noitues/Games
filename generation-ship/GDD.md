@@ -89,7 +89,7 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 4. **Dusk.**
    1. Earned Discovery cards resolve: for each, choose a one-time effect or a Breakthrough.
    2. The **Elder's Legacy** resolves in the sections matching the Elder's paired event.
-   3. The Elder's event **strikes**.
+   3. The Elder's event **collapses**.
 5. **Day.** The Steward's **Reign** applies. The Steward's event **grows**.
 6. **Dawn.**
    1. All houses **vote** for one nominee as successor. Ties go to the Steward's house's choice.
@@ -116,7 +116,7 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 **Slots:** Dawn, Day and Dusk each hold one leader card paired with one event card.
 - **Dawn** = the rising heir. Its event **seeds**.
 - **Day** = the **Steward**. Its Reign applies, and its event **grows**.
-- **Dusk** = the **Elder**. Its Legacy resolves, then its event **strikes**.
+- **Dusk** = the **Elder**. Its Legacy resolves, then its event **collapses**.
 
 **Leader cards are people cards.** Any people card can become a leader. Its **Reign** and **Legacy** text is used only while it is in the conveyor.
 - **Reign:** an ongoing effect while the card is in Day.
@@ -176,11 +176,11 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 **Slot actions** (Spirit Island resolution order: Dusk, then Day, then Dawn):
 - **Seed (Dawn):** add 1 Glitch to each matching section that is on the **Outer Hull** or **adjacent to a section with a Fault or Failure**.
 - **Grow (Day):** in each matching section that has at least one threat piece, add 1 Fault. If that section already has 2 or more Faults, add 1 Failure instead.
-- **Strike (Dusk):**
+- **Collapse (Dusk):**
   1. Each matching section with threat pieces takes damage equal to the **total damage of its threat pieces**.
   2. If a section takes **2 or more damage**, add 1 Decay.
   3. The same total damage is **also** dealt to the Crew there (not split between section and Crew). Players assign it, at 2 health per Crew.
-  4. **Each surviving Crew in a struck section then deals 2 damage** (repair) to threat pieces there. Players assign it.
+  4. **Each surviving Crew in a collapsed section then deals 2 damage** (repair) to threat pieces there. Players assign it.
 
 ---
 
@@ -200,7 +200,7 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 ## Crew
 
 - Spirit Island's Dahan equivalent.
-- **Health 2. Each Crew deals 2 damage** (repair) when fighting back after a strike.
+- **Health 2. Each Crew deals 2 damage** (repair) when fighting back after a collapse.
 - **No natural births.** Crew are added only by powers.
 - Powers can **move, gather, add, shelter** (protect) and **rally** Crew.
 - Damage on Crew clears at Time passes.
@@ -385,8 +385,8 @@ No houses have been designed yet. See *Vertical slice* for the prototype placeho
 | **Quarantine** | Isolate (section) | The section is cut off: no seed, vent or cascade into or out of it this generation. |
 | **Patch** | Disease | The next **grow** in this section is skipped. Then remove one Patch. |
 | **Lockout** | Wilds | The next **seed** in this section is skipped. Then remove one Lockout. |
-| **Unrest** | Badlands | Each strike in this section deals +1 damage. |
-| **Isolate** | Strife (on a threat piece) | This threat piece deals no damage at its next strike. Then remove Isolate. |
+| **Unrest** | Badlands | Each collapse in this section deals +1 damage. |
+| **Isolate** | Strife (on a threat piece) | This threat piece deals no damage at its next collapse. Then remove Isolate. |
 
 Brace and Quarantine clear at Time passes. Patch, Lockout and Isolate are removed when used. Unrest persists *(defaults follow Spirit Island)*.
 
@@ -436,7 +436,7 @@ The people deck does not scale. Solo-specific tuning is deferred until multiplay
 | Nominee is the only fast card | Removes printed speed. The card you need most urgently is the one at risk of being taken as leader. |
 | Offset event pairing by default, Direct as a toggle | Keeps Spirit Island's "the next card disrupts your plans" tension. |
 | One event drawn after the vote (not one per candidate) | Simpler, and you see the problems the leader faces after choosing. |
-| Dusk = Legacy + strike, Day = grow | Puts damage and the leader's downside together in the same sections. |
+| Dusk = Legacy + collapse, Day = grow | Puts damage and the leader's downside together in the same sections. |
 | Threat ladder (Glitch/Fault/Failure) over a single Strain dial | Chosen for tactical richness, close to Spirit Island. |
 | A single threat track (no separate people/unrest track) | Avoids doubling the system. |
 | One shared people deck, a fresh hand each generation | Fits "a new set of people every generation" better than a deckbuilder. Removes reclaim and thinning. |
@@ -488,7 +488,7 @@ The people deck does not scale. Solo-specific tuning is deferred until multiplay
 
 Procedural Web Audio tones for key events:
 - phase changes,
-- seed / grow / strike (low, heavy for strikes),
+- seed / grow / collapse (low, heavy for collapses),
 - Decay placed or cascading,
 - Discovery earned,
 - succession chosen,
@@ -507,7 +507,7 @@ A mute toggle is included.
   - growth options: "add 1 influence within range 1", "gain 2 credits", "draw +1 card this generation".
 - The **full round loop**: Growth, Commit, Fast, Dusk, Day, Dawn vote, Slow, Time passes.
 - **Leader conveyor** with Offset/Direct toggle, nomination, vote with tie-break, and the Wall with 12 slots.
-- **Event deck** with 3/4/5 stages, seed/grow/strike, Spirit Island resolution order, and the escalation symbol (ignored at level 0).
+- **Event deck** with 3/4/5 stages, seed/grow/collapse, Spirit Island resolution order, and the escalation symbol (ignored at level 0).
 - **Threat ladder, Crew fight-back, Decay with cascade and influence loss, and the Ship in Crisis flip** (placeholder crisis effect: none).
 - **Purpose pool, Discovery choice and Breakthroughs, Understanding tiers and their win conditions.**
 - **People deck:** about 30 Common and 10 Remarkable placeholder cards. They use only the effect verbs listed above, and each has a Reign and a Legacy.
@@ -534,8 +534,6 @@ A mute toggle is included.
 - board size (8 sections) and the setup symbol contents,
 - token durations,
 - the tie-break when there is no Steward.
-
-**Naming:** "strike" for the Dusk action is a placeholder; a better term is wanted.
 
 **Remarkable access:** whether drawing a Remarkable by substitution is always available or gated by a house unlock was not decided.
 
