@@ -736,7 +736,7 @@ Still open without data: is "move Crew" different from "gather Crew"? (The engin
 - the Wall as a power source (Breakthroughs are the only current use),
 - names and flavor text for the 400 people cards (IDs only by request).
 
-**Measured state (level 0, house bots):** 74–75% wins with 1–2 players and 66–68% with 3–4, mostly at Understanding III around generation 8–9. All eight houses are within ±4 points. Destination levels step down to 23–39% at level 6. The Landfall card variant costs about 15–20 points. Details are in `sim/RESULTS.md`.
+**Measured state (level 0, house bots, hull-module boards):** 77% wins on the 2-player pair layout; other layouts range from 52% (fan) to 78% (triad). All eight houses are within ±4.4 points (seat-swapped). Most wins come at Understanding III around generation 8–9. Destination levels step down to 23–39% at level 6. The Landfall card variant costs about 15–20 points. Details are in `sim/RESULTS.md`.
 
 **Calibration:** PP prices remain first guesses except where measured (card thresholds, innate reach in `data/calibration.json`). Purpose at 1 PP is still a suspect.
 

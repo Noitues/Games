@@ -15,23 +15,22 @@ Eight houses, built from the GDD's Balance framework and then tuned by simulatio
 
 Every guild is the primary or secondary guild of exactly two houses.
 
-## Balance (house bots, all 28 two-house pairings, 50 games each)
+## Balance (house bots, hull-module boards, default pair layout)
 
-Strength = average win rate of the pairings a house appears in.
+All 28 two-house pairings, each played in **both seat orders** (each house on both boards), 30 games per order: 1,680 games.
 
 | House | Strength | vs average |
 |---|---|---|
-| Vigil | 77% | +3.4 |
-| Keel | 77% | +3.1 |
-| Foremen | 75% | +1.1 |
-| Meridian | 75% | +0.9 |
-| Voidwardens | 73% | −0.9 |
-| Galvan | 72% | −1.7 |
-| Gardeners | 72% | −2.3 |
-| Tellers | 70% | −3.7 |
+| Keel | 82% | +4.4 |
+| Galvan | 81% | +3.5 |
+| Voidwardens | 81% | +3.2 |
+| Foremen | 79% | +1.8 |
+| Tellers | 76% | −1.1 |
+| Meridian | 74% | −3.5 |
+| Vigil | 73% | −4.2 |
+| Gardeners | 73% | −4.2 |
 
-- **Overall:** 74% wins at level 0, about 82% of them at Understanding III, around generation 8.6.
-- **Spread:** every house is within ±4 points. The noise is about ±3 points per house at this sample size.
-- **How we got here:** see `sim/RESULTS.md`, runs 4–5.
+- **Overall:** 77% wins at level 0.
+- **Spread:** every house is within ±4.4 points. The noise is about ±2.3 points per house at this sample size.
 
 The earlier first-guess economy curves (Power Point totals per track) are kept in git history. The tracks have since changed with tuning, and simulation now measures power directly.

@@ -288,3 +288,46 @@ House bots, all 28 pairings, 1,120 games, every draw and play tracked.
 - **Pick rate is a weak repricing signal on its own.** The deck stays as calibrated. The repricing code is kept behind `APPLY_REPRICE = False` in `tools/generate_people.py`.
 
 **Use the report for individual outliers instead** (e.g. Commons with 3 damage at cost 1 are picked about 88% of the time). Fix those by hand rather than with global price changes.
+
+---
+
+# Board shapes: from grids to hull modules
+
+## Iterations
+1. **Voronoi boards on irregular outlines:** curved hull edges, 2–4 Hull sections, 2–6 neighbors per section. Per-board solo win rates were 72–84%; board C (2 Hull sections) was too easy, so it got an extra Fault.
+2. **Organic warped borders:** one smooth warp field across the whole ship, so seams matched. Fixing the B–C seam (63% → 73%) took a wider joint.
+3. **Hull modules (current):** every board has the same hexagonal outline.
+   - The Outer Hull side has armor plating, a prow and fins.
+   - The five docking sides share one point-symmetric dovetail profile, so any docking side mates with any other.
+   - Interiors are unique, with angular kinked borders.
+   - Layouts choose rotations that maximize docking links.
+
+## Hull modules: measured
+**Solo per board:** A 76%, B 73%, C 69%, D 68%.
+
+| Layout | Boards | Links | Win rate |
+|---|---|---|---|
+| Pair (2-player default) | 2 | 3 | 66% |
+| Line | 3 | 6 | 63% |
+| Arc (3-player default) | 3 | 6 | 64% |
+| Triad | 3 | 9 | 78% |
+| Line | 4 | 9 | 64% |
+| Diamond (4-player default) | 4 | 16 | 70% |
+| Wave (arc4) | 4 | 10 | 68% |
+| Fan | 4 | 9 | 52% |
+
+*(8 house combinations × 20 games each. Choosing rotations to maximize links raised the pair from 55% to 66%.)*
+
+**Finding: connectivity (docking links) is the main difficulty lever between layouts.**
+
+**House rebalance for the new boards** (seat-swapped sweeps, 30 games per seat order):
+
+| Change | Why |
+|---|---|
+| Keel: Brace 1 outside Havens, 2 in Havens | Too strong at +7 |
+| Gardeners' Rooted: once per generation | Too strong at +12 |
+| Voidwardens: may add influence next to the Hull; tier II/III vent 3 | Too weak at −8 (hex boards have only 2–3 Hull sections) |
+| Tellers: hand back to plays + 2 | Slightly strong |
+| Foremen: tier I Brace 2 | Slightly weak |
+
+Final: every house within ±4.4 points, 77% overall (pair layout, level 0).
