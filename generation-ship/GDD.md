@@ -262,10 +262,27 @@ The destination's Landfall requirement is added on top of the tier condition.
 
 ## Ship map
 
-**Boards:**
-- One board per player, connected edge to edge.
-- Each board's setup symbols define its starting pieces. Each board sets the starting sections for its player's house.
-- **Default board:** 8 sections, 2 of each section type, 3 on the Outer Hull. Adjacency is hand-authored.
+**Boards: hull modules.** One board per player. Like Spirit Island, every board has the **same outline**, and only the interiors differ.
+- **The outline is a hexagonal hull module.** One side is the **Outer Hull**: faceted armor plating with a central prow and two fins, facing the void. The other five sides are **docking sides**, each with the same dovetail clamp and socket.
+- **The docking profile is point-symmetric, so any docking side mates with any other.** Boards can be assembled in many layouts. The Outer Hull side must always face the void.
+- **Interiors:** 8 sections, 2 of each type, with angular borders. Boards differ in section shapes, neighbor counts (2–6) and Hull sections (2–3).
+- **Docking links:** where two boards dock, sections whose borders overlap along the shared side become adjacent.
+- **Starting influence:** each house places its starting influence on its own board, in the sections its rule allows that have the most threat and Crew within reach.
+
+**Layouts** (rotations chosen to maximize docking links, every Hull facing the void). Win rates are for house bots, 8 house combinations × 20 games, at level 0:
+
+| Layout | Boards | Docking links | Win rate | Notes |
+|---|---|---|---|---|
+| Pair | 2 | 3 | 66% | Default for 2 players |
+| Line | 3 | 6 | 63% | |
+| Arc | 3 | 6 | 64% | Default for 3 players |
+| Triad | 3 | 9 | 78% | Easier: three boards around one point |
+| Line | 4 | 9 | 64% | |
+| Diamond | 4 | 16 | 70% | Default for 4 players |
+| Wave (arc4) | 4 | 10 | 68% | |
+| Fan | 4 | 9 | 52% | Harder: three boards around a central one |
+
+Single boards are balanced: solo games on boards A–D win 68–76%. **Connectivity is the main difficulty lever between layouts:** more docking links let Crew, influence and venting move between boards.
 
 **Section types:** Infrastructure, Residential, Government, Agricultural.
 
@@ -277,7 +294,7 @@ The destination's Landfall requirement is added on top of the tier condition.
 - **1 Failure, 2 Faults and 1 Glitch, each in a different section type**, so every type starts with some threat at a different strength. Which type gets the Failure rotates between boards (A: Infrastructure, B: Residential, C: Government, D: Agricultural).
 - 1 Decay next to the Failure,
 - 6 Crew (2, 2, 1, 1) across 4 sections away from the Failure and the Decay,
-- 2 influence for the board's house in the marked start sections.
+- 2 influence for the board's house (see Starting influence above).
 
 Starting Decay does not come from the pool, as in Spirit Island.
 
@@ -612,6 +629,7 @@ The people deck does not scale. Solo-specific tuning is deferred until multiplay
 | Loss: Decay pool, or a house with no influence | Matches Spirit Island. Crew loss is not a loss condition. |
 | Win conditions shifted one step stricter; Purpose 5 per player; Decay 3 per player − 1 | Simulation tuning so an average table wins at about Understanding III, around generation 8–9. |
 | Keel starts at 2 card plays | With 1 play and a free nominee, Keel never spent credits. |
+| Boards are identical hexagonal hull modules that dock on any non-Hull side | Like Spirit Island's boards: one shared outline, distinct interiors, many layouts. Angular shapes read as ship modules. |
 | Boards start with threat in every section type (1 Failure, 2 Faults, 1 Glitch) | Like Spirit Island's starting towns and cities; every type is under some pressure from the first generation, at different strengths. |
 | No house perk for the chosen heir | It's a joint decision with built-in gains. Kept as a later option. |
 | No score, no scenarios, no Loyal/Restless crew | Out of scope for now (Loyal/Restless is rejected outright). |

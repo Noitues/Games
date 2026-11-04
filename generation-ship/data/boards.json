@@ -340,7 +340,7 @@
  "default_layout": {
   "1": "solo",
   "2": "pair",
-  "3": "triad",
+  "3": "arc3",
   "4": "diamond"
  },
  "setup_rule": "Per board: 1 Failure, 2 Faults and 1 Glitch, each in a different section type (rotated between boards), 1 Decay next to the Failure, 6 Crew (2,2,1,1) across 4 sections away from the Failure and Decay.",

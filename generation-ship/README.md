@@ -22,7 +22,7 @@ Open `print.html` in the browser (served the same way as the prototype). Pick th
 | Path | What |
 |---|---|
 | `GDD.md` | The game design document: rules, decisions and reasons, balance framework, open questions |
-| `houses/` | The eight houses, one sheet each, plus curve analysis |
+| `houses/` | The eight houses, one sheet each |
 | `data/` | Game data: 400 people cards, events, Discoveries, crisis cards, boards, houses, destinations, calibration |
 | `tools/` | Deterministic card generators (Python) |
 | `src/engine/` | Headless rules engine (shared by the browser and the simulations) |

@@ -66,7 +66,7 @@ LAYOUTS = {
     "arc4":    {"A": walk(), "B": walk(330), "C": walk(330, 30), "D": walk(330, 30, 330)},
     "fan":     {"A": walk(), "B": walk(330), "C": walk(210), "D": walk(90)},
 }
-DEFAULT_LAYOUT = {1: "solo", 2: "pair", 3: "triad", 4: "diamond"}
+DEFAULT_LAYOUT = {1: "solo", 2: "pair", 3: "arc3", 4: "diamond"}  # mid-difficulty layouts (sim/boards.js)
 
 
 def clip(poly, a, b, c):
