@@ -36,12 +36,13 @@
     },
     {
      "level": 4,
-     "text": "Setup: +1 Fault in every Agricultural section.",
+     "text": "Setup: +1 Fault in every Agricultural section on the Outer Hull.",
      "setup": [
       {
        "piece": "fault",
        "type": "Agricultural",
-       "all": true
+       "all": true,
+       "hullOnly": true
       }
      ]
     },

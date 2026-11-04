@@ -102,7 +102,7 @@ function applyDestinationSetup(st, dest, boards) {
     for (const b of boards) {
       if (sp.boards && !sp.boards.includes(b.id)) continue;
       const secs = b.sections.map((x) => st.sections[x.id])
-        .filter((x) => (sp.type === "Hull" ? x.hull : x.type === sp.type));
+        .filter((x) => (sp.type === "Hull" ? x.hull : x.type === sp.type) && (!sp.hullOnly || x.hull));
       const list = sp.all ? secs : secs.slice(0, sp.perBoard ?? 1);
       for (const x of list) x[sp.piece] += 1;
     }
