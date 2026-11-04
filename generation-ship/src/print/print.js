@@ -40,19 +40,38 @@ function crisisCard(x) {
     <div class="reign">Flip when the Decay pool first runs out; add 1 Decay per player to the pool.</div></div>`;
 }
 const FILL = { Infrastructure: "#c9d4e0", Residential: "#e8d6c0", Government: "#d9cfe6", Agricultural: "#cfe3c4" };
+const tfp = ([x, y], [px, py, rot]) => { const r = (rot * Math.PI) / 180; return [x * Math.cos(r) - y * Math.sin(r) + px, x * Math.sin(r) + y * Math.cos(r) + py]; };
 function boardHTML(b) {
-  const [W, H] = boards.size || [420, 280];
   const secs = b.sections.map((s) => {
     const set = Object.entries(s.setup).filter(([, n]) => n).map(([k, n]) => `${n} ${k}`).join(", ");
     const [cx, cy] = s.center;
-    return `<polygon points="${s.poly.map((p) => p.join(",")).join(" ")}" fill="${FILL[s.type]}" stroke="#1f1b16" stroke-width="${s.hull ? 2.4 : 0.8}" stroke-linejoin="round"/>
+    return `<polygon points="${s.poly.map((p) => p.join(",")).join(" ")}" fill="${FILL[s.type]}" stroke="#1f1b16" stroke-width="0.8" stroke-linejoin="round"/>
       <text x="${cx}" y="${cy - 6}" text-anchor="middle" font-size="11" font-weight="700">${s.id}</text>
       <text x="${cx}" y="${cy + 7}" text-anchor="middle" font-size="8">${s.type}</text>
       <text x="${cx}" y="${cy + 19}" text-anchor="middle" font-size="7">${set}</text>`;
   }).join("");
-  const links = Object.entries(boards.links || {}).filter(([k]) => k.includes(b.id)).map(([k, v]) => `${k}: ${v.map((p) => p.join("–")).join(", ")}`).join(" · ");
-  return `<div class="board"><b>Ship board ${b.id}</b>${""} · heavy outline = Outer Hull · joins: ${esc(links)}
-    <svg viewBox="-16 -30 ${W + 32} ${H + 80}" width="100%" role="img" aria-label="Ship board ${b.id}">${secs}</svg></div>`;
+  const out = `<polygon points="${boards.outline.map((p) => p.join(",")).join(" ")}" fill="none" stroke="#1f1b16" stroke-width="2.4" stroke-linejoin="round"/>`;
+  return `<div class="board"><b>Ship board ${b.id}</b> · every board shares this outline · top edge (fins and prow) = Outer Hull · the other five sides dock with any other board
+    <svg viewBox="-215 -265 430 460" width="100%" role="img" aria-label="Ship board ${b.id}">${secs}${out}</svg></div>`;
+}
+function layoutsHTML() {
+  const L = boards.layouts || {};
+  const B = Object.fromEntries(boards.boards.map((b) => [b.id, b]));
+  return Object.entries(L).filter(([, l]) => l.boards.length > 1).map(([name, l]) => {
+    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    const parts = l.boards.map((bid) => {
+      const pl = l.place[bid];
+      const polys = B[bid].sections.map((s) => {
+        const pts = s.poly.map((p) => tfp(p, pl));
+        pts.forEach(([x, y]) => { minX = Math.min(minX, x); minY = Math.min(minY, y); maxX = Math.max(maxX, x); maxY = Math.max(maxY, y); });
+        return `<polygon points="${pts.map((p) => p.join(",")).join(" ")}" fill="${FILL[s.type]}" stroke="#1f1b16" stroke-width="1"/>`;
+      }).join("");
+      const [cx, cy] = tfp([0, 0], pl);
+      return polys + `<text x="${cx}" y="${cy + 10}" text-anchor="middle" font-size="40" font-weight="700" fill="#1f1b16" fill-opacity="0.55">${bid}</text>`;
+    }).join("");
+    return `<div class="board" style="width:94mm;display:inline-block;vertical-align:top;margin-right:4mm"><b>${name}</b> (${l.boards.length} boards, ${l.links.length} docking links)
+      <svg viewBox="${minX - 10} ${minY - 10} ${maxX - minX + 20} ${maxY - minY + 20}" width="100%">${parts}</svg></div>`;
+  }).join("");
 }
 function slot(v) {
   if (typeof v === "object") { const [k, n] = Object.entries(v)[0]; return k === "element" ? `+${n}` : k === "fast_play" ? "+fast" : "+clone"; }
@@ -91,7 +110,7 @@ const REF = `<div class="ref">
 const parts = {
   ref: `<h1>Generation Ship: rules reference</h1>${REF}`,
   houses: `<h2>House boards</h2>${houses.houses.map(houseBoard).join("")}`,
-  boards: `<h2>Ship boards</h2>${boards.boards.map(boardHTML).join("")}`,
+  boards: `<h2>Ship boards</h2>${boards.boards.map(boardHTML).join("")}<h2>Ship layouts</h2><div style="padding:0">${layoutsHTML()}</div>`,
   events: `<h2>Event cards</h2><div class="sheet">${[...events.cards, events.landfall].map(eventCard).join("")}</div>`,
   disc: `<h2>Discoveries and Ship in Crisis</h2><div class="sheet">${discoveries.map(discoveryCard).join("")}${crisis.cards.map(crisisCard).join("")}</div>`,
   rem: `<h2>Remarkable people</h2><div class="sheet">${people.filter((c) => c.tier === "Remarkable").map(personCard).join("")}</div>`,

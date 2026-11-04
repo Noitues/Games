@@ -26,14 +26,16 @@ export function createGame(data, cfgIn = {}, seed = 1) {
              legacyTempered: 0, houses: [] },
   };
   // boards
-  const ids = cfg.boards || BOARD_IDS.slice(0, P);
+  // Layout: which boards, where, and which sections link across docked sides.
+  const layouts = data.boards.layouts || {};
+  const layoutName = cfg.layout || data.boards.default_layout?.[String(P)];
+  const layout = !cfg.boards && layouts[layoutName] ? layouts[layoutName] : null;
+  const ids = layout ? layout.boards : (cfg.boards || BOARD_IDS.slice(0, P));
+  st.layout = layout ? layoutName : null;
   const boards = ids.map((b) => data.boards.boards.find((x) => x.id === b));
-  // links between consecutive boards in play (asymmetric boards); grid boards fall back to rows
   const extra = {};
-  ids.forEach((b, i) => {
-    const pairs = (data.boards.links || {})[`${b}-${ids[i + 1]}`] || [];
-    for (const [x, y] of pairs) { (extra[x] ??= []).push(y); (extra[y] ??= []).push(x); }
-  });
+  const pairs = layout ? layout.links : ids.flatMap((b, i) => (data.boards.links || {})[`${b}-${ids[i + 1]}`] || []);
+  for (const [x, y] of pairs) { (extra[x] ??= []).push(y); (extra[y] ??= []).push(x); }
   boards.forEach((b, bi) => {
     for (const s of b.sections) {
       const adj = [...s.adjacent, ...(extra[s.id] || [])];

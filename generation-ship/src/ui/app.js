@@ -146,20 +146,32 @@ function renderConveyor() {
     (st.breakthroughs.length ? "Breakthroughs: " + st.breakthroughs.map((d) => `<div class="slot">${esc(DATA.discoveryById[d].breakthrough.text)}</div>`).join("") : "");
 }
 
-// Section geometry from data/boards.json (polygons); boards laid left to right, scaled 1.45x.
-const SCALE = 1.45;
+// Section geometry from data/boards.json: each board's polygons rotated and placed by the layout.
+const SCALE = 0.95;
 function geometry() {
   const st = D.st, geo = {};
   const ids = [...new Set(st.order.map((id) => st.sections[id].board))];
-  const [BW, BH] = DATA.boards.size || [420, 280];
-  ids.forEach((b, bi) => {
-    const bd = DATA.boards.boards.find((x) => x.id === b);
+  const L = st.layout && DATA.boards.layouts?.[st.layout];
+  const place = (b, i) => (L ? L.place[b] : [i * 340, 0, 0]);
+  const tf = ([x, y], [px, py, rot]) => {
+    const r = (rot * Math.PI) / 180;
+    return [x * Math.cos(r) - y * Math.sin(r) + px, x * Math.sin(r) + y * Math.cos(r) + py];
+  };
+  let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+  const raw = {};
+  ids.forEach((b, i) => {
+    const bd = DATA.boards.boards.find((x) => x.id === b), pl = place(b, i);
     for (const s of bd.sections) {
-      const ox = 20 + bi * BW * SCALE, oy = 10 + 30 * SCALE; // boards meet at their seams; room for hull domes
-      geo[s.id] = { poly: s.poly.map(([x, y]) => [ox + x * SCALE, oy + y * SCALE]), c: [ox + s.center[0] * SCALE, oy + s.center[1] * SCALE] };
+      const poly = s.poly.map((p) => tf(p, pl));
+      for (const [x, y] of poly) { minX = Math.min(minX, x); minY = Math.min(minY, y); maxX = Math.max(maxX, x); maxY = Math.max(maxY, y); }
+      raw[s.id] = { poly, c: tf(s.center, pl) };
     }
   });
-  return { geo, width: 40 + ids.length * BW * SCALE, height: 20 + (BH + 80) * SCALE };
+  const m = 16;
+  const map = ([x, y]) => [m + (x - minX) * SCALE, m + (y - minY) * SCALE];
+  for (const [id, g] of Object.entries(raw)) geo[id] = { poly: g.poly.map(map), c: map(g.c) };
+  geo.$outlines = ids.map((b, i) => (DATA.boards.outline || []).map((p) => map(tf(p, place(b, i)))));
+  return { geo, width: 2 * m + (maxX - minX) * SCALE, height: 2 * m + (maxY - minY) * SCALE };
 }
 
 function renderMap() {
@@ -182,15 +194,15 @@ function renderMap() {
       s.unrest && `U${s.unrest}`, s.isolate && `I${s.isolate}`].filter(Boolean).join(" ");
     const threat = [s.glitch && `▲${s.glitch}`, s.fault && `■${s.fault}`, s.failure && `⬢${s.failure}`].filter(Boolean).join(" ");
     const pts = g.poly.map((p) => p.join(",")).join(" ");
-    const x = cx - 40;
     svg += `<g class="sec ${opts.has(id) ? "opt" : ""}" data-id="${id}">
       <polygon points="${pts}" fill="${TYPE_FILL[s.type]}" class="${s.hull ? "hullsec" : ""}"/>
-      <text x="${x}" y="${cy - 26}"><tspan font-weight="700">${id}</tspan> ${s.type.slice(0, 5)}${s.hull ? " ⌒" : ""}</text>
-      <text x="${x}" y="${cy - 8}" font-size="15">${threat || "·"}</text>
-      <text x="${x}" y="${cy + 10}">${s.crew ? `☺${s.crew}` : ""} ${s.decay ? `✸${s.decay}` : ""}</text>
-      <text x="${x}" y="${cy + 28}" font-size="14">${inf}</text>
-      <text x="${x}" y="${cy + 44}" font-size="11">${tok}</text></g>`;
+      <text x="${cx}" y="${cy - 20}" text-anchor="middle" font-size="11"><tspan font-weight="700">${id}</tspan> ${s.type.slice(0, 3)}${s.hull ? " ⌒" : ""}</text>
+      <text x="${cx}" y="${cy - 4}" text-anchor="middle" font-size="14">${threat || "·"}</text>
+      <text x="${cx}" y="${cy + 12}" text-anchor="middle" font-size="11">${s.crew ? `☺${s.crew}` : ""} ${s.decay ? `✸${s.decay}` : ""}</text>
+      <text x="${cx}" y="${cy + 27}" text-anchor="middle" font-size="13">${inf}</text>
+      <text x="${cx}" y="${cy + 40}" text-anchor="middle" font-size="10">${tok}</text></g>`;
   }
+  for (const o of geo.$outlines) svg += `<polygon points="${o.map((p) => p.join(",")).join(" ")}" fill="none" stroke="var(--ink)" stroke-opacity=".8" stroke-width="2" stroke-linejoin="round" pointer-events="none"/>`;
   const map = $("map");
   map.setAttribute("width", width); map.setAttribute("height", height);
   map.innerHTML = svg;
@@ -377,6 +389,13 @@ function renderSeats() {
     <select class="h">${houses.map((h, j) => `<option value="${h.id}" ${(prev[i]?.[0] ?? houses[i].id) === h.id ? "selected" : ""}>${esc(h.name)} (${h.template})</option>`).join("")}</select>
     <select class="c">${["human", "team", "house", "planner", "tactician"].map((c) => `<option ${(prev[i]?.[1] ?? (i === 0 ? "human" : "team")) === c ? "selected" : ""}>${c}</option>`).join("")}</select></div>`).join("");
 }
+function renderLayouts() {
+  const P = +$("players").value;
+  const L = DATA.boards.layouts || {};
+  const def = DATA.boards.default_layout?.[String(P)];
+  $("layout").innerHTML = Object.entries(L).filter(([, l]) => l.boards.length === P)
+    .map(([n]) => `<option value="${n}" ${n === def ? "selected" : ""}>${n}${n === def ? " (default)" : ""}</option>`).join("");
+}
 function renderDestinations() {
   const ds = DATA.destinations.destinations || [];
   $("destination").innerHTML = `<option value="">None (level 0)</option>` + ds.map((d) => `<option value="${d.id}">${esc(d.name)}</option>`).join("");
@@ -388,7 +407,7 @@ function start() {
   const seatEls = [...document.querySelectorAll(".seat")];
   const houses = seatEls.map((s) => s.querySelector(".h").value);
   seats = seatEls.map((s) => s.querySelector(".c").value);
-  const cfg = { players: P, houses, eventPairing: $("pairing").value, tierConditions: $("tiers").value,
+  const cfg = { players: P, houses, layout: $("layout").value || null, eventPairing: $("pairing").value, tierConditions: $("tiers").value,
     destination: $("destination").value || null, destinationLevel: +$("level").value, landfallCard: $("landfall").checked };
   D = new Driver(DATA, cfg, seats, +$("seed").value || 1);
   D.cfgIn = cfg;
@@ -398,8 +417,8 @@ function start() {
 
 async function main() {
   DATA = await loadData();
-  renderSeats(); renderDestinations();
-  $("players").addEventListener("change", renderSeats);
+  renderSeats(); renderDestinations(); renderLayouts();
+  $("players").addEventListener("change", () => { renderSeats(); renderLayouts(); });
   $("btn-start").addEventListener("click", start);
   $("btn-new").addEventListener("click", () => { stopAuto(); $("setup").hidden = false; $("game").hidden = true; });
   $("btn-step").addEventListener("click", () => { if (D && !D.pending) afterStep(D.step()); });
