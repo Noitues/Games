@@ -20,7 +20,7 @@
       "glitch": 0,
       "fault": 0,
       "failure": 0,
-      "crew": 0,
+      "crew": 1,
       "decay": 0
      }
     },
@@ -38,8 +38,8 @@
      ],
      "setup": {
       "glitch": 0,
-      "fault": 0,
-      "failure": 1,
+      "fault": 1,
+      "failure": 0,
       "crew": 0,
       "decay": 0
      }
@@ -56,7 +56,7 @@
       "A7"
      ],
      "setup": {
-      "glitch": 0,
+      "glitch": 1,
       "fault": 0,
       "failure": 0,
       "crew": 0,
@@ -114,8 +114,8 @@
       "glitch": 0,
       "fault": 0,
       "failure": 0,
-      "crew": 2,
-      "decay": 0
+      "crew": 0,
+      "decay": 1
      }
     },
     {
@@ -133,9 +133,9 @@
      "setup": {
       "glitch": 0,
       "fault": 0,
-      "failure": 0,
+      "failure": 1,
       "crew": 0,
-      "decay": 1
+      "decay": 0
      }
     },
     {
@@ -152,7 +152,7 @@
       "glitch": 0,
       "fault": 0,
       "failure": 0,
-      "crew": 1,
+      "crew": 2,
       "decay": 0
      }
     }
@@ -173,9 +173,9 @@
      ],
      "setup": {
       "glitch": 0,
-      "fault": 1,
+      "fault": 0,
       "failure": 0,
-      "crew": 0,
+      "crew": 1,
       "decay": 0
      }
     },
@@ -192,7 +192,7 @@
      ],
      "setup": {
       "glitch": 0,
-      "fault": 0,
+      "fault": 1,
       "failure": 0,
       "crew": 0,
       "decay": 0
@@ -211,10 +211,10 @@
       "B7"
      ],
      "setup": {
-      "glitch": 0,
+      "glitch": 1,
       "fault": 0,
-      "failure": 1,
-      "crew": 1,
+      "failure": 0,
+      "crew": 0,
       "decay": 0
      }
     },
@@ -230,9 +230,9 @@
      ],
      "setup": {
       "glitch": 0,
-      "fault": 0,
+      "fault": 1,
       "failure": 0,
-      "crew": 0,
+      "crew": 1,
       "decay": 0
      }
     },
@@ -270,8 +270,8 @@
       "glitch": 0,
       "fault": 0,
       "failure": 0,
-      "crew": 1,
-      "decay": 0
+      "crew": 0,
+      "decay": 1
      }
     },
     {
@@ -288,8 +288,8 @@
      "setup": {
       "glitch": 0,
       "fault": 0,
-      "failure": 0,
-      "crew": 2,
+      "failure": 1,
+      "crew": 0,
       "decay": 0
      }
     },
@@ -307,8 +307,8 @@
       "glitch": 0,
       "fault": 0,
       "failure": 0,
-      "crew": 0,
-      "decay": 1
+      "crew": 2,
+      "decay": 0
      }
     }
    ]
@@ -351,7 +351,7 @@
       "fault": 0,
       "failure": 0,
       "crew": 0,
-      "decay": 0
+      "decay": 1
      }
     },
     {
@@ -368,8 +368,8 @@
      "setup": {
       "glitch": 0,
       "fault": 0,
-      "failure": 1,
-      "crew": 0,
+      "failure": 0,
+      "crew": 1,
       "decay": 0
      }
     },
@@ -384,10 +384,10 @@
       "C8"
      ],
      "setup": {
-      "glitch": 0,
+      "glitch": 1,
       "fault": 0,
       "failure": 0,
-      "crew": 0,
+      "crew": 1,
       "decay": 0
      }
     },
@@ -424,9 +424,9 @@
      "setup": {
       "glitch": 0,
       "fault": 0,
-      "failure": 0,
-      "crew": 1,
-      "decay": 1
+      "failure": 1,
+      "crew": 0,
+      "decay": 0
      }
     },
     {
@@ -460,9 +460,9 @@
      ],
      "setup": {
       "glitch": 0,
-      "fault": 0,
+      "fault": 1,
       "failure": 0,
-      "crew": 1,
+      "crew": 0,
       "decay": 0
      }
     }
@@ -482,9 +482,9 @@
       "D5"
      ],
      "setup": {
-      "glitch": 0,
+      "glitch": 1,
       "fault": 0,
-      "failure": 1,
+      "failure": 0,
       "crew": 0,
       "decay": 0
      }
@@ -505,7 +505,7 @@
       "glitch": 0,
       "fault": 0,
       "failure": 0,
-      "crew": 1,
+      "crew": 2,
       "decay": 0
      }
     },
@@ -524,7 +524,7 @@
       "glitch": 0,
       "fault": 0,
       "failure": 0,
-      "crew": 0,
+      "crew": 1,
       "decay": 0
      }
     },
@@ -542,7 +542,7 @@
       "glitch": 0,
       "fault": 1,
       "failure": 0,
-      "crew": 0,
+      "crew": 1,
       "decay": 0
      }
     },
@@ -560,8 +560,8 @@
       "glitch": 0,
       "fault": 0,
       "failure": 0,
-      "crew": 0,
-      "decay": 1
+      "crew": 2,
+      "decay": 0
      }
     },
     {
@@ -577,9 +577,9 @@
      ],
      "setup": {
       "glitch": 0,
-      "fault": 0,
+      "fault": 1,
       "failure": 0,
-      "crew": 2,
+      "crew": 0,
       "decay": 0
      }
     },
@@ -599,8 +599,8 @@
       "glitch": 0,
       "fault": 0,
       "failure": 0,
-      "crew": 2,
-      "decay": 0
+      "crew": 0,
+      "decay": 1
      }
     },
     {
@@ -616,12 +616,13 @@
      "setup": {
       "glitch": 0,
       "fault": 0,
-      "failure": 0,
-      "crew": 1,
+      "failure": 1,
+      "crew": 0,
       "decay": 0
      }
     }
    ]
   }
- ]
+ ],
+ "setup_rule": "Per board: 1 Failure, 2 Faults and 1 Glitch, each in a different section type (rotated between boards), 1 Decay next to the Failure, 6 Crew (2,2,1,1) across 4 sections away from the Failure and Decay."
 }
