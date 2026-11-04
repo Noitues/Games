@@ -155,11 +155,11 @@ function geometry() {
   ids.forEach((b, bi) => {
     const bd = DATA.boards.boards.find((x) => x.id === b);
     for (const s of bd.sections) {
-      const ox = 10 + bi * (BW + 8) * SCALE, oy = 10;
+      const ox = 10 + bi * (BW + 8) * SCALE, oy = 10 + 15 * SCALE; // room for hull domes above y=0
       geo[s.id] = { poly: s.poly.map(([x, y]) => [ox + x * SCALE, oy + y * SCALE]), c: [ox + s.center[0] * SCALE, oy + s.center[1] * SCALE] };
     }
   });
-  return { geo, width: 20 + ids.length * (BW + 8) * SCALE, height: 20 + BH * SCALE };
+  return { geo, width: 20 + ids.length * (BW + 8) * SCALE, height: 20 + (BH + 15) * SCALE };
 }
 
 function renderMap() {

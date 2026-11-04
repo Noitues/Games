@@ -52,7 +52,7 @@ function boardHTML(b) {
   }).join("");
   const links = Object.entries(boards.links || {}).filter(([k]) => k.includes(b.id)).map(([k, v]) => `${k}: ${v.map((p) => p.join("–")).join(", ")}`).join(" · ");
   return `<div class="board"><b>Ship board ${b.id}</b> · heavy outline = Outer Hull · joins: ${esc(links)}
-    <svg viewBox="-4 -4 ${W + 8} ${H + 8}" width="100%" role="img" aria-label="Ship board ${b.id}">${secs}</svg></div>`;
+    <svg viewBox="-4 -16 ${W + 8} ${H + 20}" width="100%" role="img" aria-label="Ship board ${b.id}">${secs}</svg></div>`;
 }
 function slot(v) {
   if (typeof v === "object") { const [k, n] = Object.entries(v)[0]; return k === "element" ? `+${n}` : k === "fast_play" ? "+fast" : "+clone"; }
