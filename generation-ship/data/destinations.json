@@ -8,9 +8,9 @@
    "levels": [
     {
      "level": 1,
-     "text": "Landfall requirement: at least 4 Crew per player. Hazard, Spore Drift: when Grow adds a Fault in an Agricultural section, also add 1 Glitch to its least-threatened adjacent section.",
+     "text": "Landfall requirement: at least 5 Crew per player. Hazard, Spore Drift: when Grow adds a Fault in an Agricultural section, also add 1 Glitch to its least-threatened adjacent section.",
      "requirement": {
-      "minCrewPerPlayer": 4
+      "minCrewPerPlayer": 5
      },
      "rules": [
       "agri_grow_spread"
@@ -18,12 +18,12 @@
     },
     {
      "level": 2,
-     "text": "Setup: +1 Fault in every Agricultural section.",
+     "text": "Setup: +1 Fault in one Agricultural section on each board.",
      "setup": [
       {
        "piece": "fault",
        "type": "Agricultural",
-       "all": true
+       "perBoard": 1
       }
      ]
     },
@@ -36,9 +36,9 @@
     },
     {
      "level": 4,
-     "text": "Landfall requirement rises to 5 Crew per player.",
+     "text": "Landfall requirement rises to 6 Crew per player.",
      "requirement": {
-      "minCrewPerPlayer": 5
+      "minCrewPerPlayer": 6
      }
     },
     {
@@ -84,9 +84,10 @@
     },
     {
      "level": 3,
-     "text": "Escalation: add 1 Unrest to every Outer Hull section that has threat.",
+     "text": "Escalation: add 1 Glitch and 1 Unrest to every Outer Hull section that has threat, and 1 Glitch to every other Outer Hull section.",
      "escalation": {
-      "unrestHullThreat": true
+      "unrestHullThreat": true,
+      "addGlitchType": "Hull"
      }
     },
     {

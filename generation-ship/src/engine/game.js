@@ -117,7 +117,7 @@ export function destinationRequirementMet(st) {
 }
 function escalate(G, st) {
   for (const e of st.dest.escalation) {
-    if (e.addGlitchType) for (const s of allSections(st)) if (s.type === e.addGlitchType) s.glitch += 1;
+    if (e.addGlitchType) for (const s of allSections(st)) if (e.addGlitchType === "Hull" ? s.hull : s.type === e.addGlitchType) s.glitch += 1;
     if (e.unrestHullThreat) for (const s of allSections(st)) if (s.hull && threatCount(s) > 0) s.unrest += 1;
     if (e.losePurpose) losePurpose(st, e.losePurpose);
   }
