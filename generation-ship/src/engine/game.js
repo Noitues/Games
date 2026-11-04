@@ -135,16 +135,21 @@ function escalate(G, st) {
   log(G, st, "Escalation");
 }
 
+// Starting influence goes where the house's rule allows, choosing the sections a player would:
+// the most threat and Crew within reach (the section plus its in-board neighbors).
 function placeStartingInfluence(st, h, hd, board) {
   const secs = board.sections.map((s) => st.sections[s.id]);
   const add = (s, n = 1) => { s.influence[h] = (s.influence[h] || 0) + n; };
+  const near = (s) => [s, ...s.adj.map((a) => st.sections[a]).filter((x) => x.board === board.id)];
+  const value = (s) => near(s).reduce((n, x) => n + x.glitch + 2 * x.fault + 3 * x.failure + 0.5 * x.crew, 0) + s.id.charCodeAt(1) * 1e-3;
+  const best = (list) => list.slice().sort((x, y) => value(y) - value(x));
   const r = hd.starting_influence.rule;
-  if (r.hull) secs.filter((s) => s.hull).slice(0, r.count).forEach((s) => add(s));
+  if (r.hull) best(secs.filter((s) => s.hull)).slice(0, r.count).forEach((s) => add(s));
   else if (r.first_type) {
-    const first = secs.find((s) => s.type === r.first_type); add(first);
-    add(st.sections[first.adj.find((a) => st.sections[a].board === board.id)]);
-  } else if (r.same_section) add(secs.find((s) => s.type === r.type), r.count);
-  else if (r.types) r.types.forEach((t) => add(secs.find((s) => s.type === t)));
+    const first = best(secs.filter((s) => s.type === r.first_type))[0]; add(first);
+    add(best(first.adj.map((a) => st.sections[a]).filter((x) => x.board === board.id))[0]);
+  } else if (r.same_section) add(best(secs.filter((s) => s.type === r.type))[0], r.count);
+  else if (r.types) r.types.forEach((t) => add(best(secs.filter((s) => s.type === t))[0]));
 }
 
 // ============================================================== helpers
