@@ -59,7 +59,7 @@
      {
       "tier": 2,
       "threshold": {
-       "Engineers": 3,
+       "Engineers": 2,
        "Navigators": 1
       },
       "threshold_cost": 4.5,
@@ -74,7 +74,7 @@
      {
       "tier": 3,
       "threshold": {
-       "Engineers": 4,
+       "Engineers": 3,
        "Navigators": 2
       },
       "threshold_cost": 7.0,
@@ -197,7 +197,7 @@
       "tier": 2,
       "threshold": {
        "Bureaucrats": 2,
-       "Farmers": 2
+       "Farmers": 1
       },
       "threshold_cost": 5.0,
       "effects": {
@@ -212,8 +212,8 @@
      {
       "tier": 3,
       "threshold": {
-       "Bureaucrats": 3,
-       "Farmers": 3
+       "Bureaucrats": 2,
+       "Farmers": 2
       },
       "threshold_cost": 7.5,
       "effects": {
@@ -328,8 +328,8 @@
      {
       "tier": 2,
       "threshold": {
-       "Medics": 3,
-       "Laborers": 2
+       "Medics": 2,
+       "Laborers": 1
       },
       "threshold_cost": 6.0,
       "effects": {
@@ -345,8 +345,8 @@
      {
       "tier": 3,
       "threshold": {
-       "Medics": 4,
-       "Laborers": 3
+       "Medics": 3,
+       "Laborers": 2
       },
       "threshold_cost": 8.5,
       "effects": {
@@ -467,7 +467,7 @@
      {
       "tier": 2,
       "threshold": {
-       "Keepers": 3,
+       "Keepers": 2,
        "Scholars": 1
       },
       "threshold_cost": 4.5,
@@ -482,8 +482,8 @@
      {
       "tier": 3,
       "threshold": {
-       "Keepers": 4,
-       "Scholars": 3
+       "Keepers": 3,
+       "Scholars": 2
       },
       "threshold_cost": 8.5,
       "effects": {
