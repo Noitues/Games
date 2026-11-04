@@ -257,3 +257,34 @@ The Landfall card adds a hard three-generation finale and costs about 15–20 po
 Interpretation is in the GDD's "Decisions for the designer".
 
 *Rule fix during this session:* Quarantine now also blocks cascades, vents and seeding *out of* the section, as the GDD says (found by the new rule tests).
+
+---
+
+# Card balance (`sim/cards.js`, report in `CARDS.md`)
+
+House bots, all 28 pairings, 1,120 games, every draw and play tracked.
+
+**Pick rate** (played ÷ drawn) by Common cost: cost 0 67%, cost 1 53%, cost 2 45%, cost 3 43%. Per-card spread is about ±18%.
+
+**Pick rate by effect, compared with cards of the same cost:**
+
+| Effect | Difference |
+|---|---|
+| add influence | +14 |
+| damage | +9 |
+| add Crew | +5 |
+| Brace, credits, Purpose, gather Crew | −4 |
+| foresee | −8 |
+| Quarantine | −11 |
+| move influence | −13 |
+
+**Repricing experiment (rejected):** I raised the prices of favored effects and lowered the neglected ones (×0.8–1.2), and gave Commons 1.15 PP per credit.
+- The overall win rate fell from 76% to 59%.
+- The pick-rate spread didn't narrow (±18% → ±18%).
+
+**Reading:**
+- Bots pick damage because removing threat is what wins, so pricing it up just weakens the players.
+- Most per-card variation is *situational*: whether the card has a useful target that generation. Restore Decay, for example, is 87% on one card and 13% on another.
+- **Pick rate is a weak repricing signal on its own.** The deck stays as calibrated. The repricing code is kept behind `APPLY_REPRICE = False` in `tools/generate_people.py`.
+
+**Use the report for individual outliers instead** (e.g. Commons with 3 damage at cost 1 are picked about 88% of the time). Fix those by hand rather than with global price changes.
