@@ -304,8 +304,8 @@
    "clone": 1,
    "special": {
     "id": "load_bearing",
-    "text": "At Dusk, every Keel Haven has Brace 3.",
-    "pp_per_generation": 0.7
+    "text": "At Dusk, every section with Keel influence has Brace 2; Keel Havens have Brace 3 instead.",
+    "pp_per_generation": 1.5
    },
    "innate": {
     "name": "Shelter the Many",
