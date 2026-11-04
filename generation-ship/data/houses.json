@@ -1,0 +1,549 @@
+{
+ "note": "Track lists: first value is the starting value; objects are special slots that grant their bonus while previous numeric value stays.",
+ "houses": [
+  {
+   "id": "galvan",
+   "name": "Galvan, the Spark-Wardens",
+   "template": "Lightning's Swift Strike",
+   "curve": "front-loaded",
+   "guilds": {
+    "primary": "Engineers",
+    "secondary": "Navigators"
+   },
+   "tracks": {
+    "credits": [
+     1,
+     1,
+     1,
+     {
+      "element": "Engineers"
+     },
+     2,
+     2
+    ],
+    "plays": [
+     3,
+     3,
+     3,
+     {
+      "fast_play": 1
+     },
+     4
+    ]
+   },
+   "hand_bonus": 2,
+   "clone": 1,
+   "special": {
+    "id": "overclock",
+    "text": "For each Engineer element you have, one additional played card (not your nominee) may resolve fast.",
+    "pp_per_generation": 1.75
+   },
+   "innate": {
+    "name": "Arc Repair",
+    "speed": "fast",
+    "note": "Each tier lists the full (cumulative) effect; use the highest tier met.",
+    "tiers": [
+     {
+      "tier": 1,
+      "threshold": {
+       "Engineers": 2
+      },
+      "threshold_cost": 2.0,
+      "effects": {
+       "damage": 2
+      },
+      "range": 0,
+      "target": "ANY",
+      "pp": 2.0
+     },
+     {
+      "tier": 2,
+      "threshold": {
+       "Engineers": 3,
+       "Navigators": 1
+      },
+      "threshold_cost": 4.5,
+      "effects": {
+       "damage": 3,
+       "lockout": 1
+      },
+      "range": 1,
+      "target": "ANY",
+      "pp": 5.0
+     },
+     {
+      "tier": 3,
+      "threshold": {
+       "Engineers": 4,
+       "Navigators": 2
+      },
+      "threshold_cost": 7.0,
+      "effects": {
+       "damage": 4,
+       "lockout": 1,
+       "downgrade_failure": 1
+      },
+      "range": 1,
+      "target": "ANY",
+      "pp": 8.1
+     }
+    ]
+   },
+   "growth": [
+    {
+     "id": "A",
+     "text": "Place 1 influence from a track, within range 1",
+     "effects": {
+      "place_influence_from_track": 1
+     },
+     "range": 1,
+     "pp": 2
+    },
+    {
+     "id": "B",
+     "text": "Gain 2 credits, plus house perk",
+     "effects": {
+      "credits": 2
+     },
+     "pp": 2
+    },
+    {
+     "id": "C",
+     "text": "Draw +2 cards this generation (or take a Remarkable by draw substitution) and gain 1 credit",
+     "effects": {
+      "extra_draw": 2,
+      "credits": 1
+     },
+     "pp": 2.5
+    }
+   ],
+   "growth_perk": {
+    "B": {
+     "text": "+1 extra fast play this generation",
+     "effects": {
+      "fast_play": 1
+     },
+     "pp": 0.9
+    }
+   },
+   "starting_influence": {
+    "text": "2 in Outer Hull sections",
+    "rule": {
+     "hull": true,
+     "count": 2,
+     "distinct": true
+    }
+   }
+  },
+  {
+   "id": "meridian",
+   "name": "Meridian, the Flowkeepers",
+   "template": "River Surges in Sunlight",
+   "curve": "standard",
+   "guilds": {
+    "primary": "Bureaucrats",
+    "secondary": "Farmers"
+   },
+   "tracks": {
+    "credits": [
+     1,
+     2,
+     2,
+     3,
+     {
+      "element": "Bureaucrats"
+     },
+     4
+    ],
+    "plays": [
+     2,
+     2,
+     3,
+     {
+      "clone": 1
+     },
+     3,
+     4
+    ]
+   },
+   "hand_bonus": 3,
+   "clone": 2,
+   "special": {
+    "id": "supply_lines",
+    "text": "Meridian influence in Agricultural sections counts as Havens for range.",
+    "pp_per_generation": 0.5
+   },
+   "innate": {
+    "name": "Reroute",
+    "speed": "slow",
+    "note": "Each tier lists the full (cumulative) effect; use the highest tier met.",
+    "tiers": [
+     {
+      "tier": 1,
+      "threshold": {
+       "Bureaucrats": 1,
+       "Farmers": 1
+      },
+      "threshold_cost": 2.5,
+      "effects": {
+       "vent_glitch": 2,
+       "gather_crew": 2
+      },
+      "range": 2,
+      "target": "ANY",
+      "pp": 2.3
+     },
+     {
+      "tier": 2,
+      "threshold": {
+       "Bureaucrats": 2,
+       "Farmers": 2
+      },
+      "threshold_cost": 5.0,
+      "effects": {
+       "vent_glitch_or_fault": 2,
+       "gather_crew": 1,
+       "patch": 1
+      },
+      "range": 2,
+      "target": "ANY",
+      "pp": 4.6
+     },
+     {
+      "tier": 3,
+      "threshold": {
+       "Bureaucrats": 3,
+       "Farmers": 3
+      },
+      "threshold_cost": 7.5,
+      "effects": {
+       "vent_glitch_or_fault": 2,
+       "vent_failure": 1,
+       "gather_crew": 1,
+       "patch": 1,
+       "quarantine_source": 1
+      },
+      "range": 2,
+      "target": "ANY",
+      "pp": 7.45
+     }
+    ]
+   },
+   "growth": [
+    {
+     "id": "A",
+     "text": "Place 1 influence from a track, within range 1",
+     "effects": {
+      "place_influence_from_track": 1
+     },
+     "range": 1,
+     "pp": 2
+    },
+    {
+     "id": "B",
+     "text": "Gain 2 credits, plus house perk",
+     "effects": {
+      "credits": 2
+     },
+     "pp": 2
+    },
+    {
+     "id": "C",
+     "text": "Draw +2 cards this generation (or take a Remarkable by draw substitution) and gain 1 credit",
+     "effects": {
+      "extra_draw": 2,
+      "credits": 1
+     },
+     "pp": 2.5
+    }
+   ],
+   "growth_overrides": {
+    "A": {
+     "range": 2,
+     "pp": 2.3
+    }
+   },
+   "starting_influence": {
+    "text": "1 in an Agricultural section and 1 adjacent to it",
+    "rule": {
+     "first_type": "Agricultural",
+     "second": "adjacent",
+     "count": 2
+    }
+   }
+  },
+  {
+   "id": "keel",
+   "name": "Keel, the Hullwrights",
+   "template": "Vital Strength of the Earth",
+   "curve": "steep",
+   "guilds": {
+    "primary": "Medics",
+    "secondary": "Laborers"
+   },
+   "tracks": {
+    "credits": [
+     1,
+     2,
+     3,
+     {
+      "element": "Medics"
+     },
+     5,
+     7
+    ],
+    "plays": [
+     1,
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "hand_bonus": 2,
+   "clone": 1,
+   "special": {
+    "id": "load_bearing",
+    "text": "At Dusk, every Keel Haven has Brace 3.",
+    "pp_per_generation": 0.7
+   },
+   "innate": {
+    "name": "Shelter the Many",
+    "speed": "slow",
+    "note": "Each tier lists the full (cumulative) effect; use the highest tier met.",
+    "tiers": [
+     {
+      "tier": 1,
+      "threshold": {
+       "Medics": 2
+      },
+      "threshold_cost": 2.0,
+      "effects": {
+       "brace": 4
+      },
+      "range": 1,
+      "target": "ANY",
+      "pp": 2.0
+     },
+     {
+      "tier": 2,
+      "threshold": {
+       "Medics": 3,
+       "Laborers": 2
+      },
+      "threshold_cost": 6.0,
+      "effects": {
+       "brace": 6,
+       "gather_crew": 1,
+       "patch": 1,
+       "isolate_fault": 1
+      },
+      "range": 1,
+      "target": "ANY",
+      "pp": 6.0
+     },
+     {
+      "tier": 3,
+      "threshold": {
+       "Medics": 4,
+       "Laborers": 3
+      },
+      "threshold_cost": 8.5,
+      "effects": {
+       "brace": 6,
+       "gather_crew": 1,
+       "patch": 1,
+       "isolate_fault": 1,
+       "restore_decay": 1
+      },
+      "range": 1,
+      "target": "ANY",
+      "pp": 9.0
+     }
+    ]
+   },
+   "growth": [
+    {
+     "id": "A",
+     "text": "Place 1 influence from a track, within range 1",
+     "effects": {
+      "place_influence_from_track": 1
+     },
+     "range": 1,
+     "pp": 2
+    },
+    {
+     "id": "B",
+     "text": "Gain 2 credits, plus house perk",
+     "effects": {
+      "credits": 2
+     },
+     "pp": 2
+    },
+    {
+     "id": "C",
+     "text": "Draw +2 cards this generation (or take a Remarkable by draw substitution) and gain 1 credit",
+     "effects": {
+      "extra_draw": 2,
+      "credits": 1
+     },
+     "pp": 2.5
+    }
+   ],
+   "growth_perk": {
+    "B": {
+     "text": "Brace 1 at each Haven",
+     "effects": {
+      "brace_each_haven": 1
+     },
+     "pp": 0.75
+    }
+   },
+   "starting_influence": {
+    "text": "2 in a single Infrastructure section (starts with a Haven)",
+    "rule": {
+     "type": "Infrastructure",
+     "count": 2,
+     "same_section": true
+    }
+   }
+  },
+  {
+   "id": "vigil",
+   "name": "Vigil, the Lamplighters",
+   "template": "Shadows Flicker Like Flame",
+   "curve": "standard",
+   "guilds": {
+    "primary": "Keepers",
+    "secondary": "Scholars"
+   },
+   "tracks": {
+    "credits": [
+     1,
+     2,
+     2,
+     {
+      "element": "Keepers"
+     },
+     3,
+     3
+    ],
+    "plays": [
+     2,
+     2,
+     3,
+     {
+      "element": "Scholars"
+     },
+     3,
+     4
+    ]
+   },
+   "hand_bonus": 2,
+   "clone": 1,
+   "special": {
+    "id": "voices",
+    "text": "Vigil may target from any section with Crew by paying 1 extra credit.",
+    "pp_per_generation": 0.5
+   },
+   "innate": {
+    "name": "Kindle Purpose",
+    "speed": "slow",
+    "note": "Each tier lists the full (cumulative) effect; use the highest tier met.",
+    "tiers": [
+     {
+      "tier": 1,
+      "threshold": {
+       "Keepers": 2
+      },
+      "threshold_cost": 2.0,
+      "effects": {
+       "purpose": 2
+      },
+      "range": null,
+      "target": "global",
+      "pp": 2.0
+     },
+     {
+      "tier": 2,
+      "threshold": {
+       "Keepers": 3,
+       "Scholars": 1
+      },
+      "threshold_cost": 4.5,
+      "effects": {
+       "purpose": 4,
+       "foresee": 1
+      },
+      "range": null,
+      "target": "global",
+      "pp": 4.5
+     },
+     {
+      "tier": 3,
+      "threshold": {
+       "Keepers": 4,
+       "Scholars": 3
+      },
+      "threshold_cost": 8.5,
+      "effects": {
+       "purpose": 5,
+       "foresee": 1,
+       "temper_legacy": 1
+      },
+      "range": null,
+      "target": "global",
+      "pp": 8.5
+     }
+    ]
+   },
+   "growth": [
+    {
+     "id": "A",
+     "text": "Place 1 influence from a track, within range 1",
+     "effects": {
+      "place_influence_from_track": 1
+     },
+     "range": 1,
+     "pp": 2
+    },
+    {
+     "id": "B",
+     "text": "Gain 2 credits, plus house perk",
+     "effects": {
+      "credits": 2
+     },
+     "pp": 2
+    },
+    {
+     "id": "C",
+     "text": "Draw +2 cards this generation (or take a Remarkable by draw substitution) and gain 1 credit",
+     "effects": {
+      "extra_draw": 2,
+      "credits": 1
+     },
+     "pp": 2.5
+    }
+   ],
+   "growth_overrides": {
+    "C": {
+     "text": "Draw +2 cards this generation (or take a Remarkable) and gain 1 Purpose",
+     "effects": {
+      "extra_draw": 2,
+      "purpose": 1
+     }
+    }
+   },
+   "starting_influence": {
+    "text": "1 in a Government section and 1 in a Residential section",
+    "rule": {
+     "types": [
+      "Government",
+      "Residential"
+     ],
+     "count": 2
+    }
+   }
+  }
+ ]
+}

@@ -165,7 +165,7 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 | Stage | Count | Content |
 |---|---|---|
 | I | 3 | Names one section type |
-| II | 4 | Names one section type, plus a twist line (e.g. "also seeds adjacent sections"). One Stage II card carries an **Escalation** symbol. |
+| II | 4 | Names one section type, plus a twist line (see `data/README.md`). The pool also holds one **Outer Hull** card, matching every Hull section. One dealt Stage II card carries an **Escalation** symbol. |
 | III | 5 | Names two section types |
 
 - Section types are **Infrastructure, Residential, Government, Agricultural**.
@@ -478,7 +478,9 @@ Houses, cards and innates are built from priced parts so every house lands in th
 
 **Reign and Legacy pricing:** effects that act per section are priced at **2 reference sections**, and per-house effects at **2 houses**. Legacy effects use the effect prices with the sign reversed; Add Decay costs 4 (because of cascade risk).
 
-**The people deck** (400 cards: 300 Common, 100 Remarkable) is generated from these rules by `tools/generate_people.py` into `data/`. See `data/README.md`.
+**Discovery pricing:** one-time effects are worth **4 / 6 / 8 PP** at Understanding I / II / III. A Breakthrough is worth about **1 PP per generation**.
+
+**The people deck** (400 cards: 300 Common, 100 Remarkable) is generated from these rules by `tools/generate_people.py` into `data/`. Events, 24 Discoveries and 4 Ship in Crisis cards come from `tools/generate_decks.py`. Four ship boards and the four houses are hand-authored in `data/`. See `data/README.md`.
 
 **Power summary:** a house's PP summed by category (**Repair, Control, Protection, Purpose, Utility**) generates its identity bars, as on Spirit Island's spirit panels.
 
@@ -650,14 +652,12 @@ A mute toggle is included.
 
 **Not yet designed:**
 - house special-rule and innate values beyond first estimates (see `houses/README.md`),
-- card content for events (including the Stage II twists) and Discoveries; the people deck is generated (`data/`),
-- the Ship in Crisis effect,
 - destination levels,
 - the Landfall event's exact text,
 - Haven effects beyond targeting.
 
 **Small gaps:**
-- an Outer Hull–specific event card (Spirit Island's coastal card),
+- the Outer Hull event card in the Stage II pool, and the four Stage II twists, are first versions,
 - whether elements from the Steward should count for everyone (deferred until the power curve is tested).
 
 **Calibration:** every PP price, element cost and the reference pacing are first guesses, to be replaced by Monte Carlo results. Purpose at 1 PP is a specific suspect (Vigil reaches 5 Purpose per generation).

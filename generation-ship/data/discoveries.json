@@ -1,0 +1,1003 @@
+[
+ {
+  "id": "D01",
+  "family": "Repair",
+  "tiers": {
+   "I": {
+    "effects": {
+     "remove_glitch": 1,
+     "damage": 1
+    },
+    "scope": "Residential",
+    "pp": 4.0,
+    "text": "remove 1 Glitch in each Residential section; 1 damage in each Residential section"
+   },
+   "II": {
+    "effects": {
+     "remove_fault": 1,
+     "damage": 1
+    },
+    "scope": "Residential",
+    "pp": 6.0,
+    "text": "remove 1 Fault in each Residential section; 1 damage in each Residential section"
+   },
+   "III": {
+    "effects": {
+     "downgrade_failure": 2,
+     "remove_glitch": 1
+    },
+    "scope": "Residential",
+    "pp": 8.0,
+    "text": "downgrade 2 Failure in each Residential section; remove 1 Glitch in each Residential section"
+   }
+  },
+  "breakthrough": {
+   "timing": "day",
+   "effects": {
+    "remove_glitch": 1
+   },
+   "scope": "Government",
+   "pp_per_generation": 1.0,
+   "text": "Each Day: remove 1 Glitch in one Government section."
+  }
+ },
+ {
+  "id": "D02",
+  "family": "Control",
+  "tiers": {
+   "I": {
+    "effects": {
+     "remove_glitch": 2
+    },
+    "scope": "Agricultural",
+    "pp": 4.0,
+    "text": "remove 2 Glitch in each Agricultural section"
+   },
+   "II": {
+    "effects": {
+     "remove_glitch": 3
+    },
+    "scope": "Agricultural",
+    "pp": 6.0,
+    "text": "remove 3 Glitch in each Agricultural section"
+   },
+   "III": {
+    "effects": {
+     "skip_seed": 1,
+     "remove_glitch": 3
+    },
+    "scope": "Agricultural",
+    "pp": 8.0,
+    "text": "skip the Seed in each Agricultural section; remove 3 Glitch in each Agricultural section"
+   }
+  },
+  "breakthrough": {
+   "timing": "dawn",
+   "effects": {
+    "foresee": 1,
+    "remove_glitch": 1
+   },
+   "scope": "Agricultural",
+   "pp_per_generation": 1.5,
+   "text": "Each Dawn: foresee; remove 1 Glitch in one Agricultural section."
+  }
+ },
+ {
+  "id": "D03",
+  "family": "Protection",
+  "tiers": {
+   "I": {
+    "effects": {
+     "brace": 3,
+     "gather_crew": 1
+    },
+    "scope": "Agricultural",
+    "pp": 4.0,
+    "text": "Brace 3 in each Agricultural section; gather 1 Crew in each Agricultural section"
+   },
+   "II": {
+    "effects": {
+     "restore_decay": 2
+    },
+    "scope": "Agricultural",
+    "pp": 6.0,
+    "text": "restore 2 Decay anywhere"
+   },
+   "III": {
+    "effects": {
+     "brace": 5,
+     "gather_crew": 3
+    },
+    "scope": "Agricultural",
+    "pp": 8.0,
+    "text": "Brace 5 in each Agricultural section; gather 3 Crew in each Agricultural section"
+   }
+  },
+  "breakthrough": {
+   "timing": "dusk",
+   "effects": {
+    "brace": 2
+   },
+   "scope": "Residential",
+   "pp_per_generation": 1.0,
+   "text": "Each Dusk: Brace 2 in one Residential section."
+  }
+ },
+ {
+  "id": "D04",
+  "family": "People",
+  "tiers": {
+   "I": {
+    "effects": {
+     "gather_crew": 2,
+     "purpose": 2
+    },
+    "scope": "Residential",
+    "pp": 4.0,
+    "text": "gather 2 Crew in each Residential section; +2 Purpose"
+   },
+   "II": {
+    "effects": {
+     "add_crew": 1,
+     "purpose": 3
+    },
+    "scope": "Residential",
+    "pp": 6.0,
+    "text": "add 1 Crew to any one section; +3 Purpose"
+   },
+   "III": {
+    "effects": {
+     "add_crew": 2,
+     "purpose": 2
+    },
+    "scope": "Residential",
+    "pp": 8.0,
+    "text": "add 2 Crew to any one section; +2 Purpose"
+   }
+  },
+  "breakthrough": {
+   "timing": "day",
+   "effects": {
+    "purpose": 1
+   },
+   "scope": "Residential",
+   "pp_per_generation": 1.0,
+   "text": "Each Day: +1 Purpose in one Residential section."
+  }
+ },
+ {
+  "id": "D05",
+  "family": "Repair",
+  "tiers": {
+   "I": {
+    "effects": {
+     "damage": 1,
+     "remove_glitch": 1
+    },
+    "scope": "Government",
+    "pp": 4.0,
+    "text": "1 damage in each Government section; remove 1 Glitch in each Government section"
+   },
+   "II": {
+    "effects": {
+     "remove_fault": 1,
+     "remove_glitch": 1
+    },
+    "scope": "Government",
+    "pp": 6.0,
+    "text": "remove 1 Fault in each Government section; remove 1 Glitch in each Government section"
+   },
+   "III": {
+    "effects": {
+     "downgrade_failure": 2,
+     "remove_glitch": 1
+    },
+    "scope": "Government",
+    "pp": 8.0,
+    "text": "downgrade 2 Failure in each Government section; remove 1 Glitch in each Government section"
+   }
+  },
+  "breakthrough": {
+   "timing": "day",
+   "effects": {
+    "remove_glitch": 1
+   },
+   "scope": "Residential",
+   "pp_per_generation": 1.0,
+   "text": "Each Day: remove 1 Glitch in one Residential section."
+  }
+ },
+ {
+  "id": "D06",
+  "family": "Control",
+  "tiers": {
+   "I": {
+    "effects": {
+     "skip_seed": 1,
+     "remove_glitch": 1
+    },
+    "scope": "Infrastructure",
+    "pp": 4.0,
+    "text": "skip the Seed in each Infrastructure section; remove 1 Glitch in each Infrastructure section"
+   },
+   "II": {
+    "effects": {
+     "remove_glitch": 2,
+     "skip_seed": 1
+    },
+    "scope": "Infrastructure",
+    "pp": 6.0,
+    "text": "remove 2 Glitch in each Infrastructure section; skip the Seed in each Infrastructure section"
+   },
+   "III": {
+    "effects": {
+     "skip_seed": 1,
+     "remove_glitch": 3
+    },
+    "scope": "Infrastructure",
+    "pp": 8.0,
+    "text": "skip the Seed in each Infrastructure section; remove 3 Glitch in each Infrastructure section"
+   }
+  },
+  "breakthrough": {
+   "timing": "day",
+   "effects": {
+    "skip_seed": 1
+   },
+   "scope": "Outer Hull",
+   "pp_per_generation": 1.0,
+   "text": "Each Day: skip the Seed in one Outer Hull section."
+  }
+ },
+ {
+  "id": "D07",
+  "family": "Protection",
+  "tiers": {
+   "I": {
+    "effects": {
+     "restore_decay": 1,
+     "brace": 1
+    },
+    "scope": "Infrastructure",
+    "pp": 4.0,
+    "text": "restore 1 Decay anywhere; Brace 1 in each Infrastructure section"
+   },
+   "II": {
+    "effects": {
+     "gather_crew": 4,
+     "brace": 2
+    },
+    "scope": "Infrastructure",
+    "pp": 6.0,
+    "text": "gather 4 Crew in each Infrastructure section; Brace 2 in each Infrastructure section"
+   },
+   "III": {
+    "effects": {
+     "brace": 5,
+     "gather_crew": 3
+    },
+    "scope": "Infrastructure",
+    "pp": 8.0,
+    "text": "Brace 5 in each Infrastructure section; gather 3 Crew in each Infrastructure section"
+   }
+  },
+  "breakthrough": {
+   "timing": "dusk",
+   "effects": {
+    "gather_crew": 2
+   },
+   "scope": "Agricultural",
+   "pp_per_generation": 1.0,
+   "text": "Each Dusk: gather 2 Crew in one Agricultural section."
+  }
+ },
+ {
+  "id": "D08",
+  "family": "People",
+  "tiers": {
+   "I": {
+    "effects": {
+     "gather_crew": 1,
+     "add_crew": 1
+    },
+    "scope": "Infrastructure",
+    "pp": 4.0,
+    "text": "gather 1 Crew in each Infrastructure section; add 1 Crew to any one section"
+   },
+   "II": {
+    "effects": {
+     "gather_crew": 3,
+     "add_crew": 1
+    },
+    "scope": "Infrastructure",
+    "pp": 6.0,
+    "text": "gather 3 Crew in each Infrastructure section; add 1 Crew to any one section"
+   },
+   "III": {
+    "effects": {
+     "purpose": 2,
+     "add_crew": 2
+    },
+    "scope": "Infrastructure",
+    "pp": 8.0,
+    "text": "+2 Purpose; add 2 Crew to any one section"
+   }
+  },
+  "breakthrough": {
+   "timing": "day",
+   "effects": {
+    "gather_crew": 2
+   },
+   "scope": "Infrastructure",
+   "pp_per_generation": 1.0,
+   "text": "Each Day: gather 2 Crew in one Infrastructure section."
+  }
+ },
+ {
+  "id": "D09",
+  "family": "Repair",
+  "tiers": {
+   "I": {
+    "effects": {
+     "remove_glitch": 2
+    },
+    "scope": "Outer Hull",
+    "pp": 4.0,
+    "text": "remove 2 Glitch in each Outer Hull section"
+   },
+   "II": {
+    "effects": {
+     "remove_glitch": 1,
+     "remove_fault": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 6.0,
+    "text": "remove 1 Glitch in each Outer Hull section; remove 1 Fault in each Outer Hull section"
+   },
+   "III": {
+    "effects": {
+     "remove_glitch": 3,
+     "damage": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 8.0,
+    "text": "remove 3 Glitch in each Outer Hull section; 1 damage in each Outer Hull section"
+   }
+  },
+  "breakthrough": {
+   "timing": "day",
+   "effects": {
+    "remove_glitch": 1
+   },
+   "scope": "Outer Hull",
+   "pp_per_generation": 1.0,
+   "text": "Each Day: remove 1 Glitch in one Outer Hull section."
+  }
+ },
+ {
+  "id": "D10",
+  "family": "Control",
+  "tiers": {
+   "I": {
+    "effects": {
+     "skip_seed": 1,
+     "remove_glitch": 1
+    },
+    "scope": "Agricultural",
+    "pp": 4.0,
+    "text": "skip the Seed in each Agricultural section; remove 1 Glitch in each Agricultural section"
+   },
+   "II": {
+    "effects": {
+     "skip_seed": 1,
+     "remove_glitch": 2
+    },
+    "scope": "Agricultural",
+    "pp": 6.0,
+    "text": "skip the Seed in each Agricultural section; remove 2 Glitch in each Agricultural section"
+   },
+   "III": {
+    "effects": {
+     "remove_glitch": 3,
+     "skip_seed": 1
+    },
+    "scope": "Agricultural",
+    "pp": 8.0,
+    "text": "remove 3 Glitch in each Agricultural section; skip the Seed in each Agricultural section"
+   }
+  },
+  "breakthrough": {
+   "timing": "dawn",
+   "effects": {
+    "foresee": 1,
+    "remove_glitch": 1
+   },
+   "scope": "Residential",
+   "pp_per_generation": 1.5,
+   "text": "Each Dawn: foresee; remove 1 Glitch in one Residential section."
+  }
+ },
+ {
+  "id": "D11",
+  "family": "Protection",
+  "tiers": {
+   "I": {
+    "effects": {
+     "gather_crew": 3,
+     "brace": 1
+    },
+    "scope": "Government",
+    "pp": 4.0,
+    "text": "gather 3 Crew in each Government section; Brace 1 in each Government section"
+   },
+   "II": {
+    "effects": {
+     "brace": 3,
+     "restore_decay": 1
+    },
+    "scope": "Government",
+    "pp": 6.0,
+    "text": "Brace 3 in each Government section; restore 1 Decay anywhere"
+   },
+   "III": {
+    "effects": {
+     "restore_decay": 2,
+     "gather_crew": 2
+    },
+    "scope": "Government",
+    "pp": 8.0,
+    "text": "restore 2 Decay anywhere; gather 2 Crew in each Government section"
+   }
+  },
+  "breakthrough": {
+   "timing": "dusk",
+   "effects": {
+    "brace": 2
+   },
+   "scope": "Infrastructure",
+   "pp_per_generation": 1.0,
+   "text": "Each Dusk: Brace 2 in one Infrastructure section."
+  }
+ },
+ {
+  "id": "D12",
+  "family": "People",
+  "tiers": {
+   "I": {
+    "effects": {
+     "purpose": 4
+    },
+    "scope": "Residential",
+    "pp": 4.0,
+    "text": "+4 Purpose"
+   },
+   "II": {
+    "effects": {
+     "purpose": 3,
+     "gather_crew": 3
+    },
+    "scope": "Residential",
+    "pp": 6.0,
+    "text": "+3 Purpose; gather 3 Crew in each Residential section"
+   },
+   "III": {
+    "effects": {
+     "purpose": 6,
+     "credits_each": 1
+    },
+    "scope": "Residential",
+    "pp": 8.0,
+    "text": "+6 Purpose; each house gains 1 credit(s)"
+   }
+  },
+  "breakthrough": {
+   "timing": "day",
+   "effects": {
+    "gather_crew": 2
+   },
+   "scope": "Agricultural",
+   "pp_per_generation": 1.0,
+   "text": "Each Day: gather 2 Crew in one Agricultural section."
+  }
+ },
+ {
+  "id": "D13",
+  "family": "Repair",
+  "tiers": {
+   "I": {
+    "effects": {
+     "remove_fault": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 4.0,
+    "text": "remove 1 Fault in each Outer Hull section"
+   },
+   "II": {
+    "effects": {
+     "remove_glitch": 1,
+     "remove_fault": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 6.0,
+    "text": "remove 1 Glitch in each Outer Hull section; remove 1 Fault in each Outer Hull section"
+   },
+   "III": {
+    "effects": {
+     "damage": 2,
+     "remove_fault": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 8.0,
+    "text": "2 damage in each Outer Hull section; remove 1 Fault in each Outer Hull section"
+   }
+  },
+  "breakthrough": {
+   "timing": "day",
+   "effects": {
+    "remove_glitch": 1
+   },
+   "scope": "Government",
+   "pp_per_generation": 1.0,
+   "text": "Each Day: remove 1 Glitch in one Government section."
+  }
+ },
+ {
+  "id": "D14",
+  "family": "Control",
+  "tiers": {
+   "I": {
+    "effects": {
+     "remove_glitch": 1,
+     "skip_seed": 1
+    },
+    "scope": "Government",
+    "pp": 4.0,
+    "text": "remove 1 Glitch in each Government section; skip the Seed in each Government section"
+   },
+   "II": {
+    "effects": {
+     "remove_glitch": 2,
+     "skip_seed": 1
+    },
+    "scope": "Government",
+    "pp": 6.0,
+    "text": "remove 2 Glitch in each Government section; skip the Seed in each Government section"
+   },
+   "III": {
+    "effects": {
+     "remove_glitch": 3,
+     "skip_seed": 1
+    },
+    "scope": "Government",
+    "pp": 8.0,
+    "text": "remove 3 Glitch in each Government section; skip the Seed in each Government section"
+   }
+  },
+  "breakthrough": {
+   "timing": "dawn",
+   "effects": {
+    "foresee": 1,
+    "remove_glitch": 1
+   },
+   "scope": "Agricultural",
+   "pp_per_generation": 1.5,
+   "text": "Each Dawn: foresee; remove 1 Glitch in one Agricultural section."
+  }
+ },
+ {
+  "id": "D15",
+  "family": "Protection",
+  "tiers": {
+   "I": {
+    "effects": {
+     "brace": 4
+    },
+    "scope": "Agricultural",
+    "pp": 4.0,
+    "text": "Brace 4 in each Agricultural section"
+   },
+   "II": {
+    "effects": {
+     "restore_decay": 1,
+     "gather_crew": 3
+    },
+    "scope": "Agricultural",
+    "pp": 6.0,
+    "text": "restore 1 Decay anywhere; gather 3 Crew in each Agricultural section"
+   },
+   "III": {
+    "effects": {
+     "gather_crew": 5,
+     "restore_decay": 1
+    },
+    "scope": "Agricultural",
+    "pp": 8.0,
+    "text": "gather 5 Crew in each Agricultural section; restore 1 Decay anywhere"
+   }
+  },
+  "breakthrough": {
+   "timing": "dusk",
+   "effects": {
+    "brace": 2
+   },
+   "scope": "Outer Hull",
+   "pp_per_generation": 1.0,
+   "text": "Each Dusk: Brace 2 in one Outer Hull section."
+  }
+ },
+ {
+  "id": "D16",
+  "family": "People",
+  "tiers": {
+   "I": {
+    "effects": {
+     "gather_crew": 2,
+     "credits_each": 1
+    },
+    "scope": "Agricultural",
+    "pp": 4.0,
+    "text": "gather 2 Crew in each Agricultural section; each house gains 1 credit(s)"
+   },
+   "II": {
+    "effects": {
+     "credits_each": 1,
+     "purpose": 4
+    },
+    "scope": "Agricultural",
+    "pp": 6.0,
+    "text": "each house gains 1 credit(s); +4 Purpose"
+   },
+   "III": {
+    "effects": {
+     "credits_each": 1,
+     "add_crew": 2
+    },
+    "scope": "Agricultural",
+    "pp": 8.0,
+    "text": "each house gains 1 credit(s); add 2 Crew to any one section"
+   }
+  },
+  "breakthrough": {
+   "timing": "day",
+   "effects": {
+    "purpose": 1
+   },
+   "scope": "Agricultural",
+   "pp_per_generation": 1.0,
+   "text": "Each Day: +1 Purpose in one Agricultural section."
+  }
+ },
+ {
+  "id": "D17",
+  "family": "Repair",
+  "tiers": {
+   "I": {
+    "effects": {
+     "remove_glitch": 1,
+     "damage": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 4.0,
+    "text": "remove 1 Glitch in each Outer Hull section; 1 damage in each Outer Hull section"
+   },
+   "II": {
+    "effects": {
+     "downgrade_failure": 2
+    },
+    "scope": "Outer Hull",
+    "pp": 6.0,
+    "text": "downgrade 2 Failure in each Outer Hull section"
+   },
+   "III": {
+    "effects": {
+     "downgrade_fault": 2,
+     "remove_glitch": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 8.0,
+    "text": "downgrade 2 Fault in each Outer Hull section; remove 1 Glitch in each Outer Hull section"
+   }
+  },
+  "breakthrough": {
+   "timing": "day",
+   "effects": {
+    "remove_glitch": 1
+   },
+   "scope": "Residential",
+   "pp_per_generation": 1.0,
+   "text": "Each Day: remove 1 Glitch in one Residential section."
+  }
+ },
+ {
+  "id": "D18",
+  "family": "Control",
+  "tiers": {
+   "I": {
+    "effects": {
+     "skip_seed": 1,
+     "remove_glitch": 1
+    },
+    "scope": "Agricultural",
+    "pp": 4.0,
+    "text": "skip the Seed in each Agricultural section; remove 1 Glitch in each Agricultural section"
+   },
+   "II": {
+    "effects": {
+     "remove_glitch": 3
+    },
+    "scope": "Agricultural",
+    "pp": 6.0,
+    "text": "remove 3 Glitch in each Agricultural section"
+   },
+   "III": {
+    "effects": {
+     "skip_seed": 1,
+     "remove_glitch": 3
+    },
+    "scope": "Agricultural",
+    "pp": 8.0,
+    "text": "skip the Seed in each Agricultural section; remove 3 Glitch in each Agricultural section"
+   }
+  },
+  "breakthrough": {
+   "timing": "dawn",
+   "effects": {
+    "foresee": 1,
+    "remove_glitch": 1
+   },
+   "scope": "Residential",
+   "pp_per_generation": 1.5,
+   "text": "Each Dawn: foresee; remove 1 Glitch in one Residential section."
+  }
+ },
+ {
+  "id": "D19",
+  "family": "Protection",
+  "tiers": {
+   "I": {
+    "effects": {
+     "restore_decay": 1,
+     "gather_crew": 1
+    },
+    "scope": "Government",
+    "pp": 4.0,
+    "text": "restore 1 Decay anywhere; gather 1 Crew in each Government section"
+   },
+   "II": {
+    "effects": {
+     "gather_crew": 2,
+     "brace": 4
+    },
+    "scope": "Government",
+    "pp": 6.0,
+    "text": "gather 2 Crew in each Government section; Brace 4 in each Government section"
+   },
+   "III": {
+    "effects": {
+     "brace": 6,
+     "gather_crew": 2
+    },
+    "scope": "Government",
+    "pp": 8.0,
+    "text": "Brace 6 in each Government section; gather 2 Crew in each Government section"
+   }
+  },
+  "breakthrough": {
+   "timing": "dusk",
+   "effects": {
+    "gather_crew": 2
+   },
+   "scope": "Infrastructure",
+   "pp_per_generation": 1.0,
+   "text": "Each Dusk: gather 2 Crew in one Infrastructure section."
+  }
+ },
+ {
+  "id": "D20",
+  "family": "People",
+  "tiers": {
+   "I": {
+    "effects": {
+     "purpose": 2,
+     "gather_crew": 2
+    },
+    "scope": "Infrastructure",
+    "pp": 4.0,
+    "text": "+2 Purpose; gather 2 Crew in each Infrastructure section"
+   },
+   "II": {
+    "effects": {
+     "purpose": 2,
+     "credits_each": 2
+    },
+    "scope": "Infrastructure",
+    "pp": 6.0,
+    "text": "+2 Purpose; each house gains 2 credit(s)"
+   },
+   "III": {
+    "effects": {
+     "purpose": 5,
+     "gather_crew": 3
+    },
+    "scope": "Infrastructure",
+    "pp": 8.0,
+    "text": "+5 Purpose; gather 3 Crew in each Infrastructure section"
+   }
+  },
+  "breakthrough": {
+   "timing": "day",
+   "effects": {
+    "gather_crew": 2
+   },
+   "scope": "Outer Hull",
+   "pp_per_generation": 1.0,
+   "text": "Each Day: gather 2 Crew in one Outer Hull section."
+  }
+ },
+ {
+  "id": "D21",
+  "family": "Repair",
+  "tiers": {
+   "I": {
+    "effects": {
+     "remove_fault": 1
+    },
+    "scope": "Residential",
+    "pp": 4.0,
+    "text": "remove 1 Fault in each Residential section"
+   },
+   "II": {
+    "effects": {
+     "downgrade_fault": 1,
+     "downgrade_failure": 1
+    },
+    "scope": "Residential",
+    "pp": 6.0,
+    "text": "downgrade 1 Fault in each Residential section; downgrade 1 Failure in each Residential section"
+   },
+   "III": {
+    "effects": {
+     "remove_glitch": 3,
+     "damage": 1
+    },
+    "scope": "Residential",
+    "pp": 8.0,
+    "text": "remove 3 Glitch in each Residential section; 1 damage in each Residential section"
+   }
+  },
+  "breakthrough": {
+   "timing": "day",
+   "effects": {
+    "remove_glitch": 1
+   },
+   "scope": "Government",
+   "pp_per_generation": 1.0,
+   "text": "Each Day: remove 1 Glitch in one Government section."
+  }
+ },
+ {
+  "id": "D22",
+  "family": "Control",
+  "tiers": {
+   "I": {
+    "effects": {
+     "remove_glitch": 2
+    },
+    "scope": "Infrastructure",
+    "pp": 4.0,
+    "text": "remove 2 Glitch in each Infrastructure section"
+   },
+   "II": {
+    "effects": {
+     "remove_glitch": 2,
+     "skip_seed": 1
+    },
+    "scope": "Infrastructure",
+    "pp": 6.0,
+    "text": "remove 2 Glitch in each Infrastructure section; skip the Seed in each Infrastructure section"
+   },
+   "III": {
+    "effects": {
+     "remove_glitch": 3,
+     "skip_seed": 1
+    },
+    "scope": "Infrastructure",
+    "pp": 8.0,
+    "text": "remove 3 Glitch in each Infrastructure section; skip the Seed in each Infrastructure section"
+   }
+  },
+  "breakthrough": {
+   "timing": "day",
+   "effects": {
+    "skip_seed": 1
+   },
+   "scope": "Government",
+   "pp_per_generation": 1.0,
+   "text": "Each Day: skip the Seed in one Government section."
+  }
+ },
+ {
+  "id": "D23",
+  "family": "Protection",
+  "tiers": {
+   "I": {
+    "effects": {
+     "restore_decay": 1,
+     "gather_crew": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 4.0,
+    "text": "restore 1 Decay anywhere; gather 1 Crew in each Outer Hull section"
+   },
+   "II": {
+    "effects": {
+     "gather_crew": 5,
+     "brace": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 6.0,
+    "text": "gather 5 Crew in each Outer Hull section; Brace 1 in each Outer Hull section"
+   },
+   "III": {
+    "effects": {
+     "gather_crew": 6,
+     "brace": 2
+    },
+    "scope": "Outer Hull",
+    "pp": 8.0,
+    "text": "gather 6 Crew in each Outer Hull section; Brace 2 in each Outer Hull section"
+   }
+  },
+  "breakthrough": {
+   "timing": "dusk",
+   "effects": {
+    "brace": 2
+   },
+   "scope": "Infrastructure",
+   "pp_per_generation": 1.0,
+   "text": "Each Dusk: Brace 2 in one Infrastructure section."
+  }
+ },
+ {
+  "id": "D24",
+  "family": "People",
+  "tiers": {
+   "I": {
+    "effects": {
+     "add_crew": 1,
+     "purpose": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 4.0,
+    "text": "add 1 Crew to any one section; +1 Purpose"
+   },
+   "II": {
+    "effects": {
+     "gather_crew": 4,
+     "purpose": 2
+    },
+    "scope": "Outer Hull",
+    "pp": 6.0,
+    "text": "gather 4 Crew in each Outer Hull section; +2 Purpose"
+   },
+   "III": {
+    "effects": {
+     "purpose": 2,
+     "add_crew": 2
+    },
+    "scope": "Outer Hull",
+    "pp": 8.0,
+    "text": "+2 Purpose; add 2 Crew to any one section"
+   }
+  },
+  "breakthrough": {
+   "timing": "day",
+   "effects": {
+    "purpose": 1
+   },
+   "scope": "Infrastructure",
+   "pp_per_generation": 1.0,
+   "text": "Each Day: +1 Purpose in one Infrastructure section."
+  }
+ }
+]

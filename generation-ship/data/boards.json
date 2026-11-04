@@ -1,0 +1,627 @@
+{
+ "layout": "Each board is a 2x4 grid. Row 0, columns 0-2 are Outer Hull. Boards join in a chain A-B-C-D (bow to stern): the column-3 section of each row is adjacent to the column-0 section of the same row on the next board.",
+ "join": "chain",
+ "players_use": "Players 1-4 use boards A, A-B, A-B-C, A-B-C-D.",
+ "boards": [
+  {
+   "id": "A",
+   "sections": [
+    {
+     "id": "A1",
+     "type": "Infrastructure",
+     "hull": true,
+     "row": 0,
+     "col": 0,
+     "adjacent": [
+      "A2",
+      "A5"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 0,
+      "decay": 0
+     }
+    },
+    {
+     "id": "A2",
+     "type": "Residential",
+     "hull": true,
+     "row": 0,
+     "col": 1,
+     "adjacent": [
+      "A1",
+      "A3",
+      "A6",
+      "A7"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 1,
+      "crew": 0,
+      "decay": 0
+     }
+    },
+    {
+     "id": "A3",
+     "type": "Agricultural",
+     "hull": true,
+     "row": 0,
+     "col": 2,
+     "adjacent": [
+      "A2",
+      "A4",
+      "A7"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 0,
+      "decay": 0
+     }
+    },
+    {
+     "id": "A4",
+     "type": "Government",
+     "hull": false,
+     "row": 0,
+     "col": 3,
+     "adjacent": [
+      "A3",
+      "A8"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 1,
+      "failure": 0,
+      "crew": 1,
+      "decay": 0
+     }
+    },
+    {
+     "id": "A5",
+     "type": "Government",
+     "hull": false,
+     "row": 1,
+     "col": 0,
+     "adjacent": [
+      "A1",
+      "A6"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 2,
+      "decay": 0
+     }
+    },
+    {
+     "id": "A6",
+     "type": "Agricultural",
+     "hull": false,
+     "row": 1,
+     "col": 1,
+     "adjacent": [
+      "A2",
+      "A5",
+      "A7"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 2,
+      "decay": 0
+     }
+    },
+    {
+     "id": "A7",
+     "type": "Infrastructure",
+     "hull": false,
+     "row": 1,
+     "col": 2,
+     "adjacent": [
+      "A2",
+      "A3",
+      "A6",
+      "A8"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 0,
+      "decay": 1
+     }
+    },
+    {
+     "id": "A8",
+     "type": "Residential",
+     "hull": false,
+     "row": 1,
+     "col": 3,
+     "adjacent": [
+      "A4",
+      "A7"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 1,
+      "decay": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": "B",
+   "sections": [
+    {
+     "id": "B1",
+     "type": "Residential",
+     "hull": true,
+     "row": 0,
+     "col": 0,
+     "adjacent": [
+      "B2",
+      "B5"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 1,
+      "failure": 0,
+      "crew": 0,
+      "decay": 0
+     }
+    },
+    {
+     "id": "B2",
+     "type": "Government",
+     "hull": true,
+     "row": 0,
+     "col": 1,
+     "adjacent": [
+      "B1",
+      "B3",
+      "B6"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 0,
+      "decay": 0
+     }
+    },
+    {
+     "id": "B3",
+     "type": "Infrastructure",
+     "hull": true,
+     "row": 0,
+     "col": 2,
+     "adjacent": [
+      "B2",
+      "B4",
+      "B6",
+      "B7"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 1,
+      "crew": 1,
+      "decay": 0
+     }
+    },
+    {
+     "id": "B4",
+     "type": "Agricultural",
+     "hull": false,
+     "row": 0,
+     "col": 3,
+     "adjacent": [
+      "B3",
+      "B8"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 0,
+      "decay": 0
+     }
+    },
+    {
+     "id": "B5",
+     "type": "Agricultural",
+     "hull": false,
+     "row": 1,
+     "col": 0,
+     "adjacent": [
+      "B1",
+      "B6"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 2,
+      "decay": 0
+     }
+    },
+    {
+     "id": "B6",
+     "type": "Infrastructure",
+     "hull": false,
+     "row": 1,
+     "col": 1,
+     "adjacent": [
+      "B2",
+      "B3",
+      "B5",
+      "B7"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 1,
+      "decay": 0
+     }
+    },
+    {
+     "id": "B7",
+     "type": "Residential",
+     "hull": false,
+     "row": 1,
+     "col": 2,
+     "adjacent": [
+      "B3",
+      "B6",
+      "B8"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 2,
+      "decay": 0
+     }
+    },
+    {
+     "id": "B8",
+     "type": "Government",
+     "hull": false,
+     "row": 1,
+     "col": 3,
+     "adjacent": [
+      "B4",
+      "B7"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 0,
+      "decay": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "C",
+   "sections": [
+    {
+     "id": "C1",
+     "type": "Agricultural",
+     "hull": true,
+     "row": 0,
+     "col": 0,
+     "adjacent": [
+      "C2",
+      "C5",
+      "C6"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 1,
+      "failure": 0,
+      "crew": 0,
+      "decay": 0
+     }
+    },
+    {
+     "id": "C2",
+     "type": "Infrastructure",
+     "hull": true,
+     "row": 0,
+     "col": 1,
+     "adjacent": [
+      "C1",
+      "C3",
+      "C6"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 0,
+      "decay": 0
+     }
+    },
+    {
+     "id": "C3",
+     "type": "Government",
+     "hull": true,
+     "row": 0,
+     "col": 2,
+     "adjacent": [
+      "C2",
+      "C4",
+      "C7"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 1,
+      "crew": 0,
+      "decay": 0
+     }
+    },
+    {
+     "id": "C4",
+     "type": "Residential",
+     "hull": false,
+     "row": 0,
+     "col": 3,
+     "adjacent": [
+      "C3",
+      "C8"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 0,
+      "decay": 0
+     }
+    },
+    {
+     "id": "C5",
+     "type": "Residential",
+     "hull": false,
+     "row": 1,
+     "col": 0,
+     "adjacent": [
+      "C1",
+      "C6"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 2,
+      "decay": 0
+     }
+    },
+    {
+     "id": "C6",
+     "type": "Government",
+     "hull": false,
+     "row": 1,
+     "col": 1,
+     "adjacent": [
+      "C1",
+      "C2",
+      "C5",
+      "C7"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 1,
+      "decay": 1
+     }
+    },
+    {
+     "id": "C7",
+     "type": "Agricultural",
+     "hull": false,
+     "row": 1,
+     "col": 2,
+     "adjacent": [
+      "C3",
+      "C6",
+      "C8"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 2,
+      "decay": 0
+     }
+    },
+    {
+     "id": "C8",
+     "type": "Infrastructure",
+     "hull": false,
+     "row": 1,
+     "col": 3,
+     "adjacent": [
+      "C4",
+      "C7"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 1,
+      "decay": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": "D",
+   "sections": [
+    {
+     "id": "D1",
+     "type": "Government",
+     "hull": true,
+     "row": 0,
+     "col": 0,
+     "adjacent": [
+      "D2",
+      "D5"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 1,
+      "crew": 0,
+      "decay": 0
+     }
+    },
+    {
+     "id": "D2",
+     "type": "Agricultural",
+     "hull": true,
+     "row": 0,
+     "col": 1,
+     "adjacent": [
+      "D1",
+      "D3",
+      "D6",
+      "D7"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 1,
+      "decay": 0
+     }
+    },
+    {
+     "id": "D3",
+     "type": "Residential",
+     "hull": true,
+     "row": 0,
+     "col": 2,
+     "adjacent": [
+      "D2",
+      "D4",
+      "D7"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 0,
+      "decay": 0
+     }
+    },
+    {
+     "id": "D4",
+     "type": "Infrastructure",
+     "hull": false,
+     "row": 0,
+     "col": 3,
+     "adjacent": [
+      "D3",
+      "D8"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 1,
+      "failure": 0,
+      "crew": 0,
+      "decay": 0
+     }
+    },
+    {
+     "id": "D5",
+     "type": "Infrastructure",
+     "hull": false,
+     "row": 1,
+     "col": 0,
+     "adjacent": [
+      "D1",
+      "D6"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 0,
+      "decay": 1
+     }
+    },
+    {
+     "id": "D6",
+     "type": "Residential",
+     "hull": false,
+     "row": 1,
+     "col": 1,
+     "adjacent": [
+      "D2",
+      "D5",
+      "D7"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 2,
+      "decay": 0
+     }
+    },
+    {
+     "id": "D7",
+     "type": "Government",
+     "hull": false,
+     "row": 1,
+     "col": 2,
+     "adjacent": [
+      "D2",
+      "D3",
+      "D6",
+      "D8"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 2,
+      "decay": 0
+     }
+    },
+    {
+     "id": "D8",
+     "type": "Agricultural",
+     "hull": false,
+     "row": 1,
+     "col": 3,
+     "adjacent": [
+      "D4",
+      "D7"
+     ],
+     "setup": {
+      "glitch": 0,
+      "fault": 0,
+      "failure": 0,
+      "crew": 1,
+      "decay": 0
+     }
+    }
+   ]
+  }
+ ]
+}
