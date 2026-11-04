@@ -9,7 +9,12 @@
     --accent: #e0a64a; --hl: #f0c040; --danger: #e06a55; --ok: #6cc08a;
     --infra: #34404d; --resi: #4a3d30; --gov: #3e3550; --agri: #33452d;
   }
-}
+}:root[data-theme="dark"] {
+    --bg: #1d1a16; --panel: #27231e; --ink: #ece4d6; --muted: #a59a8a; --line: #4a4237;
+    --accent: #e0a64a; --hl: #f0c040; --danger: #e06a55; --ok: #6cc08a;
+    --infra: #34404d; --resi: #4a3d30; --gov: #3e3550; --agri: #33452d;
+  }
+
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.4 system-ui, sans-serif; }
 button { font: inherit; padding: 4px 10px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 4px; cursor: pointer; }
@@ -59,3 +64,25 @@ h3 { margin: 10px 0 6px; font-size: 13px; text-transform: uppercase; letter-spac
 #log { max-height: 280px; overflow-y: auto; font-size: 12px; color: var(--muted); padding-left: 20px; }
 .banner { font-size: 18px; font-weight: 700; }
 .win { color: var(--ok); } .loss { color: var(--danger); }
+
+#phase-guide { grid-column: 1 / -1; padding: 6px 12px; border-radius: 6px; background: var(--panel); border: 1px solid var(--line); font-weight: 600; }
+#phase-guide:empty { display: none; }
+#map .fc-collapse { fill: none; stroke: var(--danger); stroke-width: 3; stroke-dasharray: 6 4; }
+#map .fc-collapse.fc-decay { stroke-width: 5; stroke-dasharray: none; }
+#map .fc-badge { font-size: 12px; font-weight: 700; fill: var(--danger); paint-order: stroke; stroke: var(--panel); stroke-width: 3px; }
+#map .fc-badge.fc-bad { font-size: 13px; }
+.tog { font-size: 11px; text-transform: none; letter-spacing: 0; color: var(--muted); font-weight: 400; }
+.plan table { border-collapse: collapse; margin: 6px 0; font-size: 12px; }
+.plan td { padding: 2px 8px 2px 0; vertical-align: top; }
+.plan > div { margin: 3px 0; }
+.ok { color: var(--ok); } .muted { color: var(--muted); }
+.loss { color: var(--danger); }
+.card.nom { box-shadow: 0 0 0 3px var(--accent); }
+.card.nom .hd span:first-child::after { content: " · nominee"; color: var(--accent); }
+.votec { max-width: 260px; display: inline-block; vertical-align: top; margin-right: 6px; }
+#prompt button small { color: var(--muted); font-size: 11px; }
+#prompt .opts button { text-align: left; }
+#rules p { font-size: 12px; margin: 6px 0; }
+#rules summary { cursor: pointer; }
+.house.active { box-shadow: 0 0 0 3px var(--hl); }
+.house.active .card { cursor: pointer; }

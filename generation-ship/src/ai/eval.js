@@ -13,7 +13,8 @@ export const W = {
 
 // Which events act next, from the current phase's point of view.
 export function upcoming(G, st) {
-  const early = ["setup", "growth", "commit", "fast"].includes(st.phase);
+  // "time" counts as early: Time passes shifts the slots first, so the next Collapse is the Dusk slot.
+  const early = ["setup", "growth", "commit", "fast", "time"].includes(st.phase);
   const beforeDay = early || st.phase === "dusk";
   return {
     collapse: early ? eventTypes(G, st.slots.dusk?.event) : eventTypes(G, st.slots.day?.event),

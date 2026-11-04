@@ -4,6 +4,7 @@
 import { createGame, makeContext, runPhase, PHASES, setupRamp, houseStats, houseData, card, eventTypes } from "../engine/game.js";
 import { allSections, totalInfluence } from "../engine/rules.js";
 import { Bot, BOT_LEVELS } from "../ai/bots.js";
+import { predictedCollapse } from "../ai/eval.js";
 
 const HOUSE_COLORS = ["#c0392b", "#2471a3", "#1e8449", "#8e44ad"];
 const TYPE_FILL = { Infrastructure: "var(--infra)", Residential: "var(--resi)", Government: "var(--gov)", Agricultural: "var(--agri)" };
@@ -125,12 +126,50 @@ function eventText(eid) {
   return `${e.id}: <b>${e.types.join(" + ")}</b>${e.twist ? ` <i>(${esc(e.twist.text)})</i>` : ""}`;
 }
 
+// What each phase does, shown in the status line and the idle prompt.
+const PHASE_GUIDE = {
+  growth: "Growth: each house picks A/B/C, gains credits, and draws a fresh hand.",
+  commit: "Commit: choose your plays and pay for them. One card is your free, fast nominee (a candidate heir).",
+  fast: "Fast: nominees (and other fast plays) resolve before Dusk.",
+  dusk: "Dusk: earned Discoveries resolve, then the Elder's Legacy, then the Elder's event Collapses.",
+  day: "Day: the Steward's Reign applies, then the Steward's event Grows.",
+  dawn: "Dawn: vote an heir from the nominees; the next event is drawn and Seeds.",
+  slow: "Slow: all other played cards and slow innates resolve.",
+  time: "Time passes: Dusk → Wall, Day → Dusk, Dawn → Day; hands are discarded (except clones).",
+};
+
+// Which events act next, judged by the phase about to run (or running).
+function forecastEvents() {
+  const st = D.st, idx = D.phaseIdx, ev = (slot) => slot && DATA.eventById[slot.event];
+  if (idx <= 3) return { collapse: ev(st.slots.dusk), grow: ev(st.slots.day), when: "this Dusk" };
+  if (idx === 4) return { collapse: ev(st.slots.day), grow: ev(st.slots.day), when: "next Dusk" };
+  return { collapse: ev(st.slots.day), grow: ev(st.slots.dawn), when: "next Dusk" };
+}
+const matchesEv = (s, e) => e && e.types.some((t) => t === "ALL" || t === s.type || (t === "Hull" && s.hull));
+function forecast() {
+  const st = D.st, { collapse, grow, when } = forecastEvents(), out = {};
+  for (const id of st.order) {
+    const s = st.sections[id], threat = s.glitch + s.fault + s.failure, f = {};
+    if (threat && matchesEv(s, collapse)) {
+      let d = predictedCollapse(s);
+      if (collapse.twist?.rule === "faults_plus_one") d += s.fault;
+      if (s.hull && st.dest?.rules?.hull_collapse_plus) d += 1;
+      f.collapse = d; f.decay = d >= D.G.cfg.decayThreshold; f.crew = Math.min(s.crew, Math.floor(d / D.G.cfg.crewHealth));
+    }
+    if (threat && matchesEv(s, grow)) f.grow = s.patch ? "patched" : s.fault >= 2 ? "Failure" : "Fault";
+    if (Object.keys(f).length) out[id] = f;
+  }
+  return { out, collapse, grow, when };
+}
+
 function render() {
   const st = D.st, G = D.G;
   const phase = D.snapshot ? PHASES[D.phaseIdx] : (st.result ? "end" : `next: ${PHASES[D.phaseIdx]}`);
   const cond = st.tier >= 3 ? "no Faults or Failures" : st.tier === 2 ? "no threat" : "no threat and no Decay";
+  const nowPhase = PHASES[D.phaseIdx];
+  $("phase-guide").textContent = st.result ? "" : (D.snapshot ? "Now — " : "Next — ") + PHASE_GUIDE[nowPhase];
   $("status").innerHTML = `Generation ${st.gen} · ${phase} · Events left ${st.decks.events.length} · Decay pool ${st.decayPool}${st.crisisFlipped ? ` (crisis ${st.crisisId})` : ""} · Purpose ${st.purpose}/${st.purposeCap} · Understanding ${["I", "II", "III"][st.tier - 1]} → win: ${cond}${st.landfallPlaced ? " · Landfall under way" : ""}`;
-  renderConveyor(); renderMap(); renderHouses(); renderWall(); renderPrompt();
+  renderConveyor(); renderForecast(); renderMap(); renderHouses(); renderWall(); renderPrompt();
   $("log").innerHTML = st.log.slice(-80).map((l) => `<li>${esc(l)}</li>`).join("");
   $("log").scrollTop = 1e9;
 }
@@ -144,6 +183,17 @@ function renderConveyor() {
   $("conveyor").innerHTML += dest;
   $("discoveries").innerHTML = `Earned ${st.discoveriesEarned}; pending ${st.pendingDiscoveries.length}<br>` +
     (st.breakthroughs.length ? "Breakthroughs: " + st.breakthroughs.map((d) => `<div class="slot">${esc(DATA.discoveryById[d].breakthrough.text)}</div>`).join("") : "");
+}
+
+function renderForecast() {
+  const { out, collapse, grow, when } = forecast();
+  const rows = Object.entries(out);
+  const col = rows.filter(([, f]) => f.collapse !== undefined).sort((a, b) => b[1].collapse - a[1].collapse);
+  const gr = rows.filter(([, f]) => f.grow);
+  $("forecast").innerHTML = `<div class="slot"><b>Collapse ${when}</b>${collapse ? ` (${collapse.types.join(" + ")})` : ""}<br>` +
+    (col.length ? col.map(([id, f]) => `${id}: ${f.collapse} dmg${f.decay ? " → <b class=\"loss\">Decay</b>" : ""}${f.crew ? `, ${f.crew} Crew lost` : ""}`).join("<br>") : "<i>nothing threatened</i>") +
+    `</div><div class="slot"><b>Grow</b>${grow ? ` (${grow.types.join(" + ")})` : ""}<br>` +
+    (gr.length ? gr.map(([id, f]) => `${id}: ${f.grow === "patched" ? "Patch stops it" : "+1 " + f.grow}`).join("<br>") : "<i>nothing grows</i>") + "</div>";
 }
 
 // Section geometry from data/boards.json: each board's polygons rotated and placed by the layout.
@@ -178,6 +228,7 @@ function renderMap() {
   const st = D.st;
   const opts = D.pending && SECTION_KINDS.has(D.pending.kind) ? new Set(D.pending.options.map((o) => String(o).replace("*", ""))) : new Set();
   const { geo, width, height } = geometry();
+  const fc = $("show-forecast")?.checked !== false ? forecast().out : {};
   let svg = "";
   const seen = new Set();
   for (const id of st.order) for (const a of st.sections[id].adj) {
@@ -201,6 +252,12 @@ function renderMap() {
       <text x="${cx}" y="${cy + 12}" text-anchor="middle" font-size="11">${s.crew ? `☺${s.crew}` : ""} ${s.decay ? `✸${s.decay}` : ""}</text>
       <text x="${cx}" y="${cy + 27}" text-anchor="middle" font-size="13">${inf}</text>
       <text x="${cx}" y="${cy + 40}" text-anchor="middle" font-size="10">${tok}</text></g>`;
+    const f = fc[id];
+    if (f) {
+      if (f.collapse !== undefined) svg += `<polygon points="${pts}" class="fc-collapse ${f.decay ? "fc-decay" : ""}" pointer-events="none"/>`;
+      const badge = [f.collapse !== undefined ? `⚠${f.collapse}${f.decay ? " Decay!" : ""}` : "", f.grow && f.grow !== "patched" ? `↑${f.grow === "Failure" ? "⬢" : "■"}` : ""].filter(Boolean).join(" ");
+      if (badge) svg += `<text x="${cx}" y="${cy - 34}" text-anchor="middle" class="fc-badge ${f.decay ? "fc-bad" : ""}" pointer-events="none">${badge}</text>`;
+    }
   }
   for (const o of geo.$outlines) svg += `<polygon points="${o.map((p) => p.join(",")).join(" ")}" fill="none" stroke="var(--ink)" stroke-opacity=".8" stroke-width="2" stroke-linejoin="round" pointer-events="none"/>`;
   const map = $("map");
@@ -222,8 +279,10 @@ function sectionTip(id) {
   const inf = Object.entries(s.influence).filter(([, n]) => n > 0).map(([h, n]) => `${esc(houseData(G, st, +h).name.split(",")[0])} ${n}${n >= 2 ? " (Haven)" : ""}`).join(", ") || "none";
   const toks = [["Brace", s.brace], ["Quarantine", s.quarantine], ["Patch", s.patch], ["Lockout", s.lockout], ["Unrest", s.unrest], ["Isolate", s.isolate], ["damage taken", s.dmg]]
     .filter(([, n]) => n).map(([k, n]) => `${k} ${n}`).join(", ") || "none";
+  const fc = forecast().out[id];
+  const fcText = fc ? `<br><b>Forecast:</b> ${fc.collapse !== undefined ? `Collapse ${fc.collapse} damage${fc.decay ? " → Decay" : ""}${fc.crew ? `, ${fc.crew} Crew lost` : ""}` : ""}${fc.grow ? `${fc.collapse !== undefined ? "; " : ""}${fc.grow === "patched" ? "Grow blocked by Patch" : "Grow +1 " + fc.grow}` : ""}` : "";
   const ev = ["dusk", "day", "dawn"].filter((k) => st.slots[k] && G.data.eventById[st.slots[k].event].types.some((t) => t === "ALL" || t === s.type || (t === "Hull" && s.hull)));
-  return `<b>${id}</b> ${s.type}${s.hull ? " · Outer Hull" : ""}<br>Glitch ${s.glitch} · Fault ${s.fault} · Failure ${s.failure} → collapse damage ${s.glitch + 2 * s.fault + 3 * s.failure}<br>Crew ${s.crew} · Decay ${s.decay}<br>Influence: ${inf}<br>Tokens: ${toks}<br>Adjacent: ${s.adj.join(", ")}${ev.length ? `<br><b>Targeted by:</b> ${ev.map((k) => ({ dusk: "Dusk (Collapse)", day: "Day (Grow)", dawn: "Dawn" })[k]).join(", ")}` : ""}`;
+  return `<b>${id}</b> ${s.type}${s.hull ? " · Outer Hull" : ""}<br>Glitch ${s.glitch} · Fault ${s.fault} · Failure ${s.failure} → collapse damage ${s.glitch + 2 * s.fault + 3 * s.failure}<br>Crew ${s.crew} · Decay ${s.decay}<br>Influence: ${inf}<br>Tokens: ${toks}<br>Adjacent: ${s.adj.join(", ")}${fcText}${ev.length ? `<br><b>Targeted by:</b> ${ev.map((k) => ({ dusk: "Dusk (Collapse)", day: "Day (Grow)", dawn: "Dawn" })[k]).join(", ")}` : ""}`;
 }
 function showTip(e, html) {
   let t = $("tip"); if (!t) { t = document.createElement("div"); t.id = "tip"; document.body.appendChild(t); }
@@ -270,13 +329,13 @@ function renderHouses() {
     const pend = D.pending && D.pending.h === h;
     let hand = "";
     if (pend && D.pending.kind === "commit") {
-      hand = H.hand.map((c) => cardHTML(c, commitSel.play.has(c) ? "sel" : "")).join("");
+      hand = H.hand.map((c) => cardHTML(c, (commitSel.play.has(c) ? "sel" : "") + (c === commitSel.nominee ? " nom" : ""))).join("");
     } else if (pend && D.pending.kind === "clone") {
       hand = H.hand.map((c) => cardHTML(c, cloneSel.has(c) ? "sel" : "")).join("");
     } else {
       hand = H.hand.map((c) => cardHTML(c)).join("") + (H.played.length ? `<div class="stats">Played: ${H.played.join(", ")}${H.nominee ? ` (nominee ${H.nominee})` : ""}</div>` : "");
     }
-    return `<div class="house" style="--hc:${HOUSE_COLORS[h]}"><b>${esc(hd.name)}</b> <span class="stats">${human ? "Human" : seats[h]}</span>
+    return `<div class="house ${pend ? "active" : ""}" data-h="${h}" style="--hc:${HOUSE_COLORS[h]}"><b>${esc(hd.name)}</b> <span class="stats">${human ? "Human" : seats[h]}</span>
       <div class="stats">Credits ${H.credits} (+${hs.income}/gen) · plays ${hs.plays} · hand ${hs.hand} · clone ${hs.clone} · influence ${totalInfluence(st, h)}</div>
       <div class="stats">Credits track: ${trackHTML(hd.tracks.credits, H.track.credits)}<br>Plays track: ${trackHTML(hd.tracks.plays, H.track.plays)}</div>
       <div class="stats">Elements: ${el}</div>
@@ -285,8 +344,9 @@ function renderHouses() {
   }).join("");
   document.querySelectorAll("#houses .card[data-card]").forEach((el) => el.addEventListener("click", () => {
     if (!D.pending) return;
+    if (+el.closest(".house")?.dataset.h !== D.pending.h) return; // only the deciding house's hand responds
     const cid = el.dataset.card;
-    if (D.pending.kind === "commit") { commitSel.play.has(cid) ? commitSel.play.delete(cid) : commitSel.play.add(cid); if (!commitSel.play.has(commitSel.nominee)) commitSel.nominee = [...commitSel.play][0] ?? null; render(); }
+    if (D.pending.kind === "commit") { commitSel.play.has(cid) ? commitSel.play.delete(cid) : commitSel.play.add(cid); if (!commitSel.play.has(commitSel.nominee)) commitSel.nominee = [...commitSel.play].sort((a, b) => card(D.G, b).cost - card(D.G, a).cost)[0] ?? null; commitSel.fast.delete(commitSel.nominee); render(); }
     if (D.pending.kind === "clone") { cloneSel.has(cid) ? cloneSel.delete(cid) : cloneSel.size < D.pending.ctx.slots && cloneSel.add(cid); render(); }
   }));
 }
@@ -311,6 +371,50 @@ const KIND_TEXT = {
   vote: "Vote for the next heir", discovery: "Discovery", clone: "Clone cards into the next generation", landfall: "Begin Landfall?",
 };
 
+// Human-readable description of a house's next track slot.
+function slotDesc(h, track) {
+  const st = D.st, G = D.G, hd = houseData(G, st, h), H = st.houses[h], hs = houseStats(G, st, h);
+  const t = hd.tracks[track], pos = H.track[track];
+  if (pos >= t.length - 1) return "track complete";
+  const v = t[pos + 1];
+  if (typeof v === "object") return v.element ? `+1 ${v.element} element every generation` : v.fast_play ? "+1 fast play every generation" : "+1 clone slot";
+  return track === "credits" ? `${v} credits per generation (now ${hs.income})` : `${v} card plays (now ${hs.plays}; hand ${v + hd.hand_bonus})`;
+}
+const fx = (e) => Object.entries(e).map(([k, v]) => `${k.replace(/_/g, " ")} ${v}`).join(", ");
+
+// The commit planner: selected cards, cost, nominee, fast slots, elements, thresholds and innate tier.
+function commitPlanHTML(h, ctx) {
+  const st = D.st, G = D.G, H = st.houses[h], hs = houseStats(G, st, h), hd = houseData(G, st, h);
+  const sel = [...commitSel.play];
+  const el = { ...hs.raw };
+  for (const c of sel) for (const g of card(G, c).guilds) el[g] = (el[g] || 0) + 1;
+  const met = (req) => Object.entries(req).every(([g, n]) => (el[g] || 0) >= n);
+  const fastCap = 1 + hs.fastPlays + (H.perkFast || 0) + (H.id === "galvan" ? el.Engineers || 0 : 0);
+  const cost = sel.reduce((n, c) => n + (c === commitSel.nominee ? 0 : card(G, c).cost), 0);
+  const fastUsed = 1 + [...commitSel.fast].filter((c) => sel.includes(c) && c !== commitSel.nominee).length;
+  const rows = sel.map((c) => {
+    const k = card(G, c), nom = c === commitSel.nominee;
+    const th = k.threshold ? (met(k.threshold.elements) ? `<span class="ok">✓ bonus: ${esc(k.threshold.text)}</span>` : `<span class="muted">✗ needs ${Object.entries(k.threshold.elements).map(([g, n]) => `${g} ${n}`).join(" + ")}</span>`) : "<span class=\"muted\">—</span>";
+    const canFast = !nom && (commitSel.fast.has(c) || fastUsed < fastCap);
+    return `<tr><td><b>${c}</b></td><td>${nom ? "<s>" + k.cost + "</s> 0" : k.cost}¢</td>
+      <td><label><input type="radio" name="nomr" class="nomr" value="${c}" ${nom ? "checked" : ""}> nominee</label></td>
+      <td><label><input type="checkbox" class="fx" value="${c}" ${nom ? "checked disabled" : commitSel.fast.has(c) ? "checked" : ""} ${canFast || nom ? "" : "disabled"}> fast</label></td><td>${th}</td></tr>`;
+  }).join("");
+  let tier = null;
+  for (const t of hd.innate.tiers) if (met(t.threshold)) tier = t;
+  const next = hd.innate.tiers.find((t) => !met(t.threshold));
+  const innate = tier ? `<span class="ok">Tier ${tier.tier}: ${esc(fx(tier.effects))}</span>` : `<span class="muted">no tier</span>`;
+  const nextTxt = next ? ` · next tier ${next.tier} needs ${Object.entries(next.threshold).map(([g, n]) => `${g} ${n}`).join(" + ")}` : "";
+  const elTxt = Object.entries(el).filter(([, n]) => n).map(([g, n]) => `${g} ${n}`).join(", ") || "none";
+  const over = sel.length > ctx.plays || cost > H.credits;
+  return `<div class="plan">
+    <div>Click cards in your hand to add or remove them. <b>Plays ${sel.length}/${ctx.plays}</b> · <b class="${cost > H.credits ? "loss" : ""}">Cost ${cost}¢ of ${H.credits}¢</b> · Fast ${Math.min(fastUsed, fastCap)}/${fastCap} (nominee counts)</div>
+    ${sel.length ? `<table>${rows}</table>` : "<div class=\"muted\">No cards selected yet.</div>"}
+    <div>Elements: ${elTxt}</div>
+    <div>${esc(hd.innate.name)} (${hd.innate.speed}): ${innate}${nextTxt}</div>
+    <button id="commit-ok" class="primary" ${over ? "disabled" : ""}>Commit ${sel.length ? "these plays" : "no plays"}</button></div>`;
+}
+
 function renderPrompt() {
   const p = $("prompt"), st = D.st, G = D.G;
   if (st.result) {
@@ -320,45 +424,69 @@ function renderPrompt() {
   if (!D.pending) { p.className = "idle"; p.textContent = autoTimer ? "Running…" : "Press Step (or Auto) to continue."; return; }
   p.className = "";
   const { h, kind, options, ctx } = D.pending;
-  const who = `<b style="color:${HOUSE_COLORS[h]}">${esc(houseData(G, st, h).name)}</b>: `;
-  let body = "";
+  const hd = houseData(G, st, h), H = st.houses[h];
+  const who = `<b style="color:${HOUSE_COLORS[h]}">${esc(hd.name)}</b>: `;
+  const sec = (id) => `${id} (${st.sections[id].type})`;
+  let title = KIND_TEXT[kind] ?? kind, body = "";
   if (kind === "growth") {
-    const hd = houseData(G, st, h);
-    const desc = { A: `Place influence (range ${hd.growth_overrides?.A?.range ?? 1}) and uncover a track slot`, B: "Gain 2 credits + house perk", C: "Draw +2 cards and gain 1 credit (Vigil: +1 Purpose)" };
-    body = options.map((o) => `<button data-o="${o}">${o}: ${desc[o]}</button>`).join("");
+    const perk = hd.growth_perk?.B ? ` + ${hd.growth_perk.B.text}` : "";
+    const aInf = hd.growth_overrides?.A?.influence ?? 1, aRange = hd.growth_overrides?.A?.range ?? 1;
+    const cTxt = hd.growth_overrides?.C?.text ?? "Draw +2 cards this generation and gain 1 credit";
+    body = `<button data-o="A">A · Place ${aInf} influence (range ${aRange}) and uncover a track slot<br><small>Credits next: ${slotDesc(h, "credits")} · Plays next: ${slotDesc(h, "plays")}</small></button>
+      <button data-o="B">B · Gain 2 credits${esc(perk)}<br><small>You have ${H.credits}¢</small></button>
+      <button data-o="C">C · ${esc(cTxt)}</button>`;
+  } else if (kind === "track") {
+    body = options.map((o) => `<button data-o="${o}">${o === "credits" ? "Credits" : "Plays"} track → ${esc(slotDesc(h, o))}</button>`).join("");
+  } else if (kind === "remarkables") {
+    const n = ctx.handSize;
+    title = "Draw a Remarkable person this generation?";
+    body = `<button data-o="0">No — draw ${n} Common cards</button><button data-o="1">Yes — 1 Remarkable + ${Math.max(0, n - 2)} Commons<br><small>Remarkables cost more but are stronger, with harsher Legacies</small></button>`;
   } else if (kind === "commit") {
-    const H = st.houses[h];
-    const sel = [...commitSel.play];
-    const cost = sel.reduce((n, c) => n + (c === commitSel.nominee ? 0 : card(G, c).cost), 0);
-    body = `Select up to ${ctx.plays} cards in your hand (click them). Cost ${cost}¢ of ${H.credits}¢ (the nominee is free).<br>
-      Nominee (fast, may become heir): <select id="nom">${sel.map((c) => `<option ${c === commitSel.nominee ? "selected" : ""}>${c}</option>`).join("")}</select>
-      Extra fast: ${sel.filter((c) => c !== commitSel.nominee).map((c) => `<label><input type="checkbox" class="fx" value="${c}" ${commitSel.fast.has(c) ? "checked" : ""}>${c}</label>`).join(" ") || "—"}
-      <button id="commit-ok" class="primary" ${sel.length > ctx.plays || cost > H.credits ? "disabled" : ""}>Commit</button>`;
+    body = commitPlanHTML(h, ctx);
   } else if (kind === "clone") {
-    body = `Select up to ${ctx.slots} card(s) in your hand to keep. <button id="clone-ok" class="primary">Done</button>`;
+    title = `Clone up to ${ctx.slots} card(s): click them in your hand to keep them for next generation`;
+    body = `<button id="clone-ok" class="primary">Keep ${cloneSel.size ? [...cloneSel].join(", ") : "nothing"}</button>`;
   } else if (kind === "vote") {
-    body = options.map((o) => `<div style="max-width:260px">${cardHTML(o)}<button data-o="${o}">Vote ${o}</button></div>`).join("");
+    const upcoming = st.upcomingEvent ? `The next event (Direct pairing) is ${eventText(st.upcomingEvent)}. ` : "";
+    title = "Vote for the next heir";
+    body = `<div class="muted">${upcoming}The heir reigns next generation (Reign) and leaves its Legacy the one after, in its event's sections. Ties go to the Steward's house.</div>` +
+      options.map((o) => { const nh = st.houses.findIndex((x) => x.nominee === o); return `<div class="votec">${cardHTML(o)}<button data-o="${o}">Vote ${o}${nh >= 0 ? ` (${esc(st.houses[nh].id)})` : ""}</button></div>`; }).join("");
   } else if (kind === "discovery") {
-    const d = DATA.discoveryById[ctx.id], t = d.tiers[["I", "II", "III"][st.tier - 1]];
-    body = `${d.id} (${d.family}).<br><button data-o="apply">Apply now: ${esc(t.text)}</button> <button data-o="breakthrough">Breakthrough on the Steward: ${esc(d.breakthrough.text)}</button>`;
+    const d = DATA.discoveryById[ctx.id], tl = ["I", "II", "III"][st.tier - 1], t = d.tiers[tl];
+    title = `Discovery ${d.id} (${d.family}) — apply it now, or keep it as a Breakthrough`;
+    body = `<button data-o="apply">Apply now (Understanding ${tl}):<br><small>${esc(t.text)}</small></button>
+      <button data-o="breakthrough">Breakthrough under the Steward (permanent):<br><small>${esc(d.breakthrough.text)}</small></button>`;
   } else if (SECTION_KINDS.has(kind)) {
-    const extra = kind === "cardTarget" ? ` <b>${ctx.card}</b>: ${esc(card(G, ctx.card).text)}` : "";
+    const ctxText = {
+      cardTarget: () => `Play <b>${ctx.card}</b> — choose its target section.${cardHTML(ctx.card)}`,
+      innateTarget: () => { const t = hd.innate.tiers.find((x) => x.tier === ctx.tier); return `${esc(hd.innate.name)} tier ${ctx.tier}: ${esc(fx(t?.effects || {}))} — choose a section.`; },
+      ventTo: () => `Vent a ${ctx.piece} out of ${sec(ctx.from)} into which neighbor?`,
+      gatherFrom: () => `Gather 1 Crew into ${sec(ctx.to)} from which neighbor?`,
+      cascade: () => `Decay was already in ${sec(ctx.from)}, so it cascades: choose a neighbor to receive 1 Decay (each house loses 1 influence there).`,
+      moveInfluenceFrom: () => `Move 1 influence into ${sec(ctx.to)} from which section?`,
+      growthInfluence: () => "Place 1 influence in a highlighted section (within range of your influence).",
+      influenceFor: () => `Place influence for ${esc(st.houses[ctx.house]?.id ?? "")}.`,
+      addCrewAt: () => "Add Crew to which section?",
+      restoreAt: () => "Restore (remove) Decay from which section?",
+      breakthroughAt: () => `Breakthrough: ${esc(DATA.discoveryById[ctx.id]?.breakthrough.text ?? "")} — choose the section.`,
+    }[kind]?.() ?? "";
+    title = "";
     const nonSec = options.filter((o) => typeof o === "number" || o === "global");
-    body = `${extra}<br>Click a highlighted section on the map${options.some((o) => String(o).endsWith("*")) ? " (Voices Among the Crew targets cost 1 credit)" : ""}.` +
-      nonSec.map((o) => `<button data-o="${o}">${typeof o === "number" ? esc(st.houses[o].id) : "Resolve"}</button>`).join("");
+    body = `${ctxText}<div class="muted">Click a highlighted section on the map${options.some((o) => String(o).endsWith("*")) ? " (targets marked by Voices Among the Crew cost 1 credit)" : ""}.</div>` +
+      nonSec.map((o) => `<button data-o="${o}">${typeof o === "number" ? "Give it to " + esc(st.houses[o].id) : "Resolve"}</button>`).join("");
   } else {
     body = options.map((o) => `<button data-o="${o}">${esc(String(o))}</button>`).join("");
   }
-  p.innerHTML = `${who}${KIND_TEXT[kind] ?? kind}<div class="opts">${body}</div>`;
+  p.innerHTML = `${who}${title}<div class="opts">${body}</div>`;
   p.querySelectorAll("button[data-o]").forEach((b) => b.addEventListener("click", () => {
     const raw = b.dataset.o; const o = options.find((x) => String(x) === raw);
     act(o);
   }));
-  $("nom")?.addEventListener("change", (e) => { commitSel.nominee = e.target.value; render(); });
-  p.querySelectorAll(".fx").forEach((x) => x.addEventListener("change", () => { x.checked ? commitSel.fast.add(x.value) : commitSel.fast.delete(x.value); }));
+  p.querySelectorAll(".nomr").forEach((x) => x.addEventListener("change", () => { commitSel.nominee = x.value; commitSel.fast.delete(x.value); render(); }));
+  p.querySelectorAll(".fx").forEach((x) => x.addEventListener("change", () => { x.checked ? commitSel.fast.add(x.value) : commitSel.fast.delete(x.value); render(); }));
   $("commit-ok")?.addEventListener("click", () => {
     const play = [...commitSel.play];
-    act({ play, nominee: play.length ? commitSel.nominee : null, fast: [...commitSel.fast].filter((c) => play.includes(c)) });
+    act({ play, nominee: play.length ? commitSel.nominee : null, fast: [...commitSel.fast].filter((c) => play.includes(c) && c !== commitSel.nominee) });
   });
   $("clone-ok")?.addEventListener("click", () => act([...cloneSel]));
 }
@@ -431,6 +559,7 @@ async function main() {
   $("btn-undo").addEventListener("click", () => { if (D) { stopAuto(); D.undo(); afterStep(null); } });
   $("btn-mute").addEventListener("click", () => { muted = !muted; $("btn-mute").textContent = muted ? "🔇" : "🔊"; });
   $("btn-save").addEventListener("click", () => { if (D) save(); });
+  $("show-forecast").addEventListener("change", () => { if (D) render(); });
   $("file-load").addEventListener("change", async (e) => { const f = e.target.files[0]; if (f) { stopAuto(); restore(JSON.parse(await f.text())); } });
   try {
     const saved = localStorage.getItem("gs-autosave");
