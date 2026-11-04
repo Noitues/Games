@@ -331,3 +331,49 @@ House bots, all 28 pairings, 1,120 games, every draw and play tracked.
 | Foremen: tier I Brace 2 | Slightly weak |
 
 Final: every house within ±4.4 points, 77% overall (pair layout, level 0).
+
+# Playtest 1 changes (hotseat: Galvan human + Meridian bot, Verdant 1, Landfall)
+
+Rule changes from the playtest notes:
+- card thresholds ignore the card's own guilds;
+- influence added by a card costs 2 credits each;
+- Breakthroughs are passive Wall bonuses;
+- Discoveries chain to the next Dusk and target one section per board;
+- succession ties go to the house with fewer leaders on the conveyor;
+- the Steward decides shared choices;
+- vent and gather are optional;
+- dead track slots replaced with elements or draws.
+
+Seat-swapped 2-player sweep, 15 games per seat order (210 games per house), level 0, pair layout:
+
+| Step | Overall | Spread | Note |
+|---|---|---|---|
+| Before (old rules, same sweep) | 73% | +6 / −5 | Baseline |
+| New rules, first run | 60–63% | Galvan +25, Vigil −13 | Houses stuck at 2 plays |
+| Fix bot track valuation | 81% | +8 / −6 | Bots valued element slots over card plays and ended games with 20–38 unspent credits |
+| Purpose 6 per player; Keel and Foremen track tweaks | **76%** | **+6 / −5** | Current |
+
+**Card thresholds:**
+- After the own-guild rule (before reprinting), hit rates dropped from 91% to 47% for 2-element thresholds, and from 61% to 19% for 3-element ones.
+- Reprinting the thresholds as "elements needed from elsewhere" restored the overall win rate (63% on the 4-pair test set, the same as before). Hit rates are now: 1 element 75%, 2 elements 45%, 3 elements 48%, 4 elements 19%.
+- Note: `data/calibration.json` threshold rates are keyed by the original (pre-reprint) totals, which the generator still uses for pricing. Don't recalibrate without changing that key.
+
+**Influence:** charging 2 credits per influence costs about 4 points of win rate.
+
+**Boards:**
+- The generator now snaps section borders off dovetail tabs and sockets.
+- Short borders get a smaller kink.
+- Board A's seed at (130, 40) moved to (130, 30).
+- No board has overlaps or holes anymore (checked by rasterizing).
+- Docking links changed slightly: pair 3, arc3 6, diamond 16, arc4 9.
+
+Player counts after these changes (house bots, 8 sampled combinations × 10 games):
+
+| Players | Win rate | Before |
+|---|---|---|
+| 1 | 71% | 75% |
+| 2 | 76% | 74% |
+| 3 | 68% | 66% |
+| 4 | **85%** | 68% |
+
+**Open:** 4 players is now too easy. Wall bonuses go to every house, so they scale with player count. Needs a larger run; candidate fixes are per-house Wall bonuses or a larger Purpose pool at 4 players.

@@ -17,15 +17,13 @@
       "element": "Navigators"
      },
      {
-      "element": "Navigators"
+      "draw": 1
      },
      {
       "element": "Engineers"
      },
      2,
-     {
-      "element": "Navigators"
-     }
+     3
     ],
     "plays": [
      3,
@@ -301,14 +299,14 @@
     "credits": [
      2,
      {
-      "element": "Laborers"
+      "clone": 1
      },
      3,
      {
       "element": "Medics"
      },
-     5,
-     7
+     4,
+     5
     ],
     "plays": [
      2,
@@ -445,7 +443,7 @@
      1,
      2,
      {
-      "element": "Scholars"
+      "element": "Keepers"
      },
      {
       "element": "Keepers"
@@ -590,7 +588,7 @@
      1,
      2,
      {
-      "element": "Keepers"
+      "element": "Laborers"
      },
      {
       "element": "Laborers"

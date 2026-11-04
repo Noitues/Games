@@ -1,15 +1,17 @@
 // Browser prototype: renders the engine state and lets humans and bots share the table.
 // Human input uses phase replay: each phase runs from a snapshot; when a human decision is
 // needed the run stops, the player answers, and the phase re-runs with the recorded answers.
-import { createGame, makeContext, runPhase, PHASES, setupRamp, houseStats, houseData, card, eventTypes } from "../engine/game.js";
-import { allSections, totalInfluence } from "../engine/rules.js";
+import { createGame, makeContext, runPhase, PHASES, setupRamp, houseStats, houseData, card, eventTypes, needsTarget, discoveryTier } from "../engine/game.js";
+import { allSections, totalInfluence, wallBonuses, stewardHouse } from "../engine/rules.js";
 import { Bot, BOT_LEVELS } from "../ai/bots.js";
 import { predictedCollapse } from "../ai/eval.js";
 
 const HOUSE_COLORS = ["#c0392b", "#2471a3", "#1e8449", "#8e44ad"];
 const TYPE_FILL = { Infrastructure: "var(--infra)", Residential: "var(--resi)", Government: "var(--gov)", Agricultural: "var(--agri)" };
 const SECTION_KINDS = new Set(["cardTarget", "innateTarget", "ventTo", "gatherFrom", "cascade", "moveInfluenceFrom",
-  "growthInfluence", "influenceFor", "addCrewAt", "restoreAt", "breakthroughAt"]);
+  "growthInfluence", "influenceFor", "addCrewAt", "restoreAt", "discoveryAt"]);
+// Non-section answers that can appear among section options.
+const SKIP_TEXT = { stay: "Don't vent (leave it here)", none: "Don't gather", global: "Resolve" };
 const $ = (id) => document.getElementById(id);
 const clone = (x) => structuredClone(x);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -116,19 +118,26 @@ let D = null, DATA = null, seats = [], autoTimer = null;
 let commitSel = null; // {play:Set, nominee, fast:Set} for a human commit
 let cloneSel = null;
 
+function targetText(c) {
+  const base = needsTarget(c, c.effects);
+  const full = c.threshold ? needsTarget(c, { ...c.effects, ...c.threshold.effects }) : base;
+  const where = c.target.kind === "house" ? "another house" : `range ${c.target.range}, ${c.target.type}`;
+  if (base) return where;
+  if (full) return `no target (bonus: ${where})`;
+  return "no target";
+}
 function cardHTML(cid, extra = "") {
   const c = DATA.cardById[cid]; if (!c) return "";
-  const t = c.target.kind === "house" ? "another house" : `range ${c.target.range}, ${c.target.type}`;
-  const th = c.threshold ? `<div class="th">If ${Object.entries(c.threshold.elements).map(([g, n]) => `${g} ${n}`).join(" + ")}: also ${esc(c.threshold.text)}</div>` : "";
+  const th = c.threshold ? `<div class="th">With ${Object.entries(c.threshold.elements).map(([g, n]) => `${n} ${g}`).join(" + ")} from other cards/slots: also ${esc(c.threshold.text)}</div>` : "";
   return `<div class="card ${c.tier === "Remarkable" ? "rem" : ""} ${extra}" data-card="${cid}">
     <div class="hd"><span>${cid} ${c.tier === "Remarkable" ? "★" : ""}</span><span>${c.cost}¢</span></div>
     <div>${c.guilds.map((g) => `<span class="g">${g}</span>`).join("")}</div>
-    <div><i>${esc(t)}</i>: ${esc(c.text)}</div>${th}
-    <div class="r">Reign: ${esc(c.reign.text)}</div><div class="l">Legacy: ${esc(c.legacy.text)}</div></div>`;
+    <div><i>${esc(targetText(c))}</i>: ${esc(c.text)}</div>${th}
+    <div class="rl"><div class="r">Reign: ${esc(c.reign.text)}</div><div class="l">Legacy: ${esc(c.legacy.text)}</div></div></div>`;
 }
 
 function eventText(eid) {
-  if (!eid) return "—";
+  if (!eid) return "no event (the voyage is ending)";
   const e = DATA.eventById[eid];
   return `${e.id}: <b>${e.types.join(" + ")}</b>${e.twist ? ` <i>(${esc(e.twist.text)})</i>` : ""}`;
 }
@@ -138,16 +147,16 @@ const PHASE_GUIDE = {
   growth: "Growth: each house picks A/B/C, gains credits, and draws a fresh hand.",
   commit: "Commit: choose your plays and pay for them. One card is your free, fast nominee (a candidate heir).",
   fast: "Fast: nominees (and other fast plays) resolve before Dusk.",
-  dusk: "Dusk: earned Discoveries resolve, then the Elder's Legacy, then the Elder's event Collapses.",
+  dusk: "Dusk: Discoveries earned before this Dusk resolve, Wall bonuses apply, then the Elder's Legacy, then the Elder's event Collapses.",
   day: "Day: the Steward's Reign applies, then the Steward's event Grows.",
   dawn: "Dawn: vote an heir from the nominees; the next event is drawn and Seeds.",
-  slow: "Slow: all other played cards and slow innates resolve.",
-  time: "Time passes: Dusk → Wall, Day → Dusk, Dawn → Day; hands are discarded (except clones).",
+  slow: "Slow: all other played cards and slow innates resolve, in the order each house chooses.",
+  time: "Time passes: Dusk → Wall (its Breakthrough switches on), Day → Dusk, Dawn → Day; hands are discarded (except clones).",
 };
 
 // Which events act next, judged by the phase about to run (or running).
 function forecastEvents() {
-  const st = D.st, idx = D.phaseIdx, ev = (slot) => slot && DATA.eventById[slot.event];
+  const st = D.st, idx = D.phaseIdx, ev = (slot) => slot && slot.event && DATA.eventById[slot.event];
   if (idx <= 3) return { collapse: ev(st.slots.dusk), grow: ev(st.slots.day), when: "this Dusk" };
   if (idx === 4) return { collapse: ev(st.slots.day), grow: ev(st.slots.day), when: "next Dusk" };
   return { collapse: ev(st.slots.day), grow: ev(st.slots.dawn), when: "next Dusk" };
@@ -175,21 +184,58 @@ function render() {
   const cond = st.tier >= 3 ? "no Faults or Failures" : st.tier === 2 ? "no threat" : "no threat and no Decay";
   const nowPhase = PHASES[D.phaseIdx];
   $("phase-guide").textContent = st.result ? "" : (D.snapshot ? "Now — " : "Next — ") + PHASE_GUIDE[nowPhase];
-  $("status").innerHTML = `Generation ${st.gen} · ${phase} · Events left ${st.decks.events.length} · Decay pool ${st.decayPool}${st.crisisFlipped ? ` (crisis ${st.crisisId})` : ""} · Purpose ${st.purpose}/${st.purposeCap} · Understanding ${["I", "II", "III"][st.tier - 1]} → win: ${cond}${st.landfallPlaced ? " · Landfall under way" : ""}`;
-  renderConveyor(); renderForecast(); renderMap(); renderHouses(); renderWall(); renderPrompt();
+  $("status").innerHTML = `Generation ${st.gen} · ${phase} · Events left ${st.decks.events.length} · Decay pool ${st.decayPool}${st.crisisFlipped ? ` (crisis ${st.crisisId})` : ""} · Understanding ${["I", "II", "III"][st.tier - 1]} → win: ${cond}${st.landfallPlaced ? " · Landfall under way" : ""}`;
+  renderPurpose(); renderConveyor(); renderEffects(); renderForecast(); renderMap(); renderHouses(); renderWall(); renderPrompt();
   $("log").innerHTML = st.log.slice(-80).map((l) => `<li>${esc(l)}</li>`).join("");
   $("log").scrollTop = 1e9;
 }
 
+// Purpose meter: progress to the next Discovery, Discoveries toward the next Understanding.
+function renderPurpose() {
+  const st = D.st, per = D.G.cfg.discoveriesPerTier;
+  const pct = Math.round((100 * st.purpose) / st.purposeCap);
+  const toTier = st.tier >= 3 ? "Understanding III (max)" : `${per * st.tier - st.discoveriesEarned} more for Understanding ${["II", "III"][st.tier - 1]}`;
+  $("purpose").innerHTML = `<div class="meter"><div style="width:${pct}%"></div><span>Purpose ${st.purpose} / ${st.purposeCap}</span></div>
+    <div class="muted">${st.purposeCap - st.purpose} more Purpose earns a Discovery · Discoveries earned ${st.discoveriesEarned} (${toTier})${st.pendingDiscoveries.length ? ` · <b>${st.pendingDiscoveries.length} waiting for Dusk</b>` : ""}<br>
+    Purpose comes from destroying Faults (+${D.G.cfg.purposeFault}) and Failures (+${D.G.cfg.purposeFailure}), cards, Reigns and innates. It is shared by the whole ship.</div>`;
+}
+
+// Everything in effect right now that isn't on a card in someone's hand.
+function renderEffects() {
+  const st = D.st, G = D.G, wb = wallBonuses(G, st), rows = [];
+  const el = Object.entries(wb.elements).map(([g, n]) => `+${n} ${g}`).join(", ");
+  if (el) rows.push(`<b>Wall:</b> every house counts ${el} element${Object.keys(wb.elements).length > 1 ? "s" : ""}`);
+  if (wb.credits_per_growth) rows.push(`<b>Wall:</b> +${wb.credits_per_growth} credit each Growth (every house)`);
+  if (wb.extra_draw) rows.push(`<b>Wall:</b> draw +${wb.extra_draw} card each Growth (every house)`);
+  if (wb.fast_play) rows.push(`<b>Wall:</b> +${wb.fast_play} fast play (every house)`);
+  if (wb.hull_brace) rows.push(`<b>Wall:</b> Brace ${wb.hull_brace} in every Outer Hull section each Dusk`);
+  if (wb.decay_ward) rows.push(`<b>Wall:</b> the first ${wb.decay_ward} Decay each generation returns to the pool`);
+  if (wb.purpose_per_gen) rows.push(`<b>Wall:</b> +${wb.purpose_per_gen} Purpose each Dusk`);
+  for (const [k, name] of [["dawn", "Heir"], ["day", "Steward"], ["dusk", "Elder"]]) {
+    const L = st.slots[k];
+    if (L?.bt) rows.push(`<span class="muted"><b>Waiting (${name} ${L.leader}):</b> ${esc(DATA.discoveryById[L.bt].breakthrough.text)} — switches on when this leader reaches the Wall</span>`);
+  }
+  const day = st.slots.day, dusk = st.slots.dusk;
+  if (day) rows.push(`<b>Steward ${day.leader}</b> (${esc(st.houses[day.house]?.id ?? "")}) decides shared choices · Reign this Day: ${esc(card(G, day.leader).reign.text)}`);
+  if (dusk) rows.push(`<b>Elder ${dusk.leader}</b> Legacy this Dusk${dusk.tempered ? " (tempered)" : ""}: <span class="loss">${esc(card(G, dusk.leader).legacy.text)}</span>`);
+  if (st.crisisFlipped) { const x = DATA.crisis.cards.find((c) => c.id === st.crisisId); rows.push(`<b class="loss">Ship in Crisis — ${esc(x.name)}:</b> ${esc(x.text)}`); }
+  if (st.dest?.id) rows.push(`<b>${esc(st.dest.name)}:</b> ${st.dest.texts.map(esc).join(" · ")}`);
+  if (G.cfg.landfallCard) rows.push(`<b>Landfall:</b> ${st.landfallMode === "shuffled" ? "shuffled into the Stage III events; you win if it retires to the Wall while the win condition holds" : "when the win condition is met, the Steward may begin Landfall; you win when it retires to the Wall"}${st.landfallPlaced ? " (under way)" : ""}`);
+  st.houses.forEach((H, h) => {
+    const raw = houseStats(G, st, h).raw;
+    const e = Object.entries(raw).filter(([, n]) => n).map(([g, n]) => `${g} ${n}`).join(", ");
+    if (e) rows.push(`<span style="color:${HOUSE_COLORS[h]}">●</span> ${esc(H.id)} gets <b>${e}</b> free each generation (track slots + Wall)`);
+  });
+  $("effects").innerHTML = rows.length ? rows.map((r) => `<div class="eff">${r}</div>`).join("") : "<i class=\"muted\">nothing yet</i>";
+}
+
 function renderConveyor() {
   const st = D.st;
-  const slot = (name, L) => `<div class="slot"><b>${name}</b><br>${L ? `${eventText(L.event)}${L.tempered ? " · tempered" : ""}${L.bt ? ` · Breakthrough ${L.bt}` : ""}${cardHTML(L.leader)}` : "<i>empty</i>"}</div>`;
+  const slot = (name, L) => `<div class="slot"><b>${name}</b>${L?.start ? ` <span class="muted">(starting leader)</span>` : ""}<br>${L ? `${eventText(L.event)}${L.tempered ? " · tempered" : ""}${L.bt ? ` · Breakthrough ${L.bt} (on the Wall later)` : ""}${cardHTML(L.leader)}` : "<i>empty</i>"}</div>`;
   $("conveyor").innerHTML = slot("Dusk: Elder (Legacy, then Collapse)", st.slots.dusk) + slot("Day: Steward (Reign, then Grow)", st.slots.day) +
     slot("Dawn: Heir (Seed)", st.slots.dawn) + (st.upcomingEvent ? `<div class="slot">Next event: ${eventText(st.upcomingEvent)}</div>` : "");
   const dest = st.dest?.id ? `<div class="slot"><b>${esc(st.dest.name)}</b><br>${st.dest.texts.map(esc).join("<br>")}${st.escalationEvent ? `<br><i>Escalation card: ${st.escalationEvent}</i>` : ""}</div>` : "";
   $("conveyor").innerHTML += dest;
-  $("discoveries").innerHTML = `Earned ${st.discoveriesEarned}; pending ${st.pendingDiscoveries.length}<br>` +
-    (st.breakthroughs.length ? "Breakthroughs: " + st.breakthroughs.map((d) => `<div class="slot">${esc(DATA.discoveryById[d].breakthrough.text)}</div>`).join("") : "");
 }
 
 function renderForecast() {
@@ -228,6 +274,9 @@ function geometry() {
   const map = ([x, y]) => [m + (x - minX) * SCALE, m + (y - minY) * SCALE];
   for (const [id, g] of Object.entries(raw)) geo[id] = { poly: g.poly.map(map), c: map(g.c) };
   geo.$outlines = ids.map((b, i) => (DATA.boards.outline || []).map((p) => map(tf(p, place(b, i)))));
+  // The Outer Hull side of each board (side 4 of the hull module) faces the void.
+  const per = 13, hullN = 18, start = 4 * per;
+  geo.$hulls = ids.map((b, i) => (DATA.boards.outline || []).slice(start, start + hullN + 1).map((p) => map(tf(p, place(b, i)))));
   return { geo, width: 2 * m + (maxX - minX) * SCALE, height: 2 * m + (maxY - minY) * SCALE };
 }
 
@@ -236,7 +285,10 @@ function renderMap() {
   const opts = D.pending && SECTION_KINDS.has(D.pending.kind) ? new Set(D.pending.options.map((o) => String(o).replace("*", ""))) : new Set();
   const { geo, width, height } = geometry();
   const fc = $("show-forecast")?.checked !== false ? forecast().out : {};
-  let svg = "";
+  let svg = `<defs><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="var(--hullhatch)" stroke-width="2.5"/></pattern></defs>
+    <rect x="0" y="0" width="${width}" height="${height}" fill="var(--void)"/>`;
+  for (let i = 0; i < 60; i++) { const x = (i * 97.3) % width, y = (i * 53.7 + (i % 7) * 31) % height; svg += `<circle cx="${x}" cy="${y}" r="${i % 5 ? 0.8 : 1.4}" fill="var(--star)"/>`; }
+  svg += `<text x="10" y="${height - 10}" class="voidlbl">THE VOID</text>`;
   const seen = new Set();
   for (const id of st.order) for (const a of st.sections[id].adj) {
     if (st.sections[id].board === st.sections[a].board) continue; // in-board neighbors share an edge already
@@ -254,8 +306,8 @@ function renderMap() {
     const pts = g.poly.map((p) => p.join(",")).join(" ");
     const hinted = hint && SECTION_KINDS.has(D.pending?.kind) && String(hint.value).replace("*", "") === id;
     svg += `<g class="sec ${opts.has(id) ? "opt" : ""} ${hinted ? "hinted" : ""}" data-id="${id}">
-      <polygon points="${pts}" fill="${TYPE_FILL[s.type]}" class="${s.hull ? "hullsec" : ""}"/>
-      <text x="${cx}" y="${cy - 20}" text-anchor="middle" font-size="11"><tspan font-weight="700">${id}</tspan> ${s.type.slice(0, 3)}${s.hull ? " ⌒" : ""}</text>
+      <polygon points="${pts}" fill="${TYPE_FILL[s.type]}" class="${s.hull ? "hullsec" : ""}"/>${s.hull ? `<polygon points="${pts}" fill="url(#hatch)" pointer-events="none"/>` : ""}
+      <text x="${cx}" y="${cy - 20}" text-anchor="middle" font-size="11"><tspan font-weight="700">${id}</tspan> ${s.type.slice(0, 3)}</text>
       <text x="${cx}" y="${cy - 4}" text-anchor="middle" font-size="14">${threat || "·"}</text>
       <text x="${cx}" y="${cy + 12}" text-anchor="middle" font-size="11">${s.crew ? `☺${s.crew}` : ""} ${s.decay ? `✸${s.decay}` : ""}</text>
       <text x="${cx}" y="${cy + 27}" text-anchor="middle" font-size="13">${inf}</text>
@@ -268,7 +320,9 @@ function renderMap() {
     }
   }
   for (const o of geo.$outlines) svg += `<polygon points="${o.map((p) => p.join(",")).join(" ")}" fill="none" stroke="var(--ink)" stroke-opacity=".8" stroke-width="2" stroke-linejoin="round" pointer-events="none"/>`;
+  for (const h of geo.$hulls) svg += `<polyline points="${h.map((p) => p.join(",")).join(" ")}" class="hullplate" pointer-events="none"/>`;
   const map = $("map");
+  map.setAttribute("viewBox", `0 0 ${width} ${height}`);
   map.setAttribute("width", width); map.setAttribute("height", height);
   map.innerHTML = svg;
   map.querySelectorAll(".sec").forEach((g) => {
@@ -289,8 +343,8 @@ function sectionTip(id) {
     .filter(([, n]) => n).map(([k, n]) => `${k} ${n}`).join(", ") || "none";
   const fc = forecast().out[id];
   const fcText = fc ? `<br><b>Forecast:</b> ${fc.collapse !== undefined ? `Collapse ${fc.collapse} damage${fc.decay ? " → Decay" : ""}${fc.crew ? `, ${fc.crew} Crew lost` : ""}` : ""}${fc.grow ? `${fc.collapse !== undefined ? "; " : ""}${fc.grow === "patched" ? "Grow blocked by Patch" : "Grow +1 " + fc.grow}` : ""}` : "";
-  const ev = ["dusk", "day", "dawn"].filter((k) => st.slots[k] && G.data.eventById[st.slots[k].event].types.some((t) => t === "ALL" || t === s.type || (t === "Hull" && s.hull)));
-  return `<b>${id}</b> ${s.type}${s.hull ? " · Outer Hull" : ""}<br>Glitch ${s.glitch} · Fault ${s.fault} · Failure ${s.failure} → collapse damage ${s.glitch + 2 * s.fault + 3 * s.failure}<br>Crew ${s.crew} · Decay ${s.decay}<br>Influence: ${inf}<br>Tokens: ${toks}<br>Adjacent: ${s.adj.join(", ")}${fcText}${ev.length ? `<br><b>Targeted by:</b> ${ev.map((k) => ({ dusk: "Dusk (Collapse)", day: "Day (Grow)", dawn: "Dawn" })[k]).join(", ")}` : ""}`;
+  const ev = ["dusk", "day", "dawn"].filter((k) => st.slots[k]?.event && G.data.eventById[st.slots[k].event].types.some((t) => t === "ALL" || t === s.type || (t === "Hull" && s.hull)));
+  return `<b>${id}</b> ${s.type}${s.hull ? " · Outer Hull (faces the void: Seeds always reach it)" : ""}<br>Glitch ${s.glitch} · Fault ${s.fault} · Failure ${s.failure} → collapse damage ${s.glitch + 2 * s.fault + 3 * s.failure}<br>Crew ${s.crew} · Decay ${s.decay}<br>Influence: ${inf}<br>Tokens: ${toks}<br>Adjacent: ${s.adj.join(", ")}${fcText}${ev.length ? `<br><b>Targeted by:</b> ${ev.map((k) => ({ dusk: "Dusk (Collapse)", day: "Day (Grow)", dawn: "Dawn" })[k]).join(", ")}` : ""}`;
 }
 function showTip(e, html) {
   let t = $("tip"); if (!t) { t = document.createElement("div"); t.id = "tip"; document.body.appendChild(t); }
@@ -332,7 +386,7 @@ function autosave() { try { localStorage.setItem("gs-autosave", JSON.stringify(s
 
 function trackHTML(track, pos) {
   return track.map((v, i) => {
-    const t = typeof v === "object" ? "★" + (v.element || (v.fast_play ? "fast" : v.clone ? "clone" : "")) : v;
+    const t = typeof v === "object" ? "★" + (v.element || (v.fast_play ? "fast" : v.clone ? "clone" : v.draw ? "draw" : "")) : v;
     return i <= pos ? `<b>${t}</b>` : `<span style="opacity:.5">${t}</span>`;
   }).join(" → ");
 }
@@ -354,7 +408,7 @@ function renderHouses() {
       hand = H.hand.map((c) => cardHTML(c)).join("") + (H.played.length ? `<div class="stats">Played: ${H.played.join(", ")}${H.nominee ? ` (nominee ${H.nominee})` : ""}</div>` : "");
     }
     return `<div class="house ${pend ? "active" : ""}" data-h="${h}" style="--hc:${HOUSE_COLORS[h]}"><b>${esc(hd.name)}</b> <span class="stats">${human ? "Human" : seats[h]}</span>
-      <div class="stats">Credits ${H.credits} (+${hs.income}/gen) · plays ${hs.plays} · hand ${hs.hand} · clone ${hs.clone} · influence ${totalInfluence(st, h)}</div>
+      <div class="stats">Credits ${H.credits} (+${hs.income}/gen) · plays ${hs.plays} · hand ${hs.hand} · clone ${hs.clone} · influence ${totalInfluence(st, h)}${st.slots.day?.house === h ? " · <b>Steward's house</b>" : ""}</div>
       <div class="stats">Credits track: ${trackHTML(hd.tracks.credits, H.track.credits)}<br>Plays track: ${trackHTML(hd.tracks.plays, H.track.plays)}</div>
       <div class="stats">Elements: ${el}</div>
       <details><summary class="stats">${esc(hd.innate.name)} (${hd.innate.speed}) · ${esc(hd.special.text)}</summary><div class="stats">${tiers}</div></details>
@@ -375,7 +429,7 @@ function renderWall() {
   let html = "";
   for (let i = 0; i < n; i++) {
     const w = st.wall[i];
-    html += w ? `<div class="ws full">${i + 1}. ${w.leader}<br>${DATA.eventById[w.event].types.join("+")}${w.bt ? `<br>★ ${w.bt}` : ""}</div>` : `<div class="ws">${i + 1}.</div>`;
+    html += w ? `<div class="ws full ${w.bt ? "bonus" : ""}" title="${w.bt ? esc(DATA.discoveryById[w.bt].breakthrough.text) : ""}">${i + 1}. ${w.leader}<br>${w.event ? DATA.eventById[w.event].types.join("+") : "—"}${w.bt ? `<br>★ ${esc(DATA.discoveryById[w.bt].breakthrough.text.replace("On the Wall: ", ""))}` : ""}</div>` : `<div class="ws">${i + 1}.</div>`;
   }
   $("wall").innerHTML = html;
 }
@@ -385,8 +439,9 @@ const KIND_TEXT = {
   commit: "Choose your plays", cardTarget: "Choose a target for", innateTarget: "Choose a target for your innate power",
   ventTo: "Vent to which adjacent section?", gatherFrom: "Gather Crew from which section?", cascade: "Decay cascades: choose an adjacent section",
   moveInfluenceFrom: "Move influence from which section?", growthInfluence: "Place influence where?", influenceFor: "Place that house's influence where?",
-  addCrewAt: "Add Crew where?", restoreAt: "Restore Decay where?", breakthroughAt: "Breakthrough: choose a section",
+  addCrewAt: "Add Crew where?", restoreAt: "Restore Decay where?", discoveryAt: "Discovery: choose a section",
   vote: "Vote for the next heir", discovery: "Discovery", clone: "Clone cards into the next generation", landfall: "Begin Landfall?",
+  playOrder: "Which of your plays resolves next?", buyInfluence: "Buy influence?", tiebreak: "Break the tie",
 };
 
 // Human-readable description of a house's next track slot.
@@ -395,7 +450,7 @@ function slotDesc(h, track) {
   const t = hd.tracks[track], pos = H.track[track];
   if (pos >= t.length - 1) return "track complete";
   const v = t[pos + 1];
-  if (typeof v === "object") return v.element ? `+1 ${v.element} element every generation` : v.fast_play ? "+1 fast play every generation" : "+1 clone slot";
+  if (typeof v === "object") return v.element ? `+1 ${v.element} element every generation` : v.fast_play ? "+1 fast play every generation" : v.draw ? "+1 card drawn every generation" : "+1 clone slot";
   return track === "credits" ? `${v} credits per generation (now ${hs.income})` : `${v} card plays (now ${hs.plays}; hand ${v + hd.hand_bonus})`;
 }
 const fx = (e) => Object.entries(e).map(([k, v]) => `${k.replace(/_/g, " ")} ${v}`).join(", ");
@@ -412,7 +467,8 @@ function commitPlanHTML(h, ctx) {
   const fastUsed = 1 + [...commitSel.fast].filter((c) => sel.includes(c) && c !== commitSel.nominee).length;
   const rows = sel.map((c) => {
     const k = card(G, c), nom = c === commitSel.nominee;
-    const th = k.threshold ? (met(k.threshold.elements) ? `<span class="ok">✓ bonus: ${esc(k.threshold.text)}</span>` : `<span class="muted">✗ needs ${Object.entries(k.threshold.elements).map(([g, n]) => `${g} ${n}`).join(" + ")}</span>`) : "<span class=\"muted\">—</span>";
+    const own = (req) => Object.entries(req).every(([g, n]) => (el[g] || 0) - (k.guilds.includes(g) ? 1 : 0) >= n);
+    const th = k.threshold ? (own(k.threshold.elements) ? `<span class="ok">✓ bonus: ${esc(k.threshold.text)}</span>` : `<span class="muted">✗ needs ${Object.entries(k.threshold.elements).map(([g, n]) => `${n} ${g}`).join(" + ")} from other cards/slots</span>`) : "<span class=\"muted\">—</span>";
     const canFast = !nom && (commitSel.fast.has(c) || fastUsed < fastCap);
     return `<tr><td><b>${c}</b></td><td>${nom ? "<s>" + k.cost + "</s> 0" : k.cost}¢</td>
       <td><label><input type="radio" name="nomr" class="nomr" value="${c}" ${nom ? "checked" : ""}> nominee</label></td>
@@ -446,7 +502,10 @@ function describeHint(v) {
   if (kind === "commit") return v.play.length ? `play ${v.play.join(", ")}; nominee ${v.nominee}${v.fast?.length ? `; also fast: ${v.fast.join(", ")}` : ""}` : "play nothing";
   if (kind === "clone") return v.length ? `keep ${v.join(", ")}` : "keep nothing";
   if (kind === "remarkables") return v ? "take a Remarkable" : "draw Commons only";
+  if (SKIP_TEXT[v]) return SKIP_TEXT[v];
   if (SECTION_KINDS.has(kind)) return typeof v === "number" ? `give it to ${D.st.houses[v].id}` : `section ${String(v).replace("*", "")}`;
+  if (kind === "playOrder") return v === "innate" ? "resolve your innate next" : `resolve ${v} next`;
+  if (kind === "buyInfluence") return v ? `buy ${v} influence` : "buy none";
   return String(v);
 }
 function applyHint() {
@@ -467,7 +526,7 @@ function playtestRecord() {
   return { when: new Date().toISOString(), cfg: D.cfgIn, seats, seed: D.cfgIn?.seed ?? null, layout: st.layout,
     result: st.result, tier: st.tier, discoveries: st.discoveriesEarned, wall: st.wall.map((w) => ({ leader: w.leader, event: w.event, bt: w.bt })),
     stats: { decayPlaced: st.stats.decayPlaced, crewLost: st.stats.crewLost, destroyed: st.stats.destroyed, discoveryApplied: st.stats.discoveryApplied,
-      discoveryBreakthrough: st.stats.discoveryBreakthrough, houses: st.stats.houses.map((x) => ({ id: x.id, played: x.played, creditsSpent: x.creditsSpent,
+      discoveryBreakthrough: st.stats.discoveryBreakthrough, influenceBought: st.stats.influenceBought || 0, warded: st.stats.warded || 0, houses: st.stats.houses.map((x) => ({ id: x.id, played: x.played, creditsSpent: x.creditsSpent,
         innateTiers: x.innateTiers, leaders: x.chosenLeader, remarkables: x.remarkables })) },
     notes: $("pt-notes")?.value ?? "", log: st.log };
 }
@@ -475,7 +534,7 @@ function storedRecords() { try { return JSON.parse(localStorage.getItem("gs-play
 function summaryHTML() {
   const st = D.st, r = st.result, win = r.outcome === "win";
   const houses = st.stats.houses.map((x, h) => `<tr><td style="color:${HOUSE_COLORS[h]}"><b>${esc(houseData(D.G, st, h).name.split(",")[0])}</b> (${esc(seats[h])})</td><td>${x.played}</td><td>${x.creditsSpent}</td><td>${x.innateTiers.slice(1).join(" / ")}</td><td>${x.chosenLeader}</td></tr>`).join("");
-  const wall = st.wall.map((w, i) => `${i + 1}. ${w.leader} · ${DATA.eventById[w.event].types.join("+")}${w.bt ? " ★" + w.bt : ""}`).join("<br>") || "—";
+  const wall = st.wall.map((w, i) => `${i + 1}. ${w.leader} · ${w.event ? DATA.eventById[w.event].types.join("+") : "—"}${w.bt ? " ★" + w.bt : ""}`).join("<br>") || "—";
   return `<div class="summary"><div class="banner ${r.outcome}">${win ? "Victory" : "Defeat"} in generation ${r.gen}: ${esc(win ? (r.cause === "Landfall" ? "Landfall reached" : `the ${r.cause} win condition was met`) : CAUSE[r.cause] || r.cause)}</div>
     <div class="sumgrid"><div><b>The voyage</b><br>Understanding ${["I", "II", "III"][st.tier - 1]} · ${st.discoveriesEarned} Discoveries (${st.stats.discoveryApplied} applied, ${st.stats.discoveryBreakthrough} Breakthroughs)<br>
       Threat destroyed: ${st.stats.destroyed.glitch} Glitches, ${st.stats.destroyed.fault} Faults, ${st.stats.destroyed.failure} Failures<br>
@@ -529,13 +588,28 @@ function renderPrompt() {
   } else if (kind === "vote") {
     const upcoming = st.upcomingEvent ? `The next event (Direct pairing) is ${eventText(st.upcomingEvent)}. ` : "";
     title = "Vote for the next heir";
-    body = `<div class="muted">${upcoming}The heir reigns next generation (Reign) and leaves its Legacy the one after, in its event's sections. Ties go to the Steward's house.</div>` +
+    body = `<div class="muted">${upcoming}The heir reigns next generation (Reign) and leaves its Legacy the one after, in its event's sections. Ties go to the house with fewer leaders on the conveyor; if still tied, the Steward's house decides.</div>` +
       options.map((o) => { const nh = st.houses.findIndex((x) => x.nominee === o); return `<div class="votec">${cardHTML(o)}<button data-o="${o}">Vote ${o}${nh >= 0 ? ` (${esc(st.houses[nh].id)})` : ""}</button></div>`; }).join("");
   } else if (kind === "discovery") {
     const d = DATA.discoveryById[ctx.id], tl = ["I", "II", "III"][st.tier - 1], t = d.tiers[tl];
-    title = `Discovery ${d.id} (${d.family}) — apply it now, or keep it as a Breakthrough`;
+    title = `Discovery ${d.id} (${d.family}) — the Steward's house decides: apply it now, or keep it as a Breakthrough`;
     body = `<button data-o="apply">Apply now (Understanding ${tl}):<br><small>${esc(t.text)}</small></button>
-      <button data-o="breakthrough">Breakthrough under the Steward (permanent):<br><small>${esc(d.breakthrough.text)}</small></button>`;
+      <button data-o="breakthrough">Breakthrough under Steward ${st.slots.day?.leader ?? ""}:<br><small>${esc(d.breakthrough.text)} — switches on when this leader reaches the Wall (2 generations), then lasts all voyage</small></button>`;
+  } else if (kind === "playOrder") {
+    title = `Choose what resolves next (${ctx.fast ? "fast" : "slow"} phase)`;
+    body = options.map((o) => o === "innate"
+      ? `<button data-o="innate">Innate: ${esc(hd.innate.name)}<br><small>uses the elements you committed</small></button>`
+      : `<div class="votec">${cardHTML(o)}<button data-o="${o}">Resolve ${o} now</button></div>`).join("");
+  } else if (kind === "buyInfluence") {
+    title = `Add influence in ${ctx.where}? Each costs ${ctx.cost} credit${ctx.cost === 1 ? "" : "s"} (you have ${H.credits}¢)`;
+    body = options.map((k) => `<button data-o="${k}">${k ? `Buy ${k} influence (${k * ctx.cost}¢)` : "No thanks (keep my credits)"}</button>`).join("");
+  } else if (kind === "tiebreak") {
+    title = "The vote is tied — as Steward's house, choose the heir";
+    body = options.map((o) => { const nh = st.houses.findIndex((x) => x.nominee === o); return `<div class="votec">${cardHTML(o)}<button data-o="${o}">Choose ${o}${nh >= 0 ? ` (${esc(st.houses[nh].id)})` : ""}</button></div>`; }).join("");
+  } else if (kind === "landfall") {
+    title = "The win condition is met. Begin Landfall?";
+    body = `<div class="muted">Landfall replaces the next event. It matches every section, travels down the conveyor, and you win when it retires to the Wall (survive about 3 more generations).</div>
+      <button data-o="begin">Begin Landfall</button><button data-o="wait">Not yet (ask again next generation)</button>`;
   } else if (SECTION_KINDS.has(kind)) {
     const ctxText = {
       cardTarget: () => `Play <b>${ctx.card}</b> — choose its target section.${cardHTML(ctx.card)}`,
@@ -546,14 +620,14 @@ function renderPrompt() {
       moveInfluenceFrom: () => `Move 1 influence into ${sec(ctx.to)} from which section?`,
       growthInfluence: () => "Place 1 influence in a highlighted section (within range of your influence).",
       influenceFor: () => `Place influence for ${esc(st.houses[ctx.house]?.id ?? "")}.`,
-      addCrewAt: () => "Add Crew to which section?",
+      addCrewAt: () => `Add ${ctx.n ?? 1} Crew to which section?`,
       restoreAt: () => "Restore (remove) Decay from which section?",
-      breakthroughAt: () => `Breakthrough: ${esc(DATA.discoveryById[ctx.id]?.breakthrough.text ?? "")} — choose the section.`,
+      discoveryAt: () => `Discovery ${ctx.id}: ${esc(fx(ctx.effects || {}))} — choose one section on board ${ctx.board}.`,
     }[kind]?.() ?? "";
     title = "";
-    const nonSec = options.filter((o) => typeof o === "number" || o === "global");
+    const nonSec = options.filter((o) => typeof o === "number" || SKIP_TEXT[o]);
     body = `${ctxText}<div class="muted">Click a highlighted section on the map${options.some((o) => String(o).endsWith("*")) ? " (targets marked by Voices Among the Crew cost 1 credit)" : ""}.</div>` +
-      nonSec.map((o) => `<button data-o="${o}">${typeof o === "number" ? "Give it to " + esc(st.houses[o].id) : "Resolve"}</button>`).join("");
+      nonSec.map((o) => `<button data-o="${o}">${typeof o === "number" ? "Give it to " + esc(st.houses[o].id) : SKIP_TEXT[o]}</button>`).join("");
   } else {
     body = options.map((o) => `<button data-o="${o}">${esc(String(o))}</button>`).join("");
   }
@@ -620,7 +694,8 @@ function start() {
   const houses = seatEls.map((s) => s.querySelector(".h").value);
   seats = seatEls.map((s) => s.querySelector(".c").value);
   const cfg = { players: P, houses, layout: $("layout").value || null, eventPairing: $("pairing").value, tierConditions: $("tiers").value,
-    destination: $("destination").value || null, destinationLevel: +$("level").value, landfallCard: $("landfall").checked };
+    destination: $("destination").value || null, destinationLevel: +$("level").value,
+    landfallCard: { off: false, choice: true, shuffled: "shuffled" }[$("landfall").value] ?? false };
   cfg.seed = +$("seed").value || 1;
   D = new Driver(DATA, cfg, seats, cfg.seed);
   D.cfgIn = cfg;
@@ -650,6 +725,10 @@ async function main() {
     else afterStep(r);
   });
   $("btn-mute").addEventListener("click", () => { muted = !muted; $("btn-mute").textContent = muted ? "🔇" : "🔊"; });
+  const setCompact = (on) => { document.body.classList.toggle("compact", on); $("btn-compact").textContent = on ? "Roomy view" : "Compact view"; try { localStorage.setItem("gs-compact", on ? "1" : "0"); } catch { /* storage unavailable */ } };
+  let compact = true; try { compact = localStorage.getItem("gs-compact") !== "0"; } catch { /* storage unavailable */ }
+  setCompact(compact);
+  $("btn-compact").addEventListener("click", () => setCompact(!document.body.classList.contains("compact")));
   $("btn-save").addEventListener("click", () => { if (D) save(); });
   $("show-forecast").addEventListener("change", () => { if (D) render(); });
   $("file-load").addEventListener("change", async (e) => { const f = e.target.files[0]; if (f) { stopAuto(); restore(JSON.parse(await f.text())); } });

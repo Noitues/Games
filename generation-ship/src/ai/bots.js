@@ -36,7 +36,7 @@ export function heuristicChoose(G, st, h, kind, options, ctx) {
       return best && score(best) < score(ctx.from) + 1 ? best : "stay";
     }
     case "gatherFrom": { const real = options.filter((o) => S[o]); return real.length ? maxBy(real, (id) => S[id].crew - (threatCount(S[id]) && matches(S[id], up.collapse) ? 0 : 0.5)) : "none"; }
-    case "buyInfluence": return options[0];
+    case "buyInfluence": return buyInfluenceChoice(G, st, h, options, ctx);
     case "landfall": return "begin";
     case "discoveryAt": return maxBy(options, (id) => threatCount(S[id]) * 2 + danger(id) + S[id].crew * 0.2);
     case "cascade": return minBy(options, (id) => Object.values(S[id].influence).reduce((a, b) => a + b, 0) * 2 + S[id].decay * 5 + S[id].crew);
@@ -50,6 +50,14 @@ export function heuristicChoose(G, st, h, kind, options, ctx) {
       return null;
   }
 }
+// Buy influence only with credits left over after next generation's likely card costs.
+function buyInfluenceChoice(G, st, h, options, ctx) {
+  const H = st.houses[h], hs = houseStats(G, st, h);
+  const reserve = Math.max(0, 1.5 * (hs.plays - 1) - hs.income);
+  const spare = Math.max(0, H.credits - reserve);
+  return options.find((k) => k * ctx.cost <= spare) ?? 0;
+}
+const wallCredit = (G, st) => { let n = 0; for (const L of st.wall || []) if (L.bt) n += G.data.discoveryById[L.bt]?.breakthrough?.effects?.credits_per_growth || 0; return n; };
 const maxBy = (arr, f) => arr.reduce((b, x) => (f(x) > f(b) ? x : b), arr[0]);
 const minBy = (arr, f) => arr.reduce((b, x) => (f(x) < f(b) ? x : b), arr[0]);
 
@@ -80,7 +88,7 @@ export class Bot {
       case "growthInfluence": case "influenceFor": case "addCrewAt": case "restoreAt": case "discoveryAt":
         return this.bestMutation(G, st, h, kind, options, ctx);
       case "playOrder": return options[0];
-      case "buyInfluence": return options[0];
+      case "buyInfluence": return buyInfluenceChoice(G, st, h, options, ctx);
       case "landfall": return "begin";
     }
     if (L === 1) return this.random(G, st, h, kind, options, ctx);
@@ -167,26 +175,25 @@ export class Bot {
   remainingGens(st) { return st.decks.events.length + 1; }
 
   slotValue(G, st, h, track) {
-    // Value per generation of uncovering the next slot. Looks past "no change" slots
-    // to the next real increase, divided by the uncovers it takes to get there.
+    // Value per generation of uncovering the next slot: the special it grants (if any), plus the
+    // next real numeric increase on this track divided by the uncovers it takes to get there.
     const hd = houseData(G, st, h), H = st.houses[h];
     const t = hd.tracks[track], pos = H.track[track];
     if (pos >= t.length - 1) return -1;
     const next = t[pos + 1];
-    if (typeof next === "object") return 1;
+    const SPECIAL = { element: 0.4, draw: 0.5, fast_play: 0.8, clone: 0.6 };
+    const special = typeof next === "object" ? Object.keys(next).reduce((v, k) => v + (SPECIAL[k] ?? 0.5), 0) : 0;
     const hs = houseStats(G, st, h);
-    const cur = track === "credits" ? hs.income : hs.plays;
+    const base = track === "credits" ? hs.income - (wallCredit(G, st)) : hs.plays;
     let steps = 0, delta = 0;
     for (let i = pos + 1; i < t.length; i++) {
       steps++;
-      if (typeof t[i] === "object") { delta = 0.5; break; }
-      if (t[i] !== cur) { delta = t[i] - cur; break; }
+      if (typeof t[i] === "number" && t[i] !== base) { delta = t[i] - base; break; }
     }
-    if (!delta) return 0;
     const unit = track === "credits"
-      ? (hs.income < 1.5 * hs.plays ? 1.3 : 1)
-      : 2 * Math.min(1, (hs.income + 1) / (1.5 * hs.plays));
-    return (delta * unit) / steps;
+      ? (hs.income < 1.5 * hs.plays ? 1.3 : 0.6)
+      : 2 * Math.min(1, (H.credits + hs.income + 1) / (1.5 * hs.plays));
+    return special + (delta ? (delta * unit) / steps : 0);
   }
   track(G, st, h, options) { return maxBy(options, (t) => this.slotValue(G, st, h, t)); }
 

@@ -87,16 +87,17 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 2. **Commit.** Each house chooses its plays, up to its card-play limit, and pays their credit costs. It marks **one** played card as its **nominee**. The nominee costs 0 credits and is that house's only fast card. All other played cards are slow.
 3. **Fast phase.** Nominees resolve.
 4. **Dusk.**
-   1. Earned Discovery cards resolve: for each, choose a one-time effect or a Breakthrough.
-   2. The **Elder's Legacy** resolves in the sections matching the Elder's paired event.
-   3. The Elder's event **collapses**.
+   1. Discovery cards earned before this Dusk resolve: for each, the Steward's house chooses a one-time effect or a Breakthrough. Discoveries earned *during* this resolution wait for the next Dusk.
+   2. Wall bonuses that act at Dusk apply (Hull Brace, Purpose).
+   3. The **Elder's Legacy** resolves in the sections matching the Elder's paired event.
+   4. The Elder's event **collapses**.
 5. **Day.** The Steward's **Reign** applies. The Steward's event **grows**.
 6. **Dawn.**
-   1. All houses **vote** for one nominee as successor. Ties go to the Steward's house's choice.
+   1. All houses **vote** for one nominee as successor. Ties go to the nominee whose house holds the fewest leaders on the conveyor (Day + Dusk); if still tied, the Steward's house chooses.
    2. The chosen card goes to the Dawn slot. Unchosen nominees go to the discard pile.
    3. **Offset (default toggle):** now draw the next event, pair it with the new heir, and resolve its **seed**.
    4. **Direct (toggle):** the event was drawn and shown before the vote; pair it and seed now.
-7. **Slow phase.** All other played cards resolve. Targets are chosen now, with knowledge of the new event.
+7. **Slow phase.** All other played cards resolve. Targets are chosen now, with knowledge of the new event. In both fast and slow phases each house chooses the order its cards (and its innate, in its speed) resolve.
 8. **Time passes.**
    1. The Dusk leader and its event (and any Breakthrough) move to the next Wall slot. Day moves to Dusk, and Dawn moves to Day.
    2. Damage on Crew and threat pieces clears.
@@ -104,7 +105,8 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 
 **Ending**
 - **Win (base):** you win the moment the board meets your current Understanding tier's condition **and** the destination's Landfall requirement.
-- **Win (Landfall card toggle):** when the condition above is met, the players may place the set-aside Landfall event as the next Dawn event. You win when the Landfall event retires to the Wall with its leader.
+- **Win (Landfall card, "choice"):** when the condition above is met, the Steward's house may **begin Landfall**: the set-aside Landfall event becomes the next Dawn event (even if the deck is nearly empty; once Landfall is placed no further events are needed). You win when the Landfall event retires to the Wall with its leader. Declining asks again next generation.
+- **Win (Landfall card, "shuffled"):** the Landfall card is shuffled into the Stage III events. When it retires to the Wall you win if the condition holds at that moment; otherwise it passes and the voyage continues.
 - **Loss:** you lose if an event must be drawn at Dawn and the event deck is empty. *(The Wall is full and the deck is empty at the same moment.)*
 - **Loss:** you lose if the Decay pool is empty after the Ship in Crisis card has flipped.
 - **Loss:** you lose if any house has no influence on the ship.
@@ -128,8 +130,9 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 - Houses may gain more fast candidates as a house growth unlock.
 
 **Succession vote:**
-- All houses choose one nominee. The Steward's house breaks ties.
-- If no Steward exists (round 1 has a Steward from setup), the first player breaks ties. *(default)*
+- All houses choose one nominee.
+- **Ties** go to the nominee whose house holds the fewest leaders on the conveyor (Day + Dusk). If that is still tied, the Steward's house chooses. *(Playtest 1: with "the Steward breaks ties", a 2-player Steward house could keep the succession forever, since each house votes for its own nominee.)*
+- **The Steward's house makes every shared decision:** Discoveries (apply or Breakthrough, and where), cascades, Reign gathers, and beginning Landfall. *(Playtest 1: these used to fall to the first seat.)*
 
 **What happens to leader cards:**
 - The chosen card is **permanently removed** from the people deck. It goes Dawn → Day → Dusk → Wall.
@@ -146,8 +149,15 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 - One slot per event card in the event deck. **Default: 12 slots.**
 - At Time passes, the Dusk leader moves into the next empty slot, together with **its paired event and any Breakthrough credited to its reign.**
 - The Wall is the game clock. When the Wall is full, the event deck is empty, and the next Dawn draw loses the game.
-- Breakthroughs on the Wall stay active for the rest of the game.
-- The Wall as an additional power-curve source is parked.
+- **Breakthroughs are passive Wall bonuses.** A Breakthrough does nothing while its leader is on the conveyor; it switches on when the leader retires to the Wall, and stays on for the rest of the voyage. *(Playtest 1: active Breakthroughs that fired every phase made the Wall "a flurry of venting"; the Wall should be a calm record of what the ship has learned.)*
+- Wall bonuses (one per Discovery card):
+  - every house counts +1 of a guild element (8 cards, one per guild among the Repair family),
+  - +1 credit per Growth for every house,
+  - +1 card drawn per Growth for every house,
+  - +1 fast play for every house,
+  - Brace 1 in every Outer Hull section each Dusk,
+  - the first Decay each generation returns to the pool (Decay ward),
+  - +1 Purpose each Dusk.
 
 ---
 
@@ -194,6 +204,7 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 
 - Damage on threat pieces clears at Time passes.
 - Powers can **repair** (deal damage), **downgrade** (Failure → Fault → Glitch), **vent** (push a piece to an adjacent section; this moves the problem rather than removing it, so it earns no Purpose), and **prevent** (stop a section's Day grow).
+- **Vent and gather are optional:** for each piece, the player may leave it where it is.
 
 ---
 
@@ -230,16 +241,16 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 
 Spirit Island's Fear equivalent. *Narrative:* the crew's Purpose drives them to relearn how their own ship works.
 
-**Purpose pool:** **5 per player** *(tuned by simulation)*. Gain Purpose from:
+**Purpose pool:** **6 per player** *(tuned by simulation; 5 before playtest 1)*. Gain Purpose from:
 - **destroying a Fault: 1**,
 - **destroying a Failure: 2**,
 - cards that grant it.
 
 When the pool fills, earn 1 **Discovery** card face-down and reset the pool.
 
-**Discovery cards** resolve at the **start of Dusk**. Each card offers a choice:
-- **Apply:** use its one-time effect at the current Understanding tier (I / II / III), then discard it.
-- **Breakthrough:** tuck it under the **current Steward** as a weaker **permanent** ongoing effect. It travels with that leader to the Wall and stays active.
+**Discovery cards** resolve at the **start of Dusk**. Discoveries earned while Discoveries are resolving wait for the next Dusk. The Steward's house decides each card:
+- **Apply:** use its one-time effect at the current Understanding tier (I / II / III), then discard it. Section effects land in **one section of the Steward's choice on each board** (any type). *(Playtest 1: "each Residential section" style scopes were too restrictive.)*
+- **Breakthrough:** tuck it under the **current Steward** as a **passive Wall bonus** (see The Wall of Leaders). It switches on when that leader retires to the Wall, two generations later, and stays on.
   - **Maximum one Breakthrough per leader.** If the Steward already holds one, the Discovery must be applied.
 - *Example: "Fault Mapping."*
   - I: remove 1 Glitch from each Outer Hull section.
@@ -303,6 +314,7 @@ Starting Decay does not come from the pool, as in Spirit Island.
 ## Influence and Havens
 
 - **Influence:** Spirit Island's presence equivalent. Houses add and move it through growth and powers.
+- **Adding influence with a card costs 2 credits per influence**, paid when it resolves; the player may buy fewer or none. Growth A placement stays free (it is that growth's whole point). *(Playtest 1: free influence from cards was an automatic play and accelerated a house too fast.)*
 - **Range:** cards target **0–3** sections from a section where the house has influence. Each card defines its range and its target type (a section type, Hull/Core, or **ANY**).
 - **Haven:** a section where a house has **2 or more influence** (Spirit Island's sacred site equivalent). *"Haven" is a proposed name; "Stronghold" was rejected as too militaristic.* Effects are defined on cards (e.g. "range from a Haven").
 - **A house with zero influence on the ship loses the game for everyone.**
@@ -369,7 +381,9 @@ Eight guild elements:
 
 **How guilds relate to the rest of the game:**
 - Guilds have obvious targeting tendencies (e.g. Farmer cards usually target Agricultural sections), but are not bound to section types.
-- **Elements come only from cards a house plays this generation and from raw elements on its growth track.**
+- **Elements come from cards a house plays this generation, raw elements on its growth tracks, and Wall bonuses.**
+- **A card's own guilds never count toward its own threshold.** Printed thresholds list only the elements needed from *other* sources (always at least 1). *(Playtest 1: 19 cards unlocked their own bonus, which made the bonus a baseline ability. The printed numbers were reduced by the card's own icons, so difficulty is otherwise unchanged.)*
+- **No dead track slots.** A track slot that would repeat the previous value instead grants an element (credits track) or +1 card drawn each Growth (plays track). *(Playtest 1: e.g. Galvan's last credits slot gave nothing.)*
 - **Innate powers** on the house board unlock at guild thresholds.
 - If the power curve proves too weak, the next step is to let the **current Steward's elements count for every house**.
 
@@ -589,12 +603,12 @@ Chosen before the game, with a difficulty **level 0–6**. Each destination defi
 
 | Players | Ship boards | Decay pool | Purpose pool | Event deck / Wall |
 |---|---|---|---|---|
-| 1 | 1 | 2 | 5 | 12 |
-| 2 | 2 | 5 | 10 | 12 |
-| 3 | 3 | 8 | 15 | 12 |
-| 4 | 4 | 11 | 20 | 12 |
+| 1 | 1 | 2 | 6 | 12 |
+| 2 | 2 | 5 | 12 | 12 |
+| 3 | 3 | 8 | 18 | 12 |
+| 4 | 4 | 11 | 24 | 12 |
 
-*Tuned by simulation:* Decay pool = **3 per player − 1**, Purpose pool = **5 per player**. With these, house bots win 75% / 74% / 66% / 68% at 1 / 2 / 3 / 4 players (level 0).
+*Tuned by simulation:* Decay pool = **3 per player − 1**, Purpose pool = **6 per player** (raised from 5 after playtest 1, when Wall bonuses and the new track slots made the ship stronger). With these, house bots win 75% / 74% / 66% / 68% at 1 / 2 / 3 / 4 players (level 0).
 
 The people deck does not scale. Solo-specific tuning is deferred until multiplayer is settled; solo players can play two-handed.
 
@@ -623,6 +637,10 @@ The people deck does not scale. Solo-specific tuning is deferred until multiplay
 | Guilds as elements, not tied to section types | Raw elements come from the growth track instead. |
 | Purpose → Discoveries → Understanding tiers | Keeps Spirit Island's fear structure. "Mission Forgotten" loss was dropped. |
 | Discovery choice: one-time effect or a Breakthrough | Breakthroughs give the power curve, a history on the Wall, and a cap of one per leader. |
+| **Playtest 1 (hotseat, 2 houses):** Breakthroughs become passive Wall bonuses that switch on at the Wall | Breakthroughs that acted every phase made the Wall a flurry of venting; passive elements, credits, draws and fast plays read better and reward retiring leaders. |
+| Playtest 1: succession ties go to the house with fewer leaders on the conveyor, then the Steward | With the Steward breaking ties, a 2-player bot house held the succession 9 generations out of 9. |
+| Playtest 1: the Steward's house makes every shared decision | Discovery choices fell to the first seat while succession fell to the Steward; one rule is consistent. |
+| Playtest 1: card thresholds ignore the card's own guilds; adding influence by card costs credits; vent and gather optional; no dead track slots; play order chosen; Discoveries chain to the next Dusk | See the rules sections above; each was a direct playtest note. |
 | Event deck size = Wall slots; empty deck = loss | Like Spirit Island's invader deck clock, but visible. |
 | Destinations as adversaries | Flavor comes from the journey. Levels change setup, rules, deck and the Landfall target. |
 | Fixed-length game and a mid-game "choose to land" decision | Rejected. The Landfall card toggle is the alternative climax. |

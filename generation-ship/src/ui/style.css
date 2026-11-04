@@ -2,17 +2,20 @@
   --bg: #f4efe4; --panel: #fffaf0; --ink: #2b2620; --muted: #7a7064; --line: #d8cdb9;
   --accent: #8a5a12; --hl: #e2a72e; --danger: #b23a2a; --ok: #2f7a4a;
   --infra: #c9d4e0; --resi: #e8d6c0; --gov: #d9cfe6; --agri: #cfe3c4;
+  --void: #1b2333; --star: #c8d3ea; --hullplate: #4fd1e8; --hullhatch: rgba(30, 40, 60, .18);
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #1d1a16; --panel: #27231e; --ink: #ece4d6; --muted: #a59a8a; --line: #4a4237;
     --accent: #e0a64a; --hl: #f0c040; --danger: #e06a55; --ok: #6cc08a;
     --infra: #34404d; --resi: #4a3d30; --gov: #3e3550; --agri: #33452d; color-scheme: dark;
+    --void: #05070d; --star: #8090b0; --hullplate: #4fd1e8; --hullhatch: rgba(255, 255, 255, .12);
   }
 }:root[data-theme="dark"] {
     --bg: #1d1a16; --panel: #27231e; --ink: #ece4d6; --muted: #a59a8a; --line: #4a4237;
     --accent: #e0a64a; --hl: #f0c040; --danger: #e06a55; --ok: #6cc08a;
     --infra: #34404d; --resi: #4a3d30; --gov: #3e3550; --agri: #33452d; color-scheme: dark;
+    --void: #05070d; --star: #8090b0; --hullplate: #4fd1e8; --hullhatch: rgba(255, 255, 255, .12);
   }
 
 * { box-sizing: border-box; }
@@ -28,11 +31,13 @@ select, input { font: inherit; background: var(--panel); color: var(--ink); bord
 .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 12px 16px; margin: 16px; }
 .row { display: flex; flex-wrap: wrap; gap: 12px; margin: 10px 0; }
 .seat { display: flex; gap: 8px; align-items: center; margin: 4px 0; }
-#game { display: grid; grid-template-columns: 260px 1fr 320px; gap: 12px; padding: 12px; }
+#game { display: grid; grid-template-columns: 260px minmax(0, 1fr) 320px; gap: 12px; padding: 12px; }
 @media (max-width: 1100px) { #game { grid-template-columns: 1fr; } }
 h3 { margin: 10px 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
 #mapwrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
-#map { display: block; }
+#map { display: block; width: 100%; height: auto; }
+#map .hullplate { fill: none; stroke: var(--hullplate); stroke-width: 4; stroke-linejoin: round; opacity: .9; }
+#map .voidlbl { fill: var(--star); font-size: 11px; letter-spacing: .3em; opacity: .7; }
 #map .sec polygon { stroke: var(--ink); stroke-opacity: .45; stroke-width: 1.2; stroke-linejoin: round; }
 #map .sec polygon.hullsec { stroke-opacity: .9; stroke-width: 2.5; }
 #map .sec.opt polygon { stroke: var(--hl); stroke-opacity: 1; stroke-width: 5; cursor: pointer; }
@@ -95,3 +100,26 @@ h3 { margin: 10px 0 6px; font-size: 13px; text-transform: uppercase; letter-spac
 .sumt { border-collapse: collapse; font-size: 13px; }
 .sumt th, .sumt td { text-align: left; padding: 3px 10px 3px 0; border-bottom: 1px solid var(--line); }
 #pt-notes { width: 100%; font: inherit; }
+
+/* Purpose meter and active effects */
+.meter { position: relative; height: 20px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); overflow: hidden; }
+.meter > div { position: absolute; inset: 0 auto 0 0; background: var(--accent); opacity: .35; }
+.meter > span { position: relative; display: block; text-align: center; font-size: 12px; font-weight: 700; line-height: 18px; }
+#purpose .muted { font-size: 11px; margin-top: 3px; }
+#effects .eff { font-size: 12px; border-left: 3px solid var(--line); padding: 2px 6px; margin-bottom: 4px; }
+#wall .ws.bonus { border-color: var(--accent); }
+
+/* Compact view: fits a 1080p (or smaller) screen */
+body.compact { font-size: 12.5px; }
+body.compact #game { grid-template-columns: 230px minmax(0, 1fr) 290px; gap: 8px; padding: 8px; }
+body.compact #left, body.compact #right { max-height: calc(100vh - 110px); overflow-y: auto; }
+body.compact #map { max-height: calc(100vh - 330px); }
+body.compact .card { padding: 4px 6px; font-size: 11px; margin: 2px 0; }
+body.compact .card .rl { display: none; }
+body.compact .card:hover .rl, body.compact .votec .card .rl, body.compact #conveyor .card .rl { display: block; }
+body.compact h3 { margin: 6px 0 4px; }
+body.compact .slot { padding: 4px; margin-bottom: 4px; }
+body.compact #log { max-height: 180px; }
+body.compact #wall .ws { min-width: 90px; font-size: 10px; }
+body.compact #topbar { padding: 4px 12px; }
+body.compact #prompt { padding: 6px 10px; }

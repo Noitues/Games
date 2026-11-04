@@ -14,7 +14,7 @@ const fx = (e) => Object.entries(e).map(([k, v]) => (VERB[k] ?? k).replace("{n}"
 
 function personCard(c) {
   const t = c.target.kind === "house" ? "Another house" : `Range ${c.target.range} · ${c.target.type}`;
-  const th = c.threshold ? `<div class="th"><b>If ${Object.entries(c.threshold.elements).map(([g, n]) => `${g} ${n}`).join(" + ")}:</b> also ${esc(c.threshold.text)}</div>` : "";
+  const th = c.threshold ? `<div class="th"><b>With ${Object.entries(c.threshold.elements).map(([g, n]) => `${n} ${g}`).join(" + ")} from other cards:</b> also ${esc(c.threshold.text)}</div>` : "";
   return `<div class="card ${c.tier === "Remarkable" ? "rem" : ""}">
     <div class="hd"><span>${c.id}${c.tier === "Remarkable" ? " ★" : ""}</span><span>${c.cost} ¢</span></div>
     <div>${c.guilds.map((g) => `<span class="g">${g}</span>`).join("")}</div>
@@ -32,7 +32,7 @@ function discoveryCard(d) {
   const tiers = ["I", "II", "III"].map((t) => `<div><b>${t}:</b> ${esc(d.tiers[t].text)}</div>`).join("");
   return `<div class="card"><div class="hd"><span>${d.id}</span><span class="stage">${d.family}</span></div>
     <div class="stage">Apply now at your Understanding tier, or…</div>${tiers}
-    <div class="reign"><b>…Breakthrough</b> (tuck under the Steward, permanent): ${esc(d.breakthrough.text)}</div></div>`;
+    <div class="reign"><b>…Breakthrough</b> (tuck under the Steward; switches on when it reaches the Wall): ${esc(d.breakthrough.text)}</div></div>`;
 }
 function crisisCard(x) {
   return `<div class="card"><div class="hd"><span>Ship in Crisis</span><span>${x.id}</span></div>
@@ -74,7 +74,7 @@ function layoutsHTML() {
   }).join("");
 }
 function slot(v) {
-  if (typeof v === "object") { const [k, n] = Object.entries(v)[0]; return k === "element" ? `+${n}` : k === "fast_play" ? "+fast" : "+clone"; }
+  if (typeof v === "object") { const [k, n] = Object.entries(v)[0]; return k === "element" ? `+${n}` : k === "fast_play" ? "+fast" : k === "draw" ? "+draw" : "+clone"; }
   return v;
 }
 function houseBoard(h) {
@@ -92,20 +92,21 @@ const REF = `<div class="ref">
   <h3>Each generation</h3><ol>
   <li><b>Growth:</b> draw a fresh hand (plays + bonus; keep cloned cards), pick growth A/B/C, gain credits.</li>
   <li><b>Commit:</b> choose plays (pay credits). Mark one as your <b>nominee</b>: free, fast, may become heir.</li>
-  <li><b>Fast:</b> nominees resolve (plus house fast plays / fast innates).</li>
-  <li><b>Dusk:</b> resolve earned Discoveries (apply, or Breakthrough on the Steward). The Elder's <b>Legacy</b>, then the Elder's event <b>Collapses</b>.</li>
+  <li><b>Fast:</b> nominees resolve (plus house fast plays / fast innates), in the order each house chooses.</li>
+  <li><b>Dusk:</b> resolve Discoveries earned before this Dusk (the Steward's house applies each in one section per board, or makes it a Breakthrough). Wall bonuses. The Elder's <b>Legacy</b>, then the Elder's event <b>Collapses</b>.</li>
   <li><b>Day:</b> the Steward's <b>Reign</b>, then its event <b>Grows</b>.</li>
-  <li><b>Dawn:</b> vote an heir from the nominees (tie: Steward's house). Draw the next event, pair it, <b>Seed</b>.</li>
+  <li><b>Dawn:</b> vote an heir from the nominees (tie: the house with fewer leaders on the conveyor, then the Steward's house). Draw the next event, pair it, <b>Seed</b>.</li>
   <li><b>Slow:</b> other plays and slow innates resolve.</li>
-  <li><b>Time passes:</b> Dusk → Wall, Day → Dusk, Dawn → Day. Clear damage, Brace, Quarantine. Discard hands except clones.</li></ol>
+  <li><b>Time passes:</b> Dusk → Wall (its Breakthrough switches on for the rest of the game), Day → Dusk, Dawn → Day. Clear damage, Brace, Quarantine. Discard hands except clones.</li></ol>
   <h3>Event actions (cards name section types)</h3>
   <p><b>Seed:</b> +1 Glitch in each matching section on the Outer Hull or next to a Fault/Failure. <b>Grow:</b> +1 Fault in each matching section with threat (Failure instead if it has 2+ Faults). <b>Collapse:</b> each matching section takes Glitch 1 + Fault 2 + Failure 3 damage (+1 Unrest, − Brace/Isolate). 2+ damage places Decay. The same damage hits Crew (2 health each). Surviving Crew deal 2 damage each.</p>
+  <h3>Your choices</h3><p>A card's bonus needs its elements from <i>other</i> cards, track slots or the Wall, never its own guilds. Adding influence with a card costs 2 credits each (optional). Venting and gathering are optional.</p>
   <h3>Decay</h3><p>Taken from the pool. Each house loses 1 influence there. Decay where Decay already is cascades to a neighbor. Pool empty: flip Ship in Crisis. Empty again: lose.</p>
-  <h3>Purpose and Understanding</h3><p>Destroy a Fault +1, a Failure +2 Purpose. A full pool (5 per player) earns a Discovery. Every 3 Discoveries raise Understanding.</p>
+  <h3>Purpose and Understanding</h3><p>Destroy a Fault +1, a Failure +2 Purpose. A full pool (6 per player) earns a Discovery. Every 3 Discoveries raise Understanding.</p>
   <h3>Winning (at any moment)</h3><p><b>I:</b> no threat and no Decay · <b>II:</b> no threat · <b>III:</b> no Faults or Failures, plus the destination's Landfall requirement.</p>
   <h3>Losing</h3><p>The event deck is empty at Dawn; the Decay pool runs out after the crisis flip; or any house has no influence.</p>
   <h3>Tokens</h3><p><b>Brace X:</b> prevent X damage · <b>Quarantine:</b> nothing seeds, vents or cascades in or out · <b>Patch:</b> skip next Grow · <b>Lockout:</b> skip next Seed · <b>Unrest:</b> +1 damage from every source · <b>Isolate:</b> negate damage at next Collapse.</p>
-  <h3>Setup (2 players)</h3><p>Boards A–B. Decay pool 3 per player − 1; Purpose pool 5 per player; event deck 3 Stage I / 4 Stage II / 5 Stage III (Stage I on top). Draw the first event and a random Common leader into Dawn, Seed, then move them to Day.</p></div>`;
+  <h3>Setup (2 players)</h3><p>Boards A–B. Decay pool 3 per player − 1; Purpose pool 6 per player; event deck 3 Stage I / 4 Stage II / 5 Stage III (Stage I on top). Draw the first event and a random Common leader into Dawn, Seed, then move them to Day.</p></div>`;
 
 const parts = {
   ref: `<h1>Generation Ship: rules reference</h1>${REF}`,

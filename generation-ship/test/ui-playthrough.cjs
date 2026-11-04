@@ -7,9 +7,9 @@ const { chromium } = require("playwright");
 const URL = process.argv[2] || "http://localhost:8765/index.html";
 const GAMES = [
   { name: "2p humans, pair", players: 2, houses: ["tellers", "meridian"], seats: ["human", "human"], seed: 3 },
-  { name: "3p humans, direct, Cinder 3, Landfall", players: 3, houses: ["vigil", "voidwardens", "gardeners"], seats: ["human", "human", "human"], pairing: "direct", destination: "cinder", level: "3", landfall: true, seed: 5 },
+  { name: "3p humans, direct, Cinder 3, Landfall", players: 3, houses: ["vigil", "voidwardens", "gardeners"], seats: ["human", "human", "human"], pairing: "direct", destination: "cinder", level: "3", landfall: "choice", seed: 5 },
   { name: "4p mixed, diamond, Verdant 2", players: 4, houses: ["galvan", "foremen", "keel", "tellers"], seats: ["human", "planner", "human", "planner"], destination: "verdant", level: "2", seed: 7 },
-  { name: "1p human solo", players: 1, houses: ["vigil"], seats: ["human"], seed: 9 },
+  { name: "1p human solo, Landfall shuffled", players: 1, houses: ["vigil"], seats: ["human"], landfall: "shuffled", seed: 9 },
 ];
 let rs = 12345;
 const HINT_RATE = 0.75;
@@ -35,7 +35,7 @@ const pick = (a) => a[Math.floor(rnd() * a.length)];
     }
     if (g.pairing) await page.selectOption("#pairing", g.pairing);
     if (g.destination) { await page.selectOption("#destination", g.destination); await page.selectOption("#level", g.level); }
-    if (g.landfall) await page.check("#landfall");
+    if (g.landfall) await page.selectOption("#landfall", g.landfall);
     await page.fill("#seed", String(g.seed));
     await page.click("#btn-start");
     let actions = 0, stuck = 0, lastHTML = "";

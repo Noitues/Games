@@ -12,8 +12,8 @@ The first value is the starting value. ★ marks a special slot.
 
 | Track | Values |
 |---|---|
-| Credits per generation | 2 → 2 → 2 → ★ +Navigators → 3 |
-| Card plays | 2 → 3 → 3 → ★ +1 fast play → 3 |
+| Credits per generation | 2 → ★ +Engineers → ★ +Engineers → ★ +Navigators → 3 |
+| Card plays | 2 → 3 → ★ +1 card drawn → ★ +1 fast play → ★ +1 card drawn |
 
 Hand = plays + 2. Clone 1.
 

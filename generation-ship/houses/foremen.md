@@ -12,8 +12,8 @@ The first value is the starting value. ★ marks a special slot.
 
 | Track | Values |
 |---|---|
-| Credits per generation | 1 → 2 → 2 → ★ +Laborers → 3 → 3 |
-| Card plays | 2 → 2 → 3 → ★ +1 fast play → 3 → 4 |
+| Credits per generation | 1 → 2 → ★ +Laborers → ★ +Laborers → 3 → ★ +Keepers |
+| Card plays | 2 → ★ +1 card drawn → 3 → ★ +1 fast play → ★ +1 card drawn → 4 |
 
 Hand = plays + 2. Clone 1.
 

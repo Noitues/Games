@@ -673,8 +673,9 @@ export function setupRamp(G, st) {
   st.phase = "setup";
   const eid = drawEvent(st);
   const leader = drawFrom(st, "common", "commonDiscard");
-  st.slots.dawn = { leader, event: eid, house: 0, bt: null, tempered: false };
+  st.slots.dawn = { leader, event: eid, house: 0, bt: null, tempered: false, start: true };
   seed(G, st, eid);
+  log(G, st, `Voyage begins: starting Steward ${leader} carries event ${eid} (${G.data.eventById[eid].types.join("+")}), which has Seeded; it Grows this Day and Collapses next Dusk`);
   st.slots.day = st.slots.dawn; st.slots.dawn = null;
 }
 

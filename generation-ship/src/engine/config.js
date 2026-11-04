@@ -5,7 +5,7 @@ export const DEFAULT_CONFIG = {
   eventPairing: "offset",        // "offset" | "direct"
   decayPerPlayer: 3, decayBase: -1,
   crisisRefillPerPlayer: 1,
-  purposePerPlayer: 5,
+  purposePerPlayer: 6,
   discoveriesPerTier: 3,
   stageCounts: { 1: 3, 2: 4, 3: 5 },
   startCredits: 0,

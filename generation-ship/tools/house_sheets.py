@@ -41,7 +41,7 @@ VERB = {"gather_crew": "gather {n} Crew", "brace": "Brace {n}", "damage": "{n} d
 def slot(v):
     if isinstance(v, dict):
         k, n = next(iter(v.items()))
-        return {"element": f"★ +{n}", "fast_play": "★ +1 fast play", "clone": "★ +1 clone slot"}[k]
+        return {"element": f"★ +{n}", "fast_play": "★ +1 fast play", "clone": "★ +1 clone slot", "draw": "★ +1 card drawn"}[k]
     return str(v)
 
 

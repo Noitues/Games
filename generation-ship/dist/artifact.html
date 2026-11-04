@@ -15,6 +15,7 @@
   <button id="btn-new">New game</button>
   <button id="btn-save" title="Download this game as a file">Save</button>
   <label class="loadbtn" title="Load a saved game file"><input type="file" id="file-load" accept=".json" hidden><span>Load</span></label>
+  <button id="btn-compact" title="Switch between a compact layout that fits one screen and a roomier one">Compact view</button>
   <button id="btn-mute" title="Toggle sound">🔊</button>
 </header>
 
@@ -28,7 +29,7 @@
     <label>Ship layout <select id="layout"></select></label>
     <label>Destination <select id="destination"></select></label>
     <label>Level <select id="level"></select></label>
-    <label><input type="checkbox" id="landfall"> Landfall card</label>
+    <label>Landfall <select id="landfall"><option value="off">Off (win at once)</option><option value="choice">Begin Landfall when ready</option><option value="shuffled">Shuffled into Stage III events</option></select></label>
     <label>Seed <input id="seed" type="number" value="1" style="width:6em"></label>
   </div>
   <button id="btn-start" class="primary">Start</button>
@@ -37,27 +38,32 @@
 <main id="game" hidden>
   <div id="phase-guide"></div>
   <aside id="left">
+    <h3>Purpose</h3>
+    <div id="purpose"></div>
     <h3>Generations</h3>
     <div id="conveyor"></div>
     <h3>Forecast <label class="tog"><input type="checkbox" id="show-forecast" checked> on map</label></h3>
     <div id="forecast"></div>
-    <h3>Discoveries</h3>
-    <div id="discoveries"></div>
+    <h3>Active effects</h3>
+    <div id="effects"></div>
     <details id="rules"><summary><h3 style="display:inline">Rules quick reference</h3></summary>
       <p><b>Each generation:</b> Growth → Commit → Fast → Dusk → Day → Dawn → Slow → Time passes.</p>
       <p><b>Leaders:</b> your nominee is free and fast and may be voted heir. Heir (Dawn) → Steward (Day: Reign, then its event Grows) → Elder (Dusk: Legacy in its event's sections, then its event Collapses) → the Wall.</p>
       <p><b>Events</b> name section types. <b>Seed:</b> +1 Glitch in each matching section on the Outer Hull or next to a Fault/Failure. <b>Grow:</b> +1 Fault in each matching section with threat (Failure if it has 2+ Faults). <b>Collapse:</b> Glitch 1 + Fault 2 + Failure 3 damage (+Unrest, −Brace, −Isolate); 2+ places Decay; the same damage hits Crew (2 health each); surviving Crew deal 2 damage each.</p>
+      <p><b>Your turn's choices:</b> you pick the order your cards and innate resolve. Venting and gathering are optional. Adding influence with a card costs 2 credits per influence (optional); Growth A placement is free.</p>
       <p><b>Decay</b> comes from the pool; each house loses 1 influence there; Decay on Decay cascades to a neighbor. Pool empty: Ship in Crisis flips; empty again: you lose.</p>
-      <p><b>Purpose:</b> destroying a Fault +1, a Failure +2. A full pool earns a Discovery (apply now, or Breakthrough on the Steward). Every 3 Discoveries raise Understanding.</p>
+      <p><b>Purpose</b> (shared): destroying a Fault +1, a Failure +2. A full pool earns a Discovery, which resolves at the next Dusk (Discoveries earned during that resolution wait for the Dusk after). The Steward's house applies it now (one section of its choice per board) or makes it a Breakthrough under the Steward: a passive bonus that switches on when that leader reaches the Wall. Every 3 Discoveries raise Understanding.</p>
+      <p><b>Succession:</b> each house votes for a nominee. Ties go to the house with fewer leaders on the conveyor; if still tied, the Steward's house decides. The Steward's house also makes all other shared choices.</p>
       <p><b>Win</b> at any moment: I no threat and no Decay · II no threat · III no Faults or Failures (plus any destination requirement). <b>Lose:</b> events run out, Decay runs out after the crisis, or a house has no influence.</p>
       <p><b>Tokens:</b> Brace X prevents X damage · Quarantine: nothing seeds, vents or cascades in or out · Patch skips the next Grow · Lockout skips the next Seed · Unrest +1 damage from every source · Isolate negates damage at the next Collapse.</p>
-      <p><b>Range</b> counts from sections with your influence. Elements come from the cards you play (and track slots); they power card bonuses and your innate.</p>
+      <p><b>Range</b> counts from sections with your influence. Elements come from the cards you play, track slots and Wall bonuses; they power your innate and card bonuses. A card's bonus counts only elements from <i>other</i> sources, never its own guilds.</p>
+      <p><b>Outer Hull</b> sections (hatched, with a bright cyan edge) face the void: Seeds always reach them.</p>
     </details>
   </aside>
   <section id="center">
     <div id="prompt"></div>
     <div id="mapwrap"><svg id="map"></svg></div>
-    <div id="legend">⚠ forecast: red ring = Collapses (number = damage, "Decay!" = Decay will land) · ↑ = Grows · ▲ Glitch · ■ Fault · ⬢ Failure · ☺ Crew · ✸ Decay · ● influence (house color) · Br Brace · Q Quarantine · P Patch · L Lockout · U Unrest · I Isolate · ⌒ / heavy outline = Outer Hull · dashed lines join boards</div>
+    <div id="legend">⚠ forecast: red ring = Collapses (number = damage, "Decay!" = Decay will land) · ↑ = Grows · ▲ Glitch · ■ Fault · ⬢ Failure · ☺ Crew · ✸ Decay · ● influence (house color) · Br Brace · Q Quarantine · P Patch · L Lockout · U Unrest · I Isolate · hatched + bright cyan edge = Outer Hull (faces the void) · dashed lines join boards</div>
     <h3>Wall of Leaders</h3>
     <div id="wall"></div>
   </section>
