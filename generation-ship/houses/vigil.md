@@ -1,40 +1,39 @@
 # House Vigil, the Lamplighters
 
-**Template:** Shadows Flicker Like Flame · **Curve:** standard (1.73)
+**Template:** Shadows Flicker Like Flame · **Curve:** standard
 
-Keepers of the Archive and the Mission. They inspire the crew, generate Purpose, and reach anywhere people gather. They're weak at direct repair and win through the Understanding route, as Shadows wins through fear.
+Keepers of the Archive and the Mission. They inspire the crew, generate Purpose, and reach anywhere people gather.
 
-- **Guilds:** Keepers (primary, 1 PP) / Scholars (secondary, 1.5 PP)
-- **Weaknesses:** little damage, fragile influence.
+- **Guilds:** Keepers (primary) / Scholars (secondary)
+- **Weaknesses:** Little damage, fragile influence.
 
 ## Tracks
+The first value is the starting value. ★ marks a special slot.
 
 | Track | Values |
 |---|---|
-| Credits per generation | 1 → 2 → 2 → ★ +Keeper → 3 → 3 |
-| Card plays | 2 → 2 → 3 → ★ +Scholar → 3 → 4 |
+| Credits per generation | 1 → 2 → 2 → ★ +Keepers → 3 → 3 |
+| Card plays | 2 → 2 → 3 → ★ +Scholars → 3 → 4 |
 
-Hand = plays + 2 (starts at 4). Clone 1.
+Hand = plays + 2. Clone 1.
 
-## Special rule: Voices Among the Crew
-Vigil may target from **any section with Crew** by paying **1 extra credit**.
-- *Value:* ≈ **0.5 PP per generation (≈ 6 per game)**.
+## Special rule
+Vigil may target from any section with Crew by paying 1 extra credit.
 
 ## Innate: Kindle Purpose (slow)
+Tiers are cumulative; the effect column is the full effect at that tier. *Reached* is how often a generation reaches at least that tier (house bots, calibration run).
 
-| Tier | Threshold | Threshold cost | Effect (cumulative) | Effect PP |
+| Tier | Threshold | Effect | PP | Reached |
 |---|---|---|---|---|
-| 1 | Keepers 2 | 2.0 | +2 Purpose | **2.0** |
-| 2 | Keepers 3, Scholars 1 | 4.5 | Instead, +4 Purpose; foresee the top event | **4.5** |
-| 3 | Keepers 4, Scholars 3 | 8.5 | Instead, +5 Purpose; temper the Elder's Legacy | 5 + 0.5 + 3 = **8.5** |
-
-**Watch:** Legacy tempering may play stronger than its 3 PP. The fallback is "the Elder's Legacy does not resolve in one section." Purpose at 1 PP is also suspect at these volumes.
+| 1 | Keepers 2 | +2 Purpose | 2.0 | 45% |
+| 2 | Keepers 3 + Scholars 1 | +4 Purpose; foresee | 4.5 | 42% |
+| 3 | Keepers 3 + Scholars 2 | +5 Purpose; foresee; temper the Elder's Legacy | 8.5 | 10% |
 
 ## Growth
-- A: 2 · B: 2 · C: draw +2 and **+1 Purpose** instead of +1 credit (2.5)
+Shared menu: A place influence and uncover a track slot · B gain 2 credits · C draw +2 cards and gain 1 credit.
+- Growth C: text Draw +2 cards this generation (or take a Remarkable) and gain 1 Purpose, effects {'extra_draw': 2, 'purpose': 1}
 
 ## Starting influence
-1 in a Government section and 1 in a Residential section (where the Crew are).
+1 in a Government section and 1 in a Residential section
 
-## Power summary (estimate)
-Repair ●○○○○ · Control ●●○○○ · Protection ●○○○○ · Purpose ●●●●● · Utility ●●●○○
+*Generated from `data/houses.json` by `tools/house_sheets.py`.*

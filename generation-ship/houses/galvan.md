@@ -1,40 +1,39 @@
 # House Galvan, the Spark-Wardens
 
-**Template:** Lightning's Swift Strike · **Curve:** front-loaded (1.46)
+**Template:** Lightning's Swift Strike · **Curve:** front-loaded
 
-Fast, aggressive repair crews who hit threat hard and early but can't protect anything. They're strong from the first generation and plateau later.
+Fast, aggressive repair crews who hit threat hard and early but can't protect anything.
 
-- **Guilds:** Engineers (primary, 1 PP) / Navigators (secondary, 1.5 PP)
-- **Weaknesses:** no Brace, no Crew support, slow influence spread.
+- **Guilds:** Engineers (primary) / Navigators (secondary)
+- **Weaknesses:** No Brace, no Crew support, slow influence spread.
 
 ## Tracks
 The first value is the starting value. ★ marks a special slot.
 
 | Track | Values |
 |---|---|
-| Credits per generation | 1 → 1 → 1 → ★ +Engineer → 2 → 2 |
+| Credits per generation | 1 → 1 → 1 → ★ +Engineers → 2 → 2 |
 | Card plays | 3 → 3 → 3 → ★ +1 fast play → 4 |
 
-Hand = plays + 2 (starts at 5). Clone 1.
+Hand = plays + 2. Clone 1.
 
-## Special rule: Overclock
-For each Engineer element you have, one **additional** played card (not your nominee) may resolve **fast**.
-- *Value:* about 2 Engineers per generation × 0.25 × average card value 3.5 ≈ **1.75 PP per generation (≈ 21 per game)**.
+## Special rule
+For each Engineer element you have, one additional played card (not your nominee) may resolve fast.
 
 ## Innate: Arc Repair (fast)
-Tiers are cumulative.
+Tiers are cumulative; the effect column is the full effect at that tier. *Reached* is how often a generation reaches at least that tier (house bots, calibration run).
 
-| Tier | Threshold | Threshold cost | Effect (cumulative) | Effect PP |
+| Tier | Threshold | Effect | PP | Reached |
 |---|---|---|---|---|
-| 1 | Engineers 2 | 2.0 | 2 damage in a section at range 0 | 2 × 0.8 × 1.25 = **2.0** |
-| 2 | Engineers 3, Navigators 1 | 4.5 | Instead, 3 damage at range 1; add 1 Lockout there | 3.75 + 1.25 = **5.0** (+11%) |
-| 3 | Engineers 4, Navigators 2 | 7.0 | Instead, 4 damage; also downgrade 1 Failure there | 5.0 + 1.25 + 1.9 = **8.1** (+16%) |
+| 1 | Engineers 2 | 2 damage (range 0, ANY) | 2.0 | 58% |
+| 2 | Engineers 3 + Navigators 1 | 3 damage; Lockout (range 1, ANY) | 5.0 | 44% |
+| 3 | Engineers 3 + Navigators 2 | 4 damage; Lockout; downgrade 1 Failure (range 1, ANY) | 8.1 | 4% |
 
 ## Growth
-- A: 2 · B: 2 credits + **1 extra fast play this generation** (≈ 2.9) · C: 2.5
+Shared menu: A place influence and uncover a track slot · B gain 2 credits · C draw +2 cards and gain 1 credit.
+- Growth B perk: +1 extra fast play this generation
 
 ## Starting influence
-2 in Outer Hull sections, at the front line.
+2 in Outer Hull sections
 
-## Power summary (estimate)
-Repair ●●●●● · Control ●○○○○ · Protection ○○○○○ · Purpose ●●○○○ (from destroying Faults/Failures) · Utility ●○○○○
+*Generated from `data/houses.json` by `tools/house_sheets.py`.*

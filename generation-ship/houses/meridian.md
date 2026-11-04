@@ -1,40 +1,39 @@
 # House Meridian, the Flowkeepers
 
-**Template:** River Surges in Sunlight · **Curve:** standard (1.65)
+**Template:** River Surges in Sunlight · **Curve:** standard
 
-Logistics and movement. They run the conduits, water reclamation and supply. They move Crew, vent threat and spread influence widely. They're card-rich in place of River's card gain.
+Logistics and movement. They run the conduits and supply, move Crew, vent threat and spread influence widely.
 
-- **Guilds:** Bureaucrats (primary, 1 PP) / Farmers (secondary, 1.5 PP)
-- **Weaknesses:** moderate damage; it moves problems rather than solving them.
+- **Guilds:** Bureaucrats (primary) / Farmers (secondary)
+- **Weaknesses:** Moderate damage; it moves problems rather than solving them.
 
 ## Tracks
+The first value is the starting value. ★ marks a special slot.
 
 | Track | Values |
 |---|---|
-| Credits per generation | 1 → 2 → 2 → 3 → ★ +Bureaucrat → 4 |
+| Credits per generation | 1 → 2 → 2 → 3 → ★ +Bureaucrats → 4 |
 | Card plays | 2 → 2 → 3 → ★ +1 clone slot → 3 → 4 |
 
-Hand = plays **+ 3** (starts at 5). **Clone 2** (base).
+Hand = plays + 2. Clone 2.
 
-## Special rule: Supply Lines
-Meridian's influence in **Agricultural** sections counts as **Havens** for range.
-- *Value:* ≈ 0.5 PP per generation. With hand +1 (≈ 0.5) and clone +1 (1), the extras total ≈ **2 PP per generation (≈ 24 per game)**.
+## Special rule
+Meridian influence in Agricultural sections counts as Havens for range.
 
 ## Innate: Reroute (slow)
+Tiers are cumulative; the effect column is the full effect at that tier. *Reached* is how often a generation reaches at least that tier (house bots, calibration run).
 
-| Tier | Threshold | Threshold cost | Effect (cumulative) | Effect PP |
+| Tier | Threshold | Effect | PP | Reached |
 |---|---|---|---|---|
-| 1 | Bureaucrats 1, Farmers 1 | 2.5 | Range 2: vent up to 2 Glitches; gather up to 2 Crew | 2.0 × 1.15 = **2.3** (−8%) |
-| 2 | Bureaucrats 2, Farmers 2 | 5.0 | Instead, vent up to 2 Glitches or Faults and gather 1 Crew; Patch there | 2.9 + 1.7 = **4.6** (−8%) |
-| 3 | Bureaucrats 3, Farmers 3 | 7.5 | Also vent 1 Failure; Quarantine the section vented from | 4.6 + 1.7 + 1.15 = **7.45** (−1%) |
-
-Venting moves threat to an adjacent section and earns no Purpose.
+| 1 | Bureaucrats 1 + Farmers 1 | vent 2 Glitch; gather 2 Crew (range 2, ANY) | 2.3 | 70% |
+| 2 | Bureaucrats 2 + Farmers 2 | vent 2 Glitch/Fault; gather 1 Crew; Patch (range 2, ANY) | 4.6 | 39% |
+| 3 | Bureaucrats 3 + Farmers 2 | vent 2 Glitch/Fault; vent 1 Failure; gather 1 Crew; Patch; Quarantine the source (range 2, ANY) | 7.45 | 4% |
 
 ## Growth
-- A: **range 2** (2.3) · B: 2 · C: 2.5
+Shared menu: A place influence and uncover a track slot · B gain 2 credits · C draw +2 cards and gain 1 credit.
+- Growth A: range 2
 
 ## Starting influence
-1 in an Agricultural section and 1 adjacent to it.
+1 in an Agricultural section and 1 adjacent to it
 
-## Power summary (estimate)
-Repair ●○○○○ · Control ●●●●● · Protection ●●○○○ · Purpose ●○○○○ · Utility ●●●●○
+*Generated from `data/houses.json` by `tools/house_sheets.py`.*

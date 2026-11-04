@@ -1,63 +1,37 @@
-# Houses v0
+# Houses
 
-Each house is built from the **Balance framework** in [`../GDD.md`](../GDD.md). Its Spirit Island template sets the identity and the curve shape. All PP values are first estimates, to be calibrated by Monte Carlo playtesting.
+Eight houses, built from the GDD's Balance framework and then tuned by simulation. Each sheet (`<id>.md`) is generated from `data/houses.json` by `tools/house_sheets.py`; change the data, then regenerate.
 
-| House | Template | Identity | Guilds (primary / secondary) | Curve |
-|---|---|---|---|---|
-| [Galvan](galvan.md) | Lightning's Swift Strike | Fast, aggressive repair | Engineers / Navigators | Front-loaded |
-| [Meridian](meridian.md) | River Surges in Sunlight | Movement and logistics | Bureaucrats / Farmers | Standard |
-| [Keel](keel.md) | Vital Strength of the Earth | Slow, defensive | Medics / Laborers | Standard (was steep) |
-| [Vigil](vigil.md) | Shadows Flicker Like Flame | Purpose and reach | Keepers / Scholars | Standard |
-| [Foremen](foremen.md) | Thunderspeaker | Crew-led offense | Laborers / Keepers | Standard |
-| [Gardeners](gardeners.md) | A Spread of Rampant Green | Influence as armor | Farmers / Scholars | Standard |
-| [Voidwardens](voidwardens.md) | Ocean's Hungry Grasp | Outer Hull specialists | Navigators / Engineers | Front-loaded |
-| [Tellers](tellers.md) | Bringer of Dreams and Nightmares | Damage becomes Purpose | Bureaucrats / Medics | Standard |
+| House | Spirit Island template | Identity | Guilds (primary / secondary) |
+|---|---|---|---|
+| [Galvan](galvan.md) | Lightning's Swift Strike | Fast, aggressive repair | Engineers / Navigators |
+| [Meridian](meridian.md) | River Surges in Sunlight | Movement and logistics | Bureaucrats / Farmers |
+| [Keel](keel.md) | Vital Strength of the Earth | Defensive; braces its sections | Medics / Laborers |
+| [Vigil](vigil.md) | Shadows Flicker Like Flame | Purpose and reach | Keepers / Scholars |
+| [Foremen](foremen.md) | Thunderspeaker | Crew-led offense | Laborers / Keepers |
+| [Gardeners](gardeners.md) | A Spread of Rampant Green | Influence as armor | Farmers / Scholars |
+| [Voidwardens](voidwardens.md) | Ocean's Hungry Grasp | Outer Hull specialists | Navigators / Engineers |
+| [Tellers](tellers.md) | Bringer of Dreams and Nightmares | Damage becomes Purpose | Bureaucrats / Medics |
 
-Every guild is the primary or secondary guild of exactly two houses. The last four houses are modeled on Spirit Island's moderate- and high-complexity base spirits.
+Every guild is the primary or secondary guild of exactly two houses.
 
-## Economy curves (reference pacing, tracks only)
+## Balance (house bots, all 28 two-house pairings, 50 games each)
 
-Value per generation = 2 × card plays + credits (+ raw element, fast and clone slots once uncovered). Innates and special rules are excluded until their hit rates are measured.
+Strength = average win rate of the pairings a house appears in.
 
-| House | Total (12 gens) | Gens 1–4 | Gens 9–12 | Late ÷ early | Target shape | Result |
-|---|---|---|---|---|---|---|
-| Galvan | 101.0 | 28.0 | 41.0 | **1.46** | < 1.5 | ✓ |
-| Meridian | 105.0 | 26.0 | 43.0 | **1.65** | 1.5–2.0 | ✓ |
-| Keel | 107.0 | 26.0 | 48.0 | **1.85** | > 2.0 | ✗ (now standard) |
-| Vigil | 107.5 | 26.0 | 45.0 | **1.73** | 1.5–2.0 | ✓ |
-
-Average 105.1; the ±5% band is 99.9–110.4. All four houses are inside it.
-
-Keel starts at 2 plays since Monte Carlo run 1, which moved its curve from steep to standard. No house is steep now.
-
-Per-generation values:
-
-| Gen | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Galvan | 7 | 7 | 7 | 7 | 7 | 8 | 8 | 9 | 9 | 10 | 10 | 12 |
-| Meridian | 6 | 6 | 6 | 8 | 8 | 9 | 9 | 10 | 10 | 11 | 11 | 11 |
-| Keel | 6 | 6 | 7 | 7 | 7 | 8 | 8 | 10 | 10 | 12 | 12 | 14 |
-| Vigil | 6 | 6 | 6 | 8 | 8 | 9 | 9 | 10.5 | 10.5 | 11.5 | 11.5 | 11.5 |
-
-## Not yet balanced
-
-Rough estimates of special rules and other extras, per game:
-
-| House | Extras | ≈ PP per game |
+| House | Strength | vs average |
 |---|---|---|
-| Galvan | Overclock | 21 |
-| Meridian | Supply Lines, hand +3, clone 2 | 24 |
-| Keel | Load-Bearing | 8 |
-| Vigil | Voices Among the Crew | 6 |
+| Vigil | 77% | +3.4 |
+| Keel | 77% | +3.1 |
+| Foremen | 75% | +1.1 |
+| Meridian | 75% | +0.9 |
+| Voidwardens | 73% | −0.9 |
+| Galvan | 72% | −1.7 |
+| Gardeners | 72% | −2.3 |
+| Tellers | 70% | −3.7 |
 
-With these added, Meridian and Galvan run high and Keel runs low. The fix waits for Monte Carlo data on special-rule triggers and innate hit rates.
+- **Overall:** 74% wins at level 0, about 82% of them at Understanding III, around generation 8.6.
+- **Spread:** every house is within ±4 points. The noise is about ±3 points per house at this sample size.
+- **How we got here:** see `sim/RESULTS.md`, runs 4–5.
 
-## Shared growth menu (pick one per generation)
-
-| Option | Effect | PP |
-|---|---|---|
-| A. Influence | Place 1 influence from a track, within range 1 | 2 |
-| B. Credits | Gain 2 credits, plus the house perk | 2 + perk |
-| C. Draw | Draw +2 cards this generation (or take a Remarkable by draw substitution), and gain 1 credit | 2.5 |
-
-The +1 credit on option C was added so every house's options sit within ±1 PP of each other, as the framework requires. Without it, option C was worth about 1.5.
+The earlier first-guess economy curves (Power Point totals per track) are kept in git history. The tracks have since changed with tuning, and simulation now measures power directly.

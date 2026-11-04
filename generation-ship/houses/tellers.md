@@ -1,10 +1,10 @@
 # House Tellers, the Keepers of the Story
 
-**Template:** Bringer of Dreams and Nightmares · **Curve:** standard (1.73)
+**Template:** Bringer of Dreams and Nightmares · **Curve:** standard
 
-They control the story. Their damage never destroys anything; it becomes Purpose, pushing Understanding up for the whole ship.
+They control the story. Their damage never destroys anything; it becomes Purpose and calms the threat (Isolate).
 
-- **Guilds:** Bureaucrats (primary, 1 PP) / Medics (secondary, 1.5 PP)
+- **Guilds:** Bureaucrats (primary) / Medics (secondary)
 - **Weaknesses:** Can't clear threat themselves, so teammates must do the removing.
 
 ## Tracks
@@ -15,23 +15,25 @@ The first value is the starting value. ★ marks a special slot.
 | Credits per generation | 1 → 2 → 2 → 3 → ★ +Bureaucrats → 4 |
 | Card plays | 2 → 2 → 3 → ★ +Medics → 3 → 4 |
 
-Hand = plays + 2. Clone 1.
+Hand = plays + 3. Clone 1.
 
 ## Special rule
-Damage from Tellers' cards does not destroy threat; it generates 1 Purpose per point instead.
-- *Estimated value:* ≈ 0.0 PP per generation.
+Damage from Tellers' cards does not destroy threat; each point generates 2 Purpose and Isolates 1 damage of threat in that section (it deals that much less at the next Collapse).
 
 ## Innate: Steady Voices (slow)
-Tiers are cumulative; the effect column is the full effect at that tier.
+Tiers are cumulative; the effect column is the full effect at that tier. *Reached* is how often a generation reaches at least that tier (house bots, calibration run).
 
-| Tier | Threshold | Threshold cost | Effect | Effect PP |
+| Tier | Threshold | Effect | PP | Reached |
 |---|---|---|---|---|
-| 1 | Bureaucrats 2 | 2.0 | isolate_fault 1, lockout 1 (range 1, ANY) | 2.0 |
-| 2 | Bureaucrats 2, Medics 1 | 3.5 | isolate_fault 2, lockout 1, brace 2 (range 1, ANY) | 4.0 |
-| 3 | Bureaucrats 3, Medics 2 | 6.0 | isolate_failure 1, isolate_fault 1, quarantine 1, gather_crew 2, lockout 1 (range 1, ANY) | 6.5 |
+| 1 | Bureaucrats 2 | Isolate 1 Fault; Lockout (range 1, ANY) | 2.0 | 52% |
+| 2 | Bureaucrats 2 + Medics 1 | Isolate 2 Fault; Lockout; Brace 2 (range 1, ANY) | 4.0 | 49% |
+| 3 | Bureaucrats 3 + Medics 2 | Isolate 1 Failure; Isolate 1 Fault; Quarantine; gather 2 Crew; Lockout (range 1, ANY) | 6.5 | 9% |
 
 ## Growth
-Shared menu (A: 2 · B: 2 · C: 2.5).
+Shared menu: A place influence and uncover a track slot · B gain 2 credits · C draw +2 cards and gain 1 credit.
+
 
 ## Starting influence
-1 in a Government section and 1 in an Infrastructure section.
+1 in a Government section and 1 in an Infrastructure section
+
+*Generated from `data/houses.json` by `tools/house_sheets.py`.*
