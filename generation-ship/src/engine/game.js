@@ -139,6 +139,10 @@ function placeStartingInfluence(st, h, hd, board) {
 }
 
 // ============================================================== helpers
+function cardStat(st, cid) {
+  st.stats.cards ??= {};
+  return (st.stats.cards[cid] ??= { drawn: 0, played: 0, nominated: 0, leader: 0 });
+}
 export const houseData = (G, st, h) => G.data.houseById[st.houses[h].id];
 export const card = (G, id) => G.data.cardById[id];
 
@@ -460,6 +464,7 @@ function growthPhase(G, st) {
     H.hand = [...H.cloned]; H.cloned = [];
     for (let i = 0; i < rem && n >= 2; i++) { H.hand.push(drawFrom(st, "remarkable", "remarkableDiscard")); n -= 2; HS.remarkables += 1; }
     for (let i = 0; i < n; i++) H.hand.push(drawFrom(st, "common", "commonDiscard"));
+    if (G.cfg.trackCards) for (const cid of H.hand) cardStat(st, cid).drawn += 1;
   });
 }
 
@@ -472,6 +477,7 @@ export function applyPlan(G, st, h, plan) {
   for (const cid of plan.play) if (!(G.cfg.nomineeFree && cid === plan.nominee)) spend += costOf(G, cid);
   if (plan.play.length > hs.plays || spend > H.credits) throw new Error(`illegal commit by ${H.id}`);
   H.credits -= spend; HS.creditsSpent += spend; HS.played += plan.play.length;
+  if (G.cfg.trackCards) for (const cid of plan.play) { cardStat(st, cid).played += 1; if (cid === plan.nominee) cardStat(st, cid).nominated += 1; }
   H.played = plan.play; H.nominee = plan.nominee;
   H.hand = H.hand.filter((c) => !plan.play.includes(c));
   H.elements = { ...hs.raw };
@@ -542,6 +548,7 @@ function dawnPhase(G, st) {
     chosen = top.length === 1 ? top[0] : (top.includes(votes[stewardHouse]) ? votes[stewardHouse] : top[0]);
     const winner = noms.find((n) => n.cid === chosen);
     st.stats.houses[winner.h].chosenLeader += 1;
+    if (G.cfg.trackCards) cardStat(st, chosen).leader += 1;
     for (const n of noms) if (n.cid !== chosen) discard(G, st, n.cid);
   } else {
     chosen = drawFrom(st, "common", "commonDiscard");
