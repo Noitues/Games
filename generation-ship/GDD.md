@@ -387,11 +387,15 @@ Asymmetry lives **entirely on the house boards**. There are no unique house card
 - **Special rules.**
 - **Two tracks only:** a credit track and a card-play track. Special slots on either track grant an element, a fast play or a clone slot.
 
-**Houses v0** (Spirit Island template in brackets): see `houses/README.md`.
+**Houses** (Spirit Island template in brackets): see `houses/README.md`. The first four are modeled on the low-complexity base spirits, the second four on the moderate- and high-complexity base spirits.
 - **Galvan, the Spark-Wardens** [Lightning's Swift Strike]: fast and aggressive.
 - **Meridian, the Flowkeepers** [River Surges in Sunlight]: movement and logistics.
 - **Keel, the Hullwrights** [Vital Strength of the Earth]: slow and defensive.
 - **Vigil, the Lamplighters** [Shadows Flicker Like Flame]: Purpose and reach.
+- **Foremen, the Shift-Callers** [Thunderspeaker]: Crew-led offense. *Crew Captains:* Crew in their sections deal +1 damage when fighting back.
+- **Gardeners, the Greenkeepers** [A Spread of Rampant Green]: influence as armor. *Rooted:* Decay that would land on them removes 1 of their influence instead. Growth A places 2 influence.
+- **Voidwardens, the Airlock Keepers** [Ocean's Hungry Grasp]: Outer Hull specialists. *Airlock:* threat they vent out of a Hull section is destroyed (+1 credit per Fault/Failure). They can only add influence to Hull sections.
+- **Tellers, the Keepers of the Story** [Bringer of Dreams and Nightmares]: *Spin:* their damage never destroys threat; it becomes 1 Purpose per point.
 
 ---
 
@@ -512,12 +516,42 @@ Chosen before the game, with a difficulty **level 0–6**. Each destination defi
 - **Escalation:** the effect triggered by the Stage II escalation card. If undefined, the escalation symbol is ignored.
 - **Levels 1–6:** a mix of setup changes (extra Faults, Decay or Failures), harsher or added rules, event deck changes (more Stage III cards, **fewer total events, which shortens the clock and the Wall**), and a stricter Landfall requirement.
 
-**Sample concepts** (flavor only; levels not designed):
-- **The Verdant Reach:** a garden world. Requires living colonists. Hazards hit Agricultural sections and Crew.
-- **Cinder:** a world scorched by solar flares. Hazards hit the Outer Hull. Landfall requires no Decay in Infrastructure.
-- **The Long Dark:** a rogue planet. Longer deck, Purpose drains each generation, and Landfall requires a high Understanding tier.
+**Levels are cumulative**: a level-N game applies every level from 1 to N. Level 0 means no destination rules (the base game). Full text is in `data/destinations.json`.
 
-Level 0 means no destination rules (the base game).
+**The Verdant Reach** (a garden world; needs living colonists):
+
+| Level | Adds |
+|---|---|
+| 1 | Landfall requirement: ≥ 3 Crew per player. *Spore Drift:* when Grow adds a Fault in an Agricultural section, also add 1 Glitch to its least-threatened neighbor. |
+| 2 | Setup: +1 Fault in one Agricultural section per board. |
+| 3 | Escalation: +1 Glitch in every Agricultural section. |
+| 4 | Requirement rises to ≥ 4 Crew per player. |
+| 5 | *Blight Season:* Collapse in Agricultural sections destroys 1 extra Crew. |
+| 6 | Deck: one Stage I card becomes an extra Stage III card. |
+
+**Cinder** (scorched by solar flares; the hull takes the brunt):
+
+| Level | Adds |
+|---|---|
+| 1 | Landfall requirement: no Decay in Infrastructure. *Flare:* seeded Outer Hull sections gain 1 extra Glitch. |
+| 2 | Setup: +1 Glitch in every Outer Hull section. |
+| 3 | Escalation: +1 Unrest in every Outer Hull section with threat. |
+| 4 | Setup: +1 Decay in one Outer Hull section per board (not from the pool). |
+| 5 | *Radiation:* Collapse in Outer Hull sections deals +1 damage. |
+| 6 | Deck: one fewer Stage I card. |
+
+**The Long Dark** (a rogue planet; belief wears thin):
+
+| Level | Adds |
+|---|---|
+| 1 | Landfall requirement: Understanding III. *The Cold:* lose 1 Purpose at the start of each Day. Deck: +1 Stage II card. |
+| 2 | Setup: +1 Fault in one Government section per board. |
+| 3 | Escalation: lose 3 Purpose. |
+| 4 | The Cold drains 2 Purpose per Day. |
+| 5 | Setup: +1 Failure in one Residential section on board A. |
+| 6 | Deck: one fewer Stage I card. |
+
+**Landfall card variant (toggle):** when the win condition and the Landfall requirement are met (and at least 2 events remain), the Landfall event becomes the next Dawn event. It seeds, grows and collapses in every section. The players win when it retires to the Wall.
 
 ---
 
@@ -620,6 +654,8 @@ A mute toggle is included.
 ---
 
 ## Vertical slice / first implementation target
+
+*Status:* built. The browser prototype (`index.html`, `src/ui/`) runs the full game, including all eight houses, 1–4 players, destinations, the Landfall card and human or bot seats. See `README.md` to run it. The list below is the original target, kept for reference.
 
 - **2 players, 2 ship boards** (8 sections each, hand-authored adjacency, default setup symbols).
 - **Houses:** Galvan and Keel from `houses/` (the front-loaded and steep extremes).
