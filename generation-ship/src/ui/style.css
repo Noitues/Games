@@ -28,9 +28,10 @@ select, input { font: inherit; background: var(--panel); color: var(--ink); bord
 h3 { margin: 10px 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
 #mapwrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
 #map { display: block; }
-#map .sec rect { stroke: var(--line); stroke-width: 1; }
-#map .sec.opt rect { stroke: var(--hl); stroke-width: 4; cursor: pointer; }
-#map .sec.opt:hover rect { filter: brightness(1.08); }
+#map .sec polygon { stroke: var(--ink); stroke-opacity: .45; stroke-width: 1.2; stroke-linejoin: round; }
+#map .sec polygon.hullsec { stroke-opacity: .9; stroke-width: 2.5; }
+#map .sec.opt polygon { stroke: var(--hl); stroke-opacity: 1; stroke-width: 5; cursor: pointer; }
+#map .sec.opt:hover polygon { filter: brightness(1.08); }
 #map text { fill: var(--ink); font-size: 12px; pointer-events: none; }
 #map .hull { stroke: var(--ink); stroke-width: 5; }
 #map .edge { stroke: var(--line); stroke-width: 2; }

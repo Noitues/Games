@@ -39,12 +39,20 @@ function crisisCard(x) {
     <div class="types" style="font-size:11pt;font-weight:700">${esc(x.name)}</div><div>${esc(x.text)}</div>
     <div class="reign">Flip when the Decay pool first runs out; add 1 Decay per player to the pool.</div></div>`;
 }
+const FILL = { Infrastructure: "#c9d4e0", Residential: "#e8d6c0", Government: "#d9cfe6", Agricultural: "#cfe3c4" };
 function boardHTML(b) {
-  return `<div class="board"><b>Ship board ${b.id}</b> · thick top edge = Outer Hull · ${esc(boards.setup_rule || "")}
-    <div class="grid">${b.sections.map((s) => {
-      const set = Object.entries(s.setup).filter(([, n]) => n).map(([k, n]) => `${n} ${k}`).join(", ");
-      return `<div class="sec ${s.type} ${s.hull ? "hull" : ""}"><b>${s.id}</b> ${s.type}<br><span class="stage">adj: ${s.adjacent.join(" ")}</span><div class="setup">${set ? "Setup: " + set : ""}</div></div>`;
-    }).join("")}</div></div>`;
+  const [W, H] = boards.size || [420, 280];
+  const secs = b.sections.map((s) => {
+    const set = Object.entries(s.setup).filter(([, n]) => n).map(([k, n]) => `${n} ${k}`).join(", ");
+    const [cx, cy] = s.center;
+    return `<polygon points="${s.poly.map((p) => p.join(",")).join(" ")}" fill="${FILL[s.type]}" stroke="#1f1b16" stroke-width="${s.hull ? 2.4 : 0.8}" stroke-linejoin="round"/>
+      <text x="${cx}" y="${cy - 6}" text-anchor="middle" font-size="11" font-weight="700">${s.id}</text>
+      <text x="${cx}" y="${cy + 7}" text-anchor="middle" font-size="8">${s.type}</text>
+      <text x="${cx}" y="${cy + 19}" text-anchor="middle" font-size="7">${set}</text>`;
+  }).join("");
+  const links = Object.entries(boards.links || {}).filter(([k]) => k.includes(b.id)).map(([k, v]) => `${k}: ${v.map((p) => p.join("–")).join(", ")}`).join(" · ");
+  return `<div class="board"><b>Ship board ${b.id}</b> · heavy outline = Outer Hull · joins: ${esc(links)}
+    <svg viewBox="-4 -4 ${W + 8} ${H + 8}" width="100%" role="img" aria-label="Ship board ${b.id}">${secs}</svg></div>`;
 }
 function slot(v) {
   if (typeof v === "object") { const [k, n] = Object.entries(v)[0]; return k === "element" ? `+${n}` : k === "fast_play" ? "+fast" : "+clone"; }

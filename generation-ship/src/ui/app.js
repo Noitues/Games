@@ -146,41 +146,53 @@ function renderConveyor() {
     (st.breakthroughs.length ? "Breakthroughs: " + st.breakthroughs.map((d) => `<div class="slot">${esc(DATA.discoveryById[d].breakthrough.text)}</div>`).join("") : "");
 }
 
+// Section geometry from data/boards.json (polygons); boards laid left to right, scaled 1.45x.
+const SCALE = 1.45;
+function geometry() {
+  const st = D.st, geo = {};
+  const ids = [...new Set(st.order.map((id) => st.sections[id].board))];
+  const [BW, BH] = DATA.boards.size || [420, 280];
+  ids.forEach((b, bi) => {
+    const bd = DATA.boards.boards.find((x) => x.id === b);
+    for (const s of bd.sections) {
+      const ox = 10 + bi * (BW + 8) * SCALE, oy = 10;
+      geo[s.id] = { poly: s.poly.map(([x, y]) => [ox + x * SCALE, oy + y * SCALE]), c: [ox + s.center[0] * SCALE, oy + s.center[1] * SCALE] };
+    }
+  });
+  return { geo, width: 20 + ids.length * (BW + 8) * SCALE, height: 20 + BH * SCALE };
+}
+
 function renderMap() {
-  const st = D.st, W = 150, H = 118, gap = 24;
-  const P = st.houses.length;
+  const st = D.st;
   const opts = D.pending && SECTION_KINDS.has(D.pending.kind) ? new Set(D.pending.options.map((o) => String(o).replace("*", ""))) : new Set();
-  const pos = {};
-  for (const id of st.order) {
-    const s = st.sections[id], bi = "ABCD".indexOf(s.board);
-    const col = (+id.slice(1) - 1) % 4, row = Math.floor((+id.slice(1) - 1) / 4);
-    pos[id] = { x: 10 + bi * (4 * W + gap) + col * W, y: 10 + row * H };
-  }
+  const { geo, width, height } = geometry();
   let svg = "";
   const seen = new Set();
   for (const id of st.order) for (const a of st.sections[id].adj) {
+    if (st.sections[id].board === st.sections[a].board) continue; // in-board neighbors share an edge already
     const k = [id, a].sort().join("-"); if (seen.has(k)) continue; seen.add(k);
-    const p = pos[id], q = pos[a];
-    svg += `<line class="edge" x1="${p.x + W / 2}" y1="${p.y + H / 2}" x2="${q.x + W / 2}" y2="${q.y + H / 2}"/>`;
+    const p = geo[id].c, q = geo[a].c;
+    svg += `<line class="edge" x1="${p[0]}" y1="${p[1]}" x2="${q[0]}" y2="${q[1]}" stroke-dasharray="4 4"/>`;
   }
   for (const id of st.order) {
-    const s = st.sections[id], p = pos[id];
+    const s = st.sections[id], g = geo[id], [cx, cy] = g.c;
     const inf = Object.entries(s.influence).filter(([, n]) => n > 0)
       .map(([h, n]) => `<tspan fill="${HOUSE_COLORS[h]}">●${n > 1 ? n : ""}</tspan>`).join(" ");
     const tok = [s.brace && `Br${s.brace}`, s.quarantine && "Q", s.patch && `P${s.patch}`, s.lockout && `L${s.lockout}`,
       s.unrest && `U${s.unrest}`, s.isolate && `I${s.isolate}`].filter(Boolean).join(" ");
     const threat = [s.glitch && `▲${s.glitch}`, s.fault && `■${s.fault}`, s.failure && `⬢${s.failure}`].filter(Boolean).join(" ");
+    const pts = g.poly.map((p) => p.join(",")).join(" ");
+    const x = cx - 40;
     svg += `<g class="sec ${opts.has(id) ? "opt" : ""}" data-id="${id}">
-      <rect x="${p.x + 3}" y="${p.y + 3}" width="${W - 6}" height="${H - 6}" rx="6" fill="${TYPE_FILL[s.type]}"/>
-      ${s.hull ? `<line class="hull" x1="${p.x + 6}" y1="${p.y + 4}" x2="${p.x + W - 6}" y2="${p.y + 4}"/>` : ""}
-      <text x="${p.x + 10}" y="${p.y + 22}"><tspan font-weight="700">${id}</tspan> ${s.type.slice(0, 5)}</text>
-      <text x="${p.x + 10}" y="${p.y + 44}" font-size="15">${threat || "·"}</text>
-      <text x="${p.x + 10}" y="${p.y + 64}">${s.crew ? `☺${s.crew}` : ""} ${s.decay ? `✸${s.decay}` : ""}</text>
-      <text x="${p.x + 10}" y="${p.y + 84}" font-size="14">${inf}</text>
-      <text x="${p.x + 10}" y="${p.y + 104}" font-size="11">${tok}</text></g>`;
+      <polygon points="${pts}" fill="${TYPE_FILL[s.type]}" class="${s.hull ? "hullsec" : ""}"/>
+      <text x="${x}" y="${cy - 26}"><tspan font-weight="700">${id}</tspan> ${s.type.slice(0, 5)}${s.hull ? " ⌒" : ""}</text>
+      <text x="${x}" y="${cy - 8}" font-size="15">${threat || "·"}</text>
+      <text x="${x}" y="${cy + 10}">${s.crew ? `☺${s.crew}` : ""} ${s.decay ? `✸${s.decay}` : ""}</text>
+      <text x="${x}" y="${cy + 28}" font-size="14">${inf}</text>
+      <text x="${x}" y="${cy + 44}" font-size="11">${tok}</text></g>`;
   }
   const map = $("map");
-  map.setAttribute("width", 20 + P * (4 * W + gap)); map.setAttribute("height", 20 + 2 * H);
+  map.setAttribute("width", width); map.setAttribute("height", height);
   map.innerHTML = svg;
   map.querySelectorAll(".sec").forEach((g) => {
     g.addEventListener("mousemove", (e) => showTip(e, sectionTip(g.dataset.id)));

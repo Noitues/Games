@@ -24,5 +24,6 @@ export const DEFAULT_CONFIG = {
   remarkableAccess: "always",   // "always" | "growthC" (only when taking growth option C)
   crewRequirementPerPlayer: 0,  // base Landfall requirement: Crew per player
   smartVote: false,             // bots simulate heirs' Reign/Legacy on a known (Direct) event
+  boards: null,                 // board ids in play (default: first N of A-D); must be consecutive
   maxGenerations: 40,            // safety stop
 };

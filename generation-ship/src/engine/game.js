@@ -26,12 +26,21 @@ export function createGame(data, cfgIn = {}, seed = 1) {
              legacyTempered: 0, houses: [] },
   };
   // boards
-  const boards = BOARD_IDS.slice(0, P).map((b) => data.boards.boards.find((x) => x.id === b));
+  const ids = cfg.boards || BOARD_IDS.slice(0, P);
+  const boards = ids.map((b) => data.boards.boards.find((x) => x.id === b));
+  // links between consecutive boards in play (asymmetric boards); grid boards fall back to rows
+  const extra = {};
+  ids.forEach((b, i) => {
+    const pairs = (data.boards.links || {})[`${b}-${ids[i + 1]}`] || [];
+    for (const [x, y] of pairs) { (extra[x] ??= []).push(y); (extra[y] ??= []).push(x); }
+  });
   boards.forEach((b, bi) => {
     for (const s of b.sections) {
-      const adj = [...s.adjacent];
-      if (s.col === 3 && bi + 1 < P) adj.push(`${BOARD_IDS[bi + 1]}${s.row * 4 + 1}`);
-      if (s.col === 0 && bi > 0) adj.push(`${BOARD_IDS[bi - 1]}${s.row * 4 + 4}`);
+      const adj = [...s.adjacent, ...(extra[s.id] || [])];
+      if (!data.boards.links) {
+        if (s.col === 3 && bi + 1 < P) adj.push(`${BOARD_IDS[bi + 1]}${s.row * 4 + 1}`);
+        if (s.col === 0 && bi > 0) adj.push(`${BOARD_IDS[bi - 1]}${s.row * 4 + 4}`);
+      }
       st.sections[s.id] = {
         id: s.id, board: b.id, type: s.type, hull: s.hull, adj,
         glitch: s.setup.glitch, fault: s.setup.fault, failure: s.setup.failure,
