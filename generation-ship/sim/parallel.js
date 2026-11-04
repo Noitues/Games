@@ -22,8 +22,9 @@ if (!isMainThread) {
   const rec = (i, cur) => { if (cur.length === P) { combos.push([...cur]); return; }
     for (let j = i; j < H.length; j++) { cur.push(H[j]); rec(j + 1, cur); cur.pop(); } };
   rec(0, []);
+  const weights = args.weights ? JSON.parse(args.weights.startsWith("{") ? args.weights : (await import("node:fs")).readFileSync(args.weights, "utf8")) : undefined;
   const jobs = combos.map((houses) => ({ games, players: P, houses, bot: args.bot ?? "house",
-    pairing: args.pairing ?? "offset", seed: Number(args.seed ?? 1), cfg }));
+    pairing: args.pairing ?? "offset", seed: Number(args.seed ?? 1), cfg, weights }));
   const results = {};
   const t0 = Date.now();
   await new Promise((resolve) => {

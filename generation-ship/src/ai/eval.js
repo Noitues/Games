@@ -2,9 +2,10 @@
 import { allSections, matches, threatCount, totalInfluence } from "../engine/rules.js";
 import { eventTypes } from "../engine/game.js";
 
+// Weights tuned by self-play (sim/tune-weights.js): fault 2.5 -> 4, decay 6 -> 9.6.
 export const W = {
-  glitch: 1, fault: 2.5, failure: 4.5,
-  decay: 6, crew: 2, influence: 1.5, haven: 0.5,
+  glitch: 1, fault: 4, failure: 4.5,
+  decay: 9.6, crew: 2, influence: 1.5, haven: 0.5,
   purposeFill: 4, discovery: 5, tier: 8, credits: 0.5,
   predictedDecay: 8, predictedCrewLoss: 3, growThreat: 2.5,
   lowInfluence: 30, win: 10000,
