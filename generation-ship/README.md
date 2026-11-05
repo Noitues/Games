@@ -31,7 +31,7 @@ python3 -m http.server 8000
 No build step and no dependencies. The browser loads `data/*.json` and the engine in `src/` directly.
 
 ## Print and play
-Open `print.html` in the browser, served the same way as the prototype. Pick the parts you want, then print or save as a PDF. A ready-made copy of everything is in `print/stewards-print-and-play.pdf`: 96 pages, A4, with the Wall on landscape pages.
+Open `print.html` in the browser, served the same way as the prototype. Pick the parts you want, then print or save as a PDF. A ready-made copy is in `print/stewards-print-and-play.pdf`: A4, with the Wall on landscape pages, and the 150-card playtest deck (tick "All 400 people" for the full deck).
 
 The kit uses the Retro art from `art/source/retro/` and the icon set from `art/icons/`. Card effects are drawn from `art/icons/effects.json`; the art tools own the icons and art, while this repo owns the data and layout. It contains:
 - **Cards (63 × 88 mm, 9 per page):**
