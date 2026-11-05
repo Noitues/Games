@@ -2,11 +2,12 @@
  {
   "id": "batch_6aec009b6b008190a5b63198cda15387",
   "input": "art/retro_batch2_edits.jsonl",
-  "status": "validating"
+  "status": "completed",
+  "collected": true
  },
  {
   "id": "batch_6aec00a7169881909bd1b8e6e3523cc9",
   "input": "art/retro_batch2_generations.jsonl",
-  "status": "validating"
+  "status": "in_progress"
  }
 ]
