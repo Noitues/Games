@@ -26,6 +26,7 @@
  {
   "id": "batch_6aecb3fe910c8190985cdbf6cf070abb",
   "input": "art/retro_batch4_generations.jsonl",
-  "status": "validating"
+  "status": "completed",
+  "collected": true
  }
 ]
