@@ -47,6 +47,16 @@ EDITS_3 = {f"{n}_v3{v}": (f"{n}_v3", g, size, 1) for n, g, size in
 GENERATIONS_3 = {n: (n, None, "1536x1024", 1) for n in ("threat_machine_parts", "threat_gremlins", "people_pieces")}
 GENERATIONS_4 = {**{n: (n, None, "1536x1536", 1) for n in ("cover_generations", "cover_ancestors", "cover_ship")},
                  **{n: (n, None, "1536x640", 1) for n in ("logo_a", "logo_b")}}
+EMBLEMS = {
+    "galvan": "a lightning bolt striking through a cog, crackling sparks, electric blue",
+    "keel": "a ship's anchor over a riveted hull plate, steel grey and turquoise",
+    "gardeners": "a sprouting seed inside a glass dome with two leaves, lime green",
+    "voidwardens": "a round airlock hatch wheel with a four-pointed star at its centre, deep violet",
+}
+EDITS_5 = {"event_frame_a": ("event_frame", "event_guide.png", "1104x1504", 1),
+           "event_frame_b": ("event_frame", "event_guide.png", "1104x1504", 1),
+           "event_example": ("event_example", "event_guide.png", "1104x1504", 1),
+           **{f"house_{h}_v2": ("house_board_v2", f"house_{h}_guide.png", "1536x1024", 1) for h in EMBLEMS}}
 GENERATIONS = {
     "card_back": ("card_back", None, "1104x1504", 1),
     **{f"icon_{t}": (f"icon_{t}", None, "1024x1024", 1) for t in ("infrastructure", "residential", "government", "agricultural")},
@@ -71,6 +81,8 @@ def build(jobs, endpoint, style, ps):
             body = ps[key]
             if key == "house_<id>":
                 body = body.replace("<identity>", HOUSES[name.removeprefix("house_")])
+            if key == "house_board_v2":
+                body = body.replace("<emblem>", EMBLEMS[name.removeprefix("house_").removesuffix("_v2")])
             full = f"{style}\n\n{body}"
         for k in range(variants):
             b = {"model": BATCH_IMAGE_MODEL, "prompt": full, "size": size, "quality": QUALITY}
@@ -92,10 +104,10 @@ def build(jobs, endpoint, style, ps):
 def main():
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument("--batch", type=int, default=2, choices=(2, 3, 4))
+    ap.add_argument("--batch", type=int, default=2, choices=(2, 3, 4, 5))
     batch = ap.parse_args().batch
     ps = prompts(batch)
-    edits, gens = {2: (EDITS, GENERATIONS), 3: (EDITS_3, GENERATIONS_3), 4: ({}, GENERATIONS_4)}[batch]
+    edits, gens = {2: (EDITS, GENERATIONS), 3: (EDITS_3, GENERATIONS_3), 4: ({}, GENERATIONS_4), 5: (EDITS_5, {})}[batch]
     text = (ROOT / "art" / "CHATGPT_PROMPTS.md").read_text()
     sec = text.split("## D · Retro Space", 1)[1]
     opener = re.search(r"\*\*Opener\*\*\n```\n(.*?)\n```", sec, re.S).group(1)

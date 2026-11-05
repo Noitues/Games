@@ -329,11 +329,11 @@ def main():
         drop(table, panel, (300 + k * 291, 72), 0, shadow=0.8)
     drop(table, tok["breakthrough"], (300 - 145 + 72.5 * 0.5 + 22, 80), 15, 0.7)    # on slot I, between portrait and plaque
 
-    # The conveyor board (option A, tools/conveyor_mockups.py): leaders with their events tucked behind.
-    conv = conveyor_mockups.render_board("A", PX, OUT / "_conveyor_a.png")
+    # The conveyor board (option B, tools/conveyor_mockups.py; designer 2026-11-05): each event tucks below its leader.
+    conv = conveyor_mockups.render_board("B", PX, OUT / "_conveyor_b.png")
     cb = Image.open(conv).convert("RGBA")
     conv.unlink()
-    drop(table, cb, (712, 246), 0, shadow=0.8)
+    drop(table, cb, (712, 245), 0, shadow=0.8)
 
     # House boards (typeset by tools/house_boards.py) with hands, along the bottom.
     back = card_back().resize((mm(63), mm(88)), Image.LANCZOS)

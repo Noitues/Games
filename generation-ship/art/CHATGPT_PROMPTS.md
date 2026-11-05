@@ -367,3 +367,24 @@ Wide image on a fully transparent background. A board-game title logotype that r
 ```
 Wide image on a fully transparent background. A board-game title logotype that reads exactly "Stewards of the Long Voyage", lettered like the title of a 1950s science-fiction paperback: tall, slightly condensed capitals with a mustard-gold to tangerine gradient and a deep-teal drop shadow, "of the" tucked small between the lines, and a tiny rocket trailing a dotted arc over the words. Clean, confident, mid-century. Exactly these words, spelled correctly, and nothing else.
 ```
+
+---
+
+## Retro batch 5  (folder `art/source/retro/`)
+
+Event cards in the tuck-below layout (designer, 2026-11-05: on the conveyor the event tucks under its leader; its top part holds a one-time effect, covered once the leader is placed; its band below the tuck line stays visible), and house boards rebuilt around a big house emblem instead of illustrated people (identity first, readable from across the table). Built by `tools/make_retro_batch.py --batch 5`; all edits of guides from `tools/retro_templates.py`.
+
+`event_frame.png` (edit of `event_guide.png`)
+```
+Tall portrait image, exactly the layout of the attached guide. Repaint the guide as a finished, empty event card frame for this game, flat and straight-on like a printed card template. Keep every shape exactly where it is and exactly as large as it is: the rounded picture window at the top; the cream text panel below it; the thin chrome rule across the card (the tuck line); and the dark band at the bottom with its gold stage disc, two round icon sockets, a name bar and a text bar. The picture window stays flat empty dark teal; the panels, sockets and bars stay plain empty cream; the stage disc stays plain gold. Paint only the card around them: a deep-teal card with a fine halftone texture, slim brushed-chrome bezels, a small tangerine hazard-stripe accent at both ends of the tuck line, and a faint atomic starburst in the dark band's corners. Calm and clear: this card mostly shows only its bottom band. No text, letters, numbers, logos or watermarks.
+```
+
+`event_example.png` (edit of `event_guide.png`)
+```
+Tall portrait image, exactly the layout of the attached guide. Repaint the guide as a finished event card for this game, flat and straight-on like a printed card. Keep every shape exactly where it is and exactly as large as it is. In the rounded picture window at the top, paint a small dramatic scene: a turquoise reactor room aboard the generation ship during a power surge, conduits arcing with sparks, a warning lamp glowing tangerine, two tiny crew members bracing a valve. Everything else stays as in the guide: the cream text panel, name bar and text bar stay plain empty cream; the two round icon sockets stay empty cream; the stage disc stays plain gold. Frame: a deep-teal card with a fine halftone texture, slim brushed-chrome bezels, a tangerine hazard-stripe accent at the ends of the tuck line. No text, letters, numbers, logos or watermarks.
+```
+
+`house_board_v2.png` (one per house, edit of `house_<id>_guide.png`; `<emblem>` comes from `tools/make_retro_batch.py`)
+```
+Wide landscape image, exactly the layout of the attached guide, filling the frame edge to edge. Repaint the guide as a finished house player board for this game, flat and straight-on like a printed board-game mat. The tall banner on the left is the house's identity and the hero of the board: paint it as a heraldic hanging banner in the house colour with a bold, simple emblem centred on it, readable from across a table: <emblem>. The emblem is graphic and iconic, in the 1950s atomic-age style, with chrome and gold accents, not a scene and with no people. Keep every other shape exactly where it is and exactly as large as it is, and leave it empty for text: the name bar at the top, three growth cards, two tracks of round sockets on chrome rails, a wide panel bottom left and a narrow panel bottom right. Panels and sockets stay plain empty cream. Around them: a calm deep-teal board with a fine halftone texture, slim chrome bezels, a thin line of the house colour along the board edge, and nothing else. No people, no landscapes, no text, letters, numbers, logos or watermarks.
+```

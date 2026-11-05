@@ -195,6 +195,91 @@ def board_guide(board_id):
     return im
 
 
+# --- event card (tucks BELOW its leader on the conveyor; designer 2026-11-05) -------------------
+# The leader sits on top and covers the event's upper part: that is where a one-time effect goes
+# (read when the event is revealed, not needed once covered). The band below the tuck line stays
+# visible all generation: stage, section type(s), twist.
+EVENT = {
+    "art": (4.0, 4.0, 55.0, 30.0, 3.0),          # x, y, w, h, r (mm): the one-time effect's picture
+    "once": (4.0, 36.0, 55.0, 19.0, 2.5),        # the one-time effect text
+    "tuck": 57.5,                                # the leader's bottom edge when tucked (88 - 30.5)
+    "band": (2.0, 59.0, 59.0, 27.0, 4.0),        # the visible band
+    "stage": (9.5, 66.5, 4.6),                   # cx, cy, r
+    "icons": ((26.0, 66.5), (39.0, 66.5), 5.6),  # two section-type icon circles, r
+    "name": (14.0, 73.0, 45.0, 4.8, 2.0),        # section type name bar
+    "twist": (5.0, 78.8, 53.0, 6.4, 2.0),        # twist text
+}
+
+
+def event_guide():
+    s, b = CARD_PX, BLEED
+    im = Image.new("RGB", (round((CARD_W + 2 * b) * s), round((CARD_H + 2 * b) * s)), TEAL)
+    d = ImageDraw.Draw(im)
+    box = lambda x, y, w, h: ((x + b) * s, (y + b) * s, (x + b + w) * s, (y + b + h) * s)  # noqa: E731
+    x, y, w, h, r = EVENT["art"]
+    d.rounded_rectangle(box(x, y, w, h), r * s, fill="#1A5262", outline=CHROME, width=s)
+    x, y, w, h, r = EVENT["once"]
+    d.rounded_rectangle(box(x, y, w, h), r * s, fill=CREAM, outline=CHROME, width=s)
+    ty = (EVENT["tuck"] + b) * s
+    d.line(((b + 2) * s, ty, (b + CARD_W - 2) * s, ty), fill=CHROME, width=round(s * 0.8))
+    x, y, w, h, r = EVENT["band"]
+    d.rounded_rectangle(box(x, y, w, h), r * s, fill="#0B2C37", outline=CHROME, width=s)
+    cx, cy, rr = EVENT["stage"]
+    d.ellipse(((cx - rr + b) * s, (cy - rr + b) * s, (cx + rr + b) * s, (cy + rr + b) * s), fill="#F6C85A")
+    (a, c, ri) = EVENT["icons"]
+    for cx, cy in (a, c):
+        d.ellipse(((cx - ri + b) * s, (cy - ri + b) * s, (cx + ri + b) * s, (cy + ri + b) * s), fill=CREAM, outline=CHROME, width=s)
+    for key in ("name", "twist"):
+        x, y, w, h, r = EVENT[key]
+        d.rounded_rectangle(box(x, y, w, h), r * s, fill=CREAM)
+    return im
+
+
+HOUSE_ACCENT = {"galvan": "#3A6FD8", "meridian": "#3AB0A8", "keel": "#7A8C96", "vigil": "#F6C85A",
+                "foremen": "#C9482A", "gardeners": "#8FB04A", "voidwardens": "#6A4A9A", "tellers": "#E88AA0"}
+
+
+# --- house board v2: the house's emblem front and centre --------------------------------------
+HOUSE_BOARD = {                                  # px on a 1536 x 1024 board (190 x 127 mm)
+    "emblem": (40, 40, 520, 984),                # a tall heraldic banner (swallowtail foot)
+    "name": (560, 40, 1496, 140),
+    "growth": [(560, 170, 855, 420), (880, 170, 1175, 420), (1200, 170, 1496, 420)],
+    "tracks": [(470, 6), (575, 6)],              # (y centre, max sockets); the count comes from the data
+    "track_x": (640, 1440), "socket_r": 36,
+    "innate": (560, 640, 1175, 984),
+    "special": (1200, 640, 1496, 984),
+}
+
+
+def banner_points(x0, y0, x1, y1):
+    notch = (x1 - x0) * 0.28
+    return [(x0, y0 + 30), (x0 + 30, y0), (x1 - 30, y0), (x1, y0 + 30), (x1, y1), ((x0 + x1) / 2, y1 - notch), (x0, y1)]
+
+
+def socket_centres(row_y, n):
+    x0, x1 = HOUSE_BOARD["track_x"]
+    step = (x1 - x0) / (HOUSE_BOARD["tracks"][0][1] - 1)
+    return [(x0 + i * step, row_y) for i in range(n)]
+
+
+def house_guide(house, accent):
+    im = Image.new("RGB", (1536, 1024), TEAL)
+    d = ImageDraw.Draw(im)
+    L = HOUSE_BOARD
+    d.polygon(banner_points(*L["emblem"]), fill=accent, outline=CHROME, width=6)
+    for key in ("name", "innate", "special"):
+        d.rounded_rectangle(L[key], 18, fill=CREAM, outline=CHROME, width=5)
+    for g in L["growth"]:
+        d.rounded_rectangle(g, 18, fill=CREAM, outline=CHROME, width=5)
+    for (y, _), key in zip(L["tracks"], ("credits", "plays")):
+        pts = socket_centres(y, len(house["tracks"][key]))
+        d.line((pts[0][0] - 50, y, pts[-1][0] + 50, y), fill=CHROME, width=10)
+        for cx, cy in pts:
+            r = L["socket_r"]
+            d.ellipse((cx - r, cy - r, cx + r, cy + r), fill=CREAM, outline=CHROME, width=5)
+    return im
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--stamp", nargs=2, metavar=("IMAGE", "card|wall"))
@@ -207,6 +292,10 @@ def main():
     wall_guide().save(OUT / "wall_guide.png")
     for b in "ABCD":
         board_guide(b).save(OUT / f"board_{b.lower()}_guide.png")
+    event_guide().save(OUT / "event_guide.png")
+    houses = json.loads((ROOT / "data" / "houses.json").read_text())["houses"]
+    for h in houses:
+        house_guide(h, HOUSE_ACCENT.get(h["id"], TANGERINE)).save(OUT / f"house_{h['id']}_guide.png")
     for f in sorted(OUT.iterdir()):
         print("wrote", f.relative_to(ROOT))
 
