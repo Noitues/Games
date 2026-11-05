@@ -757,7 +757,7 @@ Still open without data: is "move Crew" different from "gather Crew"? (The engin
 - Wall bonuses beyond Breakthroughs (e.g. Legacies that leave a passive mark on the Wall),
 - names and flavor text for the 400 people cards: **deferred** until the effect list is richer and the cards settle.
 
-**Measured state (after playtest 1; level 0, house bots, hull-module boards):** 74% / 73% / 69% / 75% wins at 1 / 2 / 3 / 4 players. All eight houses are within +7 / −5 points (seat-swapped, 2 players). Destination difficulty, layout difficulty and the Landfall variants were measured before playtest 1 and need re-measuring. Details are in `sim/RESULTS.md`.
+**Measured state (after playtest 1 and round 2; level 0, house bots, hull-module boards):** 71% / 70% / 75% / 73% wins at 1 / 2 / 3 / 4 players. All eight houses are within +7.5 / −3.5 points (seat-swapped, 2 players); solo spreads wider (Galvan +10, Vigil −11). Destinations step from level 1 to level 6: Verdant Reach 75% → 30%, Cinder 65% → 19%, The Long Dark 65% → 25%. Layouts range from 64% (arc4) to 81% (diamond). Landfall "begin when ready" costs nothing (76%); "shuffled" is a hard variant (45%). Details are in `sim/RESULTS.md`.
 
 **Calibration:** PP prices remain first guesses except where measured (card thresholds, innate reach in `data/calibration.json`). Purpose at 1 PP is still a suspect.
 

@@ -461,3 +461,16 @@ Fan is no longer an outlier (it was 52%). Diamond, with 16 links, is the easiest
 **Cards** (`sim/CARDS.md`, 448 games):
 - Pick rates: Commons 42%; Commons that add influence 24% (no longer an automatic play); Commons with Crew powers 51%.
 - Remarkables are picked 24%, down from 30%. The capped nominee discount and negative Legacies give them a real cost.
+
+**Player-count re-check** (larger runs, single core):
+
+| Players | Sample | Win rate |
+|---|---|---|
+| 1 | all 8 houses × 60 games | 71% (Galvan +10, Vigil −11) |
+| 2 | seat-swapped sweep | 70% |
+| 3 | 16 combinations × 12 games | 75% |
+| 4 | 6 combinations × 10 games | 73% (75% in the earlier 8 × 10 run) |
+
+The earlier 63% at 1 player and 80% at 3 players were sampling noise. No per-player tuning is needed.
+
+Open: houses spread wider in solo play (no teammate covers a weak house). Vigil and Tellers may want a solo-only boost later.
