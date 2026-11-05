@@ -31,6 +31,8 @@ A cooperative game about Great Houses stewarding a generation ship. Generations 
    - Decay;
    - house influence (4 colours);
    - Breakthrough marker (one per style: lamp / gear / crystal / starburst).
+
+   **Piece concept v2 (2026-11-05, `art/tokens/token_sheet.svg`, drawn by `tools/token_designs.py`).** Pieces read by material and silhouette, not colour. The machine is one grey cast plastic: Glitch = a 10 mm hex nut lying flat, Fault = a 14 mm cog on its edge with an axle peg, Failure = a 23 mm cracked vacuum tube with a pinched neck. The people are wood: Crew = a pawn with a fishbowl helmet, influence = stained rocket nose cones; Decay = a slag lump; Breakthrough = a brass starburst coin. **Damage states:** each point of damage on a threat piece is a tangerine wooden repair clamp (a C-clip): up to 2 on the Failure's neck, 1 on the Fault's axle; Glitch has none. An injured Crew lies on its side. Isolate is a wooden lockout tag. All of it comes off at Time passes.
 5. **Box cover** (optional, for the final pick).
 
 ### Hard layout constraints

@@ -754,6 +754,8 @@ A mute toggle is included.
 
 Still open without data: is "move Crew" different from "gather Crew"? (The engine treats them the same.)
 
+Still open (from the physical piece design, 2026-11-05): **does damage carry over on a downgrade** (Failure → Fault → Glitch)? The pieces show mid-turn damage as repair clamps, so the rule has to say what happens to them. Suggested: damage carries over, capped at the new piece's health − 1 (so a downgrade never destroys).
+
 **Not yet designed:**
 - Haven effects beyond targeting,
 - Wall bonuses beyond Breakthroughs (e.g. Legacies that leave a passive mark on the Wall),
