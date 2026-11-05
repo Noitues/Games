@@ -295,6 +295,132 @@ def hull():
 
 
 
+# --- timing, event actions, modifiers and section types (asked for by the rules session) ---------
+SUN = "#F6C85A"
+TYPE_COLOURS = {"infrastructure": "#3AB0A8", "residential": "#F2A060", "government": "#E88AA0", "agricultural": "#A8C860"}
+
+
+def _rays(cx, cy, r0, r1, angles, colour=INK, w=6):
+    return "".join(f'<line x1="{cx + r0 * math.cos(a):.1f}" y1="{cy + r0 * math.sin(a):.1f}" x2="{cx + r1 * math.cos(a):.1f}" '
+                   f'y2="{cy + r1 * math.sin(a):.1f}" stroke="{colour}" stroke-width="{w}" stroke-linecap="round"/>' for a in angles)
+
+
+def _horizon_sun(colour, up):
+    rays = _rays(46, 66, 34, 44, [math.pi * (1 + k / 6) for k in range(1, 6)])
+    arr = arrow(86, 62, 86, 22, w=6) if up else arrow(86, 22, 86, 62, w=6)
+    return (f'{rays}<path d="M16,66 A30,30 0 0 1 76,66 Z" fill="{colour}" stroke="{INK}" stroke-width="{SW}"/>'
+            f'<line x1="6" y1="68" x2="94" y2="68" stroke="{INK}" stroke-width="7" stroke-linecap="round"/>'
+            f'<line x1="20" y1="82" x2="72" y2="82" stroke="{INK}" stroke-width="4" stroke-linecap="round" opacity=".5"/>{arr}')
+
+
+def dawn():
+    """Dawn: the sun rising over the horizon."""
+    return _horizon_sun("#F2A86A", True)
+
+
+def dusk():
+    """Dusk: the sun setting, deeper in colour."""
+    return _horizon_sun("#E8603A", False)
+
+
+def day():
+    """Day: the full sun."""
+    return _rays(50, 50, 30, 44, [k * math.pi / 6 for k in range(12)]) + f'<circle cx="50" cy="50" r="24" fill="{SUN}" stroke="{INK}" stroke-width="{SW}"/>'
+
+
+def growth():
+    """Growth (each house's Growth step): an arrow rising from a sprout."""
+    return (f'<path d="M50,92 L50,30" stroke="{INK}" stroke-width="16" stroke-linecap="round"/>'
+            f'<path d="M50,92 L50,30" stroke="{ACT}" stroke-width="8" stroke-linecap="round"/>'
+            f'<polygon points="50,6 70,34 30,34" fill="{ACT}" stroke="{INK}" stroke-width="5" stroke-linejoin="round"/>'
+            f'<path d="M48,70 C30,72 18,60 16,46 C34,44 46,54 48,70 Z M52,62 C68,62 80,52 84,40 C66,38 54,48 52,62 Z" fill="#8FB04A" stroke="{INK}" stroke-width="4"/>')
+
+
+def each_house():
+    """Each house: four small banners."""
+    out = ""
+    for (x, y), c in zip(((6, 4), (52, 4), (6, 52), (52, 52)), ("#3A6FD8", "#8FB04A", "#C9482A", "#6A4A9A")):
+        out += (f'<g transform="translate({x} {y}) scale(.44)"><path d="{CREST_PATH}" fill="{c}" stroke="{INK}" stroke-width="9" stroke-linejoin="round"/>'
+                f'<path d="{CREST_BAND}" fill="{GOLD}" stroke="{INK}" stroke-width="6"/></g>')
+    return out
+
+
+def seed():
+    """Seed (Dawn): a Glitch dropping in."""
+    return (f'<line x1="14" y1="94" x2="86" y2="94" stroke="{INK}" stroke-width="6" stroke-linecap="round"/>'
+            f'<g transform="translate(24 42) scale(.52)">{glitch()}</g>' + arrow(50, 4, 50, 36, w=8))
+
+
+def grow():
+    """Grow (Day): an up arrow onto a threat."""
+    return f'<g transform="translate(2 32) scale(.66)">{fault()}</g>' + arrow(80, 92, 80, 10, w=9)
+
+
+def collapse():
+    """Collapse (Dusk): a cracked burst."""
+    pts = []
+    for k in range(16):
+        a = math.pi * k / 8 - math.pi / 2
+        r = 46 if k % 2 == 0 else 26
+        pts.append((50 + r * math.cos(a), 50 + r * math.sin(a)))
+    return (f'<polygon points="{P(pts)}" fill="{RED}" stroke="{INK}" stroke-width="5" stroke-linejoin="round"/>'
+            f'<polyline points="30,22 46,44 38,56 58,64 52,84" fill="none" stroke="{INK}" stroke-width="6" stroke-linejoin="round"/>')
+
+
+def harm():
+    """Damage done TO the ship or Crew (as opposed to repair, the players' damage to threat)."""
+    return (f'<rect x="10" y="24" width="80" height="58" rx="8" fill="{GUN}" stroke="{INK}" stroke-width="{SW}"/>'
+            f'<polygon points="58,4 36,48 52,48 40,96 72,40 56,40 68,4" fill="{RED}" stroke="{INK}" stroke-width="5" stroke-linejoin="round"/>')
+
+
+def health():
+    """Health (Crew): a heart."""
+    return f'<path d="M50,88 C14,62 6,44 10,30 C14,14 36,10 50,28 C64,10 86,14 90,30 C94,44 86,62 50,88 Z" fill="{RED}" stroke="{INK}" stroke-width="{SW}" stroke-linejoin="round"/>'
+
+
+def ward():
+    """Decay ward: a shield over the Decay piece."""
+    return (f'<g transform="translate(2 32) scale(.62)">{decay()}</g>'
+            f'<path d="M64,4 L94,16 L94,40 C94,60 80,72 64,78 C48,72 34,60 34,40 L34,16 Z" fill="{CREAM}" stroke="{INK}" stroke-width="5"/>'
+            f'<path d="M64,16 L84,24 L84,40 C84,54 75,62 64,66 Z" fill="{INK}"/>')
+
+
+def per():
+    """'For each': a slash."""
+    return f'<line x1="66" y1="8" x2="34" y2="92" stroke="{INK}" stroke-width="12" stroke-linecap="round"/>'
+
+
+def _type_badge(colour, inner):
+    return f'<circle cx="50" cy="50" r="44" fill="{colour}" stroke="{INK}" stroke-width="{SW}"/>{inner}'
+
+
+def type_infrastructure():
+    orbit = "".join(f'<ellipse cx="50" cy="50" rx="30" ry="11" fill="none" stroke="{INK}" stroke-width="5" transform="rotate({a} 50 50)"/>' for a in (0, 60, 120))
+    return _type_badge(TYPE_COLOURS["infrastructure"], orbit + f'<circle cx="50" cy="50" r="8" fill="{INK}"/>')
+
+
+def type_residential():
+    c = TYPE_COLOURS["residential"]
+    return _type_badge(c, f'<path d="M24,50 L50,26 L76,50 L70,50 L70,76 L30,76 L30,50 Z" fill="{INK}" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>'
+                          f'<rect x="44" y="58" width="12" height="18" fill="{c}"/>')
+
+
+def type_government():
+    pts = []
+    for k in range(10):
+        a = math.pi * k / 5 - math.pi / 2
+        r = 32 if k % 2 == 0 else 14
+        pts.append((50 + r * math.cos(a), 52 + r * math.sin(a)))
+    return _type_badge(TYPE_COLOURS["government"], f'<polygon points="{P(pts)}" fill="{INK}"/>')
+
+
+def type_agricultural():
+    c = TYPE_COLOURS["agricultural"]
+    return _type_badge(c, f'<path d="M30,74 C24,46 44,24 76,24 C76,54 58,74 30,74 Z" fill="{INK}"/>'
+                          f'<path d="M30,74 C44,58 56,46 68,34" fill="none" stroke="{c}" stroke-width="4"/>'
+                          f'<path d="M30,74 L22,84" stroke="{INK}" stroke-width="6" stroke-linecap="round"/>')
+
+
 # --- guilds (the game's elements) -------------------------------------------------------------
 def guild_ring(inner, colour):
     return f'<circle cx="50" cy="50" r="44" fill="{colour}" stroke="{INK}" stroke-width="{SW}"/>{inner}'
@@ -323,6 +449,11 @@ GROUPS = [
                  ("Remove", remove), ("Downgrade", downgrade), ("Restore Decay", restore_decay), ("Crew strike", crew_strike),
                  ("Foresee", foresee), ("Temper Legacy", temper_legacy), ("Draw", draw), ("Clone", clone), ("Fast", fast), ("Slow", slow),
                  ("Range", range_), ("Outer Hull", hull)]),
+    ("TIMING, EVENT ACTIONS AND MODIFIERS", [("Dawn", dawn), ("Day", day), ("Dusk", dusk), ("Growth", growth), ("Each house", each_house),
+                                             ("Seed", seed), ("Grow", grow), ("Collapse", collapse), ("Harm", harm), ("Health", health),
+                                             ("Ward", ward), ("Per", per)]),
+    ("SECTION TYPES", [("Infrastructure", type_infrastructure), ("Residential", type_residential),
+                       ("Government", type_government), ("Agricultural", type_agricultural)]),
     ("GUILDS  ·  the elements", [(g, f) for g, f in GUILD.items()]),
     ("HOUSE CRESTS  ·  influence pieces lie flat in this shape; the house board banner is the same crest",
      [(h.title(), (lambda h=h, c=c: crest(h, c))) for h, c in HOUSE_COLOURS.items()]),
@@ -340,6 +471,46 @@ ICON_FOR = {
     "damage_per_crew": [repair, crew], "place_influence_from_track": [add, influence], "fast_play": [fast],
     "vent_glitch_or_fault": [vent, glitch, fault],
 }
+
+
+# EFFECTS: every effect key in the data -> (kind, template). kind: "benefit" (teal band) or
+# "drawback" (red band). A template is a list of items: ("icon", name) or ("n", text) where text may
+# hold {n} (the effect's value) and a sign. Verbs not listed here fall back to ICON_FOR, then text.
+B, D = "benefit", "drawback"
+EFFECTS = {
+    # Legacy modifiers (ongoing in the event's sections)
+    "crew_fierce": (B, [("icon", "crew"), ("n", "+{n}"), ("icon", "repair")]),
+    "brace_dusk": (B, [("icon", "dusk"), ("icon", "brace"), ("n", "{n}")]),
+    "repair_plus": (B, [("n", "+{n}"), ("icon", "repair")]),
+    "purpose_plus": (B, [("n", "+{n}"), ("icon", "purpose"), ("icon", "per"), ("icon", "fault")]),
+    "collapse_plus": (D, [("icon", "collapse"), ("n", "+{n}"), ("icon", "harm")]),
+    "seed_plus": (D, [("icon", "seed"), ("n", "+{n}"), ("icon", "glitch")]),
+    "grow_glitch": (D, [("icon", "grow"), ("n", "+{n}"), ("icon", "glitch")]),
+    "crew_frail": (D, [("icon", "crew"), ("n", "−{n}"), ("icon", "health")]),
+    "credits_tax": (D, [("icon", "growth"), ("icon", "each_house"), ("n", "−{n}"), ("icon", "credits")]),
+    "purpose_tax": (D, [("icon", "dusk"), ("n", "−{n}"), ("icon", "purpose")]),
+    # Reign (in the event's sections, at Day)
+    "credits_each_house": (B, [("icon", "each_house"), ("n", "+{n}"), ("icon", "credits")]),
+    # Wall bonuses (Breakthroughs)
+    "credits_per_growth": (B, [("icon", "growth"), ("icon", "each_house"), ("n", "+{n}"), ("icon", "credits")]),
+    "hull_brace": (B, [("icon", "dusk"), ("icon", "hull"), ("icon", "brace"), ("n", "{n}")]),
+    "decay_ward": (B, [("icon", "ward"), ("n", "{n}")]),
+    "purpose_per_gen": (B, [("icon", "dusk"), ("n", "+{n}"), ("icon", "purpose")]),
+    # Discoveries
+    "skip_seed": (B, [("icon", "lockout")]),
+    "skip_grow": (B, [("icon", "patch")]),
+    "credits_each": (B, [("icon", "each_house"), ("n", "+{n}"), ("icon", "credits")]),
+}
+# Context-dependent forms (the same key means something else on the Wall): use effect_items(..., context="wall").
+WALL_EFFECTS = {
+    "extra_draw": (B, [("icon", "growth"), ("icon", "each_house"), ("n", "+{n}"), ("icon", "draw")]),
+    "fast_play": (B, [("icon", "each_house"), ("n", "+{n}"), ("icon", "fast")]),
+}
+
+
+def element_items(guild, n=1):
+    """A Wall element bonus: [guild] +n [each_house]."""
+    return [("icon", f"guild_{guild}"), ("n", f"+{n}"), ("icon", "each_house")]
 
 
 def place(fn, x, y, size):
@@ -402,7 +573,7 @@ def sheet():
 
 def raster_set():
     """name -> SVG body, for every glyph the typesetting tools place (art/icons/png/<name>.png)."""
-    s = {fn.__name__.rstrip("_"): fn for _, items in GROUPS[:3] for _, fn in items}
+    s = {fn.__name__.rstrip("_"): fn for title, items in GROUPS if not title.startswith(("GUILDS", "HOUSE")) for _, fn in items}
     s.update({f"guild_{g}": f for g, f in GUILD.items()})
     s.update({f"crest_{h}": (lambda h=h, c=c: crest(h, c)) for h, c in HOUSE_COLOURS.items()})
     return {k: f() for k, f in s.items()}
@@ -428,14 +599,22 @@ def export_png(size=160):
     return d
 
 
-def effect_items(effects):
-    """An effect dict as typesetting items: ("n", "2"), ("icon", name), ("sep",). Unmapped verbs fall
-    back to text (("text", "...")), so nothing is silently dropped."""
+def effect_items(effects, context=None):
+    """An effect dict as typesetting items: ("n", "2"), ("icon", name), ("sep",). EFFECTS (and
+    WALL_EFFECTS with context="wall") come first, then ICON_FOR; anything else falls back to text
+    (("text", "...")), so nothing is silently dropped."""
     out = []
     for k, n in effects.items():
-        icons_ = ICON_FOR.get(k)
         if out:
             out.append(("sep",))
+        tmpl = (WALL_EFFECTS.get(k) if context == "wall" else None) or EFFECTS.get(k)
+        if k == "element" and isinstance(n, str):
+            out += element_items(n)
+            continue
+        if tmpl:
+            out += [(kind, val.replace("{n}", str(n))) if kind == "n" else (kind, val) for kind, val in tmpl[1]]
+            continue
+        icons_ = ICON_FOR.get(k)
         if not icons_:
             out.append(("text", k.replace("_", " ") + (f" {n}" if n != 1 else "")))
             continue
@@ -448,13 +627,26 @@ def effect_items(effects):
     return out
 
 
+def export_effects_json():
+    """art/icons/effects.json: the effect -> icons lookup for non-Python consumers (print-and-play)."""
+    data = {"_about": "effect key -> {kind, items}; items are [\"icon\", name] (art/icons/<name>.svg) or [\"n\", text with {n}]. "
+                      "Keys under 'wall' override on the Wall. 'element' on the Wall: [guild_X] +1 [each_house].",
+            "effects": {k: {"kind": kd, "items": [list(i) for i in items]} for k, (kd, items) in EFFECTS.items()},
+            "wall": {k: {"kind": kd, "items": [list(i) for i in items]} for k, (kd, items) in WALL_EFFECTS.items()},
+            "verbs": {k: [fn.__name__.rstrip("_") for fn in v] for k, v in ICON_FOR.items()},
+            "count_always": ["damage", "brace", "purpose", "credits"]}
+    (OUT / "effects.json").write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n")
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     print("rasters in", export_png().relative_to(ROOT))
-    for _, items in GROUPS:
-        for name, fn in items:
-            slug = name.split(" (")[0].lower().replace(" ", "_")
-            (OUT / f"{slug}.svg").write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">{fn()}</svg>')
+    for old in OUT.glob("*.svg"):                      # one SVG per glyph, named as in raster_set()
+        if old.name != "icon_sheet.svg":
+            old.unlink()
+    for name, body in raster_set().items():
+        (OUT / f"{name}.svg").write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">{body}</svg>')
+    export_effects_json()
     svg, (w, h) = sheet()
     f = OUT / "icon_sheet.svg"
     f.write_text(svg)

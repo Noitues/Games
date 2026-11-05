@@ -1,0 +1,457 @@
+{
+ "_about": "effect key -> {kind, items}; items are [\"icon\", name] (art/icons/<name>.svg) or [\"n\", text with {n}]. Keys under 'wall' override on the Wall. 'element' on the Wall: [guild_X] +1 [each_house].",
+ "effects": {
+  "crew_fierce": {
+   "kind": "benefit",
+   "items": [
+    [
+     "icon",
+     "crew"
+    ],
+    [
+     "n",
+     "+{n}"
+    ],
+    [
+     "icon",
+     "repair"
+    ]
+   ]
+  },
+  "brace_dusk": {
+   "kind": "benefit",
+   "items": [
+    [
+     "icon",
+     "dusk"
+    ],
+    [
+     "icon",
+     "brace"
+    ],
+    [
+     "n",
+     "{n}"
+    ]
+   ]
+  },
+  "repair_plus": {
+   "kind": "benefit",
+   "items": [
+    [
+     "n",
+     "+{n}"
+    ],
+    [
+     "icon",
+     "repair"
+    ]
+   ]
+  },
+  "purpose_plus": {
+   "kind": "benefit",
+   "items": [
+    [
+     "n",
+     "+{n}"
+    ],
+    [
+     "icon",
+     "purpose"
+    ],
+    [
+     "icon",
+     "per"
+    ],
+    [
+     "icon",
+     "fault"
+    ]
+   ]
+  },
+  "collapse_plus": {
+   "kind": "drawback",
+   "items": [
+    [
+     "icon",
+     "collapse"
+    ],
+    [
+     "n",
+     "+{n}"
+    ],
+    [
+     "icon",
+     "harm"
+    ]
+   ]
+  },
+  "seed_plus": {
+   "kind": "drawback",
+   "items": [
+    [
+     "icon",
+     "seed"
+    ],
+    [
+     "n",
+     "+{n}"
+    ],
+    [
+     "icon",
+     "glitch"
+    ]
+   ]
+  },
+  "grow_glitch": {
+   "kind": "drawback",
+   "items": [
+    [
+     "icon",
+     "grow"
+    ],
+    [
+     "n",
+     "+{n}"
+    ],
+    [
+     "icon",
+     "glitch"
+    ]
+   ]
+  },
+  "crew_frail": {
+   "kind": "drawback",
+   "items": [
+    [
+     "icon",
+     "crew"
+    ],
+    [
+     "n",
+     "−{n}"
+    ],
+    [
+     "icon",
+     "health"
+    ]
+   ]
+  },
+  "credits_tax": {
+   "kind": "drawback",
+   "items": [
+    [
+     "icon",
+     "growth"
+    ],
+    [
+     "icon",
+     "each_house"
+    ],
+    [
+     "n",
+     "−{n}"
+    ],
+    [
+     "icon",
+     "credits"
+    ]
+   ]
+  },
+  "purpose_tax": {
+   "kind": "drawback",
+   "items": [
+    [
+     "icon",
+     "dusk"
+    ],
+    [
+     "n",
+     "−{n}"
+    ],
+    [
+     "icon",
+     "purpose"
+    ]
+   ]
+  },
+  "credits_each_house": {
+   "kind": "benefit",
+   "items": [
+    [
+     "icon",
+     "each_house"
+    ],
+    [
+     "n",
+     "+{n}"
+    ],
+    [
+     "icon",
+     "credits"
+    ]
+   ]
+  },
+  "credits_per_growth": {
+   "kind": "benefit",
+   "items": [
+    [
+     "icon",
+     "growth"
+    ],
+    [
+     "icon",
+     "each_house"
+    ],
+    [
+     "n",
+     "+{n}"
+    ],
+    [
+     "icon",
+     "credits"
+    ]
+   ]
+  },
+  "hull_brace": {
+   "kind": "benefit",
+   "items": [
+    [
+     "icon",
+     "dusk"
+    ],
+    [
+     "icon",
+     "hull"
+    ],
+    [
+     "icon",
+     "brace"
+    ],
+    [
+     "n",
+     "{n}"
+    ]
+   ]
+  },
+  "decay_ward": {
+   "kind": "benefit",
+   "items": [
+    [
+     "icon",
+     "ward"
+    ],
+    [
+     "n",
+     "{n}"
+    ]
+   ]
+  },
+  "purpose_per_gen": {
+   "kind": "benefit",
+   "items": [
+    [
+     "icon",
+     "dusk"
+    ],
+    [
+     "n",
+     "+{n}"
+    ],
+    [
+     "icon",
+     "purpose"
+    ]
+   ]
+  },
+  "skip_seed": {
+   "kind": "benefit",
+   "items": [
+    [
+     "icon",
+     "lockout"
+    ]
+   ]
+  },
+  "skip_grow": {
+   "kind": "benefit",
+   "items": [
+    [
+     "icon",
+     "patch"
+    ]
+   ]
+  },
+  "credits_each": {
+   "kind": "benefit",
+   "items": [
+    [
+     "icon",
+     "each_house"
+    ],
+    [
+     "n",
+     "+{n}"
+    ],
+    [
+     "icon",
+     "credits"
+    ]
+   ]
+  }
+ },
+ "wall": {
+  "extra_draw": {
+   "kind": "benefit",
+   "items": [
+    [
+     "icon",
+     "growth"
+    ],
+    [
+     "icon",
+     "each_house"
+    ],
+    [
+     "n",
+     "+{n}"
+    ],
+    [
+     "icon",
+     "draw"
+    ]
+   ]
+  },
+  "fast_play": {
+   "kind": "benefit",
+   "items": [
+    [
+     "icon",
+     "each_house"
+    ],
+    [
+     "n",
+     "+{n}"
+    ],
+    [
+     "icon",
+     "fast"
+    ]
+   ]
+  }
+ },
+ "verbs": {
+  "damage": [
+   "repair"
+  ],
+  "brace": [
+   "brace"
+  ],
+  "gather_crew": [
+   "gather",
+   "crew"
+  ],
+  "add_crew": [
+   "add",
+   "crew"
+  ],
+  "move_crew": [
+   "move",
+   "crew"
+  ],
+  "lockout": [
+   "lockout"
+  ],
+  "patch": [
+   "patch"
+  ],
+  "quarantine": [
+   "quarantine"
+  ],
+  "purpose": [
+   "purpose"
+  ],
+  "credits": [
+   "credits"
+  ],
+  "vent_glitch": [
+   "vent",
+   "glitch"
+  ],
+  "vent_fault": [
+   "vent",
+   "fault"
+  ],
+  "vent_failure": [
+   "vent",
+   "failure"
+  ],
+  "vent_glitch_or_fault": [
+   "vent",
+   "glitch",
+   "fault"
+  ],
+  "remove_glitch": [
+   "remove",
+   "glitch"
+  ],
+  "remove_fault": [
+   "remove",
+   "fault"
+  ],
+  "isolate_fault": [
+   "isolate",
+   "fault"
+  ],
+  "isolate_failure": [
+   "isolate",
+   "failure"
+  ],
+  "downgrade": [
+   "downgrade"
+  ],
+  "downgrade_failure": [
+   "downgrade"
+  ],
+  "restore_decay": [
+   "restore_decay"
+  ],
+  "crew_strike": [
+   "crew_strike"
+  ],
+  "foresee": [
+   "foresee"
+  ],
+  "temper_legacy": [
+   "temper_legacy"
+  ],
+  "extra_draw": [
+   "draw"
+  ],
+  "move_influence": [
+   "move",
+   "influence"
+  ],
+  "add_influence": [
+   "add",
+   "influence"
+  ],
+  "damage_per_crew": [
+   "repair",
+   "crew"
+  ],
+  "place_influence_from_track": [
+   "add",
+   "influence"
+  ],
+  "fast_play": [
+   "fast"
+  ]
+ },
+ "count_always": [
+  "damage",
+  "brace",
+  "purpose",
+  "credits"
+ ]
+}
