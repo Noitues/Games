@@ -3,8 +3,9 @@
 Each request is self-contained (a batch has no chat memory), so every prompt is the style's
 description (from its "Opener") followed by the image prompt.
 
-    python3 tools/make_image_batch.py [--model gpt-image-1] [--quality high] [--variants 2]
-    -> art/image_batch.jsonl
+    python3 tools/make_image_batch.py [--endpoint responses|images] [--quality high] [--variants 2]
+    -> art/image_batch_responses.jsonl  (default: /v1/responses with the image_generation tool)
+    -> art/image_batch.jsonl            (--endpoint images: /v1/images/generations with gpt-image-1)
 
 After the batch finishes, download its output file and run tools/decode_image_batch.py on it.
 """
@@ -15,7 +16,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "art" / "CHATGPT_PROMPTS.md"
-OUT = ROOT / "art" / "image_batch.jsonl"
 SIZES = {"Wide landscape": "1536x1024", "Tall portrait": "1024x1536", "Square": "1024x1024"}
 # Images worth extra variants to choose from (the style anchor and the board).
 KEY = {"ostra", "board_a"}
@@ -31,7 +31,8 @@ def style_text(opener):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", default="gpt-image-1")
+    ap.add_argument("--endpoint", choices=["responses", "images"], default="responses")
+    ap.add_argument("--model", default=None, help="images: gpt-image-1; responses: the model that calls the image tool (default gpt-4.1-mini)")
     ap.add_argument("--quality", default="high")
     ap.add_argument("--variants", type=int, default=2, help="images for ostra and board_a (others get 1)")
     a = ap.parse_args()
@@ -47,11 +48,21 @@ def main():
         for name, prompt in re.findall(r"`(\w+)\.png`\n```\n(.*?)\n```", sec, re.S):
             size = next(v for k, v in SIZES.items() if prompt.startswith(k))
             n = a.variants if name in KEY else 1
-            body = {"model": a.model, "prompt": f"{st}\n\n{prompt}", "size": size,
-                    "quality": a.quality, "n": n}
-            lines.append({"custom_id": f"{style}__{name}", "method": "POST",
-                          "url": "/v1/images/generations", "body": body})
+            full = f"{st}\n\n{prompt}"
+            if a.endpoint == "images":
+                body = {"model": a.model or "gpt-image-1", "prompt": full, "size": size, "quality": a.quality, "n": n}
+                lines.append({"custom_id": f"{style}__{name}", "method": "POST", "url": "/v1/images/generations", "body": body})
+            else:
+                # The Responses API has no n: one request per variant.
+                for k in range(n):
+                    body = {"model": a.model or "gpt-4.1-mini",
+                            "input": "Generate exactly one image from this description. Do not reply with text.\n\n" + full,
+                            "tools": [{"type": "image_generation", "size": size, "quality": a.quality}],
+                            "tool_choice": {"type": "image_generation"}}
+                    cid = f"{style}__{name}" + (f"__{k + 1}" if k else "")
+                    lines.append({"custom_id": cid, "method": "POST", "url": "/v1/responses", "body": body})
             total += n
+    OUT = ROOT / "art" / ("image_batch.jsonl" if a.endpoint == "images" else "image_batch_responses.jsonl")
     OUT.write_text("".join(json.dumps(x) + "\n" for x in lines))
     print(f"wrote {OUT.relative_to(ROOT)}: {len(lines)} requests, {total} images")
 
