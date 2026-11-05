@@ -178,12 +178,20 @@ const wallHTML = () => [1, 2, 3].map((p) => `<div class="wall"><div class="cap">
   + `<div class="wall"><div class="cap"><b>Backing layer</b> (print 3) · glue to the back of each top layer along the sides and bottom only, so cards slide in from the top</div><div class="backing"></div></div>`;
 
 // ---------------------------------------------------------------- tokens (punch sheet)
-const TOKENS = [["glitch", 30, "#2E6FD8"], ["fault", 20, "#F6C85A"], ["failure", 12, "#D8332A"], ["crew", 30, "#D9B98A"], ["decay", 15, "#7A4A30"],
-  ["brace", 10, "#FBEFD6"], ["patch", 8, "#FBEFD6"], ["lockout", 8, "#FBEFD6"], ["quarantine", 6, "#FBEFD6"], ["unrest", 6, "#FBEFD6"], ["isolate", 8, "#FBEFD6"]];
-const tokensHTML = () => `<div class="tokens">${TOKENS.flatMap(([n, k, c]) => Array(k).fill(`<span class="tok" style="--c:${c}">${I(n)}</span>`)).join("")}
-  ${Object.keys(HOUSE_COLOURS).flatMap((h) => Array(12).fill(`<span class="tok inf" style="--c:${HOUSE_COLOURS[h]}">${I(`crest_${h}`)}</span>`)).join("")}
-  ${Array(8).fill(`<span class="tok" style="--c:#F6C85A">${I("purpose")}</span>`).join("")}</div>
-  <p class="note">16 mm tokens. Threat counts: 30 Glitch, 20 Fault, 12 Failure. Damage is shown by tipping the token over (1) or turning it face down (2, Failures only). 12 influence banners per house. The starbursts are Breakthrough markers.</p>`;
+// Counts from sim/components.js (the most on the table at once in 4-player games, plus a margin).
+// Brace and Isolate stack, so they come in values; Patch and Lockout stack too (up to 7).
+const TOKENS = [["glitch", 45, "#2E6FD8"], ["fault", 25, "#F6C85A"], ["failure", 8, "#D8332A"], ["crew", 55, "#D9B98A"], ["decay", 15, "#7A4A30"],
+  ["brace", 24, "#FBEFD6", 1], ["brace", 16, "#FBEFD6", 2], ["brace", 8, "#FBEFD6", 5],
+  ["isolate", 12, "#FBEFD6", 1], ["isolate", 8, "#FBEFD6", 2], ["isolate", 6, "#FBEFD6", 5],
+  ["patch", 30, "#FBEFD6"], ["lockout", 30, "#FBEFD6"], ["quarantine", 4, "#FBEFD6"], ["unrest", 6, "#FBEFD6"]];
+const tok = (n, c, v) => `<span class="tok" style="--c:${c}">${I(n)}${v ? `<b class="tv">${v}</b>` : ""}</span>`;
+const tokensHTML = () => `<div class="tokens">${TOKENS.flatMap(([n, k, c, v]) => Array(k).fill(tok(n, c, v))).join("")}
+  ${Object.keys(HOUSE_COLOURS).flatMap((h) => Array(26).fill(`<span class="tok inf" style="--c:${HOUSE_COLOURS[h]}">${I(`crest_${h}`)}</span>`)).join("")}
+  ${Array(12).fill(`<span class="tok" style="--c:#F6C85A">${I("purpose")}</span>`).join("")}</div>
+  <p class="note">16 mm tokens, sized from simulated games (sim/components.js: the most of each on the table at once in 4-player games, plus a margin).
+  45 Glitch, 25 Fault, 8 Failure, 55 Crew, 15 Decay, 26 influence banners per house, and 12 starbursts (Breakthrough markers).
+  Brace and Isolate come in values 1, 2 and 5 (make change). Patch and Lockout stack: use several.
+  Damage: tip a token over at 1 damage; turn a Failure face down at 2. Only print the house banners you play with.</p>`;
 
 // ---------------------------------------------------------------- rules reference
 const REF = `<div class="ref">

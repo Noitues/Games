@@ -496,3 +496,35 @@ Open: houses spread wider in solo play (no teammate covers a weak house). Vigil 
 The strongest few cards swing the result. The chosen deck is about 4 points easier than the full deck, which suits learning games; the full deck stays the balance reference.
 
 Use the playtest deck in the prototype (setup: "People deck") or in sims with `--cfg '{"peopleDeck": [...]}'`. Print-and-play uses it by default.
+
+## Component counts (`sim/components.js`)
+The most of each piece on the table at once, per game (15 games per player count, house bots), shown as 95th percentile / maximum across all player counts:
+
+| Pieces | Count |
+|---|---|
+| Glitch | 37 / 42 |
+| Fault | 18 / 22 |
+| Failure | 4 / 5 |
+| Crew | 49 / 54 |
+| Decay | 11 / 14 |
+| Influence per house | 24 / 25 |
+
+| Tokens (numbered markers) | Sections holding one | Largest value in one section |
+|---|---|---|
+| Brace | 31 / 32 | 22 / 28 |
+| Patch | 25 / 29 | 6 / 7 |
+| Lockout | 24 / 27 | 5 / 7 |
+| Isolate | 11 / 17 | 23 / 27 |
+| Quarantine | 3 sections | |
+| Unrest | 0 at level 0 | |
+
+**Kit** (`print.html` token sheet):
+- 45 Glitch, 25 Fault, 8 Failure;
+- 55 Crew, 15 Decay;
+- 26 influence banners per house;
+- Brace 24 × 1, 16 × 2, 8 × 5;
+- Isolate 12 × 1, 8 × 2, 6 × 5;
+- 30 Patch, 30 Lockout, 4 Quarantine, 6 Unrest;
+- 12 Breakthrough starbursts.
+
+**Design flag:** Brace and Isolate stack very high in single sections (values in the 20s), mostly through Keel's Load-Bearing and repeated innates. If the designer wants simpler physical bookkeeping, cap them (for example "Brace max 5 per section"), then re-test.
