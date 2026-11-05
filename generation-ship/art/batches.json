@@ -8,6 +8,7 @@
  {
   "id": "batch_6aec00a7169881909bd1b8e6e3523cc9",
   "input": "art/retro_batch2_generations.jsonl",
-  "status": "in_progress"
+  "status": "completed",
+  "collected": true
  }
 ]
