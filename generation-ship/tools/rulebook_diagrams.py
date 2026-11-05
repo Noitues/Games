@@ -48,7 +48,7 @@ def build_images():
         tm.round_corners(ev.crop((b, b, ev.width - b, ev.height - b)), 3 * rt.CARD_PX).save(IMG / f"event_{eid}.png")
     # one Wall slot with its windows cut out (transparent), so a card can show through
     s = rt.WALL_PX
-    wall = Image.open(SRC / "wall_panel_v3b_exact.png").convert("RGBA")
+    wall = Image.open(SRC / "wall_panel_v4b_exact.png").convert("RGBA")
     ox, oy = rt.wall_slot_origins()[0]
     cut = tm.window_mask(wall.size, s, [(ox, oy)], erode=False)
     d = ImageDraw.Draw(cut)

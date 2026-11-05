@@ -27,7 +27,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "art" / "source" / "retro"
 OUT = ROOT / "art" / "mockups"
 PX = 6                                # px per mm on the table
-CARD_FRAME = "card_frame_v4b_exact.png"   # people cards: the frame with the guild column (Retro batch 8)
+CARD_FRAME = "card_frame_v4a_exact.png"   # people cards: the frame with the guild column (Retro batch 8)
 TABLE = (900, 640)                    # mm
 FONT_B = str(ROOT / "art" / "fonts" / "Righteous-Regular.ttf")          # style guide: titles
 FONT = str(ROOT / "art" / "fonts" / "JosefinSans[wght].ttf")            # style guide: body text
@@ -129,7 +129,7 @@ def wrap(d, text, f, width):
 
 
 def people_card(person, portrait, name):
-    """A finished people card at 16 px/mm (no bleed), from card_frame_v3b_exact."""
+    """A finished people card at 16 px/mm (no bleed), from card_frame_v4a_exact."""
     s, b = rt.CARD_PX, rt.BLEED
     im = Image.open(SRC / CARD_FRAME).convert("RGB")
     portrait_into(im, portrait, s, (b, b))
@@ -181,7 +181,7 @@ def card_back():
 def wall_panel(leaders, first_slot):
     """One Wall panel (8 px/mm) with retired leaders showing through its windows."""
     s = rt.WALL_PX
-    im = Image.open(SRC / "wall_panel_v3b_exact.png").convert("RGB")
+    im = Image.open(SRC / "wall_panel_v4b_exact.png").convert("RGB")
     d = ImageDraw.Draw(im)
     origins = rt.wall_slot_origins()
     numerals = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"]

@@ -118,7 +118,7 @@ def main():
         im.save(out)
         outs.append(out)
         print("wrote", out.relative_to(ROOT))
-    leader = Image.open(SRC / "card_frame_v3b_exact.png").convert("RGB")
+    leader = Image.open(SRC / "card_frame_v4a_exact.png").convert("RGB")
     demo = tuck_demo(Image.open(outs[1]), leader)
     out = ROOT / "art" / "mockups" / "event_tuck_demo.png"
     demo.save(out)
