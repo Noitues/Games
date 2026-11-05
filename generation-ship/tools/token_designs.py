@@ -16,6 +16,7 @@ undamaged one standing upright (damage does not carry over). Isolate is a wooden
 The sheet shows each piece from the side and from above in every state, a black-silhouette test, and
 the pieces on the four section colours. Concept only: the numbers are starting points for a sculptor.
 """
+import json
 import math
 import random
 import subprocess
@@ -424,8 +425,41 @@ def sheet():
     return "\n".join(o)
 
 
+# --- sprites for the table mock-up: one transparent PNG per piece and state, at SCALE px per mm --
+def sprite_svgs():
+    """name -> SVG body: standing pieces seen from the side (ground at y 260), flat ones from above."""
+    g = 260
+    s = {"glitch": glitch_top(150, 150), "fault": fault_side(150, g), "fault_flat": fault_top(150, 150, damage=1),
+         "failure": failure_side(150, g), "failure_side": failure_side(150, g, damage=1), "failure_up": failure_side(150, g, damage=2),
+         "crew": crew_side(150, g), "crew_injured": crew_injured(150, g), "decay": decay_lump(150, 150, 4),
+         "decay_b": decay_lump(150, 150, 9), "breakthrough": breakthrough_coin(150, 150), "isolate": isolate_tag(150, 150, 0)}
+    for i, c in enumerate(HOUSE):
+        s[f"influence_{i}"] = influence_side(150, g, c)
+    return s
+
+
+def export_sprites():
+    """Write art/tokens/sprites/<name>.png (transparent, cropped later by the mock-up)."""
+    d = OUT / "sprites"
+    d.mkdir(parents=True, exist_ok=True)
+    jobs = []
+    for name, body in sprite_svgs().items():
+        f = d / f"{name}.svg"
+        f.write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">{defs()}{body}</svg>')
+        jobs.append((str(f), str(d / f"{name}.png")))
+    js = ("const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();"
+          "const p=await b.newPage({viewport:{width:300,height:300},deviceScaleFactor:1});"
+          f"for (const [s,o] of {json.dumps(jobs)}){{await p.goto('file://'+s);await p.screenshot({{path:o,omitBackground:true}});}}"
+          "await b.close();})();")
+    subprocess.run(["node", "-e", js], check=True)
+    for svg, _ in jobs:
+        Path(svg).unlink()
+    return d
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
+    print("sprites in", export_sprites().relative_to(ROOT))
     svg = OUT / "token_sheet.svg"
     svg.write_text(sheet())
     png = OUT / "token_sheet.png"

@@ -113,9 +113,9 @@ def wrap(d, text, f, width):
 
 
 def people_card(person, portrait, name):
-    """A finished people card at 16 px/mm (no bleed), from card_frame_v2b_exact."""
+    """A finished people card at 16 px/mm (no bleed), from card_frame_v3b_exact."""
     s, b = rt.CARD_PX, rt.BLEED
-    im = Image.open(SRC / "card_frame_v2b_exact.png").convert("RGB")
+    im = Image.open(SRC / "card_frame_v3b_exact.png").convert("RGB")
     portrait_into(im, portrait, s, (b, b))
     im = im.crop((b * s, b * s, (b + rt.CARD_W) * s, (b + rt.CARD_H) * s))
     d = ImageDraw.Draw(im)
@@ -168,7 +168,7 @@ def card_back():
 def wall_panel(leaders, first_slot):
     """One Wall panel (8 px/mm) with retired leaders showing through its windows."""
     s = rt.WALL_PX
-    im = Image.open(SRC / "wall_panel_v2c_exact.png").convert("RGB")
+    im = Image.open(SRC / "wall_panel_v3b_exact.png").convert("RGB")
     d = ImageDraw.Draw(im)
     origins = rt.wall_slot_origins()
     numerals = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"]
@@ -179,7 +179,7 @@ def wall_panel(leaders, first_slot):
             legacy_text(d, person, plaque_box(*o, s), s, rt.CREAM)
         cx = (o[0] + rt.CARD_W / 2) * s
         cy = (o[1] + rt.CARD_PLAQUE[1] + rt.PLAQUE_H + 7.5) * s
-        d.text((cx, cy), numerals[first_slot + i], fill=rt.TEAL, font=ImageFont.truetype(FONT_B, round(4.2 * s)), anchor="mm")
+        d.text((cx, cy), numerals[first_slot + i], fill="#5A3E14", font=ImageFont.truetype(FONT_B, round(4.2 * s)), anchor="mm")
     return round_corners(im, 8 * s)
 
 
@@ -249,11 +249,17 @@ def main():
     common = [p for p in people if p["tier"] == "Common"]
     table = table_top()
 
-    tok = {n: cutout(SRC / f"token_{n}.png") for n in ("glitch", "fault", "failure", "crew", "decay", "breakthrough")}
-    influence = split_row(cutout(SRC / "token_influence.png"))       # blue, red, gold, white
-    size = {"glitch": 12, "fault": 15, "failure": 19, "crew": 14, "decay": 14, "breakthrough": 20}
-    tok = {n: sized(t, size[n]) for n, t in tok.items()}
-    influence = [sized(t, 11) for t in influence]
+    # The v3 pieces (art/tokens/sprites, drawn by tools/token_designs.py at 10 px/mm): standing pieces
+    # seen from the side, flat ones from above; damage shown by posture.
+    sp = ROOT / "art" / "tokens" / "sprites"
+    if not sp.exists():
+        sys.exit("run tools/token_designs.py first (it draws art/tokens/sprites)")
+    tok = {}
+    for f in sorted(sp.glob("*.png")):
+        im = Image.open(f).convert("RGBA")
+        im = im.crop(im.getchannel("A").getbbox())
+        tok[f.stem] = im.resize((max(1, round(im.width * PX / 10)), max(1, round(im.height * PX / 10))), Image.LANCZOS)
+    influence = [tok[f"influence_{i}"] for i in range(4)]             # blue, red, gold, white
 
     # Ship: boards A and B in the "pair" layout; board units -> mm (radius 180 units = 100 mm).
     pair = data["layouts"]["pair"]
@@ -277,26 +283,30 @@ def main():
         return (ship_origin[0] + (px_ * math.cos(a) - py_ * math.sin(a) + x) * U,
                 ship_origin[1] + (px_ * math.sin(a) + py_ * math.cos(a) + y) * U)
 
-    # Mid-game spread: a few threats, crew, decay and house influence in the sections.
+    # Mid-game spread: threats (some damaged, by posture), Crew (one injured), Decay, influence, Isolate.
     state = {
-        "A1": ["crew", "crew", "inf0"], "A2": ["fault", "glitch"], "A3": ["inf1", "crew"],
-        "A4": ["failure", "decay", "crew"], "A5": ["glitch", "inf1", "inf1"], "A6": ["crew", "inf0"],
-        "A7": ["glitch", "glitch"], "A8": ["decay", "fault", "crew"],
-        "B1": ["inf0", "crew", "glitch"], "B2": ["fault"], "B3": ["inf1", "crew", "crew"],
-        "B4": ["failure", "fault", "decay"], "B5": ["crew", "inf0", "inf0"], "B6": ["glitch"],
-        "B7": ["crew", "decay"], "B8": ["inf1", "glitch", "crew"],
+        "A1": ["crew", "crew", "inf0"], "A2": ["fault_flat", "glitch"], "A3": ["inf1", "crew"],
+        "A4": ["failure_side", "decay", "crew_injured"], "A5": ["glitch", "inf1", "inf1"], "A6": ["crew", "inf0"],
+        "A7": ["glitch", "glitch"], "A8": ["decay_b", "fault", "crew"],
+        "B1": ["inf0", "crew", "glitch"], "B2": ["fault", "isolate"], "B3": ["inf1", "crew", "crew_injured"],
+        "B4": ["failure_up", "fault", "decay"], "B5": ["crew", "inf0", "inf0"], "B6": ["glitch"],
+        "B7": ["crew", "decay_b"], "B8": ["inf1", "failure", "crew"],
     }
+    flat = {"glitch", "fault_flat", "decay", "decay_b", "breakthrough"}
     for bid in ("A", "B"):
         board = next(b for b in data["boards"] if b["id"] == bid)
         for sec in board["sections"]:
             items = state.get(sec["id"], [])
             cx, cy = section_xy(sec, bid)
+            placed = []
             for i, it in enumerate(items):
                 ang = 2 * math.pi * i / max(1, len(items)) + rng.uniform(-0.3, 0.3)
-                rad = 0 if len(items) == 1 else 9
-                pos = (cx + rad * math.cos(ang), cy + rad * math.sin(ang))
+                rad = 0 if len(items) == 1 else 10
+                placed.append(((cx + rad * math.cos(ang), cy + rad * math.sin(ang)), it))
+            for pos, it in sorted(placed, key=lambda q: q[0][1]):           # back to front
                 piece = influence[int(it[3])] if it.startswith("inf") else tok[it]
-                drop(table, piece, pos, rng.uniform(-25, 25), shadow=0.5)
+                spin = rng.uniform(-40, 40) if it in flat else rng.uniform(-3, 3)
+                drop(table, piece, pos, spin, shadow=0.5)
 
     # The Wall of Leaders: two panels of the tri-fold unfolded along the top. Only four portraits exist
     # so far, so two leaders have retired (Ilka, Dace) and Ostra and Pell are in the conveyor.
@@ -305,7 +315,7 @@ def main():
         panel = wall_panel(leaders[first:first + 4], first)
         panel = panel.resize((mm(rt.WALL_W), mm(rt.WALL_H)), Image.LANCZOS)
         drop(table, panel, (300 + k * 291, 72), 0, shadow=0.8)
-    drop(table, tok["breakthrough"], (300 - 145 + 72.5 * 1.5 + 23, 32), 15, 0.7)   # on slot II's frame
+    drop(table, tok["breakthrough"], (300 - 145 + 72.5 * 1.5 + 22, 80), 15, 0.7)    # on slot II, between portrait and plaque
 
     # The conveyor: Dusk, Day and Dawn leaders, right of the ship.
     conv = [(remarkable[21], SRC / "ostra.png", "Ostra Vell"), (common[30], SRC / "pell.png", "Pell Ashgrove")]
@@ -328,17 +338,19 @@ def main():
         drop(table, hb, (hx, 400), 0, shadow=0.8)
         x0, dy, step = tracks[house]
         for j in range(3, 7):                                          # influence still on its track
-            drop(table, influence[inf], (hx + x0 + j * step, 400 + dy), rng.uniform(-20, 20), 0.5)
+            drop(table, influence[inf], (hx + x0 + j * step, 400 + dy - 3), 0, 0.5)
         for j in range(4):                                             # the hand, fanned below
             drop(table, back, (hx - 36 + j * 22, 500 + abs(j - 1.5) * 4), -12 + j * 8, shadow=0.7)
 
     # Decks and supply on the right edge and lower left.
     for j in range(6):
         drop(table, back, (812 - j * 0.4, 205 - j * 0.5), 1.5, shadow=0.4 if j else 0.9)
-    supply = [("glitch", 9), ("fault", 6), ("failure", 3), ("crew", 10), ("decay", 6)]
+    supply = [("glitch", 9), ("fault", 6), ("failure", 3), ("crew", 8), ("decay", 6)]
     for i, (n, k) in enumerate(supply):
-        for j in range(k):
-            drop(table, tok[n], (28 + (i % 2) * 52 + rng.uniform(-9, 9), 40 + (i // 2) * 48 + rng.uniform(-9, 9)), rng.uniform(0, 360), 0.5)
+        heap = sorted(((28 + (i % 2) * 52 + rng.uniform(-11, 11), 40 + (i // 2) * 48 + rng.uniform(-10, 10)) for _ in range(k)), key=lambda q: q[1])
+        for j, pos in enumerate(heap):
+            name = n if n != "decay" else ("decay", "decay_b")[j % 2]
+            drop(table, tok[name], pos, rng.uniform(0, 360) if name in flat else rng.uniform(-4, 4), 0.5)
 
     final = light(table)
     final.save(OUT / "retro_table_midgame.png", optimize=True)
