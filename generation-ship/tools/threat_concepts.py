@@ -65,14 +65,68 @@ FAMILIES = [
 ]
 
 
-def sheet():
+NUT = FAMILIES[0][2][0]
+COG = FAMILIES[0][2][1]
+DRIP = FAMILIES[1][2][0]
+PIPE = FAMILIES[1][2][1]
+KLAXON = FAMILIES[2][2][1]
+BEACON = FAMILIES[2][2][2]
+BELL = solid("M-50,0 L-50,-12 L-10,-12 L-10,-24 C-46,-30 -48,-60 -40,-96 C-34,-130 34,-130 40,-96 C48,-60 46,-30 10,-24 L10,-12 L50,-12 L50,0 Z",
+             f'<circle cx="0" cy="-30" r="9" fill="{GUN}" stroke="{INK}" stroke-width="2.5"/><path d="M-60,-110 L-80,-124 M60,-110 L80,-124" stroke="{GUN}" stroke-width="7" stroke-linecap="round"/>')
+BULB = solid("M-22,0 L-22,-14 L-12,-14 L-12,-24 C-30,-30 -32,-64 0,-66 C32,-64 30,-30 12,-24 L12,-14 L22,-14 L22,0 Z")
+SMOKING_COG = COG + solid("M-10,-90 C-36,-96 -30,-130 -6,-126 C0,-150 34,-146 30,-122 C50,-118 40,-92 18,-96 C10,-88 -2,-86 -10,-90 Z")
+LAMP_POST = solid("M-30,0 L-30,-12 L-6,-12 L-6,-80 L-22,-80 C-22,-112 22,-112 22,-80 L6,-80 L6,-12 L30,-12 L30,0 Z")
+WRENCH = solid("M-8,0 L-8,-50 C-26,-56 -28,-82 -12,-90 L-12,-72 L12,-72 L12,-90 C28,-82 26,-56 8,-50 L8,0 Z")
+TOOLBOX = solid("M-56,0 L-56,-52 L56,-52 L56,0 Z", f'<path d="M-22,-52 L-22,-70 L22,-70 L22,-52" fill="none" stroke="{GUN}" stroke-width="9"/><line x1="-56" y1="-30" x2="56" y2="-30" stroke="{INK}" stroke-width="2.5"/>')
+HELMET = solid("M-56,0 L-56,-20 L-44,-20 L-44,-80 C-44,-170 44,-170 44,-80 L44,-20 L56,-20 L56,0 Z",
+               f'<path d="M-30,-110 C-30,-140 30,-140 30,-110 L30,-80 L-30,-80 Z" fill="#2A2F34" stroke="{INK}" stroke-width="2.5"/>')
+
+
+def sign(shape, h):
+    """A warning sign of the given shape on a short post with a foot (so its postures read)."""
+    post = f"M-30,0 L-30,-10 L-5,-10 L-5,-{h} L5,-{h} L5,-10 L30,-10 L30,0 Z"
+    return solid(post) + shape
+
+
+TRI = sign(solid("M0,-96 L40,-30 L-40,-30 Z", f'<rect x="-3" y="-78" width="6" height="26" fill="{INK}"/><circle cx="0" cy="-42" r="4" fill="{INK}"/>'), 34)
+DIAMOND = sign(solid("M0,-140 L50,-90 L0,-40 L-50,-90 Z", f'<rect x="-4" y="-118" width="8" height="34" fill="{INK}"/><circle cx="0" cy="-70" r="5" fill="{INK}"/>'), 44)
+OCTAGON = sign(solid(" ".join(["M"] + [f"{60 * __import__('math').cos(__import__('math').radians(22.5 + 45 * k)):.1f},{-120 + 60 * __import__('math').sin(__import__('math').radians(22.5 + 45 * k)):.1f} L" for k in range(8)])[:-2] + " Z",
+                     f'<rect x="-34" y="-128" width="68" height="16" rx="3" fill="{INK}"/>'), 62)
+
+FAMILIES_2 = [
+    ("Mix: nut → cog → alarm bell (designer's idea)", "loose nut → broken cog → alarm bell", [NUT, COG, BELL],
+     ["+ the bell finally reads as danger", "+ nut and cog stay 'the machine'", "− the jump from parts to an alarm breaks the family", "− the bell is the symptom; the nut and cog are causes"], 3),
+    ("Mix: bulb → smoking cog → klaxon", "a flickering lamp → a cog smoking → the klaxon sounds", [BULB, SMOKING_COG, KLAXON],
+     ["+ each step is 'louder' than the last", "+ smoke says 'this is getting worse'", "− three objects, three sculpts; the smoke must be solid"], 3),
+    ("Mix: drip → cracked pipe → alarm bell", "a leak, then a burst, then the alarm", [DRIP, PIPE, BELL],
+     ["+ a story: small cause, bigger cause, alarm", "+ drip and pipe keep vent = flow", "− the Failure no longer says what failed"], 3),
+    ("Signal lamps (one family, by height)", "bulb → lamp on a post → rotating beacon", [BULB, LAMP_POST, BEACON],
+     ["+ one family; escalation is height and size, like explorer → town → city", "+ simplest sculpts; posture reads (a lamp knocked over)",
+      "− signals, not problems: 'repair' means 'deal with what set it off'"], 4),
+    ("Crew response (designer's idea)", "a wrench job → a toolbox job → a space walk", [WRENCH, TOOLBOX, HELMET],
+     ["+ says how hard the fix is", "− tools and helmets look like the players' things, not the threat",
+      "− the bad pieces would be the crew's gear: confusing on the board"], 1),
+    ("Warning signs", "caution triangle → hazard diamond → stop octagon", [TRI, DIAMOND, OCTAGON],
+     ["+ universal: anyone reads caution → danger → stop", "+ three clean shapes, cheap to mould, no thin parts",
+      "+ escalation by shape and size at once", "− generic: says 'danger' but not 'the machine'"], 4),
+]
+
+DECAY_OPTIONS = [
+    ("broken plate (current)", "M-46,-10 L-6,-16 L-14,-36 L-2,-50 L-18,-64 L-8,-88 L-44,-84 Z M2,-16 L44,-8 L40,-86 L0,-90 L-8,-64 L8,-50 L-4,-36 Z"),
+    ("scorch crater", "M-50,0 C-50,-20 -30,-30 -20,-24 C-16,-40 16,-40 20,-24 C30,-30 50,-20 50,0 Z M-26,-8 C-20,-16 20,-16 26,-8 Z"),
+    ("twisted girder", "M-50,-10 L-10,-30 L10,-10 L50,-40 L54,-30 L12,0 L-8,-18 L-46,0 Z M-30,-34 L-30,-20 M20,-30 L20,-12"),
+    ("cracked panel shard", "M-40,0 L-30,-60 L10,-80 L40,-50 L30,0 Z M-30,-60 L0,-40 L10,-80 M0,-40 L30,0"),
+]
+
+
+def sheet(families=FAMILIES, title="The threat ladder: five families", decay=False):
     W, rowh = 1800, 300
-    H = 120 + rowh * len(FAMILIES) + 60
+    H = 120 + rowh * len(families) + 60 + (300 if decay else 0)
     o = [f'<rect width="{W}" height="{H}" fill="#EDE6D8"/>',
-         f'<text x="60" y="62" font-family="Righteous" font-size="32" fill="#0F3A48">The threat ladder: five families</text>',
+         f'<text x="60" y="62" font-family="Righteous" font-size="32" fill="#0F3A48">{title}</text>',
          f'<text x="60" y="94" font-family="Josefin" font-size="18" fill="#4A4F55">Glitch → Fault → Failure, gunmetal plastic, to scale (8 px = 1 mm). Right: the Failure\'s damage postures (on its side, upside down). Score: designer fit, out of 5.</text>']
     y = 140
-    for name, ladder, pieces, notes, score in FAMILIES:
+    for name, ladder, pieces, notes, score in families:
         base = y + 220
         o.append(f'<rect x="40" y="{y}" width="{W - 80}" height="{rowh - 20}" rx="18" fill="#F7F1E4" stroke="#D8CDB6"/>')
         o.append(f'<text x="70" y="{y + 40}" font-family="Righteous" font-size="26" fill="#0F3A48">{name}</text>')
@@ -94,6 +148,15 @@ def sheet():
         o.append(f'<text x="1160" y="{y + 50 + 30 * len(notes) + 10}" font-family="Righteous" font-size="20" fill="#0F3A48">'
                  f'{"★" * score}{"☆" * (5 - score)}</text>')
         y += rowh
+    if decay:
+        o.append(f'<rect x="40" y="{y}" width="{W - 80}" height="280" rx="18" fill="#F7F1E4" stroke="#D8CDB6"/>')
+        o.append(f'<text x="70" y="{y + 40}" font-family="Righteous" font-size="26" fill="#0F3A48">Decay options (permanent damage, rust-brown plastic)</text>')
+        for i, (lab, d) in enumerate(DECAY_OPTIONS):
+            x = 220 + i * 380
+            o.append(f'<line x1="{x - 120}" y1="{y + 200}" x2="{x + 120}" y2="{y + 200}" stroke="#B9AE98" stroke-width="2"/>')
+            o.append(g(f'<path d="{d}" fill="#7A4030" stroke="{INK}" stroke-width="3" stroke-linejoin="round" fill-rule="evenodd"/>', x, y + 200, 1.4))
+            o.append(f'<text x="{x}" y="{y + 238}" font-family="Josefin" font-size="17" font-weight="700" fill="#4A4F55" text-anchor="middle">{lab}</text>')
+        y += 300
     font = ROOT / "art" / "fonts"
     defs = (f"<defs><style>@font-face {{ font-family: Righteous; src: url('{(font / 'Righteous-Regular.ttf').as_uri()}'); }}"
             f"@font-face {{ font-family: Josefin; src: url('{(font / 'JosefinSans[wght].ttf').as_uri()}'); }}</style></defs>")
@@ -101,10 +164,15 @@ def sheet():
 
 
 def main():
-    svg, (w, h) = sheet()
-    f = OUT / "threat_concepts.svg"
+    render(sheet(), "threat_concepts")
+    render(sheet(FAMILIES_2, "The threat ladder, round 2: mixes and new families", decay=True), "threat_concepts_2")
+
+
+def render(result, name):
+    svg, (w, h) = result
+    f = OUT / f"{name}.svg"
     f.write_text(svg)
-    png = OUT / "threat_concepts.png"
+    png = OUT / f"{name}.png"
     js = (f"const {{chromium}}=require('playwright');(async()=>{{const b=await chromium.launch();"
           f"const p=await b.newPage({{viewport:{{width:{w},height:{h}}},deviceScaleFactor:1}});"
           f"await p.goto('{f.as_uri()}');await p.waitForTimeout(400);await p.screenshot({{path:'{png}'}});await b.close();}})();")

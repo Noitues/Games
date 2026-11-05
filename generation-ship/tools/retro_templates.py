@@ -241,8 +241,7 @@ HOUSE_ACCENT = {"galvan": "#3A6FD8", "meridian": "#3AB0A8", "keel": "#7A8C96", "
 
 # --- house board v2: the house's emblem front and centre --------------------------------------
 HOUSE_BOARD = {                                  # px on a 1536 x 1024 board (190 x 127 mm)
-    "emblem": (70, 40, 490, 571),                # the house crest at its true proportions (as the influence token)
-    "setup": (40, 610, 520, 984),                # starting influence, hand and clone slots
+    "emblem": (40, 40, 520, 984),                # the house banner, full height (as the influence token)
     "name": (560, 40, 1496, 140),
     "growth": [(560, 170, 855, 420), (880, 170, 1175, 420), (1200, 170, 1496, 420)],
     "tracks": [(470, 6), (575, 6)],              # (y centre, max sockets); the count comes from the data
@@ -252,19 +251,11 @@ HOUSE_BOARD = {                                  # px on a 1536 x 1024 board (19
 }
 
 
-def banner_points(x0, y0, x1, y1, steps=24):
-    """The house crest (tools/icons.py CREST_PATH: the influence token's shape) fitted to a box."""
-    sx, sy = (x1 - x0) / 68, (y1 - y0) / 86          # CREST_PATH spans x 16-84, y 8-94
-    X = lambda u: x0 + (u - 16) * sx  # noqa: E731
-    Y = lambda v: y0 + (v - 8) * sy  # noqa: E731
-
-    def cubic(p0, p1, p2, p3):
-        return [tuple((1 - t) ** 3 * a + 3 * (1 - t) ** 2 * t * b + 3 * (1 - t) * t ** 2 * c + t ** 3 * d
-                      for a, b, c, d in zip(p0, p1, p2, p3)) for t in (i / steps for i in range(steps + 1))]
-    right = cubic((84, 22), (84, 52), (66, 78), (50, 94))
-    left = cubic((50, 94), (34, 78), (16, 52), (16, 22))
-    pts = [(16, 8), (84, 8)] + right + left[1:]
-    return [(X(u), Y(v)) for u, v in pts]
+def banner_points(x0, y0, x1, y1):
+    """The house banner (tools/icons.py CREST_PATH: the influence token's shape): a straight drop
+    with a swallowtail foot, as the batch-5 boards painted it."""
+    notch = (y1 - y0) * 0.19
+    return [(x0, y0), (x1, y0), (x1, y1), ((x0 + x1) / 2, y1 - notch), (x0, y1)]
 
 
 def socket_centres(row_y, n):
@@ -278,7 +269,7 @@ def house_guide(house, accent):
     d = ImageDraw.Draw(im)
     L = HOUSE_BOARD
     d.polygon(banner_points(*L["emblem"]), fill=accent, outline=CHROME, width=6)
-    for key in ("name", "innate", "special", "setup"):
+    for key in ("name", "innate", "special"):
         d.rounded_rectangle(L[key], 18, fill=CREAM, outline=CHROME, width=5)
     for g in L["growth"]:
         d.rounded_rectangle(g, 18, fill=CREAM, outline=CHROME, width=5)

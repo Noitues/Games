@@ -28,29 +28,31 @@ def reg(cx, cy, r, n, rot=0.0):
     return [(cx + r * math.cos(rot + 2 * math.pi * k / n), cy + r * math.sin(rot + 2 * math.pi * k / n)) for k in range(n)]
 
 
-# The house crest: the old rocket-nose influence cone turned upside down (designer, 2026-11-05).
-# One shape for the influence token (it lies flat, like Spirit Island presence), its icon and the
-# banner on the house board (tools/retro_templates.py HOUSE_BOARD uses CREST_PATH too).
-CREST_PATH = "M16,8 L84,8 L84,22 C84,52 66,78 50,94 C34,78 16,52 16,22 Z"
-CREST_BAND = "M16,8 L84,8 L84,22 L16,22 Z"
+# The house banner (designer, 2026-11-05: the banners the batch-5 house boards painted read very
+# well, so the influence token and its icon take that shape). One shape for the influence token (it
+# lies flat, like Spirit Island presence), its icon and the banner on the house board
+# (tools/retro_templates.py banner_points). The emblem sits in the banner's upper body.
+CREST_PATH = "M22,6 L78,6 L78,94 L50,76 L22,94 Z"
+CREST_BAND = "M14,2 L86,2 L86,8 L14,8 Z"          # the hanging rod
 
 
 def emblem(house, colour=CREAM):
-    """Each house's emblem, drawn inside the crest (about a 44-unit box centred at 50, 46)."""
+    """Each house's emblem, sized to sit in the banner's body (a 40-unit box centred at 50, 42)."""
     e = {
-        "galvan": f'<circle cx="50" cy="48" r="15" fill="none" stroke="{colour}" stroke-width="7" stroke-dasharray="6 4"/><polygon points="54,26 38,52 50,52 44,72 64,42 52,42 58,26" fill="{colour}"/>',
-        "keel": f'<circle cx="50" cy="32" r="6" fill="none" stroke="{colour}" stroke-width="5"/><path d="M50,38 L50,72 M38,46 L62,46 M32,58 C34,70 44,74 50,74 C56,74 66,70 68,58" fill="none" stroke="{colour}" stroke-width="6" stroke-linecap="round"/>',
-        "gardeners": f'<path d="M34,70 L34,44 C34,30 66,30 66,44 L66,70 Z" fill="none" stroke="{colour}" stroke-width="5"/><path d="M50,68 L50,52 M50,56 C42,56 38,50 38,44 C46,44 50,48 50,56 M50,52 C56,52 62,46 62,40 C54,40 50,44 50,52" fill="{colour}" stroke="{colour}" stroke-width="3"/>',
-        "voidwardens": f'<circle cx="50" cy="48" r="18" fill="none" stroke="{colour}" stroke-width="6"/>' + "".join(
-            f'<line x1="{50 + 18 * math.cos(a)}" y1="{48 + 18 * math.sin(a)}" x2="{50 + 26 * math.cos(a)}" y2="{48 + 26 * math.sin(a)}" stroke="{colour}" stroke-width="6"/>' for a in (0, math.pi / 2, math.pi, 3 * math.pi / 2))
-            + f'<polygon points="50,38 53,45 60,48 53,51 50,58 47,51 40,48 47,45" fill="{colour}"/>',
+        "galvan": f'<circle cx="50" cy="42" r="14" fill="none" stroke="{colour}" stroke-width="6" stroke-dasharray="6 4"/><polygon points="54,22 39,46 50,46 45,64 63,37 52,37 57,22" fill="{colour}"/>',
+        "keel": f'<g transform="translate(50 43) scale(.72) translate(-50 -52)"><circle cx="50" cy="32" r="6" fill="none" stroke="{colour}" stroke-width="6"/><path d="M50,38 L50,72 M38,46 L62,46 M32,58 C34,70 44,74 50,74 C56,74 66,70 68,58" fill="none" stroke="{colour}" stroke-width="7" stroke-linecap="round"/></g>',
+        "gardeners": f'<g transform="translate(0 -6)"><path d="M34,66 L34,44 C34,30 66,30 66,44 L66,66 Z" fill="none" stroke="{colour}" stroke-width="5"/><path d="M50,64 L50,50 M50,54 C42,54 38,48 38,42 C46,42 50,46 50,54 M50,50 C56,50 62,44 62,38 C54,38 50,42 50,50" fill="{colour}" stroke="{colour}" stroke-width="3"/></g>',
+        "voidwardens": f'<circle cx="50" cy="42" r="15" fill="none" stroke="{colour}" stroke-width="5"/>' + "".join(
+            f'<line x1="{50 + 15 * math.cos(a)}" y1="{42 + 15 * math.sin(a)}" x2="{50 + 21 * math.cos(a)}" y2="{42 + 21 * math.sin(a)}" stroke="{colour}" stroke-width="5"/>' for a in (0, math.pi / 2, math.pi, 3 * math.pi / 2))
+            + f'<polygon points="50,33 53,39 59,42 53,45 50,51 47,45 41,42 47,39" fill="{colour}"/>',
     }
-    return e.get(house, f'<polygon points="50,30 55,44 70,46 58,54 62,70 50,60 38,70 42,54 30,46 45,44" fill="{colour}"/>')
+    return e.get(house, f'<polygon points="50,26 55,38 68,40 58,48 61,60 50,53 39,60 42,48 32,40 45,38" fill="{colour}"/>')
 
 
 def crest(house=None, colour="#B98A55"):
     return (f'<path d="{CREST_PATH}" fill="{colour}" stroke="{INK}" stroke-width="{SW}" stroke-linejoin="round"/>'
-            f'<path d="{CREST_BAND}" fill="{INK}" opacity=".25"/>{emblem(house)}')
+            f'<path d="M30,8 L30,80 M70,8 L70,80" stroke="{GOLD}" stroke-width="2.5" opacity=".8"/>'
+            f'<path d="{CREST_BAND}" fill="{GOLD}" stroke="{INK}" stroke-width="3"/>{emblem(house)}')
 
 
 # --- pieces (the same silhouettes as the physical pieces) ----------------------------------------
@@ -81,12 +83,15 @@ def crew():
 
 
 def decay():
-    """Plastic rubble: a heap of broken plates, a bent strut and a bolt (all bad things are cast)."""
-    return (f'<polygon points="10,86 90,86 80,70 66,62 52,66 38,58 22,68" fill="{RUST}" stroke="{INK}" stroke-width="5" stroke-linejoin="round"/>'
-            f'<polygon points="26,66 44,30 58,40 48,70" fill="{RUST}" stroke="{INK}" stroke-width="5" stroke-linejoin="round"/>'
-            f'<polygon points="52,64 70,40 86,52 74,72" fill="{RUST}" stroke="{INK}" stroke-width="5" stroke-linejoin="round"/>'
-            f'<line x1="40" y1="44" x2="50" y2="52" stroke="{INK}" stroke-width="3"/><circle cx="72" cy="56" r="4" fill="{INK}"/>'
-            f'<rect x="58" y="22" width="10" height="26" rx="2" fill="{RUST}" stroke="{INK}" stroke-width="4" transform="rotate(28 63 35)"/>')
+    """Decay, permanent damage: a hull plate broken in two along a jagged crack, one half buckled,
+    cast in rust-brown plastic (Patch, by contrast, is a whole plate with a tangerine plaster)."""
+    left = "12,20 52,14 44,34 56,48 40,62 50,86 14,82"
+    right = "58,14 90,22 86,80 56,88 46,64 62,48 50,34"
+    return (f'<polygon points="{left}" fill="{RUST}" stroke="{INK}" stroke-width="5" stroke-linejoin="round"/>'
+            f'<polygon points="{right}" fill="{RUST}" stroke="{INK}" stroke-width="5" stroke-linejoin="round" transform="rotate(8 70 50) translate(4 2)"/>'
+            f'<path d="M62,20 L84,26 L82,40" fill="none" stroke="#B0705A" stroke-width="3" transform="rotate(8 70 50) translate(4 2)"/>'
+            + "".join(f'<circle cx="{x}" cy="{y}" r="4" fill="{INK}"/>' for x, y in ((20, 28), (20, 74)))
+            + "".join(f'<circle cx="{x}" cy="{y}" r="4" fill="{INK}"/>' for x, y in ((84, 32), (80, 76))))
 
 
 
@@ -144,23 +149,21 @@ def quarantine():
 
 
 def unrest():
-    """A raised fist: rebellion."""
-    return (f'<path d="M36,94 L36,64 L64,64 L64,94" fill="{ACT}" stroke="{INK}" stroke-width="{SW}" stroke-linejoin="round"/>'
-            f'<path d="M28,64 L28,30 C28,24 36,24 36,30 L36,26 C36,18 46,18 46,26 L46,22 C46,14 56,14 56,22 L56,26 C56,18 66,18 66,26 L66,50 '
-            f'C72,46 80,50 76,58 L68,68 L32,68 Z" fill="{ACT}" stroke="{INK}" stroke-width="{SW}" stroke-linejoin="round"/>'
-            f'<path d="M36,30 L36,46 M46,26 L46,46 M56,26 L56,46" stroke="{INK}" stroke-width="4"/>'
-            f'<path d="M30,48 C40,44 54,46 66,50" fill="none" stroke="{INK}" stroke-width="4"/>')
+    """A raised fist: rebellion (short, curled fingers so it reads as a fist, not a hand)."""
+    return (f'<path d="M36,94 L36,70 L66,70 L66,94" fill="{ACT}" stroke="{INK}" stroke-width="{SW}" stroke-linejoin="round"/>'
+            f'<path d="M26,72 L26,40 C26,34 30,30 36,30 L70,30 C76,30 80,34 80,40 L80,58 C80,66 74,72 66,72 Z" fill="{ACT}" stroke="{INK}" stroke-width="{SW}" stroke-linejoin="round"/>'
+            f'<path d="M43,30 L43,46 M53,30 L53,46 M63,30 L63,46" stroke="{INK}" stroke-width="4"/>'
+            f'<path d="M26,46 L56,46 C62,46 64,52 60,56 L44,56" fill="none" stroke="{INK}" stroke-width="4.5" stroke-linejoin="round"/>')
 
 
 
 def isolate():
-    """Isolate (a threat piece deals no damage at its next collapse): its power is unplugged."""
-    return (f'<path d="M8,64 L30,64" stroke="{INK}" stroke-width="10" stroke-linecap="round"/>'
-            f'<rect x="28" y="48" width="22" height="32" rx="6" fill="{GUN}" stroke="{INK}" stroke-width="5"/>'
-            f'<path d="M50,56 L60,56 M50,72 L60,72" stroke="{INK}" stroke-width="6" stroke-linecap="round"/>'
-            f'<rect x="70" y="42" width="22" height="44" rx="6" fill="{CREAM}" stroke="{INK}" stroke-width="5"/>'
-            f'<circle cx="81" cy="56" r="3.5" fill="{INK}"/><circle cx="81" cy="72" r="3.5" fill="{INK}"/>'
-            f'<path d="M62,20 L66,36 M74,16 L72,32 M84,24 L78,36" stroke="{ACT}" stroke-width="5" stroke-linecap="round"/>')
+    """Isolate (this threat piece deals no damage at its next collapse): the universal prohibition
+    sign over a threat piece."""
+    return (f'<g transform="translate(18 18) scale(.64)">{fault()}</g>'
+            f'<circle cx="50" cy="50" r="40" fill="none" stroke="{ACT}" stroke-width="11"/>'
+            f'<line x1="22" y1="22" x2="78" y2="78" stroke="{ACT}" stroke-width="11"/>'
+            f'<circle cx="50" cy="50" r="46" fill="none" stroke="{INK}" stroke-width="3"/>')
 
 
 
@@ -206,11 +209,8 @@ def add():
 
 
 def remove():
-    """Remove: a crane claw lifting a piece off the board (distinct from Add's plus)."""
-    return (f'<path d="M50,4 L50,30" stroke="{INK}" stroke-width="6"/><rect x="36" y="28" width="28" height="12" rx="4" fill="{GUN}" stroke="{INK}" stroke-width="4"/>'
-            f'<path d="M40,40 C26,48 26,64 38,72 M60,40 C74,48 74,64 62,72" fill="none" stroke="{INK}" stroke-width="7" stroke-linecap="round"/>'
-            f'<circle cx="50" cy="64" r="11" fill="{ACT}" stroke="{INK}" stroke-width="4"/>'
-            + arrow(84, 70, 84, 20, w=6))
+    """Remove: a minus (Add is the plus)."""
+    return f'<circle cx="50" cy="50" r="40" fill="{CREAM}" stroke="{INK}" stroke-width="{SW}"/><path d="M28,50 L72,50" stroke="{ACT}" stroke-width="12" stroke-linecap="round"/>'
 
 
 

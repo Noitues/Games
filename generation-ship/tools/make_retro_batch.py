@@ -57,6 +57,13 @@ EDITS_5 = {"event_frame_a": ("event_frame", "event_guide.png", "1104x1504", 1),
            "event_frame_b": ("event_frame", "event_guide.png", "1104x1504", 1),
            "event_example": ("event_example", "event_guide.png", "1104x1504", 1),
            **{f"house_{h}_v2": ("house_board_v2", f"house_{h}_guide.png", "1536x1024", 1) for h in EMBLEMS}}
+HOUSE_LOOK = {   # colour, background motif (the emblem is EMBLEMS)
+    "galvan": ("electric blue (#3A6FD8)", "faint arcing electrical traces and circuit lines"),
+    "keel": ("steel grey (#7A8C96), not turquoise", "faint riveted hull plates, seams and cross-braces"),
+    "gardeners": ("lime green (#8FB04A)", "faint climbing vines and leaf veins"),
+    "voidwardens": ("deep violet (#6A4A9A)", "a faint starfield and concentric airlock rings"),
+}
+EDITS_6 = {f"house_{h}_v3": ("house_board_v3", f"house_{h}_guide.png", "1536x1024", 1) for h in HOUSE_LOOK}
 GENERATIONS = {
     "card_back": ("card_back", None, "1104x1504", 1),
     **{f"icon_{t}": (f"icon_{t}", None, "1024x1024", 1) for t in ("infrastructure", "residential", "government", "agricultural")},
@@ -81,6 +88,9 @@ def build(jobs, endpoint, style, ps):
             body = ps[key]
             if key == "house_<id>":
                 body = body.replace("<identity>", HOUSES[name.removeprefix("house_")])
+            if key == "house_board_v3":
+                h = name.removeprefix("house_").removesuffix("_v3")
+                body = body.replace("<colour>", HOUSE_LOOK[h][0]).replace("<emblem>", EMBLEMS[h]).replace("<motif>", HOUSE_LOOK[h][1])
             if key == "house_board_v2":
                 body = body.replace("<emblem>", EMBLEMS[name.removeprefix("house_").removesuffix("_v2")])
             full = f"{style}\n\n{body}"
@@ -104,10 +114,10 @@ def build(jobs, endpoint, style, ps):
 def main():
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument("--batch", type=int, default=2, choices=(2, 3, 4, 5))
+    ap.add_argument("--batch", type=int, default=2, choices=(2, 3, 4, 5, 6))
     batch = ap.parse_args().batch
     ps = prompts(batch)
-    edits, gens = {2: (EDITS, GENERATIONS), 3: (EDITS_3, GENERATIONS_3), 4: ({}, GENERATIONS_4), 5: (EDITS_5, {})}[batch]
+    edits, gens = {2: (EDITS, GENERATIONS), 3: (EDITS_3, GENERATIONS_3), 4: ({}, GENERATIONS_4), 5: (EDITS_5, {}), 6: (EDITS_6, {})}[batch]
     text = (ROOT / "art" / "CHATGPT_PROMPTS.md").read_text()
     sec = text.split("## D · Retro Space", 1)[1]
     opener = re.search(r"\*\*Opener\*\*\n```\n(.*?)\n```", sec, re.S).group(1)
