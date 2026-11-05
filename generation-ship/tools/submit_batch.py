@@ -39,7 +39,7 @@ def log():
 
 
 def submit(path):
-    path = Path(path)
+    path = Path(path).resolve()
     first = json.loads(path.read_text().splitlines()[0])
     b = uuid.uuid4().hex
     body = (f'--{b}\r\nContent-Disposition: form-data; name="purpose"\r\n\r\nbatch\r\n'
