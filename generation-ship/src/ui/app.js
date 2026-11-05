@@ -274,6 +274,8 @@ function geometry() {
   };
   let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
   const raw = {};
+  // include each board's void zone (beyond its Outer Hull) in the map bounds
+  ids.forEach((b, i) => { for (const p of DATA.boards.void_zone || []) { const [x, y] = tf(p, place(b, i)); minX = Math.min(minX, x); minY = Math.min(minY, y); maxX = Math.max(maxX, x); maxY = Math.max(maxY, y); } });
   ids.forEach((b, i) => {
     const bd = DATA.boards.boards.find((x) => x.id === b), pl = place(b, i);
     for (const s of bd.sections) {
@@ -286,6 +288,7 @@ function geometry() {
   const map = ([x, y]) => [m + (x - minX) * SCALE, m + (y - minY) * SCALE];
   for (const [id, g] of Object.entries(raw)) geo[id] = { poly: g.poly.map(map), c: map(g.c) };
   geo.$outlines = ids.map((b, i) => (DATA.boards.outline || []).map((p) => map(tf(p, place(b, i)))));
+  geo.$voids = ids.map((b, i) => ({ poly: (DATA.boards.void_zone || []).map((p) => map(tf(p, place(b, i)))), label: map(tf([0, -262], place(b, i))) }));
   // The Outer Hull side of each board (side 4 of the hull module) faces the void.
   const per = 13, hullN = 18, start = 4 * per;
   geo.$hulls = ids.map((b, i) => (DATA.boards.outline || []).slice(start, start + hullN + 1).map((p) => map(tf(p, place(b, i)))));
@@ -301,6 +304,7 @@ function renderMap() {
     <rect x="0" y="0" width="${width}" height="${height}" fill="var(--void)"/>`;
   for (let i = 0; i < 60; i++) { const x = (i * 97.3) % width, y = (i * 53.7 + (i % 7) * 31) % height; svg += `<circle cx="${x}" cy="${y}" r="${i % 5 ? 0.8 : 1.4}" fill="var(--star)"/>`; }
   svg += `<text x="10" y="${height - 10}" class="voidlbl">THE VOID</text>`;
+  for (const v of geo.$voids) if (v.poly.length) svg += `<polygon points="${v.poly.map((p) => p.join(",")).join(" ")}" class="voidzone"/><text x="${v.label[0]}" y="${v.label[1]}" text-anchor="middle" class="voidzlbl">VOID</text>`;
   const seen = new Set();
   for (const id of st.order) for (const a of st.sections[id].adj) {
     if (st.sections[id].board === st.sections[a].board) continue; // in-board neighbors share an edge already

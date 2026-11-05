@@ -51,8 +51,9 @@ function boardHTML(b) {
       <text x="${cx}" y="${cy + 19}" text-anchor="middle" font-size="7">${set}</text>`;
   }).join("");
   const out = `<polygon points="${boards.outline.map((p) => p.join(",")).join(" ")}" fill="none" stroke="#1f1b16" stroke-width="2.4" stroke-linejoin="round"/>`;
-  return `<div class="board"><b>Ship board ${b.id}</b> · every board shares this outline · top edge (fins and prow) = Outer Hull · the other five sides dock with any other board
-    <svg viewBox="-215 -265 430 460" width="100%" role="img" aria-label="Ship board ${b.id}">${secs}${out}</svg></div>`;
+  const vz = boards.void_zone ? `<polygon points="${boards.void_zone.map((p) => p.join(",")).join(" ")}" fill="#1b2333" stroke="#1f1b16" stroke-width="1"/><text x="0" y="-262" text-anchor="middle" font-size="12" letter-spacing="4" fill="#9fd8e6">THE VOID</text>` : "";
+  return `<div class="board"><b>Ship board ${b.id}</b> · every board shares this outline · top edge (fins and prow) = Outer Hull, with the void beyond it · the other five sides dock with any other board
+    <svg viewBox="-215 -300 430 495" width="100%" role="img" aria-label="Ship board ${b.id}">${vz}${secs}${out}</svg></div>`;
 }
 function layoutsHTML() {
   const L = boards.layouts || {};

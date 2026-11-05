@@ -274,6 +274,20 @@ def apply_setup(bid, secs):
         s["setup"]["crew"] = n
 
 
+def void_zone():
+    """A crescent of open space printed beyond the Outer Hull side of every board, like Spirit
+    Island's ocean. Not a section yet; reserved for future houses and effects that use the void."""
+    inner = [side_point(HULL, t) for t, _ in HULL_PROFILE]
+    a, b = VERTS[HULL], VERTS[(HULL + 1) % 6]
+    ang = math.radians(30 + 60 * HULL)
+    outer = []
+    for i in range(40, -1, -1):
+        t = i / 40
+        d = max(profile_at(HULL_PROFILE, t) + 28, 105 * math.sin(math.pi * t) ** 0.55)
+        outer.append((a[0] + (b[0] - a[0]) * t + d * math.cos(ang), a[1] + (b[1] - a[1]) * t + d * math.sin(ang)))
+    return [[round(x, 1), round(y, 1)] for x, y in inner + outer]
+
+
 def outline():
     pts = []
     for k in range(6):
@@ -338,7 +352,7 @@ def main():
     boards = [build_board(b, s) for b, s in BOARDS.items()]
     layouts = {n: build_layout(n, c, boards) for n, c in LAYOUTS.items()}
     out = {"layout": "Every board shares one outline: a hexagonal hull module (circumradius 180, centre 0,0). Side 4 (top) is the Outer Hull; sides 0-3 and 5 are docking sides with a point-symmetric tab/slot profile, so any docking side mates with any other. `layouts` place boards on a hex grid ([x, y, rotation in degrees]) with each Hull facing the void; `links` join sections across docked sides.",
-           "shape": "hex", "radius": R, "hull_side": HULL, "outline": outline(),
+           "shape": "hex", "radius": R, "hull_side": HULL, "outline": outline(), "void_zone": void_zone(),
            "default_layout": {str(k): v for k, v in DEFAULT_LAYOUT.items()},
            "setup_rule": "Per board: 1 Failure, 2 Faults and 1 Glitch, each in a different section type (rotated between boards), 1 Decay next to the Failure, 6 Crew (2,2,1,1) across 4 sections away from the Failure and Decay.",
            "boards": boards, "layouts": layouts}

@@ -399,3 +399,65 @@ The deck was regenerated (387 cards changed by the new pricing), then retuned:
 | 4 | 75% |
 
 The 4-player overshoot from the previous entry is gone.
+
+# Round 2 (designer decisions after playtest 1)
+
+Changes:
+- Legacies are ongoing and double-edged, centred on the paired event's sections. Remarkables are net-negative.
+- New Crew powers.
+- The nominee costs 3 credits less (instead of being free).
+- The starting Steward belongs to no house.
+- The destination sets Discoveries per tier.
+- The Direct pairing toggle is dropped.
+- Each board gets a void zone (visual only).
+
+Retuning:
+- Purpose pool: 7 per player.
+- Galvan: one extra fast card per 2 Engineers.
+- Hand bonuses: Gardeners 3, Vigil 3, Foremen 3, Galvan 1, Keel 1.
+
+**2-player sweep** (seat-swapped, 210 games per house): 70%, with houses within +7.5 / −3.5.
+
+**Player counts** (8 sampled combinations × 10 games):
+
+| Players | Win rate |
+|---|---|
+| 1 | 63% |
+| 2 | 70% |
+| 3 | 80% |
+| 4 | 75% |
+
+The 1- and 3-player results drift either side of target. Re-check with larger runs before tuning per player count.
+
+**Destinations** (level 1 → level 6):
+- Verdant Reach (2 Discoveries per tier): 75% → 30%.
+- Cinder (3): 65% → 19%.
+- Long Dark: 4 per tier gave 24% → 5%, and 3 per tier gave 40% → 14% (it requires Understanding III while draining Purpose). It is now 2 per tier: 65% / 54% / 25% at levels 1 / 3 / 6.
+
+**Landfall variants** (level 0):
+
+| Variant | Win rate | Before |
+|---|---|---|
+| Begin when ready | 76% | (no cost now; it used to cost 15–20 points) |
+| Shuffled into Stage III | 45% | 21% |
+
+Shuffled was 21% when passing unready kept the ship from winning until the deck ran out. It is now 45%, with the base win allowed once Landfall has passed. It is a hard variant.
+
+**Layouts:**
+
+| Layout | Win rate |
+|---|---|
+| Pair | 68% |
+| Line3 | 66% |
+| Triad | 76% |
+| Arc3 | 66% |
+| Line4 | 69% |
+| Diamond | 81% |
+| Arc4 | 64% |
+| Fan | 70% |
+
+Fan is no longer an outlier (it was 52%). Diamond, with 16 links, is the easiest.
+
+**Cards** (`sim/CARDS.md`, 448 games):
+- Pick rates: Commons 42%; Commons that add influence 24% (no longer an automatic play); Commons with Crew powers 51%.
+- Remarkables are picked 24%, down from 30%. The capped nominee discount and negative Legacies give them a real cost.
