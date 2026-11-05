@@ -14,11 +14,11 @@
  {
   "id": "batch_6aec1d9ebeb4819092ce87dd85beae30",
   "input": "art/retro_batch3_edits.jsonl",
-  "status": "validating"
+  "status": "finalizing"
  },
  {
   "id": "batch_6aec1da0b6fc819089f793732779c70a",
   "input": "art/retro_batch3_generations.jsonl",
-  "status": "validating"
+  "status": "in_progress"
  }
 ]
