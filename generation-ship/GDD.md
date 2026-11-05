@@ -209,6 +209,8 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 | Failure | City | 3 | 3 | 2 |
 
 - Damage on threat pieces clears at Time passes.
+- **A downgrade clears the piece's damage:** the new, smaller piece starts undamaged.
+- **On the table**, damage is shown by how a piece sits: a damaged Fault lies flat; a Failure lies on its side at 1 damage and stands upside down at 2 (see `art/tokens/token_sheet.svg`).
 - Powers can **repair** (deal damage), **downgrade** (Failure → Fault → Glitch), **vent** (push a piece to an adjacent section; this moves the problem rather than removing it, so it earns no Purpose), and **prevent** (stop a section's Day grow).
 - **Vent and gather are optional:** for each piece, the player may leave it where it is.
 
@@ -754,7 +756,7 @@ A mute toggle is included.
 
 Still open without data: is "move Crew" different from "gather Crew"? (The engine treats them the same.)
 
-Still open (from the physical piece design, 2026-11-05): **does damage carry over on a downgrade** (Failure → Fault → Glitch)? The pieces show mid-turn damage as repair clamps, so the rule has to say what happens to them. Suggested: damage carries over, capped at the new piece's health − 1 (so a downgrade never destroys).
+**Decided (designer, 2026-11-05): damage does not carry over on a downgrade.** A downgraded piece is replaced by an undamaged one. *Engine gap:* `damageThreat` in `src/engine/rules.js` keeps leftover damage as one pool per section (`s.dmg`), not per piece, and `downgrade()` leaves that pool alone, so the prototype does not apply this rule yet.
 
 **Not yet designed:**
 - Haven effects beyond targeting,
