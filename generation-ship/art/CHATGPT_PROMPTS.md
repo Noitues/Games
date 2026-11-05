@@ -20,7 +20,7 @@ Do the same for Dace, Ilka and Pell once you have a favourite of each.
 
 **Opener**
 ```
-I'm making concept art for a cooperative board game called Generation Ship: Great Houses steward a vast, ageing generation ship; generations of leaders rise and retire; the crew live inside a machine they no longer fully understand. Every image in this chat uses this style: GRIMDARK science-fantasy oil painting. Rust, bone, lamp-smoke and iron devotion; a ship that has become a cathedral of maintenance rituals. Palette: near-black browns (#14110F, #2A221C), rust (#7A2A14), oxblood (#8A2A1E), bone (#D8CFC0), tarnished brass (#8A6A3A), with warm lamp orange only as a light source. Heavy chiaroscuro, single warm light sources in cold dark space, visible oil-paint brushwork. Never put any text, letters, logos, borders or watermarks in the images. Reply "ready" and wait for my first prompt.
+I'm making concept art for a cooperative board game called Stewards of the Long Voyage: Great Houses steward a vast, ageing generation ship; generations of leaders rise and retire; the crew live inside a machine they no longer fully understand. Every image in this chat uses this style: GRIMDARK science-fantasy oil painting. Rust, bone, lamp-smoke and iron devotion; a ship that has become a cathedral of maintenance rituals. Palette: near-black browns (#14110F, #2A221C), rust (#7A2A14), oxblood (#8A2A1E), bone (#D8CFC0), tarnished brass (#8A6A3A), with warm lamp orange only as a light source. Heavy chiaroscuro, single warm light sources in cold dark space, visible oil-paint brushwork. Never put any text, letters, logos, borders or watermarks in the images. Reply "ready" and wait for my first prompt.
 ```
 
 `ostra.png`
@@ -69,7 +69,7 @@ Tall portrait image. Epic oil painting for a board-game box cover: a colossal go
 
 **Opener**
 ```
-I'm making concept art for a cooperative board game called Generation Ship: Great Houses steward a vast generation ship; generations of leaders rise and retire. Every image in this chat uses this style: STEAMPUNK / SPACEPUNK oil painting — a Victorian engine room that learned to fly. Brass, copper, mahogany, pressure gauges, orreries, glass domes, the blue aether of space. Palette: mahogany (#3A2014), brass (#D9A85A), copper (#B8663A), verdigris teal (#2E5A5A, #7AB0A8), cream paper (#F2E2C0), aether blue (#1E3A4A). Warm gaslight, crisp highlights on polished metal, rich painterly detail, optimistic ingenuity under strain. Never put any text, letters, logos, borders or watermarks in the images. Reply "ready" and wait for my first prompt.
+I'm making concept art for a cooperative board game called Stewards of the Long Voyage: Great Houses steward a vast generation ship; generations of leaders rise and retire. Every image in this chat uses this style: STEAMPUNK / SPACEPUNK oil painting — a Victorian engine room that learned to fly. Brass, copper, mahogany, pressure gauges, orreries, glass domes, the blue aether of space. Palette: mahogany (#3A2014), brass (#D9A85A), copper (#B8663A), verdigris teal (#2E5A5A, #7AB0A8), cream paper (#F2E2C0), aether blue (#1E3A4A). Warm gaslight, crisp highlights on polished metal, rich painterly detail, optimistic ingenuity under strain. Never put any text, letters, logos, borders or watermarks in the images. Reply "ready" and wait for my first prompt.
 ```
 
 `ostra.png`
@@ -118,7 +118,7 @@ Tall portrait image. Oil painting for a board-game box cover: a vast brass gener
 
 **Opener**
 ```
-I'm making concept art for a cooperative board game called Generation Ship: Great Houses steward a vast generation ship; generations of leaders rise and retire. Every image in this chat uses this style: NEW AGE SPACE — the voyage as a long meditation. Luminous airbrushed painting with nebula washes, translucent crystal, soft iridescence, sacred geometry and gentle bloom; people softly lit from within or by aura light, calm and hopeful but specific and grounded (real faces, real hands). Palette: night indigo (#1B1838, #2A2458), lilac (#B48AE0), aqua (#4AC0C8), rose (#F0A0C0), pearl white (#F6F3FC), soft gold accents (#E8D8A0). Keep strong light-and-dark contrast so things stay readable. Never put any text, letters, logos, borders or watermarks in the images. Reply "ready" and wait for my first prompt.
+I'm making concept art for a cooperative board game called Stewards of the Long Voyage: Great Houses steward a vast generation ship; generations of leaders rise and retire. Every image in this chat uses this style: NEW AGE SPACE — the voyage as a long meditation. Luminous airbrushed painting with nebula washes, translucent crystal, soft iridescence, sacred geometry and gentle bloom; people softly lit from within or by aura light, calm and hopeful but specific and grounded (real faces, real hands). Palette: night indigo (#1B1838, #2A2458), lilac (#B48AE0), aqua (#4AC0C8), rose (#F0A0C0), pearl white (#F6F3FC), soft gold accents (#E8D8A0). Keep strong light-and-dark contrast so things stay readable. Never put any text, letters, logos, borders or watermarks in the images. Reply "ready" and wait for my first prompt.
 ```
 
 `ostra.png`
@@ -167,7 +167,7 @@ Tall portrait image. Luminous painting for a board-game box cover: a crystalline
 
 **Opener**
 ```
-I'm making concept art for a cooperative board game called Generation Ship: Great Houses steward a vast generation ship; generations of leaders rise and retire. Every image in this chat uses this style: RETRO SPACE — a 1950s pulp science-fiction paperback cover come to life. Gouache painting with flat colour and soft painted gradients, halftone-dot shading, chunky outlines, chrome highlights, rocket fins, atomic starbursts, ringed planets, mid-century modern interiors, a cheerful key light. People are sincere, not parody; the stakes are real. Palette: deep teal (#0F3A48), turquoise (#3AB0A8), tangerine (#E8603A), mustard gold (#F6C85A), cream (#FBEFD6), pink (#E88AA0), lime (#A8C860). Never put any text, letters, logos, borders or watermarks in the images. Reply "ready" and wait for my first prompt.
+I'm making concept art for a cooperative board game called Stewards of the Long Voyage: Great Houses steward a vast generation ship; generations of leaders rise and retire. Every image in this chat uses this style: RETRO SPACE — a 1950s pulp science-fiction paperback cover come to life. Gouache painting with flat colour and soft painted gradients, halftone-dot shading, chunky outlines, chrome highlights, rocket fins, atomic starbursts, ringed planets, mid-century modern interiors, a cheerful key light. People are sincere, not parody; the stakes are real. Palette: deep teal (#0F3A48), turquoise (#3AB0A8), tangerine (#E8603A), mustard gold (#F6C85A), cream (#FBEFD6), pink (#E88AA0), lime (#A8C860). Never put any text, letters, logos, borders or watermarks in the images. Reply "ready" and wait for my first prompt.
 ```
 
 `ostra.png`

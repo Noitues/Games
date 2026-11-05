@@ -329,7 +329,7 @@ def sheet():
     W, H = 1800, 2010
     o = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">', defs(),
          f'<rect width="{W}" height="{H}" fill="#EDE6D8"/>',
-         label(60, 62, "Generation Ship · piece concepts, v3", 30, "bold", "#0F3A48", "start"),
+         label(60, 62, "Stewards of the Long Voyage · piece concepts, v3", 30, "bold", "#0F3A48", "start"),
          label(60, 92, "The machine is grey cast plastic; the people are wood. Threat escalates by silhouette: flat → wheel → tower. "
                "Damage is shown by how a piece sits, with no extra parts.", 16, "normal", "#4A4F55", "start"),
          f'<rect x="1640" y="40" width="{mmv(10)}" height="8" fill="#0F3A48"/>', label(1690, 66, "10 mm, to scale", 13)]

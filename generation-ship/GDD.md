@@ -1,6 +1,6 @@
-# Generation Ship — Game Design Document v0
+# Stewards of the Long Voyage — Game Design Document v0
 
-*Working title: none chosen yet. "Generation Ship" is a placeholder.*
+*Title: **Stewards of the Long Voyage** (chosen 2026-11-05). "Generation Ship" was the working title; the repo folder keeps that name.*
 
 **Status:** v0. This document records the decisions made during the design conversation, the reasons for them, and what is still open. Values marked **(default)** were not decided in conversation. They are starting points for the prototype, live in the config file, and are listed again under *Open questions*.
 
@@ -773,4 +773,3 @@ Still open without data: is "move Crew" different from "gather Crew"? (The engin
 - a dummy candidate deck for low player counts,
 - scenarios (not until the full game is polished),
 - "learning from failure" (Purpose from Decay) as a possible house trait,
-- a game name.

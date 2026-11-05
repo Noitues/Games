@@ -10,7 +10,7 @@ Both work with the prompt below; it tells Claude to prefer reproducible scripts 
 
 ---
 
-You are helping me produce physical-product renders for my board game **Generation Ship**, so I can choose an art direction. Build everything in **Blender** with **reproducible Python scripts**. Don't hand-place anything that can't be regenerated.
+You are helping me produce physical-product renders for my board game **Stewards of the Long Voyage**, so I can choose an art direction. Build everything in **Blender** with **reproducible Python scripts**. Don't hand-place anything that can't be regenerated.
 
 ## Get the project
 - Repo: `https://github.com/Noitues/Games`, branch `claude/spirit-island-time-game-hm161z`. If it isn't cloned yet, clone it; otherwise `git pull` that branch. The game lives in `generation-ship/`.

@@ -1,4 +1,4 @@
-# Generation Ship
+# Stewards of the Long Voyage
 
 A cooperative board game prototype built on Spirit Island's turn structure. Explore/Build/Ravage becomes **Dawn / Day / Dusk**: generations of leaders move down a conveyor, carry each era's crisis with them, and retire to a Wall of Leaders.
 

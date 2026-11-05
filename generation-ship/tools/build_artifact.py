@@ -14,7 +14,7 @@ src = (ROOT / "index.html").read_text()
 head = re.search(r"<head>(.*?)</head>", src, re.S).group(1)
 body = re.search(r"<body>(.*?)</body>", src, re.S).group(1)
 head = re.sub(r'<meta charset="utf-8">\s*|<meta name="viewport"[^>]*>\s*', "", head)
-page = f"""<title>Generation Ship</title>
+page = f"""<title>Stewards of the Long Voyage</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 {head.strip()}
 <style>
@@ -22,8 +22,8 @@ page = f"""<title>Generation Ship</title>
 </style>
 {body.strip()}
 """
-page = page.replace("<title>Generation Ship</title>\n<title>Generation Ship</title>", "<title>Generation Ship</title>")
-page = re.sub(r"(<title>Generation Ship</title>\n<meta[^>]*>\n)<title>[^<]*</title>\n?", r"\1", page)
+page = page.replace("<title>Stewards of the Long Voyage</title>\n<title>Stewards of the Long Voyage</title>", "<title>Stewards of the Long Voyage</title>")
+page = re.sub(r"(<title>Stewards of the Long Voyage</title>\n<meta[^>]*>\n)<title>[^<]*</title>\n?", r"\1", page)
 out = ROOT / "dist"
 out.mkdir(exist_ok=True)
 (out / "artifact.html").write_text(page)

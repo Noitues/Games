@@ -1,4 +1,4 @@
-# Generation Ship — Art Brief and Prompt Set
+# Stewards of the Long Voyage — Art Brief and Prompt Set
 
 This brief covers four candidate art directions:
 - A: Grimdark,

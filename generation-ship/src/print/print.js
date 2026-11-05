@@ -110,7 +110,7 @@ const REF = `<div class="ref">
   <h3>Setup (2 players)</h3><p>Boards A–B. Decay pool 3 per player − 1; Purpose pool 8 per player; event deck 3 Stage I / 4 Stage II / 5 Stage III (Stage I on top). Draw the first event and a random Common leader into Dawn, Seed, then move them to Day.</p></div>`;
 
 const parts = {
-  ref: `<h1>Generation Ship: rules reference</h1>${REF}`,
+  ref: `<h1>Stewards of the Long Voyage: rules reference</h1>${REF}`,
   houses: `<h2>House boards</h2>${houses.houses.map(houseBoard).join("")}`,
   boards: `<h2>Ship boards</h2>${boards.boards.map(boardHTML).join("")}<h2>Ship layouts</h2><div style="padding:0">${layoutsHTML()}</div>`,
   events: `<h2>Event cards</h2><div class="sheet">${[...events.cards, events.landfall].map(eventCard).join("")}</div>`,
