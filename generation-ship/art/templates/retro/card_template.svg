@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="69.0mm" height="94.0mm" viewBox="-3.0 -3.0 69.0 94.0">
 <rect x="-3.0" y="-3.0" width="69.0" height="94.0" fill="#E8603A"/>
 <rect x="0" y="0" width="63.0" height="88.0" rx="3" fill="none" stroke="#000" stroke-width="0.2" stroke-dasharray="1 1"/>
-<g fill="#FBEFD6"><rect x="4.0" y="1.5" width="55.0" height="6.5" rx="2"/><rect x="4.0" y="51.0" width="55.0" height="18.0" rx="2"/></g>
-<path id="portrait" d="M7.00,49.00 L56.00,49.00 Q59.00,49.00 59.00,46.00 L59.00,27.00 C59.00,17.10 42.50,9.60 31.50,9.00 C20.50,9.60 4.00,17.10 4.00,27.00 L4.00,46.00 Q4.00,49.00 7.00,49.00 Z" fill="#0F3A48"/>
+<g fill="#FBEFD6"><rect x="4.0" y="1.5" width="55.0" height="6.5" rx="2"/><rect x="11.0" y="51.0" width="48.0" height="18.0" rx="2"/></g>
+<path id="portrait" d="M14.00,49.00 L57.00,49.00 Q60.00,49.00 60.00,46.00 L60.00,27.00 C60.00,17.10 45.30,9.60 35.50,9.00 C25.70,9.60 11.00,17.10 11.00,27.00 L11.00,46.00 Q11.00,49.00 14.00,49.00 Z" fill="#0F3A48"/>
 <g id="legacy" fill="#0F3A48"><rect x="2.0" y="70.5" width="59.0" height="16.0" rx="4.0"/></g>
 </svg>

@@ -76,6 +76,8 @@ HOUSE_LOOK = {   # colour, background motif (the emblem is EMBLEMS)
 EDITS_6 = {f"house_{h}_v3": ("house_board_v3", f"house_{h}_guide.png", "1536x1024", 1) for h in HOUSE_LOOK}
 EDITS_7 = {f"house_{h}_v3": ("house_board_v3", f"house_{h}_guide.png", "1536x1024", 1) for h in HOUSE_LOOK_2}
 HOUSE_LOOK.update(HOUSE_LOOK_2)
+EDITS_8 = {**{f"card_frame_v4{v}": ("card_frame_v4", "card_guide.png", "1104x1504", 1) for v in "ab"},
+           **{f"wall_panel_v4{v}": ("wall_panel_v3", "wall_guide.png", "2320x960", 1) for v in "ab"}}
 GENERATIONS = {
     "card_back": ("card_back", None, "1104x1504", 1),
     **{f"icon_{t}": (f"icon_{t}", None, "1024x1024", 1) for t in ("infrastructure", "residential", "government", "agricultural")},
@@ -126,10 +128,12 @@ def build(jobs, endpoint, style, ps):
 def main():
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument("--batch", type=int, default=2, choices=(2, 3, 4, 5, 6, 7))
+    ap.add_argument("--batch", type=int, default=2, choices=(2, 3, 4, 5, 6, 7, 8))
     batch = ap.parse_args().batch
     ps = prompts(6 if batch == 7 else batch)      # batch 7 reuses batch 6's house-board prompt
-    edits, gens = {2: (EDITS, GENERATIONS), 3: (EDITS_3, GENERATIONS_3), 4: ({}, GENERATIONS_4), 5: (EDITS_5, {}), 6: (EDITS_6, {}), 7: (EDITS_7, {})}[batch]
+    if batch == 8:
+        ps = {**prompts(3), **ps}                  # batch 8's Wall reuses batch 3's wall_panel_v3
+    edits, gens = {2: (EDITS, GENERATIONS), 3: (EDITS_3, GENERATIONS_3), 4: ({}, GENERATIONS_4), 5: (EDITS_5, {}), 6: (EDITS_6, {}), 7: (EDITS_7, {}), 8: (EDITS_8, {})}[batch]
     text = (ROOT / "art" / "CHATGPT_PROMPTS.md").read_text()
     sec = text.split("## D · Retro Space", 1)[1]
     opener = re.search(r"\*\*Opener\*\*\n```\n(.*?)\n```", sec, re.S).group(1)

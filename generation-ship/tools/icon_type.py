@@ -15,8 +15,27 @@ INK = "#0F3A48"
 
 
 @lru_cache(maxsize=None)
-def glyph(name, size):
-    return Image.open(PNG / f"{name}.png").convert("RGBA").resize((size, size), Image.LANCZOS)
+def glyph(name, size, dim=False):
+    """A glyph; dim=True greys it out (an absent guild in the card's guild column)."""
+    g = Image.open(PNG / f"{name}.png").convert("RGBA").resize((size, size), Image.LANCZOS)
+    if dim:
+        grey = g.convert("LA").convert("RGBA")
+        grey = Image.blend(grey, Image.new("RGBA", g.size, (251, 239, 214, 0)), 0.45)
+        grey.putalpha(g.getchannel("A").point(lambda v: int(v * 0.55)))
+        g = grey
+    return g
+
+
+def guild_column(im, s, origin, guilds, frame_mm):
+    """The Spirit Island-style guild column: all eight guilds top to bottom, the card's own in colour,
+    the others greyed out. s = px per mm; origin = the card's top-left in mm on im; frame_mm = (centres
+    list, icon diameter) from tools/retro_templates.py."""
+    centres, d = frame_mm
+    order = ["Engineers", "Navigators", "Bureaucrats", "Farmers", "Medics", "Laborers", "Keepers", "Scholars"]
+    size = round(d * s)
+    for (cx, cy), g in zip(centres, order):
+        gl = glyph(f"guild_{g}", size, dim=g not in guilds)
+        im.paste(gl, (round((origin[0] + cx) * s - size / 2), round((origin[1] + cy) * s - size / 2)), gl)
 
 
 def title_font(px):

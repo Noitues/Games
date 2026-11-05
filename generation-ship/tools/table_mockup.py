@@ -27,6 +27,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "art" / "source" / "retro"
 OUT = ROOT / "art" / "mockups"
 PX = 6                                # px per mm on the table
+CARD_FRAME = "card_frame_v4b_exact.png"   # people cards: the frame with the guild column (Retro batch 8)
 TABLE = (900, 640)                    # mm
 FONT_B = str(ROOT / "art" / "fonts" / "Righteous-Regular.ttf")          # style guide: titles
 FONT = str(ROOT / "art" / "fonts" / "JosefinSans[wght].ttf")            # style guide: body text
@@ -130,7 +131,7 @@ def wrap(d, text, f, width):
 def people_card(person, portrait, name):
     """A finished people card at 16 px/mm (no bleed), from card_frame_v3b_exact."""
     s, b = rt.CARD_PX, rt.BLEED
-    im = Image.open(SRC / "card_frame_v3b_exact.png").convert("RGB")
+    im = Image.open(SRC / CARD_FRAME).convert("RGB")
     portrait_into(im, portrait, s, (b, b))
     im = im.crop((b * s, b * s, (b + rt.CARD_W) * s, (b + rt.CARD_H) * s))
     d = ImageDraw.Draw(im)
@@ -141,8 +142,8 @@ def people_card(person, portrait, name):
     tx, ty, tw, th = rt.CARD_TEXT
     f = jfont(round(1.9 * s))
     y = ty * s
-    gx = it.draw(im, (tx + 2) * s, y + 3.4 * s, [("icon", f"guild_{g}") for g in person["guilds"]], round(3.6 * s))   # guilds
-    it.draw(im, gx + 1.5 * s, y + 3.4 * s, icons.effect_items(person["effects"]), round(4.4 * s), max_w=(tx + tw - 2) * s - gx)   # effect
+    it.guild_column(im, s, (0, 0), person["guilds"], (rt.guild_centres(), rt.GUILD_D))                     # all eight guilds
+    it.draw(im, (tx + 2) * s, y + 3.4 * s, icons.effect_items(person["effects"]), round(4.4 * s), max_w=(tw - 4) * s)   # effect
     y += 6.6 * s
     for line in wrap(d, "Reign: " + person["reign"]["text"], f, (tw - 4) * s)[:3]:     # the panel ends above the accent
         d.text(((tx + 2) * s, y), line, fill=teal, font=f)

@@ -405,3 +405,14 @@ Wide landscape image, exactly the layout of the attached guide, filling the fram
 ## Retro batch 7  (folder `art/source/retro/`)
 
 House boards for the other four houses (Meridian, Vigil, Foremen, Tellers), with the batch-6 prompt (`house_board_v3.png` above); colours, emblems and background motifs are in `tools/make_retro_batch.py` (`EMBLEMS`, `HOUSE_LOOK_2`). Built by `tools/make_retro_batch.py --batch 7`.
+
+---
+
+## Retro batch 8  (folder `art/source/retro/`)
+
+The guild column (designer, 2026-11-05): all eight guilds down the left edge of every people card, the ones the card lacks greyed out, as in Spirit Island's element column, so a fanned hand shows every card's guilds. The master window narrows to 49 × 40 mm and moves right (x 11–60 mm) so the column stays hidden when a card is slotted in the Wall. New card frame and Wall panel over the new guides; the Wall uses the batch-3 `wall_panel_v3` prompt. Built by `tools/make_retro_batch.py --batch 8`.
+
+`card_frame_v4.png` (edit of `card_guide.png`)
+```
+Tall portrait image, exactly the layout of the attached guide. Repaint the guide as a finished, empty trading-card frame for this game, flat and straight-on like a printed card template, quiet enough that hundreds of these on a table look calm. Keep every shape exactly where it is and exactly as large as it is: the thin name bar at the top; the narrow column down the left edge with its eight round sockets stacked top to bottom; the arched portrait window beside it (straight sides, a gently rounded arch on top, a flat foot); the text panel below the window; and the large rounded Legacy plaque across the bottom. The arch window and the Legacy plaque stay perfectly flat, empty deep teal (#0F3A48); the name bar, text panel, column and its eight sockets stay plain, empty cream. Paint only the frame around them: a cream card border with a very fine halftone texture, a slim brushed-chrome bezel tracing the arch window, the column and the Legacy plaque, a thin deep-teal keyline inside the card edge, and one small tangerine atomic starburst as the only accent, centred just above the Legacy plaque. No text, letters, numbers, logos or watermarks.
+```

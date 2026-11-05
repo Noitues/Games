@@ -26,16 +26,29 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "art" / "templates" / "retro"
 
 # --- master shapes (mm) -------------------------------------------------------------------------
-WIN_W, WIN_H = 55.0, 40.0          # the master window
+WIN_W, WIN_H = 49.0, 40.0          # the master window (49 wide since 2026-11-05: the guild column needs the left edge)
 WIN_SIDE = 18.0                    # where the straight sides end and the arch starts (from the top)
 WIN_FOOT_R = 3.0                   # bottom corner radius
 PLAQUE_W, PLAQUE_H, PLAQUE_R = 59.0, 16.0, 4.0
 
 CARD_W, CARD_H, BLEED = 63.0, 88.0, 3.0
-CARD_WIN = (4.0, 9.0)              # top-left of the window on the card
+CARD_WIN = (11.0, 9.0)             # top-left of the window on the card
 CARD_PLAQUE = (2.0, 70.5)          # top-left of the Legacy plaque on the card
 CARD_NAME = (4.0, 1.5, 55.0, 6.5)  # name bar x, y, w, h
-CARD_TEXT = (4.0, 51.0, 55.0, 18.0)  # guilds + effect text panel x, y, w, h
+CARD_TEXT = (11.0, 51.0, 48.0, 18.0)  # effect + Reign text panel x, y, w, h
+# The guild column (designer, 2026-11-05, after Spirit Island's element column): all eight guilds
+# down the left edge, those the card does not have greyed out, so a fanned hand shows every card's
+# guilds at a glance. It lies outside both Wall windows, so a slotted card hides it.
+GUILD_ORDER = ["Engineers", "Navigators", "Bureaucrats", "Farmers", "Medics", "Laborers", "Keepers", "Scholars"]
+CARD_GUILDS = (2.0, 10.0, 7.5, 54.0)     # column x, y, w, h
+GUILD_D, GUILD_PITCH = 6.0, 6.6           # icon diameter and pitch (mm)
+
+
+def guild_centres():
+    """Centres (mm, card coordinates) of the eight guild sockets, top to bottom."""
+    x, y, w, h = CARD_GUILDS
+    top = y + (h - GUILD_PITCH * (len(GUILD_ORDER) - 1)) / 2
+    return [(x + w / 2, top + i * GUILD_PITCH) for i in range(len(GUILD_ORDER))]
 
 WALL_W, WALL_H = 290.0, 120.0      # one panel of the tri-fold Wall
 WALL_SLOTS = 4
@@ -124,8 +137,11 @@ def card_guide():
     s, b = CARD_PX, BLEED
     im = Image.new("RGB", (round((CARD_W + 2 * b) * s), round((CARD_H + 2 * b) * s)), TANGERINE)
     d = ImageDraw.Draw(im)
-    for x, y, w, h in (CARD_NAME, CARD_TEXT):
+    for x, y, w, h in (CARD_NAME, CARD_TEXT, CARD_GUILDS):
         d.rounded_rectangle(((x + b) * s, (y + b) * s, (x + b + w) * s, (y + b + h) * s), 2 * s, fill=CREAM, outline=CHROME, width=s)
+    for cx, cy in guild_centres():
+        r = GUILD_D / 2
+        d.ellipse(((cx - r + b) * s, (cy - r + b) * s, (cx + r + b) * s, (cy + r + b) * s), fill=CREAM, outline=CHROME, width=max(2, s // 2))
     draw_windows(d, s, [(b, b)], TEAL, CHROME, s)
     return im
 
