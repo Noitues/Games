@@ -3,9 +3,12 @@
 // the art tools). Cards are poker size (63 x 88 mm), nine per A4 page.
 const get = async (f) => (await fetch(f)).json();
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-const [people, events, discoveries, crisis, boards, houses, destinations, ICONS] = await Promise.all(
+const [allPeople, events, discoveries, crisis, boards, houses, destinations, ICONS, PLAYTEST] = await Promise.all(
   ["people.json", "events.json", "discoveries.json", "crisis.json", "boards.json", "houses.json", "destinations.json"]
-    .map((f) => get(`data/${f}`)).concat([get("art/icons/effects.json")]));
+    .map((f) => get(`data/${f}`)).concat([get("art/icons/effects.json"), get("data/playtest_deck.json")]));
+// The curated playtest deck (tools/playtest_deck.py) unless "all 400" is chosen.
+const ptIds = new Set([...PLAYTEST.common, ...PLAYTEST.remarkable]);
+const peopleFor = () => (document.getElementById("fulldeck")?.checked ? allPeople : allPeople.filter((c) => ptIds.has(c.id)));
 const ART = "art/source/retro/";
 const exists = async (url) => { try { return (await fetch(url, { method: "HEAD" })).ok; } catch { return false; } };
 
@@ -215,8 +218,8 @@ const parts = {
   events: async () => `<h2>Event cards</h2>${sheet([...events.cards, events.landfall].map(eventCard))}`,
   disc: async () => `<h2>Discoveries, Ship in Crisis and destinations</h2>${sheet(discoveries.map(discoveryCard).concat(crisis.cards.map(crisisCard)))}${destinations.destinations.map(destinationSheet).join("")}`,
   tokens: async () => `<h2>Tokens</h2>${tokensHTML()}`,
-  rem: async () => `<h2>Remarkable people</h2>${sheet(people.filter((c) => c.tier === "Remarkable").map(personCard))}`,
-  common: async () => `<h2>Common people</h2>${sheet(people.filter((c) => c.tier === "Common").map(personCard))}`,
+  rem: async () => `<h2>Remarkable people</h2>${sheet(peopleFor().filter((c) => c.tier === "Remarkable").map(personCard))}`,
+  common: async () => `<h2>Common people</h2>${sheet(peopleFor().filter((c) => c.tier === "Common").map(personCard))}`,
   backs: async () => `<h2>Card backs</h2><p class="note">Print on the back of the people-card pages (flip on the long edge).</p>${sheet(Array(9).fill(`<div class="card back"><img class="frame" src="${ART}card_back.png" alt=""></div>`))}`,
 };
 async function render() {
@@ -224,5 +227,5 @@ async function render() {
   document.getElementById("out").innerHTML = (await Promise.all(on.map((p) => parts[p]()))).join("");
   document.body.dataset.ready = "1";
 }
-document.querySelectorAll("[data-part], #a3boards").forEach((x) => x.addEventListener("change", render));
+document.querySelectorAll("[data-part], #a3boards, #fulldeck").forEach((x) => x.addEventListener("change", render));
 render();

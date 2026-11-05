@@ -25,5 +25,6 @@ export const DEFAULT_CONFIG = {
   crewRequirementPerPlayer: 0,  // base Landfall requirement: Crew per player
   layout: null,                 // board layout from data/boards.json (default: by player count)
   boards: null,                 // override: board ids in play without a layout (e.g. ["C"] for a solo board test)
+  peopleDeck: null,             // list of card ids to use instead of all 400 (data/playtest_deck.json)
   maxGenerations: 40,            // safety stop
 };

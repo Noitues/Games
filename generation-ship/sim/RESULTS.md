@@ -480,3 +480,19 @@ Open: houses spread wider in solo play (no teammate covers a weak house). Vigil 
 - **Effect:** the 2-player seat-swapped sweep (8 games per seat order, single core) fell from about 70% to 65%.
 - **Compensation:** Purpose pool from 7 to **6 per player**, which gives **75%**. Houses are within +7 / −5 (Galvan highest, Voidwardens lowest).
 - **Doc fix:** the GDD's Purpose numbers (8 per player) had drifted from the engine (7). Both now say 6.
+
+## Playtest deck (150 cards)
+`tools/playtest_deck.py` writes `data/playtest_deck.json`: 120 Commons and 30 Remarkables, keeping the full deck's cost curve, with guilds as even as possible (44–47 icons per guild among the Commons) and every effect type represented.
+
+2-player seat-swapped sweep (8 games per seat order, single core, Purpose pool 6):
+
+| Deck | Win rate | Note |
+|---|---|---|
+| Full deck | 75% | |
+| Least-played 20% and top 10% removed | 70% | |
+| Least-played 20% and top 5% removed | 70% | Houses +10 / −12 |
+| **Least-played 20% removed (chosen)** | **79%** | Houses +7 / −9 |
+
+The strongest few cards swing the result. The chosen deck is about 4 points easier than the full deck, which suits learning games; the full deck stays the balance reference.
+
+Use the playtest deck in the prototype (setup: "People deck") or in sims with `--cfg '{"peopleDeck": [...]}'`. Print-and-play uses it by default.

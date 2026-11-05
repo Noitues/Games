@@ -68,8 +68,11 @@ export function createGame(data, cfgIn = {}, seed = 1) {
   });
   // decks
   const people = data.people;
-  st.decks.common = shuffle(st, people.filter((c) => c.tier === "Common").map((c) => c.id));
-  st.decks.remarkable = shuffle(st, people.filter((c) => c.tier === "Remarkable").map((c) => c.id));
+  // cfg.peopleDeck: optional list of card ids (e.g. the curated playtest deck); default all 400.
+  const inDeck = cfg.peopleDeck ? new Set(cfg.peopleDeck) : null;
+  const deckCards = inDeck ? people.filter((c) => inDeck.has(c.id)) : people;
+  st.decks.common = shuffle(st, deckCards.filter((c) => c.tier === "Common").map((c) => c.id));
+  st.decks.remarkable = shuffle(st, deckCards.filter((c) => c.tier === "Remarkable").map((c) => c.id));
   st.decks.commonDiscard = []; st.decks.remarkableDiscard = [];
   const ev = data.events.cards;
   const dest = activeDestination(data, cfg);

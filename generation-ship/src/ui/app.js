@@ -23,7 +23,9 @@ async function loadData() {
     ["people.json", "events.json", "discoveries.json", "crisis.json", "boards.json", "houses.json"].map(get));
   let destinations = { destinations: [] };
   try { destinations = await get("destinations.json"); } catch { /* optional */ }
-  const data = { people, events, discoveries, crisis, boards, houses, destinations };
+  let playtestDeck = null;
+  try { playtestDeck = await get("playtest_deck.json"); } catch { /* optional */ }
+  const data = { people, events, discoveries, crisis, boards, houses, destinations, playtestDeck };
   data.cardById = Object.fromEntries(people.map((c) => [c.id, c]));
   data.eventById = Object.fromEntries([...events.cards, events.landfall].map((e) => [e.id, e]));
   data.discoveryById = Object.fromEntries(discoveries.map((d) => [d.id, d]));
@@ -708,7 +710,8 @@ function start() {
   seats = seatEls.map((s) => s.querySelector(".c").value);
   const cfg = { players: P, houses, layout: $("layout").value || null, tierConditions: $("tiers").value,
     destination: $("destination").value || null, destinationLevel: +$("level").value,
-    landfallCard: { off: false, choice: true, shuffled: "shuffled" }[$("landfall").value] ?? false };
+    landfallCard: { off: false, choice: true, shuffled: "shuffled" }[$("landfall").value] ?? false,
+    peopleDeck: $("deck")?.value === "playtest" && DATA.playtestDeck ? [...DATA.playtestDeck.common, ...DATA.playtestDeck.remarkable] : null };
   cfg.seed = +$("seed").value || 1;
   D = new Driver(DATA, cfg, seats, cfg.seed);
   D.cfgIn = cfg;
