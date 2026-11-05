@@ -14,6 +14,8 @@ Its purpose is to produce real, painted concept renders so the designer can choo
 
 ---
 
+> **Using ChatGPT?** Paste the ready-made messages in `art/CHATGPT_PROMPTS.md` instead of the Part 2 prompts.
+
 ## Part 1 — Shared specs (all styles)
 
 ### The game in one paragraph (for any artist)
