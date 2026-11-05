@@ -1,0 +1,107 @@
+"""Build the Retro batch 2 Batch API input files from art/CHATGPT_PROMPTS.md.
+
+    python3 tools/make_retro_batch.py
+    -> art/retro_batch2_edits.jsonl        (/v1/images/edits: a layout guide attached as a data URL)
+    -> art/retro_batch2_generations.jsonl  (/v1/images/generations)
+
+A batch file may hold one endpoint and one model, hence two files. One image per request; the
+custom_id "retro__<name>" (or "retro__<name>__<k>" for variant k) is what
+tools/decode_image_batch.py turns into art/source/retro/<name>.png (<name>_<k>.png).
+Submit with tools/submit_batch.py. Prints the image count and an estimated cost.
+"""
+import base64
+import json
+import re
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from generate_images import BATCH_IMAGE_MODEL  # noqa: E402
+import generate_retro_v2  # noqa: E402
+
+ROOT = Path(__file__).resolve().parent.parent
+GUIDES = ROOT / "art" / "templates" / "retro"
+QUALITY = "high"
+# Batch rates per 1M tokens (developers.openai.com pricing, 2026-11-05): image output, image input, text input.
+RATE_OUT, RATE_IMG_IN, RATE_TXT_IN = 15.0, 4.0, 2.5
+# Measured on the v2 run (high quality): about 1,700 output tokens for a card, 1,230 for the Wall.
+EST_OUT_TOKENS, EST_GUIDE_TOKENS, EST_TEXT_TOKENS = 1700, 1500, 500
+
+HOUSES = {
+    "galvan": "Galvan, the Spark-Wardens: fast, aggressive repair; lightning bolts, sparks and coiled cables, electric-blue accent",
+    "keel": "Keel, the Hullwrights: slow and defensive; riveted hull plates, braces and anchors, steel-grey and turquoise accent",
+    "gardeners": "Gardeners, the Greenkeepers: influence as armour; vines, leaves and seed pods, lime-green accent",
+    "voidwardens": "Voidwardens, the Airlock Keepers: Outer Hull specialists; airlock hatches, portholes and stars, deep violet accent",
+}
+
+# name: (prompt key, guide or None, size, variants)
+EDITS = {
+    "card_frame_v2c": ("card_frame_v2", "card_guide.png", "1104x1504", 1),
+    "card_frame_v2d": ("card_frame_v2", "card_guide.png", "1104x1504", 1),
+    "wall_panel_v2c": ("wall_panel_v2", "wall_guide.png", "2320x960", 1),
+    "wall_panel_v2d": ("wall_panel_v2", "wall_guide.png", "2320x960", 1),
+    **{f"board_{b}_v2": ("board", f"board_{b}_guide.png", "1296x1536", 2) for b in "abcd"},
+}
+GENERATIONS = {
+    "card_back": ("card_back", None, "1104x1504", 1),
+    **{f"icon_{t}": (f"icon_{t}", None, "1024x1024", 1) for t in ("infrastructure", "residential", "government", "agricultural")},
+    **{f"token_{t}": (f"token_{t}", None, "1024x1024", 1) for t in ("glitch", "fault", "failure", "crew", "decay", "breakthrough")},
+    "token_influence": ("token_influence", None, "1536x1024", 1),
+    **{f"house_{h}": ("house_<id>", None, "1536x1024", 1) for h in HOUSES},
+}
+
+
+def prompts():
+    text = (ROOT / "art" / "CHATGPT_PROMPTS.md").read_text()
+    sec = text.split("## Retro batch 2", 1)[1]
+    return {k: v for k, v in re.findall(r"`([\w<>]+)\.png`[^\n]*\n```\n(.*?)\n```", sec, re.S)}
+
+
+def build(jobs, endpoint, style, ps):
+    lines, n_img, n_guide = [], 0, 0
+    for name, (key, guide, size, variants) in jobs.items():
+        if key.endswith("_v2"):
+            full = generate_retro_v2.prompt_for(key.removesuffix("_v2"))
+        else:
+            body = ps[key]
+            if key == "house_<id>":
+                body = body.replace("<identity>", HOUSES[name.removeprefix("house_")])
+            full = f"{style}\n\n{body}"
+        for k in range(variants):
+            b = {"model": BATCH_IMAGE_MODEL, "prompt": full, "size": size, "quality": QUALITY}
+            if guide:
+                data = base64.b64encode((GUIDES / guide).read_bytes()).decode()
+                b["images"] = [{"image_url": f"data:image/png;base64,{data}"}]
+                n_guide += 1
+            else:
+                b["n"] = 1
+            cid = f"retro__{name}" + (f"__{k + 1}" if k else "")
+            lines.append({"custom_id": cid, "method": "POST", "url": endpoint, "body": b})
+            n_img += 1
+    return lines, n_img, n_guide
+
+
+def main():
+    ps = prompts()
+    text = (ROOT / "art" / "CHATGPT_PROMPTS.md").read_text()
+    sec = text.split("## D · Retro Space", 1)[1]
+    opener = re.search(r"\*\*Opener\*\*\n```\n(.*?)\n```", sec, re.S).group(1)
+    style = re.sub(r"Reply \"ready\".*$", "", opener).replace("Every image in this chat uses this style:", "Style:").strip()
+    total_img = total_cost = 0
+    for jobs, endpoint, fname in ((EDITS, "/v1/images/edits", "retro_batch2_edits.jsonl"),
+                                  (GENERATIONS, "/v1/images/generations", "retro_batch2_generations.jsonl")):
+        lines, n_img, n_guide = build(jobs, endpoint, style, ps)
+        out = ROOT / "art" / fname
+        out.write_text("".join(json.dumps(x) + "\n" for x in lines))
+        cost = (n_img * EST_OUT_TOKENS * RATE_OUT + n_guide * EST_GUIDE_TOKENS * RATE_IMG_IN
+                + n_img * EST_TEXT_TOKENS * RATE_TXT_IN) / 1e6
+        total_img += n_img
+        total_cost += cost
+        print(f"{out.relative_to(ROOT)}: {n_img} images ({endpoint}, {BATCH_IMAGE_MODEL}, {QUALITY}), about ${cost:.2f}")
+        for x in lines:
+            print("   ", x["custom_id"], x["body"]["size"])
+    print(f"total: {total_img} images, about ${total_cost:.2f} at the Batch rate")
+
+
+if __name__ == "__main__":
+    main()

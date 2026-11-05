@@ -229,3 +229,79 @@ Tall portrait image. 1950s pulp paperback-style painting for a board-game box co
 - **If the face sits too low** for the card window, reply: "Same image, but zoom out slightly and move her face higher, with more space above and around the head."
 - **If board A gets too busy,** reply: "Same layout, but simplify: calmer room floors, fewer props, stronger colour difference between room types."
 - **Minimum first pass:** `ostra.png` and `board_a.png` for each style, 8 images in total.
+
+---
+
+## Retro batch 2  (folder `art/source/retro/`)
+
+Built by `tools/make_retro_batch.py` into two Batch API files (one per endpoint): **edits** of the layout guides in `art/templates/retro/` (card frame and Wall variants, boards A–D), and **generations** (card back, section icons, tokens, house boards). Each prompt follows the Retro opener's style text. The card frame and Wall variants reuse `card_frame_v2` and `wall_panel_v2` above.
+
+`board.png` (one prompt for every board; the guide supplies the layout)
+```
+Square-on top-down orthographic illustration, seen from directly above like a floor plan, of one deck module of a 1950s atomic-age generation ship, exactly the layout of the attached guide. Keep the outer outline, the hull, the two fins and every room border exactly where they are; the rooms are the coloured shapes, and each keeps its colour. Paint each room as a mid-century interior seen from above, with walls following the room borders: turquoise rooms are reactor and pump rooms with atom motifs and conduits; tangerine rooms are family apartments with boomerang tables and bunks; pink rooms are council rooms and archives with starburst floors; lime rooms are hydroponic gardens with planters and water tanks. Keep the middle of every room a calm, low-detail floor so game tokens can sit on it. The top edge is a chrome outer hull with portholes and rocket fins; the rooms touching it read as facing space (viewports, airlocks, armour plates). The dark teal crescent above the hull is open space with a few gold starbursts and stars, mostly empty. The grey area around the board stays plain flat grey. Bold, readable colours. No text, letters, numbers, logos or watermarks.
+```
+
+`card_back.png`
+```
+Tall portrait image. The back of a playing card for this game, flat and straight-on, symmetrical in both directions so it looks the same either way up. A deep teal field with a fine halftone texture, a slim chrome border with rounded corners, and in the centre a large chrome-and-tangerine emblem: a generation ship with rocket fins inside a ring like a ringed planet, surrounded by gold atomic starbursts. Calm and clean, like a 1950s paperback back cover. No text, letters, numbers, logos or watermarks.
+```
+
+`icon_infrastructure.png`
+```
+Square image. One flat game icon, centred on a plain cream background: a chunky stylised atom (three elliptical orbits and a round nucleus) in turquoise with a dark teal outline and a small chrome highlight, inside a round turquoise badge. Simple and bold enough to read at 8 mm; no fine detail. No text, letters, numbers or watermarks.
+```
+
+`icon_residential.png`
+```
+Square image. One flat game icon, centred on a plain cream background: a chunky stylised mid-century house with a sloped roof and a round window, in tangerine with a dark teal outline and a small chrome highlight, inside a round tangerine badge. Simple and bold enough to read at 8 mm; no fine detail. No text, letters, numbers or watermarks.
+```
+
+`icon_government.png`
+```
+Square image. One flat game icon, centred on a plain cream background: a chunky five-pointed star in pink with a dark teal outline and a small chrome highlight, inside a round pink badge. Simple and bold enough to read at 8 mm; no fine detail. No text, letters, numbers or watermarks.
+```
+
+`icon_agricultural.png`
+```
+Square image. One flat game icon, centred on a plain cream background: a chunky stylised leaf with a curling stem in lime green with a dark teal outline and a small chrome highlight, inside a round lime badge. Simple and bold enough to read at 8 mm; no fine detail. No text, letters, numbers or watermarks.
+```
+
+`token_glitch.png`
+```
+Square image. One small round game token seen from directly above, centred on a plain cream background: the smallest step of the ship's threat, a Glitch. A mustard-gold disc with a dark teal outline showing a single small crackling spark, a little jagged and playful. Flat print art, halftone shading, readable at 16 mm. No text, letters, numbers or watermarks.
+```
+
+`token_fault.png`
+```
+Square image. One game token seen from directly above, centred on a plain cream background: the middle step of the ship's threat, a Fault. A tangerine hexagon with a dark teal outline showing a cracked gear with two sparks; clearly bigger and more serious than a small spark token. Flat print art, halftone shading, readable at 16 mm. No text, letters, numbers or watermarks.
+```
+
+`token_failure.png`
+```
+Square image. One game token seen from directly above, centred on a plain cream background: the worst step of the ship's threat, a Failure. A large deep-red eight-pointed burst with a dark teal outline and a broken chrome bolt at its centre, alarming but still in the cheerful 1950s style. Flat print art, halftone shading, readable at 20 mm. No text, letters, numbers or watermarks.
+```
+
+`token_crew.png`
+```
+Square image. One game piece seen from directly above, centred on a plain cream background: a Crew token, a round turquoise disc showing the head-and-shoulders silhouette of a crew member in a 1950s space-crew cap, dark teal outline, chrome rim. Flat print art, halftone shading, readable at 16 mm. No text, letters, numbers or watermarks.
+```
+
+`token_decay.png`
+```
+Square image. One game token seen from directly above, centred on a plain cream background: a Decay token for permanent damage, a dull rust-brown square plate with rounded corners, riveted, with a dark scorch mark and a hairline crack, dark teal outline. Clearly different from the bright threat tokens. Flat print art, halftone shading, readable at 16 mm. No text, letters, numbers or watermarks.
+```
+
+`token_influence.png`
+```
+Wide landscape image. Four house influence tokens in a row, seen from directly above on a plain cream background, evenly spaced: identical small domed markers like 1950s rocket-nose caps, in four clearly different colours: cobalt blue, cherry red, mustard gold and pearl white, each with a dark teal outline and a chrome highlight. Flat print art, readable at 14 mm. No text, letters, numbers or watermarks.
+```
+
+`token_breakthrough.png`
+```
+Square image. One game marker seen from directly above, centred on a plain cream background: a Breakthrough marker, a gold atomic starburst with eight long and short rays and a small chrome orb at its centre, dark teal outline, a little glow. Flat print art, readable at 20 mm. No text, letters, numbers or watermarks.
+```
+
+`house_<id>.png` (one per house; `<identity>` comes from `tools/make_retro_batch.py`)
+```
+Wide landscape image. A house player board for this game, flat and straight-on like a printed board-game mat, with every panel left empty for text to be added later. A rounded panel in deep teal and cream with chrome trim. Across the top: a wide empty banner for the house name next to a round emblem. Upper left: three empty side-by-side cards for growth options. Middle: two long horizontal tracks of seven empty round sockets each, linked by a chrome rail. Right: an empty panel for special rules. Bottom: two empty panels for innate powers, each with a row of four small empty icon circles. The house's identity sets the motifs and the accent colour in the border art: <identity>. No text, letters, numbers, logos or watermarks.
+```

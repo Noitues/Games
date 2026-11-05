@@ -17,6 +17,7 @@ painted frame keeps the windows where the layout needs them. --stamp re-cuts the
 as a die-cut or a layout program would.
 """
 import argparse
+import json
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFilter
@@ -161,6 +162,39 @@ def stamp(path, kind):
     return out
 
 
+# --- board guides: data/boards.json drawn flat, one colour per section type ----------------------
+SECTION_COLOURS = {"Infrastructure": TURQ, "Residential": "#F2A060", "Government": "#E88AA0", "Agricultural": "#A8C860"}
+BOARD_SIZE = (1296, 1536)          # px; the board plus its void crescent, portrait, with a margin
+BOARD_MARGIN = 10.0                # board units around the drawing
+
+
+def board_frame(d):
+    """Scale and offset (board units -> px) shared by every board, so the guides line up."""
+    pts = d["outline"] + d["void_zone"]
+    x0, x1 = min(p[0] for p in pts) - BOARD_MARGIN, max(p[0] for p in pts) + BOARD_MARGIN
+    y0, y1 = min(p[1] for p in pts) - BOARD_MARGIN, max(p[1] for p in pts) + BOARD_MARGIN
+    s = min(BOARD_SIZE[0] / (x1 - x0), BOARD_SIZE[1] / (y1 - y0))
+    ox = (BOARD_SIZE[0] - s * (x1 - x0)) / 2 - s * x0
+    oy = (BOARD_SIZE[1] - s * (y1 - y0)) / 2 - s * y0
+    return s, ox, oy
+
+
+def board_guide(board_id):
+    """A flat guide of one board: the void crescent, the hull outline and the 8 sections by type."""
+    d = json.loads((ROOT / "data" / "boards.json").read_text())
+    s, ox, oy = board_frame(d)
+    px = lambda poly: [(ox + s * x, oy + s * y) for x, y in poly]  # noqa: E731
+    im = Image.new("RGB", BOARD_SIZE, "#9A9A9A")
+    dr = ImageDraw.Draw(im)
+    dr.polygon(px(d["void_zone"]), fill=TEAL)
+    dr.polygon(px(d["outline"]), fill=CHROME)
+    board = next(b for b in d["boards"] if b["id"] == board_id)
+    for sec in board["sections"]:
+        dr.polygon(px(sec["poly"]), fill=SECTION_COLOURS[sec["type"]], outline=CREAM, width=4)
+    dr.line(px(d["outline"] + d["outline"][:1]), fill=CHROME, width=6)
+    return im
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--stamp", nargs=2, metavar=("IMAGE", "card|wall"))
@@ -171,6 +205,8 @@ def main():
     write_svgs()
     card_guide().save(OUT / "card_guide.png")
     wall_guide().save(OUT / "wall_guide.png")
+    for b in "ABCD":
+        board_guide(b).save(OUT / f"board_{b.lower()}_guide.png")
     for f in sorted(OUT.iterdir()):
         print("wrote", f.relative_to(ROOT))
 
