@@ -30,6 +30,9 @@ python3 -m http.server 8000
 
 No build step and no dependencies. The browser loads `data/*.json` and the engine in `src/` directly.
 
+## Rulebook
+`rulebook.html` (and `print/stewards-rulebook.pdf`, 6 pages) is the player rulebook. It covers how to win and lose, the components, setup, a generation step by step, event actions, threat and damage, Decay, influence, card anatomy, tokens, the Landfall variants and a quick-start game. The design rationale stays in `GDD.md`.
+
 ## Print and play
 Open `print.html` in the browser, served the same way as the prototype. Pick the parts you want, then print or save as a PDF. A ready-made copy is in `print/stewards-print-and-play.pdf`: A4, with the Wall on landscape pages, and the 150-card playtest deck (tick "All 400 people" for the full deck).
 
