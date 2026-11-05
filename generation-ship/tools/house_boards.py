@@ -14,7 +14,11 @@ import re
 from collections import deque
 from pathlib import Path
 
+import sys
+
 from PIL import Image, ImageDraw, ImageFont
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "art" / "source" / "retro"
@@ -209,5 +213,55 @@ def main():
             print("wrote", typeset(h).relative_to(ROOT))
 
 
+
+
+# --- v2: the emblem boards (Retro batch 5), typeset from the known geometry ------------------------
+def typeset_v2(house):
+    """Typeset house_<id>_v2.png from tools/retro_templates.py HOUSE_BOARD (the guide it was painted
+    over), so nothing has to be found in the image."""
+    import retro_templates as rt
+    im = Image.open(SRC / f"house_{house['id']}_v2.png").convert("RGB")
+    d = ImageDraw.Draw(im)
+    L = rt.HOUSE_BOARD
+    x0, y0, x1, y1 = L["name"]
+    name, _, epithet = house["name"].partition(", ")
+    d.text((x0 + 26, (y0 + y1) / 2), name, fill=TEAL, font=title_font(54), anchor="lm")
+    nx = x0 + 26 + d.textlength(name, font=title_font(54)) + 22
+    d.text((nx, (y0 + y1) / 2 - 13), epithet, fill=TANGERINE, font=text_font(24, "SemiBold"), anchor="lm")
+    g = house["guilds"]
+    d.text((nx, (y0 + y1) / 2 + 16), f"{g['primary']} · {g['secondary']}", fill=INK, font=text_font(20), anchor="lm")
+    perks = house.get("growth_perk") or {}
+    for box, gr in zip(L["growth"], house["growth"]):
+        body = [gr["text"]] + ([f"Perk: {perks[gr['id']]['text']}"] if gr["id"] in perks else [])
+        block(d, box, f"Growth {gr['id']}", body, tsize=28, bsize=21)
+    for (y, _), key in zip(L["tracks"], ("credits", "plays")):
+        pts = rt.socket_centres(y, len(house["tracks"][key]))
+        d.text((pts[0][0] - 46, y), key.upper(), fill="#FBEFD6", font=text_font(17, "Bold"), anchor="rm")
+        for (cx, cy), v in zip(pts, house["tracks"][key]):
+            text, f = slot_label(v)
+            d.multiline_text((cx, cy), text, fill=TEAL if isinstance(v, int) else TANGERINE, font=f, anchor="mm", align="center", spacing=0)
+    inn = house["innate"]
+    numerals = ["I", "II", "III"]
+    th = lambda t: " + ".join(f"{n} {GUILD_ABBR.get(gg, gg)}" for gg, n in t["threshold"].items())  # noqa: E731
+    rng = lambda t: f"range {t['range']}" if t.get("range") else "here"  # noqa: E731
+    block(d, L["innate"], f"{inn['name']} · {inn['speed']}",
+          [f"{numerals[t['tier'] - 1]} · {th(t)} · {rng(t)}: {fx(t['effects'])}" for t in inn["tiers"]], tsize=30, bsize=21)
+    sp = house["special"]
+    block(d, L["special"], sp["id"].replace("_", " ").title(),
+          [sp["text"], f"Start: {house['starting_influence']['text']}.", f"Hand +{house.get('hand_bonus', 0)} · Clone {house.get('clone', 0)}"],
+          tsize=28, bsize=19)
+    out = SRC / f"house_{house['id']}_v2_typeset.png"
+    im.save(out)
+    return out
+
+
+def main_v2():
+    houses = json.loads((ROOT / "data" / "houses.json").read_text())["houses"]
+    for h in houses:
+        if (SRC / f"house_{h['id']}_v2.png").exists():
+            print("wrote", typeset_v2(h).relative_to(ROOT))
+
+
 if __name__ == "__main__":
     main()
+    main_v2()
