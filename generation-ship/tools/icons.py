@@ -16,6 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "art" / "icons"
 INK, ACT, CREAM, GUN, WOOD, GOLD = "#0F3A48", "#E8603A", "#FBEFD6", "#4E545B", "#D9B07A", "#E8B23A"
+RUST = "#7A4030"                                 # Decay: rust-brown cast plastic
 SW = 6                                            # stroke width in icon units
 
 
@@ -25,6 +26,31 @@ def P(points):
 
 def reg(cx, cy, r, n, rot=0.0):
     return [(cx + r * math.cos(rot + 2 * math.pi * k / n), cy + r * math.sin(rot + 2 * math.pi * k / n)) for k in range(n)]
+
+
+# The house crest: the old rocket-nose influence cone turned upside down (designer, 2026-11-05).
+# One shape for the influence token (it lies flat, like Spirit Island presence), its icon and the
+# banner on the house board (tools/retro_templates.py HOUSE_BOARD uses CREST_PATH too).
+CREST_PATH = "M16,8 L84,8 L84,22 C84,52 66,78 50,94 C34,78 16,52 16,22 Z"
+CREST_BAND = "M16,8 L84,8 L84,22 L16,22 Z"
+
+
+def emblem(house, colour=CREAM):
+    """Each house's emblem, drawn inside the crest (about a 44-unit box centred at 50, 46)."""
+    e = {
+        "galvan": f'<circle cx="50" cy="48" r="15" fill="none" stroke="{colour}" stroke-width="7" stroke-dasharray="6 4"/><polygon points="54,26 38,52 50,52 44,72 64,42 52,42 58,26" fill="{colour}"/>',
+        "keel": f'<circle cx="50" cy="32" r="6" fill="none" stroke="{colour}" stroke-width="5"/><path d="M50,38 L50,72 M38,46 L62,46 M32,58 C34,70 44,74 50,74 C56,74 66,70 68,58" fill="none" stroke="{colour}" stroke-width="6" stroke-linecap="round"/>',
+        "gardeners": f'<path d="M34,70 L34,44 C34,30 66,30 66,44 L66,70 Z" fill="none" stroke="{colour}" stroke-width="5"/><path d="M50,68 L50,52 M50,56 C42,56 38,50 38,44 C46,44 50,48 50,56 M50,52 C56,52 62,46 62,40 C54,40 50,44 50,52" fill="{colour}" stroke="{colour}" stroke-width="3"/>',
+        "voidwardens": f'<circle cx="50" cy="48" r="18" fill="none" stroke="{colour}" stroke-width="6"/>' + "".join(
+            f'<line x1="{50 + 18 * math.cos(a)}" y1="{48 + 18 * math.sin(a)}" x2="{50 + 26 * math.cos(a)}" y2="{48 + 26 * math.sin(a)}" stroke="{colour}" stroke-width="6"/>' for a in (0, math.pi / 2, math.pi, 3 * math.pi / 2))
+            + f'<polygon points="50,38 53,45 60,48 53,51 50,58 47,51 40,48 47,45" fill="{colour}"/>',
+    }
+    return e.get(house, f'<polygon points="50,30 55,44 70,46 58,54 62,70 50,60 38,70 42,54 30,46 45,44" fill="{colour}"/>')
+
+
+def crest(house=None, colour="#B98A55"):
+    return (f'<path d="{CREST_PATH}" fill="{colour}" stroke="{INK}" stroke-width="{SW}" stroke-linejoin="round"/>'
+            f'<path d="{CREST_BAND}" fill="{INK}" opacity=".25"/>{emblem(house)}')
 
 
 # --- pieces (the same silhouettes as the physical pieces) ----------------------------------------
@@ -43,9 +69,10 @@ def fault():
 
 
 def failure():
+    """Placeholder until the threat ladder is chosen (art/tokens/threat_concepts.svg)."""
     return (f'<rect x="26" y="74" width="48" height="18" rx="4" fill="{GUN}" stroke="{INK}" stroke-width="{SW}"/>'
-            f'<path d="M38,74 L38,66 C38,62 30,61 30,56 L30,22 C30,13 38,10 42,10 L58,10 C62,10 70,13 70,22 L70,56 C70,61 62,62 62,66 L62,74 Z" fill="{GUN}" stroke="{INK}" stroke-width="{SW}"/>'
-            f'<polyline points="70,30 58,36 62,42 52,48" fill="none" stroke="{CREAM}" stroke-width="4"/>')
+            f'<path d="M38,74 L38,66 C38,62 30,61 30,56 L30,22 C30,13 38,10 42,10 L58,10 C62,10 70,13 70,22 L70,56 C70,61 62,62 62,66 L62,74 Z" fill="{GUN}" stroke="{INK}" stroke-width="{SW}"/>')
+
 
 
 def crew():
@@ -54,14 +81,19 @@ def crew():
 
 
 def decay():
-    pts = [(18, 58), (24, 34), (42, 24), (60, 28), (78, 22), (86, 46), (80, 70), (60, 80), (36, 78)]
-    return (f'<polygon points="{P(pts)}" fill="#3A2A22" stroke="{INK}" stroke-width="{SW}" stroke-linejoin="round"/>'
-            f'<circle cx="40" cy="48" r="5" fill="#8A4A24"/><circle cx="62" cy="56" r="4" fill="#8A4A24"/><circle cx="56" cy="40" r="3" fill="#120D0B"/>')
+    """Plastic rubble: a heap of broken plates, a bent strut and a bolt (all bad things are cast)."""
+    return (f'<polygon points="10,86 90,86 80,70 66,62 52,66 38,58 22,68" fill="{RUST}" stroke="{INK}" stroke-width="5" stroke-linejoin="round"/>'
+            f'<polygon points="26,66 44,30 58,40 48,70" fill="{RUST}" stroke="{INK}" stroke-width="5" stroke-linejoin="round"/>'
+            f'<polygon points="52,64 70,40 86,52 74,72" fill="{RUST}" stroke="{INK}" stroke-width="5" stroke-linejoin="round"/>'
+            f'<line x1="40" y1="44" x2="50" y2="52" stroke="{INK}" stroke-width="3"/><circle cx="72" cy="56" r="4" fill="{INK}"/>'
+            f'<rect x="58" y="22" width="10" height="26" rx="2" fill="{RUST}" stroke="{INK}" stroke-width="4" transform="rotate(28 63 35)"/>')
 
 
-def influence(colour=WOOD):
-    return (f'<path d="M24,84 C24,50 38,22 50,10 C62,22 76,50 76,84 Z" fill="{colour}" stroke="{INK}" stroke-width="{SW}" stroke-linejoin="round"/>'
-            f'<rect x="18" y="80" width="64" height="12" rx="4" fill="{colour}" stroke="{INK}" stroke-width="{SW}"/>')
+
+def influence(colour="#B98A55", house=None):
+    """House influence: the house crest, lying flat; in the house colour with its emblem."""
+    return crest(house, colour)
+
 
 
 def haven():
@@ -73,9 +105,10 @@ def purpose():
     star = []
     for k in range(16):
         a = math.pi * k / 8 - math.pi / 2
-        r = 44 if k % 4 == 0 else (30 if k % 2 == 0 else 14)
+        r = 46 if k % 4 == 0 else (34 if k % 2 == 0 else 20)
         star.append((50 + r * math.cos(a), 50 + r * math.sin(a)))
-    return f'<polygon points="{P(star)}" fill="{GOLD}" stroke="{INK}" stroke-width="5" stroke-linejoin="round"/><circle cx="50" cy="50" r="7" fill="{CREAM}" stroke="{INK}" stroke-width="3"/>'
+    return f'<polygon points="{P(star)}" fill="{GOLD}" stroke="{INK}" stroke-width="6" stroke-linejoin="round"/><circle cx="50" cy="50" r="10" fill="{CREAM}" stroke="{INK}" stroke-width="4"/>'
+
 
 
 def credits():
@@ -111,14 +144,24 @@ def quarantine():
 
 
 def unrest():
-    return f'<polygon points="56,6 22,56 46,56 38,94 80,38 54,38 64,6" fill="{ACT}" stroke="{INK}" stroke-width="{SW}" stroke-linejoin="round"/>'
+    """A raised fist: rebellion."""
+    return (f'<path d="M36,94 L36,64 L64,64 L64,94" fill="{ACT}" stroke="{INK}" stroke-width="{SW}" stroke-linejoin="round"/>'
+            f'<path d="M28,64 L28,30 C28,24 36,24 36,30 L36,26 C36,18 46,18 46,26 L46,22 C46,14 56,14 56,22 L56,26 C56,18 66,18 66,26 L66,50 '
+            f'C72,46 80,50 76,58 L68,68 L32,68 Z" fill="{ACT}" stroke="{INK}" stroke-width="{SW}" stroke-linejoin="round"/>'
+            f'<path d="M36,30 L36,46 M46,26 L46,46 M56,26 L56,46" stroke="{INK}" stroke-width="4"/>'
+            f'<path d="M30,48 C40,44 54,46 66,50" fill="none" stroke="{INK}" stroke-width="4"/>')
+
 
 
 def isolate():
-    return (f'<g transform="rotate(-12 50 50)"><rect x="26" y="14" width="48" height="74" rx="8" fill="{CREAM}" stroke="{INK}" stroke-width="{SW}"/>'
-            f'<clipPath id="i"><rect x="26" y="50" width="48" height="38" rx="8"/></clipPath><g clip-path="url(#i)">'
-            + "".join(f'<line x1="{x}" y1="48" x2="{x - 20}" y2="92" stroke="{ACT}" stroke-width="7"/>' for x in range(30, 110, 15))
-            + f'</g><circle cx="50" cy="30" r="7" fill="{INK}"/></g>')
+    """Isolate (a threat piece deals no damage at its next collapse): its power is unplugged."""
+    return (f'<path d="M8,64 L30,64" stroke="{INK}" stroke-width="10" stroke-linecap="round"/>'
+            f'<rect x="28" y="48" width="22" height="32" rx="6" fill="{GUN}" stroke="{INK}" stroke-width="5"/>'
+            f'<path d="M50,56 L60,56 M50,72 L60,72" stroke="{INK}" stroke-width="6" stroke-linecap="round"/>'
+            f'<rect x="70" y="42" width="22" height="44" rx="6" fill="{CREAM}" stroke="{INK}" stroke-width="5"/>'
+            f'<circle cx="81" cy="56" r="3.5" fill="{INK}"/><circle cx="81" cy="72" r="3.5" fill="{INK}"/>'
+            f'<path d="M62,20 L66,36 M74,16 L72,32 M84,24 L78,36" stroke="{ACT}" stroke-width="5" stroke-linecap="round"/>')
+
 
 
 # --- actions ----------------------------------------------------------------------------------------
@@ -139,17 +182,19 @@ def arrow(x1, y1, x2, y2, colour=ACT, w=10):
 
 
 def section_box():
-    return f'<rect x="10" y="10" width="80" height="80" rx="14" fill="{CREAM}" stroke="{INK}" stroke-width="5" stroke-dasharray="10 7"/>'
+    return f'<rect x="18" y="18" width="64" height="64" rx="12" fill="{CREAM}" stroke="{INK}" stroke-width="4" stroke-dasharray="8 6" opacity=".9"/>'
 
 
 def vent():
-    """Push out of the section (Spirit Island's Push): arrows leaving a section."""
-    return f'{section_box()}<circle cx="50" cy="50" r="9" fill="{INK}"/>' + arrow(50, 50, 94, 50) + arrow(50, 50, 50, 6)
+    """Push out of the section: one arrow from the centre out to the right (Spirit Island's Push)."""
+    return f'{section_box()}<circle cx="50" cy="50" r="9" fill="{INK}"/>' + arrow(56, 50, 98, 50)
+
 
 
 def gather():
-    """Gather into the section: arrows arriving."""
-    return f'{section_box()}<circle cx="50" cy="50" r="9" fill="{INK}"/>' + arrow(96, 50, 62, 50) + arrow(50, 4, 50, 38)
+    """Gather into the section: one arrow from the left into the centre."""
+    return f'{section_box()}<circle cx="50" cy="50" r="9" fill="{INK}"/>' + arrow(2, 50, 42, 50)
+
 
 
 def move():
@@ -161,18 +206,28 @@ def add():
 
 
 def remove():
-    return f'<circle cx="50" cy="50" r="40" fill="{CREAM}" stroke="{INK}" stroke-width="{SW}"/><path d="M34,34 L66,66 M66,34 L34,66" stroke="{ACT}" stroke-width="12" stroke-linecap="round"/>'
+    """Remove: a crane claw lifting a piece off the board (distinct from Add's plus)."""
+    return (f'<path d="M50,4 L50,30" stroke="{INK}" stroke-width="6"/><rect x="36" y="28" width="28" height="12" rx="4" fill="{GUN}" stroke="{INK}" stroke-width="4"/>'
+            f'<path d="M40,40 C26,48 26,64 38,72 M60,40 C74,48 74,64 62,72" fill="none" stroke="{INK}" stroke-width="7" stroke-linecap="round"/>'
+            f'<circle cx="50" cy="64" r="11" fill="{ACT}" stroke="{INK}" stroke-width="4"/>'
+            + arrow(84, 70, 84, 20, w=6))
+
 
 
 def downgrade():
-    return (f'<g transform="translate(2 2) scale(.55)">{failure()}</g><g transform="translate(46 46) scale(.5)">{fault()}</g>'
-            + arrow(46, 34, 66, 52, w=7))
+    """Downgrade (Failure to Fault, Fault to Glitch): one step down."""
+    return (f'<circle cx="50" cy="50" r="42" fill="{CREAM}" stroke="{INK}" stroke-width="{SW}"/>'
+            f'<path d="M28,30 L50,50 L72,30 M28,52 L50,72 L72,52" fill="none" stroke="{ACT}" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>')
+
 
 
 def restore_decay():
-    return (f'<g transform="translate(18 22) scale(.64)">{decay()}</g>'
-            f'<path d="M16,30 A38,38 0 1 1 22,74" fill="none" stroke="{INK}" stroke-width="14"/><path d="M16,30 A38,38 0 1 1 22,74" fill="none" stroke="{ACT}" stroke-width="7"/>'
-            f'<polygon points="10,62 32,72 14,88" fill="{ACT}" stroke="{INK}" stroke-width="4"/>')
+    """Restore Decay: a Decay leaves the board and returns to its card (the pool)."""
+    return (f'<g transform="translate(-4 30) scale(.68)">{decay()}</g>'
+            f'<path d="M34,52 C34,22 60,10 84,22" fill="none" stroke="{INK}" stroke-width="14" stroke-linecap="round"/>'
+            f'<path d="M34,52 C34,22 60,10 84,22" fill="none" stroke="{ACT}" stroke-width="7" stroke-linecap="round"/>'
+            f'<polygon points="94,28 74,32 84,12" fill="{ACT}" stroke="{INK}" stroke-width="4" stroke-linejoin="round"/>')
+
 
 
 def crew_strike():
@@ -190,9 +245,12 @@ def foresee():
 
 
 def temper_legacy():
-    return (f'<rect x="10" y="30" width="80" height="44" rx="12" fill="{INK}" stroke="{INK}" stroke-width="4"/>'
-            f'<rect x="20" y="40" width="60" height="6" rx="3" fill="{CREAM}"/><rect x="20" y="54" width="40" height="6" rx="3" fill="{CREAM}"/>'
-            f'<circle cx="80" cy="76" r="16" fill="{ACT}" stroke="{INK}" stroke-width="4"/><rect x="70" y="73" width="20" height="6" fill="{CREAM}"/>')
+    """Temper the Elder's Legacy: its costliest drawback is struck out, for good."""
+    return (f'<rect x="8" y="22" width="84" height="56" rx="12" fill="{INK}"/>'
+            f'<rect x="18" y="34" width="52" height="7" rx="3" fill="{CREAM}"/><rect x="18" y="47" width="64" height="7" rx="3" fill="{CREAM}"/>'
+            f'<rect x="18" y="60" width="40" height="7" rx="3" fill="{CREAM}"/>'
+            f'<path d="M12,52 L88,48" stroke="{ACT}" stroke-width="8" stroke-linecap="round"/>')
+
 
 
 def draw():
@@ -217,9 +275,12 @@ def range_():
 
 
 def hull():
-    return (f'<path d="M6,70 L94,70 L94,90 L6,90 Z" fill="{GUN}" stroke="{INK}" stroke-width="5"/>'
-            f'<path d="M22,70 L34,20 L42,70 Z M58,70 L66,20 L78,70 Z" fill="{CREAM}" stroke="{INK}" stroke-width="5" stroke-linejoin="round"/>'
-            + "".join(f'<circle cx="{x}" cy="80" r="4" fill="{GOLD}"/>' for x in (16, 50, 84)))
+    """The Outer Hull: the hull's edge, its portholes, and the void beyond."""
+    return (f'<path d="M6,62 A44,44 0 0 1 94,62 Z" fill="{INK}"/>'
+            f'<polygon points="30,30 32,36 38,36 33,40 35,46 30,42 25,46 27,40 22,36 28,36" fill="{GOLD}"/><circle cx="66" cy="34" r="3" fill="{GOLD}"/>'
+            f'<path d="M4,62 L96,62 L96,88 L4,88 Z" fill="{GUN}" stroke="{INK}" stroke-width="5"/>'
+            + "".join(f'<circle cx="{x}" cy="75" r="6" fill="{CREAM}" stroke="{INK}" stroke-width="3"/>' for x in (22, 50, 78)))
+
 
 
 # --- guilds (the game's elements) -------------------------------------------------------------
@@ -248,6 +309,8 @@ GROUPS = [
                  ("Foresee", foresee), ("Temper Legacy", temper_legacy), ("Draw", draw), ("Fast", fast), ("Slow", slow),
                  ("Range", range_), ("Outer Hull", hull)]),
     ("GUILDS  ·  the elements", [(g, f) for g, f in GUILD.items()]),
+    ("HOUSE CRESTS  ·  influence pieces lie flat in this shape; the house board banner is the same crest",
+     [(h.title(), (lambda h=h, c=c: crest(h, c))) for h, c in (("galvan", "#3A6FD8"), ("keel", "#7A8C96"), ("gardeners", "#8FB04A"), ("voidwardens", "#6A4A9A"))]),
 ]
 
 # Effect verbs -> (icons, how to show n). An icon list reads left to right after the number.

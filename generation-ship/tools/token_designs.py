@@ -5,8 +5,8 @@
 Every piece is drawn from its real size in millimetres (SIZES), shown at SCALE px per mm:
 - Threat (grey cast plastic, one colour): Glitch = a hex nut lying flat; Fault = a cog standing on
   its edge with a snapped tooth; Failure = a cracked vacuum tube in its socket. Flat -> wheel -> tower.
-- People (wood): Crew = a pawn with a fishbowl helmet; house influence = rocket nose cones.
-- Decay = a lump of slag; Breakthrough = a brass starburst coin.
+- People (wood): Crew = a pawn with a fishbowl helmet; house influence = flat house crests.
+- Decay = a heap of rust-brown plastic rubble; Breakthrough = a brass starburst coin.
 Damage states (GDD "Threat pieces": damage clears at Time passes) use no extra parts, only the way a
 piece sits: a damaged Fault (health 2) lies flat; a Failure (health 3) lies on its side at 1 damage and
 stands upside down at 2; an injured Crew (health 2) lies on its side; Glitch (health 1) has no state.
@@ -21,6 +21,10 @@ import math
 import random
 import subprocess
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import icons  # noqa: E402  (the house crest and the rubble share their shapes with the icons)
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "art" / "tokens"
@@ -37,7 +41,8 @@ SIZES = {                      # mm
     "isolate": {"w": 6, "h": 8.5},
 }
 ACCENT, DAMAGE_INK = "#E8763A", "#8A3A16"
-HOUSE = ["#2F5DB8", "#C8323C", "#E8B23A", "#EDEBE4"]        # cobalt, cherry, mustard, pearl (wood stain)
+HOUSE = ["#3A6FD8", "#8FB04A", "#7A8C96", "#6A4A9A"]        # Galvan, Gardeners, Keel, Voidwardens (wood stain)
+HOUSE_IDS = ["galvan", "gardeners", "keel", "voidwardens"]
 SECTIONS = [("Infrastructure", "#3AB0A8"), ("Residential", "#F2A060"), ("Government", "#E88AA0"), ("Agricultural", "#A8C860")]
 INK = "#1A1D20"                 # outline; the threat plastic is gunmetal (gradients in defs)
 
@@ -261,34 +266,26 @@ def crew_top(cx, cy, solid=None):
             f'<circle cx="{cx}" cy="{cy}" r="{mmv(s["head"]) / 2}" fill="url(#wood)" stroke="#5A3A1C" stroke-width="1.2"/></g>')
 
 
-def influence_side(cx, by, colour, solid=None):
+def influence_side(cx, by, colour, solid=None, house=None):
+    """House influence: a flat wooden token in the house crest's shape (it lies flat, like Spirit
+    Island presence), stained the house colour with the emblem engraved; seen from above."""
     s = SIZES["influence"]
-    B, H = mmv(s["base"]), mmv(s["height"])
-    ring = mmv(1.6)
-    cone = f"M{cx - B * .44},{by - ring} C{cx - B * .44},{by - H * .55} {cx - B * .18},{by - H * .92} {cx},{by - H} C{cx + B * .18},{by - H * .92} {cx + B * .44},{by - H * .55} {cx + B * .44},{by - ring} Z"
-    base = f'<rect x="{cx - B / 2}" y="{by - ring}" width="{B}" height="{ring}" rx="2"'
-    if solid:
-        return f'<path d="{cone}" fill="{solid}"/>{base} fill="{solid}"/>'
-    return (f'<g filter="url(#shadow)"><path d="{cone}" fill="{colour}" stroke="#3A2A1A" stroke-width="1.4"/>'
-            f'<path d="{cone}" fill="url(#wood)" opacity=".28"/>'
-            f'<path d="M{cx - B * .22},{by - ring - 3} C{cx - B * .24},{by - H * .5} {cx - B * .1},{by - H * .8} {cx - 2},{by - H * .9}" fill="none" stroke="#fff" stroke-width="1.6" opacity=".45"/>'
-            f'{base} fill="{colour}" stroke="#3A2A1A" stroke-width="1.3"/></g>')
+    w = mmv(s["base"]) * 1.15
+    house = house or (HOUSE_IDS[HOUSE.index(colour)] if colour in HOUSE else None)
+    body = (f'<path d="{icons.CREST_PATH}" fill="{solid}"/>' if solid else
+            f'<path d="{icons.CREST_PATH}" fill="{colour}" stroke="#3A2A1A" stroke-width="5" stroke-linejoin="round"/>'
+            f'<path d="{icons.CREST_PATH}" fill="url(#wood)" opacity=".25"/>'
+            f'<path d="{icons.CREST_BAND}" fill="#000" opacity=".18"/>{icons.emblem(house, "#FBEFD6")}')
+    return f'<g filter="url(#shadow)" transform="translate({cx - w / 2} {by - w}) scale({w / 100})">{body}</g>'
 
 
 def decay_lump(cx, cy, seed=4, solid=None):
-    r = random.Random(seed)
-    R = mmv(SIZES["decay"]["size"]) / 2
-    pts = []
-    for k in range(11):
-        a = 2 * math.pi * k / 11 + r.uniform(-.15, .15)
-        rad = R * r.uniform(.72, 1.0)
-        pts.append((cx + rad * math.cos(a), cy + rad * 0.82 * math.sin(a)))
-    if solid:
-        return f'<polygon points="{poly(pts)}" fill="{solid}" stroke="{solid}" stroke-width="4" stroke-linejoin="round"/>'
-    pits = "".join(f'<circle cx="{cx + r.uniform(-R * .5, R * .5)}" cy="{cy + r.uniform(-R * .4, R * .4)}" r="{r.uniform(1.5, 3.5)}" fill="#120D0B"/>' for _ in range(7))
-    rust = "".join(f'<circle cx="{cx + r.uniform(-R * .5, R * .5)}" cy="{cy + r.uniform(-R * .45, R * .2)}" r="{r.uniform(1.5, 3)}" fill="#8A4A24" opacity=".8"/>' for _ in range(5))
-    return (f'<g filter="url(#shadow)"><polygon points="{poly(pts)}" fill="url(#slag)" stroke="#0E0A08" stroke-width="3" stroke-linejoin="round"/>{pits}{rust}'
-            f'<path d="M{cx - R * .5},{cy - R * .35} Q{cx - R * .2},{cy - R * .62} {cx + R * .2},{cy - R * .5}" fill="none" stroke="#9A8270" stroke-width="1.6" opacity=".6"/></g>')
+    """Decay: a heap of rubble cast in rust-brown plastic (all the bad things are cast; the
+    people's things are wood). The same heap as the icon."""
+    w = mmv(SIZES["decay"]["size"]) * 1.2
+    body = icons.decay() if not solid else f'<g fill="{solid}">{icons.decay()}</g>'
+    flip = -1 if seed % 2 else 1
+    return (f'<g filter="url(#shadow)" transform="translate({cx - flip * w / 2} {cy - w / 2}) scale({flip * w / 100} {w / 100})">{body}</g>')
 
 
 def breakthrough_coin(cx, cy, solid=None):
@@ -386,13 +383,13 @@ def sheet():
 
     # Row 3: the people
     base = 1300
-    o.append(head(60, 1100, "THE PEOPLE  ·  wood, brass and slag"))
+    o.append(head(60, 1100, "THE PEOPLE  ·  wood and brass (Decay: rust-brown plastic rubble)"))
     o.append(ground(80, 1740, base))
     o.append(crew_side(180, base) + crew_top(300, base - 55) + name(240, base + 60, "Crew", "wooden pawn, fishbowl helmet · 16 mm · health 2"))
     for i, c in enumerate(HOUSE):
         o.append(influence_side(530 + i * 95, base, c))
-    o.append(name(672, base + 60, "House influence", "stained wooden rocket nose cones · 10 mm"))
-    o.append(decay_lump(985, base - 36, 4) + decay_lump(1080, base - 30, 9) + name(1035, base + 60, "Decay", "slag lump, never two the same · 12 mm"))
+    o.append(name(672, base + 60, "House influence", "flat wooden house crests, emblem engraved · 12 mm"))
+    o.append(decay_lump(985, base - 36, 4) + decay_lump(1080, base - 30, 9) + name(1035, base + 60, "Decay", "rubble heap, rust-brown cast plastic · 12 mm"))
     o.append(breakthrough_coin(1360, base - 92) + name(1360, base + 60, "Breakthrough", "brass starburst coin · 18 mm"))
     o.append(isolate_tag(1620, base - 44, 0) + name(1620, base + 60, "Isolate", "wooden lockout tag · 6 × 8.5 mm"))
 
