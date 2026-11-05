@@ -413,6 +413,9 @@
   "downgrade_failure": [
    "downgrade"
   ],
+  "downgrade_fault": [
+   "downgrade"
+  ],
   "restore_decay": [
    "restore_decay"
   ],
