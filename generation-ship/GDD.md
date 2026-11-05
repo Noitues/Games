@@ -151,6 +151,8 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 ## The Wall of Leaders
 
 - One slot per event card in the event deck. **Default: 12 slots.**
+- **Physical form (designer's vision):** a **dual-layer board**. The retired leader card slides into a slot in the top edge, between the two layers. One cutout window shows the card's **portrait** inside a printed frame; a lower cutout shows its **Legacy text**, like the description plaque under a painting. A Breakthrough is marked with a token on that leader's frame.
+  - *Card template constraint:* every people card keeps its portrait in the same top area and its Legacy in a fixed band at the bottom edge, so both windows line up on every card.
 - At Time passes, the Dusk leader moves into the next empty slot, together with **its paired event and any Breakthrough credited to its reign.**
 - The Wall is the game clock. When the Wall is full, the event deck is empty, and the next Dawn draw loses the game.
 - **Breakthroughs are passive Wall bonuses.** A Breakthrough does nothing while its leader is on the conveyor; it switches on when the leader retires to the Wall, and stays on for the rest of the voyage. *(Playtest 1: active Breakthroughs that fired every phase made the Wall "a flurry of venting"; the Wall should be a calm record of what the ship has learned.)*
