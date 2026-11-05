@@ -43,3 +43,8 @@ The designer is leaning towards **Retro Space**.
 - **Item 1 and 2, done (Retro v2):** one master window, the card frame's wide arch at 55 × 40 mm, and a 59 × 16 mm Legacy plaque (18 % of the card). Geometry: `tools/retro_templates.py`. New art, generated as edits of the layout guides so the windows match: `art/source/retro/card_frame_v2a/b.png` and `wall_panel_v2a/b.png`, with `_exact` copies whose windows are re-cut from the master shape.
 - **Item 3, decided: option (a).** Keep the game's 8-section boards; the art follows `data/boards.json`.
 - **Image API:** gpt-image-1 was shut down on 2026-10-23. Direct requests use `gpt-image-2.6-sunburst`; the Batch API (half price, now the project's only route for image runs) takes GPT Image 2.5 only, so batches use `gpt-image-2.5-sunburst`.
+- **Title (2026-11-05):** *Stewards of the Long Voyage*. Box covers and logotypes: Retro batch 4.
+- **Threat pieces (2026-11-05):** gunmetal-grey plastic (darker than mid-grey, so they stand apart from the chrome painted on the boards); damage shown by posture only (`art/tokens/token_sheet.svg`).
+- **Boards toned (2026-11-05):** `tools/tone_boards.py` writes `board_*_v2*_toned.png` (less saturation and contrast; calm floors in each section's centre). No image model.
+- **Fonts:** Righteous (titles) and Josefin Sans (text), both SIL Open Font License, in `art/fonts/`. House boards typeset from `data/houses.json` by `tools/house_boards.py`.
+- **Conveyor board:** three layout studies along the sun's path in `art/conveyor/conveyor_options.svg` (`tools/conveyor_mockups.py`); the mock-up uses option A (event tucked behind the leader).

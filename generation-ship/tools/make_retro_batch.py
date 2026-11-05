@@ -45,6 +45,8 @@ EDITS = {
 EDITS_3 = {f"{n}_v3{v}": (f"{n}_v3", g, size, 1) for n, g, size in
            (("wall_panel", "wall_guide.png", "2320x960"), ("card_frame", "card_guide.png", "1104x1504")) for v in "ab"}
 GENERATIONS_3 = {n: (n, None, "1536x1024", 1) for n in ("threat_machine_parts", "threat_gremlins", "people_pieces")}
+GENERATIONS_4 = {**{n: (n, None, "1536x1536", 1) for n in ("cover_generations", "cover_ancestors", "cover_ship")},
+                 **{n: (n, None, "1536x640", 1) for n in ("logo_a", "logo_b")}}
 GENERATIONS = {
     "card_back": ("card_back", None, "1104x1504", 1),
     **{f"icon_{t}": (f"icon_{t}", None, "1024x1024", 1) for t in ("infrastructure", "residential", "government", "agricultural")},
@@ -72,6 +74,9 @@ def build(jobs, endpoint, style, ps):
             full = f"{style}\n\n{body}"
         for k in range(variants):
             b = {"model": BATCH_IMAGE_MODEL, "prompt": full, "size": size, "quality": QUALITY}
+            if name.startswith("logo_"):
+                b["background"] = "transparent"
+                b["output_format"] = "png"
             if guide:
                 data = base64.b64encode((GUIDES / guide).read_bytes()).decode()
                 b["images"] = [{"image_url": f"data:image/png;base64,{data}"}]
@@ -87,10 +92,10 @@ def build(jobs, endpoint, style, ps):
 def main():
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument("--batch", type=int, default=2, choices=(2, 3))
+    ap.add_argument("--batch", type=int, default=2, choices=(2, 3, 4))
     batch = ap.parse_args().batch
     ps = prompts(batch)
-    edits, gens = (EDITS, GENERATIONS) if batch == 2 else (EDITS_3, GENERATIONS_3)
+    edits, gens = {2: (EDITS, GENERATIONS), 3: (EDITS_3, GENERATIONS_3), 4: ({}, GENERATIONS_4)}[batch]
     text = (ROOT / "art" / "CHATGPT_PROMPTS.md").read_text()
     sec = text.split("## D · Retro Space", 1)[1]
     opener = re.search(r"\*\*Opener\*\*\n```\n(.*?)\n```", sec, re.S).group(1)
@@ -98,6 +103,8 @@ def main():
     total_img = total_cost = 0
     for jobs, endpoint, fname in ((edits, "/v1/images/edits", f"retro_batch{batch}_edits.jsonl"),
                                   (gens, "/v1/images/generations", f"retro_batch{batch}_generations.jsonl")):
+        if not jobs:
+            continue
         lines, n_img, n_guide = build(jobs, endpoint, style, ps)
         out = ROOT / "art" / fname
         out.write_text("".join(json.dumps(x) + "\n" for x in lines))

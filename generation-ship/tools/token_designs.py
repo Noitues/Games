@@ -39,7 +39,7 @@ SIZES = {                      # mm
 ACCENT, DAMAGE_INK = "#E8763A", "#8A3A16"
 HOUSE = ["#2F5DB8", "#C8323C", "#E8B23A", "#EDEBE4"]        # cobalt, cherry, mustard, pearl (wood stain)
 SECTIONS = [("Infrastructure", "#3AB0A8"), ("Residential", "#F2A060"), ("Government", "#E88AA0"), ("Agricultural", "#A8C860")]
-INK = "#2B2F33"
+INK = "#1A1D20"                 # outline; the threat plastic is gunmetal (gradients in defs)
 
 
 def mmv(v):
@@ -48,9 +48,9 @@ def mmv(v):
 
 def defs():
     return """<defs>
-  <linearGradient id="plastic" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C9CDD1"/><stop offset=".55" stop-color="#9A9FA5"/><stop offset="1" stop-color="#6E7379"/></linearGradient>
-  <linearGradient id="plasticSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7E848A"/><stop offset=".35" stop-color="#C4C8CC"/><stop offset=".7" stop-color="#9DA2A8"/><stop offset="1" stop-color="#6A6F75"/></linearGradient>
-  <radialGradient id="glass" cx=".38" cy=".3" r=".75"><stop offset="0" stop-color="#E4E7EA"/><stop offset=".5" stop-color="#ADB2B8"/><stop offset="1" stop-color="#7A8086"/></radialGradient>
+  <linearGradient id="plastic" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7A8088"/><stop offset=".55" stop-color="#4E545B"/><stop offset="1" stop-color="#33383E"/></linearGradient>
+  <linearGradient id="plasticSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3A3F45"/><stop offset=".35" stop-color="#737980"/><stop offset=".7" stop-color="#50565D"/><stop offset="1" stop-color="#30353A"/></linearGradient>
+  <radialGradient id="glass" cx=".38" cy=".3" r=".75"><stop offset="0" stop-color="#8E959C"/><stop offset=".5" stop-color="#5A6067"/><stop offset="1" stop-color="#3A3F45"/></radialGradient>
   <linearGradient id="wood" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#B98A55"/><stop offset=".4" stop-color="#E2BE8A"/><stop offset="1" stop-color="#A8783F"/></linearGradient>
   <radialGradient id="brass" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#FFE7A0"/><stop offset=".45" stop-color="#D9A848"/><stop offset="1" stop-color="#8F6420"/></radialGradient>
   <linearGradient id="slag" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5A463C"/><stop offset=".6" stop-color="#2E2420"/><stop offset="1" stop-color="#1C1614"/></linearGradient>
@@ -72,8 +72,8 @@ def glitch_top(cx, cy, solid=None):
     inner = [(cx + 0.82 * (x - cx), cy + 0.82 * (y - cy)) for x, y in hexa]
     return (f'<g filter="url(#shadow)"><polygon points="{poly(hexa)}" fill="url(#plastic)" stroke="{INK}" stroke-width="1.6"/>'
             f'<polygon points="{poly(inner)}" fill="none" stroke="#E6E8EA" stroke-width="1" opacity=".7"/>'
-            f'<circle cx="{cx}" cy="{cy}" r="{mmv(s["hole"]) / 2}" fill="#4A4F55" stroke="{INK}" stroke-width="1.4"/>'
-            f'<circle cx="{cx}" cy="{cy}" r="{mmv(s["hole"]) / 2 - 3}" fill="none" stroke="#7A8086" stroke-width="1" stroke-dasharray="3 2"/>'
+            f'<circle cx="{cx}" cy="{cy}" r="{mmv(s["hole"]) / 2}" fill="#202428" stroke="{INK}" stroke-width="1.4"/>'
+            f'<circle cx="{cx}" cy="{cy}" r="{mmv(s["hole"]) / 2 - 3}" fill="none" stroke="#4A5056" stroke-width="1" stroke-dasharray="3 2"/>'
             f'<path d="M{cx + r * .35},{cy - r * .5} l{r * .18},{r * .14}" stroke="{INK}" stroke-width="1.2"/></g>')
 
 
@@ -118,9 +118,9 @@ def fault_face(cx, cy, solid=None):
     a = 2 * math.pi * 2.27 / s["teeth"] - math.pi / 2
     crack = [(cx + R * k * math.cos(a + d), cy + R * k * math.sin(a + d)) for k, d in ((.8, 0), (.6, .1), (.5, -.05), (.4, .12))]
     return (f'<polygon points="{poly(pts)}" fill="url(#plastic)" stroke="{INK}" stroke-width="1.6" stroke-linejoin="round"/>'
-            f'<circle cx="{cx}" cy="{cy}" r="{R * .58}" fill="none" stroke="#E2E5E8" stroke-width="1.2" opacity=".7"/>'
-            + "".join(f'<circle cx="{cx + R * .44 * math.cos(2 * math.pi * (k + .5) / 5)}" cy="{cy + R * .44 * math.sin(2 * math.pi * (k + .5) / 5)}" r="{R * .07}" fill="#6E7379"/>' for k in range(5))
-            + f'<circle cx="{cx}" cy="{cy}" r="{R * .2}" fill="#4A4F55" stroke="{INK}" stroke-width="1.4"/>'
+            f'<circle cx="{cx}" cy="{cy}" r="{R * .58}" fill="none" stroke="#9AA1A8" stroke-width="1.2" opacity=".7"/>'
+            + "".join(f'<circle cx="{cx + R * .44 * math.cos(2 * math.pi * (k + .5) / 5)}" cy="{cy + R * .44 * math.sin(2 * math.pi * (k + .5) / 5)}" r="{R * .07}" fill="#3E434A"/>' for k in range(5))
+            + f'<circle cx="{cx}" cy="{cy}" r="{R * .2}" fill="#202428" stroke="{INK}" stroke-width="1.4"/>'
             f'<polyline points="{poly(crack)}" fill="none" stroke="{INK}" stroke-width="1.3"/>')
 
 
@@ -132,7 +132,7 @@ def fault_edge(cx, cy, solid=None):
     core = f'<rect x="{cx - R * .8}" y="{cy - t / 2}" width="{R * 1.6}" height="{t}" rx="2"'
     if solid:
         return f'<g fill="{solid}">{teeth}</g>{core} fill="{solid}"/>'
-    return (f'{core} fill="#8A9096" stroke="{INK}" stroke-width="1.2"/>'
+    return (f'{core} fill="#5A6067" stroke="{INK}" stroke-width="1.2"/>'
             f'<g fill="url(#plasticSide)" stroke="{INK}" stroke-width="1.2">{teeth}</g>')
 
 
@@ -166,16 +166,16 @@ def tube(cx, by, solid=None):
     if solid:
         return f'<path d="{bulb}" fill="{solid}"/>{sock} fill="{solid}"/>{cap} fill="{solid}"/>'
     bt, bb = gt + mmv(3.6), nt - mmv(2.4)
-    plate = f'<rect x="{cx - bw * .2}" y="{bt}" width="{bw * .4}" height="{bb - bt}" rx="1.5" fill="#868C92" stroke="{INK}" stroke-width="1" opacity=".75"/>'
+    plate = f'<rect x="{cx - bw * .2}" y="{bt}" width="{bw * .4}" height="{bb - bt}" rx="1.5" fill="#4A5056" stroke="{INK}" stroke-width="1" opacity=".75"/>'
     fil = (f'<polyline points="{cx - 3},{nt} {cx - 3},{bt + 10} {cx + 1},{bt + 2}" fill="none" stroke="{INK}" stroke-width="1.3"/>'
            f'<polyline points="{cx + 3},{nt} {cx + 3},{bt + 18}" fill="none" stroke="{INK}" stroke-width="1.3"/>')
     my = (bt + bb) / 2 + mmv(1)
     crack = (f'<polyline points="{cx + bw / 2 - 1},{my - mmv(2)} {cx + bw * .25},{my - mmv(1.2)} {cx + bw * .32},{my - mmv(.2)} '
              f'{cx + bw * .12},{my + mmv(.6)} {cx + bw * .2},{my + mmv(1.6)}" fill="none" stroke="{INK}" stroke-width="1.4"/>')
     facets = "".join(f'<line x1="{cx + d}" y1="{by - sh}" x2="{cx + d}" y2="{by}" stroke="{INK}" stroke-width="1"/>' for d in (-sw * .3, sw * .3))
-    pins = "".join(f'<rect x="{cx + d - 1.5}" y="{by - 1}" width="3" height="4" fill="#6E7379"/>' for d in (-sw * .3, -sw * .1, sw * .1, sw * .3))
+    pins = "".join(f'<rect x="{cx + d - 1.5}" y="{by - 1}" width="3" height="4" fill="#3E434A"/>' for d in (-sw * .3, -sw * .1, sw * .1, sw * .3))
     return (f'{pins}<path d="{bulb}" fill="url(#glass)" stroke="{INK}" stroke-width="1.6"/>{plate}{fil}{crack}'
-            f'<path d="M{cx - bw * .32},{bt} Q{cx - bw * .36},{(bt + bb) / 2} {cx - bw * .3},{bb}" fill="none" stroke="#F4F6F8" stroke-width="2" opacity=".7"/>'
+            f'<path d="M{cx - bw * .32},{bt} Q{cx - bw * .36},{(bt + bb) / 2} {cx - bw * .3},{bb}" fill="none" stroke="#B8BEC4" stroke-width="2" opacity=".7"/>'
             f'{cap} fill="url(#plasticSide)" stroke="{INK}" stroke-width="1.4"/>'
             f'{sock} fill="url(#plasticSide)" stroke="{INK}" stroke-width="1.6"/>{facets}')
 
@@ -209,7 +209,7 @@ def failure_top(cx, cy, solid=None, damage=0):
     if damage == 2:
         pins = "".join(f'<circle cx="{cx + sr * .62 * math.cos(math.radians(45 * k))}" cy="{cy + sr * .62 * math.sin(math.radians(45 * k))}" r="3" fill="#5A5F65" stroke="{INK}"/>' for k in range(8))
         return (f'<g filter="url(#shadow)">{sock}<circle cx="{cx}" cy="{cy}" r="{sr * .62 + 6}" fill="none" stroke="#7E848A" stroke-width="1"/>{pins}'
-                f'<circle cx="{cx}" cy="{cy}" r="{mmv(1.2)}" fill="#8A9096" stroke="{INK}" stroke-width="1.2"/>'
+                f'<circle cx="{cx}" cy="{cy}" r="{mmv(1.2)}" fill="#5A6067" stroke="{INK}" stroke-width="1.2"/>'
                 f'<rect x="{cx - 2}" y="{cy - mmv(1.6)}" width="4" height="{mmv(0.8)}" fill="{INK}"/></g>')
     return (f'<g filter="url(#shadow)">{sock}<circle cx="{cx}" cy="{cy}" r="{mmv(s["bulb_w"]) / 2}" fill="url(#glass)" stroke="{INK}" stroke-width="1.4"/>'
             f'<circle cx="{cx}" cy="{cy}" r="{mmv(s["cap_w"]) / 2}" fill="url(#plastic)" stroke="{INK}" stroke-width="1.3"/>'
@@ -330,13 +330,13 @@ def sheet():
     o = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">', defs(),
          f'<rect width="{W}" height="{H}" fill="#EDE6D8"/>',
          label(60, 62, "Stewards of the Long Voyage · piece concepts, v3", 30, "bold", "#0F3A48", "start"),
-         label(60, 92, "The machine is grey cast plastic; the people are wood. Threat escalates by silhouette: flat → wheel → tower. "
+         label(60, 92, "The machine is gunmetal-grey cast plastic; the people are wood. Threat escalates by silhouette: flat → wheel → tower. "
                "Damage is shown by how a piece sits, with no extra parts.", 16, "normal", "#4A4F55", "start"),
          f'<rect x="1640" y="40" width="{mmv(10)}" height="8" fill="#0F3A48"/>', label(1690, 66, "10 mm, to scale", 13)]
 
     # Row 1: the machine, healthy, side and top
     base = 330
-    o.append(head(60, 160, "THE MACHINE  ·  threat pieces, one grey plastic"))
+    o.append(head(60, 160, "THE MACHINE  ·  threat pieces, one gunmetal plastic"))
     cols = [(240, "Glitch", "hex nut, lying flat · 10 mm · health 1", glitch_side, glitch_top),
             (620, "Fault", "cog on its edge, flat-ground foot · 14 mm · health 2", fault_side, fault_top),
             (1000, "Failure", "cracked octal tube, flat top cap · 23 mm · health 3", failure_side, failure_top)]

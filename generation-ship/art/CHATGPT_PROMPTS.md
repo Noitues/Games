@@ -336,3 +336,34 @@ Wide landscape image. A clean board-game product photo on a plain warm-grey card
 ```
 Wide landscape image. A clean board-game product photo on a plain warm-grey card background, soft studio light from the upper left, gentle shadows: the players' pieces in natural materials, arranged in a loose row. A few turned natural-wood Crew pawns about 18 mm tall, each a simple tapered body with a round ball head inside a clear round fishbowl helmet ring; four wooden influence pieces shaped like rocket nose cones, painted cobalt blue, cherry red, mustard gold and pearl white; three irregular matte black-brown slag lumps for Decay, rough and asymmetric like cooled cinder; and one brass Breakthrough coin embossed with an eight-pointed atomic starburst. Warm, tactile, handmade, contrasting with cold machine parts. No text, letters, numbers, logos or watermarks.
 ```
+
+---
+
+## Retro batch 4  (folder `art/source/retro/`)
+
+The title is settled: **Stewards of the Long Voyage** (designer, 2026-11-05). Box covers (square, for a large square box) and title logotypes. Built by `tools/make_retro_batch.py --batch 4`. The covers keep text out; the logotypes are the one place lettering is wanted, and they are a starting point for a designer to redraw as vector.
+
+`cover_generations.png`
+```
+Square image. 1950s pulp science-fiction paperback-style painting for a board-game box cover. Inside the big round observation window of a vast chrome generation ship, three generations of one family stand together looking out at the stars: a silver-haired grandmother in a teal uniform with a gold starburst medallion, her grown daughter with a toolbelt, and a young boy pressing his hand to the glass. Beyond the window the ship's long chrome hull with rocket fins stretches away towards a ringed planet and a distant golden star. Sincere, hopeful and a little bittersweet: they will not live to see the end of the voyage. Keep the top third of the image as calm deep-teal space with only a few small stars (a title will go there). Turquoise, tangerine, cream and mustard gold; gouache with halftone shading. No text, letters, numbers, logos or watermarks.
+```
+
+`cover_ancestors.png`
+```
+Square image. 1950s pulp science-fiction paperback-style painting for a board-game box cover. A quiet museum hall aboard a generation ship: an ivory wall lined with arched, brass-lit portraits of past leaders, each with a small brass plaque, stretching into the distance. In the foreground a young steward in a teal uniform looks up at the portraits, holding a glowing lantern. Through a great round window at the end of the hall, the stars and a ringed planet. Reverent, warm, hopeful. Keep the top third of the image calm (a softly lit ivory vault with nothing busy; a title will go there). Ivory, deep teal, brass and a touch of tangerine; gouache with halftone shading. No text, letters, numbers, logos or watermarks.
+```
+
+`cover_ship.png`
+```
+Square image. 1950s pulp science-fiction paperback-style painting for a board-game box cover. A colossal chrome generation ship with rocket fins and rings of glowing portholes drifts past a huge ringed planet, seen from slightly below so it feels vast and old. Tiny crew figures in suits work on its hull with welding sparks; one section of hull plating is patched and scorched. Gold atomic starbursts in deep teal space. The machine is old, loved and failing, and the people keep it alive. Keep the top third of the image as calm deep-teal space (a title will go there). Turquoise, tangerine, cream and mustard gold; gouache with halftone shading. No text, letters, numbers, logos or watermarks.
+```
+
+`logo_a.png`
+```
+Wide image on a fully transparent background. A board-game title logotype that reads exactly "Stewards of the Long Voyage", in 1950s atomic-age display lettering: "STEWARDS" large in a bold rounded retro face with a chrome bevel and a thin tangerine outline; "of the" small in script; "LONG VOYAGE" in wide spaced capitals beneath, with a sweeping orbit swoosh and a small gold starburst dotting the composition. Cream and chrome letters with deep-teal shadow, readable from across a room. Exactly these words, spelled correctly, and nothing else.
+```
+
+`logo_b.png`
+```
+Wide image on a fully transparent background. A board-game title logotype that reads exactly "Stewards of the Long Voyage", lettered like the title of a 1950s science-fiction paperback: tall, slightly condensed capitals with a mustard-gold to tangerine gradient and a deep-teal drop shadow, "of the" tucked small between the lines, and a tiny rocket trailing a dotted arc over the words. Clean, confident, mid-century. Exactly these words, spelled correctly, and nothing else.
+```

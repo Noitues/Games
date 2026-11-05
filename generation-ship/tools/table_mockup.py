@@ -17,15 +17,27 @@ from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import retro_templates as rt  # noqa: E402
+import conveyor_mockups  # noqa: E402
+import house_boards  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "art" / "source" / "retro"
 OUT = ROOT / "art" / "mockups"
 PX = 6                                # px per mm on the table
-TABLE = (860, 560)                    # mm
-FONT_B = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+TABLE = (900, 640)                    # mm
+FONT_B = str(ROOT / "art" / "fonts" / "Righteous-Regular.ttf")          # style guide: titles
+FONT = str(ROOT / "art" / "fonts" / "JosefinSans[wght].ttf")            # style guide: body text
 rng = random.Random(7)                # fixed: the mock-up is reproducible
+
+
+def jfont(px, weight="Medium"):
+    """Josefin Sans is a variable font: pick a weight, or Pillow uses its thinnest."""
+    f = ImageFont.truetype(FONT, px)
+    try:
+        f.set_variation_by_name(weight)
+    except (OSError, ValueError):
+        pass
+    return f
 
 
 def mm(v):
@@ -124,7 +136,7 @@ def people_card(person, portrait, name):
     d.text(((nx + 2) * s, (ny + nh / 2) * s), name, fill=teal, font=ImageFont.truetype(FONT_B, round(3.4 * s)), anchor="lm")
     d.text(((nx + nw - 2) * s, (ny + nh / 2) * s), str(person["cost"]), fill=rt.TANGERINE, font=ImageFont.truetype(FONT_B, round(4 * s)), anchor="rm")
     tx, ty, tw, th = rt.CARD_TEXT
-    f = ImageFont.truetype(FONT, round(2.3 * s))
+    f = jfont(round(2.3 * s))
     fb = ImageFont.truetype(FONT_B, round(2.3 * s))
     y = (ty + 1.5) * s
     d.text(((tx + 2) * s, y), " · ".join(person["guilds"]), fill=rt.TANGERINE, font=fb)
@@ -140,7 +152,7 @@ def people_card(person, portrait, name):
 
 
 def legacy_text(d, person, box, s, fill):
-    f = ImageFont.truetype(FONT, round(2.2 * s))
+    f = jfont(round(2.2 * s))
     x0, y0, x1, y1 = box
     lines = wrap(d, "Legacy: " + person["legacy"]["text"], f, x1 - x0 - 4 * s)[:4]
     y = (y0 + y1) / 2 - len(lines) * 1.4 * s
@@ -265,7 +277,7 @@ def main():
     pair = data["layouts"]["pair"]
     U = 100 / 180
     ship_origin = (205, 330)                                            # mm on the table for (0, 0)
-    for bid, art in (("A", "board_a_v2.png"), ("B", "board_b_v2.png")):
+    for bid, art in (("A", "board_a_v2_toned.png"), ("B", "board_b_v2_toned.png")):   # tools/tone_boards.py
         piece, (ox, oy), s = board_piece(SRC / art, data)
         piece = piece.resize((round(piece.width * PX * U / s), round(piece.height * PX * U / s)), Image.LANCZOS)
         cx, cy = ox * PX * U / s, oy * PX * U / s                       # board centre inside the piece
@@ -309,42 +321,40 @@ def main():
                 drop(table, piece, pos, spin, shadow=0.5)
 
     # The Wall of Leaders: two panels of the tri-fold unfolded along the top. Only four portraits exist
-    # so far, so two leaders have retired (Ilka, Dace) and Ostra and Pell are in the conveyor.
-    leaders = [(remarkable[3], SRC / "ilka.png"), (common[5], SRC / "dace.png")]
+    # so far: Ilka, Pell and Ostra are in the conveyor, and Dace has retired to slot I.
+    leaders = [(common[5], SRC / "dace.png")]           # Ilka, Pell and Ostra are in the conveyor
     for k, first in enumerate((0, 4)):
         panel = wall_panel(leaders[first:first + 4], first)
         panel = panel.resize((mm(rt.WALL_W), mm(rt.WALL_H)), Image.LANCZOS)
         drop(table, panel, (300 + k * 291, 72), 0, shadow=0.8)
-    drop(table, tok["breakthrough"], (300 - 145 + 72.5 * 1.5 + 22, 80), 15, 0.7)    # on slot II, between portrait and plaque
+    drop(table, tok["breakthrough"], (300 - 145 + 72.5 * 0.5 + 22, 80), 15, 0.7)    # on slot I, between portrait and plaque
 
-    # The conveyor: Dusk, Day and Dawn leaders, right of the ship.
-    conv = [(remarkable[21], SRC / "ostra.png", "Ostra Vell"), (common[30], SRC / "pell.png", "Pell Ashgrove")]
-    for i, (p, por, n) in enumerate(conv):
-        c = people_card(p, por, n).resize((mm(63), mm(88)), Image.LANCZOS)
-        drop(table, c, (565 + i * 71, 205), rng.uniform(-2, 2), shadow=0.6)
-    lab = ImageDraw.Draw(table)
-    for i, t in enumerate(("DUSK", "DAY", "DAWN")):
-        lab.text((mm(565 + i * 71), mm(256)), t, fill=(245, 225, 190, 230), font=ImageFont.truetype(FONT_B, mm(5)), anchor="mm")
+    # The conveyor board (option A, tools/conveyor_mockups.py): leaders with their events tucked behind.
+    conv = conveyor_mockups.render_board("A", PX, OUT / "_conveyor_a.png")
+    cb = Image.open(conv).convert("RGBA")
+    conv.unlink()
+    drop(table, cb, (712, 246), 0, shadow=0.8)
 
+    # House boards (typeset by tools/house_boards.py) with hands, along the bottom.
     back = card_back().resize((mm(63), mm(88)), Image.LANCZOS)
-    drop(table, back, (565 + 2 * 71, 205), 1, shadow=0.6)              # Dawn: a portrait not yet painted
-
-    # House boards with hands, along the bottom (Galvan = blue, Gardeners = red influence).
-    # (x of the first socket from the board centre, y of the first track, socket pitch) in mm,
-    # measured on each house board's art; the first three sockets are uncovered (mid-game).
-    tracks = {"galvan": (-54, 5, 10.6), "gardeners": (-66, 2, 12.9)}
-    for hx, house, inf in ((560, "galvan", 0), (765, "gardeners", 1)):
-        hb = round_corners(Image.open(SRC / f"house_{house}.png").convert("RGB"), 40).resize((mm(190), mm(127)), Image.LANCZOS)
-        drop(table, hb, (hx, 400), 0, shadow=0.8)
-        x0, dy, step = tracks[house]
-        for j in range(3, 7):                                          # influence still on its track
-            drop(table, influence[inf], (hx + x0 + j * step, 400 + dy - 3), 0, 0.5)
+    for hx, house, inf in ((560, "galvan", 0), (775, "gardeners", 1)):
+        art = Image.open(SRC / f"house_{house}_typeset.png").convert("RGB")
+        rows = house_boards.layout(Image.open(SRC / f"house_{house}.png"))["tracks"]
+        k = mm(190) / art.width
+        hb = round_corners(art, 40).resize((mm(190), mm(127)), Image.LANCZOS)
+        top_left = (hx - 95, 440 - 63.5)
+        drop(table, hb, (hx, 440), 0, shadow=0.8)
+        for row, first in zip(rows, (3, 4)):                          # influence still covering the later sockets
+            for sock in row[first:]:
+                cx = top_left[0] + (sock[0] + sock[2]) / 2 * k / PX
+                cy = top_left[1] + (sock[1] + sock[3]) / 2 * k / PX
+                drop(table, influence[inf], (cx, cy - 1), 0, 0.5)
         for j in range(4):                                             # the hand, fanned below
-            drop(table, back, (hx - 36 + j * 22, 500 + abs(j - 1.5) * 4), -12 + j * 8, shadow=0.7)
+            drop(table, back, (hx - 36 + j * 22, 556 + abs(j - 1.5) * 4), -12 + j * 8, shadow=0.7)
 
-    # Decks and supply on the right edge and lower left.
+    # The people deck and the supply.
     for j in range(6):
-        drop(table, back, (812 - j * 0.4, 205 - j * 0.5), 1.5, shadow=0.4 if j else 0.9)
+        drop(table, back, (440 - j * 0.4, 585 - j * 0.5), 1.5, shadow=0.4 if j else 0.9)
     supply = [("glitch", 9), ("fault", 6), ("failure", 3), ("crew", 8), ("decay", 6)]
     for i, (n, k) in enumerate(supply):
         heap = sorted(((28 + (i % 2) * 52 + rng.uniform(-11, 11), 40 + (i // 2) * 48 + rng.uniform(-10, 10)) for _ in range(k)), key=lambda q: q[1])
