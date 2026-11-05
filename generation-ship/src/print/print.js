@@ -193,6 +193,25 @@ const tokensHTML = () => `<div class="tokens">${TOKENS.flatMap(([n, k, c, v]) =>
   Brace and Isolate come in values 1, 2 and 5 (make change). Patch and Lockout stack: use several.
   Damage: tip a token over at 1 damage; turn a Failure face down at 2. Only print the house banners you play with.</p>`;
 
+// ---------------------------------------------------------------- playtest record sheet
+// Mirrors the browser prototype's playtest record, so paper and digital playtests compare.
+const field = (label, w = "100%") => `<div class="fld" style="width:${w}"><span>${label}</span></div>`;
+const recordHTML = () => `<div class="record">
+  <h3>Game</h3><div class="flds">${field("Date", "24%")}${field("Players", "24%")}${field("Seed / setup notes", "48%")}
+    ${field("Houses (seat order)", "64%")}${field("Ship layout", "32%")}
+    ${field("Destination + level", "32%")}${field("Landfall: off / when ready / shuffled", "40%")}${field("Deck: playtest / full", "24%")}</div>
+  <h3>Result</h3><div class="flds">${field("Win / loss", "24%")}${field("Cause (tier, Landfall, time, Decay, influence)", "48%")}${field("Ended in generation", "24%")}
+    ${field("Understanding tier at the end", "32%")}${field("Discoveries earned / applied / Breakthroughs", "64%")}</div>
+  <h3>Each generation</h3>
+  <table class="gens"><tr><th>Gen</th><th>Heir (house)</th><th>Event</th><th>Decay pool</th><th>Purpose</th><th>Discoveries</th><th>Crisis?</th><th>Notes</th></tr>
+    ${Array.from({ length: 13 }, (_, i) => `<tr><td>${i + 1}</td>${"<td></td>".repeat(7)}</tr>`).join("")}</table>
+  <h3>Per house</h3>
+  <table class="gens"><tr><th>House</th><th>Heirs chosen</th><th>Remarkables taken</th><th>Innate tier reached most</th><th>Felt strong / weak?</th></tr>
+    ${Array.from({ length: 4 }, () => `<tr>${"<td></td>".repeat(5)}</tr>`).join("")}</table>
+  <h3>Your notes</h3><div class="flds">${field("Fun, 1–5", "24%")}${field("Length felt: short / right / long", "48%")}${field("Would play again?", "24%")}
+    ${["What felt good?", "What was confusing?", "What felt broken or pointless?", "Rules you had to look up (page or topic)"].map((q) => `<div class="fld big"><span>${q}</span></div>`).join("")}</div>
+  <p class="note">Enter the same details in the browser prototype's playtest record (end-of-game screen), or photograph this sheet and send it back.</p></div>`;
+
 // ---------------------------------------------------------------- rules reference
 const REF = `<div class="ref">
   <h3>Each generation</h3><ol>
@@ -228,7 +247,8 @@ const parts = {
   tokens: async () => `<h2>Tokens</h2>${tokensHTML()}`,
   rem: async () => `<h2>Remarkable people</h2>${sheet(peopleFor().filter((c) => c.tier === "Remarkable").map(personCard))}`,
   common: async () => `<h2>Common people</h2>${sheet(peopleFor().filter((c) => c.tier === "Common").map(personCard))}`,
-  backs: async () => `<h2>Card backs</h2><p class="note">Print on the back of the people-card pages (flip on the long edge).</p>${sheet(Array(9).fill(`<div class="card back"><img class="frame" src="${ART}card_back.png" alt=""></div>`))}`,
+  record: async () => `<h2>Playtest record</h2>${recordHTML()}`,
+  backs: async () => `<div class="sheet backs">${Array(9).fill(`<div class="card back"><img class="frame" src="${ART}card_back.png" alt=""></div>`).join("")}</div>`,
 };
 async function render() {
   const on = [...document.querySelectorAll("[data-part]")].filter((x) => x.checked).map((x) => x.dataset.part);

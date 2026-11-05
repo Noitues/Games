@@ -23,7 +23,7 @@
   .fx b { font: 8.5pt "Righteous", sans-serif; }
   .sep { display: inline-block; width: 0.3mm; height: 3.5mm; background: currentColor; opacity: .35; margin: 0 1mm; vertical-align: middle; }
   .lbl { font: 6.5pt "Righteous", sans-serif; text-transform: uppercase; letter-spacing: .04em; margin-right: 1mm; }
-  .sheet { display: flex; flex-wrap: wrap; padding: 0 8mm; }
+  .sheet { display: flex; flex-wrap: wrap; justify-content: center; padding: 0; }
   .card { width: 63mm; height: 88mm; position: relative; overflow: hidden; break-inside: avoid; outline: 0.2mm dashed #aaa; outline-offset: -0.1mm; }
   .card .frame { position: absolute; left: -3mm; top: -3mm; width: 69mm; height: 94mm; }
   .person .name { position: absolute; left: 4mm; top: 1.5mm; width: 55mm; height: 6.5mm; display: flex; justify-content: space-between; align-items: center; padding: 0 2.5mm; font: 9pt "Righteous", sans-serif; }
@@ -91,6 +91,15 @@
   .ref { margin: 0 8mm; columns: 2; column-gap: 8mm; font-size: 8.5pt; }
   .ref h3 { font: 10.5pt "Righteous", sans-serif; margin: 2mm 0 1mm; }
   .glossary { width: 180mm; margin: 0 8mm; }
+  .record { padding: 0 8mm; font-size: 9pt; }
+  .record h3 { font: 11pt "Righteous", sans-serif; margin: 3mm 0 1mm; }
+  .flds { display: flex; flex-wrap: wrap; gap: 2mm; }
+  .fld { border: .3mm solid var(--teal); border-radius: 1.5mm; height: 10mm; padding: .8mm 1.5mm; }
+  .fld span { font-size: 7pt; color: var(--muted); }
+  .fld.big { width: 100%; height: 15mm; }
+  .sheet.backs { break-before: page; padding-top: 0; }
+  .gens { border-collapse: collapse; width: 100%; }
+  .gens th, .gens td { border: .3mm solid var(--teal); padding: .6mm 1.5mm; height: 6.5mm; font-size: 8pt; text-align: left; }
   @media print { .controls { display: none; } }
   @page { size: A4; margin: 8mm; }
   @page land { size: A4 landscape; margin: 3mm; }
@@ -110,6 +119,7 @@
   <label><input type="checkbox" data-part="common" checked> Common people</label>
   <label><input type="checkbox" id="fulldeck"> All 400 people (default: the 150-card playtest deck)</label>
   <label><input type="checkbox" data-part="backs" checked> Card backs</label>
+  <label><input type="checkbox" data-part="record" checked> Playtest record sheet</label>
   <label><input type="checkbox" id="a3boards"> Ship boards at 100 % (A3)</label>
   <button onclick="print()">Print / save as PDF</button>
 </div>
