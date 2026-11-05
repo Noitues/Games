@@ -474,3 +474,9 @@ Fan is no longer an outlier (it was 52%). Diamond, with 16 links, is the easiest
 The earlier 63% at 1 player and 80% at 3 players were sampling noise. No per-player tuning is needed.
 
 Open: houses spread wider in solo play (no teammate covers a weak house). Vigil and Tellers may want a solo-only boost later.
+
+## Downgrade clears damage (designer decision, 2026-11-05)
+`downgrade()` now clears a section's leftover damage: the replacement piece starts undamaged.
+- **Effect:** the 2-player seat-swapped sweep (8 games per seat order, single core) fell from about 70% to 65%.
+- **Compensation:** Purpose pool from 7 to **6 per player**, which gives **75%**. Houses are within +7 / −5 (Galvan highest, Voidwardens lowest).
+- **Doc fix:** the GDD's Purpose numbers (8 per player) had drifted from the engine (7). Both now say 6.

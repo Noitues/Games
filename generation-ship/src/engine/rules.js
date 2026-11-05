@@ -228,11 +228,15 @@ export function vent(G, st, h, s, kind, n) {
   }
 }
 
+// A downgrade replaces a piece with an undamaged, smaller one (designer decision 2026-11-05).
+// Damage is pooled per section (s.dmg) and only ever sits on the piece being worn down, so a
+// downgrade clears the pool.
 export function downgrade(s, which = "any", n = 1) {
   for (let i = 0; i < n; i++) {
     if ((which === "any" || which === "failure") && s.failure > 0) { s.failure--; s.fault++; }
     else if ((which === "any" || which === "fault") && s.fault > 0) { s.fault--; s.glitch++; }
     else return;
+    s.dmg = 0;
   }
 }
 

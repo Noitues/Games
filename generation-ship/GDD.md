@@ -210,7 +210,7 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 
 - Damage on threat pieces clears at Time passes.
 - **A downgrade clears the piece's damage:** the new, smaller piece starts undamaged.
-- **On the table**, damage is shown by how a piece sits: a damaged Fault lies flat; a Failure lies on its side at 1 damage and stands upside down at 2 (see `art/tokens/token_sheet.svg`).
+- **On the table**, damage is shown by how a piece sits, with no extra parts: at 1 damage a Fault or Failure is knocked over; at 2 damage a Failure stands upside down. An injured Crew lies on its side. A Glitch has no damaged state (see `art/tokens/token_sheet.svg`).
 - Powers can **repair** (deal damage), **downgrade** (Failure → Fault → Glitch), **vent** (push a piece to an adjacent section; this moves the problem rather than removing it, so it earns no Purpose), and **prevent** (stop a section's Day grow).
 - **Vent and gather are optional:** for each piece, the player may leave it where it is.
 
@@ -249,7 +249,7 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 
 Spirit Island's Fear equivalent. *Narrative:* the crew's Purpose drives them to relearn how their own ship works.
 
-**Purpose pool:** **8 per player** *(tuned by simulation; 5 before playtest 1)*. Gain Purpose from:
+**Purpose pool:** **6 per player** *(tuned by simulation; 5 before playtest 1)*. Gain Purpose from:
 - **destroying a Fault: 1**,
 - **destroying a Failure: 2**,
 - cards that grant it.
@@ -612,12 +612,12 @@ Chosen before the game, with a difficulty **level 0–6**. Each destination defi
 
 | Players | Ship boards | Decay pool | Purpose pool | Event deck / Wall |
 |---|---|---|---|---|
-| 1 | 1 | 2 | 8 | 12 |
-| 2 | 2 | 5 | 16 | 12 |
-| 3 | 3 | 8 | 24 | 12 |
-| 4 | 4 | 11 | 32 | 12 |
+| 1 | 1 | 2 | 6 | 12 |
+| 2 | 2 | 5 | 12 | 12 |
+| 3 | 3 | 8 | 18 | 12 |
+| 4 | 4 | 11 | 24 | 12 |
 
-*Tuned by simulation:* Decay pool = **3 per player − 1**, Purpose pool = **8 per player** (raised from 5 after playtest 1, when Wall bonuses and the new track slots made the ship stronger). After playtest 1, house bots win 74% / 73% / 69% / 75% at 1 / 2 / 3 / 4 players. With these, house bots win 75% / 74% / 66% / 68% at 1 / 2 / 3 / 4 players (level 0).
+*Tuned by simulation:* Decay pool = **3 per player − 1**, Purpose pool = **6 per player** (raised from 5 after playtest 1, when Wall bonuses and the new track slots made the ship stronger). After playtest 1, house bots win 74% / 73% / 69% / 75% at 1 / 2 / 3 / 4 players. With these, house bots win 75% / 74% / 66% / 68% at 1 / 2 / 3 / 4 players (level 0).
 
 The people deck does not scale. Solo-specific tuning is deferred until multiplayer is settled; solo players can play two-handed.
 
@@ -756,7 +756,7 @@ A mute toggle is included.
 
 Still open without data: is "move Crew" different from "gather Crew"? (The engine treats them the same.)
 
-**Decided (designer, 2026-11-05): damage does not carry over on a downgrade.** A downgraded piece is replaced by an undamaged one. *Engine gap:* `damageThreat` in `src/engine/rules.js` keeps leftover damage as one pool per section (`s.dmg`), not per piece, and `downgrade()` leaves that pool alone, so the prototype does not apply this rule yet.
+**Decided (designer, 2026-11-05): damage does not carry over on a downgrade.** A downgraded piece is replaced by an undamaged one. The engine applies this: `downgrade()` in `src/engine/rules.js` clears the section's leftover damage.
 
 **Not yet designed:**
 - Haven effects beyond targeting,

@@ -4,7 +4,7 @@ export const DEFAULT_CONFIG = {
   houses: ["galvan", "keel"],
   decayPerPlayer: 3, decayBase: -1,
   crisisRefillPerPlayer: 1,
-  purposePerPlayer: 7,
+  purposePerPlayer: 6,
   discoveriesPerTier: 3,
   stageCounts: { 1: 3, 2: 4, 3: 5 },
   startCredits: 0,

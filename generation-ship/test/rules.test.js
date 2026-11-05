@@ -373,3 +373,11 @@ test("clock: drawing from an empty event deck loses the game", () => {
   runPhase(G, st, "dawn");
   assert.equal(st.result?.cause, "time");
 });
+test("a downgrade clears the damage on the piece (it is replaced by an undamaged one)", () => {
+  const { G, st, S } = fresh();
+  S.A1.failure = 1;
+  damageThreat(G, st, S.A1, 2);   // 2 of 3 damage on the Failure
+  assert.equal(S.A1.failure, 1); assert.equal(S.A1.dmg, 2);
+  applySectionEffects(G, st, 0, S.A1, { downgrade: 1 });
+  assert.equal(S.A1.fault, 1); assert.equal(S.A1.dmg, 0);
+});
