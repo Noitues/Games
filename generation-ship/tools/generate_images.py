@@ -1,6 +1,7 @@
 """Generate the concept-art images directly (no Batch API), one request at a time.
 
-Run on your own computer, from the generation-ship folder, with your key in the environment:
+Run from the generation-ship folder. On your own computer, put your key in the environment
+(in a Claude cloud session with an OpenAI network secret, no key is needed):
     export OPENAI_API_KEY=...            (Windows PowerShell: $env:OPENAI_API_KEY="...")
     python3 tools/generate_images.py [--only retro] [--names ostra,board_a] [--quality medium]
 
@@ -27,9 +28,9 @@ def main():
     ap.add_argument("--names", help="comma-separated image names (ostra,dace,ilka,pell,board_a,card_frame,wall_panel,cover)")
     ap.add_argument("--quality", help="override quality: low, medium or high")
     a = ap.parse_args()
+    # On your own computer, set OPENAI_API_KEY. In a Claude cloud session with an OpenAI network
+    # secret, leave it unset: the session's proxy adds the key to requests to api.openai.com.
     key = os.environ.get("OPENAI_API_KEY")
-    if not key:
-        sys.exit("Set OPENAI_API_KEY in your environment first.")
     styles = set(a.only.split(",")) if a.only else None
     names = set(a.names.split(",")) if a.names else None
     reqs = [json.loads(l) for l in (ROOT / "art" / "image_batch.jsonl").read_text().splitlines() if l.strip()]
@@ -45,8 +46,10 @@ def main():
         if a.quality:
             body["quality"] = a.quality
         print(f"generating {style}/{name} ({body['size']}, x{body.get('n', 1)}) ...", flush=True)
-        req = urllib.request.Request(API, data=json.dumps(body).encode(), method="POST",
-                                     headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+        headers = {"Content-Type": "application/json"}
+        if key:
+            headers["Authorization"] = f"Bearer {key}"
+        req = urllib.request.Request(API, data=json.dumps(body).encode(), method="POST", headers=headers)
         try:
             with urllib.request.urlopen(req, timeout=300) as resp:
                 data = json.loads(resp.read())
