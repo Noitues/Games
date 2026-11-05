@@ -216,11 +216,11 @@ def main():
 
 
 # --- v2: the emblem boards (Retro batch 5), typeset from the known geometry ------------------------
-def typeset_v2(house):
+def typeset_v2(house, version="v2"):
     """Typeset house_<id>_v2.png from tools/retro_templates.py HOUSE_BOARD (the guide it was painted
     over), so nothing has to be found in the image."""
     import retro_templates as rt
-    im = Image.open(SRC / f"house_{house['id']}_v2.png").convert("RGB")
+    im = Image.open(SRC / f"house_{house['id']}_{version}.png").convert("RGB")
     d = ImageDraw.Draw(im)
     L = rt.HOUSE_BOARD
     x0, y0, x1, y1 = L["name"]
@@ -250,7 +250,7 @@ def typeset_v2(house):
     block(d, L["special"], sp["id"].replace("_", " ").title(),
           [sp["text"], f"Start: {house['starting_influence']['text']}.", f"Hand +{house.get('hand_bonus', 0)} · Clone {house.get('clone', 0)}"],
           tsize=28, bsize=19)
-    out = SRC / f"house_{house['id']}_v2_typeset.png"
+    out = SRC / f"house_{house['id']}_{version}_typeset.png"
     im.save(out)
     return out
 
@@ -258,8 +258,9 @@ def typeset_v2(house):
 def main_v2():
     houses = json.loads((ROOT / "data" / "houses.json").read_text())["houses"]
     for h in houses:
-        if (SRC / f"house_{h['id']}_v2.png").exists():
-            print("wrote", typeset_v2(h).relative_to(ROOT))
+        for v in ("v2", "v3"):
+            if (SRC / f"house_{h['id']}_{v}.png").exists():
+                print("wrote", typeset_v2(h, v).relative_to(ROOT))
 
 
 if __name__ == "__main__":

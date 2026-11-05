@@ -337,9 +337,11 @@ def main():
 
     # House boards (typeset by tools/house_boards.py) with hands, along the bottom.
     back = card_back().resize((mm(63), mm(88)), Image.LANCZOS)
+    houses = {h["id"]: h for h in json.loads((ROOT / "data" / "houses.json").read_text())["houses"]}
     for hx, house, inf in ((560, "galvan", 0), (775, "gardeners", 1)):
-        art = Image.open(SRC / f"house_{house}_typeset.png").convert("RGB")
-        rows = house_boards.layout(Image.open(SRC / f"house_{house}.png"))["tracks"]
+        art = Image.open(SRC / f"house_{house}_v3_typeset.png").convert("RGB")       # emblem boards (batch 6)
+        rows = [[(x - 36, y - 36, x + 36, y + 36) for x, y in rt.socket_centres(yy, len(houses[house]["tracks"][key]))]
+                for (yy, _), key in zip(rt.HOUSE_BOARD["tracks"], ("credits", "plays"))]
         k = mm(190) / art.width
         hb = round_corners(art, 40).resize((mm(190), mm(127)), Image.LANCZOS)
         top_left = (hx - 95, 440 - 63.5)
