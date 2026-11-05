@@ -38,3 +38,8 @@ The designer is leaning towards **Retro Space**.
    - a card back;
    - house player boards;
    - the four section-type corner icons (atom / house / star / leaf).
+
+## Decisions and follow-up (2026-11-05)
+- **Item 1 and 2, done (Retro v2):** one master window, the card frame's wide arch at 55 × 40 mm, and a 59 × 16 mm Legacy plaque (18 % of the card). Geometry: `tools/retro_templates.py`. New art, generated as edits of the layout guides so the windows match: `art/source/retro/card_frame_v2a/b.png` and `wall_panel_v2a/b.png`, with `_exact` copies whose windows are re-cut from the master shape.
+- **Item 3, decided: option (a).** Keep the game's 8-section boards; the art follows `data/boards.json`.
+- **Image API:** gpt-image-1 was shut down on 2026-10-23. Direct requests use `gpt-image-2.6-sunburst`; the Batch API (half price, now the project's only route for image runs) takes GPT Image 2.5 only, so batches use `gpt-image-2.5-sunburst`.

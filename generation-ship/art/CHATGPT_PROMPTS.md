@@ -205,6 +205,18 @@ Tall portrait image. Front view of an empty trading-card frame for this game: a 
 Wide landscape image, with the subject a very wide horizontal panel centred in the frame. Front view of a mid-century retro-space wall panel: a rounded tangerine panel with four rocket-nose-shaped windows side by side and a blank teal mission plaque under each. The windows are empty. Chrome trim and gold starbursts. Flat, straight-on, like a board-game component. No text, letters, logos or watermarks.
 ```
 
+**Retro v2: one master window (fixes review item 1 and 2).** The card and the Wall now share one window: the card frame's wide arch, 55 × 40 mm, with flat sides and a flat foot, and one Legacy plaque, 59 × 16 mm (18 % of the card). Both are drawn from `tools/retro_templates.py`. Attach the layout guide (`art/templates/retro/card_guide.png` or `wall_guide.png`) with the prompt; `tools/generate_retro_v2.py` does this through the edits endpoint and also saves an `_exact` copy with the windows re-cut from the master shape.
+
+`card_frame_v2.png`
+```
+Tall portrait image, exactly the layout of the attached guide. Repaint the guide as a finished, empty trading-card frame for this game, flat and straight-on like a printed card template. Keep every shape exactly where it is and exactly as large as it is: the thin cream name bar at the top; the wide arched portrait window below it (straight sides, a gently rounded arch on top, a flat foot); the cream text panel in the middle; and the large rounded Legacy plaque across the bottom. The arch window and the Legacy plaque stay perfectly flat, empty deep teal (#0F3A48), with no stars, planets or shading inside them; the name bar and text panel stay plain, empty cream. Paint only the frame around them: a tangerine card border with a softly rounded outer edge, a chrome bezel tracing the arch window and the Legacy plaque, small gold atomic starbursts and a tiny ringed planet in the corners of the border, fine halftone shading on the tangerine. Symmetrical left to right. No text, letters, numbers, logos or watermarks.
+```
+
+`wall_panel_v2.png`
+```
+Very wide landscape image, exactly the layout of the attached guide, with the panel filling the whole frame edge to edge. Repaint the guide as one finished panel of the Wall of Leaders, a mid-century memorial gallery for the ship's retired leaders, flat and straight-on like a board-game component. Keep every shape exactly where it is and exactly as large as it is: four identical wide arched windows in a row (straight sides, a gently rounded arch on top, a flat foot), a rounded mission plaque window under each, and a small round thumb notch at the top edge above each arch. The windows, plaques and notches stay perfectly flat, empty deep teal (#0F3A48), with nothing inside them. Paint only the panel around them: a tangerine panel with chrome bezels tracing every arch and plaque exactly, a slim chrome rail along the top and bottom edges, gold atomic starbursts between the slots, and a small blank round gold medallion centred under each plaque for the slot number. Calm, even, memorial mood; fine halftone shading. No text, letters, numbers, logos or watermarks.
+```
+
 `cover.png`
 ```
 Tall portrait image. 1950s pulp paperback-style painting for a board-game box cover: a gleaming chrome generation ship with rocket fins leaving a ringed planet, families waving from a big round observation window, gold starbursts, turquoise and tangerine. Optimistic golden-age adventure. Leave the top quarter as calmer space (a title will go there later). No text, letters, logos, borders or watermarks.

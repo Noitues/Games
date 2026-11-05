@@ -20,13 +20,19 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.openai.com/v1/images/generations"
+# gpt-image-1 was shut down on 2026-10-23. GPT Image 2.6 Sunburst is OpenAI's current model for
+# detailed work and edit precision (Flare, gpt-image-2.6-flare, is the fast one).
+DEFAULT_IMAGE_MODEL = "gpt-image-2.6-sunburst"
+# The Batch API (half price) takes GPT Image 2.5 only, for /v1/images/generations and /edits.
+BATCH_IMAGE_MODEL = "gpt-image-2.5-sunburst"
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", help="comma-separated styles (grimdark,spacepunk,newage,retro)")
     ap.add_argument("--names", help="comma-separated image names (ostra,dace,ilka,pell,board_a,card_frame,wall_panel,cover)")
-    ap.add_argument("--quality", help="override quality: low, medium or high")
+    ap.add_argument("--quality", help="override quality: low, medium, high, xhigh or max")
+    ap.add_argument("--model", default=DEFAULT_IMAGE_MODEL, help="image model (replaces the model in the batch file)")
     a = ap.parse_args()
     # On your own computer, set OPENAI_API_KEY. In a Claude cloud session with an OpenAI network
     # secret, leave it unset: the session's proxy adds the key to requests to api.openai.com.
@@ -43,6 +49,7 @@ def main():
             print("exists, skipping", style, name)
             continue
         body = dict(r["body"])
+        body["model"] = a.model
         if a.quality:
             body["quality"] = a.quality
         print(f"generating {style}/{name} ({body['size']}, x{body.get('n', 1)}) ...", flush=True)

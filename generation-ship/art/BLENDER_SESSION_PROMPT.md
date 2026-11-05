@@ -57,7 +57,7 @@ You are helping me produce physical-product renders for my board game **Generati
 5. **`wall.py`**: the **Wall of Leaders as a dual-layer board**. This is the most important piece.
    - **Size:** tri-fold, three panels of four slots (12 slots), each panel about 290 × 120 mm. Two 2 mm layers.
    - **Top layer cutouts, per slot:**
-     - a **frame window** over the card's portrait zone (about 55 × 33 mm, in the style's frame shape: arch / porthole / hexagon / rocket-nose),
+     - a **frame window** over the card's portrait zone (about 55 × 33 mm, in the style's frame shape: arch / porthole / hexagon; Retro: the master window, 55 × 40 mm, from `art/templates/retro/`),
      - a **plaque window** over the Legacy band (about 59 × 14 mm).
 
      Print a frame around each window, and a slot number.

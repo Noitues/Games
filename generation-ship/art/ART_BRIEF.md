@@ -40,9 +40,11 @@ A cooperative game about Great Houses stewarding a generation ship. Generations 
 | Zone | Position (from the card top, 88 mm tall) | Content |
 |---|---|---|
 | Name bar | 0–9 mm | Name, cost (top right) |
-| **Portrait window** | 9–44 mm, full width (63 × 35 mm art area; 69 × 38 mm with bleed) | The person's portrait. Must read inside an arch or round frame inset 4 mm from each side. |
-| Guilds + effect text | 44–72 mm | 2–4 guild icons; effect; threshold bonus; Reign |
-| **Legacy band** | 72–88 mm (63 × 16 mm) | Legacy text, always last. Shows through the Wall's plaque window. |
+| **Portrait window** | 9–49 mm: the **master window**, a wide arch 55 × 40 mm at x 4–59 mm (straight sides, a gently rounded arch, a flat foot) | The person's portrait (art area 63 × 40 mm; 69 × 43 mm with bleed). The face sits in the upper-middle, inside the arch. |
+| Guilds + effect text | 49–70.5 mm (text panel 51–69 mm) | 2–4 guild icons; effect; threshold bonus; Reign |
+| **Legacy plaque** | 70.5–86.5 mm, 59 × 16 mm at x 2–61 mm (18 % of the card height) | Legacy text, always last. Shows through the Wall's plaque window. |
+
+**One master window (Retro v2, 2026-11-05).** The card and the Wall share one portrait window and one Legacy plaque. The exact shapes live in `tools/retro_templates.py`, which writes `art/templates/retro/` (`master_window.svg`, `card_template.svg`, `wall_panel_template.svg` and the layout guides for the image model). Change them only there.
 
 **Ship board module.**
 - **Outline:** every board shares one flat-top hexagonal hull module, about 200 mm across. The exact outline is `outline` in `data/boards.json` (circumradius 180 units = 100 mm).
@@ -59,9 +61,9 @@ A cooperative game about Great Houses stewarding a generation ship. Generations 
 
 **Wall of Leaders (dual-layer board).**
 - **Size:** a tri-fold board, 3 panels of 4 slots each (12 leaders), each panel about 290 × 120 mm.
-- **Top layer** (2 mm) has, per slot:
-  - a frame window over the card's portrait zone (about 55 × 33 mm),
-  - a plaque window over the Legacy band (about 59 × 14 mm),
+- **Top layer** (2 mm) has, per slot, the same two shapes as the card (the master window), with a slotted card's top edge 8 mm below the panel's top edge:
+  - the portrait window, 55 × 40 mm, exactly over the card's arch,
+  - the plaque window, 59 × 16 mm, exactly over the Legacy plaque,
   - a printed frame around each window,
   - a slot number (I–XII or 1–12).
 - **Bottom layer** (2 mm) backs it. The card slides down between the layers through slits in the top edge. Optionally, a thumb notch at the top of each slit.
@@ -83,6 +85,8 @@ A cooperative game about Great Houses stewarding a generation ship. Generations 
 Portraits are **head and shoulders, three-quarter view, the face in the upper-middle third**, so they survive the arch window crop. Each needs a simple background that hints at the guild (archives, terraces, council, engine room).
 
 ### Board art test
+**Decision (2026-11-05): the art follows the game's boards.** Each board keeps its 8 irregular sections and the Outer Hull on one side, exactly as in `data/boards.json` (review option a). The painter (or a guide image drawn from the data) follows those section shapes; the hub-and-six-rooms layout of the first Retro board A is not used.
+
 Paint **board A** first, using these sections (centres from `data/boards.json`):
 - **Outer Hull:** A1 Infrastructure, A2 Residential, A3 Agricultural.
 - **Core:** A4 Government, A5 Agricultural, A6 Infrastructure, A7 Government, A8 Residential.
@@ -260,7 +264,7 @@ Each type also gets a distinct geometric glyph.
 - **Titles:** Righteous (or an atomic-age display face).
 - **Body:** Josefin Sans.
 
-**Wall:** rounded tangerine panel with rocket-nose windows and mission-plaque windows. Breakthrough marker: a gold starburst.
+**Wall:** rounded tangerine panel with the card's own wide-arch windows (the master window) and Legacy plaque windows, chrome bezels, a gold medallion per slot for its number. Breakthrough marker: a gold starburst.
 
 **Risk:** reads as parody. Keep the people sincere; the stakes are real.
 
@@ -270,8 +274,8 @@ Each type also gets a distinct geometric glyph.
 - **Portrait: Ilka Tor.** `1950s pulp science-fiction gouache illustration, head and shoulders portrait of an androgynous elder council steward in a high-collared uniform with a gold starburst medallion, calm unreadable face, mid-century modern council chamber with a big round window behind, pink and teal palette, halftone --ar 63:35`
 - **Portrait: Pell Ashgrove.** `1950s pulp science-fiction gouache illustration, head and shoulders portrait of a grinning teenage rocket mechanic, chrome goggles pushed up, oversized gloves, wrench on shoulder, rocket engine glowing tangerine behind, cheerful, halftone texture --ar 63:35`
 - **Board A.** `top-down orthographic illustration of a hexagonal deck of a 1950s atomic-age generation ship, eight rooms with rounded mid-century walls: turquoise reactor room with atom motifs, tangerine family apartments with boomerang tables, pink council room with starburst floor, lime hydroponic gardens, top edge is a chrome hull with rocket fins and round portholes facing deep teal space with gold starbursts and a ringed planet, seen from directly above like a map, gouache and halftone, bold readable colours --ar 1:1`
-- **Card frame.** `1950s retro space card frame, rounded tangerine border with chrome trim and small starbursts, rocket-nose shaped window at top, cream text panel, teal mission plaque at bottom, flat front view, no text --ar 63:88`
-- **Wall panel.** `front view of a mid-century retro space wall panel, rounded tangerine panel with four rocket-nose shaped windows in a row and a teal mission plaque under each, chrome trim, gold starbursts, flat orthographic, gouache and halftone, game component art --ar 29:12`
+- **Card frame.** Superseded by `card_frame_v2` in `art/CHATGPT_PROMPTS.md` (the master window: the card's wide arch, 55 × 40 mm, and a 59 × 16 mm Legacy plaque).
+- **Wall panel.** Superseded by `wall_panel_v2` in `art/CHATGPT_PROMPTS.md` (the same master window and plaque in every slot).
 - **Box cover.** `1950s pulp science-fiction paperback cover painting, a gleaming chrome generation ship with rocket fins leaving a ringed planet, families waving from a big round observation window, gold starbursts, turquoise and tangerine, optimistic golden-age adventure --ar 4:5`
 
 ---
