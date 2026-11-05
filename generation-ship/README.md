@@ -31,7 +31,20 @@ python3 -m http.server 8000
 No build step and no dependencies. The browser loads `data/*.json` and the engine in `src/` directly.
 
 ## Print and play
-Open `print.html` in the browser (served the same way as the prototype). Pick the parts you want, then print or save as a PDF. Cards are poker size (63 × 88 mm), 9 per A4 page, with dashed cut lines. A ready-made copy of everything (64 pages, including the hull-module boards and a page of ship layouts) is in `print/generation-ship-print-and-play.pdf`.
+Open `print.html` in the browser, served the same way as the prototype. Pick the parts you want, then print or save as a PDF. A ready-made copy of everything is in `print/stewards-print-and-play.pdf`: 96 pages, A4, with the Wall on landscape pages.
+
+The kit uses the Retro art from `art/source/retro/` and the icon set from `art/icons/`. Card effects are drawn from `art/icons/effects.json`; the art tools own the icons and art, while this repo owns the data and layout. It contains:
+- **Cards (63 × 88 mm, 9 per page):**
+  - people cards: name, cost, guilds, target, effect, bonus, Reign, and the Legacy plaque;
+  - event cards, laid out to tuck under their leader;
+  - Discoveries, with their Breakthrough;
+  - Ship in Crisis cards;
+  - card backs, to print duplex behind the people cards.
+- **House boards:** the typeset art where it exists, otherwise a layout built from the data with icons.
+- **Ship boards A–D:** printed at 90 % on A4, so all boards still dock; tick "100 % (A3)" for true scale. Each board shows section IDs, type icons and starting pieces, plus the void crescent.
+- **Wall of Leaders:** three panels for the top layer (cut the windows and a slit per slot) plus a backing layer.
+- **Tokens:** a 16 mm punch sheet.
+- **Reference:** destinations, a rules summary and the icon glossary.
 
 ## Repository map
 | Path | What |
