@@ -237,7 +237,7 @@ def card_anatomy():
     o.append(call(36, 54.2, L, "R", ["Effect", "in icons: 2 credits; Lockout"]))
     E = rt.EVENT
     o.append(call(31.5, 19, R, "L", ["Picture", "where the trouble is"]))
-    o.append(call(10, 44, R, "L", ["When revealed", "a one-time effect, read at", "Dawn (if the event has one)"], dy=-20))
+    o.append(call(10, 44, R, "L", ["When revealed", "(optional, not yet in use):", "a possible one-time effect"], dy=-20))
     o.append(call(3, E["tuck"], R, "L", ["Tuck line", "the leader covers everything", "above it on the conveyor"], dy=20))
     o.append(call(E["stage"][0], E["stage"][1], R, "L", ["Stage", "I, II or III"], dy=70))
     o.append(call(E["icons"][0][0], E["icons"][0][1], R, "R", ["Section types", "where it seeds, grows", "and collapses"], dy=-20))
