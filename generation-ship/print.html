@@ -28,12 +28,13 @@
   .card .frame { position: absolute; left: -3mm; top: -3mm; width: 69mm; height: 94mm; }
   .person .name { position: absolute; left: 4mm; top: 1.5mm; width: 55mm; height: 6.5mm; display: flex; justify-content: space-between; align-items: center; padding: 0 2.5mm; font: 9pt "Righteous", sans-serif; }
   .person .cost { display: inline-flex; align-items: center; gap: .5mm; }
-  .person .window { position: absolute; left: 4mm; top: 9mm; width: 55mm; height: 40mm; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3mm; color: var(--cream); }
-  .person .guilds { display: flex; gap: 2mm; margin-top: 5mm; }
-  .person .guilds .ic { background: var(--cream); border-radius: 50%; padding: .6mm; }
-  .person .target { display: inline-flex; align-items: center; gap: .6mm; background: var(--cream); color: var(--teal); border-radius: 3mm; padding: .5mm 2mm; }
+  .person .gcol { position: absolute; left: 2mm; top: 0; width: 7.5mm; height: 88mm; }
+  .person .gcol .g { position: absolute; left: .75mm; width: 6mm; height: 6mm; background: var(--cream); border-radius: 50%; }
+  .person .gcol .g.off { filter: grayscale(1); opacity: .55; }
+  .person .target { display: inline-flex; align-items: center; gap: .4mm; background: var(--teal); color: var(--cream); border-radius: 2mm; padding: .2mm 1.2mm; margin-right: 1mm; }
+  .person .target .ic { filter: brightness(0) invert(1); }
   .person .target b { font: 8.5pt "Righteous", sans-serif; }
-  .person .panel { position: absolute; left: 4mm; top: 51mm; width: 55mm; height: 18mm; padding: 1.2mm 2mm; display: flex; flex-direction: column; justify-content: space-around; }
+  .person .panel { position: absolute; left: 11mm; top: 51mm; width: 48mm; height: 18mm; padding: 1.2mm 2mm; display: flex; flex-direction: column; justify-content: space-around; }
   .row { display: flex; align-items: center; flex-wrap: wrap; gap: .4mm; }
   .row.eff .ic { height: 4.6mm; width: 4.6mm; } .row.eff b { font-size: 11pt; }
   .row.th { border-top: .2mm solid #c9b98f; padding-top: .5mm; }

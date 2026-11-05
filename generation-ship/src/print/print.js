@@ -42,15 +42,16 @@ function targetHTML(c) {
   const type = TYPE_ICON[t.type] ? I(TYPE_ICON[t.type]) : t.type === "Hull" ? I("hull") : `<span class="tx">${esc(t.type === "ANY" ? "any section" : t.type)}</span>`;
   return `${I("range")}<b>${t.range}</b>${type}`;
 }
+// guild column (Spirit Island style): all eight, fixed order, the card's own in colour
+const GUILD_ORDER = ["Engineers", "Navigators", "Bureaucrats", "Farmers", "Medics", "Laborers", "Keepers", "Scholars"];
 function personCard(c) {
   const rem = c.tier === "Remarkable";
   const th = c.threshold ? `<div class="row th">${req(c.threshold.elements)}<span class="arrow">→</span>${fxRow(c.threshold.effects)}</div>` : "";
   return `<div class="card person ${rem ? "rem" : ""}">
-    <img class="frame" src="${ART}card_frame_v3b_exact.png" alt="">
+    <img class="frame" src="${ART}card_frame_v4a_exact.png" alt="">
     <div class="name"><span>${c.id}${rem ? " ★" : ""}</span><span class="cost"><b>${c.cost}</b>${I("credits")}</span></div>
-    <div class="window"><div class="guilds">${c.guilds.map((g) => I(`guild_${g}`, "ic big")).join("")}</div>
-      <div class="target">${targetHTML(c)}</div></div>
-    <div class="panel"><div class="row eff">${fxRow(c.effects)}</div>${th}
+    <div class="gcol">${GUILD_ORDER.map((g, i) => `<img class="g ${c.guilds.includes(g) ? "on" : "off"}" style="top:${(13.9 + i * 6.6 - 3).toFixed(2)}mm" src="art/icons/guild_${g}.svg" alt="${g}">`).join("")}</div>
+    <div class="panel"><div class="row eff"><span class="target">${targetHTML(c)}</span>${fxRow(c.effects)}</div>${th}
       <div class="row reign">${I("day")}<span class="lbl">Reign</span>${fxRow(c.reign.effects)}</div></div>
     <div class="plaque"><span class="lbl">Legacy</span>${fxRow(c.legacy.effects)}</div></div>`;
 }
@@ -173,7 +174,7 @@ function layoutsHTML() {
 
 // ---------------------------------------------------------------- Wall of Leaders (dual layer)
 const wallHTML = () => [1, 2, 3].map((p) => `<div class="wall"><div class="cap"><b>Wall of Leaders, panel ${p} of 3 (top layer)</b> · 290 × 120 mm, on card stock · cut out the two windows of each slot and a slit along the top edge of each slot · slots ${(p - 1) * 4 + 1}–${p * 4}</div>
-    <div class="wallpanel"><img src="${ART}wall_panel_v3b_exact.png" alt="Wall panel">
+    <div class="wallpanel"><img src="${ART}wall_panel_v4b_exact.png" alt="Wall panel">
       ${[0, 1, 2, 3].map((i) => `<span class="slotno" style="left:${36.25 + i * 72.5}mm">${["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"][(p - 1) * 4 + i]}</span>`).join("")}</div></div>`).join("")
   + `<div class="wall"><div class="cap"><b>Backing layer</b> (print 3) · glue to the back of each top layer along the sides and bottom only, so cards slide in from the top</div><div class="backing"></div></div>`;
 
