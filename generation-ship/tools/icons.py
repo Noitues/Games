@@ -47,6 +47,13 @@ def emblem(house, colour=CREAM):
             f'<line x1="{50 + 15 * math.cos(a)}" y1="{42 + 15 * math.sin(a)}" x2="{50 + 21 * math.cos(a)}" y2="{42 + 21 * math.sin(a)}" stroke="{colour}" stroke-width="5"/>' for a in (0, math.pi / 2, math.pi, 3 * math.pi / 2))
             + f'<polygon points="50,33 53,39 59,42 53,45 50,51 47,45 41,42 47,39" fill="{colour}"/>',
     }
+    e.update({
+        "meridian": f'<path d="M28,46 C36,36 44,56 52,46 C60,36 68,56 74,46" fill="none" stroke="{colour}" stroke-width="6" stroke-linecap="round"/><path d="M30,30 A24,24 0 0 1 70,30" fill="none" stroke="{colour}" stroke-width="4"/><polygon points="70,22 76,32 64,32" fill="{colour}"/>',
+        "vigil": f'<rect x="42" y="24" width="16" height="6" rx="2" fill="{colour}"/><path d="M40,30 L60,30 L64,56 L36,56 Z" fill="none" stroke="{colour}" stroke-width="5" stroke-linejoin="round"/><circle cx="50" cy="44" r="5" fill="{colour}"/>'
+                 + "".join(f'<line x1="{50 + 18 * math.cos(a)}" y1="{44 + 18 * math.sin(a)}" x2="{50 + 24 * math.cos(a)}" y2="{44 + 24 * math.sin(a)}" stroke="{colour}" stroke-width="3" stroke-linecap="round"/>' for a in (math.pi, 0, -math.pi / 4, -3 * math.pi / 4)),
+        "foremen": f'<circle cx="50" cy="44" r="16" fill="none" stroke="{colour}" stroke-width="5" stroke-dasharray="5 4"/><path d="M36,58 L62,30" stroke="{colour}" stroke-width="6" stroke-linecap="round"/><rect x="56" y="22" width="14" height="10" rx="2" fill="{colour}" transform="rotate(45 63 27)"/><path d="M38,30 L64,58" stroke="{colour}" stroke-width="5" stroke-linecap="round"/>',
+        "tellers": f'<path d="M30,56 C38,52 46,54 50,58 C54,54 62,52 70,56 L70,40 C62,36 54,38 50,42 C46,38 38,36 30,40 Z" fill="{colour}"/><polygon points="50,18 53,30 64,30 55,36 58,46 50,40 42,46 45,36 36,30 47,30" fill="{colour}"/>',
+    })
     return e.get(house, f'<polygon points="50,26 55,38 68,40 58,48 61,60 50,53 39,60 42,48 32,40 45,38" fill="{colour}"/>')
 
 
@@ -255,6 +262,13 @@ def draw():
     return f'<g transform="translate(-8 0)">{card()}</g><circle cx="74" cy="70" r="18" fill="{ACT}" stroke="{INK}" stroke-width="4"/><path d="M74,60 L74,80 M64,70 L84,70" stroke="{CREAM}" stroke-width="6" stroke-linecap="round"/>'
 
 
+def clone():
+    """Clone slot: a card and its copy, offset."""
+    return (f'<rect x="14" y="20" width="44" height="64" rx="6" fill="{INK}" stroke="{INK}" stroke-width="4"/>'
+            f'<rect x="42" y="12" width="44" height="64" rx="6" fill="{CREAM}" stroke="{INK}" stroke-width="5" stroke-dasharray="7 5"/>'
+            f'<path d="M64,34 L64,54 M54,44 L74,44" stroke="{ACT}" stroke-width="6" stroke-linecap="round"/>')
+
+
 def fast():
     return (f'<path d="M50,6 C66,20 70,40 66,64 L34,64 C30,40 34,20 50,6 Z" fill="{CREAM}" stroke="{INK}" stroke-width="{SW}" transform="rotate(40 50 50)"/>'
             f'<circle cx="50" cy="36" r="8" fill="{INK}" transform="rotate(40 50 50)"/>'
@@ -297,6 +311,9 @@ GUILD = {
     "Scholars": lambda: guild_ring(f'<path d="M14,30 C30,24 44,26 50,34 C56,26 70,24 86,30 L86,74 C70,68 56,70 50,78 C44,70 30,68 14,74 Z" fill="{INK}"/><path d="M50,34 L50,78" stroke="{CREAM}" stroke-width="4"/>', "#C8C0E8"),
 }
 
+HOUSE_COLOURS = {"galvan": "#3A6FD8", "meridian": "#2A9D8F", "keel": "#7A8C96", "vigil": "#E8A23A",
+                 "foremen": "#C9482A", "gardeners": "#8FB04A", "voidwardens": "#6A4A9A", "tellers": "#D86A8A"}
+
 GROUPS = [
     ("PIECES", [("Glitch", glitch), ("Fault", fault), ("Failure", failure), ("Crew", crew), ("Decay", decay),
                 ("Influence", influence), ("Haven", haven), ("Purpose", purpose), ("Credits", credits), ("Card", card)]),
@@ -304,11 +321,11 @@ GROUPS = [
                 ("Unrest", unrest), ("Isolate", isolate)]),
     ("ACTIONS", [("Repair (damage)", repair), ("Vent (push)", vent), ("Gather", gather), ("Move", move), ("Add", add),
                  ("Remove", remove), ("Downgrade", downgrade), ("Restore Decay", restore_decay), ("Crew strike", crew_strike),
-                 ("Foresee", foresee), ("Temper Legacy", temper_legacy), ("Draw", draw), ("Fast", fast), ("Slow", slow),
+                 ("Foresee", foresee), ("Temper Legacy", temper_legacy), ("Draw", draw), ("Clone", clone), ("Fast", fast), ("Slow", slow),
                  ("Range", range_), ("Outer Hull", hull)]),
     ("GUILDS  ·  the elements", [(g, f) for g, f in GUILD.items()]),
     ("HOUSE CRESTS  ·  influence pieces lie flat in this shape; the house board banner is the same crest",
-     [(h.title(), (lambda h=h, c=c: crest(h, c))) for h, c in (("galvan", "#3A6FD8"), ("keel", "#7A8C96"), ("gardeners", "#8FB04A"), ("voidwardens", "#6A4A9A"))]),
+     [(h.title(), (lambda h=h, c=c: crest(h, c))) for h, c in HOUSE_COLOURS.items()]),
 ]
 
 # Effect verbs -> (icons, how to show n). An icon list reads left to right after the number.
@@ -320,7 +337,8 @@ ICON_FOR = {
     "isolate_fault": [isolate, fault], "isolate_failure": [isolate, failure], "downgrade": [downgrade],
     "downgrade_failure": [downgrade], "restore_decay": [restore_decay], "crew_strike": [crew_strike], "foresee": [foresee],
     "temper_legacy": [temper_legacy], "extra_draw": [draw], "move_influence": [move, influence], "add_influence": [add, influence],
-    "damage_per_crew": [repair, crew],
+    "damage_per_crew": [repair, crew], "place_influence_from_track": [add, influence], "fast_play": [fast],
+    "vent_glitch_or_fault": [vent, glitch, fault],
 }
 
 
@@ -382,8 +400,57 @@ def sheet():
     return f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{y}" viewBox="0 0 {W} {y}">{defs}<rect width="{W}" height="{y}" fill="#EDE6D8"/>{"".join(o)}</svg>', (W, y)
 
 
+def raster_set():
+    """name -> SVG body, for every glyph the typesetting tools place (art/icons/png/<name>.png)."""
+    s = {fn.__name__.rstrip("_"): fn for _, items in GROUPS[:3] for _, fn in items}
+    s.update({f"guild_{g}": f for g, f in GUILD.items()})
+    s.update({f"crest_{h}": (lambda h=h, c=c: crest(h, c)) for h, c in HOUSE_COLOURS.items()})
+    return {k: f() for k, f in s.items()}
+
+
+def export_png(size=160):
+    d = OUT / "png"
+    d.mkdir(parents=True, exist_ok=True)
+    font = ROOT / "art" / "fonts"
+    style = f"<defs><style>@font-face {{ font-family: Righteous; src: url('{(font / 'Righteous-Regular.ttf').as_uri()}'); }}</style></defs>"
+    jobs = []
+    for name, body in raster_set().items():
+        f = d / f"{name}.svg"
+        f.write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 100 100">{style}{body}</svg>')
+        jobs.append((f.as_uri(), str(d / f"{name}.png"), str(f)))
+    js = ("const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();"
+          f"const p=await b.newPage({{viewport:{{width:{size},height:{size}}},deviceScaleFactor:1}});"
+          f"for (const [u,o] of {json.dumps([(u, o) for u, o, _ in jobs])}){{await p.goto(u);await p.waitForTimeout(60);await p.screenshot({{path:o,omitBackground:true}});}}"
+          "await b.close();})();")
+    subprocess.run(["node", "-e", js], check=True)
+    for _, _, f in jobs:
+        Path(f).unlink()
+    return d
+
+
+def effect_items(effects):
+    """An effect dict as typesetting items: ("n", "2"), ("icon", name), ("sep",). Unmapped verbs fall
+    back to text (("text", "...")), so nothing is silently dropped."""
+    out = []
+    for k, n in effects.items():
+        icons_ = ICON_FOR.get(k)
+        if out:
+            out.append(("sep",))
+        if not icons_:
+            out.append(("text", k.replace("_", " ") + (f" {n}" if n != 1 else "")))
+            continue
+        if n != 1 or k in ("damage", "brace", "purpose", "credits"):
+            out.append(("n", str(n)))
+        for j, fn in enumerate(icons_):
+            if k.endswith("_per_crew") and j == 1:
+                out.append(("n", "/"))
+            out.append(("icon", fn.__name__.rstrip("_")))
+    return out
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
+    print("rasters in", export_png().relative_to(ROOT))
     for _, items in GROUPS:
         for name, fn in items:
             slug = name.split(" (")[0].lower().replace(" ", "_")

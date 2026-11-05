@@ -40,5 +40,10 @@
   "input": "art/retro_batch6_edits.jsonl",
   "status": "completed",
   "collected": true
+ },
+ {
+  "id": "batch_6aecd74b821c819099a3ecd5c0cdccf5",
+  "input": "art/retro_batch7_edits.jsonl",
+  "status": "validating"
  }
 ]

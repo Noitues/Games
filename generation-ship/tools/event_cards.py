@@ -69,9 +69,16 @@ def typeset(event, frame="event_example.png"):
     (a, c, ri) = E["icons"]
     types = event["types"]
     spots = [a, c] if len(types) == 2 else [a]
-    if len(types) == 1:                                # paint the unused socket out with the band colour
-        band = im.getpixel((round((c[0] + ri + 3 + B) * S), round((c[1] + B) * S)))
-        d.ellipse(((c[0] - ri - 0.6 + B) * S, (c[1] - ri - 0.6 + B) * S, (c[0] + ri + 0.6 + B) * S, (c[1] + ri + 0.6 + B) * S), fill=band)
+    if len(types) == 1:      # paint the unused socket out: the band's average colour around it, soft-edged
+        import math
+        from PIL import ImageFilter
+        ring = [im.getpixel((round((c[0] + (ri + 1.7) * math.cos(a) + B) * S), round((c[1] + (ri + 1.7) * math.sin(a) + B) * S)))
+                for a in (k * math.pi / 12 for k in range(24))]
+        ring = [p for p in ring if sum(p) < 360]            # skip cream bars and stars
+        band = tuple(sorted(ch)[len(ch) // 2] for ch in zip(*ring))
+        m = Image.new("L", im.size, 0)
+        ImageDraw.Draw(m).ellipse(((c[0] - ri - 1.1 + B) * S, (c[1] - ri - 1.1 + B) * S, (c[0] + ri + 1.1 + B) * S, (c[1] + ri + 1.1 + B) * S), fill=255)
+        im.paste(Image.new("RGB", im.size, band), mask=m.filter(ImageFilter.GaussianBlur(S * .35)))
     for (ix, iy), t in zip(spots, types):
         ic = Image.open(SRC / f"{ICON[t]}.png").convert("RGBA").resize((round(2 * ri * S * 0.92),) * 2, Image.LANCZOS)
         m = Image.new("L", ic.size, 0)

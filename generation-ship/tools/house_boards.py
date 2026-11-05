@@ -134,13 +134,15 @@ def block(d, box, title, body, pad=16, tsize=24, bsize=19, title_fill=TEAL, gap=
         lines = []
         for para in body:
             lines += wrap(d, para, f, x1 - x0 - 2 * pad) + ([""] if gap else [])
-        if y0 + pad + tsize + 8 + len(lines) * size * 1.18 <= y1 - pad:
+        if y0 + pad + (tsize + 8 if title else 0) + len(lines) * size * 1.18 <= y1 - pad:
             break
     y = y0 + pad
     if title:
         y += 6
         d.text((x0 + pad, y), title, fill=title_fill, font=title_font(tsize))
         y += tsize + 8
+    elif title is None:
+        y -= pad - 4
     for line in lines:
         if line:
             d.text((x0 + pad, y), line, fill=INK, font=f)
@@ -216,9 +218,21 @@ def main():
 
 
 # --- v2: the emblem boards (Retro batch 5), typeset from the known geometry ------------------------
+def track_items(v):
+    """A track socket's value as icon items (numbers stay numbers)."""
+    if isinstance(v, int):
+        return [("n", str(v))]
+    k, n = next(iter(v.items()))
+    if k == "element":
+        return [("icon", f"guild_{n}")]
+    return [("icon", {"draw": "draw", "clone": "clone", "fast_play": "fast"}.get(k, "card"))]
+
+
 def typeset_v2(house, version="v2"):
-    """Typeset house_<id>_v2.png from tools/retro_templates.py HOUSE_BOARD (the guide it was painted
-    over), so nothing has to be found in the image."""
+    """Typeset house_<id>_<version>.png from tools/retro_templates.py HOUSE_BOARD (the guide it was
+    painted over): text for names and special rules, icons for tracks, growth and innate powers."""
+    import icons
+    import icon_type as it
     import retro_templates as rt
     im = Image.open(SRC / f"house_{house['id']}_{version}.png").convert("RGB")
     d = ImageDraw.Draw(im)
@@ -229,23 +243,46 @@ def typeset_v2(house, version="v2"):
     nx = x0 + 26 + d.textlength(name, font=title_font(54)) + 22
     d.text((nx, (y0 + y1) / 2 - 13), epithet, fill=TANGERINE, font=text_font(24, "SemiBold"), anchor="lm")
     g = house["guilds"]
-    d.text((nx, (y0 + y1) / 2 + 16), f"{g['primary']} · {g['secondary']}", fill=INK, font=text_font(20), anchor="lm")
+    gx = it.draw(im, x1 - 150, (y0 + y1) / 2, [("icon", f"guild_{g['primary']}"), ("icon", f"guild_{g['secondary']}")], 56)
+    # growth: icons first, the wording small beneath
     perks = house.get("growth_perk") or {}
     for box, gr in zip(L["growth"], house["growth"]):
+        bx0, by0, bx1, by1 = box
+        d.text((bx0 + 18, by0 + 16), f"Growth {gr['id']}", fill=TEAL, font=title_font(28))
+        items = [("icon", f"crest_{house['id']}") if x == ("icon", "influence") else x for x in icons.effect_items(gr["effects"])]
+        if gr.get("range") is not None and "place_influence_from_track" in gr["effects"]:
+            items += [("gap",), ("icon", "range"), ("n", str(gr["range"]))]
+        it.draw(im, bx0 + 18, by0 + 92, items, 58, max_w=bx1 - bx0 - 36)
         body = [gr["text"]] + ([f"Perk: {perks[gr['id']]['text']}"] if gr["id"] in perks else [])
-        block(d, box, f"Growth {gr['id']}", body, tsize=28, bsize=21)
+        block(d, (bx0, by0 + 120, bx1, by1), None, body, tsize=0, bsize=17, gap=False)
+    # tracks: the row's icon, then each socket's value as an icon or number
     for (y, _), key in zip(L["tracks"], ("credits", "plays")):
         pts = rt.socket_centres(y, len(house["tracks"][key]))
-        d.text((pts[0][0] - 46, y), key.upper(), fill="#FBEFD6", font=text_font(17, "Bold"), anchor="rm")
+        lx = pts[0][0] - 92
+        d.ellipse((lx - 34, y - 34, lx + 34, y + 34), fill="#FBEFD6", outline="#C9D1D6", width=4)
+        it.draw(im, lx - 25, y, [("icon", "credits" if key == "credits" else "card")], 50)
         for (cx, cy), v in zip(pts, house["tracks"][key]):
-            text, f = slot_label(v)
-            d.multiline_text((cx, cy), text, fill=TEAL if isinstance(v, int) else TANGERINE, font=f, anchor="mm", align="center", spacing=0)
+            items = track_items(v)
+            size = 50 if items[0][0] == "icon" else 44
+            w = size if items[0][0] == "icon" else d.textlength(items[0][1], font=title_font(round(size * .8)))
+            it.draw(im, cx - w / 2, cy, items, size, colour=TEAL)
+    # innate power: one icon line per tier: numeral, threshold, range, effects
     inn = house["innate"]
+    bx0, by0, bx1, by1 = L["innate"]
+    d.text((bx0 + 34, by0 + 18), inn["name"], fill=TEAL, font=title_font(30))
+    it.draw(im, bx0 + 40 + d.textlength(inn["name"], font=title_font(30)), by0 + 36, [("icon", "fast" if inn["speed"] == "fast" else "slow")], 40)
     numerals = ["I", "II", "III"]
-    th = lambda t: " + ".join(f"{n} {GUILD_ABBR.get(gg, gg)}" for gg, n in t["threshold"].items())  # noqa: E731
-    rng = lambda t: f"range {t['range']}" if t.get("range") else "here"  # noqa: E731
-    block(d, L["innate"], f"{inn['name']} · {inn['speed']}",
-          [f"{numerals[t['tier'] - 1]} · {th(t)} · {rng(t)}: {fx(t['effects'])}" for t in inn["tiers"]], tsize=30, bsize=21)
+    row_h = (by1 - by0 - 80) / len(inn["tiers"])
+    for i, tier in enumerate(inn["tiers"]):
+        cy = by0 + 80 + row_h * (i + .5)
+        items = [("n", numerals[tier["tier"] - 1]), ("gap",)]
+        for gname, n in tier["threshold"].items():
+            items += [("n", str(n)), ("icon", f"guild_{gname}")]
+        items += [("sep",), ("icon", "range"), ("n", str(tier.get("range") or 0)), ("sep",)]
+        items += icons.effect_items(tier["effects"])
+        it.draw(im, bx0 + 30, cy, items, 52, max_w=bx1 - bx0 - 60)
+        if i:
+            d.line((bx0 + 30, cy - row_h / 2, bx1 - 30, cy - row_h / 2), fill="#D8CDB6", width=2)
     sp = house["special"]
     block(d, L["special"], sp["id"].replace("_", " ").title(),
           [sp["text"], f"Start: {house['starting_influence']['text']}.", f"Hand +{house.get('hand_bonus', 0)} · Clone {house.get('clone', 0)}"],

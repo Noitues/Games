@@ -399,3 +399,9 @@ House boards, second pass (designer, 2026-11-05): keep the batch-5 banner shape 
 ```
 Wide landscape image, exactly the layout of the attached guide, filling the frame edge to edge. Repaint the guide as a finished house player board for this game, flat and straight-on like a printed board-game mat. The tall banner on the left is the house's identity and the hero of the board: a heraldic hanging banner on a brass rod, straight sides and a swallowtail foot, exactly the shape in the guide, in <colour> with a thin gold border, and a bold, simple emblem centred in its upper half, readable from across a table: <emblem>. The emblem is graphic and iconic, 1950s atomic-age style, with chrome and gold accents, no people. Keep every other shape exactly where it is and exactly as large as it is, and leave it empty for text: the name bar at the top, three growth cards, two tracks of round sockets on chrome rails, a wide panel bottom left and a narrow panel bottom right. Panels and sockets stay plain empty cream. The board around them is deep teal with a very subtle, low-contrast tone-on-tone pattern that hints at the house's power, like a faint watermark that never competes with the panels: <motif>. A thin line of <colour> along the board edge. No people, no text, letters, numbers, logos or watermarks.
 ```
+
+---
+
+## Retro batch 7  (folder `art/source/retro/`)
+
+House boards for the other four houses (Meridian, Vigil, Foremen, Tellers), with the batch-6 prompt (`house_board_v3.png` above); colours, emblems and background motifs are in `tools/make_retro_batch.py` (`EMBLEMS`, `HOUSE_LOOK_2`). Built by `tools/make_retro_batch.py --batch 7`.

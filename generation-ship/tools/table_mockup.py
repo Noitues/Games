@@ -19,6 +19,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import retro_templates as rt  # noqa: E402
 import conveyor_mockups  # noqa: E402
 import house_boards  # noqa: E402
+import event_cards  # noqa: E402
+import icon_type as it  # noqa: E402
+import icons  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "art" / "source" / "retro"
@@ -136,17 +139,14 @@ def people_card(person, portrait, name):
     d.text(((nx + 2) * s, (ny + nh / 2) * s), name, fill=teal, font=ImageFont.truetype(FONT_B, round(3.4 * s)), anchor="lm")
     d.text(((nx + nw - 2) * s, (ny + nh / 2) * s), str(person["cost"]), fill=rt.TANGERINE, font=ImageFont.truetype(FONT_B, round(4 * s)), anchor="rm")
     tx, ty, tw, th = rt.CARD_TEXT
-    f = jfont(round(2.3 * s))
-    fb = ImageFont.truetype(FONT_B, round(2.3 * s))
-    y = (ty + 1.5) * s
-    d.text(((tx + 2) * s, y), " · ".join(person["guilds"]), fill=rt.TANGERINE, font=fb)
-    y += 3.6 * s
-    for line in wrap(d, person["text"], f, (tw - 4) * s)[:2]:
+    f = jfont(round(1.9 * s))
+    y = ty * s
+    gx = it.draw(im, (tx + 2) * s, y + 3.4 * s, [("icon", f"guild_{g}") for g in person["guilds"]], round(3.6 * s))   # guilds
+    it.draw(im, gx + 1.5 * s, y + 3.4 * s, icons.effect_items(person["effects"]), round(4.4 * s), max_w=(tx + tw - 2) * s - gx)   # effect
+    y += 6.6 * s
+    for line in wrap(d, "Reign: " + person["reign"]["text"], f, (tw - 4) * s)[:3]:     # the panel ends above the accent
         d.text(((tx + 2) * s, y), line, fill=teal, font=f)
-        y += 3 * s
-    for line in wrap(d, "Reign: " + person["reign"]["text"], f, (tw - 4) * s)[:2]:
-        d.text(((tx + 2) * s, y), line, fill=teal, font=f)
-        y += 3 * s
+        y += 2.4 * s
     legacy_text(d, person, plaque_box(0, 0, s), s, cream)
     return round_corners(im, 3 * s)
 
@@ -334,6 +334,21 @@ def main():
     cb = Image.open(conv).convert("RGBA")
     conv.unlink()
     drop(table, cb, (712, 245), 0, shadow=0.8)
+    # ...with the real cards on it: each leader (icons for its effect) over its event, tucked below.
+    events = {e["id"]: e for e in json.loads((ROOT / "data" / "events.json").read_text())["cards"]}
+    ox, oy = 712 - 180, 245 - 100                                      # the board's top-left (360 x 200 mm)
+    slots = [(0.255, 48, remarkable[2], SRC / "ilka.png", "Ilka Tor", "E1-3"),
+             (0.5, 30, common[30], SRC / "pell.png", "Pell Ashgrove", "E2-1"),
+             (0.745, 48, remarkable[21], SRC / "ostra.png", "Ostra Vell", "E3-5")]
+    b = rt.BLEED * rt.CARD_PX
+    for f, lift, person, portrait, name, eid in slots:
+        cx, top = ox + 360 * f, oy + lift
+        frame = "event_example.png" if eid == "E2-1" else "event_frame_b.png"
+        ev = event_cards.typeset(events[eid], frame)
+        ev = round_corners(ev.crop((b, b, ev.width - b, ev.height - b)), 3 * rt.CARD_PX).resize((mm(63), mm(88)), Image.LANCZOS)
+        drop(table, ev, (cx, top + 30 + 44), 0, shadow=0.5)
+        card = people_card(person, portrait, name).resize((mm(63), mm(88)), Image.LANCZOS)
+        drop(table, card, (cx, top + 44), 0, shadow=0.7)
 
     # House boards (typeset by tools/house_boards.py) with hands, along the bottom.
     back = card_back().resize((mm(63), mm(88)), Image.LANCZOS)

@@ -235,8 +235,8 @@ def event_guide():
     return im
 
 
-HOUSE_ACCENT = {"galvan": "#3A6FD8", "meridian": "#3AB0A8", "keel": "#7A8C96", "vigil": "#F6C85A",
-                "foremen": "#C9482A", "gardeners": "#8FB04A", "voidwardens": "#6A4A9A", "tellers": "#E88AA0"}
+HOUSE_ACCENT = {"galvan": "#3A6FD8", "meridian": "#2A9D8F", "keel": "#7A8C96", "vigil": "#E8A23A",
+                "foremen": "#C9482A", "gardeners": "#8FB04A", "voidwardens": "#6A4A9A", "tellers": "#D86A8A"}
 
 
 # --- house board v2: the house's emblem front and centre --------------------------------------

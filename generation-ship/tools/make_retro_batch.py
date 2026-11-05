@@ -48,6 +48,10 @@ GENERATIONS_3 = {n: (n, None, "1536x1024", 1) for n in ("threat_machine_parts", 
 GENERATIONS_4 = {**{n: (n, None, "1536x1536", 1) for n in ("cover_generations", "cover_ancestors", "cover_ship")},
                  **{n: (n, None, "1536x640", 1) for n in ("logo_a", "logo_b")}}
 EMBLEMS = {
+    "meridian": "a flowing wave crossing a compass meridian arc with a small arrowhead, ocean teal and gold",
+    "vigil": "a mid-century lantern with radiating rays of light, amber and gold",
+    "foremen": "a shift whistle crossed with a riveter's hammer over a gear, brick red and chrome",
+    "tellers": "an open book with a starburst rising from its pages, rose and gold",
     "galvan": "a lightning bolt striking through a cog, crackling sparks, electric blue",
     "keel": "a ship's anchor over a riveted hull plate, steel grey and turquoise",
     "gardeners": "a sprouting seed inside a glass dome with two leaves, lime green",
@@ -57,6 +61,12 @@ EDITS_5 = {"event_frame_a": ("event_frame", "event_guide.png", "1104x1504", 1),
            "event_frame_b": ("event_frame", "event_guide.png", "1104x1504", 1),
            "event_example": ("event_example", "event_guide.png", "1104x1504", 1),
            **{f"house_{h}_v2": ("house_board_v2", f"house_{h}_guide.png", "1536x1024", 1) for h in EMBLEMS}}
+HOUSE_LOOK_2 = {   # the other four houses (Retro batch 7)
+    "meridian": ("ocean teal (#2A9D8F)", "faint flowing current lines and route-map dashes"),
+    "vigil": ("amber (#E8A23A) with a cream border, not gold on gold", "faint lamplight rays and a few constellation lines"),
+    "foremen": ("brick red (#C9482A)", "faint girders, rivets and a shift-roster grid"),
+    "tellers": ("dusky rose (#D86A8A)", "faint ribbons of script-like flourishes and page edges, with no readable letters"),
+}
 HOUSE_LOOK = {   # colour, background motif (the emblem is EMBLEMS)
     "galvan": ("electric blue (#3A6FD8)", "faint arcing electrical traces and circuit lines"),
     "keel": ("steel grey (#7A8C96), not turquoise", "faint riveted hull plates, seams and cross-braces"),
@@ -64,6 +74,8 @@ HOUSE_LOOK = {   # colour, background motif (the emblem is EMBLEMS)
     "voidwardens": ("deep violet (#6A4A9A)", "a faint starfield and concentric airlock rings"),
 }
 EDITS_6 = {f"house_{h}_v3": ("house_board_v3", f"house_{h}_guide.png", "1536x1024", 1) for h in HOUSE_LOOK}
+EDITS_7 = {f"house_{h}_v3": ("house_board_v3", f"house_{h}_guide.png", "1536x1024", 1) for h in HOUSE_LOOK_2}
+HOUSE_LOOK.update(HOUSE_LOOK_2)
 GENERATIONS = {
     "card_back": ("card_back", None, "1104x1504", 1),
     **{f"icon_{t}": (f"icon_{t}", None, "1024x1024", 1) for t in ("infrastructure", "residential", "government", "agricultural")},
@@ -114,10 +126,10 @@ def build(jobs, endpoint, style, ps):
 def main():
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument("--batch", type=int, default=2, choices=(2, 3, 4, 5, 6))
+    ap.add_argument("--batch", type=int, default=2, choices=(2, 3, 4, 5, 6, 7))
     batch = ap.parse_args().batch
-    ps = prompts(batch)
-    edits, gens = {2: (EDITS, GENERATIONS), 3: (EDITS_3, GENERATIONS_3), 4: ({}, GENERATIONS_4), 5: (EDITS_5, {}), 6: (EDITS_6, {})}[batch]
+    ps = prompts(6 if batch == 7 else batch)      # batch 7 reuses batch 6's house-board prompt
+    edits, gens = {2: (EDITS, GENERATIONS), 3: (EDITS_3, GENERATIONS_3), 4: ({}, GENERATIONS_4), 5: (EDITS_5, {}), 6: (EDITS_6, {}), 7: (EDITS_7, {})}[batch]
     text = (ROOT / "art" / "CHATGPT_PROMPTS.md").read_text()
     sec = text.split("## D · Retro Space", 1)[1]
     opener = re.search(r"\*\*Opener\*\*\n```\n(.*?)\n```", sec, re.S).group(1)
