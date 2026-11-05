@@ -416,6 +416,9 @@
   "downgrade_fault": [
    "downgrade"
   ],
+  "quarantine_source": [
+   "quarantine"
+  ],
   "restore_decay": [
    "restore_decay"
   ],

@@ -42,9 +42,15 @@ def text_font(px, weight="Regular"):
 
 
 def verbs():
+    # The wording of print-and-play's old text table, if it is still there (src/print is the rules
+    # session's; it now sets icons), else a minimal built-in set. Only the v1 boards use this text.
     js = (ROOT / "src" / "print" / "print.js").read_text()
-    block = js[js.index("const VERB = {"):js.index("};", js.index("const VERB = {"))]
-    v = dict(re.findall(r'(\w+): "([^"]*)"', block))
+    v = {}
+    if "const VERB = {" in js:
+        block = js[js.index("const VERB = {"):js.index("};", js.index("const VERB = {"))]
+        v = dict(re.findall(r'(\w+): "([^"]*)"', block))
+    v.update({k: s for k, s in {"damage": "{n} damage", "brace": "Brace {n}", "gather_crew": "gather {n} Crew", "lockout": "Lockout",
+                                 "patch": "Patch", "purpose": "+{n} Purpose"}.items() if k not in v})
     v.update({"brace_each_haven": "Brace {n} at each Haven", "fast_play": "+{n} fast play", "extra_draw": "draw +{n}",
               "credits": "+{n} credits", "place_influence_from_track": "place {n} influence"})
     return v

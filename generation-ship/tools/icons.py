@@ -466,7 +466,7 @@ ICON_FOR = {
     "vent_glitch": [vent, glitch], "vent_fault": [vent, fault], "vent_failure": [vent, failure],
     "vent_glitch_or_fault": [vent, glitch, fault], "remove_glitch": [remove, glitch], "remove_fault": [remove, fault],
     "isolate_fault": [isolate, fault], "isolate_failure": [isolate, failure], "downgrade": [downgrade],
-    "downgrade_failure": [downgrade], "downgrade_fault": [downgrade], "restore_decay": [restore_decay], "crew_strike": [crew_strike], "foresee": [foresee],
+    "downgrade_failure": [downgrade], "downgrade_fault": [downgrade], "quarantine_source": [quarantine], "restore_decay": [restore_decay], "crew_strike": [crew_strike], "foresee": [foresee],
     "temper_legacy": [temper_legacy], "extra_draw": [draw], "move_influence": [move, influence], "add_influence": [add, influence],
     "damage_per_crew": [repair, crew], "place_influence_from_track": [add, influence], "fast_play": [fast],
     "vent_glitch_or_fault": [vent, glitch, fault],
