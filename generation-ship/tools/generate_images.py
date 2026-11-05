@@ -4,7 +4,7 @@ Run on your own computer, from the generation-ship folder, with your key in the 
     export OPENAI_API_KEY=...            (Windows PowerShell: $env:OPENAI_API_KEY="...")
     python3 tools/generate_images.py [--only retro] [--names ostra,board_a] [--quality medium]
 
-Reads the requests in art/image_batch.jsonl (/v1/images/generations, gpt-image-1) and saves
+Reads the requests in art/image_batch.jsonl (/v1/images/generations) and saves
 art/source/<style>/<name>.png (variants: <name>_2.png ...). Skips images that already exist,
 so it can be re-run after an interruption. Standard library only; no installs needed.
 """

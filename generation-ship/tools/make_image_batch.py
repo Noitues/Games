@@ -5,7 +5,7 @@ description (from its "Opener") followed by the image prompt.
 
     python3 tools/make_image_batch.py [--endpoint responses|images] [--quality high] [--variants 2]
     -> art/image_batch_responses.jsonl  (default: /v1/responses with the image_generation tool)
-    -> art/image_batch.jsonl            (--endpoint images: /v1/images/generations with gpt-image-1)
+    -> art/image_batch.jsonl            (--endpoint images: /v1/images/generations; --model sets the image model)
 
 After the batch finishes, download its output file and run tools/decode_image_batch.py on it.
 """
@@ -19,6 +19,8 @@ SRC = ROOT / "art" / "CHATGPT_PROMPTS.md"
 SIZES = {"Wide landscape": "1536x1024", "Tall portrait": "1024x1536", "Square": "1024x1024"}
 # Images worth extra variants to choose from (the style anchor and the board).
 KEY = {"ostra", "board_a"}
+# gpt-image-1 is deprecated; override with --model if OpenAI names a different replacement.
+DEFAULT_IMAGE_MODEL = "gpt-image-1.5"
 
 
 def style_text(opener):
@@ -32,7 +34,7 @@ def style_text(opener):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--endpoint", choices=["responses", "images"], default="responses")
-    ap.add_argument("--model", default=None, help="images: gpt-image-1; responses: the model that calls the image tool (default gpt-4.1-mini)")
+    ap.add_argument("--model", default=None, help="images: the image model (default gpt-image-1.5); responses: the model that calls the image tool (default gpt-4.1-mini)")
     ap.add_argument("--quality", default="high")
     ap.add_argument("--variants", type=int, default=2, help="images for ostra and board_a (others get 1)")
     a = ap.parse_args()
@@ -50,7 +52,7 @@ def main():
             n = a.variants if name in KEY else 1
             full = f"{st}\n\n{prompt}"
             if a.endpoint == "images":
-                body = {"model": a.model or "gpt-image-1", "prompt": full, "size": size, "quality": a.quality, "n": n}
+                body = {"model": a.model or DEFAULT_IMAGE_MODEL, "prompt": full, "size": size, "quality": a.quality, "n": n}
                 lines.append({"custom_id": f"{style}__{name}", "method": "POST", "url": "/v1/images/generations", "body": body})
             else:
                 # The Responses API has no n: one request per variant.
