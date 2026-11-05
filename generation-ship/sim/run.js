@@ -1,5 +1,5 @@
 // Monte Carlo runner.
-//   node sim/run.js --games 200 --players 2 --houses galvan,keel --bot house [--pairing direct] [--seed 1] [--json out.json]
+//   node sim/run.js --games 200 --players 2 --houses galvan,keel --bot house [--seed 1] [--json out.json]
 //   node sim/run.js --sweep --games 100 --bot house      (every 2-house pairing)
 //   node sim/run.js --ladder --games 100                  (compare bot levels)
 import { writeFileSync } from "node:fs";

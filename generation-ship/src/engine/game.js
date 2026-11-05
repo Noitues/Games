@@ -604,7 +604,6 @@ function drawEvent(st) {
 }
 function dawnPhase(G, st) {
   let eid = null;
-  if (G.cfg.eventPairing === "direct") { eid = drawEvent(st); if (!eid) return; st.upcomingEvent = eid === "NONE" ? null : eid; }
   const noms = st.houses.map((H, h) => ({ h, cid: H.nominee })).filter((x) => x.cid);
   let chosen = null;
   if (noms.length) {
@@ -629,9 +628,9 @@ function dawnPhase(G, st) {
   } else {
     chosen = drawFrom(st, "common", "commonDiscard");
   }
-  if (G.cfg.eventPairing !== "direct") { eid = drawEvent(st); if (!eid) return; }
+  // The heir is chosen first; only then is its event revealed (hidden information by design).
+  eid = drawEvent(st); if (!eid) return;
   if (eid === "NONE") eid = null;
-  st.upcomingEvent = null;
   const house = noms.find((n) => n.cid === chosen)?.h ?? 0;
   st.slots.dawn = { leader: chosen, event: eid, house, bt: null, tempered: false };
   log(G, st, `New heir ${chosen} (${st.houses[house]?.id}); ${eid ? `event ${eid} (${G.data.eventById[eid].types.join("+")}) seeds` : "no event"}`);

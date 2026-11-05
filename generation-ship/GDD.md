@@ -13,7 +13,7 @@ Browser prototype: **vanilla JavaScript (ES modules) + HTML/CSS + inline SVG for
 Suggested file structure:
 - `index.html`: entry point and layout.
 - `src/main.js`: boot, game loop, phase sequencing.
-- `src/config.js`: **every tunable value and rule toggle** (pool sizes, health, damage, costs, hand size, card plays, deck sizes, Offset/Direct toggle, Landfall card toggle).
+- `src/config.js`: **every tunable value and rule toggle** (pool sizes, health, damage, costs, hand size, card plays, deck sizes, Landfall variant).
 - `src/state.js`: the game state model, plus undo snapshots for rapid testing.
 - `src/phases/`: one file per phase (`growth.js`, `fast.js`, `dusk.js`, `day.js`, `dawn.js`, `slow.js`, `timePasses.js`).
 - `src/systems/`: `threat.js`, `crew.js`, `decay.js`, `influence.js`, `purpose.js`, `leaders.js`, `wall.js`, `tokens.js`, `targeting.js`.
@@ -76,7 +76,7 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 ## Core gameplay loop
 
 **Setup**
-1. Choose the player count (1–4), a house per player, a destination and difficulty level, and the rule toggles (Offset/Direct, Landfall card on/off).
+1. Choose the player count (1–4), a house per player, a destination and difficulty level, and the Landfall variant.
 2. Lay out one ship board per player. Place the starting pieces shown by each board's setup symbols, and each house's starting influence.
 3. Build the event deck: Stage I, Stage II, Stage III, plus any destination changes. Set the **Wall** to one slot per card in the event deck.
 4. Set the Decay pool and Purpose pool for the player count. Set the Understanding tier to I.
@@ -95,8 +95,7 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 6. **Dawn.**
    1. All houses **vote** for one nominee as successor. Ties go to the nominee whose house holds the fewest leaders on the conveyor (Day + Dusk); if still tied, the Steward's house chooses.
    2. The chosen card goes to the Dawn slot. Unchosen nominees go to the discard pile.
-   3. **Offset (default toggle):** now draw the next event, pair it with the new heir, and resolve its **seed**.
-   4. **Direct (toggle):** the event was drawn and shown before the vote; pair it and seed now.
+   3. Only now draw the next event, pair it with the new heir, and resolve its **seed**. The heir is always chosen before its event is revealed.
 7. **Slow phase.** All other played cards resolve. Targets are chosen now, with knowledge of the new event. In both fast and slow phases each house chooses the order its cards (and its innate, in its speed) resolve.
 8. **Time passes.**
    1. The Dusk leader and its event (and any Breakthrough) move to the next Wall slot. Day moves to Dusk, and Dawn moves to Day.
@@ -144,9 +143,8 @@ Mouse-driven, **hot-seat**: one person can control every house, for rapid solo p
 - The chosen card is **permanently removed** from the people deck. It goes Dawn → Day → Dusk → Wall.
 - Unchosen nominees go to the people discard pile.
 
-**Event pairing toggle:**
-- **Offset (default):** the event is drawn *after* the vote, so you choose a leader without knowing what they will face. *Reason:* this recreates Spirit Island's tension, where you plan for coming problems and the next card disrupts the plan.
-- **Direct:** the event is drawn and shown before the vote, so the choice is informed.
+**Event pairing:**
+- The event is drawn **after** the vote, so you choose a leader without knowing where it will serve (its Reign and Legacy follow its event). *Reason:* this recreates Spirit Island's tension, where you plan for coming problems and the next card disrupts the plan. *(A "Direct" toggle that revealed the event first was tested and dropped after playtest 1: hidden information is the point.)*
 
 ---
 
@@ -633,7 +631,7 @@ The people deck does not scale. Solo-specific tuning is deferred until multiplay
 | One clock: every round is a generation | A second, slower leadership timer was rejected. |
 | Heirs are a second use of people cards | Avoids adding a separate system. |
 | Nominee is the only fast card | Removes printed speed. The card you need most urgently is the one at risk of being taken as leader. |
-| Offset event pairing by default, Direct as a toggle | Keeps Spirit Island's "the next card disrupts your plans" tension. |
+| Event revealed after the vote (Offset only; the Direct toggle was dropped after playtest 1) | Hidden information throws wrenches into plans, like Spirit Island's next card. |
 | One event drawn after the vote (not one per candidate) | Simpler, and you see the problems the leader faces after choosing. |
 | Dusk = Legacy + collapse, Day = grow | Puts damage and the leader's downside together in the same sections. |
 | Threat ladder (Glitch/Fault/Failure) over a single Strain dial | Chosen for tactical richness, close to Spirit Island. |
@@ -689,7 +687,7 @@ The people deck does not scale. Solo-specific tuning is deferred until multiplay
   - influence tracks with uncovered unlocks,
   - innate powers with threshold status.
 - **Bottom: the Wall of Leaders.** A row of slots, each holding its leader, event and Breakthrough once filled. Empty slots show the remaining clock.
-- **Vote panel** (during Dawn): nominee cards side by side showing Reign/Legacy. In Direct mode it also shows the upcoming event.
+- **Vote panel** (during Dawn): nominee cards side by side showing Reign/Legacy.
 - **Discovery choice modal** (at the start of Dusk): the tiered effect versus the Breakthrough text, with "Apply" and "Breakthrough" buttons. "Breakthrough" is disabled if the Steward already has one.
 - **Log panel** (collapsible): a step-by-step record of every placement, damage and choice.
 - **Settings panel** (pre-game): player count, houses, destination and level, rule toggles, and numeric overrides from the config file.
@@ -719,7 +717,7 @@ A mute toggle is included.
 - **Houses:** Galvan and Keel from `houses/` (the front-loaded and steep extremes).
 - **House calculator:** reads house data and reports total PP, curve shape and power summary.
 - The **full round loop**: Growth, Commit, Fast, Dusk, Day, Dawn vote, Slow, Time passes.
-- **Leader conveyor** with Offset/Direct toggle, nomination, vote with tie-break, and the Wall with 12 slots.
+- **Leader conveyor** with nomination, vote with tie-break, and the Wall with 12 slots.
 - **Event deck** with 3/4/5 stages, seed/grow/collapse, Spirit Island resolution order, and the escalation symbol (ignored at level 0).
 - **Threat ladder, Crew fight-back, Decay with cascade and influence loss, and the Ship in Crisis flip** (placeholder crisis effect: none).
 - **Purpose pool, Discovery choice and Breakthroughs, Understanding tiers and their win conditions.**
@@ -751,8 +749,6 @@ A mute toggle is included.
 | ~~Havens give +1 range~~ | 89% (+13) | **Decided: no.** Havens stay as they are: only a source or target for power abilities. |
 | ~~Remarkables only with growth C~~ | 47% (−29) | **Decided: no.** Remarkables stay available every generation (max 1 per house); their downside is now the nominee discount cap and net-negative ongoing Legacies. |
 | **Crew requirement 4 per player** (no destination) | 76% (±0) | No effect: strong play keeps Crew alive anyway. Crew needs a different hook to matter (e.g. Crew as a resource). |
-| **Direct pairing** | 78% (+2) | Within noise. |
-| **Direct pairing + smart vote** (bots simulate each heir's Reign/Legacy on the known event) | 79% (+3) | Still small. Leaders' Reign and Legacy effects are too small for the event information to matter. Options: make leader effects bigger, or drop the Direct toggle. |
 
 Still open without data: is "move Crew" different from "gather Crew"? (The engine treats them the same.)
 

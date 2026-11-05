@@ -12,7 +12,7 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 - **Seats:** pick 1–4 players and a house for each seat. Each seat is controlled by a human or a bot (`team`, `house`, `planner` or `tactician`).
-- **Rules:** choose Offset or Direct event pairing, the win conditions, a destination and level, and the Landfall variant (off, begin when ready, or shuffled into Stage III).
+- **Rules:** choose the win conditions, a destination and level, and the Landfall variant (off, begin when ready, or shuffled into Stage III).
 - **Playing:** **Step** runs one phase. **Auto** keeps running until a human decision is needed. **Undo phase** rewinds.
 - **Your decisions** appear in the highlighted prompt. Click sections on the map, cards in your hand, or the prompt buttons. The active house's panel is outlined.
 - **Layout:** **Compact view** (the default) fits a 1080p or 1440×900 screen; **Roomy view** shows full card text everywhere.

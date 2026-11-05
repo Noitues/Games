@@ -21,8 +21,6 @@ const VARIANTS = {
   "haven +1 range": { cfg: { havenRangeBonus: 1 } },
   "Remarkables only on growth C": { cfg: { remarkableAccess: "growthC" } },
   "Crew requirement 4/player": { cfg: { crewRequirementPerPlayer: 4 } },
-  "Direct pairing": { cfg: {}, pairing: "direct" },
-  "Direct + smart vote": { cfg: { smartVote: true }, pairing: "direct" },
 };
 
 console.log("variant | win | win gen | tier III share | Decay loss | Meridian strength | house spread (max-min)");

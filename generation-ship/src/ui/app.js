@@ -245,7 +245,7 @@ function renderConveyor() {
   const st = D.st;
   const slot = (name, L) => `<div class="slot"><b>${name}</b>${L ? " " + houseTag(L.house) : ""}${L?.start ? ` <span class="muted">(starting leader)</span>` : ""}<br>${L ? `${eventText(L.event)}${L.tempered ? " · tempered" : ""}${L.bt ? ` · Breakthrough ${L.bt} (on the Wall later)` : ""}${cardHTML(L.leader)}` : "<i>empty</i>"}</div>`;
   $("conveyor").innerHTML = slot("Dusk: Elder (Legacy, then Collapse)", st.slots.dusk) + slot("Day: Steward (Reign, then Grow)", st.slots.day) +
-    slot("Dawn: Heir (Seed)", st.slots.dawn) + (st.upcomingEvent ? `<div class="slot">Next event: ${eventText(st.upcomingEvent)}</div>` : "");
+    slot("Dawn: Heir (Seed)", st.slots.dawn);
   const dest = st.dest?.id ? `<div class="slot"><b>${esc(st.dest.name)}</b><br>${st.dest.texts.map(esc).join("<br>")}${st.escalationEvent ? `<br><i>Escalation card: ${st.escalationEvent}</i>` : ""}</div>` : "";
   $("conveyor").innerHTML += dest;
 }
@@ -598,7 +598,7 @@ function renderPrompt() {
     title = `Clone up to ${ctx.slots} card(s): click them in your hand to keep them for next generation`;
     body = `<button id="clone-ok" class="primary">Keep ${cloneSel.size ? [...cloneSel].join(", ") : "nothing"}</button>`;
   } else if (kind === "vote") {
-    const upcoming = st.upcomingEvent ? `The next event (Direct pairing) is ${eventText(st.upcomingEvent)}. ` : "";
+    const upcoming = "Its event is revealed only after the vote. ";
     title = "Vote for the next heir";
     body = `<div class="muted">${upcoming}The heir reigns next generation (Reign) and leaves its Legacy the one after, in its event's sections. Ties go to the house with fewer leaders on the conveyor; if still tied, the Steward's house decides.</div>` +
       options.map((o) => { const nh = st.houses.findIndex((x) => x.nominee === o); return `<div class="votec">${cardHTML(o)}<button data-o="${o}">Vote ${o}${nh >= 0 ? ` (${esc(st.houses[nh].id)})` : ""}</button></div>`; }).join("");
@@ -702,7 +702,7 @@ function start() {
   const seatEls = [...document.querySelectorAll(".seat")];
   const houses = seatEls.map((s) => s.querySelector(".h").value);
   seats = seatEls.map((s) => s.querySelector(".c").value);
-  const cfg = { players: P, houses, layout: $("layout").value || null, eventPairing: $("pairing").value, tierConditions: $("tiers").value,
+  const cfg = { players: P, houses, layout: $("layout").value || null, tierConditions: $("tiers").value,
     destination: $("destination").value || null, destinationLevel: +$("level").value,
     landfallCard: { off: false, choice: true, shuffled: "shuffled" }[$("landfall").value] ?? false };
   cfg.seed = +$("seed").value || 1;

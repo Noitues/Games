@@ -2,7 +2,6 @@
 export const DEFAULT_CONFIG = {
   players: 2,
   houses: ["galvan", "keel"],
-  eventPairing: "offset",        // "offset" | "direct"
   decayPerPlayer: 3, decayBase: -1,
   crisisRefillPerPlayer: 1,
   purposePerPlayer: 7,
@@ -24,7 +23,6 @@ export const DEFAULT_CONFIG = {
   havenRangeBonus: 0,           // +N range when targeting from a Haven (2+ influence; Meridian: any Agricultural influence)
   remarkableAccess: "always",   // "always" | "growthC" (only when taking growth option C)
   crewRequirementPerPlayer: 0,  // base Landfall requirement: Crew per player
-  smartVote: false,             // bots simulate heirs' Reign/Legacy on a known (Direct) event
   layout: null,                 // board layout from data/boards.json (default: by player count)
   boards: null,                 // override: board ids in play without a layout (e.g. ["C"] for a solo board test)
   maxGenerations: 40,            // safety stop

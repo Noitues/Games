@@ -302,32 +302,8 @@ export class Bot {
   }
 
   vote(G, st, h, options) {
-    if (G.cfg.smartVote && st.upcomingEvent) return this.smartVote(G, st, options);
-    const direct = st.upcomingEvent ? eventTypes(G, st.upcomingEvent) : null;
-    const score = (cid) => {
-      const c = card(G, cid);
-      let s = c.reign.pp - 1.2 * c.legacy.pp;
-      if (direct) {
-        // Legacy will land in these sections two generations from now; punish Decay/threat legacies where threat already is
-        const hot = Object.values(st.sections).filter((x) => matches(x, direct) && threatCount(x) > 0).length;
-        const harsh = ["collapse_plus", "seed_plus", "grow_glitch", "crew_frail"].some((k) => c.legacy.effects[k]);
-        if (harsh) s -= hot * 0.5;
-      }
-      return s;
-    };
-    return maxBy(options, score);
-  }
-
-  // Direct pairing: simulate each heir's Reign and Legacy on the event they will carry.
-  smartVote(G, st, options) {
-    const HG = heuristicContext(G);
-    const base = evaluate(G, st);
-    const score = (cid) => {
-      const r = clone(st); r.slots.day = { leader: cid, event: st.upcomingEvent, house: 0 }; applyReign(HG, r);
-      const l = clone(st); l.slots.dusk = { leader: cid, event: st.upcomingEvent, house: 0 }; applyLegacy(HG, l);
-      return (evaluate(G, r) - base) + (evaluate(G, l) - base);
-    };
-    return maxBy(options, score);
+    // The heir's event is revealed only after the vote, so judge Reign against Legacy alone.
+    return maxBy(options, (cid) => { const c = card(G, cid); return c.reign.pp - 1.2 * c.legacy.pp; });
   }
 
   discovery(G, st, h, ctx) {
