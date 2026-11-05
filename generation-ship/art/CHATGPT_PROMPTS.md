@@ -305,3 +305,34 @@ Square image. One game marker seen from directly above, centred on a plain cream
 ```
 Wide landscape image. A house player board for this game, flat and straight-on like a printed board-game mat, with every panel left empty for text to be added later. A rounded panel in deep teal and cream with chrome trim. Across the top: a wide empty banner for the house name next to a round emblem. Upper left: three empty side-by-side cards for growth options. Middle: two long horizontal tracks of seven empty round sockets each, linked by a chrome rail. Right: an empty panel for special rules. Bottom: two empty panels for innate powers, each with a row of four small empty icon circles. The house's identity sets the motifs and the accent colour in the border art: <identity>. No text, letters, numbers, logos or watermarks.
 ```
+
+---
+
+## Retro batch 3  (folder `art/source/retro/`)
+
+After the table mock-up review (2026-11-05): a quieter Wall, a quieter card frame, and tokens that read by material and silhouette instead of colour. The machine is grey cast plastic, the people are wood, Decay is slag, achievements are brass. Built by `tools/make_retro_batch.py --batch 3`.
+
+`wall_panel_v3.png` (edit of `wall_guide.png`)
+```
+Very wide landscape image, exactly the layout of the attached guide, with the panel filling the whole frame edge to edge. Repaint the guide as one panel of the Wall of Leaders as a quiet gallery of ancestors in a mid-century science museum, flat and straight-on like a board-game component. Keep every shape exactly where it is and exactly as large as it is: four identical wide arched windows in a row (straight sides, a gently rounded arch on top, a flat foot), a rounded plaque window under each, and a small round thumb notch at the top edge above each arch. The windows, plaques and notches stay perfectly flat, empty deep teal (#0F3A48), with nothing inside them. Paint only the wall around them: warm ivory plaster with a soft painted texture, a low deep-teal wainscot along the bottom with one thin atomic pinstripe, a slim brushed-chrome frame tracing each arch, a brass placard frame tracing each plaque, a small brass picture light above each arch casting a gentle pool of light, and a small blank engraved brass disc centred under each plaque for the slot number. Calm, dignified, museum-quiet; no starbursts, no orange, no planets. No text, letters, numbers, logos or watermarks.
+```
+
+`card_frame_v3.png` (edit of `card_guide.png`)
+```
+Tall portrait image, exactly the layout of the attached guide. Repaint the guide as a finished, empty trading-card frame for this game, flat and straight-on like a printed card template, quiet enough that hundreds of these on a table look calm. Keep every shape exactly where it is and exactly as large as it is: the thin name bar at the top; the wide arched portrait window below it (straight sides, a gently rounded arch on top, a flat foot); the text panel in the middle; and the large rounded Legacy plaque across the bottom. The arch window and the Legacy plaque stay perfectly flat, empty deep teal (#0F3A48); the name bar and text panel stay plain, empty cream. Paint only the frame around them: a cream card border with a very fine halftone texture, a slim brushed-chrome bezel tracing the arch window and the Legacy plaque, a thin deep-teal keyline inside the card edge, and one small tangerine atomic starburst as the only accent, centred just above the Legacy plaque. Symmetrical left to right. No text, letters, numbers, logos or watermarks.
+```
+
+`threat_machine_parts.png`
+```
+Wide landscape image. A clean board-game product photo on a plain warm-grey card background, soft studio light from the upper left, gentle shadows: three unpainted grey cast-plastic miniatures in a row, all one matte mid-grey plastic, showing a threat that grows. Left, smallest: a hex nut about 12 mm across lying flat, slightly worn. Middle: a 16 mm cog standing upright on its edge on a tiny base, with one tooth snapped off and a hairline crack. Right, tallest: a 22 mm tall cracked vacuum tube standing in its socket, a bulb on a stem with a broken filament visible through the grey plastic glass. Each has a completely different silhouette: flat polygon, upright wheel, tall bulb. 1950s industrial design details. No text, letters, numbers, logos or watermarks.
+```
+
+`threat_gremlins.png`
+```
+Wide landscape image. A clean board-game product photo on a plain warm-grey card background, soft studio light from the upper left, gentle shadows: three unpainted grey cast-plastic miniatures in a row, all one matte mid-grey plastic, showing a threat that grows, in the style of 1950s tin toys. Left, smallest: a tiny round tin beetle about 12 mm long with riveted wing cases and stubby legs. Middle: a 16 mm crab-like crawling robot with two pincers and a dome body. Right, tallest: a 24 mm lumbering boxy robot with a single antenna, dome eyes and clamp hands. Each has a completely different silhouette: low bug, wide crab, tall robot. Mischievous but not cute. No text, letters, numbers, logos or watermarks.
+```
+
+`people_pieces.png`
+```
+Wide landscape image. A clean board-game product photo on a plain warm-grey card background, soft studio light from the upper left, gentle shadows: the players' pieces in natural materials, arranged in a loose row. A few turned natural-wood Crew pawns about 18 mm tall, each a simple tapered body with a round ball head inside a clear round fishbowl helmet ring; four wooden influence pieces shaped like rocket nose cones, painted cobalt blue, cherry red, mustard gold and pearl white; three irregular matte black-brown slag lumps for Decay, rough and asymmetric like cooled cinder; and one brass Breakthrough coin embossed with an eight-pointed atomic starburst. Warm, tactile, handmade, contrasting with cold machine parts. No text, letters, numbers, logos or watermarks.
+```

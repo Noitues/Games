@@ -1,6 +1,6 @@
 """Build the Retro batch 2 Batch API input files from art/CHATGPT_PROMPTS.md.
 
-    python3 tools/make_retro_batch.py
+    python3 tools/make_retro_batch.py [--batch 2|3]
     -> art/retro_batch2_edits.jsonl        (/v1/images/edits: a layout guide attached as a data URL)
     -> art/retro_batch2_generations.jsonl  (/v1/images/generations)
 
@@ -42,6 +42,9 @@ EDITS = {
     "wall_panel_v2d": ("wall_panel_v2", "wall_guide.png", "2320x960", 1),
     **{f"board_{b}_v2": ("board", f"board_{b}_guide.png", "1296x1536", 2) for b in "abcd"},
 }
+EDITS_3 = {f"{n}_v3{v}": (f"{n}_v3", g, size, 1) for n, g, size in
+           (("wall_panel", "wall_guide.png", "2320x960"), ("card_frame", "card_guide.png", "1104x1504")) for v in "ab"}
+GENERATIONS_3 = {n: (n, None, "1536x1024", 1) for n in ("threat_machine_parts", "threat_gremlins", "people_pieces")}
 GENERATIONS = {
     "card_back": ("card_back", None, "1104x1504", 1),
     **{f"icon_{t}": (f"icon_{t}", None, "1024x1024", 1) for t in ("infrastructure", "residential", "government", "agricultural")},
@@ -51,16 +54,16 @@ GENERATIONS = {
 }
 
 
-def prompts():
+def prompts(batch):
     text = (ROOT / "art" / "CHATGPT_PROMPTS.md").read_text()
-    sec = text.split("## Retro batch 2", 1)[1]
+    sec = text.split(f"## Retro batch {batch}", 1)[1].split("\n## Retro batch ", 1)[0]
     return {k: v for k, v in re.findall(r"`([\w<>]+)\.png`[^\n]*\n```\n(.*?)\n```", sec, re.S)}
 
 
 def build(jobs, endpoint, style, ps):
     lines, n_img, n_guide = [], 0, 0
     for name, (key, guide, size, variants) in jobs.items():
-        if key.endswith("_v2"):
+        if key.endswith("_v2") and key not in ps:
             full = generate_retro_v2.prompt_for(key.removesuffix("_v2"))
         else:
             body = ps[key]
@@ -82,14 +85,19 @@ def build(jobs, endpoint, style, ps):
 
 
 def main():
-    ps = prompts()
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--batch", type=int, default=2, choices=(2, 3))
+    batch = ap.parse_args().batch
+    ps = prompts(batch)
+    edits, gens = (EDITS, GENERATIONS) if batch == 2 else (EDITS_3, GENERATIONS_3)
     text = (ROOT / "art" / "CHATGPT_PROMPTS.md").read_text()
     sec = text.split("## D · Retro Space", 1)[1]
     opener = re.search(r"\*\*Opener\*\*\n```\n(.*?)\n```", sec, re.S).group(1)
     style = re.sub(r"Reply \"ready\".*$", "", opener).replace("Every image in this chat uses this style:", "Style:").strip()
     total_img = total_cost = 0
-    for jobs, endpoint, fname in ((EDITS, "/v1/images/edits", "retro_batch2_edits.jsonl"),
-                                  (GENERATIONS, "/v1/images/generations", "retro_batch2_generations.jsonl")):
+    for jobs, endpoint, fname in ((edits, "/v1/images/edits", f"retro_batch{batch}_edits.jsonl"),
+                                  (gens, "/v1/images/generations", f"retro_batch{batch}_generations.jsonl")):
         lines, n_img, n_guide = build(jobs, endpoint, style, ps)
         out = ROOT / "art" / fname
         out.write_text("".join(json.dumps(x) + "\n" for x in lines))
