@@ -16,7 +16,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "art" / "icons"
 INK, ACT, CREAM, GUN, WOOD, GOLD = "#0F3A48", "#E8603A", "#FBEFD6", "#4E545B", "#D9B07A", "#E8B23A"
-RUST = "#7A4030"                                 # Decay: rust-brown cast plastic
+RUST, RUSTHI = "#7A4030", "#A86A50"              # Decay: rust-brown cast plastic
+BLUE, YELLOW, RED, BLACK = "#2F6FB8", "#F2C230", "#C8323C", "#1A1D20"   # the threat signs
 SW = 6                                            # stroke width in icon units
 
 
@@ -57,23 +58,25 @@ def crest(house=None, colour="#B98A55"):
 
 # --- pieces (the same silhouettes as the physical pieces) ----------------------------------------
 def glitch():
-    return f'<polygon points="{P(reg(50, 50, 38, 6))}" fill="{GUN}" stroke="{INK}" stroke-width="{SW}"/><circle cx="50" cy="50" r="14" fill="{CREAM}" stroke="{INK}" stroke-width="4"/>'
+    """Glitch = Notice: the blue disc sign."""
+    return (f'<circle cx="50" cy="50" r="42" fill="{BLUE}" stroke="{INK}" stroke-width="{SW}"/>'
+            f'<circle cx="50" cy="50" r="33" fill="none" stroke="#FFFFFF" stroke-width="5"/>'
+            f'<rect x="44" y="24" width="12" height="34" rx="5" fill="#FFFFFF"/><circle cx="50" cy="70" r="7" fill="#FFFFFF"/>')
 
 
 def fault():
-    pts = []
-    for k in range(10):
-        a0 = 2 * math.pi * k / 10 - math.pi / 2
-        for f, r in ((0, 30), (.12, 42), (.42, 42), (.54, 30)):
-            a = a0 + f * 2 * math.pi / 10
-            pts.append((50 + r * math.cos(a), 50 + r * math.sin(a)))
-    return f'<polygon points="{P(pts)}" fill="{GUN}" stroke="{INK}" stroke-width="5" stroke-linejoin="round"/><circle cx="50" cy="50" r="11" fill="{CREAM}" stroke="{INK}" stroke-width="4"/>'
+    """Fault = Caution: the yellow triangle sign."""
+    return (f'<polygon points="50,6 96,88 4,88" fill="{YELLOW}" stroke="{INK}" stroke-width="7" stroke-linejoin="round"/>'
+            f'<polygon points="50,24 81,79 19,79" fill="none" stroke="{BLACK}" stroke-width="4" stroke-linejoin="round"/>'
+            f'<rect x="45" y="38" width="10" height="24" rx="4" fill="{BLACK}"/><circle cx="50" cy="70" r="5.5" fill="{BLACK}"/>')
 
 
 def failure():
-    """Placeholder until the threat ladder is chosen (art/tokens/threat_concepts.svg)."""
-    return (f'<rect x="26" y="74" width="48" height="18" rx="4" fill="{GUN}" stroke="{INK}" stroke-width="{SW}"/>'
-            f'<path d="M38,74 L38,66 C38,62 30,61 30,56 L30,22 C30,13 38,10 42,10 L58,10 C62,10 70,13 70,22 L70,56 C70,61 62,62 62,66 L62,74 Z" fill="{GUN}" stroke="{INK}" stroke-width="{SW}"/>')
+    """Failure = Warning: the red octagon sign."""
+    pts = reg(50, 50, 46, 8, math.pi / 8)
+    return (f'<polygon points="{P(pts)}" fill="{RED}" stroke="{INK}" stroke-width="{SW}" stroke-linejoin="round"/>'
+            f'<polygon points="{P(reg(50, 50, 38, 8, math.pi / 8))}" fill="none" stroke="#FFFFFF" stroke-width="5"/>'
+            f'<rect x="24" y="43" width="52" height="14" rx="4" fill="#FFFFFF"/>')
 
 
 
@@ -83,15 +86,11 @@ def crew():
 
 
 def decay():
-    """Decay, permanent damage: a hull plate broken in two along a jagged crack, one half buckled,
-    cast in rust-brown plastic (Patch, by contrast, is a whole plate with a tangerine plaster)."""
-    left = "12,20 52,14 44,34 56,48 40,62 50,86 14,82"
-    right = "58,14 90,22 86,80 56,88 46,64 62,48 50,34"
-    return (f'<polygon points="{left}" fill="{RUST}" stroke="{INK}" stroke-width="5" stroke-linejoin="round"/>'
-            f'<polygon points="{right}" fill="{RUST}" stroke="{INK}" stroke-width="5" stroke-linejoin="round" transform="rotate(8 70 50) translate(4 2)"/>'
-            f'<path d="M62,20 L84,26 L82,40" fill="none" stroke="#B0705A" stroke-width="3" transform="rotate(8 70 50) translate(4 2)"/>'
-            + "".join(f'<circle cx="{x}" cy="{y}" r="4" fill="{INK}"/>' for x, y in ((20, 28), (20, 74)))
-            + "".join(f'<circle cx="{x}" cy="{y}" r="4" fill="{INK}"/>' for x, y in ((84, 32), (80, 76))))
+    """Decay: a hull panel cracked in two and buckled, lying on a round base (the piece, from above)."""
+    return (f'<circle cx="50" cy="50" r="45" fill="#5A2E22" stroke="{INK}" stroke-width="5"/>'
+            f'<polygon points="18,18 50,18 58,36 46,52 56,68 48,82 18,82" fill="{RUST}" stroke="{INK}" stroke-width="5" stroke-linejoin="round" transform="translate(-3 1)"/>'
+            f'<polygon points="82,18 50,18 58,36 46,52 56,68 48,82 82,82" fill="{RUSTHI}" stroke="{INK}" stroke-width="5" stroke-linejoin="round" transform="translate(4 -1)"/>'
+            + "".join(f'<circle cx="{x}" cy="{y}" r="3.5" fill="{INK}"/>' for x, y in ((24, 25), (24, 75), (80, 25), (80, 75))))
 
 
 
@@ -158,12 +157,11 @@ def unrest():
 
 
 def isolate():
-    """Isolate (this threat piece deals no damage at its next collapse): the universal prohibition
-    sign over a threat piece."""
-    return (f'<g transform="translate(18 18) scale(.64)">{fault()}</g>'
-            f'<circle cx="50" cy="50" r="40" fill="none" stroke="{ACT}" stroke-width="11"/>'
-            f'<line x1="22" y1="22" x2="78" y2="78" stroke="{ACT}" stroke-width="11"/>'
-            f'<circle cx="50" cy="50" r="46" fill="none" stroke="{INK}" stroke-width="3"/>')
+    """Isolate (a threat piece deals no damage at its next collapse): a flat wooden 'no entry' disc,
+    the prohibition circle and slash (the token is this same disc)."""
+    return (f'<circle cx="50" cy="50" r="44" fill="{WOOD}" stroke="{INK}" stroke-width="{SW}"/>'
+            f'<circle cx="50" cy="50" r="31" fill="none" stroke="{ACT}" stroke-width="11"/>'
+            f'<line x1="28" y1="28" x2="72" y2="72" stroke="{ACT}" stroke-width="11"/>')
 
 
 
@@ -215,18 +213,18 @@ def remove():
 
 
 def downgrade():
-    """Downgrade (Failure to Fault, Fault to Glitch): one step down."""
+    """Downgrade (Warning to Caution, Caution to Notice): one step down."""
     return (f'<circle cx="50" cy="50" r="42" fill="{CREAM}" stroke="{INK}" stroke-width="{SW}"/>'
             f'<path d="M28,30 L50,50 L72,30 M28,52 L50,72 L72,52" fill="none" stroke="{ACT}" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>')
 
 
 
 def restore_decay():
-    """Restore Decay: a Decay leaves the board and returns to its card (the pool)."""
-    return (f'<g transform="translate(-4 30) scale(.68)">{decay()}</g>'
-            f'<path d="M34,52 C34,22 60,10 84,22" fill="none" stroke="{INK}" stroke-width="14" stroke-linecap="round"/>'
-            f'<path d="M34,52 C34,22 60,10 84,22" fill="none" stroke="{ACT}" stroke-width="7" stroke-linecap="round"/>'
-            f'<polygon points="94,28 74,32 84,12" fill="{ACT}" stroke="{INK}" stroke-width="4" stroke-linejoin="round"/>')
+    """Restore Decay: the Decay piece, with a curved arrow from it out (back to its card)."""
+    return (f'<g transform="translate(2 30) scale(.66)">{decay()}</g>'
+            f'<path d="M40,30 C44,10 66,6 84,16" fill="none" stroke="{INK}" stroke-width="14" stroke-linecap="round"/>'
+            f'<path d="M40,30 C44,10 66,6 84,16" fill="none" stroke="{ACT}" stroke-width="7" stroke-linecap="round"/>'
+            f'<polygon points="96,24 76,28 84,8" fill="{ACT}" stroke="{INK}" stroke-width="4" stroke-linejoin="round"/>')
 
 
 

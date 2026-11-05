@@ -304,7 +304,7 @@ def main():
         "B4": ["failure_up", "fault", "decay"], "B5": ["crew", "inf0", "inf0"], "B6": ["glitch"],
         "B7": ["crew", "decay_b"], "B8": ["inf1", "failure", "crew"],
     }
-    flat = {"glitch", "fault_flat", "decay", "decay_b", "breakthrough"}
+    flat = {"fault_flat", "decay", "decay_b", "breakthrough", "isolate"}
     for bid in ("A", "B"):
         board = next(b for b in data["boards"] if b["id"] == bid)
         for sec in board["sections"]:

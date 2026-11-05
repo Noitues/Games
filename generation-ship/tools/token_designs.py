@@ -11,7 +11,7 @@ Damage states (GDD "Threat pieces": damage clears at Time passes) use no extra p
 piece sits: 1 damage knocks a Fault or Failure over; 2 damage turns a Failure upside down (it stands
 on the octagon's flat top edge); an injured Crew lies on its side; Glitch (health 1) has no state.
 A downgrade replaces the piece with an
-undamaged one standing upright (damage does not carry over). Isolate is a wooden lockout tag.
+undamaged one standing upright (damage does not carry over). Isolate is a flat wooden no-entry disc.
 The sheet shows each piece from the side and from above in every state, a black-silhouette test, and
 the pieces on the four section colours. Concept only: the numbers are starting points for a sculptor.
 """
@@ -37,7 +37,7 @@ SIZES = {                      # mm
     "influence": {"base": 10, "height": 12},
     "decay": {"size": 12, "height": 5.5},
     "breakthrough": {"diameter": 18, "rays": 8},
-    "isolate": {"w": 6, "h": 8.5},
+    "isolate": {"d": 8},
 }
 ACCENT, DAMAGE_INK = "#E8763A", "#8A3A16"
 HOUSE = ["#3A6FD8", "#8FB04A", "#7A8C96", "#6A4A9A"]        # Galvan, Gardeners, Keel, Voidwardens (wood stain)
@@ -215,16 +215,11 @@ def failure_top(cx, cy, solid=None, damage=0):
     return f'<g filter="url(#shadow)">{base}{slab}</g>'
 
 
-def isolate_tag(cx, cy, angle=-14):
-    """Isolate: a wooden lockout tag, cream with tangerine hazard stripes, leaning on the piece."""
-    s = SIZES["isolate"]
-    w, h = mmv(s["w"]), mmv(s["h"])
-    stripes = "".join(f'<path d="M{cx - w / 2 + k * 10},{cy + h * .1} l10,0 l-12,{h * .4} l-10,0 Z" fill="{ACCENT}"/>' for k in range(-1, 7))
-    return (f'<g transform="rotate({angle} {cx} {cy})" filter="url(#shadow)"><clipPath id="tag{int(cx)}{int(cy)}"><rect x="{cx - w / 2}" y="{cy - h / 2}" width="{w}" height="{h}" rx="5"/></clipPath>'
-            f'<rect x="{cx - w / 2}" y="{cy - h / 2}" width="{w}" height="{h}" rx="5" fill="#F3E4C4" stroke="#5A3A1C" stroke-width="1.5"/>'
-            f'<g clip-path="url(#tag{int(cx)}{int(cy)})">{stripes}</g>'
-            f'<circle cx="{cx}" cy="{cy - h * .28}" r="{mmv(0.9)}" fill="#5A3A1C"/>'
-            f'<rect x="{cx - w / 2}" y="{cy - h / 2}" width="{w}" height="{h}" rx="5" fill="none" stroke="#5A3A1C" stroke-width="1.5"/></g>')
+def isolate_tag(cx, cy, angle=0):
+    """Isolate: a flat wooden 'no entry' disc (prohibition circle and slash), placed by the piece; the
+    same disc as its icon."""
+    w = mmv(SIZES["isolate"]["d"])
+    return f'<g filter="url(#shadow)" transform="translate({cx - w / 2} {cy - w / 2}) rotate({angle} {w / 2} {w / 2}) scale({w / 100})">{icons.isolate()}</g>'
 
 
 # --- the people (wood) -----------------------------------------------------------------------------
@@ -384,8 +379,8 @@ def sheet():
     o.append(crew_side(1200, base) + crew_injured(1320, base))
     o.append(label(1200, base + 30, "standing", 14) + label(1330, base + 30, "injured: on its side", 14, "bold", DAMAGE_INK))
     o.append(label(1265, base + 58, "Crew (health 2)", 15, "bold", "#2B2F33"))
-    o.append(fault_side(1560, base) + isolate_tag(1620, base - 42))
-    o.append(label(1590, base + 30, "Isolate", 14, "bold", DAMAGE_INK) + label(1590, base + 58, "lockout tag (a power, not damage)", 14))
+    o.append(fault_side(1560, base) + isolate_tag(1635, base - 18))
+    o.append(label(1590, base + 30, "Isolate", 14, "bold", DAMAGE_INK) + label(1590, base + 58, "no-entry disc (a power, not damage)", 14))
 
     # Row 2b: the same states from above
     base = 900
@@ -409,7 +404,7 @@ def sheet():
     o.append(name(672, base + 60, "House influence", "flat wooden house crests, emblem engraved · 12 mm"))
     o.append(decay_side(985, base) + decay_lump(1085, base - 60, 4) + name(1035, base + 60, "Decay", "cracked panel lying on a base · 12 mm"))
     o.append(breakthrough_coin(1360, base - 92) + name(1360, base + 60, "Breakthrough", "brass starburst coin · 18 mm"))
-    o.append(isolate_tag(1620, base - 44, 0) + name(1620, base + 60, "Isolate", "wooden lockout tag · 6 × 8.5 mm"))
+    o.append(isolate_tag(1620, base - 40, 0) + name(1620, base + 60, "Isolate", "flat wooden no-entry disc · 8 mm"))
 
     # Row 4: on the board, mid-turn
     y0 = 1490
@@ -431,7 +426,7 @@ def sheet():
         if i == 1:
             o.append(decay_lump(440, 430, 12))
         if i == 3:
-            o.append(fault_side(500, 420) + isolate_tag(555, 380))
+            o.append(fault_side(500, 420) + isolate_tag(575, 410))
         o.append("</g>")
         o.append(label(x0 + 190, y0 + 360, sname, 16, "bold", "#2B2F33"))
     o.append(label(60, y0 + 430, "Print-and-play: every piece is a die-cut token with an undamaged face and a damaged face; the Failure's back face "
