@@ -545,3 +545,18 @@ The engine had treated Isolate as a pooled damage reduction that built up across
 **Components:** at most 7 Contained pieces at once (95th percentile 7), so the kit has 12 Contain markers. Brace no longer shares the 1/2/5 values with Isolate.
 
 **Board D:** D8 sat on the bottom edge between D6 and D7. It was about 1,600 square units against a typical 10,500, and had no neighbours on its own board. The seeds moved to D6 (−85, 80), D7 (85, 80) and D8 (0, 120). Section sizes now range from about 9,600 to 15,300, and D8 touches D3, D6 and D7. Boards A–C are unchanged. The painted art for D needs redoing; print draws D in flat type colours until it arrives.
+
+**Layouts after both changes** (20 games × 8 house combinations, so 160 per layout):
+
+| Layout | Win rate |
+|---|---|
+| pair | 69 % |
+| line3 | 77 % |
+| triad | 79 % |
+| arc3 | 71 % |
+| line4 | 75 % |
+| diamond | 82 % |
+| arc4 | 72 % |
+| fan | 79 % |
+
+That is within the earlier 64–81 % band, so the reshaped board D doesn't skew the 4-board layouts.
