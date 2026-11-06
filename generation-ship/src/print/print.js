@@ -141,7 +141,7 @@ async function boardHTML(b) {
   const P = (poly) => poly.map(([x, y]) => `${(ox + s * x).toFixed(1)},${(oy + s * y).toFixed(1)}`).join(" ");
   const art = `${ART}board_${b.id.toLowerCase()}_v2_toned.png`;
   // Board art painted for an older geometry is not used (set while a reshaped board waits for new art).
-  const STALE_ART = new Set(["C"]);
+  const STALE_ART = new Set([]);
   const hasArt = !STALE_ART.has(b.id) && (await exists(art));
   const wmm = (BOARD_PX[0] / s) * mmPerUnit(), hmm = (BOARD_PX[1] / s) * mmPerUnit();
   const labels = b.sections.map((sec) => {
