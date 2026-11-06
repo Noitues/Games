@@ -10,6 +10,9 @@ const [allPeople, events, discoveries, crisis, boards, houses, destinations, ICO
 const ptIds = new Set([...PLAYTEST.common, ...PLAYTEST.remarkable]);
 const peopleFor = () => (document.getElementById("fulldeck")?.checked ? allPeople : allPeople.filter((c) => ptIds.has(c.id)));
 const ART = "art/source/retro/";
+// Ink saver (default on): pale windows and washed frames from tools/inksaver_assets.py (print/assets).
+const inkSaver = () => document.getElementById("inksaver")?.checked;
+const FRAME = (full, saver) => (inkSaver() ? `print/assets/${saver}` : `${ART}${full}`);
 const exists = async (url) => { try { return (await fetch(url, { method: "HEAD" })).ok; } catch { return false; } };
 
 // ---------------------------------------------------------------- icons
@@ -48,7 +51,7 @@ function personCard(c) {
   const rem = c.tier === "Remarkable";
   const th = c.threshold ? `<div class="row th">${req(c.threshold.elements)}<span class="arrow">→</span>${fxRow(c.threshold.effects)}</div>` : "";
   return `<div class="card person ${rem ? "rem" : ""}">
-    <img class="frame" src="${ART}card_frame_v4a_exact.png" alt="">
+    <img class="frame" src="${FRAME("card_frame_v4a_exact.png", "card_frame_inksaver.png")}" alt="">
     <div class="name"><span>${c.id}${rem ? " ★" : ""}</span><span class="cost"><b>${c.cost}</b>${I("credits")}</span></div>
     <div class="gcol">${GUILD_ORDER.map((g, i) => `<img class="g ${c.guilds.includes(g) ? "on" : "off"}" style="top:${(13.9 + i * 6.6 - 3).toFixed(2)}mm" src="art/icons/guild_${g}.svg" alt="${g}">`).join("")}</div>
     <div class="panel"><div class="row eff"><span class="target">${targetHTML(c)}</span>${fxRow(c.effects)}</div>${th}
@@ -62,7 +65,7 @@ function eventCard(e) {
   const icon = (t) => (TYPE_ICON[t] ? I(TYPE_ICON[t], "ic huge") : t === "Hull" ? I("hull", "ic huge") : "");
   const name = e.types[0] === "ALL" ? "Every section" : e.types.map((t) => (t === "Hull" ? "Outer Hull" : t)).join(" + ");
   return `<div class="card event">
-    <img class="frame" src="${ART}event_frame_b.png" alt="">
+    <img class="frame" src="${FRAME("event_frame_b.png", "event_frame_inksaver.png")}" alt="">
     <div class="ev-art">${types.map(icon).join("")}</div>
     <div class="ev-once"><span class="lbl">When revealed</span><span class="muted">no one-time effect</span></div>
     <div class="ev-stage">${ROMAN[e.stage] || e.stage}</div>
@@ -119,7 +122,8 @@ async function houseBoard(h) {
 const BOARD_PX = [1296, 1536], BOARD_MARGIN = 10;
 // True scale is 100 mm per 180 units (a 216 x 256 mm sheet: A3). On A4 every board prints at 90 %,
 // so boards still dock with each other; Crew and tokens are unaffected.
-const boardScale = () => (document.getElementById("a3boards")?.checked ? 1 : 0.9);
+const boardMode = () => document.getElementById("boardmode")?.value || "a4";   // a4 (90 %) · a3 (100 %) · halves (100 % on two A4 sheets)
+const boardScale = () => (boardMode() === "a4" ? 0.9 : 1);
 const mmPerUnit = () => (100 / boards.radius) * boardScale();
 function boardFrame() {
   const pts = boards.outline.concat(boards.void_zone);
@@ -144,14 +148,20 @@ async function boardHTML(b) {
       <text x="${X}" y="${Y + 8}" text-anchor="middle" font-family="Righteous, sans-serif" font-size="26" fill="#0F3A48" stroke="#FBEFD6" stroke-width="5" paint-order="stroke">${sec.id}</text>
       ${setup.map((n, i) => ic(n, i, setup.length)).join("")}</g>`;
   }).join("");
-  return `<div class="shipboard"><div class="cap"><b>Ship board ${b.id}</b> · cut along the outline and around the void · ${wmm.toFixed(0)} × ${hmm.toFixed(0)} mm (${Math.round(boardScale() * 100)} % scale) · the top edge (fins and prow) is the Outer Hull; the other five sides dock with any board · printed pieces show the setup</div>
-    <svg viewBox="0 0 ${BOARD_PX[0]} ${BOARD_PX[1]}" style="width:${wmm.toFixed(1)}mm;height:${hmm.toFixed(1)}mm">
-      <defs><clipPath id="clip${b.id}"><polygon points="${P(boards.outline)}"/><polygon points="${P(boards.void_zone)}"/></clipPath></defs>
-      ${hasArt ? `<image href="${art}" width="${BOARD_PX[0]}" height="${BOARD_PX[1]}" clip-path="url(#clip${b.id})"/>` : `<polygon points="${P(boards.void_zone)}" fill="#0F3A48"/><polygon points="${P(boards.outline)}" fill="#C9D1D6"/>`}
+  const body = (attrs) => `<svg ${attrs}>
+      <defs><clipPath id="clip${b.id}${attrs.length}"><polygon points="${P(boards.outline)}"/><polygon points="${P(boards.void_zone)}"/></clipPath></defs>
+      ${hasArt ? `<image href="${art}" width="${BOARD_PX[0]}" height="${BOARD_PX[1]}" clip-path="url(#clip${b.id}${attrs.length})"/>` : `<polygon points="${P(boards.void_zone)}" fill="#0F3A48"/><polygon points="${P(boards.outline)}" fill="#C9D1D6"/>`}
       ${b.sections.map((sec) => `<polygon points="${P(sec.poly)}" fill="none" stroke="#FBEFD6" stroke-width="4" stroke-linejoin="round"/>`).join("")}
       <polygon points="${P(boards.outline)}" fill="none" stroke="#0F3A48" stroke-width="5" stroke-linejoin="round"/>
       <polygon points="${P(boards.void_zone)}" fill="none" stroke="#0F3A48" stroke-width="3" stroke-dasharray="14 10"/>
-      ${labels}</svg></div>`;
+      ${labels}</svg>`;
+  const cap = (extra) => `<div class="cap"><b>Ship board ${b.id}</b>${extra} · cut along the outline and around the void · ${wmm.toFixed(0)} × ${hmm.toFixed(0)} mm (${Math.round(boardScale() * 100)} % scale) · the top edge (fins and prow) is the Outer Hull; the other five sides dock with any board · printed pieces show the setup</div>`;
+  if (boardMode() !== "halves") return `<div class="shipboard">${cap("")}${body(`viewBox="0 0 ${BOARD_PX[0]} ${BOARD_PX[1]}" style="width:${wmm.toFixed(1)}mm;height:${hmm.toFixed(1)}mm"`)}</div>`;
+  // 100 % on A4: top and bottom halves on landscape sheets, overlapping by 8 mm; trim the top half at the dashed line and tape
+  const ov = (8 / hmm) * BOARD_PX[1], mid = BOARD_PX[1] / 2;
+  const half = (y0, y1, label, cut) => `<div class="shipboard half">${cap(` · ${label}`)}<div class="halfwrap">${body(`viewBox="0 ${y0.toFixed(1)} ${BOARD_PX[0]} ${(y1 - y0).toFixed(1)}" style="width:${wmm.toFixed(1)}mm;height:${(((y1 - y0) / BOARD_PX[1]) * hmm).toFixed(1)}mm"`)}${cut}</div></div>`;
+  return half(0, mid + ov, "top half: trim at the dashed line", `<div class="cutline" style="top:${((mid / BOARD_PX[1]) * hmm).toFixed(1)}mm"></div>`)
+    + half(mid - ov, BOARD_PX[1], "bottom half: slide under the top half to the dashed line and tape on the back", `<div class="cutline" style="top:${((ov / BOARD_PX[1]) * hmm).toFixed(1)}mm"></div>`);
 }
 const tfp = ([x, y], [px, py, rot]) => { const r = (rot * Math.PI) / 180; return [x * Math.cos(r) - y * Math.sin(r) + px, x * Math.sin(r) + y * Math.cos(r) + py]; };
 const FILL = { Infrastructure: "#3AB0A8", Residential: "#F2A060", Government: "#E88AA0", Agricultural: "#A8C860" };
@@ -174,7 +184,7 @@ function layoutsHTML() {
 
 // ---------------------------------------------------------------- Wall of Leaders (dual layer)
 const wallHTML = () => [1, 2, 3].map((p) => `<div class="wall"><div class="cap"><b>Wall of Leaders, panel ${p} of 3 (top layer)</b> · 290 × 120 mm, on card stock · cut out the two windows of each slot and a slit along the top edge of each slot · slots ${(p - 1) * 4 + 1}–${p * 4}</div>
-    <div class="wallpanel"><img src="${ART}wall_panel_v4b_exact.png" alt="Wall panel">
+    <div class="wallpanel"><img src="${FRAME("wall_panel_v4b_exact.png", "wall_panel_inksaver.png")}" alt="Wall panel">
       ${[0, 1, 2, 3].map((i) => `<span class="slotno" style="left:${36.25 + i * 72.5}mm">${["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"][(p - 1) * 4 + i]}</span>`).join("")}</div></div>`).join("")
   + `<div class="wall"><div class="cap"><b>Backing layer</b> (print 3) · glue to the back of each top layer along the sides and bottom only, so cards slide in from the top</div><div class="backing"></div></div>`;
 
@@ -238,23 +248,62 @@ const REF = `<div class="ref">
 
 // ---------------------------------------------------------------- assemble
 const sheet = (cards) => `<div class="sheet">${cards.join("")}</div>`;
+// Card decks print one sheet per page, each with the same one-line header, so a backs page lines up
+// behind its fronts page when printed double-sided (flip on the long edge). Every backs page is a full
+// nine, so a short last fronts page is still covered.
+const DECKS = {
+  people: { label: "People", color: "#0F3A48", icon: "crew" },
+  remarkable: { label: "Remarkable ★", color: "#B8862E", icon: "crew" },
+  events: { label: "Event", color: "#E8603A", icon: "collapse" },
+  disc: { label: "Discovery", color: "#3AB0A8", icon: "purpose" },
+  crisis: { label: "Ship in Crisis", color: "#C8402A", icon: "decay" },
+};
+const duplex = () => document.getElementById("duplex")?.checked;
+const backCard = (deck) => `<div class="card back"><img class="frame" src="${FRAME("card_back.png", "card_back_inksaver.png")}" alt="">
+  <div class="bk-label" style="background:${DECKS[deck].color}">${I(DECKS[deck].icon)}<span>${DECKS[deck].label}</span></div></div>`;
+const cardPage = (title, cards) => `<div class="cardpage"><div class="ph">${title}</div>${sheet(cards)}</div>`;
+// fronts (and, double-sided, a backs page after each); `backsFor` collects the separate backs pages
+const backsFor = [];
+function deckPages(deck, title, cards) {
+  const out = [], n = Math.ceil(cards.length / 9);
+  for (let i = 0; i < n; i++) {
+    const t = `${title} · sheet ${i + 1} of ${n}`;
+    out.push(cardPage(t, cards.slice(i * 9, i * 9 + 9)));
+    const back = cardPage(`${t} · backs`, Array(9).fill(backCard(deck)));
+    if (duplex()) out.push(back); else backsFor.push(back);
+  }
+  return out.join("");
+}
 const parts = {
   ref: async () => `<h1>Stewards of the Long Voyage · rules reference</h1>${REF}`,
   houses: async () => `<h2>House boards</h2>${(await Promise.all(houses.houses.map(houseBoard))).join("")}`,
-  boards: async () => `<h2>Ship boards</h2>${(await Promise.all(boards.boards.map(boardHTML))).join("")}<h2>Ship layouts</h2><div class="layouts">${layoutsHTML()}</div>`,
+  boards: async () => `${boardMode() === "halves" ? "" : "<h2>Ship boards</h2>"}${(await Promise.all(boards.boards.map(boardHTML))).join("")}<h2>Ship layouts</h2><div class="layouts">${layoutsHTML()}</div>`,
   wall: async () => `<h2 class="land">Wall of Leaders</h2>${wallHTML()}`,
-  events: async () => `<h2>Event cards</h2>${sheet([...events.cards, events.landfall].map(eventCard))}`,
-  disc: async () => `<h2>Discoveries, Ship in Crisis and destinations</h2>${sheet(discoveries.map(discoveryCard).concat(crisis.cards.map(crisisCard)))}${destinations.destinations.map(destinationSheet).join("")}`,
+  events: async () => deckPages("events", "Event cards", [...events.cards, events.landfall].map(eventCard)),
+  disc: async () => deckPages("disc", "Discoveries", discoveries.map(discoveryCard)) + deckPages("crisis", "Ship in Crisis", crisis.cards.map(crisisCard))
+,
+  dest: async () => `<h2>Destinations</h2>${destinations.destinations.map(destinationSheet).join("")}`,
   tokens: async () => `<h2>Tokens</h2>${tokensHTML()}`,
-  rem: async () => `<h2>Remarkable people</h2>${sheet(peopleFor().filter((c) => c.tier === "Remarkable").map(personCard))}`,
-  common: async () => `<h2>Common people</h2>${sheet(peopleFor().filter((c) => c.tier === "Common").map(personCard))}`,
+  rem: async () => deckPages("remarkable", "Remarkable people", peopleFor().filter((c) => c.tier === "Remarkable").map(personCard)),
+  common: async () => deckPages("people", "Common people", peopleFor().filter((c) => c.tier === "Common").map(personCard)),
   record: async () => `<h2>Playtest record</h2>${recordHTML()}`,
-  backs: async () => `<div class="sheet backs">${Array(9).fill(`<div class="card back"><img class="frame" src="${ART}card_back.png" alt=""></div>`).join("")}</div>`,
+  backs: async () => backsFor.join(""),   // filled by the card parts above (empty when double-sided)
 };
 async function render() {
   const on = [...document.querySelectorAll("[data-part]")].filter((x) => x.checked).map((x) => x.dataset.part);
-  document.getElementById("out").innerHTML = (await Promise.all(on.map((p) => parts[p]()))).join("");
+  backsFor.length = 0;
+  document.body.classList.toggle("ink", !!inkSaver());
+  const html = [];
+  for (const p of on) html.push(await parts[p]());   // in order: the card parts fill backsFor before "backs"
+  document.getElementById("out").innerHTML = html.join("");
   document.body.dataset.ready = "1";
 }
-document.querySelectorAll("[data-part], #a3boards, #fulldeck").forEach((x) => x.addEventListener("change", render));
+document.querySelectorAll("[data-part], #boardmode, #fulldeck, #inksaver, #duplex").forEach((x) => x.addEventListener("change", render));
+for (const opt of location.hash.slice(1).split(",")) {
+  if (opt === "duplex") document.getElementById("duplex").checked = true;
+  if (opt === "fullink") document.getElementById("inksaver").checked = false;
+  if (opt === "halves" || opt === "a3") document.getElementById("boardmode").value = opt;
+  if (opt === "boardsonly") document.querySelectorAll("[data-part]").forEach((x) => { x.checked = x.dataset.part === "boards"; });
+  if (opt === "cardsonly") document.querySelectorAll("[data-part]").forEach((x) => { x.checked = ["events", "disc", "rem", "common"].includes(x.dataset.part); });
+}
 render();

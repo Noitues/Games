@@ -98,7 +98,15 @@
   .fld { border: .3mm solid var(--teal); border-radius: 1.5mm; height: 10mm; padding: .8mm 1.5mm; }
   .fld span { font-size: 7pt; color: var(--muted); }
   .fld.big { width: 100%; height: 15mm; }
-  .sheet.backs { break-before: page; padding-top: 0; }
+  body.ink .backing { background: none; border: .6mm solid var(--teal); }
+  body.ink .event .ev-icons span.empty { background: #c9d3d6; }
+  .cardpage { break-before: page; break-inside: avoid; }
+  .ph { font: 8pt "Righteous", sans-serif; color: var(--muted); height: 5mm; text-align: center; }
+  .card.back .bk-label { position: absolute; left: 8mm; right: 8mm; bottom: 7mm; height: 9mm; border-radius: 3mm; color: var(--cream); display: flex; align-items: center; justify-content: center; gap: 1.5mm; font: 12pt "Righteous", sans-serif; border: .5mm solid var(--cream); }
+  .card.back .bk-label .ic { width: 6mm; height: 6mm; background: var(--cream); border-radius: 50%; padding: .4mm; }
+  .shipboard.half { page: land; break-before: page; }
+  .halfwrap { position: relative; display: inline-block; }
+  .cutline { position: absolute; left: 0; right: 0; border-top: .4mm dashed var(--tang); }
   .gens { border-collapse: collapse; width: 100%; }
   .gens th, .gens td { border: .3mm solid var(--teal); padding: .6mm 1.5mm; height: 6.5mm; font-size: 8pt; text-align: left; }
   @media print { .controls { display: none; } }
@@ -115,13 +123,16 @@
   <label><input type="checkbox" data-part="wall" checked> Wall of Leaders</label>
   <label><input type="checkbox" data-part="tokens" checked> Tokens</label>
   <label><input type="checkbox" data-part="events" checked> Events</label>
-  <label><input type="checkbox" data-part="disc" checked> Discoveries, crisis, destinations</label>
+  <label><input type="checkbox" data-part="disc" checked> Discoveries and Ship in Crisis</label>
+  <label><input type="checkbox" data-part="dest" checked> Destinations</label>
   <label><input type="checkbox" data-part="rem" checked> Remarkable people</label>
   <label><input type="checkbox" data-part="common" checked> Common people</label>
   <label><input type="checkbox" id="fulldeck"> All 400 people (default: the 150-card playtest deck)</label>
-  <label><input type="checkbox" data-part="backs" checked> Card backs</label>
+  <label><input type="checkbox" data-part="backs" checked> Card backs (one-sided printing: all backs pages at the end)</label>
   <label><input type="checkbox" data-part="record" checked> Playtest record sheet</label>
-  <label><input type="checkbox" id="a3boards"> Ship boards at 100 % (A3)</label>
+  <label>Ship boards <select id="boardmode"><option value="a4">A4 at 90 %</option><option value="halves">A4 at 100 %, two halves per board</option><option value="a3">A3 at 100 %</option></select></label>
+  <label><input type="checkbox" id="inksaver" checked> Ink saver (pale picture windows)</label>
+  <label><input type="checkbox" id="duplex"> Double-sided cards (a backs page after each fronts page)</label>
   <button onclick="print()">Print / save as PDF</button>
 </div>
 <div id="out"></div>

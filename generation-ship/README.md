@@ -31,10 +31,19 @@ python3 -m http.server 8000
 No build step and no dependencies. The browser loads `data/*.json` and the engine in `src/` directly.
 
 ## Rulebook
-`rulebook.html` (and `print/stewards-rulebook.pdf`, 6 pages) is the player rulebook. It covers how to win and lose, the components, setup, a generation step by step, event actions, threat and damage, Decay, influence, card anatomy, tokens, the Landfall variants and a quick-start game. The design rationale stays in `GDD.md`.
+`rulebook.html` (and `print/stewards-rulebook.pdf`, 9 pages with the diagrams) is the player rulebook. It covers how to win and lose, the components, setup, a generation step by step, event actions, threat and damage, Decay, influence, card anatomy, tokens, the Landfall variants and a quick-start game. The design rationale stays in `GDD.md`.
 
 ## Print and play
-Open `print.html` in the browser, served the same way as the prototype. Pick the parts you want, then print or save as a PDF. A ready-made copy is in `print/stewards-print-and-play.pdf`: A4, with the Wall on landscape pages, and the 150-card playtest deck (tick "All 400 people" for the full deck).
+Open `print.html` in the browser, served the same way as the prototype. Pick the parts you want, then print or save as a PDF. Ready-made copies are in `print/` (A4, the 150-card playtest deck; tick "All 400 people" for the full deck), rebuilt with `node tools/build_pdfs.cjs` while the folder is served on port 8765:
+
+| File | Use it for |
+|---|---|
+| `stewards-print-and-play.pdf` | Everything, printed one-sided. Card backs come last, one set of pages per deck: glue them on, or skip them and use a sleeve colour per deck. |
+| `stewards-cards-duplex.pdf` | Just the four card decks, each fronts page followed by its backs page. Print double-sided, flip on the long edge. |
+| `stewards-boards-a4-100.pdf` | The ship boards at true scale on A4: two landscape halves per board, overlapping 8 mm. Trim the top half at the dashed line, line it up with the dashed line on the bottom half, and tape the back. |
+| `stewards-rulebook.pdf` | The rulebook. |
+
+Ink saver is on by default: the empty portrait and picture windows print pale, the event frames and card backs are washed out, and the Wall's cut-outs are white (`tools/inksaver_assets.py` makes these from the art). Untick it, or add `#fullink` to the URL, for the full-colour frames. Each deck has its own labelled back: People, Remarkable ★, Event, Discovery and Ship in Crisis.
 
 The kit uses the Retro art from `art/source/retro/` and the icon set from `art/icons/`. Card effects are drawn from `art/icons/effects.json`; the art tools own the icons and art, while this repo owns the data and layout. It contains:
 - **Cards (63 × 88 mm, 9 per page):**
@@ -42,9 +51,9 @@ The kit uses the Retro art from `art/source/retro/` and the icon set from `art/i
   - event cards, laid out to tuck under their leader;
   - Discoveries, with their Breakthrough;
   - Ship in Crisis cards;
-  - card backs, to print duplex behind the people cards.
+  - card backs, one labelled design per deck.
 - **House boards:** the typeset art where it exists, otherwise a layout built from the data with icons.
-- **Ship boards A–D:** printed at 90 % on A4, so all boards still dock; tick "100 % (A3)" for true scale. Each board shows section IDs, type icons and starting pieces, plus the void crescent.
+- **Ship boards A–D:** printed at 90 % on A4 by default, so all boards still dock; choose "A3 at 100 %" or "A4 at 100 %, two halves per board" for true scale. Each board shows section IDs, type icons and starting pieces, plus the void crescent.
 - **Wall of Leaders:** three panels for the top layer (cut the windows and a slit per slot) plus a backing layer.
 - **Tokens:** a 16 mm punch sheet.
 - **Reference:** destinations, a rules summary and the icon glossary.
