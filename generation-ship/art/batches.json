@@ -1,0 +1,68 @@
+[
+ {
+  "id": "batch_6aec009b6b008190a5b63198cda15387",
+  "input": "art/retro_batch2_edits.jsonl",
+  "status": "completed",
+  "collected": true
+ },
+ {
+  "id": "batch_6aec00a7169881909bd1b8e6e3523cc9",
+  "input": "art/retro_batch2_generations.jsonl",
+  "status": "completed",
+  "collected": true
+ },
+ {
+  "id": "batch_6aec1d9ebeb4819092ce87dd85beae30",
+  "input": "art/retro_batch3_edits.jsonl",
+  "status": "completed",
+  "collected": true
+ },
+ {
+  "id": "batch_6aec1da0b6fc819089f793732779c70a",
+  "input": "art/retro_batch3_generations.jsonl",
+  "status": "completed",
+  "collected": true
+ },
+ {
+  "id": "batch_6aecb3fe910c8190985cdbf6cf070abb",
+  "input": "art/retro_batch4_generations.jsonl",
+  "status": "completed",
+  "collected": true
+ },
+ {
+  "id": "batch_6aecba7c6bd0819085b259f05da3a4c4",
+  "input": "art/retro_batch5_edits.jsonl",
+  "status": "completed",
+  "collected": true
+ },
+ {
+  "id": "batch_6aeccb1493488190b87402c0eabe03be",
+  "input": "art/retro_batch6_edits.jsonl",
+  "status": "completed",
+  "collected": true
+ },
+ {
+  "id": "batch_6aecd74b821c819099a3ecd5c0cdccf5",
+  "input": "art/retro_batch7_edits.jsonl",
+  "status": "completed",
+  "collected": true
+ },
+ {
+  "id": "batch_6aed09e78a248190b9d0c160fd4a24b0",
+  "input": "art/retro_batch8_edits.jsonl",
+  "status": "completed",
+  "collected": true
+ },
+ {
+  "id": "batch_6aed4ad8fdb48190ade4d87444f2d733",
+  "input": "art/retro_batch9_edits.jsonl",
+  "status": "completed",
+  "collected": true
+ },
+ {
+  "id": "batch_6aedee5ec894819091fc06da7e8e43ec",
+  "input": "art/retro_batch10_edits.jsonl",
+  "status": "completed",
+  "collected": true
+ }
+]

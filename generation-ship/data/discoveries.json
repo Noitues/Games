@@ -1,0 +1,975 @@
+[
+ {
+  "id": "D01",
+  "family": "Repair",
+  "tiers": {
+   "I": {
+    "effects": {
+     "remove_glitch": 1,
+     "damage": 1
+    },
+    "scope": "Residential",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: remove 1 Glitch, 1 damage"
+   },
+   "II": {
+    "effects": {
+     "remove_fault": 1,
+     "damage": 1
+    },
+    "scope": "Residential",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: remove 1 Fault, 1 damage"
+   },
+   "III": {
+    "effects": {
+     "downgrade_failure": 2,
+     "remove_glitch": 1
+    },
+    "scope": "Residential",
+    "pp": 8.0,
+    "text": "in one section of your choice on each board: downgrade 2 Failure, remove 1 Glitch"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "element": "Engineers"
+   },
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Every house counts +1 Engineers element."
+  }
+ },
+ {
+  "id": "D02",
+  "family": "Control",
+  "tiers": {
+   "I": {
+    "effects": {
+     "remove_glitch": 2
+    },
+    "scope": "Agricultural",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: remove 2 Glitch"
+   },
+   "II": {
+    "effects": {
+     "remove_glitch": 3
+    },
+    "scope": "Agricultural",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: remove 3 Glitch"
+   },
+   "III": {
+    "effects": {
+     "skip_seed": 1,
+     "remove_glitch": 3
+    },
+    "scope": "Agricultural",
+    "pp": 8.0,
+    "text": "in one section of your choice on each board: skip the Seed, remove 3 Glitch"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "credits_per_growth": 1
+   },
+   "pp_per_generation": 2.0,
+   "text": "On the Wall: Each Growth: every house gains +1 credit."
+  }
+ },
+ {
+  "id": "D03",
+  "family": "Protection",
+  "tiers": {
+   "I": {
+    "effects": {
+     "brace": 3,
+     "gather_crew": 1
+    },
+    "scope": "Agricultural",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: Brace 3, gather 1 Crew"
+   },
+   "II": {
+    "effects": {
+     "restore_decay": 2
+    },
+    "scope": "Agricultural",
+    "pp": 6.0,
+    "text": "restore 2 Decay anywhere"
+   },
+   "III": {
+    "effects": {
+     "brace": 5,
+     "gather_crew": 3
+    },
+    "scope": "Agricultural",
+    "pp": 8.0,
+    "text": "in one section of your choice on each board: Brace 5, gather 3 Crew"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "hull_brace": 1
+   },
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Each Dusk: Brace 1 in every Outer Hull section."
+  }
+ },
+ {
+  "id": "D04",
+  "family": "People",
+  "tiers": {
+   "I": {
+    "effects": {
+     "gather_crew": 2,
+     "purpose": 2
+    },
+    "scope": "Residential",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: gather 2 Crew; +2 Purpose"
+   },
+   "II": {
+    "effects": {
+     "add_crew": 1,
+     "purpose": 3
+    },
+    "scope": "Residential",
+    "pp": 6.0,
+    "text": "add 1 Crew to any one section; +3 Purpose"
+   },
+   "III": {
+    "effects": {
+     "add_crew": 2,
+     "purpose": 2
+    },
+    "scope": "Residential",
+    "pp": 8.0,
+    "text": "add 2 Crew to any one section; +2 Purpose"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "fast_play": 1
+   },
+   "pp_per_generation": 1.0,
+   "text": "On the Wall: Every house may play +1 card fast."
+  }
+ },
+ {
+  "id": "D05",
+  "family": "Repair",
+  "tiers": {
+   "I": {
+    "effects": {
+     "damage": 1,
+     "remove_glitch": 1
+    },
+    "scope": "Government",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: 1 damage, remove 1 Glitch"
+   },
+   "II": {
+    "effects": {
+     "remove_fault": 1,
+     "remove_glitch": 1
+    },
+    "scope": "Government",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: remove 1 Fault, remove 1 Glitch"
+   },
+   "III": {
+    "effects": {
+     "downgrade_failure": 2,
+     "remove_glitch": 1
+    },
+    "scope": "Government",
+    "pp": 8.0,
+    "text": "in one section of your choice on each board: downgrade 2 Failure, remove 1 Glitch"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "element": "Medics"
+   },
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Every house counts +1 Medics element."
+  }
+ },
+ {
+  "id": "D06",
+  "family": "Control",
+  "tiers": {
+   "I": {
+    "effects": {
+     "skip_seed": 1,
+     "remove_glitch": 1
+    },
+    "scope": "Infrastructure",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: skip the Seed, remove 1 Glitch"
+   },
+   "II": {
+    "effects": {
+     "remove_glitch": 2,
+     "skip_seed": 1
+    },
+    "scope": "Infrastructure",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: remove 2 Glitch, skip the Seed"
+   },
+   "III": {
+    "effects": {
+     "skip_seed": 1,
+     "remove_glitch": 3
+    },
+    "scope": "Infrastructure",
+    "pp": 8.0,
+    "text": "in one section of your choice on each board: skip the Seed, remove 3 Glitch"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "extra_draw": 1
+   },
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Each Growth: every house draws +1 card."
+  }
+ },
+ {
+  "id": "D07",
+  "family": "Protection",
+  "tiers": {
+   "I": {
+    "effects": {
+     "restore_decay": 1,
+     "brace": 1
+    },
+    "scope": "Infrastructure",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: Brace 1; restore 1 Decay anywhere"
+   },
+   "II": {
+    "effects": {
+     "gather_crew": 4,
+     "brace": 2
+    },
+    "scope": "Infrastructure",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: gather 4 Crew, Brace 2"
+   },
+   "III": {
+    "effects": {
+     "brace": 5,
+     "gather_crew": 3
+    },
+    "scope": "Infrastructure",
+    "pp": 8.0,
+    "text": "in one section of your choice on each board: Brace 5, gather 3 Crew"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "decay_ward": 1
+   },
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Each generation, the first Decay that would be placed is returned to the pool instead."
+  }
+ },
+ {
+  "id": "D08",
+  "family": "People",
+  "tiers": {
+   "I": {
+    "effects": {
+     "gather_crew": 1,
+     "add_crew": 1
+    },
+    "scope": "Infrastructure",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: gather 1 Crew; add 1 Crew to any one section"
+   },
+   "II": {
+    "effects": {
+     "gather_crew": 3,
+     "add_crew": 1
+    },
+    "scope": "Infrastructure",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: gather 3 Crew; add 1 Crew to any one section"
+   },
+   "III": {
+    "effects": {
+     "purpose": 2,
+     "add_crew": 2
+    },
+    "scope": "Infrastructure",
+    "pp": 8.0,
+    "text": "+2 Purpose; add 2 Crew to any one section"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "purpose_per_gen": 1
+   },
+   "pp_per_generation": 1.0,
+   "text": "On the Wall: Each Dusk: +1 Purpose."
+  }
+ },
+ {
+  "id": "D09",
+  "family": "Repair",
+  "tiers": {
+   "I": {
+    "effects": {
+     "remove_glitch": 2
+    },
+    "scope": "Outer Hull",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: remove 2 Glitch"
+   },
+   "II": {
+    "effects": {
+     "remove_glitch": 1,
+     "remove_fault": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: remove 1 Glitch, remove 1 Fault"
+   },
+   "III": {
+    "effects": {
+     "remove_glitch": 3,
+     "damage": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 8.0,
+    "text": "in one section of your choice on each board: remove 3 Glitch, 1 damage"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "element": "Keepers"
+   },
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Every house counts +1 Keepers element."
+  }
+ },
+ {
+  "id": "D10",
+  "family": "Control",
+  "tiers": {
+   "I": {
+    "effects": {
+     "skip_seed": 1,
+     "remove_glitch": 1
+    },
+    "scope": "Agricultural",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: skip the Seed, remove 1 Glitch"
+   },
+   "II": {
+    "effects": {
+     "skip_seed": 1,
+     "remove_glitch": 2
+    },
+    "scope": "Agricultural",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: skip the Seed, remove 2 Glitch"
+   },
+   "III": {
+    "effects": {
+     "remove_glitch": 3,
+     "skip_seed": 1
+    },
+    "scope": "Agricultural",
+    "pp": 8.0,
+    "text": "in one section of your choice on each board: remove 3 Glitch, skip the Seed"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "credits_per_growth": 1
+   },
+   "pp_per_generation": 2.0,
+   "text": "On the Wall: Each Growth: every house gains +1 credit."
+  }
+ },
+ {
+  "id": "D11",
+  "family": "Protection",
+  "tiers": {
+   "I": {
+    "effects": {
+     "gather_crew": 3,
+     "brace": 1
+    },
+    "scope": "Government",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: gather 3 Crew, Brace 1"
+   },
+   "II": {
+    "effects": {
+     "brace": 3,
+     "restore_decay": 1
+    },
+    "scope": "Government",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: Brace 3; restore 1 Decay anywhere"
+   },
+   "III": {
+    "effects": {
+     "restore_decay": 2,
+     "gather_crew": 2
+    },
+    "scope": "Government",
+    "pp": 8.0,
+    "text": "in one section of your choice on each board: gather 2 Crew; restore 2 Decay anywhere"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "hull_brace": 1
+   },
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Each Dusk: Brace 1 in every Outer Hull section."
+  }
+ },
+ {
+  "id": "D12",
+  "family": "People",
+  "tiers": {
+   "I": {
+    "effects": {
+     "purpose": 4
+    },
+    "scope": "Residential",
+    "pp": 4.0,
+    "text": "+4 Purpose"
+   },
+   "II": {
+    "effects": {
+     "purpose": 3,
+     "gather_crew": 3
+    },
+    "scope": "Residential",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: gather 3 Crew; +3 Purpose"
+   },
+   "III": {
+    "effects": {
+     "purpose": 6,
+     "credits_each": 1
+    },
+    "scope": "Residential",
+    "pp": 8.0,
+    "text": "+6 Purpose; each house gains 1 credit(s)"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "fast_play": 1
+   },
+   "pp_per_generation": 1.0,
+   "text": "On the Wall: Every house may play +1 card fast."
+  }
+ },
+ {
+  "id": "D13",
+  "family": "Repair",
+  "tiers": {
+   "I": {
+    "effects": {
+     "remove_fault": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: remove 1 Fault"
+   },
+   "II": {
+    "effects": {
+     "remove_glitch": 1,
+     "remove_fault": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: remove 1 Glitch, remove 1 Fault"
+   },
+   "III": {
+    "effects": {
+     "damage": 2,
+     "remove_fault": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 8.0,
+    "text": "in one section of your choice on each board: 2 damage, remove 1 Fault"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "element": "Scholars"
+   },
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Every house counts +1 Scholars element."
+  }
+ },
+ {
+  "id": "D14",
+  "family": "Control",
+  "tiers": {
+   "I": {
+    "effects": {
+     "remove_glitch": 1,
+     "skip_seed": 1
+    },
+    "scope": "Government",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: remove 1 Glitch, skip the Seed"
+   },
+   "II": {
+    "effects": {
+     "remove_glitch": 2,
+     "skip_seed": 1
+    },
+    "scope": "Government",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: remove 2 Glitch, skip the Seed"
+   },
+   "III": {
+    "effects": {
+     "remove_glitch": 3,
+     "skip_seed": 1
+    },
+    "scope": "Government",
+    "pp": 8.0,
+    "text": "in one section of your choice on each board: remove 3 Glitch, skip the Seed"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "extra_draw": 1
+   },
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Each Growth: every house draws +1 card."
+  }
+ },
+ {
+  "id": "D15",
+  "family": "Protection",
+  "tiers": {
+   "I": {
+    "effects": {
+     "brace": 4
+    },
+    "scope": "Agricultural",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: Brace 4"
+   },
+   "II": {
+    "effects": {
+     "restore_decay": 1,
+     "gather_crew": 3
+    },
+    "scope": "Agricultural",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: gather 3 Crew; restore 1 Decay anywhere"
+   },
+   "III": {
+    "effects": {
+     "gather_crew": 5,
+     "restore_decay": 1
+    },
+    "scope": "Agricultural",
+    "pp": 8.0,
+    "text": "in one section of your choice on each board: gather 5 Crew; restore 1 Decay anywhere"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "decay_ward": 1
+   },
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Each generation, the first Decay that would be placed is returned to the pool instead."
+  }
+ },
+ {
+  "id": "D16",
+  "family": "People",
+  "tiers": {
+   "I": {
+    "effects": {
+     "gather_crew": 2,
+     "credits_each": 1
+    },
+    "scope": "Agricultural",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: gather 2 Crew; each house gains 1 credit(s)"
+   },
+   "II": {
+    "effects": {
+     "credits_each": 1,
+     "purpose": 4
+    },
+    "scope": "Agricultural",
+    "pp": 6.0,
+    "text": "each house gains 1 credit(s); +4 Purpose"
+   },
+   "III": {
+    "effects": {
+     "credits_each": 1,
+     "add_crew": 2
+    },
+    "scope": "Agricultural",
+    "pp": 8.0,
+    "text": "each house gains 1 credit(s); add 2 Crew to any one section"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "purpose_per_gen": 1
+   },
+   "pp_per_generation": 1.0,
+   "text": "On the Wall: Each Dusk: +1 Purpose."
+  }
+ },
+ {
+  "id": "D17",
+  "family": "Repair",
+  "tiers": {
+   "I": {
+    "effects": {
+     "remove_glitch": 1,
+     "damage": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: remove 1 Glitch, 1 damage"
+   },
+   "II": {
+    "effects": {
+     "downgrade_failure": 2
+    },
+    "scope": "Outer Hull",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: downgrade 2 Failure"
+   },
+   "III": {
+    "effects": {
+     "downgrade_fault": 2,
+     "remove_glitch": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 8.0,
+    "text": "in one section of your choice on each board: downgrade 2 Fault, remove 1 Glitch"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "element": "Laborers"
+   },
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Every house counts +1 Laborers element."
+  }
+ },
+ {
+  "id": "D18",
+  "family": "Control",
+  "tiers": {
+   "I": {
+    "effects": {
+     "skip_seed": 1,
+     "remove_glitch": 1
+    },
+    "scope": "Agricultural",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: skip the Seed, remove 1 Glitch"
+   },
+   "II": {
+    "effects": {
+     "remove_glitch": 3
+    },
+    "scope": "Agricultural",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: remove 3 Glitch"
+   },
+   "III": {
+    "effects": {
+     "skip_seed": 1,
+     "remove_glitch": 3
+    },
+    "scope": "Agricultural",
+    "pp": 8.0,
+    "text": "in one section of your choice on each board: skip the Seed, remove 3 Glitch"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "credits_per_growth": 1
+   },
+   "pp_per_generation": 2.0,
+   "text": "On the Wall: Each Growth: every house gains +1 credit."
+  }
+ },
+ {
+  "id": "D19",
+  "family": "Protection",
+  "tiers": {
+   "I": {
+    "effects": {
+     "restore_decay": 1,
+     "gather_crew": 1
+    },
+    "scope": "Government",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: gather 1 Crew; restore 1 Decay anywhere"
+   },
+   "II": {
+    "effects": {
+     "gather_crew": 2,
+     "brace": 4
+    },
+    "scope": "Government",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: gather 2 Crew, Brace 4"
+   },
+   "III": {
+    "effects": {
+     "brace": 6,
+     "gather_crew": 2
+    },
+    "scope": "Government",
+    "pp": 8.0,
+    "text": "in one section of your choice on each board: Brace 6, gather 2 Crew"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "hull_brace": 1
+   },
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Each Dusk: Brace 1 in every Outer Hull section."
+  }
+ },
+ {
+  "id": "D20",
+  "family": "People",
+  "tiers": {
+   "I": {
+    "effects": {
+     "purpose": 2,
+     "gather_crew": 2
+    },
+    "scope": "Infrastructure",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: gather 2 Crew; +2 Purpose"
+   },
+   "II": {
+    "effects": {
+     "purpose": 2,
+     "credits_each": 2
+    },
+    "scope": "Infrastructure",
+    "pp": 6.0,
+    "text": "+2 Purpose; each house gains 2 credit(s)"
+   },
+   "III": {
+    "effects": {
+     "purpose": 5,
+     "gather_crew": 3
+    },
+    "scope": "Infrastructure",
+    "pp": 8.0,
+    "text": "in one section of your choice on each board: gather 3 Crew; +5 Purpose"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "fast_play": 1
+   },
+   "pp_per_generation": 1.0,
+   "text": "On the Wall: Every house may play +1 card fast."
+  }
+ },
+ {
+  "id": "D21",
+  "family": "Repair",
+  "tiers": {
+   "I": {
+    "effects": {
+     "remove_fault": 1
+    },
+    "scope": "Residential",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: remove 1 Fault"
+   },
+   "II": {
+    "effects": {
+     "downgrade_fault": 1,
+     "downgrade_failure": 1
+    },
+    "scope": "Residential",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: downgrade 1 Fault, downgrade 1 Failure"
+   },
+   "III": {
+    "effects": {
+     "remove_glitch": 3,
+     "damage": 1
+    },
+    "scope": "Residential",
+    "pp": 8.0,
+    "text": "in one section of your choice on each board: remove 3 Glitch, 1 damage"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "element": "Farmers"
+   },
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Every house counts +1 Farmers element."
+  }
+ },
+ {
+  "id": "D22",
+  "family": "Control",
+  "tiers": {
+   "I": {
+    "effects": {
+     "remove_glitch": 2
+    },
+    "scope": "Infrastructure",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: remove 2 Glitch"
+   },
+   "II": {
+    "effects": {
+     "remove_glitch": 2,
+     "skip_seed": 1
+    },
+    "scope": "Infrastructure",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: remove 2 Glitch, skip the Seed"
+   },
+   "III": {
+    "effects": {
+     "remove_glitch": 3,
+     "skip_seed": 1
+    },
+    "scope": "Infrastructure",
+    "pp": 8.0,
+    "text": "in one section of your choice on each board: remove 3 Glitch, skip the Seed"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "extra_draw": 1
+   },
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Each Growth: every house draws +1 card."
+  }
+ },
+ {
+  "id": "D23",
+  "family": "Protection",
+  "tiers": {
+   "I": {
+    "effects": {
+     "restore_decay": 1,
+     "gather_crew": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 4.0,
+    "text": "in one section of your choice on each board: gather 1 Crew; restore 1 Decay anywhere"
+   },
+   "II": {
+    "effects": {
+     "gather_crew": 5,
+     "brace": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: gather 5 Crew, Brace 1"
+   },
+   "III": {
+    "effects": {
+     "gather_crew": 6,
+     "brace": 2
+    },
+    "scope": "Outer Hull",
+    "pp": 8.0,
+    "text": "in one section of your choice on each board: gather 6 Crew, Brace 2"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "decay_ward": 1
+   },
+   "pp_per_generation": 1.5,
+   "text": "On the Wall: Each generation, the first Decay that would be placed is returned to the pool instead."
+  }
+ },
+ {
+  "id": "D24",
+  "family": "People",
+  "tiers": {
+   "I": {
+    "effects": {
+     "add_crew": 1,
+     "purpose": 1
+    },
+    "scope": "Outer Hull",
+    "pp": 4.0,
+    "text": "add 1 Crew to any one section; +1 Purpose"
+   },
+   "II": {
+    "effects": {
+     "gather_crew": 4,
+     "purpose": 2
+    },
+    "scope": "Outer Hull",
+    "pp": 6.0,
+    "text": "in one section of your choice on each board: gather 4 Crew; +2 Purpose"
+   },
+   "III": {
+    "effects": {
+     "purpose": 2,
+     "add_crew": 2
+    },
+    "scope": "Outer Hull",
+    "pp": 8.0,
+    "text": "+2 Purpose; add 2 Crew to any one section"
+   }
+  },
+  "breakthrough": {
+   "timing": "wall",
+   "effects": {
+    "purpose_per_gen": 1
+   },
+   "pp_per_generation": 1.0,
+   "text": "On the Wall: Each Dusk: +1 Purpose."
+  }
+ }
+]

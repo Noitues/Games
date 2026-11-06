@@ -1,0 +1,30 @@
+{
+ "refill_per_player": 1,
+ "pick": "one at random during setup, face down",
+ "cards": [
+  {
+   "id": "X1",
+   "name": "Rationing",
+   "rule": "credits_drain",
+   "text": "At the start of each Day, each house loses 1 credit (if it has any)."
+  },
+  {
+   "id": "X2",
+   "name": "Structural Fatigue",
+   "rule": "double_cascade",
+   "text": "Each cascade places 2 Decay in adjacent sections instead of 1 (players choose)."
+  },
+  {
+   "id": "X3",
+   "name": "Despair",
+   "rule": "decay_costs_purpose",
+   "text": "Each time Decay is placed, lose 1 Purpose."
+  },
+  {
+   "id": "X4",
+   "name": "Failing Systems",
+   "rule": "decay_seeds",
+   "text": "At each Grow, add 1 Glitch to every section with Decay that has no threat."
+  }
+ ]
+}

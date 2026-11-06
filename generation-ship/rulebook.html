@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stewards of the Long Voyage · Rulebook</title>
+<style>
+  @font-face { font-family: "Righteous"; src: url("art/fonts/Righteous-Regular.ttf"); }
+  @font-face { font-family: "Josefin"; src: url("art/fonts/JosefinSans[wght].ttf"); font-weight: 100 700; }
+  :root { --teal: #0F3A48; --cream: #FBEFD6; --tang: #E8603A; --turq: #3AB0A8; --gold: #F6C85A; --red: #C8402A; --muted: #4f6168; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #fff; color: var(--teal); font: 10.5pt/1.45 "Josefin", system-ui, sans-serif; }
+  main { max-width: 180mm; margin: 0 auto; padding: 10mm 8mm; }
+  h1 { font: 26pt "Righteous", sans-serif; margin: 0 0 1mm; color: var(--teal); }
+  .sub { font-size: 12pt; color: var(--tang); margin: 0 0 6mm; }
+  h2 { font: 15pt "Righteous", sans-serif; margin: 7mm 0 2mm; padding-bottom: 1mm; border-bottom: 0.6mm solid var(--tang); break-after: avoid; }
+  h3 { font: 11.5pt "Righteous", sans-serif; margin: 4mm 0 1mm; break-after: avoid; }
+  p, li { margin: 1mm 0; }
+  ul, ol { padding-left: 6mm; margin: 1mm 0; }
+  .ic { height: 1.3em; width: 1.3em; vertical-align: -0.3em; }
+  .box { background: var(--cream); border-radius: 3mm; padding: 3mm 4mm; margin: 3mm 0; break-inside: avoid; }
+  .box.tang { border-left: 1.5mm solid var(--tang); }
+  .box h3 { margin-top: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 2mm 0; font-size: 9.5pt; break-inside: avoid; }
+  th, td { border-bottom: 0.2mm solid #c9b98f; padding: 1.2mm 2mm; text-align: left; vertical-align: top; }
+  th { font: 9.5pt "Righteous", sans-serif; }
+  .cols { columns: 2; column-gap: 8mm; }
+  .cols > * { break-inside: avoid; }
+  .phase { display: grid; grid-template-columns: 10mm 1fr; gap: 2mm; margin: 2mm 0; break-inside: avoid; }
+  .phase .n { font: 14pt "Righteous", sans-serif; color: var(--tang); text-align: center; }
+  .muted { color: var(--muted); font-size: 9pt; }
+  @media print { main { padding: 0; } }
+  @page { size: A4; margin: 12mm; }
+  figure.dia { margin: 3mm 0; break-inside: avoid; }
+  figure.dia img { width: 100%; display: block; border-radius: 2mm; }
+</style>
+</head>
+<body><main>
+<h1>Stewards of the Long Voyage</h1>
+<p class="sub">A cooperative game for 1–4 players · about 90 minutes · playtest rulebook</p>
+
+<p>Your people have lived aboard the generation ship for longer than anyone remembers. The great machine still carries them, but no one fully understands it any more. Faults spread through its sections, and every generation inherits the last one's mistakes. You are the <b>Great Houses</b>. You choose who leads each generation, keep the crew alive, relearn how the ship works, and hold it together until Landfall.</p>
+<p>Everyone wins or loses together.</p>
+
+<h2>How you win and lose</h2>
+<div class="box tang">
+<p><b>Win</b> the moment the ship meets the condition for your current <b>Understanding</b> tier:</p>
+<ul>
+<li><b>I:</b> no threat and no Decay anywhere.</li>
+<li><b>II:</b> no threat anywhere.</li>
+<li><b>III:</b> no Faults <img class="ic" src="art/icons/fault.svg" alt=""> or Failures <img class="ic" src="art/icons/failure.svg" alt=""> anywhere. Glitches may remain.</li>
+</ul>
+<p>A destination may add a Landfall requirement, such as a number of Crew.</p>
+<p><b>Lose</b> if any of these happens:</p>
+<ul>
+<li>an event must be drawn and the event deck is empty (time runs out);</li>
+<li>Decay must be placed after the Ship in Crisis card has flipped and the Decay pool is empty;</li>
+<li>any house has no influence left on the ship.</li>
+</ul>
+</div>
+<p>Understanding rises as you earn <b>Discoveries</b>, so the win gets easier as you learn. The clock is the event deck: about 12 generations.</p>
+
+<h2>Components (print-and-play kit)</h2>
+<div class="cols">
+<ul>
+<li><b>Ship boards A–D:</b> one per player. Each is a hull module with 8 sections and the void beyond its Outer Hull.</li>
+<li><b>House boards:</b> 8 houses. Each has two tracks (credits and card plays), three growth options, an innate power and a special rule.</li>
+<li><b>People cards:</b> Common and Remarkable. Every person is a power you can play and a possible leader. The 150-card playtest deck is recommended.</li>
+<li><b>Event cards:</b> 12, in three stages, plus the Landfall card.</li>
+<li><b>Discovery cards:</b> 24.</li>
+<li><b>Ship in Crisis cards:</b> 4.</li>
+<li><b>Destination sheets:</b> 3.</li>
+<li><b>The Wall of Leaders:</b> a three-panel, dual-layer board with 12 slots.</li>
+<li><b>Threat:</b> Glitch <img class="ic" src="art/icons/glitch.svg" alt="">, Fault <img class="ic" src="art/icons/fault.svg" alt=""> and Failure <img class="ic" src="art/icons/failure.svg" alt="">.</li>
+<li><b>People pieces:</b> Crew <img class="ic" src="art/icons/crew.svg" alt="">, Decay <img class="ic" src="art/icons/decay.svg" alt="">, and influence banners <img class="ic" src="art/icons/influence.svg" alt=""> in each house's colour.</li>
+<li><b>Tokens:</b> Brace <img class="ic" src="art/icons/brace.svg" alt="">, Patch <img class="ic" src="art/icons/patch.svg" alt="">, Lockout <img class="ic" src="art/icons/lockout.svg" alt="">, Quarantine <img class="ic" src="art/icons/quarantine.svg" alt="">, Unrest <img class="ic" src="art/icons/unrest.svg" alt="">, Contain markers <img class="ic" src="art/icons/contain.svg" alt="">, and Breakthrough starbursts.</li>
+<li><b>Trackers:</b> a Purpose pool and a Decay pool. Use any counters, such as coins or a d20.</li>
+<li><b>Counts for 1–4 players:</b>
+  <ul>
+  <li>45 Glitch, 25 Fault, 8 Failure;</li>
+  <li>55 Crew, 15 Decay;</li>
+  <li>26 influence banners per house;</li>
+  <li>Brace tokens in values 1, 2 and 5;</li>
+  <li>12 Contain markers;</li>
+  <li>30 each of Patch and Lockout;</li>
+  <li>12 Breakthrough starbursts.</li>
+  </ul>
+  These come from simulated 4-player games, with a margin.</li>
+</ul>
+</div>
+<p class="muted">The icon glossary at the end of the print-and-play kit lists every symbol.</p>
+
+<h2>Setup</h2>
+<ol>
+<li><b>Choose houses.</b> Each player takes a house board, its influence banners, and one ship board.
+  <ul><li>For a first game, use <b>Galvan</b> and <b>Keel</b>, which are simple and sturdy.</li></ul></li>
+<li><b>Build the ship.</b> Join the boards by any docking sides. Keep each board's fins and prow, the Outer Hull, facing open space. Suggested layouts:
+  <ul>
+  <li>2 players: <i>pair</i></li>
+  <li>3 players: <i>arc</i></li>
+  <li>4 players: <i>diamond</i></li>
+  </ul>
+  Sections that touch across a seam are adjacent.</li>
+<li><b>Starting pieces.</b> Place the pieces printed on each board. Each house then places its starting influence, as shown on its house board, on its own board.</li>
+<li><b>Pools:</b>
+  <ul>
+  <li><b>Decay pool:</b> 3 per player − 1. Starting Decay printed on the boards doesn't come from the pool.</li>
+  <li><b>Purpose pool:</b> 6 per player. Start it at 0.</li>
+  <li>Shuffle the Ship in Crisis cards and place one face down.</li>
+  </ul></li>
+<li><b>Event deck.</b> Shuffle each stage separately. Deal 5 Stage III cards face down, then 4 Stage II on top, then 3 Stage I on top. A destination may change these numbers.</li>
+<li><b>Destination.</b> Optional; skip it for a first game. Apply the levels you chose. The destination also sets how many Discoveries raise Understanding; without one, it's 3.</li>
+<li><b>People deck.</b> Shuffle the Commons and the Remarkables into separate piles. Shuffle the Discoveries.</li>
+<li><b>The first leader.</b> Draw a Common as the starting Steward and draw the first event. Tuck the event under the leader in the <b>Day</b> slot of the conveyor, then <b>Seed</b> that event (see Event actions). The starting Steward belongs to no house. Dawn and Dusk start empty.</li>
+</ol>
+
+<h2>The conveyor and the Wall</h2>
+<p>Three slots, <img class="ic" src="art/icons/dawn.svg" alt=""> <b>Dawn</b>, <img class="ic" src="art/icons/day.svg" alt=""> <b>Day</b> and <img class="ic" src="art/icons/dusk.svg" alt=""> <b>Dusk</b>, each hold one leader with its event card tucked below it. Each generation, leaders age one step:</p>
+<ul>
+<li>The <b>Heir</b> in Dawn is newly chosen. Its event <b>Seeds</b>.</li>
+<li>The <b>Steward</b> in Day <b>reigns</b>: its Reign effect applies, then its event <b>Grows</b>. The Steward's house makes every shared decision.</li>
+<li>The <b>Elder</b> in Dusk leaves its <b>Legacy</b>, an ongoing effect in its event's sections, and then its event <b>Collapses</b>.</li>
+</ul>
+<p>Then the Elder retires to the next slot of the <b>Wall of Leaders</b>. Slide the card in from the top so its portrait and Legacy show through the windows. Its Legacy stays in force for the rest of the voyage. Mark each leader with a small banner of the house that put it forward.</p>
+<figure class="dia"><img src="art/rulebook/conveyor.png" alt="The leader conveyor: Dawn, Day, Dusk, then the Wall"></figure>
+<figure class="dia"><img src="art/rulebook/wall_slotting.png" alt="Sliding a retired leader into the Wall"></figure>
+
+<h2>A generation, step by step</h2>
+<div class="phase"><div class="n">1</div><div><h3><img class="ic" src="art/icons/growth.svg" alt=""> Growth</h3>
+<p>Each house picks one growth option from its house board:</p>
+<ul>
+<li><b>A:</b> place 1 influence within range 1 of your influence, and uncover the next slot on either track. The new value applies from now on.</li>
+<li><b>B:</b> gain 2 credits, plus your house's perk.</li>
+<li><b>C:</b> draw 2 extra cards this generation and gain 1 credit.</li>
+</ul>
+<p>Then gain your <b>income</b>: the highest uncovered number on your credits track. Draw a new hand from the Commons: your card plays plus your hand bonus, plus any extra draws. You may take <b>one Remarkable</b> in place of two Commons. Cards you cloned last generation stay in your hand.</p></div></div>
+<div class="phase"><div class="n">2</div><div><h3>Commit</h3>
+<p>Choose cards to play, up to your <b>card plays</b>, and pay their costs <img class="ic" src="art/icons/credits.svg" alt="">. Mark one played card as your <b>nominee</b>, a candidate for heir. The nominee costs 3 credits less, so a Common is free, and it resolves <b>fast</b>. Some houses can make more cards fast. Everyone commits before anything resolves, so talk it over.</p>
+<p><b>Elements.</b> Each card's guild icons are its elements. Add up the elements of everything you played this generation, plus any elements on your uncovered track slots and on the Wall. Those totals power your <b>innate</b> (house board) and each card's <b>bonus</b>. A card's own guilds count toward its bonus, but every bonus needs at least one more element from somewhere else.</p></div></div>
+<div class="phase"><div class="n">3</div><div><h3><img class="ic" src="art/icons/fast.svg" alt=""> Fast</h3><p>Fast cards and fast innates resolve. Each house chooses its own order. Choose each card's target when it resolves: a section within the card's range <img class="ic" src="art/icons/range.svg" alt=""> of one of your influence banners, and of the type the card names.</p></div></div>
+<div class="phase"><div class="n">4</div><div><h3><img class="ic" src="art/icons/dusk.svg" alt=""> Dusk</h3>
+<ol>
+<li><b>Discoveries.</b> Resolve each Discovery earned before this Dusk. The Steward's house either <b>applies it now</b> (its effect at your current Understanding tier, in one section of your choice on each board), or tucks it under the Steward as a <b>Breakthrough</b>. A Breakthrough switches on as a permanent bonus when that leader reaches the Wall. A leader can hold only one.</li>
+<li><b>Wall bonuses</b> that act at Dusk apply.</li>
+<li>The Elder's <b>Legacy</b> takes hold, for good, in the sections matching its event.</li>
+<li>The Elder's event <img class="ic" src="art/icons/collapse.svg" alt=""> <b>Collapses</b>.</li>
+</ol></div></div>
+<div class="phase"><div class="n">5</div><div><h3><img class="ic" src="art/icons/day.svg" alt=""> Day</h3><p>The Steward's <b>Reign</b> applies in the sections matching its event. Then that event <img class="ic" src="art/icons/grow.svg" alt=""> <b>Grows</b>.</p></div></div>
+<div class="phase"><div class="n">6</div><div><h3><img class="ic" src="art/icons/dawn.svg" alt=""> Dawn: succession</h3><p>Lay out the nominees. Each house votes for one; the most votes becomes the new <b>Heir</b> in Dawn.</p>
+<ul>
+<li><b>Ties:</b> the nominee whose house has fewer leaders in Day and Dusk wins. If still tied, the Steward's house chooses.</li>
+<li>Unchosen nominees are discarded.</li>
+<li><b>Only now</b> draw the next event, tuck it under the Heir, and <img class="ic" src="art/icons/seed.svg" alt=""> <b>Seed</b> it. You never know where a leader will serve until after you've chosen them.</li>
+</ul></div></div>
+<div class="phase"><div class="n">7</div><div><h3><img class="ic" src="art/icons/slow.svg" alt=""> Slow</h3><p>All other played cards and slow innates resolve, in each house's chosen order. You now know the new event.</p></div></div>
+<div class="phase"><div class="n">8</div><div><h3>Time passes</h3><p>The Elder and its event move to the Wall, with any Breakthrough, which switches on now. Day moves to Dusk, and Dawn moves to Day. Stand damaged pieces back up, and remove Brace and Quarantine. Each house discards its hand, keeping up to its <b>clone</b> number of cards. Credits carry over.</p></div></div>
+
+<h2>Event actions</h2>
+<p>Event cards name section types: <img class="ic" src="art/icons/type_infrastructure.svg" alt=""> Infrastructure, <img class="ic" src="art/icons/type_residential.svg" alt=""> Residential, <img class="ic" src="art/icons/type_government.svg" alt=""> Government, <img class="ic" src="art/icons/type_agricultural.svg" alt=""> Agricultural, or the Outer Hull <img class="ic" src="art/icons/hull.svg" alt="">. The slot an event is in decides what it does there:</p>
+<table>
+<tr><th>Slot</th><th>Action</th><th>In every matching section…</th></tr>
+<tr><td>Dawn</td><td><img class="ic" src="art/icons/seed.svg" alt=""> Seed</td><td>…that is on the Outer Hull or next to a Fault or Failure: add 1 Glitch. Seeding comes in from the void and spreads from damage.</td></tr>
+<tr><td>Day</td><td><img class="ic" src="art/icons/grow.svg" alt=""> Grow</td><td>…that has any threat: add 1 Fault, or a Failure instead if it already has 2 or more Faults.</td></tr>
+<tr><td>Dusk</td><td><img class="ic" src="art/icons/collapse.svg" alt=""> Collapse</td><td>…that has any threat: the section takes damage equal to Glitches × 1 + Faults × 2 + Failures × 3 (Contained pieces count 0), plus 1 for Unrest, minus Brace. Then take the Contain markers off; the pieces stay.
+  <ul>
+  <li><b>2 or more damage</b> places Decay there.</li>
+  <li>The <b>same damage</b> hits the Crew there: each Crew has 2 health.</li>
+  <li><b>Then</b> the surviving Crew strike back for 2 damage each against the threat in their section.</li>
+  </ul></td></tr>
+</table>
+<p>Stage II events add a <b>twist</b>, printed on the card's visible band.</p>
+
+<h2>Threat, damage and Purpose</h2>
+<ul>
+<li><b>Health:</b> Glitch <img class="ic" src="art/icons/glitch.svg" alt=""> 1 · Fault <img class="ic" src="art/icons/fault.svg" alt=""> 2 · Failure <img class="ic" src="art/icons/failure.svg" alt=""> 3.</li>
+<li><b>Dealing damage</b> <img class="ic" src="art/icons/repair.svg" alt="">: you choose how to assign it among the threat in the section. Damage that doesn't destroy a piece stays until Time passes. Tip the piece over at 1 damage; turn a Failure upside down at 2.</li>
+<li><b>Downgrade</b> <img class="ic" src="art/icons/downgrade.svg" alt="">: swap a piece for the next smaller one (Failure to Fault, Fault to Glitch). The new piece is undamaged.</li>
+<li><b>Purpose</b> <img class="ic" src="art/icons/purpose.svg" alt="">: destroying a Fault gives +1 and a Failure +2; cards and Reigns give more. When the pool fills, empty it and draw a <b>Discovery</b>, which resolves at the next Dusk. Every few Discoveries (3, or as the destination says) raise <b>Understanding</b> by one tier, up to III.</li>
+</ul>
+
+<h2>Decay and the Ship in Crisis</h2>
+<p>Decay <img class="ic" src="art/icons/decay.svg" alt=""> comes from the Decay pool:</p>
+<ul>
+<li>When Decay lands in a section, every house loses 1 influence there.</li>
+<li>If the section already had Decay, it <b>cascades</b>: the Steward's house places 1 more Decay in an adjacent section.</li>
+<li>When the pool runs out, flip the <b>Ship in Crisis</b> card: add 1 Decay per player to the pool and apply its effect. If the pool runs out again, you lose.</li>
+</ul>
+
+<h2>Influence, range and other houses</h2>
+<ul>
+<li><b>Range</b> counts sections, by adjacency, from any section where you have influence. Range 0 means a section with your influence.</li>
+<li>A section where you have 2 or more influence is a <b>Haven</b>. Some powers use Havens.</li>
+<li>Some cards target <b>another house</b>: give them credits, or add or move their influence.</li>
+<li>Adding influence is powerful, so cards that do it cost the most.</li>
+</ul>
+
+<h2>Card anatomy</h2>
+<figure class="dia"><img src="art/rulebook/card_anatomy.png" alt="A people card and an event card, labelled"></figure>
+<table>
+<tr><th>Part</th><th>Meaning</th></tr>
+<tr><td>Name bar</td><td>The card's number, ★ for Remarkable, and its cost <img class="ic" src="art/icons/credits.svg" alt="">.</td></tr>
+<tr><td>Guild column</td><td>All eight guilds down the left edge, always in the same order. The card's own guilds (its elements) are in colour; the rest are greyed out.</td></tr>
+<tr><td>Portrait window</td><td>The person. It shows through the Wall once they retire.</td></tr>
+<tr><td>Effect line</td><td>Starts with the target, range <img class="ic" src="art/icons/range.svg" alt=""> and section type, then what the card does when it resolves, as icons. A number goes with the icon after it.</td></tr>
+<tr><td>Bonus line</td><td>The elements needed (from elsewhere too), then → the extra effect.</td></tr>
+<tr><td>Reign <img class="ic" src="art/icons/day.svg" alt=""></td><td>Applies while this person is Steward, in its event's sections.</td></tr>
+<tr><td>Legacy plaque</td><td>Ongoing for the rest of the game once this person retires, in its event's sections. Teal parts help, red parts hurt. Remarkables leave heavier Legacies.</td></tr>
+</table>
+
+<h2>Tokens</h2>
+<table>
+<tr><td><img class="ic" src="art/icons/brace.svg" alt=""> Brace X</td><td>Prevents X damage at the next Collapse there. Removed at Time passes.</td></tr>
+<tr><td><img class="ic" src="art/icons/patch.svg" alt=""> Patch</td><td>The next Grow there is skipped.</td></tr>
+<tr><td><img class="ic" src="art/icons/lockout.svg" alt=""> Lockout</td><td>The next Seed there is skipped.</td></tr>
+<tr><td><img class="ic" src="art/icons/quarantine.svg" alt=""> Quarantine</td><td>Nothing seeds, vents or cascades into or out of the section this generation.</td></tr>
+<tr><td><img class="ic" src="art/icons/unrest.svg" alt=""> Unrest</td><td>+1 damage from every source there, both yours and the Collapse's.</td></tr>
+<tr><td><img class="ic" src="art/icons/contain.svg" alt=""> Contain</td><td>Put the marker on one threat piece. It stays with that piece if the piece is vented or moved. At the next Collapse in its section, that piece deals no damage; then remove the marker (not the piece). If the piece is destroyed or downgraded, the marker goes too.</td></tr>
+<tr><td><img class="ic" src="art/icons/vent.svg" alt=""> Vent / <img class="ic" src="art/icons/gather.svg" alt=""> Gather</td><td>Push threat to, or pull Crew from, an adjacent section. Always optional, piece by piece.</td></tr>
+</table>
+
+<h2>Landfall variants</h2>
+<ul>
+<li><b>Off</b> (recommended for learning): you win the moment the condition is met.</li>
+<li><b>Begin when ready:</b> when the condition is met, the Steward's house may begin Landfall. The Landfall card becomes the next event. You win when it retires to the Wall, about 3 generations later. Survive until then.</li>
+<li><b>Shuffled:</b> the Landfall card is shuffled into Stage III. If the condition holds when it retires, you win. If not, from then on you win the moment the condition is met. This is a hard variant.</li>
+</ul>
+
+<h2>Quick-start game</h2>
+<div class="box">
+<ul>
+<li><b>Players:</b> 2. Galvan on board A, Keel on board B, docked as the <i>pair</i> layout.</li>
+<li><b>Destination:</b> none. Landfall off.</li>
+<li><b>Cards:</b> the 150-card playtest deck.</li>
+<li><b>Pools:</b> Decay 5, Purpose 12.</li>
+<li><b>Tip:</b> watch the forecast. The Elder's event Collapses this Dusk and the Steward's event Grows this Day, so you always know where the next damage lands.</li>
+</ul>
+</div>
+<p class="muted">Playtest build. The browser prototype plays the same rules and records each game; send your notes and the record back.</p>
+</main></body>
+</html>

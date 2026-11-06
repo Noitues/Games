@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stewards of the Long Voyage Print-and-Play</title>
+<style>
+  @font-face { font-family: "Righteous"; src: url("art/fonts/Righteous-Regular.ttf"); }
+  @font-face { font-family: "Josefin"; src: url("art/fonts/JosefinSans[wght].ttf"); font-weight: 100 700; }
+  :root { --teal: #0F3A48; --cream: #FBEFD6; --tang: #E8603A; --turq: #3AB0A8; --gold: #F6C85A; --red: #C8402A; --muted: #5b6b70; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 8pt/1.25 "Josefin", system-ui, sans-serif; color: var(--teal); background: #fff; }
+  .controls { padding: 12px 16px; border-bottom: 1px solid #ccc; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; font-size: 11pt; }
+  .controls label { display: flex; gap: 4px; align-items: center; }
+  h1 { font: 18pt "Righteous", sans-serif; margin: 6mm 8mm 3mm; }
+  h2 { font: 13pt "Righteous", sans-serif; margin: 4mm 8mm 2mm; break-before: page; }
+  .note { color: var(--muted); font-size: 7pt; }
+  .ic { height: 1.25em; width: 1.25em; vertical-align: -0.28em; }
+  .ic.big { height: 9mm; width: 9mm; }
+  .ic.huge { height: 13mm; width: 13mm; }
+  .tx { font-size: 6.5pt; }
+  .fx { display: inline-flex; align-items: center; gap: 0.3mm; white-space: nowrap; }
+  .fx b { font: 8.5pt "Righteous", sans-serif; }
+  .sep { display: inline-block; width: 0.3mm; height: 3.5mm; background: currentColor; opacity: .35; margin: 0 1mm; vertical-align: middle; }
+  .lbl { font: 6.5pt "Righteous", sans-serif; text-transform: uppercase; letter-spacing: .04em; margin-right: 1mm; }
+  .sheet { display: flex; flex-wrap: wrap; justify-content: center; padding: 0; }
+  .card { width: 63mm; height: 88mm; position: relative; overflow: hidden; break-inside: avoid; outline: 0.2mm dashed #aaa; outline-offset: -0.1mm; }
+  .card .frame { position: absolute; left: -3mm; top: -3mm; width: 69mm; height: 94mm; }
+  .person .name { position: absolute; left: 4mm; top: 1.5mm; width: 55mm; height: 6.5mm; display: flex; justify-content: space-between; align-items: center; padding: 0 2.5mm; font: 9pt "Righteous", sans-serif; }
+  .person .cost { display: inline-flex; align-items: center; gap: .5mm; }
+  .person .gcol { position: absolute; left: 2mm; top: 0; width: 7.5mm; height: 88mm; }
+  .person .gcol .g { position: absolute; left: .75mm; width: 6mm; height: 6mm; background: var(--cream); border-radius: 50%; }
+  .person .gcol .g.off { filter: grayscale(1); opacity: .55; }
+  .person .target { display: inline-flex; align-items: center; gap: .4mm; background: var(--teal); color: var(--cream); border-radius: 2mm; padding: .2mm 1.2mm; margin-right: 1mm; }
+  .person .target .ic { filter: brightness(0) invert(1); }
+  .person .target b { font: 8.5pt "Righteous", sans-serif; }
+  .person .panel { position: absolute; left: 11mm; top: 51mm; width: 48mm; height: 18mm; padding: 1.2mm 2mm; display: flex; flex-direction: column; justify-content: space-around; }
+  .row { display: flex; align-items: center; flex-wrap: wrap; gap: .4mm; }
+  .row.eff .ic { height: 4.6mm; width: 4.6mm; } .row.eff b { font-size: 11pt; }
+  .row.th { border-top: .2mm solid #c9b98f; padding-top: .5mm; }
+  .arrow { margin: 0 .8mm; font-weight: 700; }
+  .row.reign { font-size: 7pt; }
+  .person .plaque { position: absolute; left: 2mm; top: 70.5mm; width: 59mm; height: 16mm; padding: 1.5mm 3mm; color: var(--cream); display: flex; flex-wrap: wrap; align-items: center; align-content: center; gap: .6mm 0; }
+  .plaque .fx { border-radius: 2mm; padding: .2mm 1mm; }
+  .plaque .fx.benefit { background: rgba(58,176,168,.35); }
+  .plaque .fx.drawback { background: rgba(200,64,42,.75); }
+  .plaque .ic { background: var(--cream); border-radius: 50%; }
+  .rem .name::after { content: ""; }
+  .event .ev-art { position: absolute; left: 4mm; top: 4mm; width: 55mm; height: 30mm; display: flex; align-items: center; justify-content: center; gap: 3mm; }
+  .event .ev-art .ic { background: var(--cream); border-radius: 50%; padding: 1mm; }
+  .event .ev-once { position: absolute; left: 4mm; top: 36mm; width: 55mm; height: 19mm; padding: 2mm 3mm; display: flex; flex-direction: column; }
+  .event .ev-stage { position: absolute; left: 4.9mm; top: 61.9mm; width: 9.2mm; height: 9.2mm; display: flex; align-items: center; justify-content: center; font: 11pt "Righteous", sans-serif; }
+  .event .ev-icons span { position: absolute; top: 60.9mm; width: 11.2mm; height: 11.2mm; display: flex; align-items: center; justify-content: center; }
+  .event .ev-icons span:nth-child(1) { left: 20.4mm; } .event .ev-icons span:nth-child(2) { left: 33.4mm; }
+  .event .ev-icons .ic { width: 8mm; height: 8mm; }
+  .event .ev-icons span.empty { background: #0B2C37; border-radius: 50%; width: 12.2mm; height: 12.2mm; margin: -0.5mm 0 0 -0.5mm; }
+  .event .ev-name { position: absolute; left: 14mm; top: 73mm; width: 45mm; height: 4.8mm; display: flex; align-items: center; justify-content: center; font: 7.5pt "Righteous", sans-serif; }
+  .event .ev-twist { position: absolute; left: 5mm; top: 78.8mm; width: 53mm; height: 6.4mm; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 6pt; line-height: 1.1; padding: 0 1.5mm; }
+  .muted { color: var(--muted); font-size: 7pt; }
+  .card.plain { background: var(--cream); border: 1.5mm solid var(--teal); border-radius: 3mm; padding: 2.5mm; display: flex; flex-direction: column; gap: 1.2mm; outline: none; }
+  .plain .hd { display: flex; justify-content: space-between; font: 9pt "Righteous", sans-serif; }
+  .plain .tier { font: 9pt "Righteous", sans-serif; width: 6mm; }
+  .plain .bt { margin-top: auto; border-top: .3mm solid var(--teal); padding-top: 1mm; }
+  .plain .big { font: 11pt "Righteous", sans-serif; }
+  .crisis { border-color: var(--red); }
+  .house { width: 194mm; margin: 0 8mm 5mm; break-inside: avoid; }
+  .house.art img { width: 190mm; display: block; }
+  .house:not(.art) { position: relative; border: 1.2mm solid var(--hc); border-radius: 3mm; padding: 4mm 4mm 4mm 34mm; background: var(--cream); min-height: 120mm; display: flex; flex-direction: column; gap: 2mm; }
+  .house .banner { position: absolute; left: 4mm; top: 4mm; width: 26mm; bottom: 4mm; background: var(--hc); border-radius: 2mm; display: flex; justify-content: center; padding-top: 6mm; }
+  .house .crest { width: 20mm; height: 24mm; }
+  .house .hd { display: flex; justify-content: space-between; font: 14pt "Righteous", sans-serif; }
+  .house .track { display: inline-flex; gap: 2mm; margin-left: 2mm; }
+  .house .track span { width: 10mm; height: 10mm; border-radius: 50%; border: .5mm solid var(--teal); display: inline-flex; align-items: center; justify-content: center; background: #fff; }
+  .house table { border-collapse: collapse; } .house td, .house th { border: .2mm solid #c9b98f; padding: 1mm 2mm; text-align: left; }
+  .house.plain { border: 1.2mm solid var(--teal); padding: 4mm; }
+  .shipboard { margin: 0 0 4mm; break-inside: avoid; page-break-after: always; }
+  .shipboard .cap, .wall .cap { font-size: 7pt; color: var(--muted); margin-bottom: 2mm; }
+  .layouts { display: flex; flex-wrap: wrap; gap: 4mm; padding: 0 8mm; }
+  .layout { width: 60mm; } .layout svg { width: 100%; height: 60mm; }
+  .wall { page: land; break-inside: avoid; margin: 0 0 4mm; }
+  h2.land { page: land; }
+  .wallpanel { position: relative; width: 290mm; height: 120mm; }
+  .wallpanel img { width: 290mm; height: 120mm; display: block; }
+  .slotno { position: absolute; top: 93.9mm; transform: translateX(-50%); font: 10pt "Righteous", sans-serif; color: var(--teal); }
+  .backing { width: 290mm; height: 120mm; background: var(--teal); border-radius: 4mm; }
+  .tokens { display: flex; flex-wrap: wrap; gap: 1.5mm; padding: 0 8mm; }
+  .tok { width: 16mm; height: 16mm; border-radius: 50%; background: var(--c); border: .4mm solid var(--teal); display: inline-flex; align-items: center; justify-content: center; }
+  .tok { position: relative; }
+  .tok .ic { width: 11mm; height: 11mm; }
+  .tok .tv { position: absolute; right: -0.5mm; bottom: -0.5mm; background: var(--teal); color: var(--cream); font: 8pt "Righteous", sans-serif; border-radius: 50%; width: 5.5mm; height: 5.5mm; display: flex; align-items: center; justify-content: center; }
+  .card.back { outline-color: #888; }
+  .ref { margin: 0 8mm; columns: 2; column-gap: 8mm; font-size: 8.5pt; }
+  .ref h3 { font: 10.5pt "Righteous", sans-serif; margin: 2mm 0 1mm; }
+  .glossary { width: 180mm; margin: 0 8mm; }
+  .record { padding: 0 8mm; font-size: 9pt; }
+  .record h3 { font: 11pt "Righteous", sans-serif; margin: 3mm 0 1mm; }
+  .flds { display: flex; flex-wrap: wrap; gap: 2mm; }
+  .fld { border: .3mm solid var(--teal); border-radius: 1.5mm; height: 10mm; padding: .8mm 1.5mm; }
+  .fld span { font-size: 7pt; color: var(--muted); }
+  .fld.big { width: 100%; height: 15mm; }
+  body.ink .backing { background: none; border: .6mm solid var(--teal); }
+  body.ink .event .ev-icons span.empty { background: #c9d3d6; }
+  .cardpage { break-before: page; break-inside: avoid; }
+  .ph { font: 8pt "Righteous", sans-serif; color: var(--muted); height: 5mm; text-align: center; }
+  .card.back .bk-label { position: absolute; left: 8mm; right: 8mm; bottom: 7mm; height: 9mm; border-radius: 3mm; color: var(--cream); display: flex; align-items: center; justify-content: center; gap: 1.5mm; font: 12pt "Righteous", sans-serif; border: .5mm solid var(--cream); }
+  .card.back .bk-label .ic { width: 6mm; height: 6mm; background: var(--cream); border-radius: 50%; padding: .4mm; }
+  .shipboard.half { page: land; break-before: page; }
+  .halfwrap { position: relative; display: inline-block; }
+  .cutline { position: absolute; left: 0; right: 0; border-top: .4mm dashed var(--tang); }
+  .gens { border-collapse: collapse; width: 100%; }
+  .gens th, .gens td { border: .3mm solid var(--teal); padding: .6mm 1.5mm; height: 6.5mm; font-size: 8pt; text-align: left; }
+  @media print { .controls { display: none; } }
+  @page { size: A4; margin: 8mm; }
+  @page land { size: A4 landscape; margin: 3mm; }
+</style>
+</head>
+<body>
+<div class="controls">
+  <strong>Print-and-play</strong>
+  <label><input type="checkbox" data-part="ref" checked> Rules reference</label>
+  <label><input type="checkbox" data-part="houses" checked> House boards</label>
+  <label><input type="checkbox" data-part="boards" checked> Ship boards and layouts</label>
+  <label><input type="checkbox" data-part="wall" checked> Wall of Leaders</label>
+  <label><input type="checkbox" data-part="tokens" checked> Tokens</label>
+  <label><input type="checkbox" data-part="events" checked> Events</label>
+  <label><input type="checkbox" data-part="disc" checked> Discoveries and Ship in Crisis</label>
+  <label><input type="checkbox" data-part="dest" checked> Destinations</label>
+  <label><input type="checkbox" data-part="rem" checked> Remarkable people</label>
+  <label><input type="checkbox" data-part="common" checked> Common people</label>
+  <label><input type="checkbox" id="fulldeck"> All 400 people (default: the 150-card playtest deck)</label>
+  <label><input type="checkbox" data-part="backs" checked> Card backs (one-sided printing: all backs pages at the end)</label>
+  <label><input type="checkbox" data-part="record" checked> Playtest record sheet</label>
+  <label>Ship boards <select id="boardmode"><option value="a4">A4 at 90 %</option><option value="halves">A4 at 100 %, two halves per board</option><option value="a3">A3 at 100 %</option></select></label>
+  <label><input type="checkbox" id="inksaver" checked> Ink saver (pale picture windows)</label>
+  <label><input type="checkbox" id="duplex"> Double-sided cards (a backs page after each fronts page)</label>
+  <button onclick="print()">Print / save as PDF</button>
+</div>
+<div id="out"></div>
+<script type="module" src="src/print/print.js"></script>
+</body>
+</html>

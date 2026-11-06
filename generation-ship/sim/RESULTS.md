@@ -1,0 +1,585 @@
+# Monte Carlo findings, run 1
+
+House bots, 2 players, offset pairing, 150 games per pairing (`--sweep --games 150 --seed 3`).
+
+## 1. Keel is far too weak, and the cause is a rule interaction
+Every pairing that includes Keel wins **52–64%**. Pairings without Keel win **87–94%**.
+
+| Keel stat | Value |
+|---|---|
+| Plays per generation | 1.1–1.2 |
+| Credits spent per generation | 0.1–0.2 |
+| Innate tier II or higher | under 1% |
+
+The cause:
+- **Keel starts with 1 card play, and the nominee is free.** For its first several generations Keel's only play is its free nominee, so it never needs credits.
+- **Its credit-rich, steep identity never activates.** Wealth only pays off with more plays (or Remarkables, which need a hand of 4+).
+
+Options:
+- (a) Make the nominee pay full cost, or a reduced cost, or make it free only for Commons.
+- (b) Start Keel at 2 plays.
+- (c) Let Keel spend credits on something besides plays (e.g. Brace per credit).
+
+## 2. Games end early: wins come at generation 5–7 of a 13-generation clock
+- About 3.5 Discoveries are earned per game, so **Understanding II arrives quickly**. Its condition ("no Faults or Failures") is then met within a generation or two.
+- Losses to the event deck running out are under 2%. The clock almost never matters.
+- **Steep curves can't pay off**, because the reference pacing assumed 12 generations. This also makes the Keel problem worse.
+
+Levers:
+- a larger Purpose pool (currently 4 per player),
+- more Discoveries per tier,
+- or tier conditions that also require a minimum generation.
+
+## 3. Innate thresholds: tier III is almost unreachable
+Rates at which each innate tier is reached:
+
+| House | No tier | Tier I | Tier II | Tier III |
+|---|---|---|---|---|
+| Galvan | 54–58% | 31–34% | 11–12% | ~0% |
+| Meridian | 40–42% | 46–50% | 9–12% | ~1% |
+| Vigil | 65% | 27–30% | 5–8% | ~0% |
+| Keel | 63–67% | 33–37% | ~0% | ~0% |
+
+- Card element-threshold bonuses are met **42–62%** of the time they're attempted.
+- The framework prices elements as if tiers II and III are reachable. **Element costs should rise sharply for tiers II and III**, or raw track elements should be more generous.
+
+## 4. Other measurements
+- **Galvan's Overclock:** about 1.35 extra fast plays per generation.
+- **Discoveries:** Breakthrough is chosen about twice as often as Apply (about 2.3 vs 1.1 per game).
+- **Remarkables:** 4–5 per game for non-Keel houses, about 1 for Keel.
+- **Losses** are almost entirely from the Decay pool emptying. Influence losses are rare (≤2%).
+- **Free nominee:** the planner always nominates its most expensive card. That makes free Remarkables a strong pattern, and is part of finding 1.
+
+## Bot strength
+| Bot | Win rate (Galvan + Keel) |
+|---|---|
+| random | 0% |
+| tactician | 5% |
+| planner | 48–53% |
+| house (with round rollouts) | 62–63% |
+
+Each layer adds measurably. Next bot improvements:
+- coordinate commits across houses (plan the second house after simulating the first),
+- roll out growth choices,
+- cooperative house targeting.
+
+---
+
+# Run 2: Keel at 2 plays, pacing retuned
+
+## Changes
+- **Keel** starts at **2 card plays** (track 2 → 2 → 2 → 3 → 4).
+- **Win conditions shifted one step stricter:**
+  - I: no threat and no Decay
+  - II: no threat
+  - III: no Faults or Failures
+- **Purpose pool:** 5 per player (was 4).
+- **Decay pool:** 3 per player + 1 (was 2 + 1).
+
+## Why these settings
+House bots, 4 pairings × 25–40 games per setting (`sim/tune.js`):
+
+| Setting | Win rate | Win generation | Wins at tier III |
+|---|---|---|---|
+| Original pacing (Keel at 2 plays) | 78% | 5.6 | 40% (58% at II) |
+| Slower Purpose only (8 per player, 4 per tier) | 49% | 9.0 | 0% (wins slide to tiers I/II) |
+| More threat (2 Glitches per seed) | 7–54% | 6–10 | up to 97%, but games were short or brutal |
+| **Shifted conditions, Purpose 5, Decay 3 + 1** | **66%** | **8.4** | **77%** |
+
+**Takeaway:** pacing knobs alone couldn't move wins to tier III. Tier II's original condition was nearly as easy as tier III's, so the conditions themselves had to change.
+
+## Pairing sweep (house bots, 100 games each, seed 9)
+
+| Pairing | Win | Gens | Tier III wins | Decay loss | Time loss |
+|---|---|---|---|---|---|
+| Galvan + Meridian | 82% | 8.2 | 43% | 17% | 1% |
+| Meridian + Vigil | 75% | 7.8 | 61% | 25% | 0% |
+| Galvan + Vigil | 71% | 8.0 | 54% | 29% | 0% |
+| Galvan + Keel | 58% | 8.9 | 35% | 35% | 7% |
+| Meridian + Keel | 54% | 8.7 | 38% | 36% | 10% |
+| Keel + Vigil | 49% | 8.0 | 37% | 47% | 4% |
+
+## Findings
+- **Pacing hit the target:**
+  - average win rate about 65%,
+  - games last about 8–9 generations and wins come at 7.9–8.7,
+  - most wins at Understanding III,
+  - **running out of events now matters** (up to 10% of games).
+- **Keel improved but is still the weakest house.** It now plays about 2 cards and spends about 1.2 credits per generation (was 1.1 and 0.2). The gap to the other pairings shrank from about 30 points to about 20.
+  - Its innate still rarely reaches tier II (3%).
+  - Load-Bearing's Brace only helps when a collapse hits a Keel Haven.
+  - Next levers: cheaper Keel innate thresholds, or a stronger special rule.
+- **Galvan + Meridian still wins often at tier II (38%).** Both houses repair aggressively, so they clear every Glitch.
+- **Innate tier III is still about 0–2%** for every house.
+- **Remarkables rose to 6–8 per game.** The longer games give more chances to draw them.
+
+---
+
+# Run 3: starting threat in every section type
+
+## Changes
+- **Boards start like Spirit Island**, with threat already on them. Each board gets 1 Failure, 2 Faults and 1 Glitch, each in a different section type, rotated so boards differ. Threat by type per board is 3 / 2 / 2 / 1. Decay starts next to the Failure.
+- **Pools retuned for the heavier start:** Purpose **4** per player, Decay **4** per player + 1.
+
+## Tuning grid (house bots, 4 pairings × 30 games)
+
+| Purpose / Decay per player | Win rate | Win generation | Wins at tier III |
+|---|---|---|---|
+| **4 / 4** | **63%** | **8.2** | **88%** |
+| 4 / 3 | 55% | 8.0 | 86% |
+| 5 / 4 | 58% | 8.9 | 79% |
+| 5 / 3 | 53% | 8.7 | 76% |
+
+## Pairing sweep (house bots, 100 games each, seed 9)
+
+| Pairing | Win | Win gen | Tier III wins | Decay loss | Time loss |
+|---|---|---|---|---|---|
+| Galvan + Meridian | 80% | 7.8 | 73% | 20% | 0% |
+| Meridian + Vigil | 74% | 7.7 | 72% | 24% | 2% |
+| Galvan + Vigil | 67% | 8.1 | 63% | 29% | 4% |
+| Meridian + Keel | 57% | 8.6 | 56% | 42% | 1% |
+| Galvan + Keel | 56% | 8.9 | 53% | 38% | 6% |
+| Keel + Vigil | 49% | 8.5 | 47% | 48% | 3% |
+
+## Findings
+- **Average win rate is about 64%**, and **about 94% of wins come at Understanding III**. Tier II wins dropped from 12–38% to 1–7%, because Glitches are now everywhere from the start.
+- **Keel is still about 20 points behind** the other pairings. Its innate reaches tier II only 3–4% of the time.
+- **Innate tier III is still at 0–1.5%.**
+
+---
+
+# Runs 4–6: eight houses, stronger bots, calibration
+
+## Stronger bots (step 5)
+| Bot | What it adds | Win rate (4 original houses, 6 pairings) |
+|---|---|---|
+| house | Whole-round rollouts | 71–75% |
+| team | Rollouts include teammates' likely plays | 71% (no gain) |
+| house + **self-play tuned weights** | `sim/tune-weights.js` coordinate search: Fault 2.5 → 4, Decay 6 → 9.6 | **78%** (fresh seeds; +3 points over the old weights) |
+
+The tuned weights are now the default for every bot level.
+
+## Calibration (step 1)
+House bots, all 28 two-house pairings (`sim/calibrate.js`, saved in `data/calibration.json`):
+
+| Card threshold size | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|
+| Met | 84% | 64% | 57% | 16% | 10% |
+
+- Threshold bonuses are now priced so their expected value is about 0.5 PP per required element (1–3 PP per element).
+- The people deck was regenerated with this rule.
+
+## House balance (eight houses, all 28 pairings)
+
+| Iteration | Changes | Overall | Spread (vs average) |
+|---|---|---|---|
+| 1 (new deck, tuned bots) | – | 80% | Tellers −25, Foremen +10 |
+| 4 | Tellers' Spin also Isolates; Foremen's Crew Strike only at tier III; Meridian tier II harder; Keel tier I gathers Crew; Purpose 5 | 72% | Tellers −11.5, Keel −9, Meridian +8 |
+| 5 | Spin gives 2 Purpose per damage; Keel plays track 2→2→3→3→4; Meridian hand +2; Galvan/Vigil tier II harder; Decay base 0 | 68% | −6.5 to +5.3 |
+| 6 | Keel credits start at 2; Tellers hand +3; Gardeners and Foremen trims | 75–78% | −6.4 to +4 |
+| **Final** | Decay pool 2 per player + 1 | **74%** | **−3.7 to +3.4** |
+
+- **Final:** every house is within ±4 points (noise is about ±3). About 82% of wins come at Understanding III, around generation 8.6.
+- **Pool tuning lesson:** a bigger Purpose pool (6 per player) made the game *easier* (75%). It shifted wins back to tier II.
+
+## Player counts and pairing (step 2)
+Final level-0 rules.
+
+| Players | Combinations | Win rate | Win gen | Tier III share of wins | Decay loss |
+|---|---|---|---|---|---|
+| 1 | 8 (all houses) | 82% | 7.3 | 69% | 14% |
+| 2 | 28 | 74% | 8.6 | 82% | 20% |
+| 3 | 12 sampled | 59% | 9.0 | 93% | 33% |
+| 4 | 10 sampled | 63% | 9.5 | 94% | 29% |
+| 2, Direct pairing | 28 | 74% | 8.5 | 87% | 21% |
+
+- **Larger tables lose more often, mostly to Decay.** More boards mean more Collapses per event, and the Decay pool only grows by 2 per player. A steeper pool scaling is being tested (next section).
+- **Direct pairing made no measurable difference to the bots.** They vote mostly on the cards' Reign/Legacy values. Human players may use the extra information more; this needs a smarter vote before it can be measured.
+
+### Steeper Decay scaling (adopted)
+Decay pool = 3 per player − 1 (2 / 5 / 8 / 11) instead of 2 per player + 1 (3 / 5 / 7 / 9):
+
+| Players | Before | After |
+|---|---|---|
+| 1 | 82% | 75% |
+| 2 | 74% | 74% (pool unchanged) |
+| 3 | 59% | 66% |
+| 4 | 63% | 68% |
+
+The spread across player counts shrinks from 23 points to 9.
+
+---
+
+# Destinations (step 3)
+
+House bots, 2 players, 4 house pairings (Galvan+Keel, Meridian+Vigil, Foremen+Tellers, Gardeners+Voidwardens), 25 games each per level. Level 0 is about 71%.
+
+| Level | Verdant Reach | Cinder | The Long Dark |
+|---|---|---|---|
+| 1 | 70% | 61% | 67% |
+| 2 | 66% | 56% | 54% |
+| 3 | 60% | 47% | 48% |
+| 4 | 55% | 41% | 40% |
+| 5 | 50% | 33% | 32% |
+| 6 | 39% | 24% | 23% |
+
+**How the levels were tuned (five passes):**
+- The first draft had Cinder too harsh at level 1 (41%), because its Flare hazard was strong. Flare moved to level 4.
+- Verdant Reach had cliffs whenever "+1 Fault in every Agricultural section" appeared. It now uses Outer Hull Agricultural sections only.
+- **Crew-loss hazards barely matter to the bots**, which protect their Crew well. Human players may feel them more.
+
+**Landfall card variant:**
+
+| Setting | Base win | With the Landfall card |
+|---|---|---|
+| Level 0 | 71% | 56% |
+| Verdant 3 / 6 | 60% / 39% | 39% / 29% |
+| Cinder 3 / 6 | 47% / 24% | 30% / 13% |
+| Long Dark 3 / 6 | 48% / 23% | 31% / 8% |
+
+The Landfall card adds a hard three-generation finale and costs about 15–20 points of win rate.
+
+---
+
+# Design-decision experiments
+
+`sim/experiments.js`: house bots, all 28 two-house pairings × 25 games, same seeds for every variant.
+
+| Variant | Win | Win gen | Tier III share | Decay loss | Meridian | House spread |
+|---|---|---|---|---|---|---|
+| Baseline | 76% | 8.5 | 85% | 21% | 73% | 5 pts |
+| Haven +1 range | 89% | 8.1 | 78% | 9% | 86% | 8 pts |
+| Remarkables only on growth C | 47% | 9.5 | 64% | 39% | 46% | 18 pts |
+| Crew requirement 4 per player | 76% | 8.5 | 85% | 20% | 74% | 7 pts |
+| Direct pairing | 78% | 8.5 | 84% | 18% | 76% | 7 pts |
+| Direct + smart vote | 79% | 8.5 | 78% | 16% | 80% | 8 pts |
+
+Interpretation is in the GDD's "Decisions for the designer".
+
+*Rule fix during this session:* Quarantine now also blocks cascades, vents and seeding *out of* the section, as the GDD says (found by the new rule tests).
+
+---
+
+# Card balance (`sim/cards.js`, report in `CARDS.md`)
+
+House bots, all 28 pairings, 1,120 games, every draw and play tracked.
+
+**Pick rate** (played ÷ drawn) by Common cost: cost 0 67%, cost 1 53%, cost 2 45%, cost 3 43%. Per-card spread is about ±18%.
+
+**Pick rate by effect, compared with cards of the same cost:**
+
+| Effect | Difference |
+|---|---|
+| add influence | +14 |
+| damage | +9 |
+| add Crew | +5 |
+| Brace, credits, Purpose, gather Crew | −4 |
+| foresee | −8 |
+| Quarantine | −11 |
+| move influence | −13 |
+
+**Repricing experiment (rejected):** I raised the prices of favored effects and lowered the neglected ones (×0.8–1.2), and gave Commons 1.15 PP per credit.
+- The overall win rate fell from 76% to 59%.
+- The pick-rate spread didn't narrow (±18% → ±18%).
+
+**Reading:**
+- Bots pick damage because removing threat is what wins, so pricing it up just weakens the players.
+- Most per-card variation is *situational*: whether the card has a useful target that generation. Restore Decay, for example, is 87% on one card and 13% on another.
+- **Pick rate is a weak repricing signal on its own.** The deck stays as calibrated. The repricing code is kept behind `APPLY_REPRICE = False` in `tools/generate_people.py`.
+
+**Use the report for individual outliers instead** (e.g. Commons with 3 damage at cost 1 are picked about 88% of the time). Fix those by hand rather than with global price changes.
+
+---
+
+# Board shapes: from grids to hull modules
+
+## Iterations
+1. **Voronoi boards on irregular outlines:** curved hull edges, 2–4 Hull sections, 2–6 neighbors per section. Per-board solo win rates were 72–84%; board C (2 Hull sections) was too easy, so it got an extra Fault.
+2. **Organic warped borders:** one smooth warp field across the whole ship, so seams matched. Fixing the B–C seam (63% → 73%) took a wider joint.
+3. **Hull modules (current):** every board has the same hexagonal outline.
+   - The Outer Hull side has armor plating, a prow and fins.
+   - The five docking sides share one point-symmetric dovetail profile, so any docking side mates with any other.
+   - Interiors are unique, with angular kinked borders.
+   - Layouts choose rotations that maximize docking links.
+
+## Hull modules: measured
+**Solo per board:** A 76%, B 73%, C 69%, D 68%.
+
+| Layout | Boards | Links | Win rate |
+|---|---|---|---|
+| Pair (2-player default) | 2 | 3 | 66% |
+| Line | 3 | 6 | 63% |
+| Arc (3-player default) | 3 | 6 | 64% |
+| Triad | 3 | 9 | 78% |
+| Line | 4 | 9 | 64% |
+| Diamond (4-player default) | 4 | 16 | 70% |
+| Wave (arc4) | 4 | 10 | 68% |
+| Fan | 4 | 9 | 52% |
+
+*(8 house combinations × 20 games each. Choosing rotations to maximize links raised the pair from 55% to 66%.)*
+
+**Finding: connectivity (docking links) is the main difficulty lever between layouts.**
+
+**House rebalance for the new boards** (seat-swapped sweeps, 30 games per seat order):
+
+| Change | Why |
+|---|---|
+| Keel: Brace 1 outside Havens, 2 in Havens | Too strong at +7 |
+| Gardeners' Rooted: once per generation | Too strong at +12 |
+| Voidwardens: may add influence next to the Hull; tier II/III vent 3 | Too weak at −8 (hex boards have only 2–3 Hull sections) |
+| Tellers: hand back to plays + 2 | Slightly strong |
+| Foremen: tier I Brace 2 | Slightly weak |
+
+Final: every house within ±4.4 points, 77% overall (pair layout, level 0).
+
+# Playtest 1 changes (hotseat: Galvan human + Meridian bot, Verdant 1, Landfall)
+
+Rule changes from the playtest notes:
+- card thresholds ignore the card's own guilds;
+- influence added by a card costs 2 credits each;
+- Breakthroughs are passive Wall bonuses;
+- Discoveries chain to the next Dusk and target one section per board;
+- succession ties go to the house with fewer leaders on the conveyor;
+- the Steward decides shared choices;
+- vent and gather are optional;
+- dead track slots replaced with elements or draws.
+
+Seat-swapped 2-player sweep, 15 games per seat order (210 games per house), level 0, pair layout:
+
+| Step | Overall | Spread | Note |
+|---|---|---|---|
+| Before (old rules, same sweep) | 73% | +6 / −5 | Baseline |
+| New rules, first run | 60–63% | Galvan +25, Vigil −13 | Houses stuck at 2 plays |
+| Fix bot track valuation | 81% | +8 / −6 | Bots valued element slots over card plays and ended games with 20–38 unspent credits |
+| Purpose 6 per player; Keel and Foremen track tweaks | **76%** | **+6 / −5** | Current |
+
+**Card thresholds:**
+- After the own-guild rule (before reprinting), hit rates dropped from 91% to 47% for 2-element thresholds, and from 61% to 19% for 3-element ones.
+- Reprinting the thresholds as "elements needed from elsewhere" restored the overall win rate (63% on the 4-pair test set, the same as before). Hit rates are now: 1 element 75%, 2 elements 45%, 3 elements 48%, 4 elements 19%.
+- Note: `data/calibration.json` threshold rates are keyed by the original (pre-reprint) totals, which the generator still uses for pricing. Don't recalibrate without changing that key.
+
+**Influence:** charging 2 credits per influence costs about 4 points of win rate.
+
+**Boards:**
+- The generator now snaps section borders off dovetail tabs and sockets.
+- Short borders get a smaller kink.
+- Board A's seed at (130, 40) moved to (130, 30).
+- No board has overlaps or holes anymore (checked by rasterizing).
+- Docking links changed slightly: pair 3, arc3 6, diamond 16, arc4 9.
+
+Player counts after these changes (house bots, 8 sampled combinations × 10 games):
+
+| Players | Win rate | Before |
+|---|---|---|
+| 1 | 71% | 75% |
+| 2 | 76% | 74% |
+| 3 | 68% | 66% |
+| 4 | **85%** | 68% |
+
+**Open:** 4 players is now too easy. Wall bonuses go to every house, so they scale with player count. Needs a larger run; candidate fixes are per-house Wall bonuses or a larger Purpose pool at 4 players.
+
+## Playtest 1 follow-up: revised threshold and influence rules
+
+Changes:
+- **Thresholds:** a card's own guilds count again. Each printed threshold is "elements needed from elsewhere (at least 1)" plus the card's own icons, so no card meets its own threshold.
+- **Influence:** the credit cost for adding influence is removed. Instead, add influence is priced at 3.5 PP (the costliest effect, up from 2) in the card generator. Cards that add influence now average 4.2 credits, up from 1.8.
+
+The deck was regenerated (387 cards changed by the new pricing), then retuned:
+- Galvan hand +1, Keel hand +1, Vigil hand +3, Foremen hand +3 (all were +2);
+- track slots adjusted for Galvan, Meridian and Vigil;
+- Purpose pool raised to 8 per player.
+
+2-player seat-swapped sweep: **73%**, houses within +7 / −5.
+
+| Players | Win rate (house bots) |
+|---|---|
+| 1 | 74% |
+| 2 | 73% |
+| 3 | 69% |
+| 4 | 75% |
+
+The 4-player overshoot from the previous entry is gone.
+
+# Round 2 (designer decisions after playtest 1)
+
+Changes:
+- Legacies are ongoing and double-edged, centred on the paired event's sections. Remarkables are net-negative.
+- New Crew powers.
+- The nominee costs 3 credits less (instead of being free).
+- The starting Steward belongs to no house.
+- The destination sets Discoveries per tier.
+- The Direct pairing toggle is dropped.
+- Each board gets a void zone (visual only).
+
+Retuning:
+- Purpose pool: 7 per player.
+- Galvan: one extra fast card per 2 Engineers.
+- Hand bonuses: Gardeners 3, Vigil 3, Foremen 3, Galvan 1, Keel 1.
+
+**2-player sweep** (seat-swapped, 210 games per house): 70%, with houses within +7.5 / −3.5.
+
+**Player counts** (8 sampled combinations × 10 games):
+
+| Players | Win rate |
+|---|---|
+| 1 | 63% |
+| 2 | 70% |
+| 3 | 80% |
+| 4 | 75% |
+
+The 1- and 3-player results drift either side of target. Re-check with larger runs before tuning per player count.
+
+**Destinations** (level 1 → level 6):
+- Verdant Reach (2 Discoveries per tier): 75% → 30%.
+- Cinder (3): 65% → 19%.
+- Long Dark: 4 per tier gave 24% → 5%, and 3 per tier gave 40% → 14% (it requires Understanding III while draining Purpose). It is now 2 per tier: 65% / 54% / 25% at levels 1 / 3 / 6.
+
+**Landfall variants** (level 0):
+
+| Variant | Win rate | Before |
+|---|---|---|
+| Begin when ready | 76% | (no cost now; it used to cost 15–20 points) |
+| Shuffled into Stage III | 45% | 21% |
+
+Shuffled was 21% when passing unready kept the ship from winning until the deck ran out. It is now 45%, with the base win allowed once Landfall has passed. It is a hard variant.
+
+**Layouts:**
+
+| Layout | Win rate |
+|---|---|
+| Pair | 68% |
+| Line3 | 66% |
+| Triad | 76% |
+| Arc3 | 66% |
+| Line4 | 69% |
+| Diamond | 81% |
+| Arc4 | 64% |
+| Fan | 70% |
+
+Fan is no longer an outlier (it was 52%). Diamond, with 16 links, is the easiest.
+
+**Cards** (`sim/CARDS.md`, 448 games):
+- Pick rates: Commons 42%; Commons that add influence 24% (no longer an automatic play); Commons with Crew powers 51%.
+- Remarkables are picked 24%, down from 30%. The capped nominee discount and negative Legacies give them a real cost.
+
+**Player-count re-check** (larger runs, single core):
+
+| Players | Sample | Win rate |
+|---|---|---|
+| 1 | all 8 houses × 60 games | 71% (Galvan +10, Vigil −11) |
+| 2 | seat-swapped sweep | 70% |
+| 3 | 16 combinations × 12 games | 75% |
+| 4 | 6 combinations × 10 games | 73% (75% in the earlier 8 × 10 run) |
+
+The earlier 63% at 1 player and 80% at 3 players were sampling noise. No per-player tuning is needed.
+
+Open: houses spread wider in solo play (no teammate covers a weak house). Vigil and Tellers may want a solo-only boost later.
+
+## Downgrade clears damage (designer decision, 2026-11-05)
+`downgrade()` now clears a section's leftover damage: the replacement piece starts undamaged.
+- **Effect:** the 2-player seat-swapped sweep (8 games per seat order, single core) fell from about 70% to 65%.
+- **Compensation:** Purpose pool from 7 to **6 per player**, which gives **75%**. Houses are within +7 / −5 (Galvan highest, Voidwardens lowest).
+- **Doc fix:** the GDD's Purpose numbers (8 per player) had drifted from the engine (7). Both now say 6.
+
+## Playtest deck (150 cards)
+`tools/playtest_deck.py` writes `data/playtest_deck.json`: 120 Commons and 30 Remarkables, keeping the full deck's cost curve, with guilds as even as possible (44–47 icons per guild among the Commons) and every effect type represented.
+
+2-player seat-swapped sweep (8 games per seat order, single core, Purpose pool 6):
+
+| Deck | Win rate | Note |
+|---|---|---|
+| Full deck | 75% | |
+| Least-played 20% and top 10% removed | 70% | |
+| Least-played 20% and top 5% removed | 70% | Houses +10 / −12 |
+| **Least-played 20% removed (chosen)** | **79%** | Houses +7 / −9 |
+
+The strongest few cards swing the result. The chosen deck is about 4 points easier than the full deck, which suits learning games; the full deck stays the balance reference.
+
+Use the playtest deck in the prototype (setup: "People deck") or in sims with `--cfg '{"peopleDeck": [...]}'`. Print-and-play uses it by default.
+
+## Component counts (`sim/components.js`)
+The most of each piece on the table at once, per game (15 games per player count, house bots), shown as 95th percentile / maximum across all player counts:
+
+| Pieces | Count |
+|---|---|
+| Glitch | 37 / 42 |
+| Fault | 18 / 22 |
+| Failure | 4 / 5 |
+| Crew | 49 / 54 |
+| Decay | 11 / 14 |
+| Influence per house | 24 / 25 |
+
+| Tokens (numbered markers) | Sections holding one | Largest value in one section |
+|---|---|---|
+| Brace | 31 / 32 | 22 / 28 |
+| Patch | 25 / 29 | 6 / 7 |
+| Lockout | 24 / 27 | 5 / 7 |
+| Isolate | 11 / 17 | 23 / 27 |
+| Quarantine | 3 sections | |
+| Unrest | 0 at level 0 | |
+
+**Kit** (`print.html` token sheet):
+- 45 Glitch, 25 Fault, 8 Failure;
+- 55 Crew, 15 Decay;
+- 26 influence banners per house;
+- Brace 24 × 1, 16 × 2, 8 × 5;
+- Isolate 12 × 1, 8 × 2, 6 × 5;
+- 30 Patch, 30 Lockout, 4 Quarantine, 6 Unrest;
+- 12 Breakthrough starbursts.
+
+**Design flag:** Brace and Isolate stack very high in single sections (values in the 20s), mostly through Keel's Load-Bearing and repeated innates. If the designer wants simpler physical bookkeeping, cap them (for example "Brace max 5 per section"), then re-test.
+
+## Contain replaces Isolate; board D reshaped (2026-11-06)
+
+**Contain** (designer): Isolate is renamed Contain and works like Spirit Island's Strife:
+- a marker on one threat piece, which moves with the piece;
+- that piece deals no damage at the next Collapse in its section, then the marker comes off (the piece stays);
+- if the piece is destroyed or downgraded, the marker goes too.
+
+The engine had treated Isolate as a pooled damage reduction that built up across generations. Now it tracks markers per piece type (`s.contain`), and removes uncontained pieces first. Card verbs are `contain_fault` and `contain_failure`.
+
+**Tellers' Spin:** their damage now Contains the pieces it hits; a piece that takes its full health gets a marker. That cost Tellers about 20 points (with Keel, 120 games each: 82.5 % → 61.7 %; with Galvan: 89.2 % → 78.3 %). Raising Spin from 2 to 3 Purpose per point brings them back to about average: 74.2 % with Keel, 85.8 % with Galvan.
+
+**House sweep** (40 games per pairing, house bots): 79.2 % → 78.3 % (noise).
+
+**Components:** at most 7 Contained pieces at once (95th percentile 7), so the kit has 12 Contain markers. Brace no longer shares the 1/2/5 values with Isolate.
+
+**Board D:** D8 sat on the bottom edge between D6 and D7. It was about 1,600 square units against a typical 10,500, and had no neighbours on its own board. The seeds moved to D6 (−85, 80), D7 (85, 80) and D8 (0, 120). Section sizes now range from about 9,600 to 15,300, and D8 touches D3, D6 and D7. Boards A–C are unchanged. The painted art for D needs redoing; print draws D in flat type colours until it arrives.
+
+**Layouts after both changes** (20 games × 8 house combinations, so 160 per layout):
+
+| Layout | Win rate |
+|---|---|
+| pair | 69 % |
+| line3 | 77 % |
+| triad | 79 % |
+| arc3 | 71 % |
+| line4 | 75 % |
+| diamond | 82 % |
+| arc4 | 72 % |
+| fan | 79 % |
+
+That is within the earlier 64–81 % band, so the reshaped board D doesn't skew the 4-board layouts.
+
+## Board C evened out (2026-11-06)
+
+**The change:**
+- C4 was about 3,500 square units and C5 about 20,300. C1 was also small and touched only one other section.
+- New seeds: C1 (−100, −95), C2 (0, −125), C3 (50, −115), C4 (125, −50), C5 (−120, 10), C6 (30, 30), C7 (−40, 110), C8 (100, 60).
+- Sections now run about 7,900–13,500. C1–C3 stay on the Outer Hull, and every section touches at least two others.
+- C6 is the hub, touching the other seven sections.
+
+**Layouts** (20 games × 8 house combinations, 160 games each):
+
+| Layout | Before | After |
+|---|---|---|
+| pair | 69 % | 69 % |
+| line3 | 77 % | 69 % |
+| triad | 79 % | 78 % |
+| arc3 | 71 % | 68 % |
+| line4 | 75 % | 77 % |
+| diamond | 82 % | 79 % |
+| arc4 | 72 % | 70 % |
+| fan | 79 % | 76 % |
+
+All are inside the earlier 64–81 % band. line3 is a little harder: its middle board now has fewer short paths through it.
