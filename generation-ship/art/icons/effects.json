@@ -407,6 +407,18 @@
    "isolate",
    "failure"
   ],
+  "contain_fault": [
+   "contain",
+   "fault"
+  ],
+  "contain_failure": [
+   "contain",
+   "failure"
+  ],
+  "contain_glitch": [
+   "contain",
+   "glitch"
+  ],
   "downgrade": [
    "downgrade"
   ],

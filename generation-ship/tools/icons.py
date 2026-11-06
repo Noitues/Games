@@ -173,6 +173,16 @@ def isolate():
 
 
 # --- actions ----------------------------------------------------------------------------------------
+def contain():
+    """Contain (after Spirit Island's Strife): a wooden collar clamped onto a threat piece, with a
+    small no-entry badge. The marker stays on that piece, and moves with it, until its next Collapse."""
+    return (f'<g transform="translate(4 14) scale(.78)">{fault()}</g>'
+            f'<path d="M10,82 C10,75 80,75 80,82 L80,88 C80,95 10,95 10,88 Z" fill="{WOOD}" stroke="{INK}" stroke-width="4.5"/>'
+            f'<circle cx="74" cy="28" r="22" fill="{WOOD}" stroke="{INK}" stroke-width="5"/>'
+            f'<circle cx="74" cy="28" r="14" fill="none" stroke="{ACT}" stroke-width="6"/>'
+            f'<line x1="64" y1="18" x2="84" y2="38" stroke="{ACT}" stroke-width="6"/>')
+
+
 def repair():
     """Damage to threat is repair: a wrench (the players' action colour)."""
     return (f'<path d="M24,84 L58,50" stroke="{INK}" stroke-width="18" stroke-linecap="round"/><path d="M24,84 L58,50" stroke="{ACT}" stroke-width="8" stroke-linecap="round"/>'
@@ -444,7 +454,7 @@ GROUPS = [
     ("PIECES", [("Glitch", glitch), ("Fault", fault), ("Failure", failure), ("Crew", crew), ("Decay", decay),
                 ("Influence", influence), ("Haven", haven), ("Purpose", purpose), ("Credits", credits), ("Card", card)]),
     ("TOKENS", [("Brace", brace), ("Patch", patch), ("Lockout", lockout), ("Quarantine", quarantine),
-                ("Unrest", unrest), ("Isolate", isolate)]),
+                ("Unrest", unrest), ("Isolate", isolate), ("Contain", contain)]),
     ("ACTIONS", [("Repair (damage)", repair), ("Vent (push)", vent), ("Gather", gather), ("Move", move), ("Add", add),
                  ("Remove", remove), ("Downgrade", downgrade), ("Restore Decay", restore_decay), ("Crew strike", crew_strike),
                  ("Foresee", foresee), ("Temper Legacy", temper_legacy), ("Draw", draw), ("Clone", clone), ("Fast", fast), ("Slow", slow),
@@ -465,7 +475,8 @@ ICON_FOR = {
     "lockout": [lockout], "patch": [patch], "quarantine": [quarantine], "purpose": [purpose], "credits": [credits],
     "vent_glitch": [vent, glitch], "vent_fault": [vent, fault], "vent_failure": [vent, failure],
     "vent_glitch_or_fault": [vent, glitch, fault], "remove_glitch": [remove, glitch], "remove_fault": [remove, fault],
-    "isolate_fault": [isolate, fault], "isolate_failure": [isolate, failure], "downgrade": [downgrade],
+    "isolate_fault": [isolate, fault], "isolate_failure": [isolate, failure],
+    "contain_fault": [contain, fault], "contain_failure": [contain, failure], "contain_glitch": [contain, glitch], "downgrade": [downgrade],
     "downgrade_failure": [downgrade], "downgrade_fault": [downgrade], "quarantine_source": [quarantine], "restore_decay": [restore_decay], "crew_strike": [crew_strike], "foresee": [foresee],
     "temper_legacy": [temper_legacy], "extra_draw": [draw], "move_influence": [move, influence], "add_influence": [add, influence],
     "damage_per_crew": [repair, crew], "place_influence_from_track": [add, influence], "fast_play": [fast],
