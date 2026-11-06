@@ -26,8 +26,8 @@ Tiers are cumulative; the effect column is the full effect at that tier. *Reache
 | Tier | Threshold | Effect | PP | Reached |
 |---|---|---|---|---|
 | 1 | Medics 1 | Brace 4; gather 1 Crew (range 1, ANY) | 2.0 | 95% |
-| 2 | Medics 2 + Laborers 1 | Brace 6; gather 1 Crew; Patch; Isolate 1 Fault (range 1, ANY) | 6.0 | 31% |
-| 3 | Medics 3 + Laborers 2 | Brace 6; gather 1 Crew; Patch; Isolate 1 Fault; restore 1 Decay (range 1, ANY) | 9.0 | 7% |
+| 2 | Medics 2 + Laborers 1 | Brace 6; gather 1 Crew; Patch; Contain 1 Fault (range 1, ANY) | 6.0 | 31% |
+| 3 | Medics 3 + Laborers 2 | Brace 6; gather 1 Crew; Patch; Contain 1 Fault; restore 1 Decay (range 1, ANY) | 9.0 | 7% |
 
 ## Growth
 Shared menu: A place influence and uncover a track slot · B gain 2 credits · C draw +2 cards and gain 1 credit.

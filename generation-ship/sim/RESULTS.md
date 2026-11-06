@@ -528,3 +528,20 @@ The most of each piece on the table at once, per game (15 games per player count
 - 12 Breakthrough starbursts.
 
 **Design flag:** Brace and Isolate stack very high in single sections (values in the 20s), mostly through Keel's Load-Bearing and repeated innates. If the designer wants simpler physical bookkeeping, cap them (for example "Brace max 5 per section"), then re-test.
+
+## Contain replaces Isolate; board D reshaped (2026-11-06)
+
+**Contain** (designer): Isolate is renamed Contain and works like Spirit Island's Strife:
+- a marker on one threat piece, which moves with the piece;
+- that piece deals no damage at the next Collapse in its section, then the marker comes off (the piece stays);
+- if the piece is destroyed or downgraded, the marker goes too.
+
+The engine had treated Isolate as a pooled damage reduction that built up across generations. Now it tracks markers per piece type (`s.contain`), and removes uncontained pieces first. Card verbs are `contain_fault` and `contain_failure`.
+
+**Tellers' Spin:** their damage now Contains the pieces it hits; a piece that takes its full health gets a marker. That cost Tellers about 20 points (with Keel, 120 games each: 82.5 % → 61.7 %; with Galvan: 89.2 % → 78.3 %). Raising Spin from 2 to 3 Purpose per point brings them back to about average: 74.2 % with Keel, 85.8 % with Galvan.
+
+**House sweep** (40 games per pairing, house bots): 79.2 % → 78.3 % (noise).
+
+**Components:** at most 7 Contained pieces at once (95th percentile 7), so the kit has 12 Contain markers. Brace no longer shares the 1/2/5 values with Isolate.
+
+**Board D:** D8 sat on the bottom edge between D6 and D7. It was about 1,600 square units against a typical 10,500, and had no neighbours on its own board. The seeds moved to D6 (−85, 80), D7 (85, 80) and D8 (0, 120). Section sizes now range from about 9,600 to 15,300, and D8 touches D3, D6 and D7. Boards A–C are unchanged. The painted art for D needs redoing; print draws D in flat type colours until it arrives.

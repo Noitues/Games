@@ -4,6 +4,24 @@ import { shuffle } from "./rng.js";
 
 // ------------------------------------------------------------ board queries
 export const threatCount = (s) => s.glitch + s.fault + s.failure;
+// Contain (like Spirit Island's Strife): a marker on one threat piece. That piece deals no damage at
+// the section's next Collapse; then the marker comes off (the piece stays). Markers stay with their
+// piece; the engine tracks them as counts per piece type (s.contain). When pieces leave a section
+// (destroyed, downgraded, vented), players remove an uncontained one first, so the count is clamped.
+export const PIECE_VALUE = { glitch: 1, fault: 2, failure: 3 };
+export function syncContain(s) {
+  s.contain ||= { glitch: 0, fault: 0, failure: 0 };
+  for (const k of ["glitch", "fault", "failure"]) s.contain[k] = Math.min(s.contain[k], s[k]);
+}
+// Mark up to n uncontained pieces of `piece` ("fault", "failure", or "best": biggest first within a damage budget n).
+export function contain(s, piece, n) {
+  syncContain(s);
+  if (piece !== "best") { s.contain[piece] = Math.min(s[piece], s.contain[piece] + n); return; }
+  for (const k of ["failure", "fault", "glitch"]) {
+    while (n >= PIECE_VALUE[k] && s[k] - s.contain[k] > 0) { s.contain[k] += 1; n -= PIECE_VALUE[k]; }
+  }
+}
+export const containedDamage = (s, surge = 0) => s.contain ? s.contain.glitch + s.contain.fault * (2 + surge) + s.contain.failure * 3 : 0;
 export const sec = (st, id) => st.sections[id];
 export const allSections = (st) => st.order.map((id) => st.sections[id]);
 
@@ -139,6 +157,7 @@ export function damageThreat(G, st, s, n, source = "card") {
   const [a, b, c] = best;
   s.failure -= a; s.fault -= b; s.glitch -= c;
   s.dmg = threatCount(s) ? total - (3 * a + 2 * b + c) : 0;
+  syncContain(s);
   st.stats.destroyed.glitch += c; st.stats.destroyed.fault += b; st.stats.destroyed.failure += a;
   gainPurpose(G, st, b * G.cfg.purposeFault + a * G.cfg.purposeFailure + (a + b) * legacyMod(st, s, "purpose_plus"), source);
 }
@@ -215,7 +234,7 @@ export function vent(G, st, h, s, kind, n) {
     if (s[piece] <= 0) return;
     // Voidwardens' Airlock: threat vented from an Outer Hull section goes into the void.
     if (st.houses[h]?.id === "voidwardens" && s.hull) {
-      s[piece] -= 1;
+      s[piece] -= 1; syncContain(s);
       st.stats.destroyed[piece] += 1;
       if (piece === "failure") st.houses[h].credits += 1;
       continue;
@@ -224,7 +243,7 @@ export function vent(G, st, h, s, kind, n) {
     if (!opts.length) return;
     const to = G.choose(st, h, "ventTo", [...opts, "stay"], { from: s.id, piece });
     if (to === "stay" || !st.sections[to]) return; // venting is optional
-    s[piece] -= 1; st.sections[to][piece] += 1;
+    s[piece] -= 1; st.sections[to][piece] += 1; syncContain(s);
   }
 }
 
@@ -236,7 +255,7 @@ export function downgrade(s, which = "any", n = 1) {
     if ((which === "any" || which === "failure") && s.failure > 0) { s.failure--; s.fault++; }
     else if ((which === "any" || which === "fault") && s.fault > 0) { s.fault--; s.glitch++; }
     else return;
-    s.dmg = 0;
+    s.dmg = 0; syncContain(s);
   }
 }
 
@@ -247,8 +266,9 @@ export function applySectionEffects(G, st, h, s, effects) {
     if (st.result) return;
     switch (v) {
       case "damage":
-        // Tellers' Spin: their damage becomes Purpose instead of destroying threat.
-        if (st.houses[h]?.id === "tellers" && threatCount(s) > 0) { gainPurpose(G, st, 2 * n, "spin"); s.isolate += n; }
+        // Tellers' Spin: their damage becomes Purpose and Contains threat instead of destroying it
+        // (a piece that takes its full health is Contained).
+        if (st.houses[h]?.id === "tellers" && threatCount(s) > 0) { gainPurpose(G, st, 3 * n, "spin"); contain(s, "best", n); }
         else damageThreat(G, st, s, n, "card");
         break;
       case "crew_strike": damageThreat(G, st, s, s.crew * crewDamage(G, st, s) * n, "crew"); break;
@@ -261,8 +281,8 @@ export function applySectionEffects(G, st, h, s, effects) {
       case "vent_glitch_or_fault": vent(G, st, h, s, "glitch_or_fault", n); break;
       case "patch": s.patch += n; break;
       case "lockout": s.lockout += n; break;
-      case "isolate_fault": s.isolate += 2 * n; break;
-      case "isolate_failure": s.isolate += 3 * n; break;
+      case "contain_fault": contain(s, "fault", n); break;
+      case "contain_failure": contain(s, "failure", n); break;
       case "brace": s.brace += n; break;
       case "quarantine": case "quarantine_source": s.quarantine = 1; break;
       case "gather_crew": case "move_crew": gatherCrew(G, st, h, s, n); break;

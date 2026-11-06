@@ -21,7 +21,7 @@ function fresh(cfg = {}) {
   // clear the board so each test controls it
   for (const s of Object.values(st.sections)) {
     Object.assign(s, { glitch: 0, fault: 0, failure: 0, crew: 0, decay: 0, brace: 0, quarantine: 0,
-      patch: 0, lockout: 0, unrest: 0, isolate: 0, dmg: 0, influence: {} });
+      patch: 0, lockout: 0, unrest: 0, contain: { glitch: 0, fault: 0, failure: 0 }, dmg: 0, influence: {} });
   }
   st.sections.A1.influence = { 0: 1 }; st.sections.B1.influence = { 1: 1 }; // keep houses alive
   return { G, st, S: st.sections };
@@ -87,15 +87,25 @@ test("collapse: 1 damage does not place Decay", () => {
   collapse(G, st, event([S.A1.type]));
   assert.equal(S.A1.decay, 0);
 });
-test("collapse: Brace and Isolate reduce damage before the Decay check", () => {
+test("collapse: Brace and Contain reduce damage before the Decay check", () => {
   const { G, st, S } = fresh();
   S.A1.fault = 1; S.A1.brace = 1; // 2 - 1 = 1
   collapse(G, st, event([S.A1.type]));
   assert.equal(S.A1.decay, 0);
   const { G: G2, st: st2, S: S2 } = fresh();
-  S2.A1.fault = 1; S2.A1.isolate = 2;
+  S2.A1.fault = 1; S2.A1.glitch = 1; S2.A1.failure = 0; S2.A1.contain.fault = 1; // the contained Fault deals nothing: 1 damage, no Decay
   collapse(G2, st2, event([S2.A1.type]));
-  assert.equal(S2.A1.decay, 0); assert.equal(S2.A1.isolate, 0);
+  assert.equal(S2.A1.decay, 0); assert.equal(S2.A1.contain.fault, 0); assert.equal(S2.A1.fault, 1); // marker off, piece stays
+});
+test("Contain follows its piece: destroying or venting threat removes an uncontained piece first", () => {
+  const { G, st, S } = fresh();
+  S.A1.fault = 2; S.A1.glitch = 0; S.A1.failure = 0;
+  applySectionEffects(G, st, 0, S.A1, { contain_fault: 1 });
+  assert.equal(S.A1.contain.fault, 1);
+  applySectionEffects(G, st, 0, S.A1, { contain_fault: 5 }); // can't mark more Faults than there are
+  assert.equal(S.A1.contain.fault, 2);
+  damageThreat(G, st, S.A1, 2, "card"); // one Fault destroyed: its marker goes with it
+  assert.equal(S.A1.fault, 1); assert.equal(S.A1.contain.fault, 1);
 });
 test("collapse: the full damage also hits Crew (2 health each); survivors deal 2 damage each", () => {
   const { G, st, S } = fresh();
@@ -222,11 +232,11 @@ test("Voidwardens' Airlock destroys threat vented from an Outer Hull section", (
   assert.equal(S.A1.adj.reduce((n, a) => n + S[a].fault, 0), 0);
   assert.equal(st.houses[0].credits, c0); // credits only for Failures
 });
-test("Tellers' Spin: damage becomes 2 Purpose per point and Isolates", () => {
+test("Tellers' Spin: damage becomes 3 Purpose per point and Contains the piece", () => {
   const { G, st, S } = fresh({ houses: ["tellers", "keel"] });
   S.A3.fault = 1;
   applySectionEffects(G, st, 0, S.A3, { damage: 2 });
-  assert.equal(S.A3.fault, 1); assert.equal(st.purpose, 4); assert.equal(S.A3.isolate, 2);
+  assert.equal(S.A3.fault, 1); assert.equal(st.purpose, 6); assert.equal(S.A3.contain.fault, 1);
 });
 test("Gardeners' Rooted: Decay removes Gardener influence instead", () => {
   const { G, st, S } = fresh({ houses: ["gardeners", "keel"] });

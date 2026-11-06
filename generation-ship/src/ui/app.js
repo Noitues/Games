@@ -5,6 +5,7 @@ import { createGame, makeContext, runPhase, PHASES, setupRamp, houseStats, house
 import { allSections, totalInfluence, wallBonuses, stewardHouse, legacyMod } from "../engine/rules.js";
 import { Bot, BOT_LEVELS } from "../ai/bots.js";
 import { predictedCollapse } from "../ai/eval.js";
+const cTotal = (s) => (s.contain ? s.contain.glitch + s.contain.fault + s.contain.failure : 0); // Contain markers on threat pieces
 
 const HOUSE_COLORS = ["#c0392b", "#2471a3", "#1e8449", "#8e44ad"];
 const TYPE_FILL = { Infrastructure: "var(--infra)", Residential: "var(--resi)", Government: "var(--gov)", Agricultural: "var(--agri)" };
@@ -319,7 +320,7 @@ function renderMap() {
     const inf = Object.entries(s.influence).filter(([, n]) => n > 0)
       .map(([h, n]) => `<tspan fill="${HOUSE_COLORS[h]}">●${n > 1 ? n : ""}</tspan>`).join(" ");
     const tok = [s.brace && `Br${s.brace}`, s.quarantine && "Q", s.patch && `P${s.patch}`, s.lockout && `L${s.lockout}`,
-      s.unrest && `U${s.unrest}`, s.isolate && `I${s.isolate}`].filter(Boolean).join(" ");
+      s.unrest && `U${s.unrest}`, cTotal(s) && `C${cTotal(s)}`].filter(Boolean).join(" ");
     const threat = [s.glitch && `▲${s.glitch}`, s.fault && `■${s.fault}`, s.failure && `⬢${s.failure}`].filter(Boolean).join(" ");
     const pts = g.poly.map((p) => p.join(",")).join(" ");
     const hinted = hint && SECTION_KINDS.has(D.pending?.kind) && String(hint.value).replace("*", "") === id;
@@ -357,7 +358,7 @@ function renderMap() {
 function sectionTip(id) {
   const st = D.st, s = st.sections[id], G = D.G;
   const inf = Object.entries(s.influence).filter(([, n]) => n > 0).map(([h, n]) => `${esc(houseData(G, st, +h).name.split(",")[0])} ${n}${n >= 2 ? " (Haven)" : ""}`).join(", ") || "none";
-  const toks = [["Brace", s.brace], ["Quarantine", s.quarantine], ["Patch", s.patch], ["Lockout", s.lockout], ["Unrest", s.unrest], ["Isolate", s.isolate], ["damage taken", s.dmg]]
+  const toks = [["Brace", s.brace], ["Quarantine", s.quarantine], ["Patch", s.patch], ["Lockout", s.lockout], ["Unrest", s.unrest], ["Contained pieces", cTotal(s)], ["damage taken", s.dmg]]
     .filter(([, n]) => n).map(([k, n]) => `${k} ${n}`).join(", ") || "none";
   const fc = forecast().out[id];
   const fcText = fc ? `<br><b>Forecast:</b> ${fc.collapse !== undefined ? `Collapse ${fc.collapse} damage${fc.decay ? " → Decay" : ""}${fc.crew ? `, ${fc.crew} Crew lost` : ""}` : ""}${fc.grow ? `${fc.collapse !== undefined ? "; " : ""}${fc.grow === "patched" ? "Grow blocked by Patch" : "Grow +1 " + fc.grow}` : ""}` : "";

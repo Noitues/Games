@@ -52,13 +52,13 @@
     <details id="rules"><summary><h3 style="display:inline">Rules quick reference</h3></summary>
       <p><b>Each generation:</b> Growth → Commit → Fast → Dusk → Day → Dawn → Slow → Time passes.</p>
       <p><b>Leaders:</b> your nominee costs 3 credits less (Commons are free), is fast, and may be voted heir. Heir (Dawn) → Steward (Day: Reign, then its event Grows) → Elder (Dusk: its Legacy takes hold for the rest of the voyage in its event's sections, then its event Collapses) → the Wall. The starting Steward belongs to no house.</p>
-      <p><b>Events</b> name section types. <b>Seed:</b> +1 Glitch in each matching section on the Outer Hull or next to a Fault/Failure. <b>Grow:</b> +1 Fault in each matching section with threat (Failure if it has 2+ Faults). <b>Collapse:</b> Glitch 1 + Fault 2 + Failure 3 damage (+Unrest, −Brace, −Isolate); 2+ places Decay; the same damage hits Crew (2 health each); surviving Crew deal 2 damage each.</p>
+      <p><b>Events</b> name section types. <b>Seed:</b> +1 Glitch in each matching section on the Outer Hull or next to a Fault/Failure. <b>Grow:</b> +1 Fault in each matching section with threat (Failure if it has 2+ Faults). <b>Collapse:</b> Glitch 1 + Fault 2 + Failure 3 damage (Contained pieces deal none; +Unrest, −Brace); 2+ places Decay; the same damage hits Crew (2 health each); surviving Crew deal 2 damage each.</p>
       <p><b>Your turn's choices:</b> you pick the order your cards and innate resolve. Venting and gathering are optional.</p>
       <p><b>Decay</b> comes from the pool; each house loses 1 influence there; Decay on Decay cascades to a neighbor. Pool empty: Ship in Crisis flips; empty again: you lose.</p>
       <p><b>Purpose</b> (shared): destroying a Fault +1, a Failure +2. A full pool earns a Discovery, which resolves at the next Dusk (Discoveries earned during that resolution wait for the Dusk after). The Steward's house applies it now (one section of its choice per board) or makes it a Breakthrough under the Steward: a passive bonus that switches on when that leader reaches the Wall. Every 3 Discoveries raise Understanding.</p>
       <p><b>Succession:</b> each house votes for a nominee. Ties go to the house with fewer leaders on the conveyor; if still tied, the Steward's house decides. The Steward's house also makes all other shared choices.</p>
       <p><b>Win</b> at any moment: I no threat and no Decay · II no threat · III no Faults or Failures (plus any destination requirement). <b>Lose:</b> events run out, Decay runs out after the crisis, or a house has no influence.</p>
-      <p><b>Tokens:</b> Brace X prevents X damage · Quarantine: nothing seeds, vents or cascades in or out · Patch skips the next Grow · Lockout skips the next Seed · Unrest +1 damage from every source · Isolate negates damage at the next Collapse.</p>
+      <p><b>Tokens:</b> Brace X prevents X damage · Quarantine: nothing seeds, vents or cascades in or out · Patch skips the next Grow · Lockout skips the next Seed · Unrest +1 damage from every source · Contain: a marker on one threat piece (it moves with the piece); that piece deals no damage at the next Collapse there, then the marker comes off.</p>
       <p><b>Range</b> counts from sections with your influence. Elements come from the cards you play, track slots and Wall bonuses; they power your innate and card bonuses. A card's own guilds count toward its bonus, but no card can unlock its bonus alone.</p>
       <p><b>Outer Hull</b> sections (hatched, with a bright cyan edge) face the void: Seeds always reach them.</p>
     </details>
@@ -66,7 +66,7 @@
   <section id="center">
     <div id="prompt"></div>
     <div id="mapwrap"><svg id="map"></svg></div>
-    <div id="legend">⚠ forecast: red ring = Collapses (number = damage, "Decay!" = Decay will land) · ↑ = Grows · ▲ Glitch · ■ Fault · ⬢ Failure · ☺ Crew · ✸ Decay · ● influence (house color) · Br Brace · Q Quarantine · P Patch · L Lockout · U Unrest · I Isolate · hatched + bright cyan edge = Outer Hull (faces the void) · dashed lines join boards</div>
+    <div id="legend">⚠ forecast: red ring = Collapses (number = damage, "Decay!" = Decay will land) · ↑ = Grows · ▲ Glitch · ■ Fault · ⬢ Failure · ☺ Crew · ✸ Decay · ● influence (house color) · Br Brace · Q Quarantine · P Patch · L Lockout · U Unrest · C Contained pieces · hatched + bright cyan edge = Outer Hull (faces the void) · dashed lines join boards</div>
     <h3>Wall of Leaders</h3>
     <div id="wall"></div>
   </section>

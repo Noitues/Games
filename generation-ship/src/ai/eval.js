@@ -1,5 +1,5 @@
 // State evaluation for the bots. Higher is better for the (cooperative) table.
-import { allSections, matches, threatCount, totalInfluence, legacyMod } from "../engine/rules.js";
+import { allSections, matches, threatCount, totalInfluence, legacyMod, containedDamage } from "../engine/rules.js";
 import { eventTypes } from "../engine/game.js";
 
 // Weights tuned by self-play (sim/tune-weights.js): fault 2.5 -> 4, decay 6 -> 9.6.
@@ -24,7 +24,7 @@ export function upcoming(G, st) {
 
 export function predictedCollapse(s, st = null) {
   const d = s.glitch + 2 * s.fault + 3 * s.failure + (s.unrest > 0 && threatCount(s) ? 1 : 0)
-    + (st ? legacyMod(st, s, "collapse_plus") : 0) - s.isolate - s.brace;
+    + (st ? legacyMod(st, s, "collapse_plus") : 0) - containedDamage(s) - s.brace;
   return Math.max(0, d);
 }
 

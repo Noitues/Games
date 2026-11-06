@@ -435,7 +435,7 @@ Asymmetry lives **entirely on the house boards**. There are no unique house card
 - **Foremen, the Shift-Callers** [Thunderspeaker]: Crew-led offense. *Crew Captains:* Crew in their sections deal +1 damage when fighting back.
 - **Gardeners, the Greenkeepers** [A Spread of Rampant Green]: influence as armor. *Rooted:* Decay that would land on them removes 1 of their influence instead. Growth A places 2 influence.
 - **Voidwardens, the Airlock Keepers** [Ocean's Hungry Grasp]: Outer Hull specialists. *Airlock:* threat they vent out of a Hull section is destroyed (+1 credit per Fault/Failure). They can only add influence to Hull sections.
-- **Tellers, the Keepers of the Story** [Bringer of Dreams and Nightmares]: *Spin:* their damage never destroys threat; it becomes 1 Purpose per point.
+- **Tellers, the Keepers of the Story** [Bringer of Dreams and Nightmares]: *Spin:* their damage never destroys threat; it becomes 3 Purpose per point and Contains the threat it hits (a piece that takes its full health gets a Contain marker).
 
 ---
 
@@ -454,7 +454,7 @@ Houses, cards and innates are built from priced parts so every house lands in th
 | Vent a Glitch / Fault / Failure | 0.5 / 1 / 1.5 |
 | Patch (prevent the next grow) | 1.5 |
 | Lockout (prevent the next seed) | 1 |
-| Isolate (a piece deals no damage) | 1 per 2 damage negated |
+| Contain (a piece deals no damage) | 1 per 2 damage negated |
 | Brace X | 0.5 × X |
 | Quarantine | 1 |
 | Gather or move 1 Crew | 0.5 |
@@ -551,9 +551,9 @@ Houses, cards and innates are built from priced parts so every house lands in th
 | **Patch** | Disease | The next **grow** in this section is skipped. Then remove one Patch. |
 | **Lockout** | Wilds | The next **seed** in this section is skipped. Then remove one Lockout. |
 | **Unrest** | Badlands | Every source of damage in this section deals +1 damage, from both threat (collapse) and players. |
-| **Isolate** | Strife (on a threat piece) | This threat piece deals no damage at its next collapse. Then remove Isolate. |
+| **Contain** | Strife (on a threat piece) | A marker on one threat piece; it moves with the piece. That piece deals no damage at the next collapse in its section; then remove the marker, not the piece. If the piece is destroyed or downgraded, the marker goes too *(designer, 2026-11-06: renamed from Isolate; the engine had been treating it as a pooled damage reduction)*. |
 
-Brace and Quarantine clear at Time passes. Patch, Lockout and Isolate are removed when used. Unrest persists *(defaults follow Spirit Island)*.
+Brace and Quarantine clear at Time passes. Patch, Lockout and Contain are removed when used. Unrest persists *(defaults follow Spirit Island)*.
 
 ---
 
@@ -727,7 +727,7 @@ A mute toggle is included.
 - **Purpose pool, Discovery choice and Breakthroughs, Understanding tiers and their win conditions.**
 - **People deck:** the generated 400-card deck in `data/people.json`.
 - **Discovery deck:** about 9 placeholder cards with I/II/III effects and a Breakthrough line.
-- **Tokens:** Brace, Quarantine, Patch, Lockout, Unrest, Isolate.
+- **Tokens:** Brace, Quarantine, Patch, Lockout, Unrest, Contain.
 - **All three loss checks and the base win check.** The Landfall card toggle comes second.
 - **Config file** exposing every default listed in this document.
 - **Undo** to the previous phase.

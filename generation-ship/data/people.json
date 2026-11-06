@@ -242,9 +242,9 @@
   },
   "effects": {
    "gather_crew": 3,
-   "isolate_fault": 2
+   "contain_fault": 2
   },
-  "text": "gather 3 Crew; Isolate 2 Fault(s)",
+  "text": "gather 3 Crew; Contain 2 Fault(s)",
   "pp_target": 3,
   "pp_actual": 2.97,
   "reign": {
@@ -375,9 +375,9 @@
   },
   "effects": {
    "downgrade": 1,
-   "isolate_fault": 1
+   "contain_fault": 1
   },
-  "text": "downgrade 1 threat piece(s); Isolate 1 Fault(s)",
+  "text": "downgrade 1 threat piece(s); Contain 1 Fault(s)",
   "pp_target": 3,
   "pp_actual": 2.88,
   "reign": {
@@ -1688,10 +1688,10 @@
     "Scholars": 2
    },
    "effects": {
-    "isolate_fault": 1,
+    "contain_fault": 1,
     "vent_glitch": 3
    },
-   "text": "Isolate 1 Fault(s); vent 3 Glitch(es)",
+   "text": "Contain 1 Fault(s); vent 3 Glitch(es)",
    "pp": 2.12
   },
   "reign": {
@@ -1907,9 +1907,9 @@
   },
   "effects": {
    "purpose": 2,
-   "isolate_fault": 1
+   "contain_fault": 1
   },
-  "text": "+2 Purpose; Isolate 1 Fault(s)",
+  "text": "+2 Purpose; Contain 1 Fault(s)",
   "pp_target": 3,
   "pp_actual": 2.98,
   "threshold": {
@@ -1918,9 +1918,9 @@
    },
    "effects": {
     "damage": 2,
-    "isolate_fault": 1
+    "contain_fault": 1
    },
-   "text": "2 damage; Isolate 1 Fault(s)",
+   "text": "2 damage; Contain 1 Fault(s)",
    "pp": 2.93
   },
   "reign": {
@@ -2214,9 +2214,9 @@
   },
   "effects": {
    "move_influence": 2,
-   "isolate_fault": 2
+   "contain_fault": 2
   },
-  "text": "move 2 influence; Isolate 2 Fault(s)",
+  "text": "move 2 influence; Contain 2 Fault(s)",
   "pp_target": 3,
   "pp_actual": 3.2,
   "reign": {
@@ -2254,10 +2254,10 @@
    "class": "ANY"
   },
   "effects": {
-   "isolate_fault": 2,
+   "contain_fault": 2,
    "move_crew": 2
   },
-  "text": "Isolate 2 Fault(s); move 2 Crew",
+  "text": "Contain 2 Fault(s); move 2 Crew",
   "pp_target": 3,
   "pp_actual": 3.0,
   "reign": {
@@ -2416,9 +2416,9 @@
   },
   "effects": {
    "damage": 4,
-   "isolate_fault": 1
+   "contain_fault": 1
   },
-  "text": "4 damage; Isolate 1 Fault(s)",
+  "text": "4 damage; Contain 1 Fault(s)",
   "pp_target": 5,
   "pp_actual": 5.0,
   "reign": {
@@ -2712,10 +2712,10 @@
    "class": "type"
   },
   "effects": {
-   "isolate_fault": 2,
+   "contain_fault": 2,
    "gather_crew": 3
   },
-  "text": "Isolate 2 Fault(s); gather 3 Crew",
+  "text": "Contain 2 Fault(s); gather 3 Crew",
   "pp_target": 3,
   "pp_actual": 2.97,
   "reign": {
@@ -3117,9 +3117,9 @@
   },
   "effects": {
    "add_crew": 1,
-   "isolate_fault": 1
+   "contain_fault": 1
   },
-  "text": "add 1 Crew; Isolate 1 Fault(s)",
+  "text": "add 1 Crew; Contain 1 Fault(s)",
   "pp_target": 4,
   "pp_actual": 4.0,
   "threshold": {
@@ -3169,9 +3169,9 @@
   },
   "effects": {
    "brace": 5,
-   "isolate_fault": 2
+   "contain_fault": 2
   },
-  "text": "Brace 5; Isolate 2 Fault(s)",
+  "text": "Brace 5; Contain 2 Fault(s)",
   "pp_target": 5,
   "pp_actual": 5.17,
   "threshold": {
@@ -3392,9 +3392,9 @@
   },
   "effects": {
    "damage": 5,
-   "isolate_fault": 1
+   "contain_fault": 1
   },
-  "text": "5 damage; Isolate 1 Fault(s)",
+  "text": "5 damage; Contain 1 Fault(s)",
   "pp_target": 4,
   "pp_actual": 4.08,
   "reign": {
@@ -3565,9 +3565,9 @@
   },
   "effects": {
    "brace": 3,
-   "isolate_fault": 2
+   "contain_fault": 2
   },
-  "text": "Brace 3; Isolate 2 Fault(s)",
+  "text": "Brace 3; Contain 2 Fault(s)",
   "pp_target": 4,
   "pp_actual": 4.02,
   "threshold": {
@@ -4083,10 +4083,10 @@
    "class": "type"
   },
   "effects": {
-   "isolate_fault": 2,
+   "contain_fault": 2,
    "brace": 6
   },
-  "text": "Isolate 2 Fault(s); Brace 6",
+  "text": "Contain 2 Fault(s); Brace 6",
   "pp_target": 5,
   "pp_actual": 4.89,
   "reign": {
@@ -4178,9 +4178,9 @@
   },
   "effects": {
    "brace": 6,
-   "isolate_fault": 2
+   "contain_fault": 2
   },
-  "text": "Brace 6; Isolate 2 Fault(s)",
+  "text": "Brace 6; Contain 2 Fault(s)",
   "pp_target": 4,
   "pp_actual": 3.75,
   "reign": {
@@ -4309,9 +4309,9 @@
   },
   "effects": {
    "damage": 2,
-   "isolate_fault": 1
+   "contain_fault": 1
   },
-  "text": "2 damage; Isolate 1 Fault(s)",
+  "text": "2 damage; Contain 1 Fault(s)",
   "pp_target": 3,
   "pp_actual": 3.0,
   "threshold": {
@@ -5393,9 +5393,9 @@
   },
   "effects": {
    "patch": 1,
-   "isolate_fault": 1
+   "contain_fault": 1
   },
-  "text": "Patch; Isolate 1 Fault(s)",
+  "text": "Patch; Contain 1 Fault(s)",
   "pp_target": 3,
   "pp_actual": 2.88,
   "reign": {
@@ -5967,10 +5967,10 @@
    "class": "type"
   },
   "effects": {
-   "isolate_fault": 2,
+   "contain_fault": 2,
    "brace": 5
   },
-  "text": "Isolate 2 Fault(s); Brace 5",
+  "text": "Contain 2 Fault(s); Brace 5",
   "pp_target": 4,
   "pp_actual": 3.83,
   "reign": {
@@ -6523,10 +6523,10 @@
    "class": "ANY"
   },
   "effects": {
-   "isolate_failure": 1,
+   "contain_failure": 1,
    "foresee": 1
   },
-  "text": "Isolate 1 Failure; foresee",
+  "text": "Contain 1 Failure; foresee",
   "pp_target": 2,
   "pp_actual": 2.0,
   "reign": {
@@ -6999,9 +6999,9 @@
   },
   "effects": {
    "gather_crew": 3,
-   "isolate_fault": 2
+   "contain_fault": 2
   },
-  "text": "gather 3 Crew; Isolate 2 Fault(s)",
+  "text": "gather 3 Crew; Contain 2 Fault(s)",
   "pp_target": 3,
   "pp_actual": 3.02,
   "threshold": {
@@ -7786,10 +7786,10 @@
    "class": "type"
   },
   "effects": {
-   "isolate_fault": 1,
+   "contain_fault": 1,
    "gather_crew": 3
   },
-  "text": "Isolate 1 Fault(s); gather 3 Crew",
+  "text": "Contain 1 Fault(s); gather 3 Crew",
   "pp_target": 2,
   "pp_actual": 2.12,
   "reign": {
@@ -7828,9 +7828,9 @@
   },
   "effects": {
    "brace": 6,
-   "isolate_fault": 1
+   "contain_fault": 1
   },
-  "text": "Brace 6; Isolate 1 Fault(s)",
+  "text": "Brace 6; Contain 1 Fault(s)",
   "pp_target": 3,
   "pp_actual": 3.0,
   "reign": {
@@ -7990,10 +7990,10 @@
    "class": "ANY"
   },
   "effects": {
-   "isolate_fault": 2,
+   "contain_fault": 2,
    "foresee": 1
   },
-  "text": "Isolate 2 Fault(s); foresee",
+  "text": "Contain 2 Fault(s); foresee",
   "pp_target": 3,
   "pp_actual": 2.8,
   "reign": {
@@ -8115,9 +8115,9 @@
   },
   "effects": {
    "brace": 3,
-   "isolate_fault": 1
+   "contain_fault": 1
   },
-  "text": "Brace 3; Isolate 1 Fault(s)",
+  "text": "Brace 3; Contain 1 Fault(s)",
   "pp_target": 3,
   "pp_actual": 3.25,
   "threshold": {
@@ -8507,9 +8507,9 @@
    },
    "effects": {
     "gather_crew": 3,
-    "isolate_fault": 1
+    "contain_fault": 1
    },
-   "text": "gather 3 Crew; Isolate 1 Fault(s)",
+   "text": "gather 3 Crew; Contain 1 Fault(s)",
    "pp": 2.12
   },
   "reign": {
@@ -8833,10 +8833,10 @@
    "class": "type"
   },
   "effects": {
-   "isolate_fault": 2,
+   "contain_fault": 2,
    "brace": 2
   },
-  "text": "Isolate 2 Fault(s); Brace 2",
+  "text": "Contain 2 Fault(s); Brace 2",
   "pp_target": 2,
   "pp_actual": 2.04,
   "reign": {
@@ -9058,10 +9058,10 @@
     "Scholars": 2
    },
    "effects": {
-    "isolate_fault": 1,
+    "contain_fault": 1,
     "brace": 2
    },
-   "text": "Isolate 1 Fault(s); Brace 2",
+   "text": "Contain 1 Fault(s); Brace 2",
    "pp": 2.0
   },
   "reign": {
@@ -9155,9 +9155,9 @@
   },
   "effects": {
    "downgrade": 2,
-   "isolate_fault": 2
+   "contain_fault": 2
   },
-  "text": "downgrade 2 threat piece(s); Isolate 2 Fault(s)",
+  "text": "downgrade 2 threat piece(s); Contain 2 Fault(s)",
   "pp_target": 4,
   "pp_actual": 4.25,
   "reign": {
@@ -9621,10 +9621,10 @@
    "class": "type"
   },
   "effects": {
-   "isolate_failure": 1,
+   "contain_failure": 1,
    "gather_crew": 1
   },
-  "text": "Isolate 1 Failure; gather 1 Crew",
+  "text": "Contain 1 Failure; gather 1 Crew",
   "pp_target": 2,
   "pp_actual": 1.95,
   "reign": {
@@ -10749,10 +10749,10 @@
    "class": "narrow"
   },
   "effects": {
-   "isolate_fault": 1,
+   "contain_fault": 1,
    "damage": 3
   },
-  "text": "Isolate 1 Fault(s); 3 damage",
+  "text": "Contain 1 Fault(s); 3 damage",
   "pp_target": 3,
   "pp_actual": 3.0,
   "reign": {
@@ -11101,9 +11101,9 @@
   },
   "effects": {
    "patch": 1,
-   "isolate_failure": 1
+   "contain_failure": 1
   },
-  "text": "Patch; Isolate 1 Failure",
+  "text": "Patch; Contain 1 Failure",
   "pp_target": 2,
   "pp_actual": 2.04,
   "threshold": {
@@ -11347,9 +11347,9 @@
   },
   "effects": {
    "purpose": 3,
-   "isolate_failure": 1
+   "contain_failure": 1
   },
-  "text": "+3 Purpose; Isolate 1 Failure",
+  "text": "+3 Purpose; Contain 1 Failure",
   "pp_target": 4,
   "pp_actual": 4.12,
   "reign": {
@@ -11612,9 +11612,9 @@
   },
   "effects": {
    "patch": 1,
-   "isolate_fault": 1
+   "contain_fault": 1
   },
-  "text": "Patch; Isolate 1 Fault(s)",
+  "text": "Patch; Contain 1 Fault(s)",
   "pp_target": 2,
   "pp_actual": 1.88,
   "reign": {
@@ -11744,10 +11744,10 @@
    "class": "ANY"
   },
   "effects": {
-   "isolate_fault": 2,
+   "contain_fault": 2,
    "vent_fault": 1
   },
-  "text": "Isolate 2 Fault(s); vent 1 Fault(s)",
+  "text": "Contain 2 Fault(s); vent 1 Fault(s)",
   "pp_target": 3,
   "pp_actual": 3.0,
   "reign": {
@@ -12054,9 +12054,9 @@
   },
   "effects": {
    "patch": 1,
-   "isolate_fault": 2
+   "contain_fault": 2
   },
-  "text": "Patch; Isolate 2 Fault(s)",
+  "text": "Patch; Contain 2 Fault(s)",
   "pp_target": 3,
   "pp_actual": 2.8,
   "threshold": {
@@ -12271,9 +12271,9 @@
   },
   "effects": {
    "move_crew": 3,
-   "isolate_fault": 2
+   "contain_fault": 2
   },
-  "text": "move 3 Crew; Isolate 2 Fault(s)",
+  "text": "move 3 Crew; Contain 2 Fault(s)",
   "pp_target": 4,
   "pp_actual": 4.02,
   "reign": {
@@ -12312,9 +12312,9 @@
   },
   "effects": {
    "gather_crew": 3,
-   "isolate_fault": 2
+   "contain_fault": 2
   },
-  "text": "gather 3 Crew; Isolate 2 Fault(s)",
+  "text": "gather 3 Crew; Contain 2 Fault(s)",
   "pp_target": 3,
   "pp_actual": 2.97,
   "threshold": {
@@ -12465,9 +12465,9 @@
    },
    "effects": {
     "damage": 2,
-    "isolate_fault": 2
+    "contain_fault": 2
    },
-   "text": "2 damage; Isolate 2 Fault(s)",
+   "text": "2 damage; Contain 2 Fault(s)",
    "pp": 3.0
   },
   "reign": {
@@ -12785,9 +12785,9 @@
   },
   "effects": {
    "purpose": 2,
-   "isolate_fault": 1
+   "contain_fault": 1
   },
-  "text": "+2 Purpose; Isolate 1 Fault(s)",
+  "text": "+2 Purpose; Contain 1 Fault(s)",
   "pp_target": 3,
   "pp_actual": 2.98,
   "reign": {
@@ -12950,9 +12950,9 @@
   },
   "effects": {
    "patch": 1,
-   "isolate_fault": 1
+   "contain_fault": 1
   },
-  "text": "Patch; Isolate 1 Fault(s)",
+  "text": "Patch; Contain 1 Fault(s)",
   "pp_target": 3,
   "pp_actual": 2.88,
   "threshold": {
@@ -13152,11 +13152,11 @@
    "class": "type"
   },
   "effects": {
-   "isolate_fault": 4,
+   "contain_fault": 4,
    "patch": 1,
    "damage": 11
   },
-  "text": "Isolate 4 Fault(s); Patch; 11 damage",
+  "text": "Contain 4 Fault(s); Patch; 11 damage",
   "pp_target": 14.0,
   "pp_actual": 14.02,
   "threshold": {
@@ -13263,10 +13263,10 @@
   },
   "effects": {
    "damage": 6,
-   "isolate_fault": 1,
+   "contain_fault": 1,
    "gather_crew": 1
   },
-  "text": "6 damage; Isolate 1 Fault(s); gather 1 Crew",
+  "text": "6 damage; Contain 1 Fault(s); gather 1 Crew",
   "pp_target": 6.5,
   "pp_actual": 6.38,
   "threshold": {
@@ -13319,11 +13319,11 @@
    "class": "ANY"
   },
   "effects": {
-   "isolate_failure": 2,
+   "contain_failure": 2,
    "gather_crew": 4,
    "purpose": 2
   },
-  "text": "Isolate 2 Failure; gather 4 Crew; +2 Purpose",
+  "text": "Contain 2 Failure; gather 4 Crew; +2 Purpose",
   "pp_target": 8.0,
   "pp_actual": 7.75,
   "threshold": {
@@ -13431,10 +13431,10 @@
   },
   "effects": {
    "move_influence": 4,
-   "isolate_failure": 1,
+   "contain_failure": 1,
    "vent_fault": 4
   },
-  "text": "move 4 influence; Isolate 1 Failure; vent 4 Fault(s)",
+  "text": "move 4 influence; Contain 1 Failure; vent 4 Fault(s)",
   "pp_target": 8.0,
   "pp_actual": 8.07,
   "reign": {
@@ -13473,11 +13473,11 @@
    "class": "narrow"
   },
   "effects": {
-   "isolate_fault": 4,
+   "contain_fault": 4,
    "crew_strike": 2,
    "add_crew": 1
   },
-  "text": "Isolate 4 Fault(s); every Crew there deals its damage; add 1 Crew",
+  "text": "Contain 4 Fault(s); every Crew there deals its damage; add 1 Crew",
   "pp_target": 8.0,
   "pp_actual": 8.25,
   "threshold": {
@@ -13749,11 +13749,11 @@
    "class": "type"
   },
   "effects": {
-   "isolate_fault": 2,
+   "contain_fault": 2,
    "purpose": 5,
    "temper_legacy": 2
   },
-  "text": "Isolate 2 Fault(s); +5 Purpose; temper the Elder's Legacy",
+  "text": "Contain 2 Fault(s); +5 Purpose; temper the Elder's Legacy",
   "pp_target": 12.5,
   "pp_actual": 12.7,
   "reign": {
@@ -13806,9 +13806,9 @@
    },
    "effects": {
     "gather_crew": 6,
-    "isolate_fault": 2
+    "contain_fault": 2
    },
-   "text": "gather 6 Crew; Isolate 2 Fault(s)",
+   "text": "gather 6 Crew; Contain 2 Fault(s)",
    "pp": 3.75
   },
   "reign": {
@@ -14294,9 +14294,9 @@
    },
    "effects": {
     "damage": 12,
-    "isolate_fault": 2
+    "contain_fault": 2
    },
-   "text": "12 damage; Isolate 2 Fault(s)",
+   "text": "12 damage; Contain 2 Fault(s)",
    "pp": 18.2
   },
   "reign": {
@@ -14715,11 +14715,11 @@
    "class": "type"
   },
   "effects": {
-   "isolate_fault": 3,
+   "contain_fault": 3,
    "gather_crew": 3,
    "purpose": 1
   },
-  "text": "Isolate 3 Fault(s); gather 3 Crew; +1 Purpose",
+  "text": "Contain 3 Fault(s); gather 3 Crew; +1 Purpose",
   "pp_target": 5.0,
   "pp_actual": 4.82,
   "threshold": {
@@ -15093,9 +15093,9 @@
   "effects": {
    "credits": 5,
    "vent_fault": 4,
-   "isolate_fault": 4
+   "contain_fault": 4
   },
-  "text": "+5 credits; vent 4 Fault(s); Isolate 4 Fault(s)",
+  "text": "+5 credits; vent 4 Fault(s); Contain 4 Fault(s)",
   "pp_target": 14.0,
   "pp_actual": 13.84,
   "reign": {
@@ -15458,10 +15458,10 @@
   },
   "effects": {
    "brace": 10,
-   "isolate_fault": 3,
+   "contain_fault": 3,
    "gather_crew": 6
   },
-  "text": "Brace 10; Isolate 3 Fault(s); gather 6 Crew",
+  "text": "Brace 10; Contain 3 Fault(s); gather 6 Crew",
   "pp_target": 11.0,
   "pp_actual": 11.0,
   "threshold": {
@@ -15725,10 +15725,10 @@
   },
   "effects": {
    "foresee": 2,
-   "isolate_fault": 4,
+   "contain_fault": 4,
    "downgrade": 3
   },
-  "text": "foresee; Isolate 4 Fault(s); downgrade 3 threat piece(s)",
+  "text": "foresee; Contain 4 Fault(s); downgrade 3 threat piece(s)",
   "pp_target": 9.5,
   "pp_actual": 9.5,
   "threshold": {
@@ -16784,11 +16784,11 @@
    "class": "ANY"
   },
   "effects": {
-   "isolate_failure": 2,
+   "contain_failure": 2,
    "downgrade": 4,
    "damage": 3
   },
-  "text": "Isolate 2 Failure; downgrade 4 threat piece(s); 3 damage",
+  "text": "Contain 2 Failure; downgrade 4 threat piece(s); 3 damage",
   "pp_target": 9.5,
   "pp_actual": 9.6,
   "threshold": {
@@ -16840,11 +16840,11 @@
    "class": "ANY"
   },
   "effects": {
-   "isolate_fault": 2,
+   "contain_fault": 2,
    "brace": 11,
    "purpose": 2
   },
-  "text": "Isolate 2 Fault(s); Brace 11; +2 Purpose",
+  "text": "Contain 2 Fault(s); Brace 11; +2 Purpose",
   "pp_target": 9.5,
   "pp_actual": 9.5,
   "threshold": {
@@ -16853,9 +16853,9 @@
    },
    "effects": {
     "brace": 4,
-    "isolate_fault": 1
+    "contain_fault": 1
    },
-   "text": "Brace 4; Isolate 1 Fault(s)",
+   "text": "Brace 4; Contain 1 Fault(s)",
    "pp": 3.0
   },
   "reign": {
@@ -16894,11 +16894,11 @@
    "class": "ANY"
   },
   "effects": {
-   "isolate_failure": 2,
-   "isolate_fault": 4,
+   "contain_failure": 2,
+   "contain_fault": 4,
    "damage": 7
   },
-  "text": "Isolate 2 Failure; Isolate 4 Fault(s); 7 damage",
+  "text": "Contain 2 Failure; Contain 4 Fault(s); 7 damage",
   "pp_target": 14.0,
   "pp_actual": 14.0,
   "threshold": {
@@ -17597,10 +17597,10 @@
     "Engineers": 2
    },
    "effects": {
-    "isolate_fault": 3,
+    "contain_fault": 3,
     "crew_strike": 1
    },
-   "text": "Isolate 3 Fault(s); every Crew there deals its damage",
+   "text": "Contain 3 Fault(s); every Crew there deals its damage",
    "pp": 4.25
   },
   "reign": {
@@ -17976,11 +17976,11 @@
    "class": "narrow"
   },
   "effects": {
-   "isolate_fault": 4,
+   "contain_fault": 4,
    "lockout": 2,
    "vent_glitch": 5
   },
-  "text": "Isolate 4 Fault(s); Lockout; vent 5 Glitch(es)",
+  "text": "Contain 4 Fault(s); Lockout; vent 5 Glitch(es)",
   "pp_target": 5.0,
   "pp_actual": 5.1,
   "threshold": {
@@ -18366,9 +18366,9 @@
    },
    "effects": {
     "foresee": 2,
-    "isolate_fault": 3
+    "contain_fault": 3
    },
-   "text": "foresee; Isolate 3 Fault(s)",
+   "text": "foresee; Contain 3 Fault(s)",
    "pp": 3.25
   },
   "reign": {

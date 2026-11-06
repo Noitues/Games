@@ -73,14 +73,15 @@
 <li><b>The Wall of Leaders:</b> a three-panel, dual-layer board with 12 slots.</li>
 <li><b>Threat:</b> Glitch <img class="ic" src="art/icons/glitch.svg" alt="">, Fault <img class="ic" src="art/icons/fault.svg" alt=""> and Failure <img class="ic" src="art/icons/failure.svg" alt="">.</li>
 <li><b>People pieces:</b> Crew <img class="ic" src="art/icons/crew.svg" alt="">, Decay <img class="ic" src="art/icons/decay.svg" alt="">, and influence banners <img class="ic" src="art/icons/influence.svg" alt=""> in each house's colour.</li>
-<li><b>Tokens:</b> Brace <img class="ic" src="art/icons/brace.svg" alt="">, Patch <img class="ic" src="art/icons/patch.svg" alt="">, Lockout <img class="ic" src="art/icons/lockout.svg" alt="">, Quarantine <img class="ic" src="art/icons/quarantine.svg" alt="">, Unrest <img class="ic" src="art/icons/unrest.svg" alt="">, Isolate <img class="ic" src="art/icons/isolate.svg" alt="">, and Breakthrough starbursts.</li>
+<li><b>Tokens:</b> Brace <img class="ic" src="art/icons/brace.svg" alt="">, Patch <img class="ic" src="art/icons/patch.svg" alt="">, Lockout <img class="ic" src="art/icons/lockout.svg" alt="">, Quarantine <img class="ic" src="art/icons/quarantine.svg" alt="">, Unrest <img class="ic" src="art/icons/unrest.svg" alt="">, Contain markers <img class="ic" src="art/icons/isolate.svg" alt="">, and Breakthrough starbursts.</li>
 <li><b>Trackers:</b> a Purpose pool and a Decay pool. Use any counters, such as coins or a d20.</li>
 <li><b>Counts for 1–4 players:</b>
   <ul>
   <li>45 Glitch, 25 Fault, 8 Failure;</li>
   <li>55 Crew, 15 Decay;</li>
   <li>26 influence banners per house;</li>
-  <li>Brace and Isolate tokens in values 1, 2 and 5;</li>
+  <li>Brace tokens in values 1, 2 and 5;</li>
+  <li>12 Contain markers;</li>
   <li>30 each of Patch and Lockout;</li>
   <li>12 Breakthrough starbursts.</li>
   </ul>
@@ -160,7 +161,7 @@
 <tr><th>Slot</th><th>Action</th><th>In every matching section…</th></tr>
 <tr><td>Dawn</td><td><img class="ic" src="art/icons/seed.svg" alt=""> Seed</td><td>…that is on the Outer Hull or next to a Fault or Failure: add 1 Glitch. Seeding comes in from the void and spreads from damage.</td></tr>
 <tr><td>Day</td><td><img class="ic" src="art/icons/grow.svg" alt=""> Grow</td><td>…that has any threat: add 1 Fault, or a Failure instead if it already has 2 or more Faults.</td></tr>
-<tr><td>Dusk</td><td><img class="ic" src="art/icons/collapse.svg" alt=""> Collapse</td><td>…that has any threat: the section takes damage equal to Glitches × 1 + Faults × 2 + Failures × 3, plus 1 for Unrest, minus Brace and Isolate.
+<tr><td>Dusk</td><td><img class="ic" src="art/icons/collapse.svg" alt=""> Collapse</td><td>…that has any threat: the section takes damage equal to Glitches × 1 + Faults × 2 + Failures × 3 (Contained pieces count 0), plus 1 for Unrest, minus Brace. Then take the Contain markers off; the pieces stay.
   <ul>
   <li><b>2 or more damage</b> places Decay there.</li>
   <li>The <b>same damage</b> hits the Crew there: each Crew has 2 health.</li>
@@ -213,7 +214,7 @@
 <tr><td><img class="ic" src="art/icons/lockout.svg" alt=""> Lockout</td><td>The next Seed there is skipped.</td></tr>
 <tr><td><img class="ic" src="art/icons/quarantine.svg" alt=""> Quarantine</td><td>Nothing seeds, vents or cascades into or out of the section this generation.</td></tr>
 <tr><td><img class="ic" src="art/icons/unrest.svg" alt=""> Unrest</td><td>+1 damage from every source there, both yours and the Collapse's.</td></tr>
-<tr><td><img class="ic" src="art/icons/isolate.svg" alt=""> Isolate</td><td>Negates that much damage at the next Collapse there.</td></tr>
+<tr><td><img class="ic" src="art/icons/isolate.svg" alt=""> Contain</td><td>Put the marker on one threat piece. It stays with that piece if the piece is vented or moved. At the next Collapse in its section, that piece deals no damage; then remove the marker (not the piece). If the piece is destroyed or downgraded, the marker goes too.</td></tr>
 <tr><td><img class="ic" src="art/icons/vent.svg" alt=""> Vent / <img class="ic" src="art/icons/gather.svg" alt=""> Gather</td><td>Push threat to, or pull Crew from, an adjacent section. Always optional, piece by piece.</td></tr>
 </table>
 

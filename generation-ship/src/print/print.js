@@ -2,6 +2,7 @@
 // (art/source/retro) and the icon language (art/icons/*.svg, art/icons/effects.json, both owned by
 // the art tools). Cards are poker size (63 x 88 mm), nine per A4 page.
 const get = async (f) => (await fetch(f)).json();
+const exists0 = async (url) => { try { return (await fetch(url, { method: "HEAD" })).ok; } catch { return false; } };
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const [allPeople, events, discoveries, crisis, boards, houses, destinations, ICONS, PLAYTEST] = await Promise.all(
   ["people.json", "events.json", "discoveries.json", "crisis.json", "boards.json", "houses.json", "destinations.json"]
@@ -16,13 +17,15 @@ const FRAME = (full, saver) => (inkSaver() ? `print/assets/${saver}` : `${ART}${
 const exists = async (url) => { try { return (await fetch(url, { method: "HEAD" })).ok; } catch { return false; } };
 
 // ---------------------------------------------------------------- icons
-const I = (name, cls = "ic") => `<img class="${cls}" src="art/icons/${name}.svg" alt="${name.replace(/_/g, " ")}">`;
+// Until the art tools ship a "contain" glyph, Contain borrows the old Isolate one.
+const ICON_ALIAS = (await exists0("art/icons/contain.svg")) ? {} : { contain: "isolate" };
+const I = (name, cls = "ic") => `<img class="${cls}" src="art/icons/${ICON_ALIAS[name] || name}.svg" alt="${name.replace(/_/g, " ")}">`;
 const TYPE_ICON = { Infrastructure: "type_infrastructure", Residential: "type_residential", Government: "type_government", Agricultural: "type_agricultural" };
 const ROMAN = ["", "I", "II", "III", "L"];
 
 // One effect key + amount -> icon items (art/icons/effects.json), with a text fallback.
 function items(key, n, ctx) {
-  const tpl = (ctx === "wall" && ICONS.wall[key]) || ICONS.effects[key];
+  const tpl = (ctx === "wall" && ICONS.wall[key]) || ICONS.effects[key] || ICONS.effects[key.replace(/^contain_/, "isolate_")];
   if (tpl) return { kind: tpl.kind, html: tpl.items.map(([t, v]) => (t === "icon" ? I(v) : `<b>${esc(String(v).replace("{n}", n))}</b>`)).join("") };
   if (key === "element") return { kind: "benefit", html: `${I(`guild_${n}`)}<b>+1</b>${I("each_house")}` };
   const verb = ICONS.verbs[key] || (key === "downgrade_fault" ? ICONS.verbs.downgrade : null);
@@ -137,7 +140,9 @@ async function boardHTML(b) {
   const { s, ox, oy } = boardFrame();
   const P = (poly) => poly.map(([x, y]) => `${(ox + s * x).toFixed(1)},${(oy + s * y).toFixed(1)}`).join(" ");
   const art = `${ART}board_${b.id.toLowerCase()}_v2_toned.png`;
-  const hasArt = await exists(art);
+  // Board art painted for an older geometry is not used (D was reshaped 2026-11-06; waiting on new art).
+  const STALE_ART = new Set(["D"]);
+  const hasArt = !STALE_ART.has(b.id) && (await exists(art));
   const wmm = (BOARD_PX[0] / s) * mmPerUnit(), hmm = (BOARD_PX[1] / s) * mmPerUnit();
   const labels = b.sections.map((sec) => {
     const [cx, cy] = sec.center, X = ox + s * cx, Y = oy + s * cy;
@@ -150,7 +155,7 @@ async function boardHTML(b) {
   }).join("");
   const body = (attrs) => `<svg ${attrs}>
       <defs><clipPath id="clip${b.id}${attrs.length}"><polygon points="${P(boards.outline)}"/><polygon points="${P(boards.void_zone)}"/></clipPath></defs>
-      ${hasArt ? `<image href="${art}" width="${BOARD_PX[0]}" height="${BOARD_PX[1]}" clip-path="url(#clip${b.id}${attrs.length})"/>` : `<polygon points="${P(boards.void_zone)}" fill="#0F3A48"/><polygon points="${P(boards.outline)}" fill="#C9D1D6"/>`}
+      ${hasArt ? `<image href="${art}" width="${BOARD_PX[0]}" height="${BOARD_PX[1]}" clip-path="url(#clip${b.id}${attrs.length})"/>` : `<polygon points="${P(boards.void_zone)}" fill="#0F3A48"/><polygon points="${P(boards.outline)}" fill="#C9D1D6"/>${b.sections.map((sec) => `<polygon points="${P(sec.poly)}" fill="${FILL[sec.type]}" fill-opacity="0.75"/>`).join("")}`}
       ${b.sections.map((sec) => `<polygon points="${P(sec.poly)}" fill="none" stroke="#FBEFD6" stroke-width="4" stroke-linejoin="round"/>`).join("")}
       <polygon points="${P(boards.outline)}" fill="none" stroke="#0F3A48" stroke-width="5" stroke-linejoin="round"/>
       <polygon points="${P(boards.void_zone)}" fill="none" stroke="#0F3A48" stroke-width="3" stroke-dasharray="14 10"/>
@@ -190,10 +195,10 @@ const wallHTML = () => [1, 2, 3].map((p) => `<div class="wall"><div class="cap">
 
 // ---------------------------------------------------------------- tokens (punch sheet)
 // Counts from sim/components.js (the most on the table at once in 4-player games, plus a margin).
-// Brace and Isolate stack, so they come in values; Patch and Lockout stack too (up to 7).
+// Brace stacks, so it comes in values; Patch and Lockout stack too (up to 7). Contain is a marker on one threat piece.
 const TOKENS = [["glitch", 45, "#2E6FD8"], ["fault", 25, "#F6C85A"], ["failure", 8, "#D8332A"], ["crew", 55, "#D9B98A"], ["decay", 15, "#7A4A30"],
   ["brace", 24, "#FBEFD6", 1], ["brace", 16, "#FBEFD6", 2], ["brace", 8, "#FBEFD6", 5],
-  ["isolate", 12, "#FBEFD6", 1], ["isolate", 8, "#FBEFD6", 2], ["isolate", 6, "#FBEFD6", 5],
+  ["contain", 12, "#FBEFD6"],
   ["patch", 30, "#FBEFD6"], ["lockout", 30, "#FBEFD6"], ["quarantine", 4, "#FBEFD6"], ["unrest", 6, "#FBEFD6"]];
 const tok = (n, c, v) => `<span class="tok" style="--c:${c}">${I(n)}${v ? `<b class="tv">${v}</b>` : ""}</span>`;
 const tokensHTML = () => `<div class="tokens">${TOKENS.flatMap(([n, k, c, v]) => Array(k).fill(tok(n, c, v))).join("")}
@@ -201,7 +206,7 @@ const tokensHTML = () => `<div class="tokens">${TOKENS.flatMap(([n, k, c, v]) =>
   ${Array(12).fill(`<span class="tok" style="--c:#F6C85A">${I("purpose")}</span>`).join("")}</div>
   <p class="note">16 mm tokens, sized from simulated games (sim/components.js: the most of each on the table at once in 4-player games, plus a margin).
   45 Glitch, 25 Fault, 8 Failure, 55 Crew, 15 Decay, 26 influence banners per house, and 12 starbursts (Breakthrough markers).
-  Brace and Isolate come in values 1, 2 and 5 (make change). Patch and Lockout stack: use several.
+  Brace comes in values 1, 2 and 5 (make change). Patch and Lockout stack: use several. Contain markers sit on one threat piece each and move with it.
   Damage: tip a token over at 1 damage; turn a Failure face down at 2. Only print the house banners you play with.</p>`;
 
 // ---------------------------------------------------------------- playtest record sheet
@@ -242,7 +247,7 @@ const REF = `<div class="ref">
   <h3>Purpose and Understanding</h3><p>Destroy a ${I("fault")} +1, a ${I("failure")} +2 ${I("purpose")}. A full pool (6 per player) earns a Discovery. The destination sets how many Discoveries raise Understanding (3 with no destination).</p>
   <h3>Winning (at any moment)</h3><p><b>I:</b> no threat and no Decay · <b>II:</b> no threat · <b>III:</b> no Faults or Failures, plus the destination's Landfall requirement.</p>
   <h3>Losing</h3><p>The event deck is empty at Dawn; the Decay pool runs out after the crisis flip; or any house has no influence.</p>
-  <h3>Tokens</h3><p>${I("brace")} <b>Brace X:</b> prevent X damage · ${I("quarantine")} <b>Quarantine:</b> nothing seeds, vents or cascades in or out · ${I("patch")} <b>Patch:</b> skip next Grow · ${I("lockout")} <b>Lockout:</b> skip next Seed · ${I("unrest")} <b>Unrest:</b> +1 damage from every source · ${I("isolate")} <b>Isolate:</b> negate damage at next Collapse.</p>
+  <h3>Tokens</h3><p>${I("brace")} <b>Brace X:</b> prevent X damage · ${I("quarantine")} <b>Quarantine:</b> nothing seeds, vents or cascades in or out · ${I("patch")} <b>Patch:</b> skip next Grow · ${I("lockout")} <b>Lockout:</b> skip next Seed · ${I("unrest")} <b>Unrest:</b> +1 damage from every source · ${I("contain")} <b>Contain:</b> a marker on one threat piece, which moves with it; that piece deals no damage at the next Collapse there, then the marker comes off.</p>
   <h3>Setup (2 players)</h3><p>Boards A–B (pair layout). Decay pool 3 per player − 1; Purpose pool 6 per player; event deck 3 Stage I / 4 Stage II / 5 Stage III (Stage I on top). Draw the first event and a random Common leader into Day (the starting Steward belongs to no house), Seed, and begin.</p></div>
   <h2>Icon glossary</h2><img class="glossary" src="art/icons/icon_sheet.svg" alt="Icon glossary">`;
 

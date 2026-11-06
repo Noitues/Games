@@ -357,7 +357,7 @@
        "brace": 6,
        "gather_crew": 1,
        "patch": 1,
-       "isolate_fault": 1
+       "contain_fault": 1
       },
       "range": 1,
       "target": "ANY",
@@ -374,7 +374,7 @@
        "brace": 6,
        "gather_crew": 1,
        "patch": 1,
-       "isolate_fault": 1,
+       "contain_fault": 1,
        "restore_decay": 1
       },
       "range": 1,
@@ -647,7 +647,7 @@
       "effects": {
        "gather_crew": 2,
        "brace": 2,
-       "isolate_fault": 1
+       "contain_fault": 1
       },
       "range": 1,
       "target": "ANY",
@@ -1020,7 +1020,7 @@
    "clone": 1,
    "special": {
     "id": "spin",
-    "text": "Damage from Tellers' cards does not destroy threat; each point generates 2 Purpose and Isolates 1 damage of threat in that section (it deals that much less at the next Collapse).",
+    "text": "Damage from Tellers' cards does not destroy threat: it Contains it instead (each piece that takes its full health gets a Contain marker, so it deals no damage at the next Collapse), and each point generates 3 Purpose.",
     "pp_per_generation": 1.5
    },
    "innate": {
@@ -1035,7 +1035,7 @@
       },
       "threshold_cost": 2.0,
       "effects": {
-       "isolate_fault": 1,
+       "contain_fault": 1,
        "lockout": 1
       },
       "range": 1,
@@ -1050,7 +1050,7 @@
       },
       "threshold_cost": 3.5,
       "effects": {
-       "isolate_fault": 2,
+       "contain_fault": 2,
        "lockout": 1,
        "brace": 2
       },
@@ -1066,8 +1066,8 @@
       },
       "threshold_cost": 6.0,
       "effects": {
-       "isolate_failure": 1,
-       "isolate_fault": 1,
+       "contain_failure": 1,
+       "contain_fault": 1,
        "quarantine": 1,
        "gather_crew": 2,
        "lockout": 1

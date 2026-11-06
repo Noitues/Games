@@ -26,14 +26,14 @@ IDENTITY = {
                   "Rooted spends influence, and a house with no influence loses the game for everyone."),
     "voidwardens": ("Masters of the Outer Hull. Threat they vent out of a Hull section is thrown into the void.",
                     "Can only add influence to Outer Hull sections; weak in the Core."),
-    "tellers": ("They control the story. Their damage never destroys anything; it becomes Purpose and calms the threat (Isolate).",
+    "tellers": ("They control the story. Their damage never destroys anything; it becomes Purpose and Contains the threat.",
                 "Can't clear threat themselves, so teammates must do the removing."),
 }
 
 VERB = {"gather_crew": "gather {n} Crew", "brace": "Brace {n}", "damage": "{n} damage", "lockout": "Lockout",
         "downgrade_failure": "downgrade {n} Failure", "vent_glitch": "vent {n} Glitch", "vent_glitch_or_fault": "vent {n} Glitch/Fault",
         "vent_failure": "vent {n} Failure", "patch": "Patch", "quarantine_source": "Quarantine the source", "quarantine": "Quarantine",
-        "isolate_fault": "Isolate {n} Fault", "isolate_failure": "Isolate {n} Failure", "restore_decay": "restore {n} Decay",
+        "contain_fault": "Contain {n} Fault", "contain_failure": "Contain {n} Failure", "restore_decay": "restore {n} Decay",
         "add_crew": "add {n} Crew", "purpose": "+{n} Purpose", "foresee": "foresee", "temper_legacy": "temper the Elder's Legacy",
         "crew_strike": "every Crew there deals its damage now"}
 

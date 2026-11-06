@@ -5,7 +5,7 @@ import {
   allSections, matches, threatCount, inRange, influenceSections, targetFilter, distances,
   damageThreat, placeDecay, gainPurpose, losePurpose, gatherCrew, applySectionEffects,
   applyHouseEffects, drawFrom, checkWin, lose, log, downgrade, restoreDecay, totalInfluence,
-  winConditionMet, stewardHouse, wallBonuses, legacyMod, crewDamage,
+  winConditionMet, stewardHouse, wallBonuses, legacyMod, crewDamage, syncContain, containedDamage,
 } from "./rules.js";
 
 const BOARD_IDS = ["A", "B", "C", "D"];
@@ -47,7 +47,7 @@ export function createGame(data, cfgIn = {}, seed = 1) {
         id: s.id, board: b.id, type: s.type, hull: s.hull, adj,
         glitch: s.setup.glitch, fault: s.setup.fault, failure: s.setup.failure,
         crew: s.setup.crew, decay: s.setup.decay, influence: {},
-        brace: 0, quarantine: 0, patch: 0, lockout: 0, unrest: 0, isolate: 0, dmg: 0,
+        brace: 0, quarantine: 0, patch: 0, lockout: 0, unrest: 0, contain: { glitch: 0, fault: 0, failure: 0 }, dmg: 0,
       };
       st.order.push(s.id);
     }
@@ -352,9 +352,11 @@ export function collapse(G, st, eid) {
   for (const s of allSections(st)) {
     if (st.result) return;
     if (!matches(s, ev.types) || threatCount(s) === 0) continue;
-    let dmg = s.glitch + s.fault * (2 + surge) + s.failure * 3 + (s.unrest > 0 ? 1 : 0)
+    syncContain(s);
+    // Contained pieces deal no damage; their markers come off (the pieces stay).
+    let dmg = (s.glitch + s.fault * (2 + surge) + s.failure * 3 - containedDamage(s, surge)) + (s.unrest > 0 ? 1 : 0)
       + (s.hull && st.dest?.rules.hull_collapse_plus ? 1 : 0) + legacyMod(st, s, "collapse_plus");
-    const neg = Math.min(dmg, s.isolate); dmg -= neg; s.isolate = 0;
+    s.contain = { glitch: 0, fault: 0, failure: 0 };
     const br = Math.min(dmg, s.brace); dmg -= br; s.brace -= br;
     log(G, st, `Collapse in ${s.id}: ${dmg} damage${dmg >= G.cfg.decayThreshold ? ", Decay" : ""}`);
     if (dmg >= G.cfg.decayThreshold) placeDecay(G, st, s);
@@ -407,7 +409,7 @@ export function applyLegacy(G, st) {
 
 // ============================================================== discoveries
 const D_REMOVE = (G, st, s, piece, n) => {
-  const k = Math.min(n, s[piece]); s[piece] -= k;
+  const k = Math.min(n, s[piece]); s[piece] -= k; syncContain(s);
   if (piece === "fault") gainPurpose(G, st, k * G.cfg.purposeFault, "discovery");
 };
 export function applyDiscoveryEffects(G, st, effects, sections, h = 0) {

@@ -68,7 +68,7 @@ The generator is deterministic (seed 1), so re-running it reproduces the same de
 | Farmers | Patch, gather/add Crew, restore Decay | Agricultural |
 | Bureaucrats | Quarantine, move influence, credits, vent | Government |
 | Navigators | vent, Lockout, foresee | Outer Hull |
-| Scholars | Purpose, downgrade, Isolate | Government |
+| Scholars | Purpose, downgrade, Contain | Government |
 | Keepers | Purpose, add influence, temper Legacy | Residential |
 
 ## Effect frequency across the deck
@@ -84,7 +84,7 @@ The generator is deterministic (seed 1), so re-running it reproduces the same de
 | vent Glitch | 47 |
 | downgrade | 46 |
 | add Crew | 43 |
-| Isolate Fault | 31 |
+| Contain Fault | 31 |
 | move influence | 30 |
 | Patch | 26 |
 | move Crew | 20 |
@@ -93,7 +93,7 @@ The generator is deterministic (seed 1), so re-running it reproduces the same de
 | restore Decay | 16 |
 | Quarantine | 14 |
 | Lockout | 13 |
-| Isolate Failure | 7 |
+| Contain Failure | 7 |
 | temper Legacy | 4 |
 | vent Failure | 1 |
 

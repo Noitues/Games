@@ -25,8 +25,8 @@ VERBS = {
     "vent_failure":    (1.5, 1, "vent {n} Failure", "R"),
     "patch":           (1.5, 1, "Patch", "C"),
     "lockout":         (1.0, 1, "Lockout", "C"),
-    "isolate_fault":   (1.0, 2, "Isolate {n} Fault(s)", "C"),
-    "isolate_failure": (1.5, 1, "Isolate {n} Failure", "C"),
+    "contain_fault":   (1.0, 2, "Contain {n} Fault(s)", "C"),
+    "contain_failure": (1.5, 1, "Contain {n} Failure", "C"),
     "brace":           (0.5, 6, "Brace {n}", "C"),
     "quarantine":      (1.0, 1, "Quarantine", "C"),
     "gather_crew":     (0.5, 3, "gather {n} Crew", "C"),
@@ -47,7 +47,7 @@ VERBS = {
 # move influence, Quarantine and foresee overpriced.
 REPRICE = {"add_influence": 1.21, "damage": 1.135, "add_crew": 1.075, "restore_decay": 1.045,
            "vent_glitch": 1.03, "downgrade": 1.015, "lockout": 0.985, "brace": 0.94, "vent_fault": 0.94,
-           "credits": 0.94, "purpose": 0.94, "gather_crew": 0.94, "patch": 0.91, "isolate_fault": 0.91,
+           "credits": 0.94, "purpose": 0.94, "gather_crew": 0.94, "patch": 0.91, "contain_fault": 0.91,
            "foresee": 0.88, "quarantine": 0.835, "move_influence": 0.805}
 # Tested and REJECTED (see sim/RESULTS.md "Card balance"): applying REPRICE and 1.15 PP per credit dropped
 # the win rate from 76% to 59% without narrowing the pick-rate spread. Kept off; set APPLY_REPRICE to retry.
@@ -62,17 +62,17 @@ GLOBAL_VERBS = {"purpose", "credits", "foresee", "temper_legacy"}  # no section 
 HOUSE_VERBS = ["credits", "add_influence", "move_influence", "purpose"]
 
 POOLS = {  # guild -> verb weights (identity tendencies)
-    "Engineers":   {"damage": 5, "downgrade": 3, "patch": 1, "isolate_fault": 1, "damage_per_crew": 1},
+    "Engineers":   {"damage": 5, "downgrade": 3, "patch": 1, "contain_fault": 1, "damage_per_crew": 1},
     "Laborers":    {"damage": 3, "vent_glitch": 2, "vent_fault": 2, "brace": 2,
                     "restore_decay": 1, "gather_crew": 1, "crew_strike": 2},
-    "Medics":      {"brace": 4, "gather_crew": 3, "move_crew": 1, "add_crew": 1, "isolate_fault": 1,
+    "Medics":      {"brace": 4, "gather_crew": 3, "move_crew": 1, "add_crew": 1, "contain_fault": 1,
                     "damage_per_crew": 1},
     "Farmers":     {"patch": 3, "gather_crew": 2, "add_crew": 2, "restore_decay": 1, "crew_strike": 1},
     "Bureaucrats": {"quarantine": 2, "move_influence": 2, "credits": 2, "vent_fault": 2,
-                    "isolate_fault": 1},
+                    "contain_fault": 1},
     "Navigators":  {"vent_glitch": 2, "vent_fault": 1, "vent_failure": 1, "lockout": 3,
                     "foresee": 2, "move_crew": 1, "damage": 1},
-    "Scholars":    {"purpose": 3, "downgrade": 2, "isolate_fault": 1, "isolate_failure": 1,
+    "Scholars":    {"purpose": 3, "downgrade": 2, "contain_fault": 1, "contain_failure": 1,
                     "foresee": 1},
     "Keepers":     {"purpose": 3, "add_influence": 2, "temper_legacy": 1, "brace": 1},
 }

@@ -1,6 +1,6 @@
 // How many of each piece a physical copy needs: the most of each on the table at once, per game,
 // across player counts (house bots). Reports the 95th percentile and the maximum. Pieces (threat,
-// Crew, Decay, influence) are counted; tokens (Brace, Patch, Lockout, Isolate, Quarantine, Unrest)
+// Crew, Decay, influence) are counted; tokens (Brace, Patch, Lockout, Quarantine, Unrest)
 // are numbered markers, so the count is sections holding one, and <token>Max the largest value.
 //   node sim/components.js [--games 20]
 import { loadData } from "./load.js";
@@ -11,9 +11,11 @@ const argv = process.argv.slice(2);
 const games = Number(argv[argv.indexOf("--games") + 1] || 20);
 const data = loadData();
 const H = data.houses.houses.map((h) => h.id);
-const KEYS = ["glitch", "fault", "failure", "crew", "decay", "brace", "patch", "lockout", "quarantine", "unrest", "isolate"];
+const KEYS = ["glitch", "fault", "failure", "crew", "decay", "brace", "patch", "lockout", "quarantine", "unrest", "contain"];
 const PIECES = new Set(["glitch", "fault", "failure", "crew", "decay"]);
-const TOKENS = ["brace", "patch", "lockout", "isolate"];
+const TOKENS = ["brace", "patch", "lockout"];
+// Contain markers sit on single pieces: count the pieces carrying one.
+const val = (s, k) => (k === "contain" ? (s.contain ? s.contain.glitch + s.contain.fault + s.contain.failure : 0) : s[k]);
 
 function peaks(players, g) {
   const houses = Array.from({ length: players }, (_, i) => H[(g * 3 + i * 5) % H.length]).filter((h, i, a) => a.indexOf(h) === i);
@@ -28,7 +30,7 @@ function peaks(players, g) {
     for (const id of st.order) {
       const s = st.sections[id];
       // threat, Crew and Decay are pieces (count them); tokens are numbered markers (count sections)
-      for (const k of KEYS) sum[k] += PIECES.has(k) ? s[k] : s[k] ? 1 : 0;
+      for (const k of KEYS) sum[k] += PIECES.has(k) || k === "contain" ? val(s, k) : s[k] ? 1 : 0;
       for (const k of TOKENS) peak[`${k}Max`] = Math.max(peak[`${k}Max`] || 0, s[k]);
       for (const [h, n] of Object.entries(s.influence)) inf[h] += n;
     }

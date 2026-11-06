@@ -19,7 +19,7 @@ House bots, all 28 two-house pairings, 448 games (base win rate 71%). Generated 
 |---|---|---|---|---|---|
 | C245 | 0 | 2 damage | 95% | 50% | 72% |
 | C107 | 1 | Brace 1; 2 damage | 89% | 64% | 72% |
-| C100 | 1 | 2 damage; Isolate 1 Fault(s) | 86% | 44% | 69% |
+| C100 | 1 | 2 damage; Contain 1 Fault(s) | 86% | 44% | 69% |
 | C041 | 0 | downgrade 1 threat piece(s); foresee | 85% | 100% | 72% |
 | C255 | 2 | 3 damage | 84% | 75% | 67% |
 | C289 | 0 | gather 3 Crew; Brace 2 | 84% | 100% | 66% |
@@ -38,7 +38,7 @@ House bots, all 28 two-house pairings, 448 games (base win rate 71%). Generated 
 | C159 | 3 | +4 Purpose; downgrade 1 threat piece(s) | 8% | 69% | 63% |
 | C010 | 3 | restore 2 Decay; gather 3 Crew | 9% | 59% | 68% |
 | C140 | 3 | 1 damage; restore 2 Decay | 9% | 67% | 60% |
-| C139 | 2 | Isolate 2 Fault(s); Brace 5 | 9% | 89% | 64% |
+| C139 | 2 | Contain 2 Fault(s); Brace 5 | 9% | 89% | 64% |
 | C124 | 1 | move 2 influence; +1 Purpose | 9% | 100% | 81% |
 | C027 | 2 | +3 credits; move 1 influence | 9% | 100% | 75% |
 | C070 | 3 | Brace 6; vent 2 Fault(s) | 9% | 12% | 67% |
@@ -69,9 +69,9 @@ House bots, all 28 two-house pairings, 448 games (base win rate 71%). Generated 
 | R047 | 3 | Brace 12; restore 1 Decay | 62% | 4% | 63% |
 | R048 | 5 | 3 damage; Brace 12; gather 1 Crew | 62% | 18% | 78% |
 | R100 | 2 | 2 damage; vent 6 Glitch(es); foresee | 61% | 33% | 80% |
-| R006 | 4 | Isolate 2 Failure; gather 4 Crew; +2 Purpose | 60% | 33% | 65% |
+| R006 | 4 | Contain 2 Failure; gather 4 Crew; +2 Purpose | 60% | 33% | 65% |
 | R065 | 3 | Brace 10 | 59% | 4% | 54% |
-| R005 | 3 | 6 damage; Isolate 1 Fault(s); gather 1 Crew | 58% | 82% | 78% |
+| R005 | 3 | 6 damage; Contain 1 Fault(s); gather 1 Crew | 58% | 82% | 78% |
 | R079 | 3 | +3 credits; add 1 Crew; gather 1 Crew | 56% | 0% | 67% |
 
 ### Least picked (possibly overpriced or weak)
@@ -79,14 +79,14 @@ House bots, all 28 two-house pairings, 448 games (base win rate 71%). Generated 
 | Card | Cost | Effect | Pick | Heir | Win when played |
 |---|---|---|---|---|---|
 | R055 | 8 | vent 4 Fault(s); Brace 9; 12 damage | 2% | 80% | 60% |
-| R039 | 8 | +5 credits; vent 4 Fault(s); Isolate 4 Fault(s) | 6% | 57% | 71% |
+| R039 | 8 | +5 credits; vent 4 Fault(s); Contain 4 Fault(s) | 6% | 57% | 71% |
 | R050 | 7 | +7 Purpose; Quarantine; vent 3 Fault(s) | 6% | 17% | 50% |
-| R014 | 7 | Isolate 2 Fault(s); +5 Purpose; temper the Elder's Legacy | 6% | 0% | 58% |
+| R014 | 7 | Contain 2 Fault(s); +5 Purpose; temper the Elder's Legacy | 6% | 0% | 58% |
 | R090 | 8 | downgrade 4 threat piece(s); move 4 influence; +6 credits | 6% | 36% | 53% |
 | R060 | 8 | vent 4 Fault(s); Brace 12; +3 credits | 6% | 32% | 68% |
 | R081 | 6 | 3 damage; downgrade 4 threat piece(s); move 4 influence | 7% | 38% | 85% |
 | R058 | 6 | +3 credits; move 4 influence; +4 Purpose | 8% | 94% | 69% |
-| R008 | 4 | move 4 influence; Isolate 1 Failure; vent 4 Fault(s) | 8% | 11% | 67% |
+| R008 | 4 | move 4 influence; Contain 1 Failure; vent 4 Fault(s) | 8% | 11% | 67% |
 | R052 | 8 | every Crew there deals its damage; downgrade 3 threat piece(s); 10 damage | 8% | 0% | 61% |
 | R097 | 8 | 11 damage; vent 1 Glitch(es); add 1 Crew | 8% | 18% | 59% |
 | R092 | 8 | Brace 12; vent 5 Glitch(es); vent 4 Fault(s) | 8% | 17% | 61% |

@@ -40,7 +40,7 @@ The engine asks agents for every decision through `choose(G, state, house, kind,
 ## How the engine interprets the rules
 Points where the GDD left room, or where the engine simplifies:
 - **Player damage pools within a section** for the generation and kills the set of pieces that removes the most threat damage. Leftover damage persists until Time passes.
-- **Brace and Isolate reduce Collapse damage** before the Decay check, and the reduced damage is dealt to Crew.
+- **Brace and Contain reduce Collapse damage** before the Decay check, and the reduced damage is dealt to Crew.
 - **Unrest adds +1 once** per damage source, including the Crew counter-attack.
 - **"Move Crew" works like "gather Crew"**: it pulls Crew into the target section.
 - **Remarkable substitution is available every generation** (at most 1). Whether it's gated was an open question.
