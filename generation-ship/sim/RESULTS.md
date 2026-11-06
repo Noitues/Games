@@ -560,3 +560,26 @@ The engine had treated Isolate as a pooled damage reduction that built up across
 | fan | 79 % |
 
 That is within the earlier 64–81 % band, so the reshaped board D doesn't skew the 4-board layouts.
+
+## Board C evened out (2026-11-06)
+
+**The change:**
+- C4 was about 3,500 square units and C5 about 20,300. C1 was also small and touched only one other section.
+- New seeds: C1 (−100, −95), C2 (0, −125), C3 (50, −115), C4 (125, −50), C5 (−120, 10), C6 (30, 30), C7 (−40, 110), C8 (100, 60).
+- Sections now run about 7,900–13,500. C1–C3 stay on the Outer Hull, and every section touches at least two others.
+- C6 is the hub, touching the other seven sections.
+
+**Layouts** (20 games × 8 house combinations, 160 games each):
+
+| Layout | Before | After |
+|---|---|---|
+| pair | 69 % | 69 % |
+| line3 | 77 % | 69 % |
+| triad | 79 % | 78 % |
+| arc3 | 71 % | 68 % |
+| line4 | 75 % | 77 % |
+| diamond | 82 % | 79 % |
+| arc4 | 72 % | 70 % |
+| fan | 79 % | 76 % |
+
+All are inside the earlier 64–81 % band. line3 is a little harder: its middle board now has fewer short paths through it.
