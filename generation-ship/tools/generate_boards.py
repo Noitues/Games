@@ -36,8 +36,10 @@ BOARDS = {
           (-120, 10, G), (-35, -35, A), (60, -20, I), (130, 30, G), (0, 105, Rs)],
     "B": [(-60, -125, Rs), (60, -125, G),
           (-140, -20, A), (-50, 20, I), (40, -40, I), (140, -5, A), (-40, 120, Rs), (80, 95, G)],
-    "C": [(-110, -115, A), (-15, -130, I), (70, -110, Rs), (130, -90, G),
-          (-70, 30, G), (40, 10, A), (-10, 120, I), (110, 90, Rs)],
+    # C1 and C4 came out small and C5 huge; evened out 2026-11-06 (still three Outer Hull sections,
+    # and every section touches at least two others on the board).
+    "C": [(-100, -95, A), (0, -125, I), (50, -115, Rs), (125, -50, G),
+          (-120, 10, G), (30, 30, A), (-40, 110, I), (100, 60, Rs)],
     # D8 used to sit on the bottom edge between D6 and D7 and came out tiny (2026-11-06): moved up.
     "D": [(-75, -120, G), (75, -120, A),
           (0, -40, I), (-140, 15, Rs), (140, 15, I), (-85, 80, A), (85, 80, Rs), (0, 120, G)],
