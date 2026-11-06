@@ -296,16 +296,16 @@ def main():
         return (ship_origin[0] + (px_ * math.cos(a) - py_ * math.sin(a) + x) * U,
                 ship_origin[1] + (px_ * math.sin(a) + py_ * math.cos(a) + y) * U)
 
-    # Mid-game spread: threats (some damaged, by posture), Crew (one injured), Decay, influence, Isolate.
+    # Mid-game spread: threats (some damaged, by posture), Crew (one injured), Decay, influence, Contain.
     state = {
         "A1": ["crew", "crew", "inf0"], "A2": ["fault_flat", "glitch"], "A3": ["inf1", "crew"],
         "A4": ["failure_side", "decay", "crew_injured"], "A5": ["glitch", "inf1", "inf1"], "A6": ["crew", "inf0"],
         "A7": ["glitch", "glitch"], "A8": ["decay_b", "fault", "crew"],
-        "B1": ["inf0", "crew", "glitch"], "B2": ["fault", "isolate"], "B3": ["inf1", "crew", "crew_injured"],
+        "B1": ["inf0", "crew", "glitch"], "B2": ["contain"], "B3": ["inf1", "crew", "crew_injured"],
         "B4": ["failure_up", "fault", "decay"], "B5": ["crew", "inf0", "inf0"], "B6": ["glitch"],
         "B7": ["crew", "decay_b"], "B8": ["inf1", "failure", "crew"],
     }
-    flat = {"fault_flat", "decay", "decay_b", "breakthrough", "isolate"}
+    flat = {"fault_flat", "decay", "decay_b", "breakthrough"}
     for bid in ("A", "B"):
         board = next(b for b in data["boards"] if b["id"] == bid)
         for sec in board["sections"]:

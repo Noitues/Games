@@ -11,7 +11,7 @@ Damage states (GDD "Threat pieces": damage clears at Time passes) use no extra p
 piece sits: 1 damage knocks a Fault or Failure over; 2 damage turns a Failure upside down (it stands
 on the octagon's flat top edge); an injured Crew lies on its side; Glitch (health 1) has no state.
 A downgrade replaces the piece with an
-undamaged one standing upright (damage does not carry over). Isolate is a flat wooden no-entry disc.
+undamaged one standing upright (damage does not carry over). Contain (after Spirit Island's Strife) is a wooden collar marker with a no-entry badge, slipped over a threat piece's base; it moves with the piece and comes off at that piece's next Collapse.
 The sheet shows each piece from the side and from above in every state, a black-silhouette test, and
 the pieces on the four section colours. Concept only: the numbers are starting points for a sculptor.
 """
@@ -37,7 +37,7 @@ SIZES = {                      # mm
     "influence": {"base": 10, "height": 12},
     "decay": {"size": 12, "height": 5.5},
     "breakthrough": {"diameter": 18, "rays": 8},
-    "isolate": {"d": 8},
+    "contain": {"d": 13},          # the collar fits round a sign base (10-12 mm)
 }
 ACCENT, DAMAGE_INK = "#E8763A", "#8A3A16"
 HOUSE = ["#3A6FD8", "#8FB04A", "#7A8C96", "#6A4A9A"]        # Galvan, Gardeners, Keel, Voidwardens (wood stain)
@@ -215,11 +215,21 @@ def failure_top(cx, cy, solid=None, damage=0):
     return f'<g filter="url(#shadow)">{base}{slab}</g>'
 
 
+def contain_marker(cx, by, angle=0):
+    """Contain: a wooden collar with a no-entry badge, slipped over a threat piece's base; drawn on
+    the ground line by (place it over a piece's base). Moves with the piece; off at its next Collapse."""
+    w = mmv(SIZES["contain"]["d"])
+    h = mmv(2.4)
+    badge = w * .36
+    return (f'<g filter="url(#shadow)" transform="rotate({angle} {cx} {by})">'
+            f'<path d="M{cx - w / 2},{by - h * .2} C{cx - w / 2},{by - h * 1.2} {cx + w / 2},{by - h * 1.2} {cx + w / 2},{by - h * .2} '
+            f'L{cx + w / 2},{by + h * .3} C{cx + w / 2},{by + h * 1.1} {cx - w / 2},{by + h * 1.1} {cx - w / 2},{by + h * .3} Z" fill="url(#wood)" stroke="#5A3A1C" stroke-width="1.6"/>'
+            f'<g transform="translate({cx + w / 2 - badge * .7} {by - badge * .9}) scale({badge / 100})">{icons.isolate()}</g></g>')
+
+
 def isolate_tag(cx, cy, angle=0):
-    """Isolate: a flat wooden 'no entry' disc (prohibition circle and slash), placed by the piece; the
-    same disc as its icon."""
-    w = mmv(SIZES["isolate"]["d"])
-    return f'<g filter="url(#shadow)" transform="translate({cx - w / 2} {cy - w / 2}) rotate({angle} {w / 2} {w / 2}) scale({w / 100})">{icons.isolate()}</g>'
+    """Back-compat name: the Contain marker on its own (by its base line)."""
+    return contain_marker(cx, cy, angle)
 
 
 # --- the people (wood) -----------------------------------------------------------------------------
@@ -379,8 +389,8 @@ def sheet():
     o.append(crew_side(1200, base) + crew_injured(1320, base))
     o.append(label(1200, base + 30, "standing", 14) + label(1330, base + 30, "injured: on its side", 14, "bold", DAMAGE_INK))
     o.append(label(1265, base + 58, "Crew (health 2)", 15, "bold", "#2B2F33"))
-    o.append(fault_side(1560, base) + isolate_tag(1635, base - 18))
-    o.append(label(1590, base + 30, "Isolate", 14, "bold", DAMAGE_INK) + label(1590, base + 58, "no-entry disc (a power, not damage)", 14))
+    o.append(fault_side(1560, base) + contain_marker(1560, base + 2))
+    o.append(label(1590, base + 30, "Contain", 14, "bold", DAMAGE_INK) + label(1590, base + 58, "collar on the piece (a power, not damage)", 14))
 
     # Row 2b: the same states from above
     base = 900
@@ -404,7 +414,7 @@ def sheet():
     o.append(name(672, base + 60, "House influence", "flat wooden house crests, emblem engraved · 12 mm"))
     o.append(decay_side(985, base) + decay_lump(1085, base - 60, 4) + name(1035, base + 60, "Decay", "cracked panel lying on a base · 12 mm"))
     o.append(breakthrough_coin(1360, base - 92) + name(1360, base + 60, "Breakthrough", "brass starburst coin · 18 mm"))
-    o.append(isolate_tag(1620, base - 40, 0) + name(1620, base + 60, "Isolate", "flat wooden no-entry disc · 8 mm"))
+    o.append(contain_marker(1620, base - 10, 0) + name(1620, base + 60, "Contain", "wooden collar marker · 13 mm"))
 
     # Row 4: on the board, mid-turn
     y0 = 1490
@@ -426,7 +436,7 @@ def sheet():
         if i == 1:
             o.append(decay_lump(440, 430, 12))
         if i == 3:
-            o.append(fault_side(500, 420) + isolate_tag(575, 410))
+            o.append(fault_side(500, 420) + contain_marker(500, 422))
         o.append("</g>")
         o.append(label(x0 + 190, y0 + 360, sname, 16, "bold", "#2B2F33"))
     o.append(label(60, y0 + 430, "Print-and-play: every piece is a die-cut token with an undamaged face and a damaged face; the Failure's back face "
@@ -442,7 +452,7 @@ def sprite_svgs():
     s = {"glitch": glitch_side(150, g), "fault": fault_side(150, g), "fault_flat": fault_top(150, 150, damage=1),
          "failure": failure_side(150, g), "failure_side": failure_side(150, g, damage=1), "failure_up": failure_side(150, g, damage=2),
          "crew": crew_side(150, g), "crew_injured": crew_injured(150, g), "decay": decay_lump(150, 150, 4),
-         "decay_b": decay_lump(150, 150, 9), "breakthrough": breakthrough_coin(150, 150), "isolate": isolate_tag(150, 150, 0)}
+         "decay_b": decay_lump(150, 150, 9), "breakthrough": breakthrough_coin(150, 150), "contain": fault_side(150, g) + contain_marker(150, g + 2)}
     for i, c in enumerate(HOUSE):
         s[f"influence_{i}"] = influence_side(150, g, c)
     return s

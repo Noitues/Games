@@ -78,6 +78,7 @@ EDITS_7 = {f"house_{h}_v3": ("house_board_v3", f"house_{h}_guide.png", "1536x102
 HOUSE_LOOK.update(HOUSE_LOOK_2)
 EDITS_8 = {**{f"card_frame_v4{v}": ("card_frame_v4", "card_guide.png", "1104x1504", 1) for v in "ab"},
            **{f"wall_panel_v4{v}": ("wall_panel_v3", "wall_guide.png", "2320x960", 1) for v in "ab"}}
+EDITS_9 = {"board_d_v2": ("board", "board_d_guide.png", "1296x1536", 2)}   # board D reshaped (2026-11-06)
 GENERATIONS = {
     "card_back": ("card_back", None, "1104x1504", 1),
     **{f"icon_{t}": (f"icon_{t}", None, "1024x1024", 1) for t in ("infrastructure", "residential", "government", "agricultural")},
@@ -128,12 +129,14 @@ def build(jobs, endpoint, style, ps):
 def main():
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument("--batch", type=int, default=2, choices=(2, 3, 4, 5, 6, 7, 8))
+    ap.add_argument("--batch", type=int, default=2, choices=(2, 3, 4, 5, 6, 7, 8, 9))
     batch = ap.parse_args().batch
-    ps = prompts(6 if batch == 7 else batch)      # batch 7 reuses batch 6's house-board prompt
+    ps = prompts({7: 6, 9: 2}.get(batch, batch))   # batch 7 reuses batch 6 (house boards), batch 9 batch 2 (boards)
+    if batch == 9:
+        ps = prompts(2)                            # batch 9 reuses batch 2's board prompt
     if batch == 8:
         ps = {**prompts(3), **ps}                  # batch 8's Wall reuses batch 3's wall_panel_v3
-    edits, gens = {2: (EDITS, GENERATIONS), 3: (EDITS_3, GENERATIONS_3), 4: ({}, GENERATIONS_4), 5: (EDITS_5, {}), 6: (EDITS_6, {}), 7: (EDITS_7, {}), 8: (EDITS_8, {})}[batch]
+    edits, gens = {2: (EDITS, GENERATIONS), 3: (EDITS_3, GENERATIONS_3), 4: ({}, GENERATIONS_4), 5: (EDITS_5, {}), 6: (EDITS_6, {}), 7: (EDITS_7, {}), 8: (EDITS_8, {}), 9: (EDITS_9, {})}[batch]
     text = (ROOT / "art" / "CHATGPT_PROMPTS.md").read_text()
     sec = text.split("## D · Retro Space", 1)[1]
     opener = re.search(r"\*\*Opener\*\*\n```\n(.*?)\n```", sec, re.S).group(1)
